@@ -76,9 +76,26 @@ Deferred — valuable but not needed for the interview.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| COMP-01 to COMP-04 | Phase 1: Competitive Analysis | Pending |
-| PRD-01 to PRD-11 | Phase 2: Product PRD | Pending |
-| STRAT-01 to STRAT-05 | Phase 3: Product Strategy | Pending |
+| COMP-01 | Phase 1: Competitive Analysis | Pending |
+| COMP-02 | Phase 1: Competitive Analysis | Pending |
+| COMP-03 | Phase 1: Competitive Analysis | Pending |
+| COMP-04 | Phase 1: Competitive Analysis | Pending |
+| PRD-01 | Phase 2: Product PRD | Pending |
+| PRD-02 | Phase 2: Product PRD | Pending |
+| PRD-03 | Phase 2: Product PRD | Pending |
+| PRD-04 | Phase 2: Product PRD | Pending |
+| PRD-05 | Phase 2: Product PRD | Pending |
+| PRD-06 | Phase 2: Product PRD | Pending |
+| PRD-07 | Phase 2: Product PRD | Pending |
+| PRD-08 | Phase 2: Product PRD | Pending |
+| PRD-09 | Phase 2: Product PRD | Pending |
+| PRD-10 | Phase 2: Product PRD | Pending |
+| PRD-11 | Phase 2: Product PRD | Pending |
+| STRAT-01 | Phase 3: Product Strategy | Pending |
+| STRAT-02 | Phase 3: Product Strategy | Pending |
+| STRAT-03 | Phase 3: Product Strategy | Pending |
+| STRAT-04 | Phase 3: Product Strategy | Pending |
+| STRAT-05 | Phase 3: Product Strategy | Pending |
 
 **Coverage:**
 - v1 requirements: 20 total
