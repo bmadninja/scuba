@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { PlanetGlobePanel } from "@/components/planet-globe-panel";
+import { getScubaGlobeData } from "@/lib/scuba-globe";
 
 export default function Home() {
+  const { markers, highlightedCountries } = getScubaGlobeData();
+
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(103,232,249,0.14),_transparent_28%),linear-gradient(180deg,_#020817_0%,_#04111f_42%,_#020617_100%)] text-white">
       <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center gap-8 px-6 py-16 text-center">
@@ -10,14 +13,8 @@ export default function Home() {
           Welcome to Scuba — your guide to what&apos;s in season.
         </p>
         <PlanetGlobePanel
-          markers={[
-            {
-              lat: -16.7346,
-              lng: -151.0094,
-              label: "Placeholder reef marker",
-              color: "#68e4ff",
-            },
-          ]}
+          markers={markers}
+          highlightedCountries={highlightedCountries}
         />
         <Button size="lg">Explore Dive Sites</Button>
       </main>

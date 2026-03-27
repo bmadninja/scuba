@@ -1,0 +1,170 @@
+[
+  {
+    "id": "maldives",
+    "country": "Maldives",
+    "region": "Indian Ocean",
+    "lat": 3.2,
+    "lng": 73.22,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Drier season with clearer water on many central atolls."
+  },
+  {
+    "id": "indonesia",
+    "country": "Indonesia",
+    "region": "Southeast Asia",
+    "lat": -2.54,
+    "lng": 118.01,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Broad dry-season window that works well for many liveaboard routes."
+  },
+  {
+    "id": "philippines",
+    "country": "Philippines",
+    "region": "Southeast Asia",
+    "lat": 12.88,
+    "lng": 121.77,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Calmer seas and better visibility outside peak typhoon months."
+  },
+  {
+    "id": "thailand",
+    "country": "Thailand",
+    "region": "Southeast Asia",
+    "lat": 15.87,
+    "lng": 100.99,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Good general season for Andaman Sea trips."
+  },
+  {
+    "id": "egypt",
+    "country": "Egypt",
+    "region": "Red Sea",
+    "lat": 26.82,
+    "lng": 30.8,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Long Red Sea season with warm water and reliable conditions."
+  },
+  {
+    "id": "mexico",
+    "country": "Mexico",
+    "region": "North America",
+    "lat": 23.63,
+    "lng": -102.55,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Good general window for Caribbean-side diving and cenotes."
+  },
+  {
+    "id": "australia",
+    "country": "Australia",
+    "region": "Oceania",
+    "lat": -25.27,
+    "lng": 133.77,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Popular dry-season timing for Great Barrier Reef trips."
+  },
+  {
+    "id": "belize",
+    "country": "Belize",
+    "region": "Caribbean",
+    "lat": 17.19,
+    "lng": -88.5,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Spring to early summer often brings calm seas and strong visibility."
+  },
+  {
+    "id": "fiji",
+    "country": "Fiji",
+    "region": "South Pacific",
+    "lat": -17.71,
+    "lng": 178.07,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Dry season tends to offer cleaner water and easier crossings."
+  },
+  {
+    "id": "palau",
+    "country": "Palau",
+    "region": "Micronesia",
+    "lat": 7.51,
+    "lng": 134.58,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Often favored for predictable conditions and pelagic-focused trips."
+  },
+  {
+    "id": "south-africa",
+    "country": "South Africa",
+    "region": "Africa",
+    "lat": -30.56,
+    "lng": 22.94,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 3,
+      "endDay": 31
+    },
+    "notes": "Warm-water season that lines up with many east-coast dive trips."
+  },
+  {
+    "id": "costa-rica",
+    "country": "Costa Rica",
+    "region": "Central America",
+    "lat": 9.75,
+    "lng": -83.75,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Classic green-season timing for nutrient-rich Pacific crossings."
+  }
+]

@@ -85,7 +85,7 @@ export function PlanetGlobe({
   const [loadError, setLoadError] = useState(false);
 
   const highlightedSet = new Set(
-    highlightedCountries.map((country) => country.toUpperCase()),
+    highlightedCountries.map((country) => country.trim().toUpperCase()),
   );
   const visibleMarkers = markers.length > 0 ? markers : DEFAULT_MARKERS;
 
@@ -207,9 +207,11 @@ export function PlanetGlobe({
                 const globeFeature = polygon as GlobeFeature;
                 const iso2 = globeFeature.properties?.iso_a2?.toUpperCase();
                 const iso3 = globeFeature.properties?.iso_a3?.toUpperCase();
+                const name = globeFeature.properties?.name?.toUpperCase();
                 const isHighlighted =
                   (iso2 && highlightedSet.has(iso2)) ||
-                  (iso3 && highlightedSet.has(iso3));
+                  (iso3 && highlightedSet.has(iso3)) ||
+                  (name && highlightedSet.has(name));
 
                 return isHighlighted
                   ? "rgba(45, 212, 191, 0.92)"
@@ -219,9 +221,11 @@ export function PlanetGlobe({
                 const globeFeature = polygon as GlobeFeature;
                 const iso2 = globeFeature.properties?.iso_a2?.toUpperCase();
                 const iso3 = globeFeature.properties?.iso_a3?.toUpperCase();
+                const name = globeFeature.properties?.name?.toUpperCase();
                 const isHighlighted =
                   (iso2 && highlightedSet.has(iso2)) ||
-                  (iso3 && highlightedSet.has(iso3));
+                  (iso3 && highlightedSet.has(iso3)) ||
+                  (name && highlightedSet.has(name));
 
                 return isHighlighted
                   ? "rgba(13, 148, 136, 0.58)"
