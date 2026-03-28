@@ -3,15 +3,41 @@
 import Globe, { type GlobeMethods } from "react-globe.gl";
 import { feature } from "topojson-client";
 import { useEffect, useRef, useState } from "react";
+import type { ScubaSeasonWindow } from "@/lib/scuba-globe";
 
 export type PlanetMarker = {
+  id?: string;
+  site?: string;
+  country?: string;
+  region?: string;
   lat: number;
   lng: number;
   label: string;
   color?: string;
+  notes?: string;
+  seasonLabel?: string;
+  season?: ScubaSeasonWindow;
+  isInSeason?: boolean;
+  sightings?: Array<{
+    name: string;
+    likelihood: "High" | "Medium" | "Occasional";
+  }>;
+  diveStyle?: string;
+  experienceLevel?: string;
+  conditions?: string;
+  gear?: string[];
+  waterTemp?: string;
+  suitRecommendation?: string;
+  gettingThere?: string;
+  stay?: string;
+  tripMode?: "liveaboard" | "resort";
+  experienceTags?: Array<"beginner" | "intermediate" | "advanced">;
+  interestTags?: string[];
+  animalTags?: string[];
 };
 
 export type PlanetGlobeProps = {
+  initialMonth?: number;
   highlightedCountries?: string[];
   markers?: PlanetMarker[];
   focusPoint?: {
@@ -83,11 +109,17 @@ export function PlanetGlobe({
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [countries, setCountries] = useState<GlobeFeature[]>([]);
   const [loadError, setLoadError] = useState(false);
+  const [selectedMarkerId, setSelectedMarkerId] = useState<string | null>(null);
 
   const highlightedSet = new Set(
     highlightedCountries.map((country) => country.trim().toUpperCase()),
   );
-  const visibleMarkers = markers.length > 0 ? markers : DEFAULT_MARKERS;
+  const visibleMarkers = markers;
+  const selectedMarker =
+    visibleMarkers.find((marker) => marker.id === selectedMarkerId) ??
+    visibleMarkers[0] ??
+    null;
+  const selectedRings = selectedMarker ? [selectedMarker] : [];
 
   useEffect(() => {
     if (!containerRef.current) {
@@ -162,6 +194,10 @@ export function PlanetGlobe({
   }, []);
 
   useEffect(() => {
+    setSelectedMarkerId(visibleMarkers[0]?.id ?? null);
+  }, [visibleMarkers]);
+
+  useEffect(() => {
     if (!globeRef.current || dimensions.width === 0) {
       return;
     }
@@ -191,7 +227,7 @@ export function PlanetGlobe({
       >
         <div className="pointer-events-none absolute inset-x-8 top-0 h-24 rounded-full bg-cyan-300/10 blur-3xl" />
         <div className="relative min-h-[340px]">
-          {dimensions.width > 0 ? (
+          {dimensions.width > 0 && visibleMarkers.length > 0 ? (
             <Globe
               ref={globeRef}
               width={Math.max(dimensions.width - 32, 0)}
@@ -214,8 +250,8 @@ export function PlanetGlobe({
                   (name && highlightedSet.has(name));
 
                 return isHighlighted
-                  ? "rgba(45, 212, 191, 0.92)"
-                  : "rgba(232, 249, 255, 0.78)";
+                  ? "rgba(73, 111, 86, 0.48)"
+                  : "rgba(210, 225, 236, 0.3)";
               }}
               polygonSideColor={(polygon) => {
                 const globeFeature = polygon as GlobeFeature;
@@ -228,19 +264,40 @@ export function PlanetGlobe({
                   (name && highlightedSet.has(name));
 
                 return isHighlighted
-                  ? "rgba(13, 148, 136, 0.58)"
-                  : "rgba(15, 23, 42, 0.3)";
+                  ? "rgba(42, 66, 51, 0.34)"
+                  : "rgba(6, 18, 30, 0.14)";
               }}
-              polygonStrokeColor={() => "rgba(4, 18, 33, 0.65)"}
+              polygonStrokeColor={() => "rgba(10, 27, 44, 0.22)"}
               polygonsTransitionDuration={300}
               pointsData={visibleMarkers}
               pointLat="lat"
               pointLng="lng"
-              pointColor="color"
-              pointAltitude={0.04}
-              pointRadius={0.6}
-              pointLabel="label"
-              ringsData={visibleMarkers}
+              pointColor={() => "rgba(0,0,0,0)"}
+              pointAltitude={0.055}
+              pointRadius={1.12}
+              pointLabel={(marker: object) =>
+                (marker as PlanetMarker).site ?? "Dive site"
+              }
+              onPointClick={(marker: object) => {
+                const selected = marker as PlanetMarker;
+                setSelectedMarkerId(selected.id ?? null);
+
+                const controls = globeRef.current?.controls();
+
+                if (controls) {
+                  controls.autoRotate = false;
+                }
+
+                globeRef.current?.pointOfView(
+                  {
+                    lat: selected.lat,
+                    lng: selected.lng,
+                    altitude: 1.15,
+                  },
+                  900,
+                );
+              }}
+              ringsData={selectedRings}
               ringLat="lat"
               ringLng="lng"
               ringColor={(marker: object) => {
@@ -253,13 +310,84 @@ export function PlanetGlobe({
               ringMaxRadius={6}
               ringPropagationSpeed={2.6}
               ringRepeatPeriod={1100}
+              htmlElementsData={visibleMarkers}
+              htmlLat="lat"
+              htmlLng="lng"
+              htmlAltitude={(marker: object) =>
+                (marker as PlanetMarker).id === selectedMarker?.id ? 0.075 : 0.052
+              }
+              htmlElement={(marker: object) => {
+                const site = marker as PlanetMarker;
+                const isSelected = site.id === selectedMarker?.id;
+                const color = site.color ?? "#2f5d39";
+                const el = document.createElement("div");
+                const pin = document.createElement("div");
+                const halo = document.createElement("div");
+                const stem = document.createElement("div");
+
+                el.style.pointerEvents = "none";
+                el.style.display = "flex";
+                el.style.flexDirection = "column";
+                el.style.alignItems = "center";
+                el.style.transform = "translateY(-3px)";
+                el.title = "";
+                el.style.position = "relative";
+
+                halo.style.position = "absolute";
+                halo.style.top = isSelected ? "0px" : "1px";
+                halo.style.width = isSelected ? "18px" : "14px";
+                halo.style.height = isSelected ? "18px" : "14px";
+                halo.style.borderRadius = "9999px";
+                halo.style.background = `${color}22`;
+                halo.style.boxShadow = isSelected
+                  ? `0 0 0 6px ${color}1f`
+                  : `0 0 0 3px ${color}14`;
+
+                pin.style.width = isSelected ? "12px" : "10px";
+                pin.style.height = isSelected ? "12px" : "10px";
+                pin.style.borderRadius = "9999px";
+                pin.style.background = color;
+                pin.style.border = isSelected
+                  ? "2px solid rgba(255,255,255,0.9)"
+                  : "1.5px solid rgba(255,255,255,0.55)";
+                pin.style.boxShadow = isSelected
+                  ? "0 8px 24px rgba(2, 8, 23, 0.45)"
+                  : "0 5px 14px rgba(2, 8, 23, 0.34)";
+                pin.style.position = "relative";
+                pin.style.zIndex = "1";
+
+                stem.style.width = isSelected ? "2px" : "1.5px";
+                stem.style.height = isSelected ? "12px" : "9px";
+                stem.style.marginTop = "2px";
+                stem.style.borderRadius = "9999px";
+                stem.style.background = color;
+                stem.style.opacity = isSelected ? "0.95" : "0.72";
+
+                el.appendChild(halo);
+                el.appendChild(pin);
+                el.appendChild(stem);
+                return el;
+              }}
             />
           ) : null}
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between px-3 pb-3 text-xs text-cyan-50/70">
-            <span>Planet prototype</span>
-            <span>{visibleMarkers.length} markers loaded</span>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-3 text-xs text-cyan-50/70">
+            <span>Click a location to pause and inspect details</span>
           </div>
+
+          {dimensions.width > 0 && visibleMarkers.length === 0 ? (
+            <div className="absolute inset-4 flex items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-100/15 bg-slate-950/50 px-6 text-center">
+              <div>
+                <p className="text-sm uppercase tracking-[0.22em] text-cyan-100/55">
+                  No Matches
+                </p>
+                <p className="mt-3 max-w-md text-sm leading-6 text-slate-300">
+                  Try clearing one of the filters or broadening what your divers
+                  want to see.
+                </p>
+              </div>
+            </div>
+          ) : null}
 
           {loadError ? (
             <div className="absolute inset-x-4 bottom-10 rounded-2xl border border-cyan-200/10 bg-slate-950/80 px-4 py-3 text-left text-sm text-slate-300 backdrop-blur">
@@ -269,6 +397,122 @@ export function PlanetGlobe({
           ) : null}
         </div>
       </div>
+
+      {selectedMarker ? (
+        <div className="mt-4 rounded-[1.75rem] border border-white/10 bg-slate-950/75 p-5 text-left text-slate-100 shadow-[0_20px_80px_rgba(0,0,0,0.25)] backdrop-blur">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="space-y-2">
+              <h2 className="text-2xl font-semibold tracking-tight">
+                {selectedMarker.site ?? "Dive site"}
+              </h2>
+              <p className="text-sm text-slate-300">
+                {selectedMarker.country}
+                {selectedMarker.region ? ` • ${selectedMarker.region}` : ""}
+              </p>
+            </div>
+            <div
+              className="rounded-full border px-3 py-1 text-sm font-medium"
+              style={{
+                borderColor: selectedMarker.color ?? "#2f5d39",
+                color: selectedMarker.color ?? "#2f5d39",
+                backgroundColor: `${selectedMarker.color ?? "#2f5d39"}22`,
+              }}
+            >
+              {selectedMarker.isInSeason ? "In season" : "Out of season"}
+            </div>
+          </div>
+
+          <div className="mt-5 grid gap-5 md:grid-cols-[1.15fr_0.85fr]">
+            <div className="space-y-3">
+              <div>
+                <p className="text-sm font-medium text-cyan-100/70">Best window</p>
+                <p className="mt-1 text-sm text-slate-300">{selectedMarker.seasonLabel}</p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-cyan-100/70">Dive style</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">
+                  {selectedMarker.diveStyle}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-cyan-100/70">Experience level</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">
+                  {selectedMarker.experienceLevel}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-cyan-100/70">Conditions</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">
+                  {selectedMarker.conditions}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-cyan-100/70">Water temperature</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">
+                  {selectedMarker.waterTemp}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-cyan-100/70">Exposure protection</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">
+                  {selectedMarker.suitRecommendation}
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm font-medium text-cyan-100/70">What you&apos;ll see</p>
+              <ul className="mt-2 space-y-2 text-sm text-slate-300">
+                {(selectedMarker.sightings ?? []).map((sighting) => (
+                  <li
+                    key={sighting.name}
+                    className="rounded-xl bg-white/5 px-3 py-2"
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="font-medium text-slate-100">{sighting.name}</div>
+                      <div className="shrink-0 rounded-full border border-white/10 bg-white/6 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.16em] text-cyan-100/60">
+                        {sighting.likelihood}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4">
+                <p className="text-sm font-medium text-cyan-100/70">Recommended gear</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  {(selectedMarker.gear ?? []).length > 0
+                    ? "Standard recreational gear plus these extras is recommended:"
+                    : "Standard recreational gear will do here."}
+                </p>
+                {(selectedMarker.gear ?? []).length > 0 ? (
+                  <ul className="mt-2 space-y-2 text-sm text-slate-300">
+                    {(selectedMarker.gear ?? []).map((item) => (
+                      <li key={item} className="rounded-xl bg-white/5 px-3 py-2">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl bg-white/5 px-4 py-3">
+              <p className="text-sm font-medium text-cyan-100/70">How to get there</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">
+                {selectedMarker.gettingThere}
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/5 px-4 py-3">
+              <p className="text-sm font-medium text-cyan-100/70">Where to stay</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">
+                {selectedMarker.stay}
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

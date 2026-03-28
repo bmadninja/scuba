@@ -1,170 +1,1637 @@
 [
   {
-    "id": "maldives",
+    "id": "ari-atoll-maldives",
+    "site": "Ari Atoll",
     "country": "Maldives",
     "region": "Indian Ocean",
-    "lat": 3.2,
-    "lng": 73.22,
+    "lat": 3.8787,
+    "lng": 72.821,
     "season": {
       "startMonth": 11,
       "startDay": 1,
       "endMonth": 4,
       "endDay": 30
     },
-    "notes": "Drier season with clearer water on many central atolls."
+    "notes": "Classic manta and whale shark season with drier weather and stronger visibility."
   },
   {
-    "id": "indonesia",
+    "id": "north-male-atoll-maldives",
+    "site": "North Male Atoll",
+    "country": "Maldives",
+    "region": "Indian Ocean",
+    "lat": 4.33,
+    "lng": 73.54,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Reliable dry-season diving with clear channels and consistent reef action."
+  },
+  {
+    "id": "raja-ampat-indonesia",
+    "site": "Raja Ampat",
     "country": "Indonesia",
-    "region": "Southeast Asia",
-    "lat": -2.54,
-    "lng": 118.01,
+    "region": "West Papua",
+    "lat": -0.2333,
+    "lng": 130.5167,
+    "season": {
+      "startMonth": 10,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Peak conditions for biodiversity, calmer seas and strong wide-angle diving."
+  },
+  {
+    "id": "komodo-national-park-indonesia",
+    "site": "Komodo National Park",
+    "country": "Indonesia",
+    "region": "Lesser Sunda Islands",
+    "lat": -8.55,
+    "lng": 119.4833,
     "season": {
       "startMonth": 4,
       "startDay": 1,
       "endMonth": 11,
       "endDay": 30
     },
-    "notes": "Broad dry-season window that works well for many liveaboard routes."
+    "notes": "Long main season with good visibility, manta encounters and liveaboard conditions."
   },
   {
-    "id": "philippines",
-    "country": "Philippines",
-    "region": "Southeast Asia",
-    "lat": 12.88,
-    "lng": 121.77,
+    "id": "tulamben-bali-indonesia",
+    "site": "Tulamben",
+    "country": "Indonesia",
+    "region": "Bali",
+    "lat": -8.2833,
+    "lng": 115.6,
     "season": {
-      "startMonth": 11,
+      "startMonth": 4,
       "startDay": 1,
-      "endMonth": 5,
+      "endMonth": 10,
       "endDay": 31
     },
-    "notes": "Calmer seas and better visibility outside peak typhoon months."
+    "notes": "Popular wreck and macro season with calmer dry-season conditions."
   },
   {
-    "id": "thailand",
-    "country": "Thailand",
-    "region": "Southeast Asia",
-    "lat": 15.87,
-    "lng": 100.99,
-    "season": {
-      "startMonth": 11,
-      "startDay": 1,
-      "endMonth": 4,
-      "endDay": 30
-    },
-    "notes": "Good general season for Andaman Sea trips."
-  },
-  {
-    "id": "egypt",
-    "country": "Egypt",
-    "region": "Red Sea",
-    "lat": 26.82,
-    "lng": 30.8,
+    "id": "bunaken-indonesia",
+    "site": "Bunaken",
+    "country": "Indonesia",
+    "region": "North Sulawesi",
+    "lat": 1.62,
+    "lng": 124.76,
     "season": {
       "startMonth": 3,
       "startDay": 1,
-      "endMonth": 11,
-      "endDay": 30
+      "endMonth": 10,
+      "endDay": 31
     },
-    "notes": "Long Red Sea season with warm water and reliable conditions."
+    "notes": "Best wall and turtle diving generally aligns with drier months and better visibility."
   },
   {
-    "id": "mexico",
-    "country": "Mexico",
-    "region": "North America",
-    "lat": 23.63,
-    "lng": -102.55,
+    "id": "malapascua-philippines",
+    "site": "Malapascua",
+    "country": "Philippines",
+    "region": "Visayas",
+    "lat": 11.329,
+    "lng": 124.113,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Prime thresher shark season with more stable seas outside typhoon peaks."
+  },
+  {
+    "id": "tubbataha-philippines",
+    "site": "Tubbataha Reefs",
+    "country": "Philippines",
+    "region": "Sulu Sea",
+    "lat": 8.95,
+    "lng": 119.8833,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 15
+    },
+    "notes": "Short liveaboard season when park access, sea state and visibility line up best."
+  },
+  {
+    "id": "apo-reef-philippines",
+    "site": "Apo Reef",
+    "country": "Philippines",
+    "region": "Mindoro",
+    "lat": 12.671,
+    "lng": 120.454,
     "season": {
       "startMonth": 11,
       "startDay": 1,
       "endMonth": 5,
       "endDay": 31
     },
-    "notes": "Good general window for Caribbean-side diving and cenotes."
+    "notes": "Dry-season window generally offers better crossings and cleaner water."
   },
   {
-    "id": "australia",
-    "country": "Australia",
-    "region": "Oceania",
-    "lat": -25.27,
-    "lng": 133.77,
+    "id": "moalboal-philippines",
+    "site": "Moalboal",
+    "country": "Philippines",
+    "region": "Cebu",
+    "lat": 9.9433,
+    "lng": 123.3994,
     "season": {
-      "startMonth": 6,
+      "startMonth": 11,
       "startDay": 1,
-      "endMonth": 10,
+      "endMonth": 5,
       "endDay": 31
     },
-    "notes": "Popular dry-season timing for Great Barrier Reef trips."
+    "notes": "Sardine run and reef diving usually shine during the drier part of the year."
   },
   {
-    "id": "belize",
-    "country": "Belize",
-    "region": "Caribbean",
-    "lat": 17.19,
-    "lng": -88.5,
+    "id": "similan-islands-thailand",
+    "site": "Similan Islands",
+    "country": "Thailand",
+    "region": "Andaman Sea",
+    "lat": 8.65,
+    "lng": 97.6333,
     "season": {
-      "startMonth": 4,
+      "startMonth": 11,
       "startDay": 1,
-      "endMonth": 6,
+      "endMonth": 5,
+      "endDay": 15
+    },
+    "notes": "Main Andaman liveaboard season with calm seas and strong visibility."
+  },
+  {
+    "id": "koh-tao-thailand",
+    "site": "Koh Tao",
+    "country": "Thailand",
+    "region": "Gulf of Thailand",
+    "lat": 10.1,
+    "lng": 99.84,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 9,
       "endDay": 30
     },
-    "notes": "Spring to early summer often brings calm seas and strong visibility."
+    "notes": "Best Gulf season usually avoids the stronger monsoon periods later in the year."
   },
   {
-    "id": "fiji",
-    "country": "Fiji",
-    "region": "South Pacific",
-    "lat": -17.71,
-    "lng": 178.07,
+    "id": "richelieu-rock-thailand",
+    "site": "Richelieu Rock",
+    "country": "Thailand",
+    "region": "Andaman Sea",
+    "lat": 9.373,
+    "lng": 98.03,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 15
+    },
+    "notes": "Peak pelagic and whale shark timing usually falls in the open-park season."
+  },
+  {
+    "id": "sipadan-malaysia",
+    "site": "Sipadan",
+    "country": "Malaysia",
+    "region": "Sabah",
+    "lat": 4.114,
+    "lng": 118.628,
     "season": {
       "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 12,
+      "endDay": 15
+    },
+    "notes": "Strong visibility and schooling action typically improve through the drier half of the year."
+  },
+  {
+    "id": "mabul-malaysia",
+    "site": "Mabul",
+    "country": "Malaysia",
+    "region": "Sabah",
+    "lat": 4.246,
+    "lng": 118.629,
+    "season": {
+      "startMonth": 3,
       "startDay": 1,
       "endMonth": 10,
       "endDay": 31
     },
-    "notes": "Dry season tends to offer cleaner water and easier crossings."
+    "notes": "Macro diving is possible year-round, but calmer conditions are common in the broad dry window."
   },
   {
-    "id": "palau",
-    "country": "Palau",
-    "region": "Micronesia",
-    "lat": 7.51,
-    "lng": 134.58,
+    "id": "layang-layang-malaysia",
+    "site": "Layang Layang",
+    "country": "Malaysia",
+    "region": "South China Sea",
+    "lat": 7.371,
+    "lng": 113.844,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 8,
+      "endDay": 31
+    },
+    "notes": "Seasonal remote diving with hammerhead potential during the calm-weather operating window."
+  },
+  {
+    "id": "mergui-archipelago-myanmar",
+    "site": "Mergui Archipelago",
+    "country": "Myanmar",
+    "region": "Andaman Sea",
+    "lat": 11.8,
+    "lng": 98.6,
     "season": {
       "startMonth": 11,
       "startDay": 1,
       "endMonth": 4,
       "endDay": 30
     },
-    "notes": "Often favored for predictable conditions and pelagic-focused trips."
+    "notes": "Best liveaboard season aligns with dry weather and calmer Andaman crossings."
   },
   {
-    "id": "south-africa",
-    "country": "South Africa",
-    "region": "Africa",
-    "lat": -30.56,
-    "lng": 22.94,
+    "id": "koh-rong-cambodia",
+    "site": "Koh Rong",
+    "country": "Cambodia",
+    "region": "Gulf of Thailand",
+    "lat": 10.7,
+    "lng": 103.25,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Local visibility and easier boat conditions typically improve through the dry season."
+  },
+  {
+    "id": "nha-trang-vietnam",
+    "site": "Nha Trang",
+    "country": "Vietnam",
+    "region": "South Central Coast",
+    "lat": 12.2388,
+    "lng": 109.1967,
+    "season": {
+      "startMonth": 2,
+      "startDay": 1,
+      "endMonth": 8,
+      "endDay": 31
+    },
+    "notes": "Best visibility commonly falls outside the heavier rainy and storm season."
+  },
+  {
+    "id": "green-island-taiwan",
+    "site": "Green Island",
+    "country": "Taiwan",
+    "region": "Western Pacific",
+    "lat": 22.661,
+    "lng": 121.493,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Warmer months generally bring the most approachable conditions and visibility."
+  },
+  {
+    "id": "yonaguni-japan",
+    "site": "Yonaguni",
+    "country": "Japan",
+    "region": "Ryukyu Islands",
+    "lat": 24.467,
+    "lng": 122.983,
     "season": {
       "startMonth": 11,
       "startDay": 1,
       "endMonth": 3,
       "endDay": 31
     },
-    "notes": "Warm-water season that lines up with many east-coast dive trips."
+    "notes": "Peak hammerhead season and strong-current diving window."
   },
   {
-    "id": "costa-rica",
-    "country": "Costa Rica",
-    "region": "Central America",
-    "lat": 9.75,
-    "lng": -83.75,
+    "id": "ogasawara-japan",
+    "site": "Ogasawara",
+    "country": "Japan",
+    "region": "Bonin Islands",
+    "lat": 27.094,
+    "lng": 142.191,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Warm-season access lines up with dolphin, pelagic and blue-water diving."
+  },
+  {
+    "id": "jeju-south-korea",
+    "site": "Jeju Island",
+    "country": "South Korea",
+    "region": "Korea Strait",
+    "lat": 33.4996,
+    "lng": 126.5312,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Temperate diving is generally most comfortable and active during the warmer months."
+  },
+  {
+    "id": "sanya-china",
+    "site": "Sanya",
+    "country": "China",
+    "region": "Hainan",
+    "lat": 18.2528,
+    "lng": 109.5119,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Warmer water and calmer weather usually dominate outside the coolest winter spells."
+  },
+  {
+    "id": "andaman-islands-india",
+    "site": "Havelock Island",
+    "country": "India",
+    "region": "Andaman Islands",
+    "lat": 11.969,
+    "lng": 92.998,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Main Andaman dive season with the best mix of visibility and weather."
+  },
+  {
+    "id": "lakshadweep-india",
+    "site": "Bangaram",
+    "country": "India",
+    "region": "Lakshadweep",
+    "lat": 10.95,
+    "lng": 72.2833,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 3,
+      "endDay": 31
+    },
+    "notes": "Best island conditions tend to fall in the dry northeast monsoon season."
+  },
+  {
+    "id": "hikkaduwa-sri-lanka",
+    "site": "Hikkaduwa",
+    "country": "Sri Lanka",
+    "region": "Southwest Coast",
+    "lat": 6.1407,
+    "lng": 80.1012,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Southwest coast season usually peaks during the drier months."
+  },
+  {
+    "id": "trincomalee-sri-lanka",
+    "site": "Trincomalee",
+    "country": "Sri Lanka",
+    "region": "East Coast",
+    "lat": 8.5874,
+    "lng": 81.2152,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 9,
+      "endDay": 30
+    },
+    "notes": "East coast conditions improve when the southwest monsoon shifts away."
+  },
+  {
+    "id": "aqaba-jordan",
+    "site": "Aqaba",
+    "country": "Jordan",
+    "region": "Red Sea",
+    "lat": 29.5321,
+    "lng": 35.0063,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Long comfortable season with warm water and easy shore-diving access."
+  },
+  {
+    "id": "daymaniyat-oman",
+    "site": "Daymaniyat Islands",
+    "country": "Oman",
+    "region": "Arabian Sea",
+    "lat": 23.85,
+    "lng": 58.0833,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Best reef and turtle diving generally falls outside the coolest and rougher periods."
+  },
+  {
+    "id": "fujairah-uae",
+    "site": "Fujairah",
+    "country": "United Arab Emirates",
+    "region": "Gulf of Oman",
+    "lat": 25.1288,
+    "lng": 56.3265,
+    "season": {
+      "startMonth": 10,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "More comfortable air temperatures and good boat conditions drive the main season."
+  },
+  {
+    "id": "jeddah-saudi-arabia",
+    "site": "Jeddah Reefs",
+    "country": "Saudi Arabia",
+    "region": "Red Sea",
+    "lat": 21.5433,
+    "lng": 39.1728,
+    "season": {
+      "startMonth": 10,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Red Sea conditions are usually most comfortable outside the hottest summer stretch."
+  },
+  {
+    "id": "brothers-egypt",
+    "site": "Brothers Islands",
+    "country": "Egypt",
+    "region": "Red Sea",
+    "lat": 26.3167,
+    "lng": 34.85,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Prime offshore season for pelagics and stronger visibility on southern liveaboards."
+  },
+  {
+    "id": "ras-mohammed-egypt",
+    "site": "Ras Mohammed",
+    "country": "Egypt",
+    "region": "Red Sea",
+    "lat": 27.7278,
+    "lng": 34.2522,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Long main season with easy access, reef life and warm-water diving."
+  },
+  {
+    "id": "sudan-shaab-rumi",
+    "site": "Shaab Rumi",
+    "country": "Sudan",
+    "region": "Red Sea",
+    "lat": 19.8,
+    "lng": 37.15,
+    "season": {
+      "startMonth": 10,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Most liveaboard access favors the calmer, drier part of the year."
+  },
+  {
+    "id": "dahlak-eritrea",
+    "site": "Dahlak Archipelago",
+    "country": "Eritrea",
+    "region": "Red Sea",
+    "lat": 15.75,
+    "lng": 40.15,
+    "season": {
+      "startMonth": 10,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Best access and heat avoidance usually fall in the cooler months."
+  },
+  {
+    "id": "djibouti-gulf-of-tadjoura",
+    "site": "Gulf of Tadjoura",
+    "country": "Djibouti",
+    "region": "Gulf of Aden",
+    "lat": 11.786,
+    "lng": 42.884,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 2,
+      "endDay": 28
+    },
+    "notes": "Known for whale shark season and calmer conditions in late fall and winter."
+  },
+  {
+    "id": "mnemba-tanzania",
+    "site": "Mnemba Atoll",
+    "country": "Tanzania",
+    "region": "Zanzibar",
+    "lat": -5.811,
+    "lng": 39.367,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 3,
+      "endDay": 15
+    },
+    "notes": "Broad best window outside the strongest long-rain period."
+  },
+  {
+    "id": "watamu-kenya",
+    "site": "Watamu Marine Park",
+    "country": "Kenya",
+    "region": "East Africa",
+    "lat": -3.3533,
+    "lng": 40.0167,
+    "season": {
+      "startMonth": 10,
+      "startDay": 1,
+      "endMonth": 3,
+      "endDay": 31
+    },
+    "notes": "Warm clear-water season usually falls between the big rainy periods."
+  },
+  {
+    "id": "tofo-mozambique",
+    "site": "Tofo",
+    "country": "Mozambique",
+    "region": "Indian Ocean",
+    "lat": -23.8597,
+    "lng": 35.5528,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Cooler dry months are often favored for manta and whale shark encounters."
+  },
+  {
+    "id": "aliwal-south-africa",
+    "site": "Aliwal Shoal",
+    "country": "South Africa",
+    "region": "KwaZulu-Natal",
+    "lat": -30.2667,
+    "lng": 30.8167,
     "season": {
       "startMonth": 6,
       "startDay": 1,
       "endMonth": 11,
       "endDay": 30
     },
-    "notes": "Classic green-season timing for nutrient-rich Pacific crossings."
+    "notes": "Main ragged-tooth shark season and a favored cool-water offshore window."
+  },
+  {
+    "id": "sodwana-south-africa",
+    "site": "Sodwana Bay",
+    "country": "South Africa",
+    "region": "KwaZulu-Natal",
+    "lat": -27.539,
+    "lng": 32.676,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 9,
+      "endDay": 30
+    },
+    "notes": "Dry-season months usually bring steadier ocean conditions and cleaner water."
+  },
+  {
+    "id": "nosy-be-madagascar",
+    "site": "Nosy Be",
+    "country": "Madagascar",
+    "region": "Mozambique Channel",
+    "lat": -13.3124,
+    "lng": 48.2593,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 12,
+      "endDay": 15
+    },
+    "notes": "Broad main season with whale shark and reef diving improving after cyclone season."
+  },
+  {
+    "id": "mahe-seychelles",
+    "site": "Mahé",
+    "country": "Seychelles",
+    "region": "Indian Ocean",
+    "lat": -4.6796,
+    "lng": 55.492,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "One of the calm inter-monsoon windows with especially good visibility."
+  },
+  {
+    "id": "praslin-seychelles",
+    "site": "Praslin",
+    "country": "Seychelles",
+    "region": "Indian Ocean",
+    "lat": -4.331,
+    "lng": 55.728,
+    "season": {
+      "startMonth": 10,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Second inter-monsoon visibility peak for granite and reef diving."
+  },
+  {
+    "id": "grande-comore-comoros",
+    "site": "Mitsamiouli",
+    "country": "Comoros",
+    "region": "Mozambique Channel",
+    "lat": -11.3833,
+    "lng": 43.2833,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Dry-season months generally provide the best local access and visibility."
+  },
+  {
+    "id": "sal-cape-verde",
+    "site": "Sal",
+    "country": "Cape Verde",
+    "region": "Atlantic Ocean",
+    "lat": 16.7414,
+    "lng": -22.9456,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 7,
+      "endDay": 31
+    },
+    "notes": "Spring to midsummer often offers good blue-water conditions and marine life encounters."
+  },
+  {
+    "id": "sao-tome-sao-tome-and-principe",
+    "site": "São Tomé North Coast",
+    "country": "São Tomé and Príncipe",
+    "region": "Gulf of Guinea",
+    "lat": 0.3365,
+    "lng": 6.7273,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 9,
+      "endDay": 30
+    },
+    "notes": "Local diving usually improves in the drier months between rainy seasons."
+  },
+  {
+    "id": "cozumel-mexico",
+    "site": "Cozumel",
+    "country": "Mexico",
+    "region": "Caribbean",
+    "lat": 20.422,
+    "lng": -86.9223,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Popular drift-diving season with generally drier weather and good visibility."
+  },
+  {
+    "id": "cenotes-mexico",
+    "site": "Riviera Maya Cenotes",
+    "country": "Mexico",
+    "region": "Yucatán Peninsula",
+    "lat": 20.211,
+    "lng": -87.4653,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Cooler dry-season months often bring especially clear freshwater conditions."
+  },
+  {
+    "id": "socorro-mexico",
+    "site": "Socorro Islands",
+    "country": "Mexico",
+    "region": "Eastern Pacific",
+    "lat": 18.781,
+    "lng": -110.95,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Main liveaboard season for giant mantas and offshore pelagics."
+  },
+  {
+    "id": "silfra-iceland",
+    "site": "Silfra Fissure",
+    "country": "Iceland",
+    "region": "Thingvellir",
+    "lat": 64.2559,
+    "lng": -21.123,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 9,
+      "endDay": 30
+    },
+    "notes": "Diving is possible year-round, but the warmest travel season is the easiest planning window."
+  },
+  {
+    "id": "blue-hole-belize",
+    "site": "Great Blue Hole",
+    "country": "Belize",
+    "region": "Caribbean",
+    "lat": 17.3156,
+    "lng": -87.5346,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Late spring often brings calm seas and strong visibility offshore."
+  },
+  {
+    "id": "turneffe-belize",
+    "site": "Turneffe Atoll",
+    "country": "Belize",
+    "region": "Caribbean",
+    "lat": 17.25,
+    "lng": -87.8,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Spring through early summer is a common favorite for weather and visibility."
+  },
+  {
+    "id": "utila-honduras",
+    "site": "Utila",
+    "country": "Honduras",
+    "region": "Bay Islands",
+    "lat": 16.0997,
+    "lng": -86.9318,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Popular shoulder-to-dry-season period with whale shark potential."
+  },
+  {
+    "id": "roatan-honduras",
+    "site": "Roatán",
+    "country": "Honduras",
+    "region": "Bay Islands",
+    "lat": 16.317,
+    "lng": -86.523,
+    "season": {
+      "startMonth": 2,
+      "startDay": 1,
+      "endMonth": 8,
+      "endDay": 31
+    },
+    "notes": "Long favorable season with good wall and reef conditions."
+  },
+  {
+    "id": "cocos-costa-rica",
+    "site": "Cocos Island",
+    "country": "Costa Rica",
+    "region": "Eastern Pacific",
+    "lat": 5.5256,
+    "lng": -87.0717,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Green-season window is favored for schooling hammerheads and large pelagics."
+  },
+  {
+    "id": "catalina-islands-costa-rica",
+    "site": "Catalina Islands",
+    "country": "Costa Rica",
+    "region": "Guanacaste",
+    "lat": 10.553,
+    "lng": -85.789,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Dry-season Pacific diving often brings easier surface conditions and mantas."
+  },
+  {
+    "id": "coiba-panama",
+    "site": "Coiba National Park",
+    "country": "Panama",
+    "region": "Eastern Pacific",
+    "lat": 7.625,
+    "lng": -81.74,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Main access season with calmer crossings and productive Pacific diving."
+  },
+  {
+    "id": "bocas-del-toro-panama",
+    "site": "Bocas del Toro",
+    "country": "Panama",
+    "region": "Caribbean",
+    "lat": 9.3403,
+    "lng": -82.2409,
+    "season": {
+      "startMonth": 2,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "One of the calmer Caribbean windows before stronger rainy stretches."
+  },
+  {
+    "id": "malpelo-colombia",
+    "site": "Malpelo Island",
+    "country": "Colombia",
+    "region": "Eastern Pacific",
+    "lat": 3.976,
+    "lng": -81.611,
+    "season": {
+      "startMonth": 7,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Prime offshore pelagic season with large shark schools and big-animal action."
+  },
+  {
+    "id": "providencia-colombia",
+    "site": "Providencia",
+    "country": "Colombia",
+    "region": "Caribbean",
+    "lat": 13.3762,
+    "lng": -81.369,
+    "season": {
+      "startMonth": 1,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Better weather and visibility generally fall before the late-year hurricane season."
+  },
+  {
+    "id": "wolf-galapagos-ecuador",
+    "site": "Wolf Island",
+    "country": "Ecuador",
+    "region": "Galápagos",
+    "lat": 1.386,
+    "lng": -91.815,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Cooler current season is favored for whale sharks and schooling sharks."
+  },
+  {
+    "id": "darwin-galapagos-ecuador",
+    "site": "Darwin Island",
+    "country": "Ecuador",
+    "region": "Galápagos",
+    "lat": 1.678,
+    "lng": -91.99,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Iconic pelagic season with cooler water, current and major shark action."
+  },
+  {
+    "id": "fernando-de-noronha-brazil",
+    "site": "Fernando de Noronha",
+    "country": "Brazil",
+    "region": "Atlantic Ocean",
+    "lat": -3.8547,
+    "lng": -32.4233,
+    "season": {
+      "startMonth": 8,
+      "startDay": 1,
+      "endMonth": 12,
+      "endDay": 31
+    },
+    "notes": "Best visibility usually arrives in the drier second half of the year."
+  },
+  {
+    "id": "arraial-do-cabo-brazil",
+    "site": "Arraial do Cabo",
+    "country": "Brazil",
+    "region": "Southeast Brazil",
+    "lat": -22.9661,
+    "lng": -42.0278,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 8,
+      "endDay": 31
+    },
+    "notes": "Cooler upwelling season is favored for visibility and marine life."
+  },
+  {
+    "id": "los-roques-venezuela",
+    "site": "Los Roques",
+    "country": "Venezuela",
+    "region": "Caribbean",
+    "lat": 11.95,
+    "lng": -66.67,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Dry months are generally favored for easy travel and clear reef conditions."
+  },
+  {
+    "id": "bonaire-national-marine-park-bonaire",
+    "site": "Bonaire National Marine Park",
+    "country": "Bonaire",
+    "region": "Caribbean",
+    "lat": 12.2019,
+    "lng": -68.2624,
+    "season": {
+      "startMonth": 1,
+      "startDay": 1,
+      "endMonth": 12,
+      "endDay": 31
+    },
+    "notes": "Famous year-round shore diving destination with consistently accessible reefs."
+  },
+  {
+    "id": "westpunt-curacao",
+    "site": "Westpunt",
+    "country": "Curaçao",
+    "region": "Caribbean",
+    "lat": 12.379,
+    "lng": -69.154,
+    "season": {
+      "startMonth": 1,
+      "startDay": 1,
+      "endMonth": 12,
+      "endDay": 31
+    },
+    "notes": "Leeward Caribbean diving with broad year-round reliability."
+  },
+  {
+    "id": "tiger-beach-bahamas",
+    "site": "Tiger Beach",
+    "country": "Bahamas",
+    "region": "Atlantic Ocean",
+    "lat": 26.6667,
+    "lng": -79.0833,
+    "season": {
+      "startMonth": 10,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Main shark-diving season outside the hottest summer stretch."
+  },
+  {
+    "id": "exuma-cays-bahamas",
+    "site": "Exuma Cays",
+    "country": "Bahamas",
+    "region": "Atlantic Ocean",
+    "lat": 24.25,
+    "lng": -76.5,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Favored liveaboard and shark-diving season with calmer weather."
+  },
+  {
+    "id": "bloody-bay-wall-cayman-islands",
+    "site": "Bloody Bay Wall",
+    "country": "Cayman Islands",
+    "region": "Caribbean",
+    "lat": 19.741,
+    "lng": -79.889,
+    "season": {
+      "startMonth": 1,
+      "startDay": 1,
+      "endMonth": 12,
+      "endDay": 31
+    },
+    "notes": "Classic wall diving destination with broad year-round reliability."
+  },
+  {
+    "id": "stingray-city-cayman-islands",
+    "site": "Stingray City",
+    "country": "Cayman Islands",
+    "region": "Caribbean",
+    "lat": 19.332,
+    "lng": -81.383,
+    "season": {
+      "startMonth": 1,
+      "startDay": 1,
+      "endMonth": 12,
+      "endDay": 31
+    },
+    "notes": "Accessible shallow diving and snorkel encounters throughout the year."
+  },
+  {
+    "id": "saba-saba",
+    "site": "Saba Marine Park",
+    "country": "Saba",
+    "region": "Caribbean",
+    "lat": 17.63,
+    "lng": -63.25,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Favored season outside the hurricane period for pinnacles and seamounts."
+  },
+  {
+    "id": "statia-st-eustatius",
+    "site": "St. Eustatius Marine Park",
+    "country": "Sint Eustatius",
+    "region": "Caribbean",
+    "lat": 17.489,
+    "lng": -62.979,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Best weather usually falls outside the late-summer storm season."
+  },
+  {
+    "id": "grenada-bianca-c",
+    "site": "Bianca C Wreck",
+    "country": "Grenada",
+    "region": "Caribbean",
+    "lat": 12.039,
+    "lng": -61.752,
+    "season": {
+      "startMonth": 1,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Dry-season months are commonly preferred for wreck and reef combinations."
+  },
+  {
+    "id": "the-pit-belize",
+    "site": "The Pit",
+    "country": "Belize",
+    "region": "Caribbean",
+    "lat": 17.3156,
+    "lng": -87.5346,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Offshore conditions tend to be strongest in spring to early summer."
+  },
+  {
+    "id": "poor-knights-new-zealand",
+    "site": "Poor Knights Islands",
+    "country": "New Zealand",
+    "region": "Northland",
+    "lat": -35.4833,
+    "lng": 174.75,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Late summer through autumn is a favored window for warmer water and visibility."
+  },
+  {
+    "id": "milford-sound-new-zealand",
+    "site": "Milford Sound",
+    "country": "New Zealand",
+    "region": "Fiordland",
+    "lat": -44.6718,
+    "lng": 167.9255,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 3,
+      "endDay": 31
+    },
+    "notes": "Summer is the most practical season for access and weather in Fiordland."
+  },
+  {
+    "id": "cod-hole-australia",
+    "site": "Cod Hole",
+    "country": "Australia",
+    "region": "Great Barrier Reef",
+    "lat": -14.676,
+    "lng": 145.475,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Popular northern reef season with dry weather and strong visibility."
+  },
+  {
+    "id": "ningaloo-australia",
+    "site": "Ningaloo Reef",
+    "country": "Australia",
+    "region": "Western Australia",
+    "lat": -22.743,
+    "lng": 113.653,
+    "season": {
+      "startMonth": 3,
+      "startDay": 1,
+      "endMonth": 7,
+      "endDay": 31
+    },
+    "notes": "Whale shark season and clear reef diving generally peak in late autumn to winter."
+  },
+  {
+    "id": "julian-rocks-australia",
+    "site": "Julian Rocks",
+    "country": "Australia",
+    "region": "New South Wales",
+    "lat": -28.609,
+    "lng": 153.634,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Warm-water pelagics, leopard sharks and manta encounters build in summer."
+  },
+  {
+    "id": "kimbe-bay-papua-new-guinea",
+    "site": "Kimbe Bay",
+    "country": "Papua New Guinea",
+    "region": "New Britain",
+    "lat": -5.55,
+    "lng": 150.15,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "The drier season is typically preferred for reefs, wide angle and easier travel."
+  },
+  {
+    "id": "milne-bay-papua-new-guinea",
+    "site": "Milne Bay",
+    "country": "Papua New Guinea",
+    "region": "Coral Sea",
+    "lat": -10.313,
+    "lng": 150.457,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Long broad season for muck, reef and liveaboard itineraries."
+  },
+  {
+    "id": "beqa-lagoon-fiji",
+    "site": "Beqa Lagoon",
+    "country": "Fiji",
+    "region": "South Pacific",
+    "lat": -18.376,
+    "lng": 178.144,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Dry-season shark and reef diving is widely favored in Fiji."
+  },
+  {
+    "id": "great-white-wall-fiji",
+    "site": "Great White Wall",
+    "country": "Fiji",
+    "region": "Somosomo Strait",
+    "lat": -16.75,
+    "lng": 179.89,
+    "season": {
+      "startMonth": 7,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Soft-coral wall diving is often especially good in the cooler dry-season months."
+  },
+  {
+    "id": "blue-corner-palau",
+    "site": "Blue Corner",
+    "country": "Palau",
+    "region": "Micronesia",
+    "lat": 7.134,
+    "lng": 134.236,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Peak visibility and dry-season liveaboard conditions for current dives."
+  },
+  {
+    "id": "jellyfish-lake-palau",
+    "site": "Rock Islands",
+    "country": "Palau",
+    "region": "Micronesia",
+    "lat": 7.251,
+    "lng": 134.363,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Dry-season conditions usually make inter-island boat travel easier."
+  },
+  {
+    "id": "manta-ridge-yap",
+    "site": "Manta Ridge",
+    "country": "Federated States of Micronesia",
+    "region": "Yap",
+    "lat": 9.516,
+    "lng": 138.128,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Main manta season with calmer trade-wind conditions."
+  },
+  {
+    "id": "chuuk-lagoon-fsm",
+    "site": "Chuuk Lagoon",
+    "country": "Federated States of Micronesia",
+    "region": "Chuuk",
+    "lat": 7.4167,
+    "lng": 151.7833,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 30
+    },
+    "notes": "Main wreck-diving season with more settled weather."
+  },
+  {
+    "id": "president-coolidge-vanuatu",
+    "site": "SS President Coolidge",
+    "country": "Vanuatu",
+    "region": "Espiritu Santo",
+    "lat": -15.4667,
+    "lng": 167.2167,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Dry-season wreck diving window with clearer water and easier access."
+  },
+  {
+    "id": "rangiroa-french-polynesia",
+    "site": "Tiputa Pass",
+    "country": "French Polynesia",
+    "region": "Tuamotu Archipelago",
+    "lat": -14.968,
+    "lng": -147.635,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Long main season for pass diving, dolphins and big schools."
+  },
+  {
+    "id": "fakarava-french-polynesia",
+    "site": "South Pass",
+    "country": "French Polynesia",
+    "region": "Tuamotu Archipelago",
+    "lat": -16.49,
+    "lng": -145.463,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Favored shark and spawning season for many advanced pass-diving trips."
+  },
+  {
+    "id": "bonegi-solomon-islands",
+    "site": "Bonegi Wrecks",
+    "country": "Solomon Islands",
+    "region": "Guadalcanal",
+    "lat": -9.408,
+    "lng": 159.91,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Dry-season visibility and logistics are generally strongest in this period."
+  },
+  {
+    "id": "niue-avaiki-cave",
+    "site": "Niue Reef",
+    "country": "Niue",
+    "region": "South Pacific",
+    "lat": -19.0544,
+    "lng": -169.8672,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Winter dry-season months are often preferred for visibility and cave entries."
+  },
+  {
+    "id": "medes-islands-spain",
+    "site": "Medes Islands",
+    "country": "Spain",
+    "region": "Mediterranean",
+    "lat": 42.05,
+    "lng": 3.22,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Warm-season Mediterranean diving with marine reserve visibility and life."
+  },
+  {
+    "id": "el-hierro-spain",
+    "site": "La Restinga",
+    "country": "Spain",
+    "region": "Canary Islands",
+    "lat": 27.639,
+    "lng": -17.981,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 11,
+      "endDay": 30
+    },
+    "notes": "Long Atlantic island season with stable weather and volcanic topography."
+  },
+  {
+    "id": "vis-croatia",
+    "site": "Vis Island",
+    "country": "Croatia",
+    "region": "Adriatic Sea",
+    "lat": 43.0619,
+    "lng": 16.1831,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 9,
+      "endDay": 30
+    },
+    "notes": "Best warm-water Adriatic season for caves, walls and wrecks."
+  },
+  {
+    "id": "gozo-malta",
+    "site": "Gozo",
+    "country": "Malta",
+    "region": "Mediterranean",
+    "lat": 36.0443,
+    "lng": 14.2512,
+    "season": {
+      "startMonth": 5,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Main season for archways, caverns and comfortable Mediterranean water temps."
+  },
+  {
+    "id": "azores-portugal",
+    "site": "Santa Maria",
+    "country": "Portugal",
+    "region": "Azores",
+    "lat": 36.95,
+    "lng": -25.15,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 9,
+      "endDay": 30
+    },
+    "notes": "Warmest and most reliable offshore season for mobulas and blue-water diving."
+  },
+  {
+    "id": "sardinia-italy",
+    "site": "Capo Carbonara",
+    "country": "Italy",
+    "region": "Mediterranean",
+    "lat": 39.104,
+    "lng": 9.521,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Warm-season Mediterranean visibility and reef life are best in summer and early fall."
+  },
+  {
+    "id": "kornati-croatia",
+    "site": "Kornati National Park",
+    "country": "Croatia",
+    "region": "Adriatic Sea",
+    "lat": 43.817,
+    "lng": 15.3,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 9,
+      "endDay": 30
+    },
+    "notes": "Summer is the main boat-diving season through the Kornati islands."
+  },
+  {
+    "id": "florida-keys-usa",
+    "site": "Florida Keys",
+    "country": "United States",
+    "region": "Florida",
+    "lat": 24.5551,
+    "lng": -81.78,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Warm-water reef season before winter cold fronts become more common."
+  },
+  {
+    "id": "kona-hawaii-usa",
+    "site": "Kona Coast",
+    "country": "United States",
+    "region": "Hawaii",
+    "lat": 19.639,
+    "lng": -155.996,
+    "season": {
+      "startMonth": 4,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Warm-season clear-water diving with manta and lava topography highlights."
+  },
+  {
+    "id": "channel-islands-usa",
+    "site": "Channel Islands",
+    "country": "United States",
+    "region": "California",
+    "lat": 34.01,
+    "lng": -119.42,
+    "season": {
+      "startMonth": 7,
+      "startDay": 1,
+      "endMonth": 10,
+      "endDay": 31
+    },
+    "notes": "Late summer and early fall usually bring the calmest conditions and best visibility."
+  },
+  {
+    "id": "cuba-jardines-de-la-reina",
+    "site": "Jardines de la Reina",
+    "country": "Cuba",
+    "region": "Caribbean",
+    "lat": 20.8333,
+    "lng": -78.9167,
+    "season": {
+      "startMonth": 11,
+      "startDay": 1,
+      "endMonth": 6,
+      "endDay": 30
+    },
+    "notes": "Main liveaboard window outside the peak storm season."
+  },
+  {
+    "id": "silver-bank-dominican-republic",
+    "site": "Silver Bank",
+    "country": "Dominican Republic",
+    "region": "Atlantic Ocean",
+    "lat": 20.8,
+    "lng": -69.2,
+    "season": {
+      "startMonth": 1,
+      "startDay": 1,
+      "endMonth": 4,
+      "endDay": 15
+    },
+    "notes": "Peak humpback interaction season in the North Atlantic."
+  },
+  {
+    "id": "anse-chastanet-saint-lucia",
+    "site": "Anse Chastanet",
+    "country": "Saint Lucia",
+    "region": "Caribbean",
+    "lat": 13.852,
+    "lng": -61.064,
+    "season": {
+      "startMonth": 12,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Drier Caribbean season generally offers the easiest boat and shore conditions."
+  },
+  {
+    "id": "tobago-speyside-trinidad-and-tobago",
+    "site": "Speyside",
+    "country": "Trinidad and Tobago",
+    "region": "Caribbean",
+    "lat": 11.297,
+    "lng": -60.533,
+    "season": {
+      "startMonth": 1,
+      "startDay": 1,
+      "endMonth": 5,
+      "endDay": 31
+    },
+    "notes": "Favored season for Tobago drift diving before wetter summer conditions."
   }
 ]
