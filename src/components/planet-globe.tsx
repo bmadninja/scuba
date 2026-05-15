@@ -3,6 +3,7 @@
 import Globe, { type GlobeMethods } from "react-globe.gl";
 import { feature } from "topojson-client";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import type { ScubaSeasonWindow } from "@/lib/scuba-globe";
 
 export type PlanetMarker = {
@@ -61,15 +62,6 @@ type WorldAtlasTopology = {
   };
 };
 
-const DEFAULT_MARKERS: PlanetMarker[] = [
-  {
-    lat: -16.7346,
-    lng: -151.0094,
-    label: "Placeholder reef marker",
-    color: "#68e4ff",
-  },
-];
-
 const DEFAULT_FOCUS_POINT = {
   lat: 12,
   lng: -135,
@@ -78,30 +70,17 @@ const DEFAULT_FOCUS_POINT = {
 
 const WORLD_ATLAS_URL =
   "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+// Day-Earth texture for the ocean-bright direction
 const EARTH_TEXTURE_URL =
-  "//unpkg.com/three-globe/example/img/earth-night.jpg";
+  "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg";
 
-const hexToRgb = (hex: string) => {
-  const value = hex.replace("#", "");
-  const normalized =
-    value.length === 3
-      ? value
-          .split("")
-          .map((char) => char + char)
-          .join("")
-      : value;
-  const parsed = Number.parseInt(normalized, 16);
-
-  return {
-    r: (parsed >> 16) & 255,
-    g: (parsed >> 8) & 255,
-    b: parsed & 255,
-  };
-};
+// Brand palette
+const IN_SEASON = "#0089de"; // PADI blue
+const OUT_OF_SEASON = "#f23d4e"; // coral accent
 
 export function PlanetGlobe({
   highlightedCountries = [],
-  markers = DEFAULT_MARKERS,
+  markers = [],
   focusPoint = DEFAULT_FOCUS_POINT,
 }: PlanetGlobeProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -119,65 +98,39 @@ export function PlanetGlobe({
     visibleMarkers.find((marker) => marker.id === selectedMarkerId) ??
     visibleMarkers[0] ??
     null;
-  const selectedRings = selectedMarker ? [selectedMarker] : [];
 
   useEffect(() => {
-    if (!containerRef.current) {
-      return;
-    }
-
+    if (!containerRef.current) return;
     const updateSize = () => {
-      if (!containerRef.current) {
-        return;
-      }
-
+      if (!containerRef.current) return;
       const width = containerRef.current.offsetWidth;
-      const height = Math.min(Math.max(width * 0.7, 320), 540);
+      const height = Math.min(Math.max(width * 0.62, 320), 520);
       setDimensions({ width, height });
     };
-
     updateSize();
-
-    const observer = new ResizeObserver(() => {
-      updateSize();
-    });
-
+    const observer = new ResizeObserver(updateSize);
     observer.observe(containerRef.current);
-
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
     let cancelled = false;
-
-    const loadCountries = async () => {
+    const load = async () => {
       try {
         setLoadError(false);
-
         const response = await fetch(WORLD_ATLAS_URL);
-
-        if (!response.ok) {
-          throw new Error(`Failed to load atlas: ${response.status}`);
-        }
-
+        if (!response.ok) throw new Error(String(response.status));
         const topology = (await response.json()) as WorldAtlasTopology;
         const geoJson = feature(
           topology as never,
           topology.objects.countries as never,
         );
-
-        if (cancelled) {
-          return;
-        }
-
+        if (cancelled) return;
         if ("features" in geoJson && Array.isArray(geoJson.features)) {
           setCountries(geoJson.features as GlobeFeature[]);
-          return;
+        } else {
+          setCountries([]);
         }
-
-        setCountries([]);
       } catch {
         if (!cancelled) {
           setLoadError(true);
@@ -185,30 +138,25 @@ export function PlanetGlobe({
         }
       }
     };
-
-    void loadCountries();
-
+    void load();
     return () => {
       cancelled = true;
     };
   }, []);
 
   useEffect(() => {
-    setSelectedMarkerId(visibleMarkers[0]?.id ?? null);
+    const inSeason = visibleMarkers.find((m) => m.isInSeason);
+    setSelectedMarkerId(inSeason?.id ?? visibleMarkers[0]?.id ?? null);
   }, [visibleMarkers]);
 
   useEffect(() => {
-    if (!globeRef.current || dimensions.width === 0) {
-      return;
-    }
-
+    if (!globeRef.current || dimensions.width === 0) return;
     const controls = globeRef.current.controls();
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.35;
+    controls.autoRotateSpeed = 0.2;
     controls.enablePan = false;
     controls.minDistance = 180;
     controls.maxDistance = 320;
-
     globeRef.current.pointOfView(
       {
         lat: focusPoint.lat,
@@ -223,9 +171,8 @@ export function PlanetGlobe({
     <div className="w-full">
       <div
         ref={containerRef}
-        className="relative mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-cyan-100/10 bg-[radial-gradient(circle_at_top,_rgba(125,211,252,0.24),_transparent_36%),linear-gradient(180deg,_rgba(3,15,32,0.98),_rgba(1,8,18,0.98))] p-4 shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
+        className="relative mx-auto w-full overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-b from-[#eaf4fb] to-[#dfecf6] p-4 shadow-sm"
       >
-        <div className="pointer-events-none absolute inset-x-8 top-0 h-24 rounded-full bg-cyan-300/10 blur-3xl" />
         <div className="relative min-h-[340px]">
           {dimensions.width > 0 && visibleMarkers.length > 0 ? (
             <Globe
@@ -235,284 +182,206 @@ export function PlanetGlobe({
               backgroundColor="rgba(0,0,0,0)"
               globeImageUrl={EARTH_TEXTURE_URL}
               showAtmosphere
-              atmosphereColor="#7dd3fc"
-              atmosphereAltitude={0.14}
+              atmosphereColor="#a8e6ff"
+              atmosphereAltitude={0.18}
               polygonsData={countries}
               polygonAltitude={0.01}
               polygonCapColor={(polygon) => {
-                const globeFeature = polygon as GlobeFeature;
-                const iso2 = globeFeature.properties?.iso_a2?.toUpperCase();
-                const iso3 = globeFeature.properties?.iso_a3?.toUpperCase();
-                const name = globeFeature.properties?.name?.toUpperCase();
+                const f = polygon as GlobeFeature;
+                const iso2 = f.properties?.iso_a2?.toUpperCase();
+                const iso3 = f.properties?.iso_a3?.toUpperCase();
+                const name = f.properties?.name?.toUpperCase();
                 const isHighlighted =
                   (iso2 && highlightedSet.has(iso2)) ||
                   (iso3 && highlightedSet.has(iso3)) ||
                   (name && highlightedSet.has(name));
-
                 return isHighlighted
-                  ? "rgba(73, 111, 86, 0.48)"
-                  : "rgba(210, 225, 236, 0.3)";
+                  ? "rgba(0, 137, 222, 0.32)"
+                  : "rgba(255, 255, 255, 0.18)";
               }}
-              polygonSideColor={(polygon) => {
-                const globeFeature = polygon as GlobeFeature;
-                const iso2 = globeFeature.properties?.iso_a2?.toUpperCase();
-                const iso3 = globeFeature.properties?.iso_a3?.toUpperCase();
-                const name = globeFeature.properties?.name?.toUpperCase();
-                const isHighlighted =
-                  (iso2 && highlightedSet.has(iso2)) ||
-                  (iso3 && highlightedSet.has(iso3)) ||
-                  (name && highlightedSet.has(name));
-
-                return isHighlighted
-                  ? "rgba(42, 66, 51, 0.34)"
-                  : "rgba(6, 18, 30, 0.14)";
-              }}
-              polygonStrokeColor={() => "rgba(10, 27, 44, 0.22)"}
+              polygonSideColor={() => "rgba(0, 137, 222, 0.08)"}
+              polygonStrokeColor={() => "rgba(29, 93, 144, 0.25)"}
               polygonsTransitionDuration={300}
               pointsData={visibleMarkers}
               pointLat="lat"
               pointLng="lng"
               pointColor={() => "rgba(0,0,0,0)"}
-              pointAltitude={0.055}
-              pointRadius={1.12}
+              pointAltitude={0.04}
+              pointRadius={1.0}
               pointLabel={(marker: object) =>
                 (marker as PlanetMarker).site ?? "Dive site"
               }
               onPointClick={(marker: object) => {
-                const selected = marker as PlanetMarker;
-                setSelectedMarkerId(selected.id ?? null);
-
+                const sel = marker as PlanetMarker;
+                setSelectedMarkerId(sel.id ?? null);
                 const controls = globeRef.current?.controls();
-
-                if (controls) {
-                  controls.autoRotate = false;
-                }
-
+                if (controls) controls.autoRotate = false;
                 globeRef.current?.pointOfView(
-                  {
-                    lat: selected.lat,
-                    lng: selected.lng,
-                    altitude: 1.15,
-                  },
+                  { lat: sel.lat, lng: sel.lng, altitude: 1.4 },
                   900,
                 );
               }}
-              ringsData={selectedRings}
-              ringLat="lat"
-              ringLng="lng"
-              ringColor={(marker: object) => {
-                const planetMarker = marker as PlanetMarker;
-                const rgb = hexToRgb(planetMarker.color ?? "#68e4ff");
-
-                return (t: number) =>
-                  `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${Math.max(0, 0.85 - t)})`;
-              }}
-              ringMaxRadius={6}
-              ringPropagationSpeed={2.6}
-              ringRepeatPeriod={1100}
               htmlElementsData={visibleMarkers}
               htmlLat="lat"
               htmlLng="lng"
               htmlAltitude={(marker: object) =>
-                (marker as PlanetMarker).id === selectedMarker?.id ? 0.075 : 0.052
+                (marker as PlanetMarker).id === selectedMarker?.id ? 0.06 : 0.045
               }
               htmlElement={(marker: object) => {
                 const site = marker as PlanetMarker;
                 const isSelected = site.id === selectedMarker?.id;
-                const color = site.color ?? "#2f5d39";
+                const color = site.color ?? IN_SEASON;
                 const el = document.createElement("div");
-                const pin = document.createElement("div");
-                const halo = document.createElement("div");
-                const stem = document.createElement("div");
-
                 el.style.pointerEvents = "none";
-                el.style.display = "flex";
-                el.style.flexDirection = "column";
-                el.style.alignItems = "center";
-                el.style.transform = "translateY(-3px)";
-                el.title = "";
                 el.style.position = "relative";
+                el.title = "";
 
+                const halo = document.createElement("div");
                 halo.style.position = "absolute";
-                halo.style.top = isSelected ? "0px" : "1px";
-                halo.style.width = isSelected ? "18px" : "14px";
-                halo.style.height = isSelected ? "18px" : "14px";
+                halo.style.top = "50%";
+                halo.style.left = "50%";
+                halo.style.transform = "translate(-50%, -50%)";
+                halo.style.width = isSelected ? "26px" : "18px";
+                halo.style.height = isSelected ? "26px" : "18px";
                 halo.style.borderRadius = "9999px";
-                halo.style.background = `${color}22`;
+                halo.style.background = `${color}26`;
                 halo.style.boxShadow = isSelected
-                  ? `0 0 0 6px ${color}1f`
-                  : `0 0 0 3px ${color}14`;
+                  ? `0 0 0 4px ${color}33, 0 0 18px ${color}66`
+                  : `0 0 0 2px ${color}26`;
 
-                pin.style.width = isSelected ? "12px" : "10px";
-                pin.style.height = isSelected ? "12px" : "10px";
-                pin.style.borderRadius = "9999px";
-                pin.style.background = color;
-                pin.style.border = isSelected
-                  ? "2px solid rgba(255,255,255,0.9)"
-                  : "1.5px solid rgba(255,255,255,0.55)";
-                pin.style.boxShadow = isSelected
-                  ? "0 8px 24px rgba(2, 8, 23, 0.45)"
-                  : "0 5px 14px rgba(2, 8, 23, 0.34)";
+                const pin = document.createElement("div");
                 pin.style.position = "relative";
                 pin.style.zIndex = "1";
-
-                stem.style.width = isSelected ? "2px" : "1.5px";
-                stem.style.height = isSelected ? "12px" : "9px";
-                stem.style.marginTop = "2px";
-                stem.style.borderRadius = "9999px";
-                stem.style.background = color;
-                stem.style.opacity = isSelected ? "0.95" : "0.72";
+                pin.style.width = isSelected ? "12px" : "9px";
+                pin.style.height = isSelected ? "12px" : "9px";
+                pin.style.borderRadius = "9999px";
+                pin.style.background = color;
+                pin.style.border = "2px solid white";
+                pin.style.boxShadow = "0 2px 6px rgba(0,0,0,0.35)";
 
                 el.appendChild(halo);
                 el.appendChild(pin);
-                el.appendChild(stem);
                 return el;
               }}
             />
           ) : null}
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-3 text-xs text-cyan-50/70">
-            <span>Click a location to pause and inspect details</span>
-          </div>
-
           {dimensions.width > 0 && visibleMarkers.length === 0 ? (
-            <div className="absolute inset-4 flex items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-100/15 bg-slate-950/50 px-6 text-center">
+            <div className="absolute inset-4 flex items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-6 text-center">
               <div>
-                <p className="text-sm uppercase tracking-[0.22em] text-cyan-100/55">
-                  No Matches
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  No matches
                 </p>
-                <p className="mt-3 max-w-md text-sm leading-6 text-slate-300">
-                  Try clearing one of the filters or broadening what your divers
-                  want to see.
+                <p className="mt-2 max-w-md text-sm leading-6 text-slate-600">
+                  Try clearing one of the filters to broaden the search.
                 </p>
               </div>
             </div>
           ) : null}
 
           {loadError ? (
-            <div className="absolute inset-x-4 bottom-10 rounded-2xl border border-cyan-200/10 bg-slate-950/80 px-4 py-3 text-left text-sm text-slate-300 backdrop-blur">
-              Planet data placeholder is ready, but the temporary world atlas
-              source could not be loaded.
+            <div className="absolute inset-x-4 bottom-10 rounded-xl border border-slate-200 bg-white/95 px-4 py-3 text-left text-sm text-slate-700 shadow">
+              World atlas data couldn&rsquo;t load. The globe will still spin —
+              country highlights are disabled.
             </div>
           ) : null}
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-2 text-[11px] text-slate-600/80">
+            <span>Click a location to inspect details</span>
+          </div>
         </div>
       </div>
 
+      {/* Marker detail card */}
       {selectedMarker ? (
-        <div className="mt-4 rounded-[1.75rem] border border-white/10 bg-slate-950/75 p-5 text-left text-slate-100 shadow-[0_20px_80px_rgba(0,0,0,0.25)] backdrop-blur">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div className="space-y-2">
-              <h2 className="text-2xl font-semibold tracking-tight">
-                {selectedMarker.site ?? "Dive site"}
-              </h2>
-              <p className="text-sm text-slate-300">
+        <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+                {selectedMarker.site}
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
                 {selectedMarker.country}
-                {selectedMarker.region ? ` • ${selectedMarker.region}` : ""}
+                {selectedMarker.region ? ` · ${selectedMarker.region}` : ""}
               </p>
             </div>
-            <div
-              className="rounded-full border px-3 py-1 text-sm font-medium"
-              style={{
-                borderColor: selectedMarker.color ?? "#2f5d39",
-                color: selectedMarker.color ?? "#2f5d39",
-                backgroundColor: `${selectedMarker.color ?? "#2f5d39"}22`,
-              }}
+            <span
+              className={`rounded-full px-3 py-1 text-sm font-semibold ${
+                selectedMarker.isInSeason
+                  ? "bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200"
+                  : "bg-slate-100 text-slate-600 ring-1 ring-inset ring-slate-200"
+              }`}
             >
-              {selectedMarker.isInSeason ? "In season" : "Out of season"}
-            </div>
+              {selectedMarker.isInSeason ? "● In season" : "○ Out of season"}
+            </span>
           </div>
 
-          <div className="mt-5 grid gap-5 md:grid-cols-[1.15fr_0.85fr]">
+          <div className="mt-4 grid gap-4 sm:grid-cols-[1.3fr_1fr]">
             <div className="space-y-3">
-              <div>
-                <p className="text-sm font-medium text-cyan-100/70">Best window</p>
-                <p className="mt-1 text-sm text-slate-300">{selectedMarker.seasonLabel}</p>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-cyan-100/70">Dive style</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">
-                  {selectedMarker.diveStyle}
-                </p>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-cyan-100/70">Experience level</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">
-                  {selectedMarker.experienceLevel}
-                </p>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-cyan-100/70">Conditions</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">
-                  {selectedMarker.conditions}
-                </p>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-cyan-100/70">Water temperature</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">
+              <Field label="Best window" value={selectedMarker.seasonLabel} />
+              <Field label="Style" value={selectedMarker.diveStyle} />
+              <Field label="Experience" value={selectedMarker.experienceLevel} />
+              <Field label="Water + suit">
+                <span>
                   {selectedMarker.waterTemp}
-                </p>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-cyan-100/70">Exposure protection</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">
-                  {selectedMarker.suitRecommendation}
-                </p>
-              </div>
+                  <br />
+                  <span className="text-slate-500">
+                    {selectedMarker.suitRecommendation}
+                  </span>
+                </span>
+              </Field>
             </div>
-
             <div>
-              <p className="text-sm font-medium text-cyan-100/70">What you&apos;ll see</p>
-              <ul className="mt-2 space-y-2 text-sm text-slate-300">
-                {(selectedMarker.sightings ?? []).map((sighting) => (
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                What you&rsquo;ll see
+              </p>
+              <ul className="space-y-1.5">
+                {(selectedMarker.sightings ?? []).map((s) => (
                   <li
-                    key={sighting.name}
-                    className="rounded-xl bg-white/5 px-3 py-2"
+                    key={s.name}
+                    className="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2 text-sm"
                   >
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="font-medium text-slate-100">{sighting.name}</div>
-                      <div className="shrink-0 rounded-full border border-white/10 bg-white/6 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.16em] text-cyan-100/60">
-                        {sighting.likelihood}
-                      </div>
-                    </div>
+                    <span className="font-medium text-slate-800">{s.name}</span>
+                    <span className="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-600 ring-1 ring-inset ring-slate-200">
+                      {s.likelihood}
+                    </span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-4">
-                <p className="text-sm font-medium text-cyan-100/70">Recommended gear</p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">
-                  {(selectedMarker.gear ?? []).length > 0
-                    ? "Standard recreational gear plus these extras is recommended:"
-                    : "Standard recreational gear will do here."}
-                </p>
-                {(selectedMarker.gear ?? []).length > 0 ? (
-                  <ul className="mt-2 space-y-2 text-sm text-slate-300">
-                    {(selectedMarker.gear ?? []).map((item) => (
-                      <li key={item} className="rounded-xl bg-white/5 px-3 py-2">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
             </div>
           </div>
 
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl bg-white/5 px-4 py-3">
-              <p className="text-sm font-medium text-cyan-100/70">How to get there</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
-                {selectedMarker.gettingThere}
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white/5 px-4 py-3">
-              <p className="text-sm font-medium text-cyan-100/70">Where to stay</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
-                {selectedMarker.stay}
-              </p>
-            </div>
-          </div>
+          {selectedMarker.id ? (
+            <Link
+              href={`/locations/${selectedMarker.id}`}
+              className="mt-5 inline-flex items-center gap-1 rounded-full bg-[#0089de] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1d5d90]"
+            >
+              View dive sites in this area →
+            </Link>
+          ) : null}
         </div>
       ) : null}
+    </div>
+  );
+}
+
+function Field({
+  label,
+  value,
+  children,
+}: {
+  label: string;
+  value?: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <div>
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+        {label}
+      </p>
+      <div className="mt-1 text-sm leading-6 text-slate-700">
+        {children ?? value ?? "—"}
+      </div>
     </div>
   );
 }
