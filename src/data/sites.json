@@ -1,5 +1,502 @@
 [
   {
+    "id": "raja-ampat-cape-kri",
+    "slug": "raja-ampat-cape-kri",
+    "locationId": "raja-ampat-indonesia",
+    "name": "Cape Kri",
+    "heroImageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=2000&q=80&auto=format&fit=crop",
+    "lat": -0.557,
+    "lng": 130.687,
+    "description": "World-record fish-density dive — a single survey here counted 374 species in a single dive. Drift along the wall with schooling jacks, snappers, sweetlips, and a constant traffic of reef sharks. Currents shift fast; the dive briefing matters.",
+    "depthRange": { "min": 5, "max": 35 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics", "coral"],
+    "species": [
+      { "commonName": "Schooling giant trevally", "reliability": "year-round" },
+      { "commonName": "Blacktip reef shark", "scientificName": "Carcharhinus melanopterus", "reliability": "year-round" },
+      { "commonName": "Wobbegong shark", "scientificName": "Eucrossorhinus dasypogon", "reliability": "year-round" },
+      { "commonName": "Napoleon wrasse", "scientificName": "Cheilinus undulatus", "reliability": "year-round" },
+      { "commonName": "Schooling sweetlips", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 29, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 29, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [10, 11, 12, 1, 2, 3, 4],
+    "editorialRank": 97,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Sorong (SOQ) via Jakarta or Bali", "url": "https://www.skyscanner.com/transport/flights-to/soq/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "LiveaboardBookings", "label": "MV Jaya (Raja Ampat liveaboard)", "url": "https://www.liveaboard.com/", "isAffiliate": true },
+      { "partner": "Booking.com", "label": "Sorido Bay Resort", "url": "https://www.booking.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Papua Diving (Kri Eco Resort)", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "Reef hook", "reason": "Current rips around the cape — hooking in is the only way to watch the schooling action.", "gearId": "reef-hook-dive-rite" },
+      { "name": "SMB + reel", "reason": "Drift exits over deep water. SMB is required.", "gearId": "smb-xs-scuba-deluxe" }
+    ],
+    "notes": "Down-currents reported by experienced divers. Stay with the guide; do not chase fish into the blue."
+  },
+  {
+    "id": "raja-ampat-blue-magic",
+    "slug": "raja-ampat-blue-magic",
+    "locationId": "raja-ampat-indonesia",
+    "name": "Blue Magic",
+    "heroImageUrl": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=2000&q=80&auto=format&fit=crop",
+    "lat": -0.495,
+    "lng": 130.541,
+    "description": "Submerged seamount in Dampier Strait that pulls in oceanic mantas, mobula rays, and big-fish action. Top of the pinnacle sits at 7 m; the sides drop into blue water. Current is the price of admission.",
+    "depthRange": { "min": 7, "max": 35 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics", "coral"],
+    "species": [
+      { "commonName": "Oceanic manta ray", "scientificName": "Mobula birostris", "reliability": "seasonal", "bestMonths": [10, 11, 12, 1, 2, 3, 4] },
+      { "commonName": "Grey reef shark", "reliability": "year-round" },
+      { "commonName": "Spanish mackerel", "reliability": "seasonal" },
+      { "commonName": "Schooling barracuda", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 29, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 29, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [10, 11, 12, 1, 2, 3, 4],
+    "editorialRank": 96,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Sorong (SOQ)", "url": "https://www.skyscanner.com/transport/flights-to/soq/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "LiveaboardBookings", "label": "Damai II Liveaboard", "url": "https://www.liveaboard.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Meridian Adventure Dive", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "Reef hook", "reason": "Top of the seamount is exposed to ripping current.", "gearId": "reef-hook-dive-rite" },
+      { "name": "SMB + reel", "reason": "Drift surfacings over open water.", "gearId": "smb-xs-scuba-deluxe" }
+    ]
+  },
+  {
+    "id": "raja-ampat-manta-sandy",
+    "slug": "raja-ampat-manta-sandy",
+    "locationId": "raja-ampat-indonesia",
+    "name": "Manta Sandy",
+    "heroImageUrl": "https://images.unsplash.com/photo-1542443605-fcefd6550d4a?w=2000&q=80&auto=format&fit=crop",
+    "lat": -0.601,
+    "lng": 130.578,
+    "description": "Sand-bottom cleaning station at 15 m. Reef mantas line up at coral bommies while cleaner wrasse work them over. Easy dive — limited current, defined manta queue line you stay behind.",
+    "depthRange": { "min": 12, "max": 18 },
+    "skillLevel": "open-water",
+    "diveTypes": ["large-pelagics"],
+    "species": [
+      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "year-round" },
+      { "commonName": "Cleaner wrasse", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 29, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 29, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [10, 11, 12, 1, 2, 3, 4],
+    "editorialRank": 91,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Sorong (SOQ)", "url": "https://www.skyscanner.com/transport/flights-to/soq/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "Booking.com", "label": "Raja Ampat Biodiversity Eco Resort", "url": "https://www.booking.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Meridian Adventure Dive", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "Patience", "reason": "Stay behind the marked queue line. Mantas leave if pushed." }
+    ]
+  },
+  {
+    "id": "palau-german-channel",
+    "slug": "palau-german-channel",
+    "locationId": "blue-corner-palau",
+    "name": "German Channel",
+    "heroImageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=2000&q=80&auto=format&fit=crop",
+    "lat": 7.275,
+    "lng": 134.232,
+    "description": "Cut-through channel dredged in 1908 connecting inner lagoon to outer reef. Mantas come in to be cleaned on the sandy bottom, and grey reef sharks patrol the channel mouth on falling tide.",
+    "depthRange": { "min": 8, "max": 30 },
+    "skillLevel": "open-water",
+    "diveTypes": ["large-pelagics", "coral"],
+    "species": [
+      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "year-round" },
+      { "commonName": "Grey reef shark", "reliability": "year-round" },
+      { "commonName": "Eagle ray", "reliability": "seasonal" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [11, 12, 1, 2, 3, 4, 5],
+    "editorialRank": 92,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Koror (ROR)", "url": "https://www.skyscanner.com/transport/flights-to/ror/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "Booking.com", "label": "Palau Pacific Resort", "url": "https://www.booking.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Sam's Tours Palau", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "Surface marker buoy", "reason": "Drift exits in the channel — operators require SMB.", "gearId": "smb-xs-scuba-deluxe" }
+    ]
+  },
+  {
+    "id": "palau-blue-holes",
+    "slug": "palau-blue-holes",
+    "locationId": "blue-corner-palau",
+    "name": "Blue Holes",
+    "heroImageUrl": "https://images.unsplash.com/photo-1581011277401-9f2953225051?w=2000&q=80&auto=format&fit=crop",
+    "lat": 7.286,
+    "lng": 134.213,
+    "description": "Four vertical shafts in the reef table that open into a single cavern. Drop through the holes at 10 m, exit at 30+ m through the cavern window, then drift to Blue Corner. Beam-shafts of light through the openings make it one of the most photographed dives in the Pacific.",
+    "depthRange": { "min": 10, "max": 35 },
+    "skillLevel": "advanced",
+    "diveTypes": ["geology", "coral"],
+    "species": [
+      { "commonName": "Grey reef shark", "reliability": "year-round" },
+      { "commonName": "Schooling bigeye trevally", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [11, 12, 1, 2, 3, 4, 5],
+    "editorialRank": 89,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Koror (ROR)", "url": "https://www.skyscanner.com/transport/flights-to/ror/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "Booking.com", "label": "Palau Pacific Resort", "url": "https://www.booking.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Sam's Tours Palau", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "Dive light", "reason": "Cavern is dark below 20 m — even with surface light overhead.", "gearId": "light-bigblue-vl5500p" }
+    ],
+    "notes": "Most operators run Blue Holes into a Blue Corner drift — single tank, two iconic sites."
+  },
+  {
+    "id": "cocos-bajo-alcyone",
+    "slug": "cocos-bajo-alcyone",
+    "locationId": "cocos-costa-rica",
+    "name": "Bajo Alcyone",
+    "heroImageUrl": "https://images.unsplash.com/photo-1511311739545-3e975f9d84f7?w=2000&q=80&auto=format&fit=crop",
+    "lat": 5.561,
+    "lng": -87.054,
+    "description": "Submerged seamount 25 m below the surface, rising from the deep. Hammerhead schools in the hundreds patrol the up-current edge. Cold thermocline, surge, and current — the most famous dive in the Eastern Pacific.",
+    "depthRange": { "min": 25, "max": 40 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics"],
+    "species": [
+      { "commonName": "Scalloped hammerhead", "scientificName": "Sphyrna lewini", "reliability": "year-round" },
+      { "commonName": "Galapagos shark", "reliability": "year-round" },
+      { "commonName": "Whale shark", "reliability": "seasonal", "bestMonths": [6, 7, 8, 9, 10, 11] },
+      { "commonName": "Silvertip shark", "reliability": "seasonal" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 2, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 3, "waterTempC": { "min": 27, "max": 28 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 4, "waterTempC": { "min": 27, "max": 28 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 5, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 6, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 7, "waterTempC": { "min": 24, "max": 27 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 8, "waterTempC": { "min": 24, "max": 27 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 9, "waterTempC": { "min": 24, "max": 27 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 10, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 11, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 12, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit" }
+    ],
+    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "editorialRank": 99,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to San José (SJO)", "url": "https://www.skyscanner.com/transport/flights-to/sjo/", "isAffiliate": true },
+      { "partner": "Direct", "label": "Liveaboard departure from Puntarenas (~36 h crossing)", "url": "", "isAffiliate": false }
+    ],
+    "lodging": [
+      { "partner": "LiveaboardBookings", "label": "Okeanos Aggressor I (10-night)", "url": "https://www.liveaboard.com/", "isAffiliate": true },
+      { "partner": "Bluewater Travel", "label": "MV Argo (10-night, deeper itinerary)", "url": "https://www.bluewaterdivetravel.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "Bluewater Travel", "label": "Aggressor Adventures", "url": "https://www.bluewaterdivetravel.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "Temperate-grade wetsuit", "reason": "Thermocline drops to 19°C at depth even in season.", "gearId": "wetsuit-aqualung-aquaflex-5mm" },
+      { "name": "Reef hook", "reason": "Standard procedure: hook in at the up-current edge of the seamount.", "gearId": "reef-hook-dive-rite" },
+      { "name": "Nitrox certification", "reason": "Most operators run nitrox for the long deep profiles required at 25–40 m." }
+    ],
+    "notes": "Permit-controlled park. Liveaboard-only access."
+  },
+  {
+    "id": "sipadan-barracuda-point",
+    "slug": "sipadan-barracuda-point",
+    "locationId": "sipadan-malaysia",
+    "name": "Barracuda Point",
+    "heroImageUrl": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=2000&q=80&auto=format&fit=crop",
+    "lat": 4.111,
+    "lng": 118.628,
+    "description": "Drift along the wall and a tornado of chevron barracuda forms overhead. Add turtles, schooling jacks, and the occasional whitetip shark. Often run as a single drift dive — current dictates direction.",
+    "depthRange": { "min": 5, "max": 40 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics", "coral"],
+    "species": [
+      { "commonName": "Chevron barracuda", "scientificName": "Sphyraena qenie", "reliability": "year-round" },
+      { "commonName": "Green sea turtle", "reliability": "year-round" },
+      { "commonName": "Hawksbill turtle", "reliability": "year-round" },
+      { "commonName": "Schooling bigeye trevally", "reliability": "year-round" },
+      { "commonName": "White-tip reef shark", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [4, 5, 6, 7, 8, 9],
+    "editorialRank": 94,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Tawau (TWU)", "url": "https://www.skyscanner.com/transport/flights-to/twu/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "Booking.com", "label": "Mabul Water Bungalows", "url": "https://www.booking.com/", "isAffiliate": true },
+      { "partner": "Booking.com", "label": "Sipadan Kapalai Dive Resort", "url": "https://www.booking.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Scuba Junkie Sipadan", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "SMB + reel", "reason": "Drift exits over deep water are standard here.", "gearId": "smb-xs-scuba-deluxe" }
+    ],
+    "notes": "Permit-controlled — 176 daily permits for the entire island. Book the permit months ahead."
+  },
+  {
+    "id": "wolf-galapagos-shark-bay",
+    "slug": "wolf-galapagos-shark-bay",
+    "locationId": "wolf-galapagos-ecuador",
+    "name": "Shark Bay (Wolf Island)",
+    "heroImageUrl": "https://images.unsplash.com/photo-1511311739545-3e975f9d84f7?w=2000&q=80&auto=format&fit=crop",
+    "lat": 1.382,
+    "lng": -91.815,
+    "description": "Northern point of Wolf Island where hammerhead schools sweep through in the hundreds. Hook into the rocks at 18 m, watch the sharks pass at arm's length. Whale sharks in season; dolphin pods occasionally crash the dive.",
+    "depthRange": { "min": 12, "max": 30 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics"],
+    "species": [
+      { "commonName": "Scalloped hammerhead", "scientificName": "Sphyrna lewini", "reliability": "year-round" },
+      { "commonName": "Whale shark", "reliability": "seasonal", "bestMonths": [6, 7, 8, 9, 10, 11] },
+      { "commonName": "Galapagos shark", "reliability": "year-round" },
+      { "commonName": "Bottlenose dolphin", "reliability": "seasonal" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 24, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit + hood" },
+      { "month": 2, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit + hood" },
+      { "month": 3, "waterTempC": { "min": 25, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 4, "waterTempC": { "min": 24, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 5, "waterTempC": { "min": 22, "max": 25 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Temperate wetsuit + hood" },
+      { "month": 6, "waterTempC": { "min": 20, "max": 24 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Coldwater wetsuit + hood" },
+      { "month": 7, "waterTempC": { "min": 19, "max": 23 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Coldwater wetsuit + hood + vest" },
+      { "month": 8, "waterTempC": { "min": 19, "max": 22 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Coldwater wetsuit + hood + vest" },
+      { "month": 9, "waterTempC": { "min": 19, "max": 22 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Coldwater wetsuit + hood + vest" },
+      { "month": 10, "waterTempC": { "min": 20, "max": 23 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Coldwater wetsuit + hood" },
+      { "month": 11, "waterTempC": { "min": 21, "max": 24 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Coldwater wetsuit + hood" },
+      { "month": 12, "waterTempC": { "min": 23, "max": 26 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit + hood" }
+    ],
+    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "editorialRank": 98,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Baltra (GPS)", "url": "https://www.skyscanner.com/transport/flights-to/gps/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "LiveaboardBookings", "label": "Galápagos Aggressor III", "url": "https://www.liveaboard.com/", "isAffiliate": true },
+      { "partner": "Bluewater Travel", "label": "Humboldt Explorer", "url": "https://www.bluewaterdivetravel.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Aggressor Adventures", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "Coldwater wetsuit + hood", "reason": "Humboldt upwellings drop temp to 19°C in season — third dive of the day is the cold one.", "gearId": "wetsuit-aqualung-aquaflex-5mm" },
+      { "name": "Reef hook", "reason": "Hooking is the only way to hold the line while hammerheads pass.", "gearId": "reef-hook-dive-rite" },
+      { "name": "Nautilus Lifeline or PLB", "reason": "Surface separations have happened here. PLB is standard kit." }
+    ]
+  },
+  {
+    "id": "tubbataha-shark-airport",
+    "slug": "tubbataha-shark-airport",
+    "locationId": "tubbataha-philippines",
+    "name": "Shark Airport (North Atoll)",
+    "heroImageUrl": "https://images.unsplash.com/photo-1511311739545-3e975f9d84f7?w=2000&q=80&auto=format&fit=crop",
+    "lat": 8.928,
+    "lng": 119.835,
+    "description": "Reef plateau on the North Atoll where whitetip and grey reef sharks rest on the sand. Drift the wall and stop on top to watch the sharks come and go. Visibility consistently >30 m in season.",
+    "depthRange": { "min": 5, "max": 35 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics", "coral"],
+    "species": [
+      { "commonName": "White-tip reef shark", "reliability": "year-round" },
+      { "commonName": "Grey reef shark", "reliability": "year-round" },
+      { "commonName": "Schooling jacks", "reliability": "year-round" },
+      { "commonName": "Hawksbill turtle", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 30, "max": 40 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 30, "max": 40 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [3, 4, 5, 6],
+    "editorialRank": 93,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Puerto Princesa (PPS)", "url": "https://www.skyscanner.com/transport/flights-to/pps/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "LiveaboardBookings", "label": "Atlantis Azores Liveaboard", "url": "https://www.liveaboard.com/", "isAffiliate": true },
+      { "partner": "LiveaboardBookings", "label": "Discovery Palawan", "url": "https://www.liveaboard.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Atlantis Dive Resorts", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "SMB + reel", "reason": "Drift exits over deep water — required by all operators.", "gearId": "smb-xs-scuba-deluxe" }
+    ],
+    "notes": "Park is open mid-March to mid-June only — strict seasonal window."
+  },
+  {
+    "id": "egypt-big-brother",
+    "slug": "egypt-big-brother",
+    "locationId": "brothers-egypt",
+    "name": "Big Brother",
+    "heroImageUrl": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=2000&q=80&auto=format&fit=crop",
+    "lat": 26.32,
+    "lng": 34.85,
+    "description": "Offshore pinnacle in the southern Red Sea with two wrecks on the plateau — the Numidia and the Aida. Walls drop into the blue where oceanic whitetips, threshers, and hammerheads cruise. Strong current makes it advanced-only.",
+    "depthRange": { "min": 10, "max": 40 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics", "wrecks"],
+    "species": [
+      { "commonName": "Oceanic whitetip shark", "scientificName": "Carcharhinus longimanus", "reliability": "seasonal", "bestMonths": [10, 11, 12] },
+      { "commonName": "Thresher shark", "reliability": "seasonal" },
+      { "commonName": "Scalloped hammerhead", "reliability": "seasonal", "bestMonths": [6, 7, 8] },
+      { "commonName": "Grey reef shark", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 22, "max": 24 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 2, "waterTempC": { "min": 21, "max": 23 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 3, "waterTempC": { "min": 22, "max": 24 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 4, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" },
+      { "month": 12, "waterTempC": { "min": 23, "max": 25 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Temperate wetsuit" }
+    ],
+    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "editorialRank": 90,
+    "getThere": [
+      { "partner": "Skyscanner", "label": "Flights to Hurghada (HRG) or Marsa Alam (RMF)", "url": "https://www.skyscanner.com/transport/flights-to/hrg/", "isAffiliate": true }
+    ],
+    "lodging": [
+      { "partner": "LiveaboardBookings", "label": "MV Emperor Elite (BDE itinerary)", "url": "https://www.liveaboard.com/", "isAffiliate": true },
+      { "partner": "LiveaboardBookings", "label": "Blue Horizon", "url": "https://www.liveaboard.com/", "isAffiliate": true }
+    ],
+    "operators": [
+      { "partner": "PADI Travel", "label": "Emperor Divers Egypt", "url": "https://travel.padi.com/", "isAffiliate": true }
+    ],
+    "gearIds": ["mask-cressi-f1", "fins-mares-avanti-quattro", "bcd-scubapro-hydros-pro", "reg-apeks-xtx200", "wetsuit-tropical"],
+    "siteSpecificGear": [
+      { "name": "SMB + long reel", "reason": "Drift exits in open ocean — operators want long-line SMB.", "gearId": "smb-xs-scuba-deluxe" },
+      { "name": "Dive light", "reason": "Two wrecks on the plateau, both worth penetrating with a guide.", "gearId": "light-bigblue-vl5500p" }
+    ],
+    "notes": "Liveaboard-only access — no day-boat trips reach Brothers."
+  },
+  {
     "id": "maldives-fish-head",
     "slug": "maldives-fish-head",
     "locationId": "ari-atoll-maldives",
