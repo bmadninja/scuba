@@ -13,6 +13,8 @@ type Props = {
   url: string;
   event: AffiliateEvent;
   partner: string;
+  /** Search query / product context to use if the partner URL is a homepage. */
+  query?: string;
   productId?: string;
   siteId: string;
   isAffiliate: boolean;
@@ -24,13 +26,16 @@ export function AffiliateLink({
   url,
   event,
   partner,
+  query,
   productId,
   siteId,
   isAffiliate,
   className,
   children,
 }: Props) {
-  const taggedUrl = isAffiliate ? enhanceAffiliateUrl(url, partner) : url;
+  // Even for "non-affiliate" Direct links we want to rewrite homepage URLs
+  // to relevant searches when we have context. Only skip tagging.
+  const targetUrl = enhanceAffiliateUrl(url, partner, query);
 
   const handleClick = () => {
     if (typeof window === "undefined") return;
@@ -42,7 +47,7 @@ export function AffiliateLink({
 
   return (
     <a
-      href={taggedUrl}
+      href={targetUrl}
       target="_blank"
       rel={isAffiliate ? "nofollow sponsored noopener" : "nofollow noopener"}
       onClick={handleClick}

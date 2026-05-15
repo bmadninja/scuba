@@ -359,6 +359,7 @@ function PartnerBlock({
               url={l.url || "#"}
               event={event}
               partner={l.partner}
+              query={l.label}
               productId={l.productId}
               siteId={siteId}
               isAffiliate={l.isAffiliate}
@@ -422,6 +423,7 @@ function GearSection({ site }: { site: Site }) {
                       url={g.partners[0].url}
                       event="gear_click"
                       partner={g.partners[0].partner}
+                      query={g.name}
                       productId={g.partners[0].productId}
                       siteId={site.id}
                       isAffiliate={true}

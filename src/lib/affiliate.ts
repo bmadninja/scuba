@@ -1,5 +1,12 @@
 // Affiliate URL tagging. Env vars hold the per-partner tracking IDs.
-// When an ID is unset, the original URL is returned untagged (graceful).
+// When an ID is unset, the URL is returned with the right search context
+// but without the tag — clicks still go to the right page.
+//
+// Two-step transform:
+//   1) detect partner-homepage URLs and rewrite to a relevant search/destination URL
+//      using the link's label as the query.
+//   2) append the partner's tracking parameter.
+//
 // Set env vars on Vercel via dashboard or `vercel env add`. See docs/affiliate-setup.md.
 
 const env = (key: string): string => {
@@ -22,7 +29,6 @@ const setParam = (url: string, name: string, value: string): string => {
     u.searchParams.set(name, value);
     return u.toString();
   } catch {
-    // Non-URL or relative — return as-is.
     return url;
   }
 };
@@ -31,61 +37,47 @@ const setParams = (url: string, params: Record<string, string>): string => {
   if (!Object.values(params).some(Boolean)) return url;
   try {
     const u = new URL(url);
-    for (const [k, v] of Object.entries(params)) {
-      if (v) u.searchParams.set(k, v);
-    }
+    for (const [k, v] of Object.entries(params)) if (v) u.searchParams.set(k, v);
     return u.toString();
   } catch {
     return url;
   }
 };
 
-// Maps the partner label used in sites.json to the tagging strategy.
-// New partners: add a case here, an env var above, and document in
-// docs/affiliate-setup.md.
-export function enhanceAffiliateUrl(url: string, partner: string): string {
-  if (!url || url === "#") return url;
-  const p = partner.toLowerCase();
+// Strips parenthetical clarifiers like "(luxury, house reef)" from labels
+// so search engines actually find the property name.
+const cleanQuery = (label: string): string =>
+  label
+    .replace(/\([^)]*\)/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
 
-  if (p === "amazon" || p.includes("amazon")) {
-    return setParam(url, "tag", AMAZON_TAG);
+const isHomepage = (urlStr: string, ...hosts: string[]): boolean => {
+  try {
+    const u = new URL(urlStr);
+    if (!hosts.some((h) => u.hostname === h || u.hostname.endsWith("." + h))) {
+      return false;
+    }
+    // Homepage = no path beyond "/" and no search params.
+    return (u.pathname === "/" || u.pathname === "") && !u.search;
+  } catch {
+    return false;
   }
-  if (p === "booking.com" || p.includes("booking")) {
-    return setParams(url, { aid: BOOKING_AID, label: "scubaseason" });
-  }
-  if (p === "padi travel" || p === "padi") {
-    return setParam(url, "partner", PADI_PARTNER);
-  }
-  if (p === "skyscanner") {
-    // Travelpayouts is the network. The actual deep-link format depends on
-    // how you configure Skyscanner-via-Travelpayouts in the dashboard.
-    // Most setups accept `marker={aid}` on any Skyscanner URL.
-    return setParam(url, "marker", TRAVELPAYOUTS_AID);
-  }
-  if (p === "liveaboardbookings" || p === "liveaboard.com" || p.includes("liveaboard")) {
-    return setParam(url, "partnerid", LIVEABOARD_AID);
-  }
-  if (p === "divebooker") {
-    return setParam(url, "ref", DIVEBOOKER_PID);
-  }
-  if (p === "scubapro") {
-    return setParam(url, "aid", SCUBAPRO_AID);
-  }
-  if (p === "bluewater travel" || p === "bluewater") {
-    // Agency — no programmatic affiliate. Pass through.
-    return url;
-  }
-  if (p === "direct") {
-    // Explicitly non-affiliate.
-    return url;
-  }
-  // Unknown partner — pass through.
-  return url;
-}
+};
 
-// Build a Booking.com search URL for a destination string.
-// Useful when you want destination-aware search instead of partner homepage.
-export function bookingSearchUrl(query: string): string {
+// Detect Amazon URL — homepage *or* search/dp with no tag set.
+const isAmazon = (urlStr: string): boolean => {
+  try {
+    const u = new URL(urlStr);
+    return u.hostname === "amazon.com" || u.hostname.endsWith(".amazon.com");
+  } catch {
+    return false;
+  }
+};
+
+// ---------- Search-URL builders per partner ----------
+
+function bookingSearchFor(query: string): string {
   const u = new URL("https://www.booking.com/searchresults.html");
   u.searchParams.set("ss", query);
   u.searchParams.set("label", "scubaseason");
@@ -93,23 +85,117 @@ export function bookingSearchUrl(query: string): string {
   return u.toString();
 }
 
-// Build an Amazon search URL for a search term.
-export function amazonSearchUrl(searchTerm: string): string {
+function amazonSearchFor(query: string): string {
   const u = new URL("https://www.amazon.com/s");
-  u.searchParams.set("k", searchTerm);
+  u.searchParams.set("k", query);
   if (AMAZON_TAG) u.searchParams.set("tag", AMAZON_TAG);
   return u.toString();
 }
 
-// Build an Amazon product URL from an ASIN.
+function liveaboardSearchFor(query: string): string {
+  const u = new URL("https://www.liveaboard.com/search");
+  u.searchParams.set("q", query);
+  if (LIVEABOARD_AID) u.searchParams.set("partnerid", LIVEABOARD_AID);
+  return u.toString();
+}
+
+function padiSearchFor(query: string): string {
+  const u = new URL("https://travel.padi.com/search/");
+  u.searchParams.set("q", query);
+  if (PADI_PARTNER) u.searchParams.set("partner", PADI_PARTNER);
+  return u.toString();
+}
+
+function bluewaterSearchFor(query: string): string {
+  const u = new URL("https://www.bluewaterdivetravel.com/");
+  u.searchParams.set("s", query);
+  return u.toString();
+}
+
+function divebookerSearchFor(query: string): string {
+  const u = new URL("https://www.divebooker.com/search");
+  u.searchParams.set("q", query);
+  if (DIVEBOOKER_PID) u.searchParams.set("ref", DIVEBOOKER_PID);
+  return u.toString();
+}
+
+function scubaproSearchFor(query: string): string {
+  const u = new URL("https://www.scubapro.com/en-US/search/");
+  u.searchParams.set("q", query);
+  if (SCUBAPRO_AID) u.searchParams.set("aid", SCUBAPRO_AID);
+  return u.toString();
+}
+
+// ---------- Main enhancer ----------
+
+export function enhanceAffiliateUrl(
+  url: string,
+  partner: string,
+  query?: string,
+): string {
+  if (!url || url === "#") return url;
+  const p = partner.toLowerCase();
+  const q = query ? cleanQuery(query) : "";
+
+  // Order matters — match the most specific partner names FIRST so that
+  // e.g. "liveaboardbookings" doesn't get caught by a loose "booking" check.
+
+  if (p.startsWith("liveaboard") || p === "liveaboardbookings") {
+    if (isHomepage(url, "liveaboard.com", "liveaboardbookings.com") && q)
+      return liveaboardSearchFor(q);
+    return setParam(url, "partnerid", LIVEABOARD_AID);
+  }
+
+  if (p === "divebooker") {
+    if (isHomepage(url, "divebooker.com") && q) return divebookerSearchFor(q);
+    return setParam(url, "ref", DIVEBOOKER_PID);
+  }
+
+  if (p === "scubapro") {
+    if (isHomepage(url, "scubapro.com") && q) return scubaproSearchFor(q);
+    return setParam(url, "aid", SCUBAPRO_AID);
+  }
+
+  if (p.startsWith("bluewater")) {
+    if (isHomepage(url, "bluewaterdivetravel.com") && q) return bluewaterSearchFor(q);
+    return url;
+  }
+
+  if (p === "padi travel" || p === "padi") {
+    if (isHomepage(url, "padi.com", "travel.padi.com") && q) return padiSearchFor(q);
+    return setParam(url, "partner", PADI_PARTNER);
+  }
+
+  if (p === "skyscanner") {
+    return setParam(url, "marker", TRAVELPAYOUTS_AID);
+  }
+
+  // Amazon — always rewrite to search with tag if hitting a homepage.
+  if (p === "amazon" || isAmazon(url)) {
+    if (isHomepage(url, "amazon.com") && q) return amazonSearchFor(q);
+    return setParam(url, "tag", AMAZON_TAG);
+  }
+
+  if (p === "booking.com" || p === "booking") {
+    if (isHomepage(url, "booking.com") && q) return bookingSearchFor(q);
+    return setParams(url, { aid: BOOKING_AID, label: "scubaseason" });
+  }
+
+  if (p === "direct") return url;
+
+  return url;
+}
+
+// Public builder helpers (kept for explicit callers).
+export const bookingSearchUrl = bookingSearchFor;
+export const amazonSearchUrl = amazonSearchFor;
+
 export function amazonProductUrl(asin: string): string {
   const u = new URL(`https://www.amazon.com/dp/${asin}`);
   if (AMAZON_TAG) u.searchParams.set("tag", AMAZON_TAG);
   return u.toString();
 }
 
-// Returns which partner programs have IDs configured. Useful for the
-// /about disclosure page and for debug.
 export const configuredPartners = {
   amazon: Boolean(AMAZON_TAG),
   booking: Boolean(BOOKING_AID),
