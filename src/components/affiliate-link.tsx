@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { enhanceAffiliateUrl } from "@/lib/affiliate";
 
 type AffiliateEvent =
   | "gear_click"
@@ -29,6 +30,8 @@ export function AffiliateLink({
   className,
   children,
 }: Props) {
+  const taggedUrl = isAffiliate ? enhanceAffiliateUrl(url, partner) : url;
+
   const handleClick = () => {
     if (typeof window === "undefined") return;
     const win = window as unknown as {
@@ -39,7 +42,7 @@ export function AffiliateLink({
 
   return (
     <a
-      href={url}
+      href={taggedUrl}
       target="_blank"
       rel={isAffiliate ? "nofollow sponsored noopener" : "nofollow noopener"}
       onClick={handleClick}
