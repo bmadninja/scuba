@@ -2,6 +2,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { AffiliateLink } from "@/components/affiliate-link";
+import { JsonLd } from "@/components/json-ld";
+import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
 import { getGearById } from "@/lib/data/gear";
@@ -25,9 +27,25 @@ export async function generateMetadata({
   const site = getSiteBySlug(slug);
   if (!site) return { title: "Dive site not found" };
   const location = getLocationById(site.locationId);
+  const title = `${site.name} — ${location?.name ?? ""}`;
+  const description = site.description.slice(0, 160);
   return {
-    title: `${site.name} — ${location?.name ?? ""} | scubaSeason.fun`,
-    description: site.description.slice(0, 160),
+    title,
+    description,
+    alternates: { canonical: `/sites/${site.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `/sites/${site.slug}`,
+      type: "article",
+      images: site.heroImageUrl ? [{ url: site.heroImageUrl, width: 2000, height: 1100 }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: site.heroImageUrl ? [site.heroImageUrl] : undefined,
+    },
   };
 }
 
@@ -64,6 +82,7 @@ export default async function SiteDetailPage({
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      <JsonLd data={siteSchema(site, location)} />
       {/* Photo hero */}
       <section className="relative h-[58vh] min-h-[420px] w-full overflow-hidden">
         <Image

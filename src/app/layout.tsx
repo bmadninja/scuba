@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
+import { JsonLd } from "@/components/json-ld";
+import { organizationSchema, websiteSchema } from "@/lib/schema-org";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
 
 const notoSans = Noto_Sans({
   variable: "--font-sans",
@@ -9,9 +12,20 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "scubaSeason.fun — research-grade dive trip planning",
-  description:
-    "Find dive sites by species, season, conditions, and skill level. Plan the trip end-to-end.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — research-grade dive trip planning`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    siteName: SITE_NAME,
+    type: "website",
+    url: SITE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +36,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${notoSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-white text-slate-900">
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={websiteSchema()} />
         {children}
       </body>
     </html>

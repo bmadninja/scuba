@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { locationSchema } from "@/lib/schema-org";
 import { getAllLocations, getLocationBySlug } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
 
@@ -16,9 +18,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const location = getLocationBySlug(slug);
   if (!location) return { title: "Location not found" };
+  const title = `${location.name}, ${location.country}`;
+  const description = location.description.slice(0, 160);
   return {
-    title: `${location.name}, ${location.country} | scubaSeason.fun`,
-    description: location.description.slice(0, 160),
+    title,
+    description,
+    alternates: { canonical: `/locations/${location.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `/locations/${location.slug}`,
+      type: "article",
+      images: location.heroImageUrl ? [{ url: location.heroImageUrl }] : undefined,
+    },
   };
 }
 
@@ -35,6 +47,7 @@ export default async function LocationPage({
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      <JsonLd data={locationSchema(location, sites.length)} />
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2">
