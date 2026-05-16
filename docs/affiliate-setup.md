@@ -32,7 +32,7 @@ To verify locally before deploying, drop the value into `.env.local` and reload 
 | **Booking.com** (via CJ Affiliate) | TODO — CAPTCHA blocked | https://public.cj.com/signup/publisher | `NEXT_PUBLIC_BOOKING_AID` | `?aid=` + `&label=scubaseason` |
 | **PADI Travel** | Account created — affiliate status unclear | https://travel.padi.com/affiliates | `NEXT_PUBLIC_PADI_PARTNER` | `?partner=` |
 | **Liveaboard.com** | Application submitted, awaiting approval | — | `NEXT_PUBLIC_LIVEABOARD_AID` | `?partnerid=` |
-| **DiveBooker** (180-day cookie) | Application submitted | — | `NEXT_PUBLIC_DIVEBOOKER_PID` | `?ref=` |
+| **DiveBooker** (180-day cookie) | ✅ Approved 2026-05-15, ID `645` | — | `NEXT_PUBLIC_DIVEBOOKER_PID` | `?afid=` |
 | **SCUBAPRO** (10% gear commission) | TODO | https://scubapro.johnsonoutdoors.com/us/affiliate-program | `NEXT_PUBLIC_SCUBAPRO_AID` | `?aid=` |
 | **Bluewater Travel** | Agency — no programmatic affiliate | — | none | pass-through |
 

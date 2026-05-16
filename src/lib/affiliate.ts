@@ -115,7 +115,7 @@ function bluewaterSearchFor(query: string): string {
 function divebookerSearchFor(query: string): string {
   const u = new URL("https://www.divebooker.com/search");
   u.searchParams.set("q", query);
-  if (DIVEBOOKER_PID) u.searchParams.set("ref", DIVEBOOKER_PID);
+  if (DIVEBOOKER_PID) u.searchParams.set("afid", DIVEBOOKER_PID);
   return u.toString();
 }
 
@@ -148,7 +148,7 @@ export function enhanceAffiliateUrl(
 
   if (p === "divebooker") {
     if (isHomepage(url, "divebooker.com") && q) return divebookerSearchFor(q);
-    return setParam(url, "ref", DIVEBOOKER_PID);
+    return setParam(url, "afid", DIVEBOOKER_PID);
   }
 
   if (p === "scubapro") {
