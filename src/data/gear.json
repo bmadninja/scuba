@@ -3,10 +3,27 @@
     "id": "wetsuit-tropical",
     "name": "Wetsuit",
     "category": "wetsuit",
-    "levels": ["never-dived", "open-water", "advanced", "rescue", "divemaster", "tech"],
+    "levels": [
+      "never-dived",
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
     "description": "Full wetsuit for warm-to-temperate diving. Pick thickness based on the destination — Tier B notes flag the cold-water exceptions.",
-    "priceRangeUsd": { "min": 200, "max": 400 },
-    "partners": [{ "partner": "scuba-com", "productId": "TBD", "url": "https://www.scuba.com/", "commission": 8 }]
+    "priceRangeUsd": {
+      "min": 200,
+      "max": 400
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "TBD",
+        "url": "https://www.amazon.com/",
+        "commission": 4
+      }
+    ]
   },
   {
     "id": "mask-cressi-f1",
@@ -73,10 +90,10 @@
     },
     "partners": [
       {
-        "partner": "scuba-com",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.scuba.com/",
-        "commission": 8
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -96,10 +113,10 @@
     },
     "partners": [
       {
-        "partner": "leisure-pro",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.leisurepro.com/",
-        "commission": 6
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -120,10 +137,10 @@
     },
     "partners": [
       {
-        "partner": "divers-direct",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.diversdirect.com/",
-        "commission": 7
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -144,10 +161,10 @@
     },
     "partners": [
       {
-        "partner": "scuba-com",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.scuba.com/",
-        "commission": 8
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -168,10 +185,10 @@
     },
     "partners": [
       {
-        "partner": "dgx",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.divegearexpress.com/",
-        "commission": 5
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -192,10 +209,10 @@
     },
     "partners": [
       {
-        "partner": "leisure-pro",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.leisurepro.com/",
-        "commission": 6
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -217,10 +234,10 @@
     },
     "partners": [
       {
-        "partner": "dgx",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.divegearexpress.com/",
-        "commission": 5
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -241,10 +258,10 @@
     },
     "partners": [
       {
-        "partner": "dgx",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.divegearexpress.com/",
-        "commission": 5
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -265,10 +282,10 @@
     },
     "partners": [
       {
-        "partner": "dgx",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.divegearexpress.com/",
-        "commission": 5
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -289,10 +306,10 @@
     },
     "partners": [
       {
-        "partner": "dgx",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.divegearexpress.com/",
-        "commission": 5
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -314,10 +331,10 @@
     },
     "partners": [
       {
-        "partner": "scuba-com",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.scuba.com/",
-        "commission": 8
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -338,10 +355,10 @@
     },
     "partners": [
       {
-        "partner": "dgx",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.divegearexpress.com/",
-        "commission": 5
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -385,10 +402,10 @@
     },
     "partners": [
       {
-        "partner": "leisure-pro",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.leisurepro.com/",
-        "commission": 6
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
@@ -455,10 +472,10 @@
     },
     "partners": [
       {
-        "partner": "dgx",
+        "partner": "amazon",
         "productId": "TBD",
-        "url": "https://www.divegearexpress.com/",
-        "commission": 5
+        "url": "https://www.amazon.com/",
+        "commission": 4
       }
     ]
   },
