@@ -49,14 +49,14 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-[#f1f7fb] to-white">
         <div className="mx-auto w-full max-w-6xl px-6 pt-14 pb-8 text-center">
           <span className="inline-block rounded-full bg-[#e8f0fe] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1d5d90]">
-            Research-grade dive trip planning
+            Dive smarter. Travel further.
           </span>
           <h1 className="mx-auto mt-5 max-w-3xl text-[clamp(2.25rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-tight text-slate-900">
-            Find the right dive site for the right month.
+            The ocean&rsquo;s in season somewhere.
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Filter by species, season, conditions and skill — then plan the trip end-to-end
-            with operators, lodging and gear we&rsquo;d actually recommend.
+            Pick a month. We&rsquo;ll show you where the water&rsquo;s warm, the viz is wide,
+            and the big animals are showing up.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function Home() {
               In season this month · {monthName}
             </p>
             <h2 className="mt-1 text-3xl font-bold tracking-tight text-slate-900">
-              Where to dive right now
+              Book the flight this week.
             </h2>
           </div>
           <Link
