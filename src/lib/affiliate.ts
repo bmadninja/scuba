@@ -166,10 +166,6 @@ export function enhanceAffiliateUrl(
     return setParam(url, "partner", PADI_PARTNER);
   }
 
-  if (p === "skyscanner") {
-    return setParam(url, "marker", TRAVELPAYOUTS_AID);
-  }
-
   // Amazon — always rewrite to search with tag if hitting a homepage.
   if (p === "amazon" || isAmazon(url)) {
     if (isHomepage(url, "amazon.com") && q) return amazonSearchFor(q);

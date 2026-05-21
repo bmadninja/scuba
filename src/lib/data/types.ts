@@ -100,7 +100,7 @@ export type Site = {
   bestMonths: number[];
   editorialRank: number;
   heroImageUrl?: string;
-  getThere: PartnerLink[];
+  getThere: string;
   lodging: PartnerLink[];
   operators: PartnerLink[];
   gearIds: string[];
@@ -115,12 +115,16 @@ export type GearPartner = {
   commission: number;
 };
 
+export type GearTier = "basic" | "addon";
+
 export type Gear = {
   id: string;
   name: string;
   category: GearCategory;
+  tier: GearTier;
   levels: SkillLevel[];
   description: string;
   priceRangeUsd: { min: number; max: number };
   partners: GearPartner[];
+  imageUrl?: string | null;
 };

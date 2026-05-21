@@ -42,8 +42,8 @@ export default function AboutPage() {
           <p>
             scubaSeason.fun is a research tool for divers. We map signature dive
             sites against the conditions and species that actually matter — water
-            temperature, visibility, current, what's there and when — so you can
-            choose where to dive based on what you want to see, not just where's
+            temperature, visibility, current, what&rsquo;s there and when — so you can
+            choose where to dive based on what you want to see, not just where&rsquo;s
             cheapest this month.
           </p>
           <p>
@@ -98,7 +98,6 @@ export default function AboutPage() {
             <li>Amazon Associates (gear)</li>
             <li>Booking.com Partner Hub (lodging)</li>
             <li>PADI Travel Affiliate Program (operators, resorts, liveaboards)</li>
-            <li>Travelpayouts (flights via Skyscanner)</li>
             <li>Liveaboard.com / LiveaboardBookings.com</li>
             <li>DiveBooker</li>
             <li>SCUBAPRO Affiliate Program</li>

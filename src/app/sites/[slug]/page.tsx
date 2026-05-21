@@ -2,11 +2,12 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { AffiliateLink } from "@/components/affiliate-link";
+import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import { JsonLd } from "@/components/json-ld";
 import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
-import { getGearById } from "@/lib/data/gear";
+import { getAllGear, getGearById } from "@/lib/data/gear";
 import type {
   ConditionsMonth,
   PartnerLink,
@@ -262,13 +263,15 @@ export default async function SiteDetailPage({
                 </h2>
               </div>
 
-              <PartnerBlock
-                heading="Getting there"
-                icon="✈"
-                links={site.getThere}
-                event="flight_click"
-                siteId={site.id}
-              />
+              <div>
+                <p className="flex items-center gap-2 text-sm font-bold text-slate-900">
+                  <span className="text-base">✈</span>
+                  Getting there
+                </p>
+                <p className="mt-2.5 text-sm leading-relaxed text-slate-700">
+                  {site.getThere}
+                </p>
+              </div>
               <PartnerBlock
                 heading="Where to stay"
                 icon="🏨"
@@ -285,6 +288,7 @@ export default async function SiteDetailPage({
               />
 
               </div>
+            <AffiliateDisclosure />
           </aside>
         </div>
       </main>
@@ -387,76 +391,125 @@ function PartnerBlock({
   );
 }
 
+const BASIC_CATEGORIES = ["mask", "wetsuit", "bcd", "regulator", "fins", "computer"] as const;
+const CATEGORY_NAME: Record<string, string> = {
+  mask: "Mask",
+  wetsuit: "Wetsuit",
+  bcd: "BCD",
+  regulator: "Regulator",
+  fins: "Fins",
+  computer: "Dive computer",
+  snorkel: "Snorkel",
+  boots: "Boots",
+  drysuit: "Drysuit",
+  light: "Dive light",
+  "reel-smb": "SMB & reel",
+  "reef-hook": "Reef hook",
+  gloves: "Gloves",
+  hood: "Hood",
+  bag: "Dive bag",
+  specialty: "Specialty",
+};
+const CATEGORY_ICON: Record<string, string> = {
+  mask: "🥽",
+  wetsuit: "🧥",
+  bcd: "🎒",
+  regulator: "🫁",
+  fins: "🦶",
+  computer: "⌚",
+  snorkel: "🤿",
+  boots: "👟",
+  drysuit: "🧥",
+  light: "🔦",
+  "reel-smb": "🎈",
+  "reef-hook": "⚓",
+  gloves: "🧤",
+  hood: "🪖",
+  bag: "🧳",
+  specialty: "🛠️",
+};
+
 function GearSection({ site }: { site: Site }) {
-  const baseKit = site.gearIds
-    .map((id) => getGearById(id))
-    .filter((g): g is NonNullable<ReturnType<typeof getGearById>> => g !== null);
+  const basics = BASIC_CATEGORIES.map((cat) =>
+    getAllGear().find((g) => g.tier === "basic" && g.category === cat),
+  ).filter((g): g is NonNullable<ReturnType<typeof getGearById>> => Boolean(g));
+
+  const addOns = site.siteSpecificGear;
 
   return (
-    <Section title="Gear" kicker="Tier A: base kit · Tier B: site-specific">
-      <div className="space-y-8">
-        {baseKit.length ? (
-          <div>
-            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-              Tier A — Base kit
-            </p>
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {baseKit.map((g) => (
-                <li
-                  key={g.id}
-                  className="group rounded-xl border border-slate-200 bg-white p-4 transition hover:border-[#0089de]/50 hover:shadow-sm"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <div className="font-semibold text-slate-900">{g.name}</div>
-                      <div className="text-xs capitalize text-slate-500">
-                        {g.category.replace("-", " ")}
-                      </div>
-                    </div>
-                    <div className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-700">
-                      ${g.priceRangeUsd.min}–${g.priceRangeUsd.max}
-                    </div>
-                  </div>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{g.description}</p>
-                  {g.partners[0] ? (
+    <Section title="Gear" kicker="What to bring">
+      <div className="space-y-6">
+        <div>
+          <p className="mb-3 text-sm font-semibold text-slate-900">Basic kit</p>
+          <ul className="space-y-2">
+            {basics.map((g) => {
+              const partner = g.partners[0];
+              const label = CATEGORY_NAME[g.category] ?? g.category;
+              const icon = CATEGORY_ICON[g.category] ?? "•";
+              return (
+                <li key={g.id} className="flex items-center gap-2 text-sm leading-6 text-slate-700">
+                  <span aria-hidden className="text-lg">{icon}</span>
+                  {partner ? (
                     <AffiliateLink
-                      url={g.partners[0].url}
+                      url={partner.url}
                       event="gear_click"
-                      partner={g.partners[0].partner}
-                      query={g.name}
-                      productId={g.partners[0].productId}
+                      partner={partner.partner}
+                      productId={partner.productId || undefined}
                       siteId={site.id}
                       isAffiliate={true}
-                      className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#0089de] transition hover:text-[#1d5d90]"
+                      className="font-semibold text-[#0089de] underline decoration-[#0089de]/30 underline-offset-2 hover:decoration-[#0089de]"
                     >
-                      Shop on Amazon
-                      <span className="transition group-hover:translate-x-0.5">→</span>
+                      {label}
                     </AffiliateLink>
-                  ) : null}
+                  ) : (
+                    <span className="font-semibold text-slate-900">{label}</span>
+                  )}
                 </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-
-        <div>
-          <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700">
-            Tier B — Site-specific extras
-          </p>
-          <ul className="space-y-2">
-            {site.siteSpecificGear.map((item) => (
-              <li
-                key={item.name}
-                className="rounded-xl border-l-4 border-amber-400 bg-amber-50 px-4 py-3"
-              >
-                <div className="font-semibold text-amber-900">{item.name}</div>
-                <div className="mt-1 text-sm leading-6 text-amber-900/80">
-                  {item.reason}
-                </div>
-              </li>
-            ))}
+              );
+            })}
           </ul>
         </div>
+
+        {addOns.length > 0 && (
+          <div>
+            <p className="mb-3 text-sm font-semibold text-slate-900">
+              Add-ons for this site
+            </p>
+            <ul className="space-y-2">
+              {addOns.map((item) => {
+                const gear = item.gearId ? getGearById(item.gearId) : undefined;
+                const partner = gear?.partners[0];
+                const label =
+                  (gear && CATEGORY_NAME[gear.category]) ?? item.name;
+                const icon =
+                  (gear && CATEGORY_ICON[gear.category]) ?? "•";
+                return (
+                  <li key={item.name} className="flex gap-2 text-sm leading-6 text-slate-700">
+                    <span aria-hidden className="text-lg leading-6">{icon}</span>
+                    <span>
+                      {partner ? (
+                        <AffiliateLink
+                          url={partner.url}
+                          event="gear_click"
+                          partner={partner.partner}
+                          productId={partner.productId || undefined}
+                          siteId={site.id}
+                          isAffiliate={true}
+                          className="font-semibold text-[#0089de] underline decoration-[#0089de]/30 underline-offset-2 hover:decoration-[#0089de]"
+                        >
+                          {label}
+                        </AffiliateLink>
+                      ) : (
+                        <span className="font-semibold text-slate-900">{label}</span>
+                      )}
+                      <span className="text-slate-600"> — {item.reason}</span>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
       </div>
     </Section>
   );

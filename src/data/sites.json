@@ -244,7 +244,7 @@
       {
         "name": "Reef hook",
         "reason": "Current rips around the cape — hooking in is the only way to watch the schooling action.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "SMB + reel",
@@ -496,7 +496,7 @@
       {
         "name": "Reef hook",
         "reason": "Top of the seamount is exposed to ripping current.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "SMB + reel",
@@ -1439,12 +1439,12 @@
       {
         "name": "Temperate-grade wetsuit",
         "reason": "Thermocline drops to 19°C at depth even in season.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Reef hook",
         "reason": "Standard procedure: hook in at the up-current edge of the seamount.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "Nitrox certification",
@@ -1945,16 +1945,17 @@
       {
         "name": "Coldwater wetsuit + hood",
         "reason": "Humboldt upwellings drop temp to 19°C in season — third dive of the day is the cold one.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Reef hook",
         "reason": "Hooking is the only way to hold the line while hammerheads pass.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "Nautilus Lifeline or PLB",
-        "reason": "Surface separations have happened here. PLB is standard kit."
+        "reason": "Surface separations have happened here. PLB is standard kit.",
+        "gearId": "plb-acr-resqlink"
       }
     ]
   },
@@ -2696,7 +2697,7 @@
       {
         "name": "Reef hook",
         "reason": "Currents at the top of the thila are strong enough that hooking in is the only way to hold position.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "SMB + reel",
@@ -3178,7 +3179,8 @@
     "siteSpecificGear": [
       {
         "name": "Camera (wide-angle)",
-        "reason": "Mantas can be close enough to fill the frame. Strobes optional in clear water."
+        "reason": "Mantas can be close enough to fill the frame. Strobes optional in clear water.",
+        "gearId": "camera-gopro"
       }
     ],
     "notes": "Liveaboard south-circuit stop. Day boats from Labuan Bajo rarely make it this far."
@@ -3422,7 +3424,7 @@
       {
         "name": "Reef hook",
         "reason": "Top of the rock is exposed to ripping current — hooking in is the only way to watch the action.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "SMB + reel",
@@ -3708,7 +3710,8 @@
       },
       {
         "name": "Wide-angle camera or GoPro",
-        "reason": "Mantas pass close enough that a standard phone case rarely captures the scale."
+        "reason": "Mantas pass close enough that a standard phone case rarely captures the scale.",
+        "gearId": "camera-gopro"
       }
     ],
     "notes": "Cleaning activity peaks at outgoing tide. Operators usually time the dive accordingly."
@@ -3973,12 +3976,12 @@
       {
         "name": "Reef hook with lanyard",
         "reason": "Current can pin you to the wall — hooking onto dead reef saves air and posture.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "Heavier wetsuit (mid-year)",
         "reason": "Southern Komodo upwellings drop the water temperature sharply in June–September. Layer up.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "SMB + reel",
@@ -4258,16 +4261,17 @@
       {
         "name": "Coldwater wetsuit + hooded vest",
         "reason": "Cold Humboldt upwellings — hypothermia risk on the third dive of the day if you're under-suited.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Reef hook with safety lanyard",
         "reason": "Standard procedure: hook into rock, watch hammerheads parade past at safe distance.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "Nautilus Lifeline or PLB",
-        "reason": "Surface currents have separated divers from boats here. Personal beacon is essential."
+        "reason": "Surface currents have separated divers from boats here. Personal beacon is essential.",
+        "gearId": "plb-acr-resqlink"
       },
       {
         "name": "Air-integrated dive computer",
@@ -5705,7 +5709,7 @@
       {
         "name": "Reef hook",
         "reason": "Useful when current picks up at the ridge.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ],
     "notes": "Marine park fees apply; remote location requires liveaboard or multi-day boat charter."
@@ -6416,7 +6420,8 @@
     "siteSpecificGear": [
       {
         "name": "Wide-angle camera setup",
-        "reason": "Sardine ball at 10 m demands a wide angle to capture scale."
+        "reason": "Sardine ball at 10 m demands a wide angle to capture scale.",
+        "gearId": "camera-gopro"
       }
     ]
   },
@@ -6892,7 +6897,8 @@
     "siteSpecificGear": [
       {
         "name": "Macro lens",
-        "reason": "Best dive in the park for small soft-coral critters."
+        "reason": "Best dive in the park for small soft-coral critters.",
+        "gearId": "camera-om-tg7"
       }
     ]
   },
@@ -7630,7 +7636,7 @@
       {
         "name": "Reef hook",
         "reason": "Hook in on up-current side to watch the action without finning.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ],
     "notes": "Liveaboard-only access; closed mid-May to mid-October."
@@ -8583,7 +8589,7 @@
       {
         "name": "Reef hook",
         "reason": "Corner currents will sweep you off the wall.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ]
   },
@@ -8824,7 +8830,7 @@
       {
         "name": "Reef hook",
         "reason": "Plateau is exposed; hooking in beats fighting current.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "SMB",
@@ -9536,7 +9542,7 @@
       {
         "name": "Reef hook",
         "reason": "Standard procedure on the up-current side.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ]
   },
@@ -9777,7 +9783,7 @@
       {
         "name": "Dark wetsuit",
         "reason": "Avoid bright colors and contrast on a baited shark dive.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ],
     "notes": "Operator-controlled feed; stay behind the rope line at all times."
@@ -10250,7 +10256,7 @@
       {
         "name": "Reef hook",
         "reason": "Once on the wall, hook in and watch the corals open.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "SMB",
@@ -10491,7 +10497,7 @@
       {
         "name": "Reef hook",
         "reason": "Current is the price of admission.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ]
   },
@@ -10740,7 +10746,7 @@
       {
         "name": "Reef hook",
         "reason": "For watching the channel mouth action while the current screams past.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ],
     "notes": "Operators run the pass only on incoming tide. Check the tide table when booking."
@@ -10985,7 +10991,7 @@
       {
         "name": "Reef hook",
         "reason": "Hook in mid-channel and watch hundreds of sharks stream past.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ],
     "notes": "Grouper spawning in late June/early July is one of the world's most concentrated shark gatherings."
@@ -13362,7 +13368,8 @@
     "siteSpecificGear": [
       {
         "name": "Macro camera",
-        "reason": "Garden eel and spotted drum colonies reward a long lens."
+        "reason": "Garden eel and spotted drum colonies reward a long lens.",
+        "gearId": "camera-om-tg7"
       }
     ]
   },
@@ -15020,12 +15027,12 @@
       {
         "name": "Temperate wetsuit",
         "reason": "Thermoclines drop sharply on the seamount.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Reef hook",
         "reason": "Hooking in at the up-current edge keeps you on the cleaning station.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ]
   },
@@ -15259,7 +15266,7 @@
       {
         "name": "Temperate wetsuit",
         "reason": "Pacific upwellings drop temps mid-dive.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -17151,7 +17158,8 @@
     "siteSpecificGear": [
       {
         "name": "Chain-mail glove or dark gloves",
-        "reason": "Operators issue dark-color gloves for the feed — bare skin attracts attention."
+        "reason": "Operators issue dark-color gloves for the feed — bare skin attracts attention.",
+        "gearId": "gloves-dark-shark"
       },
       {
         "name": "Surface marker buoy",
@@ -17624,7 +17632,8 @@
     "siteSpecificGear": [
       {
         "name": "Dark-color gloves",
-        "reason": "Standard advice on baited shark sites."
+        "reason": "Standard advice on baited shark sites.",
+        "gearId": "gloves-dark-shark"
       }
     ]
   },
@@ -18572,7 +18581,8 @@
     "siteSpecificGear": [
       {
         "name": "Underwater camera",
-        "reason": "Iconic photo subject — even smartphone housings deliver here."
+        "reason": "Iconic photo subject — even smartphone housings deliver here.",
+        "gearId": "camera-gopro"
       }
     ]
   },
@@ -18810,7 +18820,7 @@
       {
         "name": "Temperate wetsuit",
         "reason": "Hawaii water is cooler than Caribbean — night dive amplifies it.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -19281,7 +19291,8 @@
     "siteSpecificGear": [
       {
         "name": "Dark-color gloves",
-        "reason": "Shark-density site — standard advice."
+        "reason": "Shark-density site — standard advice.",
+        "gearId": "gloves-dark-shark"
       },
       {
         "name": "Dive computer",
@@ -20480,7 +20491,8 @@
     "siteSpecificGear": [
       {
         "name": "Macro camera",
-        "reason": "Macro-rich sand channels reward close-focus optics."
+        "reason": "Macro-rich sand channels reward close-focus optics.",
+        "gearId": "camera-om-tg7"
       }
     ]
   },
@@ -20715,11 +20727,13 @@
     "siteSpecificGear": [
       {
         "name": "Freediving fins",
-        "reason": "Long blades close the gap on a moving whale faster than scuba fins."
+        "reason": "Long blades close the gap on a moving whale faster than scuba fins.",
+        "gearId": "fins-cressi-gara-freediving"
       },
       {
         "name": "Underwater camera",
-        "reason": "Bucket-list footage opportunity — wide-angle preferred."
+        "reason": "Bucket-list footage opportunity — wide-angle preferred.",
+        "gearId": "camera-gopro"
       }
     ],
     "notes": "Snorkel-only sanctuary, January through April only. Permit limits keep boat numbers tight."
@@ -21189,7 +21203,7 @@
       {
         "name": "Reef hook",
         "reason": "Hooking onto barren rock in the channel keeps you positioned for shark traffic.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "SMB",
@@ -21435,7 +21449,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter water dips to 20C — tropical suits not warm enough Dec-Mar.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "SMB",
@@ -21673,7 +21687,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter Red Sea drops below 22C.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -22620,7 +22634,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter water in the Gulf of Aqaba sits in the high teens.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -23573,7 +23587,7 @@
       {
         "name": "Reef hook",
         "reason": "Strong current on top of the bank — hooking in is the only way to stay put.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       },
       {
         "name": "SMB",
@@ -23822,7 +23836,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Mozambique winter (Jun-Aug) drops water below 23C.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "SMB",
@@ -24064,7 +24078,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter dives sit at 21-22C — tropical suit insufficient.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Computer",
@@ -24321,7 +24335,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter shark season sits at 18-20C.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Hood",
@@ -24573,7 +24587,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Cold winter water.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -24815,7 +24829,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter water cools below 23C.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -25051,7 +25065,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter water dips into the low 20s.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -25755,7 +25769,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Mediterranean water cold half the year — 14-19C is the norm outside high summer.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Dive light",
@@ -25990,7 +26004,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Cold Mediterranean outside high summer.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -26224,7 +26238,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Cold water majority of year; deep wreck colder still.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -26698,7 +26712,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Adriatic stays cool even in summer at depth.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -26933,7 +26947,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Mediterranean water cold most of the year.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Hood",
@@ -27186,7 +27200,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Open Atlantic stays cool even in summer.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "SMB",
@@ -27429,7 +27443,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Atlantic temperatures even in peak season.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "SMB",
@@ -28155,7 +28169,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter water dips into low 20s; long dives chill you fast.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ],
     "notes": "Access is permit-only via Dive Ningaloo; book months ahead."
@@ -28410,7 +28424,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Winter water drops to 18C — tropical suit insufficient.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       }
     ]
   },
@@ -28640,7 +28654,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "New Zealand water is cool — 14-22C year-round.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Dive light",
@@ -28886,7 +28900,7 @@
       {
         "name": "5mm wetsuit",
         "reason": "Cool subtropical water year-round.",
-        "gearId": "wetsuit-aqualung-aquaflex-5mm"
+        "gearId": "wetsuit-bare-5mm-full"
       },
       {
         "name": "Hood",
@@ -29838,7 +29852,7 @@
       {
         "name": "Reef hook",
         "reason": "Stay positioned at cleaning station without damaging coral.",
-        "gearId": "reef-hook-dive-rite"
+        "gearId": "reef-hook-innovative"
       }
     ]
   },
