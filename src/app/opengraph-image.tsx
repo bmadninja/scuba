@@ -22,21 +22,7 @@ export default function OG() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 72,
-              height: 72,
-              borderRadius: 16,
-              background: "rgba(255,255,255,0.15)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 48,
-            }}
-          >
-            🌊
-          </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <div style={{ fontSize: 36, fontWeight: 700, letterSpacing: -0.5 }}>
             {SITE_NAME}
           </div>
