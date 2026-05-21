@@ -13,9 +13,6 @@ export default function AboutPage() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-[#0089de] text-white">
-              <span className="text-lg">🌊</span>
-            </span>
             <span className="text-lg font-bold tracking-tight text-slate-900">
               scubaSeason<span className="text-[#0089de]">.fun</span>
             </span>
@@ -40,93 +37,60 @@ export default function AboutPage() {
         </h1>
         <div className="mt-6 space-y-5 text-base leading-7 text-slate-700">
           <p>
-            scubaSeason.fun is a research tool for divers. We map signature dive
-            sites against the conditions and species that actually matter — water
-            temperature, visibility, current, what&rsquo;s there and when — so you can
-            choose where to dive based on what you want to see, not just where&rsquo;s
-            cheapest this month.
+            This site was born out of love for the ocean, and honestly a fair
+            amount of frustration too. Dive site information online is
+            scattered all over the place, bits in old forum threads, bits in
+            operator brochures, bits buried in trip reports from a decade ago,
+            and a lot of it is either out of date or just plain wrong. When
+            you&rsquo;re trying to plan a trip around what you actually want
+            to see underwater, that is a really hard place to start from.
           </p>
           <p>
-            We&rsquo;re built for the full range: from divers planning their first
-            open-water trip to advanced divers chasing specific species. Tell us
-            your cert and last-dive recency, and the site adapts.
+            I&rsquo;ve been bamboozled one too many times. I&rsquo;ve booked
+            trips chasing species that hadn&rsquo;t been spotted in years, I
+            have shown up in the wrong season for the thing I came for, and
+            I have paid good money for dives that weren&rsquo;t close to what
+            was advertised on the website. Every time it happens it&rsquo;s a
+            small heartbreak, and after enough of them I started to think
+            other divers probably feel the same way, and that maybe this
+            doesn&rsquo;t have to keep happening.
+          </p>
+          <p>
+            So this is a public search and citizen science site. The goal is
+            pretty simple, keep dive site information as fresh and honest as
+            possible, in one place, so the next person planning a trip
+            doesn&rsquo;t end up bamboozled the way I did.
+          </p>
+          <p>
+            It is very much ongoing work, and right now it is being built by
+            one person, me, with a lot of help from Squish, my OpenClaw, and
+            a handful of other AI tools picking up the slack wherever they
+            can.
           </p>
         </div>
 
         <h2 className="mt-12 text-2xl font-bold tracking-tight text-slate-900">
-          Editorial principles
+          where this is going
         </h2>
-        <ul className="mt-4 space-y-3 text-slate-700">
-          <li className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <strong className="font-semibold text-slate-900">
-              Editorial ranking is independent of affiliate revenue.
-            </strong>{" "}
-            We pick the dive sites and operators we&rsquo;d recommend regardless
-            of whether the link earns a commission. If we&rsquo;d send a friend
-            there, it&rsquo;s in.
-          </li>
-          <li className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <strong className="font-semibold text-slate-900">
-              We mark non-affiliate links as &ldquo;Link&rdquo; and partner links as
-              &ldquo;Partner&rdquo;.
-            </strong>{" "}
-            If the best operator for a site isn&rsquo;t on any affiliate program,
-            we link to them anyway — directly, with no tracking.
-          </li>
-          <li className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <strong className="font-semibold text-slate-900">
-              Gear recommendations are site-specific.
-            </strong>{" "}
-            A reef hook on a calm cleaning station is a waste of money. A 5mm
-            wetsuit on a Komodo upwelling dive isn&rsquo;t optional. We try to
-            match the gear to the actual dive.
-          </li>
-        </ul>
+        <p className="mt-4 text-base leading-7 text-slate-700">
+          Longer term, I want this site to be useful beyond just trip
+          planning. The hope is that the information and observations
+          collected here can support research, conservation, and the wider
+          climate work happening around our oceans. There&rsquo;s a lot of
+          ground to cover, and I&rsquo;ll be continuously rolling out
+          features and updates as things take shape.
+        </p>
 
-        <h2 id="affiliate-disclosure" className="mt-12 text-2xl font-bold tracking-tight text-slate-900">
-          Affiliate disclosure
-        </h2>
-        <div className="mt-4 space-y-4 text-slate-700">
-          <p>
-            scubaSeason.fun participates in several affiliate programs. When you
-            click a partner link on this site and complete a booking or purchase,
-            we may earn a commission at no extra cost to you. This helps fund
-            the site&rsquo;s ongoing research and data curation.
-          </p>
-          <p>The programs we participate in include:</p>
-          <ul className="ml-5 list-disc space-y-1.5 text-slate-700">
-            <li>Amazon Associates (gear)</li>
-            <li>Booking.com Partner Hub (lodging)</li>
-            <li>PADI Travel Affiliate Program (operators, resorts, liveaboards)</li>
-            <li>Liveaboard.com / LiveaboardBookings.com</li>
-            <li>DiveBooker</li>
-            <li>SCUBAPRO Affiliate Program</li>
-          </ul>
-          <p>
-            Affiliate participation does not influence our editorial picks. If
-            you&rsquo;d like to support the site, using our partner links is the
-            most direct way. Thank you.
-          </p>
-        </div>
-
-        <h2 className="mt-12 text-2xl font-bold tracking-tight text-slate-900">
-          Contact
-        </h2>
-        <p className="mt-4 text-slate-700">
-          Found an error? Want to suggest a dive site, operator, or correction?
-          Email{" "}
+        <p className="mt-10 text-base leading-7 text-slate-700">
+          Quick note, there are some affiliate links scattered across the
+          site, and anything they earn goes straight back into R&amp;D for
+          this thing. Would absolutely love to hear feedback, good, bad,
+          weird, half formed, all of it, at{" "}
           <a
             href="mailto:hi@scubaseason.fun"
             className="font-semibold text-[#0089de] hover:underline"
           >
             hi@scubaseason.fun
-          </a>
-          . For affiliate or partnership inquiries:{" "}
-          <a
-            href="mailto:affiliate@scubaseason.fun"
-            className="font-semibold text-[#0089de] hover:underline"
-          >
-            affiliate@scubaseason.fun
           </a>
           .
         </p>

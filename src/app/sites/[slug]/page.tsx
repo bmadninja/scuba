@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { AffiliateLink } from "@/components/affiliate-link";
@@ -84,6 +85,23 @@ export default async function SiteDetailPage({
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <JsonLd data={siteSchema(site, location)} />
+      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-lg font-bold tracking-tight text-slate-900">
+              scubaSeason<span className="text-[#0089de]">.fun</span>
+            </span>
+          </Link>
+          <nav className="hidden gap-6 text-sm font-medium text-slate-700 sm:flex">
+            <Link href="/sites" className="hover:text-[#0089de]">
+              Dive sites
+            </Link>
+            <Link href="/about" className="hover:text-[#0089de]">
+              About
+            </Link>
+          </nav>
+        </div>
+      </header>
       {/* Photo hero */}
       <section className="relative h-[58vh] min-h-[420px] w-full overflow-hidden">
         <Image
@@ -278,6 +296,7 @@ export default async function SiteDetailPage({
                 links={site.lodging}
                 event="lodging_click"
                 siteId={site.id}
+                showPriceLevel
               />
               <PartnerBlock
                 heading="Who to dive with"
@@ -342,12 +361,14 @@ function PartnerBlock({
   links,
   event,
   siteId,
+  showPriceLevel = false,
 }: {
   heading: string;
   icon: string;
   links: PartnerLink[];
   event: "flight_click" | "lodging_click" | "operator_click";
   siteId: string;
+  showPriceLevel?: boolean;
 }) {
   if (!links.length) return null;
   return (
@@ -371,17 +392,19 @@ function PartnerBlock({
             >
               <div className="flex items-center justify-between gap-2">
                 <span className="font-medium leading-snug">{l.label}</span>
-                <span className="shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#0089de]">
-                  →
-                </span>
-              </div>
-              <div className="mt-0.5 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
-                <span>{l.partner}</span>
-                {l.isAffiliate ? (
-                  <span className="rounded bg-[#e8f0fe] px-1 py-px text-[#1d5d90]">
-                    partner
+                <span className="flex shrink-0 items-center gap-2">
+                  {showPriceLevel && l.priceLevel ? (
+                    <span className="text-xs font-semibold tracking-wider text-emerald-700">
+                      <span>{"$".repeat(l.priceLevel)}</span>
+                      <span className="text-slate-300">
+                        {"$".repeat(4 - l.priceLevel)}
+                      </span>
+                    </span>
+                  ) : null}
+                  <span className="text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#0089de]">
+                    →
                   </span>
-                ) : null}
+                </span>
               </div>
             </AffiliateLink>
           </li>
