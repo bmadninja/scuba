@@ -429,7 +429,7 @@ function GearSection({ site }: { site: Site }) {
                       isAffiliate={true}
                       className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#0089de] transition hover:text-[#1d5d90]"
                     >
-                      Shop on {g.partners[0].partner}
+                      Shop on Amazon
                       <span className="transition group-hover:translate-x-0.5">→</span>
                     </AffiliateLink>
                   ) : null}
