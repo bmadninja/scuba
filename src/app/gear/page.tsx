@@ -1,23 +1,16 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SitesExplorer } from "@/components/sites-explorer";
-import { getAllSites } from "@/lib/data/sites";
-import { getAllLocations } from "@/lib/data/locations";
-import type { Location } from "@/lib/data/types";
+import { getAllGear } from "@/lib/data/gear";
+import { GearExplorer } from "@/components/gear-explorer";
 
 export const metadata: Metadata = {
-  title: "Dive sites | scubaSeason.fun",
+  title: "Gear Guide | scubaSeason.fun",
   description:
-    "Browse curated dive sites by species, conditions, and skill level. Plan trips end-to-end with operators, lodging and gear.",
+    "Curated scuba diving gear by cert level — wetsuits, regulators, dive computers and more. Filtered for your experience.",
 };
 
-export default function SitesPage() {
-  const sites = getAllSites();
-  const locations = getAllLocations();
-  const locationsById: Record<string, Location> = Object.fromEntries(
-    locations.map((l) => [l.id, l]),
-  );
-  const currentMonth = new Date().getUTCMonth() + 1;
+export default function GearPage() {
+  const gear = getAllGear();
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -32,10 +25,10 @@ export default function SitesPage() {
             </span>
           </Link>
           <nav className="hidden gap-6 text-sm font-medium text-slate-700 sm:flex">
-            <Link href="/sites" className="text-[#0089de]">
+            <Link href="/sites" className="hover:text-[#0089de]">
               Dive sites
             </Link>
-            <Link href="/gear" className="hover:text-[#0089de]">
+            <Link href="/gear" className="text-[#0089de]">
               Gear
             </Link>
             <Link href="/about" className="hover:text-[#0089de]">
@@ -46,24 +39,20 @@ export default function SitesPage() {
       </header>
 
       <main className="mx-auto w-full max-w-6xl px-6 py-12">
-        <div className="mb-6">
+        <div className="mb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-            Catalogue
+            Gear guide
           </p>
           <h1 className="mt-1 text-4xl font-bold tracking-tight text-slate-900">
-            All dive sites
+            What you actually need
           </h1>
           <p className="mt-2 max-w-2xl text-base leading-7 text-slate-600">
-            Search across every curated dive site. Filter by cert level, dive type,
-            or what&rsquo;s in season this month.
+            Pick your cert level and see the gear that fits. No fluff — just
+            what we&rsquo;d actually recommend buying.
           </p>
         </div>
 
-        <SitesExplorer
-          sites={sites}
-          locationsById={locationsById}
-          currentMonth={currentMonth}
-        />
+        <GearExplorer gear={gear} />
       </main>
     </div>
   );
