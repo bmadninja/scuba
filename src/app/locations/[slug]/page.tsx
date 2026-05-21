@@ -62,9 +62,6 @@ export default async function LocationPage({
             <Link href="/sites" className="hover:text-[#0089de]">
               Dive sites
             </Link>
-            <Link href="/gear" className="hover:text-[#0089de]">
-              Gear
-            </Link>
             <Link href="/about" className="hover:text-[#0089de]">
               About
             </Link>

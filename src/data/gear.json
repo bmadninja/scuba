@@ -1,34 +1,9 @@
 [
   {
-    "id": "wetsuit-tropical",
-    "name": "Wetsuit",
-    "category": "wetsuit",
-    "levels": [
-      "never-dived",
-      "open-water",
-      "advanced",
-      "rescue",
-      "divemaster",
-      "tech"
-    ],
-    "description": "Full wetsuit for warm-to-temperate diving. Pick thickness based on the destination — Tier B notes flag the cold-water exceptions.",
-    "priceRangeUsd": {
-      "min": 200,
-      "max": 400
-    },
-    "partners": [
-      {
-        "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
-      }
-    ]
-  },
-  {
     "id": "mask-cressi-f1",
     "name": "Cressi F1 Frameless Mask",
     "category": "mask",
+    "tier": "basic",
     "levels": [
       "never-dived",
       "open-water",
@@ -37,7 +12,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Low-volume frameless mask, popular entry-level pick. Black silicone reduces glare.",
+    "description": "Your window underwater. Seals against your face so you can see without water getting in your eyes.",
     "priceRangeUsd": {
       "min": 40,
       "max": 60
@@ -45,45 +20,76 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B0065NYXWW",
+        "url": "https://www.amazon.com/dp/B0065NYXWW",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://store.cressi.com/cdn/shop/files/F1__black-black-UV420_blue-red_lens__ZDN282150_01__WEB_88efa56c-0190-41f3-90fa-70af5868f0fa.jpg?v=1747403208"
   },
   {
-    "id": "snorkel-aqualung-impulse",
-    "name": "Aqualung Impulse 3 Snorkel",
+    "id": "snorkel-cressi-supernova",
+    "name": "Cressi Supernova Dry Snorkel",
     "category": "snorkel",
+    "tier": "addon",
     "levels": [
       "never-dived",
       "open-water"
     ],
-    "description": "Splash-guard dry-style snorkel. Good for surface swims and snorkel pairings.",
+    "description": "Splash guard + purge valve. Pairs with the F1 mask.",
     "priceRangeUsd": {
       "min": 25,
-      "max": 45
+      "max": 40
     },
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B007MAKHUO",
+        "url": "https://www.amazon.com/dp/B007MAKHUO",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Snorkeling_equipment.jpg/1280px-Snorkeling_equipment.jpg"
   },
   {
-    "id": "fins-mares-avanti-quattro",
-    "name": "Mares Avanti Quattro Plus Fins",
+    "id": "fins-scubapro-go-travel",
+    "name": "ScubaPro Go Travel Fins",
     "category": "fins",
+    "tier": "basic",
     "levels": [
+      "never-dived",
       "open-water",
       "advanced",
       "rescue",
       "divemaster"
     ],
-    "description": "Power fins for current diving, four-channel blade design.",
+    "description": "Foot blades that turn leg kicks into forward motion underwater.",
+    "priceRangeUsd": {
+      "min": 140,
+      "max": 200
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B077PHF3L5",
+        "url": "https://www.amazon.com/dp/B077PHF3L5",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://www.scuba.com/Image/Product/Full/SCPGO.jpg"
+  },
+  {
+    "id": "fins-mares-avanti-quattro",
+    "name": "Mares Avanti Quattro Plus Fins",
+    "category": "fins",
+    "tier": "addon",
+    "levels": [
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "Power fins for current diving (Galápagos, Komodo, Socorro). Heavier but worth it where current matters.",
     "priceRangeUsd": {
       "min": 120,
       "max": 180
@@ -91,46 +97,52 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B00AR7S2L0",
+        "url": "https://www.amazon.com/dp/B00AR7S2L0",
+        "commission": 3
       }
-    ]
-  },
-  {
-    "id": "boots-henderson-aqualock-7",
-    "name": "Henderson Aqualock 7mm Boots",
-    "category": "boots",
-    "levels": [
-      "open-water",
-      "advanced",
-      "rescue"
     ],
-    "description": "Warm boots for temperate or cold diving. Pairs with open-heel fins.",
-    "priceRangeUsd": {
-      "min": 60,
-      "max": 90
-    },
-    "partners": [
-      {
-        "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
-      }
-    ]
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Scuba_fins_on_the_beach_%28Unsplash%29.jpg/1280px-Scuba_fins_on_the_beach_%28Unsplash%29.jpg"
   },
   {
-    "id": "wetsuit-bare-3mm-full",
-    "name": "Bare Reactive 3mm Full Wetsuit",
-    "category": "wetsuit",
+    "id": "boots-cressi-isla-5mm",
+    "name": "Cressi Isla 5mm Dive Boots",
+    "category": "boots",
+    "tier": "addon",
     "levels": [
       "open-water",
       "advanced",
       "rescue",
       "divemaster"
     ],
-    "description": "Tropical-to-temperate 3mm full suit. Stretch panels for mobility.",
+    "description": "5mm zip boots for open-heel fins. Solid mid-price warmth.",
+    "priceRangeUsd": {
+      "min": 50,
+      "max": 80
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B00J86CKBY",
+        "url": "https://www.amazon.com/dp/B00J86CKBY",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Hard_soled_neoprene_wetsuit_boots_P7100005.jpg/1280px-Hard_soled_neoprene_wetsuit_boots_P7100005.jpg"
+  },
+  {
+    "id": "wetsuit-bare-3mm-full",
+    "name": "Bare Reactive 3mm Full Wetsuit",
+    "category": "wetsuit",
+    "tier": "basic",
+    "levels": [
+      "never-dived",
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster"
+    ],
+    "description": "An insulating neoprene suit that traps a thin layer of water against your skin to keep you warm.",
     "priceRangeUsd": {
       "min": 200,
       "max": 280
@@ -138,40 +150,44 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B0979N8SYL",
+        "url": "https://www.amazon.com/dp/B0979N8SYL",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://www.baresports.com/wp-content/uploads/sites/7/2021/06/BARE_Reactive2.0_3MM_Blue_01.jpg"
   },
   {
-    "id": "wetsuit-aqualung-aquaflex-5mm",
-    "name": "Aqualung Aquaflex 5mm Wetsuit",
+    "id": "wetsuit-bare-5mm-full",
+    "name": "Bare Reactive 5mm Full Wetsuit",
     "category": "wetsuit",
+    "tier": "addon",
     "levels": [
       "advanced",
       "rescue",
       "divemaster",
       "tech"
     ],
-    "description": "Cool-water 5mm full suit for Galapagos, Socorro, Cocos.",
+    "description": "Thicker suit for cool water — Socorro, Galápagos, Cocos. Same line as the 3mm. Add when sites dip below 75°F.",
     "priceRangeUsd": {
       "min": 280,
-      "max": 400
+      "max": 380
     },
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B0979M2T3B",
+        "url": "https://www.amazon.com/dp/B0979M2T3B",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://www.baresports.com/wp-content/uploads/sites/7/2021/11/BARE_Reactive2.0_5MM_Blue_01.jpg"
   },
   {
     "id": "drysuit-fourth-element-argonaut",
     "name": "Fourth Element Argonaut Drysuit",
     "category": "drysuit",
+    "tier": "addon",
     "levels": [
       "advanced",
       "rescue",
@@ -186,23 +202,25 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "",
+        "url": "https://www.amazon.com/s?k=Fourth+Element+Argonaut+drysuit",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Plastic_watertight_drysuit_zipper_closed_teeth_detail_P8110024.jpg/1280px-Plastic_watertight_drysuit_zipper_closed_teeth_detail_P8110024.jpg"
   },
   {
     "id": "bcd-scubapro-hydros-pro",
     "name": "ScubaPro Hydros Pro BCD",
     "category": "bcd",
+    "tier": "basic",
     "levels": [
       "open-water",
       "advanced",
       "rescue",
       "divemaster"
     ],
-    "description": "Modular back-inflate BCD, travel-friendly, replaceable harness.",
+    "description": "A vest that holds your tank and inflates or deflates to control your buoyancy at depth.",
     "priceRangeUsd": {
       "min": 700,
       "max": 900
@@ -210,48 +228,77 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B01DMK7CI2",
+        "url": "https://www.amazon.com/dp/B01DMK7CI2",
+        "commission": 3
       }
-    ]
-  },
-  {
-    "id": "reg-apeks-xtx200",
-    "name": "Apeks XTX200 Regulator Set",
-    "category": "regulator",
-    "levels": [
-      "open-water",
-      "advanced",
-      "rescue",
-      "divemaster",
-      "tech"
     ],
-    "description": "Cold-water rated, environmentally sealed first stage. Workhorse pick.",
-    "priceRangeUsd": {
-      "min": 800,
-      "max": 1100
-    },
-    "partners": [
-      {
-        "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
-      }
-    ]
+    "imageUrl": "https://www.scuba.com/Image/Product/Full/scubapro-hydros-pro-men-black_scphpm2_color-black.webp"
   },
   {
-    "id": "computer-shearwater-peregrine",
-    "name": "Shearwater Peregrine Dive Computer",
-    "category": "computer",
+    "id": "reg-scubapro-mk11-c370",
+    "name": "ScubaPro MK11/C370 Regulator Set",
+    "category": "regulator",
+    "tier": "basic",
     "levels": [
       "open-water",
       "advanced",
       "rescue",
       "divemaster"
     ],
-    "description": "Bright color screen, simple recreational profile, no-frills reliability.",
+    "description": "The breathing apparatus. Steps high-pressure tank air down to something you can comfortably inhale.",
+    "priceRangeUsd": {
+      "min": 550,
+      "max": 800
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B0CLJWY86V",
+        "url": "https://www.amazon.com/dp/B0CLJWY86V",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://www.scuba.com/Image/Product/Full/SCPM11C370.jpg"
+  },
+  {
+    "id": "octo-scubapro-r195",
+    "name": "ScubaPro R195 Octopus",
+    "category": "regulator",
+    "tier": "addon",
+    "levels": [
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster"
+    ],
+    "description": "Pairs with the MK11/C370 set. Bright yellow alternate second stage.",
+    "priceRangeUsd": {
+      "min": 150,
+      "max": 220
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B00BTMGCX2",
+        "url": "https://www.amazon.com/dp/B00BTMGCX2",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Scuba_diving_regulator_%28single%29.jpg"
+  },
+  {
+    "id": "computer-shearwater-peregrine",
+    "name": "Shearwater Peregrine Dive Computer",
+    "category": "computer",
+    "tier": "basic",
+    "levels": [
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster"
+    ],
+    "description": "A wrist-worn device that tracks your depth, time, and how long you can safely stay at depth.",
     "priceRangeUsd": {
       "min": 450,
       "max": 550
@@ -259,16 +306,18 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B08DKFHD7P",
+        "url": "https://www.amazon.com/dp/B08DKFHD7P",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://www.scuba.com/Image/Product/Full/shearwater-peregrine-dive-computer-dark_swtpadcde.webp"
   },
   {
     "id": "computer-shearwater-teric",
     "name": "Shearwater Teric Wrist Computer",
     "category": "computer",
+    "tier": "addon",
     "levels": [
       "advanced",
       "rescue",
@@ -283,23 +332,74 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B07DCPSD44",
+        "url": "https://www.amazon.com/dp/B07DCPSD44",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Dive_computer_logbook.jpg/1280px-Dive_computer_logbook.jpg"
   },
   {
-    "id": "light-bigblue-vl5500p",
-    "name": "BigBlue VL5500P Dive Light",
+    "id": "light-bigblue-al1200",
+    "name": "BigBlue AL1200XWP-II Dive Torch",
     "category": "light",
+    "tier": "addon",
+    "levels": [
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster"
+    ],
+    "description": "1200 lumens, AA-powered (no Li-ion airline hassle). Add for night dives, signaling, and sites with overhangs or swim-throughs.",
+    "priceRangeUsd": {
+      "min": 90,
+      "max": 130
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B08P27BVKB",
+        "url": "https://www.amazon.com/dp/B08P27BVKB",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://www.scuba.com/Image/Product/Full/BBLAL12XWPI.jpg"
+  },
+  {
+    "id": "light-orcatorch-d550",
+    "name": "OrcaTorch D550 Backup Light",
+    "category": "light",
+    "tier": "addon",
     "levels": [
       "advanced",
       "rescue",
       "divemaster",
       "tech"
     ],
-    "description": "Primary light for wrecks, caverns, night dives. 5500-lumen flood.",
+    "description": "Tiny 1000-lumen AA backup. Every serious diver should carry one.",
+    "priceRangeUsd": {
+      "min": 60,
+      "max": 90
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B07F8S81CX",
+        "url": "https://www.amazon.com/dp/B07F8S81CX",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/A_Navy_diver_uses_an_underwater_welding_torch._%288407482809%29.jpg/1280px-A_Navy_diver_uses_an_underwater_welding_torch._%288407482809%29.jpg"
+  },
+  {
+    "id": "light-bigblue-vl5500p",
+    "name": "BigBlue VL5500P Tech Light",
+    "category": "light",
+    "tier": "addon",
+    "levels": [
+      "tech"
+    ],
+    "description": "5500-lumen flood primary for wrecks, caverns, deep tech. Li-ion — check airline rules.",
     "priceRangeUsd": {
       "min": 350,
       "max": 450
@@ -307,16 +407,18 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B09LS5XF5W",
+        "url": "https://www.amazon.com/dp/B09LS5XF5W",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/A_Navy_diver_uses_an_underwater_welding_torch._%288407482809%29.jpg/1280px-A_Navy_diver_uses_an_underwater_welding_torch._%288407482809%29.jpg"
   },
   {
     "id": "smb-xs-scuba-deluxe",
     "name": "XS Scuba 6ft Closed-Bottom SMB",
     "category": "reel-smb",
+    "tier": "addon",
     "levels": [
       "open-water",
       "advanced",
@@ -324,7 +426,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Surface marker buoy with reel kit. Required for drift dives.",
+    "description": "Closed-bottom holds gas at the surface. Oral-inflate. Required for drift dives.",
     "priceRangeUsd": {
       "min": 55,
       "max": 90
@@ -332,40 +434,71 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B07MB2MR5F",
+        "url": "https://www.amazon.com/dp/B07MB2MR5F",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Diver_deploying_a_DSMB_at_boiler_of_Cape_Matapan.jpg/1280px-Diver_deploying_a_DSMB_at_boiler_of_Cape_Matapan.jpg"
   },
   {
-    "id": "reef-hook-dive-rite",
-    "name": "Dive Rite Reef Hook with Lanyard",
+    "id": "spool-dgx-100",
+    "name": "DGX 100ft Finger Spool",
+    "category": "reel-smb",
+    "tier": "addon",
+    "levels": [
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "Pairs with the SMB. 100ft is the right length for recreational depths.",
+    "priceRangeUsd": {
+      "min": 20,
+      "max": 35
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B0CXHP1TBM",
+        "url": "https://www.amazon.com/dp/B0CXHP1TBM",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Diver_deploying_a_DSMB_at_boiler_of_Cape_Matapan.jpg/1280px-Diver_deploying_a_DSMB_at_boiler_of_Cape_Matapan.jpg"
+  },
+  {
+    "id": "reef-hook-innovative",
+    "name": "Innovative Scuba Reef Hook",
     "category": "reef-hook",
+    "tier": "addon",
     "levels": [
       "advanced",
       "rescue",
       "divemaster",
       "tech"
     ],
-    "description": "For current-exposed sites (Palau, Komodo, Galapagos). Hooks into dead reef only.",
+    "description": "Stainless hook + 4ft line + clip. Add for ripping-current sites — Palau Blue Corner, Komodo, Galápagos. Hooks into dead reef only.",
     "priceRangeUsd": {
-      "min": 25,
-      "max": 40
+      "min": 20,
+      "max": 35
     },
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B0D261QQL5",
+        "url": "https://www.amazon.com/dp/B0D261QQL5",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://www.diverightinscuba.com/media/catalog/product/cache/78b1f2194c2281617868e3880f0033db/s/p/sp0620.png"
   },
   {
     "id": "gloves-akona-3mm",
     "name": "Akona 3mm Reef Gloves",
     "category": "gloves",
+    "tier": "addon",
     "levels": [
       "open-water",
       "advanced",
@@ -379,23 +512,25 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B0B3Y9Y3PM",
+        "url": "https://www.amazon.com/dp/B0B3Y9Y3PM",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Guanti.jpg"
   },
   {
     "id": "hood-bare-5mm",
     "name": "Bare 5mm Coldwater Hood",
     "category": "hood",
+    "tier": "addon",
     "levels": [
       "advanced",
       "rescue",
       "divemaster",
       "tech"
     ],
-    "description": "Cold-water hood for upwellings (Galapagos, Cocos, Channel Islands).",
+    "description": "Cold-water hood for upwellings (Galápagos, Cocos, Channel Islands).",
     "priceRangeUsd": {
       "min": 45,
       "max": 70
@@ -403,16 +538,18 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B077WV89LM",
+        "url": "https://www.amazon.com/dp/B077WV89LM",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": null
   },
   {
-    "id": "bag-akona-roller",
-    "name": "Akona Roller Dive Bag",
+    "id": "bag-mares-cruise-backpack-pro",
+    "name": "Mares Cruise Backpack Pro Roller",
     "category": "bag",
+    "tier": "addon",
     "levels": [
       "open-water",
       "advanced",
@@ -420,24 +557,81 @@
       "divemaster",
       "tech"
     ],
-    "description": "Travel-ready wheeled gear bag, holds full kit for international dive trips.",
+    "description": "Wheeled roller that fits a full kit. Beats most dedicated dive bags on durability.",
     "priceRangeUsd": {
-      "min": 150,
-      "max": 220
+      "min": 180,
+      "max": 260
     },
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B0CRDZNQ74",
+        "url": "https://www.amazon.com/dp/B0CRDZNQ74",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/US_Navy_110608-N-XD935-486_ble_Body_Seaman_Jason_Austin_uses_a_lift_bag_system_to_move_a_sunken_ship%27s_propeller_during_an_underwater_lift.jpg/1280px-US_Navy_110608-N-XD935-486_ble_Body_Seaman_Jason_Austin_uses_a_lift_bag_system_to_move_a_sunken_ship%27s_propeller_during_an_underwater_lift.jpg"
+  },
+  {
+    "id": "save-a-dive-kit",
+    "name": "Trident Save-A-Dive Kit",
+    "category": "specialty",
+    "tier": "addon",
+    "levels": [
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "O-rings, mouthpiece, zip ties, mask strap. Never travel without one — saves a trip.",
+    "priceRangeUsd": {
+      "min": 25,
+      "max": 40
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B07XPBP4ZZ",
+        "url": "https://www.amazon.com/dp/B07XPBP4ZZ",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Set_of_tools_for_scuba_diving_from_the_Italian_company_Panerai.jpg"
+  },
+  {
+    "id": "defog-stream2sea",
+    "name": "Stream2Sea Reef-Safe Mask Defog",
+    "category": "specialty",
+    "tier": "addon",
+    "levels": [
+      "never-dived",
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "Reef-safe defog — won't poison the corals you came to see.",
+    "priceRangeUsd": {
+      "min": 10,
+      "max": 15
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "B082MQRFJV",
+        "url": "https://www.amazon.com/dp/B082MQRFJV",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Set_of_tools_for_scuba_diving_from_the_Italian_company_Panerai.jpg"
   },
   {
     "id": "starter-kit-package",
     "name": "Beginner Mask/Snorkel/Fin Set",
     "category": "specialty",
+    "tier": "addon",
     "levels": [
       "never-dived",
       "open-water"
@@ -450,16 +644,18 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B07Q6R2VFX",
+        "url": "https://www.amazon.com/dp/B07Q6R2VFX",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Set_of_tools_for_scuba_diving_from_the_Italian_company_Panerai.jpg"
   },
   {
     "id": "pony-bottle-19cf",
     "name": "Catalina 19cf Pony Bottle Setup",
     "category": "specialty",
+    "tier": "addon",
     "levels": [
       "rescue",
       "divemaster",
@@ -473,16 +669,18 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B0000DYNXU",
+        "url": "https://www.amazon.com/dp/B0000DYNXU",
+        "commission": 3
       }
-    ]
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Set_of_tools_for_scuba_diving_from_the_Italian_company_Panerai.jpg"
   },
   {
     "id": "muck-stick-trident",
     "name": "Trident Stainless Muck Stick",
     "category": "specialty",
+    "tier": "addon",
     "levels": [
       "advanced",
       "rescue",
@@ -496,9 +694,137 @@
     "partners": [
       {
         "partner": "amazon",
-        "productId": "TBD",
-        "url": "https://www.amazon.com/",
-        "commission": 4
+        "productId": "B09NNLVDFC",
+        "url": "https://www.amazon.com/dp/B09NNLVDFC",
+        "commission": 3
+      }
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Set_of_tools_for_scuba_diving_from_the_Italian_company_Panerai.jpg"
+  },
+  {
+    "id": "camera-gopro",
+    "name": "GoPro Hero 12 Black",
+    "category": "specialty",
+    "tier": "addon",
+    "levels": [
+      "never-dived",
+      "open-water",
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "Wide-angle action camera. The default underwater rig for travel — small, durable, native waterproof to 33ft, dive housing extends deeper.",
+    "priceRangeUsd": {
+      "min": 300,
+      "max": 450
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "",
+        "url": "https://www.amazon.com/s?k=GoPro+Hero+12+Black",
+        "commission": 3
+      }
+    ]
+  },
+  {
+    "id": "camera-om-tg7",
+    "name": "OM System Tough TG-7",
+    "category": "specialty",
+    "tier": "addon",
+    "levels": [
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "Compact with true macro mode (1cm focus). The best small-budget underwater camera for nudibranchs, pygmy seahorses, and other macro subjects.",
+    "priceRangeUsd": {
+      "min": 500,
+      "max": 600
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "",
+        "url": "https://www.amazon.com/s?k=OM+System+TG-7+underwater+camera",
+        "commission": 3
+      }
+    ]
+  },
+  {
+    "id": "plb-acr-resqlink",
+    "name": "ACR ResQLink 400 PLB",
+    "category": "specialty",
+    "tier": "addon",
+    "levels": [
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "Personal locator beacon for surface separations. Standard kit at remote sites — Galápagos, Cocos, Socorro. Transmits to satellite SAR.",
+    "priceRangeUsd": {
+      "min": 300,
+      "max": 400
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "",
+        "url": "https://www.amazon.com/s?k=ACR+ResQLink+400+PLB",
+        "commission": 3
+      }
+    ]
+  },
+  {
+    "id": "fins-cressi-gara-freediving",
+    "name": "Cressi Gara Modular Freediving Fins",
+    "category": "fins",
+    "tier": "addon",
+    "levels": [
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "Long-blade freediving fins. For snorkel-only encounters (whale sharks, humpbacks) where long blades close distance fast.",
+    "priceRangeUsd": {
+      "min": 130,
+      "max": 200
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "",
+        "url": "https://www.amazon.com/s?k=Cressi+Gara+Modular+freediving+fins",
+        "commission": 3
+      }
+    ]
+  },
+  {
+    "id": "gloves-dark-shark",
+    "name": "Dark Neoprene Dive Gloves (shark-safe)",
+    "category": "gloves",
+    "tier": "addon",
+    "levels": [
+      "advanced",
+      "rescue",
+      "divemaster",
+      "tech"
+    ],
+    "description": "Dark-color gloves for baited shark dives. Bright skin/gloves can attract bites — operators require dark covers.",
+    "priceRangeUsd": {
+      "min": 25,
+      "max": 50
+    },
+    "partners": [
+      {
+        "partner": "amazon",
+        "productId": "",
+        "url": "https://www.amazon.com/s?k=black+scuba+dive+gloves",
+        "commission": 3
       }
     ]
   }

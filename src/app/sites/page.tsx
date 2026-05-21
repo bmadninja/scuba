@@ -35,9 +35,6 @@ export default function SitesPage() {
             <Link href="/sites" className="text-[#0089de]">
               Dive sites
             </Link>
-            <Link href="/gear" className="hover:text-[#0089de]">
-              Gear
-            </Link>
             <Link href="/about" className="hover:text-[#0089de]">
               About
             </Link>

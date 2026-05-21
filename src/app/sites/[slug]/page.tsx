@@ -479,8 +479,7 @@ function GearSection({ site }: { site: Site }) {
               {addOns.map((item) => {
                 const gear = item.gearId ? getGearById(item.gearId) : undefined;
                 const partner = gear?.partners[0];
-                const label =
-                  (gear && CATEGORY_NAME[gear.category]) ?? item.name;
+                const label = item.name;
                 const icon =
                   (gear && CATEGORY_ICON[gear.category]) ?? "•";
                 return (
