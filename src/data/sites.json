@@ -44625,5 +44625,262 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Sanctuary Preservation Area inside Florida Keys National Marine Sanctuary — mooring buoys only, no anchoring, no fishing, no spearfishing, no coral contact, no glove use. Reef-friendly sunscreen required. The annual Lower Keys Underwater Music Festival is held in early July. Current on the outer reef edge can run moderately; back reef shallows are usually calm enough for snorkelers and open-water divers."
+  },
+  {
+    "id": "maldives-maamigili-beyru",
+    "slug": "maldives-maamigili-beyru",
+    "locationId": "ari-atoll-maldives",
+    "name": "Maamigili Beyru (Whale Shark Point)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Walhai_3.jpg",
+    "lat": 3.4648,
+    "lng": 72.8173,
+    "description": "Outer reef along the southern edge of Maamigili island, gazetted in 2009 as part of the South Ari Marine Protected Area to safeguard the only known year-round whale shark aggregation in the Indian Ocean. Juvenile sharks 4-8 m long cruise the shallow reef shelf at 5-15 m feeding on copepods, and the South Ari research programme has logged sightings on more than 70% of days. The dive is a drift along the outer wall where the reef drops past 200 m — manta and mobula rays pass on cleaning rotations, eagle rays glide the slope, and grey reef sharks patrol deeper. Operators run a coordinated radio search; snorkellers stay at the surface while scuba divers hold below 5 m. MPA rules cap boat numbers and forbid touching, flash photography, and motorised approach within 20 m.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Mobula ray",
+        "scientificName": "Mobula spp.",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowfin tuna",
+        "scientificName": "Thunnus albacares",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "editorialRank": 92,
+    "getThere": "Villa International Airport on Maamigili (VAM) takes 25-minute domestic flights from Malé (MLE) and sits a five-minute speedboat ride from the dive site. Alternatively, board a southbound liveaboard from Malé — most central-atolls itineraries include Maamigili Beyru.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside the South Ari MPA: no touching, no flash photography, no fins within 3 m of the shark, no chasing. Operators communicate by radio when a shark is spotted; expect 3-5 boats and 20+ snorkellers per encounter during peak season. Best window is the morning slack tide on a sunny day."
   }
 ]
