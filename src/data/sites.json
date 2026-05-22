@@ -44132,30 +44132,206 @@
       "max": 30
     },
     "skillLevel": "advanced",
-    "diveTypes": ["wrecks", "coral"],
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
     "species": [
-      { "commonName": "Anthias", "scientificName": "Pseudanthias squamipinnis", "reliability": "year-round" },
-      { "commonName": "Soft coral overgrowth", "reliability": "year-round" },
-      { "commonName": "Glassfish", "reliability": "year-round" },
-      { "commonName": "Lionfish", "scientificName": "Pterois miles", "reliability": "year-round" },
-      { "commonName": "Bluestriped snapper", "scientificName": "Lutjanus kasmira", "reliability": "year-round" },
-      { "commonName": "Grey reef shark", "scientificName": "Carcharhinus amblyrhynchos", "reliability": "year-round" }
+      {
+        "commonName": "Anthias",
+        "scientificName": "Pseudanthias squamipinnis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Soft coral overgrowth",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Glassfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois miles",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluestriped snapper",
+        "scientificName": "Lutjanus kasmira",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      }
     ],
     "conditionsByMonth": [
-      { "month": 1, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 2, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 3, "waterTempC": {"min": 25, "max": 27}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 4, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 5, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 6, "waterTempC": {"min": 29, "max": 31}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 7, "waterTempC": {"min": 30, "max": 32}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 8, "waterTempC": {"min": 30, "max": 33}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 9, "waterTempC": {"min": 29, "max": 31}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 10, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 11, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
-      { "month": 12, "waterTempC": {"min": 25, "max": 27}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" }
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 30,
+          "max": 33
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
     ],
-    "bestMonths": [2, 3, 4, 5, 10, 11],
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
     "editorialRank": 86,
     "getThere": "Port Sudan (PZU) has limited international service — most divers connect through Cairo (CAI), Doha (DOH), or Dubai (DXB) and join a liveaboard for the 48 km transit north to Shaab Rumi. The Conshelf remains sit roughly 100 m inside the southern lagoon entrance, typically dived as a shallow second or check-out dive on a multi-day Sudan itinerary.",
     "lodging": [
@@ -44191,5 +44367,263 @@
       }
     ],
     "notes": "Historical site — do not touch, lift, or remove any artifacts. The air inside the hangar is original from 1963 and not breathable for sustained surface intervals; surface only briefly to look around, then return to your regulator. The Conshelf is usually paired with the Shaab Rumi South Plateau as a single liveaboard day."
+  },
+  {
+    "id": "florida-keys-looe-key",
+    "slug": "florida-keys-looe-key",
+    "locationId": "florida-keys-usa",
+    "name": "Looe Key Reef",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Elkhorn_01_Looe_Key_2010.jpg",
+    "lat": 24.545,
+    "lng": -81.4083,
+    "description": "U-shaped spur-and-groove reef 5 miles south of Big Pine Key, named after the 44-gun HMS Looe — a British man-of-war that ran aground here in February 1744 while towing a captured French ship. Anchor, ballast pile, and copper plating from the wreck still lie on the eastern end in 25 feet of water. The 374-acre Sanctuary Preservation Area is renowned for one of the densest surviving stands of elkhorn coral in the Florida Reef Tract, with parallel coral fingers and sand grooves dropping from 7 to 35 feet. Reliable encounters with goliath grouper under ledges, tarpon, large schools of grunts and yellowtail snapper, and seasonal nurse sharks. Hosts the annual Underwater Music Festival in July, when speakers are lowered to the reef.",
+    "depthRange": {
+      "min": 2,
+      "max": 11
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Elkhorn coral",
+        "scientificName": "Acropora palmata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Staghorn coral",
+        "scientificName": "Acropora cervicornis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Atlantic tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "French grunt",
+        "scientificName": "Haemulon flavolineatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Hogfish",
+        "scientificName": "Lachnolaimus maximus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Queen angelfish",
+        "scientificName": "Holacanthus ciliaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 84,
+    "getThere": "Fly into Key West International (EYW) for the shortest hop — ~30 minutes by car east on US-1 to Ramrod Key or Big Pine Key marinas. Miami International (MIA) is the larger gateway, ~3 hours by car south on the Overseas Highway. Charters depart Ramrod Key, Big Pine Key, and Summerland Key; the reef is a 20–25 minute boat ride offshore.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Sanctuary Preservation Area inside Florida Keys National Marine Sanctuary — mooring buoys only, no anchoring, no fishing, no spearfishing, no coral contact, no glove use. Reef-friendly sunscreen required. The annual Lower Keys Underwater Music Festival is held in early July. Current on the outer reef edge can run moderately; back reef shallows are usually calm enough for snorkelers and open-water divers."
   }
 ]
