@@ -8,7 +8,7 @@ import { isDateInSeason } from "@/lib/scuba-globe";
 
 import type { PlanetGlobeProps } from "./planet-globe";
 
-export type FeaturedSite = {
+export type FeaturedLocation = {
   id: string;
   slug: string;
   name: string;
@@ -16,13 +16,14 @@ export type FeaturedSite = {
   heroImageUrl?: string;
   country: string;
   continent: string;
-  skillLevel: string;
   bestMonths: number[];
   editorialRank: number;
-  experience: "beginner" | "intermediate" | "advanced";
+  siteCount: number;
+  skillLevels: string[];
+  experiences: ("beginner" | "intermediate" | "advanced")[];
   interestTags: string[];
   animalTags: string[];
-  tripMode: "liveaboard" | "resort";
+  tripModes: ("liveaboard" | "resort")[];
 };
 
 type TripModeFilter = "liveaboard" | "resort";
@@ -120,11 +121,11 @@ const toggleValue = <T extends string>(values: T[], value: T) =>
     : [...values, value];
 
 type PlanetGlobePanelProps = PlanetGlobeProps & {
-  featuredSites?: FeaturedSite[];
+  featuredLocations?: FeaturedLocation[];
 };
 
 export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
-  const { featuredSites = [], ...globeProps } = props;
+  const { featuredLocations = [], ...globeProps } = props;
   const [selectedMonth, setSelectedMonth] = useState(globeProps.initialMonth ?? 1);
   const [tripMode, setTripMode] = useState<TripModeFilter | "">("");
   const [cert, setCert] = useState<CertFilter | "">("");
@@ -411,7 +412,7 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
       />
 
       <FeaturedGrid
-        sites={featuredSites}
+        locations={featuredLocations}
         selectedMonth={selectedMonth}
         tripMode={tripMode}
         cert={cert}
@@ -422,13 +423,13 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
 }
 
 function FeaturedGrid({
-  sites,
+  locations,
   selectedMonth,
   tripMode,
   cert,
   seeFilters,
 }: {
-  sites: FeaturedSite[];
+  locations: FeaturedLocation[];
   selectedMonth: number;
   tripMode: TripModeFilter | "";
   cert: CertFilter | "";
@@ -446,52 +447,48 @@ function FeaturedGrid({
   };
 
   const featured = useMemo(() => {
-    if (sites.length === 0) return [];
+    if (locations.length === 0) return [];
     const expLevel = cert === "" ? null : certToExperience(cert);
 
-    const passesFilters = (s: FeaturedSite) => {
-      if (tripMode !== "" && s.tripMode !== tripMode) return false;
-      if (expLevel && s.experience !== expLevel) return false;
+    const passesFilters = (l: FeaturedLocation) => {
+      if (tripMode !== "" && !l.tripModes.includes(tripMode)) return false;
+      if (expLevel && !l.experiences.includes(expLevel)) return false;
       if (seeFilters.length > 0) {
         const matchesSee = seeFilters.some((f) => {
           if (ANIMAL_OPTIONS.includes(f as AnimalFilter)) {
-            return s.animalTags.includes(f);
+            return l.animalTags.includes(f);
           }
-          return s.interestTags.includes(f);
+          return l.interestTags.includes(f);
         });
         if (!matchesSee) return false;
       }
       return true;
     };
 
-    const inSeason = sites
-      .filter((s) => s.bestMonths.includes(selectedMonth) && passesFilters(s))
+    const inSeason = locations
+      .filter((l) => l.bestMonths.includes(selectedMonth) && passesFilters(l))
       .sort((a, b) => b.editorialRank - a.editorialRank);
 
-    // First pass: one per continent for diversity.
     const seenContinents = new Set<string>();
-    const picks: FeaturedSite[] = [];
-    for (const s of inSeason) {
-      if (!seenContinents.has(s.continent)) {
-        seenContinents.add(s.continent);
-        picks.push(s);
+    const picks: FeaturedLocation[] = [];
+    for (const l of inSeason) {
+      if (!seenContinents.has(l.continent)) {
+        seenContinents.add(l.continent);
+        picks.push(l);
       }
     }
-    // Second pass: fill remaining slots with other in-season sites.
-    for (const s of inSeason) {
+    for (const l of inSeason) {
       if (picks.length >= 12) break;
-      if (!picks.includes(s)) picks.push(s);
+      if (!picks.includes(l)) picks.push(l);
     }
 
     if (picks.length > 0) return picks;
 
-    // Fallback: nothing in season matches — show top-ranked filter matches
-    // regardless of season so the grid isn't empty.
-    return sites
+    return locations
       .filter(passesFilters)
       .sort((a, b) => b.editorialRank - a.editorialRank)
       .slice(0, 6);
-  }, [sites, selectedMonth, tripMode, cert, seeFilters]);
+  }, [locations, selectedMonth, tripMode, cert, seeFilters]);
 
   const hasFilters =
     tripMode !== "" || cert !== "" || seeFilters.length > 0;
@@ -513,37 +510,37 @@ function FeaturedGrid({
           href="/sites"
           className="hidden text-sm font-semibold text-[#0089de] hover:text-[#1d5d90] sm:inline-flex"
         >
-          All sites →
+          All dive sites →
         </Link>
       </div>
       {featured.length === 0 ? (
         <p className="text-sm text-slate-500">
-          No sites match these filters for {monthName}. Try clearing a filter or
-          picking another month.
+          No locations match these filters for {monthName}. Try clearing a
+          filter or picking another month.
         </p>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((s) => {
-            const inSeason = s.bestMonths.includes(selectedMonth);
+          {featured.map((l) => {
+            const inSeason = l.bestMonths.includes(selectedMonth);
             return (
               <Link
-                key={s.id}
-                href={`/sites/${s.slug}`}
+                key={l.id}
+                href={`/locations/${l.slug}`}
                 className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-[#0089de]/40 hover:shadow-md"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={
-                    s.heroImageUrl ??
-                    `https://picsum.photos/seed/${s.slug}/800/440`
+                    l.heroImageUrl ??
+                    `https://picsum.photos/seed/${l.slug}/800/440`
                   }
-                  alt={s.name}
+                  alt={l.name}
                   className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
                 />
                 <div className="p-5">
                   <div className="flex items-center justify-between gap-2">
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      {s.country}
+                      {l.country}
                     </p>
                     <span
                       className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold ${
@@ -556,13 +553,13 @@ function FeaturedGrid({
                     </span>
                   </div>
                   <h3 className="mt-1 text-lg font-bold text-slate-900 group-hover:text-[#0089de]">
-                    {s.name}
+                    {l.name}
                   </h3>
                   <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
-                    {s.description}
+                    {l.description}
                   </p>
-                  <div className="mt-3 inline-block rounded-full bg-[#e8f0fe] px-2.5 py-0.5 text-[11px] font-semibold capitalize text-[#1d5d90]">
-                    {s.skillLevel.replace("-", " ")}+
+                  <div className="mt-3 inline-block rounded-full bg-[#e8f0fe] px-2.5 py-0.5 text-[11px] font-semibold text-[#1d5d90]">
+                    {l.siteCount} {l.siteCount === 1 ? "dive site" : "dive sites"}
                   </div>
                 </div>
               </Link>

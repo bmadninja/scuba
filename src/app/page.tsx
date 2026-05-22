@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { PlanetGlobePanel } from "@/components/planet-globe-panel";
-import type { FeaturedSite } from "@/components/planet-globe-panel";
+import type { FeaturedLocation } from "@/components/planet-globe-panel";
 import { getScubaGlobeData } from "@/lib/scuba-globe";
 import { getAllSites } from "@/lib/data/sites";
-import { getLocationById } from "@/lib/data/locations";
+import { getAllLocations } from "@/lib/data/locations";
 import type { Site } from "@/lib/data/types";
 
 const COUNTRY_TO_CONTINENT: Record<string, string> = {
@@ -88,33 +88,65 @@ export default function Home() {
   const initialMonth = new Date().getUTCMonth() + 1;
   const { markers, highlightedCountries } = getScubaGlobeData();
 
-  const featuredSites = getAllSites()
-    .map((s) => {
-      const location = getLocationById(s.locationId);
-      if (!location) return null;
+  const sitesByLocation = new Map<string, Site[]>();
+  for (const s of getAllSites()) {
+    const list = sitesByLocation.get(s.locationId) ?? [];
+    list.push(s);
+    sitesByLocation.set(s.locationId, list);
+  }
+
+  const featuredLocations: FeaturedLocation[] = getAllLocations()
+    .map((location) => {
+      const sites = sitesByLocation.get(location.id) ?? [];
+      if (sites.length === 0) return null;
       const continent = COUNTRY_TO_CONTINENT[location.country] ?? "Other";
-      const { interestTags, animalTags, tripMode } = deriveTags(
-        s,
-        location.region,
-      );
+
+      const interestSet = new Set<string>();
+      const animalSet = new Set<string>();
+      const tripModeSet = new Set<"liveaboard" | "resort">();
+      const experienceSet = new Set<"beginner" | "intermediate" | "advanced">();
+      const skillSet = new Set<string>();
+      let topRank = -Infinity;
+      let topSiteImageUrl: string | undefined;
+
+      for (const s of sites) {
+        const { interestTags, animalTags, tripMode } = deriveTags(
+          s,
+          location.region,
+        );
+        interestTags.forEach((t) => interestSet.add(t));
+        animalTags.forEach((t) => animalSet.add(t));
+        tripModeSet.add(tripMode);
+        experienceSet.add(SKILL_TO_EXPERIENCE[s.skillLevel]);
+        skillSet.add(s.skillLevel);
+        if (s.editorialRank > topRank) {
+          topRank = s.editorialRank;
+          topSiteImageUrl = s.heroImageUrl;
+        }
+      }
+
+      const heroImageUrl =
+        location.heroImageUrl ?? topSiteImageUrl;
+
       return {
-        id: s.id,
-        slug: s.slug,
-        name: s.name,
-        description: s.description,
-        ...(s.heroImageUrl !== undefined ? { heroImageUrl: s.heroImageUrl } : {}),
+        id: location.id,
+        slug: location.slug,
+        name: location.name,
+        description: location.description,
+        ...(heroImageUrl !== undefined ? { heroImageUrl } : {}),
         country: location.country,
         continent,
-        skillLevel: s.skillLevel,
-        bestMonths: s.bestMonths,
-        editorialRank: s.editorialRank,
-        experience: SKILL_TO_EXPERIENCE[s.skillLevel],
-        interestTags,
-        animalTags,
-        tripMode,
+        bestMonths: location.bestMonths,
+        editorialRank: topRank === -Infinity ? 0 : topRank,
+        siteCount: sites.length,
+        skillLevels: Array.from(skillSet),
+        experiences: Array.from(experienceSet),
+        interestTags: Array.from(interestSet),
+        animalTags: Array.from(animalSet),
+        tripModes: Array.from(tripModeSet),
       };
     })
-    .filter((s) => s !== null);
+    .filter((l): l is FeaturedLocation => l !== null);
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -155,7 +187,7 @@ export default function Home() {
             initialMonth={initialMonth}
             markers={markers}
             highlightedCountries={highlightedCountries}
-            featuredSites={featuredSites}
+            featuredLocations={featuredLocations}
           />
         </div>
       </section>
