@@ -44913,20 +44913,171 @@
       }
     ],
     "conditionsByMonth": [
-      { "month": 1, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 2, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 3, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 4, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 5, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 6, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 7, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 8, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 9, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 10, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 11, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
-      { "month": 12, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" }
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit (long bottom time at depth)"
+      }
     ],
-    "bestMonths": [11, 12, 1, 2, 3, 4],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
     "editorialRank": 88,
     "getThere": "Fly into Cancún (CUN), then drive 1h45 south on Highway 307 to Tulum. The cenote entrance is at Km 17 on the Tulum–Chetumal highway, about a 15-minute drive south of Tulum town. Park at the property gate, pay the landowner fee, and walk 5 minutes through jungle to the shaft.",
     "lodging": [],
@@ -44973,7 +45124,15 @@
         "commonName": "Spotted eagle ray",
         "scientificName": "Aetobatus narinari",
         "reliability": "seasonal",
-        "bestMonths": [4, 5, 6, 7, 8, 9, 10]
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
       },
       {
         "commonName": "Horse-eye jack",
@@ -44992,20 +45151,171 @@
       }
     ],
     "conditionsByMonth": [
-      { "month": 1, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
-      { "month": 2, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
-      { "month": 3, "waterTempC": {"min": 23, "max": 25}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
-      { "month": 4, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
-      { "month": 5, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
-      { "month": 6, "waterTempC": {"min": 28, "max": 29}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
-      { "month": 7, "waterTempC": {"min": 29, "max": 30}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
-      { "month": 8, "waterTempC": {"min": 29, "max": 31}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
-      { "month": 9, "waterTempC": {"min": 28, "max": 30}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "strong", "suitRecommendation": "3mm wetsuit" },
-      { "month": 10, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
-      { "month": 11, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
-      { "month": 12, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" }
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      }
     ],
-    "bestMonths": [4, 5, 6, 7, 8, 10],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
     "editorialRank": 86,
     "getThere": "Fly into Miami International (MIA) and drive 1 hour south on US-1 to Key Largo, or fort Lauderdale (FLL) for similar driving distance. Charters depart Key Largo marinas (notably Garden Cove, Marina del Mar, and Holiday Inn) for the ~30-minute boat ride to the mooring buoys at the wreck — usually paired with a second dive on the nearby USCGC Bibb or Molasses Reef.",
     "lodging": [],
@@ -45036,40 +45346,476 @@
     "lat": -8.7833,
     "lng": 115.45,
     "description": "Southwest-coast cleaning station off Batu Lumbung where reef mantas queue up at coral bommies while cleaner wrasse pick parasites from their gill arches. Action begins at 4 m and the wall steps down to about 25 m. Cooler upwelled water from the Lombok Strait — often dropping to 22 °C — and Indian Ocean swell separate this site from the calmer reefs of northern Bali. Mantas are resident year-round; surface conditions, not animal reliability, decide whether the boat runs. Occasional oceanic mantas and the rare mola mola pass through during the July–October upwelling.",
-    "depthRange": { "min": 5, "max": 25 },
+    "depthRange": {
+      "min": 5,
+      "max": 25
+    },
     "skillLevel": "open-water",
-    "diveTypes": ["large-pelagics", "coral"],
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
     "species": [
-      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "year-round" },
-      { "commonName": "Oceanic manta ray", "scientificName": "Mobula birostris", "reliability": "rare" },
-      { "commonName": "Bluestreak cleaner wrasse", "scientificName": "Labroides dimidiatus", "reliability": "year-round" },
-      { "commonName": "Whitetip reef shark", "scientificName": "Triaenodon obesus", "reliability": "seasonal", "bestMonths": [7, 8, 9, 10] },
-      { "commonName": "Ocean sunfish (mola)", "scientificName": "Mola alexandrini", "reliability": "rare", "bestMonths": [7, 8, 9, 10] }
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Bluestreak cleaner wrasse",
+        "scientificName": "Labroides dimidiatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Ocean sunfish (mola)",
+        "scientificName": "Mola alexandrini",
+        "reliability": "rare",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      }
     ],
     "conditionsByMonth": [
-      { "month": 1, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
-      { "month": 2, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
-      { "month": 3, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
-      { "month": 4, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
-      { "month": 5, "waterTempC": {"min": 24, "max": 27}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
-      { "month": 6, "waterTempC": {"min": 22, "max": 26}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
-      { "month": 7, "waterTempC": {"min": 22, "max": 25}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
-      { "month": 8, "waterTempC": {"min": 22, "max": 25}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
-      { "month": 9, "waterTempC": {"min": 23, "max": 26}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
-      { "month": 10, "waterTempC": {"min": 24, "max": 27}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
-      { "month": 11, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
-      { "month": 12, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" }
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit (cooler upwelling)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit (cooler upwelling)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit (cooler upwelling)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit (cooler upwelling)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 23,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit (cooler upwelling)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
     ],
-    "bestMonths": [4, 5, 6, 7, 8, 9, 10],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
     "editorialRank": 92,
     "getThere": "Fly into Ngurah Rai International (DPS) on Bali. Fast boats run from Sanur to Toya Pakeh or Banjar Nyuh on Nusa Penida (~45 minutes); most dive operators also day-trip directly from Sanur, Padangbai, or Candidasa, reaching Manta Point in about 90 minutes by speedboat. The site sits off the southwest coast near Batu Lumbung; entry is by negative descent off the boat.",
     "lodging": [],
     "operators": [],
     "gearIds": [],
     "siteSpecificGear": [
-      { "name": "5mm wetsuit", "reason": "Lombok Strait upwelling pulls water down to 22 °C in the dry season — colder than the 3mm setup most divers bring from Tulamben or Sanur." },
-      { "name": "Reef hook / patience", "reason": "Stay off the bottom and behind the cleaning bommies. Pushy divers send the mantas off and end the show for everyone." }
+      {
+        "name": "5mm wetsuit",
+        "reason": "Lombok Strait upwelling pulls water down to 22 °C in the dry season — colder than the 3mm setup most divers bring from Tulamben or Sanur."
+      },
+      {
+        "name": "Reef hook / patience",
+        "reason": "Stay off the bottom and behind the cleaning bommies. Pushy divers send the mantas off and end the show for everyone."
+      }
     ],
     "notes": "Exposed to Indian Ocean swell — trips cancel when southwest swell tops about 2.5 m, most often June–August. Surface chop can make boat exits demanding. Cooler than other Bali sites by 4–6 °C in dry season; reef-safe sunscreen only. Mantas have right of way; do not chase, touch, or block their queue."
+  },
+  {
+    "id": "larnaca-zenobia-wreck",
+    "slug": "larnaca-zenobia-wreck",
+    "locationId": "larnaca-cyprus",
+    "name": "MS Zenobia",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Ship_propeller_of_the_wreck_Zenobia%2C_Cyprus_%2843660170221%29.jpg",
+    "lat": 34.8894,
+    "lng": 33.6508,
+    "description": "172-metre Swedish-built Ro-Ro ferry that capsized in Larnaca Bay on her maiden voyage in June 1980 after a software fault flooded the port ballast tanks. She came to rest on her port side in 42 m of water roughly 1.5 km offshore and has since become the Mediterranean's signature wreck. The starboard hull breaks the thermocline at 16 m, the wheelhouse and bridge sit around 18–22 m, and the cargo decks open at 28–36 m with 104 articulated trucks still chained inside, hanging at impossible angles. The propellers and rudder at the stern reach the full 42 m. Resident grouper, barracuda schools, and a long-standing moray live in the structure; permit-only penetrations of the upper car deck and engine room are run by Larnaca operators for trained wreck divers.",
+    "depthRange": {
+      "min": 16,
+      "max": 42
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Dusky grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "European barracuda",
+        "scientificName": "Sphyraena sphyraena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moray eel",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Common stingray",
+        "scientificName": "Dasyatis pastinaca",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Tompot blenny",
+        "scientificName": "Parablennius gattorugine",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semi-dry"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semi-dry"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semi-dry"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit (thermocline at depth)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit (thermocline at depth)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit (thermocline at depth)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semi-dry"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 94,
+    "getThere": "Fly into Larnaca International (LCA), which sits 7 km southwest of the wreck and 10 minutes from Larnaca Marina. Most dive centres run the Zenobia as a two-tank morning boat trip from Larnaca Marina or nearby Mackenzie Beach, motoring out 1.5 km to the mooring (a 10–15 minute boat ride).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Nitrox 32",
+        "reason": "Most of the dive is spent between 18 and 30 m. EAN32 buys 10–15 minutes of extra no-deco time without changing the profile."
+      },
+      {
+        "name": "Primary torch",
+        "reason": "Even outside penetrations, the upper car deck and bridge openings are dark cavities full of suspended trucks and silt — a torch turns them from outlines into a scene."
+      }
+    ],
+    "notes": "Penetration of the cargo decks, engine room, and accommodation block is for certified wreck/tech divers only and must be booked with a local operator — entanglement risk inside is high. The Zenobia is a protected wreck under Cypriot law; removing artefacts is prohibited. Surface conditions are usually calm but afternoon meltemi winds can chop the bay in summer — morning slots are more reliable."
   }
 ]
