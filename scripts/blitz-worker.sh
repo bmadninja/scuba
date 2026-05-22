@@ -49,7 +49,11 @@ for i in $(seq 1 $MAX); do
 
   echo "$OUTPUT" | tail -15
 
-  if echo "$OUTPUT" | grep -q "^DONE:"; then
+  if echo "$OUTPUT" | grep -qi "session limit\|usage limit\|rate limit"; then
+    echo "[$LABEL] quota/limit hit — stopping instead of logging fake progress."
+    echo "$(date) | [$LABEL] stopped=quota-limit iter=$i added=$ADDED total=$(node -e "console.log(require('./src/data/sites.json').length)" 2>/dev/null || echo "?")" >> logs/blitz-progress.log
+    break
+  elif echo "$OUTPUT" | grep -q "^DONE:"; then
     SITE=$(echo "$OUTPUT" | grep "^DONE:" | sed 's/^DONE: //')
     echo "[$LABEL] ✓ Added: $SITE"
     ADDED=$((ADDED + 1))

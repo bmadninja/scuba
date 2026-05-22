@@ -46852,5 +46852,57 @@
       }
     ],
     "notes": "Treat the swim-throughs as optional scenic routes, not mandatory passages. Surge can make the arches uncomfortable even when the surface looks calm, and boats may substitute another Kona reef if the afternoon wind or swell has built."
+  },
+  {
+    "id": "raja-ampat-indonesia-magic-mountain",
+    "slug": "raja-ampat-indonesia-magic-mountain",
+    "locationId": "raja-ampat-indonesia",
+    "name": "Magic Mountain (Shadow Reef)",
+    "heroImageUrl": null,
+    "lat": -2.2667,
+    "lng": 130.6,
+    "description": "A submerged seamount in southern Raja Ampat's Misool region, also known as Shadow Reef or Karang Bayangan. The reef rises to snorkelable depth before stepping down into blue water, with manta cleaning stations, grey reef sharks, jacks, barracuda and dense clouds of reef fish. Current is part of the draw here, but it can turn the dive demanding quickly.",
+    "depthRange": { "min": 5, "max": 40 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics", "coral", "geology"],
+    "species": [
+      { "commonName": "Oceanic manta ray", "scientificName": "Mobula birostris", "reliability": "seasonal", "bestMonths": [12, 1, 2, 3, 4] },
+      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "seasonal", "bestMonths": [12, 1, 2, 3, 4] },
+      { "commonName": "Grey reef shark", "scientificName": "Carcharhinus amblyrhynchos", "reliability": "year-round" },
+      { "commonName": "Giant trevally", "scientificName": "Caranx ignobilis", "reliability": "year-round" },
+      { "commonName": "Wobbegong shark", "scientificName": "Eucrossorhinus dasypogon", "reliability": "year-round" },
+      { "commonName": "Schooling barracuda", "scientificName": "Sphyraena qenie", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 12, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 22 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 22 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 22 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 12, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [10, 11, 12, 1, 2, 3, 4],
+    "editorialRank": 93,
+    "getThere": "Fly to Sorong (SOQ), then join a Raja Ampat liveaboard or Misool-based resort transfer. Magic Mountain sits in the remote southern Misool area and is normally reached only by liveaboards or resort boats during southern Raja Ampat itineraries.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "Guides may use hooks only where locally permitted and only on dead substrate when current is running across the cleaning stations."
+      },
+      {
+        "name": "SMB",
+        "reason": "The site is exposed and blue-water ascents are common when groups drift off the seamount."
+      }
+    ],
+    "notes": "This is not a beginner manta dive. Current, remote logistics and blue-water ascents make it best for confident advanced divers with recent drift experience. Manta encounters are seasonal and tide-dependent; give cleaning stations space and follow guide positioning closely."
   }
 ]
