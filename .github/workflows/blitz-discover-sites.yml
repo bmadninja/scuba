@@ -8,7 +8,7 @@ on:
         default: "150"
       model:
         description: "Model to use"
-        default: "claude-sonnet-4-7"
+        default: "claude-opus-4-7"
 
 permissions:
   contents: write
@@ -50,7 +50,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BLITZ: "1"
-          MODEL: ${{ inputs.model || 'claude-sonnet-4-7' }}
+          MODEL: ${{ inputs.model || 'claude-opus-4-7' }}
           MAX_SITES: ${{ inputs.max_per_worker || '150' }}
           EXHAUSTION_THRESHOLD: "6"
           REGION_FOCUS: ${{ matrix.focus }}
