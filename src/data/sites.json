@@ -37505,5 +37505,275 @@
       }
     ],
     "notes": "Liveaboard-only — no day boats. Brothers marine park is closed roughly December–February (dates vary year to year); confirm with operator. Park fees apply per dive day."
+  },
+  {
+    "id": "el-hierro-spain-el-bajon",
+    "slug": "el-hierro-spain-el-bajon",
+    "locationId": "el-hierro-spain",
+    "name": "El Bajón",
+    "heroImageUrl": null,
+    "lat": 27.635,
+    "lng": -17.974,
+    "description": "A volcanic seamount a few hundred metres off La Restinga harbour on El Hierro's southern tip, anchoring the Mar de las Calmas marine reserve. Twin pinnacles crest at 6 and 9 metres before steep walls plunge past 100 metres into open Atlantic. Current pulls feed schooling barracuda, amberjacks and tuna along the ridge, while large dusky groupers, morays and burrfish hold to the rock. In summer and autumn, mobula and oceanic manta rays circle the peaks and whale sharks occasionally pass through. Visibility runs 30 to 50 metres on calm days.",
+    "depthRange": {
+      "min": 6,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Dusky grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Atlantic amberjack",
+        "scientificName": "Seriola dumerili",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "European barracuda",
+        "scientificName": "Sphyraena viridensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mobula ray (devil ray)",
+        "scientificName": "Mobula tarapacana",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "rare",
+        "bestMonths": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare",
+        "bestMonths": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Atlantic trumpetfish",
+        "scientificName": "Aulostomus strigosus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moray eel",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Atlantic bonito",
+        "scientificName": "Sarda sarda",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 19,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 18,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full, optional hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 18,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full, optional hood"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 19,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 21,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full or 5mm"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 20,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly Binter Canarias from Tenerife North (TFN) to Valverde (VDE) on El Hierro — 35 min, 4–5 daily flights. Alternative: ferry from Los Cristianos, Tenerife to Puerto de La Estaca (~3 hr). From Valverde or La Estaca, drive south ~45 min to La Restinga; rental car or taxi recommended (buses are infrequent). Dive boats depart La Restinga harbour and reach El Bajón in 5–10 minutes.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + finger reel",
+        "reason": "Currents over the seamount can push divers off the structure; surface marker buoy required for blue-water ascents and boat pickup."
+      },
+      {
+        "name": "Dive computer with multi-level/deep capability",
+        "reason": "Walls drop past 100 m and most dives work depth profiles between 20 and 40 m along the ridge."
+      }
+    ],
+    "notes": "Inside Mar de las Calmas marine reserve — no fishing or collecting; permits handled by dive operators. Currents can be strong on the ridge edges; advanced certification and good buoyancy expected. Conditions occasionally cancel the dive in winter Atlantic swell."
   }
 ]
