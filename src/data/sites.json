@@ -4531,7 +4531,7 @@
     "slug": "galapagos-darwins-arch",
     "locationId": "darwin-galapagos-ecuador",
     "name": "Darwin's Arch (The Pillars)",
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Tibur%C3%B3n_martillo_com%C3%BAn_%28Sphyrna_lewini%29%2C_San_Jos%C3%A9_del_Cabo%2C_Baja_California%2C_M%C3%A9xico%2C_2024-12-21%2C_DD_04.jpg/3840px-Tibur%C3%B3n_martillo_com%C3%BAn_%28Sphyrna_lewini%29%2C_San_Jos%C3%A9_del_Cabo%2C_Baja_California%2C_M%C3%A9xico%2C_2024-12-21%2C_DD_04.jpg",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Gal%C3%A1pagos_sealion-_underwater_%2835566878280%29.jpg",
     "lat": 1.677,
     "lng": -91.994,
     "description": "Liveaboard-only seamount off the remote Darwin Island. Schooling scalloped hammerheads in the hundreds, whale sharks in season, silky sharks circling the surface. Strong current, surge, cold thermoclines, and the second-best shark-density site on the planet. The arch itself collapsed in 2021; the pillars remain.",
@@ -4822,7 +4822,7 @@
     "slug": "tulamben-uss-liberty",
     "locationId": "tulamben-bali-indonesia",
     "name": "USS Liberty Wreck",
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Blacktip_reef_shark_%28Carcharhinus_melanopterus%29_Moorea.jpg/3840px-Blacktip_reef_shark_%28Carcharhinus_melanopterus%29_Moorea.jpg",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coral_garden.jpg",
     "lat": -8.274,
     "lng": 115.593,
     "description": "A WWII US Army cargo ship torpedoed in 1942 and pushed into the sea by the 1963 Mount Agung eruption. The 120 m hull now rests parallel to shore between 5 and 30 m, encrusted in soft coral and sponges. Beach entry makes it one of the most accessible major wrecks in the world.",
@@ -5595,7 +5595,7 @@
     "slug": "bunaken-lekuan",
     "locationId": "bunaken-indonesia",
     "name": "Lekuan Walls",
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tortuga_carey_%28Eretmochelys_imbricata%29%2C_islas_Ad_Dimaniyat%2C_Om%C3%A1n%2C_2024-08-13%2C_DD_69.jpg/3840px-Tortuga_carey_%28Eretmochelys_imbricata%29%2C_islas_Ad_Dimaniyat%2C_Om%C3%A1n%2C_2024-08-13%2C_DD_69.jpg",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Bunaken_Marine_Park.JPG",
     "lat": 1.611,
     "lng": 124.766,
     "description": "Three contiguous wall sections (Lekuan I, II, III) along the south side of Bunaken island, dropping from the reef crest to over 200 m. Bristling with sea fans, sponges and overhangs hiding turtles. The cleanest visibility in the Bunaken marine park.",
@@ -35406,5 +35406,123 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Bow and midships sit in recreational range; the stern requires deep or technical training. Landowner fee paid at the beach. Currents are usually mild but visibility drops sharply during and after heavy rains when Bonegi Creek discharges silt."
+  }
+,
+  {
+    "id": "channel-islands-cathedral-cove",
+    "slug": "channel-islands-cathedral-cove",
+    "locationId": "channel-islands-usa",
+    "name": "Cathedral Cove",
+    "heroImageUrl": null,
+    "lat": 34.0152,
+    "lng": -119.3683,
+    "description": "Anacapa Island's signature dive: a kelp-forest cathedral on the north shore of the east islet, where giant kelp (Macrocystis pyrifera) climbs from a 21 m sand channel to the surface in vertical golden columns. Drop along the reef structure at 6 m, work the arches and small caverns, and finish in the shallow forest watching garibaldi defend territories and juvenile sea lions strafe the canopy. Inside the Anacapa Island State Marine Reserve, so fish densities and giant sea bass sightings are noticeably higher than nearby unprotected reefs.",
+    "depthRange": { "min": 6, "max": 21 },
+    "skillLevel": "advanced",
+    "diveTypes": ["coral", "geology", "macro"],
+    "species": [
+      { "commonName": "California sea lion", "scientificName": "Zalophus californianus", "reliability": "year-round" },
+      { "commonName": "Garibaldi", "scientificName": "Hypsypops rubicundus", "reliability": "year-round" },
+      { "commonName": "Giant kelp", "scientificName": "Macrocystis pyrifera", "reliability": "year-round" },
+      { "commonName": "California sheephead", "scientificName": "Bodianus pulcher", "reliability": "year-round" },
+      { "commonName": "Horn shark", "scientificName": "Heterodontus francisci", "reliability": "year-round" },
+      { "commonName": "Bat ray", "scientificName": "Myliobatis californica", "reliability": "year-round" },
+      { "commonName": "Giant sea bass", "scientificName": "Stereolepis gigas", "reliability": "seasonal", "bestMonths": [7, 8, 9, 10] },
+      { "commonName": "Moray eel", "scientificName": "Gymnothorax mordax", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 13, "max": 15 },
+        "visibilityM": { "min": 6, "max": 12 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 13, "max": 14 },
+        "visibilityM": { "min": 6, "max": 12 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 13, "max": 14 },
+        "visibilityM": { "min": 6, "max": 15 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 13, "max": 15 },
+        "visibilityM": { "min": 6, "max": 12 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 14, "max": 16 },
+        "visibilityM": { "min": 6, "max": 12 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 15, "max": 17 },
+        "visibilityM": { "min": 6, "max": 15 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 17, "max": 19 },
+        "visibilityM": { "min": 9, "max": 18 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 18, "max": 20 },
+        "visibilityM": { "min": 9, "max": 18 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 18, "max": 20 },
+        "visibilityM": { "min": 12, "max": 21 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 17, "max": 19 },
+        "visibilityM": { "min": 15, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 15, "max": 17 },
+        "visibilityM": { "min": 12, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 14, "max": 15 },
+        "visibilityM": { "min": 9, "max": 18 },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      }
+    ],
+    "bestMonths": [7, 8, 9, 10, 11],
+    "editorialRank": 78,
+    "getThere": "Fly into Los Angeles (LAX) or Santa Barbara (SBA). Channel Islands National Park dive boats depart from Ventura Harbor and Oxnard's Channel Islands Harbor, both roughly 90 minutes north of LAX by car. The crossing to Anacapa takes about an hour. Day trips are practical; no overnight accommodation exists on the island itself.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside the Anacapa Island State Marine Reserve — no take of any marine life. Cold water and surge through the arches demand solid buoyancy; entanglement awareness in the kelp canopy is essential. Surface swell can build quickly at exposed sections; check NOAA forecasts before booking. Visibility is plankton-limited in spring and early summer and peaks in October-November."
   }
 ]
