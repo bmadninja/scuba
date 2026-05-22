@@ -32705,6 +32705,275 @@
     "notes": "Tech certification recommended for full exploration. Wreck penetration card required."
   },
   {
+    "id": "chuuk-san-francisco-maru",
+    "slug": "chuuk-san-francisco-maru",
+    "locationId": "chuuk-lagoon-fsm",
+    "name": "San Francisco Maru",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/San_Francisco_Maru_Type_95_HA-Go_Tank.jpg",
+    "lat": 7.3669,
+    "lng": 151.9112,
+    "description": "The Million Dollar Wreck — a Japanese armed cargo ship sunk by USS Essex bombers during Operation Hailstone on 18 February 1944. Sits upright on the lagoon floor at 64 m with the bridge at 50 m and main deck at 50–55 m. Three Type 95 Ha-Go tanks remain lashed to the foredeck, holds packed with mines, bombs, artillery shells, trucks and aircraft parts. Deep, dark and intact — the ammunition is still live.",
+    "depthRange": {
+      "min": 42,
+      "max": 64
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Whitetip reef shark",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grey reef shark",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 90,
+    "getThere": "Chuuk (TKK / Weno) is reached via United's island-hopper service from Guam (GUM) or Honolulu (HNL), or via short hops from Pohnpei (PNI). Service is sparse — book early. The wreck sits south-east of Dublon (Tonoas) Island; ~25 min by dive boat from Weno.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Truk Stop Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Truk%20Stop%20Hotel",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Blue Lagoon Resort Chuuk",
+        "url": "https://www.booking.com/searchresults.html?ss=Blue%20Lagoon%20Resort%20Chuuk",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "SS Thorfinn",
+        "url": "https://www.liveaboard.com/diving/search?destination=SS%20Thorfinn%20Truk",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Truk Master",
+        "url": "https://www.liveaboard.com/diving/search?destination=Truk%20Master%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Truk Odyssey",
+        "url": "https://www.liveaboard.com/diving/search?destination=Truk%20Odyssey%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "Bluewater Travel",
+        "label": "Truk Lagoon wreck expeditions",
+        "url": "https://bluewaterdivetravel.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light",
+        "reason": "Sub-50 m bottom is dark — primary plus backup canister required.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Computer",
+        "reason": "Trimix and decompression schedules — multi-gas computer essential.",
+        "gearId": "computer-shearwater-teric"
+      }
+    ],
+    "notes": "Tech-trimix dive — runtimes typically 50–60 min with 30+ min of deco. Live ordnance is present throughout the holds; do not touch. Penetration is not recommended even for advanced wreck divers given the depth, debris and oil seepage."
+  },
+  {
     "id": "yap-mil-channel",
     "slug": "yap-mil-channel",
     "locationId": "manta-ridge-yap",
