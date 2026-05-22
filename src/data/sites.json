@@ -46232,5 +46232,248 @@
       }
     ],
     "notes": "Advanced Open Water with wreck experience strongly recommended; full penetration into the engine room and crew quarters requires PADI/SSI Wreck Diver certification. The sideways orientation disorients first-time wreck divers — practise neutral buoyancy and trim before going inside. Three Abu Nuhas mooring buoys serve different wrecks; confirm with the dive guide which wreck the line drops on, as currents can prevent reaching another. Strait of Gubal winds frequently force itineraries to swap Abu Nuhas for sheltered sites. Nearest hyperbaric chamber is in Hurghada."
+  },
+  {
+    "id": "salt-island-bvi-rms-rhone",
+    "slug": "salt-island-bvi-rms-rhone",
+    "locationId": "salt-island-bvi",
+    "name": "RMS Rhone",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/RMS_Rhone_2003_6.jpg",
+    "lat": 18.3687,
+    "lng": -64.5356,
+    "description": "310-foot Royal Mail Steamer launched in 1865 and torn apart on Black Rock Point during the San Narciso Hurricane of October 1867, killing 123. She lies in two sections off Salt Island: the bow rests on its starboard side in 24–26 m with the bowsprit, foremast and open cargo holds large enough to swim through, while the stern lies broken in 6–15 m around the bronze propeller and condenser. Iron ribs are encrusted with orange cup coral, sponges and gorgonians. Hawksbill turtles, nurse sharks, big southern stingrays, green moray eels, schools of horse-eye jacks and resident barracuda work the structure. Featured in Peter Benchley's 1977 film The Deep, the wreck became the BVI's first National Marine Park in 1980 and is widely cited as the Caribbean's best recreational wreck dive.",
+    "depthRange": {
+      "min": 6,
+      "max": 26
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Southern stingray",
+        "scientificName": "Hypanus americanus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Horse-eye jack",
+        "scientificName": "Caranx latus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "French angelfish",
+        "scientificName": "Pomacanthus paru",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Shorty or rash guard"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Shorty or rash guard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Shorty or rash guard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Shorty or rash guard"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 92,
+    "getThere": "Fly into Terrance B. Lettsome International (EIS) on Beef Island, Tortola, or arrive via ferry from St. Thomas (STT) in the US Virgin Islands. Dive operators in Road Town and West End, Tortola, and out of Cooper Island Beach Club run the Rhone as a two-tank trip, motoring 30–45 minutes south to the moorings off Black Rock Point at the western tip of Salt Island.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Primary torch",
+        "reason": "The bow's cargo holds and the open passages between deck beams are dark even on bright days — a torch reveals the encrusting cup coral, lobster and resident moray eels tucked into the iron framework."
+      },
+      {
+        "name": "Reef hook or SMB",
+        "reason": "Currents through the Salt Island channel can pick up on outgoing tides; an SMB is required for ascents off the mooring line on most operator policies."
+      }
+    ],
+    "notes": "The Rhone is fully protected within the BVI National Parks Trust — removing artefacts, coral or marine life is prohibited and enforced. Most operators run it as two separate dives: a deeper bow dive first (24–26 m) then a shallow stern dive (6–15 m), with the famous 'Lucky Porthole' (a bronze condenser fitting rubbed for luck) on the stern leg. Penetration through the bow's open cargo holds is straightforward for Open Water divers in good trim; deeper engine-room penetration requires Wreck certification. Hurricane season (Aug–Oct) brings reduced visibility and occasional closures; nearest recompression chamber is on St. Thomas, USVI."
   }
 ]
