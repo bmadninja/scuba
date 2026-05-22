@@ -33494,5 +33494,247 @@
       }
     ],
     "notes": "Bow accessible to advanced divers; full stern requires tech certification."
+  },
+  {
+    "id": "malapascua-philippines-monad-shoal",
+    "slug": "malapascua-philippines-monad-shoal",
+    "locationId": "malapascua-philippines",
+    "name": "Monad Shoal",
+    "heroImageUrl": null,
+    "lat": 11.3138,
+    "lng": 124.195,
+    "description": "Monad Shoal is a submerged seamount on the edge of a 200m drop-off roughly 7.8 km off Malapascua, with a plateau topping out around 15-20m. Dive boats reach the reef edge before dawn so divers can descend to cleaning stations at 25-35m, where wrasse pick parasites from pelagic thresher sharks rising from the depths. Manta and mobula rays also visit; tiger sharks have been resident since around 2020. Flash photography is prohibited as the sharks are extremely light-sensitive.",
+    "depthRange": {
+      "min": 15,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Pelagic thresher shark",
+        "scientificName": "Alopias pelagicus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Devil ray",
+        "scientificName": "Mobula spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Eagle ray",
+        "scientificName": "Aetobatus spp.",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Scalloped hammerhead shark",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Tiger shark",
+        "scientificName": "Galeocerdo cuvier",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or full"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 94,
+    "getThere": "Fly to Mactan-Cebu International Airport (CEB). Transfer 4-6 hours by van or bus from Cebu City's North Bus Terminal to Maya port in Daanbantayan, then a 30-minute bangka boat crossing to Malapascua Island. Dive boats depart Malapascua around 04:00-04:30 for the 30-40 minute run to Monad Shoal, roughly 7.8 km offshore.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Monad Shoal is a declared Marine Protected Area; a small MPA/shark conservation fee is collected per dive (Malapascua Marine Protection Fund). Advanced certification required - thresher cleaning stations sit at 25-35m and bottom time is brief. Nitrox strongly recommended. Flash photography prohibited (sharks are extremely light-sensitive). Pre-dawn departure required; sharks retreat once the sun is high. Tiger sharks have been resident at Monad Shoal since around 2020, pushing many thresher sightings to nearby Kimud (Kemod) Shoal. Typhoon season July-October can disrupt access."
   }
 ]
