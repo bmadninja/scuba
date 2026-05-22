@@ -8,9 +8,12 @@
     "start": "next start",
     "lint": "eslint",
     "migrate": "node --experimental-strip-types scripts/migrate.ts",
-    "verify:stories": "node scripts/verify-stories.mjs"
+    "verify:stories": "node scripts/verify-stories.mjs",
+    "discover:dry": "DRY_RUN=1 node scripts/discover-sites.mjs",
+    "discover": "node scripts/discover-sites.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.1",
     "@base-ui/react": "^1.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -35,6 +38,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "zod": "^3.25.76"
   }
 }

@@ -1,0 +1,76 @@
+name: Discover dive sites
+
+on:
+  schedule:
+    - cron: "0 7 * * *"   # daily at 07:00 UTC
+  workflow_dispatch:
+    inputs:
+      max_sites:
+        description: "How many sites to add this run"
+        default: "1"
+      dry_run:
+        description: "Write to sites.proposed.json instead of sites.json"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run discovery
+        id: discover
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MAX_SITES: ${{ inputs.max_sites || '1' }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: |
+          set +e
+          node scripts/discover-sites.mjs | tee discover.log
+          code=${PIPESTATUS[0]}
+          echo "exit_code=$code" >> $GITHUB_OUTPUT
+          if [ $code -eq 2 ]; then
+            echo "No sites added — skipping PR"
+            exit 0
+          fi
+          exit $code
+
+      - name: Extract added sites
+        if: steps.discover.outputs.exit_code == '0'
+        id: meta
+        run: |
+          added=$(grep '^ADDED_SITES=' discover.log | sed 's/^ADDED_SITES=//')
+          echo "added=$added" >> $GITHUB_OUTPUT
+          echo "branch=auto/discover-$(date +%Y%m%d-%H%M%S)" >> $GITHUB_OUTPUT
+
+      - name: Open PR
+        if: steps.discover.outputs.exit_code == '0'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ${{ steps.meta.outputs.branch }}
+          commit-message: "auto: add dive site — ${{ steps.meta.outputs.added }}"
+          title: "🤿 New dive site: ${{ steps.meta.outputs.added }}"
+          body: |
+            Autonomous discovery run added: **${{ steps.meta.outputs.added }}**
+
+            Vercel will attach a preview URL to this PR shortly — click through to verify the new site renders correctly, then merge to ship to prod.
+
+            <details><summary>Run log</summary>
+
+            ```
+            $(cat discover.log)
+            ```
+            </details>
+          labels: automation,dive-site
