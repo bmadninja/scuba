@@ -39721,7 +39721,14 @@
         "commonName": "Whale shark",
         "scientificName": "Rhincodon typus",
         "reliability": "seasonal",
-        "bestMonths": [6, 7, 8, 9, 10, 11]
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
       },
       {
         "commonName": "Barberfish",
@@ -39732,90 +39739,169 @@
     "conditionsByMonth": [
       {
         "month": 1,
-        "waterTempC": { "min": 25, "max": 27 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 2,
-        "waterTempC": { "min": 26, "max": 28 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 3,
-        "waterTempC": { "min": 27, "max": 28 },
-        "visibilityM": { "min": 25, "max": 35 },
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 4,
-        "waterTempC": { "min": 27, "max": 28 },
-        "visibilityM": { "min": 25, "max": 35 },
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 5,
-        "waterTempC": { "min": 26, "max": 28 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 6,
-        "waterTempC": { "min": 25, "max": 27 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 7,
-        "waterTempC": { "min": 24, "max": 27 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 8,
-        "waterTempC": { "min": 24, "max": 27 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 9,
-        "waterTempC": { "min": 24, "max": 27 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 10,
-        "waterTempC": { "min": 25, "max": 27 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 11,
-        "waterTempC": { "min": 25, "max": 27 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 12,
-        "waterTempC": { "min": 25, "max": 27 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       }
     ],
-    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "editorialRank": 96,
     "getThere": "San José (SJO) is Costa Rica's main international airport. From there, a 90-minute road transfer to Puntarenas for liveaboard departure — the crossing to Cocos takes roughly 36 hours each way and the island is accessible only by liveaboard.",
     "lodging": [
@@ -39881,5 +39967,329 @@
       }
     ],
     "notes": "Cocos Island National Park is permit-controlled and accessible only via licensed liveaboards. Park ranger station at Wafer Bay. AOW + 50 logged dives is the de facto minimum across operators; many require 100+. Hammerhead population has declined sharply since the 2000s but the cleaning-station behavior at Dirty Rock remains the most reliable encounter in the Eastern Pacific."
+  },
+  {
+    "id": "egypt-daedalus-reef",
+    "slug": "egypt-daedalus-reef",
+    "locationId": "brothers-egypt",
+    "name": "Daedalus Reef",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Daedalus_Reef_lighthouse_in_the_Red_Sea.JPG",
+    "lat": 24.9233,
+    "lng": 35.8583,
+    "description": "Isolated 400 × 100 m oval reef in the central Red Sea, 90 km east of Marsa Alam, marked by a black-and-white striped lighthouse rebuilt in 1931. Walls drop from the surface to 20 m then slope to 40 m before plunging into 550 m of open water. The north tip is the money dive — a current-swept point where scalloped hammerhead schools queue in summer and oceanic threshers cruise the blue. The south plateau holds 'Anemone City', a 15 m carpet of magnificent anemones and clownfish. Liveaboard-only.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Pelagic thresher shark",
+        "scientificName": "Alopias pelagicus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Oceanic whitetip shark",
+        "scientificName": "Carcharhinus longimanus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Silky shark",
+        "scientificName": "Carcharhinus falciformis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Humphead wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Magnificent anemone & anemonefish",
+        "scientificName": "Heteractis magnifica / Amphiprion bicinctus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 92,
+    "getThere": "Fly into Marsa Alam (RMF) or Hurghada (HRG) — both have direct seasonal flights from major European hubs. Daedalus is accessible only by liveaboard; most southern Red Sea boats depart from Port Ghalib (20 min from Marsa Alam airport) or Hurghada, with crossings of 6–10 hours of open water to reach the reef.",
+    "lodging": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Blue Pearl",
+        "url": "https://www.liveaboard.com/diving/search?destination=Blue%20Pearl%20Red%20Sea%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Emperor Elite",
+        "url": "https://www.liveaboard.com/diving/search?destination=Emperor%20Elite%20Red%20Sea",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Red Sea Aggressor IV",
+        "url": "https://www.liveaboard.com/diving/search?destination=Red%20Sea%20Aggressor%20IV",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Port Ghalib Marina hotels (pre/post liveaboard)",
+        "url": "https://www.booking.com/searchresults.html?ss=Port%20Ghalib",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Emperor Divers Egypt",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical",
+      "computer-shearwater-peregrine"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + long reel",
+        "reason": "Dives end as blue-water drifts away from the reef; every diver shoots their own marker for the zodiac pickup.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Nitrox certification",
+        "reason": "Hammerhead encounters happen at 25–40 m on the north tip — EAN32 buys meaningful bottom time across 3–4 dives a day."
+      },
+      {
+        "name": "Dive light",
+        "reason": "Strong sun on shallow walls but the swim-throughs on the south plateau and the wall slopes past 30 m hold shaded crevices worth peering into.",
+        "gearId": "light-bigblue-vl5500p"
+      }
+    ],
+    "notes": "Liveaboard-only — no day boats. Crossings can be rough October–April; check sea state before booking shoulder-season trips. The lighthouse island itself is staffed by Egyptian coast guard; landings are at their discretion. Northern tip is exposed; if currents exceed safe limits the dive guide will reroute to the sheltered east or west walls."
   }
 ]
