@@ -34317,5 +34317,46 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Advanced Open Water with deep and wreck experience strongly recommended; full wreck-penetration requires PADI/SSI Wreck Diver certification and a primary plus backup torch. Mooring lines are mandatory for descent and ascent because surface currents in the Strait of Gubal can hit 2 knots — drift-off scenarios have caused fatalities. Nitrox extends bottom time on the deeper holds and propeller. Avoid kicking up silt inside the holds, and never remove or touch the cargo or human remains — the wreck is a designated war grave for the 9 crew lost in 1941. Sharm el-Sheikh has the nearest hyperbaric chamber. Site can be crowded with 20+ boats midday in high season; first dive of the day is usually the cleanest."
+  },
+  {
+    "id": "stingray-city-proper",
+    "slug": "stingray-city-proper",
+    "locationId": "stingray-city-cayman-islands",
+    "name": "Stingray City",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Southern_stingrays_at_stingray_city.jpg",
+    "lat": 19.3757,
+    "lng": -81.3048,
+    "description": "A patch of white sand inside Grand Cayman's North Sound where dozens of southern stingrays patrol at around 12 feet. The rays began gathering here in the 1980s when fishermen cleaned their catch in the calm lagoon shallows — the population learned the sound of outboards and now reliably arrives at boat noise. The dive itself is technically trivial (no current, sand bottom, you kneel) but the encounter is the draw: three-to-four-foot wingspans gliding inches over your head, often in groups of twenty or more. A separate sandbar nearby in 3–5 feet handles the snorkel crowds.",
+    "depthRange": { "min": 1, "max": 5 },
+    "skillLevel": "open-water",
+    "diveTypes": ["large-pelagics"],
+    "species": [
+      { "commonName": "Southern stingray", "scientificName": "Hypanus americanus", "reliability": "year-round" },
+      { "commonName": "Yellowtail snapper", "scientificName": "Ocyurus chrysurus", "reliability": "year-round" },
+      { "commonName": "Bar jack", "scientificName": "Caranx ruber", "reliability": "year-round" },
+      { "commonName": "Nurse shark", "scientificName": "Ginglymostoma cirratum", "reliability": "rare" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 26, "max": 27}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "none", "suitRecommendation": "3mm tropical wetsuit" },
+      { "month": 2, "waterTempC": {"min": 26, "max": 27}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "none", "suitRecommendation": "3mm tropical wetsuit" },
+      { "month": 3, "waterTempC": {"min": 26, "max": 27}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "none", "suitRecommendation": "3mm tropical wetsuit" },
+      { "month": 4, "waterTempC": {"min": 27, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "none", "suitRecommendation": "3mm tropical wetsuit" },
+      { "month": 5, "waterTempC": {"min": 27, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "none", "suitRecommendation": "3mm tropical wetsuit or rashguard" },
+      { "month": 6, "waterTempC": {"min": 28, "max": 29}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "none", "suitRecommendation": "Rashguard or 3mm shorty" },
+      { "month": 7, "waterTempC": {"min": 29, "max": 30}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "none", "suitRecommendation": "Rashguard or 3mm shorty" },
+      { "month": 8, "waterTempC": {"min": 29, "max": 30}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "none", "suitRecommendation": "Rashguard or 3mm shorty" },
+      { "month": 9, "waterTempC": {"min": 29, "max": 30}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "none", "suitRecommendation": "Rashguard or 3mm shorty" },
+      { "month": 10, "waterTempC": {"min": 28, "max": 29}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "none", "suitRecommendation": "Rashguard or 3mm shorty" },
+      { "month": 11, "waterTempC": {"min": 27, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "none", "suitRecommendation": "3mm tropical wetsuit" },
+      { "month": 12, "waterTempC": {"min": 26, "max": 27}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "none", "suitRecommendation": "3mm tropical wetsuit" }
+    ],
+    "bestMonths": [11, 12, 1, 2, 3, 4, 5],
+    "editorialRank": 84,
+    "getThere": "Owen Roberts International (GCM) on Grand Cayman, with direct flights from Miami, Tampa, Charlotte, New York, Toronto and London. The dive itself is reached by a 20–30 minute boat ride from departure docks near Seven Mile Beach, Camana Bay, North Side or Rum Point — Rum Point is the closest at about 10 minutes across the sound.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "The site sits within a designated Wildlife Interaction Zone managed by the Cayman Islands Department of Environment — only permitted operators can feed the rays, and feeding rules apply (squid only, no chasing, no lifting from the bottom). Touching is permitted on the flat top of the disc; avoid the tail barb. The 'proper' scuba site at ~12 ft is distinct from the adjacent sandbar (3–5 ft) used by cruise-ship snorkel tours, which is far more crowded. Ray numbers have dropped over the past two decades; mornings before the cruise boats arrive are the calmest. Hurricane season runs June–November with peak risk August–October."
   }
 ]
