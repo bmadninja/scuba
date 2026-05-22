@@ -38141,90 +38141,169 @@
     "conditionsByMonth": [
       {
         "month": 1,
-        "waterTempC": {"min": 27, "max": 28},
-        "visibilityM": {"min": 20, "max": 30},
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 2,
-        "waterTempC": {"min": 27, "max": 28},
-        "visibilityM": {"min": 25, "max": 35},
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 3,
-        "waterTempC": {"min": 28, "max": 29},
-        "visibilityM": {"min": 25, "max": 35},
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 4,
-        "waterTempC": {"min": 28, "max": 30},
-        "visibilityM": {"min": 25, "max": 35},
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 5,
-        "waterTempC": {"min": 29, "max": 30},
-        "visibilityM": {"min": 20, "max": 30},
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 6,
-        "waterTempC": {"min": 29, "max": 30},
-        "visibilityM": {"min": 15, "max": 25},
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 7,
-        "waterTempC": {"min": 29, "max": 30},
-        "visibilityM": {"min": 15, "max": 25},
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 8,
-        "waterTempC": {"min": 29, "max": 30},
-        "visibilityM": {"min": 15, "max": 25},
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 9,
-        "waterTempC": {"min": 29, "max": 30},
-        "visibilityM": {"min": 15, "max": 25},
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 10,
-        "waterTempC": {"min": 28, "max": 30},
-        "visibilityM": {"min": 15, "max": 25},
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 11,
-        "waterTempC": {"min": 28, "max": 29},
-        "visibilityM": {"min": 20, "max": 30},
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 12,
-        "waterTempC": {"min": 27, "max": 29},
-        "visibilityM": {"min": 20, "max": 30},
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       }
     ],
-    "bestMonths": [11, 12, 1, 2, 3, 4],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
     "editorialRank": 98,
     "getThere": "Fly into Roman Tmetuchl International Airport (ROR) on Babeldaob via Manila, Taipei, Tokyo, or Guam. Sam's Tours and other Koror-based operators run daily speedboats — Blue Corner sits at the southwest end of Palau's barrier reef off Ngemelis Island, roughly 45 minutes from Koror. Most divers reach it on a two- or three-tank Rock Islands day trip; liveaboards anchor in the Ngemelis area.",
     "lodging": [],
@@ -38249,5 +38328,271 @@
       }
     ],
     "notes": "Permit: Rock Islands / Koror State permit plus the Palau Pristine Paradise Environmental Fee (paid on arrival, valid for the trip). Advanced Open Water minimum; previous reef-hook and drift experience expected. Currents can shift direction mid-dive — listen to the briefing on which way the hook faces. March-April peak for shark numbers."
+  },
+  {
+    "id": "catalina-islands-la-pared",
+    "slug": "catalina-islands-la-pared",
+    "locationId": "catalina-islands-costa-rica",
+    "name": "La Pared (The Wall)",
+    "heroImageUrl": null,
+    "lat": 10.5535,
+    "lng": -85.8835,
+    "description": "A volcanic rock face on the outer Catalina Islands off Guanacaste, dropping from about 12 metres to past 24 along a single sloping wall locals call Shark Alley. Cold nutrient-rich upwellings between November and April pull oceanic manta rays with wingspans over 6 metres, mobula schools of dozens to hundreds, and squadrons of cow-nosed and spotted eagle rays through the cleaning stations on the ridge. White-tip reef sharks rest in the channels at the base, with schooling jacks, snapper and the occasional bull or whitetip in the blue. Strong tidal currents and a sharp thermocline make for serious diving, but it is the most reliable Pacific manta encounter in northern Costa Rica.",
+    "depthRange": {
+      "min": 12,
+      "max": 24
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Munk's devil ray",
+        "scientificName": "Mobula munkiana",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Cow-nosed ray",
+        "scientificName": "Rhinoptera steindachneri",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus laticeps",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Pacific green turtle",
+        "scientificName": "Chelonia mydas agassizii",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye jack",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "King angelfish",
+        "scientificName": "Holacanthus passer",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 18,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full, hood and vest"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 17,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full, hood and vest"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 18,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 22,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm or 5mm shorty"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or skin"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or skin"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or skin"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or skin"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 20,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly into Daniel Oduber International Airport in Liberia (LIR), Guanacaste — direct flights from major US hubs and seasonal European routes. From Liberia, drive 40–60 minutes to dive shops in Playas del Coco, Playa Flamingo, or Tamarindo. Boats reach the Catalina Islands in 30–45 minutes depending on the departure beach.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Temperate wetsuit",
+        "reason": "Upwellings in manta season push water below 20°C with sharp thermoclines — a 5mm full suit plus hood is standard from December through March."
+      },
+      {
+        "name": "SMB + reel",
+        "reason": "Drift profiles along the wall regularly end in blue-water ascents; surface marker buoy is required for boat pickup in current."
+      }
+    ],
+    "notes": "Strong tidal currents and surge make this an advanced-only dive — most operators require Advanced Open Water and previous current-diving experience. Oceanic mantas concentrate at the cleaning stations from late November through April, peaking January to March. Big Pacific swells in winter occasionally cancel the boat trip."
   }
 ]
