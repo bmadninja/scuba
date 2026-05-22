@@ -44882,5 +44882,57 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside the South Ari MPA: no touching, no flash photography, no fins within 3 m of the shark, no chasing. Operators communicate by radio when a shark is spotted; expect 3-5 boats and 20+ snorkellers per encounter during peak season. Best window is the morning slack tide on a sunny day."
+  },
+  {
+    "id": "cenotes-angelita",
+    "slug": "cenotes-angelita",
+    "locationId": "cenotes-mexico",
+    "name": "Cenote Angelita",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Mexico_cenotes_Angelita_Tom_Sladek.jpg",
+    "lat": 20.1377,
+    "lng": -87.5777,
+    "description": "A vertical shaft 17 km south of Tulum that drops past a 30 m hydrogen sulfide layer to a 60 m floor. The dive begins with a black-water descent through clear freshwater, then at ~27 m a dense sulfide cloud appears as a milky river — divers see the crowns of long-dead trees and tangled branches rising up through it like a drowned forest. Punch down through the 3 m murk and the lower halocline opens into amber, anoxic salt water that smells like sulfur even through the regulator. Locals call it \"The Nightmare.\" Sealed cenote with no cave overhead — open vertical shaft only, but the depth and stratified visibility make it a Level 3 dive in the Quintana Roo grading system.",
+    "depthRange": {
+      "min": 25,
+      "max": 60
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Mosquitofish",
+        "scientificName": "Gambusia spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mayan tetra",
+        "scientificName": "Astyanax aeneus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 2, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 3, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 4, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 5, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 6, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 7, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 8, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 9, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 10, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 11, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" },
+      { "month": 12, "waterTempC": {"min": 24, "max": 25}, "visibilityM": {"min": 30, "max": 50}, "currentStrength": "none", "suitRecommendation": "5mm wetsuit (long bottom time at depth)" }
+    ],
+    "bestMonths": [11, 12, 1, 2, 3, 4],
+    "editorialRank": 88,
+    "getThere": "Fly into Cancún (CUN), then drive 1h45 south on Highway 307 to Tulum. The cenote entrance is at Km 17 on the Tulum–Chetumal highway, about a 15-minute drive south of Tulum town. Park at the property gate, pay the landowner fee, and walk 5 minutes through jungle to the shaft.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Advanced Open Water minimum; most operators require Deep certification, prior Level 1 and Level 2 cenote dives, and 20+ logged dives. Bottom time below the sulfide layer triggers mandatory deco — plan as a deep dive. No sunscreen or insect repellent allowed in the water; rinse off at the shore shower before entry. Single tank dives only on a typical recreational profile; many divers run two tanks (sidemount or twins) for adequate gas reserves at 40+ m."
   }
 ]
