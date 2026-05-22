@@ -45817,5 +45817,261 @@
       }
     ],
     "notes": "Penetration of the cargo decks, engine room, and accommodation block is for certified wreck/tech divers only and must be booked with a local operator — entanglement risk inside is high. The Zenobia is a protected wreck under Cypriot law; removing artefacts is prohibited. Surface conditions are usually calm but afternoon meltemi winds can chop the bay in summer — morning slots are more reliable."
+  },
+  {
+    "id": "ogasawara-chichijima-dolphin-swim",
+    "slug": "ogasawara-chichijima-dolphin-swim",
+    "locationId": "ogasawara-japan",
+    "name": "Chichijima Dolphin Swim",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Swimming_with_dolphins_Ogasawara.jpg",
+    "lat": 27.08,
+    "lng": 142.18,
+    "description": "In-water encounter with resident pods of Indo-Pacific bottlenose and spinner dolphins along the western and southern coasts of Chichijima, the main island of the Ogasawara (Bonin) archipelago — 1,000 km south of Tokyo and accessible only by a 24-hour overnight ferry from Takeshiba. Boats spot pods from the surface, then drop snorkellers ahead of the line of travel. Bottlenoses are slow, curious, and often hold eye contact for whole passes; spinners move in larger, faster schools and frequently spiral past at 5–10 m. The surrounding reef hosts the wrought-iron butterflyfish (Chaetodon daedalma), a species endemic to southern Japan that is unusually common here. The Ogasawara group is a UNESCO World Heritage Site (2011), often called Japan's Galápagos for its isolated endemic fauna.",
+    "depthRange": {
+      "min": 0,
+      "max": 15
+    },
+    "skillLevel": "never-dived",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Indo-Pacific bottlenose dolphin",
+        "scientificName": "Tursiops aduncus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spinner dolphin",
+        "scientificName": "Stenella longirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Sperm whale",
+        "scientificName": "Physeter macrocephalus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Wrought-iron butterflyfish",
+        "scientificName": "Chaetodon daedalma",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 78,
+    "getThere": "There is no airport on Ogasawara. The only access is the Ogasawara Maru ferry from Takeshiba Pier in central Tokyo to Futami Port on Chichijima — a single ~24-hour sailing each way, departing about once a week. Round-trip itineraries are typically locked to a 5- or 6-day window between ferry sailings. Dolphin swim and watching tours depart Futami Port on small day boats; book ahead with local operators on the island.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Long freediving fins",
+        "reason": "The dolphins set the pace. A few extra seconds of speed on the kick is the difference between a full pass and watching them disappear."
+      },
+      {
+        "name": "Snorkel and mask (no scuba)",
+        "reason": "By prefecture rule and pod behaviour, encounters are snorkel/freedive only — bubbles drive the dolphins off."
+      }
+    ],
+    "notes": "This is a wild-pod encounter, not a captive interaction; sightings are weather- and mood-dependent. Tour operators follow strict approach rules — no chasing, no touching, drop in front of the line of travel. Summer (June–September) is the most stable window but coincides with typhoon season; winter (January–April) brings humpback whales but cooler water and rougher swell. Allow buffer days at either end — ferry sailings cancel for weather and there are no alternatives."
   }
 ]
