@@ -42259,5 +42259,48 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Protected wreck under the Commonwealth Underwater Cultural Heritage Act 2018 — penetration is illegal and nothing may be touched or removed. Currents are routinely strong; many operators require an advanced certification, recent dive experience, and a deep adventure dive. Nitrox is widely recommended to extend bottom time at 25-30 m. Exposed open-ocean site: seasickness on the surface interval is common, and trips are cancelled in marginal weather."
+  },
+  {
+    "id": "ras-mohammed-egypt-ss-dunraven",
+    "slug": "ras-mohammed-egypt-ss-dunraven",
+    "locationId": "ras-mohammed-egypt",
+    "name": "SS Dunraven",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Dunraven_interior_2017-04-22_14-26-24_Sinai-8046.jpg",
+    "lat": 27.7033,
+    "lng": 34.1217,
+    "description": "British steam-sail merchantman that struck the southern reef of Sha'ab Mahmoud in April 1876 carrying spices and cotton home from Bombay. She capsized within hours of the impact and sank in two pieces, settling upside-down on a sandy slope outside the Ras Mohammed park boundary; local fishermen kept her location secret for a century before sport divers rediscovered her in 1977. The 80 m hull rises from 29 m at the broken stern to 15 m at the bow, with the propeller shaft and a single boiler still in place. A long swim-through runs the inverted hold, exiting where the ship snapped in half, and the rusted plates host glassfish clouds, lionfish, blue-spotted stingrays, moray eels and Dendronephthya soft corals.",
+    "depthRange": { "min": 15, "max": 30 },
+    "skillLevel": "advanced",
+    "diveTypes": ["wrecks", "coral"],
+    "species": [
+      { "commonName": "Glassfish", "scientificName": "Parapriacanthus ransonneti", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Common lionfish", "scientificName": "Pterois miles", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Bluespotted stingray", "scientificName": "Neotrygon kuhlii", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Giant moray", "scientificName": "Gymnothorax javanicus", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Klunzinger's soft coral", "scientificName": "Dendronephthya klunzingeri", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Crocodilefish", "scientificName": "Papilloculiceps longiceps", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 21, "max": 23}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5–7 mm wetsuit" },
+      { "month": 2, "waterTempC": {"min": 20, "max": 22}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5–7 mm wetsuit" },
+      { "month": 3, "waterTempC": {"min": 21, "max": 23}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" },
+      { "month": 4, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" },
+      { "month": 5, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "3–5 mm wetsuit" },
+      { "month": 6, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
+      { "month": 7, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
+      { "month": 8, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
+      { "month": 9, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "3 mm wetsuit" },
+      { "month": 10, "waterTempC": {"min": 25, "max": 27}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" },
+      { "month": 11, "waterTempC": {"min": 23, "max": 25}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" },
+      { "month": 12, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" }
+    ],
+    "bestMonths": [3,4,5,6,7,8,9,10,11],
+    "editorialRank": 78,
+    "getThere": "Fly into Sharm El Sheikh International (SSH). The Dunraven is roughly 30 km south-west of Sharm and is reached by day boats running out of Sharm marinas (~90-minute crossing) or by Strait of Gubal / Ras Mohammed liveaboards that often pair the dive with Shark and Yolanda Reef on the same itinerary.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "The wreck sits just outside the Ras Mohammed National Park boundary, so park fees and permits may apply depending on operator routing. The hull is inverted and dark inside — a primary dive light is essential, and the central swim-through past the boiler is a true overhead environment best done with wreck or AOW training. Maximum depth is 29 m at the stern; plan for deco awareness and Nitrox if available."
   }
 ]
