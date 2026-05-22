@@ -39672,5 +39672,214 @@
       }
     ],
     "notes": "Advanced Open Water with deep training is the working minimum — most operators require it plus a confirmed AOW logbook entry. Foreign nationals no longer need a separate Restricted Area Permit (RAP) for Havelock but must carry passport; the older RAP rule was lifted in 2022. Site is closed during the southwest monsoon (roughly mid-May through mid-September) when surface swell and silt make the run unsafe. Do not touch the giant barrel sponges — some are estimated at over 1,000 years old and break easily."
+  },
+  {
+    "id": "cocos-dirty-rock",
+    "slug": "cocos-dirty-rock",
+    "locationId": "cocos-costa-rica",
+    "name": "Dirty Rock (Roca Sucia)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Scalloped_hammerhead_cocos.jpg",
+    "lat": 5.568,
+    "lng": -87.083,
+    "description": "Cluster of jagged pinnacles off Cocos's northwest corner, streaked with guano that gives the rock its name. Drop down a wall to 20–25 m and hold position at the barberfish cleaning station — scalloped hammerheads queue overhead in schools that can number in the hundreds, sliding in one at a time to be cleaned. Galapagos sharks, marbled rays, and bigeye trevally fill the blue between passes. Strong current and surge are the price of admission.",
+    "depthRange": {
+      "min": 10,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Galapagos shark",
+        "scientificName": "Carcharhinus galapagensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Marbled ray",
+        "scientificName": "Taeniurops meyeni",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [6, 7, 8, 9, 10, 11]
+      },
+      {
+        "commonName": "Barberfish",
+        "scientificName": "Johnrandallia nigrirostris",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 24, "max": 27 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 24, "max": 27 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 24, "max": 27 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "editorialRank": 96,
+    "getThere": "San José (SJO) is Costa Rica's main international airport. From there, a 90-minute road transfer to Puntarenas for liveaboard departure — the crossing to Cocos takes roughly 36 hours each way and the island is accessible only by liveaboard.",
+    "lodging": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MV Okeanos Aggressor I",
+        "url": "https://www.liveaboard.com/diving/search?destination=Okeanos%20Aggressor%20Cocos",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MV Argo (Undersea Hunter)",
+        "url": "https://www.liveaboard.com/diving/search?destination=Argo%20Cocos%20Island",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MV Sea Hunter",
+        "url": "https://www.liveaboard.com/diving/search?destination=Sea%20Hunter%20Cocos%20Island",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "Bluewater Travel",
+        "label": "Aggressor Adventures",
+        "url": "https://www.bluewaterdivetravel.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "computer-shearwater-peregrine"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Temperate-grade wetsuit",
+        "reason": "Thermocline can drop into the low 20s°C even during the warm-water months — a 5 mm full suit is the working minimum.",
+        "gearId": "wetsuit-bare-5mm-full"
+      },
+      {
+        "name": "Reef hook",
+        "reason": "Standard practice is to hook into dead substrate at the cleaning station ledge and hold position while hammerheads queue overhead. Saves air and reduces silting.",
+        "gearId": "reef-hook-innovative"
+      },
+      {
+        "name": "Nitrox certification",
+        "reason": "Hammerhead action is at 20–25 m and divers stay there for the whole dive; EAN32 meaningfully extends bottom time. All Cocos liveaboards offer nitrox."
+      },
+      {
+        "name": "SMB and reel",
+        "reason": "Surface intervals happen well offshore of the main island and current can push you away from the pinnacles fast — every diver carries their own marker.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Cocos Island National Park is permit-controlled and accessible only via licensed liveaboards. Park ranger station at Wafer Bay. AOW + 50 logged dives is the de facto minimum across operators; many require 100+. Hammerhead population has declined sharply since the 2000s but the cleaning-station behavior at Dirty Rock remains the most reliable encounter in the Eastern Pacific."
   }
 ]
