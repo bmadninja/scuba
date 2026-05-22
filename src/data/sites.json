@@ -33716,5 +33716,243 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside the Revillagigedo National Park / UNESCO World Heritage Site (2016) and Mexico's largest fully protected marine reserve (2017); access requires permits held by licensed liveaboards. Touching mantas is prohibited. Diving on top of the pinnacle is not allowed due to heavy surge that can injure divers and damage coral. Watch for down-currents along the walls and the bottom dropping to ~50m+; most liveaboards require 50+ logged dives and advanced/nitrox certification. Surface support carries DSMBs and individual GPS/radio beacons standard."
+  },
+  {
+    "id": "malpelo-colombia-el-monstruo",
+    "slug": "malpelo-colombia-el-monstruo",
+    "locationId": "malpelo-colombia",
+    "name": "El Monstruo (Bajo del Monstruo)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Odontaspis_ferox.jpg",
+    "lat": 3.985,
+    "lng": -81.606,
+    "description": "A submerged pinnacle off Malpelo Island and the most reliable place on Earth to encounter the deep-dwelling smalltooth sand tiger shark (Odontaspis ferox), nicknamed 'the monster'. The site features a fragile hard-coral patch on its south side around 12 m, walls cloaked in yellow-orange anemones and gorgonians, a 'condominium of morays' grotto, and a deeper reef slope at 60–70 m where the ferox shark congregates during cold-water months. Schools of leather bass, creolefish, jacks and scalloped hammerheads cycle through; strong currents and depth make it a serious dive only run in good conditions.",
+    "depthRange": {
+      "min": 12,
+      "max": 70
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Smalltooth sand tiger shark",
+        "scientificName": "Odontaspis ferox",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Scalloped hammerhead shark",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Galapagos shark",
+        "scientificName": "Carcharhinus galapagensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silky shark",
+        "scientificName": "Carcharhinus falciformis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Leather bass",
+        "scientificName": "Dermatolepis dermatolepis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barberfish (cleaner butterflyfish)",
+        "scientificName": "Johnrandallia nigrirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Fine-spotted moray eel",
+        "scientificName": "Gymnothorax dovii",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 20,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full with hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 20,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full with hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 20,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full with hood"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 20,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 21,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 21,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 92,
+    "getThere": "Fly to Alfonso Bonilla Aragón International Airport in Cali, Colombia (CLO); transfer ~2.5 hours by road to the port of Buenaventura, then board a Colombian-flagged liveaboard (only vessel permitted in the sanctuary at a time) for the 32–40 hour crossing to Malpelo. Site is reached by panga in a short ride from the liveaboard.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside Malpelo Fauna and Flora Sanctuary (UNESCO World Heritage Site); access only via permitted Colombian liveaboard, one vessel at a time. Park requires minimum 50 logged dives; many operators require more. Nitrox strongly recommended. No anchoring allowed; live skiff entries with immediate negative descents are standard due to strong currents (up to ~5 knots). Yellow fever vaccination required. Site can only be dived in good conditions; the deep ferox reef slope at 60–70 m is beyond recreational limits — most divers stay in the 20–40 m range. Nearest hyperbaric chamber is at the naval base in Buenaventura."
   }
 ]
