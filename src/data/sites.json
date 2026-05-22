@@ -35271,5 +35271,140 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Strongly recommended as a tech or extended-range dive: bow sits at 27 m, decks and superstructure at 30-42 m, sand at 50 m. Most operators require a minimum of 30+ logged dives, Advanced Open Water with Deep Diver specialty, and nitrox; full penetration requires Wreck Diver certification and is risky because the 1992 collapse left jagged metal and silt traps. Surface currents can run 2-3 knots and the wreck is typically dived as a one-way drift with a surface marker buoy mandatory. Nearest recompression chamber is at St. George's General Hospital. The site is closed when swells push current beyond safe limits, most often August-October."
+  },
+  {
+    "id": "solomons-bonegi-hirokawa-maru",
+    "slug": "solomons-bonegi-hirokawa-maru",
+    "locationId": "bonegi-solomon-islands",
+    "name": "Hirokawa Maru (Bonegi I)",
+    "heroImageUrl": null,
+    "lat": -9.4247,
+    "lng": 159.9011,
+    "description": "Japanese transport beached on 14 November 1942 during the naval battle of Guadalcanal, then bombed and burned out by US aircraft. The 156 m hull lies on her port side perpendicular to Bonegi Beach, with the bow in 5 m of water and the stern dropping to about 55 m — divable as a shore-entry shallow swim or as a deep technical descent into the holds and engine room. Hard corals, gorgonians and brain coral now sheathe the steel; sweetlips, batfish, lionfish, fusiliers and moray eels patrol the wreckage and cleaning stations along the upper deck.",
+    "depthRange": {
+      "min": 5,
+      "max": 55
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Sweetlips",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moray eel",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Fusiliers",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 12, "max": 22 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 12, "max": 22 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [5, 6, 7, 8, 9, 10, 11],
+    "editorialRank": 80,
+    "getThere": "Fly into Honiara International Airport (HIR) on Guadalcanal; the wreck is roughly 12 km west of town along the Tambea road, with a small landowner fee charged at the beach access. Shore entry is straightforward; most operators will run guided shore dives or short boat trips from Honiara.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Bow and midships sit in recreational range; the stern requires deep or technical training. Landowner fee paid at the beach. Currents are usually mild but visibility drops sharply during and after heavy rains when Bonegi Creek discharges silt."
   }
 ]
