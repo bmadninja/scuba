@@ -45026,5 +45026,50 @@
       }
     ],
     "notes": "Advanced Open Water and 25+ logged dives recommended; current can run strong, especially in late summer when the Gulf Stream presses closer to the reef line. Three mooring buoys mark the bow, midships, and stern — never tie to the wreck. National Register of Historic Places — no artifact removal. Penetration into the engine room and lower decks is possible but silt-prone and requires wreck-penetration training. The flag at the mast top is regularly replaced by local dive operators."
+  },
+  {
+    "id": "tulamben-nusa-penida-manta-point",
+    "slug": "tulamben-nusa-penida-manta-point",
+    "locationId": "tulamben-bali-indonesia",
+    "name": "Manta Point (Nusa Penida)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Eye_To_Eye_%28219520559%29.jpeg",
+    "lat": -8.7833,
+    "lng": 115.45,
+    "description": "Southwest-coast cleaning station off Batu Lumbung where reef mantas queue up at coral bommies while cleaner wrasse pick parasites from their gill arches. Action begins at 4 m and the wall steps down to about 25 m. Cooler upwelled water from the Lombok Strait — often dropping to 22 °C — and Indian Ocean swell separate this site from the calmer reefs of northern Bali. Mantas are resident year-round; surface conditions, not animal reliability, decide whether the boat runs. Occasional oceanic mantas and the rare mola mola pass through during the July–October upwelling.",
+    "depthRange": { "min": 5, "max": 25 },
+    "skillLevel": "open-water",
+    "diveTypes": ["large-pelagics", "coral"],
+    "species": [
+      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "year-round" },
+      { "commonName": "Oceanic manta ray", "scientificName": "Mobula birostris", "reliability": "rare" },
+      { "commonName": "Bluestreak cleaner wrasse", "scientificName": "Labroides dimidiatus", "reliability": "year-round" },
+      { "commonName": "Whitetip reef shark", "scientificName": "Triaenodon obesus", "reliability": "seasonal", "bestMonths": [7, 8, 9, 10] },
+      { "commonName": "Ocean sunfish (mola)", "scientificName": "Mola alexandrini", "reliability": "rare", "bestMonths": [7, 8, 9, 10] }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 2, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 3, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 4, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 5, "waterTempC": {"min": 24, "max": 27}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
+      { "month": 6, "waterTempC": {"min": 22, "max": 26}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
+      { "month": 7, "waterTempC": {"min": 22, "max": 25}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
+      { "month": 8, "waterTempC": {"min": 22, "max": 25}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
+      { "month": 9, "waterTempC": {"min": 23, "max": 26}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit (cooler upwelling)" },
+      { "month": 10, "waterTempC": {"min": 24, "max": 27}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 11, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 12, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 10, "max": 20}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" }
+    ],
+    "bestMonths": [4, 5, 6, 7, 8, 9, 10],
+    "editorialRank": 92,
+    "getThere": "Fly into Ngurah Rai International (DPS) on Bali. Fast boats run from Sanur to Toya Pakeh or Banjar Nyuh on Nusa Penida (~45 minutes); most dive operators also day-trip directly from Sanur, Padangbai, or Candidasa, reaching Manta Point in about 90 minutes by speedboat. The site sits off the southwest coast near Batu Lumbung; entry is by negative descent off the boat.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      { "name": "5mm wetsuit", "reason": "Lombok Strait upwelling pulls water down to 22 °C in the dry season — colder than the 3mm setup most divers bring from Tulamben or Sanur." },
+      { "name": "Reef hook / patience", "reason": "Stay off the bottom and behind the cleaning bommies. Pushy divers send the mantas off and end the show for everyone." }
+    ],
+    "notes": "Exposed to Indian Ocean swell — trips cancel when southwest swell tops about 2.5 m, most often June–August. Surface chop can make boat exits demanding. Cooler than other Bali sites by 4–6 °C in dry season; reef-safe sunscreen only. Mantas have right of way; do not chase, touch, or block their queue."
   }
 ]
