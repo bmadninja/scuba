@@ -37216,5 +37216,294 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "The tunnel swim-through is dark and narrow in places; bring a torch and stay off the bottom to avoid silting. AOW certification is recommended for the cave passage and the deeper wall sections. Yellow-lipped sea kraits are extremely venomous but docile — do not touch or handle them. Boat crossings can be rough during typhoon season (Jun–Nov); some operators cancel Gato trips when northerly winds push swell into the channel. Nearest recompression chamber is in Cebu City."
+  },
+  {
+    "id": "egypt-little-brother",
+    "slug": "egypt-little-brother",
+    "locationId": "brothers-egypt",
+    "name": "Little Brother",
+    "lat": 26.308,
+    "lng": 34.858,
+    "description": "The smaller of the two El Ikhwa pinnacles, one kilometre south of Big Brother and barely 170 metres long. Sheer walls plunge past recreational limits into the blue; the north plateau bottoms out around 40 m and is the staging point for thresher and hammerhead encounters. Soft-coral overhangs on the south and west walls bloom in the current, with grey reef sharks patrolling the corners and oceanic whitetips circling the surface in autumn. Liveaboard-only, current-dependent, and routinely dived as a drift along one wall before a blue-water hang.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Oceanic whitetip shark",
+        "scientificName": "Carcharhinus longimanus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Thresher shark",
+        "scientificName": "Alopias pelagicus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2
+        ]
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silvertip shark",
+        "scientificName": "Carcharhinus albimarginatus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      10,
+      11
+    ],
+    "editorialRank": 88,
+    "getThere": "Hurghada (HRG) or Marsa Alam (RMF) — both take direct flights from major European hubs. Liveaboards typically depart from Hurghada, Port Ghalib, or Marsa Alam marinas; the 67 km open-ocean crossing to the Brothers takes roughly 5–7 hours and only runs March through November when the marine park is open.",
+    "lodging": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Blue Pearl",
+        "url": "https://www.liveaboard.com/diving/search?destination=Blue%20Pearl%20Red%20Sea%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Emperor Elite",
+        "url": "https://www.liveaboard.com/diving/search?destination=Emperor%20Elite%20Red%20Sea",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Red Sea Aggressor IV",
+        "url": "https://www.liveaboard.com/diving/search?destination=Red%20Sea%20Aggressor%20IV",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Emperor Divers Egypt",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + long reel",
+        "reason": "Drift exits in open ocean — operators require a long-line SMB for blue-water pickup.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Reef hook",
+        "reason": "Strong current on the corners; hooking in lets you hold the plateau edge to watch sharks without finning."
+      }
+    ],
+    "notes": "Liveaboard-only — no day boats. Brothers marine park is closed roughly December–February (dates vary year to year); confirm with operator. Park fees apply per dive day."
   }
 ]
