@@ -40980,5 +40980,248 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Sanctuary Preservation Area — anchoring, lobstering, spearfishing, and coral contact are prohibited. Boats must tie to mooring buoys. Reef-friendly sunscreen required. Light current on the outer edge near the lighthouse pilings."
+  },
+  {
+    "id": "bunaken-hairball-lembeh",
+    "slug": "bunaken-hairball-lembeh",
+    "locationId": "bunaken-indonesia",
+    "name": "Hairball (Lembeh Strait)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Hairy_frogfish%2C_slow_poke%2C_lembeh%2C_indonesia%2C_2017_%2834983756456%29.jpg",
+    "lat": 1.4515,
+    "lng": 125.2129,
+    "description": "Black volcanic sand slope on the Sulawesi side of the Lembeh Strait, considered the flagship muck dive of the world's macro-diving capital. From 3 m to about 25 m the bottom looks barren until your guide starts pointing — hairy frogfish, mimic and wunderpus octopus, flamboyant cuttlefish, ornate ghostpipefish, harlequin shrimp and a procession of nudibranchs all hide in the rubble. Currents are usually negligible, making it a favoured perch for macro photographers running 60-105 mm lenses.",
+    "depthRange": {
+      "min": 5,
+      "max": 25
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Hairy frogfish",
+        "scientificName": "Antennarius striatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mimic octopus",
+        "scientificName": "Thaumoctopus mimicus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Flamboyant cuttlefish",
+        "scientificName": "Metasepia pfefferi",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Wunderpus octopus",
+        "scientificName": "Wunderpus photogenicus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Ornate ghostpipefish",
+        "scientificName": "Solenostomus paradoxus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Harlequin shrimp",
+        "scientificName": "Hymenocera picta",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blue-ringed octopus",
+        "scientificName": "Hapalochlaena lunulata",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 5 mm wetsuit recommended"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 5 mm wetsuit recommended"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 5 mm wetsuit recommended"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical 3 mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly into Sam Ratulangi International (MDC) in Manado, North Sulawesi. From there it is a 90-minute road transfer to Bitung port, then a short shuttle boat across the Lembeh Strait to the resort jetty. Hairball is a 5-15 minute ride from most Lembeh resorts, accessed by traditional outrigger or speedboat.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Dedicated muck site — bring a pointer stick, a focus light, and a macro lens. Look but do not touch: hairy frogfish camouflage so well that finning the sand will bury one within a metre. Buoyancy discipline matters here more than anywhere else in North Sulawesi."
   }
 ]
