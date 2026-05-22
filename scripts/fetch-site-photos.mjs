@@ -136,7 +136,7 @@ function siteMatchOk(file, name, locationWords) {
   return true;
 }
 
-async function findSitePhoto(name, locationWords) {
+async function findSitePhoto(name, locationWords, usedUrls) {
   const queries = [
     `"${name}" diving`,
     `"${name}" underwater`,
@@ -149,6 +149,7 @@ async function findSitePhoto(name, locationWords) {
     for (const r of results) {
       if (looksBad(r.title)) continue;
       if (!siteMatchOk(r, name, locationWords)) continue;
+      if (usedUrls.has(r.url)) continue;
       return { url: r.url, source: `Commons: ${r.title}` };
     }
   }
@@ -175,11 +176,14 @@ function speciesMatchOk(file, species) {
   return speciesTokens.every((t) => titleOrDesc.includes(t));
 }
 
-const speciesCache = new Map();
+// Cache the full ordered candidate LIST per species so we can pick a fresh
+// one each time a species repeats. The species-fallback dedupe rule: the same
+// photo must never appear on two different sites.
+const speciesCandidatesCache = new Map();
 
-async function findSpeciesPhoto(species) {
+async function getSpeciesCandidates(species) {
   const key = norm(species);
-  if (speciesCache.has(key)) return speciesCache.get(key);
+  if (speciesCandidatesCache.has(key)) return speciesCandidatesCache.get(key);
 
   const queries = [
     `"${species}" underwater`,
@@ -187,21 +191,31 @@ async function findSpeciesPhoto(species) {
     `"${species}" reef`,
     `"${species}" scuba`,
   ];
+  const seen = new Set();
+  const candidates = [];
   for (const q of queries) {
     const results = await commonsSearch(q);
     for (const r of results) {
       if (looksBad(r.title)) continue;
       if (!speciesMatchOk(r, species)) continue;
-      const hit = { url: r.url, source: `Commons (species): ${r.title}` };
-      speciesCache.set(key, hit);
-      return hit;
+      if (seen.has(r.url)) continue;
+      seen.add(r.url);
+      candidates.push({ url: r.url, source: `Commons (species): ${r.title}` });
     }
   }
-  speciesCache.set(key, null);
+  speciesCandidatesCache.set(key, candidates);
+  return candidates;
+}
+
+async function findSpeciesPhoto(species, usedUrls) {
+  const candidates = await getSpeciesCandidates(species);
+  for (const c of candidates) {
+    if (!usedUrls.has(c.url)) return c;
+  }
   return null;
 }
 
-async function findFallbackPhoto(site) {
+async function findFallbackPhoto(site, usedUrls) {
   // Try species in order of distinctiveness. Heuristic: longer / more-specific
   // names tend to be more visually distinctive (e.g. "Scalloped hammerhead"
   // beats "Shark"). Stable tie-break by original order.
@@ -211,7 +225,7 @@ async function findFallbackPhoto(site) {
     .sort((a, b) => b.length - a.length);
 
   for (const sp of species) {
-    const hit = await findSpeciesPhoto(sp);
+    const hit = await findSpeciesPhoto(sp, usedUrls);
     if (hit) return { ...hit, source: `${hit.source}  [species: ${sp}]` };
   }
   return null;
@@ -239,15 +253,16 @@ async function main() {
   const locById = new Map(locations.map((l) => [l.id, l]));
 
   let siteHits = 0, speciesHits = 0, unmatched = 0;
+  const usedUrls = new Set();
 
   for (const site of sites) {
     const locWords = locationWordsFor(locById.get(site.locationId));
-    let hit = await findSitePhoto(site.name, locWords);
+    let hit = await findSitePhoto(site.name, locWords, usedUrls);
     if (hit) {
       siteHits++;
       console.log(`[site]    ${site.slug} ← ${hit.source}`);
     } else {
-      hit = await findFallbackPhoto(site);
+      hit = await findFallbackPhoto(site, usedUrls);
       if (hit) {
         speciesHits++;
         console.log(`[species] ${site.slug} ← ${hit.source}`);
@@ -256,6 +271,7 @@ async function main() {
         console.log(`[none]    ${site.slug}`);
       }
     }
+    if (hit) usedUrls.add(hit.url);
     site.heroImageUrl = hit ? hit.url : null;
   }
 

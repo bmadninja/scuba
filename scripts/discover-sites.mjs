@@ -80,12 +80,21 @@ async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
 }
 
 function extractJson(text) {
-  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-  const raw = fenced ? fenced[1] : text;
+  if (!text || !text.trim()) throw new Error("Empty response text");
+  // Prefer the LAST fenced block (model may include earlier examples)
+  const fences = [...text.matchAll(/```(?:json)?\s*([\s\S]*?)```/g)];
+  const raw = fences.length ? fences[fences.length - 1][1] : text;
   const start = raw.indexOf("{");
   const end = raw.lastIndexOf("}");
   if (start === -1 || end === -1) throw new Error("No JSON object found in response");
   return JSON.parse(raw.slice(start, end + 1));
+}
+
+function collectText(content) {
+  return content
+    .filter((c) => c.type === "text")
+    .map((c) => c.text)
+    .join("\n");
 }
 
 /* ---------- step 1: pick a gap ---------- */
@@ -117,8 +126,7 @@ Return JSON: { "locationId": "...", "candidateName": "...", "reasoning": "..." }
     messages: [{ role: "user", content: user }],
     max_tokens: 1000,
   });
-  const text = resp.content.find((c) => c.type === "text").text;
-  return extractJson(text);
+  return extractJson(collectText(resp.content));
 }
 
 /* ---------- step 2: research + emit entry ---------- */
@@ -151,29 +159,48 @@ If you cannot corroborate the site (≥3 sources), respond with: \`\`\`json
     { type: "web_fetch_20250910", name: "web_fetch", max_uses: 10 },
   ];
 
-  // tool-use loop
+  // Server-side tools loop. web_search / web_fetch execute on Anthropic's side.
+  // Between rounds the API returns stop_reason "pause_turn" — we resend the full
+  // message history (with the assistant turn appended) to continue.
   const messages = [{ role: "user", content: user }];
-  for (let i = 0; i < 15; i++) {
-    const resp = await callClaude({ system: sys, messages, tools, max_tokens: 12000 });
+  let lastResp = null;
+  for (let i = 0; i < 20; i++) {
+    const resp = await callClaude({ system: sys, messages, tools, max_tokens: 16000 });
+    lastResp = resp;
     messages.push({ role: "assistant", content: resp.content });
+    console.log(`  [turn ${i}] stop=${resp.stop_reason} blocks=${resp.content.map((c) => c.type).join(",")}`);
+
     if (resp.stop_reason === "end_turn") {
-      const text = resp.content.find((c) => c.type === "text")?.text ?? "";
-      return extractJson(text);
+      const text = collectText(resp.content);
+      try {
+        return extractJson(text);
+      } catch (err) {
+        // Ask the model to emit the JSON explicitly
+        messages.push({
+          role: "user",
+          content:
+            "You ended without a JSON block. Emit ONLY the JSON object now (or the refuse object), wrapped in ```json fences. No other text.",
+        });
+        continue;
+      }
     }
-    if (resp.stop_reason === "tool_use") {
-      // server-side tools (web_search/web_fetch) execute on Anthropic's side and
-      // results come back in the next turn automatically when we pass content back.
-      // For server-tools we typically don't need to add tool_result blocks — the
-      // model continues. But if there are client-tool calls, fail loudly.
+    if (resp.stop_reason === "pause_turn" || resp.stop_reason === "tool_use") {
       const clientTool = resp.content.find(
         (c) => c.type === "tool_use" && !["web_search", "web_fetch"].includes(c.name),
       );
       if (clientTool) throw new Error(`Unexpected client tool: ${clientTool.name}`);
       continue;
     }
+    if (resp.stop_reason === "max_tokens") {
+      messages.push({
+        role: "user",
+        content: "You hit max_tokens. Skip narration and emit ONLY the JSON object in ```json fences.",
+      });
+      continue;
+    }
     throw new Error(`Unexpected stop_reason: ${resp.stop_reason}`);
   }
-  throw new Error("Tool loop exceeded 15 turns");
+  throw new Error(`Tool loop exceeded 20 turns; last stop=${lastResp?.stop_reason}`);
 }
 
 /* ---------- step 3: confidence self-review ---------- */
@@ -187,8 +214,7 @@ Score <0.8 if: coordinates seem off, species list looks generic, depth range imp
     messages: [{ role: "user", content: "Entry:\n" + JSON.stringify(entry, null, 2) }],
     max_tokens: 800,
   });
-  const text = resp.content.find((c) => c.type === "text").text;
-  return extractJson(text);
+  return extractJson(collectText(resp.content));
 }
 
 /* ---------- main ---------- */

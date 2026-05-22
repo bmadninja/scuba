@@ -54,6 +54,27 @@ export type Location = {
   heroImageUrl?: string;
 };
 
+export type LocationQuote = {
+  text: string;
+  attribution?: string;
+};
+
+export type LocationGoodToKnow = {
+  title: string;
+  body: string;
+};
+
+export type LocationDetails = {
+  id: string;
+  extendedDescription: string;
+  seasonNotes?: string;
+  tripDuration: string;
+  diveStyle: string;
+  diveLevel: string;
+  quotes: LocationQuote[];
+  goodToKnow: LocationGoodToKnow[];
+};
+
 export type SpeciesEntry = {
   commonName: string;
   scientificName?: string;
@@ -76,6 +97,10 @@ export type PartnerLink = {
   url: string;
   productId?: string;
   isAffiliate: boolean;
+  /** 1 = budget, 2 = mid-range, 3 = upscale, 4 = luxury. Lodging only. */
+  priceLevel?: 1 | 2 | 3 | 4;
+  /** Lodging type. Used to split lodging into hotels vs liveaboards in UI. */
+  kind?: "hotel" | "liveaboard";
 };
 
 export type SiteGearItem = {

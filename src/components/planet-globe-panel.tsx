@@ -1,11 +1,29 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
-import { X, SlidersHorizontal } from "lucide-react";
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import { X } from "lucide-react";
 import { isDateInSeason } from "@/lib/scuba-globe";
 
 import type { PlanetGlobeProps } from "./planet-globe";
+
+export type FeaturedSite = {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  heroImageUrl?: string;
+  country: string;
+  continent: string;
+  skillLevel: string;
+  bestMonths: number[];
+  editorialRank: number;
+  experience: "beginner" | "intermediate" | "advanced";
+  interestTags: string[];
+  animalTags: string[];
+  tripMode: "liveaboard" | "resort";
+};
 
 type TripModeFilter = "liveaboard" | "resort";
 type CertFilter =
@@ -101,9 +119,13 @@ const toggleValue = <T extends string>(values: T[], value: T) =>
     ? values.filter((item) => item !== value)
     : [...values, value];
 
-export function PlanetGlobePanel(props: PlanetGlobeProps) {
-  const [expanded, setExpanded] = useState(true);
-  const [selectedMonth, setSelectedMonth] = useState(props.initialMonth ?? 1);
+type PlanetGlobePanelProps = PlanetGlobeProps & {
+  featuredSites?: FeaturedSite[];
+};
+
+export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
+  const { featuredSites = [], ...globeProps } = props;
+  const [selectedMonth, setSelectedMonth] = useState(globeProps.initialMonth ?? 1);
   const [tripMode, setTripMode] = useState<TripModeFilter | "">("");
   const [cert, setCert] = useState<CertFilter | "">("");
   const [recency, setRecency] = useState<RecencyFilter | "">("");
@@ -147,7 +169,7 @@ export function PlanetGlobePanel(props: PlanetGlobeProps) {
     });
   };
 
-  const markers = (props.markers ?? []).map((marker) => {
+  const markers = (globeProps.markers ?? []).map((marker) => {
     if (!marker.season) return marker;
     const isInSeason = isDateInSeason(selectedDate, marker.season);
     return {
@@ -223,14 +245,6 @@ export function PlanetGlobePanel(props: PlanetGlobeProps) {
       {/* Top filter bar (PADI-style light) */}
       <div className="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div className="flex flex-wrap items-center gap-3 px-4 py-3">
-          <button
-            type="button"
-            onClick={() => setExpanded((e) => !e)}
-            className="inline-flex items-center gap-2 rounded-full bg-[#0089de] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1d5d90]"
-          >
-            <SlidersHorizontal className="size-4" />
-            {expanded ? "Hide filters" : "Filter"}
-          </button>
           <div className="flex flex-1 flex-wrap gap-1.5">
             {activeChips.map((chip) => (
               <span
@@ -251,8 +265,7 @@ export function PlanetGlobePanel(props: PlanetGlobeProps) {
           </div>
         </div>
 
-        {expanded ? (
-          <div className="border-t border-slate-200 p-4">
+        <div className="border-t border-slate-200 p-4">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <FilterField label="Month">
                 <select
@@ -388,16 +401,176 @@ export function PlanetGlobePanel(props: PlanetGlobeProps) {
                 ) : null}
               </FilterField>
             </div>
-          </div>
-        ) : null}
+        </div>
       </div>
 
       <DynamicPlanetGlobe
-        {...props}
+        {...globeProps}
         markers={filteredMarkers}
         highlightedCountries={filteredHighlightedCountries}
       />
+
+      <FeaturedGrid
+        sites={featuredSites}
+        selectedMonth={selectedMonth}
+        tripMode={tripMode}
+        cert={cert}
+        seeFilters={seeFilters}
+      />
     </div>
+  );
+}
+
+function FeaturedGrid({
+  sites,
+  selectedMonth,
+  tripMode,
+  cert,
+  seeFilters,
+}: {
+  sites: FeaturedSite[];
+  selectedMonth: number;
+  tripMode: TripModeFilter | "";
+  cert: CertFilter | "";
+  seeFilters: SeeFilter[];
+}) {
+  const monthName = MONTH_OPTIONS[selectedMonth - 1].label;
+
+  const certToExperience = (
+    c: CertFilter,
+  ): "beginner" | "intermediate" | "advanced" | null => {
+    if (c === "never-dived" || c === "open-water") return "beginner";
+    if (c === "advanced") return "intermediate";
+    if (c === "rescue" || c === "divemaster" || c === "tech") return "advanced";
+    return null;
+  };
+
+  const featured = useMemo(() => {
+    if (sites.length === 0) return [];
+    const expLevel = cert === "" ? null : certToExperience(cert);
+
+    const passesFilters = (s: FeaturedSite) => {
+      if (tripMode !== "" && s.tripMode !== tripMode) return false;
+      if (expLevel && s.experience !== expLevel) return false;
+      if (seeFilters.length > 0) {
+        const matchesSee = seeFilters.some((f) => {
+          if (ANIMAL_OPTIONS.includes(f as AnimalFilter)) {
+            return s.animalTags.includes(f);
+          }
+          return s.interestTags.includes(f);
+        });
+        if (!matchesSee) return false;
+      }
+      return true;
+    };
+
+    const inSeason = sites
+      .filter((s) => s.bestMonths.includes(selectedMonth) && passesFilters(s))
+      .sort((a, b) => b.editorialRank - a.editorialRank);
+
+    // First pass: one per continent for diversity.
+    const seenContinents = new Set<string>();
+    const picks: FeaturedSite[] = [];
+    for (const s of inSeason) {
+      if (!seenContinents.has(s.continent)) {
+        seenContinents.add(s.continent);
+        picks.push(s);
+      }
+    }
+    // Second pass: fill remaining slots with other in-season sites.
+    for (const s of inSeason) {
+      if (picks.length >= 12) break;
+      if (!picks.includes(s)) picks.push(s);
+    }
+
+    if (picks.length > 0) return picks;
+
+    // Fallback: nothing in season matches — show top-ranked filter matches
+    // regardless of season so the grid isn't empty.
+    return sites
+      .filter(passesFilters)
+      .sort((a, b) => b.editorialRank - a.editorialRank)
+      .slice(0, 6);
+  }, [sites, selectedMonth, tripMode, cert, seeFilters]);
+
+  const hasFilters =
+    tripMode !== "" || cert !== "" || seeFilters.length > 0;
+
+  return (
+    <section className="mt-12">
+      <div className="mb-6 flex items-end justify-between gap-4 border-b border-slate-200 pb-4">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
+            {hasFilters
+              ? `Matches · ${monthName}`
+              : `In season this month · ${monthName}`}
+          </p>
+          <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+            Book the flight this week.
+          </h2>
+        </div>
+        <Link
+          href="/sites"
+          className="hidden text-sm font-semibold text-[#0089de] hover:text-[#1d5d90] sm:inline-flex"
+        >
+          All sites →
+        </Link>
+      </div>
+      {featured.length === 0 ? (
+        <p className="text-sm text-slate-500">
+          No sites match these filters for {monthName}. Try clearing a filter or
+          picking another month.
+        </p>
+      ) : (
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((s) => {
+            const inSeason = s.bestMonths.includes(selectedMonth);
+            return (
+              <Link
+                key={s.id}
+                href={`/sites/${s.slug}`}
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-[#0089de]/40 hover:shadow-md"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={
+                    s.heroImageUrl ??
+                    `https://picsum.photos/seed/${s.slug}/800/440`
+                  }
+                  alt={s.name}
+                  className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
+                />
+                <div className="p-5">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                      {s.country}
+                    </p>
+                    <span
+                      className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                        inSeason
+                          ? "bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200"
+                          : "bg-slate-100 text-slate-500"
+                      }`}
+                    >
+                      {inSeason ? "● In season" : "○ Off season"}
+                    </span>
+                  </div>
+                  <h3 className="mt-1 text-lg font-bold text-slate-900 group-hover:text-[#0089de]">
+                    {s.name}
+                  </h3>
+                  <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
+                    {s.description}
+                  </p>
+                  <div className="mt-3 inline-block rounded-full bg-[#e8f0fe] px-2.5 py-0.5 text-[11px] font-semibold capitalize text-[#1d5d90]">
+                    {s.skillLevel.replace("-", " ")}+
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </section>
   );
 }
 

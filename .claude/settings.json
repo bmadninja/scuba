@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(curl -s http://localhost:*)",
+      "Bash(npx tsc --noEmit*)",
+      "mcp__Claude_Preview__preview_logs",
+      "mcp__Claude_Preview__preview_list",
+      "mcp__Claude_in_Chrome__list_connected_browsers"
+    ]
+  }
+}

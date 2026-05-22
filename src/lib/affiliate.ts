@@ -93,14 +93,16 @@ function amazonSearchFor(query: string): string {
 }
 
 function liveaboardSearchFor(query: string): string {
-  const u = new URL("https://www.liveaboard.com/search");
-  u.searchParams.set("q", query);
+  const u = new URL("https://www.liveaboard.com/diving/search");
+  u.searchParams.set("destination", query);
   if (LIVEABOARD_AID) u.searchParams.set("partnerid", LIVEABOARD_AID);
   return u.toString();
 }
 
 function padiSearchFor(query: string): string {
-  const u = new URL("https://travel.padi.com/search/");
+  // PADI's travel search is a SPA — search-by-URL doesn't work. Best we can do
+  // is land users on the dive-shop locator with the query as a hint.
+  const u = new URL("https://www.padi.com/dive-shop-locator");
   u.searchParams.set("q", query);
   if (PADI_PARTNER) u.searchParams.set("partner", PADI_PARTNER);
   return u.toString();

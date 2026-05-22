@@ -80,7 +80,8 @@ export default async function SiteDetailPage({
   const inSeason = site.bestMonths.includes(currentMonth);
 
   const heroUrl =
-    site.heroImageUrl ?? `https://picsum.photos/seed/${site.slug}/2000/1100`;
+    site.heroImageUrl ??
+    "https://upload.wikimedia.org/wikipedia/commons/c/c7/Diving_the_Cenotes_in_Yucatan%2C_Mexico_%2841791832870%29.jpg";
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -114,11 +115,17 @@ export default async function SiteDetailPage({
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/55" />
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-6 pb-12 text-white">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/85">
-            <span>{location?.country}</span>
-            <span className="h-1 w-1 rounded-full bg-white/60" />
-            <span>{location?.region}</span>
-          </div>
+          {location ? (
+            <Link
+              href={`/locations/${location.slug}`}
+              className="group inline-flex w-fit items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/85 transition hover:text-white"
+            >
+              <span aria-hidden className="transition group-hover:-translate-x-0.5">←</span>
+              <span>{location.country}</span>
+              <span className="h-1 w-1 rounded-full bg-white/60" />
+              <span>{location.region}</span>
+            </Link>
+          ) : null}
           <h1 className="mt-3 max-w-3xl text-[clamp(2.25rem,5vw,4rem)] font-bold leading-[1.05] tracking-tight">
             {site.name}
           </h1>
@@ -205,7 +212,6 @@ export default async function SiteDetailPage({
                       <th className="px-4 py-3">Water</th>
                       <th className="px-4 py-3">Visibility</th>
                       <th className="px-4 py-3">Current</th>
-                      <th className="px-4 py-3">Exposure</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
@@ -233,7 +239,6 @@ export default async function SiteDetailPage({
                             {c.currentStrength}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-slate-600">{c.suitRecommendation}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -290,14 +295,7 @@ export default async function SiteDetailPage({
                   {site.getThere}
                 </p>
               </div>
-              <PartnerBlock
-                heading="Where to stay"
-                icon="🏨"
-                links={site.lodging}
-                event="lodging_click"
-                siteId={site.id}
-                showPriceLevel
-              />
+              <LodgingBlock lodging={site.lodging} siteId={site.id} />
               <PartnerBlock
                 heading="Who to dive with"
                 icon="🤿"
@@ -355,20 +353,115 @@ function Section({
   );
 }
 
+const TIER_LABELS: Record<1 | 2 | 3 | 4, string> = {
+  1: "Budget",
+  2: "Mid-range",
+  3: "Upscale",
+  4: "Luxury",
+};
+
+function TierBadge({ level }: { level: 1 | 2 | 3 | 4 }) {
+  return (
+    <span className="flex shrink-0 items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+      <span className="text-emerald-700">
+        <span>{"$".repeat(level)}</span>
+        <span className="text-slate-300">{"$".repeat(4 - level)}</span>
+      </span>
+      <span>{TIER_LABELS[level]}</span>
+    </span>
+  );
+}
+
+function LodgingBlock({ lodging, siteId }: { lodging: PartnerLink[]; siteId: string }) {
+  if (!lodging.length) return null;
+  const hotels = lodging.filter((l) => (l.kind ?? "hotel") === "hotel");
+  const liveaboards = lodging.filter((l) => l.kind === "liveaboard");
+  return (
+    <div className="space-y-4">
+      <p className="flex items-center gap-2 text-sm font-bold text-slate-900">
+        <span className="text-base">🏨</span>
+        Where to stay
+      </p>
+      {hotels.length ? (
+        <LodgingTierGroup
+          subheading="Hotels & resorts"
+          links={hotels}
+          siteId={siteId}
+        />
+      ) : null}
+      {liveaboards.length ? (
+        <LodgingTierGroup
+          subheading="Liveaboards"
+          links={liveaboards}
+          siteId={siteId}
+        />
+      ) : null}
+    </div>
+  );
+}
+
+function LodgingTierGroup({
+  subheading,
+  links,
+  siteId,
+}: {
+  subheading: string;
+  links: PartnerLink[];
+  siteId: string;
+}) {
+  // Sort budget → luxury so the cheapest option is first.
+  const sorted = [...links].sort(
+    (a, b) => (a.priceLevel ?? 3) - (b.priceLevel ?? 3),
+  );
+  return (
+    <div>
+      <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+        {subheading}
+      </p>
+      <ul className="mt-1.5 space-y-1.5">
+        {sorted.map((l) => (
+          <li key={`${l.partner}-${l.label}`}>
+            <AffiliateLink
+              url={l.url || "#"}
+              event="lodging_click"
+              partner={l.partner}
+              query={l.label}
+              productId={l.productId}
+              siteId={siteId}
+              isAffiliate={l.isAffiliate}
+              className="group block rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 transition hover:border-[#0089de] hover:bg-[#e8f0fe]"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-medium leading-snug">{l.label}</span>
+                <span className="shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#0089de]">
+                  →
+                </span>
+              </div>
+              {l.priceLevel ? (
+                <div className="mt-1">
+                  <TierBadge level={l.priceLevel} />
+                </div>
+              ) : null}
+            </AffiliateLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function PartnerBlock({
   heading,
   icon,
   links,
   event,
   siteId,
-  showPriceLevel = false,
 }: {
   heading: string;
   icon: string;
   links: PartnerLink[];
   event: "flight_click" | "lodging_click" | "operator_click";
   siteId: string;
-  showPriceLevel?: boolean;
 }) {
   if (!links.length) return null;
   return (
@@ -392,18 +485,8 @@ function PartnerBlock({
             >
               <div className="flex items-center justify-between gap-2">
                 <span className="font-medium leading-snug">{l.label}</span>
-                <span className="flex shrink-0 items-center gap-2">
-                  {showPriceLevel && l.priceLevel ? (
-                    <span className="text-xs font-semibold tracking-wider text-emerald-700">
-                      <span>{"$".repeat(l.priceLevel)}</span>
-                      <span className="text-slate-300">
-                        {"$".repeat(4 - l.priceLevel)}
-                      </span>
-                    </span>
-                  ) : null}
-                  <span className="text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#0089de]">
-                    →
-                  </span>
+                <span className="shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-[#0089de]">
+                  →
                 </span>
               </div>
             </AffiliateLink>
