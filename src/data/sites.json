@@ -37775,5 +37775,307 @@
       }
     ],
     "notes": "Inside Mar de las Calmas marine reserve — no fishing or collecting; permits handled by dive operators. Currents can be strong on the ridge edges; advanced certification and good buoyancy expected. Conditions occasionally cancel the dive in winter Atlantic swell."
+  },
+  {
+    "id": "palau-ulong-channel",
+    "slug": "palau-ulong-channel",
+    "locationId": "jellyfish-lake-palau",
+    "name": "Ulong Channel",
+    "heroImageUrl": null,
+    "lat": 7.3134,
+    "lng": 134.2238,
+    "description": "A natural cut through the barrier reef west of Ulong Island, often picked as Palau's signature drift. Enter at the channel mouth around 18-20 m where grey reef and whitetip sharks patrol the sandy runoff, hook in to a rocky ledge to watch the parade, then unhook and let the incoming current carry you down a coral-lined corridor past a 5-7 m wall of lettuce coral (Pavona) and schools of jacks, snapper, and barracuda. April-July full moons bring spawning aggregations of camouflage groupers.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Camouflage grouper",
+        "scientificName": "Epinephelus polyphekadion",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Chevron barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 94,
+    "getThere": "Koror (ROR / Roman Tmetuchl International) is Palau's only international airport, with direct flights from Manila, Taipei, Seoul, Guam, and Tokyo. Ulong Channel is roughly a 90-minute boat ride west of Koror; nearly every Koror-based day-boat and liveaboard runs it on incoming tide.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Palau Central Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Palau%20Central%20Hotel%20Koror",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sea Passion Hotel Palau",
+        "url": "https://www.booking.com/searchresults.html?ss=Sea%20Passion%20Hotel%20Palau",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Palau Pacific Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Palau%20Pacific%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Ocean Hunter III",
+        "url": "https://www.liveaboard.com/diving/search?destination=Ocean%20Hunter%20Palau",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Palau Aggressor II",
+        "url": "https://www.liveaboard.com/diving/search?destination=Palau%20Aggressor%20II",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Palau Siren",
+        "url": "https://www.liveaboard.com/diving/search?destination=Palau%20Siren%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Sam's Tours Palau",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "Hook-in at the channel entrance is the standard technique to watch sharks and snappers without finning against the current.",
+        "gearId": null
+      },
+      {
+        "name": "Surface marker buoy",
+        "reason": "Drift exits the channel into open water — operators require SMB for pickup.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Permit: requires the Rock Islands / Koror State permit (sold with Palau Pristine Paradise Environmental Fee at arrival). Strong currents — Advanced Open Water and reef-hook experience expected. Best on incoming tide; grouper spawning aggregations on full moons April-July."
   }
 ]
