@@ -44117,5 +44117,79 @@
       }
     ],
     "notes": "Currents in the strait can run 1–4 knots and reverse with the tide — brief on direction with the boat before splashing. The reefs are part of Ras Mohammed National Park; park fees apply and certain sectors are subject to access restrictions due to the Egypt–Saudi maritime boundary. Hammerheads in summer require a back-of-Jackson drop in blue water with no reef reference; only attempt with an experienced guide."
+  },
+  {
+    "id": "sudan-shaab-rumi-conshelf-ii",
+    "slug": "sudan-shaab-rumi-conshelf-ii",
+    "locationId": "sudan-shaab-rumi",
+    "name": "Conshelf II (Précontinent II)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Precontinent_II_-_Frontansicht.jpg",
+    "lat": 19.94,
+    "lng": 37.405,
+    "description": "Remains of Jacques Cousteau's 1963 underwater habitat experiment, set 100 m inside the Shaab Rumi lagoon entrance. The Starfish House and Deep Cabin were removed after the 30-day mission, but the urchin-shaped sub hangar still stands at 10 m — divers can swim up through its grated floor into the original air pocket. Nearby sit the encrusted tool shed, fish cages, and the shark cage at 27 m, all draped in soft coral and sponge growth. Featured in Cousteau's Oscar-winning documentary 'World Without Sun.'",
+    "depthRange": {
+      "min": 10,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": ["wrecks", "coral"],
+    "species": [
+      { "commonName": "Anthias", "scientificName": "Pseudanthias squamipinnis", "reliability": "year-round" },
+      { "commonName": "Soft coral overgrowth", "reliability": "year-round" },
+      { "commonName": "Glassfish", "reliability": "year-round" },
+      { "commonName": "Lionfish", "scientificName": "Pterois miles", "reliability": "year-round" },
+      { "commonName": "Bluestriped snapper", "scientificName": "Lutjanus kasmira", "reliability": "year-round" },
+      { "commonName": "Grey reef shark", "scientificName": "Carcharhinus amblyrhynchos", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": {"min": 25, "max": 27}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": {"min": 29, "max": 31}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": {"min": 30, "max": 32}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": {"min": 30, "max": 33}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": {"min": 29, "max": 31}, "visibilityM": {"min": 20, "max": 35}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": {"min": 25, "max": 27}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [2, 3, 4, 5, 10, 11],
+    "editorialRank": 86,
+    "getThere": "Port Sudan (PZU) has limited international service — most divers connect through Cairo (CAI), Doha (DOH), or Dubai (DXB) and join a liveaboard for the 48 km transit north to Shaab Rumi. The Conshelf remains sit roughly 100 m inside the southern lagoon entrance, typically dived as a shallow second or check-out dive on a multi-day Sudan itinerary.",
+    "lodging": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Cassiopeia",
+        "url": "https://www.liveaboard.com/diving/search?destination=Cassiopeia%20Sudan%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Royal Evolution",
+        "url": "https://www.liveaboard.com/diving/search?destination=Royal%20Evolution%20Sudan",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light",
+        "reason": "Inside the hangar the air pocket and grated floor are easier to navigate with a focused beam; the tool shed interior is also dim."
+      }
+    ],
+    "notes": "Historical site — do not touch, lift, or remove any artifacts. The air inside the hangar is original from 1963 and not breathable for sustained surface intervals; surface only briefly to look around, then return to your regulator. The Conshelf is usually paired with the Shaab Rumi South Plateau as a single liveaboard day."
   }
 ]
