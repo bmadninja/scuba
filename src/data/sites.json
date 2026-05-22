@@ -23441,7 +23441,7 @@
     "slug": "ras-mohammed-shark-yolanda",
     "locationId": "ras-mohammed-egypt",
     "name": "Shark and Yolanda Reef",
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Napoleon_fish%2C_Blue_Corner%2C_Palau.jpg",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Ras_mohammed_coral_reef_landscape.jpg",
     "lat": 27.726,
     "lng": 34.258,
     "description": "Twin pinnacles at the tip of the Sinai peninsula where Red Sea currents converge. Walls drop into deep blue; barracuda tornadoes and jacks school overhead. The wreck of the Yolanda spilled its cargo of toilets and bathtubs across the reef in 1980 — still scattered on the sand.",
@@ -34273,5 +34273,49 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Strong, often unpredictable currents along the outer face — most operators require Advanced Open Water and prior deep/drift experience. Bottom time is typically short (20–25 minutes) and the dive is run on a narrow tidal window; rough winter seas frequently cancel boats from December through February. Hammerhead dives are at separate sites along the same southwest coast (notably Hammerhead Rock, west of the monument) and are run as deep, current-heavy drifts at 20–35 m. Touching or breaking off any part of the monument is prohibited under Japanese cultural property guidance. Nearest recompression chamber is on Okinawa's main island; medevac from Yonaguni is air-only."
+  },
+  {
+    "id": "egypt-ss-thistlegorm",
+    "slug": "egypt-ss-thistlegorm",
+    "locationId": "ras-mohammed-egypt",
+    "name": "SS Thistlegorm",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Motorbikes_Thistlegorm.jpg",
+    "lat": 27.8142,
+    "lng": 33.92,
+    "description": "British WWII armed merchant steamship bombed by two Luftwaffe Heinkel He 111s on October 6, 1941 while at anchor at Safe Anchorage F in the Strait of Gubal. The blast tore open Hold 4 — loaded with ammunition — and split the 128-meter hull. The wreck sits upright on a sand bottom with its decks at 18 m and the propeller at 32 m, the holds still packed with Bedford trucks, Norton 16H and BSA M20 motorcycles, Bren-gun carriers, Lee-Enfield rifles, aircraft parts, Wellington boots, and two LMS Stanier 8F locomotives blown onto the seabed on either side of the hull. Rediscovered by Jacques Cousteau in 1955 and reopened to recreational divers in the early 1990s, it is the most-dived wreck in the world.",
+    "depthRange": { "min": 16, "max": 32 },
+    "skillLevel": "advanced",
+    "diveTypes": ["wrecks", "large-pelagics"],
+    "species": [
+      { "commonName": "Giant moray", "scientificName": "Gymnothorax javanicus", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Crocodilefish", "scientificName": "Papilloculiceps longiceps", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Batfish", "scientificName": "Platax teira", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Yellowtail barracuda", "scientificName": "Sphyraena flavicauda", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Bluespotted stingray", "scientificName": "Taeniura lymma", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Hawksbill turtle", "scientificName": "Eretmochelys imbricata", "reliability": "seasonal", "bestMonths": [4,5,6,7,8,9,10] },
+      { "commonName": "Tuna", "scientificName": "Thunnus", "reliability": "seasonal", "bestMonths": [3,4,5,6,9,10,11] }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 21, "max": 23}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit with hood" },
+      { "month": 2, "waterTempC": {"min": 20, "max": 22}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit with hood" },
+      { "month": 3, "waterTempC": {"min": 21, "max": 23}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 4, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 5, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 6, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 7, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit or shorty" },
+      { "month": 8, "waterTempC": {"min": 28, "max": 30}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit or shorty" },
+      { "month": 9, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 10, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 11, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 12, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit with hood" }
+    ],
+    "bestMonths": [3,4,5,6,9,10,11],
+    "editorialRank": 98,
+    "getThere": "Fly to Sharm el-Sheikh International (SSH) — about 50 km southeast of the wreck — or Hurghada International (HRG), about 60 km west across the Gulf of Suez. Most divers run day trips by speedboat from Sharm el-Sheikh (Travco, Naama Bay or Sharks Bay marinas), a 3–4 hour crossing each way, or join a 3–7 night northern Red Sea liveaboard out of Hurghada that combines Thistlegorm with Ras Mohammed and Shaab Abu Nuhas. Day trips typically depart at 04:00–05:00 to reach the site before currents and crowds build.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Advanced Open Water with deep and wreck experience strongly recommended; full wreck-penetration requires PADI/SSI Wreck Diver certification and a primary plus backup torch. Mooring lines are mandatory for descent and ascent because surface currents in the Strait of Gubal can hit 2 knots — drift-off scenarios have caused fatalities. Nitrox extends bottom time on the deeper holds and propeller. Avoid kicking up silt inside the holds, and never remove or touch the cargo or human remains — the wreck is a designated war grave for the 9 crew lost in 1941. Sharm el-Sheikh has the nearest hyperbaric chamber. Site can be crowded with 20+ boats midday in high season; first dive of the day is usually the cleanest."
   }
 ]
