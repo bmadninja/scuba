@@ -1,0 +1,64 @@
+name: Blitz — fill all dive sites
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_per_worker:
+        description: "Max sites per worker (default 150)"
+        default: "150"
+      model:
+        description: "Model to use"
+        default: "claude-sonnet-4-7"
+
+permissions:
+  contents: write
+
+jobs:
+  blitz:
+    name: "Worker (${{ matrix.region }})"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false   # one worker failing doesn't kill the others
+      matrix:
+        include:
+          - region: "Indo-Pacific"
+            focus: "Indonesia,Philippines,Papua New Guinea,Solomon Islands,Fiji,Palau,Malaysia,Thailand,Myanmar"
+          - region: "Americas + Atlantic"
+            focus: "Mexico,Costa Rica,Colombia,Ecuador,Galapagos,Belize,Bahamas,Cayman Islands,Turks and Caicos,Cuba,Dominican Republic,Bonaire,Curaçao,St Kitts,Saba,USA,Brazil,Argentina"
+          - region: "Indian Ocean + Red Sea + Pacific"
+            focus: "Maldives,Sri Lanka,Egypt,Jordan,Sudan,Djibouti,Mozambique,Tanzania,South Africa,Seychelles,Comoros,Australia,New Zealand,French Polynesia,Hawaii,Japan,Micronesia"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Configure git
+        run: |
+          git config user.email "bot@scubaseason.fun"
+          git config user.name "scubaseason-bot"
+          git config pull.rebase true
+
+      - name: Run blitz worker
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BLITZ: "1"
+          MODEL: ${{ inputs.model || 'claude-sonnet-4-7' }}
+          MAX_SITES: ${{ inputs.max_per_worker || '150' }}
+          EXHAUSTION_THRESHOLD: "6"
+          REGION_FOCUS: ${{ matrix.focus }}
+        run: node scripts/discover-sites.mjs
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Worker: ${{ matrix.region }}" >> $GITHUB_STEP_SUMMARY
+          echo "Sites added this run: $(git log --oneline origin/main..HEAD | wc -l)" >> $GITHUB_STEP_SUMMARY
+          git log --oneline origin/main..HEAD >> $GITHUB_STEP_SUMMARY || true

@@ -23,6 +23,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { execSync } from "node:child_process";
 import { SiteSchema, SCHEMA_DESCRIPTION_FOR_LLM } from "./lib/site-schema.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -31,14 +32,38 @@ const SITES_PATH = resolve(ROOT, "src/data/sites.json");
 const LOCATIONS_PATH = resolve(ROOT, "src/data/locations.json");
 const PROPOSED_PATH = resolve(ROOT, "src/data/sites.proposed.json");
 
-const MODEL = "claude-opus-4-7";
+const MODEL = process.env.MODEL ?? "claude-opus-4-7";
 const DRY_RUN = process.env.DRY_RUN === "1";
+const BLITZ = process.env.BLITZ === "1";
 const MAX_SITES = Number(process.env.MAX_SITES ?? "1");
+const EXHAUSTION_THRESHOLD = Number(process.env.EXHAUSTION_THRESHOLD ?? "5"); // consecutive rejects → exit code 3
+const REGION_FOCUS = process.env.REGION_FOCUS; // optional comma-separated region hints for parallel workers
 
 const client = new Anthropic();
 
-const sites = JSON.parse(readFileSync(SITES_PATH, "utf8"));
+// Re-read fresh on each iteration in blitz mode (other workers may have pushed)
+function loadSites() {
+  return JSON.parse(readFileSync(SITES_PATH, "utf8"));
+}
+let sites = loadSites();
 const locations = JSON.parse(readFileSync(LOCATIONS_PATH, "utf8"));
+
+function gitCommitPush(siteName) {
+  // commits sites.json with a clear message, pulls --rebase to fold in parallel
+  // workers' changes, retries push up to 5 times.
+  execSync(`git add src/data/sites.json`, { stdio: "inherit" });
+  execSync(`git -c user.email="bot@scubaseason.fun" -c user.name="scubaseason-bot" commit -m "auto: add ${siteName.replace(/"/g, '')}"`, { stdio: "inherit" });
+  for (let attempt = 0; attempt < 5; attempt++) {
+    try {
+      execSync(`git pull --rebase origin main`, { stdio: "inherit" });
+      execSync(`git push origin HEAD:main`, { stdio: "inherit" });
+      return;
+    } catch (err) {
+      console.log(`  push retry ${attempt + 1}/5...`);
+    }
+  }
+  throw new Error("git push failed after 5 retries");
+}
 
 /* ---------- helpers ---------- */
 
@@ -118,6 +143,7 @@ Existing site names (for dedup awareness):
 ${sites.map((s) => `- ${s.name} (${s.locationId})`).join("\n")}
 
 Pick the single best dive site to add next. Prefer locations with siteCount < 2, OR famous missing sites (e.g. SS Thistlegorm, Blue Hole Dahab, Manta Point) within existing locations.
+${REGION_FOCUS ? `\nBIAS YOUR PICK toward these regions/countries: ${REGION_FOCUS}. If no good gap exists there, pick the best gap elsewhere.` : ""}
 
 Return JSON: { "locationId": "...", "candidateName": "...", "reasoning": "..." }`;
 
@@ -262,29 +288,69 @@ async function main() {
     console.error("ANTHROPIC_API_KEY required");
     process.exit(1);
   }
+
+  console.log(`Mode: ${BLITZ ? "BLITZ (direct push)" : DRY_RUN ? "DRY_RUN" : "PR"} | model: ${MODEL} | max: ${MAX_SITES}${REGION_FOCUS ? ` | region: ${REGION_FOCUS}` : ""}`);
+
   const accepted = [];
+  let consecutiveFails = 0;
+
   for (let i = 0; i < MAX_SITES; i++) {
+    console.log(`\n[${i + 1}/${MAX_SITES}] consecutive_fails=${consecutiveFails}`);
+
+    // In blitz, reload sites.json each iteration so we see parallel workers' additions
+    if (BLITZ) {
+      sites.length = 0;
+      sites.push(...loadSites());
+    }
+
     try {
       const entry = await discoverOne();
       if (entry) {
+        consecutiveFails = 0;
         accepted.push(entry);
-        sites.push(entry); // so next iteration sees it for dedup
+        sites.push(entry); // local dedup for this run
+
+        if (BLITZ) {
+          // write + commit + push immediately, don't wait for end of loop
+          writeFileSync(SITES_PATH, JSON.stringify(sites, null, 2) + "\n");
+          console.log(`  ↑ committing ${entry.name}...`);
+          gitCommitPush(entry.name);
+          console.log(`  ✓ pushed ${entry.name} → prod`);
+        }
+      } else {
+        consecutiveFails++;
+        if (consecutiveFails >= EXHAUSTION_THRESHOLD) {
+          console.log(`\n✓ Exhaustion threshold reached (${EXHAUSTION_THRESHOLD} consecutive non-accepts). Done.`);
+          break;
+        }
       }
     } catch (err) {
-      console.error("Iteration failed:", err.message);
+      console.error(`  Iteration error: ${err.message}`);
+      consecutiveFails++;
+      if (consecutiveFails >= EXHAUSTION_THRESHOLD) {
+        console.log(`\n✓ Exhaustion threshold reached after errors. Done.`);
+        break;
+      }
     }
   }
-  if (accepted.length === 0) {
-    console.log("No sites accepted this run.");
-    process.exit(2); // signal to CI: nothing to PR
+
+  if (!BLITZ) {
+    // Batch write for non-blitz modes
+    if (accepted.length === 0) {
+      console.log("No sites accepted this run.");
+      process.exit(2); // signal to CI: nothing to PR
+    }
+    const out = DRY_RUN ? PROPOSED_PATH : SITES_PATH;
+    const base = DRY_RUN && existsSync(out) ? JSON.parse(readFileSync(out, "utf8")) : sites;
+    const finalArr = DRY_RUN ? [...base, ...accepted] : sites;
+    writeFileSync(out, JSON.stringify(finalArr, null, 2) + "\n");
+    console.log(`\n✓ Wrote ${accepted.length} site(s) to ${out}`);
+    console.log("ADDED_SITES=" + accepted.map((s) => s.name).join(", "));
+  } else {
+    console.log(`\n✓ Blitz complete. Added ${accepted.length} sites.`);
+    console.log("ADDED_SITES=" + accepted.map((s) => s.name).join(", "));
+    if (accepted.length === 0) process.exit(2);
   }
-  const out = DRY_RUN ? PROPOSED_PATH : SITES_PATH;
-  const existing = existsSync(out) && DRY_RUN ? JSON.parse(readFileSync(out, "utf8")) : sites;
-  const finalArr = DRY_RUN ? [...existing, ...accepted] : sites;
-  writeFileSync(out, JSON.stringify(finalArr, null, 2) + "\n");
-  console.log(`✓ Wrote ${accepted.length} site(s) to ${out}`);
-  // emit for the GH Action
-  console.log("ADDED_SITES=" + accepted.map((s) => s.name).join(", "));
 }
 
 main().catch((err) => {
