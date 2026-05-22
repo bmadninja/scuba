@@ -36753,7 +36753,7 @@
     "slug": "tobago-speyside-kelleston-drain",
     "locationId": "tobago-speyside-trinidad-and-tobago",
     "name": "Kelleston Drain",
-    "heroImageUrl": null,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Speyside_Tobago.JPG",
     "lat": 11.295,
     "lng": -60.499,
     "description": "Drift dive off the southern flank of Little Tobago, 3 km east of Speyside, ending at the largest documented brain coral colony on Earth — a boulder brain (Colpophyllia natans) roughly 3 m tall and 5 m across, estimated to be more than two centuries old. The reef slopes from 18 m down past 40 m through forests of gorgonians, sea whips, and barrel sponges fed by nutrient-rich currents pushing up from the Guiana plume.",
@@ -38084,7 +38084,7 @@
     "slug": "palau-blue-corner",
     "locationId": "jellyfish-lake-palau",
     "name": "Blue Corner",
-    "heroImageUrl": null,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Diving_in_Blue_Corner%2C_Palau_-_fish.jpg",
     "lat": 7.1336,
     "lng": 134.2203,
     "description": "A triangular reef plateau jutting off the northwest tip of Ngemelis Island, where Palau's barrier reef drops sharply into open ocean and currents accelerate around the point. Divers descend to a 15-20 m ledge, set a reef hook into rubble, and watch a near-permanent rotation of grey reef sharks, schooling bigeye trevally, chevron barracuda, and Napoleon wrasse hold against the flow. Unhook on the inside for a drift past hard coral and the occasional spotted eagle ray. Currents shift direction and strength quickly — the site is the reason Palauans invented the reef hook.",
@@ -38884,5 +38884,231 @@
       }
     ],
     "notes": "Pigeon Island National Park requires an entry permit purchased onshore at Nilaveli (Department of Wildlife Conservation); dive operators usually arrange tickets. The park is closed during the November-March northeast monsoon when seas are rough and visibility collapses. Blacktip reef sharks here are best observed while snorkeling the shallow sand pools on the north side; on scuba you'll see fewer sharks but more coral structure on the back reef. Anchor damage and crowding from snorkel tourism have stressed the reef — do not stand on coral, touch wildlife, or feed fish."
+  },
+  {
+    "id": "florida-keys-uss-spiegel-grove",
+    "slug": "florida-keys-uss-spiegel-grove",
+    "locationId": "florida-keys-usa",
+    "name": "USS Spiegel Grove",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/US_flag_with_diver_on_USS_Spiegel_Grove_%28LSD-32%29_wreck_in_2007.jpg",
+    "lat": 25.06672,
+    "lng": -80.30612,
+    "description": "510-foot Thomaston-class dock landing ship sunk as an artificial reef 6 miles off Key Largo in 2002 — one of the largest intentionally scuttled wrecks in the world. Sat on her starboard side until Hurricane Dennis rolled her fully upright in 2005. Bow tops out near 18 m, main deck at 27 m, sand bottom at 40 m. Strong Gulf Stream currents are typical; advanced wreck training is needed for the cargo hold, well deck, and superstructure penetrations. Encrusted in sponges, hydroids, and coral colonisers with resident goliath grouper, barracuda schools, and silversides.",
+    "depthRange": {
+      "min": 18,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "seasonal",
+        "bestMonths": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Atlantic spadefish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bull shark",
+        "scientificName": "Carcharhinus leucas",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Silversides",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 90,
+    "getThere": "Fly into Miami International (MIA) and drive ~1 hr south to Key Largo, or use Fort Lauderdale (FLL). Most charters depart Key Largo marinas; the wreck sits roughly 6 nautical miles offshore on Dixie Shoal in the Florida Keys National Marine Sanctuary, a 30–45 min boat ride.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Goliath grouper aggregate here during their late-summer spawning season. Strong Gulf Stream currents require negative entries and reef hooks; nitrox is standard for bottom-time management. Penetration requires wreck certification — the hull is buoy-moored at multiple points to spread diver load."
   }
 ]
