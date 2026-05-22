@@ -46955,5 +46955,56 @@
       }
     ],
     "notes": "This is one of Komodo's signature current dives and should be treated as advanced-only. The same tide that creates the memorable ride can also make depth control and group contact difficult, so follow the local guide's timing, entry point and abort call."
+  },
+  {
+    "id": "komodo-national-park-indonesia-mawan",
+    "slug": "komodo-national-park-indonesia-mawan",
+    "locationId": "komodo-national-park-indonesia",
+    "name": "Mawan",
+    "heroImageUrl": null,
+    "lat": -8.566,
+    "lng": 119.616,
+    "description": "A central Komodo manta cleaning station off Pulau Mawan, west of Siaba Besar. The dive follows white sand, coral rubble and bommies where reef mantas can hover over cleaner fish, while bamboo sharks, turtles, cuttlefish, nudibranchs and reef fish fill the shallows. It is calmer than Komodo's big-current icons, but timing still matters.",
+    "depthRange": { "min": 5, "max": 25 },
+    "skillLevel": "open-water",
+    "diveTypes": ["large-pelagics", "coral", "macro"],
+    "species": [
+      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "seasonal", "bestMonths": [12, 1, 2, 3, 4] },
+      { "commonName": "Bamboo shark", "scientificName": "Hemiscylliidae", "reliability": "year-round" },
+      { "commonName": "Hawksbill turtle", "scientificName": "Eretmochelys imbricata", "reliability": "year-round" },
+      { "commonName": "Cuttlefish", "scientificName": "Sepiida", "reliability": "year-round" },
+      { "commonName": "Nudibranch", "scientificName": "Nudibranchia", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 22 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 22 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 12, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 8, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 9, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 12, "max": 22 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 22 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "editorialRank": 84,
+    "getThere": "Fly to Labuan Bajo (LBJ) on Flores, then join a Komodo day boat or liveaboard. Mawan is in central Komodo, close enough for standard day-trip rotations when tide and manta conditions suit the plan.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "SMB",
+        "reason": "Even mellow Komodo dives can end as short drifts when the tide changes."
+      },
+      {
+        "name": "Macro lens or torch",
+        "reason": "The rubble and bommies hold nudibranchs, shrimp and small cryptic subjects between manta passes."
+      }
+    ],
+    "notes": "Mawan is often suitable for Open Water divers when dived at slack or gentle current, but new and full moon tides can make the site stronger. Give manta cleaning stations room and follow the guide's approach line rather than swimming directly at rays."
   }
 ]
