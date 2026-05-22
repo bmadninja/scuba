@@ -46750,5 +46750,107 @@
       }
     ],
     "notes": "Advanced Open Water with prior wreck experience recommended for any penetration; the 2008 hurricane damage left jagged metal and unstable bulkheads inside the broken hull. Bow and stern can be split across two tanks. Cayman Brac is a sister island to Little Cayman — sharing the same airport hub and many of the same liveaboard itineraries as Bloody Bay Wall — and the wreck is the island's marquee dive."
+  },
+  {
+    "id": "kona-hawaii-usa-turtle-pinnacle",
+    "slug": "kona-hawaii-usa-turtle-pinnacle",
+    "locationId": "kona-hawaii-usa",
+    "name": "Turtle Pinnacle",
+    "heroImageUrl": null,
+    "lat": 19.736,
+    "lng": -156.061,
+    "description": "A shallow volcanic pinnacle off the north Kona coast where Hawaiian green sea turtles pause over cleaner-fish stations. The main action sits around 12-18 m: turtles hover over the reef while surgeonfish and wrasse pick algae and parasites from their shells, with morays, octopus and reef fish tucked into the lava ledges.",
+    "depthRange": { "min": 6, "max": 18 },
+    "skillLevel": "open-water",
+    "diveTypes": ["coral", "geology"],
+    "species": [
+      { "commonName": "Hawaiian green sea turtle", "scientificName": "Chelonia mydas", "reliability": "year-round" },
+      { "commonName": "Hawaiian cleaner wrasse", "scientificName": "Labroides phthirophagus", "reliability": "year-round" },
+      { "commonName": "Yellow tang", "scientificName": "Zebrasoma flavescens", "reliability": "year-round" },
+      { "commonName": "Whitemouth moray", "scientificName": "Gymnothorax meleagris", "reliability": "year-round" },
+      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "rare" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 24, "max": 25 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm or 5mm wetsuit" },
+      { "month": 2, "waterTempC": { "min": 24, "max": 25 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm or 5mm wetsuit" },
+      { "month": 3, "waterTempC": { "min": 24, "max": 25 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm or 5mm wetsuit" },
+      { "month": 4, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 20, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 5, "waterTempC": { "min": 25, "max": 26 }, "visibilityM": { "min": 20, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 6, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 20, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 7, "waterTempC": { "min": 26, "max": 27 }, "visibilityM": { "min": 20, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 8, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 20, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit or rash guard" },
+      { "month": 9, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 20, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit or rash guard" },
+      { "month": 10, "waterTempC": { "min": 26, "max": 27 }, "visibilityM": { "min": 20, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 11, "waterTempC": { "min": 25, "max": 26 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 12, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm or 5mm wetsuit" }
+    ],
+    "bestMonths": [4, 5, 6, 7, 8, 9, 10],
+    "editorialRank": 79,
+    "getThere": "Fly to Kona International Airport (KOA). Dive boats depart from Honokohau Harbor or Kailua-Kona and run north along the leeward coast; Turtle Pinnacle is normally a boat dive rather than a shore entry.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "3mm wetsuit",
+        "reason": "Kona water is warm but many divers chill during long, slow turtle-observation dives."
+      },
+      {
+        "name": "Reef-safe camera discipline",
+        "reason": "The turtles are protected wildlife; stay neutral, avoid blocking their route, and let cleaning behavior continue undisturbed."
+      }
+    ],
+    "notes": "Stay at least several metres from resting or cleaning turtles and never chase them for photos. Morning two-tank boats usually offer the calmest surface conditions before the afternoon wind line builds along the Kona coast."
+  },
+  {
+    "id": "kona-hawaii-usa-pyramid-pinnacle",
+    "slug": "kona-hawaii-usa-pyramid-pinnacle",
+    "locationId": "kona-hawaii-usa",
+    "name": "Pyramid Pinnacle",
+    "heroImageUrl": null,
+    "lat": 19.719,
+    "lng": -156.057,
+    "description": "A Kona lava-reef dive built around a hollow pinnacle, swim-throughs and small arches, with schools of pyramid butterflyfish giving the site its name. The reef starts in recreational depths but drops toward deeper sand channels, so guides usually keep newer divers on the upper structure while advanced divers explore the darker ledges for eels, lobsters and cleaner shrimp.",
+    "depthRange": { "min": 12, "max": 37 },
+    "skillLevel": "advanced",
+    "diveTypes": ["coral", "geology"],
+    "species": [
+      { "commonName": "Pyramid butterflyfish", "scientificName": "Hemitaurichthys polylepis", "reliability": "year-round" },
+      { "commonName": "Hawaiian green sea turtle", "scientificName": "Chelonia mydas", "reliability": "year-round" },
+      { "commonName": "Conger eel", "reliability": "year-round" },
+      { "commonName": "Hawaiian flagtail", "scientificName": "Kuhlia xenura", "reliability": "year-round" },
+      { "commonName": "Peacock flounder", "scientificName": "Bothus mancus", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 24, "max": 25 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3mm or 5mm wetsuit" },
+      { "month": 2, "waterTempC": { "min": 24, "max": 25 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3mm or 5mm wetsuit" },
+      { "month": 3, "waterTempC": { "min": 24, "max": 25 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3mm or 5mm wetsuit" },
+      { "month": 4, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 5, "waterTempC": { "min": 25, "max": 26 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 6, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 7, "waterTempC": { "min": 26, "max": 27 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 8, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit or rash guard" },
+      { "month": 9, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit or rash guard" },
+      { "month": 10, "waterTempC": { "min": 26, "max": 27 }, "visibilityM": { "min": 18, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 11, "waterTempC": { "min": 25, "max": 26 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 12, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 15, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3mm or 5mm wetsuit" }
+    ],
+    "bestMonths": [4, 5, 6, 7, 8, 9, 10],
+    "editorialRank": 76,
+    "getThere": "Fly to Kona International Airport (KOA) and board a charter from Honokohau Harbor or Kailua-Kona. Operators choose Pyramid Pinnacle on calm mornings when surge is low enough for the lava arches and swim-throughs.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Dive computer",
+        "reason": "The pinnacle has attractive deeper ledges and sand channels, so nitrogen loading can creep up if the group spends too long below 25 m."
+      },
+      {
+        "name": "Small torch",
+        "reason": "A compact light helps reveal cleaner shrimp, lobster and eels under the lava ledges without turning the dive into an overhead penetration."
+      }
+    ],
+    "notes": "Treat the swim-throughs as optional scenic routes, not mandatory passages. Surge can make the arches uncomfortable even when the surface looks calm, and boats may substitute another Kona reef if the afternoon wind or swell has built."
   }
 ]
