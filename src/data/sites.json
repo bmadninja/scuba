@@ -44934,5 +44934,97 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Advanced Open Water minimum; most operators require Deep certification, prior Level 1 and Level 2 cenote dives, and 20+ logged dives. Bottom time below the sulfide layer triggers mandatory deco — plan as a deep dive. No sunscreen or insect repellent allowed in the water; rinse off at the shore shower before entry. Single tank dives only on a typical recreational profile; many divers run two tanks (sidemount or twins) for adequate gas reserves at 40+ m."
+  },
+  {
+    "id": "florida-keys-uscgc-duane",
+    "slug": "florida-keys-uscgc-duane",
+    "locationId": "florida-keys-usa",
+    "name": "USCGC Duane",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Underwater_divers_near_the_mast_and_flag_on_the_USCGC_Duane%2C_Key_Largo_%2815461303995%29.jpg",
+    "lat": 25.0072,
+    "lng": -80.3465,
+    "description": "A 100 m Treasury-class US Coast Guard cutter scuttled 1 mile south of Molasses Reef off Key Largo on 27 November 1987 as an artificial reef. Commissioned in 1936, she escorted North Atlantic convoys in WWII, helped sink U-boat U-77, then served in Vietnam and on drug interdiction before retirement in 1985. The wreck sits perfectly upright on a sandy bottom at 37 m — the mast and crow's nest reach up to 18 m, the bridge sits at 23 m, and the main deck runs 27-30 m. Gulf Stream current along the outer reef line draws schooling barracuda, jacks, and resident goliath grouper sheltering under the stern; eagle rays and the occasional bull shark cruise the deeper sand. Added to the National Register of Historic Places in 2002. The visible flag at the masthead is the canonical photo subject.",
+    "depthRange": {
+      "min": 18,
+      "max": 37
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Atlantic spadefish",
+        "scientificName": "Chaetodipterus faber",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [4, 5, 6, 7, 8, 9, 10]
+      },
+      {
+        "commonName": "Horse-eye jack",
+        "scientificName": "Caranx latus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bull shark",
+        "scientificName": "Carcharhinus leucas",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Green moray",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 2, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 3, "waterTempC": {"min": 23, "max": 25}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 4, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 5, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 6, "waterTempC": {"min": 28, "max": 29}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 7, "waterTempC": {"min": 29, "max": 30}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 8, "waterTempC": {"min": 29, "max": 31}, "visibilityM": {"min": 25, "max": 40}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 9, "waterTempC": {"min": 28, "max": 30}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "strong", "suitRecommendation": "3mm wetsuit" },
+      { "month": 10, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 11, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 12, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 15, "max": 25}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" }
+    ],
+    "bestMonths": [4, 5, 6, 7, 8, 10],
+    "editorialRank": 86,
+    "getThere": "Fly into Miami International (MIA) and drive 1 hour south on US-1 to Key Largo, or fort Lauderdale (FLL) for similar driving distance. Charters depart Key Largo marinas (notably Garden Cove, Marina del Mar, and Holiday Inn) for the ~30-minute boat ride to the mooring buoys at the wreck — usually paired with a second dive on the nearby USCGC Bibb or Molasses Reef.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "SMB and reel",
+        "reason": "Gulf Stream current can push divers off the wreck during ascent; deploy a marker for boat pickup."
+      },
+      {
+        "name": "Dive computer with deco modeling",
+        "reason": "Deck-level depth at 27-30 m and bottom time on the wreck routinely push recreational no-deco limits."
+      },
+      {
+        "name": "Nitrox certification recommended",
+        "reason": "EAN32 significantly extends bottom time at the deeper deck and stern."
+      }
+    ],
+    "notes": "Advanced Open Water and 25+ logged dives recommended; current can run strong, especially in late summer when the Gulf Stream presses closer to the reef line. Three mooring buoys mark the bow, midships, and stern — never tie to the wreck. National Register of Historic Places — no artifact removal. Penetration into the engine room and lower decks is possible but silt-prone and requires wreck-penetration training. The flag at the mast top is regularly replaced by local dive operators."
   }
 ]
