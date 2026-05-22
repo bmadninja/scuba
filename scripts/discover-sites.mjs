@@ -48,21 +48,50 @@ function loadSites() {
 let sites = loadSites();
 const locations = JSON.parse(readFileSync(LOCATIONS_PATH, "utf8"));
 
-function gitCommitPush(siteName) {
-  // commits sites.json with a clear message, pulls --rebase to fold in parallel
-  // workers' changes, retries push up to 5 times.
-  execSync(`git add src/data/sites.json`, { stdio: "inherit" });
-  execSync(`git -c user.email="bot@scubaseason.fun" -c user.name="scubaseason-bot" commit -m "auto: add ${siteName.replace(/"/g, '')}"`, { stdio: "inherit" });
-  for (let attempt = 0; attempt < 5; attempt++) {
-    try {
-      execSync(`git pull --rebase origin main`, { stdio: "inherit" });
-      execSync(`git push origin HEAD:main`, { stdio: "inherit" });
+function gitCommitPush(newEntry) {
+  // Optimistic-lock pattern: fetch latest remote, merge our entry in, commit, push.
+  // On push rejection (another worker pushed first), reset and retry with fresh fetch.
+  // Avoids rebase entirely — JSON conflicts don't merge cleanly with rebase.
+  const GIT = `git -c user.email="bot@scubaseason.fun" -c user.name="scubaseason-bot"`;
+  const name = newEntry.name.replace(/"/g, "");
+
+  for (let attempt = 0; attempt < 6; attempt++) {
+    // 1. Fetch latest remote sites.json without changing working tree
+    execSync(`git fetch origin main`, { stdio: "inherit" });
+    const remoteSitesRaw = execSync(`git show origin/main:src/data/sites.json`).toString();
+    const remoteSites = JSON.parse(remoteSitesRaw);
+
+    // 2. If another worker already pushed this site, skip
+    if (remoteSites.some((s) => s.id === newEntry.id)) {
+      console.log(`  Already pushed by another worker, skipping commit`);
+      // Update local array to reflect remote state
+      sites.length = 0;
+      sites.push(...remoteSites);
       return;
-    } catch (err) {
-      console.log(`  push retry ${attempt + 1}/5...`);
+    }
+
+    // 3. Append our entry to the remote version and write
+    remoteSites.push(newEntry);
+    writeFileSync(SITES_PATH, JSON.stringify(remoteSites, null, 2) + "\n");
+    sites.length = 0;
+    sites.push(...remoteSites);
+
+    // 4. Commit on top of remote HEAD
+    execSync(`git fetch origin main && git reset --soft origin/main`, { stdio: "inherit" });
+    execSync(`git add src/data/sites.json`, { stdio: "inherit" });
+    execSync(`${GIT} commit -m "auto: add ${name}"`, { stdio: "inherit" });
+
+    // 5. Try to push
+    try {
+      execSync(`git push origin HEAD:main`, { stdio: "inherit" });
+      return; // success
+    } catch (_) {
+      // Another worker pushed between our fetch and push — reset and retry
+      console.log(`  push retry ${attempt + 1}/6 (concurrent write)...`);
+      execSync(`git reset --soft origin/main`, { stdio: "inherit" });
     }
   }
-  throw new Error("git push failed after 5 retries");
+  throw new Error(`git push failed after 6 retries for "${name}"`);
 }
 
 /* ---------- helpers ---------- */
@@ -93,15 +122,26 @@ function isDuplicate(candidate) {
 
 /* ---------- LLM helpers ---------- */
 
+async function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
 async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
-  const resp = await client.messages.create({
-    model: MODEL,
-    max_tokens,
-    system,
-    messages,
-    tools,
-  });
-  return resp;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      return await client.messages.create({ model: MODEL, max_tokens, system, messages, tools });
+    } catch (err) {
+      const isOverloaded = err.status === 529 || err.status === 529;
+      const isRateLimit = err.status === 429;
+      if ((isOverloaded || isRateLimit) && attempt < 3) {
+        const waitMs = (attempt + 1) * 45000; // 45s, 90s, 135s
+        console.log(`  API ${err.status} — waiting ${waitMs / 1000}s before retry...`);
+        await sleep(waitMs);
+        continue;
+      }
+      throw err;
+    }
+  }
 }
 
 function extractJson(text) {
@@ -124,6 +164,8 @@ function collectText(content) {
 
 /* ---------- step 1: pick a gap ---------- */
 
+const attemptedSites = new Set(); // tracks "candidateName@locationId" to avoid repeat picks
+
 async function pickGap() {
   const coverage = locations.map((l) => ({
     locationId: l.id,
@@ -136,12 +178,15 @@ async function pickGap() {
 You decide which dive site to add next based on (a) gaps in existing coverage and (b) editorial importance (famous, frequently-searched, or culturally significant sites).
 You will be given coverage stats. Pick ONE site to add. Return strict JSON.`;
 
+  const alreadyAttempted = [...attemptedSites].map(k => `- ${k}`).join("\n");
+
   const user = `Existing locations with site counts:
 ${JSON.stringify(coverage, null, 2)}
 
 Existing site names (for dedup awareness):
 ${sites.map((s) => `- ${s.name} (${s.locationId})`).join("\n")}
 
+${alreadyAttempted ? `Sites already attempted this session (DO NOT pick these again):\n${alreadyAttempted}\n` : ""}
 Pick the single best dive site to add next. Prefer locations with siteCount < 2, OR famous missing sites (e.g. SS Thistlegorm, Blue Hole Dahab, Manta Point) within existing locations.
 ${REGION_FOCUS ? `\nBIAS YOUR PICK toward these regions/countries: ${REGION_FOCUS}. If no good gap exists there, pick the best gap elsewhere.` : ""}
 
@@ -251,6 +296,9 @@ async function discoverOne() {
   console.log(`  Target: ${gap.candidateName} @ ${gap.locationId}`);
   console.log(`  Reason: ${gap.reasoning}`);
 
+  // Record this attempt immediately so it won't be picked again this session
+  attemptedSites.add(`${gap.candidateName}@${gap.locationId}`);
+
   console.log("→ Researching...");
   const entry = await researchSite(gap);
   if (entry.refuse) {
@@ -261,7 +309,7 @@ async function discoverOne() {
   console.log("→ Validating schema...");
   const parsed = SiteSchema.safeParse(entry);
   if (!parsed.success) {
-    console.error("  Schema errors:", parsed.error.issues);
+    console.error("  Schema errors:", parsed.error.issues.slice(0, 5));
     return null;
   }
 
@@ -312,9 +360,8 @@ async function main() {
 
         if (BLITZ) {
           // write + commit + push immediately, don't wait for end of loop
-          writeFileSync(SITES_PATH, JSON.stringify(sites, null, 2) + "\n");
           console.log(`  ↑ committing ${entry.name}...`);
-          gitCommitPush(entry.name);
+          gitCommitPush(entry); // handles write + fetch + commit + push atomically
           console.log(`  ✓ pushed ${entry.name} → prod`);
         }
       } else {
