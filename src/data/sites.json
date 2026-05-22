@@ -46073,5 +46073,164 @@
       }
     ],
     "notes": "This is a wild-pod encounter, not a captive interaction; sightings are weather- and mood-dependent. Tour operators follow strict approach rules — no chasing, no touching, drop in front of the line of travel. Summer (June–September) is the most stable window but coincides with typhoon season; winter (January–April) brings humpback whales but cooler water and rougher swell. Allow buffer days at either end — ferry sailings cancel for weather and there are no alternatives."
+  },
+  {
+    "id": "egypt-giannis-d",
+    "slug": "egypt-giannis-d",
+    "locationId": "ras-mohammed-egypt",
+    "name": "Giannis D",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Giannis_D_Bow_2017-04-22_Egypt-8014.jpg",
+    "lat": 27.5783,
+    "lng": 33.9233,
+    "description": "Greek cargo ship that slammed into the northwest corner of Sha'ab Abu Nuhas reef at full speed on April 19, 1983, en route from Croatia to Jeddah with a hold full of softwood timber. The 99.5-meter hull split into three sections and now lies on her port side, with the mast reaching to 4 m below the surface and the propeller at 27 m. The 45-degree tilt of the intact stern superstructure — engine room, pilothouse, crew quarters — is the most photographed angle of any Red Sea wreck after the Thistlegorm. Shafts of light cut through the slanted portholes onto schools of glassfish packing the lower decks, and scorpionfish, crocodilefish and the occasional Napoleon wrasse work the broken midsection.",
+    "depthRange": {
+      "min": 4,
+      "max": 27
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish (sweeper)",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Scorpionfish",
+        "scientificName": "Scorpaenopsis oxycephala",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Crocodilefish",
+        "scientificName": "Papilloculiceps longiceps",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Bluespotted stingray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "rare",
+        "bestMonths": [3, 4, 5, 6, 9, 10, 11]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 21, "max": 23 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 20, "max": 22 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 21, "max": 23 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 22, "max": 24 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 22, "max": 24 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      }
+    ],
+    "bestMonths": [3, 4, 5, 6, 9, 10, 11],
+    "editorialRank": 88,
+    "getThere": "Fly to Hurghada International (HRG) — the closest airport, about 30 km west of Sha'ab Abu Nuhas. Day boats from Hurghada marinas (Sahl Hasheesh, El Gouna, New Marina) reach the reef in 60–90 minutes; departures are typically 06:00–07:00 to beat the wind. Most divers visit on a northern Red Sea liveaboard out of Hurghada that combines Abu Nuhas with Ras Mohammed, Thistlegorm and the Strait of Tiran over 4–7 nights. Sharm el-Sheikh (SSH) is also feasible but adds a longer Gulf of Suez crossing.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Primary plus backup torch",
+        "reason": "The most rewarding parts — engine room and crew quarters in the stern — are dark interior penetrations even on a sunny day."
+      },
+      {
+        "name": "Reef hook or SMB",
+        "reason": "Surface currents on Abu Nuhas can build through the morning; an SMB is essential for ascents off the mooring line."
+      }
+    ],
+    "notes": "Advanced Open Water with wreck experience strongly recommended; full penetration into the engine room and crew quarters requires PADI/SSI Wreck Diver certification. The sideways orientation disorients first-time wreck divers — practise neutral buoyancy and trim before going inside. Three Abu Nuhas mooring buoys serve different wrecks; confirm with the dive guide which wreck the line drops on, as currents can prevent reaching another. Strait of Gubal winds frequently force itineraries to swap Abu Nuhas for sheltered sites. Nearest hyperbaric chamber is in Hurghada."
   }
 ]
