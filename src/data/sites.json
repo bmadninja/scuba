@@ -46475,5 +46475,93 @@
       }
     ],
     "notes": "The Rhone is fully protected within the BVI National Parks Trust — removing artefacts, coral or marine life is prohibited and enforced. Most operators run it as two separate dives: a deeper bow dive first (24–26 m) then a shallow stern dive (6–15 m), with the famous 'Lucky Porthole' (a bronze condenser fitting rubbed for luck) on the stern leg. Penetration through the bow's open cargo holds is straightforward for Open Water divers in good trim; deeper engine-room penetration requires Wreck certification. Hurricane season (Aug–Oct) brings reduced visibility and occasional closures; nearest recompression chamber is on St. Thomas, USVI."
+  },
+  {
+    "id": "egypt-ss-carnatic",
+    "slug": "egypt-ss-carnatic",
+    "locationId": "ras-mohammed-egypt",
+    "name": "SS Carnatic",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Ship_wreck_Carnatic_2017-04-22_Egypt-7947.jpg",
+    "lat": 27.5814,
+    "lng": 33.9256,
+    "description": "British P&O steam-and-sail hybrid that struck Sha'ab Abu Nuhas reef on the night of 12-13 September 1869, broke in two after thirty-six hours of pounding seas, and sank with thirty-one of those aboard plus £40,000 in Indian Mint coins and a hold of fine wines and Royal Mail. Rediscovered in May 1984, the 89-meter iron hull now lies on its port side parallel to the reef between 16 and 27 m, the wooden superstructure long since rotted into a skeletal lattice of iron crossbeams that lets sunlight stream through the stacked decks. Soft coral and gorgonians fur the wreck head to stern; glassfish boil through the broken midships and shoals of bluestripe snapper hover off the bow. The hold still rewards careful searchers with the dark-green Hamilton-pattern wine bottles that earned the wreck its nickname, the 'Bottle Wreck.'",
+    "depthRange": { "min": 16, "max": 27 },
+    "skillLevel": "advanced",
+    "diveTypes": ["wrecks"],
+    "species": [
+      {
+        "commonName": "Glassfish (sweeper)",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round",
+        "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12]
+      },
+      {
+        "commonName": "Bluestripe snapper",
+        "scientificName": "Lutjanus kasmira",
+        "reliability": "year-round",
+        "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12]
+      },
+      {
+        "commonName": "Scalefin anthias",
+        "scientificName": "Pseudanthias squamipinnis",
+        "reliability": "year-round",
+        "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12]
+      },
+      {
+        "commonName": "Scorpionfish",
+        "scientificName": "Scorpaenopsis oxycephala",
+        "reliability": "year-round",
+        "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12]
+      },
+      {
+        "commonName": "Crocodilefish",
+        "scientificName": "Papilloculiceps longiceps",
+        "reliability": "year-round",
+        "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12]
+      },
+      {
+        "commonName": "Bluespotted stingray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round",
+        "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12]
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round",
+        "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12]
+      }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 21, "max": 23}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit with hood" },
+      { "month": 2, "waterTempC": {"min": 20, "max": 22}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit with hood" },
+      { "month": 3, "waterTempC": {"min": 21, "max": 23}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 4, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 5, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 6, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 7, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit or shorty" },
+      { "month": 8, "waterTempC": {"min": 28, "max": 30}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit or shorty" },
+      { "month": 9, "waterTempC": {"min": 27, "max": 29}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 10, "waterTempC": {"min": 26, "max": 28}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "3mm wetsuit" },
+      { "month": 11, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit" },
+      { "month": 12, "waterTempC": {"min": 22, "max": 24}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "moderate", "suitRecommendation": "5mm wetsuit with hood" }
+    ],
+    "bestMonths": [3,4,5,6,9,10,11],
+    "editorialRank": 82,
+    "getThere": "Fly into Hurghada International (HRG), about 30 km west of Sha'ab Abu Nuhas across the Strait of Gubal. Day boats from Hurghada marinas (Sahl Hasheesh, El Gouna, New Marina) reach the reef in 60–90 minutes; departures are typically 06:00–07:00 to beat the afternoon wind. The Carnatic is most often dived as one tank of a two-wreck day paired with the Giannis D or Chrisoula K, and is a fixture on every northern Red Sea liveaboard out of Hurghada that combines Abu Nuhas with Thistlegorm and Ras Mohammed over 4–7 nights. Sharm el-Sheikh (SSH) is feasible but adds a longer Gulf of Suez crossing.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Primary plus backup torch",
+        "reason": "Light beams through the rotted upper decks are the wreck's signature look, but the holds and the dark debris field between bow and stern reveal lobsters, morays and the wine-bottle shards only with a torch."
+      },
+      {
+        "name": "SMB",
+        "reason": "Currents on Abu Nuhas build through the morning and the mooring line is often unreachable on ascent; an SMB is mandatory for free-water ascents off the wreck."
+      }
+    ],
+    "notes": "Advanced Open Water with some wreck experience strongly recommended. The collapsed wooden upper decks have left the iron-rib skeleton wide open, so most swim-throughs are well-lit and free of true overhead — making the Carnatic the most beginner-friendly of the four Abu Nuhas wrecks. Three mooring buoys serve different wrecks on the reef; confirm with the guide which wreck the line drops on, as currents can prevent moving between them. Strait of Gubal winds frequently force itineraries to swap Abu Nuhas for sheltered sites. Removing artefacts (including the famous wine bottles) is prohibited under Egyptian antiquities law. Nearest hyperbaric chamber is in Hurghada."
   }
 ]
