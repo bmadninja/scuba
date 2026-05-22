@@ -46563,5 +46563,192 @@
       }
     ],
     "notes": "Advanced Open Water with some wreck experience strongly recommended. The collapsed wooden upper decks have left the iron-rib skeleton wide open, so most swim-throughs are well-lit and free of true overhead — making the Carnatic the most beginner-friendly of the four Abu Nuhas wrecks. Three mooring buoys serve different wrecks on the reef; confirm with the guide which wreck the line drops on, as currents can prevent moving between them. Strait of Gubal winds frequently force itineraries to swap Abu Nuhas for sheltered sites. Removing artefacts (including the famous wine bottles) is prohibited under Egyptian antiquities law. Nearest hyperbaric chamber is in Hurghada."
+  },
+  {
+    "id": "cayman-brac-captain-keith-tibbetts",
+    "slug": "cayman-brac-captain-keith-tibbetts",
+    "locationId": "bloody-bay-wall-cayman-islands",
+    "name": "MV Captain Keith Tibbetts",
+    "heroImageUrl": null,
+    "lat": 19.6947,
+    "lng": -79.8847,
+    "description": "A 100 m Koni II-class Soviet frigate (ex-Cuban Navy hull #356) scuttled off Cayman Brac's north shore in September 1996 — one of only two divable former Soviet warships in the western hemisphere. Jean-Michel Cousteau filmed the sinking. Hurricane Paloma broke the hull through the midsection in 2008, opening the engine rooms to penetration. The bow sits upright at about 24 m; the stern lies on its starboard side at 15 m, with deck guns and turrets still in place and now blanketed in orange cup coral and tube sponges.",
+    "depthRange": {
+      "min": 6,
+      "max": 27
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean reef shark",
+        "scientificName": "Carcharhinus perezi",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 26, "max": 27 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 26, "max": 27 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 25, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 25, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 25, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 18, "max": 28 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 26, "max": 27 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [12, 1, 2, 3, 4, 5, 6, 7],
+    "editorialRank": 88,
+    "getThere": "Grand Cayman (GCM / Owen Roberts International) has direct flights from major US East Coast hubs and the UK. Cayman Airways operates the short hop on to Cayman Brac (CYB). The wreck lies about 200 m off the north shore near West End and is reached either as a boat dive (most operators run two-tank trips) or as a long surface swim from the cliffside shore entry.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Cayman Brac Beach Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Cayman%20Brac%20Beach%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Le Soleil d'Or Cayman Brac",
+        "url": "https://www.booking.com/searchresults.html?ss=Le%20Soleil%20d%27Or%20Cayman%20Brac",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Cayman Aggressor V",
+        "url": "https://www.liveaboard.com/diving/search?destination=Cayman%20Aggressor",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Reef Divers Cayman Brac",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary plus backup torch",
+        "reason": "The midship break and the engine rooms are now penetrable, and the corridors behind the gun turrets are dark even on the brightest day.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "SMB",
+        "reason": "Boat traffic over the mooring is constant and the north-shore current can drift divers off the wreck on ascent."
+      }
+    ],
+    "notes": "Advanced Open Water with prior wreck experience recommended for any penetration; the 2008 hurricane damage left jagged metal and unstable bulkheads inside the broken hull. Bow and stern can be split across two tanks. Cayman Brac is a sister island to Little Cayman — sharing the same airport hub and many of the same liveaboard itineraries as Bloody Bay Wall — and the wreck is the island's marquee dive."
   }
 ]
