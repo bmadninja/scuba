@@ -33494,5 +33494,263 @@
       }
     ],
     "notes": "Bow accessible to advanced divers; full stern requires tech certification."
+  },
+  {
+    "id": "socorro-mexico-the-boiler",
+    "slug": "socorro-mexico-the-boiler",
+    "locationId": "socorro-mexico",
+    "name": "The Boiler",
+    "heroImageUrl": null,
+    "lat": 19.33,
+    "lng": -110.83,
+    "description": "A submerged volcanic pinnacle off the northwest coast of San Benedicto Island, roughly oval-shaped and approximately the size of a football field, rising from a bottom around 35m below to within a few meters of the surface. The name comes from waves and swell breaking on top of the shallow seamount, giving the water the appearance of boiling. The site functions as a manta cleaning station where clarion angelfish pick parasites from giant oceanic mantas, and the resident mantas are known for repeatedly hovering over divers' exhaust bubbles.",
+    "depthRange": {
+      "min": 6,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Giant oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Clarion angelfish",
+        "scientificName": "Holacanthus clarionensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bottlenose dolphin",
+        "scientificName": "Tursiops truncatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silky shark",
+        "scientificName": "Carcharhinus falciformis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Galapagos shark",
+        "scientificName": "Carcharhinus galapagensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silvertip shark",
+        "scientificName": "Carcharhinus albimarginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5-7mm full"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm full with hood"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm full with hood"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 96,
+    "getThere": "Liveaboard only. Fly into Los Cabos International Airport (SJD); liveaboards depart from Cabo San Lucas or San Jose del Cabo marinas with an approximately 24-30 hour crossing to San Benedicto Island.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Site lies within Revillagigedo National Park, a fully protected marine reserve established in 2017; access requires permits and a licensed liveaboard. Strict no-touching policy for manta rays is enforced. Most operators require a minimum of approximately 50 logged dives. Hazards include strong currents, surge, down-currents, and breaking surface waves over the shallow pinnacle. Mandatory DSMB and personal GPS/radio beacon on many vessels."
   }
 ]
