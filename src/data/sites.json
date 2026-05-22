@@ -46904,5 +46904,56 @@
       }
     ],
     "notes": "This is not a beginner manta dive. Current, remote logistics and blue-water ascents make it best for confident advanced divers with recent drift experience. Manta encounters are seasonal and tide-dependent; give cleaning stations space and follow guide positioning closely."
+  },
+  {
+    "id": "komodo-national-park-indonesia-the-cauldron-shotgun",
+    "slug": "komodo-national-park-indonesia-the-cauldron-shotgun",
+    "locationId": "komodo-national-park-indonesia",
+    "name": "The Cauldron / Shotgun",
+    "heroImageUrl": null,
+    "lat": -8.456,
+    "lng": 119.563,
+    "description": "A high-energy channel drift between Gili Lawa Laut and Gili Lawa Darat in north Komodo. Divers start over coral gardens and a bowl-shaped sandy basin, then time the tide for the fast Shotgun section, where the current funnels through the pass. Reef mantas, sharks, giant trevally and dense reef fish can appear when the flow is right.",
+    "depthRange": { "min": 8, "max": 30 },
+    "skillLevel": "advanced",
+    "diveTypes": ["large-pelagics", "coral", "geology"],
+    "species": [
+      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "seasonal", "bestMonths": [4, 5, 6, 7, 8, 9, 10, 11] },
+      { "commonName": "Whitetip reef shark", "scientificName": "Triaenodon obesus", "reliability": "year-round" },
+      { "commonName": "Giant trevally", "scientificName": "Caranx ignobilis", "reliability": "year-round" },
+      { "commonName": "Hawksbill turtle", "scientificName": "Eretmochelys imbricata", "reliability": "year-round" },
+      { "commonName": "Schooling snapper", "scientificName": "Lutjanidae", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 8, "max": 18 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 8, "max": 18 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 22 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "3mm wetsuit" },
+      { "month": 8, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "3mm wetsuit" },
+      { "month": 9, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 12, "max": 22 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 8, "max": 18 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [4, 5, 6, 7, 8, 9, 10, 11],
+    "editorialRank": 90,
+    "getThere": "Fly to Labuan Bajo (LBJ) on Flores, then join a day boat or liveaboard into northern Komodo National Park. The site sits in the channel between Gili Lawa Laut and Gili Lawa Darat and is normally selected only when tide timing suits an experienced group.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "SMB",
+        "reason": "The final drift can separate divers from the reef, and boat pickup is often in moving water."
+      },
+      {
+        "name": "Reef hook",
+        "reason": "Some guides permit hooks on dead substrate for brief holds near manta or shark action, but only use one if the briefing allows it."
+      }
+    ],
+    "notes": "This is one of Komodo's signature current dives and should be treated as advanced-only. The same tide that creates the memorable ride can also make depth control and group contact difficult, so follow the local guide's timing, entry point and abort call."
   }
 ]
