@@ -42878,5 +42878,527 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Shore dive with easy entry over a sand and coral shelf. Watch for sharp rusted edges on the wreckage and use a torch for poking into stacked vehicles. Wet-season runoff from the Sarakata River cuts visibility December through March; dry season May through October is best. Pairs naturally with an SS President Coolidge dive on the same coast."
+  },
+  {
+    "id": "cocos-manuelita",
+    "slug": "cocos-manuelita",
+    "locationId": "cocos-costa-rica",
+    "name": "Manuelita Island",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Scalloped_hammerhead_cocos.jpg",
+    "lat": 5.5667,
+    "lng": -87.05,
+    "description": "A 150 m basalt islet off the north-east corner of Cocos with three named dives: a deep outside wall holding scalloped hammerhead cleaning stations at 21–24 m, an inside coral garden running 12–21 m, and the channel between the islet and the main island. Tiger sharks patrol the blue, barberfish work the cleaning stations on the wall, and the after-dark version is the most famous whitetip-reef-shark hunting dive in the world — dozens of sharks swarming the reef on a single torch beam.",
+    "depthRange": {
+      "min": 12,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tiger shark",
+        "scientificName": "Galeocerdo cuvier",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Galapagos shark",
+        "scientificName": "Carcharhinus galapagensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Marble ray",
+        "scientificName": "Taeniura meyeni",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "seasonal"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 92,
+    "getThere": "Cocos Island sits ~550 km off mainland Costa Rica and is liveaboard-only — there is no day-boat or shore access. Fly into San José (SJO), then transfer to Puntarenas marina and board one of the two licensed Costa Rican liveaboards (Undersea Hunter / Argo or Okeanos Aggressor). The Pacific crossing takes 32–36 hours each way; minimum trips are 10 nights. Manuelita is the first and last anchorage of every itinerary.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "All Cocos diving requires a Costa Rican national park permit, included in the liveaboard fee. The night dive at Manuelita Inside is the signature event — dozens of whitetip reef sharks hunt across the reef under torch light; experienced buoyancy and a strong primary torch with backup are essential. Surge and downcurrents are common at the outside cleaning stations. Nitrox is strongly recommended for the back-to-back deep profiles across a typical 10-night itinerary."
+  },
+  {
+    "id": "north-male-lankan-manta-point",
+    "slug": "north-male-lankan-manta-point",
+    "locationId": "north-male-atoll-maldives",
+    "name": "Lankan Manta Point",
+    "heroImageUrl": null,
+    "lat": 4.2853,
+    "lng": 73.5615,
+    "description": "Gently sloping outer reef on the eastern flank of Lankanfinolhu (Paradise Island), the most-visited manta cleaning station in North Malé Atoll. Three coral bommies at 10–18 m act as fixed cleaning stations where reef mantas queue for wrasse to pick parasites from gills and underside, sometimes a dozen at a time. The reef top sits at 5 m and the sand slopes off to 30 m; current usually runs north-to-south along the outside of the atoll. Eagle rays, mobulas, whitetip reef sharks and napoleon wrasse pass through. Peak action is August through November when the southwest monsoon pushes plankton up the eastern atoll wall.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mobula ray",
+        "scientificName": "Mobula spp.",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly into Velāna International Airport (MLE) at Malé. Most North Malé Atoll resorts and dive operators run a 30–45 min speedboat transfer to the site; liveaboards routinely include it on a central-atolls itinerary.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Villa Nautica Paradise Island",
+        "url": "https://www.booking.com/searchresults.html?ss=Villa%20Nautica%20Paradise%20Island%20Maldives",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "North Malé Atoll Resorts",
+        "url": "https://www.booking.com/searchresults.html?ss=North%20Male%20Atoll%20Maldives",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI",
+        "label": "PADI dive centers — North Malé Atoll",
+        "url": "https://www.padi.com/diving-in/north-male-atoll-kaafu-atoll/",
+        "isAffiliate": false
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "When current runs hard along the outer reef the hook lets you settle on a rubble patch off the cleaning stations without finning over coral.",
+        "gearId": null
+      },
+      {
+        "name": "SMB + reel",
+        "reason": "Standard exit is a drift off the outer reef; surface marker is required for boat pickup.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Stay back at least 3–4 m from cleaning stations — mantas will leave if approached. Do not chase or touch. Site is open year-round but mantas are reliable only during the southwest monsoon."
   }
 ]
