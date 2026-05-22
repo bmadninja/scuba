@@ -41718,5 +41718,284 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Bonaire Marine Park tag required (sold at any dive shop). Exit stairs are steep and slippery — hand a buddy your gear at the platform before climbing out. The marked one-way road means you cannot drive back south from here; continue around the northern loop."
+  },
+  {
+    "id": "lakshadweep-manta-point-bangaram",
+    "slug": "lakshadweep-manta-point-bangaram",
+    "locationId": "lakshadweep-india",
+    "name": "Manta Point Bangaram",
+    "heroImageUrl": null,
+    "lat": 10.95,
+    "lng": 72.32,
+    "description": "Outer-reef site on the eastern edge of Bangaram Atoll, the most-dived spot in Lakshadweep. The reef top sits at 6 m and slopes to 23 m, with cleaning stations on the deeper bommies where reef manta rays show up in November and December. Snappers, big-eye trevally and yellowfin tuna patrol the drop-off; whitetip and grey reef sharks pass on most dives. Visibility is exceptional outside the southwest monsoon.",
+    "depthRange": {
+      "min": 6,
+      "max": 23
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2
+        ]
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowfin tuna",
+        "scientificName": "Thunnus albacares",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Closed for monsoon"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Closed for monsoon"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Closed for monsoon"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 70,
+    "getThere": "Fly into Agatti Airport (AGX) via Cochin (COK), then a 1–1.5 hr boat transfer from Agatti to Bangaram. Lakshadweep entry requires a permit arranged in advance through a registered tour operator or the Lakshadweep Tourism office.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Bangaram Island Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Bangaram%20Island%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Agatti Island Stays",
+        "url": "https://www.booking.com/searchresults.html?ss=Agatti%20Lakshadweep",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI",
+        "label": "Bangaram Dive Center",
+        "url": "https://www.padi.com/dive-center/india/bangaram-dive-center/",
+        "isAffiliate": false
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + reel",
+        "reason": "Boat pickup off the outer reef; deployable surface marker is standard for the drift exit.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Lakshadweep entry permits are mandatory and arranged through a registered tour operator before travel. Diving is closed roughly June–September for the southwest monsoon."
   }
 ]
