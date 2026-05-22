@@ -36233,7 +36233,7 @@
     "slug": "sipadan-malaysia-turtle-tomb",
     "locationId": "sipadan-malaysia",
     "name": "Turtle Tomb",
-    "heroImageUrl": null,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Hawksbill_Sipadan.jpg",
     "lat": 4.115,
     "lng": 118.626,
     "description": "A submerged limestone cavern on Sipadan's west wall, entered at around 18m and opening into a labyrinth of tunnels that runs roughly 200m back into the island. The cavern floor is layered with the bones of green and hawksbill turtles — and reportedly a dolphin — that swam in disoriented and never found their way out. Jacques Cousteau popularized the site in his documentary 'Borneo: The Ghost of the Sea Turtle.' Cave certification and a local guide are required for penetration; the outer reef wall is a strong open-water dive on its own, with schooling jacks, bumphead parrotfish, and resident reef sharks patrolling the drop-off.",
@@ -37504,14 +37504,15 @@
         "reason": "Strong current on the corners; hooking in lets you hold the plateau edge to watch sharks without finning."
       }
     ],
-    "notes": "Liveaboard-only — no day boats. Brothers marine park is closed roughly December–February (dates vary year to year); confirm with operator. Park fees apply per dive day."
+    "notes": "Liveaboard-only — no day boats. Brothers marine park is closed roughly December–February (dates vary year to year); confirm with operator. Park fees apply per dive day.",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Along_the_wall_at_Little_Brother%2C_Red_Sea_%2838916564322%29.jpg"
   },
   {
     "id": "el-hierro-spain-el-bajon",
     "slug": "el-hierro-spain-el-bajon",
     "locationId": "el-hierro-spain",
     "name": "El Bajón",
-    "heroImageUrl": null,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Bodianus_scrofa.jpg",
     "lat": 27.635,
     "lng": -17.974,
     "description": "A volcanic seamount a few hundred metres off La Restinga harbour on El Hierro's southern tip, anchoring the Mar de las Calmas marine reserve. Twin pinnacles crest at 6 and 9 metres before steep walls plunge past 100 metres into open Atlantic. Current pulls feed schooling barracuda, amberjacks and tuna along the ridge, while large dusky groupers, morays and burrfish hold to the rock. In summer and autumn, mobula and oceanic manta rays circle the peaks and whale sharks occasionally pass through. Visibility runs 30 to 50 metres on calm days.",
@@ -37781,7 +37782,7 @@
     "slug": "palau-ulong-channel",
     "locationId": "jellyfish-lake-palau",
     "name": "Ulong Channel",
-    "heroImageUrl": null,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Diving%2C_Ulong_Channel%2C_Palau.jpg",
     "lat": 7.3134,
     "lng": 134.2238,
     "description": "A natural cut through the barrier reef west of Ulong Island, often picked as Palau's signature drift. Enter at the channel mouth around 18-20 m where grey reef and whitetip sharks patrol the sandy runoff, hook in to a rocky ledge to watch the parade, then unhook and let the incoming current carry you down a coral-lined corridor past a 5-7 m wall of lettuce coral (Pavona) and schools of jacks, snapper, and barracuda. April-July full moons bring spawning aggregations of camouflage groupers.",
@@ -38594,5 +38595,294 @@
       }
     ],
     "notes": "Strong tidal currents and surge make this an advanced-only dive — most operators require Advanced Open Water and previous current-diving experience. Oceanic mantas concentrate at the cleaning stations from late November through April, peaking January to March. Big Pacific swells in winter occasionally cancel the boat trip."
+  },
+  {
+    "id": "trincomalee-sri-lanka-pigeon-island",
+    "slug": "trincomalee-sri-lanka-pigeon-island",
+    "locationId": "trincomalee-sri-lanka",
+    "name": "Pigeon Island",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/A_beautiful_view_of_Pigeon_Island.jpg",
+    "lat": 8.717,
+    "lng": 81.2,
+    "description": "Shallow fringing-reef marine park 1 km off Nilaveli on Sri Lanka's east coast, named for the rock pigeons nesting on its two granite outcrops. Reef structure sits in 3-15 m and carries over 100 hard and soft coral species — Acropora and Montipora tables alongside Sinularia leather corals — and roughly 300 reef fish including Moorish idols, parrotfish, butterflyfish, lionfish, moray eels, and Kuhl's stingrays. Blacktip reef sharks aggregate predictably in the shallow sand patches north of the main island during the calm May-September season; hawksbill and green turtles graze the coral heads year-round, and octopus, nudibranchs, and pipefish work the cracks. The 2004 tsunami and recent bleaching events have left scars, but coral cover here remains the healthiest along Sri Lanka's east coast.",
+    "depthRange": {
+      "min": 3,
+      "max": 15
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Kuhl's stingray",
+        "scientificName": "Neotrygon kuhlii",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moorish idol",
+        "scientificName": "Zanclus cornutus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef octopus",
+        "scientificName": "Octopus cyanea",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Parrotfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Butterflyfish",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly into Colombo Bandaranaike International Airport (CMB), then transfer to Trincomalee — about 6-7 hours by road (270 km), or 50 minutes by domestic seaplane/Cinnamon Air to China Bay (TRR). From Trincomalee head 16 km north to Nilaveli; dive operators run 10-15 minute boat transfers to Pigeon Island. The park is closed during the northeast monsoon and reopens reliably from April-May.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Nilaveli Beach Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Nilaveli%20Beach%20Hotel%20Sri%20Lanka",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Jungle Beach by Uga Escapes",
+        "url": "https://www.booking.com/searchresults.html?ss=Jungle%20Beach%20Uga%20Trincomalee",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Find PADI dive operators (Trincomalee)",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef-safe sunscreen",
+        "reason": "The park has restricted-use rules around chemical sunscreens; reef-safe formulas are expected and most operators check at briefing.",
+        "gearId": null
+      },
+      {
+        "name": "SMB",
+        "reason": "Boat traffic between Nilaveli and the park is constant during season; surface the dive on a deployed SMB for pickup.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Pigeon Island National Park requires an entry permit purchased onshore at Nilaveli (Department of Wildlife Conservation); dive operators usually arrange tickets. The park is closed during the November-March northeast monsoon when seas are rough and visibility collapses. Blacktip reef sharks here are best observed while snorkeling the shallow sand pools on the north side; on scuba you'll see fewer sharks but more coral structure on the back reef. Anchor damage and crowding from snorkel tourism have stressed the reef — do not stand on coral, touch wildlife, or feed fish."
   }
 ]
