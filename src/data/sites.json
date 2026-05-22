@@ -34122,5 +34122,156 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Pre-dawn departure is required — thresher sharks visit cleaning stations only at first light and disappear back to deep water by mid-morning. The Department of Tourism enforces a fixed mooring rope and a no-cross line on the plateau edge; touching, chasing or flashing strobes at the sharks is prohibited and rangers fine offenders. Most operators require AOW certification due to the 25–30 m hang depth and occasional strong currents along the wall. Typhoon season (Jun–Nov) can cancel boats; avoid the immediate aftermath of named storms. Nearest recompression chamber is in Cebu City."
+  },
+  {
+    "id": "yonaguni-monument",
+    "slug": "yonaguni-monument",
+    "locationId": "yonaguni-japan",
+    "name": "Yonaguni Monument",
+    "heroImageUrl": null,
+    "lat": 24.432,
+    "lng": 123.011,
+    "description": "Submerged sandstone formation about 100 m off Arakawabana Cape on the southern coast of Yonaguni Island, discovered in 1986 by local dive operator Kihachiro Aratake while scouting hammerhead habitat. The structure features terraced platforms, broad flat surfaces, sharp right angles and what divers call staircases, spanning roughly 50 m across and rising about 25 m off the bottom. Geologists generally read the geometry as erosion along bedding planes and linear joints in soft sandstone; a minority argue for prehistoric human modification. The main monument tops out near 5 m and its outer face drops to 25–30 m. From January through March schools of scalloped hammerheads pass the same southwest coast on rising current — sometimes more than 100 sharks in a single sighting.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Scalloped hammerhead shark",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellow-spotted boxfish",
+        "scientificName": "Ostracion cubicus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 21, "max": 23 },
+        "visibilityM": { "min": 20, "max": 40 },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full + hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 21, "max": 23 },
+        "visibilityM": { "min": 20, "max": 40 },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full + hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 22, "max": 24 },
+        "visibilityM": { "min": 20, "max": 40 },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 23, "max": 25 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3–5mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full or shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full or shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3–5mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 23, "max": 25 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 22, "max": 24 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full + hood"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 93,
+    "getThere": "Fly to Naha (OKA) or Ishigaki (ISG) in Okinawa, then connect on a Ryukyu Air Commuter (RAC) flight to Yonaguni Airport (OGN) — about 30 minutes from Ishigaki or 75 minutes from Naha. A car ferry runs twice weekly from Ishigaki to Kubura Port on the island's west end. Local dive shops handle a short 10–15 minute boat transfer south to the monument off Arakawabana Cape; the site is reached by boat only.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Strong, often unpredictable currents along the outer face — most operators require Advanced Open Water and prior deep/drift experience. Bottom time is typically short (20–25 minutes) and the dive is run on a narrow tidal window; rough winter seas frequently cancel boats from December through February. Hammerhead dives are at separate sites along the same southwest coast (notably Hammerhead Rock, west of the monument) and are run as deep, current-heavy drifts at 20–35 m. Touching or breaking off any part of the monument is prohibited under Japanese cultural property guidance. Nearest recompression chamber is on Okinawa's main island; medevac from Yonaguni is air-only."
   }
 ]
