@@ -39379,5 +39379,298 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Goliath grouper aggregate here during their late-summer spawning season. Strong Gulf Stream currents require negative entries and reef hooks; nitrox is standard for bottom-time management. Penetration requires wreck certification — the hull is buoy-moored at multiple points to spread diver load."
+  },
+  {
+    "id": "andaman-islands-india-johnnys-gorge",
+    "slug": "andaman-islands-india-johnnys-gorge",
+    "locationId": "andaman-islands-india",
+    "name": "Johnny's Gorge",
+    "heroImageUrl": null,
+    "lat": 12.025,
+    "lng": 93.15,
+    "description": "Open-water deep dive 18-19 km east of Havelock Island (Swaraj Dweep), named for the divemaster who first explored it. The bottom sits between 28 and 34 m on low-lying rocky outcrops stitched together by huge barrel sponges, gorgonian fans, and soft coral. White-tip reef sharks are the headline — they cruise sand channels between the rocks and often rest motionless in pairs while divers drift overhead. Big-fish density is the second draw: dense schools of Andaman sweetlips, bluefin and giant trevally, dogtooth tuna, queenfish, barracuda, and large grouper hold position in the lee of the structure. Eagle rays pass through and the site sees occasional dolphins. Currents shift quickly with the tide and the depth chops visibility below 16 m, so this is firmly advanced-only.",
+    "depthRange": {
+      "min": 20,
+      "max": 34
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluefin trevally",
+        "scientificName": "Caranx melampygus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Andaman sweetlips",
+        "scientificName": "Plectorhinchus macrolepis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant grouper",
+        "scientificName": "Epinephelus lanceolatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Queenfish",
+        "scientificName": "Scomberoides commersonnianus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Veer Savarkar International Airport (IXZ) in Port Blair via Chennai (MAA), Kolkata (CCU), Delhi (DEL), or Bengaluru (BLR). From Port Blair, take the 1.5-2 hour high-speed catamaran ferry (Makruzz, Nautika, Green Ocean) to Havelock Island (Swaraj Dweep) — government MV ferries also run but are slower. Dive operators based at Beach No. 3 / Govind Nagar run dedicated deep-site boats that reach Johnny's Gorge in about 60-75 minutes. The site is dived as a single deep profile, often paired with Dixon's Pinnacle as the second dive.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Barefoot at Havelock",
+        "url": "https://www.booking.com/searchresults.html?ss=Barefoot%20at%20Havelock",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "resort"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "TSG Blue Resort Havelock",
+        "url": "https://www.booking.com/searchresults.html?ss=TSG%20Blue%20Havelock",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Find PADI dive operators (Havelock)",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-3mm-full",
+      "computer-shearwater-peregrine",
+      "smb-xs-scuba-deluxe"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light or torch",
+        "reason": "At 30-34 m, ambient light drops sharply and the overhangs where sharks rest are dim — a primary torch helps with shark ID and gorgonian colour.",
+        "gearId": "light-bigblue-al1200"
+      },
+      {
+        "name": "Nitrox cert + EAN32 fills",
+        "reason": "Bottom time at 28-30 m on air is short; EAN32 stretches no-deco limits and is offered by all Havelock operators with advance booking.",
+        "gearId": null
+      }
+    ],
+    "notes": "Advanced Open Water with deep training is the working minimum — most operators require it plus a confirmed AOW logbook entry. Foreign nationals no longer need a separate Restricted Area Permit (RAP) for Havelock but must carry passport; the older RAP rule was lifted in 2022. Site is closed during the southwest monsoon (roughly mid-May through mid-September) when surface swell and silt make the run unsafe. Do not touch the giant barrel sponges — some are estimated at over 1,000 years old and break easily."
   }
 ]
