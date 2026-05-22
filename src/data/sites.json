@@ -36450,5 +36450,302 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Cave/cavern certification and a guide who knows the system are mandatory for penetration past the entrance — the interior is a maze of narrow connecting tunnels with dead ends and silt-out risk. Sabah Parks permit cap of 176 divers/day applies to all Sipadan sites; book through a licensed Mabul/Kapalai operator weeks in advance."
+  },
+  {
+    "id": "mnemba-tanzania-kichwani",
+    "slug": "mnemba-tanzania-kichwani",
+    "locationId": "mnemba-tanzania",
+    "name": "Kichwani",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Mnemba_Atoll.jpg",
+    "lat": -5.825,
+    "lng": 39.39,
+    "description": "Sloping coral wall on the southeast face of Mnemba Atoll, starting around 4m and dropping into the channel toward 30m and beyond. The protected reef inside Mnemba Island Marine Conservation Area carries dense table and staghorn coral, schooling snappers and goatfish, and a steady cast of green and hawksbill turtles. Bottlenose dolphins regularly pass through the surface waters; whitetip reef sharks and Napoleon wrasse appear along the deeper sections, and macro hunters work the wall for scorpionfish, leaf fish, and nudibranchs.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bottlenose dolphin",
+        "scientificName": "Tursiops aduncus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare",
+        "bestMonths": [
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Scorpionfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluefin trevally",
+        "scientificName": "Caranx melampygus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 86,
+    "getThere": "Fly into Abeid Amani Karume International Airport (ZNZ) on Unguja. Most operators run from Matemwe or Nungwi on the northeast coast (60-90 minutes by road from the airport); from there it's a 15-30 minute dhow or speedboat crossing to the atoll. Day trips also leave from Stone Town and Kendwa with longer transit times.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Matemwe Beach Village",
+        "url": "https://www.booking.com/searchresults.html?ss=Matemwe%20Beach%20Village%20Zanzibar",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sunshine Marine Lodge",
+        "url": "https://www.booking.com/searchresults.html?ss=Sunshine%20Marine%20Lodge%20Matemwe",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Find PADI dive operators (Mnemba)",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "Channel drift along the southeast wall picks up on outgoing tides; a hook lets you hold position when the current accelerates.",
+        "gearId": null
+      },
+      {
+        "name": "SMB",
+        "reason": "Most dives are run as drifts and boats pick up downcurrent; a deployed SMB is standard for surfacing.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Inside the Mnemba Island Marine Conservation Area (MIMCA) - a daily marine park / conservation fee is collected by operators and is usually not included in the dive price. The island itself is private (andBeyond Mnemba Island lodge); landings are not permitted for day visitors, but the surrounding reefs are open to permitted dive boats. Touching coral and chasing dolphins are prohibited. Outgoing tides through the channel can push currents from mild to moderate without warning."
   }
 ]
