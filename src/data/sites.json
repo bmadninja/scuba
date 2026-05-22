@@ -43400,5 +43400,232 @@
       }
     ],
     "notes": "Stay back at least 3–4 m from cleaning stations — mantas will leave if approached. Do not chase or touch. Site is open year-round but mantas are reliable only during the southwest monsoon."
+  },
+  {
+    "id": "blue-corner-palau-big-drop-off",
+    "slug": "blue-corner-palau-big-drop-off",
+    "locationId": "blue-corner-palau",
+    "name": "Big Drop-Off",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Macro_soft_corals%2C_Big_Drop_Off_Reef%2C_Palau_%289971760155%29.jpg",
+    "lat": 7.045,
+    "lng": 134.232,
+    "description": "A near-vertical wall running the southwestern flank of Ngemelis Island, dropping from a 3 m reef crest into 270 m of blue. Jacques Cousteau called it the best wall dive in the world. Plankton-rich currents feed a dense garden of sea fans, soft corals, and barrel sponges that line the upper face, while pyramid butterflyfish swarm above. Grey reef, white-tip, and resting leopard sharks patrol along the wall; hawksbills graze sponges; leaf fish and lionfish hide in coral cracks. Usually run as a single-tank drift; conditions stay benign enough that the entry can be 3 m deep at low tide.",
+    "depthRange": {
+      "min": 3,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Leopard shark",
+        "scientificName": "Stegostoma tigrinum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Pyramid butterflyfish",
+        "scientificName": "Hemitaurichthys polylepis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Soft corals and sea fans",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Leaf scorpionfish",
+        "scientificName": "Taenianotus triacanthus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [11, 12, 1, 2, 3, 4],
+    "editorialRank": 90,
+    "getThere": "Fly into Roman Tmetuchl International Airport (ROR) on Babeldaob, the only commercial gateway to Palau. From Koror, dive operators run a 45–60 minute speedboat to Ngemelis Island in the southern Rock Islands; the site sits on the island's southwestern flank.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + reel",
+        "reason": "Standard exit is a drift along the wall into open water; surface marker is required for boat pickup.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Requires a Rock Islands / Southern Lagoon permit (purchased in Koror, currently $50 valid 10 days) plus a separate Koror state diving permit. Current can run unexpectedly along the wall — watch your depth, the bottom is 270 m below you."
   }
 ]
