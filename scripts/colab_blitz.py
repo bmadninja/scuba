@@ -47,7 +47,7 @@ PROVIDER = "gemini"   # "gemini" (free tier on AI Studio) | "anthropic"
 
 # Model per provider — only the active one is used.
 ANTHROPIC_MODEL = "claude-sonnet-4-5"
-GEMINI_MODEL    = "gemini-2.5-pro"   # swap to "gemini-2.5-flash" for higher free quota
+GEMINI_MODEL    = "gemini-2.5-flash"   # higher free-tier quota than pro; swap to "gemini-2.5-pro" if you have paid quota
 
 GITHUB_REPO   = "bmadninja/scuba"
 MAX_SITES     = 500                   # safety cap
