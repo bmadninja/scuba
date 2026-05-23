@@ -1,0 +1,16 @@
+Mode: PR | model: claude-opus-4-7 | max: 1
+
+[1/1] consecutive_fails=0
+→ Picking gap...
+  Target: Hon Mun Marine Protected Area @ nha-trang-vietnam
+  Reason: Nha Trang currently has zero sites despite Vietnam being a major Southeast Asian dive destination with significant search interest. Hon Mun is the flagship dive site of Vietnam—a designated Marine Protected Area famous for its biodiversity, soft corals, and accessibility from Nha Trang. Adding it fills a complete country gap and addresses an editorially important, frequently-searched site in a region where we already cover neighboring countries (Thailand, Philippines, Indonesia, Malaysia) heavily.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,text,server_tool_use,web_fetch_tool_result,server_tool_use,web_search_tool_result,text,server_tool_use,web_search_tool_result,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text
+  [turn 1] stop=end_turn blocks=text
+→ Validating schema...
+→ Dedup check...
+→ Self-review...
+  Score: 0.86 (issues: Coordinates (12.1675, 109.3058) are plausible for Hon Mun island southeast of Nha Trang, acceptable.; 'Canoe transfer' from Cau Da is an odd phrasing - likely meant speedboat; minor terminology issue.; Species list is somewhat generic for Indo-Pacific reefs (clownfish, moray, lionfish, nudibranchs) but consistent with the site.; Madonna Rock max depth of 35m is slightly deeper than the listed site depthRange max of 30m - minor internal inconsistency.; Claim of 340 hard/soft coral species and ~1,500 marine species aligns with commonly cited figures for Hon Mun MPA.; June 2022 closure and subsequent recovery program is accurate per public reporting.; Entrance fee figures (22,000/11,000 VND) are plausible but may be outdated; not independently verified here.)
+
+✓ Wrote 1 site(s) to /home/runner/work/scuba/scuba/src/data/sites.json
+ADDED_SITES=Hon Mun Marine Protected Area
