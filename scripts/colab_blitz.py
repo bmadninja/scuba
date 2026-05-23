@@ -1,21 +1,25 @@
 """
 scubaseason.fun — Dive Site Discovery Blitz
-Google Colab script — uses Anthropic API (not your Max plan)
+Google Colab script — runs Anthropic OR Gemini (Google AI Studio, free tier)
 
 SETUP (run once):
-  1. Add secrets in Colab sidebar (🔑 icon):
-       ANTHROPIC_API_KEY  →  sk-ant-...
-       GITHUB_TOKEN       →  github_pat_... (needs repo write access)
+  1. Add secrets in Colab sidebar (🔑 icon). You only need the one for the
+     provider you pick below:
+       ANTHROPIC_API_KEY  →  sk-ant-...                  (if PROVIDER="anthropic")
+       GOOGLE_API_KEY     →  AIza...                     (if PROVIDER="gemini" — get from https://aistudio.google.com/apikey)
+       GITHUB_TOKEN       →  github_pat_...              (needs repo write access)
   2. Run Cell 1 (install), then Cell 2 (config), then Cell 3 (blitz).
 
-COST: ~$0.10–0.30 per site using claude-sonnet-4-5.
-      At 1 site per iteration and 2 min/iter → ~$5–15 for an overnight run.
+COST:
+  - anthropic claude-sonnet-4-5  → ~$0.10–0.30 per site
+  - gemini-2.5-pro (AI Studio)   → free up to daily quota, then paid
+  - gemini-2.5-flash (AI Studio) → free up to a much higher daily quota
 """
 
 # ─── CELL 1: Install dependencies ─────────────────────────────────────────────
 # Paste this cell and run it first.
 
-# !pip install anthropic duckduckgo-search html2text gitpython -q
+# !pip install anthropic google-genai duckduckgo-search html2text gitpython -q
 
 
 # ─── CELL 2: Config ───────────────────────────────────────────────────────────
@@ -34,27 +38,45 @@ from pathlib import Path
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
-import anthropic
 import html2text
 import requests
 from duckduckgo_search import DDGS
 
-try:
-    from google.colab import userdata
-    ANTHROPIC_API_KEY = userdata.get("ANTHROPIC_API_KEY")
-    GITHUB_TOKEN      = userdata.get("GITHUB_TOKEN")
-except Exception:
-    # If running locally or secrets not set, fall back to env vars
-    ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-    GITHUB_TOKEN      = os.environ.get("GITHUB_TOKEN", "")
+# ── Provider choice ───────────────────────────────────────────────────────────
+PROVIDER = "gemini"   # "gemini" (free tier on AI Studio) | "anthropic"
+
+# Model per provider — only the active one is used.
+ANTHROPIC_MODEL = "claude-sonnet-4-5"
+GEMINI_MODEL    = "gemini-2.5-pro"   # swap to "gemini-2.5-flash" for higher free quota
 
 GITHUB_REPO   = "bmadninja/scuba"
-MODEL         = "claude-sonnet-4-5"   # cheap + capable; swap to claude-opus-4-5 for higher quality
 MAX_SITES     = 500                   # safety cap
 DELAY_SECONDS = 30                    # pause between iterations
 REPO_DIR      = Path("/content/scuba")
 
-client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+try:
+    from google.colab import userdata
+    ANTHROPIC_API_KEY = userdata.get("ANTHROPIC_API_KEY") if PROVIDER == "anthropic" else ""
+    GOOGLE_API_KEY    = userdata.get("GOOGLE_API_KEY")    if PROVIDER == "gemini"    else ""
+    GITHUB_TOKEN      = userdata.get("GITHUB_TOKEN")
+except Exception:
+    # If running locally or secrets not set, fall back to env vars
+    ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+    GOOGLE_API_KEY    = os.environ.get("GOOGLE_API_KEY", "")
+    GITHUB_TOKEN      = os.environ.get("GITHUB_TOKEN", "")
+
+if PROVIDER == "anthropic":
+    import anthropic
+    anthropic_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    MODEL = ANTHROPIC_MODEL
+elif PROVIDER == "gemini":
+    from google import genai
+    from google.genai import types as genai_types
+    gemini_client = genai.Client(api_key=GOOGLE_API_KEY)
+    MODEL = GEMINI_MODEL
+else:
+    raise ValueError(f"Unknown PROVIDER: {PROVIDER}")
+
 h2t    = html2text.HTML2Text()
 h2t.ignore_links = False
 h2t.body_width   = 0
@@ -280,15 +302,15 @@ If all famous sites in this region are already covered: EXHAUSTED
 
 # ─── CELL 5: Blitz loop ────────────────────────────────────────────────────────
 
-def run_one_discovery() -> tuple[str, str]:
+def run_one_discovery_anthropic() -> tuple[str, str]:
     """
-    Run one discovery iteration. Returns (status, site_name).
+    Run one discovery iteration via Anthropic. Returns (status, site_name).
     status: "done" | "exhausted" | "error"
     """
     messages = [{"role": "user", "content": DISCOVER_PROMPT}]
 
     for turn in range(40):  # max tool-use turns
-        response = client.messages.create(
+        response = anthropic_client.messages.create(
             model=MODEL,
             max_tokens=8192,
             tools=TOOL_DEFS,
@@ -331,6 +353,80 @@ def run_one_discovery() -> tuple[str, str]:
     return "error", "no DONE/EXHAUSTED signal emitted"
 
 
+def _gemini_tool_config():
+    """Build Gemini Tool list from the shared TOOL_DEFS."""
+    return [genai_types.Tool(function_declarations=[
+        genai_types.FunctionDeclaration(
+            name=t["name"],
+            description=t["description"],
+            parameters=t["input_schema"],
+        ) for t in TOOL_DEFS
+    ])]
+
+
+def run_one_discovery_gemini() -> tuple[str, str]:
+    """
+    Run one discovery iteration via Gemini (Google AI Studio).
+    Returns (status, site_name). status: "done" | "exhausted" | "error"
+    """
+    contents = [genai_types.Content(
+        role="user",
+        parts=[genai_types.Part.from_text(text=DISCOVER_PROMPT)],
+    )]
+    tools = _gemini_tool_config()
+
+    for turn in range(40):
+        response = gemini_client.models.generate_content(
+            model=MODEL,
+            contents=contents,
+            config=genai_types.GenerateContentConfig(
+                tools=tools,
+                max_output_tokens=8192,
+            ),
+        )
+
+        if not response.candidates:
+            return "error", "empty response"
+        candidate = response.candidates[0]
+        if candidate.content is None or not candidate.content.parts:
+            return "error", "no content parts"
+
+        contents.append(candidate.content)
+
+        function_calls = []
+        for part in candidate.content.parts:
+            if getattr(part, "text", None):
+                if m := re.search(r"^DONE:\s*(.+)$", part.text, re.MULTILINE):
+                    return "done", m.group(1).strip()
+                if re.search(r"^EXHAUSTED", part.text, re.MULTILINE):
+                    return "exhausted", ""
+            if getattr(part, "function_call", None):
+                function_calls.append(part.function_call)
+
+        if not function_calls:
+            break
+
+        tool_result_parts = []
+        for fc in function_calls:
+            args = dict(fc.args) if fc.args else {}
+            print(f"  → {fc.name}({json.dumps(args)[:120]})")
+            result = run_tool(fc.name, args)
+            tool_result_parts.append(genai_types.Part.from_function_response(
+                name=fc.name,
+                response={"result": result[:8000]},
+            ))
+
+        contents.append(genai_types.Content(role="user", parts=tool_result_parts))
+
+    return "error", "no DONE/EXHAUSTED signal emitted"
+
+
+def run_one_discovery() -> tuple[str, str]:
+    if PROVIDER == "anthropic":
+        return run_one_discovery_anthropic()
+    return run_one_discovery_gemini()
+
+
 def blitz(max_sites: int = MAX_SITES, delay: int = DELAY_SECONDS):
     # Clone repo if not already present
     if not REPO_DIR.exists():
@@ -365,13 +461,19 @@ def blitz(max_sites: int = MAX_SITES, delay: int = DELAY_SECONDS):
 
         try:
             status, site = run_one_discovery()
-        except anthropic.RateLimitError:
-            print("  Rate limited — sleeping 60s")
-            time.sleep(60)
-            continue
-        except anthropic.APIStatusError as e:
-            print(f"  API error: {e.status_code} — sleeping 30s")
-            time.sleep(30)
+        except Exception as e:
+            msg = str(e)
+            is_rate_limit = (
+                "429" in msg
+                or "RESOURCE_EXHAUSTED" in msg
+                or "rate_limit" in msg.lower()
+            )
+            if is_rate_limit:
+                print(f"  Rate limited ({msg[:200]}) — sleeping 60s")
+                time.sleep(60)
+            else:
+                print(f"  API error: {type(e).__name__}: {msg[:400]} — sleeping 30s")
+                time.sleep(30)
             continue
 
         if status == "done":
