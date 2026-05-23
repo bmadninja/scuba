@@ -115,14 +115,44 @@ def web_fetch(url: str, max_chars: int = 12000) -> str:
 
 
 def git_pull():
-    subprocess.run(
-        ["git", "pull", "--rebase", "--autostash", "--quiet"],
-        cwd=REPO_DIR, capture_output=True
-    )
+    """Reset working copy to origin/main. Discards any local edits — safer than
+    --autostash because a model that truncated sites.json mid-iteration can't
+    leak that corruption into the next iteration."""
+    subprocess.run(["git", "fetch", "origin", "--quiet"], cwd=REPO_DIR, capture_output=True)
+    subprocess.run(["git", "reset", "--hard", "origin/main", "--quiet"], cwd=REPO_DIR, capture_output=True)
+
+
+def _sites_count_or_none() -> int | None:
+    try:
+        return len(json.loads((REPO_DIR / "src/data/sites.json").read_text()))
+    except Exception:
+        return None
 
 
 def git_commit_push(site_name: str) -> bool:
     """Stage sites.json, commit, push. Returns True on success."""
+    # Safety: never commit a sites.json that shrank
+    current = _sites_count_or_none()
+    if current is None:
+        print(f"  ✗ ABORT COMMIT: sites.json unreadable")
+        subprocess.run(["git", "checkout", "HEAD", "--", "src/data/sites.json"],
+                       cwd=REPO_DIR, capture_output=True)
+        return False
+    # Compare against HEAD's sites.json count
+    head = subprocess.run(
+        ["git", "show", "HEAD:src/data/sites.json"],
+        cwd=REPO_DIR, capture_output=True, text=True,
+    )
+    try:
+        head_count = len(json.loads(head.stdout))
+    except Exception:
+        head_count = current  # if HEAD unreadable, skip the guard
+    if current < head_count + 1:
+        print(f"  ✗ ABORT COMMIT: sites.json has {current} entries (HEAD: {head_count}) — likely corrupted")
+        subprocess.run(["git", "checkout", "HEAD", "--", "src/data/sites.json"],
+                       cwd=REPO_DIR, capture_output=True)
+        return False
+
     for attempt in range(3):
         try:
             git_pull()
@@ -221,9 +251,29 @@ def run_tool(name: str, inputs: dict) -> str:
             return f"Read error: {e}"
     elif name == "write_file":
         try:
-            p = REPO_DIR / inputs["path"]
+            rel = inputs["path"]
+            p = REPO_DIR / rel
+            content = inputs["content"]
+            # Guard: never let the model shrink sites.json — it should only ever grow
+            if rel.endswith("src/data/sites.json"):
+                try:
+                    new_data = json.loads(content)
+                except json.JSONDecodeError as e:
+                    return f"REJECTED: invalid JSON for sites.json: {e}"
+                if not isinstance(new_data, list):
+                    return f"REJECTED: sites.json must be a JSON array, got {type(new_data).__name__}"
+                try:
+                    old_count = len(json.loads(p.read_text())) if p.exists() else 0
+                except Exception:
+                    old_count = 0
+                if len(new_data) != old_count + 1:
+                    return (
+                        f"REJECTED: sites.json must grow by exactly 1 entry. "
+                        f"Old count: {old_count}, new count: {len(new_data)}. "
+                        f"Read the current file with read_file, append your new entry, then write back the full array."
+                    )
             p.parent.mkdir(parents=True, exist_ok=True)
-            p.write_text(inputs["content"])
+            p.write_text(content)
             return f"Written {p}"
         except Exception as e:
             return f"Write error: {e}"
