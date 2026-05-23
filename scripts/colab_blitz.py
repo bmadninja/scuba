@@ -27,7 +27,12 @@ import time
 import subprocess
 import re
 import textwrap
+import warnings
 from pathlib import Path
+
+# Suppress noisy deprecation warnings from gitpython / jupyter internals
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 import anthropic
 import html2text
