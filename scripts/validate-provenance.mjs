@@ -28,6 +28,7 @@ const readJson = (rel) => JSON.parse(readFileSync(resolve(root, rel), "utf8"));
 
 const sources = readJson("src/data/sources.json");
 const methodologies = readJson("src/data/methodologies.json");
+const encounters = readJson("src/data/encounters.json");
 
 const sourceIds = new Set(sources.map((s) => s.id));
 const methodologyByClaim = new Map(methodologies.map((m) => [m.claimId, m]));
@@ -115,6 +116,36 @@ for (const claim of claimsNeedingMethodology) {
   }
 }
 
+// --- Encounter provenance (Story 03 AC6) ---------------------------------
+for (const e of encounters) {
+  if (!Array.isArray(e.sourceIds) || e.sourceIds.length === 0) {
+    report("error", "encounter", e.id, "missing source");
+  } else {
+    for (const sid of e.sourceIds) {
+      if (!sourceIds.has(sid)) {
+        report("error", "encounter", e.id, `references unknown source "${sid}"`);
+      }
+    }
+  }
+  if (!Array.isArray(e.methodologyClaimIds) || e.methodologyClaimIds.length === 0) {
+    report("error", "encounter", e.id, "missing method");
+  } else {
+    for (const mid of e.methodologyClaimIds) {
+      if (!methodologyByClaim.has(mid)) {
+        report(
+          "error",
+          "encounter",
+          e.id,
+          `references unknown methodology "${mid}"`,
+        );
+      }
+    }
+  }
+  if (!e.limitations || !e.limitations.trim()) {
+    report("error", "encounter", e.id, "missing limitation");
+  }
+}
+
 // --- Output --------------------------------------------------------------
 const errors = issues.filter((i) => i.severity === "error");
 const warnings = issues.filter((i) => i.severity === "warn");
@@ -126,7 +157,7 @@ for (const i of issues) {
 
 console.log("");
 console.log(
-  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s)`,
+  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s)`,
 );
 console.log(`  ${errors.length} error(s), ${warnings.length} warning(s)`);
 

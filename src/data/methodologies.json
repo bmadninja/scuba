@@ -1,1 +1,90 @@
-[]
+[
+  {
+    "claimId": "encounter-sardine-run-seasonality",
+    "claimType": "seasonality",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "medium",
+    "limitations": "Best months are derived from clustering of occurrence records and operator-reported seasons. No per-trip probability is published — the Sardine Run varies year to year with current and water temperature.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-great-white-cage-presence",
+    "claimType": "species-presence",
+    "sourceIds": ["gbif", "dan"],
+    "confidence": "medium",
+    "limitations": "Regional populations have shifted; operator availability changes annually. We do not publish per-trip probability.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-hammerhead-schools-presence",
+    "claimType": "species-presence",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "medium",
+    "limitations": "Schooling behavior is operator-reported. Aggregation density varies with current, lunar phase, and temperature.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-whale-shark-seasonality",
+    "claimType": "seasonality",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "high",
+    "limitations": "Best months are derived from occurrence-record clustering and well-documented regional aggregations. Per-trip probability is not published.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-manta-cleaning-presence",
+    "claimType": "species-presence",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "high",
+    "limitations": "Cleaning stations are site-specific; visit frequency varies with current and time of day.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-thresher-cleaning-presence",
+    "claimType": "species-presence",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "high",
+    "limitations": "Monad Shoal threshers are reliably present year-round but encounters are pre-dawn and weather-dependent. No per-dive probability.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-mobula-aggregation-presence",
+    "claimType": "species-presence",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "medium",
+    "limitations": "Aggregation timing shifts with water temperature and prey. Encounter is occurrence-clustered, not survey-measured.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-blackwater-conduct",
+    "claimType": "travel-recommendation",
+    "sourceIds": ["obis", "padi"],
+    "confidence": "high",
+    "limitations": "Subject diversity is highly variable. We do not list per-species probabilities for blackwater dives.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-coral-spawning-seasonality",
+    "claimType": "seasonality",
+    "sourceIds": ["aims-ltmp", "gcrmn"],
+    "confidence": "medium",
+    "limitations": "Exact spawning night varies by reef and year. Predictions are operator-tracked and affected by ocean temperature anomalies.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-mandarin-spawning-presence",
+    "claimType": "species-presence",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "high",
+    "limitations": "Daily ascent is consistent at established rubble sites but very brief; not a guarantee on any single dive.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "encounter-giant-cuttlefish-seasonality",
+    "claimType": "seasonality",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "high",
+    "limitations": "Aggregation numbers fluctuate; the Spencer Gulf population crashed in the 2010s and has only partially recovered.",
+    "lastReviewedAt": "2026-05-24"
+  }
+]

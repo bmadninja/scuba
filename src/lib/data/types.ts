@@ -148,6 +148,51 @@ export type GearPartner = {
 
 export type GearTier = "basic" | "addon";
 
+export type EncounterCategory =
+  | "shark-aggregation"
+  | "ray-aggregation"
+  | "pelagic-migration"
+  | "cage-dive"
+  | "blackwater"
+  | "mating-event"
+  | "spawning-event"
+  | "cleaning-station"
+  | "cephalopod-aggregation";
+
+export type EncounterDifficulty =
+  | "beginner"
+  | "intermediate"
+  | "advanced"
+  | "expert";
+
+export type EncounterLocationRef = {
+  locationId: string;
+  siteIds?: string[];
+  bestMonthsAtLocation?: number[];
+  notes?: string;
+};
+
+export type Encounter = {
+  id: string;
+  slug: string;
+  name: string;
+  category: EncounterCategory;
+  speciesCommon?: string;
+  speciesScientific?: string;
+  shortDescription: string;
+  bestMonths: number[];
+  difficulty: EncounterDifficulty;
+  requiredExperience: string;
+  ethicsNotes: string;
+  conservationNotes: string;
+  limitations: string;
+  confidence: "high" | "medium" | "low";
+  locations: EncounterLocationRef[];
+  sourceIds: string[];
+  methodologyClaimIds: string[];
+  bucketListRank?: number;
+};
+
 export type SourceType =
   | "scientific-survey"
   | "government-monitoring"
