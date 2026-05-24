@@ -155,7 +155,9 @@ def git_commit_push(site_name: str) -> bool:
 
     for attempt in range(3):
         try:
-            git_pull()
+            # Note: do NOT git_pull here — it would hard-reset and wipe the
+            # pending append_site change. The blitz loop already pulls before
+            # each iteration, so we're up to date with origin/main going in.
             subprocess.run(
                 ["git", "add", "src/data/sites.json"],
                 cwd=REPO_DIR, check=True, capture_output=True
