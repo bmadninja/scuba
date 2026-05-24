@@ -240,13 +240,13 @@ TOOL_DEFS = [
     },
     {
         "name": "append_site",
-        "description": "Append ONE new dive-site entry to src/data/sites.json. Provide ONLY the new entry as a JSON object — Python handles read-append-write atomically. This is the ONLY way you should add a site.",
+        "description": "Append ONE new dive-site entry to src/data/sites.json. Pass the site entry as a JSON-encoded STRING in site_json — Python decodes, validates, and atomically appends.",
         "input_schema": {
             "type": "object",
             "properties": {
-                "site": {"type": "object", "description": "The new site entry matching the schema. Must include id, slug, locationId, name, lat, lng, description, depthRange, skillLevel, diveTypes, species, conditionsByMonth (12 entries), bestMonths, editorialRank, getThere, lodging, operators, gearIds, siteSpecificGear, notes, heroImageUrl."}
+                "site_json": {"type": "string", "description": "The new site entry as a JSON-encoded string. Must conform to the schema below."}
             },
-            "required": ["site"]
+            "required": ["site_json"]
         }
     }
 ]
@@ -292,9 +292,16 @@ def run_tool(name: str, inputs: dict) -> str:
             return f"Write error: {e}"
     elif name == "append_site":
         try:
-            new_entry = inputs.get("site")
+            raw = inputs.get("site_json") or inputs.get("site")
+            if isinstance(raw, str):
+                try:
+                    new_entry = json.loads(raw)
+                except json.JSONDecodeError as e:
+                    return f"REJECTED: site_json is not valid JSON: {e}"
+            else:
+                new_entry = raw
             if not isinstance(new_entry, dict):
-                return "REJECTED: 'site' must be a JSON object"
+                return "REJECTED: site_json must decode to a JSON object"
             sites_path = REPO_DIR / "src/data/sites.json"
             try:
                 sites = json.loads(sites_path.read_text())
@@ -386,7 +393,7 @@ def build_discover_prompt(target: dict) -> str:
     ## Your job
     1. Read `src/data/locations.json` with read_file to find or pick the correct locationId. If no exact match exists, pick the closest geographic location (same country, nearby region) — its id is fine.
     2. Research the target using web_search and web_fetch — find depth, coordinates, species, conditions, AND a great hero image.
-    3. Call the `append_site` tool with ONE argument named `site` whose value is the new entry as a JSON object. DO NOT read or rewrite sites.json — `append_site` handles atomic append for you.
+    3. Call the `append_site` tool with ONE argument named `site_json` whose value is the new entry serialized as a JSON STRING (use a string literal containing the JSON). DO NOT read or rewrite sites.json — `append_site` handles atomic append for you.
     4. Print exactly: `DONE: {target.get("name")} added successfully`
 
     You MUST add this site via the append_site tool. The only acceptable outcome is a DONE line after a successful append_site call.""").strip() + "\n\n" + _SCHEMA_AND_RULES
@@ -533,10 +540,14 @@ def run_one_discovery_gemini(prompt: str) -> tuple[str, str]:
         )
 
         if not response.candidates:
-            return "error", "empty response"
+            return "error", "empty response (no candidates)"
         candidate = response.candidates[0]
         if candidate.content is None or not candidate.content.parts:
-            return "error", "no content parts"
+            finish = getattr(candidate, "finish_reason", None)
+            safety = getattr(candidate, "safety_ratings", None)
+            usage = getattr(response, "usage_metadata", None)
+            detail = f"finish={finish} safety={safety} usage={usage}"
+            return "error", f"no content parts ({detail})"
 
         contents.append(candidate.content)
 
