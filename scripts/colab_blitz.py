@@ -226,7 +226,7 @@ TOOL_DEFS = [
     },
     {
         "name": "write_file",
-        "description": "Write content to a file in the local repo.",
+        "description": "Write content to a file in the local repo. For small files only — do NOT use this to rewrite src/data/sites.json (it is too large). Use append_site instead.",
         "input_schema": {
             "type": "object",
             "properties": {
@@ -234,6 +234,17 @@ TOOL_DEFS = [
                 "content": {"type": "string", "description": "File content"}
             },
             "required": ["path", "content"]
+        }
+    },
+    {
+        "name": "append_site",
+        "description": "Append ONE new dive-site entry to src/data/sites.json. Provide ONLY the new entry as a JSON object — Python handles read-append-write atomically. This is the ONLY way you should add a site.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "site": {"type": "object", "description": "The new site entry matching the schema. Must include id, slug, locationId, name, lat, lng, description, depthRange, skillLevel, diveTypes, species, conditionsByMonth (12 entries), bestMonths, editorialRank, getThere, lodging, operators, gearIds, siteSpecificGear, notes, heroImageUrl."}
+            },
+            "required": ["site"]
         }
     }
 ]
@@ -277,6 +288,38 @@ def run_tool(name: str, inputs: dict) -> str:
             return f"Written {p}"
         except Exception as e:
             return f"Write error: {e}"
+    elif name == "append_site":
+        try:
+            new_entry = inputs.get("site")
+            if not isinstance(new_entry, dict):
+                return "REJECTED: 'site' must be a JSON object"
+            sites_path = REPO_DIR / "src/data/sites.json"
+            try:
+                sites = json.loads(sites_path.read_text())
+            except Exception as e:
+                return f"REJECTED: could not read sites.json: {e}"
+            if not isinstance(sites, list):
+                return "REJECTED: sites.json is not a JSON array"
+            # Required fields check
+            required = ["id", "slug", "locationId", "name", "lat", "lng",
+                        "description", "depthRange", "skillLevel", "diveTypes",
+                        "species", "conditionsByMonth", "bestMonths",
+                        "editorialRank", "getThere"]
+            missing = [k for k in required if k not in new_entry]
+            if missing:
+                return f"REJECTED: missing required fields: {missing}"
+            if not isinstance(new_entry.get("conditionsByMonth"), list) or len(new_entry["conditionsByMonth"]) != 12:
+                return "REJECTED: conditionsByMonth must have exactly 12 entries (months 1-12)"
+            # Duplicate check
+            new_norm = _norm_name(new_entry.get("name", ""))
+            for s in sites:
+                if _norm_name(s.get("name", "")) == new_norm:
+                    return f"REJECTED: site name {new_entry.get('name')!r} already exists in sites.json"
+            sites.append(new_entry)
+            sites_path.write_text(json.dumps(sites, indent=2) + "\n")
+            return f"OK: appended {new_entry.get('name')!r}. sites.json now has {len(sites)} entries."
+        except Exception as e:
+            return f"append_site error: {e}"
     return f"Unknown tool: {name}"
 
 
@@ -339,16 +382,15 @@ def build_discover_prompt(target: dict) -> str:
     - Suggested locationId: {location_hint}
 
     ## Your job
-    1. Read `src/data/locations.json` with read_file to find or pick the correct locationId. If no exact match exists, pick the closest geographic location (same country, nearby region).
-    2. Read `src/data/sites.json` with read_file to get the current array of sites.
-    3. Research the target using web_search and web_fetch — find depth, coordinates, species, conditions, AND a great hero image.
-    4. Append the new entry to the sites array (KEEP ALL EXISTING ENTRIES) and write the full updated array back to `src/data/sites.json` using write_file.
-    5. Print exactly: `DONE: {target.get("name")} added successfully`
+    1. Read `src/data/locations.json` with read_file to find or pick the correct locationId. If no exact match exists, pick the closest geographic location (same country, nearby region) — its id is fine.
+    2. Research the target using web_search and web_fetch — find depth, coordinates, species, conditions, AND a great hero image.
+    3. Call the `append_site` tool with ONE argument named `site` whose value is the new entry as a JSON object. DO NOT read or rewrite sites.json — `append_site` handles atomic append for you.
+    4. Print exactly: `DONE: {target.get("name")} added successfully`
 
-    You MUST add this site. The only acceptable outcome is a DONE line after a successful write. Do NOT output EXHAUSTED.""").strip() + "\n\n" + _SCHEMA_AND_RULES
+    You MUST add this site via the append_site tool. The only acceptable outcome is a DONE line after a successful append_site call.""").strip() + "\n\n" + _SCHEMA_AND_RULES
 
 _SCHEMA_AND_RULES = textwrap.dedent("""
-## Schema (append to the JSON array — match this exactly)
+## Schema for the `site` object you pass to append_site — match this exactly
 ```json
 {
   "id": "locationId-site-slug",
@@ -417,7 +459,7 @@ def run_one_discovery_anthropic(prompt: str) -> tuple[str, str]:
     for turn in range(40):  # max tool-use turns
         response = anthropic_client.messages.create(
             model=MODEL,
-            max_tokens=8192,
+            max_tokens=16384,
             tools=TOOL_DEFS,
             messages=messages,
         )
@@ -484,7 +526,7 @@ def run_one_discovery_gemini(prompt: str) -> tuple[str, str]:
             contents=contents,
             config=genai_types.GenerateContentConfig(
                 tools=tools,
-                max_output_tokens=8192,
+                max_output_tokens=16384,
             ),
         )
 
