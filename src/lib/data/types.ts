@@ -52,6 +52,8 @@ export type Location = {
   bestMonths: number[];
   siteIds: string[];
   heroImageUrl?: string;
+  sourceIds?: string[];
+  methodologyClaimIds?: string[];
 };
 
 export type LocationQuote = {
@@ -81,6 +83,8 @@ export type SpeciesEntry = {
   reliability: "year-round" | "seasonal" | "rare";
   bestMonths?: number[];
   depthRange?: { min: number; max: number };
+  sourceIds?: string[];
+  methodologyClaimIds?: string[];
 };
 
 export type ConditionsMonth = {
@@ -131,6 +135,8 @@ export type Site = {
   gearIds: string[];
   siteSpecificGear: SiteGearItem[];
   notes?: string;
+  sourceIds?: string[];
+  methodologyClaimIds?: string[];
 };
 
 export type GearPartner = {
@@ -198,4 +204,6 @@ export type Gear = {
   priceRangeUsd: { min: number; max: number };
   partners: GearPartner[];
   imageUrl?: string | null;
+  sourceIds?: string[];
+  methodologyClaimIds?: string[];
 };
