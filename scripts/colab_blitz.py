@@ -280,18 +280,66 @@ def run_tool(name: str, inputs: dict) -> str:
     return f"Unknown tool: {name}"
 
 
-# ─── CELL 4: Discovery prompt ─────────────────────────────────────────────────
+# ─── CELL 4: Target picking + discovery prompt ────────────────────────────────
 
-DISCOVER_PROMPT = textwrap.dedent("""
-You are autonomously adding dive sites to scubaseason.fun. Complete this task fully without asking questions.
+def _norm_name(s: str) -> str:
+    """Lowercase + strip non-alphanumerics for fuzzy name matching."""
+    return "".join(c.lower() for c in s if c.isalnum())
 
-## Your job
-1. Read `src/data/sites.json` and `src/data/locations.json` using the read_file tool.
-2. If `src/data/coverage-gaps.json` exists (read it), prefer picks from there — sites competitors cover that we don't.
-3. Otherwise pick the most editorially important missing dive site (famous, highly-searched, from a location with 0-1 sites).
-4. Research it using web_search and web_fetch tools — find depth, coordinates, species, conditions, AND a great hero image.
-5. Add it to `src/data/sites.json` by reading the file, appending the new entry, and writing it back.
 
+def pick_next_target() -> dict | None:
+    """Pick the highest-priority entry in coverage-gaps.json that isn't already
+    covered in sites.json. Returns None when all gaps are filled."""
+    try:
+        gaps = json.loads((REPO_DIR / "src/data/coverage-gaps.json").read_text())
+    except FileNotFoundError:
+        return None
+    try:
+        sites = json.loads((REPO_DIR / "src/data/sites.json").read_text())
+    except FileNotFoundError:
+        sites = []
+    site_norms = {_norm_name(s.get("name", "")) for s in sites}
+
+    def is_covered(gap: dict) -> bool:
+        candidates = [gap.get("name", "")] + list(gap.get("aliases", []) or [])
+        for c in candidates:
+            cn = _norm_name(c)
+            if not cn:
+                continue
+            for sn in site_norms:
+                if cn == sn or (len(cn) >= 5 and (cn in sn or sn in cn)):
+                    return True
+        return False
+
+    # Sort by priority desc; pick first uncovered
+    sorted_gaps = sorted(gaps, key=lambda g: g.get("priority", 0), reverse=True)
+    for g in sorted_gaps:
+        if not is_covered(g):
+            return g
+    return None
+
+
+def build_discover_prompt(target: dict) -> str:
+    """Build the discovery prompt for a specific pre-picked target site."""
+    aliases = ", ".join(target.get("aliases", []) or []) or "(none)"
+    location_hint = target.get("ourLocationId") or "(none — you may need to pick or create one)"
+    return textwrap.dedent(f"""
+    You are autonomously adding ONE specific dive site to scubaseason.fun. Complete this task fully without asking questions.
+
+    ## Your target (pre-selected — DO NOT pick a different site)
+    - Name: {target.get("name")}
+    - Aliases: {aliases}
+    - Country: {target.get("country")}
+    - Region: {target.get("region")}
+    - Suggested locationId: {location_hint}
+
+    ## Your job
+    1. Read `src/data/sites.json` and `src/data/locations.json` using the read_file tool.
+    2. If the target site appears to already be in sites.json (even under a slightly different name), reply with EXHAUSTED so we can skip it. Otherwise continue.
+    3. Research the target using web_search and web_fetch tools — find depth, coordinates, species, conditions, AND a great hero image.
+    4. Add it to `src/data/sites.json` by reading the file, appending the new entry, and writing the full updated array back.""").strip() + "\n\n" + _SCHEMA_AND_RULES
+
+_SCHEMA_AND_RULES = textwrap.dedent("""
 ## Schema (append to the JSON array — match this exactly)
 ```json
 {
@@ -346,18 +394,18 @@ Selection process:
 
 ## When done
 Print exactly: DONE: <site name> added successfully
-If all famous sites in this region are already covered: EXHAUSTED
+If the target is already in sites.json under any name, output: EXHAUSTED
 """).strip()
 
 
 # ─── CELL 5: Blitz loop ────────────────────────────────────────────────────────
 
-def run_one_discovery_anthropic() -> tuple[str, str]:
+def run_one_discovery_anthropic(prompt: str) -> tuple[str, str]:
     """
     Run one discovery iteration via Anthropic. Returns (status, site_name).
     status: "done" | "exhausted" | "error"
     """
-    messages = [{"role": "user", "content": DISCOVER_PROMPT}]
+    messages = [{"role": "user", "content": prompt}]
 
     for turn in range(40):  # max tool-use turns
         response = anthropic_client.messages.create(
@@ -414,14 +462,14 @@ def _gemini_tool_config():
     ])]
 
 
-def run_one_discovery_gemini() -> tuple[str, str]:
+def run_one_discovery_gemini(prompt: str) -> tuple[str, str]:
     """
     Run one discovery iteration via Gemini (Google AI Studio).
     Returns (status, site_name). status: "done" | "exhausted" | "error"
     """
     contents = [genai_types.Content(
         role="user",
-        parts=[genai_types.Part.from_text(text=DISCOVER_PROMPT)],
+        parts=[genai_types.Part.from_text(text=prompt)],
     )]
     tools = _gemini_tool_config()
 
@@ -471,10 +519,10 @@ def run_one_discovery_gemini() -> tuple[str, str]:
     return "error", "no DONE/EXHAUSTED signal emitted"
 
 
-def run_one_discovery() -> tuple[str, str]:
+def run_one_discovery(prompt: str) -> tuple[str, str]:
     if PROVIDER == "anthropic":
-        return run_one_discovery_anthropic()
-    return run_one_discovery_gemini()
+        return run_one_discovery_anthropic(prompt)
+    return run_one_discovery_gemini(prompt)
 
 
 def blitz(max_sites: int = MAX_SITES, delay: int = DELAY_SECONDS):
@@ -507,10 +555,17 @@ def blitz(max_sites: int = MAX_SITES, delay: int = DELAY_SECONDS):
     for i in range(1, max_sites + 1):
         git_pull()
         sites_now = len(json.loads((REPO_DIR / "src/data/sites.json").read_text()))
-        print(f"── iter {i} | added={added} | total={sites_now} | {time.strftime('%H:%M:%S')} ──")
 
+        target = pick_next_target()
+        if target is None:
+            print(f"── iter {i} | added={added} | total={sites_now} | {time.strftime('%H:%M:%S')} ──")
+            print("  → No uncovered targets remain in coverage-gaps.json — stopping.")
+            break
+        print(f"── iter {i} | added={added} | total={sites_now} | target={target.get('name')!r} (prio={target.get('priority')}) ──")
+
+        prompt = build_discover_prompt(target)
         try:
-            status, site = run_one_discovery()
+            status, site = run_one_discovery(prompt)
         except Exception as e:
             msg = str(e)
             is_rate_limit = (
