@@ -9,6 +9,7 @@
     "lint": "eslint",
     "migrate": "node --experimental-strip-types scripts/migrate.ts",
     "verify:stories": "node scripts/verify-stories.mjs",
+    "validate:provenance": "node scripts/validate-provenance.mjs",
     "discover:dry": "DRY_RUN=1 node scripts/discover-sites.mjs",
     "discover": "node scripts/discover-sites.mjs"
   },

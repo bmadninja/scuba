@@ -142,6 +142,52 @@ export type GearPartner = {
 
 export type GearTier = "basic" | "addon";
 
+export type SourceType =
+  | "scientific-survey"
+  | "government-monitoring"
+  | "occurrence-record"
+  | "citizen-science"
+  | "operator-report"
+  | "booking-partner"
+  | "editorial-curation"
+  | "peer-reviewed-paper";
+
+export type ClaimType =
+  | "species-presence"
+  | "sighting-probability"
+  | "seasonality"
+  | "reef-health"
+  | "bleaching-risk"
+  | "travel-recommendation"
+  | "gear-recommendation";
+
+export type Confidence = "high" | "medium" | "low";
+
+export type DataSource = {
+  id: string;
+  name: string;
+  url?: string;
+  publisher?: string;
+  sourceType: SourceType;
+  accessedAt: string;
+  license?: string;
+  notes?: string;
+};
+
+export type MethodologyNote = {
+  claimId: string;
+  claimType: ClaimType;
+  sourceIds: string[];
+  confidence: Confidence;
+  /**
+   * Required when the claim presents a numeric probability — must document
+   * the effort denominator (e.g. "positive sightings / eligible surveys").
+   */
+  calculation?: string;
+  limitations: string;
+  lastReviewedAt: string;
+};
+
 export type Gear = {
   id: string;
   name: string;

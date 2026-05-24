@@ -1,0 +1,89 @@
+[
+  {
+    "id": "noaa-crw",
+    "name": "NOAA Coral Reef Watch",
+    "url": "https://coralreefwatch.noaa.gov/",
+    "publisher": "U.S. National Oceanic and Atmospheric Administration",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-24",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Satellite-derived SST, SST anomaly, Degree Heating Weeks, and bleaching alert levels at ~5 km resolution. Use for current thermal stress, not for observed coral cover."
+  },
+  {
+    "id": "allen-coral-atlas",
+    "name": "Allen Coral Atlas",
+    "url": "https://allencoralatlas.org/",
+    "publisher": "Arizona State University Center for Global Discovery and Conservation Science",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-24",
+    "license": "CC BY 4.0",
+    "notes": "Global high-resolution reef habitat maps and near-real-time bleaching detection. Habitat extents are observed; bleaching alerts are model-derived."
+  },
+  {
+    "id": "gcrmn",
+    "name": "Global Coral Reef Monitoring Network",
+    "url": "https://gcrmn.net/",
+    "publisher": "GCRMN / ICRI",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-24",
+    "notes": "In-situ benthic survey aggregations. Use for observed coral cover and historical bleaching mortality, with survey method and year."
+  },
+  {
+    "id": "aims-ltmp",
+    "name": "AIMS Long-Term Monitoring Program",
+    "url": "https://www.aims.gov.au/research/monitoring/reef",
+    "publisher": "Australian Institute of Marine Science",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-24",
+    "license": "CC BY 4.0",
+    "notes": "Great Barrier Reef coral cover, bleaching, and crown-of-thorns surveys. Authoritative for GBR site-level observed condition."
+  },
+  {
+    "id": "reef-life-survey",
+    "name": "Reef Life Survey",
+    "url": "https://reeflifesurvey.com/",
+    "publisher": "Reef Life Survey Foundation",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-05-24",
+    "license": "CC BY 4.0",
+    "notes": "Diver-conducted fish and invertebrate transects with effort metadata. Provides effort denominators for sighting probabilities at survey sites."
+  },
+  {
+    "id": "gbif",
+    "name": "Global Biodiversity Information Facility",
+    "url": "https://www.gbif.org/",
+    "publisher": "GBIF Secretariat",
+    "sourceType": "occurrence-record",
+    "accessedAt": "2026-05-24",
+    "license": "Per-dataset; mostly CC0 or CC BY",
+    "notes": "Aggregated species occurrence records. Confirms presence and seasonality clustering, never per-dive probability without effort data."
+  },
+  {
+    "id": "obis",
+    "name": "Ocean Biodiversity Information System",
+    "url": "https://obis.org/",
+    "publisher": "IOC-UNESCO",
+    "sourceType": "occurrence-record",
+    "accessedAt": "2026-05-24",
+    "license": "CC BY 4.0",
+    "notes": "Marine-focused occurrence records. Use alongside GBIF for marine species presence and seasonality."
+  },
+  {
+    "id": "dan",
+    "name": "Divers Alert Network",
+    "url": "https://dan.org/",
+    "publisher": "DAN",
+    "sourceType": "editorial-curation",
+    "accessedAt": "2026-05-24",
+    "notes": "Diver safety guidance, incident data, and medical references. Use for safety and limitations language in beginner/returning flows."
+  },
+  {
+    "id": "padi",
+    "name": "PADI",
+    "url": "https://www.padi.com/",
+    "publisher": "Professional Association of Diving Instructors",
+    "sourceType": "editorial-curation",
+    "accessedAt": "2026-05-24",
+    "notes": "Certification level definitions and training-standard references. Use for skill-level recommendations, not for ecological claims."
+  }
+]
