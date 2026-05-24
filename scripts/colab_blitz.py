@@ -287,6 +287,9 @@ def _norm_name(s: str) -> str:
     return "".join(c.lower() for c in s if c.isalnum())
 
 
+_session_blacklist: set[str] = set()
+
+
 def pick_next_target() -> dict | None:
     """Pick the highest-priority entry in coverage-gaps.json that isn't already
     covered in sites.json. Returns None when all gaps are filled."""
@@ -311,9 +314,11 @@ def pick_next_target() -> dict | None:
                     return True
         return False
 
-    # Sort by priority desc; pick first uncovered
+    # Sort by priority desc; pick first uncovered and not blacklisted
     sorted_gaps = sorted(gaps, key=lambda g: g.get("priority", 0), reverse=True)
     for g in sorted_gaps:
+        if g.get("name") in _session_blacklist:
+            continue
         if not is_covered(g):
             return g
     return None
@@ -324,9 +329,9 @@ def build_discover_prompt(target: dict) -> str:
     aliases = ", ".join(target.get("aliases", []) or []) or "(none)"
     location_hint = target.get("ourLocationId") or "(none — you may need to pick or create one)"
     return textwrap.dedent(f"""
-    You are autonomously adding ONE specific dive site to scubaseason.fun. Complete this task fully without asking questions.
+    You are autonomously adding ONE specific dive site to scubaseason.fun. The target has been pre-selected for you — DO NOT propose a different site, and DO NOT return EXHAUSTED. We have already verified this site is missing from sites.json.
 
-    ## Your target (pre-selected — DO NOT pick a different site)
+    ## Your target (mandatory — add this exact site)
     - Name: {target.get("name")}
     - Aliases: {aliases}
     - Country: {target.get("country")}
@@ -334,10 +339,13 @@ def build_discover_prompt(target: dict) -> str:
     - Suggested locationId: {location_hint}
 
     ## Your job
-    1. Read `src/data/sites.json` and `src/data/locations.json` using the read_file tool.
-    2. If the target site appears to already be in sites.json (even under a slightly different name), reply with EXHAUSTED so we can skip it. Otherwise continue.
-    3. Research the target using web_search and web_fetch tools — find depth, coordinates, species, conditions, AND a great hero image.
-    4. Add it to `src/data/sites.json` by reading the file, appending the new entry, and writing the full updated array back.""").strip() + "\n\n" + _SCHEMA_AND_RULES
+    1. Read `src/data/locations.json` with read_file to find or pick the correct locationId. If no exact match exists, pick the closest geographic location (same country, nearby region).
+    2. Read `src/data/sites.json` with read_file to get the current array of sites.
+    3. Research the target using web_search and web_fetch — find depth, coordinates, species, conditions, AND a great hero image.
+    4. Append the new entry to the sites array (KEEP ALL EXISTING ENTRIES) and write the full updated array back to `src/data/sites.json` using write_file.
+    5. Print exactly: `DONE: {target.get("name")} added successfully`
+
+    You MUST add this site. The only acceptable outcome is a DONE line after a successful write. Do NOT output EXHAUSTED.""").strip() + "\n\n" + _SCHEMA_AND_RULES
 
 _SCHEMA_AND_RULES = textwrap.dedent("""
 ## Schema (append to the JSON array — match this exactly)
@@ -394,7 +402,6 @@ Selection process:
 
 ## When done
 Print exactly: DONE: <site name> added successfully
-If the target is already in sites.json under any name, output: EXHAUSTED
 """).strip()
 
 
@@ -424,8 +431,6 @@ def run_one_discovery_anthropic(prompt: str) -> tuple[str, str]:
                 text = block.text
                 if m := re.search(r"^DONE:\s*(.+)$", text, re.MULTILINE):
                     return "done", m.group(1).strip()
-                if re.search(r"^EXHAUSTED", text, re.MULTILINE):
-                    return "exhausted", ""
 
         # If no more tool calls, we're done
         if response.stop_reason == "end_turn":
@@ -496,8 +501,6 @@ def run_one_discovery_gemini(prompt: str) -> tuple[str, str]:
             if getattr(part, "text", None):
                 if m := re.search(r"^DONE:\s*(.+)$", part.text, re.MULTILINE):
                     return "done", m.group(1).strip()
-                if re.search(r"^EXHAUSTED", part.text, re.MULTILINE):
-                    return "exhausted", ""
             if getattr(part, "function_call", None):
                 function_calls.append(part.function_call)
 
@@ -543,7 +546,8 @@ def blitz(max_sites: int = MAX_SITES, delay: int = DELAY_SECONDS):
         git_pull()
 
     added        = 0
-    exhausted_ct = 0
+    fail_streak  = 0  # consecutive failures on the same target
+    last_target  = None
     start        = time.time()
 
     print(f"\n{'='*60}")
@@ -581,22 +585,33 @@ def blitz(max_sites: int = MAX_SITES, delay: int = DELAY_SECONDS):
                 time.sleep(30)
             continue
 
+        target_name = target.get("name")
+        succeeded = False
         if status == "done":
             ok = git_commit_push(site)
             if ok:
                 print(f"  ✓ Pushed: {site}")
                 added += 1
-                exhausted_ct = 0
+                succeeded = True
             else:
-                print(f"  ✗ Commit failed or duplicate: {site}")
-        elif status == "exhausted":
-            print("  → Exhausted — no more sites found")
-            exhausted_ct += 1
-            if exhausted_ct >= 3:
-                print("3 consecutive EXHAUSTED — stopping.")
-                break
+                print(f"  ✗ Commit failed or rejected: {site}")
         else:
-            print(f"  ✗ {site}")
+            print(f"  ✗ {status}: {site}")
+
+        if succeeded:
+            fail_streak = 0
+            last_target = None
+        else:
+            if target_name == last_target:
+                fail_streak += 1
+            else:
+                fail_streak = 1
+                last_target = target_name
+            if fail_streak >= 3:
+                print(f"  ⚠ Blacklisting {target_name!r} after {fail_streak} consecutive failures — moving on")
+                _session_blacklist.add(target_name)
+                fail_streak = 0
+                last_target = None
 
         elapsed = int(time.time() - start)
         print(f"  [{elapsed//60}m elapsed]\n")
