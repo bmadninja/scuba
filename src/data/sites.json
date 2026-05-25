@@ -61882,5 +61882,275 @@
       }
     ],
     "notes": "Galápagos Marine Reserve park fees and a licensed dive guide are mandatory, and Wolf is liveaboard-only. Strong, shifting currents and occasional surface separations — a reef hook and a PLB or Nautilus Lifeline are standard kit. Advanced certification with recent cold-water and current experience expected."
+  },
+  {
+    "id": "hin-daeng-hin-muang",
+    "slug": "hin-daeng-hin-muang",
+    "locationId": "richelieu-rock-thailand",
+    "name": "Hin Daeng / Hin Muang",
+    "heroImageUrl": null,
+    "lat": 7.152,
+    "lng": 98.821,
+    "description": "Two open-Andaman pinnacles about 500 m apart, 70 km southwest of Koh Lanta. Hin Daeng ('Red Rock') rises from roughly 50 m and is sheeted in red soft coral; Hin Muang ('Purple Rock') is Thailand's tallest submerged wall, dropping past 70 m and carpeted in purple soft coral. Oceanic mantas up to 4 m across circle the pinnacles to feed on the current, and whale sharks pass through from February to April. The exposed location draws strong current and has no surface marker, so every dive is a drift that ends mid-water under an SMB.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Leopard (zebra) shark",
+        "scientificName": "Stegostoma tigrinum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Schooling chevron barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 88,
+    "getThere": "Krabi (KBV) and Phuket (HKT) are the nearest international airports. Koh Lanta is the standard launch point, with day-trip speedboats running roughly 2.5-3.5 hours each way; some Phuket, Phi Phi, and Koh Lipe operators also reach the site on longer day trips or liveaboards.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Koh Lanta guesthouses",
+        "url": "https://www.booking.com/searchresults.html?ss=Koh%20Lanta%20guesthouse",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Pimalai Resort & Spa Koh Lanta",
+        "url": "https://www.booking.com/searchresults.html?ss=Pimalai%20Resort%20Koh%20Lanta",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-3mm-full",
+      "computer-shearwater-peregrine"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB",
+        "reason": "Open-ocean pinnacles with no permanent mooring; every dive surfaces mid-water on a drift.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Reef hook",
+        "reason": "Hook in on the up-current face to hold position while mantas pass overhead.",
+        "gearId": "reef-hook-innovative"
+      }
+    ],
+    "notes": "Inside Mu Ko Lanta National Park, usually closed mid-May to mid-October during the southwest monsoon. Exposed, deep, strong-current site - advanced certification and Nitrox recommended; surface conditions can deteriorate quickly."
   }
 ]
