@@ -9,7 +9,39 @@ import { getAllLocations, getLocationBySlug } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getAllGear, getGearById } from "@/lib/data/gear";
-import type { PartnerLink, Site } from "@/lib/data/types";
+import { getReefHealthByLocationId } from "@/lib/data/reef-health";
+import { getSourceById } from "@/lib/data/sources";
+import { getMethodologyByClaimId } from "@/lib/data/methodologies";
+import type {
+  BleachingAlertLevel,
+  PartnerLink,
+  Site,
+} from "@/lib/data/types";
+
+const ALERT_LABEL: Record<BleachingAlertLevel, string> = {
+  "no-stress": "No stress",
+  watch: "Watch",
+  warning: "Warning",
+  "alert-1": "Alert level 1",
+  "alert-2": "Alert level 2",
+};
+
+const ALERT_RING: Record<BleachingAlertLevel, string> = {
+  "no-stress": "bg-emerald-50 text-emerald-800 ring-emerald-200",
+  watch: "bg-amber-50 text-amber-800 ring-amber-200",
+  warning: "bg-orange-50 text-orange-800 ring-orange-200",
+  "alert-1": "bg-rose-50 text-rose-800 ring-rose-200",
+  "alert-2": "bg-rose-100 text-rose-900 ring-rose-300",
+};
+
+const formatSurveyDate = (iso: string) => {
+  const d = new Date(iso + "T00:00:00Z");
+  return d.toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+};
 
 const MONTH_NAMES = [
   "Jan",
@@ -64,6 +96,7 @@ export default async function LocationPage({
   if (!location) notFound();
 
   const sites = getSitesByLocationId(location.id);
+  const reefHealth = getReefHealthByLocationId(location.id)[0] ?? null;
   const details = getLocationDetailsById(location.id);
   const bestMonthsSet = new Set(location.bestMonths);
 
@@ -256,6 +289,12 @@ export default async function LocationPage({
                 </div>
               )}
             </section>
+
+            {reefHealth ? (
+              <ReefHealthPanel record={reefHealth} />
+            ) : (
+              <UnknownReefHealthPanel />
+            )}
 
             <GearSection locationId={location.id} sites={sites} />
           </div>
@@ -611,6 +650,385 @@ function GearSection({
           </div>
         )}
       </div>
+    </section>
+  );
+}
+
+
+function UnknownReefHealthPanel() {
+  return (
+    <section>
+      <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          Reef health
+        </h2>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          No survey on file
+        </span>
+      </div>
+      <p className="text-sm leading-6 text-slate-600">
+        We don&rsquo;t yet have a survey or thermal-stress record on file for this
+        location. That doesn&rsquo;t mean the reef is healthy — it means we can&rsquo;t
+        say either way.
+      </p>
+    </section>
+  );
+}
+
+/** Coral cover on a healthy tropical reef, used as the comparison baseline. */
+const HEALTHY_REEF_COVER_PERCENT = 50;
+
+type Verdict = {
+  label: string;
+  headline: string;
+  tone: "good" | "ok" | "warn" | "bad";
+};
+
+function computeVerdict(record: {
+  observed?: { coralCoverPercent?: number; mortalityPercent?: number };
+  thermalStress?: { alertLevel?: BleachingAlertLevel };
+}): Verdict {
+  const cover = record.observed?.coralCoverPercent ?? null;
+  const mortality = record.observed?.mortalityPercent ?? null;
+  const alert = record.thermalStress?.alertLevel ?? "no-stress";
+  const stressed =
+    alert === "alert-1" || alert === "alert-2" || alert === "warning";
+
+  if (cover !== null && cover < 20 && (mortality ?? 0) >= 8) {
+    return {
+      label: "Severely degraded",
+      tone: "bad",
+      headline:
+        "This reef has lost most of its live coral. Fish life and topography may still be worth diving, but expect a very different reef from the older photos.",
+    };
+  }
+  if (cover !== null && cover < 30 && (mortality ?? 0) >= 8) {
+    return {
+      label: "Shrinking",
+      tone: "bad",
+      headline:
+        "This reef is losing coral faster than it's recovering. If it's on your list, go sooner — and manage expectations on coral colour.",
+    };
+  }
+  if (stressed && cover !== null && cover < 40) {
+    return {
+      label: "At risk now",
+      tone: "warn",
+      headline:
+        "This reef is under heat stress right now and has thinned over the last decade. Plan a trip this year rather than next.",
+    };
+  }
+  if (cover !== null && cover >= 40 && !stressed) {
+    return {
+      label: "Holding steady",
+      tone: "good",
+      headline:
+        "One of the few reefs whose live coral has held up over the last decade. Plan with confidence.",
+    };
+  }
+  return {
+    label: "Mixed",
+    tone: "ok",
+    headline:
+      "Some loss since the 2010s, but the reef still has plenty to dive. Pick depth and shoulder-season carefully.",
+  };
+}
+
+const VERDICT_STRIP: Record<Verdict["tone"], string> = {
+  good: "bg-emerald-50 border-emerald-200 text-emerald-900",
+  ok: "bg-sky-50 border-sky-200 text-sky-900",
+  warn: "bg-amber-50 border-amber-200 text-amber-900",
+  bad: "bg-rose-50 border-rose-200 text-rose-900",
+};
+
+const VERDICT_BADGE: Record<Verdict["tone"], string> = {
+  good: "bg-emerald-600 text-white",
+  ok: "bg-sky-600 text-white",
+  warn: "bg-amber-600 text-white",
+  bad: "bg-rose-600 text-white",
+};
+
+const ALERT_CONSEQUENCE: Record<BleachingAlertLevel, string> = {
+  "no-stress": "No abnormal heat right now. Corals stay coloured.",
+  watch: "Mild warmth. Worth watching — no bleaching yet.",
+  warning: "Reefs at this level can start losing colour within weeks.",
+  "alert-1": "Bleaching likely. Some coral mortality typically follows.",
+  "alert-2":
+    "Severe bleaching expected. Significant coral mortality is likely.",
+};
+
+function CoverBar({
+  label,
+  percent,
+  tone,
+  sublabel,
+}: {
+  label: string;
+  percent: number;
+  tone: "now" | "healthy" | "before";
+  sublabel?: string;
+}) {
+  const fill =
+    tone === "healthy"
+      ? "bg-emerald-500"
+      : tone === "before"
+        ? "bg-slate-400"
+        : "bg-[#0089de]";
+  const width = Math.max(0, Math.min(100, percent));
+  return (
+    <div className="flex items-center gap-3 text-[12px] leading-5">
+      <div className="w-36 shrink-0 text-slate-700">
+        <div className="font-semibold">{label}</div>
+        {sublabel ? (
+          <div className="text-[11px] text-slate-500">{sublabel}</div>
+        ) : null}
+      </div>
+      <div className="relative h-3 flex-1 overflow-hidden rounded-full bg-slate-100">
+        <div
+          className={`h-full ${fill} transition-all`}
+          style={{ width: `${width}%` }}
+        />
+      </div>
+      <div className="w-12 shrink-0 text-right font-semibold text-slate-800">
+        {percent}%
+      </div>
+    </div>
+  );
+}
+
+function ReefHealthPanel({
+  record,
+}: {
+  record: NonNullable<ReturnType<typeof getReefHealthByLocationId>>[number];
+}) {
+  const observed = record.observed;
+  const thermal = record.thermalStress;
+  const projection = record.projection;
+  const verdict = computeVerdict(record);
+
+  const sourceIds = Array.from(
+    new Set([
+      ...(observed?.sourceIds ?? []),
+      ...(thermal?.sourceIds ?? []),
+      ...(projection?.sourceIds ?? []),
+    ]),
+  );
+  const sources = sourceIds
+    .map(getSourceById)
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
+  const methods = record.methodologyClaimIds
+    .map(getMethodologyByClaimId)
+    .filter((m): m is NonNullable<typeof m> => Boolean(m));
+
+  const coverNow = observed?.coralCoverPercent ?? null;
+  const coverBefore = observed?.historicalCoralCoverPercent ?? null;
+  const historicalYear = observed?.historicalSurveyDate
+    ? new Date(observed.historicalSurveyDate + "T00:00:00Z").getUTCFullYear()
+    : null;
+  const surveyYear = observed?.surveyDate
+    ? new Date(observed.surveyDate + "T00:00:00Z").getUTCFullYear()
+    : null;
+
+  return (
+    <section>
+      <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          Reef health
+        </h2>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          What you&rsquo;ll actually find
+        </span>
+      </div>
+
+      {/* Verdict strip — the single-sentence takeaway */}
+      <div
+        className={`flex flex-col gap-3 rounded-2xl border p-5 sm:flex-row sm:items-start sm:gap-5 ${VERDICT_STRIP[verdict.tone]}`}
+      >
+        <span
+          className={`shrink-0 self-start rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${VERDICT_BADGE[verdict.tone]}`}
+        >
+          {verdict.label}
+        </span>
+        <p className="text-[14px] leading-6">{verdict.headline}</p>
+      </div>
+
+      {/* How much live coral — comparison bars */}
+      {coverNow !== null ? (
+        <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+            How much live coral
+          </p>
+          <p className="mt-1 text-[11px] text-slate-500">
+            Higher is better. Healthy tropical reefs typically sit at ~{HEALTHY_REEF_COVER_PERCENT}% cover.
+          </p>
+          <div className="mt-4 space-y-2.5">
+            <CoverBar
+              label="Here today"
+              sublabel={surveyYear ? `Survey ${surveyYear}` : undefined}
+              percent={coverNow}
+              tone="now"
+            />
+            <CoverBar
+              label="A healthy reef"
+              sublabel="Reference baseline"
+              percent={HEALTHY_REEF_COVER_PERCENT}
+              tone="healthy"
+            />
+            {coverBefore !== null ? (
+              <CoverBar
+                label="Here a decade ago"
+                sublabel={historicalYear ? `Survey ${historicalYear}` : undefined}
+                percent={coverBefore}
+                tone="before"
+              />
+            ) : null}
+          </div>
+        </div>
+      ) : null}
+
+      {/* Heat stress + dive outlook side by side */}
+      <div className="mt-5 grid gap-4 lg:grid-cols-2">
+        {thermal ? (
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+              Heat stress right now
+            </p>
+            <div
+              className={`mt-3 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-[12px] font-bold uppercase tracking-wider ring-1 ring-inset ${ALERT_RING[thermal.alertLevel]}`}
+            >
+              {ALERT_LABEL[thermal.alertLevel]}
+            </div>
+            <p className="mt-3 text-[13px] leading-6 text-slate-700">
+              {ALERT_CONSEQUENCE[thermal.alertLevel]}
+            </p>
+            <p className="mt-3 text-[11px] leading-5 text-slate-500">
+              NOAA Coral Reef Watch · updated {formatSurveyDate(thermal.asOf)}
+              {typeof thermal.degreeHeatingWeeks === "number"
+                ? ` · ${thermal.degreeHeatingWeeks} °C-week heat dose`
+                : ""}
+            </p>
+          </div>
+        ) : null}
+
+        {record.divingOutlook ? (
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+              What to expect on a dive
+            </p>
+            <p className="mt-3 text-[13px] leading-6 text-slate-700">
+              {record.divingOutlook}
+            </p>
+          </div>
+        ) : null}
+      </div>
+
+      {projection ? (
+        <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+            Projection · {projection.scenario}
+          </p>
+          <p className="mt-3 text-[13px] leading-6 text-slate-700">
+            {projection.statement}
+          </p>
+          <p className="mt-2 text-[11px] leading-5 text-slate-500">
+            Uncertainty: {projection.uncertainty}
+          </p>
+        </div>
+      ) : null}
+
+      <details className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4 text-[12px] leading-5 text-slate-700">
+        <summary className="cursor-pointer text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+          Sources, methodology, and the raw numbers
+        </summary>
+        <div className="mt-3 space-y-3">
+          {observed ? (
+            <div>
+              <p className="font-semibold text-slate-800">Raw observed numbers</p>
+              <ul className="mt-1 list-disc space-y-0.5 pl-5">
+                {typeof observed.coralCoverPercent === "number" ? (
+                  <li>
+                    Coral cover: <strong>{observed.coralCoverPercent}%</strong> (survey{" "}
+                    {formatSurveyDate(observed.surveyDate)}, {observed.surveyMethod})
+                  </li>
+                ) : null}
+                {typeof observed.bleachedPercent === "number" ? (
+                  <li>
+                    Bleached: <strong>{observed.bleachedPercent}%</strong>
+                  </li>
+                ) : null}
+                {typeof observed.mortalityPercent === "number" ? (
+                  <li>
+                    Recent mortality: <strong>{observed.mortalityPercent}%</strong>
+                  </li>
+                ) : null}
+                {observed.notes ? <li>{observed.notes}</li> : null}
+              </ul>
+            </div>
+          ) : null}
+          {thermal ? (
+            <div>
+              <p className="font-semibold text-slate-800">Raw thermal numbers</p>
+              <ul className="mt-1 list-disc space-y-0.5 pl-5">
+                <li>
+                  NOAA CRW alert level:{" "}
+                  <strong>{ALERT_LABEL[thermal.alertLevel]}</strong>
+                </li>
+                {typeof thermal.degreeHeatingWeeks === "number" ? (
+                  <li>
+                    Degree Heating Weeks:{" "}
+                    <strong>{thermal.degreeHeatingWeeks} °C-wk</strong>
+                  </li>
+                ) : null}
+                {typeof thermal.sstAnomalyC === "number" ? (
+                  <li>
+                    SST anomaly: <strong>+{thermal.sstAnomalyC} °C</strong>
+                  </li>
+                ) : null}
+              </ul>
+            </div>
+          ) : null}
+          {methods.map((m) => (
+            <div key={m.claimId}>
+              <p className="font-semibold text-slate-800">How we summarise this</p>
+              <p className="mt-1">{m.limitations}</p>
+            </div>
+          ))}
+          {sources.length > 0 ? (
+            <div>
+              <p className="font-semibold text-slate-800">Sources</p>
+              <ul className="mt-1 list-disc space-y-0.5 pl-5">
+                {sources.map((src) => (
+                  <li key={src.id}>
+                    {src.url ? (
+                      <a
+                        href={src.url}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="text-[#0089de] hover:underline"
+                      >
+                        {src.name}
+                      </a>
+                    ) : (
+                      src.name
+                    )}
+                    {src.publisher ? (
+                      <span className="text-slate-500"> — {src.publisher}</span>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      </details>
+
+      <p className="mt-3 text-[12px] leading-5 text-slate-500">
+        Reef condition changes year to year. If you visit, consider supporting{" "}
+        <Link href="/about" className="text-[#0089de] hover:underline">
+          responsible-travel and conservation
+        </Link>{" "}
+        operators on the ground.
+      </p>
     </section>
   );
 }

@@ -8,6 +8,8 @@
       "coralCoverPercent": 33,
       "bleachedPercent": 12,
       "mortalityPercent": 4,
+      "historicalCoralCoverPercent": 28,
+      "historicalSurveyDate": "2014-08-01",
       "sourceIds": ["aims-ltmp", "gbrmpa"],
       "notes": "Cooler-than-average late-summer SSTs in 2024 limited bleaching impact on the Northern GBR's Ribbon Reefs."
     },
@@ -18,6 +20,7 @@
       "sstAnomalyC": 0.6,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Northern GBR is holding up better than the mid and southern sectors. Expect full reef colour and the resident potato cod. Less crown-of-thorns pressure than further south.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -30,6 +33,8 @@
       "coralCoverPercent": 28,
       "bleachedPercent": 18,
       "mortalityPercent": 6,
+      "historicalCoralCoverPercent": 37,
+      "historicalSurveyDate": "2014-09-01",
       "sourceIds": ["reef-life-survey"],
       "notes": "Ningaloo experienced sustained thermal stress in early 2024 — extent of mortality varied by reef tract."
     },
@@ -40,6 +45,7 @@
       "sstAnomalyC": 1.1,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Whale-shark season (Mar–Jul) is the main draw and still excellent. Reef colour is patchy after the 2024 bleaching — focus on the outer reef bommies rather than shallow lagoon.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -52,6 +58,8 @@
       "coralCoverPercent": 56,
       "bleachedPercent": 3,
       "mortalityPercent": 1,
+      "historicalCoralCoverPercent": 54,
+      "historicalSurveyDate": "2014-04-01",
       "sourceIds": ["reef-check"],
       "notes": "Raja Ampat retains some of the highest live coral cover in the Coral Triangle. Strong currents and refugia help limit thermal stress."
     },
@@ -62,6 +70,7 @@
       "sstAnomalyC": 0.2,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "One of the few places where what you see today is what divers saw a decade ago. Plan the trip with confidence — peak fish biomass, intact soft-coral fields, manta and wobbegong encounters all reliable.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -74,6 +83,8 @@
       "coralCoverPercent": 47,
       "bleachedPercent": 8,
       "mortalityPercent": 2,
+      "historicalCoralCoverPercent": 50,
+      "historicalSurveyDate": "2014-04-01",
       "sourceIds": ["reef-check", "icri"],
       "notes": "April 2024 surveys recorded localised bleaching on shallow reef flats; submerged reef slopes remained largely unaffected."
     },
@@ -84,6 +95,7 @@
       "sstAnomalyC": 0.9,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Reef slopes from 10 m down are still vivid. Shallow tops show some bleaching scars. Liveaboard season is short (Mar–Jun) — book early.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -96,6 +108,8 @@
       "coralCoverPercent": 21,
       "bleachedPercent": 22,
       "mortalityPercent": 9,
+      "historicalCoralCoverPercent": 37,
+      "historicalSurveyDate": "2014-10-01",
       "sourceIds": ["agrra"],
       "notes": "Caribbean-wide 2023–2024 heat dome impacted Cozumel; SCTLD (stony coral tissue loss disease) continues to compound losses."
     },
@@ -106,6 +120,7 @@
       "sstAnomalyC": 1.2,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Less hard coral than the photos. Fish life, sponges, and the wall topography are still excellent. Best at depth (>20 m) and on the cooler shoulder months (Dec–Mar).",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -118,6 +133,8 @@
       "coralCoverPercent": 19,
       "bleachedPercent": 24,
       "mortalityPercent": 10,
+      "historicalCoralCoverPercent": 34,
+      "historicalSurveyDate": "2014-11-01",
       "sourceIds": ["agrra", "ncrmp"],
       "notes": "Bonaire saw widespread bleaching during the 2023 marine heatwave; recovery is patchy but ongoing."
     },
@@ -128,6 +145,7 @@
       "sstAnomalyC": 0.7,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Shore diving access is still world-class. The reef is rebuilding — expect smaller coral colonies than older photos. STINAPA conservation fee directly funds recovery, so go and support it.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -140,6 +158,8 @@
       "coralCoverPercent": 44,
       "bleachedPercent": 5,
       "mortalityPercent": 1,
+      "historicalCoralCoverPercent": 46,
+      "historicalSurveyDate": "2014-06-01",
       "sourceIds": ["icri", "reef-check"],
       "notes": "Fakarava's UNESCO Biosphere status and limited human pressure correlate with stable cover. 2024 SST anomalies were modest."
     },
@@ -150,6 +170,7 @@
       "sstAnomalyC": 0.3,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "South Pass shark wall is still the densest grey-reef-shark aggregation in the Pacific. Reef structure largely unchanged in a decade — what you book is what you get.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -162,6 +183,8 @@
       "coralCoverPercent": 41,
       "bleachedPercent": 7,
       "mortalityPercent": 2,
+      "historicalCoralCoverPercent": 40,
+      "historicalSurveyDate": "2014-09-01",
       "sourceIds": ["gcrmn"],
       "notes": "Northern Red Sea corals continue to show unusual thermal tolerance — one of the few global refugia."
     },
@@ -172,6 +195,7 @@
       "sstAnomalyC": 0.3,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "One of the rare reefs that has not lost cover in the last decade. Northern Red Sea corals tolerate heat better than most. Expect full colour, sharks at Yolanda, schooling jacks year-round.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -184,6 +208,8 @@
       "coralCoverPercent": 29,
       "bleachedPercent": 14,
       "mortalityPercent": 5,
+      "historicalCoralCoverPercent": 36,
+      "historicalSurveyDate": "2014-12-01",
       "sourceIds": ["ncrmp"],
       "notes": "West Hawaii reefs were hit by elevated SSTs in late 2024; partial recovery underway through 2025."
     },
@@ -194,6 +220,7 @@
       "sstAnomalyC": 0.5,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Manta night dive and blackwater are both unchanged — those don't depend on coral. Day diving over reef shows recovery in patches. Worth going for the pelagic experiences alone.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -206,6 +233,8 @@
       "coralCoverPercent": 38,
       "bleachedPercent": 11,
       "mortalityPercent": 3,
+      "historicalCoralCoverPercent": 42,
+      "historicalSurveyDate": "2014-05-01",
       "sourceIds": ["icri", "gcrmn"],
       "notes": "Palau's deep oceanic upwelling provides some thermal buffering for outer reefs."
     },
@@ -216,6 +245,7 @@
       "sstAnomalyC": 0.6,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Blue Corner shark current still produces. Outer reefs buffered by oceanic upwelling. Inner lagoon reefs show more bleaching — skip the inside in favour of the channels.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -228,6 +258,8 @@
       "coralCoverPercent": 35,
       "bleachedPercent": 14,
       "mortalityPercent": 4,
+      "historicalCoralCoverPercent": 41,
+      "historicalSurveyDate": "2014-07-01",
       "sourceIds": ["reef-check"],
       "notes": "Sipadan benefits from MPA status; bleaching in 2024 was concentrated on shallower terraces."
     },
@@ -238,6 +270,7 @@
       "sstAnomalyC": 0.5,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Barracuda Point and turtle traffic are unchanged. Deep walls (>15 m) hold the best coral cover. Permit quota limits diver impact — a key reason it's still in this shape.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   },
@@ -250,6 +283,8 @@
       "coralCoverPercent": 26,
       "bleachedPercent": 28,
       "mortalityPercent": 11,
+      "historicalCoralCoverPercent": 41,
+      "historicalSurveyDate": "2014-04-01",
       "sourceIds": ["gcrmn", "allen-coral-atlas"],
       "notes": "Maldives saw widespread bleaching in 2024 with stronger impact on shallow lagoon reefs than ocean-side thila and kandu."
     },
@@ -260,6 +295,7 @@
       "sstAnomalyC": 1.4,
       "sourceIds": ["noaa-crw"]
     },
+    "divingOutlook": "Manta and whale-shark encounters at Ari are still the main draw and are not coral-dependent. Hard coral has thinned noticeably since 2014. If you've been waiting on Maldives, this is the year — not later.",
     "methodologyClaimIds": ["reef-health-aims-noaa"],
     "lastReviewedAt": "2026-05-24"
   }

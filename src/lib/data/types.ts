@@ -244,6 +244,13 @@ export type ObservedReefCondition = {
   bleachedPercent?: number;
   /** Share of surveyed coral colonies that died (recent mortality), percent. */
   mortalityPercent?: number;
+  /**
+   * Coral cover from an earlier survey at this location (rough historical
+   * baseline for "what visitors would have seen years ago" comparison).
+   */
+  historicalCoralCoverPercent?: number;
+  /** ISO date for the historical baseline. Required when historical % is set. */
+  historicalSurveyDate?: string;
   sourceIds: string[];
   notes?: string;
 };
@@ -285,6 +292,12 @@ export type ReefHealthRecord = {
   observed?: ObservedReefCondition;
   thermalStress?: ThermalStress;
   projection?: ReefProjection;
+  /**
+   * Plain-English copy describing what a diver should expect on the reef
+   * right now (depth tips, shoulder-season tips, what's still good). Kept
+   * editorial — never invented numbers, never a projection.
+   */
+  divingOutlook?: string;
   /** Methodology notes covering the observed + thermal-stress fields. */
   methodologyClaimIds: string[];
   lastReviewedAt: string;
