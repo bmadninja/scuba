@@ -55888,5 +55888,267 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside the UNESCO Seaflower Biosphere Reserve and the Old Providence McBean Lagoon marine park — no gloves and no contact with coral; marine-park rules are enforced. Few operators work the island and the nearest recompression chamber is off-island, so dive conservatively. Visibility peaks in the Dec-Apr dry season; Sep-Nov is hurricane season."
+  },
+  {
+    "id": "kona-hawaii-usa-molokini-crater",
+    "slug": "kona-hawaii-usa-molokini-crater",
+    "locationId": "kona-hawaii-usa",
+    "name": "Molokini Crater",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Snorkeling_at_Molokini_Crater%2C_Maui_-_7077590023.jpg",
+    "lat": 20.6326,
+    "lng": -156.496,
+    "description": "A drowned volcanic tuff cone in the ʻAlalākeiki Channel between Maui and Kahoʻolawe, breaking the surface as a 0.6 km crescent that shelters a shallow lagoon famous for water clearer than almost anywhere in Hawaii — 30 m of visibility is an ordinary day, 45 m happens. Inside the arms, a coral-and-rubble reef at 6–18 m holds dense reef fish: schooling black durgon, yellow tang, Moorish idols, raccoon butterflyfish, parrotfish and patrolling bluefin trevally over beds of red pencil urchins. The crater's open back side is a different dive entirely — a sheer wall plunging past 60 m into blue water where whitetip reef sharks, eagle rays, the occasional manta and even Galápagos sharks cruise the drop-off. Protected since 1977, it is one of the most-dived sites in the islands.",
+    "depthRange": {
+      "min": 6,
+      "max": 40
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "geology",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Bluefin trevally",
+        "scientificName": "Caranx melampygus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellow tang",
+        "scientificName": "Zebrasoma flavescens",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Black durgon",
+        "scientificName": "Melichthys niger",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moorish idol",
+        "scientificName": "Zanclus cornutus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Raccoon butterflyfish",
+        "scientificName": "Chaetodon lunula",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red pencil urchin",
+        "scientificName": "Heterocentrotus mammillatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 38
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 84,
+    "getThere": "Fly into Kahului Airport (OGG) on Maui. Dive boats depart Maʻalaea Harbor and the Kihei boat ramp on Maui's south shore for a 30–45 minute crossing to the crater; early-morning departures get the calmest water and best visibility before the trade winds build. (The crater sits roughly 30 km across the Alenuihāhā Channel from the Kona Coast on the Big Island, but is dived almost exclusively from Maui.)",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "State Marine Life Conservation District and Seabird Sanctuary since 1977 — no fishing, feeding, anchoring or taking anything; mooring buoys only. The sheltered interior suits open-water divers and snorkelers, but the Back Wall is an advanced drift dive over a 300 m+ drop-off with real current and depth. Trade winds pick up by late morning and afternoon trips are often choppy and lower-visibility. Humpback song is audible underwater roughly December–April."
   }
 ]
