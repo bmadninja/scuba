@@ -53133,5 +53133,220 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "A permit is required for diving the HMAS Canberra. Due to its depth and the potential for strong currents, this site is recommended for experienced advanced divers with appropriate training. Always dive with a reputable local operator."
+  },
+  {
+    "id": "ningaloo-australia-hmas-hobart",
+    "slug": "ningaloo-australia-hmas-hobart",
+    "locationId": "ningaloo-australia",
+    "name": "HMAS Hobart",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/HMAS_Hobart_%28D39%29.jpg",
+    "lat": -35.481,
+    "lng": 138.157222,
+    "description": "The HMAS Hobart (D 39), a former Royal Australian Navy guided missile destroyer, was scuttled in 2002 to create an artificial reef. Lying upright in Yankalilla Bay, South Australia, the 134-meter wreck is a prominent dive site. Its accessible decks, bridge, and engine room, combined with the gun turrets and missile launchers, provide an intriguing exploration for advanced divers. The vessel's structure has become a vibrant habitat for temperate marine life, including schools of fish, blue devils, and various invertebrates, making it a significant attraction for wreck and marine life enthusiasts.",
+    "depthRange": {
+      "min": 10,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Leatherjackets",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Old Wives",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Morwong",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Octopus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blue Devils",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit / drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit / drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit / drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 15,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "editorialRank": 85,
+    "getThere": "Fly to Adelaide (ADL), then drive approximately 1.5 hours to Yankalilla or Normanville. Dive charters typically depart from Wirrina Cove.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": null
   }
 ]
