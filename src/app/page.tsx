@@ -52,6 +52,15 @@ const SKILL_TO_EXPERIENCE: Record<
   tech: "advanced",
 };
 
+const SKILL_RANK: Record<Site["skillLevel"], number> = {
+  "never-dived": 0,
+  "open-water": 1,
+  advanced: 2,
+  rescue: 3,
+  divemaster: 4,
+  tech: 5,
+};
+
 const deriveTags = (site: Site, regionText: string) => {
   const text = `${site.name} ${site.description} ${regionText} ${site.species
     .map((s) => s.commonName)
@@ -108,6 +117,7 @@ export default function Home() {
       const skillSet = new Set<string>();
       let topRank = -Infinity;
       let topSiteImageUrl: string | undefined;
+      let minSkillRank = 99;
 
       for (const s of sites) {
         const { interestTags, animalTags, tripMode } = deriveTags(
@@ -119,6 +129,9 @@ export default function Home() {
         tripModeSet.add(tripMode);
         experienceSet.add(SKILL_TO_EXPERIENCE[s.skillLevel]);
         skillSet.add(s.skillLevel);
+        if (SKILL_RANK[s.skillLevel] < minSkillRank) {
+          minSkillRank = SKILL_RANK[s.skillLevel];
+        }
         if (s.editorialRank > topRank) {
           topRank = s.editorialRank;
           topSiteImageUrl = s.heroImageUrl;
@@ -140,6 +153,7 @@ export default function Home() {
         editorialRank: topRank === -Infinity ? 0 : topRank,
         siteCount: sites.length,
         skillLevels: Array.from(skillSet),
+        minSkillRank: minSkillRank === 99 ? 5 : minSkillRank,
         experiences: Array.from(experienceSet),
         interestTags: Array.from(interestSet),
         animalTags: Array.from(animalSet),

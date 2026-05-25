@@ -20,6 +20,8 @@ export type FeaturedLocation = {
   editorialRank: number;
   siteCount: number;
   skillLevels: string[];
+  /** 0 = never-dived … 5 = tech. The easiest site at this location. */
+  minSkillRank: number;
   experiences: ("beginner" | "intermediate" | "advanced")[];
   interestTags: string[];
   animalTags: string[];
@@ -437,22 +439,36 @@ function FeaturedGrid({
 }) {
   const monthName = MONTH_OPTIONS[selectedMonth - 1].label;
 
-  const certToExperience = (
-    c: CertFilter,
-  ): "beginner" | "intermediate" | "advanced" | null => {
-    if (c === "never-dived" || c === "open-water") return "beginner";
-    if (c === "advanced") return "intermediate";
-    if (c === "rescue" || c === "divemaster" || c === "tech") return "advanced";
-    return null;
+  // Cert → maximum minSkillRank a location can have to qualify.
+  // We want "matches my level" to mean "the *easiest* dive at this
+  // location is at or below my certification" — so a never-dived
+  // visitor only sees places where they can actually book a dive.
+  const certToMaxMinSkillRank = (c: CertFilter): number => {
+    switch (c) {
+      case "never-dived":
+        // Pure try-dive locations are rare; allow Open Water sites too
+        // so the user can certify on the trip.
+        return 1;
+      case "open-water":
+        return 1;
+      case "advanced":
+        return 2;
+      case "rescue":
+        return 3;
+      case "divemaster":
+        return 4;
+      case "tech":
+        return 5;
+    }
   };
 
   const featured = useMemo(() => {
     if (locations.length === 0) return [];
-    const expLevel = cert === "" ? null : certToExperience(cert);
+    const maxMinSkill = cert === "" ? null : certToMaxMinSkillRank(cert);
 
     const passesFilters = (l: FeaturedLocation) => {
       if (tripMode !== "" && !l.tripModes.includes(tripMode)) return false;
-      if (expLevel && !l.experiences.includes(expLevel)) return false;
+      if (maxMinSkill !== null && l.minSkillRank > maxMinSkill) return false;
       if (seeFilters.length > 0) {
         const matchesSee = seeFilters.some((f) => {
           if (ANIMAL_OPTIONS.includes(f as AnimalFilter)) {
@@ -493,13 +509,17 @@ function FeaturedGrid({
   const hasFilters =
     tripMode !== "" || cert !== "" || seeFilters.length > 0;
 
+  const certLabel = cert
+    ? (CERT_OPTIONS.find((o) => o.value === cert)?.label ?? "")
+    : "";
+
   return (
     <section className="mt-12">
       <div className="mb-6 flex items-end justify-between gap-4 border-b border-slate-200 pb-4">
         <div>
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
             {hasFilters
-              ? `Matches · ${monthName}`
+              ? `${featured.length} ${featured.length === 1 ? "match" : "matches"} · ${monthName}${certLabel ? ` · ${certLabel}` : ""}`
               : `In season this month · ${monthName}`}
           </p>
           <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
