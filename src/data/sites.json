@@ -59703,5 +59703,232 @@
       }
     ],
     "notes": "Whale shark season is roughly November-January, peaking in December. A strict interaction code applies: no touching, no flash photography, no diving down onto the sharks, and limits on swimmers in the water. The sharks are juveniles and the bay is shallow; Ghoubbet al-Kharab next door has strong tidal currents. Summer (Jun-Aug) is brutally hot on land and diving is unremarkable outside the plankton season."
+  },
+  {
+    "id": "moalboal-philippines-apo-island",
+    "slug": "moalboal-philippines-apo-island",
+    "locationId": "moalboal-philippines",
+    "name": "Apo Island",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/Sea_Turtle_in_Apo_Island.jpg",
+    "lat": 9.0762,
+    "lng": 123.2692,
+    "description": "A volcanic island off the southeastern tip of Negros, ringed by one of the world's first community-run marine reserves — local fishers closed 450 m of reef in 1982 and the recovery is now a textbook case. Green and hawksbill turtles graze the shallow hard-coral gardens in such numbers that divers routinely share a single bommie with several at once, often within 5 m of the surface. The sheltered western sanctuary (Chapel, Rock Point West) suits any diver, while Coconut Point on the exposed tip rips with current that pulls in schooling bigeye trevally and jacks. Banded sea kraits hunt the coral heads, and the slopes pack more than 650 fish species and some 400 corals. Visibility regularly opens past 30 m.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Banded sea krait",
+        "scientificName": "Laticauda colubrina",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Titan triggerfish",
+        "scientificName": "Balistoides viridescens",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Clark's anemonefish",
+        "scientificName": "Amphiprion clarkii",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Dumaguete-Sibulan Airport (DGT) on Negros, served by daily flights from Manila and Cebu. From Dumaguete it is about a 45-minute drive south to the launch points at Malatapay (Zamboanguita) or the dive resorts along Dauin, then a 30-45 minute banca (outrigger) crossing to the island. Most divers base in Dauin or Dumaguete and visit Apo on day trips.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Apo Island is a protected community marine sanctuary: a per-diver sanctuary/entrance fee applies and the no-take core has restricted entry points, so dive only with a registered local operator or guide. Coconut Point and the eastern side can have strong, unpredictable currents and downcurrents (advanced), while the western Chapel/Rock Point sanctuary is calm and shallow. Do not touch or chase the turtles. The amihan (northeast monsoon, roughly December-February) can make the exposed side rough."
   }
 ]
