@@ -51660,5 +51660,203 @@
       "redundant-lighting"
     ],
     "notes": "Strict permits are required from relevant authorities, and access is restricted to highly experienced and qualified technical cave divers. The environment is extremely fragile, and conservation guidelines must be rigorously followed."
+  },
+  {
+    "id": "ningaloo-australia-engelbrecht-cave",
+    "slug": "ningaloo-australia-engelbrecht-cave",
+    "locationId": "ningaloo-australia",
+    "name": "Engelbrecht Cave",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Engelbrecht_Cave%2C_Mount_Gambier%2C_November_2018.jpg",
+    "lat": -37.8205,
+    "lng": 140.7723,
+    "description": "Engelbrecht Cave is a fascinating cave system nestled beneath the urban area of Mount Gambier, South Australia. This unique site features a prominent sinkhole leading to two major water-filled passages, offering distinct cave diving experiences. Its dry sections are open to the public as a show cave, while the submerged areas are renowned among technical divers, accessible strictly by permit.",
+    "depthRange": {
+      "min": 0,
+      "max": 12
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "geology"
+    ],
+    "species": [],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 85,
+    "getThere": "Fly into Mount Gambier Airport (MGB) and drive to Chute Street in Mount Gambier. The cave is located within the urban area.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Underwater access requires a permit from the Cave Divers Association of Australia (CDAA)."
   }
 ]
