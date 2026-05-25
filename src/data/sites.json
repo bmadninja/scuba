@@ -63153,5 +63153,316 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside the Malpelo Fauna and Flora Sanctuary (UNESCO World Heritage Site); access only via permitted Colombian liveaboard, one vessel at a time. Park typically requires a minimum of 50 logged dives. No anchoring: live skiff drops with immediate negative descents are standard because of strong currents (up to ~5 knots) and surge. Nitrox recommended. Yellow fever vaccination required. Divers settle into the boulders at 15-25 m to watch the cleaning stations; keep clear of the fragile fan corals. Nearest hyperbaric chamber is at the naval base in Buenaventura."
+  },
+  {
+    "id": "andaman-islands-india-dixons-pinnacle",
+    "slug": "andaman-islands-india-dixons-pinnacle",
+    "locationId": "andaman-islands-india",
+    "name": "Dixon's Pinnacle",
+    "heroImageUrl": null,
+    "lat": 12.045,
+    "lng": 93.165,
+    "description": "Three rock pinnacles rise from a 34 m floor to within 15-16 m of the surface roughly 19 km east of Havelock Island (Swaraj Dweep), a short hop from Johnny's Gorge. Their flanks are sheeted in soft coral and studded with metre-wide barrel sponges, and the shallow tops work as a cleaning station: reef fish swarm the rock while manta and mobula rays bank in to be groomed, alongside resident giant groupers and big Napoleon wrasse holding station in the current. Whitetip reef sharks patrol the bases, green turtles graze the coral, and barracuda, trevally and dogtooth tuna stack up in the blue. Tidal current and the depth make it an advanced dive; visibility opens up from November once the monsoon swell drops.",
+    "depthRange": {
+      "min": 15,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Mobula ray",
+        "scientificName": "Mobula sp.",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Giant grouper",
+        "scientificName": "Epinephelus lanceolatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Titan triggerfish",
+        "scientificName": "Balistoides viridescens",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly into Veer Savarkar International Airport (IXZ) in Port Blair via Chennai (MAA), Kolkata (CCU), Delhi (DEL), or Bengaluru (BLR). From Port Blair, take the 1.5-2 hour high-speed catamaran ferry (Makruzz, Nautika, Green Ocean) to Havelock Island (Swaraj Dweep). Dive operators based at Beach No. 3 / Govind Nagar run dedicated deep-site boats that reach Dixon's Pinnacle in roughly 60-75 minutes; it is usually dived as a pair with neighbouring Johnny's Gorge.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Barefoot at Havelock",
+        "url": "https://www.booking.com/searchresults.html?ss=Barefoot%20at%20Havelock",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "resort"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "TSG Blue Resort Havelock",
+        "url": "https://www.booking.com/searchresults.html?ss=TSG%20Blue%20Havelock",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Find PADI dive operators (Havelock)",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-3mm-full",
+      "computer-shearwater-peregrine",
+      "smb-xs-scuba-deluxe"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light or torch",
+        "reason": "Below 30 m on the pinnacle bases ambient light drops and the overhangs are dim — a primary torch helps pick out resting sharks and the colour of the soft coral.",
+        "gearId": "light-bigblue-al1200"
+      },
+      {
+        "name": "Nitrox cert + EAN32 fills",
+        "reason": "Bottom time at 25-30 m on air is short; EAN32 stretches no-deco limits and is offered by Havelock operators with advance booking.",
+        "gearId": null
+      }
+    ],
+    "notes": "Advanced Open Water with deep training is the working minimum, and operators usually require a logged deep dive. Foreign nationals no longer need a separate Restricted Area Permit (RAP) for Havelock but must carry a passport; the RAP rule was lifted in 2022. The site closes during the southwest monsoon (roughly mid-May through mid-September) when swell and silt make the offshore run unsafe. Keep well back from rays on the cleaning station and do not touch the giant barrel sponges, which break easily and are very slow-growing."
   }
 ]
