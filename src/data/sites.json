@@ -64464,5 +64464,236 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Shore dive; a small landowner access fee is paid at the beach. The shallow coral-covered bow and midships suit open-water divers, while the deeper stern (~23 m) and any penetration call for more experience. Visibility falls sharply during and after heavy rain when Bonegi Creek discharges silt; the dry season (May–Oct) is clearest."
+  },
+  {
+    "id": "cozumel-mexico-c53-felipe-xicotencatl",
+    "slug": "cozumel-mexico-c53-felipe-xicotencatl",
+    "locationId": "cozumel-mexico",
+    "name": "C-53 Felipe Xicotencatl",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Felipe_Xicotencatl_bow.jpg",
+    "lat": 20.4428,
+    "lng": -87.0003,
+    "description": "The 56-metre Admirable-class minesweeper USS Scuffle (AM-298), launched in 1943 and transferred to the Mexican Navy in 1962 as the General Felipe Xicoténcatl, was scuttled upright on a sand bottom off Chankanaab on Cozumel's leeward coast in 1999 — the island's only wreck dive. The hull rests in about 24 m with the deck and superstructure reaching up to roughly 10 m. Doorways and hatches were cut open before sinking, so divers with wreck training can pass through the wheelhouse, engine room and companionways while others circle the rails outside. Hurricane Wilma shifted and cracked the structure in 2005. Sponges and corals now coat the railings, and splendid toadfish (endemic to Cozumel), green morays, great barracuda, nurse sharks and schooling grunts shelter in and around the hull.",
+    "depthRange": {
+      "min": 10,
+      "max": 24
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Splendid toadfish",
+        "scientificName": "Sanopus splendidus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Southern stingray",
+        "scientificName": "Hypanus americanus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "French angelfish",
+        "scientificName": "Pomacanthus paru",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [12, 1, 2, 3]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 75,
+    "getThere": "Fly into Cozumel International Airport (CZM). The wreck lies offshore from Chankanaab on the island's western, leeward side; dive operators in San Miguel reach it in a 15–25 minute boat ride and usually run it as the deep first dive of a two-tank trip, paired with a nearby reef such as Tormentos or Chankanaab.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside the Cozumel Reefs National Park; the marine-park fee applies and a guide is required. The 24 m depth puts the dive beyond open-water limits, so operators generally ask for AOW/advanced certification; full penetration of the engine room and lower decks calls for wreck training, lights and care, as Hurricane Wilma (2005) shifted the hull and weakened parts of the structure. Current over the wreck is usually mild to moderate but can pick up. San Miguel has a recompression chamber."
   }
 ]
