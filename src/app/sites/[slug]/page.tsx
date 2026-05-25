@@ -226,11 +226,6 @@ export default async function SiteDetailPage({
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <div className="font-semibold text-slate-900">{s.commonName}</div>
-                      {s.scientificName ? (
-                        <div className="text-xs italic text-slate-500">
-                          {s.scientificName}
-                        </div>
-                      ) : null}
                     </div>
                     <span
                       className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset ${RELIABILITY_COLOR[s.reliability]}`}
@@ -264,11 +259,6 @@ export default async function SiteDetailPage({
                         <div className="font-semibold text-slate-900">
                           {s.speciesCommon}
                         </div>
-                        {s.speciesScientific ? (
-                          <div className="text-xs italic text-slate-500">
-                            {s.speciesScientific}
-                          </div>
-                        ) : null}
                       </div>
                       <span
                         className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset ${CONFIDENCE_RING[s.confidence]}`}
