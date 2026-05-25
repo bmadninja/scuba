@@ -57547,5 +57547,312 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Munseom lies within the Seogwipo Marine Park and Jeju Biosphere Reserve; the soft coral habitat is designated Natural Monument No. 421 \u2014 no touching, anchoring or collecting. Tidal currents can be strong and dives are planned around slack water, so most operators require Advanced Open Water. Winter water drops to around 13\u201314\u00b0C, calling for a 7mm semidry or drysuit with hood and gloves from December through April. Boats depart Seogwipo Harbour; summer typhoon swells (July\u2013September) frequently cancel diving."
+  },
+  {
+    "id": "praslin-south-marianne",
+    "slug": "praslin-south-marianne",
+    "locationId": "praslin-seychelles",
+    "name": "South Marianne",
+    "heroImageUrl": null,
+    "lat": -4.349,
+    "lng": 55.92,
+    "description": "A granite seamount off the south side of Marianne Island, widely rated the best dive in the inner Seychelles and the signature trip out of Praslin and La Digue. Boulder fields fall through canyons and swim-throughs to about 25 m, with grey reef sharks patrolling the edges and tawny nurse sharks wedged under the ledges. Schools of bigeye snapper, batfish and barracuda hang in the blue beside eagle rays, stingrays, giant morays and napoleon wrasse. Current runs hard, so it is dived as a drift; September to November brings the grey reef sharks' mating aggregation.",
+    "depthRange": {
+      "min": 12,
+      "max": 25
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round",
+        "bestMonths": [
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Tawny nurse shark",
+        "scientificName": "Nebrius ferrugineus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus ocellatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Schooling bigeye snapper",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly to Mahe (SEZ, Seychelles International), then a 15-minute domestic hop or ~1-hour Cat Cocos fast ferry to Praslin. South Marianne lies off the south coast of Marianne Island, east of La Digue; dive boats reach it in roughly 30-60 minutes from Praslin or La Digue dive centres.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Berjaya Praslin Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Berjaya%20Praslin%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Le Duc de Praslin",
+        "url": "https://www.booking.com/searchresults.html?ss=Le%20Duc%20de%20Praslin",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Constance Lemuria Praslin",
+        "url": "https://www.booking.com/searchresults.html?ss=Constance%20Lemuria%20Seychelles",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "La Digue Island Lodge",
+        "url": "https://www.booking.com/searchresults.html?ss=La%20Digue%20Island%20Lodge",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Galatea Seychelles",
+        "url": "https://www.liveaboard.com/diving/search?destination=Galatea%20Seychelles%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Sea Star Seychelles",
+        "url": "https://www.liveaboard.com/diving/search?destination=Sea%20Star%20Seychelles%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Octopus Diving Seychelles",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-3mm-full"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "Hard current along the boulder edges - a hook lets you hold position to watch the sharks pass.",
+        "gearId": "reef-hook-innovative"
+      },
+      {
+        "name": "SMB",
+        "reason": "Drift dives finish over deep open water, so a deployed SMB marks the group for the boat.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Advanced drift dive with strong, variable currents - good buoyancy and an SMB are essential. The site sits in exposed water east of La Digue, so trips are weather-dependent and only run when conditions allow."
   }
 ]
