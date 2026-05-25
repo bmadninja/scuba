@@ -54515,5 +54515,217 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": null
+  },
+  {
+    "id": "raja-ampat-indonesia-magic-point",
+    "slug": "raja-ampat-indonesia-magic-point",
+    "locationId": "raja-ampat-indonesia",
+    "name": "Magic Point",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Carcharias_taurus_02.jpg",
+    "lat": -33.95,
+    "lng": 151.27,
+    "description": "Magic Point, located off Maroubra in Sydney, Australia, is a critical aggregation site for the critically endangered Grey Nurse Shark. Divers can explore a series of rocky gutters and small caves, providing shelter for these majestic sharks as well as wobbegongs and various temperate reef fish. The site is known for its seasonal shark encounters, offering a unique opportunity to observe these placid creatures in their natural habitat. Currents can be moderate, and visibility varies.",
+    "depthRange": {
+      "min": 10,
+      "max": 25
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Grey Nurse Shark",
+        "scientificName": "Carcharias taurus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Wobbegong Shark",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit / Semi-dry"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit / Semi-dry"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit / Semi-dry"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 85,
+    "getThere": "Access via dive boats from Sydney Harbour or Botany Bay operators. Nearest major airport is Sydney Kingsford Smith Airport (SYD).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Visibility and currents can be unpredictable. Respect local wildlife guidelines, especially regarding Grey Nurse Sharks."
   }
 ]
