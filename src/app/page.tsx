@@ -1,10 +1,22 @@
 import Link from "next/link";
 import { PlanetGlobePanel } from "@/components/planet-globe-panel";
 import type { FeaturedLocation } from "@/components/planet-globe-panel";
+import { isUnderwaterQualityPhoto } from "@/lib/photo-quality";
 import { getScubaGlobeData } from "@/lib/scuba-globe";
 import { getAllSites } from "@/lib/data/sites";
 import { getAllLocations } from "@/lib/data/locations";
-import type { Site } from "@/lib/data/types";
+import { getReefHealthByLocationId } from "@/lib/data/reef-health";
+import type { BleachingAlertLevel, Site } from "@/lib/data/types";
+
+type ReefCondition = "thriving" | "stressed" | "critical" | "unknown";
+
+const REEF_CONDITION_FROM_ALERT: Record<BleachingAlertLevel, ReefCondition> = {
+  "no-stress": "thriving",
+  watch: "thriving",
+  warning: "stressed",
+  "alert-1": "stressed",
+  "alert-2": "critical",
+};
 
 const COUNTRY_TO_CONTINENT: Record<string, string> = {
   // Asia (incl. Middle East)
@@ -118,6 +130,34 @@ export default function Home() {
       let topRank = -Infinity;
       let topSiteImageUrl: string | undefined;
       let minSkillRank = 99;
+      let topQualityRank = -Infinity;
+      let topQualityImageUrl: string | undefined;
+
+      const reefRecords = getReefHealthByLocationId(location.id);
+      let worstAlert: BleachingAlertLevel | undefined;
+      const alertRank: Record<BleachingAlertLevel, number> = {
+        "no-stress": 0, watch: 1, warning: 2, "alert-1": 3, "alert-2": 4,
+      };
+      let coralCoverPercent: number | undefined;
+      let coralCoverDate: string | undefined;
+      let bleachedPercent: number | undefined;
+      for (const r of reefRecords) {
+        const alert = r.thermalStress?.alertLevel;
+        if (alert && (!worstAlert || alertRank[alert] > alertRank[worstAlert])) {
+          worstAlert = alert;
+        }
+        const cover = r.observed?.coralCoverPercent;
+        if (cover !== undefined && (coralCoverPercent === undefined || cover > coralCoverPercent)) {
+          coralCoverPercent = cover;
+          coralCoverDate = r.observed?.surveyDate;
+        }
+        const bleached = r.observed?.bleachedPercent;
+        if (bleached !== undefined && (bleachedPercent === undefined || bleached > bleachedPercent)) {
+          bleachedPercent = bleached;
+        }
+      }
+      const reefCondition: ReefCondition =
+        worstAlert ? REEF_CONDITION_FROM_ALERT[worstAlert] : "unknown";
 
       for (const s of sites) {
         const { interestTags, animalTags, tripMode } = deriveTags(
@@ -136,10 +176,18 @@ export default function Home() {
           topRank = s.editorialRank;
           topSiteImageUrl = s.heroImageUrl;
         }
+        if (
+          s.editorialRank > topQualityRank &&
+          s.heroImageUrl &&
+          isUnderwaterQualityPhoto(s.heroImageUrl)
+        ) {
+          topQualityRank = s.editorialRank;
+          topQualityImageUrl = s.heroImageUrl;
+        }
       }
 
       const heroImageUrl =
-        location.heroImageUrl ?? topSiteImageUrl;
+        location.heroImageUrl ?? topQualityImageUrl ?? topSiteImageUrl;
 
       return {
         id: location.id,
@@ -158,6 +206,10 @@ export default function Home() {
         interestTags: Array.from(interestSet),
         animalTags: Array.from(animalSet),
         tripModes: Array.from(tripModeSet),
+        reefCondition,
+        ...(coralCoverPercent !== undefined ? { coralCoverPercent } : {}),
+        ...(coralCoverDate !== undefined ? { coralCoverDate } : {}),
+        ...(bleachedPercent !== undefined ? { bleachedPercent } : {}),
       };
     })
     .filter((l): l is FeaturedLocation => l !== null);
@@ -188,14 +240,15 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-[#f1f7fb] to-white">
         <div className="mx-auto w-full max-w-6xl px-6 pt-14 pb-8 text-center">
           <span className="inline-block rounded-full bg-[#e8f0fe] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1d5d90]">
-            Dive smarter. Travel further.
+            A data atlas for the living ocean
           </span>
           <h1 className="mx-auto mt-5 max-w-3xl text-[clamp(2.25rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-tight text-slate-900">
-            The ocean&rsquo;s in season somewhere.
+            See the reefs before they change.
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Pick a month. We&rsquo;ll show you where the water&rsquo;s warm, the viz is wide,
-            and the big animals are showing up.
+            Coral cover, thermal stress, species seasonality &mdash; surfaced from
+            NOAA Coral Reef Watch, in-situ surveys, and citizen science.
+            Filter by month, certification, what you want to see, and reef condition.
           </p>
         </div>
 

@@ -3,6 +3,7 @@ import {
   formatLastConfirmed,
   getHeadlineSightingForSite,
 } from "@/lib/data/sightings";
+import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import type { Location, Site } from "@/lib/data/types";
 
 const CONFIDENCE_DOT: Record<"high" | "medium" | "low", string> = {
@@ -28,10 +29,7 @@ export function SiteCard({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={
-          site.heroImageUrl ??
-          `https://picsum.photos/seed/${site.slug}/800/440`
-        }
+        src={underwaterPhotoUrl(site.heroImageUrl)}
         alt={site.name}
         className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
       />
