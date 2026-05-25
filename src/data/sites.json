@@ -49886,5 +49886,221 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "This site is in a politically sensitive and disputed territory. Divers must adhere to all local regulations and permit requirements, which can be complex and subject to change."
+  },
+  {
+    "id": "raja-ampat-indonesia-japanese-battleship-nagato",
+    "slug": "raja-ampat-indonesia-japanese-battleship-nagato",
+    "locationId": "raja-ampat-indonesia",
+    "name": "Japanese battleship Nagato",
+    "heroImageUrl": null,
+    "lat": 11.5333,
+    "lng": 165.3333,
+    "description": "The Japanese battleship Nagato, a veteran of World War II and the flagship of Admiral Isoroku Yamamoto, met its final fate as a target ship during Operation Crossroads nuclear tests in Bikini Atoll in 1946. This massive super-dreadnought now rests inverted on the seabed, offering an imposing and historically significant deep wreck dive. Its sheer size and the dramatic events surrounding its sinking make it a poignant underwater monument.",
+    "depthRange": {
+      "min": 30,
+      "max": 50
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Grey Reef Shark",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tuna",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Snapper",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 90,
+    "getThere": "Access to Bikini Atoll is highly restricted and typically requires booking a liveaboard dive trip through specialized operators. Flights usually connect via Majuro (Marshall Islands International Airport) to a limited air service to Bikini.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Diving in Bikini Atoll requires special permits due to its historical significance and ongoing radiological monitoring. Divers must be qualified for technical diving due to the depth of the wrecks. Strict regulations and health advisories are in place."
   }
 ]
