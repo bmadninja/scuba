@@ -54727,5 +54727,245 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Visibility and currents can be unpredictable. Respect local wildlife guidelines, especially regarding Grey Nurse Sharks."
+  },
+  {
+    "id": "ningaloo-australia-neptune-islands",
+    "slug": "ningaloo-australia-neptune-islands",
+    "locationId": "ningaloo-australia",
+    "name": "Neptune Islands",
+    "heroImageUrl": null,
+    "lat": -35.25,
+    "lng": 136.15,
+    "description": "The Neptune Islands, off the coast of Port Lincoln, South Australia, are renowned for exhilarating great white shark cage diving experiences. Divers can also encounter playful Australian sea lions. The islands feature rugged underwater topography and are a key aggregation site for apex predators.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Great White Shark",
+        "scientificName": "Carcharodon carcharias",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Australian Sea Lion",
+        "scientificName": "Neophoca cinerea",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 15,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit or 7mm wetsuit + hood + gloves"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 14,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit or 7mm wetsuit + hood + gloves"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 14,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit or 7mm wetsuit + hood + gloves"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 15,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit + hood"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 85,
+    "getThere": "Fly to Port Lincoln Airport (PLO), then take a chartered boat from Port Lincoln.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      "cage"
+    ],
+    "notes": "Primary site for great white shark cage diving. Expect cold water and potentially strong currents. Permits are required for shark cage diving operations."
   }
 ]
