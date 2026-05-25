@@ -60164,5 +60164,237 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Shore entry is over concrete steps, a platform and rocks that get very slippery; steel railings aid the exit. The wreck sits near a busy harbour mouth, so carry a surface marker buoy and watch for boat traffic. Reports of vehicle break-ins at the parking area mean you should leave nothing visible in your car."
+  },
+  {
+    "id": "cozumel-columbia-reef",
+    "slug": "cozumel-columbia-reef",
+    "locationId": "cozumel-mexico",
+    "name": "Columbia Reef",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Arrecifes_de_Cozumel_National_Park.jpg",
+    "lat": 20.344,
+    "lng": -87.027,
+    "description": "A drift along the southern Cozumel reef where coral buttresses build into tall pinnacles riddled with swim-throughs, arches, and sand chutes, draped in barrel and vase sponges and sea plumes. The deep section starts near 18 m and drops past 40 m into blue water, with a gentler coral plateau running above it. Hawksbill and green turtles graze the coral, spotted eagle rays and nurse sharks patrol the drop-off, and the Cozumel-endemic splendid toadfish tucks into reef crevices. A light-to-moderate current carries divers north along the structure.",
+    "depthRange": {
+      "min": 15,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Splendid toadfish",
+        "scientificName": "Sanopus splendidus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nassau grouper",
+        "scientificName": "Epinephelus striatus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Shorty or 3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Shorty or 3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Shorty or 3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Shorty or 3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Shorty or 3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 89,
+    "getThere": "Fly to Cozumel International Airport (CZM). Dive boats leave from San Miguel and the southern marinas; the southern reefs are roughly a 30-45 minute boat ride. Columbia is a boat-only live-drift dive.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside Parque Nacional Arrecifes de Cozumel; a marine park fee/wristband is required and anchoring is banned. Dived as a live-boat drift, so deploy a surface marker buoy on ascent. The deep pinnacles and swim-throughs make it an advanced dive, while the adjacent Columbia Shallows is far easier."
   }
 ]
