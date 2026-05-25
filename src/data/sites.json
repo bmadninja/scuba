@@ -63689,5 +63689,272 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Demanding blue-water drift — most operators require Advanced Open Water plus solid deep and current experience, and many ask for 50–100+ logged dives. Expect a negative entry, fast descent and short bottom times on a current that can run hard and change direction; there is no bottom within reach, so reef hooks are not used. The Kuroshio and strong northeast winter winds frequently cancel boats from December through February, and hammerhead sightings are never guaranteed. Yonaguni has no recompression chamber — the nearest is on Okinawa's main island and evacuation is air-only."
+  },
+  {
+    "id": "curacao-tugboat",
+    "slug": "curacao-tugboat",
+    "locationId": "westpunt-curacao",
+    "name": "Tugboat (Tugboat Beach)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Wreck_Tugboat_beach_%2835865296594%29.jpg",
+    "lat": 12.069,
+    "lng": -68.862,
+    "description": "A small steel tugboat sunk decades ago in the sheltered shallows of Caracas Bay, now crusted with orange tube sponges and hard coral and circled by sergeant majors, parrotfish, and yellowtail snapper. The wreck sits upright in about 5 m of water, shallow enough to snorkel, while the coral-covered reef slope behind it drops past 30 m. Seahorses, frogfish, octopus, and scorpionfish tuck into the rocks and pilings. Calm, light current, and reachable from the beach, it is one of Cura\u00e7ao's most photographed dives.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "macro",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Sergeant major",
+        "scientificName": "Abudefduf saxatilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Stoplight parrotfish",
+        "scientificName": "Sparisoma viride",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Longsnout seahorse",
+        "scientificName": "Hippocampus reidi",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Caribbean reef octopus",
+        "scientificName": "Octopus briareus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Spotted scorpionfish",
+        "scientificName": "Scorpaena plumieri",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 82,
+    "getThere": "Cura\u00e7ao (CUR / Hato International) has direct flights from Amsterdam, Miami, and several US, Dutch, and Caribbean hubs. Caracas Bay (Tugboat Beach) is on the island's southeast tip, about 20 minutes by car from Willemstad. The wreck is a short surface swim straight off the small beach, or a quick boat hop with any local operator.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "LionsDive Beach Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=LionsDive%20Beach%20Resort%20Curacao",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sandals Royal Cura\u00e7ao",
+        "url": "https://www.booking.com/searchresults.html?ss=Sandals%20Royal%20Curacao",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Scuba Do Cura\u00e7ao",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive torch",
+        "reason": "Light up the wreck's interior and crevices to find seahorses, octopus, and scorpionfish.",
+        "gearId": "light-orcatorch-d550"
+      }
+    ],
+    "notes": "Within the Cura\u00e7ao National Marine Park (Caracas Bay / Tugboat Beach). Easy shore or snorkel access in calm, shallow water; the reef slope just past the wreck drops quickly, so watch depth and air. Resident fish are habituated to divers. Do not touch or stand on the wreck or coral, and keep clear of moored boats and the boat channel on the surface."
   }
 ]
