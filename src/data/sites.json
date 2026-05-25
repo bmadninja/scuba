@@ -57318,5 +57318,234 @@
       }
     ],
     "notes": "Inside Watamu Marine National Park - a Kenya Wildlife Service daily park fee applies and is normally collected by the dive centre. At 25-28 m with possible current it suits Advanced Open Water divers and up. Diving is seasonal: the calm northeast-monsoon window (roughly October-March) gives the best visibility and the whale-shark season, while the southeast monsoon and long rains (April-June) bring rough seas and many operators close or scale back."
+  },
+  {
+    "id": "jeju-south-korea-munseom",
+    "slug": "jeju-south-korea-munseom",
+    "locationId": "jeju-south-korea",
+    "name": "Munseom",
+    "heroImageUrl": null,
+    "lat": 33.2236,
+    "lng": 126.5661,
+    "description": "A volcanic islet about 1.5 km off Seogwipo on Jeju's south coast, ringed by vertical rock walls that drop into Korea's richest soft coral community \u2014 a habitat protected as Natural Monument No. 421. Warmed by the Tsushima Current, a branch of the Kuroshio reaching unusually high latitude, the walls below 15 m are carpeted with orange and pink Dendronephthya soft corals, Scleronephthya colonies and tall gorgonian sea whips, with more than 90 anthozoan species recorded. Schools of yellowtail amberjack hang in the current and green turtles pass through in the warm months. Depths run from a shallow shelf around 5 m to soft-coral cliffs past 40 m, and tidal flow can be strong, so dives are timed to slack water.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Carnation soft coral",
+        "scientificName": "Dendronephthya gigantea",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scleronephthya soft coral",
+        "scientificName": "Scleronephthya gracillimum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Gorgonian sea whip",
+        "scientificName": "Ellisella sp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Alveopora coral",
+        "scientificName": "Alveopora japonica",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowtail amberjack",
+        "scientificName": "Seriola quinqueradiata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "7mm semidry + hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "7mm semidry + hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "7mm semidry + hood"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm full + hood"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3\u20135mm full"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "7mm full + hood"
+      }
+    ],
+    "bestMonths": [
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly to Jeju International Airport (CJU), served by frequent flights from Seoul (GMP/ICN) and other East Asian hubs. Drive about an hour south across the island to Seogwipo, where dive operators run boats from Seogwipo Harbour; the crossing to Munseom takes only 5\u201310 minutes. The site is reached by boat only.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Munseom lies within the Seogwipo Marine Park and Jeju Biosphere Reserve; the soft coral habitat is designated Natural Monument No. 421 \u2014 no touching, anchoring or collecting. Tidal currents can be strong and dives are planned around slack water, so most operators require Advanced Open Water. Winter water drops to around 13\u201314\u00b0C, calling for a 7mm semidry or drysuit with hood and gloves from December through April. Boats depart Seogwipo Harbour; summer typhoon swells (July\u2013September) frequently cancel diving."
   }
 ]
