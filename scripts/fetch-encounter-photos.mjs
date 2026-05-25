@@ -101,10 +101,9 @@ async function pickPhoto(query) {
   for (const r of results) {
     if (acceptable(r)) return r.url;
   }
-  // last resort: take the first non-BAD hit even without an underwater word
-  for (const r of results) {
-    if (!BAD.some((b) => r.title.toLowerCase().includes(b))) return r.url;
-  }
+  // No "last resort" — a MISS is better than a specimen-on-white or
+  // surface shot. Hero rule: every encounter photo must be underwater.
+  // See ~/.claude/projects/.../memory/feedback_hero_must_be_underwater.md
   return null;
 }
 
