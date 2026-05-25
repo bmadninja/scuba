@@ -56392,5 +56392,223 @@
       }
     ],
     "notes": "Reputed to have the highest diver death toll of any site in the world — most fatalities involve recreational divers attempting the Arch (ceiling 55 m, floor 120 m), which is a technical-only objective requiring trimix and overhead training. The shallow reef rim and the Saddle are an easy open-water shore dive; do not be tempted deeper. Memorial plaques to lost divers line the cliff above the entry. Shore access only; small fee and parking at the Bedouin camps."
+  },
+  {
+    "id": "sal-cape-verde-kwarcit-wreck",
+    "slug": "sal-cape-verde-kwarcit-wreck",
+    "locationId": "sal-cape-verde",
+    "name": "Kwarcit Wreck",
+    "heroImageUrl": null,
+    "lat": 16.5827,
+    "lng": -22.9192,
+    "description": "The Kwarcit — widely called the Boris — is a 50-metre Russian stern trawler scuttled off Sal in January 2006 to seed an artificial reef. She sits upright on sand with the deck at 23 metres and the keel at 28, intact enough that wreck-certified divers can drop through the bridge and cargo holds. Round stingrays lie buried in the sand along the hull, nurse sharks occasionally rest beneath the stern, and frogfish, scorpionfish and nudibranchs work the encrusted railings and superstructure. Depth plus an exposed, sometimes shifting Atlantic current keep this an advanced dive, reached by a 15-minute boat run from Santa Maria.",
+    "depthRange": {
+      "min": 23,
+      "max": 28
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Round stingray",
+        "scientificName": "Taeniura grabata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Striated frogfish",
+        "scientificName": "Antennarius striatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dusky grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red scorpionfish",
+        "scientificName": "Scorpaena scrofa",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 70,
+    "getThere": "Fly into Amílcar Cabral International Airport (SID) on Sal. Most dive centres are based in Santa Maria on the south coast; the wreck is about a 15-minute boat ride offshore.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Entering the bridge and holds requires wreck certification. With a 28 m maximum depth and exposed Atlantic swell that can bring strong, shifting current, it is an advanced-only dive — nitrox extends bottom time and a dive computer is essential."
   }
 ]
