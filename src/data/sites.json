@@ -61588,5 +61588,299 @@
       }
     ],
     "notes": "HEPCA manages Samadai as a protected dolphin reserve with a daily cap of about 10 boats, 175 snorkelers and 100 divers; operators must hold a permit. Three zones are buoyed: Zone A (inner lagoon) is a dolphin sanctuary closed to all people, Zone B is for guided snorkeling, and scuba diving is confined to Zone C on the outer reef. Snorkel boats are admitted roughly 10:00-14:00 and dive boats 09:00-15:00. Do not chase, touch or feed the dolphins; let them approach. Day-boat or liveaboard only, no shore access."
+  },
+  {
+    "id": "wolf-galapagos-landslide",
+    "slug": "wolf-galapagos-landslide",
+    "locationId": "wolf-galapagos-ecuador",
+    "name": "The Landslide (El Derrumbe)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Sphyrna_lewini_galapagos_2.jpg",
+    "lat": 1.3795,
+    "lng": -91.814,
+    "description": "A boulder slope on Wolf Island's southeast corner that looks like the cliff let go yesterday — broken rock and rubble spilling into the blue. Drop to 10 m and work down to a cleaning station where scalloped hammerheads stack up by the dozen while barberfish pick them clean. Galápagos sharks patrol the edge; from June to November whale sharks, many of them pregnant females, cruise the deep water beyond. Moray eels jam the cracks, and eagle rays and yellowfin tuna ride past in the current.",
+    "depthRange": {
+      "min": 10,
+      "max": 25
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Galapagos shark",
+        "scientificName": "Carcharhinus galapagensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silky shark",
+        "scientificName": "Carcharhinus falciformis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit + hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit + hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit + hood"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 20,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Coldwater wetsuit + hood"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 19,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Coldwater wetsuit + hood + vest"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Coldwater wetsuit + hood + vest"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Coldwater wetsuit + hood + vest"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 20,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Coldwater wetsuit + hood"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 21,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Coldwater wetsuit + hood"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit + hood"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 97,
+    "getThere": "No international flights serve the Galápagos — fly into Quito (UIO) or Guayaquil (GYE) on mainland Ecuador, then a ~2-hour LATAM or Avianca flight to Baltra (GPS) or San Cristóbal (SCY). Wolf Island sits ~160 km north of the central islands and is reachable only by liveaboard; expect a 14–16 hour overnight crossing from the central archipelago.",
+    "lodging": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Galápagos Aggressor III",
+        "url": "https://www.liveaboard.com/diving/search?destination=Galapagos%20Aggressor%20III",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Humboldt Explorer",
+        "url": "https://www.liveaboard.com/diving/search?destination=Humboldt%20Explorer%20Galapagos",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Galápagos Master",
+        "url": "https://www.liveaboard.com/diving/search?destination=Galapagos%20Master%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Aggressor Adventures",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Coldwater wetsuit + hood",
+        "reason": "Humboldt upwellings drop temp to 19°C in season — third dive of the day is the cold one.",
+        "gearId": "wetsuit-bare-5mm-full"
+      },
+      {
+        "name": "Reef hook",
+        "reason": "Hooking is the only way to hold the line while hammerheads pass.",
+        "gearId": "reef-hook-innovative"
+      },
+      {
+        "name": "Nautilus Lifeline or PLB",
+        "reason": "Surface separations have happened here. PLB is standard kit.",
+        "gearId": "plb-acr-resqlink"
+      }
+    ],
+    "notes": "Galápagos Marine Reserve park fees and a licensed dive guide are mandatory, and Wolf is liveaboard-only. Strong, shifting currents and occasional surface separations — a reef hook and a PLB or Nautilus Lifeline are standard kit. Advanced certification with recent cold-water and current experience expected."
   }
 ]
