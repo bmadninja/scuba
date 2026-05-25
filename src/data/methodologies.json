@@ -1,5 +1,13 @@
 [
   {
+    "claimId": "sighting-occurrence-cluster",
+    "claimType": "species-presence",
+    "sourceIds": ["gbif", "obis"],
+    "confidence": "medium",
+    "limitations": "We aggregate confirmed occurrence records from GBIF and OBIS within a fixed radius of each dive site. Occurrence records confirm presence and reveal seasonality clustering, but they DO NOT measure per-dive probability — there is no eligible-effort denominator. We deliberately do not publish a numeric '% chance of sighting' from this data.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
     "claimId": "encounter-sardine-run-seasonality",
     "claimType": "seasonality",
     "sourceIds": ["gbif", "obis"],

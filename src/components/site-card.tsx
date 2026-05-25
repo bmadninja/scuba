@@ -1,5 +1,15 @@
 import Link from "next/link";
+import {
+  formatLastConfirmed,
+  getHeadlineSightingForSite,
+} from "@/lib/data/sightings";
 import type { Location, Site } from "@/lib/data/types";
+
+const CONFIDENCE_DOT: Record<"high" | "medium" | "low", string> = {
+  high: "bg-emerald-500",
+  medium: "bg-amber-500",
+  low: "bg-orange-500",
+};
 
 export function SiteCard({
   site,
@@ -10,6 +20,7 @@ export function SiteCard({
   location?: Location | null;
   inSeason: boolean;
 }) {
+  const sighting = getHeadlineSightingForSite(site.id);
   return (
     <Link
       href={`/sites/${site.slug}`}
@@ -45,6 +56,23 @@ export function SiteCard({
         <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
           {site.description}
         </p>
+        {sighting ? (
+          <p
+            className="mt-2 flex items-center gap-1.5 text-[11px] leading-5 text-slate-600"
+            title={`Confidence: ${sighting.confidence}. Based on ${sighting.recentRecordCount} confirmed records within ${sighting.proximityRadiusKm} km of this site.`}
+          >
+            <span
+              className={`inline-block size-1.5 shrink-0 rounded-full ${CONFIDENCE_DOT[sighting.confidence]}`}
+              aria-hidden
+            />
+            <span className="truncate">
+              <span className="font-semibold text-slate-700">
+                {sighting.speciesCommon}
+              </span>{" "}
+              · last confirmed {formatLastConfirmed(sighting.lastConfirmedAt)}
+            </span>
+          </p>
+        ) : null}
         <div className="mt-3 flex flex-wrap items-center gap-1.5">
           <span className="inline-block rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-700">
             {site.depthRange.min}–{site.depthRange.max} m

@@ -193,6 +193,32 @@ export type Encounter = {
   bucketListRank?: number;
 };
 
+/**
+ * Per-site, per-species evidence record. We deliberately do NOT carry a
+ * `probabilityPercent` field — numeric probabilities are only meaningful
+ * with a documented effort denominator, and most of our seed data lacks
+ * one. UI surfaces `lastConfirmedAt`, `recentRecordCount`, proximity, and
+ * seasonality instead.
+ */
+export type SightingEvidence = {
+  id: string;
+  siteId: string;
+  speciesCommon: string;
+  speciesScientific?: string;
+  /** ISO date (YYYY-MM-DD). Null means "no confirmed record on file". */
+  lastConfirmedAt: string | null;
+  /** Count of confirmed records within the proximity radius in the last 24 months. */
+  recentRecordCount: number;
+  /** Radius (km) over which records were aggregated for `recentRecordCount`. */
+  proximityRadiusKm: number;
+  /** Months (1-12) where records cluster. Empty when no seasonal signal. */
+  seasonalityMonths: number[];
+  confidence: "high" | "medium" | "low";
+  sourceIds: string[];
+  methodologyClaimIds: string[];
+  notes?: string;
+};
+
 export type SourceType =
   | "scientific-survey"
   | "government-monitoring"

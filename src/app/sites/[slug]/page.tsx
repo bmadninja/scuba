@@ -9,11 +9,28 @@ import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
 import { getGearById } from "@/lib/data/gear";
+import {
+  formatLastConfirmed,
+  getSightingsBySiteId,
+} from "@/lib/data/sightings";
+import { getSourceById } from "@/lib/data/sources";
+import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import type {
   ConditionsMonth,
   Site,
   SpeciesEntry,
 } from "@/lib/data/types";
+
+const MONTH_ABBR = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+const CONFIDENCE_RING: Record<"high" | "medium" | "low", string> = {
+  high: "bg-emerald-50 text-emerald-800 ring-emerald-200",
+  medium: "bg-amber-50 text-amber-800 ring-amber-200",
+  low: "bg-orange-50 text-orange-800 ring-orange-200",
+};
 
 export function generateStaticParams() {
   return getAllSites().map((s) => ({ slug: s.slug }));
@@ -77,6 +94,19 @@ export default async function SiteDetailPage({
   const location = getLocationById(site.locationId);
   const currentMonth = new Date().getUTCMonth() + 1;
   const inSeason = site.bestMonths.includes(currentMonth);
+  const sightings = getSightingsBySiteId(site.id);
+  const sightingSourceIds = Array.from(
+    new Set(sightings.flatMap((s) => s.sourceIds)),
+  );
+  const sightingMethodIds = Array.from(
+    new Set(sightings.flatMap((s) => s.methodologyClaimIds)),
+  );
+  const sightingSources = sightingSourceIds
+    .map(getSourceById)
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
+  const sightingMethods = sightingMethodIds
+    .map(getMethodologyByClaimId)
+    .filter((m): m is NonNullable<typeof m> => Boolean(m));
 
   const heroUrl =
     site.heroImageUrl ??
@@ -217,6 +247,117 @@ export default async function SiteDetailPage({
               ))}
             </ul>
           </Section>
+
+          {sightings.length > 0 ? (
+            <Section
+              title="Sightings evidence"
+              kicker={`${sightings.length} record${sightings.length === 1 ? "" : "s"} on file`}
+            >
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {sightings.map((s) => (
+                  <li
+                    key={s.id}
+                    className="rounded-xl border border-slate-200 bg-white p-4"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <div className="font-semibold text-slate-900">
+                          {s.speciesCommon}
+                        </div>
+                        {s.speciesScientific ? (
+                          <div className="text-xs italic text-slate-500">
+                            {s.speciesScientific}
+                          </div>
+                        ) : null}
+                      </div>
+                      <span
+                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset ${CONFIDENCE_RING[s.confidence]}`}
+                      >
+                        {s.confidence} confidence
+                      </span>
+                    </div>
+                    <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-[12px] leading-5">
+                      <dt className="text-slate-500">Last confirmed</dt>
+                      <dd className="text-slate-800">
+                        {formatLastConfirmed(s.lastConfirmedAt)}
+                      </dd>
+                      <dt className="text-slate-500">Recent records</dt>
+                      <dd className="text-slate-800">
+                        {s.recentRecordCount} within {s.proximityRadiusKm} km
+                      </dd>
+                      {s.seasonalityMonths.length > 0 &&
+                      s.seasonalityMonths.length < 12 ? (
+                        <>
+                          <dt className="text-slate-500">Cluster months</dt>
+                          <dd className="text-slate-800">
+                            {s.seasonalityMonths
+                              .map((m) => MONTH_ABBR[m - 1])
+                              .join(", ")}
+                          </dd>
+                        </>
+                      ) : null}
+                      {s.seasonalityMonths.length === 12 ? (
+                        <>
+                          <dt className="text-slate-500">Cluster months</dt>
+                          <dd className="text-slate-800">Year-round</dd>
+                        </>
+                      ) : null}
+                    </dl>
+                    {s.notes ? (
+                      <p className="mt-2 text-[12px] leading-5 text-slate-600">
+                        {s.notes}
+                      </p>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+
+              <details className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4 text-[12px] leading-5 text-slate-700">
+                <summary className="cursor-pointer text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
+                  Sources & methodology
+                </summary>
+                <div className="mt-3 space-y-3">
+                  {sightingMethods.map((m) => (
+                    <div key={m.claimId}>
+                      <p className="font-semibold text-slate-800">
+                        How we summarise this
+                      </p>
+                      <p className="mt-1">{m.limitations}</p>
+                    </div>
+                  ))}
+                  {sightingSources.length > 0 ? (
+                    <div>
+                      <p className="font-semibold text-slate-800">Sources</p>
+                      <ul className="mt-1 list-disc space-y-0.5 pl-5">
+                        {sightingSources.map((src) => (
+                          <li key={src.id}>
+                            {src.url ? (
+                              <a
+                                href={src.url}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="text-[#0089de] hover:underline"
+                              >
+                                {src.name}
+                              </a>
+                            ) : (
+                              src.name
+                            )}
+                            {src.publisher ? (
+                              <span className="text-slate-500">
+                                {" "}
+                                — {src.publisher}
+                              </span>
+                            ) : null}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+                </div>
+              </details>
+            </Section>
+          ) : null}
 
           <Section title="Conditions">
             <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">

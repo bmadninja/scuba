@@ -29,6 +29,7 @@ const readJson = (rel) => JSON.parse(readFileSync(resolve(root, rel), "utf8"));
 const sources = readJson("src/data/sources.json");
 const methodologies = readJson("src/data/methodologies.json");
 const encounters = readJson("src/data/encounters.json");
+const sightings = readJson("src/data/sightings.json");
 
 const sourceIds = new Set(sources.map((s) => s.id));
 const methodologyByClaim = new Map(methodologies.map((m) => [m.claimId, m]));
@@ -146,6 +147,44 @@ for (const e of encounters) {
   }
 }
 
+// --- Sighting evidence provenance (Story 08) -----------------------------
+for (const s of sightings) {
+  if (!Array.isArray(s.sourceIds) || s.sourceIds.length === 0) {
+    report("error", "sighting", s.id, "missing source");
+  } else {
+    for (const sid of s.sourceIds) {
+      if (!sourceIds.has(sid)) {
+        report("error", "sighting", s.id, `references unknown source "${sid}"`);
+      }
+    }
+  }
+  if (!Array.isArray(s.methodologyClaimIds) || s.methodologyClaimIds.length === 0) {
+    report("error", "sighting", s.id, "missing method");
+  } else {
+    for (const mid of s.methodologyClaimIds) {
+      if (!methodologyByClaim.has(mid)) {
+        report(
+          "error",
+          "sighting",
+          s.id,
+          `references unknown methodology "${mid}"`,
+        );
+      }
+    }
+  }
+  // AC3: no numeric probability without a methodology calculation. We
+  // don't have such a field in the schema by design, but if someone
+  // sneaks a "probabilityPercent" in via raw JSON, fail loudly.
+  if (Object.prototype.hasOwnProperty.call(s, "probabilityPercent")) {
+    report(
+      "error",
+      "sighting",
+      s.id,
+      "unsupported numeric probability — schema forbids probabilityPercent without a documented effort denominator",
+    );
+  }
+}
+
 // --- Output --------------------------------------------------------------
 const errors = issues.filter((i) => i.severity === "error");
 const warnings = issues.filter((i) => i.severity === "warn");
@@ -157,7 +196,7 @@ for (const i of issues) {
 
 console.log("");
 console.log(
-  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s)`,
+  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s)`,
 );
 console.log(`  ${errors.length} error(s), ${warnings.length} warning(s)`);
 
