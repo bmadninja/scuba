@@ -52916,5 +52916,222 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Permits may be required for diving on the HMAS Brisbane wreck, check with local operators."
+  },
+  {
+    "id": "raja-ampat-indonesia-hmas-canberra",
+    "slug": "raja-ampat-indonesia-hmas-canberra",
+    "locationId": "raja-ampat-indonesia",
+    "name": "HMAS Canberra",
+    "heroImageUrl": null,
+    "lat": -38.298,
+    "lng": 144.685,
+    "description": "The HMAS Canberra is a scuttled FFG-7 guided-missile frigate, transformed into an artificial reef and popular dive wreck off the coast of Victoria, Australia, near Port Phillip Heads. This site offers challenging and rewarding penetration opportunities and exterior exploration, attracting advanced divers. The wreck's structure provides habitat for diverse marine life.",
+    "depthRange": {
+      "min": 18,
+      "max": 28
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Schools of fish",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Nudibranchs",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Blue Devils",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Moray Eels",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 14,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 14,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 75,
+    "getThere": "Fly into Melbourne (MEL) Airport, then drive approximately 1.5-2 hours to the Mornington Peninsula (e.g., Blairgowrie or Portsea). Dive operators depart regularly from these towns to the HMAS Canberra wreck site.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "A permit is required for diving the HMAS Canberra. Due to its depth and the potential for strong currents, this site is recommended for experienced advanced divers with appropriate training. Always dive with a reputable local operator."
   }
 ]
