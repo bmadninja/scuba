@@ -55671,5 +55671,222 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Shilang is a sheltered, beginner-friendly shore-entry site, but the Kuroshio can push moderate currents around Green Island's exposed points, and the toppled Big Mushroom lies at about 18 m roughly 150 m offshore — usually reached by boat or a guided descent. Avoid the December–February northeast monsoon (rough seas, cooler water); book dives and rooms ahead for the July–August peak. Nearest recompression chamber is on Taiwan's main island, with air or ferry evacuation only."
+  },
+  {
+    "id": "providencia-felipes-place",
+    "slug": "providencia-felipes-place",
+    "locationId": "providencia-colombia",
+    "name": "Felipe's Place",
+    "heroImageUrl": null,
+    "lat": 13.345,
+    "lng": -81.39,
+    "description": "The signature reef dive of Providencia, named for local diver and explorer Felipe Cabeza. White sand channels lead out to a stepped series of coral terraces and ledges dropping from about 9 to 24 metres, draped in sea fans, sponges, and black coral. Nurse sharks rest beneath the overhangs, great barracuda hang in the blue, and hawksbill turtles graze the slope. The site sits on the Old Providence barrier reef — one of the largest in the Caribbean and part of the UNESCO Seaflower Biosphere Reserve. A small submerged Christ statue marks the spot.",
+    "depthRange": {
+      "min": 9,
+      "max": 24
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean spiny lobster",
+        "scientificName": "Panulirus argus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean reef shark",
+        "scientificName": "Carcharhinus perezi",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      12
+    ],
+    "editorialRank": 76,
+    "getThere": "Fly to San Andres (ADZ) from Bogota or Medellin, then take a 20-minute Satena turboprop to Providencia's El Embrujo Airport (PVA); a catamaran from San Andres is the slower (~3.5 hr) alternative. Dives launch by boat from Aguadulce on the island's west side.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside the UNESCO Seaflower Biosphere Reserve and the Old Providence McBean Lagoon marine park — no gloves and no contact with coral; marine-park rules are enforced. Few operators work the island and the nearest recompression chamber is off-island, so dive conservatively. Visibility peaks in the Dec-Apr dry season; Sep-Nov is hurricane season."
   }
 ]
