@@ -237,6 +237,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                 <button
                   key={e.slug}
                   type="button"
+                  aria-pressed={active}
                   onClick={() => setParam("encounter", active ? null : e.slug)}
                   className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
                     active
@@ -272,6 +273,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                   <button
                     key={o.value}
                     type="button"
+                    aria-pressed={active}
                     onClick={() => setParam("cert", active ? null : o.value)}
                     className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
                       active
@@ -294,6 +296,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                   <button
                     key={o.value}
                     type="button"
+                    aria-pressed={active}
                     onClick={() => toggleDiveType(o.value)}
                     className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
                       active
@@ -319,6 +322,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                 <button
                   key={label}
                   type="button"
+                  aria-pressed={active}
                   onClick={() => setParam("month", active ? null : String(m))}
                   className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
                     active
@@ -342,6 +346,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           <div className="flex flex-wrap gap-1.5">
             <button
               type="button"
+              aria-pressed={climate === "stressed"}
               onClick={() =>
                 setParam("climate", climate === "stressed" ? null : "stressed")
               }
@@ -355,6 +360,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             </button>
             <button
               type="button"
+              aria-pressed={climate === "stable"}
               onClick={() =>
                 setParam("climate", climate === "stable" ? null : "stable")
               }

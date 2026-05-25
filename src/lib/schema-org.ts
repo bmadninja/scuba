@@ -3,7 +3,7 @@
 // extract structured data.
 
 import { SITE_NAME, SITE_URL } from "./site-config";
-import type { Location, Site } from "./data/types";
+import type { Encounter, Location, Site } from "./data/types";
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -128,4 +128,48 @@ function humanSkillLevel(level: string): string {
 
 function humanDiveType(t: string): string {
   return t.replace("-", " ");
+}
+
+export function encounterSchema(e: Encounter) {
+  const seasonReadable =
+    e.bestMonths.length === 12
+      ? "Year-round"
+      : e.bestMonths.map((m) => MONTHS[m - 1]).join(", ");
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: e.name,
+    description: e.shortDescription,
+    url: `${SITE_URL}/encounters/${e.slug}`,
+    image: e.heroImageUrl,
+    articleSection: "Bucket-list dive encounters",
+    about: e.speciesScientific
+      ? { "@type": "Taxon", name: e.speciesScientific }
+      : undefined,
+    keywords: [
+      e.category.replace(/-/g, " "),
+      e.speciesCommon,
+      e.difficulty,
+      "scuba diving",
+    ]
+      .filter(Boolean)
+      .join(", "),
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Best season",
+        value: seasonReadable,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Required experience",
+        value: e.difficulty,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Evidence confidence",
+        value: e.confidence,
+      },
+    ],
+  };
 }

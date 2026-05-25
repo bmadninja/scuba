@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { encounterSchema } from "@/lib/schema-org";
 import {
   getAllEncounters,
   getEncounterBySlug,
@@ -70,6 +72,7 @@ export default async function EncounterDetailPage({
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      <JsonLd data={encounterSchema(e)} />
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2">
