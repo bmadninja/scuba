@@ -220,6 +220,76 @@ export type SightingEvidence = {
   notes?: string;
 };
 
+/**
+ * NOAA Coral Reef Watch bleaching alert level (5-step scale).
+ * See https://coralreefwatch.noaa.gov/product/5km/methodology.php
+ */
+export type BleachingAlertLevel =
+  | "no-stress"
+  | "watch"
+  | "warning"
+  | "alert-1"
+  | "alert-2";
+
+/**
+ * Observed reef condition from an in-situ survey. Each instance is the
+ * snapshot of a single survey, not a derived/modelled value.
+ */
+export type ObservedReefCondition = {
+  surveyDate: string;
+  surveyMethod: string;
+  /** Live hard-coral cover, percent. */
+  coralCoverPercent?: number;
+  /** Share of surveyed coral colonies that were bleached, percent. */
+  bleachedPercent?: number;
+  /** Share of surveyed coral colonies that died (recent mortality), percent. */
+  mortalityPercent?: number;
+  sourceIds: string[];
+  notes?: string;
+};
+
+/**
+ * Current thermal stress reading. Sourced from NOAA Coral Reef Watch or
+ * an equivalent satellite product.
+ */
+export type ThermalStress = {
+  asOf: string;
+  alertLevel: BleachingAlertLevel;
+  /** Degree Heating Weeks (°C-weeks). */
+  degreeHeatingWeeks?: number;
+  /** Sea-surface temperature anomaly vs climatology (°C). */
+  sstAnomalyC?: number;
+  /** HotSpot value (°C above the warmest monthly mean). */
+  hotspotC?: number;
+  sourceIds: string[];
+};
+
+/**
+ * Forward-looking projection. Must reference a documented methodology;
+ * the validator rejects records that ship a projection without one.
+ */
+export type ReefProjection = {
+  scenario: string;
+  /** Free-text projection statement (e.g. "moderate bleaching risk by 2030"). */
+  statement: string;
+  uncertainty: string;
+  sourceIds: string[];
+  methodologyClaimIds: string[];
+};
+
+export type ReefHealthRecord = {
+  id: string;
+  /** Either a locationId or a siteId (one only). */
+  locationId?: string;
+  siteId?: string;
+  observed?: ObservedReefCondition;
+  thermalStress?: ThermalStress;
+  projection?: ReefProjection;
+  /** Methodology notes covering the observed + thermal-stress fields. */
+  methodologyClaimIds: string[];
+  lastReviewedAt: string;
+};
+
 export type SourceType =
   | "scientific-survey"
   | "government-monitoring"

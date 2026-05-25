@@ -30,6 +30,11 @@ const sources = readJson("src/data/sources.json");
 const methodologies = readJson("src/data/methodologies.json");
 const encounters = readJson("src/data/encounters.json");
 const sightings = readJson("src/data/sightings.json");
+const reefHealth = readJson("src/data/reef-health.json");
+const locations = readJson("src/data/locations.json");
+const sites = readJson("src/data/sites.json");
+const locationIds = new Set(locations.map((l) => l.id));
+const siteIds = new Set(sites.map((s) => s.id));
 
 const sourceIds = new Set(sources.map((s) => s.id));
 const methodologyByClaim = new Map(methodologies.map((m) => [m.claimId, m]));
@@ -185,6 +190,101 @@ for (const s of sightings) {
   }
 }
 
+// --- Reef-health provenance (Story 09) -----------------------------------
+//
+// Hard rules from the PRD:
+//   AC2 thermal stress must reference NOAA CRW (or equivalent) sources
+//   AC4 projection without methodology = error
+//   AC5 records must link to a real site OR location (not both)
+//   AC6 validation prevents projection claims without methodology
+//
+for (const r of reefHealth) {
+  if (Boolean(r.locationId) === Boolean(r.siteId)) {
+    report(
+      "error",
+      "reef-health",
+      r.id,
+      "must reference exactly one of locationId or siteId",
+    );
+  }
+  if (r.locationId && !locationIds.has(r.locationId)) {
+    report(
+      "error",
+      "reef-health",
+      r.id,
+      `references unknown location "${r.locationId}"`,
+    );
+  }
+  if (r.siteId && !siteIds.has(r.siteId)) {
+    report(
+      "error",
+      "reef-health",
+      r.id,
+      `references unknown site "${r.siteId}"`,
+    );
+  }
+  if (!Array.isArray(r.methodologyClaimIds) || r.methodologyClaimIds.length === 0) {
+    report("error", "reef-health", r.id, "missing method");
+  } else {
+    for (const mid of r.methodologyClaimIds) {
+      if (!methodologyByClaim.has(mid)) {
+        report(
+          "error",
+          "reef-health",
+          r.id,
+          `references unknown methodology "${mid}"`,
+        );
+      }
+    }
+  }
+
+  const checkSources = (label, sids) => {
+    if (!Array.isArray(sids) || sids.length === 0) {
+      report("error", "reef-health", r.id, `${label} missing source`);
+      return;
+    }
+    for (const sid of sids) {
+      if (!sourceIds.has(sid)) {
+        report(
+          "error",
+          "reef-health",
+          r.id,
+          `${label} references unknown source "${sid}"`,
+        );
+      }
+    }
+  };
+
+  if (r.observed) checkSources("observed", r.observed.sourceIds);
+  if (r.thermalStress) checkSources("thermalStress", r.thermalStress.sourceIds);
+
+  if (r.projection) {
+    checkSources("projection", r.projection.sourceIds);
+    if (
+      !Array.isArray(r.projection.methodologyClaimIds) ||
+      r.projection.methodologyClaimIds.length === 0
+    ) {
+      report(
+        "error",
+        "reef-health",
+        r.id,
+        "projection has no methodologyClaimIds — projections without documented method are forbidden",
+      );
+    } else {
+      for (const mid of r.projection.methodologyClaimIds) {
+        if (!methodologyByClaim.has(mid)) {
+          report(
+            "error",
+            "reef-health",
+            r.id,
+            `projection references unknown methodology "${mid}"`,
+          );
+        }
+      }
+    }
+  }
+}
+
 // --- Output --------------------------------------------------------------
 const errors = issues.filter((i) => i.severity === "error");
 const warnings = issues.filter((i) => i.severity === "warn");
@@ -196,7 +296,7 @@ for (const i of issues) {
 
 console.log("");
 console.log(
-  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s)`,
+  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s), ${reefHealth.length} reef-health record(s)`,
 );
 console.log(`  ${errors.length} error(s), ${warnings.length} warning(s)`);
 

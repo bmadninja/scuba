@@ -1,5 +1,24 @@
 [
   {
+    "claimId": "reef-health-aims-noaa",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "aims-ltmp",
+      "gcrmn",
+      "agrra",
+      "ncrmp",
+      "reef-check",
+      "noaa-crw",
+      "allen-coral-atlas",
+      "gbrmpa",
+      "icri",
+      "reef-life-survey"
+    ],
+    "confidence": "high",
+    "limitations": "Observed coral cover, bleaching, and mortality come from named in-situ surveys with a stated date and method — they describe one snapshot of one reef and do not extrapolate to neighbouring sites. Current thermal stress is satellite-derived from NOAA Coral Reef Watch at ~5 km resolution; it indicates risk, not observed coral damage. We deliberately separate observed condition, current thermal stress, and projection — and we never publish a projection without a documented model and uncertainty.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
     "claimId": "sighting-occurrence-cluster",
     "claimType": "species-presence",
     "sourceIds": ["gbif", "obis", "inaturalist", "iucn-red-list"],

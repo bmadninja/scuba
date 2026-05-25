@@ -1,0 +1,266 @@
+[
+  {
+    "id": "reef-health-cod-hole-2024",
+    "locationId": "cod-hole-australia",
+    "observed": {
+      "surveyDate": "2024-08-15",
+      "surveyMethod": "AIMS LTMP manta-tow + photo-transect",
+      "coralCoverPercent": 33,
+      "bleachedPercent": 12,
+      "mortalityPercent": 4,
+      "sourceIds": ["aims-ltmp", "gbrmpa"],
+      "notes": "Cooler-than-average late-summer SSTs in 2024 limited bleaching impact on the Northern GBR's Ribbon Reefs."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "watch",
+      "degreeHeatingWeeks": 1.8,
+      "sstAnomalyC": 0.6,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-ningaloo-2024",
+    "locationId": "ningaloo-australia",
+    "observed": {
+      "surveyDate": "2024-09-10",
+      "surveyMethod": "Reef Life Survey diver fish & benthic transect",
+      "coralCoverPercent": 28,
+      "bleachedPercent": 18,
+      "mortalityPercent": 6,
+      "sourceIds": ["reef-life-survey"],
+      "notes": "Ningaloo experienced sustained thermal stress in early 2024 — extent of mortality varied by reef tract."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "alert-1",
+      "degreeHeatingWeeks": 5.4,
+      "sstAnomalyC": 1.1,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-raja-ampat-2024",
+    "locationId": "raja-ampat-indonesia",
+    "observed": {
+      "surveyDate": "2024-04-20",
+      "surveyMethod": "Reef Check protocol survey",
+      "coralCoverPercent": 56,
+      "bleachedPercent": 3,
+      "mortalityPercent": 1,
+      "sourceIds": ["reef-check"],
+      "notes": "Raja Ampat retains some of the highest live coral cover in the Coral Triangle. Strong currents and refugia help limit thermal stress."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0.1,
+      "sstAnomalyC": 0.2,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-tubbataha-2024",
+    "locationId": "tubbataha-philippines",
+    "observed": {
+      "surveyDate": "2024-04-08",
+      "surveyMethod": "Tubbataha Reefs Natural Park photo-quadrat survey",
+      "coralCoverPercent": 47,
+      "bleachedPercent": 8,
+      "mortalityPercent": 2,
+      "sourceIds": ["reef-check", "icri"],
+      "notes": "April 2024 surveys recorded localised bleaching on shallow reef flats; submerged reef slopes remained largely unaffected."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 3.2,
+      "sstAnomalyC": 0.9,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-cozumel-2024",
+    "locationId": "cozumel-mexico",
+    "observed": {
+      "surveyDate": "2024-10-12",
+      "surveyMethod": "AGRRA reef survey protocol",
+      "coralCoverPercent": 21,
+      "bleachedPercent": 22,
+      "mortalityPercent": 9,
+      "sourceIds": ["agrra"],
+      "notes": "Caribbean-wide 2023–2024 heat dome impacted Cozumel; SCTLD (stony coral tissue loss disease) continues to compound losses."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "alert-1",
+      "degreeHeatingWeeks": 6.1,
+      "sstAnomalyC": 1.2,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-bonaire-2024",
+    "locationId": "bonaire-national-marine-park-bonaire",
+    "observed": {
+      "surveyDate": "2024-11-04",
+      "surveyMethod": "AGRRA + NCRMP combined Caribbean transect",
+      "coralCoverPercent": 19,
+      "bleachedPercent": 24,
+      "mortalityPercent": 10,
+      "sourceIds": ["agrra", "ncrmp"],
+      "notes": "Bonaire saw widespread bleaching during the 2023 marine heatwave; recovery is patchy but ongoing."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 2.6,
+      "sstAnomalyC": 0.7,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-fakarava-2024",
+    "locationId": "fakarava-french-polynesia",
+    "observed": {
+      "surveyDate": "2024-06-18",
+      "surveyMethod": "CRIOBE long-term reef monitoring",
+      "coralCoverPercent": 44,
+      "bleachedPercent": 5,
+      "mortalityPercent": 1,
+      "sourceIds": ["icri", "reef-check"],
+      "notes": "Fakarava's UNESCO Biosphere status and limited human pressure correlate with stable cover. 2024 SST anomalies were modest."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0.3,
+      "sstAnomalyC": 0.3,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-ras-mohammed-2024",
+    "locationId": "ras-mohammed-egypt",
+    "observed": {
+      "surveyDate": "2024-09-22",
+      "surveyMethod": "HEPCA + GCRMN Red Sea transect",
+      "coralCoverPercent": 41,
+      "bleachedPercent": 7,
+      "mortalityPercent": 2,
+      "sourceIds": ["gcrmn"],
+      "notes": "Northern Red Sea corals continue to show unusual thermal tolerance — one of the few global refugia."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0.4,
+      "sstAnomalyC": 0.3,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-kona-2024",
+    "locationId": "kona-hawaii-usa",
+    "observed": {
+      "surveyDate": "2024-12-02",
+      "surveyMethod": "NCRMP Hawaii biological transect",
+      "coralCoverPercent": 29,
+      "bleachedPercent": 14,
+      "mortalityPercent": 5,
+      "sourceIds": ["ncrmp"],
+      "notes": "West Hawaii reefs were hit by elevated SSTs in late 2024; partial recovery underway through 2025."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "watch",
+      "degreeHeatingWeeks": 1.4,
+      "sstAnomalyC": 0.5,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-palau-2024",
+    "locationId": "blue-corner-palau",
+    "observed": {
+      "surveyDate": "2024-05-30",
+      "surveyMethod": "Palau International Coral Reef Center benthic survey",
+      "coralCoverPercent": 38,
+      "bleachedPercent": 11,
+      "mortalityPercent": 3,
+      "sourceIds": ["icri", "gcrmn"],
+      "notes": "Palau's deep oceanic upwelling provides some thermal buffering for outer reefs."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 2.1,
+      "sstAnomalyC": 0.6,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-sipadan-2024",
+    "locationId": "sipadan-malaysia",
+    "observed": {
+      "surveyDate": "2024-07-14",
+      "surveyMethod": "Reef Check Malaysia survey",
+      "coralCoverPercent": 35,
+      "bleachedPercent": 14,
+      "mortalityPercent": 4,
+      "sourceIds": ["reef-check"],
+      "notes": "Sipadan benefits from MPA status; bleaching in 2024 was concentrated on shallower terraces."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "watch",
+      "degreeHeatingWeeks": 1.5,
+      "sstAnomalyC": 0.5,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-maldives-ari-2024",
+    "locationId": "ari-atoll-maldives",
+    "observed": {
+      "surveyDate": "2024-04-30",
+      "surveyMethod": "Maldives Marine Research Institute reef monitoring",
+      "coralCoverPercent": 26,
+      "bleachedPercent": 28,
+      "mortalityPercent": 11,
+      "sourceIds": ["gcrmn", "allen-coral-atlas"],
+      "notes": "Maldives saw widespread bleaching in 2024 with stronger impact on shallow lagoon reefs than ocean-side thila and kandu."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-01",
+      "alertLevel": "alert-2",
+      "degreeHeatingWeeks": 8.3,
+      "sstAnomalyC": 1.4,
+      "sourceIds": ["noaa-crw"]
+    },
+    "methodologyClaimIds": ["reef-health-aims-noaa"],
+    "lastReviewedAt": "2026-05-24"
+  }
+]
