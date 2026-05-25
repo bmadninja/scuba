@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useMemo } from "react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { SiteCard } from "./site-card";
@@ -210,7 +211,13 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           {selectedEncounter ? (
             <p className="mt-1.5 text-[11px] text-slate-500">
               Best months: {selectedEncounter.bestMonths.map((m) => MONTH_LABELS[m - 1]).join(", ")}.{" "}
-              Difficulty: {selectedEncounter.difficulty}. Confidence: {selectedEncounter.confidence}.
+              Difficulty: {selectedEncounter.difficulty}. Confidence: {selectedEncounter.confidence}.{" "}
+              <Link
+                href={`/encounters/${selectedEncounter.slug}`}
+                className="font-semibold text-[#0089de] hover:underline"
+              >
+                View details →
+              </Link>
             </p>
           ) : null}
         </FilterField>

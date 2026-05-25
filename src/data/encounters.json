@@ -7,7 +7,11 @@
     "speciesCommon": "Southern African pilchard",
     "speciesScientific": "Sardinops sagax",
     "shortDescription": "Annual northward migration of billions of sardines along South Africa's Wild Coast, attracting common dolphins, bronze whalers, dusky sharks, Bryde's whales, and Cape gannets into spectacular bait-ball feeding events.",
-    "bestMonths": [5, 6, 7],
+    "bestMonths": [
+      5,
+      6,
+      7
+    ],
     "difficulty": "advanced",
     "requiredExperience": "Comfortable in cold open water, surface conditions, and rapid boat entries. Open Water minimum; Advanced strongly recommended. Most operators run snorkel-and-scuba hybrid trips.",
     "ethicsNotes": "Maintain distance from cetaceans; do not chase or block bait balls. Follow operator briefings on minimum distance from whales.",
@@ -17,13 +21,23 @@
     "locations": [
       {
         "locationId": "aliwal-south-africa",
-        "bestMonthsAtLocation": [5, 6, 7],
+        "bestMonthsAtLocation": [
+          5,
+          6,
+          7
+        ],
         "notes": "Operators stage daily out of Port St Johns / Coffee Bay during peak weeks."
       }
     ],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-sardine-run-seasonality"],
-    "bucketListRank": 1
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-sardine-run-seasonality"
+    ],
+    "bucketListRank": 1,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Underwater_view_of_the_sardine_run_as_a_dolphin_hunts_within_dense_schools_of_sardines.jpg"
   },
   {
     "id": "great-white-cage-diving",
@@ -33,7 +47,13 @@
     "speciesCommon": "Great white shark",
     "speciesScientific": "Carcharodon carcharias",
     "shortDescription": "Surface-cage encounters with white sharks at established aggregation sites. Non-decompression, no certification required at most operators.",
-    "bestMonths": [5, 6, 7, 8, 9],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "difficulty": "beginner",
     "requiredExperience": "No certification required for surface cage. Free-diving extensions require breath-hold competence.",
     "ethicsNotes": "Only book operators with permitted, regulated chumming practices. Avoid operators that bait sharks toward divers outside cages.",
@@ -46,9 +66,15 @@
         "notes": "Closest current scubaSeason location to active white shark cage operators on the South African coast."
       }
     ],
-    "sourceIds": ["gbif", "dan"],
-    "methodologyClaimIds": ["encounter-great-white-cage-presence"],
-    "bucketListRank": 2
+    "sourceIds": [
+      "gbif",
+      "dan"
+    ],
+    "methodologyClaimIds": [
+      "encounter-great-white-cage-presence"
+    ],
+    "bucketListRank": 2,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Guadalupe_Island_Great_White_Shark_Underwater_Tourism.jpg/3840px-Guadalupe_Island_Great_White_Shark_Underwater_Tourism.jpg"
   },
   {
     "id": "hammerhead-schools",
@@ -58,7 +84,14 @@
     "speciesCommon": "Scalloped hammerhead",
     "speciesScientific": "Sphyrna lewini",
     "shortDescription": "Daytime schooling aggregations of scalloped hammerheads at seamounts and current-swept island walls.",
-    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "difficulty": "advanced",
     "requiredExperience": "Advanced Open Water minimum, comfort with strong current, blue-water hangs, and deep multilevel profiles. Reef-hook training recommended.",
     "ethicsNotes": "Stay grouped, breathe shallowly, no flash photography at the school. Operator briefings supersede general guidance.",
@@ -66,14 +99,60 @@
     "limitations": "Schooling behavior varies with current, lunar phase, and water temperature. Encounter frequency is reported by liveaboard operators rather than measured against a survey denominator.",
     "confidence": "medium",
     "locations": [
-      { "locationId": "cocos-costa-rica", "bestMonthsAtLocation": [6, 7, 8, 9, 10, 11] },
-      { "locationId": "wolf-galapagos-ecuador", "bestMonthsAtLocation": [6, 7, 8, 9, 10, 11] },
-      { "locationId": "darwin-galapagos-ecuador", "bestMonthsAtLocation": [6, 7, 8, 9, 10, 11] },
-      { "locationId": "socorro-mexico", "bestMonthsAtLocation": [11, 12, 1, 2, 3, 4] }
+      {
+        "locationId": "cocos-costa-rica",
+        "bestMonthsAtLocation": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "locationId": "wolf-galapagos-ecuador",
+        "bestMonthsAtLocation": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "locationId": "darwin-galapagos-ecuador",
+        "bestMonthsAtLocation": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "locationId": "socorro-mexico",
+        "bestMonthsAtLocation": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
     ],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-hammerhead-schools-presence"],
-    "bucketListRank": 3
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-hammerhead-schools-presence"
+    ],
+    "bucketListRank": 3,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Scalloped_hammerhead_school_izu.jpg"
   },
   {
     "id": "whale-sharks",
@@ -83,7 +162,14 @@
     "speciesCommon": "Whale shark",
     "speciesScientific": "Rhincodon typus",
     "shortDescription": "Predictable seasonal aggregations of the world's largest fish, typically at plankton or fish-spawning hotspots.",
-    "bestMonths": [3, 4, 5, 6, 7, 8],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "difficulty": "beginner",
     "requiredExperience": "Most encounters are surface snorkel or shallow scuba. Open Water minimum where scuba is permitted; many regulated sites are snorkel-only.",
     "ethicsNotes": "Maintain minimum approach distance (typically 3 m head, 4 m tail), no touching, no flash. Follow national whale-shark codes of conduct.",
@@ -91,12 +177,38 @@
     "limitations": "Aggregation timing varies year to year with prey availability. We report occurrence and operator seasonality, not per-trip probability.",
     "confidence": "high",
     "locations": [
-      { "locationId": "ningaloo-australia", "bestMonthsAtLocation": [3, 4, 5, 6, 7] },
-      { "locationId": "ari-atoll-maldives", "bestMonthsAtLocation": [5, 6, 7, 8, 9, 10, 11] }
+      {
+        "locationId": "ningaloo-australia",
+        "bestMonthsAtLocation": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "locationId": "ari-atoll-maldives",
+        "bestMonthsAtLocation": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      }
     ],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-whale-shark-seasonality"],
-    "bucketListRank": 4
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-whale-shark-seasonality"
+    ],
+    "bucketListRank": 4,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Whale_shark_%28Rhincodon_typus%29_%2815600945944%29.jpg"
   },
   {
     "id": "manta-cleaning-stations",
@@ -106,7 +218,20 @@
     "speciesCommon": "Reef manta and oceanic manta",
     "speciesScientific": "Mobula alfredi, Mobula birostris",
     "shortDescription": "Reliable cleaning-station encounters where mantas hover for wrasse and butterflyfish cleaners.",
-    "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
     "difficulty": "intermediate",
     "requiredExperience": "Open Water; current and reef-hook experience helpful at Pacific channel sites.",
     "ethicsNotes": "Stay below or beside the cleaning station, never above the mantas. No touching, no chasing.",
@@ -114,13 +239,26 @@
     "limitations": "Visit rate varies with current and time of day; cleaning behavior is highly site-specific.",
     "confidence": "high",
     "locations": [
-      { "locationId": "manta-ridge-yap" },
-      { "locationId": "raja-ampat-indonesia" },
-      { "locationId": "kona-hawaii-usa", "notes": "Night manta dives target plankton-light aggregations, not classical cleaning stations." }
+      {
+        "locationId": "manta-ridge-yap"
+      },
+      {
+        "locationId": "raja-ampat-indonesia"
+      },
+      {
+        "locationId": "kona-hawaii-usa",
+        "notes": "Night manta dives target plankton-light aggregations, not classical cleaning stations."
+      }
     ],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-manta-cleaning-presence"],
-    "bucketListRank": 5
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-manta-cleaning-presence"
+    ],
+    "bucketListRank": 5,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Reef_manta_ray_%28Manta_alfredi%29_-_49877611243.jpg/3840px-Reef_manta_ray_%28Manta_alfredi%29_-_49877611243.jpg"
   },
   {
     "id": "thresher-sharks",
@@ -130,7 +268,20 @@
     "speciesCommon": "Pelagic thresher shark",
     "speciesScientific": "Alopias pelagicus",
     "shortDescription": "Dawn dives on Monad Shoal where pelagic threshers ascend from deep water to be cleaned by wrasses.",
-    "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
     "difficulty": "advanced",
     "requiredExperience": "Advanced Open Water; comfortable with pre-dawn entry, 25-30 m depth, and motionless hangs behind the rope line.",
     "ethicsNotes": "Stay behind the designated rope; no flash; do not approach the threshers in open water.",
@@ -138,11 +289,19 @@
     "limitations": "Sightings are operator-tracked and seasonal swell can close the site. We do not publish per-dive probability.",
     "confidence": "high",
     "locations": [
-      { "locationId": "malapascua-philippines" }
+      {
+        "locationId": "malapascua-philippines"
+      }
     ],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-thresher-cleaning-presence"],
-    "bucketListRank": 6
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-thresher-cleaning-presence"
+    ],
+    "bucketListRank": 6,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Tresher1.jpg"
   },
   {
     "id": "mobula-ray-aggregations",
@@ -152,7 +311,12 @@
     "speciesCommon": "Munk's devil ray",
     "speciesScientific": "Mobula munkiana",
     "shortDescription": "Vast schools of Munk's devil rays moving through the Sea of Cortez, with leaping displays at the surface.",
-    "bestMonths": [4, 5, 6, 7],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7
+    ],
     "difficulty": "intermediate",
     "requiredExperience": "Open Water; comfort with freediving / snorkel encounters and rapid in-out boat work.",
     "ethicsNotes": "Do not swim through schools; let rays pass. No flash photography close to schools.",
@@ -160,11 +324,20 @@
     "limitations": "Timing shifts with water temperature and prey distribution. Confidence is medium; encounter is occurrence-clustered, not survey-measured.",
     "confidence": "medium",
     "locations": [
-      { "locationId": "socorro-mexico", "notes": "Mobula encounters supplement the manta/dolphin/shark season here." }
+      {
+        "locationId": "socorro-mexico",
+        "notes": "Mobula encounters supplement the manta/dolphin/shark season here."
+      }
     ],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-mobula-aggregation-presence"],
-    "bucketListRank": 7
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-mobula-aggregation-presence"
+    ],
+    "bucketListRank": 7,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Mobula_birostris_179661621.jpg"
   },
   {
     "id": "blackwater-diving",
@@ -172,7 +345,20 @@
     "name": "Blackwater Diving",
     "category": "blackwater",
     "shortDescription": "Open-ocean night dives over deep water, tethered to a lighted drift line, observing larval and pelagic invertebrates ascending in the diel migration.",
-    "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
     "difficulty": "advanced",
     "requiredExperience": "Advanced Open Water + Night specialty strongly recommended. Comfort with neutral buoyancy in featureless water, tether discipline, and small-subject photography.",
     "ethicsNotes": "Do not collect specimens. Avoid touching gelatinous animals (siphonophores can sting through skin).",
@@ -180,11 +366,20 @@
     "limitations": "Subject diversity is highly variable and weather-dependent. We do not list specific species probabilities.",
     "confidence": "high",
     "locations": [
-      { "locationId": "kona-hawaii-usa", "notes": "One of the longest-running commercial blackwater operations." }
+      {
+        "locationId": "kona-hawaii-usa",
+        "notes": "One of the longest-running commercial blackwater operations."
+      }
     ],
-    "sourceIds": ["obis", "padi"],
-    "methodologyClaimIds": ["encounter-blackwater-conduct"],
-    "bucketListRank": 8
+    "sourceIds": [
+      "obis",
+      "padi"
+    ],
+    "methodologyClaimIds": [
+      "encounter-blackwater-conduct"
+    ],
+    "bucketListRank": 8,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Grimalditeuthis_bonplandi_paralarva.jpg"
   },
   {
     "id": "coral-spawning",
@@ -192,7 +387,11 @@
     "name": "Mass Coral Spawning",
     "category": "spawning-event",
     "shortDescription": "Synchronized broadcast spawning of stony corals, typically a few nights after a full moon in late spring or summer.",
-    "bestMonths": [10, 11, 12],
+    "bestMonths": [
+      10,
+      11,
+      12
+    ],
     "difficulty": "intermediate",
     "requiredExperience": "Open Water + Night specialty. Comfort with low-vis night reef diving and minimal-light protocols.",
     "ethicsNotes": "Reduce dive-light intensity during gamete release. No touching or finning above coral heads.",
@@ -200,11 +399,25 @@
     "limitations": "Exact night varies year to year and locally. Predictions are operator-tracked, not published as probabilities.",
     "confidence": "medium",
     "locations": [
-      { "locationId": "cod-hole-australia", "bestMonthsAtLocation": [10, 11, 12], "notes": "GBR spawning typically a few nights after the November or early-December full moon." }
+      {
+        "locationId": "cod-hole-australia",
+        "bestMonthsAtLocation": [
+          10,
+          11,
+          12
+        ],
+        "notes": "GBR spawning typically a few nights after the November or early-December full moon."
+      }
     ],
-    "sourceIds": ["aims-ltmp", "gcrmn"],
-    "methodologyClaimIds": ["encounter-coral-spawning-seasonality"],
-    "bucketListRank": 9
+    "sourceIds": [
+      "aims-ltmp",
+      "gcrmn"
+    ],
+    "methodologyClaimIds": [
+      "encounter-coral-spawning-seasonality"
+    ],
+    "bucketListRank": 9,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Coral_Chimera_Acropora_kenti_by_SciReef.jpg"
   },
   {
     "id": "mandarin-fish-dusk-spawning",
@@ -214,7 +427,20 @@
     "speciesCommon": "Mandarin fish",
     "speciesScientific": "Synchiropus splendidus",
     "shortDescription": "Daily dusk mating ascents of mandarin fish above rubble patches, observable on a single short shallow dive.",
-    "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
     "difficulty": "beginner",
     "requiredExperience": "Open Water; excellent buoyancy and patience matter more than depth experience.",
     "ethicsNotes": "Minimal dive lights, no strobes during the ascent itself. Do not crowd known spawning rubble.",
@@ -222,12 +448,22 @@
     "limitations": "Ascent is brief (often only minutes). Daily presence is consistent at established sites but not a guarantee.",
     "confidence": "high",
     "locations": [
-      { "locationId": "moalboal-philippines" },
-      { "locationId": "raja-ampat-indonesia" }
+      {
+        "locationId": "moalboal-philippines"
+      },
+      {
+        "locationId": "raja-ampat-indonesia"
+      }
     ],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-mandarin-spawning-presence"],
-    "bucketListRank": 10
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-mandarin-spawning-presence"
+    ],
+    "bucketListRank": 10,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flamboyant_cuttlefish_%28Ascarosepion_pfefferi%29_%2814217841147%29.jpg/3840px-Flamboyant_cuttlefish_%28Ascarosepion_pfefferi%29_%2814217841147%29.jpg"
   },
   {
     "id": "giant-cuttlefish-aggregation",
@@ -237,7 +473,12 @@
     "speciesCommon": "Giant Australian cuttlefish",
     "speciesScientific": "Sepia apama",
     "shortDescription": "Annual breeding aggregation of giant cuttlefish in the shallow waters of upper Spencer Gulf, with elaborate male display and mating behavior.",
-    "bestMonths": [5, 6, 7, 8],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
     "difficulty": "beginner",
     "requiredExperience": "Open Water; shore-entry, cold-water, and dry/thick-suit comfort. Many divers do this as snorkel.",
     "ethicsNotes": "Do not handle cuttlefish; avoid contact with eggs on the reef underside.",
@@ -245,8 +486,14 @@
     "limitations": "Numbers fluctuate; not a precise per-dive probability.",
     "confidence": "high",
     "locations": [],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-giant-cuttlefish-seasonality"],
-    "bucketListRank": 11
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-giant-cuttlefish-seasonality"
+    ],
+    "bucketListRank": 11,
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Sepia_apama_2.jpg"
   }
 ]

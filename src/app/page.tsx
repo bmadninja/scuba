@@ -175,6 +175,9 @@ export default function Home() {
             <Link href="/sites" className="hover:text-[#0089de]">
               Dive sites
             </Link>
+            <Link href="/encounters" className="hover:text-[#0089de]">
+              Encounters
+            </Link>
             <Link href="/about" className="hover:text-[#0089de]">
               About
             </Link>

@@ -191,6 +191,7 @@ export type Encounter = {
   sourceIds: string[];
   methodologyClaimIds: string[];
   bucketListRank?: number;
+  heroImageUrl?: string;
 };
 
 /**
