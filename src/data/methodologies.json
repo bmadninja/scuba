@@ -2,7 +2,7 @@
   {
     "claimId": "sighting-occurrence-cluster",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": ["gbif", "obis", "inaturalist", "iucn-red-list"],
     "confidence": "medium",
     "limitations": "We aggregate confirmed occurrence records from GBIF and OBIS within a fixed radius of each dive site. Occurrence records confirm presence and reveal seasonality clustering, but they DO NOT measure per-dive probability — there is no eligible-effort denominator. We deliberately do not publish a numeric '% chance of sighting' from this data.",
     "lastReviewedAt": "2026-05-24"
@@ -18,7 +18,7 @@
   {
     "claimId": "encounter-great-white-cage-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "dan"],
+    "sourceIds": ["gbif", "dan", "iucn-red-list", "wildbook"],
     "confidence": "medium",
     "limitations": "Regional populations have shifted; operator availability changes annually. We do not publish per-trip probability.",
     "lastReviewedAt": "2026-05-24"
@@ -26,7 +26,7 @@
   {
     "claimId": "encounter-hammerhead-schools-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": ["gbif", "obis", "iucn-red-list"],
     "confidence": "medium",
     "limitations": "Schooling behavior is operator-reported. Aggregation density varies with current, lunar phase, and temperature.",
     "lastReviewedAt": "2026-05-24"
@@ -34,7 +34,7 @@
   {
     "claimId": "encounter-whale-shark-seasonality",
     "claimType": "seasonality",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": ["gbif", "obis", "wildbook", "iucn-red-list"],
     "confidence": "high",
     "limitations": "Best months are derived from occurrence-record clustering and well-documented regional aggregations. Per-trip probability is not published.",
     "lastReviewedAt": "2026-05-24"
@@ -42,7 +42,7 @@
   {
     "claimId": "encounter-manta-cleaning-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": ["gbif", "obis", "manta-trust", "iucn-red-list"],
     "confidence": "high",
     "limitations": "Cleaning stations are site-specific; visit frequency varies with current and time of day.",
     "lastReviewedAt": "2026-05-24"
@@ -50,7 +50,7 @@
   {
     "claimId": "encounter-thresher-cleaning-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": ["gbif", "obis", "iucn-red-list"],
     "confidence": "high",
     "limitations": "Monad Shoal threshers are reliably present year-round but encounters are pre-dawn and weather-dependent. No per-dive probability.",
     "lastReviewedAt": "2026-05-24"
@@ -58,7 +58,7 @@
   {
     "claimId": "encounter-mobula-aggregation-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": ["gbif", "obis", "manta-trust", "iucn-red-list"],
     "confidence": "medium",
     "limitations": "Aggregation timing shifts with water temperature and prey. Encounter is occurrence-clustered, not survey-measured.",
     "lastReviewedAt": "2026-05-24"
@@ -74,7 +74,7 @@
   {
     "claimId": "encounter-coral-spawning-seasonality",
     "claimType": "seasonality",
-    "sourceIds": ["aims-ltmp", "gcrmn"],
+    "sourceIds": ["aims-ltmp", "gcrmn", "gbrmpa", "icri"],
     "confidence": "medium",
     "limitations": "Exact spawning night varies by reef and year. Predictions are operator-tracked and affected by ocean temperature anomalies.",
     "lastReviewedAt": "2026-05-24"
@@ -82,7 +82,7 @@
   {
     "claimId": "encounter-mandarin-spawning-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": ["gbif", "obis", "inaturalist"],
     "confidence": "high",
     "limitations": "Daily ascent is consistent at established rubble sites but very brief; not a guarantee on any single dive.",
     "lastReviewedAt": "2026-05-24"
@@ -90,7 +90,7 @@
   {
     "claimId": "encounter-giant-cuttlefish-seasonality",
     "claimType": "seasonality",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": ["gbif", "obis", "inaturalist"],
     "confidence": "high",
     "limitations": "Aggregation numbers fluctuate; the Spencer Gulf population crashed in the 2010s and has only partially recovered.",
     "lastReviewedAt": "2026-05-24"

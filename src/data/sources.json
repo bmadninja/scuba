@@ -85,5 +85,108 @@
     "sourceType": "editorial-curation",
     "accessedAt": "2026-05-24",
     "notes": "Certification level definitions and training-standard references. Use for skill-level recommendations, not for ecological claims."
+  },
+  {
+    "id": "iucn-red-list",
+    "name": "IUCN Red List of Threatened Species",
+    "url": "https://www.iucnredlist.org/",
+    "publisher": "International Union for Conservation of Nature",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-05-24",
+    "license": "Free for non-commercial use under IUCN terms",
+    "notes": "Authoritative conservation status (LC/NT/VU/EN/CR/EX) and population trend assessments. Use for species rarity and conservation framing."
+  },
+  {
+    "id": "inaturalist",
+    "name": "iNaturalist",
+    "url": "https://www.inaturalist.org/",
+    "publisher": "California Academy of Sciences & National Geographic Society",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-05-24",
+    "license": "CC0 / CC BY / CC BY-NC (per record)",
+    "notes": "Photo- and date-verified species occurrence records from citizen scientists. Strong recency signal; combine with GBIF/OBIS for presence and seasonality."
+  },
+  {
+    "id": "reef-check",
+    "name": "Reef Check",
+    "url": "https://www.reefcheck.org/",
+    "publisher": "Reef Check Foundation",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-05-24",
+    "notes": "Global volunteer reef-monitoring program with standardised benthic and fish protocols. Use for observed reef condition where local surveys exist."
+  },
+  {
+    "id": "manta-trust",
+    "name": "Manta Trust IDtheManta Database",
+    "url": "https://www.mantatrust.org/idthemanta",
+    "publisher": "Manta Trust",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-24",
+    "notes": "Photo-ID database of individual reef and oceanic mantas worldwide. Confirms aggregation site fidelity and seasonality."
+  },
+  {
+    "id": "wildbook",
+    "name": "Wildbook (Sharkbook, Whale Shark, Manta Matcher)",
+    "url": "https://www.wildbook.org/",
+    "publisher": "Wild Me",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-24",
+    "license": "CC BY 4.0",
+    "notes": "Open photo-ID platforms for individual sharks, whale sharks, and mantas. Documents return visits to specific dive sites."
+  },
+  {
+    "id": "ncrmp",
+    "name": "NOAA National Coral Reef Monitoring Program",
+    "url": "https://www.coris.noaa.gov/monitoring/",
+    "publisher": "NOAA Coral Reef Conservation Program",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-24",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Standardised biological, climate, and socioeconomic monitoring across US Caribbean and Pacific reefs. Use for observed reef condition."
+  },
+  {
+    "id": "gbrmpa",
+    "name": "Great Barrier Reef Marine Park Authority",
+    "url": "https://www2.gbrmpa.gov.au/",
+    "publisher": "Australian Government",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-24",
+    "notes": "Authoritative manager for the Great Barrier Reef — zoning, reef-health outlook reports, and management plans. Use for GBR site-level travel and conservation guidance."
+  },
+  {
+    "id": "agrra",
+    "name": "Atlantic and Gulf Rapid Reef Assessment",
+    "url": "https://www.agrra.org/",
+    "publisher": "AGRRA Program / Perry Institute for Marine Science",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-24",
+    "notes": "Standardised reef survey protocols and dataset for the wider Caribbean. Use for Caribbean coral cover and bleaching observations."
+  },
+  {
+    "id": "icri",
+    "name": "International Coral Reef Initiative",
+    "url": "https://icriforum.org/",
+    "publisher": "ICRI Secretariat",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-24",
+    "notes": "Intergovernmental partnership coordinating reef monitoring and protection. Use as a discovery layer for regional reef-status reports."
+  },
+  {
+    "id": "ssi",
+    "name": "SSI",
+    "url": "https://www.divessi.com/",
+    "publisher": "Scuba Schools International",
+    "sourceType": "editorial-curation",
+    "accessedAt": "2026-05-24",
+    "notes": "Alternative training-agency certification framework. Use alongside PADI for skill-level mapping, not for ecological claims."
+  },
+  {
+    "id": "dema",
+    "name": "DEMA",
+    "url": "https://www.dema.org/",
+    "publisher": "Diving Equipment and Marketing Association",
+    "sourceType": "editorial-curation",
+    "accessedAt": "2026-05-24",
+    "notes": "Industry trade body — used only for travel-industry context, never for ecological or safety claims."
   }
 ]
