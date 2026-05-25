@@ -49287,5 +49287,227 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": null
+  },
+  {
+    "id": "bunaken-indonesia-wakatobi",
+    "slug": "bunaken-indonesia-wakatobi",
+    "locationId": "bunaken-indonesia",
+    "name": "Wakatobi",
+    "heroImageUrl": null,
+    "lat": -5.29,
+    "lng": 123.77,
+    "description": "Wakatobi National Park is renowned for its exceptional marine biodiversity, featuring vibrant coral reefs, dramatic walls, and diverse ecosystems. Divers can expect to encounter an abundance of reef fish, pelagic species, and fascinating macro life across various dive sites.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "large-pelagics",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Reef Shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Pygmy Seahorse",
+        "scientificName": "Hippocampus bargibanti",
+        "reliability": "year-round",
+        "bestMonths": []
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly to Haluoleo Airport (KDI) in Kendari, Southeast Sulawesi. From Kendari, arrange for connecting domestic flights or boat transfers to Wakatobi, typically via Wangi-Wangi.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": null
   }
 ]
