@@ -1,8 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { SiteCard } from "./site-card";
+import { getAllEncounters } from "@/lib/data/encounters";
 import type {
   DiveType,
   Location,
@@ -34,6 +36,11 @@ const DIVE_TYPE_OPTIONS: { value: DiveType; label: string }[] = [
   { value: "blackwater", label: "Blackwater" },
 ];
 
+const MONTH_LABELS = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
 const SKILL_RANK: Record<SkillLevel, number> = {
   "never-dived": 0,
   "open-water": 1,
@@ -43,28 +50,63 @@ const SKILL_RANK: Record<SkillLevel, number> = {
   tech: 5,
 };
 
-export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
-  const [query, setQuery] = useState("");
-  const [skill, setSkill] = useState<SkillLevel | "">("");
-  const [diveTypes, setDiveTypes] = useState<DiveType[]>([]);
-  const [onlyInSeason, setOnlyInSeason] = useState(false);
+const ENCOUNTERS = getAllEncounters();
 
-  const toggleDiveType = (t: DiveType) =>
-    setDiveTypes((curr) =>
-      curr.includes(t) ? curr.filter((x) => x !== t) : [...curr, t],
-    );
+export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
+  const router = useRouter();
+  const params = useSearchParams();
+
+  const query = params.get("q") ?? "";
+  const skill = (params.get("cert") as SkillLevel | null) ?? "";
+  const diveTypes = (params.get("types")?.split(",").filter(Boolean) ?? []) as DiveType[];
+  const month = params.get("month") ? Number(params.get("month")) : null;
+  const encounterSlug = params.get("encounter") ?? "";
+
+  const setParam = useCallback(
+    (key: string, value: string | null) => {
+      const next = new URLSearchParams(params.toString());
+      if (value === null || value === "") next.delete(key);
+      else next.set(key, value);
+      const qs = next.toString();
+      router.replace(qs ? `/sites?${qs}` : "/sites", { scroll: false });
+    },
+    [params, router],
+  );
+
+  const toggleDiveType = (t: DiveType) => {
+    const next = diveTypes.includes(t)
+      ? diveTypes.filter((x) => x !== t)
+      : [...diveTypes, t];
+    setParam("types", next.length ? next.join(",") : null);
+  };
+
+  const selectedEncounter = ENCOUNTERS.find((e) => e.slug === encounterSlug);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
+    const encounterLocationIds = selectedEncounter
+      ? new Set(selectedEncounter.locations.map((l) => l.locationId))
+      : null;
+    const encounterMonths = selectedEncounter?.bestMonths ?? null;
+
     return sites
       .filter((s) => {
-        if (onlyInSeason && !s.bestMonths.includes(currentMonth)) return false;
+        if (month && !s.bestMonths.includes(month)) return false;
         if (skill && SKILL_RANK[s.skillLevel] > SKILL_RANK[skill]) return false;
         if (
           diveTypes.length &&
           !diveTypes.some((t) => s.diveTypes.includes(t))
         ) {
           return false;
+        }
+        if (encounterLocationIds) {
+          if (!encounterLocationIds.has(s.locationId)) return false;
+          if (
+            encounterMonths &&
+            !s.bestMonths.some((m) => encounterMonths.includes(m))
+          ) {
+            return false;
+          }
         }
         if (q) {
           const hay = [
@@ -82,10 +124,53 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
         return true;
       })
       .sort((a, b) => b.editorialRank - a.editorialRank);
-  }, [sites, locationsById, currentMonth, query, skill, diveTypes, onlyInSeason]);
+  }, [sites, locationsById, query, skill, diveTypes, month, selectedEncounter]);
 
-  const activeFilterCount =
-    (skill ? 1 : 0) + diveTypes.length + (onlyInSeason ? 1 : 0);
+  const activeChips: { key: string; label: string; clear: () => void }[] = [];
+  if (skill) {
+    activeChips.push({
+      key: `cert:${skill}`,
+      label: `Cert: ${SKILL_OPTIONS.find((o) => o.value === skill)?.label ?? skill}`,
+      clear: () => setParam("cert", null),
+    });
+  }
+  for (const t of diveTypes) {
+    activeChips.push({
+      key: `type:${t}`,
+      label: DIVE_TYPE_OPTIONS.find((o) => o.value === t)?.label ?? t,
+      clear: () => toggleDiveType(t),
+    });
+  }
+  if (month) {
+    activeChips.push({
+      key: `month:${month}`,
+      label: `Going in ${MONTH_LABELS[month - 1]}`,
+      clear: () => setParam("month", null),
+    });
+  }
+  if (selectedEncounter) {
+    activeChips.push({
+      key: `enc:${selectedEncounter.slug}`,
+      label: `Target: ${selectedEncounter.name}`,
+      clear: () => setParam("encounter", null),
+    });
+  }
+  if (query) {
+    activeChips.push({
+      key: "q",
+      label: `“${query}”`,
+      clear: () => setParam("q", null),
+    });
+  }
+
+  const clearAll = () => router.replace("/sites", { scroll: false });
+
+  const skillCaveat =
+    skill === "never-dived"
+      ? "Showing entry-level sites. Always dive under instructor supervision until certified — see DAN safety guidance before booking."
+      : skill === "open-water"
+        ? "Showing sites at or below Open Water. Mind depth and current limits in your training."
+        : null;
 
   return (
     <div>
@@ -96,11 +181,39 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           <input
             type="search"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => setParam("q", e.target.value || null)}
             placeholder="Search by site, country, species…"
             className="w-full rounded-lg border border-slate-300 bg-white pl-10 pr-3 py-2.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#0089de]"
           />
         </div>
+
+        <FilterField label="Target encounter">
+          <div className="flex flex-wrap gap-1.5">
+            {ENCOUNTERS.map((e) => {
+              const active = encounterSlug === e.slug;
+              return (
+                <button
+                  key={e.slug}
+                  type="button"
+                  onClick={() => setParam("encounter", active ? null : e.slug)}
+                  className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                    active
+                      ? "bg-[#0089de] text-white"
+                      : "border border-slate-300 bg-white text-slate-700 hover:border-[#0089de] hover:text-[#0089de]"
+                  }`}
+                >
+                  {e.name}
+                </button>
+              );
+            })}
+          </div>
+          {selectedEncounter ? (
+            <p className="mt-1.5 text-[11px] text-slate-500">
+              Best months: {selectedEncounter.bestMonths.map((m) => MONTH_LABELS[m - 1]).join(", ")}.{" "}
+              Difficulty: {selectedEncounter.difficulty}. Confidence: {selectedEncounter.confidence}.
+            </p>
+          ) : null}
+        </FilterField>
 
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <FilterField label="Your certification">
@@ -111,7 +224,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                   <button
                     key={o.value}
                     type="button"
-                    onClick={() => setSkill(active ? "" : o.value)}
+                    onClick={() => setParam("cert", active ? null : o.value)}
                     className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
                       active
                         ? "bg-[#0089de] text-white"
@@ -123,9 +236,6 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                 );
               })}
             </div>
-            <p className="mt-1 text-[11px] text-slate-500">
-              Filters to sites at or below your cert level.
-            </p>
           </FilterField>
 
           <FilterField label="Dive types">
@@ -151,31 +261,66 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           </FilterField>
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-3">
-          <label className="inline-flex cursor-pointer items-center gap-2 text-sm text-slate-700">
-            <input
-              type="checkbox"
-              checked={onlyInSeason}
-              onChange={(e) => setOnlyInSeason(e.target.checked)}
-              className="size-4 rounded border-slate-300 text-[#0089de] focus:ring-[#0089de]"
-            />
-            In season this month only
-          </label>
-          {activeFilterCount > 0 ? (
+        <FilterField label="Travel month">
+          <div className="flex flex-wrap gap-1.5">
+            {MONTH_LABELS.map((label, i) => {
+              const m = i + 1;
+              const active = month === m;
+              const isThisMonth = m === currentMonth;
+              return (
+                <button
+                  key={label}
+                  type="button"
+                  onClick={() => setParam("month", active ? null : String(m))}
+                  className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                    active
+                      ? "bg-[#0089de] text-white"
+                      : `border bg-white hover:border-[#0089de] hover:text-[#0089de] ${
+                          isThisMonth
+                            ? "border-[#0089de]/60 text-[#0089de]"
+                            : "border-slate-300 text-slate-700"
+                        }`
+                  }`}
+                >
+                  {label}
+                  {isThisMonth ? " •" : ""}
+                </button>
+              );
+            })}
+          </div>
+        </FilterField>
+
+        {skillCaveat ? (
+          <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-[12px] leading-5 text-amber-900">
+            {skillCaveat}
+          </div>
+        ) : null}
+
+        {activeChips.length > 0 ? (
+          <div className="mt-4 flex flex-wrap items-center gap-1.5 border-t border-slate-200 pt-3">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Active
+            </span>
+            {activeChips.map((c) => (
+              <button
+                key={c.key}
+                type="button"
+                onClick={c.clear}
+                className="inline-flex items-center gap-1 rounded-full bg-slate-900 px-2 py-0.5 text-[11px] font-medium text-white hover:bg-slate-700"
+              >
+                {c.label}
+                <X className="size-3" />
+              </button>
+            ))}
             <button
               type="button"
-              onClick={() => {
-                setSkill("");
-                setDiveTypes([]);
-                setOnlyInSeason(false);
-              }}
-              className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-[#0089de]"
+              onClick={clearAll}
+              className="ml-auto text-[11px] font-semibold text-slate-600 hover:text-[#0089de]"
             >
-              <X className="size-3" />
-              Clear {activeFilterCount} filter{activeFilterCount === 1 ? "" : "s"}
+              Clear all
             </button>
-          ) : null}
-        </div>
+          </div>
+        ) : null}
       </div>
 
       {/* Result count */}
@@ -206,7 +351,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
               key={s.id}
               site={s}
               location={locationsById[s.locationId] ?? null}
-              inSeason={s.bestMonths.includes(currentMonth)}
+              inSeason={s.bestMonths.includes(month ?? currentMonth)}
             />
           ))}
         </div>
@@ -223,7 +368,7 @@ function FilterField({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="mt-4 first:mt-0">
       <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
         {label}
       </p>

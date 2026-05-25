@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { SitesExplorer } from "@/components/sites-explorer";
 import { getAllSites } from "@/lib/data/sites";
@@ -53,11 +54,13 @@ export default function SitesPage() {
           </p>
         </div>
 
-        <SitesExplorer
-          sites={sites}
-          locationsById={locationsById}
-          currentMonth={currentMonth}
-        />
+        <Suspense fallback={null}>
+          <SitesExplorer
+            sites={sites}
+            locationsById={locationsById}
+            currentMonth={currentMonth}
+          />
+        </Suspense>
       </main>
     </div>
   );
