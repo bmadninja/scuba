@@ -55200,5 +55200,256 @@
       }
     ],
     "notes": "All diving is within the St. Eustatius National Marine Park; a STENAPA marine-park dive tag/nature fee is mandatory and boats use fixed moorings (anchoring is prohibited). With the wreck topping out near 20 m and the bridge and bow at 30 m, plus a long superstructure swim-through, this is an Advanced-level deep dive — plan gas and no-decompression time accordingly. Hurricane season (Aug–Oct) brings surge and reduced visibility; the nearest recompression chamber is on neighbouring Saba."
+  },
+  {
+    "id": "fuvahmulah-tiger-harbour",
+    "slug": "fuvahmulah-tiger-harbour",
+    "locationId": "ari-atoll-maldives",
+    "name": "Tiger Harbour (Fuvahmulah)",
+    "heroImageUrl": null,
+    "lat": -0.301,
+    "lng": 73.4287,
+    "description": "A harbour-mouth plateau at the southeast tip of Fuvahmulah, the Maldives' isolated single-island atoll, where the Indian Ocean's largest known resident tiger shark population gathers. Six to eighteen tiger sharks — many individually identified and re-sighted for years — circle a sandy ledge around 8-12 m beside a wall that drops past 60 m, close enough to fill a wide-angle frame in clear water. Divers kneel in a line behind the guide while the dive team works a bait box. The same exposed outer reefs draw pelagic thresher sharks to dawn cleaning stations and schooling scalloped hammerheads from October to April, with oceanic mantas, silvertips, and the occasional whale shark or mola passing through. Currents run hard and the swell is open-ocean.",
+    "depthRange": {
+      "min": 8,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Tiger shark",
+        "scientificName": "Galeocerdo cuvier",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Pelagic thresher shark",
+        "scientificName": "Alopias pelagicus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Silvertip shark",
+        "scientificName": "Carcharhinus albimarginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Oceanic sunfish (mola)",
+        "scientificName": "Mola spp.",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 90,
+    "getThere": "Fuvahmulah Airport (FVM) takes roughly 1.5-hour domestic flights from Malé's Velana International Airport (MLE). Dive centres on the island are a 5-10 minute drive from the harbour and run short dhoni rides out to the harbour-mouth site; no liveaboard needed.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Operator-led, structured shark dive: divers do a negative-entry descent to a sandy plateau around 8-12 m, line up behind the guide, and stay still while the team manages a bait box — touching, chasing, and flash are prohibited. Strong currents, surge, and open-ocean swell are normal; solid buoyancy and some pelagic experience expected. Fuvahmulah has its own recompression chamber. As a single-island atoll with no sheltering lagoon, all diving is on exposed outer reefs."
   }
 ]
