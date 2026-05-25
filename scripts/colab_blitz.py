@@ -513,6 +513,27 @@ def run_tool(name: str, inputs: dict) -> str:
                 return f"REJECTED: missing required fields: {missing}"
             if not isinstance(new_entry.get("conditionsByMonth"), list) or len(new_entry["conditionsByMonth"]) != 12:
                 return "REJECTED: conditionsByMonth must have exactly 12 entries (months 1-12)"
+            # Shape guards for array fields the schema says to leave empty.
+            # The site detail page expects siteSpecificGear items to be {name, reason, gearId?}
+            # — bare strings or {name, rationale} render as blank rows. Force empty unless
+            # the shape is exactly right.
+            ssg = new_entry.get("siteSpecificGear", [])
+            if not isinstance(ssg, list):
+                return "REJECTED: siteSpecificGear must be an array (use [])"
+            for item in ssg:
+                if not (isinstance(item, dict) and isinstance(item.get("name"), str) and isinstance(item.get("reason"), str)):
+                    return (
+                        "REJECTED: siteSpecificGear items must be objects with string 'name' and 'reason' "
+                        "(not bare strings, not 'rationale'). Per schema, leave it as []."
+                    )
+            for field in ("lodging", "operators"):
+                val = new_entry.get(field, [])
+                if not isinstance(val, list) or any(not isinstance(x, dict) for x in val):
+                    return f"REJECTED: {field} must be an array of objects (use [])"
+            if not isinstance(new_entry.get("gearIds", []), list) or any(
+                not isinstance(x, str) for x in new_entry.get("gearIds", [])
+            ):
+                return "REJECTED: gearIds must be an array of strings (use [])"
             # Duplicate check
             new_norm = _norm_name(new_entry.get("name", ""))
             for s in sites:
