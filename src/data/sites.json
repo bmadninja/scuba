@@ -61116,5 +61116,238 @@
       }
     ],
     "notes": "Shore dive with an easy wade-in entry; the bay is a protected area and a small beach access fee usually applies. Dugong and turtles are wild and free-ranging — keep your distance, never chase, touch or block their route to the surface, and avoid finning up the seagrass. Boat traffic crosses the bay, so stay within the marked swim zones in the shallows and deploy an SMB on the outer reefs. Dugong sightings are unpredictable and can never be guaranteed."
+  },
+  {
+    "id": "tulamben-nusa-penida-crystal-bay",
+    "slug": "tulamben-nusa-penida-crystal-bay",
+    "locationId": "tulamben-bali-indonesia",
+    "name": "Crystal Bay (Nusa Penida)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Mola_alexandrini_60816634.jpg",
+    "lat": -8.7197,
+    "lng": 115.4528,
+    "description": "A sheltered bay on Nusa Penida's northwest coast where a sand-floored channel slides past coral slopes to 30–40 m and a rocky islet at the entrance hides a shallow swim-through cavern. From July to October, cold upwelling off the Lombok Strait pulls Mola alexandrini — the bumphead ocean sunfish, often topping 2 m — up from deep water to reef cleaning stations around 20–40 m, where bannerfish pick parasites from their flanks. The same chilled water can fire abrupt down-currents along the outer channel. Glassy visibility, frequently past 25 m, gives the site its name.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Ocean sunfish (bumphead mola)",
+        "scientificName": "Mola alexandrini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Bannerfish",
+        "scientificName": "Heniochus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluespotted ribbontail ray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit (cooler upwelling)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit (cooler upwelling)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 19,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit; thermocline can hit 19 °C"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 18,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit; thermocline can hit 18 °C"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 19,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit; thermocline can hit 19 °C"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 23,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit (cooler upwelling)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 90,
+    "getThere": "Fly into Ngurah Rai International (DPS) on Bali. Fast boats run from Sanur to Toyapakeh or Banjar Nyuh on Nusa Penida (~45 minutes), from where Crystal Bay is a short drive to the northwest coast and a beach or jukung entry. Most operators also day-trip directly by speedboat from Sanur, Padangbai, or Candidasa, reaching the bay in roughly 60–90 minutes.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "5mm wetsuit + hood",
+        "reason": "Lombok Strait upwelling drops water to 18–20 °C through a sharp thermocline in the July–October mola season — far colder than the 3mm most divers bring from Tulamben or Sanur."
+      },
+      {
+        "name": "SMB and solid buoyancy skills",
+        "reason": "Crystal Bay is known for sudden down-currents along the outer channel toward the pinnacle; divers must be able to swim off the reef and signal a drifting boat."
+      }
+    ],
+    "notes": "Advanced certification and good buoyancy recommended: down-currents near the channel and depths of 20–40 m for mola sightings make this unsuitable for new divers despite the calm-looking bay. Peak mola season (Aug–Sep) draws crowds and boat traffic. Do not chase or crowd the sunfish — hold position and let them approach the cleaning station. Marine park / mooring fees apply."
   }
 ]
