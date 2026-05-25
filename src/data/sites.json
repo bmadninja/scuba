@@ -58907,5 +58907,566 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Decompression/technical dive only: wreck top around 42m, seabed about 53-55m, lying on the port side. Designated Commonwealth war grave - no penetration of grave spaces or artefact removal. Strong offshore current and surge are common; suitable only for experienced trimix/technical wreck divers. Access limited to the calm May-September east-coast season."
+  },
+  {
+    "id": "cuba-crocodile-mangroves",
+    "slug": "cuba-crocodile-mangroves",
+    "locationId": "cuba-jardines-de-la-reina",
+    "name": "Crocodile Mangroves",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/2017%2C_cuba%2C_jardines_aggressor%2C_nino_day_2_%2837294238770%29.jpg",
+    "lat": 20.793,
+    "lng": -78.998,
+    "description": "Shallow seagrass-and-mangrove flats on the inner side of the reserve where dive guides have built a decades-long rapport with resident American crocodiles. Snorkelers slip into chest-deep water alongside habituated animals — most famously a big male the guides call Niño — that glide between the prop roots and over turtlegrass. The crocodile's eye-level approach is the shot that has filled Caribbean dive magazines and photo contests.",
+    "depthRange": {
+      "min": 1,
+      "max": 4
+    },
+    "skillLevel": "never-dived",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "American crocodile",
+        "scientificName": "Crocodylus acutus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Schoolmaster snapper",
+        "scientificName": "Lutjanus apodus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Upside-down jellyfish",
+        "scientificName": "Cassiopea",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Shorty wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Shorty wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Shorty wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Shorty wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Shorty wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Shorty wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 83,
+    "getThere": "Havana's José Martí International (HAV) is the main gateway, with direct flights from most of Europe, Canada, Mexico, and a few US cities; US travelers must comply with current OFAC rules. Liveaboards and floating hotels depart the port of Júcaro, roughly a 6-hour drive southeast of Havana, then cruise about 80 km offshore to the reserve.",
+    "lodging": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Avalon Fleet I",
+        "url": "https://www.liveaboard.com/diving/search?destination=Avalon%20Fleet%20Jardines%20de%20la%20Reina",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Jardines Avalon Fleet II",
+        "url": "https://www.liveaboard.com/diving/search?destination=Jardines%20Avalon%20Fleet%20II",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Avalon Fleet III (Tortuga)",
+        "url": "https://www.liveaboard.com/diving/search?destination=Avalon%20Tortuga%20Jardines",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "Bluewater Travel",
+        "label": "Avalon Cuban Diving Centers",
+        "url": "https://www.bluewaterdivetravel.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "snorkel-cressi-supernova",
+      "fins-cressi-gara-freediving",
+      "wetsuit-bare-3mm-full",
+      "camera-gopro"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Wide-angle or action camera",
+        "reason": "The classic Niño portrait is a split-level wide-angle frame taken at arm's length.",
+        "gearId": "camera-gopro"
+      }
+    ],
+    "notes": "Snorkel-only, no scuba — crocodiles are approached in chest-deep water with a guide controlling positioning and one animal at a time. Liveaboard/permit access only; sightings depend on the crocodiles' mood and are never baited."
+  },
+  {
+    "id": "rangiroa-french-polynesia-avatoru-pass",
+    "slug": "rangiroa-french-polynesia-avatoru-pass",
+    "locationId": "rangiroa-french-polynesia",
+    "name": "Avatoru Pass",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Sharks_in_Rangiroa.jpg",
+    "lat": -14.943,
+    "lng": -147.712,
+    "description": "Rangiroa’s western pass, fronting Avatoru village and split into two channels by a small islet. Shallower than Tiputa and angled across the flow, it can be dived even when the tide runs outward. Grey reef sharks — the local ‘raira’ — patrol the channel mouth in squadrons, manta rays hang in the current to feed, and whitetip reef sharks rest in shallow grottos. Eagle rays and dense schools of snapper pour past before the drift releases you into the calm turquoise lagoon. Currents here are strong and shift fast.",
+    "depthRange": {
+      "min": 5,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great hammerhead",
+        "scientificName": "Sphyrna mokarran",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Schooling barracuda",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 88,
+    "getThere": "Rangiroa airport (RGI) sits on Avatoru motu right beside the pass; reach it via Papeete (PPT) on Tahiti, a ~1-hour Air Tahiti flight. Dive centers in Avatoru village run the pass on a short boat hop.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Pension Loyna Rangiroa",
+        "url": "https://www.booking.com/searchresults.html?ss=Pension%20Loyna%20Rangiroa",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Hotel Maitai Rangiroa",
+        "url": "https://www.booking.com/searchresults.html?ss=Hotel%20Maitai%20Rangiroa",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Kia Ora Resort & Spa",
+        "url": "https://www.booking.com/searchresults.html?ss=Kia%20Ora%20Resort%20Rangiroa",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Aqua Tiki III",
+        "url": "https://www.liveaboard.com/diving/search?destination=Aqua%20Tiki%20Tuamotu",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "French Polynesia Master",
+        "url": "https://www.liveaboard.com/diving/search?destination=French%20Polynesia%20Master",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Top Dive Rangiroa",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB",
+        "reason": "Every dive ends as a drift out into the lagoon — deploy before surfacing in boat traffic.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Reef hook",
+        "reason": "Hook into the channel lip to hold position while sharks and mantas work the current.",
+        "gearId": "reef-hook-innovative"
+      }
+    ],
+    "notes": "Currents are strong and less predictable than Tiputa; dive with a local guide who knows the tide windows. The two-channel mouth and shallow grottos reward good buoyancy."
   }
 ]
