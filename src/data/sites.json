@@ -64245,5 +64245,224 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Diving is restricted to the exterior: the Salem Express is a designated maritime tomb and penetration is forbidden out of respect for the dead. Human remains and personal effects are still on site, so treat the wreck with sensitivity and remove nothing. The 30 m depth and a wide scattered debris field make it an advanced dive; nitrox extends bottom time. The nearest hyperbaric chambers are in Hurghada and Safaga."
+  },
+  {
+    "id": "solomons-bonegi-kinugawa-maru",
+    "slug": "solomons-bonegi-kinugawa-maru",
+    "locationId": "bonegi-solomon-islands",
+    "name": "Kinugawa Maru (Bonegi II)",
+    "heroImageUrl": null,
+    "lat": -9.4243,
+    "lng": 159.895,
+    "description": "The Kinugawa Maru — 'Bonegi 2' — is a 135 m Japanese armed transport run aground and shelled to a wreck on 15 November 1942 during the Guadalcanal campaign, now resting just off Bonegi Beach west of Honiara. A shore-entry dive, the hull runs from a coral-crusted bow around 7 m down to the sternpost and rudder near 23 m and is easily circled in one dive. Hard and soft corals, gorgonians and balloon corallimorphs sheathe the steel and a heavily encrusted deck gun; spinecheek and Clark's anemonefish work the anemones, while round and longfin batfish and lionfish hang over the wreckage. Visibility is clearest in the dry season, when runoff from neighbouring Bonegi Creek eases.",
+    "depthRange": {
+      "min": 5,
+      "max": 27
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Spinecheek anemonefish",
+        "scientificName": "Premnas biaculeatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Clark's anemonefish",
+        "scientificName": "Amphiprion clarkii",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "scientificName": "Platax",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Gorgonian sea fans",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly into Honiara International Airport (HIR) on Guadalcanal. Bonegi Beach lies about 12 km west of town along the northwest coast road; the Kinugawa Maru (Bonegi 2) sits just west of Bonegi Creek, a few hundred metres beyond the Hirokawa Maru (Bonegi 1). It is a straightforward shore entry, and a small landowner fee is collected at the beach; operators also run guided shore dives or short boat trips from Honiara.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Shore dive; a small landowner access fee is paid at the beach. The shallow coral-covered bow and midships suit open-water divers, while the deeper stern (~23 m) and any penetration call for more experience. Visibility falls sharply during and after heavy rain when Bonegi Creek discharges silt; the dry season (May–Oct) is clearest."
   }
 ]
