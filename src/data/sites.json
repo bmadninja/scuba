@@ -58093,5 +58093,279 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside the Gull Island State Marine Reserve - no take of any marine life. The site sits on Santa Cruz Island's open south side, fully exposed to ocean swell and current, with deep outer walls dropping past 30 m; cold water, surge and kelp entanglement demand solid buoyancy and cold-water experience. Trips are weather-dependent - check NOAA swell forecasts before booking. Visibility is plankton-limited in spring and early summer and peaks in October-November."
+  },
+  {
+    "id": "chuuk-heian-maru",
+    "slug": "chuuk-heian-maru",
+    "locationId": "chuuk-lagoon-fsm",
+    "name": "Heian Maru",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/DSC09583_-_Heian.jpg",
+    "lat": 7.3828,
+    "lng": 151.8557,
+    "description": "Truk Lagoon's largest wreck: a 163 m NYK ocean liner converted into a submarine tender, sunk during Operation Hailstone in February 1944. She lies on her port side with the uppermost hull around 12 m and the seabed at 34 m, her name still spelled out in huge raised letters across the bow. Forward holds are stacked with torpedoes and artillery shells; 15 m submarine periscopes rest in the superstructure beside gas masks and oxygen bottles. Soft coral and clouds of glassfish now cloak the vast steel flank divers drift across.",
+    "depthRange": {
+      "min": 12,
+      "max": 34
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 90,
+    "getThere": "Chuuk (TKK / Weno) is reached via United's island-hopper service from Guam (GUM) or Honolulu (HNL), or via short hops from Pohnpei (PNI). The Heian Maru lies about 500 m west of Tonoas (Dublon) and is run as a boat dive from Weno operators and the lagoon liveaboards.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Truk Stop Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Truk%20Stop%20Hotel",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Blue Lagoon Resort Chuuk",
+        "url": "https://www.booking.com/searchresults.html?ss=Blue%20Lagoon%20Resort%20Chuuk",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "SS Thorfinn",
+        "url": "https://www.liveaboard.com/diving/search?destination=SS%20Thorfinn%20Truk",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Truk Master",
+        "url": "https://www.liveaboard.com/diving/search?destination=Truk%20Master%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Truk Odyssey",
+        "url": "https://www.liveaboard.com/diving/search?destination=Truk%20Odyssey%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "Bluewater Travel",
+        "label": "Truk Lagoon wreck expeditions",
+        "url": "https://bluewaterdivetravel.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light",
+        "reason": "Penetration of the holds and cavernous superstructure where periscopes and torpedoes rest.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Computer",
+        "reason": "Nitrox or trimix profiles to extend bottom time across the 34 m hull.",
+        "gearId": "computer-shearwater-teric"
+      }
+    ],
+    "notes": "Lies on her port side; the bow name lettering and upper hull sit around 12 m, within advanced limits, but the deepest holds and interior penetration to the periscopes suit tech/trimix divers. Wreck-penetration card required for entry."
   }
 ]
