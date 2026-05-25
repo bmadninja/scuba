@@ -62393,5 +62393,262 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Deep, current-swept advanced reef reached only by boat; surf launches are weather-dependent and trips cancel in big swell. Most dives are baited shark drifts - good buoyancy and nitrox recommended, and short no-deco bottom times at 30m+. Nearest recompression chamber is in Durban."
+  },
+  {
+    "id": "bonaire-national-marine-park-bonaire-karpata",
+    "slug": "bonaire-national-marine-park-bonaire-karpata",
+    "locationId": "bonaire-national-marine-park-bonaire",
+    "name": "Karpata",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Snorkeling_Karpata_Reef%2C_Bonaire_%2812841929245%29.jpg",
+    "lat": 12.2193,
+    "lng": -68.3521,
+    "description": "Northwest-coast shore dive famed for elkhorn coral standing several feet tall just below the surface, fronting a steep drop-off that walls down past 30m to a sand plateau. Old ships' anchors lie encrusted across the reef, with a centuries-old anchor tucked on the southeast side. Resident hawksbill and green turtles, schooling tarpon, barracuda and moray eels are regulars, and visibility often reaches 40m. The northern current means it is usually run as a one-way drift from La Dania's Leap back to the Karpata mooring.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 82,
+    "getThere": "Bonaire (BON / Flamingo International) has direct flights from the US East Coast, Amsterdam, and Caribbean hubs. Karpata is about a 15-minute drive north of Kralendijk on the coastal road, marked by the old Karpata monument; gear up and enter via the concrete stairs over the ironshore.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Buddy Dive Resort Bonaire",
+        "url": "https://www.booking.com/searchresults.html?ss=Buddy%20Dive%20Resort%20Bonaire",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Harbour Village Beach Club",
+        "url": "https://www.booking.com/searchresults.html?ss=Harbour%20Village%20Beach%20Club%20Bonaire",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Buddy Dive Resort",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Surface marker buoy",
+        "reason": "Drift profile and surface boat traffic on the northern coast.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Diving Bonaire requires a STINAPA marine-park nature tag. Karpata is usually run as a one-way drift from La Dania's Leap to the Karpata mooring because of the northern current, so arrange a car shuffle. Rocky ironshore entry via concrete steps, no facilities on site. The wall continues well past recreational limits to roughly 60m."
   }
 ]
