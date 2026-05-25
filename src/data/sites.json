@@ -56150,5 +56150,247 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "State Marine Life Conservation District and Seabird Sanctuary since 1977 — no fishing, feeding, anchoring or taking anything; mooring buoys only. The sheltered interior suits open-water divers and snorkelers, but the Back Wall is an advanced drift dive over a 300 m+ drop-off with real current and depth. Trade winds pick up by late morning and afternoon trips are often choppy and lower-visibility. Humpback song is audible underwater roughly December–April."
+  },
+  {
+    "id": "ras-mohammed-egypt-blue-hole-dahab",
+    "slug": "ras-mohammed-egypt-blue-hole-dahab",
+    "locationId": "ras-mohammed-egypt",
+    "name": "Blue Hole (Dahab)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Free_divers_at_the_Blue_Hole_2.jpg",
+    "lat": 28.5722,
+    "lng": 34.5374,
+    "description": "A near-circular sinkhole punched through the fringing reef on Sinai's east coast, 10 km north of Dahab, dropping past 100 m just a few fin-kicks from shore. Freedivers and scuba divers descend a coral wall thick with lyretail anthias, bluecheek butterflyfish and the occasional hawksbill turtle into still, clear blue water — the lack of current is why it became the world's premier shore freediving site. A shallow notch called the Saddle (about 6 m) links the hole to the open sea, while the notorious Arch — a 26 m tunnel whose ceiling sits at 55 m and whose floor falls to 120 m — pierces the seaward wall. The tunnel's deceptive clarity and depth have made this the deadliest dive site on record; most divers stay on the bright shallow reef rim.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology",
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Lyretail anthias",
+        "scientificName": "Pseudanthias squamipinnis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluecheek butterflyfish",
+        "scientificName": "Chaetodon semilarvatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluespotted ribbontail ray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly into Sharm el-Sheikh International (SSH), then drive about 1.5 hours north up the coast to Dahab. The Blue Hole sits roughly 10 km north of town, reached by a rough coastal track usually run by 4x4 or pickup; entry is straight off the shore in front of the Bedouin cafes — no boat needed. Taba (TCP) and a longer transfer from Hurghada (HRG) via the Sinai are alternatives.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Dive computer with depth/deep-stop alarms",
+        "reason": "The wall drops past 100 m at the rim, making it easy to exceed your planned depth without a hard reference"
+      },
+      {
+        "name": "SMB",
+        "reason": "Boat traffic and freedivers share the surface; mark your ascent before you come up the open wall"
+      },
+      {
+        "name": "Reef hook or good buoyancy discipline",
+        "reason": "There is no bottom to stand on over the hole — neutral trim keeps you off the shallow corals on the Saddle"
+      }
+    ],
+    "notes": "Reputed to have the highest diver death toll of any site in the world — most fatalities involve recreational divers attempting the Arch (ceiling 55 m, floor 120 m), which is a technical-only objective requiring trimix and overhead training. The shallow reef rim and the Saddle are an easy open-water shore dive; do not be tempted deeper. Memorial plaques to lost divers line the cliff above the entry. Shore access only; small fee and parking at the Bedouin camps."
   }
 ]
