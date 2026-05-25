@@ -4,9 +4,12 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { X } from "lucide-react";
+import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { isDateInSeason } from "@/lib/scuba-globe";
 
 import type { PlanetGlobeProps } from "./planet-globe";
+
+export type ReefCondition = "thriving" | "stressed" | "critical" | "unknown";
 
 export type FeaturedLocation = {
   id: string;
@@ -25,7 +28,44 @@ export type FeaturedLocation = {
   experiences: ("beginner" | "intermediate" | "advanced")[];
   interestTags: string[];
   animalTags: string[];
+  encounters: { id: string; slug: string; name: string }[];
   tripModes: ("liveaboard" | "resort")[];
+  reefCondition: ReefCondition;
+  coralCoverPercent?: number;
+  coralCoverDate?: string;
+  bleachedPercent?: number;
+};
+
+const REEF_CONDITION_OPTIONS: {
+  value: ReefCondition;
+  label: string;
+  hint: string;
+}[] = [
+  { value: "thriving", label: "Thriving reefs", hint: "No-stress / watch" },
+  { value: "stressed", label: "Under stress", hint: "Warning / Alert 1" },
+  { value: "critical", label: "See now — critical", hint: "Alert 2" },
+];
+
+const REEF_CONDITION_BADGE: Record<
+  ReefCondition,
+  { label: string; className: string }
+> = {
+  thriving: {
+    label: "Thriving reef",
+    className: "bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200",
+  },
+  stressed: {
+    label: "Under stress",
+    className: "bg-amber-50 text-amber-800 ring-1 ring-inset ring-amber-200",
+  },
+  critical: {
+    label: "Critical — see now",
+    className: "bg-rose-50 text-rose-700 ring-1 ring-inset ring-rose-200",
+  },
+  unknown: {
+    label: "Data pending",
+    className: "bg-slate-100 text-slate-500 ring-1 ring-inset ring-slate-200",
+  },
 };
 
 type TripModeFilter = "liveaboard" | "resort";
@@ -39,6 +79,7 @@ type CertFilter =
 type RecencyFilter = "never" | "0-6" | "6-24" | "24+";
 type InterestFilter =
   | "Big animals"
+  | "Bucket list"
   | "Coral reefs"
   | "Macro & critters"
   | "Wrecks"
@@ -87,6 +128,7 @@ const RECENCY_OPTIONS: { value: RecencyFilter; label: string }[] = [
 
 const INTEREST_OPTIONS = [
   "Big animals",
+  "Bucket list",
   "Coral reefs",
   "Macro & critters",
   "Wrecks",
@@ -128,35 +170,82 @@ type PlanetGlobePanelProps = PlanetGlobeProps & {
 
 export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
   const { featuredLocations = [], ...globeProps } = props;
-  const [selectedMonth, setSelectedMonth] = useState(globeProps.initialMonth ?? 1);
+  const [query, setQuery] = useState("");
+  const [selectedMonths, setSelectedMonths] = useState<number[]>([
+    globeProps.initialMonth ?? 1,
+  ]);
   const [tripMode, setTripMode] = useState<TripModeFilter | "">("");
   const [cert, setCert] = useState<CertFilter | "">("");
   const [recency, setRecency] = useState<RecencyFilter | "">("");
   const [seeFilters, setSeeFilters] = useState<SeeFilter[]>([]);
+  const [encounterFilter, setEncounterFilter] = useState<string | null>(null);
+  const [reefConditions, setReefConditions] = useState<ReefCondition[]>([]);
   const [showAnimalOptions, setShowAnimalOptions] = useState(false);
-  const selectedDate = new Date(Date.UTC(2024, selectedMonth - 1, 15));
+  const [showEncounterOptions, setShowEncounterOptions] = useState(false);
+
+  const toggleBucketList = () => {
+    setShowEncounterOptions((s) => {
+      const next = !s;
+      if (!next) setEncounterFilter(null);
+      return next;
+    });
+  };
+
+  const selectEncounter = (id: string) => {
+    setEncounterFilter((current) => (current === id ? null : id));
+  };
+
+  const encounterOptions = useMemo(() => {
+    const seen = new Map<string, { id: string; slug: string; name: string }>();
+    for (const l of featuredLocations) {
+      for (const e of l.encounters ?? []) {
+        if (!seen.has(e.id)) seen.set(e.id, e);
+      }
+    }
+    return Array.from(seen.values()).sort((a, b) =>
+      a.name.localeCompare(b.name),
+    );
+  }, [featuredLocations]);
+
+  const encounterNameById = useMemo(
+    () => new Map(encounterOptions.map((e) => [e.id, e.name])),
+    [encounterOptions],
+  );
+  const sortedMonths = [...selectedMonths].sort((a, b) => a - b);
+  const selectedDates = sortedMonths.map(
+    (m) => new Date(Date.UTC(2024, m - 1, 15)),
+  );
+
+  const toggleMonth = (m: number) => {
+    setSelectedMonths((current) => {
+      if (current.includes(m)) {
+        if (current.length === 1) return current;
+        return current.filter((x) => x !== m);
+      }
+      return [...current, m];
+    });
+  };
 
   const animalFilterSet = new Set<AnimalFilter>(
     seeFilters.filter((filter): filter is AnimalFilter =>
       ANIMAL_OPTIONS.includes(filter as AnimalFilter),
     ),
   );
-  const allAnimalsSelected = ANIMAL_OPTIONS.every((option) =>
-    animalFilterSet.has(option),
-  );
+  const bigAnimalsActive = showAnimalOptions || animalFilterSet.size > 0;
 
   const toggleBigAnimals = () => {
-    setSeeFilters((current) => {
-      const withoutAnimals = current.filter(
-        (filter) => !ANIMAL_OPTIONS.includes(filter as AnimalFilter),
+    if (bigAnimalsActive) {
+      // Close the sub-panel and clear any animal selections.
+      setShowAnimalOptions(false);
+      setSeeFilters((current) =>
+        current.filter(
+          (filter) => !ANIMAL_OPTIONS.includes(filter as AnimalFilter),
+        ),
       );
-      if (allAnimalsSelected) {
-        setShowAnimalOptions(false);
-        return withoutAnimals;
-      }
-      setShowAnimalOptions(true);
-      return [...withoutAnimals, ...ANIMAL_OPTIONS];
-    });
+      return;
+    }
+    // Reveal the sub-options without auto-selecting; user picks individually.
+    setShowAnimalOptions(true);
   };
 
   const toggleAnimalFilter = (animal: AnimalFilter) => {
@@ -174,7 +263,9 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
 
   const markers = (globeProps.markers ?? []).map((marker) => {
     if (!marker.season) return marker;
-    const isInSeason = isDateInSeason(selectedDate, marker.season);
+    const isInSeason = selectedDates.some((d) =>
+      isDateInSeason(d, marker.season!),
+    );
     return {
       ...marker,
       isInSeason,
@@ -190,6 +281,7 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
     return null;
   };
 
+  const normalizedQuery = query.trim().toLowerCase();
   const filteredMarkers = markers.filter((marker) => {
     const matchesTripMode = tripMode === "" || marker.tripMode === tripMode;
     const expLevel = cert === "" ? null : certToExperience(cert);
@@ -203,7 +295,11 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
         }
         return marker.interestTags?.includes(filter);
       });
-    return matchesTripMode && matchesCert && matchesInterest;
+    const matchesQuery =
+      normalizedQuery === "" ||
+      marker.label.toLowerCase().includes(normalizedQuery) ||
+      (marker.country?.toLowerCase().includes(normalizedQuery) ?? false);
+    return matchesTripMode && matchesCert && matchesInterest && matchesQuery;
   });
 
   const filteredHighlightedCountries = Array.from(
@@ -230,6 +326,15 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
     if (opt)
       activeChips.push({ key: "trip", label: opt.label, onClear: () => setTripMode("") });
   }
+  for (const r of reefConditions) {
+    const opt = REEF_CONDITION_OPTIONS.find((o) => o.value === r);
+    if (opt)
+      activeChips.push({
+        key: `reef-${r}`,
+        label: opt.label,
+        onClear: () => setReefConditions((c) => c.filter((x) => x !== r)),
+      });
+  }
   for (const f of seeFilters) {
     activeChips.push({
       key: `see-${f}`,
@@ -237,51 +342,80 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
       onClear: () => setSeeFilters((c) => c.filter((x) => x !== f)),
     });
   }
-  activeChips.push({
-    key: "month",
-    label: MONTH_OPTIONS[selectedMonth - 1].label,
-    onClear: () => setSelectedMonth(new Date().getUTCMonth() + 1),
-  });
+  if (encounterFilter) {
+    const name = encounterNameById.get(encounterFilter) ?? encounterFilter;
+    activeChips.push({
+      key: `enc-${encounterFilter}`,
+      label: name,
+      onClear: () => setEncounterFilter(null),
+    });
+  }
+  for (const m of sortedMonths) {
+    activeChips.push({
+      key: `month-${m}`,
+      label: MONTH_OPTIONS[m - 1].label,
+      onClear: () => toggleMonth(m),
+    });
+  }
 
   return (
     <div className="w-full">
       {/* Top filter bar (PADI-style light) */}
       <div className="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="flex flex-wrap items-center gap-3 px-4 py-3">
-          <div className="flex flex-1 flex-wrap gap-1.5">
-            {activeChips.map((chip) => (
-              <span
-                key={chip.key}
-                className="inline-flex items-center gap-1 rounded-full bg-[#e8f0fe] px-2.5 py-1 text-xs font-medium text-[#1d5d90]"
-              >
-                {chip.label}
-                <button
-                  type="button"
-                  onClick={chip.onClear}
-                  className="rounded-full p-0.5 hover:bg-[#0089de]/15"
-                  aria-label={`Remove ${chip.label}`}
+        <div className="p-4">
+            <div className="mb-4">
+              <label className="relative block">
+                <span className="sr-only">Search locations</span>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
                 >
-                  <X className="size-3" />
-                </button>
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="border-t border-slate-200 p-4">
+                  <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="m14 14 3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search dive locations or countries…"
+                  className="w-full rounded-lg border border-slate-300 bg-white py-2 pl-9 pr-9 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#0089de]"
+                />
+                {query ? (
+                  <button
+                    type="button"
+                    onClick={() => setQuery("")}
+                    aria-label="Clear search"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                ) : null}
+              </label>
+            </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <FilterField label="Month">
-                <select
-                  value={selectedMonth}
-                  onChange={(e) => setSelectedMonth(Number(e.target.value))}
-                  className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-[#0089de]"
-                >
-                  {MONTH_OPTIONS.map((o) => (
-                    <option key={o.value} value={o.value}>
-                      {o.label}
-                    </option>
-                  ))}
-                </select>
+              <FilterField label="Months" className="sm:col-span-2 lg:col-span-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {MONTH_OPTIONS.map((o) => {
+                    const active = selectedMonths.includes(o.value);
+                    return (
+                      <button
+                        key={o.value}
+                        type="button"
+                        aria-pressed={active}
+                        onClick={() => toggleMonth(o.value)}
+                        className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                          active
+                            ? "bg-[#0089de] text-white"
+                            : "border border-slate-300 bg-white text-slate-700 hover:border-[#0089de] hover:text-[#0089de]"
+                        }`}
+                      >
+                        {o.label.slice(0, 3)}
+                      </button>
+                    );
+                  })}
+                </div>
               </FilterField>
 
               <FilterField label="Trip type">
@@ -343,6 +477,38 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                 </div>
               </FilterField>
 
+              <FilterField label="Reef condition" className="sm:col-span-2 lg:col-span-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {REEF_CONDITION_OPTIONS.map((o) => {
+                    const active = reefConditions.includes(o.value);
+                    return (
+                      <button
+                        key={o.value}
+                        type="button"
+                        aria-pressed={active}
+                        title={o.hint}
+                        onClick={() =>
+                          setReefConditions((c) => toggleValue(c, o.value))
+                        }
+                        className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                          active
+                            ? "bg-[#0089de] text-white"
+                            : "border border-slate-300 bg-white text-slate-700 hover:border-[#0089de] hover:text-[#0089de]"
+                        }`}
+                      >
+                        {o.label}
+                      </button>
+                    );
+                  })}
+                </div>
+                <p className="mt-1.5 text-[11px] leading-5 text-slate-500">
+                  Reef condition is the worst current NOAA Coral Reef Watch
+                  alert level on file, paired with the most recent in-situ
+                  coral-cover survey. &ldquo;Data pending&rdquo; means we haven&rsquo;t
+                  ingested a survey yet — not that the reef is healthy.
+                </p>
+              </FilterField>
+
               <FilterField label="What you want to see" className="sm:col-span-2">
                 <div className="flex flex-wrap gap-1.5">
                   {INTEREST_OPTIONS.map((option) => {
@@ -353,7 +519,26 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                           type="button"
                           onClick={toggleBigAnimals}
                           className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
-                            allAnimalsSelected
+                            bigAnimalsActive
+                              ? "bg-[#0089de] text-white"
+                              : "border border-slate-300 bg-white text-slate-700 hover:border-[#0089de] hover:text-[#0089de]"
+                          }`}
+                        >
+                          {option}
+                        </button>
+                      );
+                    }
+                    if (option === "Bucket list") {
+                      if (encounterOptions.length === 0) return null;
+                      const active =
+                        showEncounterOptions || encounterFilter !== null;
+                      return (
+                        <button
+                          key={option}
+                          type="button"
+                          onClick={toggleBucketList}
+                          className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                            active
                               ? "bg-[#0089de] text-white"
                               : "border border-slate-300 bg-white text-slate-700 hover:border-[#0089de] hover:text-[#0089de]"
                           }`}
@@ -402,6 +587,27 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                     })}
                   </div>
                 ) : null}
+                {showEncounterOptions && encounterOptions.length > 0 ? (
+                  <div className="mt-2 flex flex-wrap gap-1.5 border-t border-slate-200 pt-2">
+                    {encounterOptions.map((e) => {
+                      const active = encounterFilter === e.id;
+                      return (
+                        <button
+                          key={e.id}
+                          type="button"
+                          onClick={() => selectEncounter(e.id)}
+                          className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                            active
+                              ? "bg-[#0089de] text-white"
+                              : "border border-slate-300 bg-white text-slate-700 hover:border-[#0089de] hover:text-[#0089de]"
+                          }`}
+                        >
+                          {e.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                ) : null}
               </FilterField>
             </div>
         </div>
@@ -415,10 +621,13 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
 
       <FeaturedGrid
         locations={featuredLocations}
-        selectedMonth={selectedMonth}
+        selectedMonths={sortedMonths}
         tripMode={tripMode}
         cert={cert}
         seeFilters={seeFilters}
+        encounterFilter={encounterFilter}
+        reefConditions={reefConditions}
+        query={normalizedQuery}
       />
     </div>
   );
@@ -426,18 +635,30 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
 
 function FeaturedGrid({
   locations,
-  selectedMonth,
+  selectedMonths,
   tripMode,
   cert,
   seeFilters,
+  encounterFilter,
+  reefConditions,
+  query,
 }: {
   locations: FeaturedLocation[];
-  selectedMonth: number;
+  selectedMonths: number[];
   tripMode: TripModeFilter | "";
   cert: CertFilter | "";
   seeFilters: SeeFilter[];
+  encounterFilter: string | null;
+  reefConditions: ReefCondition[];
+  query: string;
 }) {
-  const monthName = MONTH_OPTIONS[selectedMonth - 1].label;
+  const monthName =
+    selectedMonths.length === 1
+      ? MONTH_OPTIONS[selectedMonths[0] - 1].label
+      : selectedMonths.length <= 3
+        ? selectedMonths.map((m) => MONTH_OPTIONS[m - 1].label.slice(0, 3)).join(", ")
+        : `${selectedMonths.length} months`;
+  const selectedMonthSet = new Set(selectedMonths);
 
   // Cert → maximum minSkillRank a location can have to qualify.
   // We want "matches my level" to mean "the *easiest* dive at this
@@ -467,8 +688,14 @@ function FeaturedGrid({
     const maxMinSkill = cert === "" ? null : certToMaxMinSkillRank(cert);
 
     const passesFilters = (l: FeaturedLocation) => {
+      if (query !== "") {
+        const hay = `${l.name} ${l.country} ${l.continent}`.toLowerCase();
+        if (!hay.includes(query)) return false;
+      }
       if (tripMode !== "" && !l.tripModes.includes(tripMode)) return false;
       if (maxMinSkill !== null && l.minSkillRank > maxMinSkill) return false;
+      if (reefConditions.length > 0 && !reefConditions.includes(l.reefCondition))
+        return false;
       if (seeFilters.length > 0) {
         const matchesSee = seeFilters.some((f) => {
           if (ANIMAL_OPTIONS.includes(f as AnimalFilter)) {
@@ -478,11 +705,17 @@ function FeaturedGrid({
         });
         if (!matchesSee) return false;
       }
+      if (encounterFilter) {
+        if (!l.encounters.some((e) => e.id === encounterFilter)) return false;
+      }
       return true;
     };
 
     const inSeason = locations
-      .filter((l) => l.bestMonths.includes(selectedMonth) && passesFilters(l))
+      .filter(
+        (l) =>
+          l.bestMonths.some((m) => selectedMonthSet.has(m)) && passesFilters(l),
+      )
       .sort((a, b) => b.editorialRank - a.editorialRank);
 
     const seenContinents = new Set<string>();
@@ -504,10 +737,11 @@ function FeaturedGrid({
       .filter(passesFilters)
       .sort((a, b) => b.editorialRank - a.editorialRank)
       .slice(0, 6);
-  }, [locations, selectedMonth, tripMode, cert, seeFilters]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [locations, selectedMonths.join(","), tripMode, cert, seeFilters, encounterFilter, reefConditions.join(","), query]);
 
   const hasFilters =
-    tripMode !== "" || cert !== "" || seeFilters.length > 0;
+    tripMode !== "" || cert !== "" || seeFilters.length > 0 || encounterFilter !== null || reefConditions.length > 0 || query !== "";
 
   const certLabel = cert
     ? (CERT_OPTIONS.find((o) => o.value === cert)?.label ?? "")
@@ -523,8 +757,12 @@ function FeaturedGrid({
               : `In season this month · ${monthName}`}
           </p>
           <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-            Book the flight this week.
+            What the ocean is doing right now.
           </h2>
+          <p className="mt-1 max-w-xl text-sm leading-6 text-slate-600">
+            Each location card shows reef condition, coral cover, and what
+            you&rsquo;d see in season &mdash; sourced, dated, and limitations on file.
+          </p>
         </div>
         <Link
           href="/sites"
@@ -541,7 +779,7 @@ function FeaturedGrid({
       ) : (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((l) => {
-            const inSeason = l.bestMonths.includes(selectedMonth);
+            const inSeason = l.bestMonths.some((m) => selectedMonthSet.has(m));
             return (
               <Link
                 key={l.id}
@@ -550,10 +788,7 @@ function FeaturedGrid({
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={
-                    l.heroImageUrl ??
-                    `https://picsum.photos/seed/${l.slug}/800/440`
-                  }
+                  src={underwaterPhotoUrl(l.heroImageUrl)}
                   alt={l.name}
                   className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
                 />
@@ -578,8 +813,23 @@ function FeaturedGrid({
                   <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
                     {l.description}
                   </p>
-                  <div className="mt-3 inline-block rounded-full bg-[#e8f0fe] px-2.5 py-0.5 text-[11px] font-semibold text-[#1d5d90]">
-                    {l.siteCount} {l.siteCount === 1 ? "dive site" : "dive sites"}
+                  <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                    <span className="inline-block rounded-full bg-[#e8f0fe] px-2.5 py-0.5 text-[11px] font-semibold text-[#1d5d90]">
+                      {l.siteCount} {l.siteCount === 1 ? "dive site" : "dive sites"}
+                    </span>
+                    <span
+                      className={`inline-block rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${REEF_CONDITION_BADGE[l.reefCondition].className}`}
+                    >
+                      {REEF_CONDITION_BADGE[l.reefCondition].label}
+                    </span>
+                    {l.coralCoverPercent !== undefined ? (
+                      <span className="inline-block rounded-full bg-slate-50 px-2.5 py-0.5 text-[11px] font-medium text-slate-600 ring-1 ring-inset ring-slate-200">
+                        {l.coralCoverPercent}% coral cover
+                        {l.coralCoverDate
+                          ? ` · ${l.coralCoverDate.slice(0, 4)}`
+                          : ""}
+                      </span>
+                    ) : null}
                   </div>
                 </div>
               </Link>

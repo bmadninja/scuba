@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import { JsonLd } from "@/components/json-ld";
+import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
@@ -45,6 +46,7 @@ export async function generateMetadata({
   const site = getSiteBySlug(slug);
   if (!site) return { title: "Dive site not found" };
   const location = getLocationById(site.locationId);
+  const metadataImageUrl = underwaterPhotoUrl(site.heroImageUrl);
   const title = `${site.name} — ${location?.name ?? ""}`;
   const description = site.description.slice(0, 160);
   return {
@@ -56,13 +58,13 @@ export async function generateMetadata({
       description,
       url: `/sites/${site.slug}`,
       type: "article",
-      images: site.heroImageUrl ? [{ url: site.heroImageUrl, width: 2000, height: 1100 }] : undefined,
+      images: [{ url: metadataImageUrl, width: 2000, height: 1100 }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: site.heroImageUrl ? [site.heroImageUrl] : undefined,
+      images: [metadataImageUrl],
     },
   };
 }
@@ -108,9 +110,7 @@ export default async function SiteDetailPage({
     .map(getMethodologyByClaimId)
     .filter((m): m is NonNullable<typeof m> => Boolean(m));
 
-  const heroUrl =
-    site.heroImageUrl ??
-    "https://upload.wikimedia.org/wikipedia/commons/c/c7/Diving_the_Cenotes_in_Yucatan%2C_Mexico_%2841791832870%29.jpg";
+  const heroUrl = underwaterPhotoUrl(site.heroImageUrl);
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -128,6 +128,9 @@ export default async function SiteDetailPage({
             </Link>
             <Link href="/about" className="hover:text-[#0089de]">
               About
+            </Link>
+            <Link href="/faq" className="hover:text-[#0089de]">
+              FAQ
             </Link>
           </nav>
         </div>

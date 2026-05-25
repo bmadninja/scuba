@@ -24,6 +24,9 @@ export default function AboutPage() {
             <Link href="/about" className="text-[#0089de]">
               About
             </Link>
+            <Link href="/faq" className="hover:text-[#0089de]">
+              FAQ
+            </Link>
           </nav>
         </div>
       </header>

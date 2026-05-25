@@ -1,0 +1,168 @@
+{
+  "id": "cod-hole-ss-yongala-australia",
+  "slug": "cod-hole-ss-yongala-australia",
+  "locationId": "cod-hole-australia",
+  "name": "SS Yongala",
+  "heroImageUrl": null,
+  "lat": -19.30444,
+  "lng": 147.62528,
+  "description": "A 110 m steel passenger steamer that vanished in a cyclone in March 1911 with all 122 on board, now lying intact on her starboard side on a sandy bottom in the open Coral Sea, roughly 22 km east of Cape Bowling Green and 90 km southeast of Townsville. The hull rises from 30 m sand to about 16 m at the highest stanchions, isolated from any reef, which concentrates pelagic life on the wreck like nowhere else on the Great Barrier Reef. Queensland groupers the size of small cars, schooling barracuda, eagle rays, mantas, olive sea snakes, bull sharks and a resident humphead wrasse all work the structure. Penetration is illegal — it is a protected gravesite.",
+  "depthRange": {
+    "min": 16,
+    "max": 30
+  },
+  "skillLevel": "advanced",
+  "diveTypes": [
+    "wrecks",
+    "large-pelagics"
+  ],
+  "species": [
+    {
+      "commonName": "Queensland grouper",
+      "scientificName": "Epinephelus lanceolatus",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Humphead wrasse",
+      "scientificName": "Cheilinus undulatus",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Olive sea snake",
+      "scientificName": "Aipysurus laevis",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Bull shark",
+      "scientificName": "Carcharhinus leucas",
+      "reliability": "seasonal",
+      "bestMonths": [12, 1, 2, 3]
+    },
+    {
+      "commonName": "Reef manta ray",
+      "scientificName": "Mobula alfredi",
+      "reliability": "seasonal",
+      "bestMonths": [5, 6, 7, 8, 9]
+    },
+    {
+      "commonName": "Spotted eagle ray",
+      "scientificName": "Aetobatus narinari",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Giant trevally",
+      "scientificName": "Caranx ignobilis",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Great barracuda",
+      "scientificName": "Sphyraena barracuda",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Green sea turtle",
+      "scientificName": "Chelonia mydas",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Dwarf minke whale",
+      "scientificName": "Balaenoptera acutorostrata",
+      "reliability": "rare",
+      "bestMonths": [6, 7, 8]
+    }
+  ],
+  "conditionsByMonth": [
+    {
+      "month": 1,
+      "waterTempC": {"min": 28, "max": 30},
+      "visibilityM": {"min": 5, "max": 15},
+      "currentStrength": "strong",
+      "suitRecommendation": "3 mm tropical wetsuit"
+    },
+    {
+      "month": 2,
+      "waterTempC": {"min": 28, "max": 30},
+      "visibilityM": {"min": 5, "max": 15},
+      "currentStrength": "strong",
+      "suitRecommendation": "3 mm tropical wetsuit"
+    },
+    {
+      "month": 3,
+      "waterTempC": {"min": 27, "max": 29},
+      "visibilityM": {"min": 8, "max": 18},
+      "currentStrength": "moderate",
+      "suitRecommendation": "3 mm tropical wetsuit"
+    },
+    {
+      "month": 4,
+      "waterTempC": {"min": 26, "max": 28},
+      "visibilityM": {"min": 10, "max": 20},
+      "currentStrength": "moderate",
+      "suitRecommendation": "3 mm tropical wetsuit"
+    },
+    {
+      "month": 5,
+      "waterTempC": {"min": 24, "max": 26},
+      "visibilityM": {"min": 15, "max": 25},
+      "currentStrength": "moderate",
+      "suitRecommendation": "5 mm wetsuit"
+    },
+    {
+      "month": 6,
+      "waterTempC": {"min": 22, "max": 24},
+      "visibilityM": {"min": 15, "max": 30},
+      "currentStrength": "moderate",
+      "suitRecommendation": "5 mm wetsuit, hood optional"
+    },
+    {
+      "month": 7,
+      "waterTempC": {"min": 22, "max": 24},
+      "visibilityM": {"min": 15, "max": 30},
+      "currentStrength": "moderate",
+      "suitRecommendation": "5 mm wetsuit, hood optional"
+    },
+    {
+      "month": 8,
+      "waterTempC": {"min": 22, "max": 24},
+      "visibilityM": {"min": 15, "max": 30},
+      "currentStrength": "moderate",
+      "suitRecommendation": "5 mm wetsuit, hood optional"
+    },
+    {
+      "month": 9,
+      "waterTempC": {"min": 23, "max": 25},
+      "visibilityM": {"min": 15, "max": 25},
+      "currentStrength": "moderate",
+      "suitRecommendation": "5 mm wetsuit"
+    },
+    {
+      "month": 10,
+      "waterTempC": {"min": 25, "max": 27},
+      "visibilityM": {"min": 12, "max": 22},
+      "currentStrength": "moderate",
+      "suitRecommendation": "3 mm tropical wetsuit"
+    },
+    {
+      "month": 11,
+      "waterTempC": {"min": 26, "max": 28},
+      "visibilityM": {"min": 10, "max": 20},
+      "currentStrength": "moderate",
+      "suitRecommendation": "3 mm tropical wetsuit"
+    },
+    {
+      "month": 12,
+      "waterTempC": {"min": 27, "max": 29},
+      "visibilityM": {"min": 8, "max": 18},
+      "currentStrength": "strong",
+      "suitRecommendation": "3 mm tropical wetsuit"
+    }
+  ],
+  "bestMonths": [5, 6, 7, 8, 9, 10],
+  "editorialRank": 92,
+  "getThere": "Fly into Townsville Airport (TSV) or drive south to Ayr (~90 minutes). Most operators depart from Alva Beach near Ayr — a 30-minute boat ride straight east to the wreck. Longer day-boat and liveaboard runs also leave from Townsville and Magnetic Island (2–3 hours each way). Open ocean crossing, often choppy; chartered crossings are weather-dependent.",
+  "lodging": [],
+  "operators": [],
+  "gearIds": [],
+  "siteSpecificGear": [],
+  "notes": "Protected wreck under the Commonwealth Underwater Cultural Heritage Act 2018 — penetration is illegal and nothing may be touched or removed. Currents are routinely strong; many operators require an advanced certification, recent dive experience, and a deep adventure dive. Nitrox is widely recommended to extend bottom time at 25-30 m. Exposed open-ocean site: seasickness on the surface interval is common, and trips are cancelled in marginal weather."
+}

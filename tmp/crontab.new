@@ -1,0 +1,1 @@
+*/5 * * * * cd /Users/josietyleung/github/scuba && /bin/bash scripts/blitz-watchdog.sh >> logs/blitz-watchdog.log 2>&1

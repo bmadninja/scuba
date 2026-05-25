@@ -1,3 +1,12 @@
+## Region focus (worker: indo-pacific)
+
+You MUST pick a missing dive site from one of these regions/countries:
+Indonesia, Philippines, Malaysia, Thailand, Vietnam, Papua New Guinea, Solomon Islands, Fiji, Vanuatu, Micronesia (Palau/Yap/Chuuk/Pohnpei), French Polynesia, Cook Islands, Tonga, Samoa, Australia, New Zealand, Japan, South Korea, Taiwan, China, Hawaii
+
+If every famous site in this region is already covered, print EXHAUSTED. Do not pick from outside this region.
+
+---
+
 You are autonomously adding dive sites to scubaseason.fun. Complete this task fully without asking questions.
 
 ## Your job

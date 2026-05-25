@@ -1,0 +1,35 @@
+=== Worker [indian-med-africa] started at Mon May 25 12:31:58 EDT 2026 | focus: Maldives, Sri Lanka, Lakshadweep, Andaman Islands, India coastlines, Seychelles, Madagascar, Mauritius, Réunion, Comoros, Egypt Red Sea, Sudan Red Sea, Saudi Arabia Red Sea, Jordan, Israel, Oman, Yemen Socotra, South Africa (Aliwal/Sodwana/Cape), Mozambique, Tanzania (Zanzibar/Pemba/Mafia), Kenya, Mediterranean (Malta/Cyprus/Greece/Italy/Spain/France/Croatia/Turkey), West Africa (Sao Tome) ===
+
+--- [indian-med-africa] iter 1 | added=0 | Mon May 25 12:31:58 EDT 2026 ---
+The commit landed cleanly — only `src/data/sites.json` changed, none of the other modified working-tree files were swept in.
+
+## Summary
+
+Added **Tiger Harbour (Fuvahmulah)** to the Maldives — the highest-value remaining coverage gap in my region (Indian/Med/Africa). It was listed in `coverage-gaps.json` (Fuvahmulah, mapped to `ari-atoll-maldives`) and not yet in our data.
+
+**Why this site:** Fuvahmulah hosts the Indian Ocean's largest known resident tiger shark population (~400 documented individuals, 6–18 per dive year-round) and is one of the most-searched shark-diving destinations of the past decade. The bulk of the obvious coverage gaps in my region (MS Zenobia, Elphinstone, Dunraven, Carnatic, Giannis D, MV Rozi, Straits of Tiran) were already covered by earlier blitz runs.
+
+**Facts verified** across PADI, Divernet, DiveSSI, Pelagic Divers, and Liquid Shark Divers: Tiger Harbour is a harbour-mouth plateau (8–12 m) with a wall dropping past 60 m at the island's southeast tip; water 27–29 °C; viz 25–35 m peak (Jan–Apr), dropping in the SW monsoon; tigers year-round, pelagic threshers + scalloped hammerheads Oct–Apr, oceanic mantas Mar–May; advanced/managed bait dive with strong currents; access via 1.5-hr domestic flight from Malé (MLE → FVM).
+
+**Hero image:** set to `null`. Wikimedia's `Category:Fuvahmulah` holds only beach/landscape shots, and the only tiger shark photos on Commons are from the Bahamas/Hawaii/Australia. Per the rules, a generic off-site stand-in is worse than `null`, so I left it null rather than mislead.
+
+The entry passed validation: 12 monthly condition blocks, 754-char description (no banned fluff words), no duplicate.
+
+DONE: Tiger Harbour (Fuvahmulah) added successfully
+[indian-med-africa] ✓ Added: Tiger Harbour (Fuvahmulah) added successfully
+
+--- [indian-med-africa] iter 2 | added=1 | Mon May 25 12:38:56 EDT 2026 ---
+Pushed successfully to main (`67000a0..fb680d8`).
+
+I added the **Blue Hole (Dahab)** — one of the most famous and heavily-searched dive sites on Earth, and a genuine gap (the existing "Blue Hole" entries were Palau, Gozo, and Belize; the Red Sea Sinai one was missing).
+
+What I verified and chose:
+- **Pick rationale:** `coverage-gaps.json` was partly stale (its top regional picks — Zenobia, Elphinstone, Dunraven, Carnatic, Giannis D — are already in `sites.json`). The Dahab Blue Hole was a true missing world-class site. Mapped to `ras-mohammed-egypt`, the same loose South Sinai hub the dataset already uses for far-flung Sinai/Gubal sites like Thistlegorm.
+- **Facts** cross-checked against Wikipedia + dive sources: coords 28.5722, 34.5374; the Saddle (~6 m), the Arch (26 m tunnel, ceiling 55 m, floor 120 m), hole >100 m; seasonal temps/viz; reef species; "deadliest dive site" reputation.
+- **Hero image:** rejected the iconic Arch shot (only 800×600) and a topside parking-lot photo (5277px but not underwater), choosing `Free_divers_at_the_Blue_Hole_2.jpg` (2651×2675, CC BY 2.0, verified HTTP 200) — an underwater shot of freedivers descending the reef wall into the deep blue, matching the description's lead on the site's fame as a shore freediving site.
+- **Integrity:** JSON parses, no duplicate IDs, 12 monthly conditions entries, description 750 chars, diff purely additive (+242 lines).
+
+DONE: Blue Hole (Dahab) added successfully
+[indian-med-africa] ✓ Added: Blue Hole (Dahab) added successfully
+
+--- [indian-med-africa] iter 3 | added=2 | Mon May 25 12:51:48 EDT 2026 ---

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import { JsonLd } from "@/components/json-ld";
+import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { locationSchema } from "@/lib/schema-org";
 import { getAllLocations, getLocationBySlug } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
@@ -70,6 +71,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const location = getLocationBySlug(slug);
   if (!location) return { title: "Location not found" };
+  const metadataImageUrl = underwaterPhotoUrl(location.heroImageUrl);
   const title = `${location.name}, ${location.country}`;
   const description = location.description.slice(0, 160);
   return {
@@ -81,7 +83,7 @@ export async function generateMetadata({
       description,
       url: `/locations/${location.slug}`,
       type: "article",
-      images: location.heroImageUrl ? [{ url: location.heroImageUrl }] : undefined,
+      images: [{ url: metadataImageUrl }],
     },
   };
 }
@@ -120,6 +122,9 @@ export default async function LocationPage({
             </Link>
             <Link href="/about" className="hover:text-[#0089de]">
               About
+            </Link>
+            <Link href="/faq" className="hover:text-[#0089de]">
+              FAQ
             </Link>
           </nav>
         </div>
@@ -203,30 +208,11 @@ export default async function LocationPage({
               </section>
             ) : null}
 
-            {details && details.quotes.length > 0 ? (
-              <section>
-                <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-                  What divers say
-                </h2>
-                <div className="mt-6 grid gap-5 md:grid-cols-2">
-                  {details.quotes.map((q, i) => (
-                    <figure
-                      key={i}
-                      className="rounded-2xl border border-slate-200 bg-white p-6"
-                    >
-                      <blockquote className="text-base italic leading-7 text-slate-800">
-                        &ldquo;{q.text}&rdquo;
-                      </blockquote>
-                      {q.attribution ? (
-                        <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-                          — {q.attribution}
-                        </figcaption>
-                      ) : null}
-                    </figure>
-                  ))}
-                </div>
-              </section>
-            ) : null}
+            {reefHealth ? (
+              <ReefHealthPanel record={reefHealth} />
+            ) : (
+              <UnknownReefHealthPanel />
+            )}
 
             <section>
               <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
@@ -260,14 +246,12 @@ export default async function LocationPage({
                       href={`/sites/${s.slug}`}
                       className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-[#0089de]/40 hover:shadow-md"
                     >
-                      {s.heroImageUrl ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={s.heroImageUrl}
-                          alt={s.name}
-                          className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
-                        />
-                      ) : null}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={underwaterPhotoUrl(s.heroImageUrl)}
+                        alt={s.name}
+                        className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
+                      />
                       <div className="p-5">
                         <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#0089de]">
                           {s.name}
@@ -290,13 +274,32 @@ export default async function LocationPage({
               )}
             </section>
 
-            {reefHealth ? (
-              <ReefHealthPanel record={reefHealth} />
-            ) : (
-              <UnknownReefHealthPanel />
-            )}
-
             <GearSection locationId={location.id} sites={sites} />
+
+            {details && details.quotes.length > 0 ? (
+              <section>
+                <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+                  What divers say
+                </h2>
+                <div className="mt-6 grid gap-5 md:grid-cols-2">
+                  {details.quotes.map((q, i) => (
+                    <figure
+                      key={i}
+                      className="rounded-2xl border border-slate-200 bg-white p-6"
+                    >
+                      <blockquote className="text-base italic leading-7 text-slate-800">
+                        &ldquo;{q.text}&rdquo;
+                      </blockquote>
+                      {q.attribution ? (
+                        <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+                          — {q.attribution}
+                        </figcaption>
+                      ) : null}
+                    </figure>
+                  ))}
+                </div>
+              </section>
+            ) : null}
           </div>
 
           <aside className="lg:sticky lg:top-6 lg:self-start">
@@ -675,8 +678,41 @@ function UnknownReefHealthPanel() {
   );
 }
 
-/** Coral cover on a healthy tropical reef, used as the comparison baseline. */
-const HEALTHY_REEF_COVER_PERCENT = 50;
+/**
+ * Linear extrapolation of live coral cover to zero, based on the most recent
+ * two surveys on file. Returns null when we can't responsibly project — no
+ * historical survey, same-year surveys, or the reef is stable / recovering.
+ */
+function computeCoverProjection({
+  coverNow,
+  coverBefore,
+  surveyYear,
+  historicalYear,
+}: {
+  coverNow: number | null;
+  coverBefore: number | null;
+  surveyYear: number | null;
+  historicalYear: number | null;
+}): { zeroYear: number; perYear: string; yearsLeft: number } | null {
+  if (
+    coverNow === null ||
+    coverBefore === null ||
+    surveyYear === null ||
+    historicalYear === null
+  ) {
+    return null;
+  }
+  const span = surveyYear - historicalYear;
+  if (span <= 0) return null;
+  const perYear = (coverBefore - coverNow) / span;
+  if (perYear <= 0) return null; // stable or recovering — no doom projection
+  const yearsLeft = Math.max(1, Math.round(coverNow / perYear));
+  return {
+    zeroYear: surveyYear + yearsLeft,
+    perYear: perYear.toFixed(1),
+    yearsLeft,
+  };
+}
 
 type Verdict = {
   label: string;
@@ -852,37 +888,55 @@ function ReefHealthPanel({
         <p className="text-[14px] leading-6">{verdict.headline}</p>
       </div>
 
-      {/* How much live coral — comparison bars */}
+      {/* Coral reef health — this site's trajectory */}
       {coverNow !== null ? (
         <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-            How much live coral
-          </p>
-          <p className="mt-1 text-[11px] text-slate-500">
-            Higher is better. Healthy tropical reefs typically sit at ~{HEALTHY_REEF_COVER_PERCENT}% cover.
-          </p>
+          <div className="flex items-start justify-between gap-3">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+              Coral reef health
+            </p>
+            <Link
+              href="/faq#coral-cover"
+              className="text-[11px] font-medium text-slate-500 hover:text-[#0089de] hover:underline"
+            >
+              How is this calculated?
+            </Link>
+          </div>
           <div className="mt-4 space-y-2.5">
-            <CoverBar
-              label="Here today"
-              sublabel={surveyYear ? `Survey ${surveyYear}` : undefined}
-              percent={coverNow}
-              tone="now"
-            />
-            <CoverBar
-              label="A healthy reef"
-              sublabel="Reference baseline"
-              percent={HEALTHY_REEF_COVER_PERCENT}
-              tone="healthy"
-            />
             {coverBefore !== null ? (
               <CoverBar
-                label="Here a decade ago"
+                label="A decade ago"
                 sublabel={historicalYear ? `Survey ${historicalYear}` : undefined}
                 percent={coverBefore}
                 tone="before"
               />
             ) : null}
+            <CoverBar
+              label="Today"
+              sublabel={surveyYear ? `Survey ${surveyYear}` : undefined}
+              percent={coverNow}
+              tone="now"
+            />
           </div>
+          {(() => {
+            const projection = computeCoverProjection({
+              coverNow,
+              coverBefore,
+              surveyYear,
+              historicalYear,
+            });
+            if (!projection) return null;
+            return (
+              <p className="mt-4 rounded-lg bg-rose-50 px-3 py-2 text-[12px] leading-5 text-rose-900">
+                <span className="font-semibold">
+                  On current trend, no live coral by ~{projection.zeroYear}.
+                </span>{" "}
+                Losing about {projection.perYear}% cover per year — roughly{" "}
+                {projection.yearsLeft} years of reef left to see if nothing
+                changes.
+              </p>
+            );
+          })()}
         </div>
       ) : null}
 

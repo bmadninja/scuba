@@ -1,0 +1,8 @@
+=== [supervisor] launching blitz-parallel at Mon May 25 12:31:48 EDT 2026 ===
+=== Parallel blitz started at Mon May 25 12:31:48 EDT 2026 ===
+Started indo-pacific worker: PID=21207
+Started americas-atlantic worker: PID=21253
+Started indian-med-africa worker: PID=21309
+All 3 workers running. PIDs: 21207 21253 21309
+Logs: logs/worker-{indo-pacific,americas-atlantic,indian-med-africa}-20260525-123148.log
+Progress: tail -f logs/blitz-progress.log

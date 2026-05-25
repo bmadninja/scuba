@@ -1,3 +1,12 @@
+## Region focus (worker: indian-med-africa)
+
+You MUST pick a missing dive site from one of these regions/countries:
+Maldives, Sri Lanka, Lakshadweep, Andaman Islands, India coastlines, Seychelles, Madagascar, Mauritius, Réunion, Comoros, Egypt Red Sea, Sudan Red Sea, Saudi Arabia Red Sea, Jordan, Israel, Oman, Yemen Socotra, South Africa (Aliwal/Sodwana/Cape), Mozambique, Tanzania (Zanzibar/Pemba/Mafia), Kenya, Mediterranean (Malta/Cyprus/Greece/Italy/Spain/France/Croatia/Turkey), West Africa (Sao Tome)
+
+If every famous site in this region is already covered, print EXHAUSTED. Do not pick from outside this region.
+
+---
+
 You are autonomously adding dive sites to scubaseason.fun. Complete this task fully without asking questions.
 
 ## Your job

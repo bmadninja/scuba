@@ -1,0 +1,41 @@
+=== Worker [americas-atlantic] started at Mon May 25 12:31:53 EDT 2026 | focus: Caribbean (all islands), Mexico (Yucatán/Cozumel/Socorro), Belize, Honduras (Bay Islands), Cayman Islands, Costa Rica (Cocos), Panama, Colombia (Malpelo), Ecuador (Galápagos), Brazil, Argentina, USA (Florida/California/East Coast), Canada, Iceland, Azores, Canary Islands, Cape Verde, Madeira, Bermuda, Bahamas ===
+
+--- [americas-atlantic] iter 1 | added=0 | Mon May 25 12:31:53 EDT 2026 ---
+Done. Added the **Charles L. Brown Wreck** (Sint Eustatius) to `src/data/sites.json` and pushed to main.
+
+**Why this pick:** Among my Americas-Atlantic region, the `statia-st-eustatius` location had **zero** sites, and National Geographic calls Statia "the best place to dive in the Caribbean." The Charles L. Brown is its flagship dive — a 100 m (327 ft) former AT&T cable-layer (built 1954 as *CS Salernum*), scuttled in 2003, and rated "Premier Wreck Dive in the Caribbean" by Sport Diver. The coverage-gaps file was largely stale (Molinere, RMS Rhone, MV Captain Keith Tibbetts, Karpata are all already covered) and its remaining gaps point at countries with no matching location entry (Canada, Aruba, Turks & Caicos, etc.).
+
+**Facts verified** across PADI, Scuba Diving magazine, and dive-site databases: built 1954 Naples, sunk 25 Jul 2003, lies on her side off the leeward SW coast, top ~20 m / bottom ~30 m, ~100 m long, resident barracuda "Charlie," horse-eye jacks, cubera snapper, reef sharks. Coordinates from PADI (17.4626, -62.9902), conditions calibrated to the NE-Caribbean profile.
+
+**Hero image:** set to `null`. I searched Wikimedia Commons under the site name, the ship's original name (*CS Salernum*), "Charlie Brown," and the *Sint Eustatius National Marine Park* category — that category holds only a location map and an ISS satellite photo, with no underwater or wreck imagery anywhere on Commons. Per the rules, a null beats putting a generic reef shot on a wreck card.
+
+Sources: [Scuba Diving — Charlie Brown](https://www.scubadiving.com/keywords/underwater-photography/secret-dive-spot-beast-steel-sint-eustatius), [PADI dive site](https://www.padi.com/dive-site/sint-eustatius/charles-l-brown/), [National Geographic](https://www.nationalgeographic.com/travel/article/this-tiny-island-is-best-place-to-dive-in-caribbean)
+
+DONE: Charles L. Brown Wreck added successfully
+[americas-atlantic] ✓ Added: Charles L. Brown Wreck added successfully
+
+--- [americas-atlantic] iter 2 | added=1 | Mon May 25 12:37:51 EDT 2026 ---
+Done. I added **Felipe's Place (Providencia, Colombia)** to `src/data/sites.json` and pushed to `main` (commit `a89a129`, staging only `sites.json` so the other in-progress working-tree changes were left untouched).
+
+Why this pick:
+- **In-region & 0-coverage:** Providencia (Colombia, Caribbean) is an existing location with **0 sites** — the highest-priority rule-3 target. The top in-region coverage-gaps (RMS Rhone, Antilla, etc.) have no matching location, and Molinere — the #1 in-region gap — is already covered.
+- **Editorially important:** Felipe's Place is repeatedly cited as Providencia's signature dive — stepped coral terraces (9–24 m), nurse sharks, barracuda, hawksbills, a submerged Christ statue, sitting on the Old Providence barrier reef inside the UNESCO Seaflower Biosphere Reserve. Verified across Scuba Diving magazine, Colombia Travel, and Just Gotta Dive.
+- **Hero image:** set to `null`. I searched Wikimedia Commons MediaSearch and the API for Providencia/Santa Catalina/Old Providence reef + the Kwarcit fallback — **zero underwater images exist on Commons** for this site. Per the rules, a null beats a misleading or off-location stand-in.
+
+Entry has 12 valid `conditionsByMonth` entries, a 550-char fluff-free description, dry-season `bestMonths`, and `editorialRank` 76 (calibrated against nearby Caribbean reef sites).
+
+DONE: Felipe's Place added successfully
+[americas-atlantic] ✓ Added: Felipe's Place added successfully
+
+--- [americas-atlantic] iter 3 | added=2 | Mon May 25 12:46:41 EDT 2026 ---
+DONE: Kwarcit Wreck added successfully
+
+**Summary**
+- **Picked:** Kwarcit Wreck (a.k.a. the *Boris*), Sal, Cape Verde — a 50 m Russian trawler scuttled in 2006, now Sal's signature wreck dive. This fills a previously **empty country** (`sal-cape-verde` had 0 sites) in the americas-atlantic region — higher editorial value than a second-tier site at an already-covered location like Galápagos/Cocos.
+- **Why not the higher-priority gaps:** Molinere (Grenada), RMS Rhone (BVI), MV Captain Keith Tibbetts (Cayman), Molokini, and Karpata are all already in `sites.json`. Most remaining uncovered gaps (Antilla/Aruba, Champagne Reef/Dominica, Empress of Ireland/Canada) lack a matching `locationId`.
+- **Facts** cross-checked across 4+ dive sources: deck 23 m / keel 28 m, sunk Jan 2006, upright and penetrable, round stingrays + occasional nurse sharks + frogfish/scorpionfish/nudibranchs, water 22–27 °C, advanced-only due to depth and shifting Atlantic current. Coords 16.5827, −22.9192 (offshore Santa Maria) confirmed by dive-site databases.
+- **Hero image:** set to `null`. Wikimedia Commons has no underwater photo of the Kwarcit (only generic Cape Verde fish shots and a surface beach-wreck of a different vessel), and the description is wreck-specific — per the rules, `null` beats an off-subject stand-in.
+- Committed and pushed to `main` as `80f600f` ("auto: add Kwarcit Wreck"), `sites.json` only.
+[americas-atlantic] ✓ Added: Kwarcit Wreck added successfully
+
+--- [americas-atlantic] iter 4 | added=3 | Mon May 25 12:54:02 EDT 2026 ---

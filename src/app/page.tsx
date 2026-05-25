@@ -6,6 +6,7 @@ import { getScubaGlobeData } from "@/lib/scuba-globe";
 import { getAllSites } from "@/lib/data/sites";
 import { getAllLocations } from "@/lib/data/locations";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
+import { getEncountersByLocationId } from "@/lib/data/encounters";
 import type { BleachingAlertLevel, Site } from "@/lib/data/types";
 
 type ReefCondition = "thriving" | "stressed" | "critical" | "unknown";
@@ -205,6 +206,11 @@ export default function Home() {
         experiences: Array.from(experienceSet),
         interestTags: Array.from(interestSet),
         animalTags: Array.from(animalSet),
+        encounters: getEncountersByLocationId(location.id).map((e) => ({
+          id: e.id,
+          slug: e.slug,
+          name: e.name,
+        })),
         tripModes: Array.from(tripModeSet),
         reefCondition,
         ...(coralCoverPercent !== undefined ? { coralCoverPercent } : {}),
@@ -232,6 +238,9 @@ export default function Home() {
             </Link>
             <Link href="/about" className="hover:text-[#0089de]">
               About
+            </Link>
+            <Link href="/faq" className="hover:text-[#0089de]">
+              FAQ
             </Link>
           </nav>
         </div>

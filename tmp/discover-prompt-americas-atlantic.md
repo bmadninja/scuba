@@ -1,3 +1,12 @@
+## Region focus (worker: americas-atlantic)
+
+You MUST pick a missing dive site from one of these regions/countries:
+Caribbean (all islands), Mexico (Yucatán/Cozumel/Socorro), Belize, Honduras (Bay Islands), Cayman Islands, Costa Rica (Cocos), Panama, Colombia (Malpelo), Ecuador (Galápagos), Brazil, Argentina, USA (Florida/California/East Coast), Canada, Iceland, Azores, Canary Islands, Cape Verde, Madeira, Bermuda, Bahamas
+
+If every famous site in this region is already covered, print EXHAUSTED. Do not pick from outside this region.
+
+---
+
 You are autonomously adding dive sites to scubaseason.fun. Complete this task fully without asking questions.
 
 ## Your job

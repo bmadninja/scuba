@@ -1,0 +1,7 @@
+=== Parallel blitz started at Fri May 22 11:18:28 EDT 2026 ===
+Started indo-pacific worker: PID=14293
+Started americas-atlantic worker: PID=14343
+Started indian-med-africa worker: PID=14382
+All 3 workers running. PIDs: 14293 14343 14382
+Logs: logs/worker-{indo-pacific,americas-atlantic,indian-med-africa}-20260522-111828.log
+Progress: tail -f logs/blitz-progress.log

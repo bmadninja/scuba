@@ -14,7 +14,9 @@ mkdir -p logs tmp
 
 MAX=${MAX_SITES:-500}
 DELAY=${DELAY_SECONDS:-45}
+MAX_TURNS=${MAX_TURNS:-60}
 CONSECUTIVE_EXHAUSTED=0
+CONSECUTIVE_NO_RESULT=0
 ADDED=0
 START=$(date +%s)
 
@@ -44,7 +46,7 @@ for i in $(seq 1 $MAX); do
 
   OUTPUT=$(claude --print \
     --allowedTools "Bash,Read,Write,WebFetch,WebSearch" \
-    --max-turns 30 \
+    --max-turns $MAX_TURNS \
     "$(cat $PROMPT_FILE)" 2>&1) || true
 
   echo "$OUTPUT" | tail -15
@@ -58,16 +60,23 @@ for i in $(seq 1 $MAX); do
     echo "[$LABEL] ✓ Added: $SITE"
     ADDED=$((ADDED + 1))
     CONSECUTIVE_EXHAUSTED=0
+    CONSECUTIVE_NO_RESULT=0
   elif echo "$OUTPUT" | grep -q "^EXHAUSTED"; then
     echo "[$LABEL] → Exhausted"
     CONSECUTIVE_EXHAUSTED=$((CONSECUTIVE_EXHAUSTED + 1))
+    CONSECUTIVE_NO_RESULT=0
     if [ $CONSECUTIVE_EXHAUSTED -ge 3 ]; then
       echo "=== [$LABEL] 3 consecutive EXHAUSTED — stopping ==="
       break
     fi
   else
-    echo "[$LABEL] → No clear result, continuing..."
-    CONSECUTIVE_EXHAUSTED=0
+    CONSECUTIVE_NO_RESULT=$((CONSECUTIVE_NO_RESULT + 1))
+    echo "[$LABEL] → No clear result (streak=$CONSECUTIVE_NO_RESULT), continuing..."
+    if [ $CONSECUTIVE_NO_RESULT -ge 5 ]; then
+      echo "=== [$LABEL] 5 consecutive no-result iters (likely max-turns stalls) — stopping ==="
+      echo "$(date) | [$LABEL] stopped=no-result-streak iter=$i added=$ADDED" >> logs/blitz-progress.log
+      break
+    fi
   fi
 
   TOTAL=$(node -e "console.log(require('./src/data/sites.json').length)" 2>/dev/null || echo "?")

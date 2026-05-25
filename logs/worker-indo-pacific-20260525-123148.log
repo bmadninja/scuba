@@ -1,0 +1,52 @@
+=== Worker [indo-pacific] started at Mon May 25 12:31:48 EDT 2026 | focus: Indonesia, Philippines, Malaysia, Thailand, Vietnam, Papua New Guinea, Solomon Islands, Fiji, Vanuatu, Micronesia (Palau/Yap/Chuuk/Pohnpei), French Polynesia, Cook Islands, Tonga, Samoa, Australia, New Zealand, Japan, South Korea, Taiwan, China, Hawaii ===
+
+--- [indo-pacific] iter 1 | added=0 | Mon May 25 12:31:48 EDT 2026 ---
+Pushed cleanly to `main` (`c783eaa..bc53362`). The commit contains only my single new entry.
+
+**Summary of what I added:**
+
+- **Site:** Shilang & the Big Mushroom Coral — `green-island-taiwan-shilang-big-mushroom`
+- **Location:** `green-island-taiwan` (Taiwan's premier dive destination — was an empty location with **0 sites**, now filled)
+- **Why this pick:** All cleanly-attachable Indo-Pacific coverage-gaps are already covered or have no matching location; the highest-value remaining move under rule #3 was filling an empty in-region location with its single most famous feature. Green Island is Taiwan's #1 dive site and home to the globally notable "Big Mushroom" — a ~1,000+-year-old Porites colony (~12 m × 31 m), toppled but still living after Typhoon Meranti (2016), confirmed across Wikipedia, X-Ray Mag, and Taitung tourism sources.
+- **Hero image:** `null`. I searched Wikimedia Commons hard (English/Chinese terms, the `Green Island, Taitung` category, the giant-coral term 大香菇, Taiwan reef searches). The only Commons material for this site is iNaturalist-imported single-fish macro shots — no wide-angle of the Big Mushroom or the reef. Per the rules, a null is correct here rather than a coral/fish photo that doesn't depict the signature feature.
+
+All other fields verified: valid `locationId`, exactly 12 `conditionsByMonth` entries, description 774 chars (no banned fluff words), species documented at the site (green turtles, winter scalloped hammerheads, parrotfish/unicornfish observed at Shilang).
+
+DONE: Shilang & the Big Mushroom Coral added successfully
+[indo-pacific] ✓ Added: Shilang & the Big Mushroom Coral added successfully
+
+--- [indo-pacific] iter 2 | added=1 | Mon May 25 12:42:04 EDT 2026 ---
+**Summary:** Added **Molokini Crater** (Maui, Hawaii) — the only genuinely-missing site from my Indo-Pacific coverage gaps after I cross-checked the list against `sites.json` (everything higher-priority, including SS Yongala, was already covered; the gaps file is stale).
+
+- **Location:** mapped to `kona-hawaii-usa` (the only Hawaii location), per the established convention of binding to the nearest relevant location.
+- **Facts:** verified across Wikipedia + dive sources — drowned volcanic tuff cone, 6–18 m sheltered interior reef, Back Wall dropping past 60 m, MLCD since 1977, ~250 fish species, visibility regularly 30 m+ (up to ~45 m). Coordinates 20.6326, −156.496.
+- **Hero image:** a high-res (3729×2793) CC BY 2.0 Wikimedia underwater shot — a bluefin trevally over coral and red pencil urchins in Molokini's signature clear blue water. I viewed it directly to confirm it's underwater and matches the crater-interior reef-fish experience the description leads with (not a generic stand-in).
+- 12 months of conditions, species list, getThere, and notes (Back Wall is advanced; humpback song Dec–Apr) all filled in.
+
+Committed as `67000a0` ("auto: add Molokini Crater"), only `src/data/sites.json` staged.
+
+DONE: Molokini Crater added successfully
+
+Sources:
+- [Molokini — Wikipedia](https://en.wikipedia.org/wiki/Molokini)
+- [Hawaiʻi DLNR — Maui / Molokini Shoal MLCD](https://dlnr.hawaii.gov/dar/marine-managed-areas/hawaii-marine-life-conservation-districts/maui-molokini-shoal/)
+- [Molokini Back Wall — molokinicrater.com](https://molokinicrater.com/all-about-molokinis-back-wall/)
+[indo-pacific] ✓ Added: Molokini Crater added successfully
+
+--- [indo-pacific] iter 3 | added=2 | Mon May 25 12:48:35 EDT 2026 ---
+Committed and pushed to main.
+
+## Summary
+
+Added **Hon Mun** (Nha Trang, Vietnam) — `nha-trang-vietnam-hon-mun`.
+
+**Why this pick:** The coverage-gaps file was stale — its top Indo-Pacific entries (SS Yongala, Coron, Lembeh, Wakatobi, Anilao, etc.) are all already in `sites.json` (221 sites, very comprehensive). I diffed all in-region locations against actual sites and found only two with **zero** sites: Nha Trang (Vietnam) and Jeju (South Korea). Both countries are in-region. Hon Mun won on two counts: it's Vietnam's premier dive destination and first marine protected area ("Southeast Asia's Aquarium," ~1,500 species per WWF), **and** it had a usable, license-safe underwater hero on Commons — Jeju had essentially none.
+
+**Hero image:** `Vietnam_Nha_Trang_Scuba_Diving_2009_-_4163161777.jpg` (CC BY 2.0, 3488×2616) — a wide reef scene of a school of reef fish over a table coral at Nha Trang, matching the description's reef-biodiversity focus rather than a generic stand-in. Verified it resolves (HTTP 206 on range request) and viewed it directly alongside 5 alternates.
+
+**Facts verified across sources:** first MPA designated 2001, ~1,500 species, ~14 km SE of Nha Trang (coords 12.166, 109.302), dry-season (Feb–Sep) clarity vs. Oct–Dec northeast-monsoon murk, named sites (Madonna Rock swim-throughs, Hon Mun Wall). 12 month-varied condition entries, clean additive diff (225 insertions, 0 deletions), JSON validates.
+
+DONE: Hon Mun added successfully
+[indo-pacific] ✓ Added: Hon Mun added successfully
+
+--- [indo-pacific] iter 4 | added=3 | Mon May 25 12:56:44 EDT 2026 ---
