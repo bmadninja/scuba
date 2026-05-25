@@ -57076,5 +57076,247 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Advanced deep dive: 40 m-plus, strong current, far offshore with surface help a long way off \u2014 solid drift and deep-diving experience is essential. Only diveable in flat-calm conditions, primarily September-October with a secondary February-March window, so trips are weather-dependent and frequently cancelled. Part of the Cayos Tigre group; three pinnacles rise to just below or at the surface."
+  },
+  {
+    "id": "watamu-the-canyon",
+    "slug": "watamu-the-canyon",
+    "locationId": "watamu-kenya",
+    "name": "The Canyon",
+    "heroImageUrl": null,
+    "lat": -3.366,
+    "lng": 40.03,
+    "description": "The signature dive of Watamu Marine National Park, East Africa's first marine reserve, gazetted in 1968. A coral-draped arch shelters an overhang packed with shimmering golden glassfish, and just south the reef splits into the canyon itself: a sandy channel roughly 25 m wide flanked by steep drop-offs that fall to 26-28 m. Divers usually start along a shallow drift line at 11-13 m, then drop into the trench where resident groupers, barracuda schools, and large stingrays patrol the sand. The shaded cuts and overhangs hold leaf fish and a long-resident ribbon eel. From November to March whale sharks cruise the outer edge as the northeast monsoon brings the year's warmest, clearest water.",
+    "depthRange": {
+      "min": 11,
+      "max": 28
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "large-pelagics",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Malabar grouper",
+        "scientificName": "Epinephelus malabaricus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Golden sweeper (glassfish)",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluestripe snapper",
+        "scientificName": "Lutjanus kasmira",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Ribbon eel",
+        "scientificName": "Rhinomuraena quaesita",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 74,
+    "getThere": "The closest airport is Malindi (MYD), 25 km north and a 30-40 minute drive, with domestic flights from Nairobi and Mombasa; Moi International (MBA) at Mombasa is 120 km south, about 2 hours by road. Watamu dive centres launch RIBs from the beach at Turtle Bay and Watamu village - the reef lies about 0.5 km offshore and The Canyon is a 10-15 minute boat ride out to the outer edge.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Surface marker buoy (SMB)",
+        "reason": "The Canyon is run as a drift over the sand channel between two drop-offs and can pick up current - deploy an SMB on ascent so the boat can track you off the reef edge."
+      },
+      {
+        "name": "Primary torch",
+        "reason": "The arch and overhangs hide dense shoals of golden glassfish and a resident ribbon eel that only resolve under a beam, and a light restores the colour of the soft corals in the shaded cuts."
+      }
+    ],
+    "notes": "Inside Watamu Marine National Park - a Kenya Wildlife Service daily park fee applies and is normally collected by the dive centre. At 25-28 m with possible current it suits Advanced Open Water divers and up. Diving is seasonal: the calm northeast-monsoon window (roughly October-March) gives the best visibility and the whale-shark season, while the southeast monsoon and long rains (April-June) bring rough seas and many operators close or scale back."
   }
 ]
