@@ -59468,5 +59468,240 @@
       }
     ],
     "notes": "Currents are strong and less predictable than Tiputa; dive with a local guide who knows the tide windows. The two-channel mouth and shallow grottos reward good buoyancy."
+  },
+  {
+    "id": "djibouti-arta-beach",
+    "slug": "djibouti-arta-beach",
+    "locationId": "djibouti-gulf-of-tadjoura",
+    "name": "Arta Beach (Whale Shark Bay)",
+    "heroImageUrl": null,
+    "lat": 11.553,
+    "lng": 42.842,
+    "description": "A shallow bay on the southern shore of the Gulf of Tadjoura, just outside the cliff-walled Ghoubbet al-Kharab, where seasonal plankton blooms draw one of the world's densest gatherings of juvenile whale sharks each November to January. The animals here are unusually small — mostly young males of 3-6 m — and researchers suspect the gulf is a nursery, with skiffs sometimes sitting over a dozen sharks at once. Encounters are snorkel-first in green, plankton-rich water a few metres deep; scuba is a secondary affair on the fringing reefs. The plankton that feeds the sharks also cuts visibility, and Ghoubbet's tidal currents can run hard, but the trade-off is swimming alongside the largest fish in the sea at arm's length.",
+    "depthRange": {
+      "min": 3,
+      "max": 20
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1
+        ]
+      },
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "rare",
+        "bestMonths": [
+          11,
+          12,
+          1
+        ]
+      },
+      {
+        "commonName": "Spinner dolphin",
+        "scientificName": "Stenella longirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluefin trevally",
+        "scientificName": "Caranx melampygus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly to Djibouti-Ambouli International (JIB), reached via Addis Ababa, Dubai, or Paris. Arta Beach lies about 40 km southwest of Djibouti City, roughly an hour by road, and runs as day trips from the capital; most divers instead join a multi-day dhow or liveaboard safari that anchors in the western gulf during whale shark season.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Snorkel and freediving fins",
+        "reason": "Most whale shark interaction happens at the surface in a few metres of water, so a light snorkel set matters more here than scuba kit."
+      },
+      {
+        "name": "3mm wetsuit",
+        "reason": "Whale shark season (Nov-Jan) brings the year's coolest water, around 25-28C."
+      }
+    ],
+    "notes": "Whale shark season is roughly November-January, peaking in December. A strict interaction code applies: no touching, no flash photography, no diving down onto the sharks, and limits on swimmers in the water. The sharks are juveniles and the bay is shallow; Ghoubbet al-Kharab next door has strong tidal currents. Summer (Jun-Aug) is brutally hot on land and diving is unremarkable outside the plankton season."
   }
 ]
