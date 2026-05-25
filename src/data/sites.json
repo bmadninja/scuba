@@ -60396,5 +60396,234 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside Parque Nacional Arrecifes de Cozumel; a marine park fee/wristband is required and anchoring is banned. Dived as a live-boat drift, so deploy a surface marker buoy on ascent. The deep pinnacles and swim-throughs make it an advanced dive, while the adjacent Columbia Shallows is far easier."
+  },
+  {
+    "id": "niue-avaiki-cave-snake-gully",
+    "slug": "niue-avaiki-cave-snake-gully",
+    "locationId": "niue-avaiki-cave",
+    "name": "Snake Gully",
+    "heroImageUrl": null,
+    "lat": -19.108,
+    "lng": -169.927,
+    "description": "A cavern carved beneath Niue's limestone reef flat, reached by boat about 30 metres off Avatele Beach on the southwest coast. Divers drop from the reef top near 8 metres through swim-throughs to around 20, where ledges and overhangs shelter katuali — the black-and-white banded sea krait found nowhere on Earth but Niue. The venomous yet placid snakes thread between divers alongside Napoleon wrasse, regal angelfish, whitetip reef sharks, barracuda, moray eels and turtles. With no rivers and porous limestone shedding almost no sediment, visibility routinely runs 30-60 metres and can reach 80. From July to September migrating humpback whales calve offshore and their song carries into the cavern.",
+    "depthRange": {
+      "min": 8,
+      "max": 20
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "geology",
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Katuali (banded sea krait)",
+        "scientificName": "Laticauda schistorhyncha",
+        "reliability": "year-round",
+        "bestMonths": [
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 60
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 60
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 60
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 60
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 60
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 60
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 74,
+    "getThere": "Niue International Airport (IUE) at Alofi is served by Air New Zealand from Auckland (about 3.5 hours), with one to two flights a week. Dive operators based in Alofi run boats to the west-coast sites; Snake Gully lies roughly 30 metres off Avatele Beach on the southwest coast, a short ride from Alofi wharf, where boats are craned in and out because the island has no sheltered harbour.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Katuali are highly venomous but non-aggressive — observe, never handle them. Niue has no recompression chamber, so dive conservatively; the nearest is in New Zealand. Boats launch by crane at Alofi wharf and trips depend on west-coast swell. Scuba is seasonal — the local operator typically closes from around December to February."
   }
 ]
