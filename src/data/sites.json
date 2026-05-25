@@ -61349,5 +61349,244 @@
       }
     ],
     "notes": "Advanced certification and good buoyancy recommended: down-currents near the channel and depths of 20–40 m for mola sightings make this unsuitable for new divers despite the calm-looking bay. Peak mola season (Aug–Sep) draws crowds and boat traffic. Do not chase or crowd the sunfish — hold position and let them approach the cleaning station. Marine park / mooring fees apply."
+  },
+  {
+    "id": "egypt-shaab-samadai-dolphin-house",
+    "slug": "egypt-shaab-samadai-dolphin-house",
+    "locationId": "brothers-egypt",
+    "name": "Sha'ab Samadai (Dolphin House)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Delfines_girador_%28Stenella_longirostris%29%2C_mar_Rojo%2C_Egipto%2C_2023-04-18%2C_DD_36.jpg",
+    "lat": 24.9898,
+    "lng": 35.02785,
+    "description": "Crescent-shaped reef about 11 km southeast of Marsa Alam whose horseshoe arms enclose a shallow turquoise lagoon. A resident pod of 60-90 spinner dolphins (Stenella longirostris) returns to the lagoon each day to rest and nurse after feeding in open water overnight, making this one of the few reliable places on earth to share the water with wild dolphins. The site is a HEPCA-managed reserve split into three zones: an inner dolphin sanctuary closed to people, a snorkeling belt, and an outer diving zone of coral pinnacles, drop-offs and swim-throughs with a canyon on the western edge. Hard- and soft-coral gardens, reef fish, turtles and occasional reef sharks fill the outer slopes. Lagoon conditions are easy; the outer reef drops past 30 m.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Spinner dolphin",
+        "scientificName": "Stenella longirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluespotted ribbontail ray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluecheek butterflyfish",
+        "scientificName": "Chaetodon semilarvatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red soft coral",
+        "scientificName": "Dendronephthya spp.",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or 3 mm shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or 3 mm shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 84,
+    "getThere": "Fly into Marsa Alam International (RMF), roughly 30 km north of the reef. Dolphin House is a 45-90 minute day-boat ride from Marsa Alam, Port Ghalib or Hamata marinas; southern Red Sea liveaboards also call here. Access requires a HEPCA permit, which dive and snorkel operators arrange as part of the trip.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Snorkel set",
+        "reason": "The dolphin encounter happens in the shallow lagoon and snorkeling belt, not on scuba"
+      },
+      {
+        "name": "SMB",
+        "reason": "Boat traffic is heavy inside the managed area and drift exits run along the outer reef"
+      }
+    ],
+    "notes": "HEPCA manages Samadai as a protected dolphin reserve with a daily cap of about 10 boats, 175 snorkelers and 100 divers; operators must hold a permit. Three zones are buoyed: Zone A (inner lagoon) is a dolphin sanctuary closed to all people, Zone B is for guided snorkeling, and scuba diving is confined to Zone C on the outer reef. Snorkel boats are admitted roughly 10:00-14:00 and dive boats 09:00-15:00. Do not chase, touch or feed the dolphins; let them approach. Day-boat or liveaboard only, no shore access."
   }
 ]
