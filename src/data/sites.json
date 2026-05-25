@@ -56610,5 +56610,230 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Entering the bridge and holds requires wreck certification. With a 28 m maximum depth and exposed Atlantic swell that can bring strong, shifting current, it is an advanced-only dive — nitrox extends bottom time and a dive computer is essential."
+  },
+  {
+    "id": "nha-trang-vietnam-hon-mun",
+    "slug": "nha-trang-vietnam-hon-mun",
+    "locationId": "nha-trang-vietnam",
+    "name": "Hon Mun",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Vietnam_Nha_Trang_Scuba_Diving_2009_-_4163161777.jpg",
+    "lat": 12.166,
+    "lng": 109.302,
+    "description": "Hon Mun anchors Vietnam's first marine protected area, designated in 2001, and holds the country's richest reef — surveys credit Nha Trang Bay with roughly 1,500 marine species. Granite boulders and hard-coral slopes draw schools of damselfish, butterflyfish and anemonefish, while the sand and rubble between them hide nudibranchs, seahorses, frogfish and moray eels. Madonna Rock adds caverns and swim-throughs down to about 30 m, and the Hon Mun Wall drops past snapper and the occasional barracuda. Dry-season water runs clear and warm; the northeast monsoon stirs it up late in the year.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Pink Anemonefish",
+        "scientificName": "Amphiprion perideraion",
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Nudibranchs",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Seahorses",
+        "scientificName": "Hippocampus",
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Blacktip Reef Shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "rare",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "rare",
+        "bestMonths": []
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5 mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5 mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5 mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 62,
+    "getThere": "Nearest airport is Cam Ranh International (CXR), about 35 km south of Nha Trang city. Dive boats depart Cau Da Port and the Nha Trang harbour, reaching Hon Mun in roughly 30-45 minutes.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside the Hon Mun Marine Protected Area (Vietnam's first, established 2001) — a reef-protection fee applies and anchoring and collecting are restricted. Visibility is best in the Feb-Sep dry season; the Oct-Dec northeast monsoon brings wind, runoff and reduced visibility."
   }
 ]
