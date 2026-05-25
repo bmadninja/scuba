@@ -62650,5 +62650,251 @@
       }
     ],
     "notes": "Diving Bonaire requires a STINAPA marine-park nature tag. Karpata is usually run as a one-way drift from La Dania's Leap to the Karpata mooring because of the northern current, so arrange a car shuffle. Rocky ironshore entry via concrete steps, no facilities on site. The wall continues well past recreational limits to roughly 60m."
+  },
+  {
+    "id": "osprey-reef-north-horn",
+    "slug": "osprey-reef-north-horn",
+    "locationId": "osprey-reef-australia",
+    "name": "North Horn (Osprey Reef)",
+    "heroImageUrl": null,
+    "lat": -13.8,
+    "lng": 146.58,
+    "description": "The northern point of Osprey Reef, a submerged Coral Sea atoll about 350 km offshore from Cairns and reachable only by liveaboard. A coral shelf at 10–15 m steps down to a natural amphitheatre around 20 m, then the wall drops vertically into more than 1,000 m of open ocean. North Horn is built around its sharks: a controlled feed run here for decades has habituated 20–30 grey reef sharks plus whitetips and silvertips that circle within a few metres of seated divers, while scalloped hammerheads, manta rays and dwarf minke whales pass through in the cooler months. Visibility routinely tops 40 m over walls hung with gorgonians and Acropora gardens.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silvertip shark",
+        "scientificName": "Carcharhinus albimarginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "rare",
+        "bestMonths": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dwarf minke whale",
+        "scientificName": "Balaenoptera acutorostrata",
+        "reliability": "rare",
+        "bestMonths": [
+          6,
+          7
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 92,
+    "getThere": "Liveaboard only. Boats depart Cairns (CNS) and Port Douglas on 3–7 night Coral Sea expeditions (operators such as Mike Ball and Spirit of Freedom), steaming roughly 220 km and 12+ hours overnight to reach the atoll; some itineraries fly divers one way to or from Lizard Island to shorten the open-water crossing. There is no land access — Osprey Reef is uninhabited and over 300 km from the mainland.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Advanced certification and recent deep-dive experience are required; depth, blue-water disorientation and currents that can run strong make this an experienced-diver site. Operators run a managed shark feed at North Horn from a fixed bait drum while divers stay seated on the amphitheatre ledge. The reef lies within the Coral Sea Marine Park — no fishing or collecting. Open-ocean crossings are weather-dependent and surface intervals are often rough; nitrox is recommended for repetitive deep dives."
   }
 ]
