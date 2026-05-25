@@ -62152,5 +62152,246 @@
       }
     ],
     "notes": "Inside Mu Ko Lanta National Park, usually closed mid-May to mid-October during the southwest monsoon. Exposed, deep, strong-current site - advanced certification and Nitrox recommended; surface conditions can deteriorate quickly."
+  },
+  {
+    "id": "aliwal-south-africa-protea-banks",
+    "slug": "aliwal-south-africa-protea-banks",
+    "locationId": "aliwal-south-africa",
+    "name": "Protea Banks",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Protea_Banks_-_51861323472.jpg",
+    "lat": -30.825,
+    "lng": 30.515,
+    "description": "A deep offshore reef 7.5 km off Shelly Beach on the KwaZulu-Natal south coast, running roughly 6 km between a Northern and Southern Pinnacle at 27-40 m. Agulhas-fed current draws seven shark species: bull (Zambezi) sharks year-round, schooling scalloped hammerheads in spring and early summer, ragged-tooth sharks gathering to mate in winter, and tiger sharks in autumn. Sardine Run baitfish funnel through in June and July. Dived as a current drift, often on a baited line, with the reef deep enough that bottom time is short.",
+    "depthRange": {
+      "min": 27,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Bull shark",
+        "scientificName": "Carcharhinus leucas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Ragged-tooth shark",
+        "scientificName": "Carcharias taurus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Tiger shark",
+        "scientificName": "Galeocerdo cuvier",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Giant guitarfish",
+        "scientificName": "Glaucostegus typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly into King Shaka International Airport (Durban), then drive about 2 hours south to Shelly Beach/Margate on the KwaZulu-Natal south coast. Dives are surf-launched by RIB from Shelly Beach harbour, reaching the reef in 20-30 minutes.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Deep, current-swept advanced reef reached only by boat; surf launches are weather-dependent and trips cancel in big swell. Most dives are baited shark drifts - good buoyancy and nitrox recommended, and short no-deco bottom times at 30m+. Nearest recompression chamber is in Durban."
   }
 ]
