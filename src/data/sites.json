@@ -63956,5 +63956,294 @@
       }
     ],
     "notes": "Within the Cura\u00e7ao National Marine Park (Caracas Bay / Tugboat Beach). Easy shore or snorkel access in calm, shallow water; the reef slope just past the wreck drops quickly, so watch depth and air. Resident fish are habituated to divers. Do not touch or stand on the wreck or coral, and keep clear of moored boats and the boat channel on the surface."
+  },
+  {
+    "id": "egypt-salem-express",
+    "slug": "egypt-salem-express",
+    "locationId": "ras-mohammed-egypt",
+    "name": "Salem Express",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/MV_Salem_Express_2.jpg",
+    "lat": 26.6394,
+    "lng": 34.0611,
+    "description": "A 115-meter roll-on/roll-off ferry that struck Hyndman Reef off Safaga late on December 14, 1991 while carrying Egyptian workers and pilgrims home from Jeddah, and sank in minutes; the official death toll was 470, though the overcrowded vessel may have lost more than 1,600. Launched in France in 1964 as the Fred Scamaroni, she now lies on her starboard side on sand, the hull rising from 30 m to about 12 m. The bow visor doors gape open, both funnels and the large 'S' company logo remain, and lifeboats sit collapsed in their davits. Declared a maritime grave, the wreck may not be penetrated; divers circle the exterior past lionfish, groupers, moray eels and bigeye trevally among the spreading coral.",
+    "depthRange": {
+      "min": 12,
+      "max": 32
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois miles",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Crocodilefish",
+        "scientificName": "Papilloculiceps longiceps",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Bluespotted ribbontail ray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly to Hurghada International (HRG); the wreck lies offshore between Safaga and Soma Bay, about 60 km south of Hurghada. Most dives run as day trips by speedboat from Safaga (roughly 45-90 minutes) or as a stop on southern Red Sea liveaboards out of Hurghada. Marsa Alam International (RMF) is an alternative arrival airport about 200 km to the south.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Diving is restricted to the exterior: the Salem Express is a designated maritime tomb and penetration is forbidden out of respect for the dead. Human remains and personal effects are still on site, so treat the wreck with sensitivity and remove nothing. The 30 m depth and a wide scattered debris field make it an advanced dive; nitrox extends bottom time. The nearest hyperbaric chambers are in Hurghada and Safaga."
   }
 ]
