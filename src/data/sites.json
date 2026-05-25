@@ -57854,5 +57854,244 @@
       }
     ],
     "notes": "Advanced drift dive with strong, variable currents - good buoyancy and an SMB are essential. The site sits in exposed water east of La Digue, so trips are weather-dependent and only run when conditions allow."
+  },
+  {
+    "id": "channel-islands-gull-island",
+    "slug": "channel-islands-gull-island",
+    "locationId": "channel-islands-usa",
+    "name": "Gull Island",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/65/Kelp_forest%2C_Channel_Islands_NMS.jpg",
+    "lat": 33.9503,
+    "lng": -119.8277,
+    "description": "A rocky islet a little over a mile off the exposed backside (south shore) of Santa Cruz Island, ringed by giant kelp growing over boulder reef. A north-south mini-wall drops from the kelp canopy toward outer walls that fall past 30 m, with clumps of purple California hydrocoral (Stylaster californicus) clinging to the deeper rock. California sheephead, garibaldi and spiny lobster work the reef while sea lions strafe the canopy overhead. It sits inside the Gull Island State Marine Reserve, so fish densities run high, but the open south-side exposure to swell and current makes it an advanced dive.",
+    "depthRange": {
+      "min": 6,
+      "max": 34
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Giant kelp",
+        "scientificName": "Macrocystis pyrifera",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "California hydrocoral",
+        "scientificName": "Stylaster californicus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Garibaldi",
+        "scientificName": "Hypsypops rubicundus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "California sheephead",
+        "scientificName": "Bodianus pulcher",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "California spiny lobster",
+        "scientificName": "Panulirus interruptus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "California sea lion",
+        "scientificName": "Zalophus californianus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bat ray",
+        "scientificName": "Myliobatis californica",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant sea bass",
+        "scientificName": "Stereolepis gigas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 21
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 24
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 24
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      }
+    ],
+    "bestMonths": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 74,
+    "getThere": "Fly into Los Angeles (LAX) or Santa Barbara (SBA). Channel Islands National Park dive boats run from Ventura Harbor and Oxnard's Channel Islands Harbor; the crossing to the exposed backside of Santa Cruz Island and Gull Island takes roughly two to two and a half hours, so operators run it as a full-day or multi-dive charter. There is no landing or lodging on the island itself.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside the Gull Island State Marine Reserve - no take of any marine life. The site sits on Santa Cruz Island's open south side, fully exposed to ocean swell and current, with deep outer walls dropping past 30 m; cold water, surge and kelp entanglement demand solid buoyancy and cold-water experience. Trips are weather-dependent - check NOAA swell forecasts before booking. Visibility is plankton-limited in spring and early summer and peaks in October-November."
   }
 ]
