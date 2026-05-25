@@ -303,6 +303,46 @@ export type ReefHealthRecord = {
   lastReviewedAt: string;
 };
 
+export type FlightHub =
+  | "us-west"
+  | "us-east"
+  | "europe"
+  | "asia"
+  | "oceania";
+
+export type LodgingTier = "budget" | "mid" | "upscale" | "luxury" | "liveaboard";
+
+export type CostRange = { min: number; max: number };
+
+/**
+ * Hand-curated trip-cost estimate per location. Editorial bounds — we
+ * never claim live prices. Every record cites editorial-curation +
+ * any partner sources used; methodology note documents the bounds.
+ */
+export type TripCostEstimate = {
+  id: string;
+  locationId: string;
+  currency: "USD";
+  /** Round-trip flight ranges from each regional hub. Optional per hub. */
+  flightUsdFromHub: Partial<Record<FlightHub, CostRange>>;
+  /** Per-night lodging by tier (optional per tier). Liveaboard prices
+   *  include dives + meals + cabin and replace lodging+dives stack. */
+  perNightLodgingUsd: Partial<Record<LodgingTier, CostRange>>;
+  /** Per-day dive package (2 boat dives, tanks, weights, guide). Skip
+   *  when liveaboard is the only option. */
+  diveDayUsd?: CostRange;
+  /** Local transfers (airport-resort-marina, water taxis, internal
+   *  flights, etc.) per traveller over the whole trip. */
+  localTransfersUsd?: CostRange;
+  /** Marine park / dive permit / conservation fees per traveller. */
+  parkFeesUsd?: number;
+  /** Plain-English context — what makes this trip cheap or expensive. */
+  notes?: string;
+  sourceIds: string[];
+  methodologyClaimIds: string[];
+  lastReviewedAt: string;
+};
+
 export type SourceType =
   | "scientific-survey"
   | "government-monitoring"

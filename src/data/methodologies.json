@@ -1,5 +1,13 @@
 [
   {
+    "claimId": "trip-cost-editorial-2026",
+    "claimType": "travel-recommendation",
+    "sourceIds": ["editorial-curation", "dema", "padi", "ssi"],
+    "confidence": "medium",
+    "limitations": "Trip-cost estimates are editorial ranges, not live prices. Flight ranges reflect typical round-trip economy fares from each regional hub during the location's dive season; off-season or last-minute fares often fall outside. Lodging tiers are per-night ranges for double-occupancy mid-week stays — peak holiday weeks (Easter, Christmas/New Year, Chinese New Year) commonly run 20–50% higher. Dive-day prices assume a 2-boat-dive package with tanks/weights/guide included and exclude private guide, nitrox, and equipment rental. We do not claim accuracy beyond ±15%; book operators directly to confirm.",
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
     "claimId": "reef-health-aims-noaa",
     "claimType": "reef-health",
     "sourceIds": [

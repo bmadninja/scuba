@@ -31,6 +31,7 @@ const methodologies = readJson("src/data/methodologies.json");
 const encounters = readJson("src/data/encounters.json");
 const sightings = readJson("src/data/sightings.json");
 const reefHealth = readJson("src/data/reef-health.json");
+const tripCosts = readJson("src/data/trip-costs.json");
 const locations = readJson("src/data/locations.json");
 const sites = readJson("src/data/sites.json");
 const locationIds = new Set(locations.map((l) => l.id));
@@ -285,6 +286,31 @@ for (const r of reefHealth) {
   }
 }
 
+// --- Trip-cost provenance ------------------------------------------------
+for (const t of tripCosts) {
+  if (!t.locationId || !locationIds.has(t.locationId)) {
+    report("error", "trip-cost", t.id, `references unknown location "${t.locationId}"`);
+  }
+  if (!Array.isArray(t.sourceIds) || t.sourceIds.length === 0) {
+    report("error", "trip-cost", t.id, "missing source");
+  } else {
+    for (const sid of t.sourceIds) {
+      if (!sourceIds.has(sid)) {
+        report("error", "trip-cost", t.id, `references unknown source "${sid}"`);
+      }
+    }
+  }
+  if (!Array.isArray(t.methodologyClaimIds) || t.methodologyClaimIds.length === 0) {
+    report("error", "trip-cost", t.id, "missing method");
+  } else {
+    for (const mid of t.methodologyClaimIds) {
+      if (!methodologyByClaim.has(mid)) {
+        report("error", "trip-cost", t.id, `references unknown methodology "${mid}"`);
+      }
+    }
+  }
+}
+
 // --- Output --------------------------------------------------------------
 const errors = issues.filter((i) => i.severity === "error");
 const warnings = issues.filter((i) => i.severity === "warn");
@@ -296,7 +322,7 @@ for (const i of issues) {
 
 console.log("");
 console.log(
-  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s), ${reefHealth.length} reef-health record(s)`,
+  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s), ${reefHealth.length} reef-health record(s), ${tripCosts.length} trip-cost record(s)`,
 );
 console.log(`  ${errors.length} error(s), ${warnings.length} warning(s)`);
 
