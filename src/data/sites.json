@@ -62896,5 +62896,262 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Advanced certification and recent deep-dive experience are required; depth, blue-water disorientation and currents that can run strong make this an experienced-diver site. Operators run a managed shark feed at North Horn from a fixed bait drum while divers stay seated on the amphitheatre ledge. The reef lies within the Coral Sea Marine Park — no fishing or collecting. Open-ocean crossings are weather-dependent and surface intervals are often rough; nitrox is recommended for repetitive deep dives."
+  },
+  {
+    "id": "malpelo-colombia-la-nevera",
+    "slug": "malpelo-colombia-la-nevera",
+    "locationId": "malpelo-colombia",
+    "name": "La Nevera (The Refrigerator)",
+    "heroImageUrl": null,
+    "lat": 3.972,
+    "lng": -81.618,
+    "description": "La Nevera ('The Refrigerator') is Malpelo's most-dived site, a slope of large boulders on the island's southwest side dropping past 40 m. Its terraces hold the sanctuary's busiest hammerhead cleaning stations: divers wedge low among the rocks and wait for barberfish to coax in scalloped hammerheads, sometimes 100-200 strong, that hang almost motionless to be groomed. From May to August female silky sharks mass overhead in their hundreds, joined by Galapagos sharks, eagle rays, the occasional whale shark and walls of creolefish and jacks. Cold upwelling, hard current and surge give the site its name and make it a serious, current-savvy dive.",
+    "depthRange": {
+      "min": 12,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Scalloped hammerhead shark",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "year-round",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Silky shark",
+        "scientificName": "Carcharhinus falciformis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "commonName": "Galapagos shark",
+        "scientificName": "Carcharhinus galapagensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barberfish (cleaner butterflyfish)",
+        "scientificName": "Johnrandallia nigrirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Pacific creolefish",
+        "scientificName": "Paranthias colonus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 20,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full with hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 20,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full with hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 20,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full with hood"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 20,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 28
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 21,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 22,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 21,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      }
+    ],
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "editorialRank": 90,
+    "getThere": "Fly to Alfonso Bonilla Aragon International Airport in Cali, Colombia (CLO), then transfer ~2.5 hours by road to the port of Buenaventura and board a permitted Colombian-flagged liveaboard for the 32-40 hour crossing to Malpelo. La Nevera sits on the island's southwest side and is reached by a short panga ride from the liveaboard.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside the Malpelo Fauna and Flora Sanctuary (UNESCO World Heritage Site); access only via permitted Colombian liveaboard, one vessel at a time. Park typically requires a minimum of 50 logged dives. No anchoring: live skiff drops with immediate negative descents are standard because of strong currents (up to ~5 knots) and surge. Nitrox recommended. Yellow fever vaccination required. Divers settle into the boulders at 15-25 m to watch the cleaning stations; keep clear of the fragile fan corals. Nearest hyperbaric chamber is at the naval base in Buenaventura."
   }
 ]
