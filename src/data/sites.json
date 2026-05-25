@@ -59930,5 +59930,239 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Apo Island is a protected community marine sanctuary: a per-diver sanctuary/entrance fee applies and the no-take core has restricted entry points, so dive only with a registered local operator or guide. Coconut Point and the eastern side can have strong, unpredictable currents and downcurrents (advanced), while the western Chapel/Rock Point sanctuary is calm and shallow. Do not touch or chase the turtles. The amihan (northeast monsoon, roughly December-February) can make the exposed side rough."
+  },
+  {
+    "id": "gozo-hms-maori",
+    "slug": "gozo-hms-maori",
+    "locationId": "gozo-malta",
+    "name": "HMS Maori",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/HMS_Maori_Wreck%2C_Velletta.jpg",
+    "lat": 35.9026,
+    "lng": 14.5154,
+    "description": "A Tribal-class Royal Navy destroyer that joined the 1941 hunt for the battleship Bismarck, HMS Maori was sunk by a German air raid in Valletta's Grand Harbour in February 1942. The salvaged forward section was later scuttled off Fort St Elmo, where it now lies broken and upright on sand at 12-16 m, making it Malta's shallowest wreck and an easy shore dive after a 120 m surface swim. Flattened hull plates and exposed framework shelter moray eels, octopus, scorpionfish and shoals of salema and bream, while nudibranchs, cuttlefish and the occasional seahorse work the wreckage for macro divers.",
+    "depthRange": {
+      "min": 12,
+      "max": 16
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Mediterranean moray",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Common octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Salema",
+        "scientificName": "Sarpa salpa",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Cardinalfish",
+        "scientificName": "Apogon imberbis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red scorpionfish",
+        "scientificName": "Scorpaena scrofa",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Common cuttlefish",
+        "scientificName": "Sepia officinalis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Long-snouted seahorse",
+        "scientificName": "Hippocampus guttulatus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Coldwater wetsuit or semidry, hooded"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Coldwater wetsuit or semidry, hooded"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Coldwater wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Coldwater wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 18,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 20,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 17,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Coldwater wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 74,
+    "getThere": "Fly into Malta International (MLA), about 25 minutes by car or bus from Valletta. The wreck is a shore dive in St Elmo Bay below Fort St Elmo, near the entrance to Marsamxett Harbour on the city's seaward side. Gear up at the small parking area, descend the concrete steps and platform into the water, then swim roughly 120 m out to the wreck.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Shore entry is over concrete steps, a platform and rocks that get very slippery; steel railings aid the exit. The wreck sits near a busy harbour mouth, so carry a surface marker buoy and watch for boat traffic. Reports of vehicle break-ins at the parking area mean you should leave nothing visible in your car."
   }
 ]
