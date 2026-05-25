@@ -6,7 +6,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { SiteCard } from "./site-card";
 import { getAllEncounters } from "@/lib/data/encounters";
+import { getAllReefHealth } from "@/lib/data/reef-health";
 import type {
+  BleachingAlertLevel,
   DiveType,
   Location,
   Site,
@@ -53,6 +55,25 @@ const SKILL_RANK: Record<SkillLevel, number> = {
 
 const ENCOUNTERS = getAllEncounters();
 
+/**
+ * locationId → current thermal alert level. Pre-computed from
+ * reef-health.json. Sites at locations without a record stay `undefined`.
+ */
+const ALERT_BY_LOCATION: Record<string, BleachingAlertLevel> = (() => {
+  const out: Record<string, BleachingAlertLevel> = {};
+  for (const r of getAllReefHealth()) {
+    if (r.locationId && r.thermalStress?.alertLevel) {
+      out[r.locationId] = r.thermalStress.alertLevel;
+    }
+  }
+  return out;
+})();
+
+const isStressedAlert = (a: BleachingAlertLevel | undefined) =>
+  a === "warning" || a === "alert-1" || a === "alert-2";
+
+type ClimateFilter = "stressed" | "stable" | "";
+
 export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
   const router = useRouter();
   const params = useSearchParams();
@@ -62,6 +83,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
   const diveTypes = (params.get("types")?.split(",").filter(Boolean) ?? []) as DiveType[];
   const month = params.get("month") ? Number(params.get("month")) : null;
   const encounterSlug = params.get("encounter") ?? "";
+  const climate = (params.get("climate") as ClimateFilter | null) ?? "";
 
   const setParam = useCallback(
     (key: string, value: string | null) => {
@@ -109,6 +131,12 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             return false;
           }
         }
+        if (climate) {
+          const alert = ALERT_BY_LOCATION[s.locationId];
+          if (!alert) return false;
+          if (climate === "stressed" && !isStressedAlert(alert)) return false;
+          if (climate === "stable" && isStressedAlert(alert)) return false;
+        }
         if (q) {
           const hay = [
             s.name,
@@ -125,7 +153,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
         return true;
       })
       .sort((a, b) => b.editorialRank - a.editorialRank);
-  }, [sites, locationsById, query, skill, diveTypes, month, selectedEncounter]);
+  }, [sites, locationsById, query, skill, diveTypes, month, selectedEncounter, climate]);
 
   const activeChips: { key: string; label: string; clear: () => void }[] = [];
   if (skill) {
@@ -154,6 +182,19 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
       key: `enc:${selectedEncounter.slug}`,
       label: `Target: ${selectedEncounter.name}`,
       clear: () => setParam("encounter", null),
+    });
+  }
+  if (climate === "stressed") {
+    activeChips.push({
+      key: "climate",
+      label: "Climate-stressed reefs",
+      clear: () => setParam("climate", null),
+    });
+  } else if (climate === "stable") {
+    activeChips.push({
+      key: "climate",
+      label: "Stable reefs only",
+      clear: () => setParam("climate", null),
     });
   }
   if (query) {
@@ -295,6 +336,41 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
               );
             })}
           </div>
+        </FilterField>
+
+        <FilterField label="Reef health">
+          <div className="flex flex-wrap gap-1.5">
+            <button
+              type="button"
+              onClick={() =>
+                setParam("climate", climate === "stressed" ? null : "stressed")
+              }
+              className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                climate === "stressed"
+                  ? "bg-rose-600 text-white"
+                  : "border border-slate-300 bg-white text-slate-700 hover:border-rose-500 hover:text-rose-700"
+              }`}
+            >
+              Climate-stressed reefs · go soon
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                setParam("climate", climate === "stable" ? null : "stable")
+              }
+              className={`rounded-full px-2.5 py-1 text-xs font-medium transition ${
+                climate === "stable"
+                  ? "bg-emerald-600 text-white"
+                  : "border border-slate-300 bg-white text-slate-700 hover:border-emerald-500 hover:text-emerald-700"
+              }`}
+            >
+              Stable reefs only
+            </button>
+          </div>
+          <p className="mt-1.5 text-[11px] text-slate-500">
+            Based on NOAA Coral Reef Watch alert level for the location. Only
+            sites at locations we have reef-health data for are included.
+          </p>
         </FilterField>
 
         {skillCaveat ? (
