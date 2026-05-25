@@ -63464,5 +63464,230 @@
       }
     ],
     "notes": "Advanced Open Water with deep training is the working minimum, and operators usually require a logged deep dive. Foreign nationals no longer need a separate Restricted Area Permit (RAP) for Havelock but must carry a passport; the RAP rule was lifted in 2022. The site closes during the southwest monsoon (roughly mid-May through mid-September) when swell and silt make the offshore run unsafe. Keep well back from rays on the cleaning station and do not touch the giant barrel sponges, which break easily and are very slow-growing."
+  },
+  {
+    "id": "yonaguni-hammerheads",
+    "slug": "yonaguni-hammerheads",
+    "locationId": "yonaguni-japan",
+    "name": "Hammerhead Point (Irizaki)",
+    "heroImageUrl": null,
+    "lat": 24.448,
+    "lng": 122.932,
+    "description": "Open-water drift along the Kuroshio current off Cape Irizaki, the westernmost point of Japan, where scalloped hammerheads gather through winter — schools of 100 to 200 sharks are logged from January to March. There is no reef to hide behind: divers make a negative entry, drop fast and hover near 15–20 m in open blue water over a seabed close to 70 m, watching the current line for the massed sharks. Dive operator Kihachiro Aratake was scouting this hammerhead ground in 1986 when he came across the nearby Yonaguni Monument. Between shark passes the same current draws in dogtooth tuna, great barracuda and bigeye trevally, with the odd sailfish. Visibility often runs past 30 m, but winter north winds cut it back and regularly cancel boats.",
+    "depthRange": {
+      "min": 15,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Scalloped hammerhead shark",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Indo-Pacific sailfish",
+        "scientificName": "Istiophorus platypterus",
+        "reliability": "rare",
+        "bestMonths": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full + hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full + hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3–5mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full or shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full or shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3–5mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full + hood"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly to Naha (OKA) or Ishigaki (ISG) in Okinawa, then take a Ryukyu Air Commuter (RAC) flight to Yonaguni Airport (OGN) — roughly 30 minutes from Ishigaki or 75 minutes from Naha. A car ferry also runs twice weekly from Ishigaki to Kubura Port at the island's west end. Hammerhead operators are based in Kubura and Sonai; the dive is a short boat run out to the blue water off Cape Irizaki and is reached by boat only.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Demanding blue-water drift — most operators require Advanced Open Water plus solid deep and current experience, and many ask for 50–100+ logged dives. Expect a negative entry, fast descent and short bottom times on a current that can run hard and change direction; there is no bottom within reach, so reef hooks are not used. The Kuroshio and strong northeast winter winds frequently cancel boats from December through February, and hammerhead sightings are never guaranteed. Yonaguni has no recompression chamber — the nearest is on Okinawa's main island and evacuation is air-only."
   }
 ]
