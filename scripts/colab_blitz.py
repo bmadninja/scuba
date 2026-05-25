@@ -1,25 +1,36 @@
 """
 scubaseason.fun — Dive Site Discovery Blitz
-Google Colab script — runs Anthropic OR Gemini (Google AI Studio, free tier)
+Google Colab script — runs Gemini through Google AI Studio.
+
+This is the Colab replacement for the local `scripts/blitz-parallel.sh` split.
+Open the same Colab notebook in 1-3 browser tabs, choose a different WORKER
+preset in each tab, and run the cells. Each tab clones the repo, researches
+one uncovered dive site at a time, appends it to src/data/sites.json, commits,
+and pushes to main.
 
 SETUP (run once):
-  1. Add secrets in Colab sidebar (🔑 icon). You only need the one for the
-     provider you pick below:
-       ANTHROPIC_API_KEY  →  sk-ant-...                  (if PROVIDER="anthropic")
-       GOOGLE_API_KEY     →  AIza...                     (if PROVIDER="gemini" — get from https://aistudio.google.com/apikey)
-       GITHUB_TOKEN       →  github_pat_...              (needs repo write access)
-  2. Run Cell 1 (install), then Cell 2 (config), then Cell 3 (blitz).
+  1. In Colab, open the secrets sidebar (key icon) and add:
+       GOOGLE_API_KEY or GEMINI_API_KEY → your Google AI Studio key
+       GITHUB_TOKEN or GH_TOKEN         → GitHub token with repo write access
+  2. Paste this file into a Colab notebook as separate cells at the CELL markers.
+  3. Run Cell 1, Cell 2, then all definition cells, then Cell 6.
+
+RUNNING MULTIPLE TABS:
+  - Tab 1: WORKER = "indo-pacific"
+  - Tab 2: WORKER = "americas-atlantic"
+  - Tab 3: WORKER = "indian-med-africa"
+  - Start tabs 20-60 seconds apart. The script pulls before every iteration
+    and push-retries, so duplicate work is usually skipped safely.
 
 COST:
-  - anthropic claude-sonnet-4-5  → ~$0.10–0.30 per site
-  - gemini-2.5-pro (AI Studio)   → free up to daily quota, then paid
-  - gemini-2.5-flash (AI Studio) → free up to a much higher daily quota
+  - gemini-2.5-flash → cheaper/faster, higher quota; recommended for blitz
+  - gemini-2.5-pro   → better reasoning, lower quota/costlier; use sparingly
 """
 
 # ─── CELL 1: Install dependencies ─────────────────────────────────────────────
 # Paste this cell and run it first.
 
-# !pip install anthropic google-genai duckduckgo-search html2text gitpython -q
+# !pip install "google-genai>=1.66,<2.0.0" duckduckgo-search html2text -q
 
 
 # ─── CELL 2: Config ───────────────────────────────────────────────────────────
@@ -42,40 +53,66 @@ import html2text
 import requests
 from duckduckgo_search import DDGS
 
-# ── Provider choice ───────────────────────────────────────────────────────────
-PROVIDER = "gemini"   # "gemini" (free tier on AI Studio) | "anthropic"
+# ── Worker choice ─────────────────────────────────────────────────────────────
+# Use a different worker in each Colab tab. Use "all" only for a single tab.
+WORKER = "indo-pacific"  # "indo-pacific" | "americas-atlantic" | "indian-med-africa" | "all"
 
-# Model per provider — only the active one is used.
-ANTHROPIC_MODEL = "claude-sonnet-4-5"
-GEMINI_MODEL    = "gemini-2.5-flash"   # higher free-tier quota than pro; swap to "gemini-2.5-pro" if you have paid quota
+WORKER_PRESETS = {
+    "indo-pacific": [
+        "indonesia", "philippines", "malaysia", "thailand", "vietnam",
+        "papua new guinea", "solomon islands", "fiji", "vanuatu",
+        "micronesia", "palau", "yap", "chuuk", "pohnpei",
+        "french polynesia", "cook islands", "tonga", "samoa",
+        "australia", "new zealand", "japan", "south korea", "taiwan",
+        "china", "hawaii",
+    ],
+    "americas-atlantic": [
+        "caribbean", "mexico", "cozumel", "socorro", "belize", "honduras",
+        "bay islands", "cayman", "costa rica", "cocos", "panama",
+        "colombia", "malpelo", "ecuador", "galapagos", "brazil",
+        "argentina", "usa", "florida", "california", "canada",
+        "iceland", "azores", "canary", "cape verde", "madeira",
+        "bermuda", "bahamas",
+    ],
+    "indian-med-africa": [
+        "maldives", "sri lanka", "lakshadweep", "andaman", "india",
+        "seychelles", "madagascar", "mauritius", "réunion", "reunion",
+        "comoros", "egypt", "red sea", "sudan", "saudi arabia",
+        "jordan", "israel", "oman", "yemen", "socotra", "south africa",
+        "mozambique", "tanzania", "zanzibar", "pemba", "mafia", "kenya",
+        "mediterranean", "malta", "cyprus", "greece", "italy", "spain",
+        "france", "croatia", "turkey", "sao tome",
+    ],
+    "all": [],
+}
 
+GEMINI_MODEL  = "gemini-2.5-flash"
 GITHUB_REPO   = "bmadninja/scuba"
-MAX_SITES     = 500                   # safety cap
-DELAY_SECONDS = 30                    # pause between iterations
+MAX_SITES     = 500
+DELAY_SECONDS = 30
 REPO_DIR      = Path("/content/scuba")
 
 try:
     from google.colab import userdata
-    ANTHROPIC_API_KEY = userdata.get("ANTHROPIC_API_KEY") if PROVIDER == "anthropic" else ""
-    GOOGLE_API_KEY    = userdata.get("GOOGLE_API_KEY")    if PROVIDER == "gemini"    else ""
-    GITHUB_TOKEN      = userdata.get("GITHUB_TOKEN")
+    GOOGLE_API_KEY = userdata.get("GOOGLE_API_KEY") or userdata.get("GEMINI_API_KEY")
+    GITHUB_TOKEN   = userdata.get("GITHUB_TOKEN") or userdata.get("GH_TOKEN")
 except Exception:
     # If running locally or secrets not set, fall back to env vars
-    ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-    GOOGLE_API_KEY    = os.environ.get("GOOGLE_API_KEY", "")
-    GITHUB_TOKEN      = os.environ.get("GITHUB_TOKEN", "")
+    GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY", "")
+    GITHUB_TOKEN   = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN", "")
 
-if PROVIDER == "anthropic":
-    import anthropic
-    anthropic_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-    MODEL = ANTHROPIC_MODEL
-elif PROVIDER == "gemini":
-    from google import genai
-    from google.genai import types as genai_types
-    gemini_client = genai.Client(api_key=GOOGLE_API_KEY)
-    MODEL = GEMINI_MODEL
-else:
-    raise ValueError(f"Unknown PROVIDER: {PROVIDER}")
+if not GOOGLE_API_KEY:
+    raise ValueError("Missing GOOGLE_API_KEY or GEMINI_API_KEY in Colab secrets.")
+if not GITHUB_TOKEN:
+    raise ValueError("Missing GITHUB_TOKEN or GH_TOKEN in Colab secrets.")
+if WORKER not in WORKER_PRESETS:
+    raise ValueError(f"Unknown WORKER {WORKER!r}. Use one of: {', '.join(WORKER_PRESETS)}")
+
+from google import genai
+from google.genai import types as genai_types
+
+gemini_client = genai.Client(api_key=GOOGLE_API_KEY)
+MODEL = GEMINI_MODEL
 
 h2t    = html2text.HTML2Text()
 h2t.ignore_links = False
@@ -122,6 +159,32 @@ def git_pull():
     subprocess.run(["git", "reset", "--hard", "origin/main", "--quiet"], cwd=REPO_DIR, capture_output=True)
 
 
+def configure_git_remote():
+    """Keep the tokenized remote and commit identity fresh in reused runtimes."""
+    token_url = f"https://{GITHUB_TOKEN}@github.com/{GITHUB_REPO}.git"
+    subprocess.run(["git", "config", "user.email", "blitz@scubaseason.fun"], cwd=REPO_DIR, check=True)
+    subprocess.run(["git", "config", "user.name", "ScubaSeason Blitz"], cwd=REPO_DIR, check=True)
+    subprocess.run(["git", "remote", "set-url", "origin", token_url], cwd=REPO_DIR, check=True)
+
+
+def preflight_github_push():
+    """Fail fast before spending Gemini tokens if the GitHub token cannot push."""
+    check = subprocess.run(
+        ["git", "push", "--dry-run", "origin", "HEAD:main"],
+        cwd=REPO_DIR,
+        capture_output=True,
+        text=True,
+    )
+    if check.returncode != 0:
+        message = (check.stderr or check.stdout or "").strip()
+        message = re.sub(r"github_pat_[A-Za-z0-9_]+", "github_pat_***", message)
+        raise RuntimeError(
+            "GitHub push preflight failed. Fix GITHUB_TOKEN/GH_TOKEN before running the blitz.\n"
+            + message
+        )
+    print("GitHub push preflight passed.")
+
+
 def _sites_count_or_none() -> int | None:
     try:
         return len(json.loads((REPO_DIR / "src/data/sites.json").read_text()))
@@ -129,63 +192,121 @@ def _sites_count_or_none() -> int | None:
         return None
 
 
-def git_commit_push(site_name: str) -> bool:
-    """Stage sites.json, commit, push. Returns True on success."""
-    # Safety: never commit a sites.json that shrank
-    current = _sites_count_or_none()
-    if current is None:
-        print(f"  ✗ ABORT COMMIT: sites.json unreadable")
-        subprocess.run(["git", "checkout", "HEAD", "--", "src/data/sites.json"],
-                       cwd=REPO_DIR, capture_output=True)
-        return False
-    # Compare against HEAD's sites.json count
-    head = subprocess.run(
-        ["git", "show", "HEAD:src/data/sites.json"],
-        cwd=REPO_DIR, capture_output=True, text=True,
-    )
+_DATA_FILES = [
+    "src/data/sites.json",
+    "src/data/sightings.json",
+    "src/data/reef-health.json",
+]
+
+
+def _diff_new_entries(current: list, head: list) -> list:
+    head_ids = {s.get("id") for s in head if isinstance(s, dict)}
+    return [s for s in current if isinstance(s, dict) and s.get("id") not in head_ids]
+
+
+def _read_json_safe(path: Path) -> list:
     try:
-        head_count = len(json.loads(head.stdout))
+        v = json.loads(path.read_text())
+        return v if isinstance(v, list) else []
     except Exception:
-        head_count = current  # if HEAD unreadable, skip the guard
-    if current < head_count + 1:
-        print(f"  ✗ ABORT COMMIT: sites.json has {current} entries (HEAD: {head_count}) — likely corrupted")
-        subprocess.run(["git", "checkout", "HEAD", "--", "src/data/sites.json"],
-                       cwd=REPO_DIR, capture_output=True)
+        return []
+
+
+def _show_head_json(rel: str) -> list:
+    p = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=REPO_DIR, capture_output=True, text=True)
+    try:
+        v = json.loads(p.stdout)
+        return v if isinstance(v, list) else []
+    except Exception:
+        return []
+
+
+def git_commit_push(site_name: str) -> bool:
+    """Merge the bundle (site + sightings + reef-health) onto latest origin/main."""
+    # 1. Snapshot the new entries the model appended in this iteration.
+    pending: dict[str, list] = {}
+    for rel in _DATA_FILES:
+        current = _read_json_safe(REPO_DIR / rel)
+        head = _show_head_json(rel)
+        pending[rel] = _diff_new_entries(current, head)
+
+    if len(pending["src/data/sites.json"]) != 1:
+        print(f"  ✗ ABORT COMMIT: expected exactly 1 new site, found {len(pending['src/data/sites.json'])}")
+        for rel in _DATA_FILES:
+            subprocess.run(["git", "checkout", "HEAD", "--", rel], cwd=REPO_DIR, capture_output=True)
+        return False
+    if not pending["src/data/sightings.json"]:
+        print(f"  ✗ ABORT COMMIT: site appended without sighting evidence — bundle incomplete")
+        for rel in _DATA_FILES:
+            subprocess.run(["git", "checkout", "HEAD", "--", rel], cwd=REPO_DIR, capture_output=True)
         return False
 
-    for attempt in range(3):
-        try:
-            # Note: do NOT git_pull here — it would hard-reset and wipe the
-            # pending append_site change. The blitz loop already pulls before
-            # each iteration, so we're up to date with origin/main going in.
-            subprocess.run(
-                ["git", "add", "src/data/sites.json"],
-                cwd=REPO_DIR, check=True, capture_output=True
-            )
-            result = subprocess.run(
-                ["git", "diff", "--cached", "--quiet"],
-                cwd=REPO_DIR
-            )
-            if result.returncode == 0:
-                return False  # nothing to commit — site was already there
+    new_site = pending["src/data/sites.json"][0]
+    name = new_site.get("name") or site_name
+    n_sight = len(pending["src/data/sightings.json"])
+    n_rh = len(pending["src/data/reef-health.json"])
 
-            subprocess.run(
-                ["git", "commit", "-m", f"auto: add {site_name}"],
-                cwd=REPO_DIR, check=True, capture_output=True
-            )
-            push = subprocess.run(
-                ["git", "push"],
-                cwd=REPO_DIR, capture_output=True
-            )
+    for attempt in range(6):
+        try:
+            subprocess.run(["git", "fetch", "origin", "main", "--quiet"], cwd=REPO_DIR, check=True)
+            # Re-read remote versions of all three files
+            remote_state: dict[str, list] = {}
+            for rel in _DATA_FILES:
+                remote = subprocess.run(
+                    ["git", "show", f"origin/main:{rel}"],
+                    cwd=REPO_DIR, check=True, capture_output=True, text=True,
+                )
+                try:
+                    arr = json.loads(remote.stdout)
+                except Exception:
+                    arr = []
+                remote_state[rel] = arr if isinstance(arr, list) else []
+
+            # Skip if another tab already pushed this same site id
+            if any(s.get("id") == new_site.get("id") for s in remote_state["src/data/sites.json"]):
+                print("  → Site already reached origin/main from another tab; skipping local commit.")
+                subprocess.run(["git", "reset", "--hard", "origin/main", "--quiet"], cwd=REPO_DIR, capture_output=True)
+                return False
+
+            # Merge each pending list onto remote (dedup by id)
+            for rel, new_entries in pending.items():
+                if not new_entries:
+                    continue
+                existing_ids = {e.get("id") for e in remote_state[rel] if isinstance(e, dict)}
+                for entry in new_entries:
+                    if entry.get("id") in existing_ids:
+                        continue
+                    remote_state[rel].append(entry)
+
+            # Reset to clean origin/main and write merged files
+            subprocess.run(["git", "reset", "--hard", "origin/main", "--quiet"], cwd=REPO_DIR, check=True)
+            changed_paths = []
+            for rel, merged in remote_state.items():
+                if pending[rel]:
+                    (REPO_DIR / rel).write_text(json.dumps(merged, indent=2) + "\n")
+                    changed_paths.append(rel)
+            if not changed_paths:
+                return False
+            subprocess.run(["git", "add", *changed_paths], cwd=REPO_DIR, check=True)
+            result = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=REPO_DIR)
+            if result.returncode == 0:
+                return False
+
+            extras = []
+            if n_sight:
+                extras.append(f"{n_sight} sighting{'s' if n_sight != 1 else ''}")
+            if n_rh:
+                extras.append("reef-health")
+            suffix = f" (+ {', '.join(extras)})" if extras else ""
+            msg = f"auto: add {name}{suffix}"
+            subprocess.run(["git", "commit", "-m", msg], cwd=REPO_DIR, check=True)
+            push = subprocess.run(["git", "push", "origin", "HEAD:main"], cwd=REPO_DIR, capture_output=True, text=True)
             if push.returncode == 0:
                 return True
-            # Push failed (race) — rebase and retry
-            subprocess.run(
-                ["git", "pull", "--rebase", "--autostash"],
-                cwd=REPO_DIR, capture_output=True
-            )
-            subprocess.run(["git", "push"], cwd=REPO_DIR, capture_output=True)
-            return True
+            detail = (push.stderr or push.stdout or "").strip().splitlines()
+            detail = detail[-1] if detail else "unknown push error"
+            print(f"  push retry {attempt + 1}/6: {detail}")
+            subprocess.run(["git", "reset", "--hard", "origin/main", "--quiet"], cwd=REPO_DIR, capture_output=True)
         except Exception as e:
             print(f"  git error (attempt {attempt+1}): {e}")
             time.sleep(5)
@@ -248,8 +369,81 @@ TOOL_DEFS = [
             },
             "required": ["site_json"]
         }
+    },
+    {
+        "name": "append_sighting",
+        "description": "Append ONE sighting-evidence record to src/data/sightings.json. Must be called AFTER append_site (siteId must match the site you just added). Call this 1-3 times to record the headline species at the new site. Pass the record as a JSON-encoded STRING in sighting_json.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "sighting_json": {"type": "string", "description": "The new sighting-evidence record as a JSON-encoded string."}
+            },
+            "required": ["sighting_json"]
+        }
+    },
+    {
+        "name": "append_reef_health",
+        "description": "Append ONE reef-health record to src/data/reef-health.json. Required when the new site's locationId does NOT already have a reef-health record (Python will tell you which case applies). Skip if already covered. Pass the record as a JSON-encoded STRING in reef_health_json.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "reef_health_json": {"type": "string", "description": "The new reef-health record as a JSON-encoded string."}
+            },
+            "required": ["reef_health_json"]
+        }
     }
 ]
+
+
+# ── Per-iteration state (reset by blitz loop before each discovery run) ──────
+# Tracks what the model has appended this iteration so we can enforce the
+# bundled-records contract (1 site + ≥1 sighting + reef-health if needed).
+_iteration_state: dict = {
+    "site_id": None,        # id of the site just appended via append_site
+    "location_id": None,    # locationId of that site
+    "sighting_ids": [],     # ids of sightings appended this iteration
+    "reef_health_id": None, # id of reef-health appended this iteration (if any)
+    "reef_health_needed": False,  # True if locationId has no existing record
+}
+
+
+def _reset_iteration_state():
+    _iteration_state.update({
+        "site_id": None,
+        "location_id": None,
+        "sighting_ids": [],
+        "reef_health_id": None,
+        "reef_health_needed": False,
+    })
+
+
+def _load_valid_ids():
+    """Read sources + methodologies once per call. Returns (source_ids, claim_ids)."""
+    try:
+        sources = json.loads((REPO_DIR / "src/data/sources.json").read_text())
+        source_ids = {s.get("id") for s in sources if isinstance(s, dict)}
+    except Exception:
+        source_ids = set()
+    try:
+        methods = json.loads((REPO_DIR / "src/data/methodologies.json").read_text())
+        claim_ids = {m.get("claimId") for m in methods if isinstance(m, dict)}
+    except Exception:
+        claim_ids = set()
+    return source_ids, claim_ids
+
+
+def iteration_requirements_met() -> tuple[bool, str]:
+    """Check whether the model has fulfilled the bundled-records contract."""
+    if not _iteration_state["site_id"]:
+        return False, "append_site has not been called yet"
+    if not _iteration_state["sighting_ids"]:
+        return False, "append_sighting must be called at least once for the new site"
+    if _iteration_state["reef_health_needed"] and not _iteration_state["reef_health_id"]:
+        return False, (
+            f"locationId {_iteration_state['location_id']!r} has no reef-health record yet — "
+            "you MUST call append_reef_health before DONE"
+        )
+    return True, "ok"
 
 
 def run_tool(name: str, inputs: dict) -> str:
@@ -322,13 +516,145 @@ def run_tool(name: str, inputs: dict) -> str:
             # Duplicate check
             new_norm = _norm_name(new_entry.get("name", ""))
             for s in sites:
+                if new_entry.get("id") == s.get("id") or new_entry.get("slug") == s.get("slug"):
+                    return f"REJECTED: site id/slug {new_entry.get('id')!r} already exists in sites.json"
                 if _norm_name(s.get("name", "")) == new_norm:
                     return f"REJECTED: site name {new_entry.get('name')!r} already exists in sites.json"
+            try:
+                locations = json.loads((REPO_DIR / "src/data/locations.json").read_text())
+                location_ids = {l.get("id") for l in locations}
+                if new_entry.get("locationId") not in location_ids:
+                    return f"REJECTED: locationId {new_entry.get('locationId')!r} does not exist in locations.json"
+            except Exception as e:
+                return f"REJECTED: could not validate locationId: {e}"
             sites.append(new_entry)
             sites_path.write_text(json.dumps(sites, indent=2) + "\n")
-            return f"OK: appended {new_entry.get('name')!r}. sites.json now has {len(sites)} entries."
+            # Populate iteration state + detect whether reef-health is needed
+            _iteration_state["site_id"] = new_entry.get("id")
+            _iteration_state["location_id"] = new_entry.get("locationId")
+            try:
+                rh = json.loads((REPO_DIR / "src/data/reef-health.json").read_text())
+                covered_locations = {r.get("locationId") for r in rh if r.get("locationId")}
+            except Exception:
+                covered_locations = set()
+            _iteration_state["reef_health_needed"] = (
+                new_entry.get("locationId") not in covered_locations
+            )
+            rh_msg = (
+                f" reef-health REQUIRED for locationId {new_entry.get('locationId')!r}."
+                if _iteration_state["reef_health_needed"]
+                else f" reef-health already on file for locationId {new_entry.get('locationId')!r} — skip append_reef_health."
+            )
+            return (
+                f"OK: appended {new_entry.get('name')!r}. sites.json now has {len(sites)} entries. "
+                f"NEXT: call append_sighting 1-3x for headline species at this site."
+                f"{rh_msg}"
+            )
         except Exception as e:
             return f"append_site error: {e}"
+    elif name == "append_sighting":
+        try:
+            raw = inputs.get("sighting_json") or inputs.get("sighting")
+            if isinstance(raw, str):
+                try:
+                    rec = json.loads(raw)
+                except json.JSONDecodeError as e:
+                    return f"REJECTED: sighting_json is not valid JSON: {e}"
+            else:
+                rec = raw
+            if not isinstance(rec, dict):
+                return "REJECTED: sighting_json must decode to a JSON object"
+            if not _iteration_state["site_id"]:
+                return "REJECTED: call append_site first — sighting siteId must match the site you just added."
+            required = ["id", "siteId", "speciesCommon", "lastConfirmedAt",
+                        "recentRecordCount", "proximityRadiusKm",
+                        "seasonalityMonths", "confidence", "sourceIds",
+                        "methodologyClaimIds"]
+            missing = [k for k in required if k not in rec]
+            if missing:
+                return f"REJECTED: missing required fields: {missing}"
+            if rec.get("siteId") != _iteration_state["site_id"]:
+                return (
+                    f"REJECTED: sighting siteId {rec.get('siteId')!r} must equal the "
+                    f"site you just added ({_iteration_state['site_id']!r})."
+                )
+            if rec.get("confidence") not in ("high", "medium", "low"):
+                return "REJECTED: confidence must be 'high', 'medium', or 'low'"
+            if not isinstance(rec.get("seasonalityMonths"), list):
+                return "REJECTED: seasonalityMonths must be a list of ints 1-12 (empty list ok)"
+            source_ids, claim_ids = _load_valid_ids()
+            bad_src = [s for s in rec.get("sourceIds", []) if s not in source_ids]
+            if bad_src:
+                return f"REJECTED: unknown sourceIds {bad_src}. Valid ids: {sorted(source_ids)}"
+            bad_claim = [c for c in rec.get("methodologyClaimIds", []) if c not in claim_ids]
+            if bad_claim:
+                return f"REJECTED: unknown methodologyClaimIds {bad_claim}. Use 'sighting-occurrence-cluster' for standard GBIF/OBIS-derived sightings."
+            sightings_path = REPO_DIR / "src/data/sightings.json"
+            sightings = json.loads(sightings_path.read_text())
+            if any(s.get("id") == rec.get("id") for s in sightings):
+                return f"REJECTED: sighting id {rec.get('id')!r} already exists."
+            sightings.append(rec)
+            sightings_path.write_text(json.dumps(sightings, indent=2) + "\n")
+            _iteration_state["sighting_ids"].append(rec.get("id"))
+            return (
+                f"OK: appended sighting {rec.get('id')!r}. "
+                f"This iteration now has {len(_iteration_state['sighting_ids'])} sighting(s)."
+            )
+        except Exception as e:
+            return f"append_sighting error: {e}"
+    elif name == "append_reef_health":
+        try:
+            raw = inputs.get("reef_health_json") or inputs.get("reef_health")
+            if isinstance(raw, str):
+                try:
+                    rec = json.loads(raw)
+                except json.JSONDecodeError as e:
+                    return f"REJECTED: reef_health_json is not valid JSON: {e}"
+            else:
+                rec = raw
+            if not isinstance(rec, dict):
+                return "REJECTED: reef_health_json must decode to a JSON object"
+            if not _iteration_state["site_id"]:
+                return "REJECTED: call append_site first."
+            if not _iteration_state["reef_health_needed"]:
+                return (
+                    "REJECTED: locationId already has a reef-health record on file. "
+                    "Do NOT call append_reef_health for this iteration."
+                )
+            required = ["id", "methodologyClaimIds", "lastReviewedAt"]
+            missing = [k for k in required if k not in rec]
+            if missing:
+                return f"REJECTED: missing required fields: {missing}"
+            if rec.get("locationId") != _iteration_state["location_id"]:
+                return (
+                    f"REJECTED: reef-health locationId {rec.get('locationId')!r} must equal "
+                    f"{_iteration_state['location_id']!r} (locationId of the site you just added)."
+                )
+            # Must have at least one of observed / thermalStress so the panel is non-empty
+            if not rec.get("observed") and not rec.get("thermalStress"):
+                return "REJECTED: provide at least one of 'observed' (in-situ survey) or 'thermalStress' (NOAA CRW)."
+            source_ids, claim_ids = _load_valid_ids()
+            bad_claim = [c for c in rec.get("methodologyClaimIds", []) if c not in claim_ids]
+            if bad_claim:
+                return f"REJECTED: unknown methodologyClaimIds {bad_claim}. Use 'reef-health-aims-noaa' for standard reef-health records."
+            for section in ("observed", "thermalStress", "projection"):
+                sub = rec.get(section)
+                if isinstance(sub, dict):
+                    bad_src = [s for s in sub.get("sourceIds", []) if s not in source_ids]
+                    if bad_src:
+                        return f"REJECTED: unknown sourceIds in {section}: {bad_src}. Valid: {sorted(source_ids)}"
+            rh_path = REPO_DIR / "src/data/reef-health.json"
+            rh = json.loads(rh_path.read_text())
+            if any(r.get("id") == rec.get("id") for r in rh):
+                return f"REJECTED: reef-health id {rec.get('id')!r} already exists."
+            if any(r.get("locationId") == rec.get("locationId") for r in rh):
+                return f"REJECTED: locationId {rec.get('locationId')!r} already has a reef-health record."
+            rh.append(rec)
+            rh_path.write_text(json.dumps(rh, indent=2) + "\n")
+            _iteration_state["reef_health_id"] = rec.get("id")
+            return f"OK: appended reef-health {rec.get('id')!r} for locationId {rec.get('locationId')!r}."
+        except Exception as e:
+            return f"append_reef_health error: {e}"
     return f"Unknown tool: {name}"
 
 
@@ -366,10 +692,20 @@ def pick_next_target() -> dict | None:
                     return True
         return False
 
+    worker_terms = WORKER_PRESETS.get(WORKER, [])
+
+    def in_worker_scope(gap: dict) -> bool:
+        if not worker_terms:
+            return True
+        haystack = " ".join(str(gap.get(k, "")) for k in ["name", "country", "region", "notes"]).lower()
+        return any(term.lower() in haystack for term in worker_terms)
+
     # Sort by priority desc; pick first uncovered and not blacklisted
     sorted_gaps = sorted(gaps, key=lambda g: g.get("priority", 0), reverse=True)
     for g in sorted_gaps:
         if g.get("name") in _session_blacklist:
+            continue
+        if not in_worker_scope(g):
             continue
         if not is_covered(g):
             return g
@@ -389,14 +725,17 @@ def build_discover_prompt(target: dict) -> str:
     - Country: {target.get("country")}
     - Region: {target.get("region")}
     - Suggested locationId: {location_hint}
+    - Worker/tab: {WORKER}
 
-    ## Your job
+    ## Your job — bundle of records (site + sightings + reef-health)
     1. Read `src/data/locations.json` with read_file to find or pick the correct locationId. If no exact match exists, pick the closest geographic location (same country, nearby region) — its id is fine.
-    2. Research the target using web_search and web_fetch — find depth, coordinates, species, conditions, AND a great hero image.
-    3. Call the `append_site` tool with ONE argument named `site_json` whose value is the new entry serialized as a JSON STRING (use a string literal containing the JSON). DO NOT read or rewrite sites.json — `append_site` handles atomic append for you.
-    4. Print exactly: `DONE: {target.get("name")} added successfully`
+    2. Research the target using web_search and web_fetch — find depth, coordinates, species, conditions, AND a great hero image. Also research what the SITE IS FAMOUS FOR seeing (1-3 headline species) and (if you'll need it) recent reef condition / NOAA Coral Reef Watch alert for this reef.
+    3. Call `append_site` with the site entry.
+    4. Call `append_sighting` 1-3 times — one per headline species at this site (the species used to advertise the dive). siteId MUST equal the id of the site you just added.
+    5. The `append_site` response will tell you whether the locationId already has a reef-health record. If it does NOT, call `append_reef_health` once for that locationId. If it does, skip this step.
+    6. Print exactly: `DONE: {target.get("name")} added successfully`
 
-    You MUST add this site via the append_site tool. The only acceptable outcome is a DONE line after a successful append_site call.""").strip() + "\n\n" + _SCHEMA_AND_RULES
+    DONE will be rejected if any required record (site, ≥1 sighting, reef-health when needed) is missing. The runtime tracks this and will tell you what's still missing — read tool responses carefully.""").strip() + "\n\n" + _SCHEMA_AND_RULES
 
 _SCHEMA_AND_RULES = textwrap.dedent("""
 ## Schema for the `site` object you pass to append_site — match this exactly
@@ -451,61 +790,70 @@ Selection process:
 - Use the full-resolution URL, NOT the thumb URL.
 - If no site-specific high-quality image exists on Commons, set heroImageUrl: null.
 
+## Schema for `append_sighting` — siteId MUST equal the just-appended site's id
+```json
+{
+  "id": "<siteId>-<species-abbrev>",
+  "siteId": "<id of the site you just appended>",
+  "speciesCommon": "Reef manta",
+  "speciesScientific": "Mobula alfredi",
+  "lastConfirmedAt": "2026-04-15",
+  "recentRecordCount": 42,
+  "proximityRadiusKm": 25,
+  "seasonalityMonths": [10,11,12,1,2,3,4],
+  "confidence": "high|medium|low",
+  "sourceIds": ["gbif", "obis"],
+  "methodologyClaimIds": ["sighting-occurrence-cluster"],
+  "notes": "Optional"
+}
+```
+- Add 1-3 sightings — only the species the site is actually known for, not every fish on the reef.
+- `sourceIds` must be from sources.json (gbif, obis, inaturalist, wildbook, manta-trust, iucn-red-list, reef-life-survey, reef-check, etc).
+- `methodologyClaimIds` for standard records: `["sighting-occurrence-cluster"]`.
+- `lastConfirmedAt`: ISO date (YYYY-MM-DD) of the most recent confirmed record you can cite. Be honest — set null if no confirmed record on file.
+- `recentRecordCount`: confirmed records within the proximity radius in the last 24 months. Estimate from GBIF/OBIS occurrence density; small integers are fine when records are sparse.
+
+## Schema for `append_reef_health` — only when locationId has no record yet
+```json
+{
+  "id": "reef-health-<locationId>-<year>",
+  "locationId": "<must equal the locationId of the site you just appended>",
+  "observed": {
+    "surveyDate": "2024-08-15",
+    "surveyMethod": "AIMS LTMP manta-tow + photo-transect | Reef Check protocol survey | Reef Life Survey | AGRRA | NCRMP | GCRMN",
+    "coralCoverPercent": 33,
+    "bleachedPercent": 12,
+    "mortalityPercent": 4,
+    "historicalCoralCoverPercent": 28,
+    "historicalSurveyDate": "2014-08-01",
+    "sourceIds": ["aims-ltmp"],
+    "notes": "One-line context about the most recent survey."
+  },
+  "thermalStress": {
+    "asOf": "2026-05-01",
+    "alertLevel": "no-stress|watch|warning|alert-1|alert-2",
+    "degreeHeatingWeeks": 1.8,
+    "sstAnomalyC": 0.6,
+    "sourceIds": ["noaa-crw"]
+  },
+  "divingOutlook": "Plain-English 1-3 sentence diver-facing outlook. What to expect on the reef now. NEVER invent numbers, NEVER project the future.",
+  "methodologyClaimIds": ["reef-health-aims-noaa"],
+  "lastReviewedAt": "2026-05-24"
+}
+```
+- Required fields: id, locationId, methodologyClaimIds, lastReviewedAt, and at least one of `observed` / `thermalStress`.
+- All sourceIds must exist in sources.json. Common ones: aims-ltmp, reef-check, reef-life-survey, gcrmn, agrra, ncrmp, allen-coral-atlas, gbrmpa, icri, noaa-crw.
+- Always include `noaa-crw` thermalStress when you can cite a recent alert level; check NOAA Coral Reef Watch for the region.
+- Do NOT include `projection` unless you have a peer-reviewed source and methodology to back it.
+- Skip this tool entirely if `append_site` told you the locationId already has a record.
+
 ## When done
 Print exactly: DONE: <site name> added successfully
+Only after: append_site (1x), append_sighting (≥1x), append_reef_health (1x if locationId was uncovered).
 """).strip()
 
 
 # ─── CELL 5: Blitz loop ────────────────────────────────────────────────────────
-
-def run_one_discovery_anthropic(prompt: str) -> tuple[str, str]:
-    """
-    Run one discovery iteration via Anthropic. Returns (status, site_name).
-    status: "done" | "exhausted" | "error"
-    """
-    messages = [{"role": "user", "content": prompt}]
-
-    for turn in range(40):  # max tool-use turns
-        response = anthropic_client.messages.create(
-            model=MODEL,
-            max_tokens=16384,
-            tools=TOOL_DEFS,
-            messages=messages,
-        )
-
-        # Collect assistant message
-        messages.append({"role": "assistant", "content": response.content})
-
-        # Check for terminal signals in text blocks
-        for block in response.content:
-            if block.type == "text":
-                text = block.text
-                if m := re.search(r"^DONE:\s*(.+)$", text, re.MULTILINE):
-                    return "done", m.group(1).strip()
-
-        # If no more tool calls, we're done
-        if response.stop_reason == "end_turn":
-            break
-
-        if response.stop_reason != "tool_use":
-            break
-
-        # Execute all tool calls
-        tool_results = []
-        for block in response.content:
-            if block.type == "tool_use":
-                print(f"  → {block.name}({json.dumps(block.input)[:120]})")
-                result = run_tool(block.name, block.input)
-                tool_results.append({
-                    "type": "tool_result",
-                    "tool_use_id": block.id,
-                    "content": result[:8000],  # truncate large responses
-                })
-
-        messages.append({"role": "user", "content": tool_results})
-
-    return "error", "no DONE/EXHAUSTED signal emitted"
-
 
 def _gemini_tool_config():
     """Build Gemini Tool list from the shared TOOL_DEFS."""
@@ -513,7 +861,7 @@ def _gemini_tool_config():
         genai_types.FunctionDeclaration(
             name=t["name"],
             description=t["description"],
-            parameters=t["input_schema"],
+            parameters_json_schema=t["input_schema"],
         ) for t in TOOL_DEFS
     ])]
 
@@ -552,12 +900,28 @@ def run_one_discovery_gemini(prompt: str) -> tuple[str, str]:
         contents.append(candidate.content)
 
         function_calls = []
+        pending_done: str | None = None
         for part in candidate.content.parts:
             if getattr(part, "text", None):
                 if m := re.search(r"^DONE:\s*(.+)$", part.text, re.MULTILINE):
-                    return "done", m.group(1).strip()
+                    pending_done = m.group(1).strip()
             if getattr(part, "function_call", None):
                 function_calls.append(part.function_call)
+
+        if pending_done is not None:
+            ok, reason = iteration_requirements_met()
+            if ok:
+                return "done", pending_done
+            # Inject the reason back so the model fixes it instead of exiting
+            print(f"  ↻ DONE rejected: {reason}")
+            contents.append(genai_types.Content(
+                role="user",
+                parts=[genai_types.Part.from_text(text=(
+                    f"DONE rejected — {reason}. "
+                    "Call the missing tool(s), then re-emit DONE: <site name> added successfully."
+                ))],
+            ))
+            continue
 
         if not function_calls:
             break
@@ -578,8 +942,6 @@ def run_one_discovery_gemini(prompt: str) -> tuple[str, str]:
 
 
 def run_one_discovery(prompt: str) -> tuple[str, str]:
-    if PROVIDER == "anthropic":
-        return run_one_discovery_anthropic(prompt)
     return run_one_discovery_gemini(prompt)
 
 
@@ -589,16 +951,10 @@ def blitz(max_sites: int = MAX_SITES, delay: int = DELAY_SECONDS):
         token_url = f"https://{GITHUB_TOKEN}@github.com/{GITHUB_REPO}.git"
         print(f"Cloning {GITHUB_REPO}...")
         subprocess.run(["git", "clone", token_url, str(REPO_DIR)], check=True)
-        # Set git identity for commits
-        subprocess.run(["git", "config", "user.email", "blitz@scubaseason.fun"], cwd=REPO_DIR)
-        subprocess.run(["git", "config", "user.name", "ScubaSeason Blitz"], cwd=REPO_DIR)
-        # Embed token so push works without re-auth
-        subprocess.run(
-            ["git", "remote", "set-url", "origin", token_url],
-            cwd=REPO_DIR
-        )
     else:
         git_pull()
+    configure_git_remote()
+    preflight_github_push()
 
     added        = 0
     fail_streak  = 0  # consecutive failures on the same target
@@ -606,13 +962,14 @@ def blitz(max_sites: int = MAX_SITES, delay: int = DELAY_SECONDS):
     start        = time.time()
 
     print(f"\n{'='*60}")
-    print(f"Blitz started | model={MODEL} | max={max_sites}")
+    print(f"Blitz started | worker={WORKER} | model={MODEL} | max={max_sites}")
     sites_now = len(json.loads((REPO_DIR / "src/data/sites.json").read_text()))
     print(f"Sites at start: {sites_now}")
     print(f"{'='*60}\n")
 
     for i in range(1, max_sites + 1):
         git_pull()
+        _reset_iteration_state()
         sites_now = len(json.loads((REPO_DIR / "src/data/sites.json").read_text()))
 
         target = pick_next_target()
