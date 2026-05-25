@@ -53348,5 +53348,290 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": null
+  },
+  {
+    "id": "komodo-national-park-indonesia-hmas-perth-ii",
+    "slug": "komodo-national-park-indonesia-hmas-perth-ii",
+    "locationId": "komodo-national-park-indonesia",
+    "name": "HMAS Perth",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/HMAS_Perth_%28D29%29_wreck_photo_01_in_October_2015.JPG",
+    "lat": -35.0795,
+    "lng": 117.9682,
+    "description": "The HMAS Perth II is a 133-meter former Royal Australian Navy guided missile destroyer, purposefully scuttled as an artificial reef in King George Sound off Albany. Sitting upright on the seabed between 23 and 36 meters, the wreck offers extensive exploration opportunities. Its hull is largely intact with multiple cut access points for certified wreck divers to explore internal compartments, including the bridge, engine spaces, and accommodation areas. The wreck is encrusted with sponges, ascidians, hydroids, soft corals, and gorgonian fans, attracting diverse marine life.",
+    "depthRange": {
+      "min": 23,
+      "max": 36
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral",
+      "large-pelagics",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Western blue groper",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Western rock lobster",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Southern blue devil fish",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Samson fish",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Kingfish",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Snapper",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Trevally",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Octopus",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Moray eel",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Bull ray",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Stingray",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Nudibranch",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Sea spider",
+        "scientificName": null,
+        "reliability": "year-round",
+        "bestMonths": []
+      },
+      {
+        "commonName": "Australian sea lion",
+        "scientificName": null,
+        "reliability": "rare",
+        "bestMonths": []
+      },
+      {
+        "commonName": "New Zealand fur seal",
+        "scientificName": null,
+        "reliability": "rare",
+        "bestMonths": []
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hooded vest"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 85,
+    "getThere": "HMAS Perth II is a boat dive only. Charter departures run from Emu Point or Albany Town Jetty with transit times of around 20 to 30 minutes across the protected waters of King George Sound. Albany is approximately a 4.5-hour drive from Perth via the Albany Highway.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "This is an advanced wreck dive, with a depth profile to 36 meters. Advanced Open Water certification is the minimum recommended, with deep speciality and wreck speciality training highly valuable. Wreck speciality training is required for any penetration through the cut access points. Divers should be aware of sharp edges, exposed plating, and potential entanglement points from the deteriorating steel structure and lost fishing line, making a dive knife essential. Cold water is a significant factor, with winter temperatures as low as 14\u00b0C, necessitating a 7mm wetsuit with a hooded vest or a drysuit year-round. Nitrox is strongly recommended for managing bottom time and decompression due to the depth."
   }
 ]
