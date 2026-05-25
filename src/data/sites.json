@@ -52478,5 +52478,226 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Heron Island is a protected national park. Divers must adhere to responsible diving practices."
+  },
+  {
+    "id": "raja-ampat-indonesia-hmas-adelaide",
+    "slug": "raja-ampat-indonesia-hmas-adelaide",
+    "locationId": "raja-ampat-indonesia",
+    "name": "HMAS Adelaide",
+    "heroImageUrl": null,
+    "lat": -33.43,
+    "lng": 151.48,
+    "description": "The HMAS Adelaide is a scuttled guided-missile frigate creating an artificial reef off the coast of New South Wales, Australia. This impressive wreck offers multiple penetration points and a diverse array of marine life for advanced divers.",
+    "depthRange": {
+      "min": 18,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Grey Nurse Shark",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Yellowtail Kingfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant Cuttlefish",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 75,
+    "getThere": "The dive site is accessible from local dive operators in Terrigal and Avoca Beach, NSW. Nearest major airport is Sydney Airport (SYD).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Permits are required for diving the HMAS Adelaide. Check with local dive operators."
   }
 ]
