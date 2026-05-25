@@ -60,12 +60,7 @@
     "conservationNotes": "White sharks are listed as Vulnerable on the IUCN Red List. Regional populations have shifted (notably away from Gansbaai toward Mossel Bay) and operator availability changes year to year.",
     "limitations": "Sighting frequency is operator-reported. We do not present a per-trip probability without a documented effort denominator.",
     "confidence": "medium",
-    "locations": [
-      {
-        "locationId": "aliwal-south-africa",
-        "notes": "Closest current scubaSeason location to active white shark cage operators on the South African coast."
-      }
-    ],
+    "locations": [],
     "sourceIds": [
       "gbif",
       "dan"
