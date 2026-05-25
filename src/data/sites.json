@@ -55451,5 +55451,225 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Operator-led, structured shark dive: divers do a negative-entry descent to a sandy plateau around 8-12 m, line up behind the guide, and stay still while the team manages a bait box — touching, chasing, and flash are prohibited. Strong currents, surge, and open-ocean swell are normal; solid buoyancy and some pelagic experience expected. Fuvahmulah has its own recompression chamber. As a single-island atoll with no sheltering lagoon, all diving is on exposed outer reefs."
+  },
+  {
+    "id": "green-island-taiwan-shilang-big-mushroom",
+    "slug": "green-island-taiwan-shilang-big-mushroom",
+    "locationId": "green-island-taiwan",
+    "name": "Shilang & the Big Mushroom Coral",
+    "heroImageUrl": null,
+    "lat": 22.6525,
+    "lng": 121.4785,
+    "description": "Off Green Island's southwest coast, the Shilang dive area slopes from a gentle coral shelf — where generations of Taiwanese take their first scuba dives — into sand channels and small drop-offs fed by the warm Kuroshio Current. Its landmark is the 'Big Mushroom' (Da Xianggu), a single living Porites coral colony estimated at over 1,000 years old. Once a standing pillar about 10 m tall, it was knocked onto its side by Typhoon Meranti in 2016 and now lies roughly 12 m high and 31 m long on the 18 m seabed about 150 m offshore, still growing. Green sea turtles graze the hard coral year-round, parrotfish and unicornfish school over the reef, and scalloped hammerheads pass the island's exposed points in winter. A seahorse-shaped underwater postbox sits in the shallows.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scalloped hammerhead shark",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Japanese parrotfish",
+        "scientificName": "Chlorurus japanensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluespine unicornfish",
+        "scientificName": "Naso unicornis",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      9,
+      10
+    ],
+    "editorialRank": 72,
+    "getThere": "Fly to Taitung Airport (TTT) on Taiwan's southeast coast, then either take a 15-minute Daily Air flight to Green Island (Lyudao Airport, GNI) or a roughly 50-minute ferry from Fugang Fishing Harbour near Taitung. Shilang sits on the island's southwest coast about 2 km south of Nanliao village; dive shops run shore entries here or a short boat hop, and rented scooters are the usual way to get around the island.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Shilang is a sheltered, beginner-friendly shore-entry site, but the Kuroshio can push moderate currents around Green Island's exposed points, and the toppled Big Mushroom lies at about 18 m roughly 150 m offshore — usually reached by boat or a guided descent. Avoid the December–February northeast monsoon (rough seas, cooler water); book dives and rooms ahead for the July–August peak. Nearest recompression chamber is on Taiwan's main island, with air or ferry evacuation only."
   }
 ]
