@@ -51858,5 +51858,212 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Underwater access requires a permit from the Cave Divers Association of Australia (CDAA)."
+  },
+  {
+    "id": "ningaloo-australia-ewens-ponds",
+    "slug": "ningaloo-australia-ewens-ponds",
+    "locationId": "ningaloo-australia",
+    "name": "Ewens Ponds",
+    "heroImageUrl": null,
+    "lat": -37.75,
+    "lng": 140.75,
+    "description": "Ewens Ponds offers a unique freshwater diving experience in South Australia. Known for its exceptional clarity and abundant aquatic plant life, divers can explore a series of three main ponds connected by shallow, flowing channels. The site features intricate limestone formations and a diverse array of freshwater species. Its crystal-clear waters provide excellent visibility.",
+    "depthRange": {
+      "min": 1,
+      "max": 10
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Short-finned eel",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Freshwater crayfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Galaxias fish",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 15,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 14,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 13,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit recommended"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 13,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit recommended"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 13,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit recommended"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 14,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 15,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 75,
+    "getThere": "Ewens Ponds is located near Mount Gambier in South Australia. Access is typically by car. Nearest major airport is Adelaide (ADL).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Permits are required for diving at Ewens Ponds and must be obtained in advance. The site is a popular training location and can experience strong outflow, requiring controlled buoyancy. Entry and exit points are well-defined."
   }
 ]
