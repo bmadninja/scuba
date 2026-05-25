@@ -51457,5 +51457,208 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Note: Specific dive site details for Misool (e.g., precise coordinates, unique species list, granular monthly conditions) could not be retrieved due to limitations in web search capabilities during the data collection process. General Raja Ampat region data has been used as a fallback where Misool-specific information was unavailable."
+  },
+  {
+    "id": "ningaloo-australia-cocklebiddy-cave",
+    "slug": "ningaloo-australia-cocklebiddy-cave",
+    "locationId": "ningaloo-australia",
+    "name": "Cocklebiddy cave",
+    "heroImageUrl": null,
+    "lat": -31.9583,
+    "lng": 126.6833,
+    "description": "Cocklebiddy Cave is a world-renowned, extremely challenging technical cave diving site located in the remote Nullarbor Plain of Western Australia. Known for its extensive underwater passages and pristine geological formations, it attracts experienced technical divers seeking exploration in one of the longest underwater cave systems. The site offers a unique opportunity to witness untouched subterranean environments.",
+    "depthRange": {
+      "min": 20,
+      "max": 120
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "geology"
+    ],
+    "species": [],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Dry suit or 7mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 90,
+    "getThere": "Cocklebiddy Cave is located in a remote part of the Nullarbor Plain, Western Australia. Access typically involves significant overland travel by 4x4 vehicles from the nearest major towns like Norseman or Eucla. Divers must be self-sufficient and prepared for extreme remote conditions. Permits are strictly required for entry and diving.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      "full-cave-diving-equipment",
+      "rebreather",
+      "trimix-gas",
+      "redundant-lighting"
+    ],
+    "notes": "Strict permits are required from relevant authorities, and access is restricted to highly experienced and qualified technical cave divers. The environment is extremely fragile, and conservation guidelines must be rigorously followed."
   }
 ]
