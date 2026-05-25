@@ -2,59 +2,48 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-12)
+See: .planning/PROJECT.md (updated 2026-05-24)
 
-**Core value:** Show Bedrock Ocean you understand their product better than they do — backed by a competitive analysis, PRD, and strategy doc they can feel, not just read
-**Current focus:** Phase 1 — Competitive Analysis
+**Core value:** Help a diver decide where to go next, with honest evidence.
+**Current focus:** M2 Phase 6 — Reef-health backfill
 
 ## Current Position
 
-Phase: 1 of 3 (Competitive Analysis)
+Phase: 6 of 10 (Reef-health backfill — first of 5 M2 phases)
 Plan: 0 of TBD in current phase
 Status: Ready to plan
-Last activity: 2026-03-12 — Roadmap created; requirements mapped to 3 phases
+Last activity: 2026-05-24 — M2 roadmap created; 5 phases, 22 requirements mapped
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [░░░░░░░░░░] 0% (M2)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: —
-- Total execution time: 0 hours
-
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| - | - | - | - |
-
-**Recent Trend:**
-- Last 5 plans: —
-- Trend: —
-
-*Updated after each plan completion*
+- M1 completed: 13 stories shipped through ad-hoc tracking (BMAD v2 backlog) — see git log between `d9d42b5` and `72479e6`
+- M2 plans completed: 0
 
 ## Accumulated Context
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
+See PROJECT.md Key Decisions. Most relevant to M2:
 
-- [Init]: Demo over deck — live interactive demo more impressive in interviews than slides
-- [Init]: Bathymetry focus — Bedrock's owned data is seafloor surveys; clients are wind/cable
+- File-based source registry — extend pattern for cost data
+- No numeric sighting probability — backfill must respect this
+- Static-export Next.js — planner must work as SSG (no runtime backend)
+- URL-state filters — planner output is URL-state too
 
 ### Pending Todos
 
-None yet.
+None blocking M2 start.
 
 ### Blockers/Concerns
 
-None yet.
+- Backfill scope is large (111 locations × reef-health, 184 sites × sighting evidence). Phase plans should batch with editorial review checkpoints, not commit hundreds of records in one pass.
+- Cost data needs region-of-origin assumption (US/EU/AU). Phase 9 plan should pick one and document.
 
 ## Session Continuity
 
-Last session: 2026-03-12
-Stopped at: Roadmap written; ready to plan Phase 1 (Competitive Analysis)
+Last session: 2026-05-24
+Stopped at: M2 roadmap written; ready to plan Phase 6 (reef-health backfill)
 Resume file: None

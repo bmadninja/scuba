@@ -1,107 +1,107 @@
-# Requirements: Mosaic R&D — Bedrock Ocean Interview Package
+# Requirements: scubaSeason.fun — Milestone M2
 
-**Defined:** 2026-03-12
-**Core Value:** Show Bedrock Ocean you understand their product better than they do, backed by a live PRD and demo they can feel
+**Defined:** 2026-05-24
+**Core Value:** Help a diver decide where to go next, with honest evidence.
 
----
+## v2 (M2) Requirements
 
-## v1 Requirements
+### Data Backfill — Reef Health
 
-The deliverable is an interview package: competitive analysis, product PRD, and product strategy doc.
+- [ ] **REEF-01**: Reef-health records exist for all 111 locations (currently 12). Each carries observed condition, current thermal stress, and where appropriate a documented projection.
+- [ ] **REEF-02**: Every reef-health record carries `divingOutlook` editorial copy so the "What to expect on a dive" card always populates.
+- [ ] **REEF-03**: Every reef-health record carries `historicalCoralCoverPercent` + `historicalSurveyDate` so the cover-comparison bars always render.
+- [ ] **REEF-04**: A backfill pipeline (script + AI assist) generates draft records from GBIF/OBIS/NOAA-CRW with editorial review checkpoints; output is committable JSON.
+- [ ] **REEF-05**: Validator must still pass with 0 errors after backfill.
 
-### Competitive Analysis
+### Data Backfill — Sighting Evidence
 
-- [ ] **COMP-01**: Document covers direct competitors (Fugro SiteView, TGS Portal, ESRI Ocean) with feature comparison
-- [ ] **COMP-02**: Identifies Mosaic's unoccupied market position (proprietary bathymetry + energy workflows + modern web UX)
-- [ ] **COMP-03**: Quantifies commercial risk of inaction (e.g. if wind/cable clients migrate to competitors)
-- [ ] **COMP-04**: Written in language a non-technical executive can read and act on
+- [ ] **SIGHT-01**: Sighting evidence records exist for all 184 sites (currently 17). Each site has at least one species-level record with last-confirmed date, recent-record count within a proximity radius, and seasonality cluster.
+- [ ] **SIGHT-02**: A backfill pipeline (script + GBIF/OBIS API + AI assist) generates draft records keyed off each site's `species[]` list with editorial review.
+- [ ] **SIGHT-03**: No record may carry a numeric per-dive probability; validator continues to reject `probabilityPercent`.
+- [ ] **SIGHT-04**: Site cards continue to show the highest-signal sighting badge (no card lacks a sighting badge once backfill lands).
 
-### Product PRD
+### Trip Planner — Itinerary Builder
 
-- [ ] **PRD-01**: Documents current state of Mosaic with clear-eyed assessment of gaps (screenshots + annotations)
-- [ ] **PRD-02**: Identifies core product failure — processed bathymetric data is never rendered; clients see file trees
-- [ ] **PRD-03**: Improvement: surveys list redesigned as map-first geographic browser (draw AOI to find surveys)
-- [ ] **PRD-04**: Improvement: survey detail shows human-readable data product names, not raw sensor filenames
-- [ ] **PRD-05**: Improvement: survey header shows key metadata (resolution, depth range, sensors, datum, coverage area)
-- [ ] **PRD-06**: New feature: bathymetric rendering — GeoTIFFs served as tiled colour maps with hillshade
-- [ ] **PRD-07**: New feature: depth profile tool — draw a transect, see depth cross-section graph
-- [ ] **PRD-08**: New feature: smarter download — select area of interest, choose format (GeoTIFF/CSV/LAS)
-- [ ] **PRD-09**: New feature: shareable permalink — URL-encoded map state for sharing with colleagues
-- [ ] **PRD-10**: New feature: data type filter — filter surveys by sensor type (MBES, SSS, MAG, SBP)
-- [ ] **PRD-11**: Each improvement includes technical feasibility note (effort + stack required)
+- [ ] **PLAN-01**: A `/plan` route exists where a visitor picks a location, trip length (days), and certification level.
+- [ ] **PLAN-02**: The planner renders a build with: 2–6 dive sites at the location, a recommended operator block, lodging suggestions split by tier, a gear checklist scoped to the picked sites, and a season-fit summary.
+- [ ] **PLAN-03**: Planner output is URL-state — copy-paste `/plan?location=raja-ampat-indonesia&days=7&cert=advanced` reproduces the exact build.
+- [ ] **PLAN-04**: Planner respects cert level — only surfaces sites at or below the visitor's certification (same minSkillRank rule as the homepage filter).
+- [ ] **PLAN-05**: Planner respects climate-stressed/stable visitor preference (optional URL param).
+- [ ] **PLAN-06**: Planner output is shareable / printable — the URL is the canonical artefact.
 
-### Product Strategy Doc
+### Trip Planner — Cost Transparency
 
-- [ ] **STRAT-01**: Articulates Mosaic's positioning — not a GIS tool, not a file delivery system; the discovery layer for Bedrock's proprietary survey data
-- [ ] **STRAT-02**: Defines two target client workflows (offshore wind site selection, subsea cable route planning)
-- [ ] **STRAT-03**: Prioritised roadmap — Phase 1 quick wins (render the data), Phase 2 energy workflows
-- [ ] **STRAT-04**: Revenue model recommendation — tiered access (public free, commercial subscription with advanced tools)
-- [ ] **STRAT-05**: "Why now" — offshore wind buildout creates demand for exactly this product in 2026
+- [ ] **COST-01**: Per-location trip-cost estimate data layer (`src/data/trip-costs.json` or equivalent) with hand-curated low/mid/upscale ranges for flight (from major US/EU/AU origin region), dive package, lodging per night, and ground logistics.
+- [ ] **COST-02**: The planner output includes a "What this trip costs" panel with a per-day and total range derived from selected days + lodging tier.
+- [ ] **COST-03**: Cost methodology is documented (sources + last-reviewed date) and appears in the disclosure drawer — no fake precision.
+- [ ] **COST-04**: Costs are clearly framed as estimates / bounded ranges, not quotes.
 
----
+### Trip Planner — Discovery
 
-## v2 Requirements
+- [ ] **DISC-01**: Existing site cards on `/sites` link to `/plan?location=…` as a secondary CTA so the planner is discoverable from the catalogue.
+- [ ] **DISC-02**: Existing encounter detail pages link to `/plan?location=…&encounter=…` for each listed location so visitors can go from "I want to see sardine run" to "plan the trip" in one click.
+- [ ] **DISC-03**: Header nav exposes "Plan a trip" across the site.
 
-Deferred — valuable but not needed for the interview.
+## Future Requirements (M3+)
 
-### Demo Prototype
+### Mobile UX
+- **MOB-01**: `/sites` filter bar uses a bottom-sheet pattern on mobile
+- **MOB-02**: Encounter detail responsive polish
+- **MOB-03**: Reef-health panel reflows for narrow viewports
 
-- Build a working prototype of the improved Mosaic experience using GEBCO/EMODnet data
-- Demonstrate bathymetric rendering, geographic search, depth profile tool
+### Visual Browsing
+- **MAP-01**: Globe component on `/sites` for visual region pick
+- **MAP-02**: Per-location reef-health colored on the homepage globe (e.g. red for Alert 1+ locations)
 
-### WTG Suitability Grid
+### Sighting Freshness
+- **FRESH-01**: Nightly Vercel cron that re-fetches GBIF/OBIS and rebuilds sighting records (replaces hand-curation as data scale grows)
 
-- Offshore wind "wow" feature — drop turbine layout, auto-score by seabed conditions
-- High complexity; strong differentiator but beyond interview scope
-
-### Cable Corridor Report
-
-- Subsea cable "wow" feature — draw route, auto-generate hazard/depth PDF
-- Same complexity tradeoff as WTG grid
-
----
+### Diver-Submitted Data
+- **UGC-01**: Diver sighting reports with photo verification
+- **UGC-02**: Reef-health citizen-science contributions
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Full production build | This is a PRD, not a shipped product |
-| Codebase access / technical deep-dive | Working from live product and public information |
-| Pricing model financial modelling | Beyond scope for interview |
-| Mobile app recommendations | Not relevant to offshore industry clients |
-
----
+| Real-time flight pricing | API maintenance burden; hand-curated bounded ranges fit the editorial-trust theme |
+| Hotel booking | Affiliate hand-off, not direct booking |
+| User accounts / saved trips | URL state covers shareability for v2; defer accounts until clear demand |
+| Comparison tool (side-by-side trips) | Itinerary builder is the chosen v2 output; comparison defers to M3 |
+| Real-time chat / forum | Out of remit |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| COMP-01 | Phase 1: Competitive Analysis | Pending |
-| COMP-02 | Phase 1: Competitive Analysis | Pending |
-| COMP-03 | Phase 1: Competitive Analysis | Pending |
-| COMP-04 | Phase 1: Competitive Analysis | Pending |
-| PRD-01 | Phase 2: Product PRD | Pending |
-| PRD-02 | Phase 2: Product PRD | Pending |
-| PRD-03 | Phase 2: Product PRD | Pending |
-| PRD-04 | Phase 2: Product PRD | Pending |
-| PRD-05 | Phase 2: Product PRD | Pending |
-| PRD-06 | Phase 2: Product PRD | Pending |
-| PRD-07 | Phase 2: Product PRD | Pending |
-| PRD-08 | Phase 2: Product PRD | Pending |
-| PRD-09 | Phase 2: Product PRD | Pending |
-| PRD-10 | Phase 2: Product PRD | Pending |
-| PRD-11 | Phase 2: Product PRD | Pending |
-| STRAT-01 | Phase 3: Product Strategy | Pending |
-| STRAT-02 | Phase 3: Product Strategy | Pending |
-| STRAT-03 | Phase 3: Product Strategy | Pending |
-| STRAT-04 | Phase 3: Product Strategy | Pending |
-| STRAT-05 | Phase 3: Product Strategy | Pending |
+| REEF-01 | Phase 6 | Pending |
+| REEF-02 | Phase 6 | Pending |
+| REEF-03 | Phase 6 | Pending |
+| REEF-04 | Phase 6 | Pending |
+| REEF-05 | Phase 6 | Pending |
+| SIGHT-01 | Phase 7 | Pending |
+| SIGHT-02 | Phase 7 | Pending |
+| SIGHT-03 | Phase 7 | Pending |
+| SIGHT-04 | Phase 7 | Pending |
+| PLAN-01 | Phase 8 | Pending |
+| PLAN-02 | Phase 8 | Pending |
+| PLAN-03 | Phase 8 | Pending |
+| PLAN-04 | Phase 8 | Pending |
+| PLAN-05 | Phase 8 | Pending |
+| PLAN-06 | Phase 8 | Pending |
+| COST-01 | Phase 9 | Pending |
+| COST-02 | Phase 9 | Pending |
+| COST-03 | Phase 9 | Pending |
+| COST-04 | Phase 9 | Pending |
+| DISC-01 | Phase 10 | Pending |
+| DISC-02 | Phase 10 | Pending |
+| DISC-03 | Phase 10 | Pending |
 
 **Coverage:**
-- v1 requirements: 20 total
-- Mapped to phases: 20
+- M2 requirements: 22 total
+- Mapped to phases: 22
 - Unmapped: 0 ✓
 
 ---
-
-*Requirements defined: 2026-03-12*
+*Requirements defined: 2026-05-24*
+*Last updated: 2026-05-24*

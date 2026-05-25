@@ -1,64 +1,116 @@
-# Roadmap: Mosaic R&D — Bedrock Ocean Interview Package
+# Roadmap: scubaSeason.fun — Milestone M2
 
-## Overview
+**Defined:** 2026-05-24
+**Core Value:** Help a diver decide where to go next, with honest evidence.
 
-Three phases, three documents. The interview package is a competitive analysis, a product PRD, and a product strategy doc — each self-contained but building on the last. Phase 1 maps the competitive landscape and names the gap Mosaic can own. Phase 2 turns that gap into a concrete product critique and specification. Phase 3 wraps the specification in a strategic narrative with prioritised roadmap and revenue logic. When all three are done, there is a coherent, executive-readable package that demonstrates you understand Mosaic better than Bedrock does.
+M1 (BMAD v2 backlog) shipped phases 1–5 informally; M2 begins phase numbering at **6** and continues sequentially.
+
+## Milestone Goal
+
+Turn the source-aware data layer from M1 into (a) universal coverage so every location/site reflects honest evidence, and (b) a trip-planning funnel that turns research into a decision.
 
 ## Phases
 
-**Phase Numbering:**
-- Integer phases (1, 2, 3): Planned milestone work
-- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
+| # | Phase | Goal | Requirements | Success Criteria |
+|---|-------|------|--------------|------------------|
+| 6 | Reef-health backfill | Every location has reef-health data + diving outlook | REEF-01..05 | 5 |
+| 7 | Sighting evidence backfill | Every site has at least one sighting record | SIGHT-01..04 | 4 |
+| 8 | Trip planner — itinerary builder | `/plan` route stitches site + lodging + operator + gear | PLAN-01..06 | 5 |
+| 9 | Trip planner — cost transparency | Bounded cost ranges per location with documented sources | COST-01..04 | 4 |
+| 10 | Planner discovery + integration | Planner is reachable from `/sites`, `/encounters`, header nav | DISC-01..03 | 3 |
 
-Decimal phases appear between their surrounding integers in numeric order.
+**5 phases · 22 requirements · all covered ✓**
 
-- [ ] **Phase 1: Competitive Analysis** - Map the ocean data platform landscape and identify the unoccupied position Mosaic can own
-- [ ] **Phase 2: Product PRD** - Diagnose Mosaic's current failures and specify the improvements with technical feasibility notes
-- [ ] **Phase 3: Product Strategy** - Articulate positioning, client workflows, prioritised roadmap, and the revenue model
+---
 
-## Phase Details
+## Phase 6: Reef-health backfill
 
-### Phase 1: Competitive Analysis
-**Goal**: A document that any non-technical executive can read and act on — naming who the competitors are, what they offer, what gap Mosaic can own, and what it costs commercially to stay deprioritised
-**Depends on**: Nothing (first phase)
-**Requirements**: COMP-01, COMP-02, COMP-03, COMP-04
-**Success Criteria** (what must be TRUE):
-  1. Reader can name Mosaic's three direct competitors (Fugro SiteView, TGS Portal, ESRI Ocean) and describe what each does and does not offer
-  2. Document names the specific unoccupied market position Mosaic can claim — proprietary bathymetry plus energy workflows plus modern web UX — in one clear sentence
-  3. Reader can articulate the commercial risk of inaction: what happens to Bedrock's wind/cable clients if Mosaic stays deprioritised
-  4. A non-technical executive finishes the document without needing to look anything up
-**Plans**: TBD
+**Goal:** Every one of the 111 locations renders a populated `ReefHealthPanel` with verdict, cover bars, alert, and diving outlook. Validator stays green.
 
-### Phase 2: Product PRD
-**Goal**: A specification document that shows exactly what is broken in the current Mosaic product and what to build instead — with screenshots, annotations, and a technical feasibility note on each improvement
-**Depends on**: Phase 1
-**Requirements**: PRD-01, PRD-02, PRD-03, PRD-04, PRD-05, PRD-06, PRD-07, PRD-08, PRD-09, PRD-10, PRD-11
-**Success Criteria** (what must be TRUE):
-  1. Reader who has never seen Mosaic can describe its core failure: processed bathymetric data is never rendered; clients see file trees instead of maps
-  2. Each of the 8 improvements (map-first browser, human-readable filenames, metadata header, bathymetric rendering, depth profile, smarter download, permalink, data type filter) is specified with enough detail that an engineer can estimate it
-  3. Every improvement includes a technical feasibility note covering effort and required stack
-  4. Screenshots and annotations make the current-state critique concrete — not just claimed
-**Plans**: TBD
+**Requirements:** REEF-01, REEF-02, REEF-03, REEF-04, REEF-05
 
-### Phase 3: Product Strategy
-**Goal**: A strategic document that wraps the PRD in positioning, client workflow context, a prioritised roadmap, a revenue model, and a compelling "why now" argument tied to the offshore wind buildout
-**Depends on**: Phase 2
-**Requirements**: STRAT-01, STRAT-02, STRAT-03, STRAT-04, STRAT-05
-**Success Criteria** (what must be TRUE):
-  1. Reader can state Mosaic's positioning in one sentence — not a GIS tool, not a file delivery system, but the discovery layer for Bedrock's proprietary survey data
-  2. Document describes two complete client workflows (offshore wind site selection, subsea cable route planning) showing where Mosaic fits and what it replaces
-  3. Prioritised roadmap exists with Phase 1 quick wins (render the data) and Phase 2 energy workflows, each with clear rationale tied to client needs
-  4. Revenue model recommendation is present — tiered access structure with clear logic for what sits behind the commercial tier
-  5. "Why now" argument is concrete — offshore wind buildout timelines and market scale, not generic "growing market" language
-**Plans**: TBD
+**Success criteria:**
+1. `reef-health.json` has ≥ 1 record for every locationId in `locations.json`
+2. Every record carries `divingOutlook` and `historicalCoralCoverPercent`/`historicalSurveyDate`
+3. `npm run validate:provenance` reports 0 errors
+4. A backfill script (`scripts/backfill-reef-health.mjs`) exists and is documented — re-runnable
+5. Spot-check 5 random location pages: each renders the panel (not the "No survey on file" placeholder)
 
-## Progress
+**Notes:** AI-assisted draft generation pulling from NOAA CRW, GBIF, OBIS, Allen Coral Atlas + region-specific monitoring (AIMS, NCRMP, GCRMN, AGRRA). Editorial review checkpoint before commit.
 
-**Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3
+---
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Competitive Analysis | 0/TBD | Not started | - |
-| 2. Product PRD | 0/TBD | Not started | - |
-| 3. Product Strategy | 0/TBD | Not started | - |
+## Phase 7: Sighting evidence backfill
+
+**Goal:** Every dive site card renders a sighting badge. Every site detail page renders the Sightings Evidence section.
+
+**Requirements:** SIGHT-01, SIGHT-02, SIGHT-03, SIGHT-04
+
+**Success criteria:**
+1. `sightings.json` has ≥ 1 record for every siteId in `sites.json` (184 sites)
+2. Backfill pipeline (`scripts/backfill-sightings.mjs`) is committed and re-runnable
+3. Validator passes — no `probabilityPercent` slips in
+4. Spot-check 10 random site cards: every one shows a confidence dot + species + last-confirmed line
+
+**Notes:** Pipeline reads each site's `species[]`, queries GBIF/OBIS for those species within a proximity radius, builds a draft record per site. AI-assisted naming and notes; deterministic recordCount/seasonality from API output.
+
+---
+
+## Phase 8: Trip planner — itinerary builder
+
+**Goal:** Visitors can land on `/plan?location=…&days=7&cert=advanced` and get a complete buildable trip.
+
+**Requirements:** PLAN-01, PLAN-02, PLAN-03, PLAN-04, PLAN-05, PLAN-06
+
+**Success criteria:**
+1. `/plan` route exists, statically generates per location (111 pages or one dynamic page)
+2. Builds a coherent trip from existing data: site picks, operator block, lodging tiers, gear list, season fit
+3. URL is the canonical state — copy-paste reproduces the exact build
+4. Cert level gates which sites surface (re-uses minSkillRank rule)
+5. Output is printable / shareable; no JavaScript required to read the trip once loaded
+
+**Notes:** Static-friendly — the planner reads URL params and renders deterministic JSX. No backend.
+
+---
+
+## Phase 9: Trip planner — cost transparency
+
+**Goal:** Every trip output includes a bounded cost panel with documented sources.
+
+**Requirements:** COST-01, COST-02, COST-03, COST-04
+
+**Success criteria:**
+1. `src/data/trip-costs.json` carries per-location ranges for flight, dive package, lodging, ground logistics
+2. Planner renders a "What this trip costs" panel with per-day + total ranges
+3. Methodology drawer documents sources and last-reviewed date
+4. Cost figures are framed as bounded estimates, never quotes — language audit confirms
+
+**Notes:** Hand-curated by region. Re-use the methodology pattern from M1 (source IDs + limitations).
+
+---
+
+## Phase 10: Planner discovery + integration
+
+**Goal:** Planner is one click away from every relevant browsing surface.
+
+**Requirements:** DISC-01, DISC-02, DISC-03
+
+**Success criteria:**
+1. Site cards include a secondary CTA linking to `/plan?location=…`
+2. Encounter detail pages link to `/plan?location=…&encounter=…` for each listed location
+3. Header nav exposes "Plan a trip" on every page
+
+---
+
+## Build order
+
+Strictly sequential — each phase depends on the previous:
+
+1. **Phase 6** first — reef-health data is referenced by the planner's season-fit logic
+2. **Phase 7** before Phase 8 — sighting badges appear on the planner's site picks
+3. **Phase 8** before Phase 9 — cost panel mounts inside the planner
+4. **Phase 9** before Phase 10 — discovery links should land on the fully-built planner
+
+---
+
+*Roadmap defined: 2026-05-24*
