@@ -11,12 +11,14 @@
     "verify:stories": "node scripts/verify-stories.mjs",
     "validate:provenance": "node scripts/validate-provenance.mjs",
     "audit:data": "node scripts/audit-data-provenance.mjs",
+    "audit:independence": "node scripts/audit-editorial-independence.mjs",
     "discover:dry": "DRY_RUN=1 node scripts/discover-sites.mjs",
     "discover": "node scripts/discover-sites.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.40.1",
     "@base-ui/react": "^1.3.0",
+    "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.7.0",

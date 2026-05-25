@@ -94,6 +94,19 @@ export default function AboutPage() {
           </a>
           .
         </p>
+
+        <h2 className="mt-12 text-lg font-bold tracking-tight text-slate-900">
+          Editorial independence
+        </h2>
+        <p className="mt-3 text-base leading-7 text-slate-700">
+          Affiliate commissions do not influence what we recommend. Site
+          rankings come from editorial scoring, not commission rates. Operator
+          and lodging blocks include non-affiliate options where we know of
+          them. The source/methodology drawer on every claim is the same
+          whether a partner pays us or not. If you ever see something that
+          looks like a sponsored recommendation disguised as editorial, that&rsquo;s
+          a bug — please tell us.
+        </p>
       </main>
     </div>
   );
