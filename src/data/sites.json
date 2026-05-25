@@ -60625,5 +60625,251 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Katuali are highly venomous but non-aggressive — observe, never handle them. Niue has no recompression chamber, so dive conservatively; the nearest is in New Zealand. Boats launch by crane at Alofi wharf and trips depend on west-coast swell. Scuba is seasonal — the local operator typically closes from around December to February."
+  },
+  {
+    "id": "socorro-mexico-cabo-pearce",
+    "slug": "socorro-mexico-cabo-pearce",
+    "locationId": "socorro-mexico",
+    "name": "Cabo Pearce",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/M._Birostris_swimming_with_a_diver.jpg",
+    "lat": 18.7782,
+    "lng": -110.9068,
+    "description": "A long finger of solidified lava that juts off the east coast of Socorro Island and runs out into open water, its top shelf around 15-20m before the ridge plunges past 30m into the blue. Currents sweeping along the ridge feed a cleaning station that draws Socorro's exceptionally interactive giant oceanic mantas (Mobula birostris) - wingspans to 7m - which hover over divers' exhaust bubbles at arm's length. A resident pod of bottlenose dolphins routinely approaches divers, while schooling scalloped hammerheads, silky and Galapagos sharks patrol the deeper edge. The usual tactic is to wedge into the rocks out of the current and let the pelagic traffic come to you.",
+    "depthRange": {
+      "min": 12,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Giant oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bottlenose dolphin",
+        "scientificName": "Tursiops truncatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silky shark",
+        "scientificName": "Carcharhinus falciformis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Galapagos shark",
+        "scientificName": "Carcharhinus galapagensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm full with hood/gloves optional"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5-7mm full with hood/gloves"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5-7mm full with hood/gloves"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5-7mm full with hood/gloves"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 21,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5-7mm full with hood/gloves"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm full (late season; most liveaboards wind down)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm full (off-season; closed to liveaboards)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm full (off-season; closed to liveaboards)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm full (off-season; closed to liveaboards)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 94,
+    "getThere": "Fly into Los Cabos International Airport (SJD) in Baja California Sur. Liveaboards depart Cabo San Lucas or San Jose del Cabo; the open-ocean crossing takes 24-30 hours, and Socorro Island is the southernmost stop, usually an additional run beyond San Benedicto. There is no day-boat or shore access - the Revillagigedo Archipelago is reachable only by permitted liveaboard.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside Revillagigedo National Park / UNESCO World Heritage Site (2016), Mexico's largest fully protected marine reserve; access requires permits held by licensed liveaboards. Touching mantas and dolphins is prohibited. Strong along-ridge currents and occasional down-currents along the wall; the bottom drops well past 40m, so a reverse profile and good gas management matter. Most operators require 50+ logged dives and advanced/nitrox certification. Best plan is a negative entry onto the ridge, then shelter among the rocks and wait for mantas and dolphins to approach."
   }
 ]
