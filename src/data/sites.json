@@ -60871,5 +60871,250 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside Revillagigedo National Park / UNESCO World Heritage Site (2016), Mexico's largest fully protected marine reserve; access requires permits held by licensed liveaboards. Touching mantas and dolphins is prohibited. Strong along-ridge currents and occasional down-currents along the wall; the bottom drops well past 40m, so a reverse profile and good gas management matter. Most operators require 50+ logged dives and advanced/nitrox certification. Best plan is a negative entry onto the ridge, then shelter among the rocks and wait for mantas and dolphins to approach."
+  },
+  {
+    "id": "egypt-abu-dabbab",
+    "slug": "egypt-abu-dabbab",
+    "locationId": "brothers-egypt",
+    "name": "Abu Dabbab",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Dugong_Marsa_Alam_PLW_edit.jpg",
+    "lat": 25.337,
+    "lng": 34.733,
+    "description": "A sheltered horseshoe bay 34 km north of Marsa Alam where a broad seagrass meadow fills the sandy centre between two fringing coral reefs. The grass is grazing ground for the bay's resident dugong — the 'sea cow' that gives the site its fame — and for giant green and hawksbill turtles that crop the blades at arm's length. Halavi guitarfish lie half-buried on the sand, seahorses and pipefish shelter in the seagrass, and the north and south reefs hold the usual Red Sea anthias, butterflyfish and morays. Most of the action sits between 5 and 12 m, with the outer reefs sloping past 18 m. Calm, near current-free and entered straight off the beach, it suits snorkellers, first dives and macro shooters alike — though dugong sightings are never guaranteed.",
+    "depthRange": {
+      "min": 3,
+      "max": 20
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Dugong",
+        "scientificName": "Dugong dugon",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Halavi guitarfish",
+        "scientificName": "Glaucostegus halavi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Bluespotted ribbontail ray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Seahorse",
+        "scientificName": "Hippocampus spp.",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Bluecheek butterflyfish",
+        "scientificName": "Chaetodon semilarvatus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5 mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Marsa Alam International (RMF), about 35 km south of the bay (roughly 40 minutes by road). Abu Dabbab sits off the main coastal highway between the Malikia and Hilton Nubian resorts, signed down a short access road to the public beach. Most divers come on a shore-dive day trip from Marsa Alam, Port Ghalib or El Quseir dive centres and wade in straight off the sand. Hurghada (HRG) is a 3-4 hour drive north.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Surface marker buoy",
+        "reason": "Boats and watersports cross the open bay; mark your position before surfacing on the outer reefs"
+      },
+      {
+        "name": "Macro lens or close-up filter",
+        "reason": "Seahorses, pipefish and nudibranchs hide in the seagrass and along the reef flanks"
+      }
+    ],
+    "notes": "Shore dive with an easy wade-in entry; the bay is a protected area and a small beach access fee usually applies. Dugong and turtles are wild and free-ranging — keep your distance, never chase, touch or block their route to the surface, and avoid finning up the seagrass. Boat traffic crosses the bay, so stay within the marked swim zones in the shallows and deploy an SMB on the outer reefs. Dugong sightings are unpredictable and can never be guaranteed."
   }
 ]
