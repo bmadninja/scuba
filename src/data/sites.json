@@ -65578,5 +65578,291 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Protected marine reserve: a per-person entry fee applies and is collected by the Hol Chan Marine Reserve. No fishing, gloves, touching or feeding of wildlife; use mooring buoys, do not anchor on the reef. Tidal currents in the cut can be too strong to swim against at peak flow—dive with local guides who time the slack."
+  },
+  {
+    "id": "aliwal-sardine-run",
+    "slug": "aliwal-sardine-run",
+    "locationId": "aliwal-south-africa",
+    "name": "Sardine Run",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Sardine_run_in_South_Africa_2022.jpg",
+    "lat": -30.95,
+    "lng": 30.28,
+    "description": "Not a fixed reef but a moving feeding frenzy. Each winter the cold Benguela counter-current pushes a tongue of sub-21°C water up the coast, and billions of Southern African pilchard migrate northeast from the Eastern Cape along the Wild Coast into southern KwaZulu-Natal. Pods of up to 18,000 common dolphins herd the fish into bait balls 10–20 m wide, which copper (bronze whaler) sharks, Bryde's whales and dive-bombing Cape gannets shred within minutes. Divers and snorkellers drop into open blue water alongside a ball as it forms — spotter planes radio the boats onto the action, and most balls hold for under ten minutes. Surf launches, surge and cold green water make this a demanding expedition, run mainly in June and July.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Southern African pilchard",
+        "scientificName": "Sardinops sagax",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Common dolphin",
+        "scientificName": "Delphinus delphis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Cape gannet",
+        "scientificName": "Morus capensis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Bronze whaler (copper) shark",
+        "scientificName": "Carcharhinus brachyurus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Bryde's whale",
+        "scientificName": "Balaenoptera brydei",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Cape fur seal",
+        "scientificName": "Arctocephalus pusillus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 16,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 15,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7
+    ],
+    "editorialRank": 90,
+    "getThere": "Most operators run multi-day expeditions from Port St Johns on the Wild Coast (Eastern Cape) or from the KwaZulu-Natal South Coast around Shelly Beach and Port Edward. Fly into Durban's King Shaka International (DUR) and drive about three hours south for the KZN launches, or into Mthatha (UTT) and transfer roughly two hours to Port St Johns. Boats are RIBs launched through the surf, and spotter planes locate the bait balls offshore.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Spotted Grunter Resort (Port St Johns)",
+        "url": "https://www.booking.com/searchresults.html?ss=Spotted%20Grunter%20Resort%20Port%20St%20Johns",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "San Lameer Resort (KZN South Coast)",
+        "url": "https://www.booking.com/searchresults.html?ss=San%20Lameer%20Resort%20Southbroom",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Blue Wilderness Sardine Run",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-5mm-full"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "5mm hood",
+        "reason": "Winter run water drops to 15-18°C and trips are long days in cold green water.",
+        "gearId": "hood-bare-5mm"
+      },
+      {
+        "name": "Dive computer",
+        "reason": "Action ranges from the surface to 30 m with rapid depth changes while chasing a moving ball.",
+        "gearId": "computer-shearwater-peregrine"
+      }
+    ],
+    "notes": "Not a guaranteed dive — the run's timing and intensity vary year to year and some seasons underperform. Conditions are open-ocean: big swell, surge, surf launches and water as cold as 15°C. Most encounters are on snorkel or scuba in blue water beside the bait ball; baited shark activity and breaching whales mean disciplined briefings matter. Peak window is mid-June to late July."
   }
 ]
