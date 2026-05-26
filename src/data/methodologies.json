@@ -1,5 +1,55 @@
 [
   {
+    "claimId": "dive-conditions-forecast",
+    "claimType": "travel-recommendation",
+    "sourceIds": [
+      "noaa-co-ops",
+      "ibtracs",
+      "ecmwf-open",
+      "era5",
+      "hycom",
+      "copernicus-marine",
+      "noaa-coastwatch",
+      "noaa-ndbc"
+    ],
+    "confidence": "medium",
+    "limitations": "Conditions claims (wave height, wind, swell, current, water temp, tide windows) are sourced from peer-reviewed forecast and reanalysis models — they are statistically calibrated but not site-specific to the metre. Tropical-cyclone history is from IBTrACS. None of this replaces a local operator's morning briefing. We use these for climatological 'what to expect in this month' framing, not day-of dive go/no-go calls.",
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "claimId": "water-quality-pollution",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "ncei-microplastics",
+      "noaa-erma",
+      "emodnet-chemistry",
+      "noaa-hab-forecast",
+      "haedat",
+      "goa-on",
+      "noaa-mussel-watch",
+      "global-mangrove-watch"
+    ],
+    "confidence": "medium",
+    "limitations": "Pollution and water-quality claims are sourced from governmental monitoring networks and peer-reviewed registries — coverage is excellent in the US, EU, and Australia and patchier elsewhere. Microplastic concentrations vary enormously by time, season, and depth — published values are sparse spatial averages. Harmful algal bloom forecasts are short-term (days to weeks) and species-specific. Always confirm current advisories with the local operator before relying on this layer for site selection.",
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "claimId": "wreck-history-bathymetry",
+    "claimType": "travel-recommendation",
+    "sourceIds": [
+      "gebco",
+      "smithsonian-gvp",
+      "usn-nhhc",
+      "usgs-earthquake",
+      "noaa-enc-direct",
+      "noaa-maritime-heritage",
+      "openseamap"
+    ],
+    "confidence": "high",
+    "limitations": "Bathymetry comes from GEBCO at 15-arcsecond global resolution — good for depth context but not survey-grade for navigation. Wreck history is taken from naval / governmental archives (DANFS, ENC Direct, NOAA Maritime Heritage) which are authoritative for cited vessels but do not cover every sport-dive wreck worldwide. Volcanic and seismic context (Smithsonian GVP, USGS) is event-level — use for 'this site sits near an active fault / volcano' framing, not for risk assessment.",
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
     "claimId": "human-pressure-mpa-context",
     "claimType": "travel-recommendation",
     "sourceIds": [
@@ -46,7 +96,10 @@
       "imos-aodn",
       "wri-reefs-at-risk",
       "ocean-health-index",
-      "ipcc-srocc"
+      "ipcc-srocc",
+      "goa-on",
+      "haedat",
+      "ncei-microplastics"
     ],
     "confidence": "high",
     "limitations": "Observed coral cover, bleaching, and mortality come from named in-situ surveys with a stated date and method — they describe one snapshot of one reef and do not extrapolate to neighbouring sites. Current thermal stress is satellite-derived from NOAA Coral Reef Watch at ~5 km resolution; it indicates risk, not observed coral damage. We deliberately separate observed condition, current thermal stress, and projection — and we never publish a projection without a documented model and uncertainty.",

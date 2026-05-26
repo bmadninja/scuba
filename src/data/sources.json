@@ -418,6 +418,196 @@
     "notes": "Annual composite index of ocean health by EEZ covering 10 goals (food provision, carbon storage, biodiversity, etc.). Use for country-level ocean-health context."
   },
   {
+    "id": "noaa-co-ops",
+    "name": "NOAA Tides & Currents (CO-OPS)",
+    "url": "https://tidesandcurrents.noaa.gov/",
+    "publisher": "NOAA National Ocean Service",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Authoritative US tide predictions, water levels, currents, and meteorological observations. REST API, no auth. Use for tide-window claims and current-strength context at US-territorial sites."
+  },
+  {
+    "id": "ibtracs",
+    "name": "IBTrACS",
+    "url": "https://www.ncei.noaa.gov/products/international-best-track-archive",
+    "publisher": "NOAA NCEI + WMO + global tropical-cyclone agencies",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "International Best Track Archive — every named tropical cyclone since 1842. Use for historical hurricane / typhoon / cyclone impact context at affected dive locations."
+  },
+  {
+    "id": "ecmwf-open",
+    "name": "ECMWF Open Data",
+    "url": "https://www.ecmwf.int/en/forecasts/datasets/open-data",
+    "publisher": "European Centre for Medium-Range Weather Forecasts",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "CC BY 4.0",
+    "notes": "Global numerical-weather-prediction outputs at 0.25° resolution. Use for forward-looking wind, wave, and water-temp conditions cards."
+  },
+  {
+    "id": "era5",
+    "name": "ERA5 reanalysis (Copernicus CDS)",
+    "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels",
+    "publisher": "ECMWF / Copernicus Climate Change Service",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-26",
+    "license": "Copernicus data policy — free and open with attribution",
+    "notes": "Hourly atmospheric and oceanographic reanalysis from 1940 to present. Use for climatological 'typical conditions in October at this location' claims."
+  },
+  {
+    "id": "hycom",
+    "name": "HYCOM ocean model",
+    "url": "https://www.hycom.org/dataserver",
+    "publisher": "HYCOM Consortium (US Navy + NOAA + academic)",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public release, Distribution A)",
+    "notes": "Global hybrid-coordinate ocean circulation model. Use for currents, temperature/salinity profiles, and ocean-state forecasts at sub-coastal resolution."
+  },
+  {
+    "id": "ncei-microplastics",
+    "name": "NCEI Marine Microplastics",
+    "url": "https://www.ncei.noaa.gov/products/microplastics",
+    "publisher": "NOAA National Centers for Environmental Information",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Global database of microplastic concentrations in seawater, sediment, and biota. Use for 'how plasticky is this water' framing at coastal locations."
+  },
+  {
+    "id": "noaa-erma",
+    "name": "NOAA ERMA + IncidentNews",
+    "url": "https://erma.noaa.gov/",
+    "publisher": "NOAA Office of Response and Restoration",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Environmental Response Management Application and incident timeline of US oil spills + chemical releases. Use for active-incident context near US dive sites."
+  },
+  {
+    "id": "emodnet-chemistry",
+    "name": "EMODnet Chemistry",
+    "url": "https://emodnet.ec.europa.eu/en/chemistry",
+    "publisher": "European Marine Observation and Data Network",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "CC BY 4.0",
+    "notes": "European seawater chemistry — nutrients, contaminants, microplastics, oxygen. Use for water-quality framing at Mediterranean / North Atlantic / Baltic sites."
+  },
+  {
+    "id": "noaa-hab-forecast",
+    "name": "NOAA HAB Operational Forecast",
+    "url": "https://oceanservice.noaa.gov/hazards/hab/",
+    "publisher": "NOAA National Ocean Service",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Harmful algal bloom forecasts and bulletins for US waters. Use for active-bloom warnings near US dive locations."
+  },
+  {
+    "id": "haedat",
+    "name": "HAEDAT — Harmful Algae Event Database",
+    "url": "http://haedat.iode.org/",
+    "publisher": "IOC-UNESCO Intergovernmental Panel on Harmful Algal Blooms",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-26",
+    "license": "Free use with attribution",
+    "notes": "Global registry of HAB events with toxin, species, and impact records since 1985. Use for historical-HAB context at any coastal site."
+  },
+  {
+    "id": "goa-on",
+    "name": "GOA-ON — Global Ocean Acidification Observing Network",
+    "url": "https://www.goa-on.org/",
+    "publisher": "GOA-ON Secretariat + IOC-UNESCO",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-26",
+    "license": "Open with attribution; per-dataset",
+    "notes": "Global pH and carbonate-chemistry observations from moorings + cruises. Use for ocean-acidification claims at the reef-health layer."
+  },
+  {
+    "id": "noaa-mussel-watch",
+    "name": "NOAA Mussel Watch",
+    "url": "https://products.coastalscience.noaa.gov/nsandt_data/data.aspx",
+    "publisher": "NOAA National Centers for Coastal Ocean Science",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Longest-running US coastal contaminant monitoring — heavy metals, PCBs, PAHs in shellfish tissue back to 1986. Use for historical-contamination context."
+  },
+  {
+    "id": "gebco",
+    "name": "GEBCO bathymetry grid",
+    "url": "https://www.gebco.net/",
+    "publisher": "General Bathymetric Chart of the Oceans (IHO + IOC-UNESCO)",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "CC0 (public domain)",
+    "notes": "Global ocean-floor depth grid at 15-arcsecond resolution. Use for depth-context claims at any dive site, especially walls, dropoffs, and pinnacles."
+  },
+  {
+    "id": "smithsonian-gvp",
+    "name": "Smithsonian Global Volcanism Program",
+    "url": "https://volcano.si.edu/",
+    "publisher": "Smithsonian Institution",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-05-26",
+    "license": "CC BY 4.0",
+    "notes": "Authoritative database of Holocene volcanoes worldwide with eruption history. Use for volcanic-origin context at island and seamount sites (Galápagos, Hawaii, Indonesia, Solomons)."
+  },
+  {
+    "id": "usn-nhhc",
+    "name": "Naval History and Heritage Command (DANFS)",
+    "url": "https://www.history.navy.mil/research/histories/ship-histories/danfs.html",
+    "publisher": "US Naval History and Heritage Command",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Dictionary of American Naval Fighting Ships — authoritative service histories for US Navy wrecks. Use for wreck dive pages (USS Liberty, SS President Coolidge, Chuuk fleet, Bikini Atoll)."
+  },
+  {
+    "id": "usgs-earthquake",
+    "name": "USGS Earthquake Catalog",
+    "url": "https://earthquake.usgs.gov/earthquakes/search/",
+    "publisher": "US Geological Survey",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Global earthquake catalog with magnitude, depth, location. REST API. Use for seismic-impact context at sites near active fault zones (Indonesia, Japan, Philippines, Aegean)."
+  },
+  {
+    "id": "noaa-enc-direct",
+    "name": "NOAA ENC Direct",
+    "url": "https://encdirect.noaa.gov/",
+    "publisher": "NOAA Office of Coast Survey",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Electronic Navigational Charts including wreck and obstruction overlays. Replaces the retired AWOIS database. Use for wreck-position and obstruction lookups in US waters."
+  },
+  {
+    "id": "noaa-maritime-heritage",
+    "name": "NOAA Maritime Heritage Program",
+    "url": "https://sanctuaries.noaa.gov/maritime/",
+    "publisher": "NOAA Office of National Marine Sanctuaries",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-26",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Underwater cultural heritage protection within US National Marine Sanctuaries — wreck preservation status, archaeology, regulations. Use for wreck-protection framing."
+  },
+  {
+    "id": "openseamap",
+    "name": "OpenSeaMap",
+    "url": "https://www.openseamap.org/",
+    "publisher": "OpenSeaMap community / OpenStreetMap Foundation",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-05-26",
+    "license": "Open Database License (ODbL)",
+    "notes": "Open nautical chart tiles with crowd-sourced harbours, lights, wrecks, and buoys. Use only as a cross-reference layer, not as authoritative wreck-identity data."
+  },
+  {
     "id": "ipcc-srocc",
     "name": "IPCC Special Report on the Ocean and Cryosphere (SROCC)",
     "url": "https://www.ipcc.ch/srocc/",
