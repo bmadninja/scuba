@@ -67355,5 +67355,278 @@
       }
     ],
     "notes": "Permit-controlled - Sabah Parks issues 176 Sipadan diver permits per day through licensed Mabul/Kapalai/Semporna operators, so book weeks ahead. Currents here are strong and can switch direction without warning; carry an SMB, consider a reef hook, and watch your depth - the hammerheads and threshers sit below recreational limits."
+  },
+  {
+    "id": "curacao-superior-producer",
+    "slug": "curacao-superior-producer",
+    "locationId": "westpunt-curacao",
+    "name": "Superior Producer",
+    "heroImageUrl": null,
+    "lat": 12.1093,
+    "lng": -68.9419,
+    "description": "A 50 m coastal freighter that capsized just outside Willemstad's harbor on 30 September 1977, overloaded with cargo bound for Venezuela. It sits upright on the sand at about 30 m with its bow facing open water, the wheelhouse near 25 m and the mast rising toward 15 m. Decades of growth have sheathed the hull in orange cup coral and sponges, and dense schools of tarpon hang over the deck alongside barracuda, horse-eye jacks, and snapper. Green moray, frogfish, and banded coral shrimp work the macro angles. A deep dive with current, often closed when cruise ships occupy the adjacent Mega Pier.",
+    "depthRange": {
+      "min": 15,
+      "max": 33
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Orange cup coral",
+        "scientificName": "Tubastraea coccinea",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Horse-eye jack",
+        "scientificName": "Caranx latus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Banded coral shrimp",
+        "scientificName": "Stenopus hispidus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Longlure frogfish",
+        "scientificName": "Antennarius multiocellatus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 84,
+    "getThere": "Curaçao (CUR / Hato International) has direct flights from Amsterdam, Miami, and several US, Dutch, and Caribbean hubs. The wreck lies just west of the Mega Pier at the entrance to Willemstad's St. Anna Bay, a few minutes from the city center. Most operators run it as a boat dive; a shore entry is also possible from the rocky waterfront beside the pier. Access is closed whenever a cruise ship is berthed at the Mega Pier, so confirm timing with a local shop.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Renaissance Wind Creek Curaçao Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Renaissance%20Curacao%20Resort%20Willemstad",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "LionsDive Beach Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=LionsDive%20Beach%20Resort%20Curacao",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Scuba Do Curaçao",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light",
+        "reason": "Brings out the orange cup coral and lights shaded structure on a 30 m wreck.",
+        "gearId": "light-orcatorch-d550"
+      }
+    ],
+    "notes": "Within the Curaçao Marine Park. A deep wreck (~30 m) for advanced divers, with current that can pick up and surface boat traffic at the harbor mouth, so carry an SMB. Diving is prohibited when a cruise ship is docked at the adjacent Mega Pier. Interior penetration is for trained wreck divers only."
   }
 ]
