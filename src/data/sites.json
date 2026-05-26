@@ -68225,5 +68225,279 @@
       }
     ],
     "notes": "Liveaboard south-circuit only; too far for day boats. Plankton-rich, low-viz water and dense soft coral demand excellent buoyancy to avoid contact. Komodo dragons patrol the adjacent Horseshoe Bay beach."
+  },
+  {
+    "id": "azores-portugal-baixa-do-ambrosio",
+    "slug": "azores-portugal-baixa-do-ambrosio",
+    "locationId": "azores-portugal",
+    "name": "Baixa do Ambrósio",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Chilean_Devil_Ray.jpg",
+    "lat": 37.0889,
+    "lng": -25.2825,
+    "description": "An offshore seamount about 7 km north of Santa Maria that rises to within roughly 5 m of the surface and draws the Atlantic's largest known summer aggregation of sicklefin devil rays (Mobula tarapacana). From June to October, divers clip onto the mooring line at 5–15 m and watch groups of 10–30 golden-backed rays, some with wingspans over 3 m, circle slowly in midwater alongside schooling almaco jacks and yellowmouth barracuda. Currents run moderate to strong, and late-summer plankton blooms can bring whale sharks and oceanic mantas. A small platform sits near 40 m for experienced divers.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Sicklefin devil ray",
+        "scientificName": "Mobula tarapacana",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "rare",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare",
+        "bestMonths": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Almaco jack",
+        "scientificName": "Seriola rivoliana",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Yellowmouth barracuda",
+        "scientificName": "Sphyraena viridensis",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Ocean sunfish",
+        "scientificName": "Mola mola",
+        "reliability": "rare",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 17,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 17,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 18,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      }
+    ],
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 84,
+    "getThere": "Fly to Santa Maria Airport (SMA), usually connecting through Ponta Delgada (PDL) on São Miguel with Azores Airlines. Dive operators in Vila do Porto run boats to the seamount, roughly 7 km (about 3 nautical miles) off the island's north coast — a 30–45 minute crossing.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Marine reserve: do not touch or chase the rays and stay on the mooring line. Offshore seamount exposed to current and surface chop, so a current-experienced group is best. Devil ray sightings peak July–October and are never guaranteed."
   }
 ]
