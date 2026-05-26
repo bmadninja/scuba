@@ -67628,5 +67628,602 @@
       }
     ],
     "notes": "Within the Curaçao Marine Park. A deep wreck (~30 m) for advanced divers, with current that can pick up and surface boat traffic at the harbor mouth, so carry an SMB. Diving is prohibited when a cruise ship is docked at the adjacent Mega Pier. Interior penetration is for trained wreck divers only."
+  },
+  {
+    "id": "egypt-chrisoula-k",
+    "slug": "egypt-chrisoula-k",
+    "locationId": "ras-mohammed-egypt",
+    "name": "Chrisoula K (Tile Wreck)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Chrisoula_K_Bow_2017-04-21_Egypt-7720.jpg",
+    "lat": 27.5722,
+    "lng": 33.925,
+    "description": "Greek cargo steamer — launched in Germany in 1954 as the Dora Oldendorff — that ran full-tilt onto the northeast corner of Sha'ab Abu Nuhas on the night of 30 August 1981 while carrying roughly 3,000 tonnes of Italian floor tiles toward Jeddah. The hull broke apart on the reef; the intact bow and anchor winch now rise to within about 5 m of the surface while the stern, engine room and four-bladed propeller rest on sand at 26 m. Divers know it as the 'Tile Wreck' because the forward holds are still stacked with terracotta tiles, many stamped 'Made in Italy.' Clouds of glassfish fill the holds, anthias and soft coral coat the railings, and lionfish, groupers and morays work the collapsed midsection.",
+    "depthRange": {
+      "min": 5,
+      "max": 27
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish (sweeper)",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Scalefin anthias",
+        "scientificName": "Pseudanthias squamipinnis",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Common lionfish",
+        "scientificName": "Pterois miles",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Coral grouper",
+        "scientificName": "Cephalopholis miniata",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Crocodilefish",
+        "scientificName": "Papilloculiceps longiceps",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Hurghada International (HRG), about 30 km west of Sha'ab Abu Nuhas across the Strait of Gubal. Day boats from Hurghada marinas (Sahl Hasheesh, El Gouna, New Marina) reach the reef in 60–90 minutes, leaving around 06:00–07:00 to beat the afternoon wind. The Chrisoula K is usually dived as one tank of a two-wreck Abu Nuhas day paired with the Giannis D or Carnatic, and is a standard stop on northern Red Sea liveaboards out of Hurghada that combine the reef with Thistlegorm and Ras Mohammed over 4–7 nights. Sharm el-Sheikh (SSH) is feasible but adds a longer Gulf of Suez crossing.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Primary plus backup torch",
+        "reason": "The stacked tile holds, the engine room and the dark stern interior are the wreck's highlights and stay dim even in bright surface conditions."
+      },
+      {
+        "name": "SMB",
+        "reason": "Currents on Abu Nuhas build through the morning and the mooring line is often unreachable on ascent; an SMB is mandatory for free-water ascents off the wreck."
+      }
+    ],
+    "notes": "Advanced Open Water with some wreck experience recommended; the shallow intact bow is easy, but penetrating the holds, engine room and stern needs a Wreck Diver certification, a torch and a reel. The identity of the visible wreck is debated — some researchers argue it is the MV Marcus and that the Chrisoula K herself lies elsewhere on the reef — but it is universally logged and dived as the Chrisoula K / Tile Wreck. Three mooring buoys serve different wrecks on Abu Nuhas; confirm with the guide which wreck the line drops on, as currents can prevent moving between them. Strait of Gubal winds frequently force itineraries to swap Abu Nuhas for sheltered sites. Removing tiles or artefacts is prohibited under Egyptian antiquities law. Nearest hyperbaric chamber is in Hurghada."
+  },
+  {
+    "id": "komodo-cannibal-rock",
+    "slug": "komodo-cannibal-rock",
+    "locationId": "komodo-national-park-indonesia",
+    "name": "Cannibal Rock",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Soft_coral_komodo.jpg",
+    "lat": -8.766,
+    "lng": 119.69,
+    "description": "A seamount in Loh Dasami (Horseshoe Bay) at the far south of Komodo National Park, between Rinca and Nusa Kode. The pinnacle tops out around 4 m and drops past 35 m, its walls carpeted in Dendronephthya soft coral, crinoids, sponges, and tunicates. Cold upwelling feeds the south's signature critters: sea apples, frogfish, Bargibant's pygmy seahorses, and nudibranchs, with banded bamboo sharks tucked in ledges at night. Water runs green and plankton-rich and can drop below 22 C mid-year. The name comes from divers who watched one Komodo dragon eating another on the adjacent beach.",
+    "depthRange": {
+      "min": 4,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Sea apple",
+        "scientificName": "Pseudocolochirus violaceus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Frogfish",
+        "scientificName": "Antennarius sp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bargibant's pygmy seahorse",
+        "scientificName": "Hippocampus bargibanti",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nudibranchs",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Brown-banded bamboo shark",
+        "scientificName": "Chiloscyllium punctatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Rhinopias scorpionfish",
+        "scientificName": "Rhinopias sp.",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 23,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 21,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 20,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full + hooded vest"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly to Labuan Bajo (LBJ / Komodo Airport) on Flores, with daily flights from Bali (DPS) and Jakarta (CGK). Cannibal Rock sits in the far south of the park, roughly 5-7 hours by boat from the harbour, so it is reached only on multi-day liveaboard south-circuit itineraries, not on day trips.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Bayview Gardens Hotel Labuan Bajo",
+        "url": "https://www.booking.com/searchresults.html?ss=Bayview%20Gardens%20Hotel%20Labuan%20Bajo",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sudamala Resort Komodo",
+        "url": "https://www.booking.com/searchresults.html?ss=Sudamala%20Resort%20Seraya",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Mermaid I & II",
+        "url": "https://www.liveaboard.com/diving/search?destination=Mermaid%20liveaboard%20Komodo",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Aqua Blu Komodo",
+        "url": "https://www.liveaboard.com/diving/search?destination=Aqua%20Blu%20Komodo",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Wicked Diving",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "5mm wetsuit",
+        "reason": "South Komodo upwelling drives cold thermoclines that can drop below 22 C, especially June-September.",
+        "gearId": "wetsuit-bare-5mm-full"
+      },
+      {
+        "name": "Camera (macro) + dive light",
+        "reason": "The draw is small, cryptic critters on a soft-coral wall, often best worked on a slow or night dive.",
+        "gearId": "camera-gopro"
+      }
+    ],
+    "notes": "Liveaboard south-circuit only; too far for day boats. Plankton-rich, low-viz water and dense soft coral demand excellent buoyancy to avoid contact. Komodo dragons patrol the adjacent Horseshoe Bay beach."
   }
 ]
