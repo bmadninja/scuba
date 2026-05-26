@@ -65864,5 +65864,536 @@
       }
     ],
     "notes": "Not a guaranteed dive — the run's timing and intensity vary year to year and some seasons underperform. Conditions are open-ocean: big swell, surge, surf launches and water as cold as 15°C. Most encounters are on snorkel or scuba in blue water beside the bait ball; baited shark activity and breaching whales mean disciplined briefings matter. Peak window is mid-June to late July."
+  },
+  {
+    "id": "apo-reef-philippines-akitsushima-wreck",
+    "slug": "apo-reef-philippines-akitsushima-wreck",
+    "locationId": "apo-reef-philippines",
+    "name": "Akitsushima Wreck",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Ship_Wreck_Coron_Palawan%2C_Philippines_09.jpg",
+    "lat": 11.983,
+    "lng": 120.033,
+    "description": "Imperial Japanese Navy seaplane tender sunk by US carrier aircraft on 24 September 1944 — Coron's largest warship wreck. The 114 m hull lies on its port side between 22 and 38 m, almost torn in two near the stern where a Kawanishi 'Emily' flying boat once rode metal tracks. The signature sight is the massive seaplane crane fallen off the hull onto the sand, circled by schooling batfish and barracuda. Penetration reaches the engine room and its four diesel engines.",
+    "depthRange": {
+      "min": 20,
+      "max": 38
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Longfin batfish",
+        "scientificName": "Platax teira",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Grouper",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "editorialRank": 84,
+    "getThere": "Fly to Francisco B. Reyes Airport (USU) on Busuanga from Manila or Cebu, then transfer ~30-45 min to Coron Town. Dive operators run day boats roughly 1.5-2 hrs west to the wreck, anchored in the channel between Lajo and Manglet Islands; liveaboards also reach it on Apo Reef-Coron itineraries.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light",
+        "reason": "Engine room and lower-deck penetration sit in darkness - carry a primary plus backup.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Computer",
+        "reason": "38 m multi-level wreck - Nitrox and deco awareness recommended.",
+        "gearId": "computer-shearwater-peregrine"
+      }
+    ],
+    "notes": "Advanced, depth- and overhead-aware dive. Currents run moderate to strong and are slack-dependent; engine-room and cargo-hold penetration requires wreck certification, lights and a reel."
+  },
+  {
+    "id": "sudan-shaab-rumi-sanganeb",
+    "slug": "sudan-shaab-rumi-sanganeb",
+    "locationId": "sudan-shaab-rumi",
+    "name": "Sanganeb Atoll",
+    "heroImageUrl": null,
+    "lat": 19.7396,
+    "lng": 37.44,
+    "description": "The only true atoll in the Red Sea, rising from 800 m of open water 25 km off Port Sudan and crowned by a British-built lighthouse. Sheer walls draped in soft coral fall away from a shallow reef flat, but the southwest plateau at 20-30 m is the headline dive: a standing tornado of barracuda, schools of bigeye trevally, and patrolling grey reef and whitetip sharks, with scalloped hammerheads cruising the blue from January to April. Gazetted as a marine national park in 1990 and inscribed by UNESCO as World Heritage in 2016; reachable only by liveaboard.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Schooling barracuda",
+        "scientificName": "Sphyraena qenie",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bumphead parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 31,
+          "max": 33
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 90,
+    "getThere": "Port Sudan (PZU) is the gateway, with connections via Cairo (CAI), Jeddah (JED), or Dubai (DXB). The atoll lies ~25 km offshore and is reached only by liveaboard, usually on week-long itineraries paired with Shaab Rumi.",
+    "lodging": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Royal Evolution",
+        "url": "https://www.liveaboard.com/diving/search?destination=Royal%20Evolution%20Sudan",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Cassiopeia",
+        "url": "https://www.liveaboard.com/diving/search?destination=Cassiopeia%20Sudan%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Sudan Red Sea Liveaboards",
+        "url": "https://www.liveaboard.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive computer",
+        "reason": "Deep multi-level wall and plateau dives demand continuous no-deco tracking.",
+        "gearId": "computer-shearwater-peregrine"
+      },
+      {
+        "name": "SMB",
+        "reason": "Currents sweep divers off the southwest plateau into open water — deploy before surfacing.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "UNESCO World Heritage marine national park — park fees and a permit apply. Remote, liveaboard-only access from Port Sudan; Sudan visa required. Currents on the plateau can be strong and walls drop into the abyss, so watch depth and buoyancy."
   }
 ]
