@@ -4438,5 +4438,36 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "north-male-atoll-maldives-farne-islands-grey-seal",
+    "siteId": "north-male-atoll-maldives-farne-islands",
+    "speciesCommon": "Grey Seal",
+    "speciesScientific": "Halichoerus grypus",
+    "lastConfirmedAt": "2024-08-01",
+    "recentRecordCount": 50,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Frequent sightings around the Farne Islands."
   }
 ]

@@ -70001,5 +70001,218 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Access to some wreck sites may require specific permits or experienced guides. Strong currents can be present. Advanced wreck diving experience is highly recommended."
+  },
+  {
+    "id": "north-male-atoll-maldives-farne-islands",
+    "slug": "north-male-atoll-maldives-farne-islands",
+    "locationId": "north-male-atoll-maldives",
+    "name": "Farne Islands",
+    "heroImageUrl": null,
+    "lat": 55.6,
+    "lng": -1.6333,
+    "description": "The Farne Islands are a group of islands off the coast of Northumberland, England. Known for their abundant wildlife, including a large grey seal colony and various seabirds. Diving here offers encounters with seals in their natural habitat, alongside kelp forests and rocky reefs.",
+    "depthRange": {
+      "min": 5,
+      "max": 25
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Grey Seal",
+        "scientificName": "Halichoerus grypus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 6,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 5,
+          "max": 7
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 9
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 6,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 7,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 14
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 14
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 13
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 7,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 80,
+    "getThere": "Nearest airport is Newcastle International Airport (NCL). From there, drive to Seahouses for boat charters to the Farne Islands.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Diving permits may be required. Strong currents can occur. Follow responsible wildlife interaction guidelines."
   }
 ]
