@@ -66617,5 +66617,255 @@
       }
     ],
     "notes": "Cavern-trained guide required; stay on the line — no penetration past the daylight zone without full cave certification. Light beams are strongest on clear, sunny days around midday in late spring and summer when the sun is high. The deeper cave system beyond the cavern circuit is for cave-certified divers only."
+  },
+  {
+    "id": "stingray-city-cayman-uss-kittiwake",
+    "slug": "stingray-city-cayman-uss-kittiwake",
+    "locationId": "stingray-city-cayman-islands",
+    "name": "USS Kittiwake",
+    "heroImageUrl": null,
+    "lat": 19.3619,
+    "lng": -81.4012,
+    "description": "The ex-USS Kittiwake, a 76 m Chanticleer-class submarine rescue ship commissioned in 1946, was scuttled off the northern end of Seven Mile Beach in January 2011 as an artificial reef. Inside a dedicated marine park it offers five decks of penetration — recompression chambers, the mess hall, galley and wheelhouse — laced with large swim-throughs. Since Tropical Storm Nate in 2017 the hull has listed to port, its shallowest deck now around 10 m and the sand-set keel near 20 m. Great barracuda, green morays, Nassau grouper, spotted eagle rays and green turtles work the coral- and sponge-encrusted superstructure. Clear, near-currentless water keeps it among the Caribbean's most-dived wrecks.",
+    "depthRange": {
+      "min": 10,
+      "max": 20
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nassau grouper",
+        "scientificName": "Epinephelus striatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Atlantic tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 87,
+    "getThere": "Fly into Owen Roberts International Airport (GCM) on Grand Cayman. The wreck lies about 800 m off the northern end of Seven Mile Beach, a 10–15 minute boat ride from most Seven Mile Beach and George Town dive shops; permanent mooring buoys mark the site. A Kittiwake access tag is required and is normally bundled into the operator's dive fee.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary dive light",
+        "reason": "Interior decks and the lower engine spaces are dark and silty once you leave the daylight zone.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Dive computer",
+        "reason": "Repeated up-and-down through the multi-deck structure between 10 and 20 m builds bottom time.",
+        "gearId": "computer-shearwater-peregrine"
+      }
+    ],
+    "notes": "Lies within the Kittiwake Marine Park: touching or removing anything is prohibited and an access tag/fee is required. Since Tropical Storm Nate (October 2017) the wreck has listed onto its port side, deepening the shallowest decks to roughly 10 m. Multi-deck penetration is possible with a wreck-trained guide — large cut openings keep it relatively benign, but silt-out and overhead hazards apply."
   }
 ]
