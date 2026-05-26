@@ -68499,5 +68499,226 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Marine reserve: do not touch or chase the rays and stay on the mooring line. Offshore seamount exposed to current and surface chop, so a current-experienced group is best. Devil ray sightings peak July–October and are never guaranteed."
+  },
+  {
+    "id": "apo-reef-philippines-verde-island-drop-off",
+    "slug": "apo-reef-philippines-verde-island-drop-off",
+    "locationId": "apo-reef-philippines",
+    "name": "Verde Island Drop-Off (San Agapito)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Four_butterfly_fish_swim_over_a_coral_reef._Verde_Island_National_Marine_Reserve._Philippines.jpg",
+    "lat": 13.527,
+    "lng": 121.085,
+    "description": "Off the south-east corner of Verde Island, the San Agapito seamount rises in three peaks — the shallowest breaking the surface, the wall plunging past 70 metres into the Verde Island Passage, the strait a 2005 Carpenter–Springer study identified as the world's centre of marine shorefish biodiversity. Currents run hard here and can turn downward without warning, sweeping the rock in clouds of lyretail anthias while bigeye trevally, emperors and tuna patrol the blue. Gorgonian fans, 1.5-metre barrel sponges and volcanic gas bubbles seeping through the coral give the wall its texture; hawksbill turtles, frogfish and nudibranchs work the ledges. An advanced drift dive reached by banca from Puerto Galera.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "large-pelagics",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Lyretail anthias",
+        "scientificName": "Pseudanthias squamipinnis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Humphead wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "seasonal"
+      },
+      {
+        "commonName": "Frogfish",
+        "scientificName": "Antennarius",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 77,
+    "getThere": "Nearest major airport is Manila (MNL). Transfer to the Batangas pier and ferry to Puerto Galera (Sabang/Small La Laguna), the usual dive base; the Verde Island sites are about a 45-minute banca crossing from there, or roughly 2 hours by boat from Anilao.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Advanced-only: currents are strong and unpredictable with frequent down-currents, so a current-experienced group, an SMB and a reef hook are recommended. Morning dives generally find the calmest seas. Part of the Verde Island Passage marine corridor."
   }
 ]
