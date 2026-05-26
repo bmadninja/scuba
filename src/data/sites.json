@@ -66867,5 +66867,493 @@
       }
     ],
     "notes": "Lies within the Kittiwake Marine Park: touching or removing anything is prohibited and an access tag/fee is required. Since Tropical Storm Nate (October 2017) the wreck has listed onto its port side, deepening the shallowest decks to roughly 10 m. Multi-deck penetration is possible with a wreck-trained guide — large cut openings keep it relatively benign, but silt-out and overhead hazards apply."
+  },
+  {
+    "id": "gozo-statue-of-christ",
+    "slug": "gozo-statue-of-christ",
+    "locationId": "gozo-malta",
+    "name": "Statue of Christ & Imperial Eagle",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Christ_of_the_Abyss._A_Silent_Guardian_in_the_Deep.jpg",
+    "lat": 35.9633,
+    "lng": 14.4344,
+    "description": "Off Qawra Point on Malta's northeast coast, a 3 m statue of Christ — concrete over fiberglass, arms outstretched, sculpted by Alfred Camilleri Cauchi and blessed by Pope John Paul II in 1990 — stands on white sand at 35 m inside a natural rock amphitheatre. Relocated here from St Paul's Islands in 2000, it sits about 30 m along an underwater valley from the MV Imperial Eagle, a 45 m former Malta–Gozo ferry scuttled in 1999 that rests upright with its deck at 32 m and keel near 42 m. A reef arch and a large 17th-century anchor mark the route. Dusky grouper, amberjack, barracuda, two-banded bream and moray eels work the wreck and walls in clear, deep water that suits experienced divers on a boat dive.",
+    "depthRange": {
+      "min": 30,
+      "max": 42
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Dusky grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Greater amberjack",
+        "scientificName": "Seriola dumerili",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "European barracuda",
+        "scientificName": "Sphyraena viridensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mediterranean moray",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Common two-banded seabream",
+        "scientificName": "Diplodus vulgaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Common octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7 mm semi-dry or drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7 mm semi-dry or drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7 mm semi-dry or drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm semi-dry or drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit; below 30 m stays near 16 C"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7 mm wetsuit; below 30 m stays near 16 C"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit with hood; thermocline near 16 C at depth"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit with hood; thermocline near 16 C at depth"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit with hood; thermocline near 16 C at depth"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit; below 30 m stays near 16 C"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7 mm semi-dry or drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 17,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7 mm semi-dry or drysuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 76,
+    "getThere": "Fly into Malta International Airport (MLA). The site lies about 500 m off Qawra Point on Malta's northeast coast and is reached by boat in 10-20 minutes with dive centres in Bugibba, Qawra and St Paul's Bay; there is no practical shore entry to the statue or wreck.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-5mm-full"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary dive light",
+        "reason": "The statue sits at 35 m in a shaded rock amphitheatre and the Imperial Eagle's interior is dark; a light brings back colour and aids orientation.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Dive computer",
+        "reason": "Bottom depths of 35-42 m build nitrogen loading quickly, so a computer is needed to track no-decompression limits and stops.",
+        "gearId": "computer-shearwater-peregrine"
+      },
+      {
+        "name": "Redundant air (pony bottle)",
+        "reason": "A boat-only dive near 40 m where a direct free ascent is hazardous warrants an independent backup gas supply.",
+        "gearId": "pony-bottle-19cf"
+      }
+    ],
+    "notes": "Boat-access deep dive: the statue rests at 35 m and the Imperial Eagle's keel reaches about 42 m, so it is for advanced/experienced divers — plan gas and no-deco limits accordingly. Below the ~30 m thermocline the water stays around 15-16 C year-round, even in summer. Penetrating the Imperial Eagle should only be attempted with wreck training and a guide."
+  },
+  {
+    "id": "sipadan-malaysia-south-point",
+    "slug": "sipadan-malaysia-south-point",
+    "locationId": "sipadan-malaysia",
+    "name": "South Point",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/Jack_fish_and_reef_sharks.jpg",
+    "lat": 4.108,
+    "lng": 118.629,
+    "description": "At Sipadan's southern tip the reef slopes from 5m before a second wall drops past recreational limits into open blue. Strong, shifting currents funnel pelagics along the edge - grey and whitetip reef sharks stalk schools of bigeye trevally while big green turtles queue at a cleaning station in the shallows. Bumphead parrotfish crunch the coral overhead, and below 40m lone scalloped hammerheads and thresher sharks sometimes cruise the depths. The pull of the current makes this a fast advanced drift, best ridden with a reef hook where the action stacks up.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bumphead parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "rare",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly to Tawau (TWU) in Sabah (direct from Kuala Lumpur and Kota Kinabalu), then transfer ~1.5h by road to Semporna and ~45 min by boat to a Mabul or Kapalai resort. South Point sits at the southern tip of Sipadan, about 15 minutes by boat from the island's jetty; access is by permitted day trip.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + reel",
+        "reason": "Strong, shifting currents and a wall into deep water make blue-water drift exits the norm.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Permit-controlled - Sabah Parks issues 176 Sipadan diver permits per day through licensed Mabul/Kapalai/Semporna operators, so book weeks ahead. Currents here are strong and can switch direction without warning; carry an SMB, consider a reef hook, and watch your depth - the hammerheads and threshers sit below recreational limits."
   }
 ]
