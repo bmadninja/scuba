@@ -63698,7 +63698,7 @@
     "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Wreck_Tugboat_beach_%2835865296594%29.jpg",
     "lat": 12.069,
     "lng": -68.862,
-    "description": "A small steel tugboat sunk decades ago in the sheltered shallows of Caracas Bay, now crusted with orange tube sponges and hard coral and circled by sergeant majors, parrotfish, and yellowtail snapper. The wreck sits upright in about 5 m of water, shallow enough to snorkel, while the coral-covered reef slope behind it drops past 30 m. Seahorses, frogfish, octopus, and scorpionfish tuck into the rocks and pilings. Calm, light current, and reachable from the beach, it is one of Cura\u00e7ao's most photographed dives.",
+    "description": "A small steel tugboat sunk decades ago in the sheltered shallows of Caracas Bay, now crusted with orange tube sponges and hard coral and circled by sergeant majors, parrotfish, and yellowtail snapper. The wreck sits upright in about 5 m of water, shallow enough to snorkel, while the coral-covered reef slope behind it drops past 30 m. Seahorses, frogfish, octopus, and scorpionfish tuck into the rocks and pilings. Calm, light current, and reachable from the beach, it is one of Curaçao's most photographed dives.",
     "depthRange": {
       "min": 5,
       "max": 30
@@ -63914,7 +63914,7 @@
       12
     ],
     "editorialRank": 82,
-    "getThere": "Cura\u00e7ao (CUR / Hato International) has direct flights from Amsterdam, Miami, and several US, Dutch, and Caribbean hubs. Caracas Bay (Tugboat Beach) is on the island's southeast tip, about 20 minutes by car from Willemstad. The wreck is a short surface swim straight off the small beach, or a quick boat hop with any local operator.",
+    "getThere": "Curaçao (CUR / Hato International) has direct flights from Amsterdam, Miami, and several US, Dutch, and Caribbean hubs. Caracas Bay (Tugboat Beach) is on the island's southeast tip, about 20 minutes by car from Willemstad. The wreck is a short surface swim straight off the small beach, or a quick boat hop with any local operator.",
     "lodging": [
       {
         "partner": "Booking.com",
@@ -63926,7 +63926,7 @@
       },
       {
         "partner": "Booking.com",
-        "label": "Sandals Royal Cura\u00e7ao",
+        "label": "Sandals Royal Curaçao",
         "url": "https://www.booking.com/searchresults.html?ss=Sandals%20Royal%20Curacao",
         "isAffiliate": false,
         "priceLevel": 4,
@@ -63936,7 +63936,7 @@
     "operators": [
       {
         "partner": "PADI Travel",
-        "label": "Scuba Do Cura\u00e7ao",
+        "label": "Scuba Do Curaçao",
         "url": "https://travel.padi.com/",
         "isAffiliate": true
       }
@@ -63955,7 +63955,7 @@
         "gearId": "light-orcatorch-d550"
       }
     ],
-    "notes": "Within the Cura\u00e7ao National Marine Park (Caracas Bay / Tugboat Beach). Easy shore or snorkel access in calm, shallow water; the reef slope just past the wreck drops quickly, so watch depth and air. Resident fish are habituated to divers. Do not touch or stand on the wreck or coral, and keep clear of moored boats and the boat channel on the surface."
+    "notes": "Within the Curaçao National Marine Park (Caracas Bay / Tugboat Beach). Easy shore or snorkel access in calm, shallow water; the reef slope just past the wreck drops quickly, so watch depth and air. Resident fish are habituated to divers. Do not touch or stand on the wreck or coral, and keep clear of moored boats and the boat channel on the surface."
   },
   {
     "id": "egypt-salem-express",
@@ -64517,7 +64517,12 @@
         "commonName": "Spotted eagle ray",
         "scientificName": "Aetobatus narinari",
         "reliability": "seasonal",
-        "bestMonths": [12, 1, 2, 3]
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
       }
     ],
     "conditionsByMonth": [
@@ -65262,5 +65267,316 @@
       }
     ],
     "notes": "Deck at ~30 m and the tank near 38 m make this a deep dive; bottom is ~42 m. Penetration requires wreck certification. Live ordnance and human remains are present — show respect and take nothing."
+  },
+  {
+    "id": "blue-hole-belize-hol-chan-marine-reserve",
+    "slug": "blue-hole-belize-hol-chan-marine-reserve",
+    "locationId": "blue-hole-belize",
+    "name": "Hol Chan Marine Reserve",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/GreenSeaTurtle-HolChanMarineReserve-Belize.JPG",
+    "lat": 17.869,
+    "lng": -88.003,
+    "description": "A narrow cut through the Belize Barrier Reef off the south tip of Ambergris Caye, Hol Chan (“little channel” in Maya) was declared Belize’s first marine reserve in 1987. The 9 m channel and the coral walls flanking it hold green and hawksbill turtles, Nassau and black groupers, green moray eels, schooling snapper and over 160 fish species. The adjoining Shark Ray Alley, added in 1999, gathers resident nurse sharks and southern stingrays in water shallow enough to stand in. Tidal flow funnels through the cut and can run hard at peak ebb and flood, sweeping nutrients—and divers—across the reef.",
+    "depthRange": {
+      "min": 5,
+      "max": 18
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Southern stingray",
+        "scientificName": "Hypanus americanus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Nassau grouper",
+        "scientificName": "Epinephelus striatus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2
+        ]
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or rashguard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or rashguard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty or rashguard"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 85,
+    "getThere": "Fly into Philip S. W. Goldson International Airport (BZE) near Belize City, then take a 15-minute domestic flight (Tropic Air or Maya Island Air) or a water taxi to San Pedro on Ambergris Caye. From San Pedro the reserve is a 10–15 minute boat ride about 6 km (4 mi) south; San Pedro and Caye Caulker dive shops run daily trips.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Protected marine reserve: a per-person entry fee applies and is collected by the Hol Chan Marine Reserve. No fishing, gloves, touching or feeding of wildlife; use mooring buoys, do not anchor on the reef. Tidal currents in the cut can be too strong to swim against at peak flow—dive with local guides who time the slack."
   }
 ]
