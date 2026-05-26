@@ -651,8 +651,6 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
       </aside>
 
       <div className="min-w-0">
-        <FieldMissionCards locations={featuredLocations} />
-
         <DynamicPlanetGlobe
           {...globeProps}
           markers={filteredMarkers}
@@ -676,93 +674,6 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
         />
       </div>
     </div>
-  );
-}
-
-function FieldMissionCards({ locations }: { locations: FeaturedLocation[] }) {
-  const missions = useMemo(() => {
-    const missionCandidates = [...locations]
-      .filter(
-        (location) =>
-          location.reefCondition === "stressed" ||
-          location.reefCondition === "critical" ||
-          location.reefCondition === "unknown" ||
-          (location.bleachedPercent !== undefined &&
-            location.bleachedPercent >= 10),
-      )
-      .sort((a, b) => {
-        const rank: Record<ReefCondition, number> = {
-          critical: 0,
-          stressed: 1,
-          unknown: 2,
-          thriving: 3,
-        };
-        return (
-          rank[a.reefCondition] - rank[b.reefCondition] ||
-          b.editorialRank - a.editorialRank
-        );
-      })
-      .slice(0, 3);
-
-    return missionCandidates.map((location) => {
-      const needsPhotos =
-        location.reefCondition === "unknown" ||
-        location.coralCoverPercent === undefined;
-      const focus = needsPhotos
-        ? "Baseline photo check"
-        : location.reefCondition === "critical"
-          ? "Bleaching evidence check"
-          : "Heat-stress follow-up";
-      const task = needsPhotos
-        ? "Capture wide reef-context photos so this place has a recent visual baseline."
-        : "Photograph the same depth band across several reef patches to compare live colour, paling, and algae cover.";
-      const reward = location.reefCondition === "critical" ? "$20" : "$10-$15";
-
-      return { location, focus, task, reward };
-    });
-  }, [locations]);
-
-  if (missions.length === 0) return null;
-
-  return (
-    <section className="mb-5 rounded-lg border border-[#c7e2f0] bg-white p-4 shadow-sm">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1d5d90]">
-            Prototype reef missions
-          </p>
-          <h2 className="mt-1 text-xl font-bold tracking-tight text-slate-950">
-            Places where diver photos could help.
-          </h2>
-        </div>
-        <p className="max-w-sm text-xs leading-5 text-slate-500">
-          Mission rewards are placeholders for the research workflow, not live
-          payouts yet.
-        </p>
-      </div>
-      <div className="mt-4 grid gap-3 lg:grid-cols-3">
-        {missions.map(({ location, focus, task, reward }) => (
-          <Link
-            key={location.id}
-            href={`/locations/${location.slug}`}
-            className="rounded-lg border border-slate-200 bg-[#f8fbfd] p-3 transition hover:border-[#0089de]/40 hover:bg-white"
-          >
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <p className="text-xs font-bold text-slate-950">{focus}</p>
-                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                  {location.name}, {location.country}
-                </p>
-              </div>
-              <span className="shrink-0 rounded-full bg-[#eef7fb] px-2 py-0.5 text-[10px] font-semibold text-[#1d5d90] ring-1 ring-inset ring-[#c7e2f0]">
-                {reward}
-              </span>
-            </div>
-            <p className="mt-2 text-xs leading-5 text-slate-600">{task}</p>
-          </Link>
-        ))}
-      </div>
-    </section>
   );
 }
 
