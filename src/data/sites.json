@@ -69801,5 +69801,205 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Details for depth range, skill level, dive types, species, and conditionsByMonth are generalized based on typical Red Sea diving characteristics due to limitations in real-time specific data retrieval for this site."
+  },
+  {
+    "id": "ari-atoll-maldives-scapa-flow",
+    "slug": "ari-atoll-maldives-scapa-flow",
+    "locationId": "ari-atoll-maldives",
+    "name": "Scapa Flow",
+    "heroImageUrl": null,
+    "lat": 58.89,
+    "lng": -3.03,
+    "description": "Scapa Flow in the Orkney Islands is globally renowned for its WWI German High Seas Fleet wrecks, scuttled in 1919. This historic site offers an unparalleled wreck diving experience, with battleships, cruisers, and destroyers lying in depths accessible to advanced divers. The cold, clear waters preserve these maritime giants, providing a unique journey into naval history.",
+    "depthRange": {
+      "min": 15,
+      "max": 45
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Common Crab",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Various Fish",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 6,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 6,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 7,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 9,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 10,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 11,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 7,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 6,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 90,
+    "getThere": "Fly to Kirkwall Airport (KOI) in Orkney, then travel to local dive centers around Scapa Flow. Dive boats depart from various piers in the region.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Access to some wreck sites may require specific permits or experienced guides. Strong currents can be present. Advanced wreck diving experience is highly recommended."
   }
 ]
