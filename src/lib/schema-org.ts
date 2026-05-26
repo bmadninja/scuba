@@ -130,6 +130,181 @@ function humanDiveType(t: string): string {
   return t.replace("-", " ");
 }
 
+// --- SEO landing-page schema builders (M3 Phase 11) ---
+
+type CollectionItem = { name: string; url: string };
+
+export function collectionPageSchema({
+  headline,
+  description,
+  url,
+  image,
+  items,
+}: {
+  headline: string;
+  description: string;
+  url: string;
+  image?: string;
+  items: CollectionItem[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: headline,
+    headline,
+    description,
+    url,
+    image,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: items.map((it, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: it.name,
+        url: it.url,
+      })),
+    },
+  };
+}
+
+export function speciesLandingSchema(
+  e: Encounter,
+  locations: { name: string; slug: string }[],
+) {
+  const seasonReadable =
+    e.bestMonths.length === 12
+      ? "Year-round"
+      : e.bestMonths.map((m) => MONTHS[m - 1]).join(", ");
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `Where to see ${e.name} in 2026`,
+    headline: `Where to see ${e.name} in 2026`,
+    description: e.shortDescription,
+    url: `${SITE_URL}/where-to-see/${e.slug}`,
+    image: e.heroImageUrl,
+    about: e.speciesScientific
+      ? { "@type": "Taxon", name: e.speciesScientific }
+      : undefined,
+    keywords: [
+      `where to see ${e.speciesCommon ?? e.name}`,
+      `${e.speciesCommon ?? e.name} diving`,
+      "best dive trips 2026",
+      "scuba diving",
+    ]
+      .filter(Boolean)
+      .join(", "),
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Best season",
+        value: seasonReadable,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Difficulty",
+        value: e.difficulty,
+      },
+    ],
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: locations.map((l, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: l.name,
+        url: `${SITE_URL}/locations/${l.slug}`,
+      })),
+    },
+  };
+}
+
+export function monthLandingSchema({
+  month,
+  monthName,
+  locations,
+}: {
+  month: number;
+  monthName: string;
+  locations: { name: string; slug: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `Where to dive in ${monthName} 2026`,
+    headline: `Where to dive in ${monthName} 2026`,
+    description: `In-season dive locations, encounters and sites for ${monthName}.`,
+    url: `${SITE_URL}/dive-in/${monthName.toLowerCase()}`,
+    keywords: [
+      `dive trips ${monthName} 2026`,
+      `where to scuba dive in ${monthName}`,
+      `${monthName} dive season`,
+    ].join(", "),
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Travel month",
+        value: monthName,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Month number",
+        value: String(month),
+      },
+    ],
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: locations.map((l, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: l.name,
+        url: `${SITE_URL}/locations/${l.slug}`,
+      })),
+    },
+  };
+}
+
+export function certLandingSchema({
+  cert,
+  certLabel,
+  description,
+  locations,
+}: {
+  cert: string;
+  certLabel: string;
+  description: string;
+  locations: { name: string; slug: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `Best dive trips for ${certLabel}`,
+    headline: `Best dive trips for ${certLabel}`,
+    description,
+    url: `${SITE_URL}/for/${cert}`,
+    keywords: [
+      `${certLabel} dive trips`,
+      `dive sites for ${certLabel}`,
+      `scuba travel ${certLabel}`,
+    ].join(", "),
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Certification level",
+        value: certLabel,
+      },
+    ],
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: locations.map((l, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: l.name,
+        url: `${SITE_URL}/locations/${l.slug}`,
+      })),
+    },
+  };
+}
+
 export function encounterSchema(e: Encounter) {
   const seasonReadable =
     e.bestMonths.length === 12
