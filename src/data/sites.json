@@ -66395,5 +66395,227 @@
       }
     ],
     "notes": "UNESCO World Heritage marine national park — park fees and a permit apply. Remote, liveaboard-only access from Port Sudan; Sudan visa required. Currents on the plateau can be strong and walls drop into the abyss, so watch depth and buoyancy."
+  },
+  {
+    "id": "cenotes-chac-mool",
+    "slug": "cenotes-chac-mool",
+    "locationId": "cenotes-mexico",
+    "name": "Chac Mool",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Halocline_cenote_Chac_Mool.jpg",
+    "lat": 20.5129,
+    "lng": -87.247,
+    "description": "Cavern dive in the Riviera Maya cenote system near Puerto Aventuras, linking three sinkholes — Chac Mool, Kukulkan, and Little Brother — through flooded limestone passages. At midday, shafts of sunlight pour through the jungle-fringed entrance and rake across the cavern floor in laser-sharp beams. Divers cross a halocline near 14 m, where freshwater meets denser saltwater in an oily, vision-warping blur, then surface inside an air dome beneath a collapsed ceiling hung with stalactites. Max depth 14 m, no current, water near 25°C year-round.",
+    "depthRange": {
+      "min": 4,
+      "max": 14
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Mexican molly",
+        "scientificName": "Poecilia mexicana",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mexican tetra",
+        "scientificName": "Astyanax mexicanus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blind cavefish",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 60
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "editorialRank": 84,
+    "getThere": "Fly into Cancún (CUN), then drive ~1 hour south on Highway 307. The cenote entrance is on the inland side of the highway just south of Puerto Aventuras, about 22 km below Playa del Carmen. Most Playa del Carmen and Tulum dive shops run it as a guided two-tank cavern trip with a short walk and steps down to the water.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary dive light",
+        "reason": "Cavern interior is dark off the guideline and beams fade into shadow.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Dive computer",
+        "reason": "Repeated crossings of the 14 m halocline stack up bottom time.",
+        "gearId": "computer-shearwater-peregrine"
+      }
+    ],
+    "notes": "Cavern-trained guide required; stay on the line — no penetration past the daylight zone without full cave certification. Light beams are strongest on clear, sunny days around midday in late spring and summer when the sun is high. The deeper cave system beyond the cavern circuit is for cave-certified divers only."
   }
 ]
