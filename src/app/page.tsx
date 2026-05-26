@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { PlanetGlobePanel } from "@/components/planet-globe-panel";
 import type { FeaturedLocation } from "@/components/planet-globe-panel";
@@ -262,12 +263,14 @@ export default function Home() {
         </div>
 
         <div className="mx-auto w-full max-w-6xl px-6 pb-14">
-          <PlanetGlobePanel
-            initialMonth={initialMonth}
-            markers={markers}
-            highlightedCountries={highlightedCountries}
-            featuredLocations={featuredLocations}
-          />
+          <Suspense fallback={null}>
+            <PlanetGlobePanel
+              initialMonth={initialMonth}
+              markers={markers}
+              highlightedCountries={highlightedCountries}
+              featuredLocations={featuredLocations}
+            />
+          </Suspense>
         </div>
       </section>
     </div>
