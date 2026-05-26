@@ -271,6 +271,43 @@ export type SightingEvidence = {
  * no-take. Sourced from Protected Planet (WDPA) and refined with
  * Marine Protection Atlas (MPAtlas) for genuine-enforcement signal.
  */
+/**
+ * Significance of a current or recent water-quality event at a
+ * location. Surfaces in a small callout when something happened that
+ * would affect a dive trip.
+ */
+export type WaterQualitySeverity = "watch" | "concerning" | "severe";
+
+export type WaterQualityEvent = {
+  /** Short event title (e.g. "Sargassum influx", "SCTLD outbreak"). */
+  title: string;
+  severity: WaterQualitySeverity;
+  /** Year or year-range the event began. */
+  since: string;
+  /** Plain-English description of what divers actually see / experience. */
+  description: string;
+  /** Optional months when this event is worst (1-12). */
+  worstMonths?: number[];
+};
+
+/**
+ * Water-quality / pollution record. Only present for locations with a
+ * notable ongoing or recent issue divers should know about. Sites
+ * without a record stay silent — no UI placeholder.
+ */
+export type WaterQualityRecord = {
+  id: string;
+  locationId: string;
+  events: WaterQualityEvent[];
+  /** Microplastics ambient pressure if known. */
+  microplasticsLevel?: "low" | "moderate" | "high" | "very-high";
+  /** Editorial summary of what a visitor can expect / how to adapt. */
+  divingImpactNote: string;
+  sourceIds: string[];
+  methodologyClaimIds: string[];
+  lastReviewedAt: string;
+};
+
 export type WreckVesselType =
   | "freighter"
   | "tanker"

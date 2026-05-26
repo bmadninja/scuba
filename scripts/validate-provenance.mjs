@@ -34,6 +34,7 @@ const reefHealth = readJson("src/data/reef-health.json");
 const tripCosts = readJson("src/data/trip-costs.json");
 const reefPressure = readJson("src/data/reef-pressure.json");
 const wrecks = readJson("src/data/wrecks.json");
+const waterQuality = readJson("src/data/water-quality.json");
 const locations = readJson("src/data/locations.json");
 const sites = readJson("src/data/sites.json");
 const locationIds = new Set(locations.map((l) => l.id));
@@ -354,6 +355,31 @@ for (const w of wrecks) {
   }
 }
 
+// --- Water-quality provenance --------------------------------------------
+for (const w of waterQuality) {
+  if (!w.locationId || !locationIds.has(w.locationId)) {
+    report("error", "water-quality", w.id, `references unknown location "${w.locationId}"`);
+  }
+  if (!Array.isArray(w.sourceIds) || w.sourceIds.length === 0) {
+    report("error", "water-quality", w.id, "missing source");
+  } else {
+    for (const sid of w.sourceIds) {
+      if (!sourceIds.has(sid)) {
+        report("error", "water-quality", w.id, `references unknown source "${sid}"`);
+      }
+    }
+  }
+  if (!Array.isArray(w.methodologyClaimIds) || w.methodologyClaimIds.length === 0) {
+    report("error", "water-quality", w.id, "missing method");
+  } else {
+    for (const mid of w.methodologyClaimIds) {
+      if (!methodologyByClaim.has(mid)) {
+        report("error", "water-quality", w.id, `references unknown methodology "${mid}"`);
+      }
+    }
+  }
+}
+
 // --- Output --------------------------------------------------------------
 const errors = issues.filter((i) => i.severity === "error");
 const warnings = issues.filter((i) => i.severity === "warn");
@@ -365,7 +391,7 @@ for (const i of issues) {
 
 console.log("");
 console.log(
-  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s), ${reefHealth.length} reef-health record(s), ${tripCosts.length} trip-cost record(s), ${reefPressure.length} reef-pressure record(s), ${wrecks.length} wreck record(s)`,
+  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s), ${reefHealth.length} reef-health record(s), ${tripCosts.length} trip-cost record(s), ${reefPressure.length} reef-pressure record(s), ${wrecks.length} wreck record(s), ${waterQuality.length} water-quality record(s)`,
 );
 console.log(`  ${errors.length} error(s), ${warnings.length} warning(s)`);
 

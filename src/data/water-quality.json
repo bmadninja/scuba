@@ -1,0 +1,431 @@
+[
+  {
+    "id": "wq-florida-keys-2026",
+    "locationId": "florida-keys-usa",
+    "events": [
+      {
+        "title": "SCTLD coral disease outbreak",
+        "severity": "severe",
+        "since": "2014",
+        "description": "Stony coral tissue loss disease has affected over half of Florida's reef-building coral species. Brain corals, star corals, and pillar corals have been hit hardest. Active treatment programs are ongoing at major sites."
+      },
+      {
+        "title": "Agricultural runoff from south Florida",
+        "severity": "concerning",
+        "since": "ongoing",
+        "description": "Nutrient-laden freshwater from sugar plantations and the Everglades chronically degrades reef-flat water clarity, especially after summer rains."
+      }
+    ],
+    "microplasticsLevel": "high",
+    "divingImpactNote": "Choose offshore sites and wall dives over inshore patch reefs for the best visibility. Many operators participate in coral-restoration nurseries — ask about joining a fragment-outplanting dive.",
+    "sourceIds": ["noaa-maritime-heritage", "ncrmp", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-cozumel-2026",
+    "locationId": "cozumel-mexico",
+    "events": [
+      {
+        "title": "Sargassum influx",
+        "severity": "concerning",
+        "since": "2018",
+        "description": "Massive seasonal sargassum blooms in the Mexican Caribbean choke beaches and reduce surface visibility. Worst in summer; underwater visibility on the wall is largely unaffected.",
+        "worstMonths": [5, 6, 7, 8, 9]
+      },
+      {
+        "title": "SCTLD coral disease outbreak",
+        "severity": "severe",
+        "since": "2018",
+        "description": "Mesoamerican Reef SCTLD outbreak has caused significant coral mortality. Active treatment dive programs operate at some sites."
+      }
+    ],
+    "divingImpactNote": "Visibility on the wall remains excellent year-round. Avoid June–August if surface conditions matter — beach-level sargassum can be heavy. Support operators participating in SCTLD treatment dives.",
+    "sourceIds": ["agrra", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-bonaire-2026",
+    "locationId": "bonaire-national-marine-park-bonaire",
+    "events": [
+      {
+        "title": "SCTLD coral disease outbreak",
+        "severity": "severe",
+        "since": "2019",
+        "description": "Bonaire's SCTLD outbreak has affected over 30 coral species. STINAPA monitors and treats affected colonies; recovery is patchy."
+      },
+      {
+        "title": "Coastal-development runoff",
+        "severity": "watch",
+        "since": "2020",
+        "description": "New resort and housing construction on the leeward coast has increased sediment runoff at a handful of shore-dive sites."
+      }
+    ],
+    "microplasticsLevel": "moderate",
+    "divingImpactNote": "Despite SCTLD, Bonaire shore diving remains world-class — fish life and topography are intact. Pay the STINAPA tag; it directly funds disease treatment.",
+    "sourceIds": ["agrra", "ncrmp", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-roatan-2026",
+    "locationId": "roatan-honduras",
+    "events": [
+      {
+        "title": "SCTLD coral disease outbreak",
+        "severity": "concerning",
+        "since": "2020",
+        "description": "Bay Islands SCTLD outbreak progressing. Treatment programs are smaller-scale than in Florida."
+      },
+      {
+        "title": "Plastic pollution from Río Motagua",
+        "severity": "concerning",
+        "since": "ongoing",
+        "description": "Honduran-Guatemalan river discharge brings significant plastic and debris into Caribbean currents. Visible on north-coast beaches after storms."
+      }
+    ],
+    "microplasticsLevel": "high",
+    "divingImpactNote": "Wall diving on the south side stays clear. Choose operators that participate in shoreline cleanups.",
+    "sourceIds": ["agrra", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-utila-2026",
+    "locationId": "utila-honduras",
+    "events": [
+      {
+        "title": "SCTLD coral disease outbreak",
+        "severity": "concerning",
+        "since": "2020",
+        "description": "Same Bay Islands SCTLD progression as Roatan. Hard-coral loss is visible at most reef sites."
+      },
+      {
+        "title": "Plastic pollution from Río Motagua",
+        "severity": "concerning",
+        "since": "ongoing",
+        "description": "Caribbean current brings significant plastic debris through the Bay Islands."
+      }
+    ],
+    "microplasticsLevel": "high",
+    "divingImpactNote": "Whale shark season (Mar–Apr) is unaffected — they're plankton feeders cruising the channel. For reef diving, choose deeper sites where impact is lower.",
+    "sourceIds": ["agrra", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-cod-hole-2026",
+    "locationId": "cod-hole-australia",
+    "events": [
+      {
+        "title": "Agricultural runoff from Queensland",
+        "severity": "concerning",
+        "since": "ongoing",
+        "description": "Inshore Great Barrier Reef receives runoff from sugarcane and banana plantations, especially after wet-season rains. Northern outer-reef sites (where Cod Hole sits) are largely buffered."
+      },
+      {
+        "title": "Crown-of-thorns starfish outbreaks",
+        "severity": "concerning",
+        "since": "2010",
+        "description": "Cyclical COTS outbreaks driven partly by nutrient runoff. AIMS-led culling teams operate at affected reefs."
+      }
+    ],
+    "divingImpactNote": "Outer Ribbon Reef sites are buffered from coastal pressures and remain in good shape. Inshore-reef trips are more affected by runoff and clarity issues.",
+    "sourceIds": ["aims-ltmp", "gbrmpa", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-koh-tao-2026",
+    "locationId": "koh-tao-thailand",
+    "events": [
+      {
+        "title": "Coral disease — yellow band + white syndrome",
+        "severity": "concerning",
+        "since": "2015",
+        "description": "Recurrent disease outbreaks combined with heavy diver-training load have eroded shallow-reef cover near Sairee Beach."
+      },
+      {
+        "title": "Wastewater issues",
+        "severity": "watch",
+        "since": "ongoing",
+        "description": "Island wastewater infrastructure is at capacity during peak season; nutrient-loading effects visible at some shore-entry sites."
+      }
+    ],
+    "microplasticsLevel": "high",
+    "divingImpactNote": "Pick dive shops with ecology-focused training and choose deeper offshore sites over the heavily-trained shallow shore reefs.",
+    "sourceIds": ["reef-check", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-nha-trang-2026",
+    "locationId": "nha-trang-vietnam",
+    "events": [
+      {
+        "title": "Heavy thermal stress + coral mortality",
+        "severity": "severe",
+        "since": "2024",
+        "description": "Severe 2024 bleaching event triggered closure of large parts of Hon Mun MPA to diving for restoration work. Check current status with operators."
+      }
+    ],
+    "microplasticsLevel": "high",
+    "divingImpactNote": "Hon Mun MPA access has been restricted since 2024 — verify operator permits before booking. Consider Phu Quoc as an alternative.",
+    "sourceIds": ["editorial-curation", "icri"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-medes-2026",
+    "locationId": "medes-islands-spain",
+    "events": [
+      {
+        "title": "Marine heatwave gorgonian die-off",
+        "severity": "severe",
+        "since": "2022",
+        "description": "Successive Mediterranean marine heatwaves have caused mass mortality among red gorgonians in shallow water. Deeper colonies (>30 m) survived better."
+      }
+    ],
+    "divingImpactNote": "Shallow gorgonian gardens have thinned considerably. Go deeper (>25 m) to see colonies that survived the heatwaves.",
+    "sourceIds": ["icri", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-gozo-2026",
+    "locationId": "gozo-malta",
+    "events": [
+      {
+        "title": "Marine heatwave thermal stress",
+        "severity": "concerning",
+        "since": "2022",
+        "description": "Mediterranean marine heatwaves have affected gorgonian and sponge communities. Cave and wreck diving largely unaffected."
+      }
+    ],
+    "microplasticsLevel": "moderate",
+    "divingImpactNote": "Limestone caves, wrecks, and arches dominate diving here — these are unaffected by water-quality issues. Open-water reef dives feel the heat impact.",
+    "sourceIds": ["icri", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-ari-atoll-2026",
+    "locationId": "ari-atoll-maldives",
+    "events": [
+      {
+        "title": "Severe 2024 bleaching event",
+        "severity": "severe",
+        "since": "2024",
+        "description": "Extreme thermal stress in 2024 caused widespread coral bleaching across the Maldives. Lagoon and shallow reef-flat impact has been worst."
+      },
+      {
+        "title": "Resort sand-mining and dredging",
+        "severity": "concerning",
+        "since": "ongoing",
+        "description": "Resort construction frequently involves channel dredging and beach replenishment, with chronic localised water-clarity impacts."
+      }
+    ],
+    "microplasticsLevel": "moderate",
+    "divingImpactNote": "Pelagic encounters (manta, whale shark, hammerhead) are unaffected — go for those over coral-cover trips. Deeper thila and kandu (channel dives) retain better hard-coral cover than reef flats.",
+    "sourceIds": ["gcrmn", "allen-coral-atlas", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-tofo-2026",
+    "locationId": "tofo-mozambique",
+    "events": [
+      {
+        "title": "Coral mortality and declining shark/ray populations",
+        "severity": "concerning",
+        "since": "2010",
+        "description": "Tofo's once-iconic whale shark numbers crashed in the 2010s. Likely combination of artisanal-fishing pressure, gillnetting bycatch, and changing currents."
+      }
+    ],
+    "divingImpactNote": "Whale shark season (Oct–Mar) is still on but encounters are less reliable than a decade ago. Manta sightings remain consistent at Manta Reef and other cleaning stations.",
+    "sourceIds": ["gcrmn", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-ningaloo-2026",
+    "locationId": "ningaloo-australia",
+    "events": [
+      {
+        "title": "2024 marine heatwave bleaching",
+        "severity": "concerning",
+        "since": "2024",
+        "description": "Sustained high SSTs caused significant bleaching on Ningaloo's lagoon reefs. Outer-reef bommies fared better."
+      }
+    ],
+    "divingImpactNote": "Whale shark, manta, and humpback seasons are largely unaffected — they're seasonal pelagic encounters. For reef diving, focus on outer-reef sites over lagoon flats.",
+    "sourceIds": ["aims-ltmp", "reef-life-survey", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-kona-2026",
+    "locationId": "kona-hawaii-usa",
+    "events": [
+      {
+        "title": "2024 bleaching event + invasive algae",
+        "severity": "concerning",
+        "since": "2024",
+        "description": "West Hawaii experienced significant 2024 bleaching plus expanding alien algae (Avrainvillea amadelpha) competing with native coral."
+      }
+    ],
+    "microplasticsLevel": "moderate",
+    "divingImpactNote": "Manta night dive and blackwater dives are unaffected by reef condition. Day-diving over hard reef now shows recovery in patches.",
+    "sourceIds": ["ncrmp", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-tubbataha-2026",
+    "locationId": "tubbataha-philippines",
+    "events": [
+      {
+        "title": "2024 bleaching event",
+        "severity": "watch",
+        "since": "2024",
+        "description": "April 2024 surveys recorded localised bleaching on shallow reef flats; submerged slopes largely unaffected."
+      }
+    ],
+    "divingImpactNote": "Reef slopes from 10 m down are still vivid. Liveaboard-only season (Mar–Jun) is short — book early.",
+    "sourceIds": ["reef-check", "icri", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-raja-ampat-2026",
+    "locationId": "raja-ampat-indonesia",
+    "events": [
+      {
+        "title": "Plastic from regional currents",
+        "severity": "concerning",
+        "since": "ongoing",
+        "description": "Indo-Pacific currents bring substantial plastic debris through the Raja Ampat archipelago — visible on remote-island beaches and in surface drift lines."
+      }
+    ],
+    "microplasticsLevel": "high",
+    "divingImpactNote": "Underwater visibility and reef condition remain world-class. Surface plastic is a visible problem — operators run frequent cleanups and welcome volunteers.",
+    "sourceIds": ["reef-check", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-blue-hole-belize-2026",
+    "locationId": "blue-hole-belize",
+    "events": [
+      {
+        "title": "Sargassum influx",
+        "severity": "concerning",
+        "since": "2018",
+        "description": "Atlantic sargassum blooms wash onto Belizean shorelines and into the atoll. Underwater impact at the Blue Hole itself is limited."
+      }
+    ],
+    "divingImpactNote": "Blue Hole proper sees little impact — it's a deep geological feature. Surrounding atoll reefs are affected. Trip-cost includes Marine Reserve fee.",
+    "sourceIds": ["agrra", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-aliwal-2026",
+    "locationId": "aliwal-south-africa",
+    "events": [
+      {
+        "title": "Industrial fishing bycatch on shark populations",
+        "severity": "concerning",
+        "since": "ongoing",
+        "description": "Sardine fishery in adjacent waters affects bycatch of tiger sharks, ragged-tooth sharks, and other Aliwal Shoal apex predators. Park enforces strict no-fish zones."
+      }
+    ],
+    "divingImpactNote": "Sardine Run remains world-class. Tiger shark dives are unchanged — choose operators participating in shark-tagging research.",
+    "sourceIds": ["editorial-curation", "iucn-red-list"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-mahe-2026",
+    "locationId": "mahe-seychelles",
+    "events": [
+      {
+        "title": "Multiple bleaching events (1998, 2016, 2024)",
+        "severity": "severe",
+        "since": "1998",
+        "description": "Granitic Seychelles has been hit by three major bleaching events since 1998. Cumulative coral loss is significant."
+      }
+    ],
+    "microplasticsLevel": "moderate",
+    "divingImpactNote": "Pelagic-focused trips (whale shark, mola mola at L'Ilot) remain strong. Reef diving has thinned but unique granitic boulder topography keeps it visually striking.",
+    "sourceIds": ["gcrmn", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-praslin-2026",
+    "locationId": "praslin-seychelles",
+    "events": [
+      {
+        "title": "Multiple bleaching events (1998, 2016, 2024)",
+        "severity": "severe",
+        "since": "1998",
+        "description": "Same regional bleaching pattern as Mahe. Inner Seychelles reefs have lost majority of hard coral."
+      }
+    ],
+    "divingImpactNote": "Big-fish diving (whale shark, ray aggregations) remains the draw. Pelagic itineraries skip the worst reef-loss areas.",
+    "sourceIds": ["gcrmn", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-mnemba-2026",
+    "locationId": "mnemba-tanzania",
+    "events": [
+      {
+        "title": "Reef thinning from cumulative bleaching",
+        "severity": "concerning",
+        "since": "2016",
+        "description": "Zanzibar's marquee reef has lost substantial cover through the 2016 + 2020 + 2024 bleaching cycle. Dolphin and turtle encounters remain consistent."
+      }
+    ],
+    "divingImpactNote": "Manta and turtle encounters off Mnemba are still excellent — they don't depend on coral cover. Skip if hard-coral landscapes are what you came for.",
+    "sourceIds": ["gcrmn", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-bocas-2026",
+    "locationId": "bocas-del-toro-panama",
+    "events": [
+      {
+        "title": "Chronic agricultural runoff + warming",
+        "severity": "severe",
+        "since": "2000",
+        "description": "Bocas reefs have declined steadily for two decades due to banana-plantation runoff, sedimentation, and recurrent bleaching. SCTLD now adding pressure."
+      }
+    ],
+    "microplasticsLevel": "high",
+    "divingImpactNote": "Reef diving here is patchy. Worth visiting for macro/critter diving, sloths, and the broader Caribbean-coast culture rather than dramatic coral scenery.",
+    "sourceIds": ["agrra", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  },
+  {
+    "id": "wq-similan-2026",
+    "locationId": "similan-islands-thailand",
+    "events": [
+      {
+        "title": "Cumulative bleaching damage",
+        "severity": "concerning",
+        "since": "2010",
+        "description": "Similan reefs hit by 2010, 2016, and 2024 bleaching cycles. Soft coral and gorgonian recovery is patchy. Park closed seasonally (May–Oct) to allow recovery."
+      }
+    ],
+    "divingImpactNote": "Granitic boulder topography is unchanged and still stunning. Pelagic encounters (whale shark, manta) are the headline. Liveaboard-only Nov–Apr.",
+    "sourceIds": ["gcrmn", "icri", "editorial-curation"],
+    "methodologyClaimIds": ["water-quality-pollution"],
+    "lastReviewedAt": "2026-05-26"
+  }
+]

@@ -13,6 +13,7 @@ import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getAllGear, getGearById } from "@/lib/data/gear";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { getWaterQualityByLocationId } from "@/lib/data/water-quality";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import type {
@@ -102,6 +103,7 @@ export default async function LocationPage({
   const sites = getSitesByLocationId(location.id);
   const reefHealth = getReefHealthByLocationId(location.id)[0] ?? null;
   const reefPressure = getReefPressureByLocationId(location.id);
+  const waterQuality = getWaterQualityByLocationId(location.id);
   const details = getLocationDetailsById(location.id);
   const bestMonthsSet = new Set(location.bestMonths);
 
@@ -199,6 +201,8 @@ export default async function LocationPage({
             )}
 
             {reefPressure ? <ReefPressurePanel record={reefPressure} /> : null}
+
+            {waterQuality ? <WaterQualityPanel record={waterQuality} /> : null}
 
             <section>
               <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
@@ -1206,6 +1210,100 @@ function ReefPressurePanel({
         </Link>{" "}
         for what these sources can and can&rsquo;t prove.
       </p>
+    </section>
+  );
+}
+
+const WQ_SEVERITY_TONE: Record<string, string> = {
+  watch: "bg-amber-50 text-amber-800 ring-1 ring-inset ring-amber-200",
+  concerning: "bg-orange-50 text-orange-800 ring-1 ring-inset ring-orange-200",
+  severe: "bg-rose-50 text-rose-800 ring-1 ring-inset ring-rose-200",
+};
+
+const WQ_SEVERITY_LABEL: Record<string, string> = {
+  watch: "WATCH",
+  concerning: "CONCERNING",
+  severe: "SEVERE",
+};
+
+const WQ_MICROPLASTICS_LABEL: Record<string, string> = {
+  low: "Low microplastics",
+  moderate: "Moderate microplastics",
+  high: "High microplastics",
+  "very-high": "Very high microplastics",
+};
+
+const WQ_MICROPLASTICS_TONE: Record<string, string> = {
+  low: "bg-emerald-50 text-emerald-800 ring-emerald-200",
+  moderate: "bg-amber-50 text-amber-800 ring-amber-200",
+  high: "bg-orange-50 text-orange-800 ring-orange-200",
+  "very-high": "bg-rose-50 text-rose-800 ring-rose-200",
+};
+
+function WaterQualityPanel({
+  record,
+}: {
+  record: NonNullable<ReturnType<typeof getWaterQualityByLocationId>>;
+}) {
+  return (
+    <section>
+      <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          Pollution & water-quality
+        </h2>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          What divers should know
+        </span>
+      </div>
+
+      <ul className="space-y-3">
+        {record.events.map((e, i) => (
+          <li
+            key={i}
+            className="rounded-2xl border border-slate-200 bg-white p-5"
+          >
+            <div className="flex flex-wrap items-start justify-between gap-2">
+              <h3 className="text-base font-bold text-slate-900">{e.title}</h3>
+              <span
+                className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${WQ_SEVERITY_TONE[e.severity]}`}
+              >
+                {WQ_SEVERITY_LABEL[e.severity]}
+              </span>
+            </div>
+            <p className="mt-1 text-[11px] uppercase tracking-wider text-slate-500">
+              Since {e.since}
+              {e.worstMonths && e.worstMonths.length > 0
+                ? " · worst " +
+                  e.worstMonths
+                    .map((m) => ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m - 1])
+                    .join(", ")
+                : ""}
+            </p>
+            <p className="mt-3 text-[13px] leading-6 text-slate-700">
+              {e.description}
+            </p>
+          </li>
+        ))}
+      </ul>
+
+      {record.microplasticsLevel ? (
+        <div className="mt-4">
+          <span
+            className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider ring-1 ring-inset ${WQ_MICROPLASTICS_TONE[record.microplasticsLevel]}`}
+          >
+            {WQ_MICROPLASTICS_LABEL[record.microplasticsLevel]}
+          </span>
+        </div>
+      ) : null}
+
+      <div className="mt-4 rounded-2xl border border-sky-200 bg-sky-50 p-5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-700">
+          What this means for your trip
+        </p>
+        <p className="mt-2 text-[14px] leading-6 text-sky-900">
+          {record.divingImpactNote}
+        </p>
+      </div>
     </section>
   );
 }
