@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { SiteHeader } from "@/components/site-header";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { AffiliateLink } from "@/components/affiliate-link";
@@ -97,44 +99,31 @@ export default async function SiteDetailPage({
   const currentMonth = new Date().getUTCMonth() + 1;
   const inSeason = site.bestMonths.includes(currentMonth);
   const sightings = getSightingsBySiteId(site.id);
-  const sightingSourceIds = Array.from(
-    new Set(sightings.flatMap((s) => s.sourceIds)),
-  );
   const sightingMethodIds = Array.from(
     new Set(sightings.flatMap((s) => s.methodologyClaimIds)),
+  );
+  const sightingMethods = sightingMethodIds
+    .map(getMethodologyByClaimId)
+    .filter((m): m is NonNullable<typeof m> => Boolean(m));
+  // Surface the methodology's full source list in the drawer, not just
+  // the per-record sourceIds — that way new registry entries cited by
+  // the methodology note appear here without rewriting every record.
+  const sightingSourceIds = Array.from(
+    new Set([
+      ...sightings.flatMap((s) => s.sourceIds),
+      ...sightingMethods.flatMap((m) => m.sourceIds),
+    ]),
   );
   const sightingSources = sightingSourceIds
     .map(getSourceById)
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
-  const sightingMethods = sightingMethodIds
-    .map(getMethodologyByClaimId)
-    .filter((m): m is NonNullable<typeof m> => Boolean(m));
 
   const heroUrl = underwaterPhotoUrl(site.heroImageUrl);
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <JsonLd data={siteSchema(site, location)} />
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-lg font-bold tracking-tight text-slate-900">
-              scubaSeason<span className="text-[#0089de]">.fun</span>
-            </span>
-          </Link>
-          <nav className="hidden gap-6 text-sm font-medium text-slate-700 sm:flex">
-            <Link href="/sites" className="hover:text-[#0089de]">
-              Dive sites
-            </Link>
-            <Link href="/about" className="hover:text-[#0089de]">
-              About
-            </Link>
-            <Link href="/faq" className="hover:text-[#0089de]">
-              FAQ
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader activeHref="/sites" />
       {/* Photo hero */}
       <section className="relative h-[58vh] min-h-[420px] w-full overflow-hidden">
         <Image
@@ -150,12 +139,18 @@ export default async function SiteDetailPage({
           {location ? (
             <Link
               href={`/locations/${location.slug}`}
-              className="group inline-flex w-fit items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/85 transition hover:text-white"
+              className="group inline-flex w-fit max-w-full items-center gap-2 rounded-full bg-slate-950/45 px-3 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-white/20 backdrop-blur-md transition hover:bg-slate-950/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              aria-label={`Back to the ${location.name} location guide`}
             >
-              <span aria-hidden className="transition group-hover:-translate-x-0.5">←</span>
-              <span>{location.name}</span>
-              <span className="h-1 w-1 rounded-full bg-white/60" />
-              <span>{location.country}</span>
+              <ArrowLeft
+                aria-hidden
+                className="h-3.5 w-3.5 shrink-0 transition group-hover:-translate-x-0.5"
+              />
+              <span className="truncate">Location guide</span>
+              <span aria-hidden className="h-1 w-1 shrink-0 rounded-full bg-white/50" />
+              <span className="truncate text-xs font-medium text-white/78">
+                {location.name}
+              </span>
             </Link>
           ) : null}
           <h1 className="mt-3 max-w-3xl text-[clamp(2.25rem,5vw,4rem)] font-bold leading-[1.05] tracking-tight">

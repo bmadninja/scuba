@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteHeader } from "@/components/site-header";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { AffiliateLink } from "@/components/affiliate-link";
@@ -109,26 +110,7 @@ export default async function LocationPage({
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <JsonLd data={locationSchema(location, sites.length)} />
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-lg font-bold tracking-tight text-slate-900">
-              scubaSeason<span className="text-[#0089de]">.fun</span>
-            </span>
-          </Link>
-          <nav className="hidden gap-6 text-sm font-medium text-slate-700 sm:flex">
-            <Link href="/sites" className="hover:text-[#0089de]">
-              Dive sites
-            </Link>
-            <Link href="/about" className="hover:text-[#0089de]">
-              About
-            </Link>
-            <Link href="/faq" className="hover:text-[#0089de]">
-              FAQ
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader activeHref="/sites" />
 
       <main className="mx-auto w-full max-w-6xl px-6 py-12">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
@@ -842,19 +824,23 @@ function ReefHealthPanel({
   const projection = record.projection;
   const verdict = computeVerdict(record);
 
+  const methods = record.methodologyClaimIds
+    .map(getMethodologyByClaimId)
+    .filter((m): m is NonNullable<typeof m> => Boolean(m));
+  // Sources displayed in the drawer = sources directly cited by this
+  // record PLUS sources referenced by the methodology notes that govern
+  // its claims. That way registry expansions surface here.
   const sourceIds = Array.from(
     new Set([
       ...(observed?.sourceIds ?? []),
       ...(thermal?.sourceIds ?? []),
       ...(projection?.sourceIds ?? []),
+      ...methods.flatMap((m) => m.sourceIds),
     ]),
   );
   const sources = sourceIds
     .map(getSourceById)
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
-  const methods = record.methodologyClaimIds
-    .map(getMethodologyByClaimId)
-    .filter((m): m is NonNullable<typeof m> => Boolean(m));
 
   const coverNow = observed?.coralCoverPercent ?? null;
   const coverBefore = observed?.historicalCoralCoverPercent ?? null;
