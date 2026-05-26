@@ -68720,5 +68720,282 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Advanced-only: currents are strong and unpredictable with frequent down-currents, so a current-experienced group, an SMB and a reef hook are recommended. Morning dives generally find the calmest seas. Part of the Verde Island Passage marine corridor."
+  },
+  {
+    "id": "hikkaduwa-sri-lanka-coral-sanctuary",
+    "slug": "hikkaduwa-sri-lanka-coral-sanctuary",
+    "locationId": "hikkaduwa-sri-lanka",
+    "name": "Hikkaduwa Coral Sanctuary",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Hikkaduwa_under_water.jpg",
+    "lat": 6.14,
+    "lng": 80.098,
+    "description": "Sri Lanka's first marine protected area — declared a sanctuary in 1979 and a marine national park in 2002 — fringing the beach town of Hikkaduwa on the southwest coast. The coral gardens sit in 3-12 m of warm, calm water 100-300 m offshore: a shallow fringing reef of Acropora tables, Montipora, and brain corals recovering from the 1998 bleaching and 2004 tsunami. Green and hawksbill turtles graze the heads daily and are reliably approachable, while parrotfish, surgeonfish, snappers, butterflyfish, Moorish idols, and moray eels work the coral, with the odd blacktip reef shark on the seaward edge. Shallow depth, easy shore and short-boat access, and minimal current make it one of the island's best beginner and training reefs, busiest with glass-bottom boats in the November-April dry season.",
+    "depthRange": {
+      "min": 3,
+      "max": 12
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Bluestripe snapper",
+        "scientificName": "Lutjanus kasmira",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moorish idol",
+        "scientificName": "Zanclus cornutus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Parrotfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Butterflyfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Powder-blue surgeonfish",
+        "scientificName": "Acanthurus leucosternon",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 66,
+    "getThere": "Fly into Colombo Bandaranaike International (CMB), then drive about 2.5 hours south to Hikkaduwa (100 km) on the Southern Expressway (E01), or take the scenic coastal train from Colombo Fort to Hikkaduwa station and a short tuk-tuk to the beach. The coral sanctuary lies directly off Hikkaduwa's main beach — dive centres run 5-10 minute boat trips and you can also snorkel in from shore. Conditions are reliable in the November-April dry season.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Hikka Tranz by Cinnamon",
+        "url": "https://www.booking.com/searchresults.html?ss=Hikka%20Tranz%20by%20Cinnamon%20Hikkaduwa",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Citrus Hikkaduwa",
+        "url": "https://www.booking.com/searchresults.html?ss=Citrus%20Hikkaduwa",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Find PADI dive operators (Hikkaduwa)",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-3mm-full"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef-safe sunscreen",
+        "reason": "The reef is shallow and heavily visited; reef-safe formulas reduce chemical load on already-stressed coral.",
+        "gearId": null
+      },
+      {
+        "name": "SMB",
+        "reason": "Glass-bottom-boat and snorkel-tour traffic over the reef is constant in season — deploy an SMB and surface alert.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "The sanctuary lies within Hikkaduwa Marine National Park; a Department of Wildlife Conservation entry ticket applies and is usually arranged by dive operators. Coral here was hit hard by the 1998 mass bleaching and the 2004 tsunami and is still recovering — do not touch or stand on coral, and do not chase or ride turtles. Boat and snorkel-tour traffic over the shallow reef is heavy, so dive on a deployed SMB. Diving turns rough and visibility collapses during the May-September southwest monsoon."
   }
 ]
