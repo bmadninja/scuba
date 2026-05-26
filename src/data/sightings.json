@@ -229,7 +229,7 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ],
-    "notes": "June–July full-moon aggregation is the densest documented in French Polynesia."
+    "notes": "June\u2013July full-moon aggregation is the densest documented in French Polynesia."
   },
   {
     "id": "cozumel-palancar-reef-tu",
@@ -4308,5 +4308,73 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "ari-atoll-maldives-marsa-alam-dugong",
+    "siteId": "ari-atoll-maldives-marsa-alam",
+    "speciesCommon": "Dugong",
+    "speciesScientific": "Dugong dugon",
+    "lastConfirmedAt": "2024-05-01",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Data generalized due to research tool limitations."
+  },
+  {
+    "id": "ari-atoll-maldives-marsa-alam-green-sea-turtle",
+    "siteId": "ari-atoll-maldives-marsa-alam",
+    "speciesCommon": "Green Sea Turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Data generalized due to research tool limitations."
+  },
+  {
+    "id": "ari-atoll-maldives-marsa-alam-spinner-dolphin",
+    "siteId": "ari-atoll-maldives-marsa-alam",
+    "speciesCommon": "Spinner Dolphin",
+    "speciesScientific": "Stenella longirostris",
+    "lastConfirmedAt": "2024-07-01",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Data generalized due to research tool limitations."
   }
 ]
