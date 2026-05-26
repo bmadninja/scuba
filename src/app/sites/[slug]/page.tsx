@@ -16,6 +16,7 @@ import {
   formatLastConfirmed,
   getSightingsBySiteId,
 } from "@/lib/data/sightings";
+import { getWrecksBySiteId } from "@/lib/data/wrecks";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import type {
@@ -99,6 +100,7 @@ export default async function SiteDetailPage({
   const currentMonth = new Date().getUTCMonth() + 1;
   const inSeason = site.bestMonths.includes(currentMonth);
   const sightings = getSightingsBySiteId(site.id);
+  const wrecks = getWrecksBySiteId(site.id);
   const sightingMethodIds = Array.from(
     new Set(sightings.flatMap((s) => s.methodologyClaimIds)),
   );
@@ -347,6 +349,28 @@ export default async function SiteDetailPage({
             </Section>
           ) : null}
 
+          {wrecks.length > 0 ? (
+            <Section
+              title="The wreck"
+              kicker={wrecks.length === 1 ? "Ship history" : `${wrecks.length} wrecks here`}
+            >
+              <ul className="grid gap-4">
+                {wrecks.map((w) => (
+                  <WreckCard key={w.id} record={w} />
+                ))}
+              </ul>
+              <p className="mt-3 text-[12px] leading-5 text-slate-500">
+                Vessel histories sourced from the Naval History and Heritage
+                Command (DANFS), NOAA ENC Direct, and editorial research.
+                Bathymetry per GEBCO. See the{" "}
+                <Link href="/about" className="text-[#0089de] hover:underline">
+                  methodology
+                </Link>{" "}
+                for limits.
+              </p>
+            </Section>
+          ) : null}
+
           <Section title="Conditions">
             <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
               <table className="w-full min-w-[680px] text-sm">
@@ -547,5 +571,135 @@ function SiteGearSection({ site }: { site: Site }) {
         })}
       </ul>
     </Section>
+  );
+}
+
+const VESSEL_TYPE_LABEL: Record<string, string> = {
+  freighter: "Freighter",
+  tanker: "Tanker",
+  warship: "Warship",
+  submarine: "Submarine",
+  aircraft: "Aircraft",
+  ferry: "Ferry",
+  fishing: "Fishing vessel",
+  "cable-layer": "Cable-layer",
+  research: "Research vessel",
+  tug: "Tug",
+  other: "Structure",
+};
+
+const SUNK_CAUSE_LABEL: Record<string, string> = {
+  "wartime-attack": "Sunk in wartime",
+  "scuttled-artificial-reef": "Scuttled as artificial reef",
+  "scuttled-disposal": "Scuttled / disposed",
+  accident: "Accident",
+  storm: "Lost in storm",
+  unknown: "Cause unknown",
+};
+
+const PROTECTION_LABEL: Record<string, string> = {
+  none: "No formal protection",
+  "underwater-cultural-heritage": "Underwater cultural heritage",
+  "national-marine-sanctuary": "National marine sanctuary",
+  "war-grave": "War grave",
+  "restricted-access": "Restricted access",
+};
+
+const PROTECTION_TONE: Record<string, string> = {
+  none: "bg-slate-100 text-slate-600",
+  "underwater-cultural-heritage": "bg-amber-50 text-amber-800 ring-1 ring-inset ring-amber-200",
+  "national-marine-sanctuary": "bg-emerald-50 text-emerald-800 ring-1 ring-inset ring-emerald-200",
+  "war-grave": "bg-rose-50 text-rose-800 ring-1 ring-inset ring-rose-200",
+  "restricted-access": "bg-amber-100 text-amber-900 ring-1 ring-inset ring-amber-300",
+};
+
+function fmtSunk(iso: string): string {
+  if (/^\d{4}$/.test(iso)) return iso;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
+    const d = new Date(iso + "T00:00:00Z");
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  }
+  return iso;
+}
+
+function WreckCard({
+  record,
+}: {
+  record: NonNullable<ReturnType<typeof getWrecksBySiteId>>[number];
+}) {
+  return (
+    <li className="rounded-2xl border border-slate-200 bg-white p-5">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
+            {VESSEL_TYPE_LABEL[record.vesselType] ?? record.vesselType}
+            {record.nationality ? ` · ${record.nationality}` : ""}
+          </p>
+          <h3 className="mt-1 text-lg font-bold tracking-tight text-slate-900">
+            {record.vesselName}
+          </h3>
+        </div>
+        <span
+          className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${PROTECTION_TONE[record.protectionStatus]}`}
+        >
+          {PROTECTION_LABEL[record.protectionStatus] ?? record.protectionStatus}
+        </span>
+      </div>
+
+      <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-[12px] leading-5 sm:grid-cols-4">
+        {record.builtYear ? (
+          <>
+            <dt className="text-slate-500">Built</dt>
+            <dd className="font-semibold text-slate-800">{record.builtYear}</dd>
+          </>
+        ) : null}
+        <dt className="text-slate-500">Sunk</dt>
+        <dd className="font-semibold text-slate-800">{fmtSunk(record.sunk)}</dd>
+        {record.lengthM ? (
+          <>
+            <dt className="text-slate-500">Length</dt>
+            <dd className="font-semibold text-slate-800">{record.lengthM} m</dd>
+          </>
+        ) : null}
+        {record.tonnage ? (
+          <>
+            <dt className="text-slate-500">Tonnage</dt>
+            <dd className="font-semibold text-slate-800">{record.tonnage.toLocaleString()}</dd>
+          </>
+        ) : null}
+        {record.depthRangeM ? (
+          <>
+            <dt className="text-slate-500">Diveable depth</dt>
+            <dd className="font-semibold text-slate-800">
+              {record.depthRangeM.min}–{record.depthRangeM.max} m
+            </dd>
+          </>
+        ) : null}
+        <dt className="text-slate-500">How she sank</dt>
+        <dd className="font-semibold text-slate-800">
+          {SUNK_CAUSE_LABEL[record.sunkCause] ?? record.sunkCause}
+        </dd>
+      </dl>
+
+      <p className="mt-4 text-[13px] leading-6 text-slate-700">{record.history}</p>
+
+      {record.notableFeatures && record.notableFeatures.length > 0 ? (
+        <>
+          <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Notable features
+          </p>
+          <ul className="mt-1.5 flex flex-wrap gap-1.5">
+            {record.notableFeatures.map((f) => (
+              <li
+                key={f}
+                className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700"
+              >
+                {f}
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+    </li>
   );
 }

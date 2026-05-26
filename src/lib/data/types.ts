@@ -271,6 +271,65 @@ export type SightingEvidence = {
  * no-take. Sourced from Protected Planet (WDPA) and refined with
  * Marine Protection Atlas (MPAtlas) for genuine-enforcement signal.
  */
+export type WreckVesselType =
+  | "freighter"
+  | "tanker"
+  | "warship"
+  | "submarine"
+  | "aircraft"
+  | "ferry"
+  | "fishing"
+  | "cable-layer"
+  | "research"
+  | "tug"
+  | "other";
+
+export type WreckSunkCause =
+  | "wartime-attack"
+  | "scuttled-artificial-reef"
+  | "scuttled-disposal"
+  | "accident"
+  | "storm"
+  | "unknown";
+
+export type WreckProtection =
+  | "none"
+  | "underwater-cultural-heritage"
+  | "national-marine-sanctuary"
+  | "war-grave"
+  | "restricted-access";
+
+/**
+ * Wreck history record. Attached to a site (not a location) because a
+ * single location often hosts multiple wrecks.
+ */
+export type WreckRecord = {
+  id: string;
+  siteId: string;
+  vesselName: string;
+  vesselType: WreckVesselType;
+  /** ISO country code or "Multi-national" / "Unknown". */
+  nationality?: string;
+  builtYear?: number;
+  /** ISO date or just year string. */
+  sunk: string;
+  sunkCause: WreckSunkCause;
+  /** Length in metres. */
+  lengthM?: number;
+  /** Tonnage where credible (gross or displacement). */
+  tonnage?: number;
+  /** Min and max diveable depths (often a structure span). */
+  depthRangeM?: { min: number; max: number };
+  protectionStatus: WreckProtection;
+  /** 1–3 sentence editorial history paragraph. */
+  history: string;
+  /** Notable inside the wreck — cargo, fittings, rooms divers visit. */
+  notableFeatures?: string[];
+  sourceIds: string[];
+  methodologyClaimIds: string[];
+  lastReviewedAt: string;
+};
+
 export type MpaStatus =
   | "no-protection"
   | "designated-multi-use"
