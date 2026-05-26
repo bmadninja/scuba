@@ -64988,5 +64988,279 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Remote deep-south reef with no shore access; diveable year-round but most liveaboards run May-October. Outer reefs (Habili Ali, Habili Gafaar) sit in open water with depth and strong, variable currents suited to experienced divers, while the inner reefs of Umm Kararim and Gota Kebir are shallow and gentler. The cave swim-throughs are open caverns with overhead access to the surface rather than true penetration, but a torch and good buoyancy are recommended."
+  },
+  {
+    "id": "chuuk-nippo-maru",
+    "slug": "chuuk-nippo-maru",
+    "locationId": "chuuk-lagoon-fsm",
+    "name": "Nippo Maru",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/%E6%97%A5%E8%B1%8A%E4%B8%B8_97%E5%BC%8F%E8%BB%BD%E8%A3%85%E7%94%B2%E8%BB%8A.jpg",
+    "lat": 7.3989,
+    "lng": 151.9164,
+    "description": "Japanese armed water-and-supply transport sunk during Operation Hailstone in February 1944. She sits upright with a list to port, holds packed with war materiel — artillery shells, sea mines, gas masks and crockery. A Japanese light tank still rests on the deck and three field howitzers lie aft; the bridge telegraph and ship’s helm remain in place. Hard and soft coral now sheath the railings, with the shallowest mast around 21 m and the deck near 30 m.",
+    "depthRange": {
+      "min": 21,
+      "max": 42
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 90,
+    "getThere": "Chuuk (TKK / Weno) is reached via United’s island-hopper service from Guam (GUM) or Honolulu (HNL), or via short hops from Pohnpei (PNI). The wreck sits in the Natsushima anchorage east of Dublon (Tonoas) Island, a short boat ride from Weno.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Truk Stop Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Truk%20Stop%20Hotel",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Blue Lagoon Resort Chuuk",
+        "url": "https://www.booking.com/searchresults.html?ss=Blue%20Lagoon%20Resort%20Chuuk",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "SS Thorfinn",
+        "url": "https://www.liveaboard.com/diving/search?destination=SS%20Thorfinn%20Truk",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Truk Master",
+        "url": "https://www.liveaboard.com/diving/search?destination=Truk%20Master%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Truk Odyssey",
+        "url": "https://www.liveaboard.com/diving/search?destination=Truk%20Odyssey%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "Bluewater Travel",
+        "label": "Truk Lagoon wreck expeditions",
+        "url": "https://bluewaterdivetravel.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light",
+        "reason": "Bridge, holds and engine room penetration — primary plus backup.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Computer",
+        "reason": "Deep multi-level wreck with the tank near 38 m — Nitrox recommended.",
+        "gearId": "computer-shearwater-peregrine"
+      }
+    ],
+    "notes": "Deck at ~30 m and the tank near 38 m make this a deep dive; bottom is ~42 m. Penetration requires wreck certification. Live ordnance and human remains are present — show respect and take nothing."
   }
 ]
