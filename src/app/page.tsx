@@ -1,12 +1,19 @@
-import Link from "next/link";
+import { Suspense } from "react";
+import { SiteHeader } from "@/components/site-header";
 import { PlanetGlobePanel } from "@/components/planet-globe-panel";
 import type { FeaturedLocation } from "@/components/planet-globe-panel";
 import { isUnderwaterQualityPhoto } from "@/lib/photo-quality";
 import { getScubaGlobeData } from "@/lib/scuba-globe";
 import { getAllSites } from "@/lib/data/sites";
 import { getAllLocations } from "@/lib/data/locations";
-import { getReefHealthByLocationId } from "@/lib/data/reef-health";
-import { getEncountersByLocationId } from "@/lib/data/encounters";
+import {
+  getAllReefHealth,
+  getReefHealthByLocationId,
+} from "@/lib/data/reef-health";
+import {
+  getAllEncounters,
+  getEncountersByLocationId,
+} from "@/lib/data/encounters";
 import type { BleachingAlertLevel, Site } from "@/lib/data/types";
 
 type ReefCondition = "thriving" | "stressed" | "critical" | "unknown";
@@ -109,6 +116,7 @@ const deriveTags = (site: Site, regionText: string) => {
 export default function Home() {
   const initialMonth = new Date().getUTCMonth() + 1;
   const { markers, highlightedCountries } = getScubaGlobeData();
+  const reefHealthRecords = getAllReefHealth();
 
   const sitesByLocation = new Map<string, Site[]>();
   for (const s of getAllSites()) {
@@ -220,56 +228,107 @@ export default function Home() {
     })
     .filter((l): l is FeaturedLocation => l !== null);
 
+  const urgentAlertCount = reefHealthRecords.filter((record) =>
+    ["warning", "alert-1", "alert-2"].includes(
+      record.thermalStress?.alertLevel ?? "",
+    ),
+  ).length;
+  const observedRecordCount = reefHealthRecords.filter(
+    (record) => record.observed !== undefined,
+  ).length;
+  const monitoringGapCount = featuredLocations.filter(
+    (location) => location.reefCondition === "unknown",
+  ).length;
+
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-lg font-bold tracking-tight text-slate-900">
-              scubaSeason<span className="text-[#0089de]">.fun</span>
-            </span>
-          </Link>
-          <nav className="hidden gap-6 text-sm font-medium text-slate-700 sm:flex">
-            <Link href="/sites" className="hover:text-[#0089de]">
-              Dive sites
-            </Link>
-            <Link href="/encounters" className="hover:text-[#0089de]">
-              Encounters
-            </Link>
-            <Link href="/about" className="hover:text-[#0089de]">
-              About
-            </Link>
-            <Link href="/faq" className="hover:text-[#0089de]">
-              FAQ
-            </Link>
-          </nav>
-        </div>
-      </header>
+    <div className="min-h-screen bg-[#f7fbfd] text-slate-900">
+      <SiteHeader />
 
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-[#f1f7fb] to-white">
-        <div className="mx-auto w-full max-w-6xl px-6 pt-14 pb-8 text-center">
-          <span className="inline-block rounded-full bg-[#e8f0fe] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#1d5d90]">
-            A data atlas for the living ocean
-          </span>
-          <h1 className="mx-auto mt-5 max-w-3xl text-[clamp(2.25rem,5vw,3.75rem)] font-bold leading-[1.1] tracking-tight text-slate-900">
-            See the reefs before they change.
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Coral cover, thermal stress, species seasonality &mdash; surfaced from
-            NOAA Coral Reef Watch, in-situ surveys, and citizen science.
-            Filter by month, certification, what you want to see, and reef condition.
-          </p>
-        </div>
+      <section className="border-b border-slate-200 bg-[#f7fbfd]">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-6 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(460px,1.1fr)] lg:items-end">
+            <div>
+              <span className="inline-flex rounded-full bg-[#e7f2f8] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1d5d90]">
+                Public reef-change atlas
+              </span>
+              <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+                Track the reefs changing in our lifetime.
+              </h1>
+            </div>
+            <div className="max-w-2xl lg:justify-self-end">
+              <p className="text-base leading-7 text-slate-600">
+                scubaSeason combines satellite heat alerts, reef-health
+                surveys, diver-visible field notes, and monitoring gaps so
+                civilians can understand where the ocean needs eyes underwater.
+              </p>
+              <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
+                <div className="border-l border-[#0089de]/30 pl-3">
+                  <p className="font-bold text-slate-950">{urgentAlertCount}</p>
+                  <p className="text-xs text-slate-500">heat alerts</p>
+                </div>
+                <div className="border-l border-[#0089de]/30 pl-3">
+                  <p className="font-bold text-slate-950">{observedRecordCount}</p>
+                  <p className="text-xs text-slate-500">reef records</p>
+                </div>
+                <div className="border-l border-[#0089de]/30 pl-3">
+                  <p className="font-bold text-slate-950">{monitoringGapCount}</p>
+                  <p className="text-xs text-slate-500">data gaps</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div className="mx-auto w-full max-w-6xl px-6 pb-14">
-          <PlanetGlobePanel
-            initialMonth={initialMonth}
-            markers={markers}
-            highlightedCountries={highlightedCountries}
-            featuredLocations={featuredLocations}
-          />
+          <div className="grid gap-3 md:grid-cols-3">
+            <SignalCard
+              label="Reef alerts"
+              title="Where heat stress is rising"
+              body="Track NOAA-style thermal stress alongside dated in-water reef surveys."
+            />
+            <SignalCard
+              label="Evidence gaps"
+              title="Where we need recent eyes"
+              body="Find places with weak or missing diver-visible evidence before they fade into old data."
+            />
+            <SignalCard
+              label="Reef missions"
+              title="How divers could help"
+              body="Prototype photo tasks show what locals and visiting divers could safely collect next."
+            />
+          </div>
+
+          <div>
+            <Suspense fallback={null}>
+              <PlanetGlobePanel
+                initialMonth={initialMonth}
+                markers={markers}
+                highlightedCountries={highlightedCountries}
+                featuredLocations={featuredLocations}
+                allEncounters={getAllEncounters()}
+              />
+            </Suspense>
+          </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+function SignalCard({
+  label,
+  title,
+  body,
+}: {
+  label: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white px-4 py-3 shadow-sm">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1d5d90]">
+        {label}
+      </p>
+      <h2 className="mt-1 text-sm font-bold text-slate-950">{title}</h2>
+      <p className="mt-1 text-xs leading-5 text-slate-600">{body}</p>
     </div>
   );
 }

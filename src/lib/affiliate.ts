@@ -1,3 +1,5 @@
+import type { Operator } from "./data/types";
+
 // Affiliate URL tagging. Env vars hold the per-partner tracking IDs.
 // When an ID is unset, the URL is returned with the right search context
 // but without the tag — clicks still go to the right page.
@@ -203,3 +205,57 @@ export const configuredPartners = {
   divebooker: Boolean(DIVEBOOKER_PID),
   scubapro: Boolean(SCUBAPRO_AID),
 };
+
+// ---------- Operator booking (encounter pages) ----------
+//
+// Operators are listed in src/data/operators.json with an affiliateProvider
+// (or `direct` if we don't have a partnership). We always stamp UTM so we
+// can see clicks in analytics even when there's no affiliate ID yet.
+
+export function bookingUrlForOperator(
+  operator: Operator,
+  context: { encounterSlug?: string } = {},
+): string {
+  const target = operator.affiliateUrl ?? operator.website;
+  if (!target) return "#";
+  // If we have a known partner, run it through the existing enhancer first.
+  const enhanced = operator.affiliateProvider && operator.affiliateProvider !== "direct"
+    ? enhanceAffiliateUrl(target, operator.affiliateProvider, operator.name)
+    : target;
+  try {
+    const url = new URL(enhanced);
+    url.searchParams.set("utm_source", "scubaseason");
+    url.searchParams.set("utm_medium", "encounter");
+    url.searchParams.set(
+      "utm_campaign",
+      context.encounterSlug ?? operator.id,
+    );
+    return url.toString();
+  } catch {
+    return enhanced;
+  }
+}
+
+export function bookingCtaLabel(operator: Operator): string {
+  switch (operator.affiliateProvider) {
+    case "padi-travel":
+      return "Book via PADI Travel";
+    case "divezone":
+      return "Book via DiveZone";
+    case "zublu":
+      return "Book via ZuBlu";
+    case "direct":
+    default:
+      return "Visit operator site";
+  }
+}
+
+export function hasAffiliateBookings(operators: Operator[]): boolean {
+  return operators.some(
+    (o) =>
+      o.affiliateProvider && o.affiliateProvider !== "direct",
+  );
+}
+
+export const AFFILIATE_DISCLOSURE =
+  "Some operator links are affiliate links — if you book through them, we may earn a commission. It doesn't change the price, and we don't accept payment for listings.";

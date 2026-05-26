@@ -2,12 +2,13 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
-import { X } from "lucide-react";
 import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { isDateInSeason } from "@/lib/scuba-globe";
 
 import type { PlanetGlobeProps } from "./planet-globe";
+import type { Encounter } from "@/lib/data/types";
 
 export type ReefCondition = "thriving" | "stressed" | "critical" | "unknown";
 
@@ -41,9 +42,9 @@ const REEF_CONDITION_OPTIONS: {
   label: string;
   hint: string;
 }[] = [
-  { value: "thriving", label: "Thriving reefs", hint: "No-stress / watch" },
-  { value: "stressed", label: "Under stress", hint: "Warning / Alert 1" },
-  { value: "critical", label: "See now — critical", hint: "Alert 2" },
+  { value: "thriving", label: "Stable / watch", hint: "No-stress / watch" },
+  { value: "stressed", label: "Heat stress", hint: "Warning / Alert 1" },
+  { value: "critical", label: "Severe risk", hint: "Alert 2" },
 ];
 
 const REEF_CONDITION_BADGE: Record<
@@ -166,11 +167,13 @@ const toggleValue = <T extends string>(values: T[], value: T) =>
 
 type PlanetGlobePanelProps = PlanetGlobeProps & {
   featuredLocations?: FeaturedLocation[];
+  allEncounters?: Encounter[];
 };
 
 export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
-  const { featuredLocations = [], ...globeProps } = props;
-  const [query, setQuery] = useState("");
+  const { featuredLocations = [], allEncounters = [], ...globeProps } = props;
+  const searchParams = useSearchParams();
+  const query = searchParams?.get("q") ?? "";
   const [selectedMonths, setSelectedMonths] = useState<number[]>([
     globeProps.initialMonth ?? 1,
   ]);
@@ -182,6 +185,18 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
   const [reefConditions, setReefConditions] = useState<ReefCondition[]>([]);
   const [showAnimalOptions, setShowAnimalOptions] = useState(false);
   const [showEncounterOptions, setShowEncounterOptions] = useState(false);
+
+  const clearAllFilters = () => {
+    setSelectedMonths([globeProps.initialMonth ?? 1]);
+    setTripMode("");
+    setCert("");
+    setRecency("");
+    setSeeFilters([]);
+    setEncounterFilter(null);
+    setReefConditions([]);
+    setShowAnimalOptions(false);
+    setShowEncounterOptions(false);
+  };
 
   const toggleBucketList = () => {
     setShowEncounterOptions((s) => {
@@ -196,21 +211,34 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
   };
 
   const encounterOptions = useMemo(() => {
-    const seen = new Map<string, { id: string; slug: string; name: string }>();
-    for (const l of featuredLocations) {
-      for (const e of l.encounters ?? []) {
-        if (!seen.has(e.id)) seen.set(e.id, e);
-      }
-    }
-    return Array.from(seen.values()).sort((a, b) =>
-      a.name.localeCompare(b.name),
-    );
-  }, [featuredLocations]);
+    // Prefer the canonical list (so encounters without any mapped location
+    // still appear); fall back to location-aggregated when not provided.
+    const source = allEncounters.length > 0
+      ? allEncounters.map((e) => ({ id: e.id, slug: e.slug, name: e.name }))
+      : (() => {
+          const seen = new Map<string, { id: string; slug: string; name: string }>();
+          for (const l of featuredLocations) {
+            for (const e of l.encounters ?? []) {
+              if (!seen.has(e.id)) seen.set(e.id, e);
+            }
+          }
+          return Array.from(seen.values());
+        })();
+    return [...source].sort((a, b) => a.name.localeCompare(b.name));
+  }, [allEncounters, featuredLocations]);
+
+  const encountersById = useMemo(
+    () => new Map(allEncounters.map((e) => [e.id, e])),
+    [allEncounters],
+  );
 
   const encounterNameById = useMemo(
     () => new Map(encounterOptions.map((e) => [e.id, e.name])),
     [encounterOptions],
   );
+
+  const selectedEncounter =
+    encounterFilter !== null ? encountersById.get(encounterFilter) ?? null : null;
   const sortedMonths = [...selectedMonths].sort((a, b) => a - b);
   const selectedDates = sortedMonths.map(
     (m) => new Date(Date.UTC(2024, m - 1, 15)),
@@ -359,43 +387,53 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
   }
 
   return (
-    <div className="w-full">
-      {/* Top filter bar (PADI-style light) */}
-      <div className="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="p-4">
-            <div className="mb-4">
-              <label className="relative block">
-                <span className="sr-only">Search locations</span>
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+    <div className="grid w-full gap-5 lg:grid-cols-[300px_minmax(0,1fr)] lg:items-start">
+      <aside className="lg:sticky lg:top-20">
+        <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+          <div className="border-b border-slate-200 px-4 py-3">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1d5d90]">
+                  Focus the atlas
+                </p>
+                <p className="mt-1 text-sm text-slate-600">
+                  Follow reef stress, data gaps, and diver-safe evidence.
+                </p>
+              </div>
+              {activeChips.length > 1 ? (
+                <button
+                  type="button"
+                  onClick={clearAllFilters}
+                  className="shrink-0 text-xs font-semibold text-[#0089de] hover:text-[#1d5d90]"
                 >
-                  <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="m14 14 3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-                <input
-                  type="search"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search dive locations or countries…"
-                  className="w-full rounded-lg border border-slate-300 bg-white py-2 pl-9 pr-9 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#0089de]"
-                />
-                {query ? (
-                  <button
-                    type="button"
-                    onClick={() => setQuery("")}
-                    aria-label="Clear search"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
-                  >
-                    <X className="h-3.5 w-3.5" />
-                  </button>
-                ) : null}
-              </label>
+                  Reset
+                </button>
+              ) : null}
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <FilterField label="Months" className="sm:col-span-2 lg:col-span-3">
+            {activeChips.length > 0 ? (
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {activeChips.slice(0, 8).map((chip) => (
+                  <button
+                    key={chip.key}
+                    type="button"
+                    onClick={chip.onClear}
+                    className="rounded-full bg-[#eef7fb] px-2.5 py-1 text-[11px] font-medium text-[#1d5d90] ring-1 ring-inset ring-[#c7e2f0] transition hover:bg-white"
+                    title="Clear filter"
+                  >
+                    {chip.label} ×
+                  </button>
+                ))}
+                {activeChips.length > 8 ? (
+                  <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-500">
+                    +{activeChips.length - 8}
+                  </span>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
+
+          <div className="max-h-none space-y-4 p-4 lg:max-h-[calc(100vh-10rem)] lg:overflow-auto">
+              <FilterField label="Months">
                 <div className="flex flex-wrap gap-1.5">
                   {MONTH_OPTIONS.map((o) => {
                     const active = selectedMonths.includes(o.value);
@@ -418,7 +456,7 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                 </div>
               </FilterField>
 
-              <FilterField label="Trip type">
+              <FilterField label="Dive access">
                 <select
                   value={tripMode}
                   onChange={(e) => setTripMode(e.target.value as TripModeFilter | "")}
@@ -433,7 +471,7 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                 </select>
               </FilterField>
 
-              <FilterField label="Certification">
+              <FilterField label="Contributor level">
                 <div className="flex flex-wrap gap-1.5">
                   {CERT_OPTIONS.map((o) => {
                     const active = cert === o.value;
@@ -455,7 +493,7 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                 </div>
               </FilterField>
 
-              <FilterField label="Last dive">
+              <FilterField label="Recent dive activity">
                 <div className="flex flex-wrap gap-1.5">
                   {RECENCY_OPTIONS.map((o) => {
                     const active = recency === o.value;
@@ -477,7 +515,7 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                 </div>
               </FilterField>
 
-              <FilterField label="Reef condition" className="sm:col-span-2 lg:col-span-3">
+              <FilterField label="Reef condition">
                 <div className="flex flex-wrap gap-1.5">
                   {REEF_CONDITION_OPTIONS.map((o) => {
                     const active = reefConditions.includes(o.value);
@@ -504,12 +542,11 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                 <p className="mt-1.5 text-[11px] leading-5 text-slate-500">
                   Reef condition is the worst current NOAA Coral Reef Watch
                   alert level on file, paired with the most recent in-situ
-                  coral-cover survey. &ldquo;Data pending&rdquo; means we haven&rsquo;t
-                  ingested a survey yet — not that the reef is healthy.
+                  coral-cover survey.
                 </p>
               </FilterField>
 
-              <FilterField label="What you want to see" className="sm:col-span-2">
+              <FilterField label="Evidence focus">
                 <div className="flex flex-wrap gap-1.5">
                   {INTEREST_OPTIONS.map((option) => {
                     if (option === "Big animals") {
@@ -609,26 +646,190 @@ export function PlanetGlobePanel(props: PlanetGlobePanelProps) {
                   </div>
                 ) : null}
               </FilterField>
+          </div>
+        </div>
+      </aside>
+
+      <div className="min-w-0">
+        <FieldMissionCards locations={featuredLocations} />
+
+        <DynamicPlanetGlobe
+          {...globeProps}
+          markers={filteredMarkers}
+          highlightedCountries={filteredHighlightedCountries}
+        />
+
+        {selectedEncounter ? (
+          <EncounterBrief encounter={selectedEncounter} />
+        ) : null}
+
+        <FeaturedGrid
+          locations={featuredLocations}
+          selectedMonths={sortedMonths}
+          tripMode={tripMode}
+          cert={cert}
+          seeFilters={seeFilters}
+          encounterFilter={encounterFilter}
+          selectedEncounter={selectedEncounter}
+          reefConditions={reefConditions}
+          query={normalizedQuery}
+        />
+      </div>
+    </div>
+  );
+}
+
+function FieldMissionCards({ locations }: { locations: FeaturedLocation[] }) {
+  const missions = useMemo(() => {
+    const missionCandidates = [...locations]
+      .filter(
+        (location) =>
+          location.reefCondition === "stressed" ||
+          location.reefCondition === "critical" ||
+          location.reefCondition === "unknown" ||
+          (location.bleachedPercent !== undefined &&
+            location.bleachedPercent >= 10),
+      )
+      .sort((a, b) => {
+        const rank: Record<ReefCondition, number> = {
+          critical: 0,
+          stressed: 1,
+          unknown: 2,
+          thriving: 3,
+        };
+        return (
+          rank[a.reefCondition] - rank[b.reefCondition] ||
+          b.editorialRank - a.editorialRank
+        );
+      })
+      .slice(0, 3);
+
+    return missionCandidates.map((location) => {
+      const needsPhotos =
+        location.reefCondition === "unknown" ||
+        location.coralCoverPercent === undefined;
+      const focus = needsPhotos
+        ? "Baseline photo check"
+        : location.reefCondition === "critical"
+          ? "Bleaching evidence check"
+          : "Heat-stress follow-up";
+      const task = needsPhotos
+        ? "Capture wide reef-context photos so this place has a recent visual baseline."
+        : "Photograph the same depth band across several reef patches to compare live colour, paling, and algae cover.";
+      const reward = location.reefCondition === "critical" ? "$20" : "$10-$15";
+
+      return { location, focus, task, reward };
+    });
+  }, [locations]);
+
+  if (missions.length === 0) return null;
+
+  return (
+    <section className="mb-5 rounded-lg border border-[#c7e2f0] bg-white p-4 shadow-sm">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1d5d90]">
+            Prototype reef missions
+          </p>
+          <h2 className="mt-1 text-xl font-bold tracking-tight text-slate-950">
+            Places where diver photos could help.
+          </h2>
+        </div>
+        <p className="max-w-sm text-xs leading-5 text-slate-500">
+          Mission rewards are placeholders for the research workflow, not live
+          payouts yet.
+        </p>
+      </div>
+      <div className="mt-4 grid gap-3 lg:grid-cols-3">
+        {missions.map(({ location, focus, task, reward }) => (
+          <Link
+            key={location.id}
+            href={`/locations/${location.slug}`}
+            className="rounded-lg border border-slate-200 bg-[#f8fbfd] p-3 transition hover:border-[#0089de]/40 hover:bg-white"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-bold text-slate-950">{focus}</p>
+                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                  {location.name}, {location.country}
+                </p>
+              </div>
+              <span className="shrink-0 rounded-full bg-[#eef7fb] px-2 py-0.5 text-[10px] font-semibold text-[#1d5d90] ring-1 ring-inset ring-[#c7e2f0]">
+                {reward}
+              </span>
             </div>
+            <p className="mt-2 text-xs leading-5 text-slate-600">{task}</p>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function EncounterBrief({ encounter }: { encounter: Encounter }) {
+  const DIFFICULTY_RING: Record<string, string> = {
+    beginner: "bg-emerald-50 text-emerald-800 ring-emerald-200",
+    intermediate: "bg-amber-50 text-amber-800 ring-amber-200",
+    advanced: "bg-orange-50 text-orange-800 ring-orange-200",
+    expert: "bg-rose-50 text-rose-800 ring-rose-200",
+  };
+  const monthAbbr = (m: number) =>
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][m - 1];
+  const months =
+    encounter.bestMonths.length === 12
+      ? "Year-round"
+      : encounter.bestMonths.map(monthAbbr).join(" · ");
+  const primaryRegion =
+    encounter.regions.find((r) => r.status === "primary") ??
+    encounter.regions[0];
+  return (
+    <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div className="flex flex-col gap-0 sm:flex-row">
+        {encounter.heroImageUrl ? (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={encounter.heroImageUrl}
+            alt={encounter.name}
+            className="h-32 w-full object-cover sm:h-auto sm:w-40 sm:shrink-0"
+          />
+        ) : null}
+        <div className="flex flex-1 flex-col gap-2 p-4 sm:p-5">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h3 className="text-lg font-bold text-slate-900">
+                {encounter.name}
+              </h3>
+              {encounter.speciesCommon ? (
+                <p className="text-xs text-slate-600">
+                  {encounter.speciesCommon}
+                </p>
+              ) : null}
+            </div>
+            <span
+              className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset ${DIFFICULTY_RING[encounter.difficulty]}`}
+            >
+              {encounter.difficulty}
+            </span>
+          </div>
+          <p className="text-[12px] leading-5 text-slate-600">
+            <span className="font-semibold text-slate-700">When:</span>{" "}
+            {months}
+            {primaryRegion ? (
+              <>
+                {" · "}
+                <span className="font-semibold text-slate-700">Best in:</span>{" "}
+                {primaryRegion.name}, {primaryRegion.country}
+              </>
+            ) : null}
+          </p>
+          <Link
+            href={`/encounters/${encounter.slug}`}
+            className="inline-flex w-fit items-center gap-1 rounded-full bg-[#0089de] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1d5d90]"
+          >
+            Open encounter guide →
+          </Link>
         </div>
       </div>
-
-      <DynamicPlanetGlobe
-        {...globeProps}
-        markers={filteredMarkers}
-        highlightedCountries={filteredHighlightedCountries}
-      />
-
-      <FeaturedGrid
-        locations={featuredLocations}
-        selectedMonths={sortedMonths}
-        tripMode={tripMode}
-        cert={cert}
-        seeFilters={seeFilters}
-        encounterFilter={encounterFilter}
-        reefConditions={reefConditions}
-        query={normalizedQuery}
-      />
     </div>
   );
 }
@@ -640,6 +841,7 @@ function FeaturedGrid({
   cert,
   seeFilters,
   encounterFilter,
+  selectedEncounter,
   reefConditions,
   query,
 }: {
@@ -649,9 +851,46 @@ function FeaturedGrid({
   cert: CertFilter | "";
   seeFilters: SeeFilter[];
   encounterFilter: string | null;
+  selectedEncounter: Encounter | null;
   reefConditions: ReefCondition[];
   query: string;
 }) {
+  // An encounter "has atlas coverage" if any of its regions resolve to a
+  // scubaSeason location we cover. Region.inAtlasLocationId is the direct
+  // link; nearbyAtlasLocationIds enables "pair with" — we use both to drive
+  // the location grid.
+  const encounterHasLocations = selectedEncounter
+    ? selectedEncounter.regions.some(
+        (r) =>
+          r.inAtlasLocationId ||
+          (r.nearbyAtlasLocationIds && r.nearbyAtlasLocationIds.length > 0),
+      )
+    : true;
+  // Map atlas locationId → { months, region } so the grid can prefer the
+  // region-specific season over the encounter-wide bestMonths.
+  const encounterLocationRefs = useMemo(() => {
+    if (!selectedEncounter) return null;
+    const m = new Map<
+      string,
+      { bestMonthsAtLocation?: number[]; isPrimary: boolean }
+    >();
+    for (const r of selectedEncounter.regions) {
+      const ids = [
+        r.inAtlasLocationId,
+        ...(r.nearbyAtlasLocationIds ?? []),
+      ].filter((x): x is string => Boolean(x));
+      for (const id of ids) {
+        // First write wins so direct hits aren't overwritten by neighbor hits.
+        if (!m.has(id)) {
+          m.set(id, {
+            bestMonthsAtLocation: r.bestMonthsAtRegion,
+            isPrimary: Boolean(r.inAtlasLocationId === id),
+          });
+        }
+      }
+    }
+    return m;
+  }, [selectedEncounter]);
   const monthName =
     selectedMonths.length === 1
       ? MONTH_OPTIONS[selectedMonths[0] - 1].label
@@ -711,11 +950,24 @@ function FeaturedGrid({
       return true;
     };
 
+    const inSeasonForLocation = (l: FeaturedLocation): boolean => {
+      if (selectedEncounter && encounterLocationRefs) {
+        // Encounter-aware season: prefer per-location override, else the
+        // encounter's own bestMonths. Don't fall back to the location's
+        // generic seasonality — a mandarin-fish dusk dive happens nightly
+        // even outside the destination's "macro season."
+        const ref = encounterLocationRefs.get(l.id);
+        const months =
+          ref?.bestMonthsAtLocation && ref.bestMonthsAtLocation.length > 0
+            ? ref.bestMonthsAtLocation
+            : selectedEncounter.bestMonths;
+        return months.some((m) => selectedMonthSet.has(m));
+      }
+      return l.bestMonths.some((m) => selectedMonthSet.has(m));
+    };
+
     const inSeason = locations
-      .filter(
-        (l) =>
-          l.bestMonths.some((m) => selectedMonthSet.has(m)) && passesFilters(l),
-      )
+      .filter((l) => inSeasonForLocation(l) && passesFilters(l))
       .sort((a, b) => b.editorialRank - a.editorialRank);
 
     const seenContinents = new Set<string>();
@@ -738,7 +990,7 @@ function FeaturedGrid({
       .sort((a, b) => b.editorialRank - a.editorialRank)
       .slice(0, 6);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locations, selectedMonths.join(","), tripMode, cert, seeFilters, encounterFilter, reefConditions.join(","), query]);
+  }, [locations, selectedMonths.join(","), tripMode, cert, seeFilters, encounterFilter, selectedEncounter, encounterLocationRefs, reefConditions.join(","), query]);
 
   const hasFilters =
     tripMode !== "" || cert !== "" || seeFilters.length > 0 || encounterFilter !== null || reefConditions.length > 0 || query !== "";
@@ -757,11 +1009,12 @@ function FeaturedGrid({
               : `In season this month · ${monthName}`}
           </p>
           <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-            What the ocean is doing right now.
+            Reef signals worth watching.
           </h2>
           <p className="mt-1 max-w-xl text-sm leading-6 text-slate-600">
-            Each location card shows reef condition, coral cover, and what
-            you&rsquo;d see in season &mdash; sourced, dated, and limitations on file.
+            Each location card shows reef condition, coral cover, seasonality,
+            and what evidence we currently have &mdash; dated, sourced, and
+            bounded by limitations.
           </p>
         </div>
         <Link
@@ -771,7 +1024,13 @@ function FeaturedGrid({
           All dive sites →
         </Link>
       </div>
-      {featured.length === 0 ? (
+      {encounterFilter && !encounterHasLocations ? (
+        <p className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
+          Operators for this encounter aren&rsquo;t in our location atlas yet
+          &mdash; the closest sites are a separate, regional industry. See the
+          encounter brief above for when and where it actually happens.
+        </p>
+      ) : featured.length === 0 ? (
         <p className="text-sm text-slate-500">
           No locations match these filters for {monthName}. Try clearing a
           filter or picking another month.
@@ -779,7 +1038,13 @@ function FeaturedGrid({
       ) : (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((l) => {
-            const inSeason = l.bestMonths.some((m) => selectedMonthSet.has(m));
+            const seasonMonths = selectedEncounter
+              ? (encounterLocationRefs?.get(l.id)?.bestMonthsAtLocation
+                  ?.length
+                  ? encounterLocationRefs.get(l.id)!.bestMonthsAtLocation!
+                  : selectedEncounter.bestMonths)
+              : l.bestMonths;
+            const inSeason = seasonMonths.some((m) => selectedMonthSet.has(m));
             return (
               <Link
                 key={l.id}

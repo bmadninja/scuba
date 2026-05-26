@@ -15,7 +15,11 @@ export const getEncounterById = (id: string): Encounter | null =>
 
 export const getEncountersByLocationId = (locationId: string): Encounter[] =>
   encounters.filter((e) =>
-    e.locations.some((l) => l.locationId === locationId),
+    e.regions.some(
+      (r) =>
+        r.inAtlasLocationId === locationId ||
+        (r.nearbyAtlasLocationIds?.includes(locationId) ?? false),
+    ),
   );
 
 export const getEncountersBySpecies = (query: string): Encounter[] => {

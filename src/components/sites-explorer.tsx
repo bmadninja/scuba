@@ -108,7 +108,14 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     const encounterLocationIds = selectedEncounter
-      ? new Set(selectedEncounter.locations.map((l) => l.locationId))
+      ? new Set(
+          selectedEncounter.regions
+            .flatMap((r) => [
+              r.inAtlasLocationId,
+              ...(r.nearbyAtlasLocationIds ?? []),
+            ])
+            .filter((x): x is string => Boolean(x)),
+        )
       : null;
     const encounterMonths = selectedEncounter?.bestMonths ?? null;
 
