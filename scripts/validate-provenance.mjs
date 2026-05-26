@@ -32,6 +32,7 @@ const encounters = readJson("src/data/encounters.json");
 const sightings = readJson("src/data/sightings.json");
 const reefHealth = readJson("src/data/reef-health.json");
 const tripCosts = readJson("src/data/trip-costs.json");
+const reefPressure = readJson("src/data/reef-pressure.json");
 const locations = readJson("src/data/locations.json");
 const sites = readJson("src/data/sites.json");
 const locationIds = new Set(locations.map((l) => l.id));
@@ -311,6 +312,22 @@ for (const t of tripCosts) {
   }
 }
 
+// --- Reef-pressure provenance --------------------------------------------
+for (const r of reefPressure) {
+  if (!r.locationId || !locationIds.has(r.locationId)) {
+    report("error", "reef-pressure", r.id, `references unknown location "${r.locationId}"`);
+  }
+  if (!Array.isArray(r.methodologyClaimIds) || r.methodologyClaimIds.length === 0) {
+    report("error", "reef-pressure", r.id, "missing method");
+  } else {
+    for (const mid of r.methodologyClaimIds) {
+      if (!methodologyByClaim.has(mid)) {
+        report("error", "reef-pressure", r.id, `references unknown methodology "${mid}"`);
+      }
+    }
+  }
+}
+
 // --- Output --------------------------------------------------------------
 const errors = issues.filter((i) => i.severity === "error");
 const warnings = issues.filter((i) => i.severity === "warn");
@@ -322,7 +339,7 @@ for (const i of issues) {
 
 console.log("");
 console.log(
-  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s), ${reefHealth.length} reef-health record(s), ${tripCosts.length} trip-cost record(s)`,
+  `Provenance validation: ${sources.length} source(s), ${methodologies.length} methodology note(s), ${encounters.length} encounter(s), ${sightings.length} sighting(s), ${reefHealth.length} reef-health record(s), ${tripCosts.length} trip-cost record(s), ${reefPressure.length} reef-pressure record(s)`,
 );
 console.log(`  ${errors.length} error(s), ${warnings.length} warning(s)`);
 

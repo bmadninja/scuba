@@ -12,6 +12,7 @@ import { getSitesByLocationId } from "@/lib/data/sites";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getAllGear, getGearById } from "@/lib/data/gear";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
+import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import type {
@@ -100,6 +101,7 @@ export default async function LocationPage({
 
   const sites = getSitesByLocationId(location.id);
   const reefHealth = getReefHealthByLocationId(location.id)[0] ?? null;
+  const reefPressure = getReefPressureByLocationId(location.id);
   const details = getLocationDetailsById(location.id);
   const bestMonthsSet = new Set(location.bestMonths);
 
@@ -195,6 +197,8 @@ export default async function LocationPage({
             ) : (
               <UnknownReefHealthPanel />
             )}
+
+            {reefPressure ? <ReefPressurePanel record={reefPressure} /> : null}
 
             <section>
               <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
@@ -1068,6 +1072,139 @@ function ReefHealthPanel({
           responsible-travel and conservation
         </Link>{" "}
         operators on the ground.
+      </p>
+    </section>
+  );
+}
+
+const MPA_STATUS: Record<string, { label: string; tone: "good" | "ok" | "warn"; copy: string }> = {
+  "no-protection": {
+    label: "No formal protection",
+    tone: "warn",
+    copy: "This site sits outside any designated marine protected area. Operator and community choices carry most of the conservation weight here.",
+  },
+  "designated-multi-use": {
+    label: "Multi-use MPA",
+    tone: "ok",
+    copy: "Inside a designated MPA that permits regulated fishing and other uses. Worth checking which zones at this location are no-take.",
+  },
+  "strict-mpa": {
+    label: "Strict MPA",
+    tone: "good",
+    copy: "Inside a strict marine protected area with active enforcement.",
+  },
+  "no-take": {
+    label: "No-take reserve",
+    tone: "good",
+    copy: "Fully no-take — no fishing of any kind. The strongest protection tier.",
+  },
+};
+
+const FISHING_PRESSURE: Record<string, { label: string; tone: "good" | "ok" | "warn" | "bad" }> = {
+  low: { label: "Low fishing pressure", tone: "good" },
+  moderate: { label: "Moderate fishing pressure", tone: "ok" },
+  high: { label: "High fishing pressure", tone: "warn" },
+  "very-high": { label: "Very high fishing pressure", tone: "bad" },
+  unknown: { label: "Fishing pressure unknown", tone: "ok" },
+};
+
+const PRESSURE_BADGE_TONE = {
+  good: "bg-emerald-50 text-emerald-800 ring-emerald-200",
+  ok: "bg-sky-50 text-sky-800 ring-sky-200",
+  warn: "bg-amber-50 text-amber-800 ring-amber-200",
+  bad: "bg-rose-50 text-rose-800 ring-rose-200",
+} as const;
+
+function ReefPressurePanel({
+  record,
+}: {
+  record: NonNullable<ReturnType<typeof getReefPressureByLocationId>>;
+}) {
+  const mpa = MPA_STATUS[record.mpaStatus] ?? MPA_STATUS["no-protection"];
+  const fishing = FISHING_PRESSURE[record.fishingPressure] ?? FISHING_PRESSURE.unknown;
+  return (
+    <section>
+      <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          Pressure on this reef
+        </h2>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          Protection · fishing · what you can do
+        </span>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="rounded-2xl border border-slate-200 bg-white p-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+            Protected-area status
+          </p>
+          <span
+            className={`mt-3 inline-flex rounded-lg px-3 py-1.5 text-[12px] font-bold uppercase tracking-wider ring-1 ring-inset ${PRESSURE_BADGE_TONE[mpa.tone]}`}
+          >
+            {mpa.label}
+          </span>
+          <p className="mt-3 text-[13px] leading-6 text-slate-700">{mpa.copy}</p>
+          {record.mpaName ? (
+            <p className="mt-2 text-[11px] text-slate-500">
+              {record.mpaName}
+              {record.mpaSinceYear ? ` · since ${record.mpaSinceYear}` : ""}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="rounded-2xl border border-slate-200 bg-white p-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+            Fishing pressure
+          </p>
+          <span
+            className={`mt-3 inline-flex rounded-lg px-3 py-1.5 text-[12px] font-bold uppercase tracking-wider ring-1 ring-inset ${PRESSURE_BADGE_TONE[fishing.tone]}`}
+          >
+            {fishing.label}
+          </span>
+          {record.topPressures.length > 0 ? (
+            <>
+              <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                Dominant pressures
+              </p>
+              <ul className="mt-1.5 flex flex-wrap gap-1.5">
+                {record.topPressures.map((p) => (
+                  <li
+                    key={p}
+                    className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700"
+                  >
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+          {typeof record.greenFinsOperatorCount === "number" &&
+          record.greenFinsOperatorCount > 0 ? (
+            <p className="mt-3 text-[11px] text-slate-500">
+              {record.greenFinsOperatorCount} Green Fins-verified operator
+              {record.greenFinsOperatorCount === 1 ? "" : "s"} known at this location.
+            </p>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700">
+          What you can do
+        </p>
+        <p className="mt-2 text-[14px] leading-6 text-emerald-900">
+          {record.visitorImpactNote}
+        </p>
+      </div>
+
+      <p className="mt-3 text-[12px] leading-5 text-slate-500">
+        Protection status sourced from Protected Planet / WDPA and refined with
+        Marine Protection Atlas. Fishing pressure proxy is Global Fishing Watch
+        AIS data. See the{" "}
+        <Link href="/about" className="text-[#0089de] hover:underline">
+          methodology
+        </Link>{" "}
+        for what these sources can and can&rsquo;t prove.
       </p>
     </section>
   );

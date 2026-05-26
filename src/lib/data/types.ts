@@ -165,11 +165,30 @@ export type EncounterDifficulty =
   | "advanced"
   | "expert";
 
-export type EncounterLocationRef = {
-  locationId: string;
-  siteIds?: string[];
-  bestMonthsAtLocation?: number[];
-  notes?: string;
+/**
+ * A real-world region where an encounter happens. Decoupled from our
+ * scubaSeason atlas — a region exists whether or not we have a corresponding
+ * `Location` record. `inAtlasLocationId` links into the atlas when we have
+ * coverage; `nearbyAtlasLocationIds` enables "pair with" itinerary suggestions
+ * for adjacent atlas locations.
+ */
+export type EncounterRegion = {
+  name: string;
+  country: string;
+  /**
+   * - "primary": currently the best place for this encounter.
+   * - "secondary": still happens, but eclipsed or less reliable.
+   * - "emerging": new or rebuilding.
+   * - "closed": not currently bookable (operator licence revoked, MPA
+   *   restriction, conservation closure, etc.).
+   */
+  status: "primary" | "secondary" | "emerging" | "closed";
+  inAtlasLocationId?: string;
+  nearbyAtlasLocationIds?: string[];
+  whyHere: string;
+  bestMonthsAtRegion: number[];
+  /** Plain-English status note when status !== "primary". */
+  statusNote?: string;
 };
 
 export type Encounter = {
@@ -187,11 +206,38 @@ export type Encounter = {
   conservationNotes: string;
   limitations: string;
   confidence: "high" | "medium" | "low";
-  locations: EncounterLocationRef[];
+  regions: EncounterRegion[];
+  /** Operator ids — resolved against operators.json. Affiliate-eligible. */
+  operatorIds: string[];
   sourceIds: string[];
   methodologyClaimIds: string[];
   bucketListRank?: number;
   heroImageUrl?: string;
+};
+
+/**
+ * A dive operator that runs a specific encounter (or several) in a specific
+ * region. Listings are conservative: `permitStatus: "listed-only"` until we
+ * have a documented permit/licence cross-check.
+ *
+ * Affiliate links are optional — when present, the encounter page renders
+ * the CTA via the affiliate provider with UTM tagging; otherwise it falls
+ * back to the operator's own site.
+ */
+export type Operator = {
+  id: string;
+  name: string;
+  /** Matches an EncounterRegion.name on at least one encounter. */
+  regionName: string;
+  encounterIds: string[];
+  permitStatus: "verified" | "listed-only" | "unknown";
+  priceRangeUSD?: [number, number];
+  durationDays?: number;
+  groupSizeMax?: number;
+  website: string;
+  affiliateUrl?: string;
+  affiliateProvider?: "padi-travel" | "divezone" | "zublu" | "direct";
+  notesShort?: string;
 };
 
 /**
@@ -218,6 +264,58 @@ export type SightingEvidence = {
   sourceIds: string[];
   methodologyClaimIds: string[];
   notes?: string;
+};
+
+/**
+ * MPA protection status, ordered from no formal protection to strict
+ * no-take. Sourced from Protected Planet (WDPA) and refined with
+ * Marine Protection Atlas (MPAtlas) for genuine-enforcement signal.
+ */
+export type MpaStatus =
+  | "no-protection"
+  | "designated-multi-use"
+  | "strict-mpa"
+  | "no-take";
+
+export type FishingPressureLevel =
+  | "low"
+  | "moderate"
+  | "high"
+  | "very-high"
+  | "unknown";
+
+/**
+ * Per-location human-pressure record. Pairs with reef-health to power
+ * a "what humans are doing to this reef" panel on location pages.
+ *
+ * All fields editorial-bounded; none claim precision beyond what the
+ * cited sources support. New methodology note "human-pressure-mpa-context"
+ * documents the bounds.
+ */
+export type ReefPressureRecord = {
+  id: string;
+  locationId: string;
+  mpaStatus: MpaStatus;
+  /** Year the MPA was established; only set when mpaStatus !== "no-protection". */
+  mpaSinceYear?: number;
+  /** Plain-English MPA name (e.g. "Raja Ampat Marine Park"). */
+  mpaName?: string;
+  fishingPressure: FishingPressureLevel;
+  /**
+   * Editorial summary of the dominant pressures here — fishing,
+   * coastal development, tourism, plastic, agricultural runoff, etc.
+   */
+  topPressures: string[];
+  /**
+   * Count of Green Fins-listed sustainable operators known at this
+   * location. Undefined when we haven't verified.
+   */
+  greenFinsOperatorCount?: number;
+  /** Editorial paragraph framing what visitors can do here. */
+  visitorImpactNote: string;
+  /** Always cites human-pressure-mpa-context (and possibly extras). */
+  methodologyClaimIds: string[];
+  lastReviewedAt: string;
 };
 
 /**
