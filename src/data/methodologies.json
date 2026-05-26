@@ -1,5 +1,21 @@
 [
   {
+    "claimId": "human-pressure-mpa-context",
+    "claimType": "travel-recommendation",
+    "sourceIds": [
+      "wdpa",
+      "mpatlas",
+      "global-fishing-watch",
+      "global-mangrove-watch",
+      "green-fins",
+      "wri-reefs-at-risk",
+      "ocean-health-index"
+    ],
+    "confidence": "medium",
+    "limitations": "MPA boundaries are taken from Protected Planet (WDPA); not every MPA is genuinely enforced — Marine Protection Atlas adds a protection-quality layer to distinguish paper-park designations from no-take protection. Fishing-pressure proxies come from Global Fishing Watch AIS data, which captures industrial vessels but misses small-scale and illegal fishing. We use these layers for context — not to certify that a specific site is well-managed or fish-stocked. Always confirm permits and rules with the local operator before booking.",
+    "lastReviewedAt": "2026-05-25"
+  },
+  {
     "claimId": "trip-cost-editorial-2026",
     "claimType": "travel-recommendation",
     "sourceIds": ["editorial-curation", "dema", "padi", "ssi"],
@@ -17,10 +33,20 @@
       "ncrmp",
       "reef-check",
       "noaa-crw",
+      "noaa-coastwatch",
       "allen-coral-atlas",
       "gbrmpa",
       "icri",
-      "reef-life-survey"
+      "reef-life-survey",
+      "nasa-podaac",
+      "copernicus-marine",
+      "nasa-ocean-color",
+      "argo",
+      "coralwatch",
+      "imos-aodn",
+      "wri-reefs-at-risk",
+      "ocean-health-index",
+      "ipcc-srocc"
     ],
     "confidence": "high",
     "limitations": "Observed coral cover, bleaching, and mortality come from named in-situ surveys with a stated date and method — they describe one snapshot of one reef and do not extrapolate to neighbouring sites. Current thermal stress is satellite-derived from NOAA Coral Reef Watch at ~5 km resolution; it indicates risk, not observed coral damage. We deliberately separate observed condition, current thermal stress, and projection — and we never publish a projection without a documented model and uncertainty.",
@@ -29,7 +55,17 @@
   {
     "claimId": "sighting-occurrence-cluster",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis", "inaturalist", "iucn-red-list"],
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "obis-seamap",
+      "inaturalist",
+      "iucn-red-list",
+      "worms",
+      "fishbase",
+      "atlas-living-australia",
+      "reef-org"
+    ],
     "confidence": "medium",
     "limitations": "We aggregate confirmed occurrence records from GBIF and OBIS within a fixed radius of each dive site. Occurrence records confirm presence and reveal seasonality clustering, but they DO NOT measure per-dive probability — there is no eligible-effort denominator. We deliberately do not publish a numeric '% chance of sighting' from this data.",
     "lastReviewedAt": "2026-05-24"
@@ -61,7 +97,7 @@
   {
     "claimId": "encounter-whale-shark-seasonality",
     "claimType": "seasonality",
-    "sourceIds": ["gbif", "obis", "wildbook", "iucn-red-list"],
+    "sourceIds": ["gbif", "obis", "obis-seamap", "wildbook", "ocean-tracking-network", "iucn-red-list"],
     "confidence": "high",
     "limitations": "Best months are derived from occurrence-record clustering and well-documented regional aggregations. Per-trip probability is not published.",
     "lastReviewedAt": "2026-05-24"
@@ -69,7 +105,7 @@
   {
     "claimId": "encounter-manta-cleaning-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis", "manta-trust", "iucn-red-list"],
+    "sourceIds": ["gbif", "obis", "obis-seamap", "manta-trust", "iucn-red-list"],
     "confidence": "high",
     "limitations": "Cleaning stations are site-specific; visit frequency varies with current and time of day.",
     "lastReviewedAt": "2026-05-24"

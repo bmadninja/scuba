@@ -197,5 +197,234 @@
     "sourceType": "editorial-curation",
     "accessedAt": "2026-05-24",
     "notes": "Industry trade body — used only for travel-industry context, never for ecological or safety claims."
+  },
+  {
+    "id": "nasa-podaac",
+    "name": "NASA PO.DAAC",
+    "url": "https://podaac.jpl.nasa.gov/",
+    "publisher": "NASA Jet Propulsion Laboratory / Caltech",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Physical Oceanography DAAC — canonical archive for SST, sea-surface salinity, sea level, ocean circulation, ocean winds. Hosts MODIS, GHRSST, SMAP, JASON/Sentinel-6, SWOT datasets."
+  },
+  {
+    "id": "copernicus-marine",
+    "name": "Copernicus Marine Service",
+    "url": "https://data.marine.copernicus.eu/products",
+    "publisher": "Mercator Ocean International for the European Union",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "Copernicus data policy — free and open with attribution (CC BY equivalent)",
+    "notes": "Near-real-time and forecast SST, currents, chlorophyll, oxygen, pH for global and regional seas. Best single source for live anomaly cards on location pages."
+  },
+  {
+    "id": "noaa-coastwatch",
+    "name": "NOAA CoastWatch / OceanWatch",
+    "url": "https://coastwatch.noaa.gov/cwn/index.html",
+    "publisher": "NOAA NESDIS / STAR",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "ERDDAP-served satellite oceanography — SST, sea-level anomaly, chlorophyll-a, ocean heat content, sea-surface salinity, ocean winds. Programmatic per-coordinate access."
+  },
+  {
+    "id": "nasa-ocean-color",
+    "name": "NASA Ocean Color (OB.DAAC)",
+    "url": "https://oceancolor.gsfc.nasa.gov/",
+    "publisher": "NASA Goddard Space Flight Center / Ocean Biology Processing Group",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Chlorophyll-a, water clarity, primary productivity from MODIS, VIIRS, OLCI, PACE. Use for site-level water-clarity context and productivity claims."
+  },
+  {
+    "id": "argo",
+    "name": "Argo float network",
+    "url": "https://argo.ucsd.edu/",
+    "publisher": "International Argo Program / UCSD",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-25",
+    "license": "Free and open with attribution",
+    "notes": "Global array of 4,000+ profiling floats measuring temperature, salinity, and biogeochemistry to 2 km depth. Use for ocean-interior temperature trend claims."
+  },
+  {
+    "id": "noaa-ndbc",
+    "name": "NOAA NDBC buoy network",
+    "url": "https://www.ndbc.noaa.gov/",
+    "publisher": "NOAA National Data Buoy Center",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "Real-time and historical in-situ wave, wind, water-temp, salinity, and atmospheric data from anchored buoys. Use for site-adjacent conditions where a buoy exists."
+  },
+  {
+    "id": "obis-seamap",
+    "name": "OBIS-SEAMAP",
+    "url": "https://seamap.env.duke.edu/",
+    "publisher": "Duke University Marine Geospatial Ecology Lab / OBIS",
+    "sourceType": "occurrence-record",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY (per-dataset; honor individual licenses)",
+    "notes": "Marine megafauna occurrence database — cetaceans, sea turtles, seabirds, sharks. Use alongside GBIF/OBIS for high-quality megafauna sighting records."
+  },
+  {
+    "id": "happywhale",
+    "name": "Happywhale",
+    "url": "https://happywhale.com/",
+    "publisher": "Happywhale (Allied Whale / College of the Atlantic partnership)",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-05-25",
+    "license": "Free for research/non-commercial; commercial use requires permission",
+    "notes": "Photo-ID database for humpback, orca, sperm, blue, fin, and gray whales. Tracks individual animals across years — supports return-rate and seasonality claims."
+  },
+  {
+    "id": "reef-org",
+    "name": "REEF Volunteer Fish Survey",
+    "url": "https://www.reef.org/",
+    "publisher": "Reef Environmental Education Foundation",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-05-25",
+    "license": "Public data with attribution; commercial use requires permission",
+    "notes": "275,000+ diver-conducted fish surveys with standardized methodology across the Americas, Caribbean, and Pacific. Use for diver-confirmed species presence claims with effort data."
+  },
+  {
+    "id": "coralwatch",
+    "name": "CoralWatch",
+    "url": "https://www.coralwatch.org/",
+    "publisher": "University of Queensland",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY 4.0",
+    "notes": "Volunteer coral colour-chart survey program with 15+ years of bleaching observations from 100+ countries. Supports observed-bleaching claims at lower-monitoring sites."
+  },
+  {
+    "id": "ocean-tracking-network",
+    "name": "Ocean Tracking Network",
+    "url": "https://oceantrackingnetwork.org/",
+    "publisher": "Dalhousie University / OTN",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-25",
+    "license": "Open data with attribution; per-dataset restrictions may apply",
+    "notes": "Global acoustic telemetry network tracking fish, sharks, turtles, and marine mammals. Use for migratory-corridor and residence-time claims for tagged species."
+  },
+  {
+    "id": "imos-aodn",
+    "name": "IMOS / AODN",
+    "url": "https://portal.aodn.org.au/",
+    "publisher": "Integrated Marine Observing System / Australian Ocean Data Network",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY 4.0",
+    "notes": "Australian oceanographic and biological observation data — moorings, gliders, animal tagging, satellite. Authoritative for Australian and Indo-Pacific waters."
+  },
+  {
+    "id": "worms",
+    "name": "WoRMS — World Register of Marine Species",
+    "url": "https://www.marinespecies.org/",
+    "publisher": "Flanders Marine Institute (VLIZ)",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY 4.0",
+    "notes": "Authoritative taxonomic backbone for marine species names. Use when normalizing common-name → scientific-name and for conservation-status lookups."
+  },
+  {
+    "id": "fishbase",
+    "name": "FishBase",
+    "url": "https://www.fishbase.org/",
+    "publisher": "FishBase Consortium",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY-NC (research and education use)",
+    "notes": "Comprehensive fish species reference — biology, distribution, ecology, conservation. Use for species-specific depth ranges, diet, behaviour claims."
+  },
+  {
+    "id": "atlas-living-australia",
+    "name": "Atlas of Living Australia",
+    "url": "https://www.ala.org.au/",
+    "publisher": "CSIRO / GBIF Australia",
+    "sourceType": "occurrence-record",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY 4.0 (per-dataset; honor individual licenses)",
+    "notes": "Australian biodiversity aggregator with 130M+ occurrence records. Use for Great Barrier Reef and Coral Sea species claims."
+  },
+  {
+    "id": "wdpa",
+    "name": "Protected Planet (WDPA)",
+    "url": "https://www.protectedplanet.net/",
+    "publisher": "UNEP-WCMC + IUCN",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "Custom — citation required; shapefile redistribution restricted; derived statistics with attribution fine",
+    "notes": "Canonical global database of marine and terrestrial protected areas. Use to state whether a dive site sits inside an MPA / no-take zone."
+  },
+  {
+    "id": "mpatlas",
+    "name": "Marine Protection Atlas (MPAtlas)",
+    "url": "https://mpatlas.org/",
+    "publisher": "Marine Conservation Institute",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY 4.0",
+    "notes": "Protection-quality layer over WDPA — distinguishes paper-park MPAs from genuinely enforced no-take zones. Use to qualify MPA claims."
+  },
+  {
+    "id": "global-fishing-watch",
+    "name": "Global Fishing Watch",
+    "url": "https://globalfishingwatch.org/",
+    "publisher": "Global Fishing Watch (Oceana + SkyTruth + Google)",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY-SA 4.0; API requires registration",
+    "notes": "AIS-derived fishing-effort data globally at 0.1° resolution. Use to indicate fishing pressure near dive sites and to support 'sits inside / outside fishing zone' claims."
+  },
+  {
+    "id": "global-mangrove-watch",
+    "name": "Global Mangrove Watch",
+    "url": "https://www.globalmangrovewatch.org/",
+    "publisher": "JAXA + Aberystwyth University + UNEP-WCMC + Wetlands International",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY 4.0",
+    "notes": "Annual global mangrove extent and change layers since 1996 from satellite + ground truth. Use for mangrove-adjacent reef claims and habitat-decline context."
+  },
+  {
+    "id": "green-fins",
+    "name": "Green Fins",
+    "url": "https://greenfins.net/",
+    "publisher": "UNEP + Reef-World Foundation",
+    "sourceType": "editorial-curation",
+    "accessedAt": "2026-05-25",
+    "notes": "UN-endorsed directory and standards for sustainable dive operators. Use to flag verified-responsible operators in trip recommendations."
+  },
+  {
+    "id": "wri-reefs-at-risk",
+    "name": "WRI Reefs at Risk Revisited",
+    "url": "https://www.wri.org/research/reefs-risk-revisited",
+    "publisher": "World Resources Institute",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-05-25",
+    "license": "Public report with attribution",
+    "notes": "Comprehensive global reef-threat assessment combining local and global pressures. Use for regional risk framing alongside in-situ surveys."
+  },
+  {
+    "id": "ocean-health-index",
+    "name": "Ocean Health Index",
+    "url": "https://oceanhealthindex.org/",
+    "publisher": "OHI partnership (Conservation International + UCSB + NCEAS)",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-05-25",
+    "license": "CC BY 4.0",
+    "notes": "Annual composite index of ocean health by EEZ covering 10 goals (food provision, carbon storage, biodiversity, etc.). Use for country-level ocean-health context."
+  },
+  {
+    "id": "ipcc-srocc",
+    "name": "IPCC Special Report on the Ocean and Cryosphere (SROCC)",
+    "url": "https://www.ipcc.ch/srocc/",
+    "publisher": "Intergovernmental Panel on Climate Change",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-05-25",
+    "license": "Free with attribution",
+    "notes": "The peer-reviewed reference for climate impacts on the ocean. Use to frame long-horizon outlook claims with appropriate confidence levels."
   }
 ]
