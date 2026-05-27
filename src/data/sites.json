@@ -70670,5 +70670,203 @@
       }
     ],
     "notes": "Bowie Seamount is part of the SGaan Kinghlas-Bowie Seamount Marine Protected Area, requiring adherence to strict conservation guidelines. Diving here is a true expedition into a remote, pristine deep-sea environment."
+  },
+  {
+    "id": "zimbabwe-mashonaland-west-chinhoyi-caves",
+    "slug": "zimbabwe-mashanaland-west-chinhoyi-caves",
+    "locationId": "zimbabwe-mashonaland-west",
+    "name": "Chinhoyi Caves",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Chinhoyi_caves%2C_Zimbabwe.JPG",
+    "lat": -17.35,
+    "lng": 30.125,
+    "description": "A unique group of limestone and dolomite caves in north central Zimbabwe, designated a National Park. The Wonder Hole leads to the Sleeping Pool, featuring intensely blue, crystal-clear waters with over 50 meters visibility. Experienced divers explore impressive geological formations and depths exceeding 100 meters, making it a premier technical cave diving destination in Africa.",
+    "depthRange": {
+      "min": 10,
+      "max": 100
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "geology"
+    ],
+    "species": [],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 85,
+    "getThere": "The Chinhoyi Caves are located near the town of Chinhoyi, approximately 128 kilometers northwest of Harare, the capital of Zimbabwe. Access is typically via road from Harare.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Diving requires permits from the Zimbabwe Parks & Wildlife Management Authority. The deep, dark cave environment necessitates appropriate training and equipment for technical cave diving."
   }
 ]

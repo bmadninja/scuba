@@ -4599,5 +4599,34 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "zimbabwe-mashonaland-west-chinhoyi-caves-cave-fish",
+    "siteId": "zimbabwe-mashonaland-west-chinhoyi-caves",
+    "speciesCommon": "Cave fish",
+    "speciesScientific": "Unidentified",
+    "lastConfirmedAt": null,
+    "recentRecordCount": 1,
+    "proximityRadiusKm": 0,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "low",
+    "sourceIds": [],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "General presence of unspecific cave-dwelling fish is assumed due to the nature of the cave system; no specific headline species identified due to lack of external data."
   }
 ]

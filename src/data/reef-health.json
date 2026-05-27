@@ -3349,5 +3349,23 @@
       "reef-health-aims-noaa"
     ],
     "lastReviewedAt": "2024-05-25"
+  },
+  {
+    "id": "reef-health-zimbabwe-mashonaland-west-2024",
+    "locationId": "zimbabwe-mashonaland-west",
+    "observed": null,
+    "thermalStress": {
+      "asOf": "2024-06-01",
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0.0,
+      "sstAnomalyC": 0.0,
+      "sourceIds": [],
+      "notes": "Thermal stress metrics are not applicable for this freshwater cave system, which is not a coral reef."
+    },
+    "divingOutlook": "The Chinhoyi Caves offer consistent and stable conditions year-round, with crystal-clear waters and no currents. Divers can expect a unique geological experience in a freshwater cave environment.",
+    "methodologyClaimIds": [
+      "reef-health-aims-noaa"
+    ],
+    "lastReviewedAt": "2024-06-01"
   }
 ]
