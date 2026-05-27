@@ -80729,5 +80729,233 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "The wreck lies within a marine area managed as a fish sanctuary; no fishing or souvenir collecting. Depth to 27 m and cool water make this an advanced dive; penetration of the hull requires wreck training and a guide. Surface conditions in exposed Northland water can build quickly, so trips depend on weather windows."
+  },
+  {
+    "id": "arraial-do-cabo-brazil-saco-do-cardeiro",
+    "slug": "arraial-do-cabo-brazil-saco-do-cardeiro",
+    "locationId": "arraial-do-cabo-brazil",
+    "name": "Saco do Cardeiro",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cardume_Olho-de-c%C3%A3o.jpg",
+    "lat": -22.968,
+    "lng": -42.01,
+    "description": "A sheltered cove on the calm inner sea of Arraial do Cabo, the mar de dentro, where a rocky bottom slopes gently from about 6 to 11 meters under unusually clear water. Cold, plankton rich pulses from the South Atlantic upwelling feed dense schools of bigeye and other fish that drift over reef carpeted in zoanthids, gorgonians and sponges. Divers come for the resident longsnout seahorses and for a bright orange and pink soft coral, not native to Brazil, that has colonised the rocks and become a favorite subject for underwater photographers. Barracuda, green turtles, small morays and the occasional dolphin pass through. Gentle depth and protected water make this Arraial's main training and discover scuba site.",
+    "depthRange": {
+      "min": 5,
+      "max": 12
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Atlantic bigeye",
+        "scientificName": "Priacanthus arenatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Longsnout seahorse",
+        "scientificName": "Hippocampus reidi",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted moray",
+        "scientificName": "Gymnothorax moringa",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bottlenose dolphin",
+        "scientificName": "Tursiops truncatus",
+        "reliability": "rare",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          4
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 18,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm to 7mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 18,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm to 7mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 19,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm to 7mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 19,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 19,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 18,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 18,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 17,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 17,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 18,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 17,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm to 7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 17,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm to 7mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 55,
+    "getThere": "Fly into Cabo Frio Airport (CFB), about 25 minutes by road, or Rio de Janeiro Galeao (GIG), roughly 2.5 hours by car or bus. Dive boats leave the Praia dos Anjos pier in Arraial do Cabo; the cove is about a 15 minute ride into the sheltered inner sea.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Shallow, sheltered cove that operators use for discover scuba and certification dives, so expect training groups. Departures are by boat from the Praia dos Anjos pier, and the area lies within the Arraial do Cabo Marine Extractive Reserve. Water can cool sharply when upwelling drives cold water inshore, even in Brazilian summer, so carry enough exposure protection."
   }
 ]
