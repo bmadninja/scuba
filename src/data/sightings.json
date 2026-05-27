@@ -5806,5 +5806,92 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "turks-and-caicos-west-caicos-walls-reef-shark",
+    "siteId": "turks-and-caicos-west-caicos-walls",
+    "speciesCommon": "Reef Shark",
+    "speciesScientific": "Carcharhinus perezi",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Often seen patrolling the deep walls."
+  },
+  {
+    "id": "turks-and-caicos-west-caicos-walls-eagle-ray",
+    "siteId": "turks-and-caicos-west-caicos-walls",
+    "speciesCommon": "Eagle Ray",
+    "speciesScientific": "Aetobatus narinari",
+    "lastConfirmedAt": "2024-05-15",
+    "recentRecordCount": 7,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Seasonal encounters common near wall edges."
+  },
+  {
+    "id": "turks-and-caicos-west-caicos-walls-grouper",
+    "siteId": "turks-and-caicos-west-caicos-walls",
+    "speciesCommon": "Grouper",
+    "speciesScientific": "Epinephelus spp.",
+    "lastConfirmedAt": "2024-06-10",
+    "recentRecordCount": 20,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Large groupers are residents of the coral formations."
   }
 ]

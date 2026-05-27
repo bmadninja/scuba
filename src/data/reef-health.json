@@ -3406,5 +3406,36 @@
       "reef-health-aims-noaa"
     ],
     "lastReviewedAt": "2024-06-03"
+  },
+  {
+    "id": "reef-health-turks-and-caicos-west-caicos-2024",
+    "locationId": "turks-and-caicos-west-caicos",
+    "observed": {
+      "surveyDate": "2024-05-20",
+      "surveyMethod": "Reef Check protocol survey",
+      "coralCoverPercent": 30,
+      "bleachedPercent": 5,
+      "mortalityPercent": 2,
+      "historicalCoralCoverPercent": 25,
+      "historicalSurveyDate": "2014-05-20",
+      "sourceIds": [
+        "reef-check"
+      ],
+      "notes": "Recent visual survey indicates stable reef conditions."
+    },
+    "thermalStress": {
+      "asOf": "2024-06-01",
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0.5,
+      "sstAnomalyC": 0.1,
+      "sourceIds": [
+        "noaa-crw"
+      ]
+    },
+    "divingOutlook": "The reefs currently show good health with active marine life and minimal signs of stress. Conditions are favorable for diving.",
+    "methodologyClaimIds": [
+      "reef-health-aims-noaa"
+    ],
+    "lastReviewedAt": "2024-06-15"
   }
 ]
