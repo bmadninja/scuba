@@ -5893,5 +5893,87 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Large groupers are residents of the coral formations."
+  },
+  {
+    "id": "lakshadweep-india-bangaram-atoll-gst",
+    "siteId": "lakshadweep-india-bangaram-atoll",
+    "speciesCommon": "Green Sea Turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2024-05-28",
+    "recentRecordCount": 30,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "lakshadweep-india-bangaram-atoll-wrs",
+    "siteId": "lakshadweep-india-bangaram-atoll",
+    "speciesCommon": "Whitetip Reef Shark",
+    "speciesScientific": "Triaenodon obesus",
+    "lastConfirmedAt": "2024-05-28",
+    "recentRecordCount": 20,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "lakshadweep-india-bangaram-atoll-mr",
+    "siteId": "lakshadweep-india-bangaram-atoll",
+    "speciesCommon": "Manta Ray",
+    "speciesScientific": "Mobula alfredi",
+    "lastConfirmedAt": "2024-05-28",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
