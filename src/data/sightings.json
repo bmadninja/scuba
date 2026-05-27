@@ -6643,5 +6643,101 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Commonly found in Caribbean waters."
+  },
+  {
+    "id": "providencia-colombia-taganga-parrotfish",
+    "siteId": "providencia-colombia-taganga",
+    "speciesCommon": "Parrotfish",
+    "speciesScientific": "Sparisoma viride",
+    "lastConfirmedAt": "2024-07-01",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "providencia-colombia-taganga-damselfish",
+    "siteId": "providencia-colombia-taganga",
+    "speciesCommon": "Damselfish",
+    "speciesScientific": "Stegastes adustus",
+    "lastConfirmedAt": "2024-07-01",
+    "recentRecordCount": 20,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "providencia-colombia-taganga-angelfish",
+    "siteId": "providencia-colombia-taganga",
+    "speciesCommon": "Angelfish",
+    "speciesScientific": "Pomacanthus paru",
+    "lastConfirmedAt": "2024-07-01",
+    "recentRecordCount": 12,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
