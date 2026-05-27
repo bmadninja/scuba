@@ -3468,5 +3468,36 @@
       "reef-health-aims-noaa"
     ],
     "lastReviewedAt": "2024-05-20"
+  },
+  {
+    "id": "reef-health-bahamas-caribbean-2024",
+    "locationId": "bahamas-caribbean",
+    "observed": {
+      "surveyDate": "2024-07-01",
+      "surveyMethod": "Reef Check protocol survey",
+      "coralCoverPercent": 25,
+      "bleachedPercent": 5,
+      "mortalityPercent": 2,
+      "historicalCoralCoverPercent": 30,
+      "historicalSurveyDate": "2014-07-01",
+      "sourceIds": [
+        "reef-check"
+      ],
+      "notes": "Recent survey indicates moderate coral cover with some bleaching and mortality."
+    },
+    "thermalStress": {
+      "asOf": "2024-07-20",
+      "alertLevel": "watch",
+      "degreeHeatingWeeks": 1.5,
+      "sstAnomalyC": 0.5,
+      "sourceIds": [
+        "noaa-crw"
+      ]
+    },
+    "divingOutlook": "Expect to see active reef life and moderate coral health. Thermal stress is currently at a watch level, which may indicate some potential for bleaching if conditions persist.",
+    "methodologyClaimIds": [
+      "reef-health-aims-noaa"
+    ],
+    "lastReviewedAt": "2024-07-20"
   }
 ]

@@ -7079,5 +7079,101 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Can be seen camouflaged among the rocks."
+  },
+  {
+    "id": "bahamas-caribbean-ms-logna-caribbean-reef-shark",
+    "siteId": "bahamas-caribbean-ms-logna",
+    "speciesCommon": "Caribbean Reef Shark",
+    "speciesScientific": "Carcharhinus perezi",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "bahamas-caribbean-ms-logna-barracuda",
+    "siteId": "bahamas-caribbean-ms-logna",
+    "speciesCommon": "Barracuda",
+    "speciesScientific": "Sphyraena barracuda",
+    "lastConfirmedAt": "2024-05-15",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "bahamas-caribbean-ms-logna-grouper",
+    "siteId": "bahamas-caribbean-ms-logna",
+    "speciesCommon": "Grouper",
+    "speciesScientific": "Epinephelus spp.",
+    "lastConfirmedAt": "2024-05-01",
+    "recentRecordCount": 20,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
