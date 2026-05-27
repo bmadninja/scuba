@@ -4988,5 +4988,98 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "united-kingdom-scapa-flow-sms-markgraf-atlantic-cod",
+    "siteId": "united-kingdom-scapa-flow-sms-markgraf",
+    "speciesCommon": "Atlantic Cod",
+    "speciesScientific": "Gadus morhua",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "united-kingdom-scapa-flow-sms-markgraf-pollack",
+    "siteId": "united-kingdom-scapa-flow-sms-markgraf",
+    "speciesCommon": "Pollack",
+    "speciesScientific": "Pollachius pollachius",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "united-kingdom-scapa-flow-sms-markgraf-european-lobster",
+    "siteId": "united-kingdom-scapa-flow-sms-markgraf",
+    "speciesCommon": "European Lobster",
+    "speciesScientific": "Homarus gammarus",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]

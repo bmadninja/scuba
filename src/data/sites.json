@@ -72266,5 +72266,253 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Strong currents and cold water are typical. Advanced wreck diving experience and appropriate technical diving certifications are essential. Permits may be required for diving this protected historical site."
+  },
+  {
+    "id": "united-kingdom-scapa-flow-sms-markgraf",
+    "slug": "united-kingdom-scapa-flow-sms-markgraf",
+    "locationId": "united-kingdom-scapa-flow",
+    "name": "SMS Markgraf",
+    "heroImageUrl": null,
+    "lat": 58.887,
+    "lng": -3.125,
+    "description": "The SMS Markgraf, a German K\u00f6nig-class battleship, was scuttled in Gutter Sound, Scapa Flow, on 21 June 1919 as part of the scuttling of the German High Seas Fleet. Lying inverted on the seabed, this historic wreck offers a challenging dive into a significant piece of World War I naval history. Divers can explore its massive structure, including the distinctive propeller shafts and barbettes, now home to cold-water marine life.",
+    "depthRange": {
+      "min": 25,
+      "max": 45
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Atlantic Cod",
+        "scientificName": "Gadus morhua",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Pollack",
+        "scientificName": "Pollachius pollachius",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "European Lobster",
+        "scientificName": "Homarus gammarus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 6,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 6,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 7,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 7,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 6,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 85,
+    "getThere": "Fly to Kirkwall Airport (KOI) on the Orkney Islands, then arrange transport to your dive operator. Ferry services also run from mainland Scotland to Orkney. Dive boat charters operate directly to the wrecks in Scapa Flow.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Scapa Flow diving requires experience with cold-water wreck diving. Strong currents can occur, especially around tidal windows. Permits may be required for certain dive sites."
   }
 ]

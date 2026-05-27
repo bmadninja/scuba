@@ -3387,5 +3387,24 @@
       "reef-health-aims-noaa"
     ],
     "lastReviewedAt": "2024-05-24"
+  },
+  {
+    "id": "reef-health-united-kingdom-scapa-flow-2024",
+    "locationId": "united-kingdom-scapa-flow",
+    "observed": null,
+    "thermalStress": {
+      "asOf": "2024-06-03",
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0.0,
+      "sstAnomalyC": 0.0,
+      "sourceIds": [
+        "noaa-crw"
+      ]
+    },
+    "divingOutlook": "Scapa Flow offers unique historical wreck diving in cold, temperate waters. Marine life, though not tropical, is abundant on the wrecks. Visibility is variable but can be excellent, especially in summer months.",
+    "methodologyClaimIds": [
+      "reef-health-aims-noaa"
+    ],
+    "lastReviewedAt": "2024-06-03"
   }
 ]
