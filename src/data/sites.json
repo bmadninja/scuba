@@ -79706,5 +79706,233 @@
       }
     ],
     "notes": "This is a night dive: bring a primary and backup light, though operators supply the bottom lights that draw the plankton. The dive is shallow and stationary, so divers get cold quickly. Touching mantas is prohibited and strips their protective mucus; stay low, keep your arms in, and let them pass over you. Garden Eel Cove off the airport is the more sheltered choice in summer, while Keauhou Bay can be exposed to south swell."
+  },
+  {
+    "id": "daymaniyat-oman-garden-of-eden",
+    "slug": "daymaniyat-oman-garden-of-eden",
+    "locationId": "daymaniyat-oman",
+    "name": "Garden of Eden",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Tortuga_carey_%28Eretmochelys_imbricata%29%2C_islas_Ad_Dimaniyat%2C_Om%C3%A1n%2C_2024-08-13%2C_DD_69.jpg",
+    "lat": 23.866,
+    "lng": 58.105,
+    "description": "A wall and coral plateau off the western tip of Qesmah, one of the nine Daymaniyat islands scattered 70 km off Muscat. Boulders and blocks spangled with orange, purple and yellow soft corals drop from a 12 m shelf to sand near 23 m. Green and hawksbill turtles graze the plateau, which sits inside a reserve set aside in 1996 to protect their nesting beaches, and whale sharks cruise through on the late summer plankton bloom.",
+    "depthRange": {
+      "min": 10,
+      "max": 24
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Honeycomb moray",
+        "scientificName": "Gymnothorax favagineus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus ocellatus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly into Muscat International (MCT), Oman's main hub with direct links across Europe, Asia and the Gulf. Dive boats run out to the islands in about 60 to 90 minutes from marinas just north of the city, such as Al Mouj and Seeb.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "The Daymaniyat Islands are a protected nature reserve. Landing is closed during turtle and seabird nesting season (roughly May to October), and all diving must be booked through licensed Muscat operators. Carry an SMB for boat traffic inside the reserve."
   }
 ]
