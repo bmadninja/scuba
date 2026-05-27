@@ -6263,5 +6263,90 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "lakshadweep-india-kadmat-island-green-turtle",
+    "siteId": "lakshadweep-india-kadmat-island",
+    "speciesCommon": "Green Sea Turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "lakshadweep-india-kadmat-island-reef-shark",
+    "siteId": "lakshadweep-india-kadmat-island",
+    "speciesCommon": "Reef Shark",
+    "speciesScientific": "Carcharhinus melanopterus",
+    "lastConfirmedAt": "2024-04-10",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Commonly sighted around healthy reef channels."
+  },
+  {
+    "id": "lakshadweep-india-kadmat-island-napoleon-wrasse",
+    "siteId": "lakshadweep-india-kadmat-island",
+    "speciesCommon": "Napoleon Wrasse",
+    "speciesScientific": "Cheilinus undulatus",
+    "lastConfirmedAt": "2024-03-25",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
