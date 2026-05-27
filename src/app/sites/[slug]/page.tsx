@@ -11,6 +11,12 @@ import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
+import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
+import { getFishingPressureForLocation } from "@/lib/data/fishing-pressure";
+import { CoralCoverPanel } from "@/components/coral-cover-panel";
+import { FishingPressurePanel } from "@/components/fishing-pressure-panel";
+import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
+import { IucnBadge } from "@/components/iucn-badge";
 import { getGearById } from "@/lib/data/gear";
 import {
   formatLastConfirmed,
@@ -121,6 +127,12 @@ export default async function SiteDetailPage({
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
   const heroUrl = underwaterPhotoUrl(site.heroImageUrl);
+  const coralCover = location
+    ? getCoralCoverForLocation(location.id)
+    : null;
+  const fishingPressure = location
+    ? getFishingPressureForLocation(location.id)
+    : null;
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -218,30 +230,53 @@ export default async function SiteDetailPage({
             kicker={`${site.species.length} species curated`}
           >
             <ul className="grid gap-2 sm:grid-cols-2">
-              {site.species.map((s) => (
-                <li
-                  key={s.commonName}
-                  className="rounded-xl border border-slate-200 bg-white p-4 transition hover:border-[#0089de]/40 hover:shadow-sm"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <div className="font-semibold text-slate-900">{s.commonName}</div>
+              {site.species.map((s) => {
+                const iucn =
+                  IUCN_ENABLED ? getIucnStatus(s.scientificName) : null;
+                return (
+                  <li
+                    key={s.commonName}
+                    className="rounded-xl border border-slate-200 bg-white p-4 transition hover:border-[#0089de]/40 hover:shadow-sm"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <div className="font-semibold text-slate-900">{s.commonName}</div>
+                      </div>
+                      <span
+                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset ${RELIABILITY_COLOR[s.reliability]}`}
+                      >
+                        {s.reliability}
+                      </span>
                     </div>
-                    <span
-                      className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset ${RELIABILITY_COLOR[s.reliability]}`}
-                    >
-                      {s.reliability}
-                    </span>
-                  </div>
-                  {s.bestMonths && s.bestMonths.length > 0 ? (
-                    <div className="mt-2 text-[11px] text-slate-500">
-                      Peak: {s.bestMonths.map((m) => MONTHS[m - 1]).join(" · ")}
-                    </div>
-                  ) : null}
-                </li>
-              ))}
+                    {iucn ? (
+                      <div className="mt-2">
+                        <IucnBadge status={iucn} />
+                      </div>
+                    ) : null}
+                    {s.bestMonths && s.bestMonths.length > 0 ? (
+                      <div className="mt-2 text-[11px] text-slate-500">
+                        Peak: {s.bestMonths.map((m) => MONTHS[m - 1]).join(" · ")}
+                      </div>
+                    ) : null}
+                  </li>
+                );
+              })}
             </ul>
           </Section>
+
+          {coralCover || fishingPressure ? (
+            <Section
+              title="Reef data for this area"
+              kicker="Jurisdiction-level snapshots"
+            >
+              <div className="space-y-4">
+                {coralCover ? <CoralCoverPanel snapshot={coralCover} /> : null}
+                {fishingPressure ? (
+                  <FishingPressurePanel record={fishingPressure} />
+                ) : null}
+              </div>
+            </Section>
+          ) : null}
 
           {sightings.length > 0 ? (
             <Section

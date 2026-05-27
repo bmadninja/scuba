@@ -11,6 +11,8 @@ import {
 import { getLocationById } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
+import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
+import { IucnBadge, IucnAttribution } from "@/components/iucn-badge";
 
 const MONTH_ABBR = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -148,6 +150,19 @@ export default async function SpeciesLandingPage({
             ) : null}
           </p>
         ) : null}
+
+        {IUCN_ENABLED && e.speciesScientific
+          ? (() => {
+              const status = getIucnStatus(e.speciesScientific);
+              if (!status) return null;
+              return (
+                <div className="mt-4">
+                  <IucnBadge status={status} />
+                  <IucnAttribution />
+                </div>
+              );
+            })()
+          : null}
 
         <p className="mt-6 text-base leading-7 text-slate-700">
           {e.shortDescription}

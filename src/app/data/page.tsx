@@ -119,11 +119,54 @@ export default function DataPage() {
             What&rsquo;s a snapshot
           </h2>
           <p className="mt-3 text-base leading-7 text-slate-700">
-            Coral cover, bleaching %, and historical baselines come from
-            in water surveys done by reef monitoring programs. They&rsquo;re
-            not updated continuously. The freshness varies by region — and
-            that variance is itself a fact worth knowing before you read the
-            number.
+            Coral cover, bleaching %, fishing pressure, and historical
+            baselines come from periodic data products — not continuous
+            feeds. The freshness varies by region — and that variance is
+            itself a fact worth knowing before you read the number.
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-900">
+                NCRMP + AGRRA · coral cover
+              </p>
+              <p className="mt-2 text-[13px] leading-6 text-slate-800">
+                Jurisdiction-mean coral cover from NOAA&rsquo;s National
+                Coral Reef Monitoring Program (US Atlantic + Pacific) and
+                AGRRA (wider Caribbean). Reported at the jurisdiction
+                scale, not the single dive site. Refreshed when a new
+                biennial report is published.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-900">
+                Global Fishing Watch · visible fishing
+              </p>
+              <p className="mt-2 text-[13px] leading-6 text-slate-800">
+                Apparent fishing-effort hours within 50&nbsp;km of a dive
+                location, AIS-derived. Small artisanal boats and any
+                vessel running dark are not visible to GFW — a low number
+                is not evidence of low pressure in artisanal-dominated
+                regions.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-900">
+                IUCN Red List · species threat category
+              </p>
+              <p className="mt-2 text-[13px] leading-6 text-slate-800">
+                Each species page shows the current IUCN category
+                (Critically Endangered, Endangered, Vulnerable, etc.) with
+                population trend and last-assessed year. The category is a{" "}
+                <strong>global</strong> extinction-risk classification —
+                local abundance at a dive site can be very different.
+              </p>
+            </div>
+          </div>
+          <p className="mt-5 text-base leading-7 text-slate-700">
+            And alongside the published programs above, per-site coral
+            cover snapshots from AIMS LTMP / Reef Life Survey / GBRMPA Eye
+            on the Reef remain the historical baseline for our older
+            reef-health records. Their freshness varies by region:
           </p>
           <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200">
             <table className="w-full text-left text-[13.5px]">
@@ -172,6 +215,25 @@ export default function DataPage() {
             at site scale:
           </p>
           <ul className="mt-4 ml-5 list-disc space-y-2 text-[14px] leading-6 text-slate-700">
+            <li>
+              <strong>Artisanal fishing pressure</strong> in regions where
+              small boats don&rsquo;t broadcast AIS. GFW only sees vessels
+              on AIS, so the visible-fishing number can be near zero in
+              places that are actually heavily fished.
+            </li>
+            <li>
+              <strong>Site-level coral cover outside named jurisdictions</strong>{" "}
+              — NCRMP covers US territories, AGRRA covers the Caribbean,
+              AIMS covers the GBR. The Indo-Pacific outside Australia, and
+              most of the Western Indian Ocean, has no equivalent
+              published mean.
+            </li>
+            <li>
+              <strong>Local population status</strong> for a species at a
+              specific reef — IUCN categories are global. A Critically
+              Endangered species can still be locally abundant where
+              there&rsquo;s protection (and vice versa).
+            </li>
             <li>
               <strong>Water clarity / turbidity</strong> at site resolution
               — global satellite products exist but don&rsquo;t resolve a

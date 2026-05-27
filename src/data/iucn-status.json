@@ -1,0 +1,149 @@
+{
+  "_comment": "IUCN Red List status keyed by scientific name (lowercased). Seeded from the public IUCN Red List website (https://www.iucnredlist.org/) and refreshable via scripts/fetch-iucn-status.mjs when IUCN_API_KEY is set. Categories: EX, EW, CR (Critically Endangered), EN (Endangered), VU (Vulnerable), NT (Near Threatened), LC (Least Concern), DD (Data Deficient), NE (Not Evaluated).",
+  "lastBuiltAt": "2026-05-27",
+  "records": [
+    {
+      "scientificName": "sardinops sagax",
+      "commonName": "South African pilchard",
+      "category": "LC",
+      "categoryLabel": "Least Concern",
+      "populationTrend": "unknown",
+      "lastAssessedYear": 2017,
+      "assessmentUrl": "https://www.iucnredlist.org/species/183370/82850861",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "carcharodon carcharias",
+      "commonName": "Great white shark",
+      "category": "VU",
+      "categoryLabel": "Vulnerable",
+      "populationTrend": "unknown",
+      "lastAssessedYear": 2018,
+      "assessmentUrl": "https://www.iucnredlist.org/species/3855/212629880",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "sphyrna lewini",
+      "commonName": "Scalloped hammerhead",
+      "category": "CR",
+      "categoryLabel": "Critically Endangered",
+      "populationTrend": "decreasing",
+      "lastAssessedYear": 2018,
+      "assessmentUrl": "https://www.iucnredlist.org/species/39385/2918526",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "rhincodon typus",
+      "commonName": "Whale shark",
+      "category": "EN",
+      "categoryLabel": "Endangered",
+      "populationTrend": "decreasing",
+      "lastAssessedYear": 2016,
+      "assessmentUrl": "https://www.iucnredlist.org/species/19488/2365291",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "mobula alfredi",
+      "commonName": "Reef manta ray",
+      "category": "VU",
+      "categoryLabel": "Vulnerable",
+      "populationTrend": "decreasing",
+      "lastAssessedYear": 2019,
+      "assessmentUrl": "https://www.iucnredlist.org/species/195459/214395983",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "mobula birostris",
+      "commonName": "Oceanic manta ray",
+      "category": "EN",
+      "categoryLabel": "Endangered",
+      "populationTrend": "decreasing",
+      "lastAssessedYear": 2019,
+      "assessmentUrl": "https://www.iucnredlist.org/species/198921/214397182",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "alopias pelagicus",
+      "commonName": "Pelagic thresher",
+      "category": "EN",
+      "categoryLabel": "Endangered",
+      "populationTrend": "decreasing",
+      "lastAssessedYear": 2018,
+      "assessmentUrl": "https://www.iucnredlist.org/species/161597/894883",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "mobula munkiana",
+      "commonName": "Munk's devil ray",
+      "category": "VU",
+      "categoryLabel": "Vulnerable",
+      "populationTrend": "decreasing",
+      "lastAssessedYear": 2019,
+      "assessmentUrl": "https://www.iucnredlist.org/species/60198/100016302",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "synchiropus splendidus",
+      "commonName": "Mandarinfish",
+      "category": "LC",
+      "categoryLabel": "Least Concern",
+      "populationTrend": "unknown",
+      "lastAssessedYear": 2009,
+      "assessmentUrl": "https://www.iucnredlist.org/species/155336/4769339",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "sepia apama",
+      "commonName": "Giant Australian cuttlefish",
+      "category": "NT",
+      "categoryLabel": "Near Threatened",
+      "populationTrend": "unknown",
+      "lastAssessedYear": 2012,
+      "assessmentUrl": "https://www.iucnredlist.org/species/162627/939816",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "carcharhinus melanopterus",
+      "commonName": "Blacktip reef shark",
+      "category": "VU",
+      "categoryLabel": "Vulnerable",
+      "populationTrend": "decreasing",
+      "lastAssessedYear": 2020,
+      "assessmentUrl": "https://www.iucnredlist.org/species/39375/58303674",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "eucrossorhinus dasypogon",
+      "commonName": "Tasselled wobbegong",
+      "category": "NT",
+      "categoryLabel": "Near Threatened",
+      "populationTrend": "stable",
+      "lastAssessedYear": 2015,
+      "assessmentUrl": "https://www.iucnredlist.org/species/41873/68638667",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    },
+    {
+      "scientificName": "cheilinus undulatus",
+      "commonName": "Napoleon wrasse",
+      "category": "EN",
+      "categoryLabel": "Endangered",
+      "populationTrend": "decreasing",
+      "lastAssessedYear": 2020,
+      "assessmentUrl": "https://www.iucnredlist.org/species/4592/11023949",
+      "source": "iucn-red-list",
+      "fetchedAt": "2026-05-27T00:00:00Z"
+    }
+  ]
+}

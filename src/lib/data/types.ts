@@ -505,6 +505,71 @@ export type ReefHealthRecord = {
   lastReviewedAt: string;
 };
 
+/**
+ * Jurisdiction-level coral cover snapshot from NOAA NCRMP (US Atlantic +
+ * Pacific) or AGRRA (wider Caribbean). Stored per jurisdiction, not per
+ * dive site — published reports are at jurisdiction/domain resolution.
+ * Joined to dive sites/locations via the `appliesTo` list.
+ */
+export type CoralCoverSnapshot = {
+  id: string;
+  label: string;
+  program: "NOAA NCRMP" | "AGRRA" | "NOAA Pacific NCRMP";
+  programUrl: string;
+  method: string;
+  current: { year: number; coverPercent: number };
+  historical?: { year: number; coverPercent: number };
+  sourceUrl: string;
+  sourceLabel: string;
+  notes?: string;
+  appliesTo: string[];
+};
+
+export type CoralCoverData = {
+  lastBuiltAt: string;
+  jurisdictions: CoralCoverSnapshot[];
+};
+
+/**
+ * Apparent fishing-effort summary from Global Fishing Watch, computed
+ * within a fixed radius of a dive site or location. Numbers are in
+ * AIS-detected fishing hours — small artisanal boats not broadcasting
+ * AIS are not visible to GFW. Stored per location.
+ */
+export type FishingPressureRecord = {
+  locationId: string;
+  radiusKm: number;
+  current: { year: number; fishingHours: number };
+  historical?: { year: number; fishingHours: number };
+  fetchedAt: string;
+  source: "global-fishing-watch";
+};
+
+/**
+ * IUCN Red List status for a species, keyed by scientific (binomial)
+ * name. Lower-cased for lookup.
+ */
+export type IucnStatus = {
+  scientificName: string;
+  commonName?: string;
+  category:
+    | "EX"
+    | "EW"
+    | "CR"
+    | "EN"
+    | "VU"
+    | "NT"
+    | "LC"
+    | "DD"
+    | "NE";
+  categoryLabel: string;
+  populationTrend?: "increasing" | "decreasing" | "stable" | "unknown";
+  lastAssessedYear?: number;
+  assessmentUrl?: string;
+  source: "iucn-red-list";
+  fetchedAt: string;
+};
+
 export type FlightHub =
   | "us-west"
   | "us-east"

@@ -14,6 +14,10 @@ import { getAllGear, getGearById } from "@/lib/data/gear";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getWaterQualityByLocationId } from "@/lib/data/water-quality";
+import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
+import { getFishingPressureForLocation } from "@/lib/data/fishing-pressure";
+import { CoralCoverPanel } from "@/components/coral-cover-panel";
+import { FishingPressurePanel } from "@/components/fishing-pressure-panel";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import { DataFreshnessLabel } from "@/components/data-freshness-label";
@@ -105,6 +109,8 @@ export default async function LocationPage({
   const reefHealth = getReefHealthByLocationId(location.id)[0] ?? null;
   const reefPressure = getReefPressureByLocationId(location.id);
   const waterQuality = getWaterQualityByLocationId(location.id);
+  const coralCover = getCoralCoverForLocation(location.id);
+  const fishingPressure = getFishingPressureForLocation(location.id);
   const details = getLocationDetailsById(location.id);
   const bestMonthsSet = new Set(location.bestMonths);
 
@@ -200,6 +206,12 @@ export default async function LocationPage({
             ) : (
               <UnknownReefHealthPanel />
             )}
+
+            {coralCover ? <CoralCoverPanel snapshot={coralCover} /> : null}
+
+            {fishingPressure ? (
+              <FishingPressurePanel record={fishingPressure} />
+            ) : null}
 
             {reefPressure ? <ReefPressurePanel record={reefPressure} /> : null}
 
