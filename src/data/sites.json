@@ -71557,5 +71557,243 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Strict permits and specialized technical diving certification required. Diving is typically conducted with authorized exploration teams."
+  },
+  {
+    "id": "andes-peru-lake-titicaca",
+    "slug": "andes-peru-lake-titicaca",
+    "locationId": "andes-peru",
+    "name": "Lake Titicaca",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Amanecer_en_el_lago_Titicaca%2C_Puno%2C_Per%C3%BA%2C_2015-08-01%2C_DD_01.JPG",
+    "lat": -15.75,
+    "lng": -69.4167,
+    "description": "Dive the frigid, high-altitude waters of Lake Titicaca, the world's highest navigable lake, straddling the border of Peru and Bolivia. Explore submerged Inca ruins and encounter unique endemic species like the giant Titicaca water frog. The clear, cold waters offer a distinct freshwater diving experience unlike any other.",
+    "depthRange": {
+      "min": 5,
+      "max": 20
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Titicaca water frog",
+        "scientificName": "Telmatobius culeus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Rainbow trout",
+        "scientificName": "Oncorhynchus mykiss",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 10,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or 7mm+ wetsuit with hood and gloves"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 70,
+    "getThere": "Fly into Juliaca (JUL) in Peru or El Alto (LPB) in Bolivia. Buses and shared taxis connect to Puno (Peru) or Copacabana (Bolivia) on the lake shore.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Diving at high altitude requires specialized training and acclimatization. Consult with local dive operators for specific safety protocols. Permits may be required for certain dive sites."
   }
 ]

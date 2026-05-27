@@ -3367,5 +3367,25 @@
       "reef-health-aims-noaa"
     ],
     "lastReviewedAt": "2024-06-01"
+  },
+  {
+    "id": "reef-health-andes-peru-2024",
+    "locationId": "andes-peru",
+    "observed": {
+      "surveyDate": "2024-05-24",
+      "surveyMethod": "Visual observation - freshwater lake",
+      "coralCoverPercent": 0,
+      "bleachedPercent": 0,
+      "mortalityPercent": 0,
+      "historicalCoralCoverPercent": 0,
+      "historicalSurveyDate": "2000-01-01",
+      "sourceIds": [],
+      "notes": "No coral reefs present in this high-altitude freshwater lake. Observed general lake conditions."
+    },
+    "divingOutlook": "Diving in Lake Titicaca is characterized by clear, cold freshwater. Divers can expect unique geological features and endemic aquatic life, but no coral reefs.",
+    "methodologyClaimIds": [
+      "reef-health-aims-noaa"
+    ],
+    "lastReviewedAt": "2024-05-24"
   }
 ]
