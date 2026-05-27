@@ -3359,7 +3359,9 @@
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0.0,
       "sstAnomalyC": 0.0,
-      "sourceIds": [],
+      "sourceIds": [
+        "editorial-curation"
+      ],
       "notes": "Thermal stress metrics are not applicable for this freshwater cave system, which is not a coral reef."
     },
     "divingOutlook": "The Chinhoyi Caves offer consistent and stable conditions year-round, with crystal-clear waters and no currents. Divers can expect a unique geological experience in a freshwater cave environment.",
@@ -3379,7 +3381,9 @@
       "mortalityPercent": 0,
       "historicalCoralCoverPercent": 0,
       "historicalSurveyDate": "2000-01-01",
-      "sourceIds": [],
+      "sourceIds": [
+        "editorial-curation"
+      ],
       "notes": "No coral reefs present in this high-altitude freshwater lake. Observed general lake conditions."
     },
     "divingOutlook": "Diving in Lake Titicaca is characterized by clear, cold freshwater. Divers can expect unique geological features and endemic aquatic life, but no coral reefs.",

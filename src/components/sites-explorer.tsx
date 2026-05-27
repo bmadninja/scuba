@@ -80,7 +80,10 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
 
   const query = params.get("q") ?? "";
   const skill = (params.get("cert") as SkillLevel | null) ?? "";
-  const diveTypes = (params.get("types")?.split(",").filter(Boolean) ?? []) as DiveType[];
+  const diveTypes = useMemo(
+    () => (params.get("types")?.split(",").filter(Boolean) ?? []) as DiveType[],
+    [params],
+  );
   const month = params.get("month") ? Number(params.get("month")) : null;
   const encounterSlug = params.get("encounter") ?? "";
   const climate = (params.get("climate") as ClimateFilter | null) ?? "";
@@ -103,7 +106,10 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
     setParam("types", next.length ? next.join(",") : null);
   };
 
-  const selectedEncounter = ENCOUNTERS.find((e) => e.slug === encounterSlug);
+  const selectedEncounter = useMemo(
+    () => ENCOUNTERS.find((e) => e.slug === encounterSlug),
+    [encounterSlug],
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();

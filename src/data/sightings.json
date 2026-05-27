@@ -4623,7 +4623,9 @@
       12
     ],
     "confidence": "low",
-    "sourceIds": [],
+    "sourceIds": [
+      "editorial-curation"
+    ],
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ],
@@ -6846,7 +6848,9 @@
     "proximityRadiusKm": 0,
     "seasonalityMonths": [],
     "confidence": "low",
-    "sourceIds": [],
+    "sourceIds": [
+      "editorial-curation"
+    ],
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ],

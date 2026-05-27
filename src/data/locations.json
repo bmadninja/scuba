@@ -2267,5 +2267,175 @@
       11
     ],
     "siteIds": []
+  },
+  {
+    "id": "bikini-marshall-islands",
+    "slug": "bikini-marshall-islands",
+    "name": "Bikini Atoll",
+    "country": "Marshall Islands",
+    "region": "Micronesia",
+    "countryCode": "MH",
+    "lat": 11.617,
+    "lng": 165.483,
+    "description": "Remote WWII wreck diving in a Pacific atoll lagoon, home to the ghost fleet sunk during the 1946 Operation Crossroads nuclear tests.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "siteIds": [
+      "bikini-marshall-islands-japanese-cruiser-sakawa"
+    ]
+  },
+  {
+    "id": "pacific-canada",
+    "slug": "pacific-canada",
+    "name": "Bowie Seamount",
+    "country": "Canada",
+    "region": "Eastern Pacific",
+    "countryCode": "CA",
+    "lat": 53.306925,
+    "lng": -135.6592306,
+    "description": "A remote submarine volcano in the northeastern Pacific, 180 km west of Haida Gwaii and a Canadian Marine Protected Area, with cold, nutrient-rich water and one of the shallowest seamount summits in the world.",
+    "bestMonths": [
+      7,
+      8,
+      9
+    ],
+    "siteIds": [
+      "pacific-canada-bowie-seamount"
+    ]
+  },
+  {
+    "id": "zimbabwe-mashonaland-west",
+    "slug": "zimbabwe-mashonaland-west",
+    "name": "Chinhoyi Caves",
+    "country": "Zimbabwe",
+    "region": "Southern Africa",
+    "countryCode": "ZW",
+    "lat": -17.35,
+    "lng": 30.125,
+    "description": "A national park of limestone and dolomite caves in northern Zimbabwe, where the Wonder Hole opens into clear, still, cobalt-blue freshwater pools.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "siteIds": [
+      "zimbabwe-mashonaland-west-chinhoyi-caves"
+    ]
+  },
+  {
+    "id": "andes-peru",
+    "slug": "andes-peru",
+    "name": "Lake Titicaca",
+    "country": "Peru",
+    "region": "Andes",
+    "countryCode": "PE",
+    "lat": -15.75,
+    "lng": -69.4167,
+    "description": "The world's highest navigable lake, straddling the Peru-Bolivia border at 3,800 m, offering frigid high-altitude freshwater diving over submerged terraces and ruins.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "siteIds": [
+      "andes-peru-lake-titicaca"
+    ]
+  },
+  {
+    "id": "united-kingdom-scapa-flow",
+    "slug": "united-kingdom-scapa-flow",
+    "name": "Scapa Flow",
+    "country": "United Kingdom",
+    "region": "Orkney Islands",
+    "countryCode": "GB",
+    "lat": 58.887,
+    "lng": -3.125,
+    "description": "Sheltered Orkney waters holding the scuttled WWI German High Seas Fleet, the premier cold-water wreck-diving destination in the British Isles.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "siteIds": [
+      "united-kingdom-scapa-flow-sms-markgraf"
+    ]
+  },
+  {
+    "id": "turks-and-caicos-west-caicos",
+    "slug": "turks-and-caicos-west-caicos",
+    "name": "West Caicos",
+    "country": "Turks and Caicos Islands",
+    "region": "Caribbean",
+    "countryCode": "TC",
+    "lat": 21.64,
+    "lng": -72.48,
+    "description": "An uninhabited island on the western edge of the Caicos Bank, fringed by dramatic vertical reef walls that drop into deep blue water.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "siteIds": [
+      "turks-and-caicos-west-caicos-walls"
+    ]
+  },
+  {
+    "id": "bahamas-caribbean",
+    "slug": "bahamas-caribbean",
+    "name": "Bahamas",
+    "country": "Bahamas",
+    "region": "Caribbean",
+    "countryCode": "BS",
+    "lat": 25,
+    "lng": -77.4,
+    "description": "Warm Atlantic waters spread across hundreds of islands and cays, known for wrecks, reef walls, blue holes and reliable shark encounters.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "siteIds": [
+      "bahamas-caribbean-ms-logna"
+    ]
   }
 ]

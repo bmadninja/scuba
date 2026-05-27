@@ -213,7 +213,7 @@ function Plan({
 
   // Cost math
   let total: CostRange | null = null;
-  let breakdown: { label: string; range: CostRange; sub?: string }[] = [];
+  const breakdown: { label: string; range: CostRange; sub?: string }[] = [];
   if (cost) {
     const flight = cost.flightUsdFromHub[hub];
     const lodgingPerNight = cost.perNightLodgingUsd[tier];
