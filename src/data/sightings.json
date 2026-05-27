@@ -6739,5 +6739,101 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "gozo-malta-blue-hole-gozo-octopus",
+    "siteId": "gozo-malta-blue-hole-gozo",
+    "speciesCommon": "Common Octopus",
+    "speciesScientific": "Octopus vulgaris",
+    "lastConfirmedAt": "2024-05-01",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "gozo-malta-blue-hole-gozo-moray-eel",
+    "siteId": "gozo-malta-blue-hole-gozo",
+    "speciesCommon": "Moray Eel",
+    "speciesScientific": "Muraena helena",
+    "lastConfirmedAt": "2024-04-15",
+    "recentRecordCount": 6,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "gozo-malta-blue-hole-gozo-dusky-grouper",
+    "siteId": "gozo-malta-blue-hole-gozo",
+    "speciesCommon": "Dusky Grouper",
+    "speciesScientific": "Epinephelus marginatus",
+    "lastConfirmedAt": "2024-04-20",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
