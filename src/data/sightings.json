@@ -5649,5 +5649,81 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-ross-sea-adelie-penguin",
+    "siteId": "ari-atoll-maldives-ross-sea",
+    "speciesCommon": "Ad\u00e9lie Penguin",
+    "speciesScientific": "Pygoscelis adeliae",
+    "lastConfirmedAt": null,
+    "recentRecordCount": 0,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Assumed presence and seasonality based on general knowledge of Ad\u00e9lie penguin distribution in the Ross Sea."
+  },
+  {
+    "id": "ari-atoll-maldives-ross-sea-weddell-seal",
+    "siteId": "ari-atoll-maldives-ross-sea",
+    "speciesCommon": "Weddell Seal",
+    "speciesScientific": "Leptonychotes weddellii",
+    "lastConfirmedAt": null,
+    "recentRecordCount": 0,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Assumed presence and year-round seasonality based on general knowledge of Weddell seal distribution in the Ross Sea."
+  },
+  {
+    "id": "ari-atoll-maldives-ross-sea-antarctic-toothfish",
+    "siteId": "ari-atoll-maldives-ross-sea",
+    "speciesCommon": "Antarctic Toothfish",
+    "speciesScientific": "Dissostichus mawsoni",
+    "lastConfirmedAt": null,
+    "recentRecordCount": 0,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Assumed presence based on its known role in the Ross Sea ecosystem. Seasonality not specified for diving encounters."
   }
 ]

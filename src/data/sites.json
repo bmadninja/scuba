@@ -74317,5 +74317,229 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-ross-sea",
+    "slug": "ari-atoll-maldives-ross-sea",
+    "locationId": "ari-atoll-maldives",
+    "name": "Ross Sea",
+    "heroImageUrl": null,
+    "lat": -77.5,
+    "lng": 175.0,
+    "description": "The Ross Sea, a deep bay in the Southern Ocean, offers a unique and challenging polar diving experience. Divers encounter a pristine underwater wilderness defined by towering ice formations, nutrient-rich waters supporting abundant marine life, and extreme cold. It's a realm of incredible biodiversity and a vital ecosystem.",
+    "depthRange": {
+      "min": 5,
+      "max": 50
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "large-pelagics",
+      "macro",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Ad\u00e9lie Penguin",
+        "scientificName": "Pygoscelis adeliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Weddell Seal",
+        "scientificName": "Leptonychotes weddellii",
+        "reliability": "year-round",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Antarctic Toothfish",
+        "scientificName": "Dissostichus mawsoni",
+        "reliability": "year-round",
+        "bestMonths": []
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": -1,
+          "max": 2
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit with thick undergarments"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 90,
+    "getThere": "Expedition cruise or scientific vessel from Ushuaia, Argentina or Christchurch, New Zealand.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Extreme cold water diving requires specialized training and equipment. Access is typically via scientific expeditions or specialized polar diving liveaboards during the austral summer."
   }
 ]
