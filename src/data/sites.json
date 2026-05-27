@@ -81191,5 +81191,321 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Boat dive on an open reef with moderate current, so it suits divers comfortable with mild drift. Several wrecks lie on Abu Madafi besides the Boiler Wreck, including the Old Coaster and the Pipe Wreck, and the reef is riddled with caves and passages that reward good buoyancy and a torch. Coordinates are approximate for an offshore reef reached by boat from Obhur. Diving in Saudi Arabia is arranged through licensed local operators."
+  },
+  {
+    "id": "komodo-crystal-rock",
+    "slug": "komodo-crystal-rock",
+    "locationId": "komodo-national-park-indonesia",
+    "name": "Crystal Rock",
+    "heroImageUrl": null,
+    "lat": -8.386,
+    "lng": 119.587,
+    "description": "A current swept pinnacle in the far north of Komodo National Park, 300 m from Castle Rock, rising from open water to break the surface at low tide. A submerged spur falls away to a saddle near 20 m, its walls stacked with giant sea fans, barrel sponges, and soft coral in reds and orange. The water is famously clear, often well past 25 m, which is how the site earned its name. When the tide runs, grey reef and whitetip sharks hold in the flow on the up current side while clouds of fusiliers, snapper, and surgeonfish wrap the slopes and anthias swarm the shallows. Plate corals around 17 m shelter resting whitetip pups.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Schooling fusiliers",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 92,
+    "getThere": "Fly into Labuan Bajo (LBJ / Komodo Airport) on Flores, which has multiple daily domestic flights from Bali (DPS) and Jakarta (CGK). Crystal Rock lies in the far north of the park near Gili Lawa, roughly 3 to 4 hours by fast day boat from Labuan Bajo harbour and most often dived as a stop on a Komodo liveaboard.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Bayview Gardens Hotel Labuan Bajo",
+        "url": "https://www.booking.com/searchresults.html?ss=Bayview%20Gardens%20Hotel%20Labuan%20Bajo",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sudamala Resort Komodo",
+        "url": "https://www.booking.com/searchresults.html?ss=Sudamala%20Resort%20Seraya",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Plataran Komodo Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Plataran%20Komodo%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "KLM Cajoma IV",
+        "url": "https://www.liveaboard.com/diving/search?destination=Cajoma%20liveaboard%20Komodo",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Mermaid I & II",
+        "url": "https://www.liveaboard.com/diving/search?destination=Mermaid%20liveaboard%20Komodo",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Aqua Blu Komodo",
+        "url": "https://www.liveaboard.com/diving/search?destination=Aqua%20Blu%20Komodo",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Wicked Diving",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      },
+      {
+        "partner": "Direct",
+        "label": "Blue Marlin Komodo",
+        "url": "https://bluemarlinkomodo.com/",
+        "isAffiliate": false
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "The crown of the seamount sits in ripping current, and hooking into bare reef is the only way to hold position while the sharks and schooling fish stream past.",
+        "gearId": "reef-hook-innovative"
+      },
+      {
+        "name": "SMB and reel",
+        "reason": "Drift exits put you over open water, so send a marker buoy up before you ascend.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Negative entry and consistently strong current make this an advanced dive, not a spot for new divers. Surface on the down current side and never up current of the rock. Komodo National Park entry and ranger fees apply, and most divers reach the far north on a liveaboard rather than a day boat."
   }
 ]
