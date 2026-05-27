@@ -80957,5 +80957,239 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Shallow, sheltered cove that operators use for discover scuba and certification dives, so expect training groups. Departures are by boat from the Praia dos Anjos pier, and the area lies within the Arraial do Cabo Marine Extractive Reserve. Water can cool sharply when upwelling drives cold water inshore, even in Brazilian summer, so carry enough exposure protection."
+  },
+  {
+    "id": "jeddah-saudi-arabia-boiler-wreck",
+    "slug": "jeddah-saudi-arabia-boiler-wreck",
+    "locationId": "jeddah-saudi-arabia",
+    "name": "Boiler Wreck (Abu Madafi)",
+    "heroImageUrl": null,
+    "lat": 21.8,
+    "lng": 39.01,
+    "description": "Abu Madafi is an offshore reef about 30 minutes by boat north of Jeddah, and its signature dive is the Boiler Wreck, a steamer that has lain here so long that little remains beyond a section of the stern and the two heavy iron boilers it is named for, now thickly crusted in hard and soft coral. The wreckage rests in 4 to 20 meters on a reef pierced by a network of caves and narrow passages where shafts of sunlight cut through openings overhead, and a coral wall drops away alongside into deeper water. Moderate current pulls in whitetip and blacktip reef sharks, great barracuda, dogtooth tuna and jacks, with reef mantas passing through in the cooler months. It is the most dived site in Jeddah and an approachable introduction to Saudi Red Sea diving.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluefin trevally",
+        "scientificName": "Caranx melampygus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard or 3mm shorty"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard or 3mm shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard or 3mm shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard or 3mm shorty"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 60,
+    "getThere": "Fly into King Abdulaziz International Airport (JED) in Jeddah. Dive operators run boats from the marinas at Obhur (Sharm Obhur) on the northern edge of the city, and it is roughly a 30 minute ride out to the Abu Madafi reef.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Boat dive on an open reef with moderate current, so it suits divers comfortable with mild drift. Several wrecks lie on Abu Madafi besides the Boiler Wreck, including the Old Coaster and the Pipe Wreck, and the reef is riddled with caves and passages that reward good buoyancy and a torch. Coordinates are approximate for an offshore reef reached by boat from Obhur. Diving in Saudi Arabia is arranged through licensed local operators."
   }
 ]
