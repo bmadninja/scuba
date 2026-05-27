@@ -4628,5 +4628,98 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "General presence of unspecific cave-dwelling fish is assumed due to the nature of the cave system; no specific headline species identified due to lack of external data."
+  },
+  {
+    "id": "north-male-atoll-maldives-hmcs-chaudiere-lingcod",
+    "siteId": "north-male-atoll-maldives-hmcs-chaudiere",
+    "speciesCommon": "Lingcod",
+    "speciesScientific": "Ophiodon elongatus",
+    "lastConfirmedAt": "2024-07-26",
+    "recentRecordCount": 50,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "north-male-atoll-maldives-hmcs-chaudiere-rockfish",
+    "siteId": "north-male-atoll-maldives-hmcs-chaudiere",
+    "speciesCommon": "Rockfish",
+    "speciesScientific": "Sebastes",
+    "lastConfirmedAt": "2024-07-26",
+    "recentRecordCount": 50,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "north-male-atoll-maldives-hmcs-chaudiere-octopus",
+    "siteId": "north-male-atoll-maldives-hmcs-chaudiere",
+    "speciesCommon": "Giant Pacific Octopus",
+    "speciesScientific": "Enteroctopus dofleini",
+    "lastConfirmedAt": "2024-07-26",
+    "recentRecordCount": 30,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
   }
 ]

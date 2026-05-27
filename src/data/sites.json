@@ -70868,5 +70868,258 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Diving requires permits from the Zimbabwe Parks & Wildlife Management Authority. The deep, dark cave environment necessitates appropriate training and equipment for technical cave diving."
+  },
+  {
+    "id": "north-male-atoll-maldives-hmcs-chaudiere",
+    "slug": "north-male-atoll-maldives-hmcs-chaudiere",
+    "locationId": "north-male-atoll-maldives",
+    "name": "HMCS Chaudiere",
+    "heroImageUrl": null,
+    "lat": 49.1659,
+    "lng": -123.9401,
+    "description": "The HMCS Chaudiere is a captivating artificial reef off the coast of British Columbia, offering divers a chance to explore a deliberately sunk warship. This former destroyer escort provides habitat for a diverse array of cold-water marine life, including various rockfish, lingcod, and colorful anemones. Its accessible depth and intriguing structure make it a popular site for advanced divers seeking a historical and ecological adventure in the Pacific Northwest.",
+    "depthRange": {
+      "min": 20,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "cold-water-marine-life"
+    ],
+    "species": [
+      {
+        "commonName": "Lingcod",
+        "scientificName": "Ophiodon elongatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Rockfish",
+        "scientificName": "Sebastes",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Giant Pacific Octopus",
+        "scientificName": "Enteroctopus dofleini",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "editorialRank": 70,
+    "getThere": "Accessible from Nanaimo, British Columbia, by local dive charter boats.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "drysuit",
+      "cold-water-regulator"
+    ],
+    "siteSpecificGear": [],
+    "notes": "Subject to local currents and tides; consult with local dive operators for optimal dive times."
   }
 ]
