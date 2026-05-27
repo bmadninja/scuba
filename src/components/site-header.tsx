@@ -8,6 +8,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/sites", label: "Dive sites" },
   { href: "/encounters", label: "Encounters" },
   { href: "/plan", label: "Plan a trip" },
+  { href: "/data", label: "Reef data" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
 ];

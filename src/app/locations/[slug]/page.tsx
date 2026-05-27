@@ -16,6 +16,7 @@ import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getWaterQualityByLocationId } from "@/lib/data/water-quality";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
+import { DataFreshnessLabel } from "@/components/data-freshness-label";
 import type {
   BleachingAlertLevel,
   PartnerLink,
@@ -896,6 +897,15 @@ function ReefHealthPanel({
               How is this calculated?
             </Link>
           </div>
+          {observed?.surveyMethod ? (
+            <div className="mt-2">
+              <DataFreshnessLabel
+                variant="snapshot"
+                surveyMethod={observed.surveyMethod}
+                surveyDate={observed.surveyDate}
+              />
+            </div>
+          ) : null}
           <div className="mt-4 space-y-2.5">
             {coverBefore !== null ? (
               <CoverBar
@@ -941,6 +951,21 @@ function ReefHealthPanel({
             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
               Heat stress right now
             </p>
+            <div className="mt-2">
+              {thermal.source === "noaa-crw-live" ? (
+                <DataFreshnessLabel
+                  variant="live"
+                  source="NOAA CRW"
+                  updatedAt={thermal.fetchedAt ?? thermal.asOf}
+                />
+              ) : (
+                <DataFreshnessLabel
+                  variant="snapshot"
+                  surveyMethod="NOAA CRW (scaffolding)"
+                  surveyDate={thermal.asOf}
+                />
+              )}
+            </div>
             <div
               className={`mt-3 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-[12px] font-bold uppercase tracking-wider ring-1 ring-inset ${ALERT_RING[thermal.alertLevel]}`}
             >

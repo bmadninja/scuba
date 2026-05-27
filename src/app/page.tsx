@@ -237,6 +237,12 @@ export default function Home() {
             <Link href="/encounters" className="hover:text-[#0089de]">
               Encounters
             </Link>
+            <Link href="/plan" className="hover:text-[#0089de]">
+              Plan a trip
+            </Link>
+            <Link href="/data" className="hover:text-[#0089de]">
+              Reef data
+            </Link>
             <Link href="/about" className="hover:text-[#0089de]">
               About
             </Link>

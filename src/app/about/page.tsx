@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteHeader } from "@/components/site-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,26 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-lg font-bold tracking-tight text-slate-900">
-              scubaSeason<span className="text-[#0089de]">.fun</span>
-            </span>
-          </Link>
-          <nav className="hidden gap-6 text-sm font-medium text-slate-700 sm:flex">
-            <Link href="/sites" className="hover:text-[#0089de]">
-              Dive sites
-            </Link>
-            <Link href="/about" className="text-[#0089de]">
-              About
-            </Link>
-            <Link href="/faq" className="hover:text-[#0089de]">
-              FAQ
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader activeHref="/about" />
 
       <main className="mx-auto w-full max-w-3xl px-6 py-12">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
@@ -73,16 +55,89 @@ export default function AboutPage() {
         </div>
 
         <h2 className="mt-12 text-2xl font-bold tracking-tight text-slate-900">
-          where this is going
+          Roadmap — where this is going
         </h2>
         <p className="mt-4 text-base leading-7 text-slate-700">
-          Longer term, I want this site to be useful beyond just trip
-          planning. The hope is that the information and observations
-          collected here can support research, conservation, and the wider
-          climate work happening around our oceans. There&rsquo;s a lot of
-          ground to cover, and I&rsquo;ll be continuously rolling out
-          features and updates as things take shape.
+          The bigger arc is to make scubaSeason a public atlas of reef
+          condition that&rsquo;s also genuinely useful for booking a trip.
+          Honest about
+          what&rsquo;s live, what&rsquo;s a snapshot, and what we can&rsquo;t
+          see yet. The split below is the current plan — nothing in
+          &ldquo;later&rdquo; is a promise.
         </p>
+
+        <div className="mt-6 grid gap-5">
+          <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-800">
+              Now
+            </p>
+            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[14px] leading-6 text-slate-800">
+              <li>
+                Live NOAA Coral Reef Watch thermal stress on every reef,
+                refreshed nightly.
+              </li>
+              <li>
+                Honest labels everywhere distinguishing live data from
+                snapshot surveys vs. presence only sightings (
+                <Link href="/data" className="text-[#0089de] hover:underline">
+                  /data
+                </Link>
+                ).
+              </li>
+              <li>
+                Trip planning the site already does — operators, lodging,
+                gear, season windows — stays front and centre.
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-800">
+              Next
+            </p>
+            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[14px] leading-6 text-slate-800">
+              <li>
+                Real coral cover ingestion for US and Caribbean sites
+                (NOAA NCRMP + AGRRA) so the snapshot half stops being
+                scaffolding.
+              </li>
+              <li>
+                Global Fishing Watch pressure layer per site.
+              </li>
+              <li>
+                IUCN Red List species badges — pending non commercial
+                licensing.
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-700">
+              Later
+            </p>
+            <p className="mt-3 text-[14px] leading-6 text-slate-800">
+              The longer term vision — exploratory, not committed — has two
+              halves:
+            </p>
+            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[14px] leading-6 text-slate-800">
+              <li>
+                <strong>Targeted citizen missions</strong> in the regions
+                where dive tourism is dense but reef monitoring is thin.
+                The idea is to coordinate divers around specific reefs
+                where standardised imagery would actually be useful, and
+                fold the contributions back into the public atlas.
+              </li>
+              <li>
+                <strong>Post event evidence infrastructure</strong> that
+                gives conservation funders a clean, standardised picture
+                of a reef after a hurricane or bleaching event. The
+                interesting role here is plumbing — coordination, capture
+                protocols, attribution — sitting alongside the satellite
+                signals everyone already uses.
+              </li>
+            </ul>
+          </div>
+        </div>
 
         <p className="mt-10 text-base leading-7 text-slate-700">
           Quick note, there are some affiliate links scattered across the

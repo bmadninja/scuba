@@ -463,6 +463,14 @@ export type ThermalStress = {
   /** HotSpot value (°C above the warmest monthly mean). */
   hotspotC?: number;
   sourceIds: string[];
+  /**
+   * Provenance of this thermal-stress reading. "noaa-crw-live" means the
+   * block was overwritten by `scripts/fetch-reef-health-live.mjs` against
+   * the NOAA Coral Reef Watch ERDDAP endpoint; absent means scaffolding.
+   */
+  source?: "noaa-crw-live";
+  /** ISO timestamp of the live fetch. Present only when source is live. */
+  fetchedAt?: string;
 };
 
 /**

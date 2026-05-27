@@ -3,6 +3,7 @@
 
 export const SITE_URL = "https://scubaseason.fun";
 export const SITE_NAME = "scubaSeason.fun";
-export const SITE_TAGLINE = "Research-grade dive trip planning";
+export const SITE_TAGLINE =
+  "Dive condition atlas — where to go, and what's changing.";
 export const SITE_DESCRIPTION =
-  "Find dive sites by species, season, conditions and skill level. Plan trips end-to-end with operators, lodging and gear.";
+  "Dive condition atlas — where to go, and what's changing. Live NOAA Coral Reef Watch thermal stress on every reef, alongside trip planning with operators, lodging and gear.";

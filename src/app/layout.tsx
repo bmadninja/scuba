@@ -40,6 +40,15 @@ export default function RootLayout({
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
         {children}
+        <footer className="mt-auto border-t border-slate-200 bg-slate-50 px-6 py-4 text-center text-[11px] leading-5 text-slate-500">
+          Thermal stress data: NOAA Coral Reef Watch 5&nbsp;km Bleaching Alert Area
+          v3.1, public domain. Coral cover figures are snapshots from named
+          monitoring programs — see{" "}
+          <a href="/data" className="text-[#0089de] hover:underline">
+            /data
+          </a>{" "}
+          for sources and freshness.
+        </footer>
         <Analytics />
       </body>
     </html>
