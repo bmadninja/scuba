@@ -79934,5 +79934,250 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "The Daymaniyat Islands are a protected nature reserve. Landing is closed during turtle and seabird nesting season (roughly May to October), and all diving must be booked through licensed Muscat operators. Carry an SMB for boat traffic inside the reserve."
+  },
+  {
+    "id": "channel-islands-san-miguel-island",
+    "slug": "channel-islands-san-miguel-island",
+    "locationId": "channel-islands-usa",
+    "name": "San Miguel Island",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/California_sea_lions_in_the_kelp_forest_off_San_Miguel_Island.jpg",
+    "lat": 34.022,
+    "lng": -120.408,
+    "description": "San Miguel is the westernmost and most exposed of the Channel Islands, where the cold California Current slams into the coast and feeds dense giant kelp. Point Bennett on the western tip holds the largest pinniped haul out on the planet, with California and Steller sea lions, northern fur seals, harbor seals and elephant seals piled by the thousand. Drop into the kelp off Tyler Bight and curious young sea lions corkscrew through the golden canopy at arm's length. The classic dive is Wyckoff Ledge, a rock wall falling from 12 m to a sand floor near 27 m and crusted with strawberry anemones, nudibranchs, wolf eels and lingcod. Water hovers around 11 to 13 C and the seas are unforgiving, so the island only opens on calm days.",
+    "depthRange": {
+      "min": 8,
+      "max": 27
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "California sea lion",
+        "scientificName": "Zalophus californianus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Steller sea lion",
+        "scientificName": "Eumetopias jubatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Northern fur seal",
+        "scientificName": "Callorhinus ursinus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Harbor seal",
+        "scientificName": "Phoca vitulina",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Northern elephant seal",
+        "scientificName": "Mirounga angustirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant kelp",
+        "scientificName": "Macrocystis pyrifera",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Wolf eel",
+        "scientificName": "Anarrhichthys ocellatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lingcod",
+        "scientificName": "Ophiodon elongatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "California sheephead",
+        "scientificName": "Bodianus pulcher",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit, or 7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 11,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit, or 7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit recommended"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit recommended"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit, or 7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 13,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 21
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 24
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 24
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood and gloves, or drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 12,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit, or 7mm wetsuit with hood and gloves"
+      }
+    ],
+    "bestMonths": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Santa Barbara (SBA) or Los Angeles (LAX). Dive boats run from Santa Barbara Harbor and Ventura Harbor. San Miguel is the most distant of the Channel Islands, a crossing of roughly 3 to 5 hours, so it is almost always reached on multi day liveaboard charters rather than day trips. There are no facilities on the island.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Part of Channel Islands National Park and National Marine Sanctuary; the island is owned by the US Navy and managed by the National Park Service. Going ashore needs a permit and a ranger escort, and Point Bennett is closed to protect breeding wildlife, so the diving is done from the boat offshore. Conditions are exposed with strong swell and current and the island is frequently weathered out, calmest from late summer into fall. Cold water calls for a 7mm wetsuit with hood and gloves or a drysuit. Never approach hauled out pinnipeds."
   }
 ]
