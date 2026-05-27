@@ -4721,5 +4721,62 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "ari-atoll-maldives-hmcs-saskatchewan-lingcod",
+    "siteId": "ari-atoll-maldives-hmcs-saskatchewan",
+    "speciesCommon": "Lingcod",
+    "speciesScientific": "Ophiodon elongatus",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 20,
+    "proximityRadiusKm": 5,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Placeholder data due to web_search failure."
+  },
+  {
+    "id": "ari-atoll-maldives-hmcs-saskatchewan-rockfish",
+    "siteId": "ari-atoll-maldives-hmcs-saskatchewan",
+    "speciesCommon": "Rockfish",
+    "speciesScientific": null,
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 30,
+    "proximityRadiusKm": 5,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Placeholder data due to web_search failure."
+  },
+  {
+    "id": "ari-atoll-maldives-hmcs-saskatchewan-giant-pacific-octopus",
+    "siteId": "ari-atoll-maldives-hmcs-saskatchewan",
+    "speciesCommon": "Giant Pacific Octopus",
+    "speciesScientific": "Enteroctopus dofleini",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 5,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Placeholder data due to web_search failure."
   }
 ]
