@@ -78278,5 +78278,211 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Always dive with a guide familiar with Gozo's cave systems."
+  },
+  {
+    "id": "gozo-malta-inland-sea-gozo",
+    "slug": "gozo-malta-inland-sea-gozo",
+    "locationId": "gozo-malta",
+    "name": "Inland Sea Gozo",
+    "heroImageUrl": null,
+    "lat": 36.046,
+    "lng": 14.187,
+    "description": "The Inland Sea in Gozo offers a unique diving experience, starting in a shallow lagoon and leading through a natural tunnel to the open sea. Divers can explore rock formations and a vibrant ecosystem in sheltered conditions.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Damselfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moray Eel",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Octopus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 22
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 22
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 75,
+    "getThere": "Fly to Malta International Airport (MLA), then take a ferry from Cirkewwa (Malta) to Mgarr (Gozo). The Inland Sea is located near Dwejra Bay on Gozo.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Entrance is through a natural tunnel, conditions inside the Inland Sea are usually calm. Can be crowded during peak season."
   }
 ]

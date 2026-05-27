@@ -6986,5 +6986,98 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "gozo-malta-inland-sea-gozo-damselfish",
+    "siteId": "gozo-malta-inland-sea-gozo",
+    "speciesCommon": "Damselfish",
+    "speciesScientific": "Chromis chromis",
+    "lastConfirmedAt": "2024-07-26",
+    "recentRecordCount": 30,
+    "proximityRadiusKm": 1,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Common in the Mediterranean, often seen in schools."
+  },
+  {
+    "id": "gozo-malta-inland-sea-gozo-moray-eel",
+    "siteId": "gozo-malta-inland-sea-gozo",
+    "speciesCommon": "Moray Eel",
+    "speciesScientific": "Muraena helena",
+    "lastConfirmedAt": "2024-07-26",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 1,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Often found hiding in crevices and rocks."
+  },
+  {
+    "id": "gozo-malta-inland-sea-gozo-octopus",
+    "siteId": "gozo-malta-inland-sea-gozo",
+    "speciesCommon": "Octopus",
+    "speciesScientific": "Octopus vulgaris",
+    "lastConfirmedAt": "2024-07-26",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 1,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Can be seen camouflaged among the rocks."
   }
 ]
