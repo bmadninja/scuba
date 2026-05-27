@@ -80179,5 +80179,256 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Part of Channel Islands National Park and National Marine Sanctuary; the island is owned by the US Navy and managed by the National Park Service. Going ashore needs a permit and a ranger escort, and Point Bennett is closed to protect breeding wildlife, so the diving is done from the boat offshore. Conditions are exposed with strong swell and current and the island is frequently weathered out, calmest from late summer into fall. Cold water calls for a 7mm wetsuit with hood and gloves or a drysuit. Never approach hauled out pinnipeds."
+  },
+  {
+    "id": "palau-peleliu-corner",
+    "slug": "palau-peleliu-corner",
+    "locationId": "blue-corner-palau",
+    "name": "Peleliu Corner",
+    "heroImageUrl": null,
+    "lat": 6.962,
+    "lng": 134.255,
+    "description": "Peleliu marks the southern tip of Palau's barrier reef, where Pacific Ocean and Philippine Sea currents collide over a submarine ridge between Peleliu and Angaur, generating some of the strongest flow in Palau. The dive traces the sheer Peleliu Wall, dropping past giant sea fans from a 10 m plateau near the World War II landing beach monument to a 30 m corner where Peleliu Cut and Peleliu Express merge. Divers set a reef hook at the lip and hold against the rip while grey reef sharks cruise the blue in groups of 15 or more, joined by whitetips, bumphead parrotfish, Napoleon wrasse, and schooling barracuda. Slack tide windows are short and the current can pull divers deep into the corner, so trips are timed to the tide tables. Sailfin snapper mass to spawn here from March through May.",
+    "depthRange": {
+      "min": 10,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Chevron barracuda",
+        "scientificName": "Sphyraena qenie",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bumphead parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Sailfin snapper",
+        "scientificName": "Symphorichthys spilurus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly into Roman Tmetuchl International Airport (ROR) near Koror via Manila, Taipei, Tokyo, or Guam. Peleliu lies about 56 km south of Koror at the bottom of the barrier reef; most divers reach it on a long speedboat run from Koror or by liveaboard working the southern reefs, while a small island airfield and ferry serve those staying on Peleliu itself.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "Currents are among the strongest in Palau and reverse at the tide change. Hooking into rubble at the 10 to 15 m lip is the only way to hold position and watch the shark line without finning hard.",
+        "gearId": null
+      },
+      {
+        "name": "Surface marker buoy",
+        "reason": "Drift exits run out over open ocean off the corner, so operators require an SMB deployed on ascent for boat pickup.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Permit: Koror State Rock Islands pass plus the Palau Pristine Paradise Environmental Fee, paid on arrival. Advanced certification with drift and reef hook experience expected. Currents are tide driven and can run hard with strong downcurrents near the corner, so dives are scheduled around slack water; follow the tide and exit briefing closely. Often combined with WWII wreck dives and topside battlefield visits."
   }
 ]
