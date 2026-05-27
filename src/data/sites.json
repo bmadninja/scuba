@@ -72028,5 +72028,243 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-rms-empress-of-ireland",
+    "slug": "ari-atoll-maldives-rms-empress-of-ireland",
+    "locationId": "ari-atoll-maldives",
+    "name": "RMS Empress of Ireland",
+    "heroImageUrl": null,
+    "lat": 48.625,
+    "lng": -68.40833,
+    "description": "The RMS Empress of Ireland was a Canadian ocean liner that sank in the Saint Lawrence River following a collision with the Norwegian collier Storstad in 1914. It is one of Canada's worst maritime disasters. The wreck lies on its starboard side at a depth of 43 meters, attracting advanced and technical divers to explore its historically significant structure in cold, often low-visibility waters.",
+    "depthRange": {
+      "min": 35,
+      "max": 45
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Lake Sturgeon",
+        "scientificName": "Acipenser fulvescens",
+        "reliability": "rare",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Northern Pike",
+        "scientificName": "Esox lucius",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Freshwater Sculpin",
+        "scientificName": "Cottus cognatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 3,
+          "max": 5
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 4,
+          "max": 6
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 9
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 6,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 8,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 9,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 9,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 8,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 6,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 9
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 4,
+          "max": 6
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 80,
+    "getThere": "The wreck is located in the Saint Lawrence River off Rimouski, Quebec. Access is typically via specialized dive charters operating from nearby ports. Nearest major airports are in Quebec City (YQB) and Montreal (YUL).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Strong currents and cold water are typical. Advanced wreck diving experience and appropriate technical diving certifications are essential. Permits may be required for diving this protected historical site."
   }
 ]

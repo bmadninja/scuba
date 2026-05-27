@@ -4907,5 +4907,86 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-rms-empress-of-ireland-lake-sturgeon",
+    "siteId": "ari-atoll-maldives-rms-empress-of-ireland",
+    "speciesCommon": "Lake Sturgeon",
+    "speciesScientific": "Acipenser fulvescens",
+    "lastConfirmedAt": "2024-05-01",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ari-atoll-maldives-rms-empress-of-ireland-northern-pike",
+    "siteId": "ari-atoll-maldives-rms-empress-of-ireland",
+    "speciesCommon": "Northern Pike",
+    "speciesScientific": "Esox lucius",
+    "lastConfirmedAt": "2024-05-01",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ari-atoll-maldives-rms-empress-of-ireland-freshwater-sculpin",
+    "siteId": "ari-atoll-maldives-rms-empress-of-ireland",
+    "speciesCommon": "Freshwater Sculpin",
+    "speciesScientific": "Cottus cognatus",
+    "lastConfirmedAt": "2024-05-01",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
   }
 ]
