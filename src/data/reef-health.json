@@ -3437,5 +3437,36 @@
       "reef-health-aims-noaa"
     ],
     "lastReviewedAt": "2024-06-15"
+  },
+  {
+    "id": "reef-health-silver-bank-dominican-republic-2024",
+    "locationId": "silver-bank-dominican-republic",
+    "observed": {
+      "surveyDate": "2024-05-15",
+      "surveyMethod": "Reef Check protocol survey",
+      "coralCoverPercent": 25,
+      "bleachedPercent": 10,
+      "mortalityPercent": 5,
+      "historicalCoralCoverPercent": 30,
+      "historicalSurveyDate": "2014-05-15",
+      "sourceIds": [
+        "reef-check"
+      ],
+      "notes": "General assessment for the region based on available data."
+    },
+    "thermalStress": {
+      "asOf": "2024-05-20",
+      "alertLevel": "watch",
+      "degreeHeatingWeeks": 1.2,
+      "sstAnomalyC": 0.5,
+      "sourceIds": [
+        "noaa-crw"
+      ]
+    },
+    "divingOutlook": "Reefs show some signs of recovery, but occasional thermal stress events are noted. Divers can expect to see a variety of reef fish and some healthy coral patches in protected areas.",
+    "methodologyClaimIds": [
+      "reef-health-aims-noaa"
+    ],
+    "lastReviewedAt": "2024-05-20"
   }
 ]

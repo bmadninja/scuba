@@ -6454,5 +6454,98 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Rarely sighted, but known to inhabit sandy areas near the museum."
+  },
+  {
+    "id": "silver-bank-dominican-republic-punta-cana-nurse-shark",
+    "siteId": "silver-bank-dominican-republic-punta-cana",
+    "speciesCommon": "Nurse Shark",
+    "speciesScientific": "Ginglymostoma cirratum",
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Observed regularly on local dive sites."
+  },
+  {
+    "id": "silver-bank-dominican-republic-punta-cana-southern-stingray",
+    "siteId": "silver-bank-dominican-republic-punta-cana",
+    "speciesCommon": "Southern Stingray",
+    "speciesScientific": "Hypanus americanus",
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 7,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Commonly seen resting on sandy bottoms."
+  },
+  {
+    "id": "silver-bank-dominican-republic-punta-cana-blue-tang",
+    "siteId": "silver-bank-dominican-republic-punta-cana",
+    "speciesCommon": "Blue Tang",
+    "speciesScientific": "Acanthurus coeruleus",
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Abundant on coral reefs."
   }
 ]
