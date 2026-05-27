@@ -80430,5 +80430,304 @@
       }
     ],
     "notes": "Permit: Koror State Rock Islands pass plus the Palau Pristine Paradise Environmental Fee, paid on arrival. Advanced certification with drift and reef hook experience expected. Currents are tide driven and can run hard with strong downcurrents near the corner, so dives are scheduled around slack water; follow the tide and exit briefing closely. Often combined with WWII wreck dives and topside battlefield visits."
+  },
+  {
+    "id": "poor-knights-new-zealand-rainbow-warrior",
+    "slug": "poor-knights-new-zealand-rainbow-warrior",
+    "locationId": "poor-knights-new-zealand",
+    "name": "Rainbow Warrior",
+    "heroImageUrl": null,
+    "lat": -34.975,
+    "lng": 173.935,
+    "description": "Greenpeace's flagship, bombed by French secret service agents in Auckland Harbour in 1985 in an attack that killed photographer Fernando Pereira, now rests off the Cavalli Islands near Matauri Bay. The salvaged hull was scuttled here in December 1987 as an artificial reef, the masts removed and displayed onshore. The 40 m wreck lies upright in 27 m of water with the deck around 16 m, its steel skin smothered in a dense carpet of varicoloured jewel anemones that give the dive its nickname, Jewel of the North. Schools of snapper, blue maomao and demoiselles hang over the wreck while kingfish patrol the blue and john dory hover near the superstructure. Cooler subtropical water and depth make this an advanced dive, though current is usually mild.",
+    "depthRange": {
+      "min": 16,
+      "max": 27
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Jewel anemone",
+        "scientificName": "Corynactis haddoni",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Snapper",
+        "scientificName": "Chrysophrys auratus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Yellowtail kingfish",
+        "scientificName": "Seriola lalandi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Blue maomao",
+        "scientificName": "Scorpis violacea",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "John dory",
+        "scientificName": "Zeus faber",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Spiny rock lobster",
+        "scientificName": "Jasus edwardsii",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit or semidry"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit or semidry"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Semidry or drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Semidry or drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Semidry or drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Semidry or drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit or semidry"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7 mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 90,
+    "getThere": "Fly into Auckland or Kerikeri (Bay of Islands), then drive to Matauri Bay or Tutukaka in Northland. Dive charters run to the wreck from Matauri Bay (about 10 minutes by boat to the Cavalli Islands) and on day trips from Paihia and Tutukaka.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "The wreck lies within a marine area managed as a fish sanctuary; no fishing or souvenir collecting. Depth to 27 m and cool water make this an advanced dive; penetration of the hull requires wreck training and a guide. Surface conditions in exposed Northland water can build quickly, so trips depend on weather windows."
   }
 ]
