@@ -72514,5 +72514,198 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Scapa Flow diving requires experience with cold-water wreck diving. Strong currents can occur, especially around tidal windows. Permits may be required for certain dive sites."
+  },
+  {
+    "id": "gozo-malta-cirkewwa",
+    "slug": "gozo-malta-cirkewwa",
+    "locationId": "gozo-malta",
+    "name": "Cirkewwa",
+    "heroImageUrl": null,
+    "lat": 35.9866,
+    "lng": 14.3314,
+    "description": "Cirkewwa is a popular dive site on the northern tip of Malta, renowned for its clear waters, impressive underwater topography, and a variety of artificial reefs including shipwrecks and a Madonna statue. Divers can explore the P29 patrol boat wreck, the Rozi tugboat, and stunning archways and caves.",
+    "depthRange": {
+      "min": 10,
+      "max": 38
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "geology"
+    ],
+    "species": [],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 85,
+    "getThere": "Fly to Malta International Airport (MLA), then take a taxi or bus to Cirkewwa ferry terminal area.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Access from shore is generally easy; permits not typically required for recreational diving."
   }
 ]

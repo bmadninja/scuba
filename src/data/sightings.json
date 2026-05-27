@@ -5081,5 +5081,67 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "gozo-malta-cirkewwa-grouper",
+    "siteId": "gozo-malta-cirkewwa",
+    "speciesCommon": "Dusky Grouper",
+    "speciesScientific": "Epinephelus marginatus",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "gozo-malta-cirkewwa-barracuda",
+    "siteId": "gozo-malta-cirkewwa",
+    "speciesCommon": "European Barracuda",
+    "speciesScientific": "Sphyraena sphyraena",
+    "lastConfirmedAt": "2024-05-15",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
