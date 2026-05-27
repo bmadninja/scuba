@@ -78738,5 +78738,259 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": null
+  },
+  {
+    "id": "palau-jellyfish-lake",
+    "slug": "palau-jellyfish-lake",
+    "locationId": "jellyfish-lake-palau",
+    "name": "Jellyfish Lake",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/Snorkeling_with_Jellyfish.jpg",
+    "lat": 7.1612,
+    "lng": 134.3763,
+    "description": "A marine lake on Eil Malk island in the southern Rock Islands, cut off from the sea since the last ice age and reached by a short climb over a limestone ridge from the boat landing. Snorkelers cross water thick with golden jellyfish (Mastigias papua etpisoni), an endemic subspecies that lost most of its sting in isolation and pulses across the lake each day to keep its symbiotic algae in sunlight. Moon jellyfish drift through the same surface layer. Scuba is banned: exhaled bubbles lodge under the bells and harm the animals, and a hydrogen sulfide layer below 15 m is dangerous to breathe near. Golden jellyfish numbers swing with climate, from tens of millions in good years to near total collapse and back.",
+    "depthRange": {
+      "min": 0,
+      "max": 13
+    },
+    "skillLevel": "never-dived",
+    "diveTypes": [
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Golden jellyfish",
+        "scientificName": "Mastigias papua etpisoni",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moon jellyfish",
+        "scientificName": "Aurelia sp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Jellyfish-eating anemone",
+        "scientificName": "Entacmaea medusivora",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 30,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 30,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Rash guard or swimsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 90,
+    "getThere": "Koror (ROR / Roman Tmetuchl International) is Palau's only international airport, with flights from Manila, Taipei, Seoul, Guam, and Tokyo. The lake sits on Eil Malk island in the southern Rock Islands, roughly a 45 minute boat ride south of Koror followed by a short uphill climb over the ridge to the water. Most Koror day boats include it on a Rock Islands snorkel itinerary.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Palau Central Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Palau%20Central%20Hotel%20Koror",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sea Passion Hotel Palau",
+        "url": "https://www.booking.com/searchresults.html?ss=Sea%20Passion%20Hotel%20Palau",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Palau Pacific Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Palau%20Pacific%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Sam's Tours Palau",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Snorkel and mask (no scuba)",
+        "reason": "Scuba is prohibited in the lake; the visit is a surface snorkel, so mask, snorkel and fins are all you take in.",
+        "gearId": null
+      },
+      {
+        "name": "Rash guard",
+        "reason": "A thin layer guards skin against incidental contact with the mild jellyfish and against sun on the long surface swim.",
+        "gearId": null
+      }
+    ],
+    "notes": "Permits: requires the Rock Islands / Koror State permit plus a separate Jellyfish Lake permit, usually bundled by operators with the Palau Pristine Paradise Environmental Fee paid on arrival. Snorkel only, no scuba. Rinse off sunscreen and oils before entering to protect the lake. Golden jellyfish densities have crashed and recovered repeatedly with El Ni\u00f1o warming, so the spectacle varies widely by year; confirm current status before booking."
   }
 ]
