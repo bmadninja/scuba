@@ -70214,5 +70214,235 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Diving permits may be required. Strong currents can occur. Follow responsible wildlife interaction guidelines."
+  },
+  {
+    "id": "gozo-malta-hms-southwold",
+    "slug": "gozo-malta-hms-southwold",
+    "locationId": "gozo-malta",
+    "name": "HMS Southwold",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Hmssouthwold-l10-1-1941-1942cropped1_%281%29.jpg",
+    "lat": 35.883,
+    "lng": 14.583,
+    "description": "The HMS Southwold, a Type II Hunt-class destroyer, lies in two main sections off the coast of Malta, a victim of a German mine in March 1942. This WWII naval wreck provides a dramatic historical dive, offering a glimpse into the past. Advanced divers can explore the remains of this significant vessel, now home to a variety of Mediterranean marine life.",
+    "depthRange": {
+      "min": 50,
+      "max": 70
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Dusky Grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Mediterranean Moray Eel",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit + hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 20,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 75,
+    "getThere": "Fly to Malta International Airport (MLA), then take a ferry or boat to Gozo. The wreck is accessed by dive boat.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Due to depth, this site is suitable for advanced or technical divers. Standard diving permits and regulations apply."
   }
 ]

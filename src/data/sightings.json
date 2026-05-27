@@ -4469,5 +4469,81 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Frequent sightings around the Farne Islands."
+  },
+  {
+    "id": "gozo-malta-hms-southwold-dusky-grouper",
+    "siteId": "gozo-malta-hms-southwold",
+    "speciesCommon": "Dusky Grouper",
+    "speciesScientific": "Epinephelus marginatus",
+    "lastConfirmedAt": "2024-06-15",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Commonly observed on Mediterranean wrecks and reefs."
+  },
+  {
+    "id": "gozo-malta-hms-southwold-mediterranean-moray-eel",
+    "siteId": "gozo-malta-hms-southwold",
+    "speciesCommon": "Mediterranean Moray Eel",
+    "speciesScientific": "Muraena helena",
+    "lastConfirmedAt": "2024-06-10",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Often found sheltering in crevices of wrecks and rocky reefs."
+  },
+  {
+    "id": "gozo-malta-hms-southwold-barracuda",
+    "siteId": "gozo-malta-hms-southwold",
+    "speciesCommon": "Barracuda",
+    "speciesScientific": "Sphyraena barracuda",
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Schools of barracuda are occasionally sighted around wrecks during warmer months."
   }
 ]
