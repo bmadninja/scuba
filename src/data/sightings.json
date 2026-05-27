@@ -6547,5 +6547,101 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Abundant on coral reefs."
+  },
+  {
+    "id": "providencia-colombia-san-andres-green-sea-turtle",
+    "siteId": "providencia-colombia-san-andres",
+    "speciesCommon": "Green Sea Turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2024-06-01",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Commonly sighted on Caribbean reefs."
+  },
+  {
+    "id": "providencia-colombia-san-andres-caribbean-reef-shark",
+    "siteId": "providencia-colombia-san-andres",
+    "speciesCommon": "Caribbean Reef Shark",
+    "speciesScientific": "Carcharhinus perezi",
+    "lastConfirmedAt": "2024-05-15",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Resident shark species in the Caribbean."
+  },
+  {
+    "id": "providencia-colombia-san-andres-barracuda",
+    "siteId": "providencia-colombia-san-andres",
+    "speciesCommon": "Great Barracuda",
+    "speciesScientific": "Sphyraena barracuda",
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 12,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Commonly found in Caribbean waters."
   }
 ]
