@@ -6835,5 +6835,21 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-boesmansgat-freshwater-cave-fauna",
+    "siteId": "ari-atoll-maldives-boesmansgat",
+    "speciesCommon": "Freshwater Cave Fauna",
+    "speciesScientific": "Undetermined",
+    "lastConfirmedAt": null,
+    "recentRecordCount": 1,
+    "proximityRadiusKm": 0,
+    "seasonalityMonths": [],
+    "confidence": "low",
+    "sourceIds": [],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Inferred presence of general freshwater cave adapted organisms, specific species undetermined due to lack of data."
   }
 ]

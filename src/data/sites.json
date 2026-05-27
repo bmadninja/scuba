@@ -77639,5 +77639,190 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-boesmansgat",
+    "slug": "ari-atoll-maldives-boesmansgat",
+    "locationId": "ari-atoll-maldives",
+    "name": "Boesmansgat",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Dave_Shaw.jpg",
+    "lat": -27.92167,
+    "lng": 23.64167,
+    "description": "Boesmansgat, or Bushman's Hole, is a challenging deep submerged freshwater cave in South Africa's Northern Cape. Renowned among technical divers for its extreme depths, it has been dived to over 280 meters. The high altitude of 1,500 meters further amplifies its demands, requiring extensive decompression planning. It holds records for deep scuba diving.",
+    "depthRange": {
+      "min": 5,
+      "max": 283
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "geology"
+    ],
+    "species": [],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 10,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [],
+    "editorialRank": 85,
+    "getThere": "Fly to Kimberley Airport (KIM). Boesmansgat is located near Dani\u00eblskuil in the Northern Cape, requiring ground transport from the airport.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Permits are required for diving Boesmansgat. Specialized technical diving equipment and experience are essential."
   }
 ]
