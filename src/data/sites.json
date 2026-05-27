@@ -78992,5 +78992,229 @@
       }
     ],
     "notes": "Permits: requires the Rock Islands / Koror State permit plus a separate Jellyfish Lake permit, usually bundled by operators with the Palau Pristine Paradise Environmental Fee paid on arrival. Snorkel only, no scuba. Rinse off sunscreen and oils before entering to protect the lake. Golden jellyfish densities have crashed and recovered repeatedly with El Ni\u00f1o warming, so the spectacle varies widely by year; confirm current status before booking."
+  },
+  {
+    "id": "egypt-numidia-wreck",
+    "slug": "egypt-numidia-wreck",
+    "locationId": "brothers-egypt",
+    "name": "Numidia Wreck",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/06/Ship_wreck_Numidia_%281901%29_2015-05-02_12-41-06_Brothers-5820.jpg",
+    "lat": 26.3157,
+    "lng": 34.8419,
+    "description": "A 137 m Anchor Line steamer that ran straight onto the north point of Big Brother in July 1901 and slid down the reef wall, where she now lies almost vertical \u2014 bow at 8 m, stern past 80 m. Two railway axles and their iron wheels still sit on the deck near 25 m, cargo that never reached Calcutta. Soft corals and gorgonians sheath the hull, clouds of glassfish fill the holds, and anthias hang over the rails while grey reef sharks patrol the blue off the stern.",
+    "depthRange": {
+      "min": 8,
+      "max": 50
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish (golden sweeper)",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red Sea anthias",
+        "scientificName": "Pseudanthias taeniatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Oceanic whitetip shark",
+        "scientificName": "Carcharhinus longimanus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 84,
+    "getThere": "Liveaboard-only, departing Hurghada (HRG) or Marsa Alam (RMF), both with direct European flights. Southern itineraries that take in Brothers, Daedalus and Elphinstone run roughly 5 to 7 nights and reach the El Ikhwa (Brother) Islands offshore in the central Red Sea.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "The wreck drops down a vertical wall: bow around 8 m, the railway wheels near 25 m, midship by 40 to 50 m and the stern beyond 80 m, so the lower hull is technical only. Brother Islands are liveaboard-only and the marine park is generally reachable only in the calmer months."
   }
 ]
