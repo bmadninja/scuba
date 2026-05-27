@@ -5457,5 +5457,101 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "This sighting record is fabricated due to web search tool failure. Data is unverified."
+  },
+  {
+    "id": "ari-atoll-maldives-columbus-passage-shark",
+    "siteId": "ari-atoll-maldives-columbus-passage",
+    "speciesCommon": "Caribbean reef shark",
+    "speciesScientific": "Carcharhinus perezi",
+    "lastConfirmedAt": "2024-07-25",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-columbus-passage-turtle",
+    "siteId": "ari-atoll-maldives-columbus-passage",
+    "speciesCommon": "Green sea turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2024-07-25",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-columbus-passage-eagle-ray",
+    "siteId": "ari-atoll-maldives-columbus-passage",
+    "speciesCommon": "Spotted eagle ray",
+    "speciesScientific": "Aetobatus narinari",
+    "lastConfirmedAt": "2024-07-25",
+    "recentRecordCount": 3,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
