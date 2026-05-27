@@ -6851,5 +6851,66 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Inferred presence of general freshwater cave adapted organisms, specific species undetermined due to lack of data."
+  },
+  {
+    "id": "ari-atoll-maldives-deans-blue-hole-crs",
+    "siteId": "ari-atoll-maldives-deans-blue-hole",
+    "speciesCommon": "Caribbean Reef Shark",
+    "speciesScientific": "Carcharhinus perezi",
+    "lastConfirmedAt": "2024-06-15",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ari-atoll-maldives-deans-blue-hole-gst",
+    "siteId": "ari-atoll-maldives-deans-blue-hole",
+    "speciesCommon": "Green Sea Turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2024-06-15",
+    "recentRecordCount": 20,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ari-atoll-maldives-deans-blue-hole-sfv",
+    "siteId": "ari-atoll-maldives-deans-blue-hole",
+    "speciesCommon": "Schooling Fish (various)",
+    "speciesScientific": null,
+    "lastConfirmedAt": "2024-06-15",
+    "recentRecordCount": 25,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "low",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
   }
 ]
