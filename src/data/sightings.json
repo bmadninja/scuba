@@ -4871,5 +4871,41 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "ari-atoll-maldives-petit-saint-vincent-green-turtle",
+    "siteId": "ari-atoll-maldives-petit-saint-vincent",
+    "speciesCommon": "Green Sea Turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": null,
+    "recentRecordCount": 0,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "low",
+    "sourceIds": [
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-petit-saint-vincent-reef-shark",
+    "siteId": "ari-atoll-maldives-petit-saint-vincent",
+    "speciesCommon": "Caribbean Reef Shark",
+    "speciesScientific": "Carcharhinus perezi",
+    "lastConfirmedAt": null,
+    "recentRecordCount": 0,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "low",
+    "sourceIds": [
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
