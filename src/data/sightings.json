@@ -5725,5 +5725,86 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Assumed presence based on its known role in the Ross Sea ecosystem. Seasonality not specified for diving encounters."
+  },
+  {
+    "id": "ari-atoll-maldives-socotra-reef-shark",
+    "siteId": "ari-atoll-maldives-socotra",
+    "speciesCommon": "Reef Shark",
+    "speciesScientific": null,
+    "lastConfirmedAt": "2024-01-01",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ari-atoll-maldives-socotra-manta-ray",
+    "siteId": "ari-atoll-maldives-socotra",
+    "speciesCommon": "Manta Ray",
+    "speciesScientific": null,
+    "lastConfirmedAt": "2024-01-01",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ari-atoll-maldives-socotra-endemic-gobies",
+    "siteId": "ari-atoll-maldives-socotra",
+    "speciesCommon": "Endemic Gobies",
+    "speciesScientific": null,
+    "lastConfirmedAt": "2024-01-01",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
   }
 ]
