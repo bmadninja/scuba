@@ -79216,5 +79216,276 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "The wreck drops down a vertical wall: bow around 8 m, the railway wheels near 25 m, midship by 40 to 50 m and the stern beyond 80 m, so the lower hull is technical only. Brother Islands are liveaboard-only and the marine park is generally reachable only in the calmer months."
+  },
+  {
+    "id": "bimini-great-hammerheads",
+    "slug": "bimini-great-hammerheads",
+    "locationId": "tiger-beach-bahamas",
+    "name": "Bimini Great Hammerheads",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/Great_hammerhead_feeding%2C_Bimini.jpg",
+    "lat": 25.7,
+    "lng": -79.305,
+    "description": "From December to March, great hammerheads up to 4 m long patrol a shallow white sand flat on the lee side of South Bimini, the most reliable encounter with this species anywhere in the Atlantic. Divers kneel on the bottom at around 6 m while a baited handler draws the sharks in to glide past at arm's length, scalloped heads sweeping the sand. Nurse sharks and wintering bull sharks crowd the same flat, and the Gulf Stream runs along the deep edge just offshore. Visibility stays high over the pale sand, making this one of the great wide angle shark photography dives.",
+    "depthRange": {
+      "min": 5,
+      "max": 12
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Great hammerhead",
+        "scientificName": "Sphyrna mokarran",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bull shark",
+        "scientificName": "Carcharhinus leucas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2
+        ]
+      },
+      {
+        "commonName": "Caribbean reef shark",
+        "scientificName": "Carcharhinus perezi",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 88,
+    "getThere": "South Bimini Airport (BIM) is a 25 minute flight from Fort Lauderdale, or reach Bimini by fast ferry from Miami. The hammerhead flat is a short boat ride on the lee side of South Bimini, about 5 minutes from the island resorts and dive centers.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Bimini Big Game Club Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Bimini%20Big%20Game%20Club%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Resorts World Bimini",
+        "url": "https://www.booking.com/searchresults.html?ss=Resorts%20World%20Bimini",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sea Crest Hotel & Marina Bimini",
+        "url": "https://www.booking.com/searchresults.html?ss=Sea%20Crest%20Hotel%20Marina%20Bimini",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Neal Watson's Bimini Scuba Center",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "wetsuit-bare-5mm-full",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "5mm wetsuit",
+        "reason": "Divers kneel still on the sand for the whole dive; winter water near 23C chills you without the extra neoprene.",
+        "gearId": "wetsuit-bare-5mm-full"
+      },
+      {
+        "name": "Wide angle camera",
+        "reason": "Four metre hammerheads pass within arm's reach over bright sand, the classic close focus wide angle shot.",
+        "gearId": "camera-gopro"
+      }
+    ],
+    "notes": "Baited, guided shark dive run by Bimini operators; the great hammerhead season runs roughly November to April and peaks January to March. Expect a long, shallow dive kneeling on sand while sharks are drawn in with bait. Nurse and bull sharks share the site, and a Gulf Stream current runs along the nearby drop. This is a pelagic encounter dive, not a reef or coral site."
   }
 ]
