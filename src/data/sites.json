@@ -78049,5 +78049,234 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Access to Dean's Blue Hole is generally unrestricted for recreational and freediving. Be aware of freediving competitions which may limit access temporarily. Technical diving here requires significant experience and appropriate training/equipment due to the extreme depth."
+  },
+  {
+    "id": "gozo-malta-ghar-qawqla",
+    "slug": "gozo-malta-ghar-qawqla",
+    "locationId": "gozo-malta",
+    "name": "Ghar Qawqla",
+    "heroImageUrl": null,
+    "lat": 36.046,
+    "lng": 14.242,
+    "description": "Ghar Qawqla offers a unique cave diving experience on Gozo, Malta, with fascinating rock formations and calm, clear waters. Divers can explore the illuminated cavern entrance and discover a variety of macro life clinging to the walls and crevices.",
+    "depthRange": {
+      "min": 8,
+      "max": 25
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Mediterranean Damselfish",
+        "scientificName": "Chromis chromis",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Moray Eel",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Shorty or 3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 75,
+    "getThere": "Accessible from various dive centers across Gozo. Usually reached by boat or shore entry depending on specific site conditions.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Always dive with a guide familiar with Gozo's cave systems."
   }
 ]

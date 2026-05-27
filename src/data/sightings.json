@@ -6912,5 +6912,79 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "gozo-malta-ghar-qawqla-damselfish",
+    "siteId": "gozo-malta-ghar-qawqla",
+    "speciesCommon": "Mediterranean Damselfish",
+    "speciesScientific": "Chromis chromis",
+    "lastConfirmedAt": "2024-03-15",
+    "recentRecordCount": 30,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "gozo-malta-ghar-qawqla-octopus",
+    "siteId": "gozo-malta-ghar-qawqla",
+    "speciesCommon": "Octopus",
+    "speciesScientific": "Octopus vulgaris",
+    "lastConfirmedAt": "2024-02-20",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "gozo-malta-ghar-qawqla-moray-eel",
+    "siteId": "gozo-malta-ghar-qawqla",
+    "speciesCommon": "Moray Eel",
+    "speciesScientific": "Muraena helena",
+    "lastConfirmedAt": "2024-01-10",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
