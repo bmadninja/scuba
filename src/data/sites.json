@@ -72897,5 +72897,218 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Data for this site is based on general Mediterranean conditions and limited information due to web search tool unavailability."
+  },
+  {
+    "id": "ari-atoll-maldives-barkley-sound",
+    "slug": "ari-atoll-maldives-barkley-sound",
+    "locationId": "ari-atoll-maldives",
+    "name": "Barkley Sound",
+    "heroImageUrl": null,
+    "lat": 48.9,
+    "lng": -125.2,
+    "description": "Barkley Sound on Vancouver Island offers rugged cold-water diving amidst lush temperate rainforests. Divers can explore a vibrant marine ecosystem, characterized by intricate rock formations, walls adorned with colorful anemones, and kelp forests teeming with life. Known for encounters with large marine invertebrates and various fish species, this area presents a unique Pacific Northwest diving experience.",
+    "depthRange": {
+      "min": 10,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "cold-water",
+      "wrecks",
+      "macro",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Giant Pacific Octopus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Wolf Eel",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lingcod",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "editorialRank": 70,
+    "getThere": "Accessible via Ucluelet or Port Alberni on Vancouver Island. Fly to Vancouver (YVR) or Victoria (YYJ), then ferry to Vancouver Island and drive to the west coast. Dive operators depart from Ucluelet.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "drysuit",
+      "hood",
+      "gloves",
+      "regulator-cold-water",
+      "fins",
+      "mask"
+    ],
+    "siteSpecificGear": [],
+    "notes": "Strong currents can be present; advanced cold-water diving experience recommended."
   }
 ]

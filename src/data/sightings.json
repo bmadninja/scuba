@@ -5174,5 +5174,98 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Placeholder due to unavailable web search."
+  },
+  {
+    "id": "ari-atoll-maldives-barkley-sound-gpo",
+    "siteId": "ari-atoll-maldives-barkley-sound",
+    "speciesCommon": "Giant Pacific Octopus",
+    "speciesScientific": "Enteroctopus dofleini",
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ari-atoll-maldives-barkley-sound-wolfeel",
+    "siteId": "ari-atoll-maldives-barkley-sound",
+    "speciesCommon": "Wolf Eel",
+    "speciesScientific": "Anarrhichthys ocellatus",
+    "lastConfirmedAt": "2024-04-10",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ari-atoll-maldives-barkley-sound-lingcod",
+    "siteId": "ari-atoll-maldives-barkley-sound",
+    "speciesCommon": "Lingcod",
+    "speciesScientific": "Ophiodon elongatus",
+    "lastConfirmedAt": "2024-03-01",
+    "recentRecordCount": 20,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
   }
 ]
