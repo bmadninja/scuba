@@ -70444,5 +70444,231 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Due to depth, this site is suitable for advanced or technical divers. Standard diving permits and regulations apply."
+  },
+  {
+    "id": "pacific-canada-bowie-seamount",
+    "slug": "pacific-canada-bowie-seamount",
+    "locationId": "pacific-canada",
+    "name": "Bowie Seamount",
+    "heroImageUrl": null,
+    "lat": 53.306925,
+    "lng": -135.6592306,
+    "description": "A remote and ecologically significant submarine volcano in the northeastern Pacific, 180 km west of Haida Gwaii, Canada. Rising from 3,000 meters to a summit depth of 24 meters, Bowie Seamount is a Marine Protected Area, renowned for its unique geological formations and supporting diverse deep-sea and pelagic marine life in cold, nutrient-rich waters.",
+    "depthRange": {
+      "min": 24,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Pacific Rockfish",
+        "scientificName": "Sebastes spp.",
+        "reliability": "year-round",
+        "bestMonths": null
+      },
+      {
+        "commonName": "Lingcod",
+        "scientificName": "Ophiodon elongatus",
+        "reliability": "year-round",
+        "bestMonths": null
+      },
+      {
+        "commonName": "Pacific Halibut",
+        "scientificName": "Hippoglossus stenolepis",
+        "reliability": "year-round",
+        "bestMonths": null
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 5,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 5,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 6,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 6,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 7,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 7,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 7,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 6,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 5,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 85,
+    "getThere": "Accessible by specialized liveaboard vessels or research expeditions departing from coastal British Columbia, typically from major ports such as Prince Rupert or Vancouver. Due to its extreme remoteness, it is not a destination for typical recreational day trips.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "drysuit-bare-x-mission-evolution"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + reel",
+        "reason": "Essential for safety in strong currents and open ocean drift.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Reef hook",
+        "reason": "To safely observe marine life in strong currents without damaging the delicate ecosystem.",
+        "gearId": "reef-hook-innovative"
+      }
+    ],
+    "notes": "Bowie Seamount is part of the SGaan Kinghlas-Bowie Seamount Marine Protected Area, requiring adherence to strict conservation guidelines. Diving here is a true expedition into a remote, pristine deep-sea environment."
   }
 ]

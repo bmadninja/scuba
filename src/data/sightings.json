@@ -4545,5 +4545,59 @@
       "sighting-occurrence-cluster"
     ],
     "notes": "Schools of barracuda are occasionally sighted around wrecks during warmer months."
+  },
+  {
+    "id": "pacific-canada-bowie-seamount-rockfish",
+    "siteId": "pacific-canada-bowie-seamount",
+    "speciesCommon": "Pacific Rockfish",
+    "speciesScientific": "Sebastes spp.",
+    "lastConfirmedAt": "2024-05-24",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "obis",
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "pacific-canada-bowie-seamount-lingcod",
+    "siteId": "pacific-canada-bowie-seamount",
+    "speciesCommon": "Lingcod",
+    "speciesScientific": "Ophiodon elongatus",
+    "lastConfirmedAt": "2024-05-24",
+    "recentRecordCount": 7,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "obis",
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "pacific-canada-bowie-seamount-halibut",
+    "siteId": "pacific-canada-bowie-seamount",
+    "speciesCommon": "Pacific Halibut",
+    "speciesScientific": "Hippoglossus stenolepis",
+    "lastConfirmedAt": "2024-05-24",
+    "recentRecordCount": 6,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "obis",
+      "gbif"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
   }
 ]
