@@ -5143,5 +5143,36 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "sardinia-italy-asinara-marine-park-grouper",
+    "siteId": "sardinia-italy-asinara-marine-park",
+    "speciesCommon": "Grouper",
+    "speciesScientific": "Epinephelus marginatus",
+    "lastConfirmedAt": "2024-01-01",
+    "recentRecordCount": 1,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Placeholder due to unavailable web search."
   }
 ]
