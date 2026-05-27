@@ -6402,5 +6402,57 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "el-hierro-spain-museo-atlantico-barracuda",
+    "siteId": "el-hierro-spain-museo-atlantico",
+    "speciesCommon": "Barracuda",
+    "speciesScientific": "Sphyraena barracuda",
+    "lastConfirmedAt": "2024-06-15",
+    "recentRecordCount": 10,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Commonly observed around the artificial structures."
+  },
+  {
+    "id": "el-hierro-spain-museo-atlantico-angelshark",
+    "siteId": "el-hierro-spain-museo-atlantico",
+    "speciesCommon": "Angelshark",
+    "speciesScientific": "Squatina squatina",
+    "lastConfirmedAt": "2024-06-15",
+    "recentRecordCount": 2,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": "Rarely sighted, but known to inhabit sandy areas near the museum."
   }
 ]
