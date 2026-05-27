@@ -79487,5 +79487,224 @@
       }
     ],
     "notes": "Baited, guided shark dive run by Bimini operators; the great hammerhead season runs roughly November to April and peaks January to March. Expect a long, shallow dive kneeling on sand while sharks are drawn in with bait. Nurse and bull sharks share the site, and a Gulf Stream current runs along the nearby drop. This is a pelagic encounter dive, not a reef or coral site."
+  },
+  {
+    "id": "kona-hawaii-manta-ray-night-dive",
+    "slug": "kona-hawaii-manta-ray-night-dive",
+    "locationId": "kona-hawaii-usa",
+    "name": "Manta Ray Night Dive (Garden Eel Cove)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Manta_ray_night_swim.jpg",
+    "lat": 19.736,
+    "lng": -156.054,
+    "description": "By day this sandy shelf off Keahole Point is Garden Eel Cove, named for the colonies of Hawaiian garden eels that sway from the bottom near 12 m. After dark it becomes Manta Heaven: crews set powerful lights on the sand at about 11 m, the glow concentrates plankton into a bright column, and resident reef mantas with wingspans near 4 m sweep in to barrel roll through the swarm, mouths agape, sometimes passing inches above kneeling divers. Kona's catalog holds more than 200 identified individuals, so the show runs most nights of the year. A resident undulated moray nicknamed Frank often turns up to pick off fish drawn to the lights. Keahole Point shelters the cove from the summer south swell.",
+    "depthRange": {
+      "min": 9,
+      "max": 18
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawaiian garden eel",
+        "scientificName": "Gorgasia hawaiiensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Undulated moray",
+        "scientificName": "Gymnothorax undulatus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 90,
+    "getThere": "Fly into Ellison Onizuka Kona International Airport (KOA) at Keahole, minutes from the site. Manta night dive boats leave Honokohau Harbor just north of Kailua Kona and reach Garden Eel Cove in 20 to 30 minutes. The Keauhou Bay site, known as Manta Village, is the alternate to the south when swell favors it. Shore entry over lava rock is possible but most divers go by boat.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Backup dive light",
+        "reason": "Every diver carries a primary and a backup light for the night descent, even though crews set the big plankton lights on the sand."
+      },
+      {
+        "name": "5mm wetsuit",
+        "reason": "You kneel motionless on the sand for 30 to 45 minutes while the mantas feed, so divers chill faster than the warm water suggests, especially on winter nights."
+      }
+    ],
+    "notes": "This is a night dive: bring a primary and backup light, though operators supply the bottom lights that draw the plankton. The dive is shallow and stationary, so divers get cold quickly. Touching mantas is prohibited and strips their protective mucus; stay low, keep your arms in, and let them pass over you. Garden Eel Cove off the airport is the more sheltered choice in summer, while Keauhou Bay can be exposed to south swell."
   }
 ]
