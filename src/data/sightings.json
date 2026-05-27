@@ -6348,5 +6348,59 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "tofo-mozambique-memba-bay-manta",
+    "siteId": "tofo-mozambique-memba-bay",
+    "speciesCommon": "Reef Manta",
+    "speciesScientific": "Mobula alfredi",
+    "lastConfirmedAt": "2024-05-01",
+    "recentRecordCount": 5,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "tofo-mozambique-memba-bay-whaleshark",
+    "siteId": "tofo-mozambique-memba-bay",
+    "speciesCommon": "Whale Shark",
+    "speciesScientific": "Rhincodon typus",
+    "lastConfirmedAt": "2024-05-01",
+    "recentRecordCount": 3,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
