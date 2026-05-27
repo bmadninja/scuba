@@ -6071,5 +6071,101 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "providencia-colombia-capurgana-parrotfish",
+    "siteId": "providencia-colombia-capurgana",
+    "speciesCommon": "Parrotfish",
+    "speciesScientific": null,
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 20,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "providencia-colombia-capurgana-damselfish",
+    "siteId": "providencia-colombia-capurgana",
+    "speciesCommon": "Damselfish",
+    "speciesScientific": null,
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 25,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "providencia-colombia-capurgana-angelfish",
+    "siteId": "providencia-colombia-capurgana",
+    "speciesCommon": "Angelfish",
+    "speciesScientific": null,
+    "lastConfirmedAt": "2024-05-20",
+    "recentRecordCount": 18,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
