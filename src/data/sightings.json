@@ -5267,5 +5267,69 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ]
+  },
+  {
+    "id": "ari-atoll-maldives-barracuda-junction-barracuda",
+    "siteId": "ari-atoll-maldives-barracuda-junction",
+    "speciesCommon": "Great Barracuda",
+    "speciesScientific": "Sphyraena barracuda",
+    "lastConfirmedAt": "2024-05-15",
+    "recentRecordCount": 15,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
+  },
+  {
+    "id": "ari-atoll-maldives-barracuda-junction-green-sea-turtle",
+    "siteId": "ari-atoll-maldives-barracuda-junction",
+    "speciesCommon": "Green Sea Turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2024-04-20",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ],
+    "notes": null
   }
 ]
