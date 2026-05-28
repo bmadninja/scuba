@@ -81801,85 +81801,157 @@
     "conditionsByMonth": [
       {
         "month": 1,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 2,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 3,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 12, "max": 20 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 4,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 12, "max": 20 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 5,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 10, "max": 18 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 6,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 8, "max": 15 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 7,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 8, "max": 15 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 8,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 8, "max": 15 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 9,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 8, "max": 15 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 10,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 10, "max": 18 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 11,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 12, "max": 20 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 12,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "none",
         "suitRecommendation": "Tropical wetsuit"
       }
@@ -82193,7 +82265,7 @@
     "heroImageUrl": null,
     "lat": 12.281,
     "lng": 93.838,
-    "description": "India's only active volcano breaks the surface about 140 km northeast of Port Blair, and the reef ringing its base is unlike anywhere else in the Andamans — the sand here is black volcanic ash, not white, and old lava flows have set into stepped ledges, arches and walls that drop past 100 m. Reef manta rays are the headline: a group of up to nine works the cleaning stations off the western black sand bay, banking slowly while cleaner wrasse pick them over. Whitetip reef sharks patrol the drop offs, green and hawksbill turtles graze the shallows, and schools of needlefish, barracuda and trevally hang in water that routinely clears to 40 m or more. Sites such as the Washing Machine throw strong down currents, and with the island reachable only by liveaboard this stays firmly advanced ground.",
+    "description": "India's only active volcano breaks the surface about 140 km northeast of Port Blair, and the reef ringing its base is unlike anywhere else in the Andamans \u2014 the sand here is black volcanic ash, not white, and old lava flows have set into stepped ledges, arches and walls that drop past 100 m. Reef manta rays are the headline: a group of up to nine works the cleaning stations off the western black sand bay, banking slowly while cleaner wrasse pick them over. Whitetip reef sharks patrol the drop offs, green and hawksbill turtles graze the shallows, and schools of needlefish, barracuda and trevally hang in water that routinely clears to 40 m or more. Sites such as the Washing Machine throw strong down currents, and with the island reachable only by liveaboard this stays firmly advanced ground.",
     "depthRange": {
       "min": 5,
       "max": 40
@@ -82710,5 +82782,563 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "This is a cavern dive in an overhead environment, entered through an archway and finished through a tight chimney called the Shotgun where divers ride the surge out one at a time, so most operators require Advanced Open Water or a confident certified diver with good buoyancy. Sand stirred off the floor clouds the chamber fast, so the first group in gets the cleanest light, and the sunbeams on the Altar are sharpest on calm summer middays near noon. Winter Kona storms and rougher channel crossings cancel trips at short notice."
+  },
+  {
+    "id": "cozumel-paradise-reef",
+    "slug": "cozumel-paradise-reef",
+    "locationId": "cozumel-mexico",
+    "name": "Paradise Reef",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Splendid_toadfish.jpg",
+    "lat": 20.458,
+    "lng": -86.998,
+    "description": "Paradise Reef is the shallow coral strip just south of Cozumel's cruise piers and the northernmost reef inside the island's national marine park. Three low ridges of sponges and gorgonians sit in 9 to 15 m of gentle drift, which makes it the standard Cozumel checkout dive and its most reliable night dive. After dark, torch beams pick out the splendid toadfish, a striped electric blue fish that lives nowhere on Earth but Cozumel, wedged under ledges and croaking from its burrow. Spotted eagle rays pass through in winter while octopus, banded coral shrimp and snapper work the reef once the sun drops.",
+    "depthRange": {
+      "min": 9,
+      "max": 15
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Splendid toadfish",
+        "scientificName": "Sanopus splendidus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Queen angelfish",
+        "scientificName": "Holacanthus ciliaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean reef octopus",
+        "scientificName": "Octopus briareus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 74,
+    "getThere": "Cozumel (CZM) has direct flights from many US cities, or fly into Cancun (CUN) and take the 45 minute ferry from Playa del Carmen. Paradise Reef is a few minutes by boat from the San Miguel waterfront, just south of the cruise terminals.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Hotel Flamingo Cozumel",
+        "url": "https://www.booking.com/searchresults.html?ss=Hotel%20Flamingo%20Cozumel",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Casa Mexicana Cozumel",
+        "url": "https://www.booking.com/searchresults.html?ss=Casa%20Mexicana%20Cozumel",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Presidente InterContinental Cozumel",
+        "url": "https://www.booking.com/searchresults.html?ss=Presidente%20InterContinental%20Cozumel",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Aldora Divers",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary dive torch",
+        "reason": "Paradise is dived mainly after dark, when a strong torch is what reveals the splendid toadfish under ledges.",
+        "gearId": "light-bigblue-al1200"
+      },
+      {
+        "name": "Surface marker buoy",
+        "reason": "The reef sits beside the cruise ship channel, so divers surface under an SMB clear of boat traffic.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Inside Cozumel Reefs National Park, so a park fee or wristband applies. The site borders the cruise ship channel and dives are timed around heavy boat traffic. Night dives are the highlight."
+  },
+  {
+    "id": "blue-hole-belize-shark-ray-alley",
+    "slug": "blue-hole-belize-shark-ray-alley",
+    "locationId": "blue-hole-belize",
+    "name": "Shark Ray Alley",
+    "heroImageUrl": null,
+    "lat": 17.8537,
+    "lng": -87.9713,
+    "description": "Zone D of Hol Chan Marine Reserve, about a mile south of the reserve's main cut off Ambergris Caye. Decades of fish cleaning by local fishermen drew Atlantic nurse sharks and southern stingrays into the shallow sand patch, and now twenty or more sharks routinely circle in waist deep water as boats arrive. Depths run only 5 to 12 feet over a white sand bottom, so divers and snorkelers share the column with the animals. The draw is close encounters and natural light photography rather than reef structure, and most operators pair it with a Hol Chan reef dive on the same trip.",
+    "depthRange": {
+      "min": 2,
+      "max": 4
+    },
+    "skillLevel": "never-dived",
+    "diveTypes": [
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Atlantic nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Southern stingray",
+        "scientificName": "Hypanus americanus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full or shorty"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full or shorty"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or skin"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or skin"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or skin"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Skin or 3mm shorty"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Skin or 3mm shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Skin or 3mm shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Skin or 3mm shorty"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Skin or 3mm shorty"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or full"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full or shorty"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 70,
+    "getThere": "Fly into Philip S. W. Goldson International Airport (BZE) near Belize City, then take a 15 minute Tropic Air or Maya Island Air hop to San Pedro on Ambergris Caye (SPR). Most San Pedro dive operators run the trip as a half day boat charter combined with Hol Chan, roughly 20 minutes south of town.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Inside Hol Chan Marine Reserve (Zone D), so a per person park fee applies and is usually bundled by operators. No gloves, no touching, no chasing. Sharks are habituated and generally calm but bites have occurred when divers grab them or get between them and bait. Often combined with a Hol Chan reef dive on the same boat trip. Suitable as a snorkel or for first dives; current is typically mild."
   }
 ]
