@@ -91361,5 +91361,234 @@
       }
     ],
     "notes": "Advanced Open Water with deep training and a verified logbook is the working minimum, and most liveaboard operators want 50 plus logged dives. The site is fully exposed and routinely cancelled when the southwest monsoon swell builds, which can be any time between mid May and mid September. Hammerhead sightings are rare and dependent on bringing thermoclines; treat them as a bonus rather than the headline. Foreign nationals no longer need a Restricted Area Permit for Havelock since 2022 but must carry a passport on board."
+  },
+  {
+    "id": "cod-hole-pixie-pinnacle",
+    "slug": "cod-hole-pixie-pinnacle",
+    "locationId": "cod-hole-australia",
+    "name": "Pixie Pinnacle",
+    "heroImageUrl": null,
+    "lat": -14.9299,
+    "lng": 145.6756,
+    "description": "A single soft coral spire rising from a sandy 30 m bottom to within 5 m of the surface, no more than 15 m wide at the base. The whole column is wrapped in soft corals and gorgonian fans, with a permanent pink cloud of anthias hovering against the blue. Lionfish patrol caves and overhangs, leaf scorpionfish wedge into coral nubs, magnificent nudibranchs crawl the rubble at the base, and schools of bigeye trevally sweep past the pinnacle. Whitetip reef sharks cruise the sand. Currents are usually mild but can rip on tide changes; the bommie is small enough to circle in one dive. Pixie sits on Ribbon Reef 10 a short distance from Cod Hole and is reached only by liveaboard from Cairns or Port Douglas.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Fairy basslet",
+        "scientificName": "Pseudanthias squamipinnis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Orange-fin anemonefish",
+        "scientificName": "Amphiprion chrysopterus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Leaf scorpionfish",
+        "scientificName": "Taenianotus triacanthus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Magnificent nudibranch",
+        "scientificName": "Chromodoris magnifica",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 85,
+    "getThere": "Cairns (CNS) is the gateway airport, with Port Douglas as the secondary departure point. Pixie Pinnacle is liveaboard only and sits about 140 km north of Cairns on Ribbon Reef 10. Liveaboards run 3, 4, or 7 night Ribbon Reefs itineraries and typically pair Pixie with Cod Hole, Lighthouse Bommie, and Steve's Bommie on Ribbon Reef 3. The nearest land is Lizard Island, about 30 km west, which has its own airstrip served from Cairns.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Marine park fee applies inside the Great Barrier Reef Marine Park. The pinnacle is exposed and tides can drive moderate flow; a reef hook is rarely needed but a surface marker buoy is standard. Dwarf minke whales frequent the wider Ribbon Reefs area in June and July and are sometimes encountered between dives. Combine with the Cod Hole feed dive on the same itinerary."
   }
 ]
