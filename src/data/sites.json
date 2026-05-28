@@ -94350,132 +94350,290 @@
         "commonName": "Whitetip reef shark",
         "scientificName": "Triaenodon obesus",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Grey reef shark",
         "scientificName": "Carcharhinus amblyrhynchos",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Blacktip reef shark",
         "scientificName": "Carcharhinus melanopterus",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Scalloped hammerhead",
         "scientificName": "Sphyrna lewini",
         "reliability": "rare",
-        "bestMonths": [12, 1, 2, 3]
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
       },
       {
         "commonName": "Oceanic manta ray",
         "scientificName": "Mobula birostris",
         "reliability": "seasonal",
-        "bestMonths": [11, 12, 1, 2, 3, 4, 5]
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
       },
       {
         "commonName": "Giant Napoleon wrasse",
         "scientificName": "Cheilinus undulatus",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Hawksbill turtle",
         "scientificName": "Eretmochelys imbricata",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       }
     ],
     "conditionsByMonth": [
       {
         "month": 1,
-        "waterTempC": { "min": 26, "max": 28 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 2,
-        "waterTempC": { "min": 26, "max": 28 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 3,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 4,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 5,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 6,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 7,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 8,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 9,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 10,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 12, "max": 22 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 11,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 18, "max": 28 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       },
       {
         "month": 12,
-        "waterTempC": { "min": 26, "max": 28 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit (3 mm)"
       }
     ],
-    "bestMonths": [11, 12, 1, 2, 3, 4, 5],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "editorialRank": 82,
     "getThere": "Fly into Manila (MNL), then connect to San Jose (SJI) on Mindoro by short flight, or take an overnight bus from Manila to Sablayan via the Batangas ferry. From Sablayan harbour, traditional pump boats (banka) take roughly 2.5 hours west across the Mindoro Strait to the reef; most operators sell the trip as an overnight liveaboard on the banka, with calm season day boats also possible. Liveaboards from Coron, Puerto Galera and Anilao reach Apo Reef on combined Philippines itineraries.",
     "lodging": [],
@@ -94740,132 +94898,298 @@
         "commonName": "Bigeye trevally",
         "scientificName": "Caranx sexfasciatus",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Batfish",
         "scientificName": "Platax teira",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Yellowtail snapper",
         "scientificName": "Lutjanus",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Common lionfish",
         "scientificName": "Pterois volitans",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Giant moray",
         "scientificName": "Gymnothorax javanicus",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Green turtle",
         "scientificName": "Chelonia mydas",
         "reliability": "seasonal",
-        "bestMonths": [3, 4, 5, 6, 7, 8, 9, 10]
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
       },
       {
         "commonName": "Honeycomb grouper",
         "scientificName": "Epinephelus merra",
         "reliability": "year-round",
-        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       }
     ],
     "conditionsByMonth": [
       {
         "month": 1,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 2,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 25, "max": 35 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 3,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 25, "max": 35 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 4,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 25, "max": 35 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 5,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 6,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 7,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 8,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 9,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 10,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 11,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 12,
-        "waterTempC": { "min": 27, "max": 29 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       }
     ],
-    "bestMonths": [1, 2, 3, 4, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
     "editorialRank": 78,
     "getThere": "Velana International Airport (MLE) sits on Hulhulé, the same reef the wreck is impaled on. The site is a five to ten minute speedboat hop from any Malé or Hulhumalé jetty, making it the closest serious wreck dive to the Maldives' only international airport. Most North Malé liveaboards and Malé day boat operators run a morning trip timed to slack water.",
     "lodging": [],
@@ -94873,5 +95197,311 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Channel dive with persistent current, typically 1 to 3 knots — operators run it on slack tide and use a shotline down to the mast. Advanced certification, surface marker buoy and reel are standard. Sand bottom at 35 m puts a hard cap on bottom time on air; nitrox is common. Penetration of the holds and superstructure is possible but the wreck has been heavily worked over by salvage and storms, with silty interiors and no permanent guide lines; overhead training is assumed. The site reopened to recreational diving in May 2021 after a multi year closure for a debris clean up."
+  },
+  {
+    "id": "blue-corner-palau-helmet-wreck",
+    "slug": "blue-corner-palau-helmet-wreck",
+    "locationId": "blue-corner-palau",
+    "name": "Helmet Wreck",
+    "heroImageUrl": null,
+    "lat": 7.331,
+    "lng": 134.453,
+    "description": "An unidentified Japanese Army cargo ship resting upright on the floor of Malakal Harbor, sunk by US carrier aircraft during Operation Desecrate One on March 30, 1944. Bow lies at 15 m, stern at 35 m. The aft holds still cradle stacked Japanese steel helmets fused into corroded heaps, alongside rifles, gas masks, depth charges, ceramic sake jars, and three radial engines from Zeke fighters. Glassfish swarm the bridge and lionfish hover above the gunwales.",
+    "depthRange": {
+      "min": 15,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Banded pipefish",
+        "scientificName": "Doryrhamphus dactyliophorus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Stonefish",
+        "scientificName": "Synanceia verrucosa",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Tomato anemonefish",
+        "scientificName": "Amphiprion frenatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Yellow ribbon eel",
+        "scientificName": "Rhinomuraena quaesita",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Glassfish",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 72,
+    "getThere": "Roman Tmetuchl International Airport (ROR) in Koror is the gateway to Palau. Malakal Harbor sits five minutes by speedboat from most Koror dive operators; the wreck is one of the closest dives in Palau.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Live WWII ordnance remains in the holds, including depth charges and small arms ammunition. Do not touch. Penetration of the cargo holds requires wreck certification and good buoyancy; silt out is easy."
   }
 ]
