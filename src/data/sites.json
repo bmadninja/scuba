@@ -94325,5 +94325,163 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Listed on the Florida Keys Shipwreck Trail. Penetration of the cargo holds and engine room requires formal wreck certification — the broken hull has overhead hazards and silt outs. Mooring buoys are maintained by the Florida Keys National Marine Sanctuary; do not anchor. Late summer brings goliath grouper aggregations."
+  },
+  {
+    "id": "apo-reef-philippines-apo-reef-natural-park",
+    "slug": "apo-reef-philippines-apo-reef-natural-park",
+    "locationId": "apo-reef-philippines",
+    "name": "Apo Reef",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/White_Tip_Shark_of_Apo_Reef.jpg",
+    "lat": 12.6617,
+    "lng": 120.4144,
+    "description": "34 km² coral atoll in the Mindoro Strait, roughly 28 km west of Occidental Mindoro — the second largest contiguous coral reef system in the world after the Great Barrier Reef. Two lagoons split by a sand channel are ringed by walls dropping past 40 m. Shark Ridge and The Cathedral pinnacle near Binangaan Islet reliably hold whitetip and grey reef sharks, with blacktips patrolling the outer reef and occasional scalloped hammerheads passing through. Oceanic manta rays cruise the perimeter from November to May alongside giant Napoleon wrasse, schooling jacks, and hawksbill turtles working a coral garden of more than 400 hard and soft species. Visibility past 30 m is routine in the dry season; strong currents along the outer walls keep most dives at advanced level.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "rare",
+        "bestMonths": [12, 1, 2, 3]
+      },
+      {
+        "commonName": "Oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "seasonal",
+        "bestMonths": [11, 12, 1, 2, 3, 4, 5]
+      },
+      {
+        "commonName": "Giant Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 12, "max": 22 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 18, "max": 28 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      }
+    ],
+    "bestMonths": [11, 12, 1, 2, 3, 4, 5],
+    "editorialRank": 82,
+    "getThere": "Fly into Manila (MNL), then connect to San Jose (SJI) on Mindoro by short flight, or take an overnight bus from Manila to Sablayan via the Batangas ferry. From Sablayan harbour, traditional pump boats (banka) take roughly 2.5 hours west across the Mindoro Strait to the reef; most operators sell the trip as an overnight liveaboard on the banka, with calm season day boats also possible. Liveaboards from Coron, Puerto Galera and Anilao reach Apo Reef on combined Philippines itineraries.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Apo Reef Natural Park protection fee is required and collected by Sablayan rangers; a park ranger normally joins each trip. Fishing, anchoring, spearfishing and shark feeding are prohibited inside the marine park. Strong currents along the outer walls, especially at Shark Ridge and the Binangaan drop off, make advanced certification typical and a surface marker buoy mandatory for drifts. Southwest monsoon brings rough seas and frequent cancellations from June through October. Nearest recompression chamber is in Subic Bay or Manila — long medevac, plan conservatively on bottom time and gas."
   }
 ]
