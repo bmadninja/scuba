@@ -85872,5 +85872,145 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Sits inside the Canaries Marine Management Area; permit fees are collected by operators. The interior is well lit through hatch openings, with no overhead silt traps in the main holds, so most dive shops run a guided swim through on a standard open water certification — basic wreck training is recommended but not always required. A torch is still useful for the engine room and crew quarters. Mooring buoys mark the bow and stern; do not anchor. The Vicky B, a smaller tug sunk in 2003, lies 200 m to the south and is often added as a second tank by operators staying on site."
+  },
+  {
+    "id": "koh-tao-htms-sattakut",
+    "slug": "koh-tao-htms-sattakut",
+    "locationId": "koh-tao-thailand",
+    "name": "HTMS Sattakut",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Diving_Ko_Tao%2C_Thailand_1140.jpg",
+    "lat": 10.1195,
+    "lng": 99.8163,
+    "description": "Ex Royal Thai Navy infantry landing craft scuttled in June 2011 about 800 metres southwest of Koh Tao as a wreck specialty training site. The Sattakut sits upright on a sandy plain with the seabed at 30 metres and the deck around 18 to 22 metres. The bow and stern gun mounts remain in place and are the signature photo subjects, drawing schools of yellowtail fusiliers and snapper that hover in the lee of the railings. Penetration of the wheelhouse and cargo holds is possible for divers with wreck training; the engine room is reserved for more experienced wreck divers carrying lights. Originally USS LCI(L) 742, the ship served at Iwo Jima before its 1947 transfer to the Royal Thai Navy and 2011 sinking.",
+    "depthRange": {
+      "min": 18,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Yellowtail fusilier",
+        "scientificName": "Caesio cuning",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluefin trevally",
+        "scientificName": "Caranx melampygus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant grouper",
+        "scientificName": "Epinephelus lanceolatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Titan triggerfish",
+        "scientificName": "Balistoides viridescens",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare",
+        "bestMonths": [3, 4, 5, 8, 9]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 29, "max": 31 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 15 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 15, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 8, "max": 15 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 5, "max": 10 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 8, "max": 15 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [3, 4, 5, 8, 9],
+    "editorialRank": 70,
+    "getThere": "Fly to Bangkok (BKK or DMK), then transfer to Chumphon airport (CJM) or Surat Thani (URT). From Chumphon take the Lomprayah catamaran to Koh Tao (about 1.5 hours); from Surat Thani via Donsak ferry pier (around 3 hours). Dive shops in Mae Haad and Sairee Beach run boats to the wreck, a 20 to 30 minute ride.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Use the mooring buoys; the wreck sits on sand and is easy to lose in poorer visibility. Wreck specialty certification is required for penetration of the wheelhouse and cargo holds. The deeper engine room and crew quarters need a torch and are typically reserved for divers with technical or advanced wreck training. The site is often combined with Hin Pee Wee pinnacle 30 metres to the northwest as a multi level dive. Visibility drops sharply during the November monsoon when many operators skip the site."
   }
 ]
