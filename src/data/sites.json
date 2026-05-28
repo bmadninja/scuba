@@ -89399,6 +89399,248 @@
     "notes": "Heritage Malta permit required for every dive; operators handle the paperwork. Trimix and full deco capability mandatory; runtimes are typically 90 to 120 minutes including decompression. Wreck is a protected war grave so no penetration and no artefact removal."
   },
   {
+    "id": "gozo-malta-mv-karwela",
+    "slug": "gozo-malta-mv-karwela",
+    "locationId": "gozo-malta",
+    "name": "MV Karwela",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Karavela_Wrack.jpg",
+    "lat": 36.0168,
+    "lng": 14.2864,
+    "description": "Maltese passenger ferry scuttled off Gozo's south coast in August 2006 as an artificial reef. Sits upright on sand at 40 m with the wheelhouse at 30 m and the main promenade deck around 32 m. The signature shot is the long interior corridor lit blue through a row of square windows on the passenger deck. Most dived wreck in Gozo, mostly intact, with the engine room and lounge spaces open to penetration for trained divers. Often paired with the MV Cominoland and Xlendi tug wrecks on the same Xatt l’Aħmar reef.",
+    "depthRange": {
+      "min": 30,
+      "max": 42
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena sphyraena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Amberjack",
+        "scientificName": "Seriola dumerili",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Mediterranean moray",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Damselfish",
+        "scientificName": "Chromis chromis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Painted comber",
+        "scientificName": "Serranus scriba",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Coldwater wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Coldwater wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Coldwater wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Coldwater wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Coldwater wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Malta International (MLA). From Malta take the Cirkewwa–Mgarr ferry to Gozo (about 25 minutes), then drive 15 minutes south to Xatt l’Aħmar near Mgarr ix-Xini. Most operators access the wreck by boat from Mgarr harbour.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light",
+        "reason": "Penetration of the promenade corridor, engine room, and lounge interiors."
+      },
+      {
+        "name": "5mm wetsuit or drysuit",
+        "reason": "Mediterranean winter temperatures below 16C; depth keeps it cool even in summer."
+      },
+      {
+        "name": "Decompression cylinder",
+        "reason": "Maximum depth at 42 m means short no-deco windows; many divers run nitrox or twin sets for extended bottom time."
+      }
+    ],
+    "notes": "Wreck sits in Maltese marine waters with no permit required. Penetration only for divers with wreck training; sand and silt can blow out visibility inside the engine room. Best paired with MV Cominoland (50 m east) for a two-wreck dive."
+  },
+  {
     "id": "raja-ampat-indonesia-the-passage",
     "slug": "raja-ampat-indonesia-the-passage",
     "locationId": "raja-ampat-indonesia",
@@ -93849,5 +94091,239 @@
       }
     ],
     "notes": "Coron's deepest dive and considered the most technically demanding of the WWII wreck circuit. Bottom at 43 m exceeds recreational limits; Nitrox, wreck and deep certifications are typical operator requirements. Penetration of engine room, galley and bunkrooms requires wreck specialty training, redundant lights and a reel. Surface conditions and currents close the wreck during southwest monsoon storms (July to September)."
+  },
+  {
+    "id": "florida-keys-eagle-wreck",
+    "slug": "florida-keys-eagle-wreck",
+    "locationId": "florida-keys-usa",
+    "name": "Eagle Wreck",
+    "heroImageUrl": null,
+    "lat": 24.86967,
+    "lng": -80.57017,
+    "description": "Dutch built coastal freighter scuttled in 1985 off Lower Matecumbe Key, Islamorada's signature wreck dive and one of the four hulls on the Florida Keys Wreck Trek. Hurricane Georges snapped the 287 ft hull in two in 1998 — the bow and stern now lie about 100 ft apart on a sandy bottom, listing to starboard. Mast tops climb to 22 m, deck rails sit at 24 m, propeller and rudder rest at 33 m. Resident goliath grouper claim the cargo holds and machinery spaces; great barracuda hang motionless off the kingposts; tarpon, amberjack, jacks, and dense bait clouds drift through the gap between the two halves. Gulf Stream eddies push moderate current most days. Wreck certification is needed for hold penetrations.",
+    "depthRange": {
+      "min": 22,
+      "max": 33
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "commonName": "Bar jack",
+        "scientificName": "Caranx ruber",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Greater amberjack",
+        "scientificName": "Seriola dumerili",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Atlantic spadefish",
+        "scientificName": "Chaetodipterus faber",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly into Miami International (MIA) and drive ~1.5 hr south on US 1 to Islamorada, or use Fort Lauderdale (FLL). Charters depart Lower Matecumbe Key marinas; the wreck sits 6 nautical miles offshore, about 3 miles northeast of Alligator Reef Light, a 30 to 40 min boat ride.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Listed on the Florida Keys Shipwreck Trail. Penetration of the cargo holds and engine room requires formal wreck certification — the broken hull has overhead hazards and silt outs. Mooring buoys are maintained by the Florida Keys National Marine Sanctuary; do not anchor. Late summer brings goliath grouper aggregations."
   }
 ]
