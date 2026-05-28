@@ -81954,5 +81954,235 @@
       }
     ],
     "notes": "Overhead environment: stay with the guide, carry a torch, and move slowly because the fine sediment clouds the chambers fast and the formations are fragile. No technical cave certification is required and depth stays shallow, but it suits divers comfortable with buoyancy. Sheltered harbor location means it dives year round regardless of swell. Requires the Koror State permit and Palau Pristine Paradise Environmental Fee. Often paired with a dusk mandarinfish dive on the nearby Malakal Harbor wall."
+  },
+  {
+    "id": "tobago-speyside-japanese-gardens",
+    "slug": "tobago-speyside-japanese-gardens",
+    "locationId": "tobago-speyside-trinidad-and-tobago",
+    "name": "Japanese Gardens",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Agelas_clathrodes_324098911.jpg",
+    "lat": 11.2971,
+    "lng": -60.5197,
+    "description": "A drift dive off the southern tip of Goat Island, where the Guyana Current pushes divers along a slope crowded with orange elephant ear sponges, yellow tube sponges and grey barrel sponges before funneling them through the Kamikaze Cut, a narrow gap that speeds up the flow. The same nutrient laden water that grows those sponges feeds hawksbill turtles, nurse sharks tucked under ledges, and schools of barracuda and tarpon, with manta rays passing through in the greener plankton months. The dive runs from a sponge covered shelf near the island down past 30 m.",
+    "depthRange": {
+      "min": 9,
+      "max": 33
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Southern stingray",
+        "scientificName": "Hypanus americanus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "rare",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm or shortie"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm or shortie"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm or shortie"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm full wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 73,
+    "getThere": "Fly into A.N.R. Robinson International (TAB) at Crown Point in southwest Tobago, with frequent hops from Port of Spain on Trinidad and seasonal service from the UK and North America. Speyside sits on the northeast coast about 50 km away, a drive of roughly 1.5 hours along the windward coast road. Dive operators in Speyside Bay run boats to the south tip of Goat Island in about 10 minutes.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Strong drift is both the draw and the hazard: the current accelerates through a gap the guides call the Kamikaze Cut, so expect a fast ride and carry an SMB for the live boat pickup. It dives best on a slack to building tide with a guide who knows the timing. Plankton heavy water from the Guyana Current keeps visibility variable and feeds the sponges. The site lies within northeast Tobago waters managed for reef protection, so spearfishing and glove use are discouraged."
   }
 ]
