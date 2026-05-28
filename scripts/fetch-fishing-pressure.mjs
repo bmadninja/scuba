@@ -16,7 +16,7 @@
  * it does NOT modify fishing-pressure.json. This lets `npm run build`
  * succeed without credentials.
  *
- * Pace: 1s between requests (GFW free tier is rate-limited).
+ * Pace: 3s between locations (each does 2 API calls; keeps under GFW free tier).
  */
 
 import fs from "node:fs/promises";
@@ -28,7 +28,9 @@ const OUT_PATH = path.join(ROOT, "src/data/fishing-pressure.json");
 
 const TOKEN = process.env.GFW_API_TOKEN;
 const RADIUS_KM = 50;
-const PACE_MS = 1000;
+// Each location makes 2 API calls (current + baseline year). 3s between
+// locations keeps us under ~40 req/min on the GFW free tier.
+const PACE_MS = 3000;
 // GFW 4Wings dataset for apparent fishing effort.
 const DATASET = "public-global-fishing-effort:latest";
 const API_BASE = "https://gateway.api.globalfishingwatch.org/v3/4wings/report";
