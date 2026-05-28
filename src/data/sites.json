@@ -96277,42 +96277,550 @@
     "lat": 35.9878,
     "lng": 14.3286,
     "description": "Former East German Kondor-class minesweeper that the Maltese Armed Forces ran as a coastal patrol boat for seven years before scuttling her off Cirkewwa on 14 August 2007 as an artificial reef. The 52 m hull sits upright on a sand flat, bow pointing seaward, with the keel at 34 m, deck around 22 m, and the bridge mast topping out at 12 m below the surface. The bow machine gun was left in place and is the standard photograph divers come back with. Doors and bulkheads were cut for safe penetration of the wheelhouse, engine room and aft cabins, and the steel is now furred with sponges and tubeworms. Open water can be enough if the dive stays on the upper hull, but reaching the bow gun and going inside calls for advanced or wreck training. Schools of damselfish and bream work the rails, large dusky grouper sit under the stern overhang, and squid, flying gurnards and stingrays cross the sand around the keel.",
-    "depthRange": { "min": 12, "max": 35 },
+    "depthRange": {
+      "min": 12,
+      "max": 35
+    },
     "skillLevel": "advanced",
-    "diveTypes": ["wrecks"],
+    "diveTypes": [
+      "wrecks"
+    ],
     "species": [
-      { "commonName": "Dusky grouper", "scientificName": "Epinephelus marginatus", "reliability": "year-round", "bestMonths": [5,6,7,8,9,10] },
-      { "commonName": "European barracuda", "scientificName": "Sphyraena sphyraena", "reliability": "seasonal", "bestMonths": [6,7,8,9,10] },
-      { "commonName": "Common octopus", "scientificName": "Octopus vulgaris", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
-      { "commonName": "Flying gurnard", "scientificName": "Dactylopterus volitans", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
-      { "commonName": "European conger", "scientificName": "Conger conger", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
-      { "commonName": "Common stingray", "scientificName": "Dasyatis pastinaca", "reliability": "seasonal", "bestMonths": [5,6,7,8,9,10] }
+      {
+        "commonName": "Dusky grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "European barracuda",
+        "scientificName": "Sphyraena sphyraena",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Common octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Flying gurnard",
+        "scientificName": "Dactylopterus volitans",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "European conger",
+        "scientificName": "Conger conger",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Common stingray",
+        "scientificName": "Dasyatis pastinaca",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
     ],
     "conditionsByMonth": [
-      { "month": 1, "waterTempC": { "min": 14, "max": 15 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit or drysuit" },
-      { "month": 2, "waterTempC": { "min": 14, "max": 15 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit or drysuit" },
-      { "month": 3, "waterTempC": { "min": 14, "max": 16 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit or drysuit" },
-      { "month": 4, "waterTempC": { "min": 16, "max": 18 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
-      { "month": 5, "waterTempC": { "min": 18, "max": 20 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
-      { "month": 6, "waterTempC": { "min": 21, "max": 23 }, "visibilityM": { "min": 20, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
-      { "month": 7, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3-5mm wetsuit" },
-      { "month": 8, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3-5mm wetsuit" },
-      { "month": 9, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3-5mm wetsuit" },
-      { "month": 10, "waterTempC": { "min": 22, "max": 24 }, "visibilityM": { "min": 20, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
-      { "month": 11, "waterTempC": { "min": 19, "max": 21 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "5-7mm wetsuit" },
-      { "month": 12, "waterTempC": { "min": 16, "max": 17 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit or drysuit" }
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 18,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 16,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      }
     ],
-    "bestMonths": [5, 6, 7, 8, 9, 10],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
     "editorialRank": 80,
     "getThere": "Fly to Malta International Airport (MLA), then drive or bus roughly 35 km to the Cirkewwa ferry terminal at the northern tip of Malta. The wreck sits about 120 m offshore from the dive ladders next to the old terminal pier and is reached as a shore dive — a surface swim of 5 to 10 minutes on the surface or a navigation along the reef line from the Madonna statue. Most Cirkewwa operators run the P29 as a two tank morning, often paired with the Rozi tugboat 70 m away to the south.",
     "lodging": [],
     "operators": [],
     "gearIds": [],
     "siteSpecificGear": [
-      { "name": "Dive torch", "reason": "Needed for the wheelhouse and engine room interior, which are dark even on a sunny day." },
-      { "name": "SMB and reel", "reason": "Boat traffic from the Cirkewwa ferry terminal runs close to the wreck; deploy a buoy on ascent." },
-      { "name": "Nitrox 32", "reason": "Bottom time at 30 m fills quickly on air; nitrox stretches the dive and adds a safety margin on the keel."}
+      {
+        "name": "Dive torch",
+        "reason": "Needed for the wheelhouse and engine room interior, which are dark even on a sunny day."
+      },
+      {
+        "name": "SMB and reel",
+        "reason": "Boat traffic from the Cirkewwa ferry terminal runs close to the wreck; deploy a buoy on ascent."
+      },
+      {
+        "name": "Nitrox 32",
+        "reason": "Bottom time at 30 m fills quickly on air; nitrox stretches the dive and adds a safety margin on the keel."
+      }
     ],
     "notes": "Maximum keel depth of 34 m places the full hull tour outside open water limits; plan as an advanced or deep dive and stay above the deck at 22 m if untrained. Penetration is possible through cut hatches in the wheelhouse and engine room but requires wreck training, a torch, and ideally a guide. The bow machine gun is a replica left in place after scuttling. Sea state at the shore entry can be rough in north-westerly winds; check the marine forecast and use the eastern ladders if swells are running."
+  },
+  {
+    "id": "florida-keys-benwood-wreck",
+    "slug": "florida-keys-benwood-wreck",
+    "locationId": "florida-keys-usa",
+    "name": "Benwood Wreck",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Benwood-28.JPG",
+    "lat": 25.0527,
+    "lng": -80.3337,
+    "description": "A 110 m English steam freighter that collided with the SS Robert C. Tuttle off Key Largo on 9 April 1942 while running blacked out to evade a German submarine. She settled on a sandy slope between Dixie Shoals and French Reef, the broken midships and stern in 8 m of sand and the crushed bow rising 8 m above the bottom at 14 m. One of the most dived wrecks in the world and a staple shallow night dive: schools of porkfish and grunts shelter inside the forward hull, queen angelfish and stoplight parrotfish work plates encrusted with elkhorn coral and sea fans, and resident green morays and goliath grouper sit in the wreckage. Salvage in the 1950s and postwar gunnery practice broke the hull apart, but the bow profile and ribs remain the canonical photo subjects.",
+    "depthRange": {
+      "min": 8,
+      "max": 14
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Stoplight parrotfish",
+        "scientificName": "Sparisoma viride",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Queen angelfish",
+        "scientificName": "Holacanthus ciliaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Porkfish",
+        "scientificName": "Anisotremus virginicus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "French grunt",
+        "scientificName": "Haemulon flavolineatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bermuda chub",
+        "scientificName": "Kyphosus sectatrix",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spiny lobster",
+        "scientificName": "Panulirus argus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or skin"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or skin"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or skin"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly into Miami International (MIA) and drive roughly 1 hour south on US 1 to Key Largo, or fly into Fort Lauderdale (FLL) for similar driving time. Charter boats depart Key Largo marinas — Garden Cove, Marina del Mar, and the Holiday Inn dock — for the 30 minute ride out to the three mooring buoys at the wreck, often paired with a second dive on nearby French Reef or Dixie Shoals.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Underwater torch",
+        "reason": "Goliath grouper and green morays hold in shaded pockets inside the bow and under broken plates; a torch reveals the wreck's resident fauna and is mandatory for the popular night dive."
+      },
+      {
+        "name": "SMB and reel",
+        "reason": "Multiple charter boats work the three mooring buoys simultaneously and Gulf Stream eddies can push divers off the wreck; deploy a marker before surfacing."
+      }
+    ],
+    "notes": "Open Water certification and basic buoyancy control sufficient. Three mooring buoys mark the wreck — never tie to the structure. The wreck lies inside the Florida Keys National Marine Sanctuary and John Pennekamp Coral Reef State Park, both protected; no artifact removal or coral contact. Night dives are the local specialty: octopus, basket stars, and spiny lobster emerge across the broken plates, and resting parrotfish sleep in mucus cocoons inside the bow. Check the marine forecast before booking — northerly winter fronts can drop visibility and turn the surface choppy."
   }
 ]
