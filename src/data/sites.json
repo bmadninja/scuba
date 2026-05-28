@@ -85721,5 +85721,156 @@
       }
     ],
     "notes": "Overhead environment with all canyon depths exceeding recreational limits and a documented history of narcosis fatalities at the deep exit. Many divers and operators treat the slot as a technical objective and run the shallow coral garden plus the Fish Bowl as a separate open water profile. Shore access only; a small fee covers the Bedouin car park and rest area at the entry."
+  },
+  {
+    "id": "anse-chastanet-saint-lucia-lesleen-m-wreck",
+    "slug": "anse-chastanet-saint-lucia-lesleen-m-wreck",
+    "locationId": "anse-chastanet-saint-lucia",
+    "name": "Lesleen M Wreck",
+    "heroImageUrl": null,
+    "lat": 13.9167,
+    "lng": -61.0667,
+    "description": "A 50 metre cargo freighter sunk by the Saint Lucia Department of Fisheries in October 1986 as the country's first purpose laid artificial reef, just off Anse Cochon on the leeward coast. The Lesleen M sits fully upright on a flat sand floor, wheelhouse rising to roughly 12 m and keel at 20 m, with the holds, engine room, and bridge open and easily swum through for divers with basic wreck training. Four decades of growth have wrapped the hull in encrusting sponges, fire coral, and small gorgonians; resident green moray eels coil in the engine room, schools of horse eye jacks circle the bridge, and frogfish occasionally settle on the rails. Shallow enough for two long, calm dives back to back.",
+    "depthRange": {
+      "min": 9,
+      "max": 20
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Horse-eye jack",
+        "scientificName": "Caranx latus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted moray",
+        "scientificName": "Gymnothorax moringa",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "French angelfish",
+        "scientificName": "Pomacanthus paru",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean reef squid",
+        "scientificName": "Sepioteuthis sepioidea",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Longlure frogfish",
+        "scientificName": "Antennarius multiocellatus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "seasonal",
+        "bestMonths": [4, 5, 6, 7, 8, 9, 10]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {"min": 26, "max": 27},
+        "visibilityM": {"min": 20, "max": 30},
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {"min": 26, "max": 27},
+        "visibilityM": {"min": 20, "max": 30},
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {"min": 26, "max": 27},
+        "visibilityM": {"min": 20, "max": 30},
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {"min": 27, "max": 28},
+        "visibilityM": {"min": 20, "max": 30},
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {"min": 28, "max": 29},
+        "visibilityM": {"min": 20, "max": 30},
+        "currentStrength": "none",
+        "suitRecommendation": "Rashguard or 3mm shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {"min": 28, "max": 29},
+        "visibilityM": {"min": 15, "max": 25},
+        "currentStrength": "none",
+        "suitRecommendation": "Rashguard or 3mm shorty"
+      },
+      {
+        "month": 7,
+        "waterTempC": {"min": 28, "max": 29},
+        "visibilityM": {"min": 15, "max": 25},
+        "currentStrength": "mild",
+        "suitRecommendation": "Rashguard or 3mm shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {"min": 29, "max": 30},
+        "visibilityM": {"min": 15, "max": 25},
+        "currentStrength": "mild",
+        "suitRecommendation": "Rashguard or 3mm shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {"min": 29, "max": 30},
+        "visibilityM": {"min": 10, "max": 20},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rashguard or 3mm shorty"
+      },
+      {
+        "month": 10,
+        "waterTempC": {"min": 28, "max": 29},
+        "visibilityM": {"min": 15, "max": 25},
+        "currentStrength": "mild",
+        "suitRecommendation": "Rashguard or 3mm shorty"
+      },
+      {
+        "month": 11,
+        "waterTempC": {"min": 27, "max": 28},
+        "visibilityM": {"min": 18, "max": 28},
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {"min": 26, "max": 27},
+        "visibilityM": {"min": 20, "max": 30},
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm tropical wetsuit"
+      }
+    ],
+    "bestMonths": [11, 12, 1, 2, 3, 4, 5],
+    "editorialRank": 72,
+    "getThere": "Hewanorra International (UVF) at the south of Saint Lucia is the closest major airport, about 60 minutes by road to the dive resorts along the west coast; George F. L. Charles (SLU) near Castries handles only regional flights but is 25 minutes from operators in the north. The wreck is boat only, dived from operators based at Marigot Bay, Anse Chastanet, or Soufrière — typical run is 10 to 20 minutes along the leeward coast.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Sits inside the Canaries Marine Management Area; permit fees are collected by operators. The interior is well lit through hatch openings, with no overhead silt traps in the main holds, so most dive shops run a guided swim through on a standard open water certification — basic wreck training is recommended but not always required. A torch is still useful for the engine room and crew quarters. Mooring buoys mark the bow and stern; do not anchor. The Vicky B, a smaller tug sunk in 2003, lies 200 m to the south and is often added as a second tank by operators staying on site."
   }
 ]
