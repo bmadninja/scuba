@@ -22377,6 +22377,244 @@
     ]
   },
   {
+    "id": "noronha-corveta-v17",
+    "slug": "noronha-corveta-v17",
+    "locationId": "fernando-de-noronha-brazil",
+    "name": "Corveta V-17 Ipiranga",
+    "heroImageUrl": null,
+    "lat": -3.84807,
+    "lng": -32.47344,
+    "description": "Brazilian Navy corvette resting upright and largely intact at 62 m off Ponta da Sapata, where she struck the Cabeça da Sapata pinnacle in October 1983 and sank after eight hours adrift. The 56 m hull retains its bridge, gun mount and superstructure, and inside corridors remain penetrable for trained tec divers. Visibility frequently runs 30 to 50 m in the deep blue around the wreck, with passing reef sharks, jacks and the occasional manta. The signature deep wreck dive of Fernando de Noronha and a magnet for Brazilian technical divers, the V-17 sits well past recreational limits and is run only with extended range or trimix certification.",
+    "depthRange": {
+      "min": 45,
+      "max": 62
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Caribbean reef shark",
+        "scientificName": "Carcharhinus perezi",
+        "reliability": "seasonal"
+      },
+      {
+        "commonName": "Lemon shark",
+        "scientificName": "Negaprion brevirostris",
+        "reliability": "seasonal"
+      },
+      {
+        "commonName": "Schooling jack",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spinner dolphin",
+        "scientificName": "Stenella longirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 86,
+    "getThere": "Fernando de Noronha (FEN) is reached via connecting flights from Recife (REC) or Natal (NAT) on Brazil's northeast coast, both about an hour out by Azul or Gol. The wreck sits roughly 1 km offshore from Ponta da Sapata at the southwest tip of the main island; tec-equipped operators in Vila dos Remédios run it as a single-tank deep dive by boat.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Twin tanks or rebreather",
+        "reason": "62 m bottom requires extended-range or trimix gas planning."
+      },
+      {
+        "name": "Decompression stage cylinder",
+        "reason": "Mandatory deco stops on every profile."
+      },
+      {
+        "name": "Primary and backup dive lights",
+        "reason": "Penetration of corridors and gun-mount interior."
+      }
+    ],
+    "notes": "Extended-range or trimix certification required. Visitor numbers to Fernando de Noronha are capped and an environmental preservation fee plus marine park entry are mandatory; book the boat and dive well in advance through a tec-rated operator. Site is run as a single deep dive per day with mandatory decompression and is weather-dependent on the exposed southwest coast."
+  },
+  {
     "id": "los-roques-cayo-de-agua",
     "slug": "los-roques-cayo-de-agua",
     "locationId": "los-roques-venezuela",
@@ -95749,32 +95987,270 @@
     "lat": -24.1133,
     "lng": 152.7175,
     "description": "A 45 hectare coral cay at the southern tip of the Great Barrier Reef, 80 km off Bundaberg, ringed by fringing reef that drops onto bommies, ledges and sand channels in 5 to 25 m. Lady Elliot is the largest known reef manta ray (Mobula alfredi) aggregation in eastern Australia, accounting for roughly 70 percent of east coast sightings. The signature dive is Lighthouse Bommie on the eastern reef — coral heads in 14 to 16 m where mantas queue at cleaner wrasse stations from May through September. Green and loggerhead turtles rest in the soft coral beds, leopard sharks pulse over the sand in summer, and humpback whales pass through the offshore channel on the southern migration. The Blowhole on the east side is an L shaped cave entering at 14 m and dropping out the wall around 22 m.",
-    "depthRange": { "min": 5, "max": 25 },
+    "depthRange": {
+      "min": 5,
+      "max": 25
+    },
     "skillLevel": "open-water",
-    "diveTypes": ["large-pelagics", "coral"],
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
     "species": [
-      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "year-round", "bestMonths": [5, 6, 7, 8, 9] },
-      { "commonName": "Green turtle", "scientificName": "Chelonia mydas", "reliability": "year-round", "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
-      { "commonName": "Loggerhead turtle", "scientificName": "Caretta caretta", "reliability": "seasonal", "bestMonths": [11, 12, 1, 2, 3] },
-      { "commonName": "Leopard shark", "scientificName": "Stegostoma tigrinum", "reliability": "seasonal", "bestMonths": [11, 12, 1, 2, 3, 4] },
-      { "commonName": "Humpback whale", "scientificName": "Megaptera novaeangliae", "reliability": "seasonal", "bestMonths": [6, 7, 8, 9, 10] },
-      { "commonName": "Grey reef shark", "scientificName": "Carcharhinus amblyrhynchos", "reliability": "year-round", "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Loggerhead turtle",
+        "scientificName": "Caretta caretta",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Leopard shark",
+        "scientificName": "Stegostoma tigrinum",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
     ],
     "conditionsByMonth": [
-      { "month": 1, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "3mm shorty or full wetsuit" },
-      { "month": 2, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "3mm shorty or full wetsuit" },
-      { "month": 3, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3mm full wetsuit" },
-      { "month": 4, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "5mm full wetsuit" },
-      { "month": 5, "waterTempC": { "min": 22, "max": 25 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5mm full wetsuit" },
-      { "month": 6, "waterTempC": { "min": 21, "max": 23 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5mm or 7mm wetsuit" },
-      { "month": 7, "waterTempC": { "min": 19, "max": 22 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
-      { "month": 8, "waterTempC": { "min": 19, "max": 22 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
-      { "month": 9, "waterTempC": { "min": 20, "max": 23 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "5mm full wetsuit" },
-      { "month": 10, "waterTempC": { "min": 22, "max": 25 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "5mm full wetsuit" },
-      { "month": 11, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 20, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "3mm full wetsuit" },
-      { "month": 12, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "3mm full wetsuit" }
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or full wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or full wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm or 7mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 20,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full wetsuit"
+      }
     ],
-    "bestMonths": [4, 5, 6, 7, 8, 9],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "editorialRank": 85,
     "getThere": "Seair Pacific operates the only access to the island, with daily fixed wing flights to the grass airstrip from Bundaberg (BDB), Hervey Bay (HVB), Brisbane (BNE), Gold Coast (OOL) and Redcliffe. The flight from Bundaberg is about 30 minutes. Dive sites are reached on foot from the beach (lagoon entries) or by short boat ride (Lighthouse Bommie, Blowhole, west side wreck) with the resort operator. There is no ferry service and no day access except by air.",
     "lodging": [],
@@ -95791,5 +96267,52 @@
       }
     ],
     "notes": "Inside the Great Barrier Reef Marine Park Green Zone. No flash photography or strobes at manta cleaning stations; maintain 3 m distance and stay below the mantas, never above them. Daily visitor numbers are capped. Loggerhead nesting on the beach November through February, hatchlings emerge January through April — no torches on the beach at night during these months."
+  },
+  {
+    "id": "gozo-malta-p29-patrol-boat",
+    "slug": "gozo-malta-p29-patrol-boat",
+    "locationId": "gozo-malta",
+    "name": "P29 Patrol Boat",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Malte_P29_09.jpg",
+    "lat": 35.9878,
+    "lng": 14.3286,
+    "description": "Former East German Kondor-class minesweeper that the Maltese Armed Forces ran as a coastal patrol boat for seven years before scuttling her off Cirkewwa on 14 August 2007 as an artificial reef. The 52 m hull sits upright on a sand flat, bow pointing seaward, with the keel at 34 m, deck around 22 m, and the bridge mast topping out at 12 m below the surface. The bow machine gun was left in place and is the standard photograph divers come back with. Doors and bulkheads were cut for safe penetration of the wheelhouse, engine room and aft cabins, and the steel is now furred with sponges and tubeworms. Open water can be enough if the dive stays on the upper hull, but reaching the bow gun and going inside calls for advanced or wreck training. Schools of damselfish and bream work the rails, large dusky grouper sit under the stern overhang, and squid, flying gurnards and stingrays cross the sand around the keel.",
+    "depthRange": { "min": 12, "max": 35 },
+    "skillLevel": "advanced",
+    "diveTypes": ["wrecks"],
+    "species": [
+      { "commonName": "Dusky grouper", "scientificName": "Epinephelus marginatus", "reliability": "year-round", "bestMonths": [5,6,7,8,9,10] },
+      { "commonName": "European barracuda", "scientificName": "Sphyraena sphyraena", "reliability": "seasonal", "bestMonths": [6,7,8,9,10] },
+      { "commonName": "Common octopus", "scientificName": "Octopus vulgaris", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Flying gurnard", "scientificName": "Dactylopterus volitans", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "European conger", "scientificName": "Conger conger", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Common stingray", "scientificName": "Dasyatis pastinaca", "reliability": "seasonal", "bestMonths": [5,6,7,8,9,10] }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 14, "max": 15 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit or drysuit" },
+      { "month": 2, "waterTempC": { "min": 14, "max": 15 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit or drysuit" },
+      { "month": 3, "waterTempC": { "min": 14, "max": 16 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit or drysuit" },
+      { "month": 4, "waterTempC": { "min": 16, "max": 18 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
+      { "month": 5, "waterTempC": { "min": 18, "max": 20 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
+      { "month": 6, "waterTempC": { "min": 21, "max": 23 }, "visibilityM": { "min": 20, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
+      { "month": 7, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3-5mm wetsuit" },
+      { "month": 8, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3-5mm wetsuit" },
+      { "month": 9, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "3-5mm wetsuit" },
+      { "month": 10, "waterTempC": { "min": 22, "max": 24 }, "visibilityM": { "min": 20, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
+      { "month": 11, "waterTempC": { "min": 19, "max": 21 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "5-7mm wetsuit" },
+      { "month": 12, "waterTempC": { "min": 16, "max": 17 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit or drysuit" }
+    ],
+    "bestMonths": [5, 6, 7, 8, 9, 10],
+    "editorialRank": 80,
+    "getThere": "Fly to Malta International Airport (MLA), then drive or bus roughly 35 km to the Cirkewwa ferry terminal at the northern tip of Malta. The wreck sits about 120 m offshore from the dive ladders next to the old terminal pier and is reached as a shore dive — a surface swim of 5 to 10 minutes on the surface or a navigation along the reef line from the Madonna statue. Most Cirkewwa operators run the P29 as a two tank morning, often paired with the Rozi tugboat 70 m away to the south.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      { "name": "Dive torch", "reason": "Needed for the wheelhouse and engine room interior, which are dark even on a sunny day." },
+      { "name": "SMB and reel", "reason": "Boat traffic from the Cirkewwa ferry terminal runs close to the wreck; deploy a buoy on ascent." },
+      { "name": "Nitrox 32", "reason": "Bottom time at 30 m fills quickly on air; nitrox stretches the dive and adds a safety margin on the keel."}
+    ],
+    "notes": "Maximum keel depth of 34 m places the full hull tour outside open water limits; plan as an advanced or deep dive and stay above the deck at 22 m if untrained. Penetration is possible through cut hatches in the wheelhouse and engine room but requires wreck training, a torch, and ideally a guide. The bow machine gun is a replica left in place after scuttling. Sea state at the shore entry can be rough in north-westerly winds; check the marine forecast and use the eastern ladders if swells are running."
   }
 ]
