@@ -82184,5 +82184,296 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Strong drift is both the draw and the hazard: the current accelerates through a gap the guides call the Kamikaze Cut, so expect a fast ride and carry an SMB for the live boat pickup. It dives best on a slack to building tide with a guide who knows the timing. Plankton heavy water from the Guyana Current keeps visibility variable and feeds the sponges. The site lies within northeast Tobago waters managed for reef protection, so spearfishing and glove use are discouraged."
+  },
+  {
+    "id": "andaman-islands-india-barren-island",
+    "slug": "andaman-islands-india-barren-island",
+    "locationId": "andaman-islands-india",
+    "name": "Barren Island",
+    "heroImageUrl": null,
+    "lat": 12.281,
+    "lng": 93.838,
+    "description": "India's only active volcano breaks the surface about 140 km northeast of Port Blair, and the reef ringing its base is unlike anywhere else in the Andamans — the sand here is black volcanic ash, not white, and old lava flows have set into stepped ledges, arches and walls that drop past 100 m. Reef manta rays are the headline: a group of up to nine works the cleaning stations off the western black sand bay, banking slowly while cleaner wrasse pick them over. Whitetip reef sharks patrol the drop offs, green and hawksbill turtles graze the shallows, and schools of needlefish, barracuda and trevally hang in water that routinely clears to 40 m or more. Sites such as the Washing Machine throw strong down currents, and with the island reachable only by liveaboard this stays firmly advanced ground.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Reef manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Crocodile needlefish",
+        "scientificName": "Tylosurus crocodilus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 35,
+          "max": 50
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 35,
+          "max": 50
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 83,
+    "getThere": "Fly into Veer Savarkar International Airport (IXZ) at Port Blair via Chennai (MAA), Kolkata (CCU), Delhi (DEL) or Bengaluru (BLR). Barren Island lies about 140 km northeast of Port Blair and roughly 100 km from Havelock (Swaraj Dweep), with no jetty and no permitted landing, so it is reached only by liveaboard or a long private dive charter. The open ocean crossing runs about 4 to 5 hours from Port Blair or 2 to 3 hours from Havelock, and most divers join an organised multi day expedition rather than a day boat.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Barefoot at Havelock",
+        "url": "https://www.booking.com/searchresults.html?ss=Barefoot%20at%20Havelock",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "resort"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "TSG Blue Resort Havelock",
+        "url": "https://www.booking.com/searchresults.html?ss=TSG%20Blue%20Havelock",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Find PADI dive operators (Andaman liveaboards)",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-3mm-full",
+      "computer-shearwater-peregrine",
+      "smb-xs-scuba-deluxe"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light or torch",
+        "reason": "Lava ledges, arches and the deeper walls fall into shadow, and a primary torch brings out the colour of the gorgonian fans and helps with shark and turtle ID.",
+        "gearId": "light-bigblue-al1200"
+      },
+      {
+        "name": "Nitrox cert + EAN32 fills",
+        "reason": "Manta cleaning stations and the lava reef sit deep enough that air bottom time is short; EAN32 stretches no deco limits and is worth arranging with the liveaboard before departure.",
+        "gearId": null
+      }
+    ],
+    "notes": "Advanced Open Water with solid current experience is the working minimum; sites like the Washing Machine throw strong down currents. Landing on Barren Island is prohibited, it is an active volcano (last erupted 2017 to 2018) and a protected zone, so all diving is from boats with no shore access. The season runs roughly October to May; the southwest monsoon from June to September makes the offshore crossing unsafe. Trips run by liveaboard and book out well ahead because few vessels are permitted here. Keep clear of mantas on the cleaning stations and do not touch the gorgonian fans."
   }
 ]
