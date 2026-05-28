@@ -88083,5 +88083,557 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Remote Coral Sea site reached only by liveaboard. The cave passage is narrow and requires good buoyancy and a torch. Liveaboard departures from Cairns can be limited during the January to February cyclone window."
+  },
+  {
+    "id": "egypt-shaab-sataya-fury-shoals",
+    "slug": "egypt-shaab-sataya-fury-shoals",
+    "locationId": "brothers-egypt",
+    "name": "Sha'ab Sataya (Dolphin House Fury Shoals)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/A_pod_of_spinner_dolphins_in_the_Red_Sea.jpg",
+    "lat": 24.28584,
+    "lng": 35.37901,
+    "description": "Largest reef of the Fury Shoals complex, a 4.7 km horseshoe lying 15 km off the coast of Hamata in the deep south of the Egyptian Red Sea. The northern lagoon shelters a resident pod of roughly 100 to 200 spinner dolphins (Stenella longirostris) that return each morning to rest, court and nurse calves after feeding offshore overnight. Snorkelers share the calm lagoon with the pod under operator and protected-area rules, while scuba dives explore the outer crescent: hard coral plateaus at 5 to 12 m roll over into walls and drop-offs to 40 m, broken by swim-throughs, pinnacles and gardens of Dendronephthya soft coral. Fusiliers, jacks, Spanish dancers, hawksbill turtles, whitetip reef sharks and the occasional oceanic visitor patrol the outer wall. Currents are typically mild inside the horseshoe and stronger on the south-facing tip.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Spinner dolphin",
+        "scientificName": "Stenella longirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spanish dancer",
+        "scientificName": "Hexabranchus sanguineus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluespotted ribbontail ray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red soft coral",
+        "scientificName": "Dendronephthya spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Oceanic whitetip shark",
+        "scientificName": "Carcharhinus longimanus",
+        "reliability": "rare",
+        "bestMonths": [
+          10,
+          11
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or 3 mm shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or 3 mm shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly into Marsa Alam International (RMF). Sataya sits at the southern edge of the Fury Shoals about 15 km off Hamata marina, roughly a 2 hour transfer south from Marsa Alam by road then 60 to 90 minutes by speedboat. Most divers reach it on southern Red Sea liveaboards (Hurghada, Port Ghalib or Marsa Alam departures) on 4 to 7 day Fury Shoals and Saint Johns itineraries; day-boat operators based in Hamata also run snorkel and dive trips when weather allows.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Snorkel set",
+        "reason": "Dolphin encounters happen in the shallow lagoon under no-scuba rules; bring mask, fins and snorkel for the in-water time with the pod"
+      },
+      {
+        "name": "SMB",
+        "reason": "Outer reef dives often finish as drifts on the south-facing tip, and boat traffic in the lagoon is heavy"
+      }
+    ],
+    "notes": "Sataya lies inside Egypt's Red Sea protected area network and operators are expected to follow the same dolphin code as at Samadai: keep distance, do not chase, touch or feed the pod, no flash photography, and stay out of the inner resting zone. Best dolphin contact is early morning before snorkel boats arrive. Outer reef is exposed to northerly swell in winter and currents can stiffen on the south plateau. Liveaboard or day-boat only, no shore access."
+  },
+  {
+    "id": "raja-ampat-indonesia-boo-windows",
+    "slug": "raja-ampat-indonesia-boo-windows",
+    "locationId": "raja-ampat-indonesia",
+    "name": "Boo Windows",
+    "heroImageUrl": null,
+    "lat": -2.2216,
+    "lng": 130.6117,
+    "description": "Largest reef of the Fury Shoals complex, a 4.7 km horseshoe lying 15 km off Hamata in the deep south of the Egyptian Red Sea. The northern lagoon shelters a resident pod of roughly 100 to 200 spinner dolphins (Stenella longirostris) that return each morning to rest, court and nurse calves after feeding offshore overnight. Snorkelers share the calm lagoon with the pod under protected-area rules, while scuba dives explore the outer crescent: hard coral plateaus at 5 to 12 m roll over into walls and drop-offs to 40 m, broken by swim-throughs, pinnacles and gardens of Dendronephthya soft coral. Fusiliers, jacks, Spanish dancers, hawksbill turtles and whitetip reef sharks patrol the outer wall. Currents are mild inside the horseshoe and stronger on the south-facing tip.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Tasselled wobbegong",
+        "scientificName": "Eucrossorhinus dasypogon",
+        "reliability": "year-round",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Batfish",
+        "scientificName": "Platax",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Yellowtail barracuda",
+        "scientificName": "Sphyraena flavicauda",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Fusiliers",
+        "scientificName": "Caesionidae",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 90,
+    "getThere": "Fly to Sorong (SOQ) in West Papua via Jakarta, Makassar, or Manado. From Sorong the only practical access to Misool is by liveaboard or by chartered speedboat to Misool Eco Resort; the run south takes most of a day and most operators sail overnight.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Marine reserve fee for Raja Ampat is required (tag purchased in Sorong or Waisai). Currents on the southwest face can run strong; entry timing matters. Wobbegongs camouflage under coral plates — do not place hands."
   }
 ]
