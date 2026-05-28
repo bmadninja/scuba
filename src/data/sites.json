@@ -90824,5 +90824,229 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Deep dive on a fragmented wreck. PADI Deep Diver or equivalent certification expected, and most operators want 30 plus logged dives. Nitrox extends bottom time. The site is exposed and the run out can be rough in the southeast monsoon (May to September), so trips often cancel last minute in those months. Penetration of the broken sections is not recommended due to collapsed plating and sharp steel. Nearest hyperbaric chamber is at Seychelles Hospital in Victoria."
+  },
+  {
+    "id": "malmok-aruba-pedernales-wreck",
+    "slug": "malmok-aruba-pedernales-wreck",
+    "locationId": "malmok-aruba",
+    "name": "Pedernales Wreck",
+    "heroImageUrl": null,
+    "lat": 12.5806,
+    "lng": -70.0389,
+    "description": "A Lake Maracaibo crude tanker torpedoed by a German submarine on the morning of 16 February 1942, in the same Operation Neuland strike that targeted the Aruba refinery. The bow and stern survived intact, were severed and welded together, towed to the United States, and put back to service as a smaller vessel; only the bombed midsection was abandoned where she ran aground off Palm Beach in 7 to 10 m of water. Twisted plate, exposed boiler housings, and pipe runs sit on a sand and rubble bottom. French grunts, sergeant majors, great barracuda, stoplight parrotfish, and the occasional green moray colonise the steel. Shallow depth and a short boat ride from Palm Beach hotels make it one of the most accessible WWII wreck dives in the Caribbean.",
+    "depthRange": {
+      "min": 6,
+      "max": 12
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "French grunt",
+        "scientificName": "Haemulon flavolineatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Sergeant major",
+        "scientificName": "Abudefduf saxatilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Stoplight parrotfish",
+        "scientificName": "Sparisoma viride",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean spiny lobster",
+        "scientificName": "Panulirus argus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 27
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 27
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 27
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 72,
+    "getThere": "Queen Beatrix International (AUA) sits on the south side of Aruba with direct flights from major US East Coast hubs, Toronto, Amsterdam, and several Latin American cities. Most Palm Beach operators run the boat trip to the wreck in 15 to 20 minutes, and a handful offer it as a long shore swim from the Palm Beach hotel strip.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Originally a Lake Maracaibo lake tanker built in Monfalcone in 1938; the salvaged bow and stern were welded together and returned to service after the war. The midsection lies inside the buoyed Palm Beach swim and watersports zone, so listen for jet ski and boat traffic before ascending and surface near a marker buoy."
   }
 ]
