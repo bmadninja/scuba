@@ -91855,5 +91855,162 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Sanctuary Preservation Area. Anchoring, spearfishing, lobstering, and coral contact are prohibited; tie to one of the 17 yellow mooring buoys. Reef safe sunscreen required. Several caverns are true swim throughs with sand floors but they can silt out quickly, so a light and good buoyancy help."
+  },
+  {
+    "id": "egypt-million-hope",
+    "slug": "egypt-million-hope",
+    "locationId": "ras-mohammed-egypt",
+    "name": "Million Hope Wreck",
+    "heroImageUrl": null,
+    "lat": 28.0567,
+    "lng": 34.4474,
+    "description": "The largest wreck in the Red Sea. The 175 m Japanese bulk carrier MV Million Hope, built in Hiroshima in 1972 and carrying potash and phosphates from Aqaba, lost power and slammed into the fringing reef at Nabq Bay on 20 June 1996 while crossing the Strait of Tiran. All 25 Filipino crew were rescued. The hull broke its back, rolled to starboard against the reef wall, and now runs from a shattered bow above the surface to a stern propeller at 28 m. Divers usually drop in at the stern crane, encrusted with soft coral and curtained by glassfish, then drift forward over five cavernous holds. Lionfish, scorpionfish, crocodilefish, fusiliers, batfish, and snappers work the rails; nudibranchs and bluespotted stingrays show up along the silted decks.",
+    "depthRange": {
+      "min": 5,
+      "max": 28
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois miles",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Crocodilefish",
+        "scientificName": "Papilloculiceps longiceps",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Batfish",
+        "scientificName": "Platax teira",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Bluespotted stingray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Scorpionfish",
+        "scientificName": "Scorpaenopsis oxycephala",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "seasonal",
+        "bestMonths": [4, 5, 6, 7, 8, 9, 10]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 21, "max": 23 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 20, "max": 22 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 21, "max": 23 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 22, "max": 24 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 22, "max": 24 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit with hood"
+      }
+    ],
+    "bestMonths": [3, 4, 5, 6, 9, 10, 11],
+    "editorialRank": 78,
+    "getThere": "Fly to Sharm el-Sheikh International (SSH); the wreck sits roughly 11 km north of the airport off Nabq Bay on the east coast of southern Sinai. Most operators run it as a half day boat trip from the Sharm el-Sheikh marinas (Travco, Naama Bay, Sharks Bay) — about a 40 minute crossing — and it is often paired with Jackson Reef or another Tiran Strait site. Shore access via the Nabq Protected Area is also possible by 4WD with a guide, but boat is standard.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Advanced Open Water with wreck experience recommended; the holds are wide and well lit at deck level but full penetration past the bulkheads requires a wreck certification, a primary light, and a backup. Surge near the shallow bow can be sharp in winter winds. Bow plating is sheared and jagged — keep clear of sharp edges and trailing cable. The wreck sits inside the Nabq Protected Area; do not touch coral growth on the crane or rails. Lionfish and scorpionfish are abundant. Nearest hyperbaric chamber is in Sharm el-Sheikh."
   }
 ]
