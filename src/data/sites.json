@@ -89801,5 +89801,53 @@
       }
     ],
     "notes": "Marine protected area since 1995; collection of any marine life and anchoring on the thila are prohibited. Dive on incoming tide for best visibility and shark activity. Site is small and easily congested when multiple boats arrive together."
+  },
+  {
+    "id": "ras-mohammed-egypt-the-bells-dahab",
+    "slug": "ras-mohammed-egypt-the-bells-dahab",
+    "locationId": "ras-mohammed-egypt",
+    "name": "The Bells (Dahab)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Entry_to_The_Bells%2C_Dahab.jpg",
+    "lat": 28.5729,
+    "lng": 34.5378,
+    "description": "An open chimney that drops through the fringing reef 250 m north of the Blue Hole, named for the chime steel tanks make against the limestone walls as divers thread the shaft one at a time. Entry is a small fissure in the reef plate; the chimney narrows and widens before opening onto a sheer wall at about 28 m, thick with red whip corals, gorgonians and clouds of lyretail anthias. From the exit most divers cruise south along the outer reef and recross the Saddle at 7 m to drop into the Blue Hole for the swim back to shore. Schooling yellowfin tuna and the occasional bigeye trevally pass in the blue off the wall; close in, glassfish swarm the cracks and bluespotted ribbontail rays rest on rubble shelves.",
+    "depthRange": { "min": 5, "max": 30 },
+    "skillLevel": "advanced",
+    "diveTypes": ["geology", "coral"],
+    "species": [
+      { "commonName": "Lyretail anthias", "scientificName": "Pseudanthias squamipinnis", "reliability": "year-round" },
+      { "commonName": "Glassfish", "scientificName": "Parapriacanthus ransonneti", "reliability": "year-round" },
+      { "commonName": "Bluespotted ribbontail ray", "scientificName": "Taeniura lymma", "reliability": "year-round" },
+      { "commonName": "Bigeye trevally", "scientificName": "Caranx sexfasciatus", "reliability": "year-round" },
+      { "commonName": "Yellowfin tuna", "scientificName": "Thunnus albacares", "reliability": "seasonal", "bestMonths": [4, 5, 6, 9, 10, 11] },
+      { "commonName": "Hawksbill turtle", "scientificName": "Eretmochelys imbricata", "reliability": "rare" },
+      { "commonName": "Napoleon wrasse", "scientificName": "Cheilinus undulatus", "reliability": "rare" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 21, "max": 23 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" },
+      { "month": 2, "waterTempC": { "min": 21, "max": 22 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" },
+      { "month": 3, "waterTempC": { "min": 21, "max": 23 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" },
+      { "month": 4, "waterTempC": { "min": 22, "max": 24 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" },
+      { "month": 5, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3 mm shorty or tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3 mm shorty or tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3 mm shorty or tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 22, "max": 24 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5 mm wetsuit" }
+    ],
+    "bestMonths": [4, 5, 9, 10, 11],
+    "editorialRank": 82,
+    "getThere": "Fly into Sharm el Sheikh International (SSH) and drive about 1.5 hours north along the coast to Dahab. The Bells car park sits roughly 10 km north of town along a rough coastal track, usually reached by 4x4 or pickup arranged with any Dahab dive centre. From the parking shelves, walk down to the reef plate; the small entry fissure is on the seaward side, 250 m north of the Blue Hole shore entry. Taba (TCP) and a longer transfer from Hurghada (HRG) via the Sinai are alternative airports.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      { "name": "SMB", "reason": "The profile ends on the open wall before the Saddle and boat traffic crosses the Blue Hole channel; mark your ascent before you come up." },
+      { "name": "Torch", "reason": "Light reveals the soft coral colour inside the chimney and shows up lionfish and morays tucked into the wall cracks." },
+      { "name": "Dive computer with depth alarm", "reason": "The wall outside the chimney exit drops well past 100 m; an alarm keeps you on the planned 28 m exit ledge instead of the deep slope." }
+    ],
+    "notes": "Dived one diver at a time through the chimney to avoid silt outs and tank clatter against the walls. Standard profile is a one way drift south from the Bells exit, across the Saddle at 7 m, and into the Blue Hole for the swim back to shore. No boat access; entry is from the Bedouin parking shelves and exit is up the Blue Hole steps. Small site fee at the camps covers parking and the rest area."
   }
 ]
