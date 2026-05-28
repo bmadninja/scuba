@@ -95503,5 +95503,241 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Live WWII ordnance remains in the holds, including depth charges and small arms ammunition. Do not touch. Penetration of the cargo holds requires wreck certification and good buoyancy; silt out is easy."
+  },
+  {
+    "id": "aqaba-tristar-l1011",
+    "slug": "aqaba-tristar-l1011",
+    "locationId": "aqaba-jordan",
+    "name": "Lockheed L-1011 TriStar Wreck",
+    "heroImageUrl": null,
+    "lat": 29.5024,
+    "lng": 34.9918,
+    "description": "Widebody trijet airliner scuttled on 26 August 2019 by Jordan's Aqaba Special Economic Zone Authority as the Red Sea's largest aircraft wreck. The 50 m fuselage sits upright on sand off South Beach with all three engines still mounted and the tail fin reaching toward the surface. Two doors aft of the cockpit lead into the cabin past pilot seats and rows of passenger frames. Glassfish swarm the shaded interior, lionfish hold station on the wing roots, hawksbill turtles cruise the rudder, and eagle rays drift past the sandy shadow during winter.",
+    "depthRange": {
+      "min": 16,
+      "max": 28
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois miles",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moray eel",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 19,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly to King Hussein International (AQJ) in Aqaba, served daily by Royal Jordanian from Amman (AMM) plus direct seasonal flights from European hubs. The wreck sits 7 km south of central Aqaba off the South Beach dive zone; reach it by boat with any Aqaba dive centre (10 minute crossing).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Primary dive torch",
+        "reason": "Cabin and cockpit interiors are dim even in midday Red Sea light; a torch makes glassfish swarms and instrument panels pop."
+      },
+      {
+        "name": "5mm wetsuit",
+        "reason": "Winter water in the Gulf of Aqaba sits in the high teens; longer bottom times call for a thicker suit Nov to Mar.",
+        "gearId": "wetsuit-bare-5mm-full"
+      }
+    ],
+    "notes": "Advanced Open Water with Wreck Diver speciality recommended for full cabin and cockpit penetration. Site sits inside the Aqaba Marine Park and dive permits are arranged through the operator."
   }
 ]
