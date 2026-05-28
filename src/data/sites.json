@@ -81507,5 +81507,241 @@
       }
     ],
     "notes": "Negative entry and consistently strong current make this an advanced dive, not a spot for new divers. Surface on the down current side and never up current of the rock. Komodo National Park entry and ranger fees apply, and most divers reach the far north on a liveaboard rather than a day boat."
+  },
+  {
+    "id": "kornati-croatia-balun",
+    "slug": "kornati-croatia-balun",
+    "locationId": "kornati-croatia",
+    "name": "Balun",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Gorgonias_rojas_%28Paramuricea_clavata%29%2C_Cabo_de_Palos%2C_Espa%C3%B1a%2C_2022-07-15%2C_DD_56.jpg",
+    "lat": 43.805,
+    "lng": 15.2558,
+    "description": "Balun is a wall dive on the open Adriatic flank of the northern Kornati islands, where the archipelago's limestone crowns drop from the surface into deep blue water. Finning southeast along the cliff, divers reach a terrace near 26 metres where the rock turns thick with red and violet gorgonian sea fans (Paramuricea clavata) and golden Eunicella, packed among yellow sulphur sponges at a density rarely seen elsewhere in the Mediterranean. Dusky groupers hang off the wall while conger eels, scorpionfish and spiny lobsters wedge into the cracks. Diving here is permitted only with a licensed centre inside Kornati National Park.",
+    "depthRange": {
+      "min": 18,
+      "max": 38
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Violet gorgonian sea fan",
+        "scientificName": "Paramuricea clavata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellow gorgonian",
+        "scientificName": "Eunicella cavolini",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dusky grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "European conger",
+        "scientificName": "Conger conger",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mediterranean moray",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "European spiny lobster",
+        "scientificName": "Palinurus elephas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red scorpionfish",
+        "scientificName": "Scorpaena scrofa",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm wetsuit with hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm wetsuit with hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm wetsuit with hood"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 20,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood; cooler below the thermocline"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood; cooler below the thermocline"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood; cooler below the thermocline"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 21,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood; cooler below the thermocline"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 18,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit with hood"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "7mm wetsuit with hood"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit or 7mm wetsuit with hood"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 57,
+    "getThere": "Fly into Zadar (ZAD) or Split (SPU), both served by seasonal European flights. From either, reach the harbour town of Murter, the main gateway to the park, and join a licensed dive boat for the crossing of roughly 19 nautical miles to the northern Kornati islands. Day boats and liveaboards also run from Zadar and Biograd.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Diving inside Kornati National Park is allowed only through a licensed dive centre, in designated zones, and a daily park ticket is required. The richest gorgonian growth sits below 25 metres, so plan for cold water at depth and conservative no decompression limits."
   }
 ]
