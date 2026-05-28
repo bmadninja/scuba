@@ -82475,5 +82475,240 @@
       }
     ],
     "notes": "Advanced Open Water with solid current experience is the working minimum; sites like the Washing Machine throw strong down currents. Landing on Barren Island is prohibited, it is an active volcano (last erupted 2017 to 2018) and a protected zone, so all diving is from boats with no shore access. The season runs roughly October to May; the southwest monsoon from June to September makes the offshore crossing unsafe. Trips run by liveaboard and book out well ahead because few vessels are permitted here. Keep clear of mantas on the cleaning stations and do not touch the gorgonian fans."
+  },
+  {
+    "id": "kona-hawaii-usa-first-cathedral-lanai",
+    "slug": "kona-hawaii-usa-first-cathedral-lanai",
+    "locationId": "kona-hawaii-usa",
+    "name": "First Cathedral",
+    "heroImageUrl": null,
+    "lat": 20.7341,
+    "lng": -156.8879,
+    "description": "A collapsed volcanic lava tube off Lanai's leeward south coast, southeast of Manele Bay, forms a cavern the size of a small chapel: roughly 30 m long and two stories tall, entered through a wide archway whose floor drops to about 18 m. Where the roof caved in, holes in the ceiling let shafts of sunlight pour onto a fallen block of basalt that divers call the Altar, and on calm summer middays the beams turn the chamber into a stained glass effect that gave the site its name. Walls crusted with orange cup coral shelter green sea turtles, resting whitetip reef sharks, spiny lobster wedged into cracks and clouds of endemic Hawaiian reef fish. The classic finish is the Shotgun, a narrow chimney at the back of the cavern where divers time the surge and get flushed into open water one at a time.",
+    "depthRange": {
+      "min": 5,
+      "max": 18
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawaiian spinner dolphin",
+        "scientificName": "Stenella longirostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawaiian spiny lobster",
+        "scientificName": "Panulirus marginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluestripe snapper",
+        "scientificName": "Lutjanus kasmira",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moorish idol",
+        "scientificName": "Zanclus cornutus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Kahului Airport (OGG) on Maui. First Cathedral is dived almost entirely from Maui: charter boats leave Lahaina and Maalaea harbors and cross the Auau Channel to Lanai's sheltered south coast in about an hour, with the calmest water on early morning departures. A few operators run from Manele Harbor on Lanai, reached by the Expeditions passenger ferry from Lahaina. The site sits in Maui County, not on the Kona Coast of the Big Island.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "This is a cavern dive in an overhead environment, entered through an archway and finished through a tight chimney called the Shotgun where divers ride the surge out one at a time, so most operators require Advanced Open Water or a confident certified diver with good buoyancy. Sand stirred off the floor clouds the chamber fast, so the first group in gets the cleanest light, and the sunbeams on the Altar are sharpest on calm summer middays near noon. Winter Kona storms and rougher channel crossings cancel trips at short notice."
   }
 ]
