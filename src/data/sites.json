@@ -93300,13 +93300,22 @@
         "commonName": "Oceanic whitetip shark",
         "scientificName": "Carcharhinus longimanus",
         "reliability": "seasonal",
-        "bestMonths": [10, 11, 12]
+        "bestMonths": [
+          10,
+          11,
+          12
+        ]
       },
       {
         "commonName": "Scalloped hammerhead",
         "scientificName": "Sphyrna lewini",
         "reliability": "seasonal",
-        "bestMonths": [6, 7, 8, 9]
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
       },
       {
         "commonName": "Grey reef shark",
@@ -93317,7 +93326,12 @@
         "commonName": "Silky shark",
         "scientificName": "Carcharhinus falciformis",
         "reliability": "seasonal",
-        "bestMonths": [6, 7, 8, 9]
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
       },
       {
         "commonName": "Pelagic thresher",
@@ -93353,90 +93367,169 @@
     "conditionsByMonth": [
       {
         "month": 1,
-        "waterTempC": {"min": 22, "max": 24},
-        "visibilityM": {"min": 25, "max": 35},
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 2,
-        "waterTempC": {"min": 21, "max": 23},
-        "visibilityM": {"min": 25, "max": 35},
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 3,
-        "waterTempC": {"min": 22, "max": 24},
-        "visibilityM": {"min": 25, "max": 40},
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 4,
-        "waterTempC": {"min": 23, "max": 25},
-        "visibilityM": {"min": 25, "max": 40},
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 5,
-        "waterTempC": {"min": 25, "max": 27},
-        "visibilityM": {"min": 30, "max": 40},
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 6,
-        "waterTempC": {"min": 27, "max": 29},
-        "visibilityM": {"min": 30, "max": 40},
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 7,
-        "waterTempC": {"min": 28, "max": 30},
-        "visibilityM": {"min": 30, "max": 40},
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 8,
-        "waterTempC": {"min": 28, "max": 30},
-        "visibilityM": {"min": 30, "max": 40},
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 9,
-        "waterTempC": {"min": 27, "max": 29},
-        "visibilityM": {"min": 30, "max": 40},
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
         "currentStrength": "strong",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 10,
-        "waterTempC": {"min": 26, "max": 28},
-        "visibilityM": {"min": 25, "max": 40},
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 11,
-        "waterTempC": {"min": 24, "max": 26},
-        "visibilityM": {"min": 25, "max": 35},
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       },
       {
         "month": 12,
-        "waterTempC": {"min": 23, "max": 25},
-        "visibilityM": {"min": 25, "max": 35},
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
         "currentStrength": "moderate",
         "suitRecommendation": "Temperate wetsuit"
       }
     ],
-    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "editorialRank": 88,
     "getThere": "Fly into Marsa Alam (RMF) or Hurghada (HRG); both have direct seasonal flights from European hubs. Rocky Island is accessible only by liveaboard. Deep South itineraries depart from Port Ghalib (20 min from Marsa Alam airport) and run 7 to 10 nights, with a 10 to 14 hour open ocean crossing to reach the Foul Bay cluster of Rocky, Zabargad, and St John's.",
     "lodging": [
@@ -93505,5 +93598,256 @@
       }
     ],
     "notes": "Liveaboard only, no day boats. Foul Bay crossings are committing open ocean; check sea state before booking shoulder season trips. The island is uninhabited and landings are not permitted. Strong currents and the lack of shelter mean the dive guide will call sites based on conditions; if Rocky is unsafe the boat will reroute to Zabargad or St John's. Oceanic whitetips can be inquisitive; brief on shark behavior and avoid trailing gear."
+  },
+  {
+    "id": "apo-reef-philippines-irako-maru",
+    "slug": "apo-reef-philippines-irako-maru",
+    "locationId": "apo-reef-philippines",
+    "name": "Irako Maru Wreck",
+    "heroImageUrl": null,
+    "lat": 11.9677,
+    "lng": 120.0402,
+    "description": "Imperial Japanese Navy food supply and refrigeration ship sunk by US carrier aircraft on 24 September 1944 — Coron's deepest signature wreck. The 147 m hull rests virtually upright between 28 and 43 m, tilted slightly to port and almost fully intact. Penetration runs through the wheelhouse, the engine room with its four large diesels, the galley with stove still in place, and crew bunkrooms reached via a stern hull opening near the rudder at 40 m. Schooling jacks shadow the bow, longfin batfish drift around the mast, and groupers and stingrays settle on silted decks.",
+    "depthRange": {
+      "min": 28,
+      "max": 43
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Longfin batfish",
+        "scientificName": "Platax teira",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grouper",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Bluespotted stingray",
+        "scientificName": "Neotrygon kuhlii",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "editorialRank": 87,
+    "getThere": "Fly to Francisco B. Reyes Airport (USU) on Busuanga from Manila or Cebu, then transfer roughly 30 to 45 minutes to Coron Town. Day boats reach the wreck site at the mouth of Coron Bay near Lusong and Tangat Islands in about 30 to 45 minutes; multiday liveaboards combine Irako with the rest of the Coron and Apo Reef wreck circuit.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary plus backup dive light",
+        "reason": "Engine room, galley and stern crew compartment penetrations sit in full darkness, requiring redundant lights.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Technical dive computer",
+        "reason": "43 m bottom and multilevel deco profile mean Nitrox planning and conservative gradient factors are standard practice on this wreck.",
+        "gearId": "computer-shearwater-peregrine"
+      },
+      {
+        "name": "Wreck reel and SMB",
+        "reason": "Coron currents and the long upright hull demand a guideline for penetration and an SMB for blue water ascents."
+      }
+    ],
+    "notes": "Coron's deepest dive and considered the most technically demanding of the WWII wreck circuit. Bottom at 43 m exceeds recreational limits; Nitrox, wreck and deep certifications are typical operator requirements. Penetration of engine room, galley and bunkrooms requires wreck specialty training, redundant lights and a reel. Surface conditions and currents close the wreck during southwest monsoon storms (July to September)."
   }
 ]
