@@ -94483,5 +94483,238 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Apo Reef Natural Park protection fee is required and collected by Sablayan rangers; a park ranger normally joins each trip. Fishing, anchoring, spearfishing and shark feeding are prohibited inside the marine park. Strong currents along the outer walls, especially at Shark Ridge and the Binangaan drop off, make advanced certification typical and a surface marker buoy mandatory for drifts. Southwest monsoon brings rough seas and frequent cancellations from June through October. Nearest recompression chamber is in Subic Bay or Manila — long medevac, plan conservatively on bottom time and gas."
+  },
+  {
+    "id": "pensacola-florida-uss-oriskany",
+    "slug": "pensacola-florida-uss-oriskany",
+    "locationId": "pensacola-florida-usa",
+    "name": "USS Oriskany",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/USS_Oriskany_Ship_Wreck_Artificial_Reef_Dive_Underwater.jpg",
+    "lat": 30.04258,
+    "lng": -87.00661,
+    "description": "The 911 foot Essex class aircraft carrier nicknamed the Mighty O, scuttled 22.5 nautical miles southeast of Pensacola Pass in May 2006 as the largest vessel ever sunk to form an artificial reef. The island superstructure tops out at 24 m, the navigation bridge sits at 36 m, the flight deck rests at 44 m, and the keel touches sand at 65 m. Amberjack, almaco jack, and barracuda patrol the towers in tornado schools, goliath grouper hold inside the hangar bay openings, and red snapper carpet the catwalks. Manta rays and whale sharks drift across the open deck on warm Gulf Stream eddies in late summer. Encrusted now in sponges, hydroids, and oyster colonies, the wreck is the signature deep tech dive of the Gulf of Mexico.",
+    "depthRange": {
+      "min": 24,
+      "max": 65
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Greater amberjack",
+        "scientificName": "Seriola dumerili",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red snapper",
+        "scientificName": "Lutjanus campechanus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "rare",
+        "bestMonths": [
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "rare",
+        "bestMonths": [
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Cold water exposure (7 mm wetsuit or drysuit)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Cold water exposure (7 mm wetsuit or drysuit)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (7 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 20,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Cold water exposure (7 mm wetsuit or drysuit)"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 92,
+    "getThere": "Fly into Pensacola International (PNS) on the Florida Panhandle, or Mobile (MOB) about an hour west. Charter boats depart from Pensacola Beach and Pensacola Pass marinas; the wreck lies 22.5 nautical miles offshore, a 90 minute run in calm Gulf weather. Conditions windows are tight, so most operators run dawn departures and weather cancellations are common from late autumn through early spring.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Recreational divers are limited to the island superstructure at 24 to 40 m on air or nitrox; the flight deck and hangar bay require trimix and full technical certification. The Florida Fish and Wildlife Conservation Commission manages the site as the Oriskany Reef. Surface conditions in the open Gulf can change quickly, so a calm forecast is essential. Penetration is unrestricted but the wreck is enormous and silty inside the hangar deck — reel, redundant lights, and wreck training mandatory. Nearest recompression chamber is in Pensacola."
   }
 ]
