@@ -86012,5 +86012,201 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Use the mooring buoys; the wreck sits on sand and is easy to lose in poorer visibility. Wreck specialty certification is required for penetration of the wheelhouse and cargo holds. The deeper engine room and crew quarters need a torch and are typically reserved for divers with technical or advanced wreck training. The site is often combined with Hin Pee Wee pinnacle 30 metres to the northwest as a multi level dive. Visibility drops sharply during the November monsoon when many operators skip the site."
+  },
+  {
+    "id": "saba-third-encounter",
+    "slug": "saba-third-encounter",
+    "locationId": "saba-saba",
+    "name": "Third Encounter",
+    "heroImageUrl": null,
+    "lat": 17.62333,
+    "lng": -63.27966,
+    "description": "A horseshoe shaped volcanic seamount about half a mile off Saba's western coast, rising from over 600 m of open ocean to a plateau at 29 m. The signature feature is Eye of the Needle, a free standing pinnacle whose summit lifts to within 27 m of the surface, ringed by horse eye jacks and patrolled by Caribbean reef sharks. The plateau hosts Nassau groupers, nurse sharks, and creole wrasse, with one long resident grouper known to divers as Charlie; deeper edges drop into blue water where manta rays and the occasional pelagic pass through. Plankton rich water and moderate current are typical, and the site has been voted among the Caribbean's top pinnacle dives.",
+    "depthRange": {
+      "min": 27,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Caribbean reef shark",
+        "scientificName": "Carcharhinus perezii",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nassau grouper",
+        "scientificName": "Epinephelus striatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Horse-eye jack",
+        "scientificName": "Caranx latus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "seasonal",
+        "bestMonths": [1, 2, 3, 4]
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 26, "max": 27 },
+        "visibilityM": { "min": 25, "max": 45 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 26, "max": 27 },
+        "visibilityM": { "min": 25, "max": 45 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 26, "max": 27 },
+        "visibilityM": { "min": 25, "max": 45 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 25, "max": 40 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 22, "max": 40 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 18, "max": 36 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 18, "max": 36 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 18, "max": 36 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 18, "max": 36 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 18, "max": 36 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm shorty or full wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 20, "max": 40 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 22, "max": 45 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm full wetsuit"
+      }
+    ],
+    "bestMonths": [12, 1, 2, 3, 4, 5],
+    "editorialRank": 86,
+    "getThere": "St. Maarten (SXM / Princess Juliana International) has direct flights from North America, Europe, and across the Caribbean. Winair operates the short hop to Saba (SAB), or you can take the ~90 minute ferry to Fort Bay. Dive boats reach Third Encounter in about 20 to 25 minutes from Fort Bay harbour.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Scout's Place Saba",
+        "url": "https://www.booking.com/searchresults.html?ss=Scouts%20Place%20Saba",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Juliana's Hotel Saba",
+        "url": "https://www.booking.com/searchresults.html?ss=Julianas%20Hotel%20Saba",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Queen's Gardens Resort Saba",
+        "url": "https://www.booking.com/searchresults.html?ss=Queens%20Gardens%20Resort%20Saba",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Sea Saba Dive Center",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + reel",
+        "reason": "Exposed seamount with moderate current; drift exits common.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Dive computer",
+        "reason": "Multi level pinnacle profile with deep portions.",
+        "gearId": "computer-shearwater-peregrine"
+      }
+    ],
+    "notes": "Saba Marine Park access fee is collected by operators. Depth and exposure make this an advanced level dive and nitrox is commonly used to extend bottom time. Sharks are unbaited. Hurricane season is June through November though sustained storm impact on Saba is uncommon."
   }
 ]
