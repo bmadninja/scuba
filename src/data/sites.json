@@ -92427,5 +92427,303 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Open-ocean seamount with strong, unpredictable currents; trips run only in flat seas and many operators require minimum logged dives plus AOW and Nitrox. Surface marker buoys are mandatory. Hannibal Bank sits inside the Coiba Special Marine Management Zone (ZEMP) adjoining Coiba National Park; park fees and ranger registration apply. Nearest hyperbaric chamber is in Panama City."
+  },
+  {
+    "id": "tubbataha-philippines-jessie-beazley-reef",
+    "slug": "tubbataha-philippines-jessie-beazley-reef",
+    "locationId": "tubbataha-philippines",
+    "name": "Jessie Beazley Reef",
+    "heroImageUrl": null,
+    "lat": 9.033,
+    "lng": 119.817,
+    "description": "Isolated mushroom of reef rising from deep water in the Sulu Sea, roughly 20 km north of the main Tubbataha atolls. The reef cap sits at 7 to 12 m and is carpeted in Acropora and lettuce corals before plunging into a sheer wall that drops past recreational limits. Corner currents stack schooling jacks, barracuda and unicornfish against the wall, while whitetip and grey reef sharks rest on the sand at the base. Tuna, Napoleon wrasse and eagle rays pass through, and hammerheads occasionally cruise the blue in deeper water. Added to the Tubbataha Reefs Natural Park in 2006, it is dived only on calm days during the March through June liveaboard window.",
+    "depthRange": {
+      "min": 7,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Schooling barracuda",
+        "scientificName": "Sphyraena qenie",
+        "reliability": "year-round",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Yellowfin tuna",
+        "scientificName": "Thunnus albacares",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "rare",
+        "bestMonths": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "rare",
+        "bestMonths": [
+          4,
+          5
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Park closed during typhoon and swell season"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Park closed; pre season swell"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Park closed during southwest monsoon"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Park closed during southwest monsoon"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Park closed; monsoon swell"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Park closed; residual swell"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Park closed; northeast monsoon onset"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Park closed during northeast monsoon"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 90,
+    "getThere": "Puerto Princesa (PPS) on Palawan has direct flights from Manila and Cebu. Tubbataha liveaboards run a 10 to 12 hour overnight crossing from PPS to the park during the open season from mid March to mid June. Jessie Beazley is dived as a separate stop on most itineraries when conditions allow.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Park is open only from mid March through mid June. A surface marker buoy and reel are mandatory; drift exits over deep water are standard. The reef sits outside the strict core protection zone but inside the expanded park boundary added by Proclamation 1126 in 2006."
   }
 ]
