@@ -26,7 +26,10 @@ const SITES_PATH = path.join(ROOT, "src/data/sites.json");
 const OUT_PATH = path.join(ROOT, "src/data/iucn-status.json");
 
 const KEY = process.env.IUCN_API_KEY;
-const PACE_MS = 1000;
+// 1.2s between binomials — each binomial does up to 2 API calls (taxa
+// lookup + assessment detail for population trend), so this caps us at
+// ~3000 requests over a full run of ~260 binomials.
+const PACE_MS = 1200;
 const API_BASE = "https://api.iucnredlist.org/api/v4/taxa/scientific_name";
 
 function sleep(ms) {
@@ -63,6 +66,8 @@ function collectBinomials(encounters, sites) {
   return Array.from(set);
 }
 
+const ASSESSMENT_BASE = "https://api.iucnredlist.org/api/v4/assessment";
+
 async function fetchOne(binomial) {
   const parts = binomial.split(/\s+/);
   if (parts.length < 2) return null;
@@ -70,33 +75,57 @@ async function fetchOne(binomial) {
   const url =
     `${API_BASE}?genus_name=${encodeURIComponent(genus)}&species_name=${encodeURIComponent(species)}`;
   const res = await fetch(url, {
-    headers: {
-      Authorization: KEY,
-      Accept: "application/json",
-    },
+    headers: { Authorization: KEY, Accept: "application/json" },
   });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
   const json = await res.json();
-  // v4 returns a taxon with assessments[]; pick the latest published one.
-  const assessments = (json?.assessments ?? json?.taxon?.assessments ?? [])
-    .filter((a) => a?.latest === true || a?.published);
+  // v4 taxa/scientific_name returns { taxon, assessments[] } — pick the
+  // latest global assessment. assessments[].latest is a boolean.
+  const assessments = (json?.assessments ?? [])
+    .filter((a) => {
+      const scopes = a?.scopes ?? [];
+      const isGlobal = scopes.length === 0 || scopes.some((s) => s?.code === "1");
+      return isGlobal;
+    })
+    .sort((a, b) => Number(b?.year_published ?? 0) - Number(a?.year_published ?? 0));
   if (assessments.length === 0) return null;
-  assessments.sort((a, b) => (b?.year_published ?? 0) - (a?.year_published ?? 0));
-  const a = assessments[0];
-  const category = a?.red_list_category?.code ?? a?.category ?? "NE";
-  const trend = (a?.population_trend ?? "").toLowerCase();
-  const populationTrend = ["increasing", "decreasing", "stable", "unknown"].includes(
-    trend,
-  )
-    ? trend
-    : "unknown";
+  const latest = assessments.find((a) => a?.latest === true) ?? assessments[0];
+  const category = latest?.red_list_category_code ?? "NE";
+  const year = Number(latest?.year_published);
+  const assessmentUrl =
+    latest?.url ?? `https://www.iucnredlist.org/species/${latest?.sis_taxon_id ?? ""}`;
+
+  // population_trend isn't on the taxa list response — fetch the
+  // assessment detail to get it. Best-effort; on failure, fall back to
+  // "unknown" rather than killing the whole binomial.
+  let populationTrend = "unknown";
+  const assessmentId = latest?.assessment_id;
+  if (assessmentId) {
+    try {
+      const detailRes = await fetch(`${ASSESSMENT_BASE}/${assessmentId}`, {
+        headers: { Authorization: KEY, Accept: "application/json" },
+      });
+      if (detailRes.ok) {
+        const detail = await detailRes.json();
+        const trendDesc = (
+          detail?.population_trend?.description?.en ?? ""
+        ).toLowerCase();
+        if (["increasing", "decreasing", "stable", "unknown"].includes(trendDesc)) {
+          populationTrend = trendDesc;
+        }
+      }
+    } catch {
+      // ignore — keep "unknown"
+    }
+  }
+
   return {
     category,
     categoryLabel: CATEGORY_LABEL[category] ?? category,
     populationTrend,
-    lastAssessedYear: a?.year_published ?? a?.assessment_year ?? undefined,
-    assessmentUrl: a?.url ?? `https://www.iucnredlist.org/search?query=${encodeURIComponent(binomial)}`,
+    lastAssessedYear: Number.isFinite(year) ? year : undefined,
+    assessmentUrl,
   };
 }
 
