@@ -86799,5 +86799,201 @@
       }
     ],
     "notes": "Saba Marine Park access fee is collected by operators. Depth and exposure make this an advanced level dive and nitrox is commonly used to extend bottom time. Sharks are unbaited. Hurricane season is June through November though sustained storm impact on Saba is uncommon."
+  },
+  {
+    "id": "palau-iro-maru",
+    "slug": "palau-iro-maru",
+    "locationId": "blue-corner-palau",
+    "name": "Iro Maru",
+    "heroImageUrl": null,
+    "lat": 7.21,
+    "lng": 134.28,
+    "description": "A 143 m Imperial Japanese Navy fleet oiler torpedoed by USS Tunny and finished off by US carrier aircraft during Operation Desecrate One in March 1944, sitting upright in 40 m of water in the Urukthapel anchorage south of Koror. The signature feature is the bow gun, a deck cannon on its circular platform around 27 m, smothered in soft coral and sponges with anemonefish in the tendrils; an identical aft gun sits past the loading kingposts. Masts rise to 8 m below the surface and make a long descent line down to the main deck at 25 m. Penetration of cargo holds and bridge is open to divers with wreck training. Glassfish school in the holds, lionfish stake out the kingposts, and batfish patrol the deck.",
+    "depthRange": {
+      "min": 8,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Anemonefish",
+        "scientificName": "Amphiprion",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Glassfish",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "scientificName": "Platax",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 12, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 10, "max": 18 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 10, "max": 18 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 12, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [11, 12, 1, 2, 3, 4],
+    "editorialRank": 78,
+    "getThere": "Fly into Koror (ROR / Roman Tmetuchl International) with connections from Manila, Taipei, Guam, and Tokyo. The wreck lies in the Urukthapel anchorage southeast of Koror, roughly a 15 minute boat ride from town dive shops, and is usually combined with a reef or channel dive on the same boat day.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Palau Central Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Palau%20Central%20Hotel%20Koror",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sea Passion Hotel Palau",
+        "url": "https://www.booking.com/searchresults.html?ss=Sea%20Passion%20Hotel%20Palau",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Palau Pacific Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Palau%20Pacific%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Fish 'n Fins Palau",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      },
+      {
+        "partner": "DiveBooker",
+        "label": "Sam's Tours Palau",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical",
+      "computer-shearwater-peregrine"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary dive light",
+        "reason": "The cargo holds and engine room are dark; a torch is essential for inspecting the bow gun details and any interior penetration.",
+        "gearId": "light-bigblue-al1200"
+      },
+      {
+        "name": "SMB + reel",
+        "reason": "A surface marker buoy is needed for the open water ascent off the mast top in the busy Koror boat lane.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Live ordnance, including unexploded shells and small arms ammunition, remains on the wreck and inside cargo holds. Do not touch or move anything. Maximum depth of 40 m and silt bottom make this an advanced or nitrox dive; penetration of holds and bridge requires formal wreck training. Requires the Koror State permit and Palau Pristine Paradise Environmental Fee."
   }
 ]
