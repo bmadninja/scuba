@@ -84591,5 +84591,351 @@
       }
     ],
     "notes": "A cavern guide is required for the daylight zone; only fully cave certified divers should follow the line past the air dome into the deeper system. Emerald light beams are strongest from May to October when the surface algae carpet thickens; the dry season gives clearer water but a different blue cast. A resident juvenile Morelet's crocodile is sometimes seen near the lilies — give it space and do not approach."
+  },
+  {
+    "id": "egypt-ss-rosalie-moller",
+    "slug": "egypt-ss-rosalie-moller",
+    "locationId": "ras-mohammed-egypt",
+    "name": "SS Rosalie Moller",
+    "heroImageUrl": null,
+    "lat": 27.6509,
+    "lng": 33.7716,
+    "description": "British coal freighter sunk in the early hours of 8 October 1941 by two Luftwaffe Heinkel He 111s, two days after the same bombers claimed her famous sister wreck SS Thistlegorm just 15 km away. Launched in Glasgow in 1910 as the Francis, the 108 metre hull sat hidden for nearly six decades until divers relocated her in 1998. She rests upright on a sandy seabed in the Strait of Gubal: masts at 18 m, main deck at 35 m, propeller and rudder at 50 m, holds still packed with the Welsh steam coal she was carrying to Alexandria. Silt off the surrounding sand keeps visibility around 10 to 20 m, lending the wreck a brooding atmosphere lit by glassfish swarms over bridge and engine room while batfish, schools of barracuda and resident grouper patrol the masts.",
+    "depthRange": {
+      "min": 18,
+      "max": 50
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Batfish",
+        "scientificName": "Platax teira",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Yellowtail barracuda",
+        "scientificName": "Sphyraena flavicauda",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Coral grouper",
+        "scientificName": "Cephalopholis miniata",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Scorpionfish",
+        "scientificName": "Scorpaenopsis",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Common octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit with hood or drysuit for tech profiles"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit with hood or drysuit for tech profiles"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit with hood"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 87,
+    "getThere": "Fly to Hurghada International (HRG) on the Egyptian mainland, roughly 30 km southwest of the wreck across the Strait of Gubal — the closest and most common approach. Day boats run from Hurghada and El Gouna marinas, a 90 minute speedboat transfer each way, while most divers prefer to visit on a 3 to 7 night northern Red Sea liveaboard out of Hurghada that pairs the Rosalie Moller with the SS Thistlegorm, Sha'ab Abu Nuhas and Ras Mohammed. Sharm el Sheikh (SSH) day trips are possible by speedboat but the longer crossing is rarely worth it.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Technical certification recommended: the propeller and stern sit at 50 m and the main deck at 35 m, putting most of the wreck below recreational limits. Many operators run it as an extended range or trimix dive; some allow accompanied dives on nitrox with strict 40 m caps over the bridge and forward holds only. Two primary plus a backup torch are essential — the holds are dark, the silt is fine and easily stirred, and a thermocline often hangs around 22 m. Currents are usually gentle but the surface around Gubal can pick up suddenly; descend and ascend on the permanent mooring line. The wreck is a war grave for the two crew lost in 1941. Avoid touching cargo or hull plating, much of which is degrading rapidly. Nearest hyperbaric chamber is in Hurghada."
   }
 ]
