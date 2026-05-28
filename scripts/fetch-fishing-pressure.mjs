@@ -29,17 +29,18 @@ const OUT_PATH = path.join(ROOT, "src/data/fishing-pressure.json");
 const TOKEN = process.env.GFW_API_TOKEN;
 const RADIUS_KM = 50;
 const PACE_MS = 1000;
-// GFW 4Wings dataset for apparent fishing effort, daily v2.
-const DATASET = "public-global-fishing-effort:v20231026";
+// GFW 4Wings dataset for apparent fishing effort.
+const DATASET = "public-global-fishing-effort:latest";
 const API_BASE = "https://gateway.api.globalfishingwatch.org/v3/4wings/report";
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-// Build a square bounding-box polygon (close to RADIUS_KM half-width) as
-// a GeoJSON Feature. GFW 4Wings reports accept a geometry payload.
-function bboxGeojson(lat, lng, radiusKm) {
+// Build a square bounding-box GeoJSON Polygon (close to RADIUS_KM
+// half-width). GFW 4Wings reports accept a raw Polygon under `geojson`,
+// not a Feature.
+function bboxPolygon(lat, lng, radiusKm) {
   const dLat = radiusKm / 111;
   const dLng = radiusKm / (111 * Math.cos((lat * Math.PI) / 180) || 1);
   const minLat = lat - dLat;
@@ -47,29 +48,32 @@ function bboxGeojson(lat, lng, radiusKm) {
   const minLng = lng - dLng;
   const maxLng = lng + dLng;
   return {
-    type: "Feature",
-    properties: {},
-    geometry: {
-      type: "Polygon",
-      coordinates: [
-        [
-          [minLng, minLat],
-          [maxLng, minLat],
-          [maxLng, maxLat],
-          [minLng, maxLat],
-          [minLng, minLat],
-        ],
+    type: "Polygon",
+    coordinates: [
+      [
+        [minLng, minLat],
+        [maxLng, minLat],
+        [maxLng, maxLat],
+        [minLng, maxLat],
+        [minLng, minLat],
       ],
-    },
+    ],
   };
 }
 
 async function reportHours(lat, lng, year) {
   const startDate = `${year}-01-01`;
   const endDate = `${year}-12-31`;
-  const url = `${API_BASE}?spatial-resolution=LOW&temporal-resolution=YEARLY&datasets[0]=${DATASET}&date-range=${startDate},${endDate}&format=JSON`;
+  const params = new URLSearchParams({
+    "spatial-resolution": "LOW",
+    "temporal-resolution": "YEARLY",
+    "datasets[0]": DATASET,
+    "date-range": `${startDate},${endDate}`,
+    format: "JSON",
+  });
+  const url = `${API_BASE}?${params.toString()}`;
   const body = {
-    region: bboxGeojson(lat, lng, RADIUS_KM),
+    geojson: bboxPolygon(lat, lng, RADIUS_KM),
   };
   const res = await fetch(url, {
     method: "POST",
@@ -83,9 +87,14 @@ async function reportHours(lat, lng, year) {
     throw new Error(`HTTP ${res.status} ${res.statusText}`);
   }
   const json = await res.json();
-  const entries = json?.entries?.[0]?.[DATASET] ?? [];
+  // Response shape: { entries: [{ <datasetKey>: [{ hours|value, ... }] }] }
+  // The datasetKey can resolve to a versioned slug even if we requested
+  // ":latest", so pick the first key on the first entry rather than
+  // matching by literal slug.
+  const firstEntry = json?.entries?.[0] ?? {};
+  const rows = Object.values(firstEntry).flat().filter(Boolean);
   let hours = 0;
-  for (const e of entries) hours += Number(e?.hours ?? e?.value ?? 0) || 0;
+  for (const e of rows) hours += Number(e?.hours ?? e?.value ?? 0) || 0;
   return Math.round(hours);
 }
 
