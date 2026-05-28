@@ -96822,5 +96822,59 @@
       }
     ],
     "notes": "Open Water certification and basic buoyancy control sufficient. Three mooring buoys mark the wreck — never tie to the structure. The wreck lies inside the Florida Keys National Marine Sanctuary and John Pennekamp Coral Reef State Park, both protected; no artifact removal or coral contact. Night dives are the local specialty: octopus, basket stars, and spiny lobster emerge across the broken plates, and resting parrotfish sleep in mucus cocoons inside the bow. Check the marine forecast before booking — northerly winter fronts can drop visibility and turn the surface choppy."
+  },
+  {
+    "id": "milne-bay-papua-new-guinea-b17-black-jack",
+    "slug": "milne-bay-papua-new-guinea-b17-black-jack",
+    "locationId": "milne-bay-papua-new-guinea",
+    "name": "B-17F Black Jack",
+    "heroImageUrl": null,
+    "lat": -9.7,
+    "lng": 150.033,
+    "description": "A Boeing B-17F Flying Fortress that ditched on the reef off Boga Boga village in July 1943, returning from a bombing run to Rabaul with two engines out and almost no fuel. The bomber sank upright onto sand at 46 m and was rediscovered by Rod Pearce in 1986. Cockpit windows still stand open, machine guns sit in their turrets, twin tail guns pivot freely in their mounts, and rounds line the ammunition tracks. A permanent guideline runs from the 15 m reef top down the slope to the wreck.",
+    "depthRange": { "min": 15, "max": 50 },
+    "skillLevel": "tech",
+    "diveTypes": ["wrecks"],
+    "species": [
+      { "commonName": "Schooling barracuda", "reliability": "year-round" },
+      { "commonName": "Bigeye trevally", "scientificName": "Caranx sexfasciatus", "reliability": "year-round" },
+      { "commonName": "Soft coral", "reliability": "year-round" },
+      { "commonName": "Glassfish", "reliability": "year-round" }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 30, "max": 40 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 30, "max": 40 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 30, "max": 40 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 30, "max": 40 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 30, "max": 40 }, "currentStrength": "strong", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 30, "max": 40 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [5, 6, 7, 8, 9, 10, 11],
+    "editorialRank": 84,
+    "getThere": "Fly into Port Moresby (POM), connect on PNG Air to Tufi airstrip (TFI) on Cape Nelson, and stay at Tufi Dive Resort. The wreck is reached by a roughly two hour boat crossing east to Boga Boga village on Cape Vogel and runs only on special request when weather settles.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Trimix and stage tanks",
+        "reason": "Bottom at 46 m to 50 m puts the wreck beyond recreational air limits; mandatory decompression on every dive."
+      },
+      {
+        "name": "Dive light",
+        "reason": "Cockpit, bomb bay, and turret interiors are dim even when visibility above is 40 m."
+      },
+      {
+        "name": "Reel",
+        "reason": "Strong current sweeps the slope; the permanent guideline is the only reliable navigation back to the ascent line."
+      }
+    ],
+    "notes": "Wreck sits at 46 m to 50 m, beyond recreational depth limits and trimix or accelerated decompression is standard. Two fatalities have occurred since the 1986 discovery. Penetration of the fuselage is discouraged due to narcosis at depth and silt or sharp interior hazards. Trips run from Tufi Resort only in settled weather; the open ocean crossing to Cape Vogel is weather dependent. The wreck is a war grave for any crew remains and an Australian war heritage protected site; no artefact removal."
   }
 ]
