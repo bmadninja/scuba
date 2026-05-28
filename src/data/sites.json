@@ -92980,5 +92980,300 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Sodwana boat launches are surf entries — sit on the pontoon, feet hooked under straps. The site closes intermittently during peak raggie season when pregnant females are settled, to limit disturbance. A surface marker buoy is recommended on every dive. iSimangaliso park entry fee applies daily."
+  },
+  {
+    "id": "raja-ampat-sardine-reef",
+    "slug": "raja-ampat-sardine-reef",
+    "locationId": "raja-ampat-indonesia",
+    "name": "Sardine Reef",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Schooling_bannerfish_%28Heniochus_diphreutes%29_%2832396203157%29.jpg",
+    "lat": -0.5342,
+    "lng": 130.71508,
+    "description": "An oval seamount rising from 30 m to within 5 m of the surface in the Dampier Strait, where strong tidal currents pull open ocean water across the reef and pile up so much fish biomass that pioneer Max Ammer named the site after the feeling of being packed inside a sardine can. Expect swirling walls of fusiliers, jacks, and snappers, bumphead parrotfish cruising the shallows, and reef sharks patrolling the edges. Soft coral and huge gorgonian fans coat the slopes. Current dictates everything; ride it as a drift.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Schooling fusiliers",
+        "scientificName": "Caesio spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Schooling barracuda",
+        "scientificName": "Sphyraena qenie",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bumphead parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Schooling sweetlips",
+        "scientificName": "Plectorhinchus spp.",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 93,
+    "getThere": "Fly to Sorong (SOQ) via Jakarta (CGK) or Bali (DPS) on Garuda, Batik, or Sriwijaya. Transfer to Waisai by ferry (about two hours) or board a Dampier Strait liveaboard or homestay speedboat. Sardine Reef sits roughly fifteen minutes by boat off the eastern tip of Kri Island.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Sorido Bay Resort (Kri)",
+        "url": "https://www.booking.com/searchresults.html?ss=Sorido%20Bay%20Resort%20Raja%20Ampat",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Kri Eco Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Kri%20Eco%20Resort%20Raja%20Ampat",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Yenkoranu Homestay (Kri)",
+        "url": "https://www.booking.com/searchresults.html?ss=Yenkoranu%20Homestay%20Raja%20Ampat",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Mermaid I & II",
+        "url": "https://www.liveaboard.com/diving/search?destination=Mermaid%20liveaboard%20Raja%20Ampat",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Damai II",
+        "url": "https://www.liveaboard.com/diving/search?destination=Damai%20II%20liveaboard%20Indonesia",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Papua Diving (Sorido / Kri Eco)",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "Current accelerates over the seamount; hooking in is the only way to stay put and watch the schools.",
+        "gearId": "reef-hook-innovative"
+      },
+      {
+        "name": "SMB + reel",
+        "reason": "Drift exits over open water in the strait. Inflate and ascend on the line so boats can find you.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Down currents can pull divers off the wall on full moon tides. Brief carefully, descend fast to escape surface chop, and stay close to the reef. The Raja Ampat marine park entry tag is required; buy it in Waisai or Sorong before you dive."
   }
 ]
