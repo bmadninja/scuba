@@ -84095,5 +84095,188 @@
       }
     ],
     "notes": "Baited shark dive run under a permitted operator. Divers stay in a stationary semicircle on the sand at 21 m while staff present a bait drum; do not chase the animals. The sharks are habituated and have produced no recorded recreational fatalities, but a baited environment is not without risk. Advanced certification and a recent dive log are typically required."
+  },
+  {
+    "id": "cod-hole-australia-steves-bommie",
+    "slug": "cod-hole-australia-steves-bommie",
+    "locationId": "cod-hole-australia",
+    "name": "Steve's Bommie",
+    "heroImageUrl": null,
+    "lat": -15.5018,
+    "lng": 145.788,
+    "description": "An isolated coral tower on Ribbon Reef Number 3 that climbs from a 30 m sand floor to within 5 m of the surface. Schools of bigeye trevally, fusiliers and yellow-lined snapper rotate around the pinnacle in dense columns while macro hunters search the crevices for leafy scorpionfish, stonefish, longnose hawkfish and peacock mantis shrimp. Anemonefish defend host anemones near the summit and grey, whitetip and blacktip reef sharks patrol the deeper edges. A memorial plaque to Steve, the free diver the site is named after, sits near the base at about 25 m.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellow-lined snapper",
+        "scientificName": "Lutjanus rufolineatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Leafy scorpionfish",
+        "scientificName": "Rhinopias frondosa",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef stonefish",
+        "scientificName": "Synanceia verrucosa",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Longnose hawkfish",
+        "scientificName": "Oxycirrhites typus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Peacock mantis shrimp",
+        "scientificName": "Odontodactylus scyllarus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Cinnamon clownfish",
+        "scientificName": "Amphiprion melanopus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dwarf minke whale",
+        "scientificName": "Balaenoptera acutorostrata",
+        "reliability": "seasonal",
+        "bestMonths": [6, 7]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 23, "max": 25 },
+        "visibilityM": { "min": 25, "max": 40 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 22, "max": 24 },
+        "visibilityM": { "min": 25, "max": 40 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 22, "max": 24 },
+        "visibilityM": { "min": 25, "max": 40 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 23, "max": 26 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 to 5 mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 24, "max": 27 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 27, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm tropical wetsuit"
+      }
+    ],
+    "bestMonths": [5, 6, 7, 8, 9, 10, 11],
+    "editorialRank": 80,
+    "getThere": "Fly into Cairns Airport (CNS). Steve's Bommie sits on Ribbon Reef 3, roughly 240 km north of Cairns and well past day boat range, so access is by liveaboard. Three to seven night Ribbon Reefs and Coral Sea itineraries depart Cairns weekly with Mike Ball Dive Expeditions (Spoilsport), Spirit of Freedom and Divers Den OceanQuest; northbound trips often return by light aircraft from Lizard Island to Cairns.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Macro lens or torch",
+        "reason": "The pinnacle is a top critter dive on the Ribbon Reefs; leafy scorpionfish, stonefish and longnose hawkfish reward a close inspection lens or pocket torch.",
+        "gearId": null
+      },
+      {
+        "name": "Dive computer with logbook room",
+        "reason": "A typical liveaboard schedule stacks four to five dives a day; surface intervals on the boat are short and Steve's is often dived twice on the same itinerary.",
+        "gearId": null
+      }
+    ],
+    "notes": "Marine park fees apply and are usually included in liveaboard pricing. Stonefish at this site are camouflaged on the pinnacle wall; do not hand hold on the reef and watch fin placement near the base. Currents are usually mild but can pick up on a turning tide, in which case the lee side of the bommie offers shelter and concentrates the fish schools."
   }
 ]
