@@ -86848,90 +86848,169 @@
     "conditionsByMonth": [
       {
         "month": 1,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 2,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 3,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 4,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 20, "max": 30 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 5,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 6,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 12, "max": 20 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 7,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 10, "max": 20 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 8,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 10, "max": 18 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 9,
-        "waterTempC": { "min": 29, "max": 30 },
-        "visibilityM": { "min": 10, "max": 18 },
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 10,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 12, "max": 20 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 11,
-        "waterTempC": { "min": 28, "max": 30 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       },
       {
         "month": 12,
-        "waterTempC": { "min": 28, "max": 29 },
-        "visibilityM": { "min": 15, "max": 25 },
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
         "currentStrength": "mild",
         "suitRecommendation": "Tropical wetsuit"
       }
     ],
-    "bestMonths": [11, 12, 1, 2, 3, 4],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
     "editorialRank": 78,
     "getThere": "Fly into Koror (ROR / Roman Tmetuchl International) with connections from Manila, Taipei, Guam, and Tokyo. The wreck lies in the Urukthapel anchorage southeast of Koror, roughly a 15 minute boat ride from town dive shops, and is usually combined with a reef or channel dive on the same boat day.",
     "lodging": [
@@ -86995,5 +87074,261 @@
       }
     ],
     "notes": "Live ordnance, including unexploded shells and small arms ammunition, remains on the wreck and inside cargo holds. Do not touch or move anything. Maximum depth of 40 m and silt bottom make this an advanced or nitrox dive; penetration of holds and bridge requires formal wreck training. Requires the Koror State permit and Palau Pristine Paradise Environmental Fee."
+  },
+  {
+    "id": "stingray-city-cayman-eden-rock-devils-grotto",
+    "slug": "stingray-city-cayman-eden-rock-devils-grotto",
+    "locationId": "stingray-city-cayman-islands",
+    "name": "Eden Rock & Devil's Grotto",
+    "heroImageUrl": null,
+    "lat": 19.2912,
+    "lng": -81.3892,
+    "description": "Twin limestone formations off George Town's South Church Street that rise from a sand floor to within a metre of the surface, riddled with caverns, tunnels and skylight chambers where shafts of sunlight cut through the dark interior. In summer a dense silver curtain of silversides packs the chambers, hunted by resident Atlantic tarpon in lunging attacks that scatter the schools into swirling clouds. Caribbean reef squid hover at the entrances and great barracuda patrol the perimeter, all in clear water that rarely runs more than a gentle drift. Depths of 4 to 15 m make this the most dived shore site on Grand Cayman.",
+    "depthRange": {
+      "min": 4,
+      "max": 15
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "geology",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Atlantic tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Hardhead silverside",
+        "scientificName": "Atherinomorus stipes",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean reef squid",
+        "scientificName": "Sepioteuthis sepioidea",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "French angelfish",
+        "scientificName": "Pomacanthus paru",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bermuda chub",
+        "scientificName": "Kyphosus sectatrix",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly into Owen Roberts International Airport (GCM) on Grand Cayman. The site sits directly off South Church Street in George Town, roughly 400 m south of the cruise piers. Most divers shore enter from Eden Rock Diving Center's purpose built ladder or by boat from any Seven Mile Beach operator; the swim from shore to the formations is about 100 m.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary dive light",
+        "reason": "The caverns and tunnel chambers go dark even at midday; a torch lets you see structure and pick out silversides packed into the ceiling pockets.",
+        "gearId": "light-bigblue-al1200"
+      },
+      {
+        "name": "SMB",
+        "reason": "Cruise ship tenders and snorkel boats work the surface above the site through the day; a marker is essential before ascent.",
+        "gearId": "smb-xs-scuba-deluxe"
+      }
+    ],
+    "notes": "Inside the George Town port zone; check the daily cruise ship schedule before diving, as boat traffic above the site is heavy when ships are berthed. The silversides aggregation is a summer phenomenon (roughly June through September) and is the reason most divers pick this site over Cayman's offshore walls. Avoid touching or chasing the tarpon, which feed naturally through the schools."
   }
 ]
