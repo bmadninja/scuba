@@ -71731,7 +71731,7 @@
     "locationId": "ari-atoll-maldives",
     "name": "HMCS Saskatchewan",
     "heroImageUrl": null,
-    "lat": 49.0,
+    "lat": 49,
     "lng": -123.5,
     "description": "The HMCS Saskatchewan, a former Canadian naval destroyer, was intentionally sunk as an artificial reef. This wreck dive offers exploration opportunities through its various decks and compartments, attracting a diverse range of temperate marine life. Visibility can be excellent, revealing the ship's structure and the vibrant ecosystem it now supports.",
     "depthRange": {
@@ -74928,7 +74928,7 @@
     "name": "Ross Sea",
     "heroImageUrl": null,
     "lat": -77.5,
-    "lng": 175.0,
+    "lng": 175,
     "description": "The Ross Sea, a deep bay in the Southern Ocean, offers a unique and challenging polar diving experience. Divers encounter a pristine underwater wilderness defined by towering ice formations, nutrient-rich waters supporting abundant marine life, and extreme cold. It's a realm of incredible biodiversity and a vital ecosystem.",
     "depthRange": {
       "min": 5,
@@ -76352,7 +76352,7 @@
     "name": "Cuba Jardines de la Reina",
     "heroImageUrl": null,
     "lat": 20.98,
-    "lng": -79.0,
+    "lng": -79,
     "description": "Jardines de la Reina, or Gardens of the Queen, is a protected marine park off the southern coast of Cuba. This pristine archipelago offers vibrant coral reefs, dramatic wall dives, and consistent encounters with resident Caribbean reef sharks and silvertip sharks. Known for its healthy ecosystem, divers can observe large groupers, schooling snappers, and a rich diversity of marine life in clear, warm waters.",
     "depthRange": {
       "min": 5,
@@ -79094,7 +79094,7 @@
     "locationId": "bahamas-caribbean",
     "name": "MS Logna",
     "heroImageUrl": null,
-    "lat": 25.0,
+    "lat": 25,
     "lng": -77.4,
     "description": "The MS Logna, a sunken vessel off the Bahamian coast, offers a captivating artificial reef environment. Corals have begun to colonize its structure, attracting a diverse array of marine life, making it a compelling dive for wreck enthusiasts and underwater photographers.",
     "depthRange": {
@@ -88635,5 +88635,488 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Marine reserve fee for Raja Ampat is required (tag purchased in Sorong or Waisai). Currents on the southwest face can run strong; entry timing matters. Wobbegongs camouflage under coral plates — do not place hands."
+  },
+  {
+    "id": "salt-island-bvi-painted-walls",
+    "slug": "salt-island-bvi-painted-walls",
+    "locationId": "salt-island-bvi",
+    "name": "Painted Walls",
+    "heroImageUrl": null,
+    "lat": 18.358,
+    "lng": -64.562,
+    "description": "On the west side of Dead Chest Island in the British Virgin Islands, four narrow gullies cut into the limestone to form parallel canyons whose vertical walls are sheeted in encrusting cup corals in yellow, red, orange, and purple, with rope and finger sponges threaded through the cracks. Pillar corals stand in the sandy gaps between ridges. A swim through arch on the northern ridge opens into a small basin where silversides ball up and resident tarpon hang at the entrance. Hawksbill turtles graze the slopes, nurse sharks rest beneath ledges, and green moray eels watch from holes in the wall. Currents are typically low and the profile bottoms near 18 m, so the colour and texture of the walls reward a slow recreational pace.",
+    "depthRange": {
+      "min": 5,
+      "max": 18
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silversides",
+        "scientificName": "Atherinidae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean spiny lobster",
+        "scientificName": "Panulirus argus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit or shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Shorty or rash guard"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Shorty or rash guard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Shorty or rash guard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Shorty or rash guard"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly to Terrance B. Lettsome International (EIS) on Beef Island, Tortola, or arrive by ferry from St. Thomas (STT) in the US Virgin Islands. Dive boats from Road Town and Cooper Island reach the moorings on the west side of Dead Chest Island in about 20 minutes; the site is usually paired as a second tank with the nearby RMS Rhone.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Primary torch",
+        "reason": "The swim through arch and the deep cracks in the wall corals are dark; a torch reveals the layered cup coral colour and the silversides packed into the basin."
+      }
+    ],
+    "notes": "Painted Walls sits inside the BVI National Parks system; coral and marine life are protected. The arch is wide enough for an Open Water diver in good trim and is short, so penetration cert is not required. Hurricane season (August through October) brings reduced visibility and occasional closures."
+  },
+  {
+    "id": "bonaire-bari-reef",
+    "slug": "bonaire-bari-reef",
+    "locationId": "bonaire-national-marine-park-bonaire",
+    "name": "Bari Reef",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Snorkeling_Bari_Reef%2C_Bonaire_%2812841304654%29.jpg",
+    "lat": 12.176,
+    "lng": -68.288,
+    "description": "Shore dive fronting Sand Dollar Resort north of Kralendijk and the standing biodiversity champion of the Caribbean: over 420 fish species logged by REEF surveyors, more than any single site in the basin. The slope drops from 9 m to a sandy bottom around 30 m, with collapsed pier debris in the shallows that schools of grunts, goatfish, and sergeant majors use for cover. Reliable for the species hunt list: yellowhead jawfish brooding eggs, juvenile drums, seahorses on the sponges, and the longnose batfish and frogfish that draw macro shooters back week after week. Calm, current free, and divable straight off the beach 24 hours.",
+    "depthRange": {
+      "min": 5,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Longlure frogfish",
+        "scientificName": "Antennarius multiocellatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowhead jawfish",
+        "scientificName": "Opistognathus aurifrons",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean reef octopus",
+        "scientificName": "Octopus briareus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Longnose batfish",
+        "scientificName": "Ogcocephalus corniger",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Spotted moray",
+        "scientificName": "Gymnothorax moringa",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Queen angelfish",
+        "scientificName": "Holacanthus ciliaris",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical rashguard or thin wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical rashguard or thin wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      11,
+      12
+    ],
+    "editorialRank": 84,
+    "getThere": "Fly into Bonaire (BON / Flamingo International) with direct connections from Houston, Newark, Atlanta, Miami, and Amsterdam. Bari Reef is a 5 minute drive north of Kralendijk along Kaya Gobernador Debrot, accessed from the public beach beside Sand Dollar Resort.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Macro focus light",
+        "reason": "Frogfish, seahorses, and brooding jawfish on this reef are notoriously well camouflaged and reward a focused beam.",
+        "gearId": null
+      }
+    ],
+    "notes": "Bari Reef sits inside Bonaire National Marine Park; every diver must purchase a Nature Tag fee before getting wet. Entry is straight off the sand at Isidel Beach Park. Boat traffic is constant near Sand Dollar and Den Laman piers, so a surface marker buoy is strongly advised on ascent."
   }
 ]
