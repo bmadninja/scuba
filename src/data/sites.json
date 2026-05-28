@@ -93275,5 +93275,235 @@
       }
     ],
     "notes": "Down currents can pull divers off the wall on full moon tides. Brief carefully, descend fast to escape surface chop, and stay close to the reef. The Raja Ampat marine park entry tag is required; buy it in Waisai or Sorong before you dive."
+  },
+  {
+    "id": "egypt-rocky-island",
+    "slug": "egypt-rocky-island",
+    "locationId": "brothers-egypt",
+    "name": "Rocky Island",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Tibur%C3%B3n_oce%C3%A1nico_%28Carcharhinus_longimanus%29%2C_mar_Rojo%2C_Egipto%2C_2023-04-16%2C_DD_37.jpg",
+    "lat": 23.5639,
+    "lng": 36.2453,
+    "description": "Tiny rock pinnacle 70 km offshore in southern Egyptian Red Sea, the country's southernmost island and the most remote stop on the Deep South liveaboard circuit. Sheer walls plunge from 5 m to over 800 m, fed by open ocean currents that draft pelagic traffic onto the reef. Oceanic whitetip sharks patrol the blue from October through December, often shadowed by pilot fish; scalloped hammerhead schools queue at depth in summer. The east wall is the signature dive: strong drift, grey reef sharks at cleaning stations, schooling barracuda, and big tuna. Liveaboard only.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Oceanic whitetip shark",
+        "scientificName": "Carcharhinus longimanus",
+        "reliability": "seasonal",
+        "bestMonths": [10, 11, 12]
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [6, 7, 8, 9]
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silky shark",
+        "scientificName": "Carcharhinus falciformis",
+        "reliability": "seasonal",
+        "bestMonths": [6, 7, 8, 9]
+      },
+      {
+        "commonName": "Pelagic thresher",
+        "scientificName": "Alopias pelagicus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Bottlenose dolphin",
+        "scientificName": "Tursiops truncatus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Giant barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {"min": 22, "max": 24},
+        "visibilityM": {"min": 25, "max": 35},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {"min": 21, "max": 23},
+        "visibilityM": {"min": 25, "max": 35},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {"min": 22, "max": 24},
+        "visibilityM": {"min": 25, "max": 40},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {"min": 23, "max": 25},
+        "visibilityM": {"min": 25, "max": 40},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {"min": 25, "max": 27},
+        "visibilityM": {"min": 30, "max": 40},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {"min": 27, "max": 29},
+        "visibilityM": {"min": 30, "max": 40},
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {"min": 28, "max": 30},
+        "visibilityM": {"min": 30, "max": 40},
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {"min": 28, "max": 30},
+        "visibilityM": {"min": 30, "max": 40},
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {"min": 27, "max": 29},
+        "visibilityM": {"min": 30, "max": 40},
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {"min": 26, "max": 28},
+        "visibilityM": {"min": 25, "max": 40},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {"min": 24, "max": 26},
+        "visibilityM": {"min": 25, "max": 35},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {"min": 23, "max": 25},
+        "visibilityM": {"min": 25, "max": 35},
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit"
+      }
+    ],
+    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "editorialRank": 88,
+    "getThere": "Fly into Marsa Alam (RMF) or Hurghada (HRG); both have direct seasonal flights from European hubs. Rocky Island is accessible only by liveaboard. Deep South itineraries depart from Port Ghalib (20 min from Marsa Alam airport) and run 7 to 10 nights, with a 10 to 14 hour open ocean crossing to reach the Foul Bay cluster of Rocky, Zabargad, and St John's.",
+    "lodging": [
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Blue Pearl",
+        "url": "https://www.liveaboard.com/diving/search?destination=Blue%20Pearl%20Red%20Sea%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MY Emperor Elite",
+        "url": "https://www.liveaboard.com/diving/search?destination=Emperor%20Elite%20Red%20Sea",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Red Sea Aggressor IV",
+        "url": "https://www.liveaboard.com/diving/search?destination=Red%20Sea%20Aggressor%20IV",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Port Ghalib Marina hotels (pre and post liveaboard)",
+        "url": "https://www.booking.com/searchresults.html?ss=Port%20Ghalib",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Emperor Divers Egypt",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical",
+      "computer-shearwater-peregrine"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB and long reel",
+        "reason": "Most dives end as the current drifts you off the wall into open water; every diver shoots their own marker for zodiac pickup.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Nitrox certification",
+        "reason": "Pelagic action happens at 25 to 40 m on the corners; EAN32 buys meaningful bottom time across 3 to 4 dives a day."
+      },
+      {
+        "name": "Reef hook",
+        "reason": "Strong current sweeps the east and south corners where the sharks queue; hook in to watch without burning gas fighting the flow."
+      }
+    ],
+    "notes": "Liveaboard only, no day boats. Foul Bay crossings are committing open ocean; check sea state before booking shoulder season trips. The island is uninhabited and landings are not permitted. Strong currents and the lack of shelter mean the dive guide will call sites based on conditions; if Rocky is unsafe the boat will reroute to Zabargad or St John's. Oceanic whitetips can be inquisitive; brief on shark behavior and avoid trailing gear."
   }
 ]
