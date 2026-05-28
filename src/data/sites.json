@@ -89397,5 +89397,409 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Heritage Malta permit required for every dive; operators handle the paperwork. Trimix and full deco capability mandatory; runtimes are typically 90 to 120 minutes including decompression. Wreck is a protected war grave so no penetration and no artefact removal."
+  },
+  {
+    "id": "raja-ampat-indonesia-the-passage",
+    "slug": "raja-ampat-indonesia-the-passage",
+    "locationId": "raja-ampat-indonesia",
+    "name": "The Passage",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Soft_corals_between_Gam_and_Waigeo%2C_Raja_Ampat.jpg",
+    "lat": -0.4279,
+    "lng": 130.6605,
+    "description": "A 1.6 km tidal channel separating Gam and Waigeo islands, narrow enough at points to throw a rope across. Limestone karst walls draped in orange soft corals plunge into water stained brown by mangrove tannins; archerfish hunt insects above the surface while wobbegongs sleep in cracks below. Tidal flow rips through on incoming and outgoing tide, so divers ride drifts past swimthroughs, undercut walls, and pygmy seahorses (Hippocampus denise and bargibanti) on sea fans. Light drops after midday as low sun and steep walls darken the channel.",
+    "depthRange": {
+      "min": 3,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "macro",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Tasselled wobbegong",
+        "scientificName": "Eucrossorhinus dasypogon",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Denise's pygmy seahorse",
+        "scientificName": "Hippocampus denise",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Bargibant's pygmy seahorse",
+        "scientificName": "Hippocampus bargibanti",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Banded archerfish",
+        "scientificName": "Toxotes jaculatrix",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Bumphead parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Broadclub cuttlefish",
+        "scientificName": "Sepia latimanus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly to Sorong (SOQ) via Jakarta, Makassar, or Manado. Ferry from Sorong to Waisai on Waigeo takes about 2 hours. The Passage sits at the western mouth of Kabui Bay and is reached by liveaboard or speedboat from homestays on Gam, Mansuar, or Waisai (45 to 90 minutes).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Dive on slack or with the current rather than against it; rips can exceed 4 knots through the narrowest sections. Marine Park entry tag (about IDR 1,000,000 / USD 65 for foreign divers, valid one year) must be purchased in Sorong or Waisai before diving."
+  },
+  {
+    "id": "maldives-kudarah-thila",
+    "slug": "maldives-kudarah-thila",
+    "locationId": "ari-atoll-maldives",
+    "name": "Kudarah Thila",
+    "heroImageUrl": null,
+    "lat": 3.55794,
+    "lng": 72.9218,
+    "description": "Marine protected pinnacle in South Ari Atoll, gazetted in 1995. Top of the thila sits at 14 m and drops past 30 m, with two enormous overhangs on the east and west sides smothered in red and orange Dendronephthya soft corals, plus a swim through arch hung with sea fans. Five lined snapper and bluestripe snapper sit motionless in dense ledges while jacks, dogtooth tuna, and rainbow runners hunt the corners. Grey reef sharks and Napoleon wrasse work the deeper edges in current.",
+    "depthRange": { "min": 14, "max": 30 },
+    "skillLevel": "advanced",
+    "diveTypes": ["coral", "large-pelagics", "geology"],
+    "species": [
+      { "commonName": "Grey reef shark", "scientificName": "Carcharhinus amblyrhynchos", "reliability": "year-round" },
+      { "commonName": "Napoleon wrasse", "scientificName": "Cheilinus undulatus", "reliability": "year-round" },
+      { "commonName": "Five lined snapper", "scientificName": "Lutjanus quinquelineatus", "reliability": "year-round" },
+      { "commonName": "Dogtooth tuna", "scientificName": "Gymnosauron unicolor", "reliability": "year-round" },
+      { "commonName": "Bigeye trevally", "scientificName": "Caranx sexfasciatus", "reliability": "year-round" },
+      { "commonName": "Great barracuda", "scientificName": "Sphyraena barracuda", "reliability": "year-round" },
+      { "commonName": "Hawksbill turtle", "scientificName": "Eretmochelys imbricata", "reliability": "year-round" },
+      { "commonName": "Eagle ray", "scientificName": "Aetobatus narinari", "reliability": "seasonal", "bestMonths": [12, 1, 2, 3, 4] }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 2, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 4, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 5, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 6, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 7, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 8, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 9, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 10, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 11, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" },
+      { "month": 12, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "Tropical wetsuit" }
+    ],
+    "bestMonths": [12, 1, 2, 3, 4],
+    "editorialRank": 86,
+    "getThere": "Fly into Velana International (MLE) in Malé. South Ari Atoll is reached by 25 to 30 minute domestic flight to Maamigili (DMM), then a short speedboat hop, or by a 90 minute speedboat / seaplane transfer from Malé. Most operators run Kudarah Thila as a midday boat dive from resorts on Kudarah, Angaga, Dhigurah, or Mahibadhoo.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "Currents sweep over the top of the thila and divers commonly hook in at the upstream edge to hold position while the action passes.",
+        "gearId": "reef-hook-innovative"
+      },
+      {
+        "name": "Dive torch",
+        "reason": "The signature overhangs and arch are deep cuts in the reef that go dark fast; a torch reveals the soft coral colour and is needed for the swim through.",
+        "gearId": null
+      }
+    ],
+    "notes": "Marine protected area since 1995; collection of any marine life and anchoring on the thila are prohibited. Dive on incoming tide for best visibility and shark activity. Site is small and easily congested when multiple boats arrive together."
   }
 ]
