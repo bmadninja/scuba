@@ -91048,5 +91048,318 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Originally a Lake Maracaibo lake tanker built in Monfalcone in 1938; the salvaged bow and stern were welded together and returned to service after the war. The midsection lies inside the buoyed Palm Beach swim and watersports zone, so listen for jet ski and boat traffic before ascending and surface near a marker buoy."
+  },
+  {
+    "id": "andaman-islands-india-invisible-bank",
+    "slug": "andaman-islands-india-invisible-bank",
+    "locationId": "andaman-islands-india",
+    "name": "Invisible Bank",
+    "heroImageUrl": null,
+    "lat": 11.1667,
+    "lng": 93.4667,
+    "description": "Submerged seamount about 100 km southeast of Havelock Island, where a flat rock crests within 8 m of the surface before its slopes drop past 30 m onto a sand and rubble base. Far from any sheltering land, the site is wholly exposed and the current can rip, but the trade off is pelagic density few Indian Ocean sites match. Dense schools of dogtooth tuna, bluefin and giant trevally, great barracuda, and unicornfish swirl over the rocks while grey reef sharks, whitetips, and resting nurse sharks patrol below. Bumphead parrotfish and napoleon wrasse work the structure, and scalloped hammerheads are sighted on lucky days in late winter. Visibility regularly hits 30 to 40 m. This is an advanced liveaboard dive that runs only when surface conditions cooperate.",
+    "depthRange": {
+      "min": 8,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tawny nurse shark",
+        "scientificName": "Nebrius ferrugineus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dogtooth tuna",
+        "scientificName": "Gymnosarda unicolor",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluefin trevally",
+        "scientificName": "Caranx melampygus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bumphead parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Black unicornfish",
+        "scientificName": "Naso hexacanthus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scalloped hammerhead",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "rare",
+        "bestMonths": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical 3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly into Veer Savarkar International Airport (IXZ) in Port Blair via Chennai (MAA), Kolkata (CCU), Delhi (DEL), or Bengaluru (BLR). Invisible Bank lies about 100 km southeast of Havelock Island in open ocean and is dived only by liveaboard. Most Andaman liveaboards depart from Port Blair on 7 to 10 day charters and reach the bank as a weather dependent day from anchorage near Inglis or Henry Lawrence Island. Day boat operators based at Havelock can occasionally schedule a long single dive run when the southwest swell is absent.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Barefoot at Havelock",
+        "url": "https://www.booking.com/searchresults.html?ss=Barefoot%20at%20Havelock",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "resort"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "TSG Blue Resort Havelock",
+        "url": "https://www.booking.com/searchresults.html?ss=TSG%20Blue%20Havelock",
+        "isAffiliate": false,
+        "priceLevel": 2,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Find PADI dive operators (Andaman liveaboards)",
+        "url": "https://travel.padi.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-scubapro-mk11-c370",
+      "wetsuit-bare-3mm-full",
+      "computer-shearwater-peregrine",
+      "smb-xs-scuba-deluxe"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Reef hook",
+        "reason": "Current can be unrelenting on the windward face; a reef hook keeps you parked where the pelagic action passes instead of fighting the flow.",
+        "gearId": null
+      },
+      {
+        "name": "Long delayed surface marker buoy (closed circuit, 1.8 m or longer)",
+        "reason": "Pickups happen far offshore in chop. A tall closed circuit SMB with a finger spool is the difference between being seen and not.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Nitrox cert with EAN32 fills",
+        "reason": "Bottom time at 25 to 30 m on air is too short to enjoy the pelagic carousel; EAN32 stretches no deco limits noticeably.",
+        "gearId": null
+      }
+    ],
+    "notes": "Advanced Open Water with deep training and a verified logbook is the working minimum, and most liveaboard operators want 50 plus logged dives. The site is fully exposed and routinely cancelled when the southwest monsoon swell builds, which can be any time between mid May and mid September. Hammerhead sightings are rare and dependent on bringing thermoclines; treat them as a bonus rather than the headline. Foreign nationals no longer need a Restricted Area Permit for Havelock since 2022 but must carry a passport on board."
   }
 ]
