@@ -85205,5 +85205,521 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Technical certification recommended: the propeller and stern sit at 50 m and the main deck at 35 m, putting most of the wreck below recreational limits. Many operators run it as an extended range or trimix dive; some allow accompanied dives on nitrox with strict 40 m caps over the bridge and forward holds only. Two primary plus a backup torch are essential — the holds are dark, the silt is fine and easily stirred, and a thermocline often hangs around 22 m. Currents are usually gentle but the surface around Gubal can pick up suddenly; descend and ascend on the permanent mooring line. The wreck is a war grave for the two crew lost in 1941. Avoid touching cargo or hull plating, much of which is degrading rapidly. Nearest hyperbaric chamber is in Hurghada."
+  },
+  {
+    "id": "chuuk-yamagiri-maru",
+    "slug": "chuuk-yamagiri-maru",
+    "locationId": "chuuk-lagoon-fsm",
+    "name": "Yamagiri Maru",
+    "heroImageUrl": null,
+    "lat": 7.38,
+    "lng": 151.83,
+    "description": "A 134 m Japanese passenger cargo ship sunk on the second day of Operation Hailstone in February 1944 by SBD Dauntless bombers from USS Yorktown and USS Bunker Hill. She rests on her port side a mile north north west of Fefan Island, the hull stretching from 12 m at the starboard rail to 34 m on the sand. Hold five still cradles stacks of 18 inch armour piercing shells cast for the battleship Musashi, their copper driving bands green with patina. The engine room and bridge are open for trained penetration divers, the props and rudder buried under three quarters of a century of black coral and crinoids. Human remains and live ordnance are still inside the hull.",
+    "depthRange": {
+      "min": 12,
+      "max": 34
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip reef shark",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 88,
+    "getThere": "Fly to Chuuk International (TKK) on Weno via United's Guam (GUM) or Honolulu (HNL) island hopper, or via Pohnpei (PNI). From Weno it is a 30 to 40 minute boat ride south to the wreck off Fefan Island; almost every dive operation on the lagoon visits Yamagiri Maru on a standard rotation.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Truk Stop Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Truk%20Stop%20Hotel",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Blue Lagoon Resort Chuuk",
+        "url": "https://www.booking.com/searchresults.html?ss=Blue%20Lagoon%20Resort%20Chuuk",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "SS Thorfinn",
+        "url": "https://www.liveaboard.com/diving/search?destination=SS%20Thorfinn%20Truk",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Truk Master",
+        "url": "https://www.liveaboard.com/diving/search?destination=Truk%20Master%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "Truk Odyssey",
+        "url": "https://www.liveaboard.com/diving/search?destination=Truk%20Odyssey%20liveaboard",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "Bluewater Travel",
+        "label": "Truk Lagoon wreck expeditions",
+        "url": "https://bluewaterdivetravel.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Dive light",
+        "reason": "Primary plus backup torches for hold five and engine room penetration; ambient light fades fast on the port side resting wreck.",
+        "gearId": "light-bigblue-vl5500p"
+      },
+      {
+        "name": "Computer",
+        "reason": "Multi level deep wreck near the 30 m bracket; nitrox extends bottom time on the holds.",
+        "gearId": "computer-shearwater-peregrine"
+      }
+    ],
+    "notes": "Wreck certification required for any interior penetration. Live 18 inch armour piercing shells are stacked in hold five and other ordnance is scattered throughout the holds; touch nothing. The wreck is a war grave for Japanese crew members lost in February 1944. Silt outs come fast when finning over the lower port side hull, so trim and buoyancy control matter."
+  },
+  {
+    "id": "ras-mohammed-egypt-canyon-dahab",
+    "slug": "ras-mohammed-egypt-canyon-dahab",
+    "locationId": "ras-mohammed-egypt",
+    "name": "The Canyon (Dahab)",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/CIMG2686_Looking_Upward_at_The_Canyon_%282693645594%29.jpg",
+    "lat": 28.5539,
+    "lng": 34.5225,
+    "description": "A limestone slot canyon punched through the fringing reef 8 km north of Dahab, entered through a shallow sandy lagoon called the Fish Bowl at 14 m. The fissure snakes upward from the depths almost closed at the top, with three windows in the roof: the Fish Bowl entry, a wide opening at 22 m, and the seaward exit at 52 m where divers swim out into open water. Inside, glassfish swarm the chimney walls in clouds thick enough to dim the surface light. The coral garden outside at 5 to 10 m holds octopus, scorpionfish, lionfish and bluespotted ribbontail rays, and serves as both the safety stop and the recreational alternative for divers staying out of the slot itself.",
+    "depthRange": {
+      "min": 5,
+      "max": 54
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology",
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Glassfish",
+        "scientificName": "Parapriacanthus ransonneti",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Day octopus",
+        "scientificName": "Octopus cyanea",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Common lionfish",
+        "scientificName": "Pterois miles",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scorpionfish",
+        "scientificName": "Scorpaenopsis oxycephala",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluespotted ribbontail ray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "rare"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 21,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 21,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm shorty or tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5 mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 84,
+    "getThere": "Fly into Sharm el-Sheikh International (SSH), then drive about 1.5 hours north up the coast to Dahab. The Canyon car park sits roughly 8 km north of town along a rough coastal track, usually reached by 4x4 or pickup arranged through any local dive centre. Walk across the shingle beach and a short rocky platform to enter the Fish Bowl lagoon directly from shore. Taba (TCP) and a longer transfer from Hurghada (HRG) via the Sinai are alternative airports.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Torch",
+        "reason": "The canyon roof is almost closed at the top; a light reveals the glassfish curtains and the cracks in the limestone walls"
+      },
+      {
+        "name": "Dive computer with deep alarms",
+        "reason": "The exit at 52 m sits well outside recreational limits and narcosis at depth has killed divers here"
+      },
+      {
+        "name": "SMB",
+        "reason": "Surface support is shore based and boat traffic crosses the bay; mark your ascent if you drift away from the entry"
+      }
+    ],
+    "notes": "Overhead environment with all canyon depths exceeding recreational limits and a documented history of narcosis fatalities at the deep exit. Many divers and operators treat the slot as a technical objective and run the shallow coral garden plus the Fish Bowl as a separate open water profile. Shore access only; a small fee covers the Bedouin car park and rest area at the entry."
   }
 ]
