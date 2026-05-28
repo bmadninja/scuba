@@ -94716,5 +94716,162 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Recreational divers are limited to the island superstructure at 24 to 40 m on air or nitrox; the flight deck and hangar bay require trimix and full technical certification. The Florida Fish and Wildlife Conservation Commission manages the site as the Oriskany Reef. Surface conditions in the open Gulf can change quickly, so a calm forecast is essential. Penetration is unrestricted but the wreck is enormous and silty inside the hangar deck — reel, redundant lights, and wreck training mandatory. Nearest recompression chamber is in Pensacola."
+  },
+  {
+    "id": "north-male-atoll-maldives-maldive-victory",
+    "slug": "north-male-atoll-maldives-maldive-victory",
+    "locationId": "north-male-atoll-maldives",
+    "name": "Maldive Victory Wreck",
+    "heroImageUrl": null,
+    "lat": 4.188,
+    "lng": 73.521,
+    "description": "83 metre cargo ship that struck the Hulhulé reef on Friday 13 February 1981 while approaching Malé with provisions from Singapore. Built in Liverpool in 1958 as the Malatian and renamed Maldive Victory in 1971, she now lies upright in the channel between Hulhulé and Malé, southwest of the airport island. The mast tops out around 12 m, the bridge sits at 18 m, and the hull rests on sand at 35 m. Funnel, masts, derricks and cargo holds are all intact and penetrable. Schools of bigeye trevally, batfish and yellowtail snapper hang over the wreck; lionfish and giant moray work the holds. Current rips through the channel at 1 to 3 knots and only slackens briefly at the tide turn, which is when most operators drop divers.",
+    "depthRange": {
+      "min": 12,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Bigeye trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Batfish",
+        "scientificName": "Platax teira",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "scientificName": "Lutjanus",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Common lionfish",
+        "scientificName": "Pterois volitans",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [3, 4, 5, 6, 7, 8, 9, 10]
+      },
+      {
+        "commonName": "Honeycomb grouper",
+        "scientificName": "Epinephelus merra",
+        "reliability": "year-round",
+        "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 25, "max": 35 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [1, 2, 3, 4, 11, 12],
+    "editorialRank": 78,
+    "getThere": "Velana International Airport (MLE) sits on Hulhulé, the same reef the wreck is impaled on. The site is a five to ten minute speedboat hop from any Malé or Hulhumalé jetty, making it the closest serious wreck dive to the Maldives' only international airport. Most North Malé liveaboards and Malé day boat operators run a morning trip timed to slack water.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Channel dive with persistent current, typically 1 to 3 knots — operators run it on slack tide and use a shotline down to the mast. Advanced certification, surface marker buoy and reel are standard. Sand bottom at 35 m puts a hard cap on bottom time on air; nitrox is common. Penetration of the holds and superstructure is possible but the wreck has been heavily worked over by salvage and storms, with silty interiors and no permanent guide lines; overhead training is assumed. The site reopened to recreational diving in May 2021 after a multi year closure for a debris clean up."
   }
 ]
