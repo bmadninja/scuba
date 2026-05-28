@@ -95739,5 +95739,57 @@
       }
     ],
     "notes": "Advanced Open Water with Wreck Diver speciality recommended for full cabin and cockpit penetration. Site sits inside the Aqaba Marine Park and dive permits are arranged through the operator."
+  },
+  {
+    "id": "cod-hole-australia-lady-elliot-island",
+    "slug": "cod-hole-australia-lady-elliot-island",
+    "locationId": "cod-hole-australia",
+    "name": "Lady Elliot Island",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Lady_Elliot_Island_SVII.jpg",
+    "lat": -24.1133,
+    "lng": 152.7175,
+    "description": "A 45 hectare coral cay at the southern tip of the Great Barrier Reef, 80 km off Bundaberg, ringed by fringing reef that drops onto bommies, ledges and sand channels in 5 to 25 m. Lady Elliot is the largest known reef manta ray (Mobula alfredi) aggregation in eastern Australia, accounting for roughly 70 percent of east coast sightings. The signature dive is Lighthouse Bommie on the eastern reef — coral heads in 14 to 16 m where mantas queue at cleaner wrasse stations from May through September. Green and loggerhead turtles rest in the soft coral beds, leopard sharks pulse over the sand in summer, and humpback whales pass through the offshore channel on the southern migration. The Blowhole on the east side is an L shaped cave entering at 14 m and dropping out the wall around 22 m.",
+    "depthRange": { "min": 5, "max": 25 },
+    "skillLevel": "open-water",
+    "diveTypes": ["large-pelagics", "coral"],
+    "species": [
+      { "commonName": "Reef manta ray", "scientificName": "Mobula alfredi", "reliability": "year-round", "bestMonths": [5, 6, 7, 8, 9] },
+      { "commonName": "Green turtle", "scientificName": "Chelonia mydas", "reliability": "year-round", "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+      { "commonName": "Loggerhead turtle", "scientificName": "Caretta caretta", "reliability": "seasonal", "bestMonths": [11, 12, 1, 2, 3] },
+      { "commonName": "Leopard shark", "scientificName": "Stegostoma tigrinum", "reliability": "seasonal", "bestMonths": [11, 12, 1, 2, 3, 4] },
+      { "commonName": "Humpback whale", "scientificName": "Megaptera novaeangliae", "reliability": "seasonal", "bestMonths": [6, 7, 8, 9, 10] },
+      { "commonName": "Grey reef shark", "scientificName": "Carcharhinus amblyrhynchos", "reliability": "year-round", "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "3mm shorty or full wetsuit" },
+      { "month": 2, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "3mm shorty or full wetsuit" },
+      { "month": 3, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "3mm full wetsuit" },
+      { "month": 4, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "5mm full wetsuit" },
+      { "month": 5, "waterTempC": { "min": 22, "max": 25 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5mm full wetsuit" },
+      { "month": 6, "waterTempC": { "min": 21, "max": 23 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "5mm or 7mm wetsuit" },
+      { "month": 7, "waterTempC": { "min": 19, "max": 22 }, "visibilityM": { "min": 25, "max": 40 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
+      { "month": 8, "waterTempC": { "min": 19, "max": 22 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
+      { "month": 9, "waterTempC": { "min": 20, "max": 23 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "5mm full wetsuit" },
+      { "month": 10, "waterTempC": { "min": 22, "max": 25 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "mild", "suitRecommendation": "5mm full wetsuit" },
+      { "month": 11, "waterTempC": { "min": 24, "max": 26 }, "visibilityM": { "min": 20, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "3mm full wetsuit" },
+      { "month": 12, "waterTempC": { "min": 25, "max": 27 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "mild", "suitRecommendation": "3mm full wetsuit" }
+    ],
+    "bestMonths": [4, 5, 6, 7, 8, 9],
+    "editorialRank": 85,
+    "getThere": "Seair Pacific operates the only access to the island, with daily fixed wing flights to the grass airstrip from Bundaberg (BDB), Hervey Bay (HVB), Brisbane (BNE), Gold Coast (OOL) and Redcliffe. The flight from Bundaberg is about 30 minutes. Dive sites are reached on foot from the beach (lagoon entries) or by short boat ride (Lighthouse Bommie, Blowhole, west side wreck) with the resort operator. There is no ferry service and no day access except by air.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "5mm or 7mm wetsuit",
+        "reason": "Water drops to 19 C in July and August during the peak manta season; the resort hires 5 mm suits but a 7 mm is more comfortable on repetitive dives."
+      },
+      {
+        "name": "Reef hook (optional)",
+        "reason": "Not allowed at the manta cleaning stations — divers must stay flat on the sand and observe from a distance to avoid disturbing the queue."
+      }
+    ],
+    "notes": "Inside the Great Barrier Reef Marine Park Green Zone. No flash photography or strobes at manta cleaning stations; maintain 3 m distance and stay below the mantas, never above them. Daily visitor numbers are capped. Loggerhead nesting on the beach November through February, hatchlings emerge January through April — no torches on the beach at night during these months."
   }
 ]
