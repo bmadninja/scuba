@@ -10054,6 +10054,274 @@
     ]
   },
   {
+    "id": "kimbe-bay-papua-new-guinea-susans-reef",
+    "slug": "kimbe-bay-papua-new-guinea-susans-reef",
+    "locationId": "kimbe-bay-papua-new-guinea",
+    "name": "Susan's Reef",
+    "heroImageUrl": null,
+    "lat": -5.42,
+    "lng": 150.1,
+    "description": "Submerged ridge between two larger reefs, capped at 5 m and dropping past a 35 m ledge into the deep. The signature feature is a saddle at 15 to 22 m densely packed with red whip gorgonians (Ellisella sp.) and elephant ear sponges, draped in crinoids of every color. The east side falls away as a sheer wall; the west slopes through staghorn gardens and anemonefish patches. Long nose hawkfish hold in the deeper fans, and pygmy seahorses cling to the gorgonians. Often called the most photographed reef in Papua New Guinea.",
+    "depthRange": {
+      "min": 5,
+      "max": 35
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Bargibant's pygmy seahorse",
+        "scientificName": "Hippocampus bargibanti",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Long nose hawkfish",
+        "scientificName": "Oxycirrhites typus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Pink anemonefish",
+        "scientificName": "Amphiprion perideraion",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Crinoid squat lobster",
+        "scientificName": "Allogalathea elegans",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red whip gorgonian",
+        "scientificName": "Ellisella sp.",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly Air Niugini from Port Moresby (POM) to Hoskins (HKN) on New Britain, then a one hour road transfer to Walindi Plantation Resort on Kimbe Bay. Susan's Reef is a short boat ride from Walindi.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Walindi Plantation Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Walindi%20Plantation%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MV FeBrina",
+        "url": "https://www.liveaboard.com/diving/search?destination=FeBrina%20liveaboard%20Kimbe%20Bay",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "liveaboard"
+      },
+      {
+        "partner": "LiveaboardBookings",
+        "label": "MV Oceania",
+        "url": "https://www.liveaboard.com/diving/search?destination=Oceania%20liveaboard%20Papua%20New%20Guinea",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "liveaboard"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Walindi Dive",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Macro lens or magnifier",
+        "reason": "Pygmy seahorses on the gorgonians are smaller than a fingernail.",
+        "gearId": null
+      },
+      {
+        "name": "Dive light",
+        "reason": "Picks color out of the deeper red sea whips and finds crinoid squat lobsters tucked into the fans.",
+        "gearId": null
+      }
+    ],
+    "notes": "The reef is part of the Walindi Plantation Resort house sites in Mahonia Na Dari conservation area. Reef hooks are not needed; current is generally mild."
+  },
+  {
     "id": "milne-bay-dinahs-beach",
     "slug": "milne-bay-dinahs-beach",
     "locationId": "milne-bay-papua-new-guinea",
