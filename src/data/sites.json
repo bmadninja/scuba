@@ -81743,5 +81743,216 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Diving inside Kornati National Park is allowed only through a licensed dive centre, in designated zones, and a daily park ticket is required. The richest gorgonian growth sits below 25 metres, so plan for cold water at depth and conservative no decompression limits."
+  },
+  {
+    "id": "palau-chandelier-cave",
+    "slug": "palau-chandelier-cave",
+    "locationId": "jellyfish-lake-palau",
+    "name": "Chandelier Cave",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Chandelier_cave_chamber_%284590695436%29.jpg",
+    "lat": 7.3408,
+    "lng": 134.4506,
+    "description": "A flooded limestone sea cave in Malakal Harbor, a few minutes by boat from Koror, where five chambers run back into the rock and four of them trap pockets of breathable air. Divers drop through the entrance at about 4 m, follow the divemaster through shallow submerged passages, and surface inside the chambers to stand among stalactites and stalagmites that took tens of thousands of years to grow, fingers of rock hanging from the ceiling to meet columns rising off the floor. Depth stays under 15 m and the water is still, but the chambers are dark and silt clouds easily, so a torch and slow, controlled buoyancy matter. Out at the entrance wall, cardinalfish and soldierfish gather in the shadows, banded coral shrimp work the cracks, and mandarinfish appear around dusk.",
+    "depthRange": {
+      "min": 3,
+      "max": 15
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Cardinalfish",
+        "scientificName": "Apogonidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Soldierfish",
+        "scientificName": "Myripristis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Banded coral shrimp",
+        "scientificName": "Stenopus hispidus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mandarinfish",
+        "scientificName": "Synchiropus splendidus",
+        "reliability": "rare",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 12, "max": 20 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 12, "max": 20 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 10, "max": 18 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 8, "max": 15 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 8, "max": 15 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 8, "max": 15 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 29, "max": 30 },
+        "visibilityM": { "min": 8, "max": 15 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 18 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 12, "max": 20 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Koror (ROR / Roman Tmetuchl International), Palau's only international airport, with connections from Manila, Taipei, Guam, and Tokyo. The cave sits in Malakal Harbor on the south side of Koror, a five to ten minute boat ride from town dive shops, so it is usually run as a second or third dive of the day rather than a dedicated trip.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Palau Central Hotel",
+        "url": "https://www.booking.com/searchresults.html?ss=Palau%20Central%20Hotel%20Koror",
+        "isAffiliate": false,
+        "priceLevel": 1,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Sea Passion Hotel Palau",
+        "url": "https://www.booking.com/searchresults.html?ss=Sea%20Passion%20Hotel%20Palau",
+        "isAffiliate": false,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Palau Pacific Resort",
+        "url": "https://www.booking.com/searchresults.html?ss=Palau%20Pacific%20Resort",
+        "isAffiliate": false,
+        "priceLevel": 4,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "DiveBooker",
+        "label": "Fish 'n Fins Palau",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      },
+      {
+        "partner": "DiveBooker",
+        "label": "Sam's Tours Palau",
+        "url": "https://www.divebooker.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Primary dive light",
+        "reason": "The inner chambers are an overhead environment with little natural light, so a torch is needed to see the stalactite formations and the way back out.",
+        "gearId": "light-bigblue-al1200"
+      },
+      {
+        "name": "Backup light",
+        "reason": "Standard redundancy for the overhead sections in case the primary torch floods or fails.",
+        "gearId": "light-orcatorch-d550"
+      }
+    ],
+    "notes": "Overhead environment: stay with the guide, carry a torch, and move slowly because the fine sediment clouds the chambers fast and the formations are fragile. No technical cave certification is required and depth stays shallow, but it suits divers comfortable with buoyancy. Sheltered harbor location means it dives year round regardless of swell. Requires the Koror State permit and Palau Pristine Paradise Environmental Fee. Often paired with a dusk mandarinfish dive on the nearby Malakal Harbor wall."
   }
 ]
