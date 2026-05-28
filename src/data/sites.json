@@ -87330,5 +87330,231 @@
       }
     ],
     "notes": "Inside the George Town port zone; check the daily cruise ship schedule before diving, as boat traffic above the site is heavy when ships are berthed. The silversides aggregation is a summer phenomenon (roughly June through September) and is the reason most divers pick this site over Cayman's offshore walls. Avoid touching or chasing the tarpon, which feed naturally through the schools."
+  },
+  {
+    "id": "malmok-aruba-antilla-wreck",
+    "slug": "malmok-aruba-antilla-wreck",
+    "locationId": "malmok-aruba",
+    "name": "Antilla Wreck",
+    "heroImageUrl": null,
+    "lat": 12.602,
+    "lng": -70.058,
+    "description": "A 122 m German cargo ship scuttled by her own crew on 10 May 1940 to avoid Dutch capture after Germany invaded the Netherlands. The hull lies on its port side off Malmok Bay with the top deck at 5 m and the seabed at 18 m, broken amidships by decades of storms. Tube sponges, soft coral, and orange cup coral encrust the steel; hawksbill turtles, green morays, blue tang, and lobsters work the holds. Snorkelers reach the upper rails while divers swim the cargo bays and crew quarters.",
+    "depthRange": {
+      "min": 5,
+      "max": 18
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Hawksbill sea turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean spiny lobster",
+        "scientificName": "Panulirus argus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blue tang",
+        "scientificName": "Acanthurus coeruleus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "French angelfish",
+        "scientificName": "Pomacanthus paru",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 80,
+    "getThere": "Queen Beatrix International (AUA) sits on the south side of the island with direct flights from major US East Coast hubs, Toronto, Amsterdam, and several Latin American cities. Dive operators run the boat trip from Oranjestad or Palm Beach to the wreck in roughly 20 to 30 minutes.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Storm damage has continued to break up the hull since 1953; some operators no longer allow penetration. Surface conditions can get choppy when the trade winds pick up in winter."
   }
 ]
