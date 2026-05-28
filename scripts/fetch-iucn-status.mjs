@@ -64,7 +64,11 @@ function collectBinomials(encounters, sites) {
 }
 
 async function fetchOne(binomial) {
-  const url = `${API_BASE}/${encodeURIComponent(binomial)}`;
+  const parts = binomial.split(/\s+/);
+  if (parts.length < 2) return null;
+  const [genus, species] = parts;
+  const url =
+    `${API_BASE}?genus_name=${encodeURIComponent(genus)}&species_name=${encodeURIComponent(species)}`;
   const res = await fetch(url, {
     headers: {
       Authorization: KEY,
