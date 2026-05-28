@@ -90504,5 +90504,325 @@
       }
     ],
     "notes": "Advanced Open Water or 15 plus logged dives required. Cave traverse should be done one diver at a time through the narrow chimney to avoid silt. Always enter at the deep end and exit through the shallow chamber. The site lies inside the Fish Rock Aggregation Critical Habitat for grey nurse sharks — no touching, no chasing, no flash photography on resting sharks."
+  },
+  {
+    "id": "mahe-ennerdale-wreck",
+    "slug": "mahe-ennerdale-wreck",
+    "locationId": "mahe-seychelles",
+    "name": "Ennerdale Wreck",
+    "heroImageUrl": null,
+    "lat": -4.5,
+    "lng": 55.55,
+    "description": "Royal Fleet Auxiliary tanker, 211 meters long, lost on 1 June 1970 when she struck uncharted granite pinnacles off Mammelles Islet at 07:37 local time. With her engine room flooding and fuel oil pouring into the Indian Ocean, Royal Navy divers placed scuttling charges and helicopters lifted them clear seconds before detonation, sinking her on the spot to keep the slick off Mahé. The hull broke into large sections that lie in 24 to 30 meters across white sand, bow and stern still recognisable. Around the kingposts and inside the open holds you find resident giant moray eels, schools of oriental sweetlips and yellow snapper packed under overhangs, batfish drifting in pairs, eagle rays cruising past, and the occasional tawny nurse shark on the sand. The largest wreck in Seychelles waters.",
+    "depthRange": {
+      "min": 22,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Giant moray",
+        "scientificName": "Gymnothorax javanicus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Oriental sweetlips",
+        "scientificName": "Plectorhinchus vittatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Bluestripe snapper",
+        "scientificName": "Lutjanus kasmira",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Batfish",
+        "scientificName": "Platax teira",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Tawny nurse shark",
+        "scientificName": "Nebrius ferrugineus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Yellowmargin scorpionfish",
+        "scientificName": "Scorpaenopsis",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or shorty"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly to Seychelles International Airport (SEZ) on Mahé. The wreck sits roughly 12 km northeast of Victoria, off the island's northeast coast near Mammelles Islet, reached by a 30 to 45 minute boat run from dive centres at Beau Vallon, Bel Ombre or Victoria Marina. Most operators run it as a single deep dive in calm sea, often paired with a shallower second dive at Brissare Rocks or the Twin Barges.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Deep dive on a fragmented wreck. PADI Deep Diver or equivalent certification expected, and most operators want 30 plus logged dives. Nitrox extends bottom time. The site is exposed and the run out can be rough in the southeast monsoon (May to September), so trips often cancel last minute in those months. Penetration of the broken sections is not recommended due to collapsed plating and sharp steel. Nearest hyperbaric chamber is at Seychelles Hospital in Victoria."
   }
 ]
