@@ -1,6 +1,6 @@
 {
   "_comment": "Jurisdiction-mean coral cover from public NCRMP (NOAA) and AGRRA reports. Built by scripts/fetch-coral-cover.mjs. Each entry cites a published source. Each locationId in the `appliesTo` list inherits this snapshot. lastReviewedAt is when the citation was last verified by hand.",
-  "lastBuiltAt": "2026-05-27",
+  "lastBuiltAt": "2026-06-01",
   "jurisdictions": [
     {
       "id": "florida-keys",
