@@ -16,6 +16,7 @@ import { getWrecksBySiteId } from "@/lib/data/wrecks";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
+import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import type { Site } from "@/lib/data/types";
 
 const FISHING_LEVEL_LABEL: Record<string, string> = {
@@ -214,6 +215,15 @@ export default async function SiteDetailPage({
   const atlasLoc = locationFull ? buildAtlasLocation(locationFull) : null;
   const creatures = mergeCreatures(site, sightings);
   const hasSpeciesData = creatures.length > 0;
+  // Photo provenance for the creatures shown, so we can credit iNaturalist
+  // photographers (most photos are CC-licensed and require attribution).
+  const photoCredits = creatures
+    .filter((c) => c.imageUrl)
+    .map((c) => ({
+      commonName: c.commonName,
+      ...getSpeciesPhotoCredit(creatureKey(c.scientificName, c.commonName)),
+    }))
+    .filter((c) => c.imageUrl);
   const gear = site.siteSpecificGear;
 
   return (
@@ -471,6 +481,23 @@ export default async function SiteDetailPage({
             Log a sighting on iNaturalist →
           </a>
         </div>
+
+        {/* Photo credits — iNaturalist photos are mostly CC-licensed and
+            require attribution to the photographer. */}
+        {photoCredits.length > 0 ? (
+          <details className="mt-4 [&_summary]:cursor-pointer">
+            <summary className="text-[11px] font-medium text-slate-400 marker:content-['']">
+              Photos via iNaturalist · credits
+            </summary>
+            <ul className="mt-2 space-y-1">
+              {photoCredits.map((c) => (
+                <li key={c.commonName} className="text-[11px] leading-5 text-slate-400">
+                  {c.commonName}: {c.photographer ?? "iNaturalist contributor"} · {c.licenseLabel}
+                </li>
+              ))}
+            </ul>
+          </details>
+        ) : null}
       </section>
 
       {/* ── CONDITIONS ── */}
