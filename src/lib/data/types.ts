@@ -85,6 +85,7 @@ export type SpeciesEntry = {
   depthRange?: { min: number; max: number };
   sourceIds?: string[];
   methodologyClaimIds?: string[];
+  imageUrl?: string;
 };
 
 export type ConditionsMonth = {

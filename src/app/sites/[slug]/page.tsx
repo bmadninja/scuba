@@ -1,46 +1,130 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { SiteHeader } from "@/components/site-header";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { AffiliateLink } from "@/components/affiliate-link";
-import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import { JsonLd } from "@/components/json-ld";
+import { IucnBadge } from "@/components/iucn-badge";
 import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
-import { getFishingPressureForLocation } from "@/lib/data/fishing-pressure";
-import { CoralCoverPanel } from "@/components/coral-cover-panel";
-import { FishingPressurePanel } from "@/components/fishing-pressure-panel";
-import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
-import { IucnBadge } from "@/components/iucn-badge";
-import { getGearById } from "@/lib/data/gear";
-import {
-  formatLastConfirmed,
-  getSightingsBySiteId,
-} from "@/lib/data/sightings";
+import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { buildAtlasLocation } from "@/lib/atlas-location";
+import { STATE_TEXT, skillText } from "@/lib/data/reef-state";
+import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getWrecksBySiteId } from "@/lib/data/wrecks";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
-import type {
-  ConditionsMonth,
-  Site,
-  SpeciesEntry,
-} from "@/lib/data/types";
+import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
+import type { Site } from "@/lib/data/types";
 
-const MONTH_ABBR = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-];
-
-const CONFIDENCE_RING: Record<"high" | "medium" | "low", string> = {
-  high: "bg-emerald-50 text-emerald-800 ring-emerald-200",
-  medium: "bg-amber-50 text-amber-800 ring-amber-200",
-  low: "bg-orange-50 text-orange-800 ring-orange-200",
+const FISHING_LEVEL_LABEL: Record<string, string> = {
+  low: "Low",
+  moderate: "Moderate",
+  high: "High",
+  "very-high": "Very high",
 };
+
+const MONTH_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+const CURRENT_COLOR: Record<string, string> = {
+  none: "bg-slate-100 text-slate-700",
+  mild: "bg-emerald-50 text-emerald-700",
+  moderate: "bg-amber-50 text-amber-800",
+  strong: "bg-rose-50 text-rose-700",
+};
+
+const RELIABILITY_LABEL: Record<string, string> = {
+  "year-round": "Year round",
+  seasonal: "Seasonal",
+  rare: "Rare",
+};
+
+/**
+ * One animal shown in "What you'll see". Combines a curated species entry
+ * with this site's sighting-evidence record for the same animal, so a manta
+ * ray shows up once — conservation status and live record count on one card.
+ */
+type Creature = {
+  commonName: string;
+  scientificName?: string;
+  reliability?: "year-round" | "seasonal" | "rare";
+  bestMonths?: number[];
+  imageUrl?: string;
+  lastConfirmedAt?: string | null;
+  recentRecordCount?: number;
+  proximityRadiusKm?: number;
+};
+
+type SightingRecord = ReturnType<typeof getSightingsBySiteId>[number];
+
+/** Join key: scientific name when present, else normalised common name. */
+function creatureKey(scientific: string | undefined, common: string): string {
+  return (scientific || common).trim().toLowerCase();
+}
+
+function mergeCreatures(site: Site, sightings: SightingRecord[]): Creature[] {
+  const byKey = new Map<string, Creature>();
+  const order: string[] = [];
+
+  for (const s of site.species) {
+    const key = creatureKey(s.scientificName, s.commonName);
+    if (!byKey.has(key)) order.push(key);
+    byKey.set(key, {
+      commonName: s.commonName,
+      scientificName: s.scientificName,
+      reliability: s.reliability,
+      bestMonths: s.bestMonths,
+      imageUrl: s.imageUrl,
+    });
+  }
+
+  for (const ev of sightings) {
+    const key = creatureKey(ev.speciesScientific, ev.speciesCommon);
+    const existing = byKey.get(key);
+    if (existing) {
+      existing.lastConfirmedAt = ev.lastConfirmedAt;
+      existing.recentRecordCount = ev.recentRecordCount;
+      existing.proximityRadiusKm = ev.proximityRadiusKm;
+    } else {
+      order.push(key);
+      byKey.set(key, {
+        commonName: ev.speciesCommon,
+        scientificName: ev.speciesScientific,
+        lastConfirmedAt: ev.lastConfirmedAt,
+        recentRecordCount: ev.recentRecordCount,
+        proximityRadiusKm: ev.proximityRadiusKm,
+      });
+    }
+  }
+
+  return order.map((k) => byKey.get(k)!);
+}
+
+function iNaturalistObsUrl(site: Site, speciesName?: string): string {
+  const params = new URLSearchParams({
+    latitude: site.lat.toFixed(6),
+    longitude: site.lng.toFixed(6),
+    place_guess: site.name,
+  });
+  if (speciesName) params.set("taxon_name", speciesName);
+  return `https://www.inaturalist.org/observations/new?${params}`;
+}
+
+function formatLastConfirmed(iso: string): string {
+  try {
+    const d = new Date(iso);
+    const now = new Date();
+    const diffDays = Math.floor((now.getTime() - d.getTime()) / (1000 * 60 * 60 * 24));
+    if (diffDays === 0) return "today";
+    if (diffDays === 1) return "yesterday";
+    if (diffDays < 30) return `${diffDays} days ago`;
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    return `${Math.floor(diffDays / 365)} years ago`;
+  } catch {
+    return iso;
+  }
+}
 
 export function generateStaticParams() {
   return getAllSites().map((s) => ({ slug: s.slug }));
@@ -78,21 +162,6 @@ export async function generateMetadata({
   };
 }
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-const CURRENT_COLOR: Record<ConditionsMonth["currentStrength"], string> = {
-  none: "bg-slate-100 text-slate-700",
-  mild: "bg-emerald-50 text-emerald-700",
-  moderate: "bg-amber-50 text-amber-800",
-  strong: "bg-rose-50 text-rose-700",
-};
-
-const RELIABILITY_COLOR: Record<SpeciesEntry["reliability"], string> = {
-  "year-round": "bg-emerald-50 text-emerald-700 ring-emerald-200",
-  seasonal: "bg-amber-50 text-amber-800 ring-amber-200",
-  rare: "bg-slate-100 text-slate-600 ring-slate-200",
-};
-
 export default async function SiteDetailPage({
   params,
 }: {
@@ -113,9 +182,6 @@ export default async function SiteDetailPage({
   const sightingMethods = sightingMethodIds
     .map(getMethodologyByClaimId)
     .filter((m): m is NonNullable<typeof m> => Boolean(m));
-  // Surface the methodology's full source list in the drawer, not just
-  // the per-record sourceIds — that way new registry entries cited by
-  // the methodology note appear here without rewriting every record.
   const sightingSourceIds = Array.from(
     new Set([
       ...sightings.flatMap((s) => s.sourceIds),
@@ -127,614 +193,446 @@ export default async function SiteDetailPage({
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
   const heroUrl = underwaterPhotoUrl(site.heroImageUrl);
-  const coralCover = location
-    ? getCoralCoverForLocation(location.id)
-    : null;
-  const fishingPressure = location
-    ? getFishingPressureForLocation(location.id)
-    : null;
+  const coralCover = location ? getCoralCoverForLocation(location.id) : null;
+  const reefPressure = location ? getReefPressureByLocationId(location.id) : null;
+  const reefStamp =
+    location &&
+    (coralCover || (reefPressure && reefPressure.fishingPressure !== "unknown"))
+      ? {
+          locationName: location.name,
+          locationSlug: location.slug,
+          coralCoverPercent: coralCover?.current.coverPercent ?? null,
+          coralCoverYear: coralCover?.current.year ?? null,
+          fishingLevel:
+            reefPressure && reefPressure.fishingPressure !== "unknown"
+              ? FISHING_LEVEL_LABEL[reefPressure.fishingPressure]
+              : null,
+        }
+      : null;
+
+  const locationFull = location ? getLocationById(location.id) : null;
+  const atlasLoc = locationFull ? buildAtlasLocation(locationFull) : null;
+  const creatures = mergeCreatures(site, sightings);
+  const hasSpeciesData = creatures.length > 0;
+  const gear = site.siteSpecificGear;
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="mx-auto w-full max-w-5xl px-6 py-12 text-slate-900">
       <JsonLd data={siteSchema(site, location)} />
-      <SiteHeader activeHref="/sites" />
-      {/* Photo hero */}
-      <section className="relative h-[58vh] min-h-[420px] w-full overflow-hidden">
-        <Image
+
+      {/* Breadcrumb */}
+      <nav className="flex flex-wrap items-center gap-1.5 text-sm text-slate-500">
+        <Link href="/" className="hover:text-[#0089de]">Atlas</Link>
+        <span className="text-slate-300">/</span>
+        {location ? (
+          <>
+            <Link href={`/locations/${location.slug}`} className="hover:text-[#0089de]">
+              {location.name}
+            </Link>
+            <span className="text-slate-300">/</span>
+          </>
+        ) : null}
+        <span className="font-medium text-slate-700">{site.name}</span>
+      </nav>
+
+      {location ? (
+        <Link
+          href={`/locations/${location.slug}`}
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0089de] hover:text-[#1d5d90]"
+        >
+          ← Back to {location.name}
+        </Link>
+      ) : null}
+
+      {/* Meta row */}
+      <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-600">
+        <span className="rounded-full bg-[#e8f0fe] px-2.5 py-0.5 text-[#1d5d90]">Dive site</span>
+        {location ? (
+          <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-slate-700">
+            {location.country}
+          </span>
+        ) : null}
+        <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-slate-700">
+          {site.depthRange.min}–{site.depthRange.max} m
+        </span>
+        <span className="rounded-full bg-slate-100 px-2.5 py-0.5 capitalize text-slate-700">
+          {skillText(site.skillLevel)}
+        </span>
+        <span
+          className={`rounded-full px-2.5 py-0.5 ${
+            inSeason
+              ? "bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200"
+              : "bg-slate-100 text-slate-500"
+          }`}
+        >
+          {inSeason ? "● In season" : "○ Off season"}
+        </span>
+        {atlasLoc ? (
+          <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-0.5 text-slate-700">
+            {STATE_TEXT[atlasLoc.state]}
+          </span>
+        ) : null}
+      </div>
+
+      <h1 className="mt-3 mb-8 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        {site.name}
+      </h1>
+
+      {/* ── ABOUT ── */}
+      <section>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={heroUrl}
           alt={site.name}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
+          className="mb-5 h-72 w-full rounded-2xl object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/55" />
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end px-6 pb-12 text-white">
-          {location ? (
-            <Link
-              href={`/locations/${location.slug}`}
-              className="group inline-flex w-fit max-w-full items-center gap-2 rounded-full bg-slate-950/45 px-3 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-white/20 backdrop-blur-md transition hover:bg-slate-950/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              aria-label={`Back to the ${location.name} location guide`}
-            >
-              <ArrowLeft
-                aria-hidden
-                className="h-3.5 w-3.5 shrink-0 transition group-hover:-translate-x-0.5"
-              />
-              <span className="truncate">Location guide</span>
-              <span aria-hidden className="h-1 w-1 shrink-0 rounded-full bg-white/50" />
-              <span className="truncate text-xs font-medium text-white/78">
-                {location.name}
-              </span>
-            </Link>
-          ) : null}
-          <h1 className="mt-3 max-w-3xl text-[clamp(2.25rem,5vw,4rem)] font-bold leading-[1.05] tracking-tight">
-            {site.name}
-          </h1>
-          <div className="mt-5 flex flex-wrap items-center gap-2">
-            <Pill>
-              {site.depthRange.min}–{site.depthRange.max} m
-            </Pill>
-            <Pill className="capitalize">{site.skillLevel.replace("-", " ")}+</Pill>
-            {site.diveTypes.slice(0, 2).map((t) => (
-              <Pill key={t} className="capitalize">
-                {t.replace("-", " ")}
-              </Pill>
-            ))}
-            <span
-              className={`rounded-full px-3 py-1 text-sm font-semibold ${
-                inSeason
-                  ? "bg-emerald-500 text-white"
-                  : "bg-white/15 text-white ring-1 ring-inset ring-white/30"
-              }`}
-            >
-              {inSeason ? "● In season now" : "○ Out of season"}
-            </span>
+        <p className="mb-5 max-w-2xl text-[15px] leading-7 text-slate-700">
+          {site.description}
+        </p>
+        {site.notes ? (
+          <div className="mb-5 rounded-2xl border border-slate-200 bg-[#f1f7fb] p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#1d5d90]">
+              Briefing note
+            </p>
+            <p className="mt-1 text-sm leading-6 text-slate-700">{site.notes}</p>
           </div>
-        </div>
+        ) : null}
+        {reefStamp ? (
+          <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-slate-200 bg-[#f1f7fb] px-4 py-3 text-[13px] leading-6 text-slate-700">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#1d5d90]">
+              Location reef science
+            </span>
+            {reefStamp.coralCoverPercent !== null ? (
+              <span>
+                coral cover {reefStamp.coralCoverPercent}%
+                {reefStamp.coralCoverYear ? ` (${reefStamp.coralCoverYear})` : ""}
+              </span>
+            ) : null}
+            {reefStamp.coralCoverPercent !== null && reefStamp.fishingLevel ? (
+              <span className="text-slate-300">·</span>
+            ) : null}
+            {reefStamp.fishingLevel ? (
+              <span>fishing {reefStamp.fishingLevel}</span>
+            ) : null}
+            <Link
+              href={`/locations/${reefStamp.locationSlug}`}
+              className="font-semibold text-[#0089de] hover:text-[#1d5d90]"
+            >
+              View {reefStamp.locationName} →
+            </Link>
+          </div>
+        ) : null}
       </section>
 
-      <main className="mx-auto w-full max-w-4xl px-6 pb-24">
-        <article className="space-y-12 pt-10">
-          {location ? (
-            <div className="rounded-2xl border border-slate-200 bg-[#f5faff] px-5 py-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-                Planning a trip?
-              </p>
-              <p className="mt-1.5 text-sm leading-6 text-slate-700">
-                Hotels, dive operators, gear, and how to get here are on the{" "}
-                <Link
-                  href={`/locations/${location.slug}`}
-                  className="font-semibold text-[#0089de] underline decoration-[#0089de]/30 underline-offset-2 hover:decoration-[#0089de]"
-                >
-                  {location.name} location page
-                </Link>
-                .
-              </p>
-            </div>
-          ) : null}
+      {/* ── WHAT YOU'LL SEE ── */}
+      <section className="mt-12">
+        <h2 className="mb-5 text-xl font-bold tracking-tight text-slate-900">
+          What you&rsquo;ll see
+        </h2>
 
-          <Section title="Overview">
-            <p className="text-lg leading-8 text-slate-700">{site.description}</p>
-            {site.notes ? (
-              <div className="mt-5 rounded-xl border-l-4 border-[#0089de] bg-[#e8f0fe] px-5 py-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#1d5d90]">
-                  Briefing note
+        {hasSpeciesData ? (
+          <>
+            {/* Method disclosure */}
+            <details className="mb-5 rounded-2xl border border-slate-200 bg-white p-4 [&_summary]:cursor-pointer">
+              <summary className="flex items-center gap-2 text-sm font-semibold text-slate-800 marker:content-['']">
+                <span className="flex size-5 items-center justify-center rounded-full bg-[#e8f0fe] text-[11px] font-bold text-[#1d5d90]">
+                  i
+                </span>
+                How these readings are measured
+              </summary>
+              <div className="mt-3 space-y-3 text-[13px] leading-6 text-slate-600">
+                <p>
+                  Each row combines a <strong className="text-slate-800">global conservation status</strong> with this
+                  atlas&rsquo;s own <strong className="text-slate-800">diver log record</strong> for the site.
                 </p>
-                <p className="mt-1 text-sm leading-6 text-slate-700">{site.notes}</p>
+                <ol className="list-decimal space-y-1.5 pl-5">
+                  <li>
+                    <strong className="text-slate-800">Conservation status (CR · EN · VU · NT · LC)</strong> — the species&rsquo;
+                    category on the IUCN Red List.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">Global population trend</strong> — increasing, stable or decreasing.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">Last seen and records</strong> — counted from diver sighting logs on a
+                    rolling 24 month window.
+                  </li>
+                </ol>
               </div>
-            ) : null}
-          </Section>
+            </details>
 
-          <Section
-            title="What you'll see"
-            kicker={`${site.species.length} species curated`}
-          >
-            <ul className="grid gap-2 sm:grid-cols-2">
-              {site.species.map((s) => {
-                const iucn =
-                  IUCN_ENABLED ? getIucnStatus(s.scientificName) : null;
+            {/* One card per animal — curated species and the site's sighting
+                evidence merged so each creature appears once. */}
+            <ul className="space-y-3">
+              {creatures.map((c) => {
+                const iucn = IUCN_ENABLED ? getIucnStatus(c.scientificName) : null;
+                const hasRecords =
+                  typeof c.recentRecordCount === "number" && c.recentRecordCount > 0;
                 return (
                   <li
-                    key={s.commonName}
-                    className="rounded-xl border border-slate-200 bg-white p-4 transition hover:border-[#0089de]/40 hover:shadow-sm"
+                    key={creatureKey(c.scientificName, c.commonName)}
+                    className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-4"
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <div className="font-semibold text-slate-900">{s.commonName}</div>
+                    {c.imageUrl ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={c.imageUrl}
+                        alt={c.commonName}
+                        className="size-16 shrink-0 rounded-xl object-cover"
+                      />
+                    ) : null}
+                    <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="flex flex-col gap-2">
+                        <p className="text-base font-bold text-slate-900">{c.commonName}</p>
+                        <div className="flex flex-wrap items-center gap-2">
+                          {iucn ? <IucnBadge status={iucn} /> : null}
+                          {c.reliability ? (
+                            <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600">
+                              {RELIABILITY_LABEL[c.reliability] ?? c.reliability}
+                            </span>
+                          ) : null}
+                        </div>
+                        {hasRecords ? (
+                          <p className="text-[12px] text-slate-500">
+                            {c.recentRecordCount} record{c.recentRecordCount === 1 ? "" : "s"} within{" "}
+                            {c.proximityRadiusKm} km
+                            {c.lastConfirmedAt
+                              ? ` · last confirmed ${formatLastConfirmed(c.lastConfirmedAt)}`
+                              : ""}
+                          </p>
+                        ) : null}
                       </div>
-                      <span
-                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset ${RELIABILITY_COLOR[s.reliability]}`}
-                      >
-                        {s.reliability}
-                      </span>
+                      <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+                        {c.bestMonths && c.bestMonths.length > 0 && c.bestMonths.length < 12 ? (
+                          <span className="rounded-full bg-[#e8f0fe] px-2.5 py-0.5 text-[11px] font-semibold text-[#1d5d90]">
+                            Peak: {c.bestMonths.map((m) => MONTH_ABBR[m - 1]).join(" · ")}
+                          </span>
+                        ) : null}
+                        <a
+                          href={iNaturalistObsUrl(site, c.scientificName ?? c.commonName)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[12px] font-semibold text-[#0089de] hover:text-[#1d5d90]"
+                        >
+                          Log on iNaturalist →
+                        </a>
+                      </div>
                     </div>
-                    {iucn ? (
-                      <div className="mt-2">
-                        <IucnBadge status={iucn} />
-                      </div>
-                    ) : null}
-                    {s.bestMonths && s.bestMonths.length > 0 ? (
-                      <div className="mt-2 text-[11px] text-slate-500">
-                        Peak: {s.bestMonths.map((m) => MONTHS[m - 1]).join(" · ")}
-                      </div>
-                    ) : null}
                   </li>
                 );
               })}
             </ul>
-          </Section>
 
-          {coralCover || fishingPressure ? (
-            <Section
-              title="Reef data for this area"
-              kicker="Jurisdiction-level snapshots"
-            >
-              <div className="space-y-4">
-                {coralCover ? <CoralCoverPanel snapshot={coralCover} /> : null}
-                {fishingPressure ? (
-                  <FishingPressurePanel record={fishingPressure} />
-                ) : null}
-              </div>
-            </Section>
-          ) : null}
+            {/* Sources */}
+            {sightingSources.length > 0 && (
+              <details className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 [&_summary]:cursor-pointer">
+                <summary className="text-[12px] font-semibold text-slate-500 marker:content-['']">
+                  {sightingSources.length} source{sightingSources.length === 1 ? "" : "s"}
+                </summary>
+                <ul className="mt-2 space-y-1">
+                  {sightingSources.map((src) => (
+                    <li key={src.id} className="text-[12px] text-slate-600">
+                      {src.url ? (
+                        <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-[#0089de] hover:underline">
+                          {src.name}
+                        </a>
+                      ) : (
+                        src.name
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </>
+        ) : (
+          <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-10 text-center">
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              No records yet
+            </p>
+            <p className="mx-auto mt-2.5 max-w-sm text-sm leading-6 text-slate-700">
+              No recent sighting data for this site. Dived here? Log what you saw — it goes
+              straight into the global record.
+            </p>
+          </div>
+        )}
 
-          {sightings.length > 0 ? (
-            <Section
-              title="Sightings evidence"
-              kicker={`${sightings.length} record${sightings.length === 1 ? "" : "s"} on file`}
-            >
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {sightings.map((s) => (
-                  <li
-                    key={s.id}
-                    className="rounded-xl border border-slate-200 bg-white p-4"
+        {/* Log a sighting CTA */}
+        <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl border border-slate-200 bg-[#f1f7fb] p-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[13px] leading-6 text-slate-700">
+            Dived here? Add what you saw. Every log keeps this record living and current.
+          </p>
+          <a
+            href={iNaturalistObsUrl(site)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 rounded-lg bg-[#0089de] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1d5d90]"
+          >
+            Log a sighting on iNaturalist →
+          </a>
+        </div>
+      </section>
+
+      {/* ── CONDITIONS ── */}
+      <section className="mt-12">
+        <h2 className="mb-5 text-xl font-bold tracking-tight text-slate-900">Conditions</h2>
+
+        {/* Season calendar */}
+        <div className="mb-6">
+          <p className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Season calendar
+          </p>
+          <div className="grid grid-cols-6 gap-1.5 sm:grid-cols-12">
+            {MONTH_ABBR.map((m, i) => {
+              const isPeak = site.bestMonths.includes(i + 1);
+              const isNow = currentMonth === i + 1;
+              return (
+                <div
+                  key={m}
+                  className={`rounded-lg px-1 py-2 text-center text-[11px] font-semibold ${
+                    isPeak ? "bg-emerald-50 text-emerald-700" : "bg-slate-100 text-slate-500"
+                  } ${isNow ? "ring-2 ring-inset ring-[#0089de]" : ""}`}
+                >
+                  {m}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Conditions table */}
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          <div className="overflow-x-auto">
+            <table className="w-full text-[13px]">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50">
+                  {["Month", "Water", "Visibility", "Current"].map((h) => (
+                    <th
+                      key={h}
+                      className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500"
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {site.conditionsByMonth.map((c) => (
+                  <tr
+                    key={c.month}
+                    className={`border-b border-slate-100 last:border-0 ${
+                      c.month === currentMonth ? "bg-[#f1f7fb]" : ""
+                    }`}
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <div className="font-semibold text-slate-900">
-                          {s.speciesCommon}
-                        </div>
-                      </div>
+                    <td className="px-3 py-2.5 font-semibold text-slate-900">
+                      {MONTH_ABBR[c.month - 1]}
+                      {c.month === currentMonth && (
+                        <span className="ml-1.5 inline-block size-1.5 rounded-full bg-[#0089de] align-middle" />
+                      )}
+                    </td>
+                    <td className="px-3 py-2.5 text-slate-700">
+                      {c.waterTempC.min}–{c.waterTempC.max} °C
+                    </td>
+                    <td className="px-3 py-2.5 text-slate-700">
+                      {c.visibilityM.min}–{c.visibilityM.max} m
+                    </td>
+                    <td className="px-3 py-2.5">
                       <span
-                        className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ring-1 ring-inset ${CONFIDENCE_RING[s.confidence]}`}
+                        className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-medium capitalize ${CURRENT_COLOR[c.currentStrength]}`}
                       >
-                        {s.confidence} confidence
+                        {c.currentStrength}
                       </span>
-                    </div>
-                    <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-[12px] leading-5">
-                      <dt className="text-slate-500">Last confirmed</dt>
-                      <dd className="text-slate-800">
-                        {formatLastConfirmed(s.lastConfirmedAt)}
-                      </dd>
-                      <dt className="text-slate-500">Recent records</dt>
-                      <dd className="text-slate-800">
-                        {s.recentRecordCount} within {s.proximityRadiusKm} km
-                      </dd>
-                      {s.seasonalityMonths.length > 0 &&
-                      s.seasonalityMonths.length < 12 ? (
-                        <>
-                          <dt className="text-slate-500">Cluster months</dt>
-                          <dd className="text-slate-800">
-                            {s.seasonalityMonths
-                              .map((m) => MONTH_ABBR[m - 1])
-                              .join(", ")}
-                          </dd>
-                        </>
-                      ) : null}
-                      {s.seasonalityMonths.length === 12 ? (
-                        <>
-                          <dt className="text-slate-500">Cluster months</dt>
-                          <dd className="text-slate-800">Year-round</dd>
-                        </>
-                      ) : null}
-                    </dl>
-                    {s.notes ? (
-                      <p className="mt-2 text-[12px] leading-5 text-slate-600">
-                        {s.notes}
-                      </p>
-                    ) : null}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── GEAR & PLANNING ── */}
+      {(gear.length > 0 || wrecks.length > 0 || location) && (
+        <section className="mt-12">
+          <h2 className="mb-5 text-xl font-bold tracking-tight text-slate-900">
+            Gear &amp; planning
+          </h2>
+
+          {gear.length > 0 && (
+            <div className="mb-6 rounded-2xl border border-slate-200 bg-white p-5">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Site gear
+              </p>
+              <ul className="divide-y divide-slate-100">
+                {gear.map((item) => (
+                  <li key={item.name} className="flex flex-wrap gap-1.5 py-2 text-[13px] text-slate-700">
+                    <span className="font-semibold text-slate-900">{item.name}</span>
+                    <span>— {item.reason}</span>
                   </li>
                 ))}
               </ul>
+            </div>
+          )}
 
-              <details className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4 text-[12px] leading-5 text-slate-700">
-                <summary className="cursor-pointer text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
-                  Sources & methodology
-                </summary>
-                <div className="mt-3 space-y-3">
-                  {sightingMethods.map((m) => (
-                    <div key={m.claimId}>
-                      <p className="font-semibold text-slate-800">
-                        How we summarise this
-                      </p>
-                      <p className="mt-1">{m.limitations}</p>
-                    </div>
-                  ))}
-                  {sightingSources.length > 0 ? (
-                    <div>
-                      <p className="font-semibold text-slate-800">Sources</p>
-                      <ul className="mt-1 list-disc space-y-0.5 pl-5">
-                        {sightingSources.map((src) => (
-                          <li key={src.id}>
-                            {src.url ? (
-                              <a
-                                href={src.url}
-                                target="_blank"
-                                rel="noreferrer noopener"
-                                className="text-[#0089de] hover:underline"
-                              >
-                                {src.name}
-                              </a>
-                            ) : (
-                              src.name
-                            )}
-                            {src.publisher ? (
-                              <span className="text-slate-500">
-                                {" "}
-                                — {src.publisher}
-                              </span>
-                            ) : null}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : null}
-                </div>
-              </details>
-            </Section>
-          ) : null}
-
-          {wrecks.length > 0 ? (
-            <Section
-              title="The wreck"
-              kicker={wrecks.length === 1 ? "Ship history" : `${wrecks.length} wrecks here`}
-            >
-              <ul className="grid gap-4">
+          {wrecks.length > 0 && (
+            <div className="mb-6">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                The wreck
+              </p>
+              <ul className="space-y-3">
                 {wrecks.map((w) => (
-                  <WreckCard key={w.id} record={w} />
+                  <li key={w.id} className="rounded-2xl border border-slate-200 bg-white p-4">
+                    <p className="font-bold text-slate-900">{w.vesselName}</p>
+                    <p className="mt-0.5 text-[12px] capitalize text-slate-500">
+                      {w.vesselType} · Sunk {w.sunk}
+                    </p>
+                    <p className="mt-2 text-[13px] leading-6 text-slate-700">{w.history}</p>
+                  </li>
                 ))}
               </ul>
-              <p className="mt-3 text-[12px] leading-5 text-slate-500">
-                Vessel histories sourced from the Naval History and Heritage
-                Command (DANFS), NOAA ENC Direct, and editorial research.
-                Bathymetry per GEBCO. See the{" "}
-                <Link href="/about" className="text-[#0089de] hover:underline">
-                  methodology
-                </Link>{" "}
-                for limits.
-              </p>
-            </Section>
-          ) : null}
-
-          <Section title="Conditions">
-            <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-              <table className="w-full min-w-[680px] text-sm">
-                <thead>
-                  <tr className="border-b border-slate-200 text-left text-[10px] font-semibold uppercase tracking-wider text-slate-500">
-                    <th className="px-4 py-3">Month</th>
-                    <th className="px-4 py-3">Water</th>
-                    <th className="px-4 py-3">Visibility</th>
-                    <th className="px-4 py-3">Current</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {site.conditionsByMonth.map((c) => (
-                    <tr
-                      key={c.month}
-                      className={c.month === currentMonth ? "bg-[#e8f0fe]/40" : ""}
-                    >
-                      <td className="px-4 py-3 font-semibold text-slate-900">
-                        {MONTHS[c.month - 1]}
-                        {c.month === currentMonth ? (
-                          <span className="ml-2 inline-block h-1.5 w-1.5 rounded-full bg-[#0089de] align-middle" />
-                        ) : null}
-                      </td>
-                      <td className="px-4 py-3 text-slate-600">
-                        {c.waterTempC.min}–{c.waterTempC.max} °C
-                      </td>
-                      <td className="px-4 py-3 text-slate-600">
-                        {c.visibilityM.min}–{c.visibilityM.max} m
-                      </td>
-                      <td className="px-4 py-3">
-                        <span
-                          className={`rounded-full px-2.5 py-0.5 text-xs font-medium capitalize ${CURRENT_COLOR[c.currentStrength]}`}
-                        >
-                          {c.currentStrength}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
-          </Section>
-
-          <Section title="Season calendar">
-            {site.bestMonths.length === 12 ? (
-              <div className="flex items-center gap-3 rounded-lg bg-[#e8f0fe] px-4 py-3 text-sm font-medium text-[#0089de]">
-                <span className="inline-block h-2 w-2 rounded-full bg-[#0089de]" />
-                Divable year-round — no distinct peak season
-              </div>
-            ) : (
-              <>
-                <div className="flex gap-1.5">
-                  {MONTHS.map((m, i) => {
-                    const isPeak = site.bestMonths.includes(i + 1);
-                    const isNow = currentMonth === i + 1;
-                    return (
-                      <div
-                        key={m}
-                        className={`relative flex-1 rounded-lg py-3 text-center text-xs font-semibold tracking-wide transition ${
-                          isPeak
-                            ? "bg-[#0089de] text-white"
-                            : "bg-slate-100 text-slate-500"
-                        } ${isNow ? "outline outline-2 outline-offset-2 outline-[#0089de]" : ""}`}
-                      >
-                        {m}
-                      </div>
-                    );
-                  })}
-                </div>
-                <p className="mt-3 text-xs text-slate-500">
-                  Peak season highlighted · current month outlined
-                </p>
-              </>
-            )}
-          </Section>
-
-          {site.siteSpecificGear.length > 0 ? <SiteGearSection site={site} /> : null}
+          )}
 
           {location ? (
             <div className="rounded-2xl border border-slate-200 bg-white p-6">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-                Next step
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                Book this trip
               </p>
-              <h2 className="mt-1 text-xl font-bold tracking-tight text-slate-900">
-                Book your trip to {location.name}
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                Hotels, liveaboards, dive operators, gear recommendations, and travel
-                logistics for the whole region.
+              <h3 className="mt-1.5 text-xl font-bold tracking-tight text-slate-900">
+                Plan a trip to {location.name}
+              </h3>
+              <p className="mt-2 text-[13px] leading-6 text-slate-700">
+                Hotels, liveaboards, dive operators and travel logistics for the whole region.
               </p>
               <Link
                 href={`/locations/${location.slug}`}
-                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#0089de] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1d5d90]"
+                className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-[#0089de] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1d5d90]"
               >
                 Plan your trip →
               </Link>
             </div>
           ) : null}
+        </section>
+      )}
 
-          <AffiliateDisclosure />
-        </article>
-      </main>
-    </div>
-  );
-}
-
-function Pill({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <span
-      className={`rounded-full bg-white/15 px-3 py-1 text-sm font-semibold text-white ring-1 ring-inset ring-white/30 backdrop-blur ${className}`}
-    >
-      {children}
-    </span>
-  );
-}
-
-function Section({
-  title,
-  kicker,
-  children,
-}: {
-  title: string;
-  kicker?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section>
-      <div className="mb-5 flex items-end justify-between gap-4 border-b border-slate-200 pb-3">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900">{title}</h2>
-        {kicker ? (
-          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-            {kicker}
-          </span>
-        ) : null}
-      </div>
-      <div>{children}</div>
-    </section>
-  );
-}
-
-const CATEGORY_ICON: Record<string, string> = {
-  mask: "🥽",
-  wetsuit: "🧥",
-  bcd: "🎒",
-  regulator: "🫁",
-  fins: "🦶",
-  computer: "⌚",
-  snorkel: "🤿",
-  boots: "👟",
-  drysuit: "🧥",
-  light: "🔦",
-  "reel-smb": "🎈",
-  "reef-hook": "⚓",
-  gloves: "🧤",
-  hood: "🪖",
-  bag: "🧳",
-  specialty: "🛠️",
-};
-
-function SiteGearSection({ site }: { site: Site }) {
-  return (
-    <Section title="Gear for this site" kicker="Beyond the basic kit">
-      <ul className="space-y-2">
-        {site.siteSpecificGear.map((item) => {
-          const gear = item.gearId ? getGearById(item.gearId) : undefined;
-          const partner = gear?.partners[0];
-          const label = item.name;
-          const icon = (gear && CATEGORY_ICON[gear.category]) ?? "•";
-          return (
-            <li key={item.name} className="flex gap-2 text-sm leading-6 text-slate-700">
-              <span aria-hidden className="text-lg leading-6">{icon}</span>
-              <span>
-                {partner ? (
-                  <AffiliateLink
-                    url={partner.url}
-                    event="gear_click"
-                    partner={partner.partner}
-                    productId={partner.productId || undefined}
-                    siteId={site.id}
-                    isAffiliate={true}
-                    className="font-semibold text-[#0089de] underline decoration-[#0089de]/30 underline-offset-2 hover:decoration-[#0089de]"
-                  >
-                    {label}
-                  </AffiliateLink>
-                ) : (
-                  <span className="font-semibold text-slate-900">{label}</span>
-                )}
-                <span className="text-slate-600"> — {item.reason}</span>
-              </span>
-            </li>
-          );
-        })}
-      </ul>
-    </Section>
-  );
-}
-
-const VESSEL_TYPE_LABEL: Record<string, string> = {
-  freighter: "Freighter",
-  tanker: "Tanker",
-  warship: "Warship",
-  submarine: "Submarine",
-  aircraft: "Aircraft",
-  ferry: "Ferry",
-  fishing: "Fishing vessel",
-  "cable-layer": "Cable-layer",
-  research: "Research vessel",
-  tug: "Tug",
-  other: "Structure",
-};
-
-const SUNK_CAUSE_LABEL: Record<string, string> = {
-  "wartime-attack": "Sunk in wartime",
-  "scuttled-artificial-reef": "Scuttled as artificial reef",
-  "scuttled-disposal": "Scuttled / disposed",
-  accident: "Accident",
-  storm: "Lost in storm",
-  unknown: "Cause unknown",
-};
-
-const PROTECTION_LABEL: Record<string, string> = {
-  none: "No formal protection",
-  "underwater-cultural-heritage": "Underwater cultural heritage",
-  "national-marine-sanctuary": "National marine sanctuary",
-  "war-grave": "War grave",
-  "restricted-access": "Restricted access",
-};
-
-const PROTECTION_TONE: Record<string, string> = {
-  none: "bg-slate-100 text-slate-600",
-  "underwater-cultural-heritage": "bg-amber-50 text-amber-800 ring-1 ring-inset ring-amber-200",
-  "national-marine-sanctuary": "bg-emerald-50 text-emerald-800 ring-1 ring-inset ring-emerald-200",
-  "war-grave": "bg-rose-50 text-rose-800 ring-1 ring-inset ring-rose-200",
-  "restricted-access": "bg-amber-100 text-amber-900 ring-1 ring-inset ring-amber-300",
-};
-
-function fmtSunk(iso: string): string {
-  if (/^\d{4}$/.test(iso)) return iso;
-  if (/^\d{4}-\d{2}-\d{2}$/.test(iso)) {
-    const d = new Date(iso + "T00:00:00Z");
-    return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
-  }
-  return iso;
-}
-
-function WreckCard({
-  record,
-}: {
-  record: NonNullable<ReturnType<typeof getWrecksBySiteId>>[number];
-}) {
-  return (
-    <li className="rounded-2xl border border-slate-200 bg-white p-5">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
-            {VESSEL_TYPE_LABEL[record.vesselType] ?? record.vesselType}
-            {record.nationality ? ` · ${record.nationality}` : ""}
+      {/* Planning helper */}
+      {location ? (
+        <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Planning a trip?
           </p>
-          <h3 className="mt-1 text-lg font-bold tracking-tight text-slate-900">
-            {record.vesselName}
-          </h3>
+          <p className="mt-1.5 text-sm leading-6 text-slate-700">
+            Hotels, dive operators, gear, and how to get here are on the{" "}
+            <Link
+              href={`/locations/${location.slug}`}
+              className="font-semibold text-[#0089de] underline decoration-[#0089de]/30 underline-offset-2 hover:decoration-[#0089de]"
+            >
+              {location.name} location page
+            </Link>
+            .
+          </p>
         </div>
-        <span
-          className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${PROTECTION_TONE[record.protectionStatus]}`}
-        >
-          {PROTECTION_LABEL[record.protectionStatus] ?? record.protectionStatus}
-        </span>
-      </div>
-
-      <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-[12px] leading-5 sm:grid-cols-4">
-        {record.builtYear ? (
-          <>
-            <dt className="text-slate-500">Built</dt>
-            <dd className="font-semibold text-slate-800">{record.builtYear}</dd>
-          </>
-        ) : null}
-        <dt className="text-slate-500">Sunk</dt>
-        <dd className="font-semibold text-slate-800">{fmtSunk(record.sunk)}</dd>
-        {record.lengthM ? (
-          <>
-            <dt className="text-slate-500">Length</dt>
-            <dd className="font-semibold text-slate-800">{record.lengthM} m</dd>
-          </>
-        ) : null}
-        {record.tonnage ? (
-          <>
-            <dt className="text-slate-500">Tonnage</dt>
-            <dd className="font-semibold text-slate-800">{record.tonnage.toLocaleString()}</dd>
-          </>
-        ) : null}
-        {record.depthRangeM ? (
-          <>
-            <dt className="text-slate-500">Diveable depth</dt>
-            <dd className="font-semibold text-slate-800">
-              {record.depthRangeM.min}–{record.depthRangeM.max} m
-            </dd>
-          </>
-        ) : null}
-        <dt className="text-slate-500">How she sank</dt>
-        <dd className="font-semibold text-slate-800">
-          {SUNK_CAUSE_LABEL[record.sunkCause] ?? record.sunkCause}
-        </dd>
-      </dl>
-
-      <p className="mt-4 text-[13px] leading-6 text-slate-700">{record.history}</p>
-
-      {record.notableFeatures && record.notableFeatures.length > 0 ? (
-        <>
-          <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-            Notable features
-          </p>
-          <ul className="mt-1.5 flex flex-wrap gap-1.5">
-            {record.notableFeatures.map((f) => (
-              <li
-                key={f}
-                className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700"
-              >
-                {f}
-              </li>
-            ))}
-          </ul>
-        </>
       ) : null}
-    </li>
+    </div>
   );
 }
