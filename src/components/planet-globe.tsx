@@ -2,11 +2,13 @@
 
 import Globe, { type GlobeMethods } from "react-globe.gl";
 import { feature } from "topojson-client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import type { ScubaSeasonWindow } from "@/lib/scuba-globe";
 
 export type PlanetMarker = {
   id?: string;
+  slug?: string;
   site?: string;
   country?: string;
   region?: string;
@@ -15,6 +17,8 @@ export type PlanetMarker = {
   label: string;
   color?: string;
   notes?: string;
+  stateLabel?: string;
+  seasonText?: string;
   seasonLabel?: string;
   season?: ScubaSeasonWindow;
   isInSeason?: boolean;
@@ -40,6 +44,7 @@ export type PlanetGlobeProps = {
   initialMonth?: number;
   highlightedCountries?: string[];
   markers?: PlanetMarker[];
+  onMarkerClick?: (m: PlanetMarker) => void;
   focusPoint?: {
     lat: number;
     lng: number;
@@ -80,6 +85,7 @@ const OUT_OF_SEASON = "#f23d4e"; // coral accent
 export function PlanetGlobe({
   highlightedCountries = [],
   markers = [],
+  onMarkerClick,
   focusPoint = DEFAULT_FOCUS_POINT,
 }: PlanetGlobeProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -93,18 +99,24 @@ export function PlanetGlobe({
     highlightedCountries.map((country) => country.trim().toUpperCase()),
   );
   const visibleMarkers = markers;
+  // Only show a detail popover once the user clicks a pin — no default select.
   const selectedMarker =
-    visibleMarkers.find((marker) => marker.id === selectedMarkerId) ??
-    visibleMarkers[0] ??
-    null;
+    visibleMarkers.find((marker) => marker.id === selectedMarkerId) ?? null;
 
   useEffect(() => {
     if (!containerRef.current) return;
     const updateSize = () => {
       if (!containerRef.current) return;
       const width = containerRef.current.offsetWidth;
-      const height = Math.min(Math.max(width * 0.62, 320), 520);
-      setDimensions({ width, height });
+      // Prominent in a wide column: scale up to 620px tall, never below 380px.
+      const height = Math.min(Math.max(width * 0.66, 380), 620);
+      // Only re-render when the size actually changes. ResizeObserver can fire
+      // with identical dimensions; an unconditional setState would hand the
+      // Globe new accessor functions each time and make it rebuild every
+      // marker, orphaning the translucent CSS2D halos into a growing glow.
+      setDimensions((prev) =>
+        prev.width === width && prev.height === height ? prev : { width, height },
+      );
     };
     updateSize();
     const observer = new ResizeObserver(updateSize);
@@ -143,9 +155,12 @@ export function PlanetGlobe({
     };
   }, []);
 
+  // If the filtered marker set no longer contains the selection, clear it so
+  // the popover does not point at a hidden pin.
   useEffect(() => {
-    const inSeason = visibleMarkers.find((m) => m.isInSeason);
-    setSelectedMarkerId(inSeason?.id ?? visibleMarkers[0]?.id ?? null);
+    setSelectedMarkerId((current) =>
+      current && visibleMarkers.some((m) => m.id === current) ? current : null,
+    );
   }, [visibleMarkers]);
 
   useEffect(() => {
@@ -165,6 +180,82 @@ export function PlanetGlobe({
       0,
     );
   }, [dimensions.width, focusPoint]);
+
+  // Shared select behaviour: fly the camera in, stop auto-rotate, surface the
+  // detail popover, and notify the parent (so it can highlight a card).
+  const selectMarker = useCallback(
+    (sel: PlanetMarker) => {
+      setSelectedMarkerId(sel.id ?? null);
+      const controls = globeRef.current?.controls();
+      if (controls) controls.autoRotate = false;
+      globeRef.current?.pointOfView(
+        { lat: sel.lat, lng: sel.lng, altitude: 1.4 },
+        900,
+      );
+      onMarkerClick?.(sel);
+    },
+    [onMarkerClick],
+  );
+
+  // Marker accessors are memoized so react-globe.gl only rebuilds the marker
+  // layer when the selection changes — not on every render. A fresh function
+  // identity makes three-globe clear and recreate every CSS2D marker, which
+  // orphans the translucent halos into a glow that grows over time.
+  const selectedId = selectedMarker?.id ?? null;
+
+  const htmlAltitudeAccessor = useCallback(
+    (marker: object) => ((marker as PlanetMarker).id === selectedId ? 0.06 : 0.045),
+    [selectedId],
+  );
+
+  const htmlElementAccessor = useCallback(
+    (marker: object) => {
+      const site = marker as PlanetMarker;
+      const isSelected = site.id === selectedId;
+      const color = site.color ?? IN_SEASON;
+      const el = document.createElement("div");
+      // react-globe.gl sets pointer-events:none on HTML markers by default so
+      // they never block globe drag. Opt back in here so the visible pin is the
+      // real click target.
+      el.style.pointerEvents = "auto";
+      el.style.cursor = "pointer";
+      el.style.position = "relative";
+      el.title = site.site ?? "Dive site";
+      el.addEventListener("click", (event) => {
+        // Stop the globe controls from treating this as a drag/rotate.
+        event.stopPropagation();
+        selectMarker(site);
+      });
+
+      const halo = document.createElement("div");
+      halo.style.position = "absolute";
+      halo.style.top = "50%";
+      halo.style.left = "50%";
+      halo.style.transform = "translate(-50%, -50%)";
+      halo.style.width = isSelected ? "26px" : "18px";
+      halo.style.height = isSelected ? "26px" : "18px";
+      halo.style.borderRadius = "9999px";
+      halo.style.background = `${color}26`;
+      halo.style.boxShadow = isSelected
+        ? `0 0 0 4px ${color}33, 0 0 18px ${color}66`
+        : `0 0 0 2px ${color}26`;
+
+      const pin = document.createElement("div");
+      pin.style.position = "relative";
+      pin.style.zIndex = "1";
+      pin.style.width = isSelected ? "12px" : "9px";
+      pin.style.height = isSelected ? "12px" : "9px";
+      pin.style.borderRadius = "9999px";
+      pin.style.background = color;
+      pin.style.border = "2px solid white";
+      pin.style.boxShadow = "0 2px 6px rgba(0,0,0,0.35)";
+
+      el.appendChild(halo);
+      el.appendChild(pin);
+      return el;
+    },
+    [selectedId, selectMarker],
+  );
 
   return (
     <div className="w-full">
@@ -211,57 +302,13 @@ export function PlanetGlobe({
                 (marker as PlanetMarker).site ?? "Dive site"
               }
               onPointClick={(marker: object) => {
-                const sel = marker as PlanetMarker;
-                setSelectedMarkerId(sel.id ?? null);
-                const controls = globeRef.current?.controls();
-                if (controls) controls.autoRotate = false;
-                globeRef.current?.pointOfView(
-                  { lat: sel.lat, lng: sel.lng, altitude: 1.4 },
-                  900,
-                );
+                selectMarker(marker as PlanetMarker);
               }}
               htmlElementsData={visibleMarkers}
               htmlLat="lat"
               htmlLng="lng"
-              htmlAltitude={(marker: object) =>
-                (marker as PlanetMarker).id === selectedMarker?.id ? 0.06 : 0.045
-              }
-              htmlElement={(marker: object) => {
-                const site = marker as PlanetMarker;
-                const isSelected = site.id === selectedMarker?.id;
-                const color = site.color ?? IN_SEASON;
-                const el = document.createElement("div");
-                el.style.pointerEvents = "none";
-                el.style.position = "relative";
-                el.title = "";
-
-                const halo = document.createElement("div");
-                halo.style.position = "absolute";
-                halo.style.top = "50%";
-                halo.style.left = "50%";
-                halo.style.transform = "translate(-50%, -50%)";
-                halo.style.width = isSelected ? "26px" : "18px";
-                halo.style.height = isSelected ? "26px" : "18px";
-                halo.style.borderRadius = "9999px";
-                halo.style.background = `${color}26`;
-                halo.style.boxShadow = isSelected
-                  ? `0 0 0 4px ${color}33, 0 0 18px ${color}66`
-                  : `0 0 0 2px ${color}26`;
-
-                const pin = document.createElement("div");
-                pin.style.position = "relative";
-                pin.style.zIndex = "1";
-                pin.style.width = isSelected ? "12px" : "9px";
-                pin.style.height = isSelected ? "12px" : "9px";
-                pin.style.borderRadius = "9999px";
-                pin.style.background = color;
-                pin.style.border = "2px solid white";
-                pin.style.boxShadow = "0 2px 6px rgba(0,0,0,0.35)";
-
-                el.appendChild(halo);
-                el.appendChild(pin);
-                return el;
-              }}
+              htmlAltitude={htmlAltitudeAccessor}
+              htmlElement={htmlElementAccessor}
             />
           ) : null}
 
@@ -285,9 +332,54 @@ export function PlanetGlobe({
             </div>
           ) : null}
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-2 text-[11px] text-slate-600/80">
-            <span>Click a location to inspect details</span>
-          </div>
+          {selectedMarker ? (
+            <div className="absolute bottom-3 left-3 right-3 sm:left-auto sm:right-3 sm:max-w-xs">
+              <div className="rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-md backdrop-blur">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold text-slate-900">
+                  {selectedMarker.color ? (
+                    <span
+                      className="h-2.5 w-2.5 rounded-full"
+                      style={{ background: selectedMarker.color }}
+                    />
+                  ) : null}
+                  {selectedMarker.stateLabel ?? "Reef"}
+                </span>
+                <h3 className="mt-1.5 text-base font-semibold leading-tight text-slate-900">
+                  {selectedMarker.site ?? selectedMarker.label}
+                </h3>
+                {selectedMarker.country ? (
+                  <p className="mt-0.5 text-sm text-slate-500">
+                    {selectedMarker.country}
+                  </p>
+                ) : null}
+                {selectedMarker.seasonText ? (
+                  <p className="mt-2 text-xs text-slate-600">
+                    Best season{" "}
+                    <span className="font-semibold text-[#1d5d90]">
+                      {selectedMarker.seasonText}
+                    </span>
+                    {selectedMarker.isInSeason ? (
+                      <span className="ml-2 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200">
+                        In season now
+                      </span>
+                    ) : null}
+                  </p>
+                ) : null}
+                {selectedMarker.slug ? (
+                  <Link
+                    href={`/locations/${selectedMarker.slug}`}
+                    className="mt-3 inline-flex text-sm font-medium text-[#0089de] hover:underline"
+                  >
+                    View location →
+                  </Link>
+                ) : null}
+              </div>
+            </div>
+          ) : (
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-2 text-[11px] text-slate-600/80">
+              <span>Click a location to inspect details</span>
+            </div>
+          )}
         </div>
       </div>
 
