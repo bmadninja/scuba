@@ -388,9 +388,19 @@ export default async function SiteDetailPage({
                       <img
                         src={c.imageUrl}
                         alt={c.commonName}
-                        className="size-16 shrink-0 rounded-xl object-cover"
+                        width={64}
+                        height={64}
+                        // A global img reset (from an imported stylesheet)
+                        // overrides width to 0 on flex img children; min-width
+                        // is not overridden, so it reliably holds the box.
+                        style={{ width: 64, height: 64, minWidth: 64, minHeight: 64 }}
+                        className="shrink-0 rounded-xl object-cover"
                       />
-                    ) : null}
+                    ) : (
+                      // No photo: reserve the same space so the name and
+                      // badges line up with the photographed cards above.
+                      <div className="size-16 shrink-0 rounded-xl bg-slate-100" />
+                    )}
                     <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                       <div className="flex flex-col gap-2">
                         <p className="text-base font-bold text-slate-900">{c.commonName}</p>
