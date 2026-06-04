@@ -189,7 +189,7 @@ export default function Home() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(175deg, rgba(2,20,34,0.82) 0%, rgba(4,28,51,0.75) 30%, rgba(5,39,69,0.65) 55%, rgba(5,37,64,0.75) 72%, rgba(3,25,40,0.85) 100%)",
+              "linear-gradient(175deg, rgba(2,20,34,0.55) 0%, rgba(4,28,51,0.45) 30%, rgba(5,39,69,0.35) 55%, rgba(5,37,64,0.50) 72%, rgba(3,25,40,0.65) 100%)",
           }}
         />
         {/* Caustic ray texture */}
@@ -217,12 +217,12 @@ export default function Home() {
           }}
         />
 
-        {/* Photo credit */}
+        {/* Photo credit — bottom right, below the nav */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
-            top: "1.5rem",
+            bottom: "calc(260px + 1rem)",
             right: "2rem",
             zIndex: 20,
             fontSize: "0.5875rem",
