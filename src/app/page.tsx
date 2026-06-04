@@ -78,6 +78,7 @@ const BADGE_BASE: React.CSSProperties = {
   backdropFilter: "blur(8px)",
   WebkitBackdropFilter: "blur(8px)",
   display: "inline-block",
+  whiteSpace: "nowrap",
 };
 
 const SEASON_BADGE: React.CSSProperties = {
@@ -354,17 +355,15 @@ export default function Home() {
 
       {/* ─── REEF STATES ─────────────────────────────────────────── */}
       <section
-        style={{ background: "#0b1e32", padding: "5rem 3rem" }}
+        className="home-reef-states-section"
+        style={{ background: "#0b1e32" }}
         aria-label="Reef states"
       >
         <div
+          className="home-reef-states-grid"
           style={{
             maxWidth: 1320,
             margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 1.1fr",
-            gap: "5rem",
-            alignItems: "center",
           }}
         >
           <div>
@@ -526,9 +525,9 @@ export default function Home() {
       {/* ─── INSPIRATION GRID ─────────────────────────────────────── */}
       {inspirationLocs.length >= 2 && (
         <section
+          className="home-inspire-section"
           style={{
             background: "#0b1e32",
-            padding: "0 3rem 5rem",
             borderBottom: "1px solid rgba(255,255,255,0.06)",
           }}
           aria-label="Featured destinations"
@@ -583,15 +582,7 @@ export default function Home() {
             </div>
 
             {/* 2-column asymmetric grid: large featured left + 2 stacked right */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1.65fr 1fr",
-                gap: "1rem",
-                borderRadius: "1.25rem",
-                overflow: "hidden",
-              }}
-            >
+            <div className="home-inspire-grid">
               {/* Large featured card */}
               {(() => {
                 const loc = inspirationLocs[0]!;

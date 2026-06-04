@@ -751,6 +751,29 @@ header input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
+/* ── Homepage dark sections (reef states + inspiration grid) ─── */
+.home-reef-states-section { padding: 5rem 3rem; }
+.home-reef-states-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.home-inspire-section { padding: 0 3rem 5rem; }
+.home-inspire-grid {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 1rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .home-reef-states-section { padding: 3rem 1.25rem; }
+  .home-reef-states-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .home-inspire-section { padding: 0 1.25rem 3rem; }
+  .home-inspire-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .atlas-hero { grid-template-columns: 1fr; }
