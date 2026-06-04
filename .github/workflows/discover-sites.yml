@@ -2,7 +2,7 @@ name: Discover dive sites
 
 on:
   schedule:
-    - cron: "0 7 * * *"   # daily at 07:00 UTC
+    - cron: "12 7 * * 1,3,5"   # Mon/Wed/Fri 07:12 UTC (was daily; cut to 3x/week to lower spend)
   workflow_dispatch:
     inputs:
       max_sites:

@@ -70,7 +70,18 @@ export function SiteCard({
               · last confirmed {formatLastConfirmed(sighting.lastConfirmedAt)}
             </span>
           </p>
-        ) : null}
+        ) : (
+          <p
+            className="mt-2 flex items-center gap-1.5 text-[11px] leading-5 text-slate-500"
+            title="No confirmed occurrence records clustered near this site yet. We are backfilling sighting evidence site by site."
+          >
+            <span
+              className="inline-block size-1.5 shrink-0 rounded-full bg-slate-300"
+              aria-hidden
+            />
+            <span className="truncate">Sighting evidence pending</span>
+          </p>
+        )}
         <div className="mt-3 flex flex-wrap items-center gap-1.5">
           <span className="inline-block rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-700">
             {site.depthRange.min}–{site.depthRange.max} m

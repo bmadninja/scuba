@@ -229,7 +229,7 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ],
-    "notes": "June\u2013July full-moon aggregation is the densest documented in French Polynesia."
+    "notes": "June–July full-moon aggregation is the densest documented in French Polynesia."
   },
   {
     "id": "cozumel-palancar-reef-tu",
@@ -5653,7 +5653,7 @@
   {
     "id": "ari-atoll-maldives-ross-sea-adelie-penguin",
     "siteId": "ari-atoll-maldives-ross-sea",
-    "speciesCommon": "Ad\u00e9lie Penguin",
+    "speciesCommon": "Adélie Penguin",
     "speciesScientific": "Pygoscelis adeliae",
     "lastConfirmedAt": null,
     "recentRecordCount": 0,
@@ -5673,7 +5673,7 @@
     "methodologyClaimIds": [
       "sighting-occurrence-cluster"
     ],
-    "notes": "Assumed presence and seasonality based on general knowledge of Ad\u00e9lie penguin distribution in the Ross Sea."
+    "notes": "Assumed presence and seasonality based on general knowledge of Adélie penguin distribution in the Ross Sea."
   },
   {
     "id": "ari-atoll-maldives-ross-sea-weddell-seal",
@@ -7175,5 +7175,2956 @@
       "sighting-occurrence-cluster"
     ],
     "notes": null
+  },
+  {
+    "id": "kimbe-bay-papua-new-guinea-susans-reef-bargibant-s-pygmy-seahorse",
+    "siteId": "kimbe-bay-papua-new-guinea-susans-reef",
+    "speciesCommon": "Bargibant's pygmy seahorse",
+    "speciesScientific": "Hippocampus bargibanti",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "noronha-corveta-v17-caribbean-reef-shark",
+    "siteId": "noronha-corveta-v17",
+    "speciesCommon": "Caribbean reef shark",
+    "speciesScientific": "Carcharhinus perezi",
+    "lastConfirmedAt": "2026-03-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "statia-st-eustatius-charles-l-brown-great-barracuda",
+    "siteId": "statia-st-eustatius-charles-l-brown",
+    "speciesCommon": "Great barracuda",
+    "speciesScientific": "Sphyraena barracuda",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "fuvahmulah-tiger-harbour-tiger-shark",
+    "siteId": "fuvahmulah-tiger-harbour",
+    "speciesCommon": "Tiger shark",
+    "speciesScientific": "Galeocerdo cuvier",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "green-island-taiwan-shilang-big-mushroom-green-sea-turtle",
+    "siteId": "green-island-taiwan-shilang-big-mushroom",
+    "speciesCommon": "Green sea turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "providencia-felipes-place-nurse-shark",
+    "siteId": "providencia-felipes-place",
+    "speciesCommon": "Nurse shark",
+    "speciesScientific": "Ginglymostoma cirratum",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "kona-hawaii-usa-molokini-crater-bluefin-trevally",
+    "siteId": "kona-hawaii-usa-molokini-crater",
+    "speciesCommon": "Bluefin trevally",
+    "speciesScientific": "Caranx melampygus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ras-mohammed-egypt-blue-hole-dahab-lyretail-anthias",
+    "siteId": "ras-mohammed-egypt-blue-hole-dahab",
+    "speciesCommon": "Lyretail anthias",
+    "speciesScientific": "Pseudanthias squamipinnis",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "sal-cape-verde-kwarcit-wreck-round-stingray",
+    "siteId": "sal-cape-verde-kwarcit-wreck",
+    "speciesCommon": "Round stingray",
+    "speciesScientific": "Taeniura grabata",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "nha-trang-vietnam-hon-mun-pink-anemonefish",
+    "siteId": "nha-trang-vietnam-hon-mun",
+    "speciesCommon": "Pink Anemonefish",
+    "speciesScientific": "Amphiprion perideraion",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "bocas-del-toro-tiger-rock-silky-shark",
+    "siteId": "bocas-del-toro-tiger-rock",
+    "speciesCommon": "Silky shark",
+    "speciesScientific": "Carcharhinus falciformis",
+    "lastConfirmedAt": "2025-10-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      9,
+      10
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "watamu-the-canyon-whale-shark",
+    "siteId": "watamu-the-canyon",
+    "speciesCommon": "Whale shark",
+    "speciesScientific": "Rhincodon typus",
+    "lastConfirmedAt": "2026-03-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "jeju-south-korea-munseom-carnation-soft-coral",
+    "siteId": "jeju-south-korea-munseom",
+    "speciesCommon": "Carnation soft coral",
+    "speciesScientific": "Dendronephthya gigantea",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "praslin-south-marianne-grey-reef-shark",
+    "siteId": "praslin-south-marianne",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      9,
+      10,
+      11
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "channel-islands-gull-island-giant-kelp",
+    "siteId": "channel-islands-gull-island",
+    "speciesCommon": "Giant kelp",
+    "speciesScientific": "Macrocystis pyrifera",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "chuuk-heian-maru-glassfish",
+    "siteId": "chuuk-heian-maru",
+    "speciesCommon": "Glassfish",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "sardinia-italy-nereo-cave-red-coral",
+    "siteId": "sardinia-italy-nereo-cave",
+    "speciesCommon": "Red coral",
+    "speciesScientific": "Corallium rubrum",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "trincomalee-sri-lanka-hms-hermes-giant-trevally",
+    "siteId": "trincomalee-sri-lanka-hms-hermes",
+    "speciesCommon": "Giant trevally",
+    "speciesScientific": "Caranx ignobilis",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cuba-crocodile-mangroves-american-crocodile",
+    "siteId": "cuba-crocodile-mangroves",
+    "speciesCommon": "American crocodile",
+    "speciesScientific": "Crocodylus acutus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "rangiroa-french-polynesia-avatoru-pass-grey-reef-shark",
+    "siteId": "rangiroa-french-polynesia-avatoru-pass",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "djibouti-arta-beach-whale-shark",
+    "siteId": "djibouti-arta-beach",
+    "speciesCommon": "Whale shark",
+    "speciesScientific": "Rhincodon typus",
+    "lastConfirmedAt": "2026-01-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      11,
+      12,
+      1
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "moalboal-philippines-apo-island-green-sea-turtle",
+    "siteId": "moalboal-philippines-apo-island",
+    "speciesCommon": "Green sea turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "gozo-hms-maori-mediterranean-moray",
+    "siteId": "gozo-hms-maori",
+    "speciesCommon": "Mediterranean moray",
+    "speciesScientific": "Muraena helena",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cozumel-columbia-reef-hawksbill-turtle",
+    "siteId": "cozumel-columbia-reef",
+    "speciesCommon": "Hawksbill turtle",
+    "speciesScientific": "Eretmochelys imbricata",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "niue-avaiki-cave-snake-gully-katuali-banded-sea-krait",
+    "siteId": "niue-avaiki-cave-snake-gully",
+    "speciesCommon": "Katuali (banded sea krait)",
+    "speciesScientific": "Laticauda schistorhyncha",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      4,
+      5
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "socorro-mexico-cabo-pearce-giant-oceanic-manta-ray",
+    "siteId": "socorro-mexico-cabo-pearce",
+    "speciesCommon": "Giant oceanic manta ray",
+    "speciesScientific": "Mobula birostris",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "manta-trust"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-abu-dabbab-dugong",
+    "siteId": "egypt-abu-dabbab",
+    "speciesCommon": "Dugong",
+    "speciesScientific": "Dugong dugon",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "low",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "tulamben-nusa-penida-crystal-bay-ocean-sunfish-bumphead-mola",
+    "siteId": "tulamben-nusa-penida-crystal-bay",
+    "speciesCommon": "Ocean sunfish (bumphead mola)",
+    "speciesScientific": "Mola alexandrini",
+    "lastConfirmedAt": "2025-10-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-shaab-samadai-dolphin-house-spinner-dolphin",
+    "siteId": "egypt-shaab-samadai-dolphin-house",
+    "speciesCommon": "Spinner dolphin",
+    "speciesScientific": "Stenella longirostris",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "wolf-galapagos-landslide-scalloped-hammerhead",
+    "siteId": "wolf-galapagos-landslide",
+    "speciesCommon": "Scalloped hammerhead",
+    "speciesScientific": "Sphyrna lewini",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "hin-daeng-hin-muang-oceanic-manta-ray",
+    "siteId": "hin-daeng-hin-muang",
+    "speciesCommon": "Oceanic manta ray",
+    "speciesScientific": "Mobula birostris",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "manta-trust"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "aliwal-south-africa-protea-banks-bull-shark",
+    "siteId": "aliwal-south-africa-protea-banks",
+    "speciesCommon": "Bull shark",
+    "speciesScientific": "Carcharhinus leucas",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "bonaire-national-marine-park-bonaire-karpata-hawksbill-turtle",
+    "siteId": "bonaire-national-marine-park-bonaire-karpata",
+    "speciesCommon": "Hawksbill turtle",
+    "speciesScientific": "Eretmochelys imbricata",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "osprey-reef-north-horn-grey-reef-shark",
+    "siteId": "osprey-reef-north-horn",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "malpelo-colombia-la-nevera-scalloped-hammerhead-shark",
+    "siteId": "malpelo-colombia-la-nevera",
+    "speciesCommon": "Scalloped hammerhead shark",
+    "speciesScientific": "Sphyrna lewini",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "andaman-islands-india-dixons-pinnacle-reef-manta-ray",
+    "siteId": "andaman-islands-india-dixons-pinnacle",
+    "speciesCommon": "Reef manta ray",
+    "speciesScientific": "Mobula alfredi",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "manta-trust"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "yonaguni-hammerheads-scalloped-hammerhead-shark",
+    "siteId": "yonaguni-hammerheads",
+    "speciesCommon": "Scalloped hammerhead shark",
+    "speciesScientific": "Sphyrna lewini",
+    "lastConfirmedAt": "2026-03-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      1,
+      2,
+      3
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "curacao-tugboat-sergeant-major",
+    "siteId": "curacao-tugboat",
+    "speciesCommon": "Sergeant major",
+    "speciesScientific": "Abudefduf saxatilis",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-salem-express-lionfish",
+    "siteId": "egypt-salem-express",
+    "speciesCommon": "Lionfish",
+    "speciesScientific": "Pterois miles",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "solomons-bonegi-kinugawa-maru-spinecheek-anemonefish",
+    "siteId": "solomons-bonegi-kinugawa-maru",
+    "speciesCommon": "Spinecheek anemonefish",
+    "speciesScientific": "Premnas biaculeatus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cozumel-mexico-c53-felipe-xicotencatl-splendid-toadfish",
+    "siteId": "cozumel-mexico-c53-felipe-xicotencatl",
+    "speciesCommon": "Splendid toadfish",
+    "speciesScientific": "Sanopus splendidus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-st-johns-reef-scalloped-hammerhead-shark",
+    "siteId": "egypt-st-johns-reef",
+    "speciesCommon": "Scalloped hammerhead shark",
+    "speciesScientific": "Sphyrna lewini",
+    "lastConfirmedAt": "2025-09-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "chuuk-nippo-maru-glassfish",
+    "siteId": "chuuk-nippo-maru",
+    "speciesCommon": "Glassfish",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "blue-hole-belize-hol-chan-marine-reserve-nurse-shark",
+    "siteId": "blue-hole-belize-hol-chan-marine-reserve",
+    "speciesCommon": "Nurse shark",
+    "speciesScientific": "Ginglymostoma cirratum",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "aliwal-sardine-run-southern-african-pilchard",
+    "siteId": "aliwal-sardine-run",
+    "speciesCommon": "Southern African pilchard",
+    "speciesScientific": "Sardinops sagax",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      5,
+      6,
+      7
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "apo-reef-philippines-akitsushima-wreck-longfin-batfish",
+    "siteId": "apo-reef-philippines-akitsushima-wreck",
+    "speciesCommon": "Longfin batfish",
+    "speciesScientific": "Platax teira",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "sudan-shaab-rumi-sanganeb-scalloped-hammerhead",
+    "siteId": "sudan-shaab-rumi-sanganeb",
+    "speciesCommon": "Scalloped hammerhead",
+    "speciesScientific": "Sphyrna lewini",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cenotes-chac-mool-mexican-molly",
+    "siteId": "cenotes-chac-mool",
+    "speciesCommon": "Mexican molly",
+    "speciesScientific": "Poecilia mexicana",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "stingray-city-cayman-uss-kittiwake-great-barracuda",
+    "siteId": "stingray-city-cayman-uss-kittiwake",
+    "speciesCommon": "Great barracuda",
+    "speciesScientific": "Sphyraena barracuda",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "gozo-statue-of-christ-dusky-grouper",
+    "siteId": "gozo-statue-of-christ",
+    "speciesCommon": "Dusky grouper",
+    "speciesScientific": "Epinephelus marginatus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "sipadan-malaysia-south-point-grey-reef-shark",
+    "siteId": "sipadan-malaysia-south-point",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "curacao-superior-producer-tarpon",
+    "siteId": "curacao-superior-producer",
+    "speciesCommon": "Tarpon",
+    "speciesScientific": "Megalops atlanticus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-chrisoula-k-glassfish-sweeper",
+    "siteId": "egypt-chrisoula-k",
+    "speciesCommon": "Glassfish (sweeper)",
+    "speciesScientific": "Parapriacanthus ransonneti",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-kimon-m-teira-batfish",
+    "siteId": "egypt-kimon-m",
+    "speciesCommon": "Teira batfish",
+    "speciesScientific": "Platax teira",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "komodo-cannibal-rock-sea-apple",
+    "siteId": "komodo-cannibal-rock",
+    "speciesCommon": "Sea apple",
+    "speciesScientific": "Pseudocolochirus violaceus",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "azores-portugal-baixa-do-ambrosio-sicklefin-devil-ray",
+    "siteId": "azores-portugal-baixa-do-ambrosio",
+    "speciesCommon": "Sicklefin devil ray",
+    "speciesScientific": "Mobula tarapacana",
+    "lastConfirmedAt": "2025-10-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "iucn-red-list",
+      "manta-trust"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "apo-reef-philippines-verde-island-drop-off-lyretail-anthias",
+    "siteId": "apo-reef-philippines-verde-island-drop-off",
+    "speciesCommon": "Lyretail anthias",
+    "speciesScientific": "Pseudanthias squamipinnis",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "hikkaduwa-sri-lanka-coral-sanctuary-green-turtle",
+    "siteId": "hikkaduwa-sri-lanka-coral-sanctuary",
+    "speciesCommon": "Green turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cocos-dos-amigos-grande-scalloped-hammerhead",
+    "siteId": "cocos-dos-amigos-grande",
+    "speciesCommon": "Scalloped hammerhead",
+    "speciesScientific": "Sphyrna lewini",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "sipadan-malaysia-drop-off-green-sea-turtle",
+    "siteId": "sipadan-malaysia-drop-off",
+    "speciesCommon": "Green sea turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "palau-jellyfish-lake-golden-jellyfish",
+    "siteId": "palau-jellyfish-lake",
+    "speciesCommon": "Golden jellyfish",
+    "speciesScientific": "Mastigias papua etpisoni",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-numidia-wreck-glassfish-golden-sweeper",
+    "siteId": "egypt-numidia-wreck",
+    "speciesCommon": "Glassfish (golden sweeper)",
+    "speciesScientific": "Parapriacanthus ransonneti",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "bimini-great-hammerheads-great-hammerhead",
+    "siteId": "bimini-great-hammerheads",
+    "speciesCommon": "Great hammerhead",
+    "speciesScientific": "Sphyrna mokarran",
+    "lastConfirmedAt": "2026-03-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "kona-hawaii-manta-ray-night-dive-reef-manta-ray",
+    "siteId": "kona-hawaii-manta-ray-night-dive",
+    "speciesCommon": "Reef manta ray",
+    "speciesScientific": "Mobula alfredi",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "manta-trust"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "daymaniyat-oman-garden-of-eden-hawksbill-turtle",
+    "siteId": "daymaniyat-oman-garden-of-eden",
+    "speciesCommon": "Hawksbill turtle",
+    "speciesScientific": "Eretmochelys imbricata",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "channel-islands-san-miguel-island-california-sea-lion",
+    "siteId": "channel-islands-san-miguel-island",
+    "speciesCommon": "California sea lion",
+    "speciesScientific": "Zalophus californianus",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "palau-peleliu-corner-grey-reef-shark",
+    "siteId": "palau-peleliu-corner",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "poor-knights-new-zealand-rainbow-warrior-jewel-anemone",
+    "siteId": "poor-knights-new-zealand-rainbow-warrior",
+    "speciesCommon": "Jewel anemone",
+    "speciesScientific": "Corynactis haddoni",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "arraial-do-cabo-brazil-saco-do-cardeiro-atlantic-bigeye",
+    "siteId": "arraial-do-cabo-brazil-saco-do-cardeiro",
+    "speciesCommon": "Atlantic bigeye",
+    "speciesScientific": "Priacanthus arenatus",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "jeddah-saudi-arabia-boiler-wreck-whitetip-reef-shark",
+    "siteId": "jeddah-saudi-arabia-boiler-wreck",
+    "speciesCommon": "Whitetip reef shark",
+    "speciesScientific": "Triaenodon obesus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "komodo-crystal-rock-grey-reef-shark",
+    "siteId": "komodo-crystal-rock",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "kornati-croatia-balun-violet-gorgonian-sea-fan",
+    "siteId": "kornati-croatia-balun",
+    "speciesCommon": "Violet gorgonian sea fan",
+    "speciesScientific": "Paramuricea clavata",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "palau-chandelier-cave-cardinalfish",
+    "siteId": "palau-chandelier-cave",
+    "speciesCommon": "Cardinalfish",
+    "speciesScientific": "Apogonidae",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "tobago-speyside-japanese-gardens-hawksbill-turtle",
+    "siteId": "tobago-speyside-japanese-gardens",
+    "speciesCommon": "Hawksbill turtle",
+    "speciesScientific": "Eretmochelys imbricata",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "andaman-islands-india-barren-island-reef-manta-ray",
+    "siteId": "andaman-islands-india-barren-island",
+    "speciesCommon": "Reef manta ray",
+    "speciesScientific": "Mobula alfredi",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "manta-trust"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "kona-hawaii-usa-first-cathedral-lanai-green-sea-turtle",
+    "siteId": "kona-hawaii-usa-first-cathedral-lanai",
+    "speciesCommon": "Green sea turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cozumel-paradise-reef-splendid-toadfish",
+    "siteId": "cozumel-paradise-reef",
+    "speciesCommon": "Splendid toadfish",
+    "speciesScientific": "Sanopus splendidus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "blue-hole-belize-shark-ray-alley-atlantic-nurse-shark",
+    "siteId": "blue-hole-belize-shark-ray-alley",
+    "speciesCommon": "Atlantic nurse shark",
+    "speciesScientific": "Ginglymostoma cirratum",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-aida-wreck-glassfish-golden-sweeper",
+    "siteId": "egypt-aida-wreck",
+    "speciesCommon": "Glassfish (golden sweeper)",
+    "speciesScientific": "Parapriacanthus ransonneti",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "bunaken-nudi-falls-lembeh-lembeh-seadragon",
+    "siteId": "bunaken-nudi-falls-lembeh",
+    "speciesCommon": "Lembeh seadragon",
+    "speciesScientific": "Kyonemichthys rumengani",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "roatan-cara-a-cara-caribbean-reef-shark",
+    "siteId": "roatan-cara-a-cara",
+    "speciesCommon": "Caribbean reef shark",
+    "speciesScientific": "Carcharhinus perezi",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cod-hole-australia-steves-bommie-bigeye-trevally",
+    "siteId": "cod-hole-australia-steves-bommie",
+    "speciesCommon": "Bigeye trevally",
+    "speciesScientific": "Caranx sexfasciatus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cenotes-carwash-mesoamerican-slider",
+    "siteId": "cenotes-carwash",
+    "speciesCommon": "Mesoamerican slider",
+    "speciesScientific": "Trachemys venusta",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-ss-rosalie-moller-glassfish",
+    "siteId": "egypt-ss-rosalie-moller",
+    "speciesCommon": "Glassfish",
+    "speciesScientific": "Parapriacanthus ransonneti",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "chuuk-yamagiri-maru-glassfish",
+    "siteId": "chuuk-yamagiri-maru",
+    "speciesCommon": "Glassfish",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ras-mohammed-egypt-canyon-dahab-glassfish",
+    "siteId": "ras-mohammed-egypt-canyon-dahab",
+    "speciesCommon": "Glassfish",
+    "speciesScientific": "Parapriacanthus ransonneti",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "anse-chastanet-saint-lucia-lesleen-m-wreck-green-moray-eel",
+    "siteId": "anse-chastanet-saint-lucia-lesleen-m-wreck",
+    "speciesCommon": "Green moray eel",
+    "speciesScientific": "Gymnothorax funebris",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "koh-tao-htms-sattakut-yellowtail-fusilier",
+    "siteId": "koh-tao-htms-sattakut",
+    "speciesCommon": "Yellowtail fusilier",
+    "speciesScientific": "Caesio cuning",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "saba-third-encounter-caribbean-reef-shark",
+    "siteId": "saba-third-encounter",
+    "speciesCommon": "Caribbean reef shark",
+    "speciesScientific": "Carcharhinus perezii",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "palau-iro-maru-anemonefish",
+    "siteId": "palau-iro-maru",
+    "speciesCommon": "Anemonefish",
+    "speciesScientific": "Amphiprion",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "stingray-city-cayman-eden-rock-devils-grotto-atlantic-tarpon",
+    "siteId": "stingray-city-cayman-eden-rock-devils-grotto",
+    "speciesCommon": "Atlantic tarpon",
+    "speciesScientific": "Megalops atlanticus",
+    "lastConfirmedAt": "2025-09-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "malmok-aruba-antilla-wreck-hawksbill-sea-turtle",
+    "siteId": "malmok-aruba-antilla-wreck",
+    "speciesCommon": "Hawksbill sea turtle",
+    "speciesScientific": "Eretmochelys imbricata",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "mnemba-tanzania-wattabomi-bottlenose-dolphin",
+    "siteId": "mnemba-tanzania-wattabomi",
+    "speciesCommon": "Bottlenose dolphin",
+    "speciesScientific": "Tursiops aduncus",
+    "lastConfirmedAt": "2026-03-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "osprey-reef-admiralty-anchor-grey-reef-shark",
+    "siteId": "osprey-reef-admiralty-anchor",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-shaab-sataya-fury-shoals-spinner-dolphin",
+    "siteId": "egypt-shaab-sataya-fury-shoals",
+    "speciesCommon": "Spinner dolphin",
+    "speciesScientific": "Stenella longirostris",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "raja-ampat-indonesia-boo-windows-tasselled-wobbegong",
+    "siteId": "raja-ampat-indonesia-boo-windows",
+    "speciesCommon": "Tasselled wobbegong",
+    "speciesScientific": "Eucrossorhinus dasypogon",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "salt-island-bvi-painted-walls-hawksbill-turtle",
+    "siteId": "salt-island-bvi-painted-walls",
+    "speciesCommon": "Hawksbill turtle",
+    "speciesScientific": "Eretmochelys imbricata",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "bonaire-bari-reef-longlure-frogfish",
+    "siteId": "bonaire-bari-reef",
+    "speciesCommon": "Longlure frogfish",
+    "speciesScientific": "Antennarius multiocellatus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "gozo-malta-hms-russell-john-dory",
+    "siteId": "gozo-malta-hms-russell",
+    "speciesCommon": "John Dory",
+    "speciesScientific": "Zeus faber",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "gozo-malta-mv-karwela-barracuda",
+    "siteId": "gozo-malta-mv-karwela",
+    "speciesCommon": "Barracuda",
+    "speciesScientific": "Sphyraena sphyraena",
+    "lastConfirmedAt": "2025-10-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "raja-ampat-indonesia-the-passage-tasselled-wobbegong",
+    "siteId": "raja-ampat-indonesia-the-passage",
+    "speciesCommon": "Tasselled wobbegong",
+    "speciesScientific": "Eucrossorhinus dasypogon",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "maldives-kudarah-thila-grey-reef-shark",
+    "siteId": "maldives-kudarah-thila",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ras-mohammed-egypt-the-bells-dahab-lyretail-anthias",
+    "siteId": "ras-mohammed-egypt-the-bells-dahab",
+    "speciesCommon": "Lyretail anthias",
+    "speciesScientific": "Pseudanthias squamipinnis",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "fish-rock-cave-swr-grey-nurse-shark",
+    "siteId": "fish-rock-cave-swr",
+    "speciesCommon": "Grey nurse shark",
+    "speciesScientific": "Carcharias taurus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "mahe-ennerdale-wreck-giant-moray",
+    "siteId": "mahe-ennerdale-wreck",
+    "speciesCommon": "Giant moray",
+    "speciesScientific": "Gymnothorax javanicus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "malmok-aruba-pedernales-wreck-french-grunt",
+    "siteId": "malmok-aruba-pedernales-wreck",
+    "speciesCommon": "French grunt",
+    "speciesScientific": "Haemulon flavolineatum",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "andaman-islands-india-invisible-bank-grey-reef-shark",
+    "siteId": "andaman-islands-india-invisible-bank",
+    "speciesCommon": "Grey reef shark",
+    "speciesScientific": "Carcharhinus amblyrhynchos",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cod-hole-pixie-pinnacle-fairy-basslet",
+    "siteId": "cod-hole-pixie-pinnacle",
+    "speciesCommon": "Fairy basslet",
+    "speciesScientific": "Pseudanthias squamipinnis",
+    "lastConfirmedAt": "2025-11-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "florida-keys-usa-french-reef-glassy-sweeper",
+    "siteId": "florida-keys-usa-french-reef",
+    "speciesCommon": "Glassy sweeper",
+    "speciesScientific": "Pempheris schomburgkii",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-million-hope-glassfish",
+    "siteId": "egypt-million-hope",
+    "speciesCommon": "Glassfish",
+    "speciesScientific": "Parapriacanthus ransonneti",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "coiba-hannibal-bank-scalloped-hammerhead",
+    "siteId": "coiba-hannibal-bank",
+    "speciesCommon": "Scalloped hammerhead",
+    "speciesScientific": "Sphyrna lewini",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "tubbataha-philippines-jessie-beazley-reef-whitetip-reef-shark",
+    "siteId": "tubbataha-philippines-jessie-beazley-reef",
+    "speciesCommon": "Whitetip reef shark",
+    "speciesScientific": "Triaenodon obesus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "sodwana-south-africa-quarter-mile-reef-ragged-tooth-shark",
+    "siteId": "sodwana-south-africa-quarter-mile-reef",
+    "speciesCommon": "Ragged tooth shark",
+    "speciesScientific": "Carcharias taurus",
+    "lastConfirmedAt": "2026-03-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "raja-ampat-sardine-reef-schooling-fusiliers",
+    "siteId": "raja-ampat-sardine-reef",
+    "speciesCommon": "Schooling fusiliers",
+    "speciesScientific": "Caesio spp.",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "egypt-rocky-island-oceanic-whitetip-shark",
+    "siteId": "egypt-rocky-island",
+    "speciesCommon": "Oceanic whitetip shark",
+    "speciesScientific": "Carcharhinus longimanus",
+    "lastConfirmedAt": "2025-12-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      10,
+      11,
+      12
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "apo-reef-philippines-irako-maru-giant-trevally",
+    "siteId": "apo-reef-philippines-irako-maru",
+    "speciesCommon": "Giant trevally",
+    "speciesScientific": "Caranx ignobilis",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "florida-keys-eagle-wreck-goliath-grouper",
+    "siteId": "florida-keys-eagle-wreck",
+    "speciesCommon": "Goliath grouper",
+    "speciesScientific": "Epinephelus itajara",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "apo-reef-philippines-apo-reef-natural-park-whitetip-reef-shark",
+    "siteId": "apo-reef-philippines-apo-reef-natural-park",
+    "speciesCommon": "Whitetip reef shark",
+    "speciesScientific": "Triaenodon obesus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "pensacola-florida-uss-oriskany-goliath-grouper",
+    "siteId": "pensacola-florida-uss-oriskany",
+    "speciesCommon": "Goliath grouper",
+    "speciesScientific": "Epinephelus itajara",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "north-male-atoll-maldives-maldive-victory-bigeye-trevally",
+    "siteId": "north-male-atoll-maldives-maldive-victory",
+    "speciesCommon": "Bigeye trevally",
+    "speciesScientific": "Caranx sexfasciatus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "blue-corner-palau-helmet-wreck-banded-pipefish",
+    "siteId": "blue-corner-palau-helmet-wreck",
+    "speciesCommon": "Banded pipefish",
+    "speciesScientific": "Doryrhamphus dactyliophorus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "aqaba-tristar-l1011-glassfish",
+    "siteId": "aqaba-tristar-l1011",
+    "speciesCommon": "Glassfish",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "cod-hole-australia-lady-elliot-island-reef-manta-ray",
+    "siteId": "cod-hole-australia-lady-elliot-island",
+    "speciesCommon": "Reef manta ray",
+    "speciesScientific": "Mobula alfredi",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "manta-trust"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "gozo-malta-p29-patrol-boat-dusky-grouper",
+    "siteId": "gozo-malta-p29-patrol-boat",
+    "speciesCommon": "Dusky grouper",
+    "speciesScientific": "Epinephelus marginatus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "florida-keys-benwood-wreck-goliath-grouper",
+    "siteId": "florida-keys-benwood-wreck",
+    "speciesCommon": "Goliath grouper",
+    "speciesScientific": "Epinephelus itajara",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "milne-bay-papua-new-guinea-b17-black-jack-schooling-barracuda",
+    "siteId": "milne-bay-papua-new-guinea-b17-black-jack",
+    "speciesCommon": "Schooling barracuda",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "tubbataha-philippines-coron-bay-green-sea-turtle",
+    "siteId": "tubbataha-philippines-coron-bay",
+    "speciesCommon": "Green Sea Turtle",
+    "speciesScientific": "Chelonia mydas",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ogasawara-japan-ogasawara-islands-spinner-dolphin",
+    "siteId": "ogasawara-japan-ogasawara-islands",
+    "speciesCommon": "Spinner Dolphin",
+    "speciesScientific": "Stenella longirostris",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 45,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "confidence": "medium",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "sanya-china-dragon-hole-blacktip-reef-shark",
+    "siteId": "sanya-china-dragon-hole",
+    "speciesCommon": "Blacktip Reef Shark",
+    "speciesScientific": "Carcharhinus melanopterus",
+    "lastConfirmedAt": "2026-05-10",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "bunaken-indonesia-derawan-islands-manta-ray",
+    "siteId": "bunaken-indonesia-derawan-islands",
+    "speciesCommon": "Manta Ray",
+    "speciesScientific": "Mobula alfredi",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 25,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "manta-trust"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "raja-ampat-indonesia-misool-wobbegong-shark",
+    "siteId": "raja-ampat-indonesia-misool",
+    "speciesCommon": "Wobbegong Shark",
+    "speciesScientific": "Eucrossorhinus dasypogon",
+    "lastConfirmedAt": "2026-04-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ningaloo-australia-cocklebiddy-cave-blind-cave-eel",
+    "siteId": "ningaloo-australia-cocklebiddy-cave",
+    "speciesCommon": "Blind Cave Eel",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 8,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "low",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ningaloo-australia-engelbrecht-cave-eel-tailed-catfish",
+    "siteId": "ningaloo-australia-engelbrecht-cave",
+    "speciesCommon": "Eel-tailed Catfish",
+    "speciesScientific": "Tandanus tandanus",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "ningaloo-australia-fossil-cave-freshwater-crayfish",
+    "siteId": "ningaloo-australia-fossil-cave",
+    "speciesCommon": "Freshwater Crayfish",
+    "lastConfirmedAt": "2026-05-10",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "raja-ampat-indonesia-hmas-tobruk-bull-shark",
+    "siteId": "raja-ampat-indonesia-hmas-tobruk",
+    "speciesCommon": "Bull Shark",
+    "speciesScientific": "Carcharhinus leucas",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 130,
+    "proximityRadiusKm": 10,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist",
+      "iucn-red-list",
+      "wildbook"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
+  },
+  {
+    "id": "raja-ampat-indonesia-iro-maru-giant-trevally",
+    "siteId": "raja-ampat-indonesia-iro-maru",
+    "speciesCommon": "Giant Trevally",
+    "speciesScientific": "Caranx ignobilis",
+    "lastConfirmedAt": "2026-05-15",
+    "recentRecordCount": 65,
+    "proximityRadiusKm": 50,
+    "seasonalityMonths": [],
+    "confidence": "high",
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "sighting-occurrence-cluster"
+    ]
   }
 ]

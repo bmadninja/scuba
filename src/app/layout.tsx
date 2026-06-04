@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Noto_Sans, IBM_Plex_Mono, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { JsonLd } from "@/components/json-ld";
+import { AtlasNav } from "@/components/atlas-nav";
+import { AtlasFooter } from "@/components/atlas-footer";
+import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { organizationSchema, websiteSchema } from "@/lib/schema-org";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
 
 const notoSans = Noto_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
+const sourceSerif4 = Source_Serif_4({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400", "600"],
   display: "swap",
 });
 
@@ -34,21 +52,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Build the nav search dataset once for every route. Shape mirrors the
+  // `searchEntries` prop the home page passed to <AtlasNav>.
+  const entries = getAllAtlasLocations().map((l) => ({
+    slug: l.slug,
+    name: l.name,
+    country: l.country,
+    region: l.region,
+    state: l.state,
+  }));
+
   return (
-    <html lang="en" className={`${notoSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans bg-white text-slate-900">
+    <html lang="en" className={`${notoSans.variable} ${ibmPlexMono.variable} ${sourceSerif4.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans">
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
-        {children}
-        <footer className="mt-auto border-t border-slate-200 bg-slate-50 px-6 py-4 text-center text-[11px] leading-5 text-slate-500">
-          Thermal stress data: NOAA Coral Reef Watch 5&nbsp;km Bleaching Alert Area
-          v3.1, public domain. Coral cover figures are snapshots from named
-          monitoring programs — see{" "}
-          <a href="/data" className="text-[#0089de] hover:underline">
-            /data
-          </a>{" "}
-          for sources and freshness.
-        </footer>
+        <AtlasNav entries={entries} />
+        <main className="flex-1">{children}</main>
+        <AtlasFooter />
         <Analytics />
       </body>
     </html>

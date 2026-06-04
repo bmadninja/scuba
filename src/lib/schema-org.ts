@@ -218,50 +218,6 @@ export function speciesLandingSchema(
   };
 }
 
-export function monthLandingSchema({
-  month,
-  monthName,
-  locations,
-}: {
-  month: number;
-  monthName: string;
-  locations: { name: string; slug: string }[];
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: `Where to dive in ${monthName} 2026`,
-    headline: `Where to dive in ${monthName} 2026`,
-    description: `In-season dive locations, encounters and sites for ${monthName}.`,
-    url: `${SITE_URL}/dive-in/${monthName.toLowerCase()}`,
-    keywords: [
-      `dive trips ${monthName} 2026`,
-      `where to scuba dive in ${monthName}`,
-      `${monthName} dive season`,
-    ].join(", "),
-    additionalProperty: [
-      {
-        "@type": "PropertyValue",
-        name: "Travel month",
-        value: monthName,
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Month number",
-        value: String(month),
-      },
-    ],
-    mainEntity: {
-      "@type": "ItemList",
-      itemListElement: locations.map((l, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: l.name,
-        url: `${SITE_URL}/locations/${l.slug}`,
-      })),
-    },
-  };
-}
 
 export function certLandingSchema({
   cert,

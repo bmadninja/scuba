@@ -4,11 +4,6 @@ import { getAllLocations } from "@/lib/data/locations";
 import { getAllSites } from "@/lib/data/sites";
 import { getAllEncounters } from "@/lib/data/encounters";
 
-const MONTHS = [
-  "january","february","march","april","may","june",
-  "july","august","september","october","november","december",
-];
-
 const CERTS = [
   "never-dived","open-water","advanced","rescue","divemaster","tech",
 ];
@@ -20,7 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/sites`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/encounters`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
-    { url: `${SITE_URL}/plan`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
@@ -55,13 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  const monthLandingRoutes: MetadataRoute.Sitemap = MONTHS.map((m) => ({
-    url: `${SITE_URL}/dive-in/${m}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
-
   const certLandingRoutes: MetadataRoute.Sitemap = CERTS.map((c) => ({
     url: `${SITE_URL}/for/${c}`,
     lastModified: now,
@@ -75,7 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...locationRoutes,
     ...encounterRoutes,
     ...speciesLandingRoutes,
-    ...monthLandingRoutes,
     ...certLandingRoutes,
   ];
 }

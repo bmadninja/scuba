@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
 import { speciesLandingSchema } from "@/lib/schema-org";
 import {
@@ -101,14 +100,8 @@ export default async function SpeciesLandingPage({
   const methodology = getMethodologyByClaimId("sighting-occurrence-cluster");
 
   const primary = e.regions.find((r) => r.status === "primary") ?? e.regions[0];
-  const planLink = primary?.inAtlasLocationId
-    ? `/plan?location=${
-        getLocationById(primary.inAtlasLocationId)?.slug ?? ""
-      }`
-    : "/plan";
-
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <>
       <JsonLd
         data={speciesLandingSchema(
           e,
@@ -118,7 +111,6 @@ export default async function SpeciesLandingPage({
           })),
         )}
       />
-      <SiteHeader />
 
       {e.heroImageUrl ? (
         /* eslint-disable-next-line @next/next/no-img-element */
@@ -129,7 +121,8 @@ export default async function SpeciesLandingPage({
         />
       ) : null}
 
-      <main className="mx-auto w-full max-w-4xl px-6 py-12">
+      <div className="mx-auto w-full max-w-6xl px-6 py-12">
+      <div className="mx-auto w-full max-w-4xl">
         <Link
           href="/encounters"
           className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 hover:text-[#0089de]"
@@ -181,20 +174,16 @@ export default async function SpeciesLandingPage({
               MONTH_ABBR.map((m, i) => {
                 const active = e.bestMonths.includes(i + 1);
                 return (
-                  <Link
+                  <span
                     key={m}
-                    href={`/dive-in/${[
-                      "january","february","march","april","may","june",
-                      "july","august","september","october","november","december",
-                    ][i]}`}
                     className={`rounded-full px-2.5 py-1 text-[12px] font-semibold ${
                       active
-                        ? "bg-[#0089de] text-white hover:bg-[#0070c0]"
-                        : "border border-slate-200 text-slate-400 hover:border-slate-300"
+                        ? "bg-[#0089de] text-white"
+                        : "border border-slate-200 text-slate-400"
                     }`}
                   >
                     {m}
-                  </Link>
+                  </span>
                 );
               })
             )}
@@ -296,26 +285,6 @@ export default async function SpeciesLandingPage({
 
         <section className="mt-8 border-t border-slate-200 pt-6">
           <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
-            Plan a trip
-          </h2>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <Link
-              href={planLink}
-              className="rounded-full bg-[#0089de] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0070c0]"
-            >
-              Build a trip around this encounter →
-            </Link>
-            <Link
-              href={`/encounters/${e.slug}`}
-              className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-[#0089de] hover:text-[#0089de]"
-            >
-              Operators &amp; ethics →
-            </Link>
-          </div>
-        </section>
-
-        <section className="mt-8 border-t border-slate-200 pt-6">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
             Methodology
           </h2>
           <details className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-700">
@@ -343,7 +312,8 @@ export default async function SpeciesLandingPage({
             </p>
           </details>
         </section>
-      </main>
-    </div>
+      </div>
+      </div>
+    </>
   );
 }

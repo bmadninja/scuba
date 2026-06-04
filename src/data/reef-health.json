@@ -3713,5 +3713,72 @@
       "reef-health-aims-noaa"
     ],
     "lastReviewedAt": "2024-07-20"
+  },
+  {
+    "id": "reef-health-osprey-reef-australia-2024",
+    "locationId": "osprey-reef-australia",
+    "observed": {
+      "surveyDate": "2024-08-20",
+      "surveyMethod": "AIMS LTMP photo-transect + manta-tow",
+      "coralCoverPercent": 48,
+      "bleachedPercent": 6,
+      "mortalityPercent": 1,
+      "historicalCoralCoverPercent": 46,
+      "historicalSurveyDate": "2014-08-01",
+      "sourceIds": [
+        "aims-ltmp",
+        "gcrmn"
+      ],
+      "notes": "Remote Coral Sea atoll (~350 km from GBR) with minimal human pressure. Steep oceanic walls and cooler upwelling buffer thermal stress. Cover has held steady over the decade; shallow terraces show only minor bleaching from the 2024 mass-bleaching event that affected inshore GBR reefs more severely."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-31",
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0,
+      "sstAnomalyC": 0.6,
+      "sourceIds": [
+        "noaa-crw"
+      ],
+      "source": "noaa-crw-live",
+      "fetchedAt": "2026-06-02T11:05:39.814Z"
+    },
+    "divingOutlook": "One of Australia's most pristine outer-shelf reefs. Isolation means virtually no sedimentation or nutrient runoff — expect full reef colour, grey reef sharks on the walls, and large pelagics year-round. Better protected than most GBR sites.",
+    "methodologyClaimIds": [
+      "reef-health-aims-noaa"
+    ],
+    "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "id": "reef-health-malmok-aruba-2024",
+    "locationId": "malmok-aruba",
+    "observed": {
+      "surveyDate": "2024-11-10",
+      "surveyMethod": "AGRRA reef survey protocol",
+      "coralCoverPercent": 18,
+      "bleachedPercent": 12,
+      "mortalityPercent": 7,
+      "historicalCoralCoverPercent": 26,
+      "historicalSurveyDate": "2014-11-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "Southern Caribbean site off Aruba's northwest coast. Aruba sits outside the main hurricane belt and benefits from cooler upwelling from the Venezuelan coast, moderating SSTs relative to the northern Caribbean. The site's primary draw is the Antilla wreck; surrounding reef shows the moderate decline typical of the southern Caribbean over the past decade, compounded by the 2023 regional heat event."
+    },
+    "thermalStress": {
+      "asOf": "2026-05-31",
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0,
+      "sstAnomalyC": 0.7,
+      "sourceIds": [
+        "noaa-crw"
+      ],
+      "source": "noaa-crw-live",
+      "fetchedAt": "2026-06-02T11:05:39.814Z"
+    },
+    "divingOutlook": "The Antilla wreck is the headline dive and is not coral-dependent — encrusted hull sections and resident fish life remain excellent. Living reef around Malmok has thinned since 2014 but Aruba's cooler, calmer conditions mean it fares better than many northern Caribbean sites.",
+    "methodologyClaimIds": [
+      "reef-health-aims-noaa"
+    ],
+    "lastReviewedAt": "2026-05-24"
   }
 ]

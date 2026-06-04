@@ -34919,7 +34919,20 @@
     "editorialRank": 96,
     "getThere": "Fly into Los Cabos International Airport (SJD) in Baja California Sur. Liveaboards depart from Cabo San Lucas marina or San Jose del Cabo; the open-ocean crossing to San Benedicto takes roughly 22-30 hours. No day-boat or shore access exists - the Revillagigedo Archipelago is a strict marine reserve only reachable by permitted liveaboard.",
     "lodging": [],
-    "operators": [],
+    "operators": [
+      {
+        "url": "https://www.nautilusliveaboards.com/",
+        "isAffiliate": false,
+        "label": "Nautilus Liveaboards",
+        "partner": "Official website"
+      },
+      {
+        "url": "https://www.solmarv.com/",
+        "isAffiliate": false,
+        "label": "Solmar V",
+        "partner": "Official website"
+      }
+    ],
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside the Revillagigedo National Park / UNESCO World Heritage Site (2016) and Mexico's largest fully protected marine reserve (2017); access requires permits held by licensed liveaboards. Touching mantas is prohibited. Diving on top of the pinnacle is not allowed due to heavy surge that can injure divers and damage coral. Watch for down-currents along the walls and the bottom dropping to ~50m+; most liveaboards require 50+ logged dives and advanced/nitrox certification. Surface support carries DSMBs and individual GPS/radio beacons standard."
@@ -35164,7 +35177,20 @@
     "editorialRank": 92,
     "getThere": "Fly to Alfonso Bonilla Aragón International Airport in Cali, Colombia (CLO); transfer ~2.5 hours by road to the port of Buenaventura, then board a Colombian-flagged liveaboard (only vessel permitted in the sanctuary at a time) for the 32–40 hour crossing to Malpelo. Site is reached by panga in a short ride from the liveaboard.",
     "lodging": [],
-    "operators": [],
+    "operators": [
+      {
+        "url": "https://www.yemaya-adventures.com/",
+        "isAffiliate": false,
+        "label": "Yemaya Adventures",
+        "partner": "Official website"
+      },
+      {
+        "url": "https://www.underseahunter.com/",
+        "isAffiliate": false,
+        "label": "Undersea Hunter",
+        "partner": "Official website"
+      }
+    ],
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Inside Malpelo Fauna and Flora Sanctuary (UNESCO World Heritage Site); access only via permitted Colombian liveaboard, one vessel at a time. Park requires minimum 50 logged dives; many operators require more. Nitrox strongly recommended. No anchoring allowed; live skiff entries with immediate negative descents are standard due to strong currents (up to ~5 knots). Yellow fever vaccination required. Site can only be dived in good conditions; the deep ferox reef slope at 60–70 m is beyond recreational limits — most divers stay in the 20–40 m range. Nearest hyperbaric chamber is at the naval base in Buenaventura."
@@ -35410,7 +35436,20 @@
     "editorialRank": 94,
     "getThere": "Fly to Mactan–Cebu International Airport (CEB); transfer ~4 hours by van to Maya port at the northern tip of Cebu, then take a 30-minute bangka crossing to Malapascua Island. Boats to Monad Shoal leave the island's dive shops around 4:30–5:00 am for the 30-minute ride east to the seamount.",
     "lodging": [],
-    "operators": [],
+    "operators": [
+      {
+        "url": "https://www.evolution.com.ph/",
+        "isAffiliate": false,
+        "label": "Evolution Diving Resort",
+        "partner": "Official website"
+      },
+      {
+        "url": "https://www.threshersharkdivers.com/",
+        "isAffiliate": false,
+        "label": "Thresher Shark Divers",
+        "partner": "Official website"
+      }
+    ],
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Pre-dawn departure is required — thresher sharks visit cleaning stations only at first light and disappear back to deep water by mid-morning. The Department of Tourism enforces a fixed mooring rope and a no-cross line on the plateau edge; touching, chasing or flashing strobes at the sharks is prohibited and rangers fine offenders. Most operators require AOW certification due to the 25–30 m hang depth and occasional strong currents along the wall. Typhoon season (Jun–Nov) can cancel boats; avoid the immediate aftermath of named storms. Nearest recompression chamber is in Cebu City."
@@ -35638,7 +35677,14 @@
     "editorialRank": 93,
     "getThere": "Fly to Naha (OKA) or Ishigaki (ISG) in Okinawa, then connect on a Ryukyu Air Commuter (RAC) flight to Yonaguni Airport (OGN) — about 30 minutes from Ishigaki or 75 minutes from Naha. A car ferry runs twice weekly from Ishigaki to Kubura Port on the island's west end. Local dive shops handle a short 10–15 minute boat transfer south to the monument off Arakawabana Cape; the site is reached by boat only.",
     "lodging": [],
-    "operators": [],
+    "operators": [
+      {
+        "url": "https://www.yonaguni.ws/",
+        "isAffiliate": false,
+        "label": "Sou-Wester Diving",
+        "partner": "Official website"
+      }
+    ],
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Strong, often unpredictable currents along the outer face — most operators require Advanced Open Water and prior deep/drift experience. Bottom time is typically short (20–25 minutes) and the dive is run on a narrow tidal window; rough winter seas frequently cancel boats from December through February. Hammerhead dives are at separate sites along the same southwest coast (notably Hammerhead Rock, west of the monument) and are run as deep, current-heavy drifts at 20–35 m. Touching or breaking off any part of the monument is prohibited under Japanese cultural property guidance. Nearest recompression chamber is on Okinawa's main island; medevac from Yonaguni is air-only."
@@ -45073,7 +45119,14 @@
     "editorialRank": 68,
     "getThere": "Fly into Cabo Frio Airport (CFB), 25 minutes by road, or Rio de Janeiro Galeão (GIG), about 2.5 hours by car or bus. Dive boats leave from the Praia dos Anjos pier in the town of Arraial do Cabo; the site is a 20-minute ride toward Ilha de Cabo Frio.",
     "lodging": [],
-    "operators": [],
+    "operators": [
+      {
+        "url": "https://www.aquanaut.com.br/",
+        "isAffiliate": false,
+        "label": "Aquanaut Dive Center",
+        "partner": "Official website"
+      }
+    ],
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Cold-water upwelling from November to March can crash temperatures from 24°C to 14°C in a single day and slash visibility — bring a 7mm wetsuit (or drysuit if cold-sensitive) even in Brazilian summer. The Cabo Frio Biological Reserve covers the island; dive operators handle permits. Sea conditions on the outer face can get rough with southerly fronts in winter."
@@ -47317,7 +47370,14 @@
     "editorialRank": 78,
     "getThere": "There is no airport on Ogasawara. The only access is the Ogasawara Maru ferry from Takeshiba Pier in central Tokyo to Futami Port on Chichijima — a single ~24-hour sailing each way, departing about once a week. Round-trip itineraries are typically locked to a 5- or 6-day window between ferry sailings. Dolphin swim and watching tours depart Futami Port on small day boats; book ahead with local operators on the island.",
     "lodging": [],
-    "operators": [],
+    "operators": [
+      {
+        "url": "https://www.h2o-diving.com/",
+        "isAffiliate": false,
+        "label": "Ogasawara Diving Center",
+        "partner": "Official website"
+      }
+    ],
     "gearIds": [],
     "siteSpecificGear": [
       {
@@ -49749,7 +49809,34 @@
       "coral",
       "macro"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill Sea Turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Sweetlips",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nudibranch",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -50853,7 +50940,65 @@
       "geology",
       "large-pelagics"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Spinner Dolphin",
+        "scientificName": "Stenella longirostris",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip Reef Shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hammerhead Shark",
+        "scientificName": "Sphyrna lewini",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Manta Ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Humpback Whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -51043,7 +51188,36 @@
     "diveTypes": [
       "geology"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Blacktip Reef Shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip Reef Shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Humphead Wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant Grouper",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bumphead Parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moray Eel",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -52427,7 +52601,39 @@
       "coral",
       "large-pelagics"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Manta Ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale Shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "commonName": "Barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mantis Shrimp",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -52627,7 +52833,37 @@
       "large-pelagics",
       "macro"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Wobbegong Shark",
+        "scientificName": "Eucrossorhinus dasypogon",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Pygmy Seahorse",
+        "scientificName": "Hippocampus bargibanti",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Manta Ray",
+        "scientificName": "Mobula alfredi",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bumphead Parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Walking Shark",
+        "scientificName": "Hemiscyllium freycineti",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mantis Shrimp",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -52820,7 +53056,20 @@
     "diveTypes": [
       "geology"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Blind Cave Eel",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Cave Gudgeon",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Freshwater Shrimp",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -53018,7 +53267,25 @@
     "diveTypes": [
       "geology"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Eel-tailed Catfish",
+        "scientificName": "Tandanus tandanus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Australian Smelt",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Freshwater Crayfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Flathead Gudgeon",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -53425,7 +53692,21 @@
     "diveTypes": [
       "geology"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Freshwater Crayfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Flathead Gudgeon",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Eel-tailed Catfish",
+        "scientificName": "Tandanus tandanus",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -55028,7 +55309,33 @@
     "diveTypes": [
       "wrecks"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Bull Shark",
+        "scientificName": "Carcharhinus leucas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Coral Trout",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lionfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moray Eel",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -55228,7 +55535,35 @@
       "coral",
       "large-pelagics"
     ],
-    "species": [],
+    "species": [
+      {
+        "commonName": "Giant Trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef Shark",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Humphead Wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bumphead Parrotfish",
+        "scientificName": "Bolbometopon muricatum",
+        "reliability": "year-round"
+      }
+    ],
     "conditionsByMonth": [
       {
         "month": 1,
@@ -58524,7 +58859,20 @@
     "editorialRank": 74,
     "getThere": "Fly into Bocas del Toro 'Isla Colón' International Airport (BOC), reached via Panama City (PTY/Albrook). Tiger Rock is a full-day trip — a roughly 75-to-90-minute open-ocean boat run from Bocas Town on Isla Colón, offered only by advanced dive operators and only when seas are calm.",
     "lodging": [],
-    "operators": [],
+    "operators": [
+      {
+        "url": "https://www.bocasdivecenter.com/",
+        "isAffiliate": false,
+        "label": "Bocas Dive Center",
+        "partner": "Official website"
+      },
+      {
+        "url": "https://www.labugapanama.com/",
+        "isAffiliate": false,
+        "label": "La Buga Dive Center",
+        "partner": "Official website"
+      }
+    ],
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Advanced deep dive: 40 m-plus, strong current, far offshore with surface help a long way off — solid drift and deep-diving experience is essential. Only diveable in flat-calm conditions, primarily September-October with a secondary February-March window, so trips are weather-dependent and frequently cancelled. Part of the Cayos Tigre group; three pinnacles rise to just below or at the surface."
@@ -62152,7 +62500,14 @@
     "editorialRank": 74,
     "getThere": "Niue International Airport (IUE) at Alofi is served by Air New Zealand from Auckland (about 3.5 hours), with one to two flights a week. Dive operators based in Alofi run boats to the west-coast sites; Snake Gully lies roughly 30 metres off Avatele Beach on the southwest coast, a short ride from Alofi wharf, where boats are craned in and out because the island has no sheltered harbour.",
     "lodging": [],
-    "operators": [],
+    "operators": [
+      {
+        "url": "https://www.niuedive.com/",
+        "isAffiliate": false,
+        "label": "Niue Dive",
+        "partner": "Official website"
+      }
+    ],
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Katuali are highly venomous but non-aggressive — observe, never handle them. Niue has no recompression chamber, so dive conservatively; the nearest is in New Zealand. Boats launch by crane at Alofi wharf and trips depend on west-coast swell. Scuba is seasonal — the local operator typically closes from around December to February."

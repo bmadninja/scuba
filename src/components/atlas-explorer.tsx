@@ -71,6 +71,12 @@ function NoResults({
       onRemove: () => onChange({ ...filters, heat: [] }),
     });
   }
+  if (filters.animals.length) {
+    chips.push({
+      label: `Wildlife: ${filters.animals.join(", ")}`,
+      onRemove: () => onChange({ ...filters, animals: [] }),
+    });
+  }
   if (filters.freshOnly) {
     chips.push({
       label: "Needs fresh eyes only",

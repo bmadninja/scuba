@@ -16,3 +16,5 @@ export const getFishingPressureForLocation = (
 ): FishingPressureRecord | null => byLocationId.get(locationId) ?? null;
 
 export const getFishingPressureRadiusKm = (): number => data.radiusKm;
+
+export const getFishingPressureLastBuiltAt = (): string => data.lastBuiltAt;

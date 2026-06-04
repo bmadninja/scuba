@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
@@ -132,9 +131,8 @@ export default async function EncounterDetailPage({
   })();
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <>
       <JsonLd data={encounterSchema(e)} />
-      <SiteHeader />
 
       {e.heroImageUrl ? (
         /* eslint-disable-next-line @next/next/no-img-element */
@@ -145,12 +143,13 @@ export default async function EncounterDetailPage({
         />
       ) : null}
 
-      <main className="mx-auto w-full max-w-4xl px-6 py-12">
+      <div className="mx-auto w-full max-w-6xl px-6 py-12">
+      <div className="mx-auto w-full max-w-4xl">
         <Link
-          href="/#bucket-list"
+          href="/encounters"
           className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 hover:text-[#0089de]"
         >
-          ← Back to planner
+          ← Encounters
         </Link>
         <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
           {e.category.replace(/-/g, " ")}
@@ -466,8 +465,9 @@ export default async function EncounterDetailPage({
             </div>
           </Section>
         ) : null}
-      </main>
-    </div>
+      </div>
+      </div>
+    </>
   );
 }
 

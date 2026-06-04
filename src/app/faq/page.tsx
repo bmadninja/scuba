@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,10 +9,8 @@ export const metadata: Metadata = {
 
 export default function FaqPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <SiteHeader activeHref="/faq" />
-
-      <main className="mx-auto w-full max-w-3xl px-6 py-12">
+    <div className="mx-auto w-full max-w-6xl px-6 py-12">
+      <div className="mx-auto w-full max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
           FAQ
         </p>
@@ -265,7 +262,7 @@ export default function FaqPage() {
             More about how we work →
           </Link>
         </p>
-      </main>
+      </div>
     </div>
   );
 }

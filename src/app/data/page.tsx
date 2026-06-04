@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SiteHeader } from "@/components/site-header";
 import sourcesData from "@/data/sources.json";
 import methodologiesData from "@/data/methodologies.json";
 
@@ -66,10 +65,8 @@ const REGION_BASELINES: Array<{
 
 export default function DataPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <SiteHeader activeHref="/data" />
-
-      <main className="mx-auto w-full max-w-3xl px-6 py-12">
+    <div className="mx-auto w-full max-w-6xl px-6 py-12">
+      <div className="mx-auto w-full max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
           Reef data
         </p>
@@ -372,7 +369,7 @@ export default function DataPage() {
           </a>
           .
         </p>
-      </main>
+      </div>
     </div>
   );
 }

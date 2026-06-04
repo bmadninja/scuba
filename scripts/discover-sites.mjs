@@ -32,7 +32,13 @@ const SITES_PATH = resolve(ROOT, "src/data/sites.json");
 const LOCATIONS_PATH = resolve(ROOT, "src/data/locations.json");
 const PROPOSED_PATH = resolve(ROOT, "src/data/sites.proposed.json");
 
-const MODEL = process.env.MODEL ?? "claude-opus-4-7";
+// Cost-tiered models. The daily scheduled run uses cheap defaults (Sonnet for
+// the research write, Haiku for the gap pick + self-review). The blitz workflow
+// sets MODEL=claude-opus-4-7, which overrides both tiers back to Opus for the
+// big manual push where quality matters more than per-run cost.
+const MODEL = process.env.MODEL; // legacy global override (blitz sets this); may be undefined
+const MODEL_RESEARCH = process.env.MODEL_RESEARCH ?? MODEL ?? "claude-sonnet-4-6";
+const MODEL_LIGHT = process.env.MODEL_LIGHT ?? MODEL ?? "claude-haiku-4-5-20251001";
 const DRY_RUN = process.env.DRY_RUN === "1";
 const BLITZ = process.env.BLITZ === "1";
 const MAX_SITES = Number(process.env.MAX_SITES ?? "1");
@@ -126,10 +132,10 @@ async function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function callClaude({ system, messages, tools, max_tokens = 8000 }) {
+async function callClaude({ system, messages, tools, max_tokens = 8000, model = MODEL_RESEARCH }) {
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
-      return await client.messages.create({ model: MODEL, max_tokens, system, messages, tools });
+      return await client.messages.create({ model, max_tokens, system, messages, tools });
     } catch (err) {
       const isOverloaded = err.status === 529 || err.status === 529;
       const isRateLimit = err.status === 429;
@@ -196,6 +202,7 @@ Return JSON: { "locationId": "...", "candidateName": "...", "reasoning": "..." }
     system: sys,
     messages: [{ role: "user", content: user }],
     max_tokens: 1000,
+    model: MODEL_LIGHT,
   });
   return extractJson(collectText(resp.content));
 }
@@ -236,7 +243,7 @@ If you cannot corroborate the site (≥3 sources), respond with: \`\`\`json
   const messages = [{ role: "user", content: user }];
   let lastResp = null;
   for (let i = 0; i < 20; i++) {
-    const resp = await callClaude({ system: sys, messages, tools, max_tokens: 16000 });
+    const resp = await callClaude({ system: sys, messages, tools, max_tokens: 16000, model: MODEL_RESEARCH });
     lastResp = resp;
     messages.push({ role: "assistant", content: resp.content });
     console.log(`  [turn ${i}] stop=${resp.stop_reason} blocks=${resp.content.map((c) => c.type).join(",")}`);
@@ -284,6 +291,7 @@ Score <0.8 if: coordinates seem off, species list looks generic, depth range imp
     system: sys,
     messages: [{ role: "user", content: "Entry:\n" + JSON.stringify(entry, null, 2) }],
     max_tokens: 800,
+    model: MODEL_LIGHT,
   });
   return extractJson(collectText(resp.content));
 }
@@ -337,7 +345,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`Mode: ${BLITZ ? "BLITZ (direct push)" : DRY_RUN ? "DRY_RUN" : "PR"} | model: ${MODEL} | max: ${MAX_SITES}${REGION_FOCUS ? ` | region: ${REGION_FOCUS}` : ""}`);
+  console.log(`Mode: ${BLITZ ? "BLITZ (direct push)" : DRY_RUN ? "DRY_RUN" : "PR"} | research: ${MODEL_RESEARCH} | light: ${MODEL_LIGHT} | max: ${MAX_SITES}${REGION_FOCUS ? ` | region: ${REGION_FOCUS}` : ""}`);
 
   const accepted = [];
   let consecutiveFails = 0;

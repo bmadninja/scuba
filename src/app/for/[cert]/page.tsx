@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
 import { certLandingSchema } from "@/lib/schema-org";
 import { getAllLocations } from "@/lib/data/locations";
@@ -132,7 +131,7 @@ export default async function CertLandingPage({
   const isBeginnerSafety = cert === "never-dived" || cert === "open-water";
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <>
       <JsonLd
         data={certLandingSchema({
           cert,
@@ -144,9 +143,9 @@ export default async function CertLandingPage({
           })),
         })}
       />
-      <SiteHeader />
 
-      <main className="mx-auto w-full max-w-5xl px-6 py-12">
+      <div className="mx-auto w-full max-w-6xl px-6 py-12">
+      <div className="mx-auto w-full max-w-5xl">
         <Link
           href="/sites"
           className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 hover:text-[#0089de]"
@@ -265,26 +264,6 @@ export default async function CertLandingPage({
           </section>
         ) : null}
 
-        <section className="mt-8 border-t border-slate-200 pt-6">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
-            Plan a trip
-          </h2>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <Link
-              href={`/plan?cert=${cert}`}
-              className="rounded-full bg-[#0089de] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0070c0]"
-            >
-              Build a trip at this level →
-            </Link>
-            <Link
-              href={`/sites?cert=${cert}`}
-              className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-[#0089de] hover:text-[#0089de]"
-            >
-              Browse all sites for {label} →
-            </Link>
-          </div>
-        </section>
-
         <section className="mt-10 border-t border-slate-200 pt-6">
           <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
             Methodology
@@ -304,7 +283,8 @@ export default async function CertLandingPage({
             </p>
           </details>
         </section>
-      </main>
-    </div>
+      </div>
+      </div>
+    </>
   );
 }
