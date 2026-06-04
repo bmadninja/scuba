@@ -15,9 +15,11 @@ type SearchEntry = {
 };
 
 const NAV = [
-  { href: "/", label: "Atlas", key: "atlas" },
-  { href: "/data", label: "Method", key: "method" },
-  { href: "/about", label: "About", key: "about" },
+  { href: "/",      label: "Atlas",  key: "atlas"  },
+  { href: "/sites", label: "Sites",  key: "sites"  },
+  { href: "/gear",  label: "Gear",   key: "gear"   },
+  { href: "/data",  label: "Method", key: "method" },
+  { href: "/about", label: "About",  key: "about"  },
 ];
 
 const STATE_TEXT: Record<string, string> = {

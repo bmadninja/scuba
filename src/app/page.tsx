@@ -23,22 +23,22 @@ export const metadata: Metadata = {
 };
 
 // Top 3 featured destinations for the inspiration grid
-const FEATURED_SLUGS = ["raja-ampat", "palau", "azores"];
+const FEATURED_SLUGS = ["raja-ampat-indonesia", "blue-corner-palau", "azores-portugal"];
 
 // Animal tags per featured slug (curated for inspiration grid)
 const ANIMAL_TAGS: Record<string, string[]> = {
-  "raja-ampat": ["Sharks", "Mantas"],
-  palau: ["Sharks", "Jellyfish"],
-  azores: ["Dolphins", "Whales"],
+  "raja-ampat-indonesia": ["Sharks", "Mantas"],
+  "blue-corner-palau": ["Sharks", "Jellyfish"],
+  "azores-portugal": ["Dolphins", "Whales"],
 };
 
 // Destination gradient backgrounds
 const DEST_GRADIENT: Record<string, string> = {
-  "raja-ampat":
+  "raja-ampat-indonesia":
     "linear-gradient(160deg, #041c33 0%, #063a52 25%, #065a66 45%, #086b7a 65%, #0a7a6b 100%)",
-  palau:
+  "blue-corner-palau":
     "linear-gradient(155deg, #031522 0%, #042338 25%, #064466 50%, #0a6b8a 75%, #0b829f 100%)",
-  azores:
+  "azores-portugal":
     "linear-gradient(150deg, #0a1f38 0%, #0d2e4e 30%, #103a5e 55%, #124870 80%, #0f3d61 100%)",
   default:
     "linear-gradient(155deg, #0b1e32 0%, #0d2e4e 30%, #0e3d5e 60%, #094a6a 100%)",
@@ -220,6 +220,7 @@ export default function Home() {
 
         {/* Hero content — pinned to bottom with flex-end */}
         <div
+          className="home-hero-content"
           style={{
             position: "relative",
             zIndex: 10,
@@ -227,7 +228,6 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-end",
-            padding: "0 3rem 5.5rem",
             maxWidth: 1320,
             margin: "0 auto",
           }}
@@ -354,17 +354,15 @@ export default function Home() {
 
       {/* ─── REEF STATES ─────────────────────────────────────────── */}
       <section
-        style={{ background: "#0b1e32", padding: "5rem 3rem" }}
+        className="home-section-pad"
+        style={{ background: "#0b1e32" }}
         aria-label="Reef states"
       >
         <div
+          className="home-reef-states-grid"
           style={{
             maxWidth: 1320,
             margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 1.1fr",
-            gap: "5rem",
-            alignItems: "center",
           }}
         >
           <div>
@@ -526,9 +524,9 @@ export default function Home() {
       {/* ─── INSPIRATION GRID ─────────────────────────────────────── */}
       {inspirationLocs.length >= 2 && (
         <section
+          className="home-section-pad-b"
           style={{
             background: "#0b1e32",
-            padding: "0 3rem 5rem",
             borderBottom: "1px solid rgba(255,255,255,0.06)",
           }}
           aria-label="Featured destinations"
@@ -583,15 +581,7 @@ export default function Home() {
             </div>
 
             {/* 2-column asymmetric grid: large featured left + 2 stacked right */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1.65fr 1fr",
-                gap: "1rem",
-                borderRadius: "1.25rem",
-                overflow: "hidden",
-              }}
-            >
+            <div className="home-inspire-grid">
               {/* Large featured card */}
               {(() => {
                 const loc = inspirationLocs[0]!;
@@ -869,7 +859,8 @@ export default function Home() {
       <section
         id="atlas"
         aria-label="Atlas explorer"
-        style={{ background: "#ffffff", padding: "5rem 3rem" }}
+        className="home-section-pad"
+        style={{ background: "#ffffff" }}
       >
         <div style={{ maxWidth: 1320, margin: "0 auto" }}>
           {/* Explorer header */}
@@ -934,20 +925,17 @@ export default function Home() {
       {/* ─── NUMBERS / EDITORIAL STATS ───────────────────────────── */}
       <section
         aria-label="About the data"
+        className="home-section-pad"
         style={{
           background: "#f8fafc",
           borderTop: "1px solid #e2e8f0",
-          padding: "4rem 3rem",
         }}
       >
         <div
+          className="home-stats-grid"
           style={{
             maxWidth: 1320,
             margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "3rem",
-            alignItems: "start",
           }}
         >
           {/* 38 data sources */}

@@ -16,6 +16,8 @@ import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getWrecksBySiteId } from "@/lib/data/wrecks";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
+import { AffiliateLink } from "@/components/affiliate-link";
+import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { Site } from "@/lib/data/types";
 
 const MONTH_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -525,7 +527,7 @@ export default async function SiteDetailPage({
                 marginBottom: "0.75rem",
               }}
             >
-              What you&rsquo;ll see
+              What you&apos;ll see
             </p>
             <h2
               style={{
@@ -626,10 +628,18 @@ export default async function SiteDetailPage({
                               fontSize: "0.6875rem",
                               fontStyle: "italic",
                               color: "#64748b",
-                              marginBottom: "0.5rem",
+                              marginBottom: "0.25rem",
                             }}
                           >
                             {c.scientificName}
+                          </p>
+                        ) : null}
+                        {c.reliability ? (
+                          <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: c.reliability === "year-round" ? "#10b981" : c.reliability === "seasonal" ? "#f59e0b" : "#94a3b8", marginBottom: "0.25rem" }}>
+                            {c.reliability}
+                            {c.reliability === "seasonal" && c.bestMonths && c.bestMonths.length > 0
+                              ? ` · Peak: ${c.bestMonths.map((m) => MONTH_ABBR[m - 1]).join(", ")}`
+                              : null}
                           </p>
                         ) : null}
                         {c.lastConfirmedAt ? (
@@ -993,6 +1003,92 @@ export default async function SiteDetailPage({
               />
             </div>
 
+            {/* ── SEASON CALENDAR ── */}
+            <section style={{ marginTop: "2.5rem", marginBottom: "2.5rem" }}>
+              <p
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#64748b",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                Season calendar
+              </p>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(12, 1fr)",
+                  gap: "0.25rem",
+                }}
+              >
+                {MONTH_ABBR.map((abbr, i) => {
+                  const active = site.bestMonths.includes(i + 1);
+                  return (
+                    <div
+                      key={abbr}
+                      style={{
+                        textAlign: "center",
+                        borderRadius: "0.5rem",
+                        padding: "0.5rem 0.25rem",
+                        background: active ? "rgba(0,137,222,0.12)" : "#f1f7fb",
+                        border: active ? "1px solid rgba(0,137,222,0.25)" : "1px solid #e2e8f0",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: "0.625rem",
+                          fontWeight: active ? 700 : 500,
+                          color: active ? "#0089de" : "#94a3b8",
+                          display: "block",
+                        }}
+                      >
+                        {abbr}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+              <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.625rem" }}>
+                Highlighted months = recommended season ({bestMonthsRange})
+              </p>
+            </section>
+
+            {/* ── GEAR ── */}
+            <section style={{ marginTop: "2.5rem", marginBottom: "2.5rem" }}>
+              <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.75rem" }}>
+                Gear
+              </p>
+              <h2 style={{ fontSize: "1.375rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#0f172a", marginBottom: "1.25rem" }}>
+                What to pack
+              </h2>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                <div style={{ border: "1px solid #e2e8f0", borderRadius: "1rem", padding: "1.25rem" }}>
+                  <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#0089de", marginBottom: "0.5rem" }}>Tier A — base kit</p>
+                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "#334155" }}>
+                    Mask, fins, wetsuit, BCD, regulator, dive computer, SMB. Everything you need for any reef dive.
+                  </p>
+                </div>
+                <div style={{ border: "1px solid #e2e8f0", borderRadius: "1rem", padding: "1.25rem" }}>
+                  <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.5rem" }}>Tier B — site-specific</p>
+                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "#334155" }}>
+                    {site.diveTypes.includes("large-pelagics")
+                      ? "Wide-angle lens, blue-water focus, reef hook for current dives."
+                      : site.diveTypes.includes("macro")
+                      ? "Macro lens, focus light, strobe with snoot."
+                      : site.diveTypes.includes("wrecks")
+                      ? "Torch, wreck reel, penetration training recommended."
+                      : "Camera system matched to the site's signature subjects."}
+                  </p>
+                </div>
+              </div>
+              <p style={{ marginTop: "0.75rem", fontSize: "0.75rem", color: "#64748b" }}>
+                Full gear recommendations on the <Link href="/gear" style={{ color: "#0089de", textDecoration: "none" }}>Gear page</Link>.
+              </p>
+            </section>
+
             {/* ── HOW TO DIVE THIS SITE ── */}
             <HowToDiveSection site={site} />
 
@@ -1009,7 +1105,7 @@ export default async function SiteDetailPage({
                     marginBottom: "0.75rem",
                   }}
                 >
-                  About this site
+                  Overview
                 </p>
                 {site.description ? (
                   <p
@@ -1444,19 +1540,18 @@ export default async function SiteDetailPage({
                           {op.isAffiliate ? " · affiliate" : ""}
                         </p>
                       </div>
-                      <a
-                        href={op.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
-                          color: op.isAffiliate ? "#0089de" : "#64748b",
-                          textDecoration: "none",
-                        }}
+                      <AffiliateLink
+                        url={op.url}
+                        event="operator_click"
+                        partner={op.label}
+                        siteId={site.id}
+                        isAffiliate={!!op.isAffiliate}
+                        className="shrink-0"
                       >
-                        {op.isAffiliate ? "Book →" : "Visit →"}
-                      </a>
+                        <span style={{ fontSize: "0.75rem", fontWeight: 600, color: op.isAffiliate ? "#0089de" : "#64748b", textDecoration: "none" }}>
+                          {op.isAffiliate ? "Book →" : "Visit →"}
+                        </span>
+                      </AffiliateLink>
                     </div>
                   ))
                 ) : location ? (
@@ -1479,6 +1574,63 @@ export default async function SiteDetailPage({
                     </p>
                   </div>
                 )}
+              </div>
+              {operators.some((op) => op.isAffiliate) && (
+                <div style={{ padding: "0.75rem 1.375rem" }}>
+                  <AffiliateDisclosure />
+                </div>
+              )}
+            </div>
+
+            {/* ── PLAN YOUR TRIP ── */}
+            <div
+              style={{
+                border: "1px solid #e2e8f0",
+                borderRadius: "1.25rem",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  padding: "1rem 1.375rem",
+                  borderBottom: "1px solid #e2e8f0",
+                  background: "#f1f7fb",
+                }}
+              >
+                <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>
+                  Plan your trip
+                </p>
+              </div>
+              <div style={{ padding: 0 }}>
+                {[
+                  {
+                    label: "Getting there",
+                    text: site.getThere || (location ? `Fly into the nearest airport and arrange a transfer to ${location.name}.` : "Check with local operators for access details."),
+                  },
+                  {
+                    label: "Where to stay",
+                    text: location ? `Accommodation options range from budget guesthouses to liveaboards based out of ${location.name}.` : "Options range from budget guesthouses to liveaboards.",
+                  },
+                  {
+                    label: "Who to dive with",
+                    text: operators.length > 0 ? `${operators[0].label}${operators.length > 1 ? ` and ${operators.length - 1} other operator${operators.length > 2 ? "s" : ""} run` : " runs"} this site.` : "Check the location page for vetted local operators.",
+                  },
+                ].map(({ label, text }) => (
+                  <div
+                    key={label}
+                    style={{
+                      padding: "0.875rem 1.375rem",
+                      borderBottom: "1px solid #f1f5f9",
+                    }}
+                  >
+                    <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.25rem" }}>
+                      {label}
+                    </p>
+                    <p style={{ fontSize: "0.8125rem", lineHeight: 1.55, color: "#334155" }}>
+                      {text}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
