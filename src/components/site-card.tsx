@@ -4,13 +4,8 @@ import {
   getHeadlineSightingForSite,
 } from "@/lib/data/sightings";
 import { underwaterPhotoUrl } from "@/lib/photo-quality";
+import { EvidenceDot } from "@/components/evidence-dot";
 import type { Location, Site } from "@/lib/data/types";
-
-const CONFIDENCE_DOT: Record<"high" | "medium" | "low", string> = {
-  high: "bg-emerald-500",
-  medium: "bg-amber-500",
-  low: "bg-orange-500",
-};
 
 export function SiteCard({
   site,
@@ -54,14 +49,17 @@ export function SiteCard({
         <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">
           {site.description}
         </p>
+
+        {/* Sighting evidence row — never blank */}
         {sighting ? (
           <p
             className="mt-2 flex items-center gap-1.5 text-[11px] leading-5 text-slate-600"
             title={`Confidence: ${sighting.confidence}. Based on ${sighting.recentRecordCount} confirmed records within ${sighting.proximityRadiusKm} km of this site.`}
           >
-            <span
-              className={`inline-block size-1.5 shrink-0 rounded-full ${CONFIDENCE_DOT[sighting.confidence]}`}
-              aria-hidden
+            {/* dot only — species name provides the label context */}
+            <EvidenceDot
+              confidence={sighting.confidence}
+              showLabel={false}
             />
             <span className="truncate">
               <span className="font-semibold text-slate-700">
@@ -71,17 +69,13 @@ export function SiteCard({
             </span>
           </p>
         ) : (
-          <p
-            className="mt-2 flex items-center gap-1.5 text-[11px] leading-5 text-slate-500"
-            title="No confirmed occurrence records clustered near this site yet. We are backfilling sighting evidence site by site."
-          >
-            <span
-              className="inline-block size-1.5 shrink-0 rounded-full bg-slate-300"
-              aria-hidden
-            />
-            <span className="truncate">Sighting evidence pending</span>
-          </p>
+          <EvidenceDot
+            confidence={null}
+            showTooltip
+            className="mt-2 text-[11px] leading-5 text-slate-500"
+          />
         )}
+
         <div className="mt-3 flex flex-wrap items-center gap-1.5">
           <span className="inline-block rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-700">
             {site.depthRange.min}–{site.depthRange.max} m

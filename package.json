@@ -10,6 +10,7 @@
     "migrate": "node --experimental-strip-types scripts/migrate.ts",
     "verify:stories": "node scripts/verify-stories.mjs",
     "validate:provenance": "node scripts/validate-provenance.mjs",
+    "validate:evidence": "node scripts/validate-evidence-coverage.mjs",
     "audit:data": "node scripts/audit-data-provenance.mjs",
     "audit:independence": "node scripts/audit-editorial-independence.mjs",
     "discover:dry": "DRY_RUN=1 node scripts/discover-sites.mjs",
