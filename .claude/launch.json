@@ -16,5 +16,12 @@
       "autoPort": true,
       "cwd": ".claude/worktrees/stoic-johnson-c825a5"
     }
+  ,{
+      "name": "mockups",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4444"],
+      "port": 4444,
+      "cwd": "_bmad-output/planning-artifacts/ux-designs/ux-scuba-2026-06-03/mockups"
+    }
   ]
 }
