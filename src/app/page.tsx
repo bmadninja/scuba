@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Suspense } from "react";
 import { AtlasExplorer } from "@/components/atlas-explorer";
 import type { FilterLocation } from "@/components/atlas-filter-rail";
@@ -8,6 +9,10 @@ import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { getAllLocations } from "@/lib/data/locations";
 import { STATE_DEF } from "@/lib/data/reef-state";
 import sourcesData from "@/data/sources.json";
+
+// Homepage hero — reef manta ray at Raja Ampat. CC BY 2.0 · iNaturalist / Wikimedia Commons
+const HERO_IMAGE_URL =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Reef_manta_ray_%28Manta_alfredi%29_-_49878449092.jpg/3840px-Reef_manta_ray_%28Manta_alfredi%29_-_49878449092.jpg";
 
 export const metadata: Metadata = {
   title: "scubaSeason.fun — a data atlas for the living ocean",
@@ -151,17 +156,24 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
-        {/* Background gradient */}
+        {/* Hero photo — reef manta ray, Raja Ampat */}
+        <Image
+          src={HERO_IMAGE_URL}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover", objectPosition: "center 40%" }}
+          aria-hidden="true"
+        />
+        {/* Dark overlay so text stays legible */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
             inset: 0,
-            background: `
-              radial-gradient(ellipse 70% 55% at 65% 25%, rgba(0,137,222,0.2) 0%, transparent 65%),
-              radial-gradient(ellipse 45% 35% at 30% 60%, rgba(0,184,212,0.12) 0%, transparent 60%),
-              linear-gradient(175deg, #021422 0%, #041c33 18%, #052745 38%, #073060 55%, #052540 72%, #031928 100%)
-            `,
+            background:
+              "linear-gradient(175deg, rgba(2,20,34,0.82) 0%, rgba(4,28,51,0.75) 30%, rgba(5,39,69,0.65) 55%, rgba(5,37,64,0.75) 72%, rgba(3,25,40,0.85) 100%)",
           }}
         />
         {/* Caustic ray texture */}
@@ -171,19 +183,9 @@ export default function Home() {
             position: "absolute",
             inset: 0,
             backgroundImage: `
-              repeating-linear-gradient(96deg, transparent 0px, transparent 44px, rgba(0,160,220,0.035) 44px, rgba(0,160,220,0.035) 47px),
-              repeating-linear-gradient(84deg, transparent 0px, transparent 70px, rgba(0,200,230,0.025) 70px, rgba(0,200,230,0.025) 73px)
+              repeating-linear-gradient(96deg, transparent 0px, transparent 44px, rgba(0,160,220,0.025) 44px, rgba(0,160,220,0.025) 47px),
+              repeating-linear-gradient(84deg, transparent 0px, transparent 70px, rgba(0,200,230,0.015) 70px, rgba(0,200,230,0.015) 73px)
             `,
-          }}
-        />
-        {/* Radial vignette */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(ellipse 120% 100% at 50% 50%, transparent 40%, rgba(2,12,24,0.6) 100%)",
           }}
         />
         {/* Bottom fade into reef states section */}
@@ -231,7 +233,7 @@ export default function Home() {
             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
             <circle cx="12" cy="13" r="4" />
           </svg>
-          Photo · Raja Ampat, West Papua
+          Photo · Reef manta ray, Raja Ampat · CC BY 2.0
         </div>
 
         {/* Hero content — pinned to bottom with flex-end */}

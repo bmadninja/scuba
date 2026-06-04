@@ -99,7 +99,6 @@ export function AtlasFooter() {
                 { href: "/sites", label: "Dive sites" },
                 { href: "/data", label: "Method" },
                 { href: "/about", label: "About" },
-                { href: "/faq", label: "FAQ" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
