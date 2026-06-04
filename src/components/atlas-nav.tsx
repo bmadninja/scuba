@@ -82,7 +82,6 @@ export function AtlasNav({ entries = [] }: { entries?: SearchEntry[] }) {
       if (r) {
         go(r);
       } else if (q.trim()) {
-        // No selection — route to search results page
         setOpen(false);
         router.push(`/search?q=${encodeURIComponent(q.trim())}`);
         setQ("");
@@ -93,21 +92,27 @@ export function AtlasNav({ entries = [] }: { entries?: SearchEntry[] }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-[1320px] items-center gap-6 px-7 py-3">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur">
+      <div
+        className="mx-auto flex max-w-[1320px] items-center"
+        style={{ padding: "1rem 3rem", gap: "2rem" }}
+      >
         <Link href="/" className="shrink-0" aria-label="scubaSeason.fun — home">
           <Logo size={28} />
         </Link>
 
-        <div ref={wrapRef} className="relative ml-auto w-full max-w-sm">
-          <div className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
+        <div ref={wrapRef} className="relative ml-auto" style={{ width: "100%", maxWidth: "300px" }}>
+          <div
+            className="pointer-events-none absolute inset-y-0 flex items-center"
+            style={{ left: "0.875rem", color: "rgba(0,0,0,0.35)" }}
+          >
             <svg
-              width="16"
-              height="16"
+              width="14"
+              height="14"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden
@@ -128,7 +133,11 @@ export function AtlasNav({ entries = [] }: { entries?: SearchEntry[] }) {
             onKeyDown={onKeyDown}
             placeholder="Search reefs by name, country or region"
             aria-label="Search reefs"
-            className="w-full rounded-full border border-slate-200 bg-[#f1f7fb] py-2 pl-9 pr-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-[#0089de] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0089de]/30"
+            className="w-full rounded-full border border-slate-200 bg-[#f1f7fb] pr-4 text-slate-900 placeholder:text-slate-400 focus:border-[#0089de] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0089de]/30"
+            style={{
+              padding: "0.5rem 1rem 0.5rem 2.5rem",
+              fontSize: "0.8125rem",
+            }}
           />
 
           {open && query && (
@@ -167,16 +176,21 @@ export function AtlasNav({ entries = [] }: { entries?: SearchEntry[] }) {
           )}
         </div>
 
-        <nav className="hidden shrink-0 items-center gap-1 sm:flex" aria-label="Main navigation">
+        <nav
+          className="hidden shrink-0 items-center sm:flex"
+          style={{ gap: "0.125rem" }}
+          aria-label="Main navigation"
+        >
           {NAV.map((n) => (
             <Link
               key={n.key}
               href={n.href}
-              className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-colors ${
                 active === n.key
                   ? "text-[#0089de]"
-                  : "text-slate-700 hover:text-[#0089de]"
+                  : "text-slate-700 hover:text-slate-900"
               }`}
+              style={{ padding: "0.45rem 0.875rem" }}
             >
               {n.label}
             </Link>

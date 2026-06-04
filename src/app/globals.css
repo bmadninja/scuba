@@ -719,6 +719,38 @@
 .atlas-crumb a:hover { color: var(--atlas-ink); }
 .atlas-crumb .sep { color: var(--atlas-hairline-str); }
 
+/* ── Sites catalogue ─────────────────────────────────────────── */
+.site-card-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(16,40,70,.04), 0 18px 36px -12px rgba(16,40,70,.17) !important;
+  border-color: rgba(0,137,222,0.25) !important;
+}
+.site-card-link:hover .site-card-name {
+  color: #0089de;
+}
+.site-card-link:hover .site-card-img {
+  transform: scale(1.04);
+}
+
+/* Dropdown chips: show the dropdown panel on parent hover */
+.filter-dropdown-wrap:hover .filter-dropdown-menu {
+  display: block !important;
+}
+/* Keep the dropdown open while hovering the menu itself */
+.filter-dropdown-menu:hover {
+  display: block !important;
+}
+
+/* Dark glass search input focus ring */
+header input[type="search"]:focus {
+  border-color: rgba(255,255,255,0.35) !important;
+  background: rgba(255,255,255,0.12) !important;
+}
+/* Remove webkit search cancel button styling */
+header input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
 /* ── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .atlas-hero { grid-template-columns: 1fr; }

@@ -1,375 +1,677 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import sourcesData from "@/data/sources.json";
-import methodologiesData from "@/data/methodologies.json";
 
 export const metadata: Metadata = {
-  title: "Reef data — what's live, what's a snapshot, what we can't see",
+  title: "Method — what's live, what's a snapshot, what we can't see",
   description:
-    "Plain English data freshness for scubaSeason.fun. NOAA Coral Reef Watch is live nightly; coral cover is a snapshot from named monitoring programs; some things we can't honestly show today.",
+    "Plain English data freshness for scubaSeason.fun. NOAA Coral Reef Watch is live nightly; coral cover is a snapshot from named monitoring programs.",
 };
-
-type Source = {
-  id: string;
-  name: string;
-  url?: string;
-  publisher?: string;
-  sourceType?: string;
-  license?: string;
-  notes?: string;
-};
-
-type Methodology = {
-  claimId: string;
-  claimType: string;
-  sourceIds: string[];
-  confidence?: string;
-  limitations?: string;
-  lastReviewedAt?: string;
-};
-
-const sources = sourcesData as Source[];
-const methodologies = methodologiesData as Methodology[];
-
-const REGION_BASELINES: Array<{
-  region: string;
-  baseline: string;
-  note: string;
-}> = [
-  {
-    region: "Great Barrier Reef (Australia)",
-    baseline: "1986",
-    note: "AIMS Long Term Monitoring Program — the longest continuous reef survey record on Earth, going back to 1986. Annual cover updates per sector.",
-  },
-  {
-    region: "Florida Keys & Caribbean US",
-    baseline: "1995",
-    note: "NOAA NCRMP + earlier Florida Reef Tract programs. Coverage solid since the mid 1990s; AGRRA fills wider Caribbean from ~1998.",
-  },
-  {
-    region: "US Pacific (Hawaiʻi, Marianas, American Samoa)",
-    baseline: "2012",
-    note: "NCRMP Pacific cycle began in 2012. Earlier site level data exists but isn't standardized into a continuous time series.",
-  },
-  {
-    region: "Indo Pacific (most sites)",
-    baseline: "2014",
-    note: "Most Indo Pacific reefs outside named jurisdictions only have a baseline from the start of the Third Global Coral Bleaching Event (2014–2017), when international monitoring effort spiked. For many sites that's the first quantitative measurement on record.",
-  },
-  {
-    region: "Western Indian Ocean & many remote reefs",
-    baseline: "Single survey",
-    note: "Some sites have one survey ever. Treat the displayed cover as a single observation, not a trend.",
-  },
-];
 
 export default function DataPage() {
   return (
-    <div className="mx-auto w-full max-w-6xl px-6 py-12">
-      <div className="mx-auto w-full max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-          Reef data
-        </p>
-        <h1 className="mt-1 text-4xl font-bold tracking-tight text-slate-900">
-          What&rsquo;s live, what&rsquo;s a snapshot, what we can&rsquo;t see
-        </h1>
-        <p className="mt-4 text-base leading-7 text-slate-700">
-          scubaSeason mixes daily satellite data with much older in water
-          survey snapshots. The labels next to every reef number on the site
-          tell you which is which. This page lays out the whole picture.
-        </p>
-
-        <section id="live" className="mt-12 scroll-mt-24">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            What&rsquo;s live every day
-          </h2>
-          <div className="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-800">
-              NOAA Coral Reef Watch · 5&nbsp;km · v3.1
-            </p>
-            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[14px] leading-6 text-slate-800">
-              <li>
-                Bleaching Alert Area (no stress / watch / warning / alert 1
-                / alert 2).
-              </li>
-              <li>Degree Heating Weeks (°C weeks of accumulated heat).</li>
-              <li>SST anomaly vs. climatology (°C).</li>
-            </ul>
-            <p className="mt-3 text-[13px] leading-6 text-slate-700">
-              Pulled nightly from NOAA&rsquo;s public ERDDAP endpoint
-              against the lat/lng of every reef location on the site. Public
-              domain, no API key.{" "}
-              <a
-                href="https://coralreefwatch.noaa.gov/"
-                className="text-[#0089de] hover:underline"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                NOAA Coral Reef Watch →
-              </a>
-            </p>
-          </div>
-        </section>
-
-        <section id="snapshot" className="mt-12 scroll-mt-24">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            What&rsquo;s a snapshot
-          </h2>
-          <p className="mt-3 text-base leading-7 text-slate-700">
-            Coral cover, bleaching %, fishing pressure, and historical
-            baselines come from periodic data products — not continuous
-            feeds. The freshness varies by region — and that variance is
-            itself a fact worth knowing before you read the number.
-          </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-900">
-                NCRMP + AGRRA · coral cover
-              </p>
-              <p className="mt-2 text-[13px] leading-6 text-slate-800">
-                Jurisdiction-mean coral cover from NOAA&rsquo;s National
-                Coral Reef Monitoring Program (US Atlantic + Pacific) and
-                AGRRA (wider Caribbean). Reported at the jurisdiction
-                scale, not the single dive site. Refreshed when a new
-                biennial report is published.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-900">
-                Global Fishing Watch · visible fishing
-              </p>
-              <p className="mt-2 text-[13px] leading-6 text-slate-800">
-                Apparent fishing-effort hours within 50&nbsp;km of a dive
-                location, AIS-derived. Small artisanal boats and any
-                vessel running dark are not visible to GFW — a low number
-                is not evidence of low pressure in artisanal-dominated
-                regions.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-900">
-                IUCN Red List · species threat category
-              </p>
-              <p className="mt-2 text-[13px] leading-6 text-slate-800">
-                Each species page shows the current IUCN category
-                (Critically Endangered, Endangered, Vulnerable, etc.) with
-                population trend and last-assessed year. The category is a{" "}
-                <strong>global</strong> extinction-risk classification —
-                local abundance at a dive site can be very different.
-              </p>
-            </div>
-          </div>
-          <p className="mt-5 text-base leading-7 text-slate-700">
-            And alongside the published programs above, per-site coral
-            cover snapshots from AIMS LTMP / Reef Life Survey / GBRMPA Eye
-            on the Reef remain the historical baseline for our older
-            reef-health records. Their freshness varies by region:
-          </p>
-          <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200">
-            <table className="w-full text-left text-[13.5px]">
-              <thead className="bg-slate-50 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-600">
-                <tr>
-                  <th className="px-4 py-2.5">Region</th>
-                  <th className="px-4 py-2.5">Earliest reliable baseline</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200">
-                {REGION_BASELINES.map((row) => (
-                  <tr key={row.region} className="align-top">
-                    <td className="px-4 py-3 font-semibold text-slate-900">
-                      {row.region}
-                      <p className="mt-1 text-[12px] font-normal leading-5 text-slate-600">
-                        {row.note}
-                      </p>
-                    </td>
-                    <td className="px-4 py-3 font-mono text-slate-800">
-                      {row.baseline}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-[13px] leading-6 text-amber-900">
-            <strong>Why 2014?</strong> It&rsquo;s when the Third Global
-            Coral Bleaching Event (2014–2017) pulled international
-            monitoring attention to reefs that had never been systematically
-            surveyed before. For a lot of Indo Pacific sites, that&rsquo;s
-            literally the first numeric observation on file. Older
-            &ldquo;before&rdquo; values for those reefs don&rsquo;t exist —
-            not because nothing happened before 2014, but because nobody was
-            measuring.
-          </p>
-        </section>
-
-        <section id="missing" className="mt-12 scroll-mt-24">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            What we can&rsquo;t see today
-          </h2>
-          <p className="mt-3 text-base leading-7 text-slate-700">
-            Things people ask about that we deliberately don&rsquo;t claim,
-            because the data isn&rsquo;t there yet or isn&rsquo;t resolved
-            at site scale:
-          </p>
-          <ul className="mt-4 ml-5 list-disc space-y-2 text-[14px] leading-6 text-slate-700">
-            <li>
-              <strong>Artisanal fishing pressure</strong> in regions where
-              small boats don&rsquo;t broadcast AIS. GFW only sees vessels
-              on AIS, so the visible-fishing number can be near zero in
-              places that are actually heavily fished.
-            </li>
-            <li>
-              <strong>Site-level coral cover outside named jurisdictions</strong>{" "}
-              — NCRMP covers US territories, AGRRA covers the Caribbean,
-              AIMS covers the GBR. The Indo-Pacific outside Australia, and
-              most of the Western Indian Ocean, has no equivalent
-              published mean.
-            </li>
-            <li>
-              <strong>Local population status</strong> for a species at a
-              specific reef — IUCN categories are global. A Critically
-              Endangered species can still be locally abundant where
-              there&rsquo;s protection (and vice versa).
-            </li>
-            <li>
-              <strong>Water clarity / turbidity</strong> at site resolution
-              — global satellite products exist but don&rsquo;t resolve a
-              single reef.
-            </li>
-            <li>
-              <strong>Ocean acidification</strong> at the dive site scale —
-              we have basin wide pH trends, not site by site values.
-            </li>
-            <li>
-              <strong>Fish populations</strong> and biomass trends —
-              sightings without effort denominators (how many divers, how
-              many hours) can&rsquo;t support trend claims, so we
-              don&rsquo;t make them.
-            </li>
-            <li>
-              <strong>Disease prevalence</strong> (e.g. Stony Coral Tissue
-              Loss Disease outside well monitored jurisdictions).
-            </li>
-            <li>
-              <strong>Crown of thorns starfish</strong> outbreaks outside the
-              GBR — AIMS publishes COTS for Australia; elsewhere it&rsquo;s
-              anecdotal.
-            </li>
-          </ul>
-        </section>
-
-        <section id="sources" className="mt-12 scroll-mt-24">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Sources
-          </h2>
-          <p className="mt-3 text-[14px] leading-6 text-slate-600">
-            Every quantitative claim on the site links back to one of
-            these. Full list from{" "}
-            <code className="rounded bg-slate-100 px-1 py-0.5 text-[12px]">
-              src/data/sources.json
-            </code>
-            .
-          </p>
-          <ul className="mt-4 divide-y divide-slate-200 rounded-2xl border border-slate-200">
-            {sources.map((s) => (
-              <li key={s.id} className="px-4 py-3">
-                <div className="flex flex-wrap items-baseline gap-x-3">
-                  {s.url ? (
-                    <a
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[14px] font-semibold text-[#0089de] hover:underline"
-                    >
-                      {s.name}
-                    </a>
-                  ) : (
-                    <span className="text-[14px] font-semibold text-slate-900">
-                      {s.name}
-                    </span>
-                  )}
-                  {s.publisher ? (
-                    <span className="text-[12px] text-slate-500">
-                      {s.publisher}
-                    </span>
-                  ) : null}
-                  {s.license ? (
-                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10.5px] font-medium text-slate-600">
-                      {s.license}
-                    </span>
-                  ) : null}
-                </div>
-                {s.notes ? (
-                  <p className="mt-1 text-[12.5px] leading-5 text-slate-600">
-                    {s.notes}
-                  </p>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="methodology" className="mt-12 scroll-mt-24">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Methodology
-          </h2>
-          <p className="mt-3 text-[14px] leading-6 text-slate-600">
-            How each claim is constructed and the limitations we&rsquo;ll
-            own up to. Full list from{" "}
-            <code className="rounded bg-slate-100 px-1 py-0.5 text-[12px]">
-              src/data/methodologies.json
-            </code>
-            .
-          </p>
-          <ul className="mt-4 space-y-4">
-            {methodologies.map((m) => (
-              <li
-                key={m.claimId}
-                className="rounded-2xl border border-slate-200 bg-white p-4"
-              >
-                <div className="flex flex-wrap items-baseline gap-x-3">
-                  <span className="text-[14px] font-semibold text-slate-900">
-                    {m.claimId}
-                  </span>
-                  <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10.5px] font-medium uppercase tracking-wider text-slate-600">
-                    {m.claimType}
-                  </span>
-                  {m.confidence ? (
-                    <span className="text-[11px] text-slate-500">
-                      confidence: {m.confidence}
-                    </span>
-                  ) : null}
-                </div>
-                {m.limitations ? (
-                  <p className="mt-2 text-[13px] leading-5 text-slate-700">
-                    {m.limitations}
-                  </p>
-                ) : null}
-                {m.sourceIds?.length ? (
-                  <p className="mt-2 text-[11.5px] leading-5 text-slate-500">
-                    Sources: {m.sourceIds.join(", ")}
-                  </p>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <p className="mt-12 text-sm text-slate-500">
-          Questions about a specific claim?{" "}
-          <Link href="/faq" className="text-[#0089de] hover:underline">
-            FAQ
-          </Link>{" "}
-          /{" "}
-          <a
-            href="mailto:hi@scubaseason.fun"
-            className="text-[#0089de] hover:underline"
+    <>
+      {/* PAGE HEADER — surface background */}
+      <header
+        style={{
+          background: "#f1f7fb",
+          borderBottom: "1px solid #e2e8f0",
+          padding: "5rem 3rem 4rem",
+        }}
+      >
+        <div style={{ maxWidth: 800, margin: "0 auto" }}>
+          <p
+            style={{
+              fontSize: "0.6875rem",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#0089de",
+              marginBottom: "1rem",
+            }}
           >
-            hi@scubaseason.fun
-          </a>
-          .
-        </p>
+            Method
+          </p>
+          <h1
+            style={{
+              fontSize: "clamp(2.25rem, 4.5vw, 3.5rem)",
+              fontWeight: 800,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.06,
+              color: "#0f172a",
+              marginBottom: "1.25rem",
+            }}
+          >
+            What&rsquo;s live, what&rsquo;s a snapshot, what we can&rsquo;t
+            see.
+          </h1>
+          <p
+            style={{
+              fontFamily: "var(--font-serif), 'Source Serif 4', serif",
+              fontSize: "1.1rem",
+              lineHeight: 1.75,
+              color: "#475569",
+            }}
+          >
+            scubaSeason mixes daily satellite data with much older in-water
+            survey snapshots. The labels next to every reef number on the site
+            tell you which is which. This page lays out the whole picture.
+          </p>
+          {/* TOC pills */}
+          <nav
+            aria-label="Page sections"
+            style={{ display: "flex", gap: "1.5rem", marginTop: "2.5rem", flexWrap: "wrap" }}
+          >
+            {[
+              { href: "#live", label: "What’s live daily" },
+              { href: "#snapshots", label: "Coral cover snapshots" },
+              { href: "#freshness", label: "Freshness labels" },
+              { href: "#reef-state", label: "Reef state" },
+              { href: "#sources", label: "All sources" },
+            ].map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                style={{
+                  fontSize: "0.8125rem",
+                  fontWeight: 600,
+                  color: "#0089de",
+                  textDecoration: "none",
+                  padding: "0.4rem 0.875rem",
+                  borderRadius: 999,
+                  border: "1px solid rgba(0,137,222,0.25)",
+                  background: "rgba(0,137,222,0.06)",
+                }}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      {/* PAGE BODY */}
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: "4rem 3rem" }}>
+
+        {/* SECTION: What updates every night */}
+        <section
+          id="live"
+          style={{
+            marginBottom: "4rem",
+            paddingBottom: "4rem",
+            borderBottom: "1px solid #e2e8f0",
+            scrollMarginTop: "6rem",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "0.6875rem",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#64748b",
+              marginBottom: "0.75rem",
+            }}
+          >
+            Daily satellite
+          </p>
+          <h2
+            style={{
+              fontSize: "1.625rem",
+              fontWeight: 800,
+              letterSpacing: "-0.025em",
+              color: "#0f172a",
+              marginBottom: "1.25rem",
+            }}
+          >
+            What updates every night
+          </h2>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", marginBottom: "1.5rem" }}>
+            Three signals pulled nightly from NOAA&rsquo;s public ERDDAP
+            endpoint against the lat/lng of every reef on the atlas.
+          </p>
+
+          {/* Live data card */}
+          <div
+            style={{
+              border: "1px solid #a7f3d0",
+              borderRadius: "1.25rem",
+              overflow: "hidden",
+              margin: "1.5rem 0",
+            }}
+          >
+            <div
+              style={{
+                padding: "1rem 1.375rem",
+                background: "#e7f6ee",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.75rem",
+              }}
+            >
+              <span
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: "50%",
+                  background: "#10b981",
+                  flexShrink: 0,
+                  display: "inline-block",
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "#065f46",
+                }}
+              >
+                NOAA Coral Reef Watch &middot; 5&nbsp;km &middot; v3.1 &middot;
+                refreshed nightly
+              </span>
+            </div>
+            <div style={{ padding: "1.25rem 1.375rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
+                {[
+                  {
+                    name: "Bleaching Alert Area",
+                    note: "No stress / Watch / Warning / Alert 1 / Alert 2",
+                  },
+                  {
+                    name: "Degree Heating Weeks",
+                    note: "°C-weeks of accumulated thermal stress",
+                  },
+                  {
+                    name: "SST anomaly",
+                    note: "°C above or below climatology baseline",
+                  },
+                ].map(({ name, note }) => (
+                  <div
+                    key={name}
+                    style={{ display: "flex", alignItems: "center", gap: "0.875rem", fontSize: "0.875rem" }}
+                  >
+                    <span
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: "50%",
+                        background: "#10b981",
+                        flexShrink: 0,
+                        display: "inline-block",
+                      }}
+                    />
+                    <span
+                      style={{
+                        fontWeight: 600,
+                        color: "#0f172a",
+                        minWidth: 220,
+                      }}
+                    >
+                      {name}
+                    </span>
+                    <span style={{ color: "#64748b" }}>{note}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155" }}>
+            These three signals drive the thermal stress indicator on every
+            location page. It tells you what&rsquo;s happening right now —
+            not what happened last year.
+          </p>
+        </section>
+
+        {/* SECTION: Coral cover — a snapshot */}
+        <section
+          id="snapshots"
+          style={{
+            marginBottom: "4rem",
+            paddingBottom: "4rem",
+            borderBottom: "1px solid #e2e8f0",
+            scrollMarginTop: "6rem",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "0.6875rem",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#64748b",
+              marginBottom: "0.75rem",
+            }}
+          >
+            In-water surveys
+          </p>
+          <h2
+            style={{
+              fontSize: "1.625rem",
+              fontWeight: 800,
+              letterSpacing: "-0.025em",
+              color: "#0f172a",
+              marginBottom: "1.25rem",
+            }}
+          >
+            Coral cover — a snapshot, not a live feed
+          </h2>
+          <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155" }}>
+            <p style={{ marginBottom: "1rem" }}>
+              The coral cover percentage comes from in-water scientific surveys
+              — line transects and point intercept surveys done by reef
+              monitoring programs. We show two data points per site so you can
+              see the trajectory, not just a number: the earliest survey on file
+              and the most recent.
+            </p>
+            <p>
+              This is not live data. Surveys happen infrequently. For many reefs
+              outside established monitoring programs, the most recent number is
+              years old. We label the year on every figure so you know exactly
+              what you&rsquo;re looking at.
+            </p>
+          </div>
+
+          {/* Snapshot card */}
+          <div
+            style={{
+              border: "1px solid #e2e8f0",
+              borderRadius: "1.25rem",
+              overflow: "hidden",
+              margin: "1.5rem 0",
+            }}
+          >
+            <div
+              style={{
+                padding: "1rem 1.375rem",
+                background: "#f1f7fb",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "#64748b",
+                }}
+              >
+                Survey baseline by region
+              </span>
+              <span style={{ fontSize: "0.75rem", color: "#64748b" }}>
+                When continuous monitoring began
+              </span>
+            </div>
+            {[
+              {
+                region: "Great Barrier Reef",
+                year: "1986",
+                note: "AIMS Long Term Monitoring Program — the longest continuous reef survey on Earth.",
+              },
+              {
+                region: "Florida Keys & Caribbean US",
+                year: "1995",
+                note: "NOAA NCRMP + earlier Florida Reef Tract programs.",
+              },
+              {
+                region: "Indo-Pacific (most sites)",
+                year: "2014",
+                note: "Most sites only have a baseline from the Third Global Coral Bleaching Event. For many, that’s the first quantitative measurement on record.",
+              },
+              {
+                region: "Western Indian Ocean",
+                year: "Single survey",
+                note: "Some sites have one survey ever. Treat the displayed cover as a single observation, not a trend.",
+              },
+            ].map(({ region, year, note }) => (
+              <div
+                key={region}
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "1rem",
+                  padding: "1rem 1.375rem",
+                  borderTop: "1px solid #e2e8f0",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "0.875rem",
+                    fontWeight: 600,
+                    color: "#0f172a",
+                    minWidth: 220,
+                    flexShrink: 0,
+                  }}
+                >
+                  {region}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                    color: "#0089de",
+                    background: "#e8f0fe",
+                    padding: "0.15rem 0.5rem",
+                    borderRadius: 4,
+                    flexShrink: 0,
+                    width: 96,
+                    textAlign: "center",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {year}
+                </span>
+                <span style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "#64748b" }}>
+                  {note}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* SECTION: Freshness key */}
+        <section
+          id="freshness"
+          style={{
+            marginBottom: "4rem",
+            paddingBottom: "4rem",
+            borderBottom: "1px solid #e2e8f0",
+            scrollMarginTop: "6rem",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "0.6875rem",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#64748b",
+              marginBottom: "0.75rem",
+            }}
+          >
+            Data freshness
+          </p>
+          <h2
+            style={{
+              fontSize: "1.625rem",
+              fontWeight: 800,
+              letterSpacing: "-0.025em",
+              color: "#0f172a",
+              marginBottom: "1.25rem",
+            }}
+          >
+            How we label data age
+          </h2>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", marginBottom: "1.5rem" }}>
+            Every data point that can go stale carries a freshness dot. There
+            are three states:
+          </p>
+          <div
+            style={{ display: "flex", gap: "1.5rem", margin: "1.5rem 0", flexWrap: "wrap" }}
+          >
+            {[
+              { color: "#10b981", label: "Fresh", note: "Survey within the last year" },
+              { color: "#e8962f", label: "Stale", note: "1–3 years since last survey" },
+              { color: "#e23a3a", label: "Cold", note: "More than 3 years ago" },
+            ].map(({ color, label, note }) => (
+              <div
+                key={label}
+                style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}
+              >
+                <span
+                  style={{
+                    width: 10,
+                    height: 10,
+                    borderRadius: "50%",
+                    background: color,
+                    flexShrink: 0,
+                    display: "inline-block",
+                  }}
+                />
+                <div>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>
+                    {label}
+                  </p>
+                  <p style={{ fontSize: "0.8125rem", color: "#64748b" }}>{note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155" }}>
+            Thermal stress is always Fresh — it&rsquo;s pulled nightly. Coral
+            cover and fishing pressure are almost always Stale or Cold for most
+            of the world. That&rsquo;s honest. We&rsquo;d rather show a Cold
+            number with a clear label than hide it behind an optimistic bar
+            chart.
+          </p>
+        </section>
+
+        {/* SECTION: Reef state */}
+        <section
+          id="reef-state"
+          style={{
+            marginBottom: "4rem",
+            paddingBottom: "4rem",
+            borderBottom: "1px solid #e2e8f0",
+            scrollMarginTop: "6rem",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "0.6875rem",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#64748b",
+              marginBottom: "0.75rem",
+            }}
+          >
+            Classification
+          </p>
+          <h2
+            style={{
+              fontSize: "1.625rem",
+              fontWeight: 800,
+              letterSpacing: "-0.025em",
+              color: "#0f172a",
+              marginBottom: "1.25rem",
+            }}
+          >
+            How reef state is assigned
+          </h2>
+          <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155" }}>
+            <p style={{ marginBottom: "1rem" }}>
+              Reef state is a judgment call made from the combination of live
+              thermal data, coral cover (where we have it), and fishing
+              pressure. It&rsquo;s not a score or an average — it&rsquo;s an
+              editorial decision that tries to answer:{" "}
+              <strong>what is this reef actually doing right now?</strong>
+            </p>
+            <p>
+              When data is thin or contradictory, we default to &ldquo;Under
+              pressure&rdquo; rather than &ldquo;Thriving.&rdquo; The bias is
+              toward honesty, not hope.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION: All 38 data sources */}
+        <section
+          id="sources"
+          style={{ scrollMarginTop: "6rem" }}
+        >
+          <p
+            style={{
+              fontSize: "0.6875rem",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#64748b",
+              marginBottom: "0.75rem",
+            }}
+          >
+            Sources
+          </p>
+          <h2
+            style={{
+              fontSize: "1.625rem",
+              fontWeight: 800,
+              letterSpacing: "-0.025em",
+              color: "#0f172a",
+              marginBottom: "1.25rem",
+            }}
+          >
+            All 38 data sources
+          </h2>
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              marginTop: "1.5rem",
+              fontSize: "0.875rem",
+            }}
+          >
+            <thead>
+              <tr>
+                {["Source", "Type", "Used for"].map((h) => (
+                  <th
+                    key={h}
+                    style={{
+                      textAlign: "left",
+                      padding: "0.625rem 0.875rem",
+                      fontSize: "0.625rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      color: "#64748b",
+                      background: "#f1f7fb",
+                      borderBottom: "1px solid #e2e8f0",
+                    }}
+                  >
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                {
+                  name: "NOAA Coral Reef Watch v3.1",
+                  live: true,
+                  usedFor: "Thermal stress, bleaching alerts, SST anomaly",
+                },
+                {
+                  name: "AIMS Long Term Monitoring Program",
+                  live: false,
+                  usedFor: "GBR coral cover time series",
+                },
+                {
+                  name: "IUCN Red List of Threatened Species",
+                  live: false,
+                  usedFor: "Species conservation status, population trend",
+                },
+                {
+                  name: "Global Fishing Watch AIS data",
+                  live: true,
+                  usedFor: "Fishing pressure per location",
+                },
+                {
+                  name: "NOAA NCRMP",
+                  live: false,
+                  usedFor: "US Pacific and Caribbean coral cover",
+                },
+                {
+                  name: "iNaturalist Research Grade observations",
+                  live: true,
+                  usedFor: "Species sighting evidence, occurrence records",
+                },
+                {
+                  name: "AGRRA Atlantic and Gulf Rapid Reef Assessment",
+                  live: false,
+                  usedFor: "Caribbean reef condition",
+                },
+                {
+                  name: "+ 31 more program-specific datasets",
+                  live: null,
+                  usedFor: "Regional baselines, site-specific surveys",
+                },
+              ].map(({ name, live, usedFor }, i) => (
+                <tr key={name}>
+                  <td
+                    style={{
+                      padding: "0.875rem",
+                      borderBottom: i < 7 ? "1px solid #e2e8f0" : undefined,
+                      fontWeight: 600,
+                      color: "#0f172a",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    {name}
+                  </td>
+                  <td
+                    style={{
+                      padding: "0.875rem",
+                      borderBottom: i < 7 ? "1px solid #e2e8f0" : undefined,
+                      color: "#334155",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    {live === null ? (
+                      <span style={{ color: "#94a3b8" }}>—</span>
+                    ) : live ? (
+                      <span
+                        style={{
+                          display: "inline-block",
+                          fontSize: "0.5875rem",
+                          fontWeight: 700,
+                          letterSpacing: "0.08em",
+                          textTransform: "uppercase",
+                          padding: "0.2rem 0.5rem",
+                          borderRadius: 4,
+                          background: "#e7f6ee",
+                          color: "#065f46",
+                        }}
+                      >
+                        Live
+                      </span>
+                    ) : (
+                      <span
+                        style={{
+                          display: "inline-block",
+                          fontSize: "0.5875rem",
+                          fontWeight: 700,
+                          letterSpacing: "0.08em",
+                          textTransform: "uppercase",
+                          padding: "0.2rem 0.5rem",
+                          borderRadius: 4,
+                          background: "#f1f7fb",
+                          color: "#64748b",
+                        }}
+                      >
+                        Snapshot
+                      </span>
+                    )}
+                  </td>
+                  <td
+                    style={{
+                      padding: "0.875rem",
+                      borderBottom: i < 7 ? "1px solid #e2e8f0" : undefined,
+                      color: "#334155",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    {usedFor}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
       </div>
-    </div>
+    </>
   );
 }
