@@ -42,13 +42,13 @@ const ALERT_LABEL: Record<BleachingAlertLevel, string> = {
 
 const STATE_PILL: Record<string, string> = {
   thriving: "bg-emerald-50 text-emerald-700",
-  pressure: "bg-[#eaf1fe] text-[#1f57c8]",
+  pressure: "bg-[#e0f0fc] text-[#0369a1]",
   change: "bg-rose-50 text-rose-700",
 };
 
 const STATE_DOT: Record<string, string> = {
   thriving: "bg-emerald-500",
-  pressure: "bg-[#2f6ced]",
+  pressure: "bg-[#0089de]",
   change: "bg-rose-500",
 };
 
@@ -265,6 +265,57 @@ export default async function LocationPage({
             <EditorialHook text={details.extendedDescription} className="mt-6" />
           ) : null}
         </section>
+
+        {/* Species highlights strip — top 3 recently confirmed species */}
+        {allSightings.length > 0 && (() => {
+          const highlighted = allSightings
+            .filter((sv) => sv.lastConfirmedAt)
+            .slice(0, 6)
+            .reduce<typeof allSightings>((acc, sv) => {
+              if (!acc.find((x) => x.speciesCommon === sv.speciesCommon)) {
+                acc.push(sv);
+              }
+              return acc;
+            }, [])
+            .slice(0, 3);
+
+          if (highlighted.length === 0) return null;
+
+          return (
+            <section className="mt-10 border-t border-slate-200 pt-8">
+              <h2 className="mb-4 text-lg font-bold text-slate-900">Notable species here</h2>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {highlighted.map((sv, i) => (
+                  <div
+                    key={`${sv.speciesCommon}-${i}`}
+                    className="rounded-xl border border-slate-200 bg-white p-4"
+                  >
+                    <p className="text-sm font-bold text-slate-900">{sv.speciesCommon}</p>
+                    {sv.speciesScientific ? (
+                      <p className="mt-0.5 text-[11px] italic text-slate-500">
+                        {sv.speciesScientific}
+                      </p>
+                    ) : null}
+                    <p className="mt-2 text-[11px] text-slate-500">
+                      {sv.siteName && (
+                        <>
+                          <span className="font-medium text-slate-700">{sv.siteName}</span>
+                          {" · "}
+                        </>
+                      )}
+                      {sv.lastConfirmedAt
+                        ? new Date(sv.lastConfirmedAt + "T00:00:00Z").toLocaleDateString(
+                            "en-US",
+                            { month: "short", year: "numeric", timeZone: "UTC" },
+                          )
+                        : "No date on file"}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
 
         {/* Live sightings feed */}
         {allSightings.length > 0 && (
