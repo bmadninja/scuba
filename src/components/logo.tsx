@@ -13,7 +13,7 @@ type LogoProps = {
 };
 
 export function Logo({ dark = false, size = 32, className = "" }: LogoProps) {
-  const topColor = dark ? "rgba(255,255,255,0.3)" : "#94a3b8";
+  const topColor = dark ? "rgba(255,255,255,0.35)" : "#94a3b8";
   const botColor = dark ? "#ffffff" : "#0f172a";
 
   return (
@@ -28,9 +28,9 @@ export function Logo({ dark = false, size = 32, className = "" }: LogoProps) {
         aria-hidden="true"
       >
         <circle cx="18" cy="18" r="16" fill="#0089de" />
-        {/* Primary wave — full white */}
+        {/* Primary wave — full white, asymmetric naturalistic shape */}
         <path
-          d="M6 18 Q10 14, 14 18 Q18 22, 22 18 Q26 14, 30 18"
+          d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16"
           stroke="white"
           strokeWidth="2"
           strokeLinecap="round"
@@ -38,7 +38,7 @@ export function Logo({ dark = false, size = 32, className = "" }: LogoProps) {
         />
         {/* Secondary wave — semi-transparent white */}
         <path
-          d="M6 22 Q10 18, 14 22 Q18 26, 22 22 Q26 18, 30 22"
+          d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21"
           stroke="rgba(255,255,255,0.4)"
           strokeWidth="1.5"
           strokeLinecap="round"

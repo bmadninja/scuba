@@ -1,168 +1,415 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About + affiliate disclosure | scubaSeason.fun",
+  title: "About | scubaSeason.fun",
   description:
-    "About scubaSeason.fun, our editorial principles, and how affiliate links work on this site.",
+    "What this site is, and why it exists. Editorial principles, roadmap, and how to get in touch.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto w-full max-w-6xl px-6 py-12">
-      <div className="mx-auto w-full max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-          About
-        </p>
-        <h1 className="mt-1 text-4xl font-bold tracking-tight text-slate-900">
-          What this site is
-        </h1>
-        <div className="mt-6 space-y-5 text-base leading-7 text-slate-700">
-          <p>
-            This site was born out of love for the ocean, and honestly a fair
-            amount of frustration too. Dive site information online is
-            scattered all over the place, bits in old forum threads, bits in
-            operator brochures, bits buried in trip reports from a decade ago,
-            and a lot of it is either out of date or just plain wrong. When
-            you&rsquo;re trying to plan a trip around what you actually want
-            to see underwater, that is a really hard place to start from.
-          </p>
-          <p>
-            I&rsquo;ve been bamboozled one too many times. I&rsquo;ve booked
-            trips chasing species that hadn&rsquo;t been spotted in years, I
-            have shown up in the wrong season for the thing I came for, and
-            I have paid good money for dives that weren&rsquo;t close to what
-            was advertised on the website. Every time it happens it&rsquo;s a
-            small heartbreak, and after enough of them I started to think
-            other divers probably feel the same way, and that maybe this
-            doesn&rsquo;t have to keep happening.
-          </p>
-          <p>
-            So this is a public search and citizen science site. The goal is
-            pretty simple, keep dive site information as fresh and honest as
-            possible, in one place, so the next person planning a trip
-            doesn&rsquo;t end up bamboozled the way I did.
-          </p>
-          <p>
-            It is very much ongoing work, and right now it is being built by
-            one person, me, with a lot of help from Squish, my OpenClaw, and
-            a handful of other AI tools picking up the slack wherever they
-            can.
-          </p>
-        </div>
-
-        <h2 className="mt-12 text-2xl font-bold tracking-tight text-slate-900">
-          Roadmap — where this is going
-        </h2>
-        <p className="mt-4 text-base leading-7 text-slate-700">
-          The bigger arc is to make scubaSeason a public atlas of reef
-          condition that&rsquo;s also genuinely useful for booking a trip.
-          Honest about
-          what&rsquo;s live, what&rsquo;s a snapshot, and what we can&rsquo;t
-          see yet. The split below is the current plan — nothing in
-          &ldquo;later&rdquo; is a promise.
-        </p>
-
-        <div className="mt-6 grid gap-5">
-          <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-800">
-              Now
-            </p>
-            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[14px] leading-6 text-slate-800">
-              <li>
-                Live NOAA Coral Reef Watch thermal stress on every reef,
-                refreshed nightly.
-              </li>
-              <li>
-                Honest labels everywhere distinguishing live data from
-                snapshot surveys vs. presence only sightings (
-                <Link href="/data" className="text-[#0089de] hover:underline">
-                  /data
-                </Link>
-                ).
-              </li>
-              <li>
-                Trip planning the site already does — operators, lodging,
-                gear, season windows — stays front and centre.
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-800">
-              Next
-            </p>
-            <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[14px] leading-6 text-slate-800">
-              <li>
-                Real coral cover ingestion for US and Caribbean sites
-                (NOAA NCRMP + AGRRA) so the snapshot half stops being
-                scaffolding.
-              </li>
-              <li>
-                Global Fishing Watch pressure layer per site.
-              </li>
-              <li>
-                IUCN Red List species badges — pending non commercial
-                licensing.
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-700">
-              Later
-            </p>
-            <p className="mt-3 text-[14px] leading-6 text-slate-800">
-              The longer term vision — exploratory, not committed — has two
-              halves:
-            </p>
-            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[14px] leading-6 text-slate-800">
-              <li>
-                <strong>Targeted citizen missions</strong> in the regions
-                where dive tourism is dense but reef monitoring is thin.
-                The idea is to coordinate divers around specific reefs
-                where standardised imagery would actually be useful, and
-                fold the contributions back into the public atlas.
-              </li>
-              <li>
-                <strong>Post event evidence infrastructure</strong> that
-                gives conservation funders a clean, standardised picture
-                of a reef after a hurricane or bleaching event. The
-                interesting role here is plumbing — coordination, capture
-                protocols, attribution — sitting alongside the satellite
-                signals everyone already uses.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <p className="mt-10 text-base leading-7 text-slate-700">
-          Quick note, there are some affiliate links scattered across the
-          site, and anything they earn goes straight back into R&amp;D for
-          this thing. Would absolutely love to hear feedback, good, bad,
-          weird, half formed, all of it, at{" "}
-          <a
-            href="mailto:hi@scubaseason.fun"
-            className="font-semibold text-[#0089de] hover:underline"
+    <>
+      {/* PAGE HEADER — light bg */}
+      <header
+        style={{ borderBottom: "1px solid #e2e8f0" }}
+        className="px-6 pb-16 pt-20"
+      >
+        <div className="mx-auto max-w-[800px]">
+          <p
+            className="text-[0.6875rem] font-bold uppercase tracking-[0.18em]"
+            style={{ color: "#0089de", marginBottom: "1rem" }}
           >
-            hi@scubaseason.fun
-          </a>
-          .
-        </p>
+            About
+          </p>
+          <h1
+            className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.04] tracking-[-0.035em]"
+            style={{
+              fontWeight: 800,
+              color: "#0f172a",
+              marginBottom: "1.5rem",
+            }}
+          >
+            What this site is, and why it exists.
+          </h1>
+          <p
+            style={{
+              fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+              fontSize: "1.2rem",
+              lineHeight: 1.75,
+              color: "#475569",
+              maxWidth: "640px",
+            }}
+          >
+            Born out of love for the ocean, and honestly a fair amount of
+            frustration too.
+          </p>
+        </div>
+      </header>
 
-        <h2 className="mt-12 text-lg font-bold tracking-tight text-slate-900">
-          Editorial independence
-        </h2>
-        <p className="mt-3 text-base leading-7 text-slate-700">
-          Affiliate commissions do not influence what we recommend. Site
-          rankings come from editorial scoring, not commission rates. Operator
-          and lodging blocks include non-affiliate options where we know of
-          them. The source/methodology drawer on every claim is the same
-          whether a partner pays us or not. If you ever see something that
-          looks like a sponsored recommendation disguised as editorial, that&rsquo;s
-          a bug — please tell us.
-        </p>
+      {/* PAGE BODY */}
+      <div className="mx-auto max-w-[800px] px-6 py-16">
+
+        {/* 4 PROSE PARAGRAPHS */}
+        <div className="space-y-5 text-base leading-[1.8]" style={{ color: "#334155" }}>
+          <p>
+            Dive site information online is scattered — old forum threads,
+            operator brochures, trip reports from a decade ago. Most of it is
+            stale or just wrong. When you&rsquo;re trying to plan a trip around
+            what you actually want to see underwater, that&rsquo;s a hard place
+            to start.
+          </p>
+          <p>
+            I&rsquo;ve been caught out too many times. Booked trips chasing
+            species that hadn&rsquo;t been spotted in years. Showed up in the
+            wrong season. Paid good money for dives that weren&rsquo;t close to
+            what was advertised. Every time it happens it&rsquo;s a small
+            heartbreak — and after enough of them, I figured other divers
+            probably feel the same.
+          </p>
+          <p>
+            This is a public atlas and citizen science project. Keep dive site
+            information as honest and current as possible, in one place, so the
+            next person planning a trip has something real to work from.
+          </p>
+          <p>
+            Ongoing work, built by one person — me. Imperfect, always being
+            updated, and genuinely trying.
+          </p>
+        </div>
+
+        {/* EDITORIAL PRINCIPLES */}
+        <div style={{ margin: "3.5rem 0 2.5rem" }}>
+          <h2
+            className="text-[1.625rem] tracking-[-0.025em]"
+            style={{ fontWeight: 800, color: "#0f172a", marginBottom: "0.5rem" }}
+          >
+            Editorial principles
+          </h2>
+          <p className="text-[0.9375rem] leading-[1.7]" style={{ color: "#334155" }}>
+            Four things that don&rsquo;t change regardless of what&rsquo;s
+            convenient.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {/* 01 */}
+          <div
+            className="rounded-2xl p-6"
+            style={{ border: "1px solid #e2e8f0" }}
+          >
+            <p
+              className="leading-none"
+              style={{
+                fontSize: "2rem",
+                fontWeight: 900,
+                letterSpacing: "-0.04em",
+                color: "#e2e8f0",
+                marginBottom: "0.75rem",
+              }}
+            >
+              01
+            </p>
+            <p
+              className="text-[0.9375rem]"
+              style={{ fontWeight: 700, color: "#0f172a", marginBottom: "0.4rem" }}
+            >
+              Honest about data age
+            </p>
+            <p className="text-sm leading-[1.65]" style={{ color: "#334155" }}>
+              Every number has a date. If a coral cover figure is from 2014, it
+              says 2014. If we don&rsquo;t know, it says we don&rsquo;t know.
+            </p>
+          </div>
+
+          {/* 02 */}
+          <div
+            className="rounded-2xl p-6"
+            style={{ border: "1px solid #e2e8f0" }}
+          >
+            <p
+              className="leading-none"
+              style={{
+                fontSize: "2rem",
+                fontWeight: 900,
+                letterSpacing: "-0.04em",
+                color: "#e2e8f0",
+                marginBottom: "0.75rem",
+              }}
+            >
+              02
+            </p>
+            <p
+              className="text-[0.9375rem]"
+              style={{ fontWeight: 700, color: "#0f172a", marginBottom: "0.4rem" }}
+            >
+              No gates on information
+            </p>
+            <p className="text-sm leading-[1.65]" style={{ color: "#334155" }}>
+              No modals, no account prompts, no paywalls interrupting the data.
+              If it&rsquo;s on this site, you can read it.
+            </p>
+          </div>
+
+          {/* 03 */}
+          <div
+            className="rounded-2xl p-6"
+            style={{ border: "1px solid #e2e8f0" }}
+          >
+            <p
+              className="leading-none"
+              style={{
+                fontSize: "2rem",
+                fontWeight: 900,
+                letterSpacing: "-0.04em",
+                color: "#e2e8f0",
+                marginBottom: "0.75rem",
+              }}
+            >
+              03
+            </p>
+            <p
+              className="text-[0.9375rem]"
+              style={{ fontWeight: 700, color: "#0f172a", marginBottom: "0.4rem" }}
+            >
+              Affiliate links don&rsquo;t steer editorial
+            </p>
+            <p className="text-sm leading-[1.65]" style={{ color: "#334155" }}>
+              Commission rates don&rsquo;t affect site rankings. Operator
+              listings include independent options wherever we know of them.
+            </p>
+          </div>
+
+          {/* 04 */}
+          <div
+            className="rounded-2xl p-6"
+            style={{ border: "1px solid #e2e8f0" }}
+          >
+            <p
+              className="leading-none"
+              style={{
+                fontSize: "2rem",
+                fontWeight: 900,
+                letterSpacing: "-0.04em",
+                color: "#e2e8f0",
+                marginBottom: "0.75rem",
+              }}
+            >
+              04
+            </p>
+            <p
+              className="text-[0.9375rem]"
+              style={{ fontWeight: 700, color: "#0f172a", marginBottom: "0.4rem" }}
+            >
+              Degraded reefs get honest labels
+            </p>
+            <p className="text-sm leading-[1.65]" style={{ color: "#334155" }}>
+              &ldquo;Witnessing change&rdquo; is not a polite way of saying
+              avoid it. It means go and see what&rsquo;s actually there — not
+              what the brochure says.
+            </p>
+          </div>
+        </div>
+
+        {/* ROADMAP */}
+        <div style={{ margin: "3.5rem 0 2.5rem" }}>
+          <h2
+            className="text-[1.625rem] tracking-[-0.025em]"
+            style={{ fontWeight: 800, color: "#0f172a", marginBottom: "0.5rem" }}
+          >
+            Roadmap
+          </h2>
+          <p className="text-[0.9375rem] leading-[1.7]" style={{ color: "#334155" }}>
+            What&rsquo;s built, what&rsquo;s next, and the longer arc. Nothing
+            in &ldquo;later&rdquo; is a promise.
+          </p>
+        </div>
+
+        <div
+          className="overflow-hidden rounded-[1.25rem]"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1px",
+            background: "#e2e8f0",
+          }}
+        >
+          {/* NOW */}
+          <div
+            className="flex gap-5 px-7 py-6"
+            style={{ background: "#e7f6ee", alignItems: "flex-start" }}
+          >
+            <div style={{ width: "48px", flexShrink: 0, marginTop: "0.1rem" }}>
+              <span
+                className="inline-block rounded-full px-2.5 py-1 text-white"
+                style={{
+                  fontSize: "0.5875rem",
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  background: "#10b981",
+                }}
+              >
+                Now
+              </span>
+            </div>
+            <div>
+              <h3
+                className="text-[0.9375rem]"
+                style={{
+                  fontWeight: 700,
+                  color: "#0f172a",
+                  marginBottom: "0.375rem",
+                }}
+              >
+                Live today
+              </h3>
+              <ul
+                className="list-disc pl-5"
+                style={{ display: "flex", flexDirection: "column", gap: "0.375rem" }}
+              >
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  NOAA Coral Reef Watch thermal stress on every reef, refreshed
+                  nightly
+                </li>
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  Honest freshness labels distinguishing live data from snapshot
+                  surveys
+                </li>
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  Operators, lodging, gear, and season windows for trip planning
+                </li>
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  IUCN Red List species conservation status on every dive site
+                  species
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* NEXT */}
+          <div
+            className="flex gap-5 px-7 py-6"
+            style={{ background: "#fef9ed", alignItems: "flex-start" }}
+          >
+            <div style={{ width: "48px", flexShrink: 0, marginTop: "0.1rem" }}>
+              <span
+                className="inline-block rounded-full px-2.5 py-1 text-white"
+                style={{
+                  fontSize: "0.5875rem",
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  background: "#f59e0b",
+                }}
+              >
+                Next
+              </span>
+            </div>
+            <div>
+              <h3
+                className="text-[0.9375rem]"
+                style={{
+                  fontWeight: 700,
+                  color: "#0f172a",
+                  marginBottom: "0.375rem",
+                }}
+              >
+                In progress
+              </h3>
+              <ul
+                className="list-disc pl-5"
+                style={{ display: "flex", flexDirection: "column", gap: "0.375rem" }}
+              >
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  Real coral cover ingestion for US and Caribbean sites (NOAA
+                  NCRMP + AGRRA)
+                </li>
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  Global Fishing Watch pressure layer per site
+                </li>
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  Diver log submission — add your own sighting evidence
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* LATER */}
+          <div
+            className="flex gap-5 px-7 py-6"
+            style={{ background: "#f8fafc", alignItems: "flex-start" }}
+          >
+            <div style={{ width: "48px", flexShrink: 0, marginTop: "0.1rem" }}>
+              <span
+                className="inline-block rounded-full px-2.5 py-1 text-white"
+                style={{
+                  fontSize: "0.5875rem",
+                  fontWeight: 800,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  background: "#94a3b8",
+                }}
+              >
+                Later
+              </span>
+            </div>
+            <div>
+              <h3
+                className="text-[0.9375rem]"
+                style={{
+                  fontWeight: 700,
+                  color: "#0f172a",
+                  marginBottom: "0.375rem",
+                }}
+              >
+                The longer arc
+              </h3>
+              <ul
+                className="list-disc pl-5"
+                style={{ display: "flex", flexDirection: "column", gap: "0.375rem" }}
+              >
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  Targeted citizen missions in regions where monitoring is thin
+                </li>
+                <li className="text-sm leading-[1.6]" style={{ color: "#334155" }}>
+                  Evidence infrastructure for conservation funders built around
+                  bleaching event data
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* CONTACT STRIP */}
+        <div
+          className="mt-14 flex flex-col gap-6 rounded-[1.25rem] p-8 sm:flex-row sm:items-center sm:justify-between"
+          style={{ background: "#0b1e32" }}
+        >
+          <div>
+            <h3
+              className="text-[1.125rem] tracking-[-0.02em] text-white"
+              style={{ fontWeight: 800, marginBottom: "0.375rem" }}
+            >
+              Spotted something wrong? Want to collaborate?
+            </h3>
+            <p className="text-sm leading-[1.6]" style={{ color: "rgba(255,255,255,0.45)" }}>
+              Good, bad, weird, unfinished — all of it welcome.
+            </p>
+          </div>
+          <a
+            href="mailto:hello@scubaseason.fun"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl px-6 py-3 text-sm text-white"
+            style={{
+              fontWeight: 700,
+              background: "#0089de",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+            }}
+          >
+            hello@scubaseason.fun →
+          </a>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

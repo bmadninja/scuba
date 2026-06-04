@@ -16,10 +16,16 @@ export const metadata: Metadata = {
 };
 
 // Top 3 featured destinations for the inspiration grid
-// Sorted by editorial rank; first location in the atlas gets the large slot.
 const FEATURED_SLUGS = ["raja-ampat", "palau", "azores"];
 
-// Destination gradient backgrounds (ocean-tone CSS gradients, no real images needed)
+// Animal tags per featured slug (curated for inspiration grid)
+const ANIMAL_TAGS: Record<string, string[]> = {
+  "raja-ampat": ["Sharks", "Mantas"],
+  palau: ["Sharks", "Jellyfish"],
+  azores: ["Dolphins", "Whales"],
+};
+
+// Destination gradient backgrounds
 const DEST_GRADIENT: Record<string, string> = {
   "raja-ampat":
     "linear-gradient(160deg, #041c33 0%, #063a52 25%, #065a66 45%, #086b7a 65%, #0a7a6b 100%)",
@@ -37,10 +43,48 @@ const STATE_TEXT: Record<string, string> = {
   change: "Witnessing change",
 };
 
-const STATE_COLOR: Record<string, string> = {
-  thriving: "#10b981",
-  pressure: "#0089de",
-  change: "#f43f5e",
+// Badge style per state — matches mockup ibadge-state-* classes
+const STATE_BADGE_STYLE: Record<string, React.CSSProperties> = {
+  thriving: {
+    background: "rgba(16,185,129,0.14)",
+    color: "#6ee7b7",
+    border: "1px solid rgba(16,185,129,0.22)",
+  },
+  pressure: {
+    background: "rgba(0,137,222,0.16)",
+    color: "#93c5fd",
+    border: "1px solid rgba(0,137,222,0.25)",
+  },
+  change: {
+    background: "rgba(244,63,94,0.14)",
+    color: "#fca5a5",
+    border: "1px solid rgba(244,63,94,0.2)",
+  },
+};
+
+const BADGE_BASE: React.CSSProperties = {
+  fontSize: "0.625rem",
+  fontWeight: 700,
+  letterSpacing: "0.06em",
+  padding: "0.25rem 0.625rem",
+  borderRadius: 999,
+  backdropFilter: "blur(8px)",
+  WebkitBackdropFilter: "blur(8px)",
+  display: "inline-block",
+};
+
+const SEASON_BADGE: React.CSSProperties = {
+  ...BADGE_BASE,
+  background: "rgba(255,255,255,0.1)",
+  color: "rgba(255,255,255,0.7)",
+  border: "1px solid rgba(255,255,255,0.14)",
+};
+
+const ANIMAL_BADGE: React.CSSProperties = {
+  ...BADGE_BASE,
+  background: "rgba(255,255,255,0.07)",
+  color: "rgba(255,255,255,0.55)",
+  border: "1px solid rgba(255,255,255,0.1)",
 };
 
 export default function Home() {
@@ -92,25 +136,22 @@ export default function Home() {
   const featuredLocs = FEATURED_SLUGS.map((slug) => allLocs.find((l) => l.slug === slug))
     .filter(Boolean)
     .slice(0, 3);
-  // If we don't have enough, fill with top editorial picks
   const inspirationLocs =
-    featuredLocs.length >= 2
-      ? featuredLocs
-      : allLocs.slice(0, 3);
+    featuredLocs.length >= 2 ? featuredLocs : allLocs.slice(0, 3);
 
   return (
     <>
-      {/* ─── DARK INK HERO ────────────────────────────────────────── */}
+      {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section
         aria-label="Hero"
         style={{
           position: "relative",
-          minHeight: "80vh",
+          height: "100vh",
+          minHeight: 700,
           overflow: "hidden",
-          background: "#0b1e32",
         }}
       >
-        {/* Background layers */}
+        {/* Background gradient */}
         <div
           aria-hidden="true"
           style={{
@@ -123,7 +164,7 @@ export default function Home() {
             `,
           }}
         />
-        {/* Light ray texture */}
+        {/* Caustic ray texture */}
         <div
           aria-hidden="true"
           style={{
@@ -135,7 +176,17 @@ export default function Home() {
             `,
           }}
         />
-        {/* Bottom fade into the next section */}
+        {/* Radial vignette */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(ellipse 120% 100% at 50% 50%, transparent 40%, rgba(2,12,24,0.6) 100%)",
+          }}
+        />
+        {/* Bottom fade into reef states section */}
         <div
           aria-hidden="true"
           style={{
@@ -143,39 +194,58 @@ export default function Home() {
             bottom: 0,
             left: 0,
             right: 0,
-            height: 160,
+            height: 260,
             background: "linear-gradient(to bottom, transparent, #0b1e32)",
           }}
         />
 
-        {/* Photo credit — top right */}
-        <p
+        {/* Photo credit */}
+        <div
           aria-hidden="true"
           style={{
             position: "absolute",
-            top: "1.25rem",
-            right: "3rem",
-            fontSize: "0.625rem",
-            fontWeight: 600,
-            letterSpacing: "0.12em",
+            top: "1.5rem",
+            right: "2rem",
+            zIndex: 20,
+            fontSize: "0.5875rem",
+            fontWeight: 500,
+            letterSpacing: "0.1em",
             textTransform: "uppercase",
             color: "rgba(255,255,255,0.25)",
-            zIndex: 10,
+            display: "flex",
+            alignItems: "center",
+            gap: "0.4rem",
           }}
         >
-          Coral garden illustration
-        </p>
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+            <circle cx="12" cy="13" r="4" />
+          </svg>
+          Photo · Raja Ampat, West Papua
+        </div>
 
-        {/* Hero content */}
+        {/* Hero content — pinned to bottom with flex-end */}
         <div
           style={{
             position: "relative",
             zIndex: 10,
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            padding: "0 3rem 5.5rem",
             maxWidth: 1320,
             margin: "0 auto",
-            padding: "0 3rem",
-            paddingTop: "12rem",
-            paddingBottom: "5.5rem",
           }}
         >
           {/* Eyebrow */}
@@ -208,7 +278,7 @@ export default function Home() {
             Live · NOAA Coral Reef Watch
           </div>
 
-          {/* H1 */}
+          {/* H1 — three lines per mockup */}
           <h1
             style={{
               fontSize: "clamp(3rem, 6.5vw, 5.75rem)",
@@ -220,10 +290,14 @@ export default function Home() {
               marginBottom: "1.4rem",
             }}
           >
-            A data atlas for the living ocean.
+            A data atlas
+            <br />
+            for the living
+            <br />
+            ocean.
           </h1>
 
-          {/* Serif subline */}
+          {/* Serif italic subline */}
           <p
             style={{
               fontFamily:
@@ -236,12 +310,12 @@ export default function Home() {
               marginBottom: "2.75rem",
             }}
           >
-            Where science meets the water. Track {reefCount} reefs with daily
-            satellite monitoring and in-water survey data.
+            Ongoing science and daily monitoring — not a one-time write-up.
           </p>
 
-          {/* Hero stats */}
+          {/* Stat strip */}
           <div
+            role="list"
             style={{
               display: "flex",
               alignItems: "stretch",
@@ -256,6 +330,7 @@ export default function Home() {
             ].map(({ val, lbl }, i) => (
               <div
                 key={lbl}
+                role="listitem"
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -293,7 +368,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── REEF STATES — still dark ─────────────────────────────── */}
+      {/* ─── REEF STATES ─────────────────────────────────────────── */}
       <section
         style={{ background: "#0b1e32", padding: "5rem 3rem" }}
         aria-label="Reef states"
@@ -319,7 +394,7 @@ export default function Home() {
                 marginBottom: "1.25rem",
               }}
             >
-              What you&apos;re looking at
+              How the atlas reads a reef
             </p>
             <h2
               style={{
@@ -331,7 +406,7 @@ export default function Home() {
                 marginBottom: "1.25rem",
               }}
             >
-              Every reef has a story. We tell it with data.
+              What a reef is actually doing right now.
             </h2>
             <p
               style={{
@@ -343,12 +418,12 @@ export default function Home() {
                 maxWidth: 400,
               }}
             >
-              Each location is classified into one of three states — based on
-              live coral cover surveys, thermal stress from NOAA, and fishing
-              pressure from Global Fishing Watch.
+              Every location carries a reef state — a judgment call about what
+              the science says is happening on the ground. Not a marketing
+              label. Not a star rating.
             </p>
             <a
-              href="#atlas"
+              href="#"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -360,12 +435,13 @@ export default function Home() {
                 textDecoration: "none",
               }}
             >
-              Browse the atlas →
+              How we calculate this →
             </a>
           </div>
 
-          {/* Reef state cards */}
+          {/* Reef state rows */}
           <div
+            role="list"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -378,13 +454,29 @@ export default function Home() {
           >
             {(
               [
-                { key: "thriving", count: thrivingCount },
-                { key: "pressure", count: pressureCount },
-                { key: "change", count: changeCount },
+                {
+                  key: "thriving" as const,
+                  color: "#10b981",
+                  count: thrivingCount,
+                  def: "Coral cover holding, pressure low. A reef with room to surprise you.",
+                },
+                {
+                  key: "pressure" as const,
+                  color: "#0089de",
+                  count: pressureCount,
+                  def: "Degraded or stressed but actively diving. Worth watching closely.",
+                },
+                {
+                  key: "change" as const,
+                  color: "#f43f5e",
+                  count: changeCount,
+                  def: "The reef has fundamentally shifted. Go to see what's actually there — not what the brochures say.",
+                },
               ] as const
-            ).map(({ key, count }) => (
+            ).map(({ key, color, count, def }) => (
               <div
                 key={key}
+                role="listitem"
                 style={{
                   display: "flex",
                   alignItems: "flex-start",
@@ -401,7 +493,7 @@ export default function Home() {
                     borderRadius: 2,
                     flexShrink: 0,
                     marginTop: 2,
-                    background: STATE_COLOR[key],
+                    background: color,
                   }}
                 />
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -423,11 +515,11 @@ export default function Home() {
                       color: "rgba(255,255,255,0.4)",
                     }}
                   >
-                    {STATE_DEF[key].short}
+                    {def}
                   </p>
                 </div>
                 <span
-                  aria-hidden="true"
+                  aria-label={`${count} locations`}
                   style={{
                     marginLeft: "auto",
                     fontSize: "1.375rem",
@@ -436,6 +528,7 @@ export default function Home() {
                     color: "rgba(255,255,255,0.14)",
                     flexShrink: 0,
                     paddingTop: 1,
+                    fontVariantNumeric: "tabular-nums",
                   }}
                 >
                   {count}
@@ -446,7 +539,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── INSPIRATION GRID ──────────────────────────────────────── */}
+      {/* ─── INSPIRATION GRID ─────────────────────────────────────── */}
       {inspirationLocs.length >= 2 && (
         <section
           style={{
@@ -456,18 +549,15 @@ export default function Home() {
           }}
           aria-label="Featured destinations"
         >
-          <div
-            style={{
-              maxWidth: 1320,
-              margin: "0 auto",
-            }}
-          >
+          <div style={{ maxWidth: 1320, margin: "0 auto" }}>
+            {/* Header */}
             <div
               style={{
                 display: "flex",
                 alignItems: "baseline",
                 justifyContent: "space-between",
                 marginBottom: "1.75rem",
+                paddingTop: 1,
               }}
             >
               <div>
@@ -481,7 +571,7 @@ export default function Home() {
                     marginBottom: "0.35rem",
                   }}
                 >
-                  Remarkable reefs
+                  Worth going for
                 </p>
                 <h2
                   style={{
@@ -491,7 +581,7 @@ export default function Home() {
                     color: "#fff",
                   }}
                 >
-                  Where to go
+                  Something remarkable, right now
                 </h2>
               </div>
               <a
@@ -508,11 +598,11 @@ export default function Home() {
               </a>
             </div>
 
-            {/* 2-col asymmetric grid: large left + 2 stacked right */}
+            {/* 3-column asymmetric grid: featured + 2 stacked */}
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1.65fr 1fr",
+                gridTemplateColumns: "1.65fr 1fr 1fr",
                 gap: 1,
                 background: "rgba(255,255,255,0.05)",
                 borderRadius: "1.25rem",
@@ -520,139 +610,41 @@ export default function Home() {
               }}
             >
               {/* Large featured card */}
-              <Link
-                href={`/locations/${inspirationLocs[0]!.slug}`}
-                style={{
-                  position: "relative",
-                  display: "block",
-                  minHeight: 360,
-                  overflow: "hidden",
-                  textDecoration: "none",
-                  background:
-                    DEST_GRADIENT[inspirationLocs[0]!.slug] ??
-                    DEST_GRADIENT.default,
-                }}
-              >
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                      "linear-gradient(to top, rgba(2,14,28,0.9) 0%, rgba(2,14,28,0.3) 50%, transparent 100%)",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    padding: "1.5rem 1.5rem 1.625rem",
-                    zIndex: 2,
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: "0.625rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.16em",
-                      textTransform: "uppercase",
-                      color: "rgba(255,255,255,0.45)",
-                      marginBottom: "0.35rem",
-                    }}
-                  >
-                    {inspirationLocs[0]!.region}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: "1.375rem",
-                      fontWeight: 800,
-                      letterSpacing: "-0.02em",
-                      color: "#fff",
-                      lineHeight: 1.15,
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    {inspirationLocs[0]!.name}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily:
-                        "var(--font-serif), 'Source Serif 4', Georgia, serif",
-                      fontStyle: "italic",
-                      fontSize: "0.875rem",
-                      lineHeight: 1.55,
-                      color: "rgba(255,255,255,0.6)",
-                      display: "-webkit-box",
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                    } as React.CSSProperties}
-                  >
-                    {inspirationLocs[0]!.hook}
-                  </p>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      marginTop: "0.875rem",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 5,
-                        fontSize: "0.6875rem",
-                        fontWeight: 600,
-                        color: STATE_COLOR[inspirationLocs[0]!.state],
-                        background: `${STATE_COLOR[inspirationLocs[0]!.state]}22`,
-                        padding: "3px 8px",
-                        borderRadius: 999,
-                      }}
-                    >
-                      {STATE_TEXT[inspirationLocs[0]!.state]}
-                    </span>
-                    {inSeason(inspirationLocs[0]!.bestMonths) && (
-                      <span
-                        style={{
-                          fontSize: "0.6875rem",
-                          fontWeight: 600,
-                          color: "#10b981",
-                          background: "rgba(16,185,129,0.15)",
-                          padding: "3px 8px",
-                          borderRadius: 999,
-                        }}
-                      >
-                        ● In season now
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </Link>
-
-              {/* Right column: 2 stacked cards */}
-              <div
-                style={{ display: "flex", flexDirection: "column", gap: 1 }}
-              >
-                {inspirationLocs.slice(1, 3).map((loc) => (
+              {(() => {
+                const loc = inspirationLocs[0]!;
+                const animals = ANIMAL_TAGS[loc.slug] ?? loc.animalTags ?? [];
+                const seasonal = inSeason(loc.bestMonths);
+                return (
                   <Link
-                    key={loc!.slug}
-                    href={`/locations/${loc!.slug}`}
+                    href={`/locations/${loc.slug}`}
                     style={{
                       position: "relative",
                       display: "block",
-                      flex: 1,
-                      minHeight: 160,
                       overflow: "hidden",
                       textDecoration: "none",
-                      background:
-                        DEST_GRADIENT[loc!.slug] ?? DEST_GRADIENT.default,
+                      background: DEST_GRADIENT[loc.slug] ?? DEST_GRADIENT.default,
                     }}
                   >
+                    {/* Image placeholder with min-height */}
+                    <div
+                      style={{
+                        width: "100%",
+                        minHeight: 380,
+                        display: "block",
+                      }}
+                    />
+                    {/* Caustic shimmer */}
+                    <div
+                      aria-hidden="true"
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        backgroundImage:
+                          "repeating-linear-gradient(94deg, transparent 0px, transparent 30px, rgba(0,160,220,0.04) 30px, rgba(0,160,220,0.04) 32px)",
+                        pointerEvents: "none",
+                      }}
+                    />
+                    {/* Gradient overlay */}
                     <div
                       aria-hidden="true"
                       style={{
@@ -660,15 +652,30 @@ export default function Home() {
                         inset: 0,
                         background:
                           "linear-gradient(to top, rgba(2,14,28,0.9) 0%, rgba(2,14,28,0.3) 50%, transparent 100%)",
+                        pointerEvents: "none",
                       }}
                     />
+                    {/* Hover blue overlay */}
+                    <div
+                      aria-hidden="true"
+                      className="inspire-hover-overlay"
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "rgba(0,137,222,0.1)",
+                        opacity: 0,
+                        transition: "opacity 0.25s",
+                        pointerEvents: "none",
+                      }}
+                    />
+                    {/* Content */}
                     <div
                       style={{
                         position: "absolute",
                         bottom: 0,
                         left: 0,
                         right: 0,
-                        padding: "1rem 1.25rem 1.25rem",
+                        padding: "1.5rem 1.5rem 1.625rem",
                         zIndex: 2,
                       }}
                     >
@@ -679,60 +686,193 @@ export default function Home() {
                           letterSpacing: "0.16em",
                           textTransform: "uppercase",
                           color: "rgba(255,255,255,0.45)",
-                          marginBottom: "0.25rem",
+                          marginBottom: "0.35rem",
                         }}
                       >
-                        {loc!.region}
+                        {loc.region}
                       </p>
-                      <p
+                      <h3
                         style={{
-                          fontSize: "1.0625rem",
+                          fontSize: "1.375rem",
                           fontWeight: 800,
                           letterSpacing: "-0.02em",
                           color: "#fff",
                           lineHeight: 1.15,
-                          marginBottom: "0.4rem",
+                          marginBottom: "0.5rem",
                         }}
                       >
-                        {loc!.name}
+                        {loc.name}
+                      </h3>
+                      <p
+                        style={{
+                          fontFamily:
+                            "var(--font-serif), 'Source Serif 4', Georgia, serif",
+                          fontStyle: "italic",
+                          fontSize: "0.875rem",
+                          lineHeight: 1.55,
+                          color: "rgba(255,255,255,0.6)",
+                          display: "-webkit-box",
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        } as React.CSSProperties}
+                      >
+                        {loc.hook}
                       </p>
+                      {/* Badges */}
                       <div
                         style={{
                           display: "flex",
                           alignItems: "center",
                           gap: "0.5rem",
+                          marginTop: "0.875rem",
+                          flexWrap: "wrap",
                         }}
                       >
-                        <span
-                          style={{
-                            fontSize: "0.6875rem",
-                            fontWeight: 600,
-                            color: STATE_COLOR[loc!.state],
-                            background: `${STATE_COLOR[loc!.state]}22`,
-                            padding: "2px 7px",
-                            borderRadius: 999,
-                          }}
-                        >
-                          {STATE_TEXT[loc!.state]}
+                        <span style={{ ...BADGE_BASE, ...STATE_BADGE_STYLE[loc.state] }}>
+                          {STATE_TEXT[loc.state]}
                         </span>
-                        {inSeason(loc!.bestMonths) && (
-                          <span
-                            style={{
-                              fontSize: "0.6875rem",
-                              fontWeight: 600,
-                              color: "#10b981",
-                              background: "rgba(16,185,129,0.15)",
-                              padding: "2px 7px",
-                              borderRadius: 999,
-                            }}
-                          >
-                            ● In season
+                        {seasonal && (
+                          <span style={SEASON_BADGE}>In season now</span>
+                        )}
+                        {animals.length > 0 && (
+                          <span style={ANIMAL_BADGE}>
+                            {animals.slice(0, 2).join(" · ")}
                           </span>
                         )}
                       </div>
                     </div>
                   </Link>
-                ))}
+                );
+              })()}
+
+              {/* Right stack — two smaller cards */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateRows: "1fr 1fr",
+                  gap: 1,
+                  gridColumn: "span 2",
+                }}
+              >
+                {inspirationLocs.slice(1, 3).map((loc) => {
+                  const animals = ANIMAL_TAGS[loc!.slug] ?? loc!.animalTags ?? [];
+                  const seasonal = inSeason(loc!.bestMonths);
+                  return (
+                    <Link
+                      key={loc!.slug}
+                      href={`/locations/${loc!.slug}`}
+                      style={{
+                        position: "relative",
+                        display: "block",
+                        overflow: "hidden",
+                        textDecoration: "none",
+                        background:
+                          DEST_GRADIENT[loc!.slug] ?? DEST_GRADIENT.default,
+                      }}
+                    >
+                      {/* Min-height placeholder */}
+                      <div style={{ width: "100%", minHeight: 160 }} />
+                      {/* Caustic shimmer */}
+                      <div
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          backgroundImage:
+                            "repeating-linear-gradient(94deg, transparent 0px, transparent 30px, rgba(0,160,220,0.04) 30px, rgba(0,160,220,0.04) 32px)",
+                          pointerEvents: "none",
+                        }}
+                      />
+                      {/* Gradient overlay */}
+                      <div
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          background:
+                            "linear-gradient(to top, rgba(2,14,28,0.9) 0%, rgba(2,14,28,0.3) 50%, transparent 100%)",
+                          pointerEvents: "none",
+                        }}
+                      />
+                      {/* Hover blue overlay */}
+                      <div
+                        aria-hidden="true"
+                        className="inspire-hover-overlay"
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          background: "rgba(0,137,222,0.1)",
+                          opacity: 0,
+                          transition: "opacity 0.25s",
+                          pointerEvents: "none",
+                        }}
+                      />
+                      {/* Content */}
+                      <div
+                        style={{
+                          position: "absolute",
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          padding: "1rem 1.25rem 1.25rem",
+                          zIndex: 2,
+                        }}
+                      >
+                        <p
+                          style={{
+                            fontSize: "0.625rem",
+                            fontWeight: 700,
+                            letterSpacing: "0.16em",
+                            textTransform: "uppercase",
+                            color: "rgba(255,255,255,0.45)",
+                            marginBottom: "0.35rem",
+                          }}
+                        >
+                          {loc!.region}
+                        </p>
+                        <h3
+                          style={{
+                            fontSize: "1.0625rem",
+                            fontWeight: 800,
+                            letterSpacing: "-0.02em",
+                            color: "#fff",
+                            lineHeight: 1.15,
+                            marginBottom: "0.4rem",
+                          }}
+                        >
+                          {loc!.name}
+                        </h3>
+                        {/* Badges */}
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.5rem",
+                            flexWrap: "wrap",
+                          }}
+                        >
+                          <span
+                            style={{
+                              ...BADGE_BASE,
+                              ...STATE_BADGE_STYLE[loc!.state],
+                            }}
+                          >
+                            {STATE_TEXT[loc!.state]}
+                          </span>
+                          {seasonal && (
+                            <span style={SEASON_BADGE}>In season</span>
+                          )}
+                          {animals.length > 0 && (
+                            <span style={ANIMAL_BADGE}>
+                              {animals.slice(0, 2).join(" · ")}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -740,13 +880,233 @@ export default function Home() {
       )}
 
       {/* ─── ATLAS EXPLORER ──────────────────────────────────────── */}
-      <div id="atlas" className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-10">
+      <section
+        id="atlas"
+        aria-label="Atlas explorer"
+        style={{ background: "#ffffff", padding: "5rem 3rem" }}
+      >
+        <div style={{ maxWidth: 1320, margin: "0 auto" }}>
+          {/* Explorer header */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+              marginBottom: "2rem",
+              paddingBottom: "1.5rem",
+              borderBottom: "1px solid #e2e8f0",
+              gap: "1rem",
+            }}
+          >
+            <div>
+              <p
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#64748b",
+                  marginBottom: "0.4rem",
+                }}
+              >
+                The full atlas
+              </p>
+              <h2
+                style={{
+                  fontSize: "1.875rem",
+                  fontWeight: 800,
+                  letterSpacing: "-0.025em",
+                  color: "#0f172a",
+                }}
+              >
+                Browse every tracked reef
+              </h2>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <p style={{ fontSize: "0.875rem", color: "#64748b", marginBottom: "0.2rem" }}>
+                <strong style={{ color: "#0f172a", fontWeight: 700 }}>
+                  {reefCount}
+                </strong>{" "}
+                locations · {regions.length} regions
+              </p>
+              <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem" }}>
+                Filter, sort, or search above
+              </p>
+            </div>
+          </div>
+
           <Suspense fallback={null}>
-            <AtlasExplorer locations={filterLocs} regions={regions} skills={skills} />
+            <AtlasExplorer
+              locations={filterLocs}
+              regions={regions}
+              skills={skills}
+            />
           </Suspense>
         </div>
-      </div>
+      </section>
+
+      {/* ─── NUMBERS / EDITORIAL STATS ───────────────────────────── */}
+      <section
+        aria-label="About the data"
+        style={{
+          background: "#f8fafc",
+          borderTop: "1px solid #e2e8f0",
+          padding: "4rem 3rem",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1320,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "3rem",
+            alignItems: "start",
+          }}
+        >
+          {/* 38 data sources */}
+          <div>
+            <p
+              style={{
+                fontSize: "3.25rem",
+                fontWeight: 900,
+                letterSpacing: "-0.05em",
+                color: "#e2e8f0",
+                lineHeight: 1,
+                marginBottom: "0.75rem",
+                fontVariantNumeric: "tabular-nums",
+              }}
+            >
+              {sourceCount}
+            </p>
+            <p
+              style={{
+                fontSize: "0.6875rem",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#64748b",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Data sources
+            </p>
+            <p
+              style={{
+                fontFamily:
+                  "var(--font-serif), 'Source Serif 4', Georgia, serif",
+                fontSize: "0.9375rem",
+                lineHeight: 1.65,
+                color: "#475569",
+              }}
+            >
+              NOAA Coral Reef Watch, AIMS, IUCN Red List, Global Fishing Watch,
+              iNaturalist, NCRMP, and {sourceCount > 6 ? sourceCount - 6 : "more"} additional program-specific monitoring datasets.
+            </p>
+          </div>
+
+          {/* Updated tonight — live badge */}
+          <div>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                padding: "0.45rem 0.875rem 0.45rem 0.625rem",
+                borderRadius: 999,
+                background: "rgba(21,160,92,0.1)",
+                border: "1px solid rgba(21,160,92,0.2)",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                letterSpacing: "0.04em",
+                color: "#15804d",
+                marginBottom: "0.75rem",
+              }}
+            >
+              <span
+                className="live-dot"
+                style={{
+                  width: 7,
+                  height: 7,
+                  borderRadius: "50%",
+                  background: "#15a05c",
+                  boxShadow: "0 0 0 3px rgba(21,160,92,0.25)",
+                  flexShrink: 0,
+                  display: "inline-block",
+                }}
+              />
+              Updated tonight
+            </div>
+            <p
+              style={{
+                fontSize: "0.6875rem",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#64748b",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Thermal data
+            </p>
+            <p
+              style={{
+                fontFamily:
+                  "var(--font-serif), 'Source Serif 4', Georgia, serif",
+                fontSize: "0.9375rem",
+                lineHeight: 1.65,
+                color: "#475569",
+              }}
+            >
+              Every reef is re-checked against NOAA&apos;s 5 km satellite feed
+              each night. Three signals: bleaching alert level, degree heating
+              weeks, and SST anomaly.
+            </p>
+          </div>
+
+          {/* 0 marketing adjectives */}
+          <div>
+            <p
+              style={{
+                fontSize: "3.25rem",
+                fontWeight: 900,
+                letterSpacing: "-0.05em",
+                color: "#e2e8f0",
+                lineHeight: 1,
+                marginBottom: "0.75rem",
+                fontVariantNumeric: "tabular-nums",
+              }}
+            >
+              0
+            </p>
+            <p
+              style={{
+                fontSize: "0.6875rem",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#64748b",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Marketing adjectives
+            </p>
+            <p
+              style={{
+                fontFamily:
+                  "var(--font-serif), 'Source Serif 4', Georgia, serif",
+                fontSize: "0.9375rem",
+                lineHeight: 1.65,
+                color: "#475569",
+              }}
+            >
+              &ldquo;Limited survey data available&rdquo; is always better than a hopeful
+              description we can&apos;t back up. If the data says a reef is
+              degraded, we say so.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
