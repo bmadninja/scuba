@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import { Logo } from "@/components/logo";
 
 type SearchEntry = {
   slug: string;
@@ -78,7 +79,14 @@ export function AtlasNav({ entries = [] }: { entries?: SearchEntry[] }) {
     } else if (e.key === "Enter") {
       e.preventDefault();
       const r = results[sel];
-      if (r) go(r);
+      if (r) {
+        go(r);
+      } else if (q.trim()) {
+        // No selection — route to search results page
+        setOpen(false);
+        router.push(`/search?q=${encodeURIComponent(q.trim())}`);
+        setQ("");
+      }
     } else if (e.key === "Escape") {
       setOpen(false);
     }
@@ -87,11 +95,8 @@ export function AtlasNav({ entries = [] }: { entries?: SearchEntry[] }) {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-[1320px] items-center gap-6 px-7 py-3">
-        <Link
-          href="/"
-          className="flex shrink-0 items-center text-lg font-semibold tracking-tight text-slate-900"
-        >
-          scubaSeason<span className="text-[#0089de]">.fun</span>
+        <Link href="/" className="shrink-0" aria-label="scubaSeason.fun — home">
+          <Logo size={28} />
         </Link>
 
         <div ref={wrapRef} className="relative ml-auto w-full max-w-sm">
@@ -162,12 +167,12 @@ export function AtlasNav({ entries = [] }: { entries?: SearchEntry[] }) {
           )}
         </div>
 
-        <nav className="hidden shrink-0 items-center gap-1 sm:flex">
+        <nav className="hidden shrink-0 items-center gap-1 sm:flex" aria-label="Main navigation">
           {NAV.map((n) => (
             <Link
               key={n.key}
               href={n.href}
-              className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 text-sm font-medium transition-colors ${
                 active === n.key
                   ? "text-[#0089de]"
                   : "text-slate-700 hover:text-[#0089de]"

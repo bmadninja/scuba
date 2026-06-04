@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Wordmark options</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400;1,8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:#f8fafc;color:#0f172a;padding:4rem 3rem;}
+h1{font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#64748b;margin-bottom:3rem;}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:1.25rem;padding:2.5rem 2rem;display:flex;flex-direction:column;gap:2rem;}
+.card-label{font-size:0.625rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#94a3b8;}
+.card-name{font-size:0.9375rem;font-weight:700;color:#0f172a;margin-top:0.25rem;margin-bottom:0.125rem;}
+.card-desc{font-size:0.8125rem;line-height:1.6;color:#64748b;}
+
+.lockup{display:flex;align-items:center;gap:0.875rem;}
+.lockup-stacked{display:flex;align-items:flex-start;gap:0.875rem;}
+.dark{background:#0b1e32;border-radius:1rem;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:0.875rem;}
+.dark-stacked{background:#0b1e32;border-radius:1rem;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:0.875rem;}
+
+/* shared mark */
+.mark{width:36px;height:36px;flex-shrink:0;}
+.mark-sm{width:28px;height:28px;flex-shrink:0;}
+
+/* A — all lowercase one voice, uniform weight */
+.wmA{font-family:'Noto Sans',sans-serif;font-size:1.0625rem;font-weight:700;letter-spacing:-0.03em;color:#0f172a;}
+.wmA-dark{color:#fff;}
+
+/* B — wide tracked all-caps, .fun tiny */
+.wmB{display:flex;flex-direction:column;line-height:1.1;}
+.wmB-main{font-family:'Noto Sans',sans-serif;font-size:0.875rem;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#0f172a;}
+.wmB-sub{font-family:'Noto Sans',sans-serif;font-size:0.5625rem;font-weight:500;letter-spacing:0.2em;color:#94a3b8;}
+
+.wmB-dark .wmB-main{color:#fff;}
+.wmB-dark .wmB-sub{color:rgba(255,255,255,0.3);}
+
+/* C — scuba thin, Season heavy, .fun inherits heavy no color */
+.wmC{display:flex;flex-direction:column;line-height:1.0;}
+.wmC-top{font-family:'Noto Sans',sans-serif;font-size:0.75rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.wmC-bot{font-family:'Noto Sans',sans-serif;font-size:1.1875rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+
+.wmC-dark .wmC-top{color:rgba(255,255,255,0.3);}
+.wmC-dark .wmC-bot{color:#fff;}
+
+/* D — italic serif for "Season", everything same color */
+.wmD{font-family:'Noto Sans',sans-serif;font-size:1.0rem;font-weight:800;letter-spacing:-0.025em;color:#0f172a;display:flex;align-items:baseline;}
+.wmD-italic{font-family:'Source Serif 4',serif;font-style:italic;font-weight:400;font-size:1.175rem;letter-spacing:0.01em;color:#0f172a;}
+.wmD-fun{font-size:0.875rem;font-weight:700;letter-spacing:-0.01em;color:#0f172a;}
+
+.wmD-dark,.wmD-dark .wmD-italic,.wmD-dark .wmD-fun{color:#fff;}
+
+/* E — scuba·season format, .fun silent */
+.wmE{font-family:'Noto Sans',sans-serif;font-size:1.0625rem;font-weight:800;letter-spacing:-0.04em;color:#0f172a;display:flex;align-items:baseline;gap:0.05em;}
+.wmE-dot{font-weight:300;color:#cbd5e1;font-size:1.25rem;line-height:1;}
+.wmE-fun{font-size:0.6875rem;font-weight:500;color:#94a3b8;letter-spacing:0.01em;}
+
+.wmE-dark{color:#fff;}
+.wmE-dark .wmE-dot{color:rgba(255,255,255,0.2);}
+.wmE-dark .wmE-fun{color:rgba(255,255,255,0.35);}
+
+/* F — "scubaSeason" with full-stop and .fun as one piece, Mono */
+.wmF{font-family:'Noto Sans',sans-serif;font-size:1.0625rem;font-weight:700;letter-spacing:-0.02em;color:#0f172a;}
+.wmF-tld{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:0.875rem;color:#0f172a;}
+
+.wmF-dark,.wmF-dark .wmF-tld{color:#fff;}
+</style>
+</head>
+<body>
+
+<h1>Wordmark v2 — no special treatment on .fun</h1>
+
+<div class="grid">
+
+  <!-- A -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option A</p>
+      <p class="card-name">One voice</p>
+      <p class="card-desc">All lowercase, single weight. The name speaks for itself — nothing highlighted.</p>
+    </div>
+    <div class="lockup">
+      <svg class="mark" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wmA">scubaseason.fun</span>
+    </div>
+    <div class="dark">
+      <svg class="mark-sm" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wmA wmA-dark">scubaseason.fun</span>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option B</p>
+      <p class="card-name">All-caps + tracked</p>
+      <p class="card-desc">SCUBA SEASON wide-spaced like a luxury brand. .fun whispered below in small caps.</p>
+    </div>
+    <div class="lockup-stacked">
+      <svg class="mark" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <div class="wmB">
+        <span class="wmB-main">Scuba Season</span>
+        <span class="wmB-sub">.fun</span>
+      </div>
+    </div>
+    <div class="dark-stacked">
+      <svg class="mark-sm" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <div class="wmB wmB-dark">
+        <span class="wmB-main">Scuba Season</span>
+        <span class="wmB-sub">.fun</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option C</p>
+      <p class="card-name">Weight split, no color</p>
+      <p class="card-desc">scuba light gray above, Season.fun ultra-black below. The contrast is the design.</p>
+    </div>
+    <div class="lockup-stacked">
+      <svg class="mark" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <div class="wmC">
+        <span class="wmC-top">scuba</span>
+        <span class="wmC-bot">Season.fun</span>
+      </div>
+    </div>
+    <div class="dark-stacked">
+      <svg class="mark-sm" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <div class="wmC wmC-dark">
+        <span class="wmC-top">scuba</span>
+        <span class="wmC-bot">Season.fun</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- D -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option D</p>
+      <p class="card-name">Mixed voice, same color</p>
+      <p class="card-desc">scuba sans, <em>Season</em> in italic serif, .fun back to sans. All the same ink — the rhythm varies, not the color.</p>
+    </div>
+    <div class="lockup">
+      <svg class="mark" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wmD">scuba<span class="wmD-italic">Season</span><span class="wmD-fun">.fun</span></span>
+    </div>
+    <div class="dark">
+      <svg class="mark-sm" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wmD wmD-dark">scuba<span class="wmD-italic">Season</span><span class="wmD-fun">.fun</span></span>
+    </div>
+  </div>
+
+  <!-- E -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option E</p>
+      <p class="card-name">Middot separator</p>
+      <p class="card-desc">scuba·season — two words, one piece. .fun very quiet at the end, almost invisible.</p>
+    </div>
+    <div class="lockup">
+      <svg class="mark" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wmE">scuba<span class="wmE-dot">·</span>season<span class="wmE-fun">.fun</span></span>
+    </div>
+    <div class="dark">
+      <svg class="mark-sm" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wmE wmE-dark">scuba<span class="wmE-dot">·</span>season<span class="wmE-fun">.fun</span></span>
+    </div>
+  </div>
+
+  <!-- F -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option F</p>
+      <p class="card-name">Mono TLD</p>
+      <p class="card-desc">scubaSeason in sans, .fun switches to monospace. The font shift does the work — no color needed.</p>
+    </div>
+    <div class="lockup">
+      <svg class="mark" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wmF">scubaSeason<span class="wmF-tld">.fun</span></span>
+    </div>
+    <div class="dark">
+      <svg class="mark-sm" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wmF wmF-dark">scubaSeason<span class="wmF-tld">.fun</span></span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

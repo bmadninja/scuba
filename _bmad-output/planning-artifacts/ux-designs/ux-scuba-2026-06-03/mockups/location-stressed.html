@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Galápagos Islands — location detail — mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#0089de;--brand-dk:#1d5d90;
+  --ink:#0b1e32;--white:#fff;
+  --body:#334155;--muted:#64748b;
+  --hairline:#e2e8f0;--surface:#f1f7fb;
+  --thriving:#10b981;--pressure:#0089de;--change:#f43f5e;
+}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;flex-shrink:0;}
+.nav-logo svg{width:28px;height:28px;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a:hover{color:#0f172a;}
+.nav-links a.active{color:var(--brand);}
+.nav-breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--muted);margin-left:2rem;}
+.nav-breadcrumb a{color:var(--muted);text-decoration:none;}
+.nav-breadcrumb a:hover{color:var(--brand);}
+.nav-breadcrumb .sep{color:#cbd5e1;}
+
+/* HERO */
+.hero{position:relative;height:68vh;min-height:520px;overflow:hidden;}
+.hero-img{
+  width:100%;height:100%;
+  background:linear-gradient(155deg,#1a0a00 0%,#3d1a00 20%,#5a2800 40%,#7a3a08 58%,#6a3010 75%,#4a2008 100%);
+}
+.hero-shimmer{
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(96deg,transparent 0,transparent 44px,rgba(220,80,30,.04) 44px,rgba(220,80,30,.04) 46px);
+}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:300px;background:linear-gradient(to bottom,transparent,#fff);}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 3rem 3rem;max-width:1320px;margin:0 auto;}
+.hero-state-pill{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.4rem 1rem;border-radius:999px;
+  background:rgba(244,63,94,0.12);border:1px solid rgba(244,63,94,0.28);
+  font-size:0.6875rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  color:#f43f5e;margin-bottom:1rem;backdrop-filter:blur(8px);
+}
+.hero-state-pill .dot{width:6px;height:6px;border-radius:50%;background:#f43f5e;}
+.hero-h1{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;letter-spacing:-0.035em;line-height:1.02;color:#0f172a;}
+.hero-sub{font-family:'Source Serif 4',serif;font-style:italic;font-size:1.05rem;color:var(--muted);margin-top:0.75rem;line-height:1.6;}
+
+/* STAT STRIP */
+.stat-strip{border-bottom:1px solid var(--hairline);background:var(--surface);}
+.stat-strip-inner{max-width:1320px;margin:0 auto;padding:0 3rem;display:flex;align-items:stretch;}
+.stat-item{display:flex;flex-direction:column;gap:0.2rem;padding:1.125rem 2rem;border-right:1px solid var(--hairline);}
+.stat-item:first-child{padding-left:0;}
+.stat-lbl{font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.stat-val{font-size:1rem;font-weight:700;color:#0f172a;letter-spacing:-0.01em;}
+.stat-note{font-size:0.6875rem;color:var(--muted);}
+
+/* EDITORIAL HOOK */
+.location-hook{padding:2.5rem 0 0;}
+.hook-text{font-family:'Source Serif 4',serif;font-size:1.0625rem;line-height:1.8;color:#334155;max-width:640px;}
+
+/* SPECIES STRIP */
+.species-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:2.5rem;}
+.sp-card{border:1px solid var(--hairline);border-radius:1rem;overflow:hidden;text-decoration:none;color:inherit;transition:border-color 0.15s;}
+.sp-card:hover{border-color:rgba(244,63,94,0.25);}
+.sp-img{height:88px;}
+.sp-img-1{background:linear-gradient(145deg,#2d0a00,#6a2000,#8a3008);}
+.sp-img-2{background:linear-gradient(145deg,#1a0800,#4a1800,#7a3010);}
+.sp-img-3{background:linear-gradient(145deg,#0a1a10,#1a4030,#2a6050);}
+.sp-img-4{background:linear-gradient(145deg,#1a1200,#3a2a00,#6a4800);}
+.sp-img-5{background:linear-gradient(145deg,#051520,#0a3040,#0a5060);}
+.sp-img-6{background:linear-gradient(145deg,#0a2808,#1a5020,#2a6030);}
+.sp-body{padding:0.75rem;}
+.sp-name{font-size:0.8125rem;font-weight:700;color:#0f172a;margin-bottom:0.2rem;}
+.sp-sci{font-size:0.6875rem;font-style:italic;color:var(--muted);margin-bottom:0.4rem;}
+.sp-sight{display:flex;align-items:center;gap:0.375rem;font-size:0.6875rem;color:var(--muted);}
+.sp-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.iucn{display:inline-block;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.15rem 0.4rem;border-radius:3px;}
+.iucn-en{background:#fde8e8;color:#991b1b;}
+.iucn-vu{background:#fde8cc;color:#9a3412;}
+.iucn-nt{background:#fef3c7;color:#92400e;}
+.iucn-lc{background:#e7f6ee;color:#065f46;}
+
+/* FOOTER */
+.footer{background:#0b1e32;padding:4rem 3rem 3rem;}
+.footer-inner{max-width:1320px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;margin-bottom:1rem;}
+.footer-wm{display:flex;flex-direction:column;line-height:1.0;}
+.footer-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.3);}
+.footer-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#fff;}
+.footer-tagline{font-family:'Source Serif 4',serif;font-size:0.875rem;line-height:1.65;color:rgba(255,255,255,0.35);max-width:260px;}
+.footer-col-title{font-size:0.625rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1.25rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.625rem;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:500;}
+.footer-contact-email{font-size:0.9375rem;font-weight:600;color:#0089de;text-decoration:none;display:block;margin-bottom:0.875rem;}
+.footer-contact-note{font-size:0.8125rem;line-height:1.6;color:rgba(255,255,255,0.3);}
+.footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
+
+/* BODY LAYOUT */
+.body-wrap{max-width:1320px;margin:0 auto;padding:4rem 3rem;}
+.body-grid{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start;}
+
+/* LEFT COLUMN */
+.section-label{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;}
+.section-h2{font-size:1.5rem;font-weight:800;letter-spacing:-0.025em;color:#0f172a;margin-bottom:1.25rem;}
+
+/* Reef science panel */
+.science-panel{border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;margin-bottom:2.5rem;}
+.science-header{padding:1.25rem 1.5rem;background:var(--surface);border-bottom:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between;}
+.science-title{font-size:0.875rem;font-weight:700;color:#0f172a;}
+.science-freshness{display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--muted);}
+.fresh-dot{width:5px;height:5px;border-radius:50%;}
+.science-body{padding:1.5rem;}
+
+/* Coral cover bars */
+.cover-row{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;}
+.cover-meta{display:flex;justify-content:space-between;align-items:baseline;}
+.cover-yr{font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.cover-val{font-size:1.125rem;font-weight:800;letter-spacing:-0.02em;color:#0f172a;}
+.cover-track{height:8px;border-radius:4px;background:#e2e8f0;overflow:hidden;}
+.cover-fill{height:100%;border-radius:4px;transition:width 0.6s ease;}
+
+/* Pressure grid */
+.pressure-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+.pressure-item{padding:1rem;border-radius:0.875rem;border:1px solid var(--hairline);background:var(--white);}
+.pressure-lbl{font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;}
+.pressure-val{font-size:0.9375rem;font-weight:700;color:#0f172a;}
+.pressure-badge{display:inline-block;padding:0.25rem 0.625rem;border-radius:999px;font-size:0.6875rem;font-weight:700;}
+.pb-low{background:#e7f6ee;color:#15824c;}
+.pb-moderate{background:#fef3c7;color:#92400e;}
+.pb-high{background:#fdecea;color:#b91c1c;}
+.pb-alert{background:#fff1f2;color:#be123c;}
+.pb-change{background:#fff1f2;color:#be123c;}
+
+/* Sites list */
+.sites-list{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;}
+.site-row{display:flex;gap:1.25rem;align-items:center;padding:1rem 1.25rem;border-radius:1.1rem;border:1px solid var(--hairline);background:var(--white);text-decoration:none;color:inherit;transition:border-color 0.15s,box-shadow 0.15s;}
+.site-row:hover{border-color:rgba(244,63,94,0.25);box-shadow:0 4px 16px -6px rgba(244,63,94,0.1);}
+.site-thumb{width:56px;height:56px;border-radius:0.75rem;flex-shrink:0;}
+.site-thumb-img{width:100%;height:100%;border-radius:0.75rem;}
+.dest-site-1{background:linear-gradient(145deg,#3d1200,#6a2800,#5a3010);}
+.dest-site-2{background:linear-gradient(145deg,#2a0800,#5a2000,#7a3808);}
+.dest-site-3{background:linear-gradient(145deg,#1a0a00,#4a2000,#6a3010);}
+.dest-site-4{background:linear-gradient(145deg,#041c20,#0a3840,#086070);}
+.site-info{flex:1;min-width:0;}
+.site-name{font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.25rem;}
+.site-meta{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.site-chip{font-size:0.625rem;font-weight:600;padding:0.2rem 0.5rem;border-radius:999px;background:var(--surface);color:var(--muted);}
+.site-chip-season{background:#fef3c7;color:#92400e;}
+.site-arrow{color:#cbd5e1;font-size:1.25rem;flex-shrink:0;}
+.site-sighting{font-size:0.6875rem;color:var(--muted);margin-top:0.25rem;display:flex;align-items:center;gap:0.375rem;}
+.sight-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+
+/* RIGHT SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1.5rem;}
+.sidebar-card{border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;}
+.sidebar-card-header{padding:1.125rem 1.375rem;border-bottom:1px solid var(--hairline);background:var(--surface);}
+.sidebar-card-title{font-size:0.8125rem;font-weight:700;color:#0f172a;}
+.sidebar-card-body{padding:1.25rem 1.375rem;}
+
+/* Season calendar */
+.season-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0.375rem;}
+.season-cell{padding:0.375rem 0.25rem;text-align:center;font-size:0.625rem;font-weight:700;border-radius:0.375rem;}
+.season-peak{background:#fef3c7;color:#92400e;}
+.season-off{background:var(--surface);color:var(--muted);}
+.season-now{outline:2px solid var(--change);outline-offset:1px;}
+
+/* Thermal / bleaching alert — amber/red */
+.alert-badge{display:flex;align-items:center;gap:0.875rem;padding:1rem;border-radius:0.875rem;border:1px solid #fca5a5;background:#fff1f2;}
+.alert-dot-wrap{width:36px;height:36px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.alert-dot-inner{width:12px;height:12px;border-radius:50%;background:#f43f5e;animation:pulse-alert 1.6s ease-in-out infinite;}
+@keyframes pulse-alert{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.6;transform:scale(0.85);}}
+.alert-label{font-size:0.75rem;font-weight:700;color:#be123c;}
+.alert-sub{font-size:0.6875rem;color:#9f1239;margin-top:0.15rem;}
+
+/* Trip planning CTA */
+.cta-card{background:var(--ink);border-radius:1.25rem;padding:1.5rem;text-align:center;}
+.cta-label{font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.75rem;}
+.cta-h3{font-size:1.0625rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:0.5rem;}
+.cta-body{font-size:0.8125rem;line-height:1.6;color:rgba(255,255,255,0.45);margin-bottom:1.25rem;}
+.cta-btn{display:block;padding:0.75rem 1.25rem;border-radius:0.75rem;background:var(--brand);color:#fff;font-size:0.875rem;font-weight:700;text-decoration:none;text-align:center;}
+.cta-btn:hover{background:#007bc7;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="homepage.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark">
+      <span class="nav-wm-top">scuba</span>
+      <span class="nav-wm-bot">Season.fun</span>
+    </div>
+  </a>
+  <nav class="nav-breadcrumb">
+    <a href="homepage.html">Atlas</a>
+    <span class="sep">/</span>
+    <span style="color:#0f172a;font-weight:600;">Galápagos Islands</span>
+  </nav>
+  <ul class="nav-links">
+    <li><a href="method.html">Method</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-shimmer" aria-hidden="true"></div>
+  <div class="hero-fade" aria-hidden="true"></div>
+  <div style="position:absolute;top:1.5rem;right:2rem;z-index:20;font-size:0.5875rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:0.4rem;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+    Photo · Galápagos Islands, East Pacific
+  </div>
+  <div class="hero-content">
+    <div class="hero-state-pill"><span class="dot"></span>Witnessing change</div>
+    <h1 class="hero-h1">Galápagos Islands</h1>
+    <p class="hero-sub">Ecuador · East Pacific</p>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-item">
+      <span class="stat-lbl">Dive sites</span>
+      <span class="stat-val">4 curated</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Reef state</span>
+      <span class="stat-val" style="color:var(--change);">Witnessing change</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Coral cover</span>
+      <span class="stat-val">18%</span>
+      <span class="stat-note">Survey 3 years ago · marked Cold</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Species tracked</span>
+      <span class="stat-val">38+</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Best season</span>
+      <span class="stat-val">Jan – May</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Last sighting</span>
+      <span class="stat-val" style="color:#d97706;">12 days ago</span>
+      <span class="stat-note">Scalloped hammerhead shark</span>
+    </div>
+  </div>
+</div>
+
+<div class="body-wrap">
+  <div class="body-grid">
+
+    <!-- LEFT -->
+    <div>
+
+      <!-- EDITORIAL HOOK -->
+      <div class="location-hook">
+        <p class="hook-text">Coral cover has dropped from 32% to 18% since 2019 — one of the steepest declines in the atlas. The reef is diminished. But the pelagics are still extraordinary. Hammerhead schools at Darwin Island, whale sharks, marine iguanas feeding underwater. This is not a reef to avoid. It is a reef to witness honestly.</p>
+      </div>
+
+      <!-- SPECIES -->
+      <p class="section-label" style="margin-top:2.5rem;">What you'll find here</p>
+      <h2 class="section-h2">Notable species across all sites</h2>
+      <div class="species-strip">
+        <a href="sites.html" class="sp-card">
+          <div class="sp-img sp-img-1"></div>
+          <div class="sp-body">
+            <p class="sp-name">Scalloped hammerhead <span class="iucn iucn-en">EN</span></p>
+            <p class="sp-sci">Sphyrna lewini</p>
+            <p class="sp-sight"><span class="sp-dot" style="background:#d97706"></span>12 days ago · Darwin Island</p>
+          </div>
+        </a>
+        <a href="sites.html" class="sp-card">
+          <div class="sp-img sp-img-2"></div>
+          <div class="sp-body">
+            <p class="sp-name">Whale shark <span class="iucn iucn-en">EN</span></p>
+            <p class="sp-sci">Rhincodon typus</p>
+            <p class="sp-sight"><span class="sp-dot" style="background:#d97706"></span>19 days ago · Darwin Island</p>
+          </div>
+        </a>
+        <a href="sites.html" class="sp-card">
+          <div class="sp-img sp-img-3"></div>
+          <div class="sp-body">
+            <p class="sp-name">Marine iguana <span class="iucn iucn-vu">VU</span></p>
+            <p class="sp-sci">Amblyrhynchus cristatus</p>
+            <p class="sp-sight"><span class="sp-dot" style="background:#10b981"></span>4 days ago · Kicker Rock</p>
+          </div>
+        </a>
+        <a href="sites.html" class="sp-card">
+          <div class="sp-img sp-img-4"></div>
+          <div class="sp-body">
+            <p class="sp-name">Galápagos shark <span class="iucn iucn-lc">LC</span></p>
+            <p class="sp-sci">Carcharhinus galapagensis</p>
+            <p class="sp-sight"><span class="sp-dot" style="background:#d97706"></span>16 days ago · Gordon Rocks</p>
+          </div>
+        </a>
+        <a href="sites.html" class="sp-card">
+          <div class="sp-img sp-img-5"></div>
+          <div class="sp-body">
+            <p class="sp-name">Green sea turtle <span class="iucn iucn-en">EN</span></p>
+            <p class="sp-sci">Chelonia mydas</p>
+            <p class="sp-sight"><span class="sp-dot" style="background:#10b981"></span>6 days ago · Kicker Rock</p>
+          </div>
+        </a>
+        <a href="sites.html" class="sp-card">
+          <div class="sp-img sp-img-6"></div>
+          <div class="sp-body">
+            <p class="sp-name">Mola mola <span class="iucn iucn-vu">VU</span></p>
+            <p class="sp-sci">Mola mola</p>
+            <p class="sp-sight"><span class="sp-dot" style="background:#d97706"></span>28 days ago · Gordon Rocks</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- REEF SCIENCE -->
+      <p class="section-label">Reef science</p>
+      <h2 class="section-h2">What the data says</h2>
+
+      <div class="science-panel">
+        <div class="science-header">
+          <span class="science-title">Coral cover — live coral as % of seafloor</span>
+          <div class="science-freshness">
+            <span class="fresh-dot" style="background:#f43f5e"></span>
+            Survey 3 years ago · Cold
+          </div>
+        </div>
+        <div class="science-body">
+          <div class="cover-row">
+            <div class="cover-meta">
+              <span class="cover-yr">2019 baseline</span>
+              <span class="cover-val">32%</span>
+            </div>
+            <div class="cover-track"><div class="cover-fill" style="width:32%;background:#d97706;opacity:0.45;"></div></div>
+          </div>
+          <div class="cover-row">
+            <div class="cover-meta">
+              <span class="cover-yr">Most recent · 2023</span>
+              <span class="cover-val" style="color:#f43f5e;">18%</span>
+            </div>
+            <div class="cover-track"><div class="cover-fill" style="width:18%;background:#f43f5e;"></div></div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:0.625rem;margin-top:0.875rem;padding:0.75rem 0.875rem;border-radius:0.75rem;background:#fff1f2;border:1px solid #fecdd3;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span style="font-size:0.8125rem;color:#be123c;font-weight:500;">↓ Cover has declined 14 points since 2019. Survey data is 3 years old — marked Cold.</span>
+          </div>
+
+          <!-- Thermal stress callout -->
+          <div style="margin-top:1rem;padding:0.875rem 1rem;border-radius:0.875rem;background:#fffbeb;border:1px solid #fcd34d;display:flex;align-items:flex-start;gap:0.75rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+            <div>
+              <p style="font-size:0.75rem;font-weight:700;color:#92400e;margin-bottom:0.2rem;">Thermal stress — Alert 1 (active)</p>
+              <p style="font-size:0.75rem;color:#78350f;line-height:1.55;">DHW 8.2 °C-weeks · SST anomaly <span style="font-weight:700;color:#d97706;">+1.8 °C</span> above seasonal baseline. Bleaching stress is elevated across all sites.</p>
+            </div>
+          </div>
+
+          <div class="pressure-grid" style="margin-top:1.5rem;">
+            <div class="pressure-item">
+              <p class="pressure-lbl">Fishing pressure</p>
+              <span class="pressure-badge pb-moderate">Moderate</span>
+            </div>
+            <div class="pressure-item">
+              <p class="pressure-lbl">Thermal stress</p>
+              <span class="pressure-badge pb-alert">Alert 1 · DHW 8.2</span>
+            </div>
+            <div class="pressure-item">
+              <p class="pressure-lbl">Bleaching alert</p>
+              <span class="pressure-badge pb-alert">Active</span>
+            </div>
+            <div class="pressure-item">
+              <p class="pressure-lbl">Reef state</p>
+              <span class="pressure-badge pb-change">Witnessing change</span>
+            </div>
+          </div>
+
+          <!-- Method callout -->
+          <div style="margin-top:1.25rem;padding:1rem 1.125rem;border-radius:0.875rem;background:#f8fafc;border:1px solid var(--hairline);display:flex;align-items:flex-start;gap:0.75rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            <p style="font-size:0.8125rem;line-height:1.6;color:#64748b;">Bleaching alert runs from <strong style="color:#0f172a;font-weight:600;">No stress → Watch → Warning → Alert 1 → Alert 2</strong>. Reef state combines thermal data, coral cover, and fishing pressure into a single judgment. <a href="method.html" style="color:var(--brand);font-weight:600;text-decoration:none;white-space:nowrap;">How we calculate this →</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SITES -->
+      <p class="section-label" style="margin-top:2.5rem;">Dive sites at this location</p>
+      <h2 class="section-h2">4 curated sites</h2>
+
+      <div class="sites-list">
+        <a href="sites.html" class="site-row">
+          <div class="site-thumb"><div class="site-thumb-img dest-site-1"></div></div>
+          <div class="site-info">
+            <p class="site-name">Darwin Island</p>
+            <p class="site-sighting"><span class="sight-dot" style="background:#d97706"></span>Scalloped hammerhead · last confirmed 12 days ago</p>
+            <div class="site-meta" style="margin-top:0.4rem;">
+              <span class="site-chip">15 – 40 m</span>
+              <span class="site-chip">Advanced+</span>
+              <span class="site-chip site-chip-season">Peak Jan – May</span>
+            </div>
+          </div>
+          <span class="site-arrow">→</span>
+        </a>
+        <a href="sites.html" class="site-row">
+          <div class="site-thumb"><div class="site-thumb-img dest-site-2"></div></div>
+          <div class="site-info">
+            <p class="site-name">Wolf Island</p>
+            <p class="site-sighting"><span class="sight-dot" style="background:#d97706"></span>Whale shark · last confirmed 19 days ago</p>
+            <div class="site-meta" style="margin-top:0.4rem;">
+              <span class="site-chip">10 – 35 m</span>
+              <span class="site-chip">Advanced+</span>
+              <span class="site-chip site-chip-season">Peak Jan – May</span>
+            </div>
+          </div>
+          <span class="site-arrow">→</span>
+        </a>
+        <a href="sites.html" class="site-row">
+          <div class="site-thumb"><div class="site-thumb-img dest-site-3"></div></div>
+          <div class="site-info">
+            <p class="site-name">Gordon Rocks</p>
+            <p class="site-sighting"><span class="sight-dot" style="background:#d97706"></span>Galápagos shark · last confirmed 16 days ago</p>
+            <div class="site-meta" style="margin-top:0.4rem;">
+              <span class="site-chip">15 – 30 m</span>
+              <span class="site-chip">Advanced+</span>
+            </div>
+          </div>
+          <span class="site-arrow">→</span>
+        </a>
+        <a href="sites.html" class="site-row">
+          <div class="site-thumb"><div class="site-thumb-img dest-site-4"></div></div>
+          <div class="site-info">
+            <p class="site-name">Kicker Rock</p>
+            <p class="site-sighting"><span class="sight-dot" style="background:#10b981"></span>Marine iguana · last confirmed 4 days ago</p>
+            <div class="site-meta" style="margin-top:0.4rem;">
+              <span class="site-chip">10 – 25 m</span>
+              <span class="site-chip">Open water+</span>
+            </div>
+          </div>
+          <span class="site-arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- BLEACHING ALERT — amber/red -->
+      <div class="alert-badge">
+        <div class="alert-dot-wrap"><div class="alert-dot-inner"></div></div>
+        <div>
+          <p class="alert-label">Bleaching alert — Alert 1 active</p>
+          <p class="alert-sub">NOAA Coral Reef Watch · updated tonight</p>
+        </div>
+      </div>
+
+      <!-- SEASON -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header"><p class="sidebar-card-title">Best season</p></div>
+        <div class="sidebar-card-body">
+          <div class="season-grid">
+            <div class="season-cell season-peak">Jan</div>
+            <div class="season-cell season-peak">Feb</div>
+            <div class="season-cell season-peak">Mar</div>
+            <div class="season-cell season-peak">Apr</div>
+            <div class="season-cell season-peak">May</div>
+            <div class="season-cell season-off season-now">Jun</div>
+            <div class="season-cell season-off">Jul</div>
+            <div class="season-cell season-off">Aug</div>
+            <div class="season-cell season-off">Sep</div>
+            <div class="season-cell season-off">Oct</div>
+            <div class="season-cell season-off">Nov</div>
+            <div class="season-cell season-off">Dec</div>
+          </div>
+          <p style="margin-top:0.875rem;font-size:0.75rem;color:var(--muted);line-height:1.55;">January through May. Calmer seas, better visibility — typically 15 – 25 m. Hammerhead aggregations peak at Darwin and Wolf during this window. Currents are strong year-round; all remote sites require Advanced certification.</p>
+        </div>
+      </div>
+
+      <!-- GETTING THERE -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header"><p class="sidebar-card-title">Getting there</p></div>
+        <div class="sidebar-card-body" style="display:flex;flex-direction:column;gap:1rem;">
+          <div>
+            <p style="font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem;">Entry airports</p>
+            <p style="font-size:0.875rem;font-weight:600;color:#0f172a;">Baltra (GPS) or San Cristóbal (SCY)</p>
+            <p style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Fly via Quito (UIO) or Guayaquil (GYE). Daily connections on LATAM and Avianca.</p>
+          </div>
+          <div style="border-top:1px solid var(--hairline);padding-top:1rem;">
+            <p style="font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem;">Remote sites</p>
+            <p style="font-size:0.875rem;font-weight:600;color:#0f172a;">Live-aboard only</p>
+            <p style="font-size:0.75rem;color:var(--muted);margin-top:0.15rem;">Darwin and Wolf Islands are accessible only by live-aboard vessel — no day-trip boats are permitted. Typical itineraries run 7 – 10 nights departing from Puerto Ayora.</p>
+          </div>
+          <div style="border-top:1px solid var(--hairline);padding-top:1rem;">
+            <p style="font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem;">Central sites</p>
+            <p style="font-size:0.75rem;color:var(--muted);">Gordon Rocks and Kicker Rock are reachable by day-boat from Puerto Ayora (Gordon Rocks) and Puerto Baquerizo Moreno (Kicker Rock).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-card">
+        <p class="cta-label">Plan a trip</p>
+        <h3 class="cta-h3">Live-aboards and island operators</h3>
+        <p class="cta-body">Curated operators with real diver reviews, not commission rankings. Includes budget and luxury live-aboard options.</p>
+        <a href="#" class="cta-btn">See trip options →</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="homepage.html" class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="footer-wm"><span class="footer-wm-top">scuba</span><span class="footer-wm-bot">Season.fun</span></div>
+        </a>
+        <p class="footer-tagline">A data atlas for the living ocean. Science-backed, honestly labeled, free to read.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Site</p>
+        <ul class="footer-links">
+          <li><a href="homepage.html">Atlas</a></li>
+          <li><a href="method.html">Method</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Get in touch</p>
+        <a href="mailto:hello@scubaseason.fun" class="footer-contact-email">hello@scubaseason.fun</a>
+        <p class="footer-contact-note">Spotted wrong data? Want to collaborate? All of it welcome.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 scubaSeason.fun</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.2);">Thermal data: NOAA Coral Reef Watch v3.1 · refreshed nightly</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

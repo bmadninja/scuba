@@ -156,10 +156,10 @@
   --a4: oklch(0.60 0.19 32);
   --a5: oklch(0.50 0.20 20);
 
-  /* reef state colors */
-  --thriving: oklch(0.58 0.10 165);
-  --pressure: oklch(0.78 0.14 75);
-  --change:   oklch(0.60 0.19 32);
+  /* reef state colors — canonical tokens (do not override) */
+  --thriving: #10b981;
+  --pressure: #0089de;
+  --change:   #f43f5e;
 
   /* font aliases: all map to the product sans stack (no serif body, no mono UI) */
   --atlas-serif: var(--font-sans), "Noto Sans", system-ui, sans-serif;

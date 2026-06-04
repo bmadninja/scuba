@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Manta Sandy — dive site mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--ink:#0b1e32;--white:#fff;--body:#334155;--muted:#64748b;--hairline:#e2e8f0;--surface:#f1f7fb;--thriving:#10b981;--pressure:#0089de;--change:#f43f5e;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;flex-shrink:0;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--muted);margin-left:2rem;}
+.nav-breadcrumb a{color:var(--muted);text-decoration:none;}
+.nav-breadcrumb a:hover{color:var(--brand);}
+.nav-breadcrumb .sep{color:#cbd5e1;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a:hover{color:#0f172a;}
+
+/* HERO */
+.hero{position:relative;height:62vh;min-height:480px;overflow:hidden;}
+.hero-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#031828 0%,#052a45 20%,#064a6a 40%,#087088 58%,#0a9880 75%,#088870 100%);
+}
+.hero-shimmer{position:absolute;inset:0;background-image:repeating-linear-gradient(96deg,transparent 0,transparent 44px,rgba(0,180,220,.04) 44px,rgba(0,180,220,.04) 46px);}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:260px;background:linear-gradient(to bottom,transparent,#fff);}
+.hero-photo-credit{position:absolute;top:1.5rem;right:2rem;z-index:20;font-size:0.5875rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:0.4rem;}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 3rem 3rem;max-width:1320px;margin:0 auto;}
+.hero-pill{display:inline-flex;align-items:center;gap:0.5rem;padding:0.375rem 0.875rem;border-radius:999px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);font-size:0.625rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#10b981;margin-bottom:1rem;backdrop-filter:blur(8px);}
+.hero-pill .dot{width:5px;height:5px;border-radius:50%;background:#10b981;}
+.hero-h1{font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:800;letter-spacing:-0.03em;line-height:1.04;color:#0f172a;}
+.hero-sub{font-family:'Source Serif 4',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-top:0.625rem;}
+
+/* STAT STRIP */
+.stat-strip{border-bottom:1px solid var(--hairline);background:var(--surface);}
+.stat-strip-inner{max-width:1320px;margin:0 auto;padding:0 3rem;display:flex;align-items:stretch;}
+.stat-item{display:flex;flex-direction:column;gap:0.2rem;padding:1.125rem 2rem;border-right:1px solid var(--hairline);}
+.stat-item:first-child{padding-left:0;}
+.stat-lbl{font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.stat-val{font-size:1rem;font-weight:700;color:#0f172a;letter-spacing:-0.01em;}
+.stat-note{font-size:0.6875rem;color:var(--muted);}
+
+/* BODY */
+.body-wrap{max-width:1320px;margin:0 auto;padding:3.5rem 3rem;}
+.body-grid{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start;}
+
+.section-label{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;}
+.section-h2{font-size:1.375rem;font-weight:800;letter-spacing:-0.025em;color:#0f172a;margin-bottom:1.25rem;}
+
+/* SPECIES GRID */
+.species-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:2.5rem;}
+.species-card{border:1px solid var(--hairline);border-radius:1rem;overflow:hidden;text-decoration:none;color:inherit;transition:border-color 0.15s,box-shadow 0.15s;}
+.species-card:hover{border-color:rgba(0,137,222,0.3);box-shadow:0 4px 16px -6px rgba(0,137,222,0.1);}
+.species-img{height:100px;background:linear-gradient(145deg,#0a3060,#0a6b8a,#087a6e);}
+.species-img-2{background:linear-gradient(145deg,#041c33,#065566,#0a7a6b);}
+.species-img-3{background:linear-gradient(145deg,#0d4060,#0a7090,#086878);}
+.species-img-4{background:linear-gradient(145deg,#031522,#064466,#0b829f);}
+.species-img-5{background:linear-gradient(145deg,#042030,#0a5060,#0a9080);}
+.species-img-6{background:linear-gradient(145deg,#0a2840,#0a5878,#087068);}
+.species-body{padding:0.75rem;}
+.species-name{font-size:0.8125rem;font-weight:700;color:#0f172a;margin-bottom:0.2rem;}
+.species-sci{font-size:0.6875rem;font-style:italic;color:var(--muted);margin-bottom:0.5rem;}
+.species-sight{display:flex;align-items:center;gap:0.375rem;font-size:0.6875rem;color:var(--muted);}
+.sight-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.iucn-chip{display:inline-block;font-size:0.5rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.15rem 0.4rem;border-radius:3px;margin-left:0.25rem;}
+.iucn-nt{background:#fef3c7;color:#92400e;}
+.iucn-vu{background:#fde8cc;color:#9a3412;}
+.iucn-lc{background:#e7f6ee;color:#065f46;}
+
+/* SIGHTINGS LOG */
+.sightings-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;margin-bottom:2.5rem;}
+.sighting-row{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.375rem;border-bottom:1px solid var(--hairline);}
+.sighting-row:last-child{border-bottom:none;}
+.sighting-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.sighting-info{flex:1;}
+.sighting-species{font-size:0.875rem;font-weight:600;color:#0f172a;}
+.sighting-meta{font-size:0.75rem;color:var(--muted);margin-top:0.15rem;}
+.sighting-source{font-size:0.6875rem;color:#94a3b8;font-family:'IBM Plex Mono',monospace;}
+.sighting-date{font-size:0.75rem;color:var(--muted);white-space:nowrap;flex-shrink:0;}
+
+/* CONDITIONS */
+.conditions-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem;}
+.cond-item{padding:1rem 1.125rem;border-radius:0.875rem;border:1px solid var(--hairline);}
+.cond-lbl{font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;}
+.cond-val{font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.2rem;}
+.cond-note{font-size:0.75rem;color:var(--muted);line-height:1.5;}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1.5rem;}
+.sidebar-card{border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;}
+.sidebar-card-header{padding:1rem 1.375rem;border-bottom:1px solid var(--hairline);background:var(--surface);}
+.sidebar-card-title{font-size:0.8125rem;font-weight:700;color:#0f172a;}
+.sidebar-card-body{padding:1.25rem 1.375rem;}
+
+/* Depth profile */
+.depth-profile{display:flex;align-items:flex-end;gap:0.5rem;height:80px;margin-bottom:0.75rem;}
+.depth-bar{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(to bottom,rgba(0,137,222,0.15),rgba(0,137,222,0.5));}
+.depth-labels{display:flex;justify-content:space-between;font-size:0.625rem;color:var(--muted);}
+
+/* Parent location card */
+.parent-card{background:var(--ink);border-radius:1.25rem;padding:1.25rem 1.375rem;}
+.parent-label{font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:0.5rem;}
+.parent-name{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.parent-sub{font-size:0.8125rem;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;}
+.parent-link{display:block;padding:0.625rem 1rem;border-radius:0.625rem;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);font-size:0.8125rem;font-weight:600;text-decoration:none;text-align:center;border:1px solid rgba(255,255,255,0.1);}
+.parent-link:hover{background:rgba(255,255,255,0.12);color:#fff;}
+
+/* FOOTER */
+.footer{background:#0b1e32;padding:4rem 3rem 3rem;}
+.footer-inner{max-width:1320px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;margin-bottom:1rem;}
+.footer-wm{display:flex;flex-direction:column;line-height:1.0;}
+.footer-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.3);}
+.footer-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#fff;}
+.footer-tagline{font-family:'Source Serif 4',serif;font-size:0.875rem;line-height:1.65;color:rgba(255,255,255,0.35);max-width:260px;}
+.footer-col-title{font-size:0.625rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1.25rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.625rem;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:500;}
+.footer-contact-email{font-size:0.9375rem;font-weight:600;color:#0089de;text-decoration:none;display:block;margin-bottom:0.875rem;}
+.footer-contact-note{font-size:0.8125rem;line-height:1.6;color:rgba(255,255,255,0.3);}
+.footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="homepage.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark"><span class="nav-wm-top">scuba</span><span class="nav-wm-bot">Season.fun</span></div>
+  </a>
+  <nav class="nav-breadcrumb">
+    <a href="homepage.html">Atlas</a>
+    <span class="sep">/</span>
+    <a href="location.html">Raja Ampat</a>
+    <span class="sep">/</span>
+    <span style="color:#0f172a;font-weight:600;">Manta Sandy</span>
+  </nav>
+  <ul class="nav-links">
+    <li><a href="method.html">Method</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-shimmer" aria-hidden="true"></div>
+  <div class="hero-fade" aria-hidden="true"></div>
+  <div class="hero-photo-credit">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+    Photo · Manta Sandy, Raja Ampat
+  </div>
+  <div class="hero-content">
+    <div class="hero-pill"><span class="dot"></span>In season now</div>
+    <h1 class="hero-h1">Manta Sandy</h1>
+    <p class="hero-sub">Cleaning station · Raja Ampat, West Papua · 5–18 m · Open water+</p>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-item">
+      <span class="stat-lbl">Depth range</span>
+      <span class="stat-val">5 – 18 m</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Certification</span>
+      <span class="stat-val">Open water+</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Typical visibility</span>
+      <span class="stat-val">15 – 25 m</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Current</span>
+      <span class="stat-val">Mild to moderate</span>
+      <span class="stat-note">Check tides — site is current-dependent</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Best time</span>
+      <span class="stat-val">Oct – Apr</span>
+      <span class="stat-note">Manta season peaks Dec – Feb</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Last confirmed sighting</span>
+      <span class="stat-val" style="color:#10b981;">3 days ago</span>
+      <span class="stat-note">Oceanic manta ray · iNaturalist</span>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-wrap">
+  <div class="body-grid">
+
+    <!-- LEFT -->
+    <div>
+
+      <!-- SPECIES -->
+      <p class="section-label">What you'll see</p>
+      <h2 class="section-h2">Confirmed species at this site</h2>
+
+      <div class="species-grid">
+        <a href="#" class="species-card">
+          <div class="species-img"></div>
+          <div class="species-body">
+            <p class="species-name">Oceanic manta ray <span class="iucn-chip iucn-vu">VU</span></p>
+            <p class="species-sci">Mobula birostris</p>
+            <p class="species-sight"><span class="sight-dot" style="background:#10b981"></span>Confirmed 3 days ago</p>
+          </div>
+        </a>
+        <a href="#" class="species-card">
+          <div class="species-img species-img-2"></div>
+          <div class="species-body">
+            <p class="species-name">Reef manta ray <span class="iucn-chip iucn-vu">VU</span></p>
+            <p class="species-sci">Mobula alfredi</p>
+            <p class="species-sight"><span class="sight-dot" style="background:#10b981"></span>Confirmed 8 days ago</p>
+          </div>
+        </a>
+        <a href="#" class="species-card">
+          <div class="species-img species-img-3"></div>
+          <div class="species-body">
+            <p class="species-name">Wobbegong shark <span class="iucn-chip iucn-lc">LC</span></p>
+            <p class="species-sci">Orectolobus sp.</p>
+            <p class="species-sight"><span class="sight-dot" style="background:#10b981"></span>Confirmed 12 days ago</p>
+          </div>
+        </a>
+        <a href="#" class="species-card">
+          <div class="species-img species-img-4"></div>
+          <div class="species-body">
+            <p class="species-name">Whitetip reef shark <span class="iucn-chip iucn-vu">VU</span></p>
+            <p class="species-sci">Triaenodon obesus</p>
+            <p class="species-sight"><span class="sight-dot" style="background:#e8962f"></span>Confirmed 34 days ago</p>
+          </div>
+        </a>
+        <a href="#" class="species-card">
+          <div class="species-img species-img-5"></div>
+          <div class="species-body">
+            <p class="species-name">Pygmy seahorse <span class="iucn-chip iucn-lc">LC</span></p>
+            <p class="species-sci">Hippocampus bargibanti</p>
+            <p class="species-sight"><span class="sight-dot" style="background:#10b981"></span>Confirmed 5 days ago</p>
+          </div>
+        </a>
+        <a href="#" class="species-card">
+          <div class="species-img species-img-6"></div>
+          <div class="species-body">
+            <p class="species-name">Walking shark <span class="iucn-chip iucn-nt">NT</span></p>
+            <p class="species-sci">Hemiscyllium freycineti</p>
+            <p class="species-sight"><span class="sight-dot" style="background:#e8962f"></span>Confirmed 28 days ago</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- SIGHTINGS LOG -->
+      <p class="section-label">Recent sightings</p>
+      <h2 class="section-h2">iNaturalist research grade observations</h2>
+
+      <div class="sightings-list">
+        <div class="sighting-row">
+          <span class="sighting-dot" style="background:#10b981"></span>
+          <div class="sighting-info">
+            <p class="sighting-species">Oceanic manta ray</p>
+            <p class="sighting-meta">Cleaning station behaviour observed · 2 individuals · depth 8 m</p>
+            <p class="sighting-source">iNaturalist · obs #228441092</p>
+          </div>
+          <span class="sighting-date">3 days ago</span>
+        </div>
+        <div class="sighting-row">
+          <span class="sighting-dot" style="background:#10b981"></span>
+          <div class="sighting-info">
+            <p class="sighting-species">Reef manta ray</p>
+            <p class="sighting-meta">Single individual · feeding near surface</p>
+            <p class="sighting-source">iNaturalist · obs #228119847</p>
+          </div>
+          <span class="sighting-date">8 days ago</span>
+        </div>
+        <div class="sighting-row">
+          <span class="sighting-dot" style="background:#10b981"></span>
+          <div class="sighting-info">
+            <p class="sighting-species">Pygmy seahorse</p>
+            <p class="sighting-meta">On sea fan at 14 m · guide-assisted find</p>
+            <p class="sighting-source">iNaturalist · obs #227884213</p>
+          </div>
+          <span class="sighting-date">5 days ago</span>
+        </div>
+        <div class="sighting-row">
+          <span class="sighting-dot" style="background:#10b981"></span>
+          <div class="sighting-info">
+            <p class="sighting-species">Wobbegong shark</p>
+            <p class="sighting-meta">Resting under coral overhang · depth 9 m</p>
+            <p class="sighting-source">iNaturalist · obs #227601884</p>
+          </div>
+          <span class="sighting-date">12 days ago</span>
+        </div>
+        <div class="sighting-row">
+          <span class="sighting-dot" style="background:#e8962f"></span>
+          <div class="sighting-info">
+            <p class="sighting-species">Walking shark</p>
+            <p class="sighting-meta">Foraging on reef flat at dusk · shallow water</p>
+            <p class="sighting-source">iNaturalist · obs #226984110</p>
+          </div>
+          <span class="sighting-date">28 days ago</span>
+        </div>
+      </div>
+
+      <!-- CONDITIONS -->
+      <p class="section-label">Conditions</p>
+      <h2 class="section-h2">What to expect in the water</h2>
+
+      <div class="conditions-grid">
+        <div class="cond-item">
+          <p class="cond-lbl">Entry type</p>
+          <p class="cond-val">Boat</p>
+          <p class="cond-note">Live-aboard or day boat from Waisai. 30 – 45 min transit.</p>
+        </div>
+        <div class="cond-item">
+          <p class="cond-lbl">Current</p>
+          <p class="cond-val">Mild to moderate</p>
+          <p class="cond-note">Incoming tide brings mantas to the cleaning station. Plan arrival 30 min before slack.</p>
+        </div>
+        <div class="cond-item">
+          <p class="cond-lbl">Visibility</p>
+          <p class="cond-val">15 – 25 m typical</p>
+          <p class="cond-note">Can drop to 8 m after heavy rain. Check conditions day-of with your operator.</p>
+        </div>
+        <div class="cond-item">
+          <p class="cond-lbl">Water temperature</p>
+          <p class="cond-val">27 – 29°C</p>
+          <p class="cond-note">Consistent year-round. 3 mm wetsuit comfortable; shorty fine for most.</p>
+        </div>
+        <div class="cond-item">
+          <p class="cond-lbl">Reef health</p>
+          <p class="cond-val">Excellent</p>
+          <p class="cond-note">Hard coral cover 74% at Raja Ampat region level. No bleaching alert active.</p>
+        </div>
+        <div class="cond-item">
+          <p class="cond-lbl">Photography</p>
+          <p class="cond-val">Wide angle</p>
+          <p class="cond-note">Mantas at cleaning station at close range. Blue water background. Strobe optional.</p>
+        </div>
+      </div>
+
+      <!-- HOW TO DIVE THIS SITE -->
+      <p class="section-label" style="margin-top:0;">How to dive this site</p>
+      <h2 class="section-h2" style="margin-bottom:1.25rem;">Sequence and positioning</h2>
+      <div style="display:flex;flex-direction:column;gap:0;border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;margin-bottom:2.5rem;">
+
+        <div style="display:flex;align-items:flex-start;gap:1.5rem;padding:1.25rem 1.5rem;border-bottom:1px solid var(--hairline);">
+          <span style="font-size:2rem;font-weight:900;color:#e2e8f0;line-height:1;min-width:48px;flex-shrink:0;">01</span>
+          <div>
+            <p style="font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.375rem;">Arrive on the incoming tide</p>
+            <p style="font-family:'Source Serif 4',serif;font-style:italic;font-size:0.875rem;line-height:1.7;color:#475569;">The cleaning station only activates when current brings plankton-rich water across the sand flat. Ask your operator for the tide table the night before — aim to be in the water 20 minutes before the tide turns.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:1.5rem;padding:1.25rem 1.5rem;border-bottom:1px solid var(--hairline);">
+          <span style="font-size:2rem;font-weight:900;color:#e2e8f0;line-height:1;min-width:48px;flex-shrink:0;">02</span>
+          <div>
+            <p style="font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.375rem;">Descend to the sandy slope at 10 m</p>
+            <p style="font-family:'Source Serif 4',serif;font-style:italic;font-size:0.875rem;line-height:1.7;color:#475569;">Position yourself on the sandy bottom facing the cleaning station coral head. Stay low and still. Mantas approach from the blue and circle — sudden movements end the encounter.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:1.5rem;padding:1.25rem 1.5rem;border-bottom:1px solid var(--hairline);">
+          <span style="font-size:2rem;font-weight:900;color:#e2e8f0;line-height:1;min-width:48px;flex-shrink:0;">03</span>
+          <div>
+            <p style="font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.375rem;">Give mantas a 3 m radius</p>
+            <p style="font-family:'Source Serif 4',serif;font-style:italic;font-size:0.875rem;line-height:1.7;color:#475569;">Manta Sandy has resident mantas that are habituated to divers, but they will abort the cleaning station visit if approached too closely. Watch from the sand, let them come to you.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:1.5rem;padding:1.25rem 1.5rem;">
+          <span style="font-size:2rem;font-weight:900;color:#e2e8f0;line-height:1;min-width:48px;flex-shrink:0;">04</span>
+          <div>
+            <p style="font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.375rem;">Save bottom time for the wall</p>
+            <p style="font-family:'Source Serif 4',serif;font-style:italic;font-size:0.875rem;line-height:1.7;color:#475569;">After the cleaning station, follow the slope down to 18 m where the reef wall begins. This is where pygmy seahorses live on sea fans and wobbegong sharks rest under overhangs.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Depth profile -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">
+          <p class="sidebar-card-title">Depth profile</p>
+        </div>
+        <div class="sidebar-card-body">
+          <div class="depth-profile">
+            <div class="depth-bar" style="height:30%"></div>
+            <div class="depth-bar" style="height:55%"></div>
+            <div class="depth-bar" style="height:80%"></div>
+            <div class="depth-bar" style="height:100%"></div>
+            <div class="depth-bar" style="height:90%"></div>
+            <div class="depth-bar" style="height:70%"></div>
+            <div class="depth-bar" style="height:55%"></div>
+            <div class="depth-bar" style="height:40%"></div>
+          </div>
+          <div class="depth-labels">
+            <span>0 m</span>
+            <span>18 m</span>
+          </div>
+          <p style="font-size:0.75rem;color:var(--muted);margin-top:0.75rem;line-height:1.5;">Sandy slope descending from 5 m. Cleaning station mid-water at 8 – 12 m. Reef wall continues to 18 m.</p>
+        </div>
+      </div>
+
+      <!-- Parent location -->
+      <div class="parent-card">
+        <p class="parent-label">Part of</p>
+        <p class="parent-name">Raja Ampat</p>
+        <p class="parent-sub">Indonesia · West Papua · Asia Pacific</p>
+        <a href="location.html" class="parent-link">View location data →</a>
+      </div>
+
+      <!-- Thermal status -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header">
+          <p class="sidebar-card-title">Thermal status · live</p>
+        </div>
+        <div class="sidebar-card-body">
+          <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;border-radius:0.75rem;background:#eef8f1;border:1px solid #cde9d6;">
+            <div style="width:32px;height:32px;border-radius:50%;background:#e7f6ee;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <div style="width:10px;height:10px;border-radius:50%;background:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);"></div>
+            </div>
+            <div>
+              <p style="font-size:0.8125rem;font-weight:700;color:#15824c;">No thermal stress</p>
+              <p style="font-size:0.6875rem;color:#3d6b50;margin-top:0.1rem;">NOAA Coral Reef Watch · updated tonight</p>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.875rem;">
+            <div style="padding:0.625rem;border-radius:0.5rem;border:1px solid var(--hairline);">
+              <p style="font-size:0.5rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem;">DHW</p>
+              <p style="font-size:0.875rem;font-weight:700;color:#0f172a;">0.0 °C-wk</p>
+            </div>
+            <div style="padding:0.625rem;border-radius:0.5rem;border:1px solid var(--hairline);">
+              <p style="font-size:0.5rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem;">SST anomaly</p>
+              <p style="font-size:0.875rem;font-weight:700;color:#0f172a;">+0.3 °C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operators -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header" style="display:flex;justify-content:space-between;align-items:center;">
+          <p class="sidebar-card-title">Operators running this site</p>
+        </div>
+        <div class="sidebar-card-body" style="padding:0;">
+          <div style="padding:1rem 1.375rem;border-bottom:1px solid var(--hairline);display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <p style="font-size:0.875rem;font-weight:600;color:#0f172a;">Raja Ampat Dive Lodge</p>
+              <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem;">Day boat · live-aboard · 4.8 ★</p>
+            </div>
+            <a href="#" style="font-size:0.75rem;font-weight:600;color:var(--brand);text-decoration:none;">Book →</a>
+          </div>
+          <div style="padding:1rem 1.375rem;border-bottom:1px solid var(--hairline);display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <p style="font-size:0.875rem;font-weight:600;color:#0f172a;">Papua Diving</p>
+              <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem;">Day boat · 4.6 ★</p>
+            </div>
+            <a href="#" style="font-size:0.75rem;font-weight:600;color:var(--brand);text-decoration:none;">Book →</a>
+          </div>
+          <div style="padding:1rem 1.375rem;display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <p style="font-size:0.875rem;font-weight:600;color:#0f172a;">Kararu Dive</p>
+              <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem;">Day boat · no affiliate link</p>
+            </div>
+            <a href="#" style="font-size:0.75rem;font-weight:600;color:var(--muted);text-decoration:none;">Visit →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="homepage.html" class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="footer-wm"><span class="footer-wm-top">scuba</span><span class="footer-wm-bot">Season.fun</span></div>
+        </a>
+        <p class="footer-tagline">A data atlas for the living ocean. Science-backed, honestly labeled, free to read.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Site</p>
+        <ul class="footer-links">
+          <li><a href="homepage.html">Atlas</a></li>
+          <li><a href="method.html">Method</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Get in touch</p>
+        <a href="mailto:hello@scubaseason.fun" class="footer-contact-email">hello@scubaseason.fun</a>
+        <p class="footer-contact-note">Spotted wrong data? Want to collaborate? All of it welcome.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 scubaSeason.fun</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.2);">Sighting data: iNaturalist Research Grade · Thermal: NOAA Coral Reef Watch v3.1</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

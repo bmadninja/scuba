@@ -16,10 +16,15 @@ import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getWaterQualityByLocationId } from "@/lib/data/water-quality";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
 import { getFishingPressureForLocation, getFishingPressureLastBuiltAt } from "@/lib/data/fishing-pressure";
+import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import { DataFreshnessLabel } from "@/components/data-freshness-label";
-import { STATE_TEXT, STATE_DEF, freshness, getLastSurveyDays, getReefState } from "@/lib/data/reef-state";
+import { StatStrip } from "@/components/stat-strip";
+import { EditorialHook } from "@/components/editorial-hook";
+import { SightingRow } from "@/components/sighting-row";
+import { LiveBadge } from "@/components/live-badge";
+import { STATE_TEXT, STATE_DEF, freshness, getLastSurveyDays, getReefState, bestMonthsText } from "@/lib/data/reef-state";
 import { HowCalculated } from "./how-calculated";
 import type {
   BleachingAlertLevel,
@@ -124,6 +129,66 @@ export default async function LocationPage({
 
   const atlasLoc = buildAtlasLocation(location);
   const encounters = getEncountersByLocationId(location.id);
+  const isWitnessing = atlasLoc.state === "change";
+
+  // Aggregate all sightings across child sites for the live feed
+  const allSightings = sites
+    .flatMap((s) =>
+      getSightingsBySiteId(s.id).map((sv) => ({
+        ...sv,
+        siteName: s.name,
+        siteSlug: s.slug,
+      })),
+    )
+    .filter((sv) => sv.lastConfirmedAt !== null)
+    .sort((a, b) => {
+      const da = a.lastConfirmedAt ? new Date(a.lastConfirmedAt).getTime() : 0;
+      const db = b.lastConfirmedAt ? new Date(b.lastConfirmedAt).getTime() : 0;
+      return db - da;
+    })
+    .slice(0, 10);
+
+  // Most recent sighting for the StatStrip
+  const latestSighting = allSightings[0] ?? null;
+
+  // StatStrip data
+  const statItems = [
+    { label: "Dive sites", value: String(sites.length) },
+    {
+      label: "Reef state",
+      value: STATE_TEXT[atlasLoc.state],
+    },
+    ...(atlasLoc.cover
+      ? [
+          {
+            label: "Coral cover",
+            value: atlasLoc.cover,
+            note: atlasLoc.coverYear ? `${atlasLoc.coverYear} survey` : undefined,
+          },
+        ]
+      : []),
+    {
+      label: "Best season",
+      value: bestMonthsText(location.bestMonths),
+    },
+    ...(latestSighting
+      ? [
+          {
+            label: "Last confirmed",
+            value: latestSighting.speciesCommon,
+            note: latestSighting.lastConfirmedAt
+              ? new Date(
+                  latestSighting.lastConfirmedAt + "T00:00:00Z",
+                ).toLocaleDateString("en-US", {
+                  month: "short",
+                  year: "numeric",
+                  timeZone: "UTC",
+                })
+              : undefined,
+          },
+        ]
+      : []),
+  ];
 
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12">
@@ -162,6 +227,9 @@ export default async function LocationPage({
           <span>Best diving {atlasLoc.season}</span>
         </div>
 
+        {/* Stat strip */}
+        <StatStrip stats={statItems} className="mt-5" />
+
         {/* Jump nav */}
         <div className="mt-6 flex gap-6 border-b border-slate-200 text-sm font-semibold">
           <a href="#overview" className="border-b-2 border-[#0089de] pb-3 text-slate-900">
@@ -175,17 +243,49 @@ export default async function LocationPage({
           </a>
         </div>
 
+        {/* Witnessing change — honest label first */}
+        {isWitnessing && (
+          <div className="mt-6 rounded-xl border border-rose-200 bg-rose-50 px-5 py-4">
+            <p className="text-sm font-semibold text-rose-800">
+              This reef is experiencing documented loss. Survey data, depth, and species records are current.
+            </p>
+          </div>
+        )}
+
         {/* Overview */}
         <section id="overview" className="pt-8">
+          {/* Editorial hook — appears BEFORE reef science for thriving/pressure, AFTER for witnessing change */}
+          {!isWitnessing && details?.extendedDescription ? (
+            <EditorialHook text={details.extendedDescription} className="mb-6" />
+          ) : null}
           <p className="max-w-3xl text-base leading-7 text-slate-700">
             {location.description}
           </p>
-          {details?.extendedDescription ? (
-            <p className="mt-4 max-w-3xl text-[15px] leading-7 text-slate-600">
-              {details.extendedDescription}
-            </p>
+          {isWitnessing && details?.extendedDescription ? (
+            <EditorialHook text={details.extendedDescription} className="mt-6" />
           ) : null}
         </section>
+
+        {/* Live sightings feed */}
+        {allSightings.length > 0 && (
+          <section className="mt-10 border-t border-slate-200 pt-8">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-lg font-bold text-slate-900">Recent sightings</h2>
+              <LiveBadge label="Nightly sync" />
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white px-4">
+              {allSightings.map((sv, i) => (
+                <SightingRow
+                  key={`${sv.siteId}-${sv.speciesCommon}-${i}`}
+                  speciesCommon={sv.speciesCommon}
+                  speciesScientific={sv.speciesScientific}
+                  siteName={sv.siteName}
+                  date={sv.lastConfirmedAt}
+                />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Conditions section */}
         <section id="conditions" className="mt-10 border-t border-slate-200 pt-10">
@@ -411,7 +511,7 @@ export default async function LocationPage({
                   Itinerary
                 </p>
                 <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900">
-                  Plan your trip
+                  {isWitnessing ? "Plan thoughtfully" : "Plan your trip"}
                 </h2>
               </div>
 

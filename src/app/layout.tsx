@@ -12,7 +12,7 @@ import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
 const notoSans = Noto_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 

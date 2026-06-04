@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Method — mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--ink:#0b1e32;--white:#fff;--body:#334155;--muted:#64748b;--hairline:#e2e8f0;--surface:#f1f7fb;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a.active{color:var(--brand);}
+
+/* HEADER */
+.page-header{padding:5rem 3rem 4rem;border-bottom:1px solid var(--hairline);background:var(--surface);}
+.page-header-inner{max-width:800px;margin:0 auto;}
+.page-eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand);margin-bottom:1rem;}
+.page-h1{font-size:clamp(2.25rem,4.5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;line-height:1.06;color:#0f172a;margin-bottom:1.25rem;}
+.page-intro{font-family:'Source Serif 4',serif;font-size:1.1rem;line-height:1.75;color:#475569;}
+
+/* TOC */
+.toc{display:flex;gap:1.5rem;margin-top:2.5rem;flex-wrap:wrap;}
+.toc-link{font-size:0.8125rem;font-weight:600;color:var(--brand);text-decoration:none;padding:0.4rem 0.875rem;border-radius:999px;border:1px solid rgba(0,137,222,0.25);background:rgba(0,137,222,0.06);}
+.toc-link:hover{background:rgba(0,137,222,0.12);}
+
+/* BODY */
+.page-body{max-width:800px;margin:0 auto;padding:4rem 3rem;}
+
+/* Section */
+.method-section{margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--hairline);}
+.method-section:last-child{border-bottom:none;}
+.method-eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;}
+.method-h2{font-size:1.625rem;font-weight:800;letter-spacing:-0.025em;color:#0f172a;margin-bottom:1.25rem;}
+.method-body p{font-size:0.9375rem;line-height:1.8;color:var(--body);margin-bottom:1rem;}
+.method-body p:last-child{margin-bottom:0;}
+
+/* Live data card */
+.live-card{border:1px solid #a7f3d0;border-radius:1.25rem;overflow:hidden;margin:1.5rem 0;}
+.live-card-header{padding:1rem 1.375rem;background:#e7f6ee;display:flex;align-items:center;gap:0.75rem;}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0;}
+.live-card-label{font-size:0.6875rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#065f46;}
+.live-card-body{padding:1.25rem 1.375rem;}
+.live-metrics{display:flex;flex-direction:column;gap:0.625rem;}
+.live-metric{display:flex;align-items:center;gap:0.875rem;font-size:0.875rem;}
+.live-metric-dot{width:6px;height:6px;border-radius:50%;background:#10b981;flex-shrink:0;}
+.live-metric-name{font-weight:600;color:#0f172a;min-width:220px;}
+.live-metric-note{color:var(--muted);}
+
+/* Snapshot card */
+.snapshot-card{border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;margin:1.5rem 0;}
+.snapshot-header{padding:1rem 1.375rem;background:var(--surface);display:flex;align-items:center;justify-content:space-between;}
+.snapshot-label{font-size:0.6875rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+.snapshot-body{padding:0;}
+.snapshot-row{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.375rem;border-top:1px solid var(--hairline);}
+.snapshot-region{font-size:0.875rem;font-weight:600;color:#0f172a;min-width:220px;flex-shrink:0;}
+.snapshot-yr{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;font-weight:500;color:var(--brand);background:#e8f0fe;padding:0.15rem 0.5rem;border-radius:4px;flex-shrink:0;width:96px;text-align:center;white-space:nowrap;}
+.snapshot-note{font-size:0.8125rem;line-height:1.6;color:var(--muted);}
+
+/* Freshness key */
+.freshness-key{display:flex;gap:1.5rem;margin:1.5rem 0;flex-wrap:wrap;}
+.fresh-item{display:flex;align-items:center;gap:0.625rem;}
+.fresh-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.fresh-label{font-size:0.875rem;font-weight:600;color:#0f172a;}
+.fresh-note{font-size:0.8125rem;color:var(--muted);}
+
+/* Sources table */
+.sources-table{width:100%;border-collapse:collapse;margin-top:1.5rem;font-size:0.875rem;}
+.sources-table th{text-align:left;padding:0.625rem 0.875rem;font-size:0.625rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--hairline);}
+.sources-table td{padding:0.875rem;border-bottom:1px solid var(--hairline);color:var(--body);vertical-align:top;}
+.sources-table td:first-child{font-weight:600;color:#0f172a;}
+.sources-table tr:last-child td{border-bottom:none;}
+.source-type{display:inline-block;font-size:0.5875rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.5rem;border-radius:4px;background:var(--surface);color:var(--muted);}
+.source-live{background:#e7f6ee;color:#065f46;}
+
+/* FOOTER */
+.footer{background:#0b1e32;padding:4rem 3rem 3rem;}
+.footer-inner{max-width:800px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;margin-bottom:1rem;}
+.footer-wm{display:flex;flex-direction:column;line-height:1.0;}
+.footer-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.3);}
+.footer-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#fff;}
+.footer-tagline{font-family:'Source Serif 4',serif;font-size:0.875rem;line-height:1.65;color:rgba(255,255,255,0.35);max-width:220px;}
+.footer-col-title{font-size:0.625rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1.25rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.625rem;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:500;}
+.footer-links a:hover{color:#fff;}
+.footer-contact-email{font-size:0.9375rem;font-weight:600;color:#0089de;text-decoration:none;display:block;margin-bottom:0.875rem;}
+.footer-contact-note{font-size:0.8125rem;line-height:1.6;color:rgba(255,255,255,0.3);}
+.footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
+.footer-data-note{font-size:0.75rem;color:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="homepage.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark">
+      <span class="nav-wm-top">scuba</span>
+      <span class="nav-wm-bot">Season.fun</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="method.html" class="active">Method</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Method</p>
+    <h1 class="page-h1">What's live, what's a snapshot, what we can't see.</h1>
+    <p class="page-intro">scubaSeason mixes daily satellite data with much older in-water survey snapshots. The labels next to every reef number on the site tell you which is which. This page lays out the whole picture.</p>
+    <nav class="toc" aria-label="Page sections">
+      <a href="#live" class="toc-link">What's live daily</a>
+      <a href="#snapshots" class="toc-link">Coral cover snapshots</a>
+      <a href="#freshness" class="toc-link">Freshness labels</a>
+      <a href="#reef-state" class="toc-link">Reef state</a>
+      <a href="#sources" class="toc-link">All sources</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-body">
+
+  <section id="live" class="method-section">
+    <p class="method-eyebrow">Daily satellite</p>
+    <h2 class="method-h2">What updates every night</h2>
+    <div class="method-body">
+      <p>Three signals pulled nightly from NOAA's public ERDDAP endpoint against the lat/lng of every reef on the atlas.</p>
+    </div>
+    <div class="live-card">
+      <div class="live-card-header">
+        <span class="live-dot"></span>
+        <span class="live-card-label">NOAA Coral Reef Watch · 5 km · v3.1 · refreshed nightly</span>
+      </div>
+      <div class="live-card-body">
+        <div class="live-metrics">
+          <div class="live-metric"><span class="live-metric-dot"></span><span class="live-metric-name">Bleaching Alert Area</span><span class="live-metric-note">No stress / Watch / Warning / Alert 1 / Alert 2</span></div>
+          <div class="live-metric"><span class="live-metric-dot"></span><span class="live-metric-name">Degree Heating Weeks</span><span class="live-metric-note">°C-weeks of accumulated thermal stress</span></div>
+          <div class="live-metric"><span class="live-metric-dot"></span><span class="live-metric-name">SST anomaly</span><span class="live-metric-note">°C above or below climatology baseline</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="method-body">
+      <p>These three signals drive the thermal stress indicator on every location page. It tells you what's happening right now — not what happened last year.</p>
+    </div>
+  </section>
+
+  <section id="snapshots" class="method-section">
+    <p class="method-eyebrow">In-water surveys</p>
+    <h2 class="method-h2">Coral cover — a snapshot, not a live feed</h2>
+    <div class="method-body">
+      <p>The coral cover percentage comes from in-water scientific surveys — line transects and point intercept surveys done by reef monitoring programs. We show two data points per site so you can see the trajectory, not just a number: the earliest survey on file and the most recent.</p>
+      <p>This is not live data. Surveys happen infrequently. For many reefs outside established monitoring programs, the most recent number is years old. We label the year on every figure so you know exactly what you're looking at.</p>
+    </div>
+    <div class="snapshot-card">
+      <div class="snapshot-header">
+        <span class="snapshot-label">Survey baseline by region</span>
+        <span style="font-size:0.75rem;color:var(--muted);">When continuous monitoring began</span>
+      </div>
+      <div class="snapshot-row"><span class="snapshot-region">Great Barrier Reef</span><span class="snapshot-yr">1986</span><span class="snapshot-note">AIMS Long Term Monitoring Program — the longest continuous reef survey on Earth.</span></div>
+      <div class="snapshot-row"><span class="snapshot-region">Florida Keys & Caribbean US</span><span class="snapshot-yr">1995</span><span class="snapshot-note">NOAA NCRMP + earlier Florida Reef Tract programs.</span></div>
+      <div class="snapshot-row"><span class="snapshot-region">Indo-Pacific (most sites)</span><span class="snapshot-yr">2014</span><span class="snapshot-note">Most sites only have a baseline from the Third Global Coral Bleaching Event. For many, that's the first quantitative measurement on record.</span></div>
+      <div class="snapshot-row"><span class="snapshot-region">Western Indian Ocean</span><span class="snapshot-yr">Single survey</span><span class="snapshot-note">Some sites have one survey ever. Treat the displayed cover as a single observation, not a trend.</span></div>
+    </div>
+  </section>
+
+  <section id="freshness" class="method-section">
+    <p class="method-eyebrow">Data freshness</p>
+    <h2 class="method-h2">How we label data age</h2>
+    <div class="method-body">
+      <p>Every data point that can go stale carries a freshness dot. There are three states:</p>
+    </div>
+    <div class="freshness-key">
+      <div class="fresh-item"><span class="fresh-dot" style="background:#10b981"></span><div><p class="fresh-label">Fresh</p><p class="fresh-note">Survey within the last year</p></div></div>
+      <div class="fresh-item"><span class="fresh-dot" style="background:#e8962f"></span><div><p class="fresh-label">Stale</p><p class="fresh-note">1–3 years since last survey</p></div></div>
+      <div class="fresh-item"><span class="fresh-dot" style="background:#e23a3a"></span><div><p class="fresh-label">Cold</p><p class="fresh-note">More than 3 years ago</p></div></div>
+    </div>
+    <div class="method-body">
+      <p>Thermal stress is always Fresh — it's pulled nightly. Coral cover and fishing pressure are almost always Stale or Cold for most of the world. That's honest. We'd rather show a Cold number with a clear label than hide it behind an optimistic bar chart.</p>
+    </div>
+  </section>
+
+  <section id="reef-state" class="method-section">
+    <p class="method-eyebrow">Classification</p>
+    <h2 class="method-h2">How reef state is assigned</h2>
+    <div class="method-body">
+      <p>Reef state is a judgment call made from the combination of live thermal data, coral cover (where we have it), and fishing pressure. It's not a score or an average — it's an editorial decision that tries to answer: <strong>what is this reef actually doing right now?</strong></p>
+      <p>When data is thin or contradictory, we default to "Under pressure" rather than "Thriving." The bias is toward honesty, not hope.</p>
+    </div>
+  </section>
+
+  <section id="sources" class="method-section">
+    <p class="method-eyebrow">Sources</p>
+    <h2 class="method-h2">All 38 data sources</h2>
+    <table class="sources-table">
+      <thead><tr><th>Source</th><th>Type</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td>NOAA Coral Reef Watch v3.1</td><td><span class="source-type source-live">Live</span></td><td>Thermal stress, bleaching alerts, SST anomaly</td></tr>
+        <tr><td>AIMS Long Term Monitoring Program</td><td><span class="source-type">Snapshot</span></td><td>GBR coral cover time series</td></tr>
+        <tr><td>IUCN Red List of Threatened Species</td><td><span class="source-type">Snapshot</span></td><td>Species conservation status, population trend</td></tr>
+        <tr><td>Global Fishing Watch AIS data</td><td><span class="source-type source-live">Live</span></td><td>Fishing pressure per location</td></tr>
+        <tr><td>NOAA NCRMP</td><td><span class="source-type">Snapshot</span></td><td>US Pacific and Caribbean coral cover</td></tr>
+        <tr><td>iNaturalist Research Grade observations</td><td><span class="source-type source-live">Live</span></td><td>Species sighting evidence, occurrence records</td></tr>
+        <tr><td>AGRRA Atlantic and Gulf Rapid Reef Assessment</td><td><span class="source-type">Snapshot</span></td><td>Caribbean reef condition</td></tr>
+        <tr><td>+ 31 more program-specific datasets</td><td>—</td><td>Regional baselines, site-specific surveys</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="homepage.html" class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="footer-wm"><span class="footer-wm-top">scuba</span><span class="footer-wm-bot">Season.fun</span></div>
+        </a>
+        <p class="footer-tagline">A data atlas for the living ocean. Science-backed, honestly labeled, free to read.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Site</p>
+        <ul class="footer-links">
+          <li><a href="homepage.html">Atlas</a></li>
+          <li><a href="method.html">Method</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Get in touch</p>
+        <a href="mailto:hello@scubaseason.fun" class="footer-contact-email">hello@scubaseason.fun</a>
+        <p class="footer-contact-note">Spotted wrong data? Want to collaborate? All of it welcome.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 scubaSeason.fun</p>
+      <p class="footer-data-note">Thermal data: NOAA Coral Reef Watch v3.1 · refreshed nightly · <a href="method.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">All sources →</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
