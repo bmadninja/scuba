@@ -916,6 +916,106 @@ export default async function SiteDetailPage({
               What to expect in the water
             </h2>
 
+            {/* 12-month conditions grid */}
+            {site.conditionsByMonth.length === 12 && (
+              <div style={{ marginBottom: "2rem", overflowX: "auto" }}>
+                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.75rem" }}>
+                  <thead>
+                    <tr>
+                      <th style={{ textAlign: "left", padding: "0.375rem 0.5rem", color: "#64748b", fontWeight: 600, fontSize: "0.625rem", letterSpacing: "0.08em", textTransform: "uppercase", whiteSpace: "nowrap" }}>
+                      </th>
+                      {MONTH_ABBR.map((m, i) => {
+                        const isCurrent = i + 1 === currentMonth;
+                        return (
+                          <th
+                            key={m}
+                            style={{
+                              padding: "0.375rem 0.25rem",
+                              textAlign: "center",
+                              fontWeight: isCurrent ? 800 : 500,
+                              color: isCurrent ? "#0089de" : "#64748b",
+                              fontSize: "0.625rem",
+                              letterSpacing: "0.06em",
+                              textTransform: "uppercase",
+                              outline: isCurrent ? "2px solid #0089de" : "none",
+                              outlineOffset: "-2px",
+                              borderRadius: "0.25rem",
+                            }}
+                          >
+                            {m}
+                          </th>
+                        );
+                      })}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* Water temp row */}
+                    <tr>
+                      <td style={{ padding: "0.5rem 0.5rem", color: "#64748b", fontWeight: 600, fontSize: "0.6875rem", whiteSpace: "nowrap" }}>Temp (°C)</td>
+                      {site.conditionsByMonth.map((c, i) => {
+                        const isCurrent = c.month === currentMonth;
+                        return (
+                          <td key={i} style={{ padding: "0.5rem 0.25rem", textAlign: "center", color: isCurrent ? "#0089de" : "#0f172a", fontWeight: isCurrent ? 700 : 400, background: isCurrent ? "rgba(0,137,222,0.06)" : "transparent", borderRadius: "0.25rem" }}>
+                            {c.waterTempC.min}–{c.waterTempC.max}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                    {/* Visibility row */}
+                    <tr>
+                      <td style={{ padding: "0.5rem 0.5rem", color: "#64748b", fontWeight: 600, fontSize: "0.6875rem", whiteSpace: "nowrap" }}>Viz (m)</td>
+                      {site.conditionsByMonth.map((c, i) => {
+                        const isCurrent = c.month === currentMonth;
+                        return (
+                          <td key={i} style={{ padding: "0.5rem 0.25rem", textAlign: "center", color: isCurrent ? "#0089de" : "#0f172a", fontWeight: isCurrent ? 700 : 400, background: isCurrent ? "rgba(0,137,222,0.06)" : "transparent", borderRadius: "0.25rem" }}>
+                            {c.visibilityM.min}–{c.visibilityM.max}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                    {/* Current row */}
+                    <tr>
+                      <td style={{ padding: "0.5rem 0.5rem", color: "#64748b", fontWeight: 600, fontSize: "0.6875rem", whiteSpace: "nowrap" }}>Current</td>
+                      {site.conditionsByMonth.map((c, i) => {
+                        const isCurrent = c.month === currentMonth;
+                        const bg =
+                          c.currentStrength === "strong" ? "rgba(244,63,94,0.12)" :
+                          c.currentStrength === "moderate" ? "rgba(245,158,11,0.12)" :
+                          "rgba(16,185,129,0.10)";
+                        const col =
+                          c.currentStrength === "strong" ? "#e11d48" :
+                          c.currentStrength === "moderate" ? "#d97706" :
+                          "#059669";
+                        return (
+                          <td key={i} style={{ padding: "0.375rem 0.25rem", textAlign: "center" }}>
+                            <span style={{
+                              display: "inline-block",
+                              fontSize: "0.5875rem",
+                              fontWeight: 700,
+                              letterSpacing: "0.04em",
+                              textTransform: "uppercase",
+                              padding: "0.15rem 0.35rem",
+                              borderRadius: "0.25rem",
+                              background: isCurrent ? (c.currentStrength === "strong" ? "rgba(244,63,94,0.2)" : c.currentStrength === "moderate" ? "rgba(245,158,11,0.2)" : "rgba(16,185,129,0.18)") : bg,
+                              color: col,
+                              outline: isCurrent ? `2px solid ${col}` : "none",
+                              outlineOffset: "1px",
+                            }}>
+                              {c.currentStrength.slice(0, 3)}
+                            </span>
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  </tbody>
+                </table>
+                <p style={{ fontSize: "0.6875rem", color: "#94a3b8", marginTop: "0.5rem" }}>
+                  Highlighted column = this month. Current: <span style={{ color: "#059669", fontWeight: 600 }}>mild</span> · <span style={{ color: "#d97706", fontWeight: 600 }}>mod</span> · <span style={{ color: "#e11d48", fontWeight: 600 }}>str</span>
+                </p>
+              </div>
+            )}
+
+            {/* Summary cards */}
             <div
               style={{
                 display: "grid",
@@ -930,16 +1030,13 @@ export default async function SiteDetailPage({
                 value={site.getThere ? (site.getThere.toLowerCase().includes("boat") ? "Boat" : "Shore") : "Boat"}
                 note={site.getThere || "Check with local operators for access details."}
               />
-              {/* Current */}
+              {/* Current (this month) */}
               <CondCard
-                label="Current"
+                label="Current now"
                 value={
                   condMonth
-                    ? condMonth.currentStrength.charAt(0).toUpperCase() + condMonth.currentStrength.slice(1) + " to " +
-                      (condMonth.currentStrength === "mild" ? "moderate" :
-                       condMonth.currentStrength === "moderate" ? "strong" :
-                       condMonth.currentStrength === "strong" ? "very strong" : "moderate")
-                    : "Mild to moderate"
+                    ? condMonth.currentStrength.charAt(0).toUpperCase() + condMonth.currentStrength.slice(1)
+                    : "Moderate"
                 }
                 note="Incoming tide can bring pelagics and better visibility. Plan arrival around tide times."
               />
@@ -955,7 +1052,7 @@ export default async function SiteDetailPage({
               />
               {/* Water temperature */}
               <CondCard
-                label="Water temperature"
+                label="Water temp"
                 value={
                   condMonth
                     ? `${condMonth.waterTempC.min} – ${condMonth.waterTempC.max}°C`
