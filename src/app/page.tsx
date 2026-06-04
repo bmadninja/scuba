@@ -8,6 +8,7 @@ import type { FilterLocation } from "@/components/atlas-filter-rail";
 import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { getAllLocations } from "@/lib/data/locations";
 import { STATE_DEF } from "@/lib/data/reef-state";
+import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import sourcesData from "@/data/sources.json";
 import { AtlasNav } from "@/components/atlas-nav";
 import { HideLayoutNav } from "@/components/hide-layout-nav";
@@ -600,13 +601,21 @@ export default function Home() {
                       minHeight: 380,
                     }}
                   >
-                    {/* Image placeholder with min-height */}
+                    {/* Borrowed underwater photo — gradient stays as base/load layer */}
                     <div
+                      aria-hidden="true"
                       style={{
                         width: "100%",
                         minHeight: 380,
                         display: "block",
                       }}
+                    />
+                    <Image
+                      src={underwaterPhotoUrl(loc.heroImageUrl)}
+                      alt={`Underwater reef at ${loc.name}`}
+                      fill
+                      sizes="(max-width: 900px) 100vw, 60vw"
+                      style={{ objectFit: "cover" }}
                     />
                     {/* Caustic shimmer */}
                     <div
@@ -747,8 +756,16 @@ export default function Home() {
                         flex: 1,
                       }}
                     >
-                      {/* Min-height placeholder */}
-                      <div style={{ width: "100%", minHeight: 160 }} />
+                      {/* Min-height base layer — gradient shows during load */}
+                      <div aria-hidden="true" style={{ width: "100%", minHeight: 160 }} />
+                      {/* Borrowed underwater photo */}
+                      <Image
+                        src={underwaterPhotoUrl(loc!.heroImageUrl)}
+                        alt={`Underwater reef at ${loc!.name}`}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 40vw"
+                        style={{ objectFit: "cover" }}
+                      />
                       {/* Caustic shimmer */}
                       <div
                         aria-hidden="true"

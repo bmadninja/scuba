@@ -16,8 +16,6 @@ import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getWrecksBySiteId } from "@/lib/data/wrecks";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
-import { AffiliateLink } from "@/components/affiliate-link";
-import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import type { Site } from "@/lib/data/types";
 
 const MONTH_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -238,9 +236,6 @@ export default async function SiteDetailPage({
   const sstAnomaly = thermalStress?.sstAnomalyC ?? 0;
 
   const noThermalStress = bleachingAlert === "no-stress";
-
-  // Operators from site data
-  const operators = site.operators.slice(0, 3);
 
   return (
     <>
@@ -1246,37 +1241,175 @@ export default async function SiteDetailPage({
               </p>
             </section>
 
-            {/* ── GEAR ── */}
+            {/* ── THERMAL STATUS (live) — conditions content ── */}
             <section style={{ marginTop: "2.5rem", marginBottom: "2.5rem" }}>
-              <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.75rem" }}>
-                Gear
+              <p
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#64748b",
+                  marginBottom: "0.75rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                }}
+              >
+                Thermal status
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.3rem",
+                    fontSize: "0.5625rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.1em",
+                    color: noThermalStress ? "#10b981" : "#f59e0b",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: 5,
+                      height: 5,
+                      borderRadius: "50%",
+                      background: noThermalStress ? "#10b981" : "#f59e0b",
+                      display: "inline-block",
+                      animation: "pulse 2s infinite",
+                    }}
+                  />
+                  Live
+                </span>
               </p>
-              <h2 style={{ fontSize: "1.375rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#0f172a", marginBottom: "1.25rem" }}>
-                What to pack
-              </h2>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-                <div style={{ border: "1px solid #e2e8f0", borderRadius: "1rem", padding: "1.25rem" }}>
-                  <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#0089de", marginBottom: "0.5rem" }}>Tier A — base kit</p>
-                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "#334155" }}>
-                    Mask, fins, wetsuit, BCD, regulator, dive computer, SMB. Everything you need for any reef dive.
-                  </p>
+              <div
+                style={{
+                  border: "1px solid #e2e8f0",
+                  borderRadius: "1.25rem",
+                  padding: "1.25rem 1.375rem",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                    padding: "0.875rem",
+                    borderRadius: "0.75rem",
+                    background: noThermalStress ? "#eef8f1" : "#fff8f0",
+                    border: noThermalStress ? "1px solid #cde9d6" : "1px solid #fde8cc",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: "50%",
+                      background: noThermalStress ? "#e7f6ee" : "#fde8cc",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 10,
+                        height: 10,
+                        borderRadius: "50%",
+                        background: noThermalStress ? "#10b981" : "#f59e0b",
+                        boxShadow: `0 0 0 3px ${noThermalStress ? "rgba(16,185,129,0.25)" : "rgba(245,158,11,0.25)"}`,
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        fontSize: "0.8125rem",
+                        fontWeight: 700,
+                        color: noThermalStress ? "#15824c" : "#92400e",
+                      }}
+                    >
+                      {BLEACHING_LABEL[bleachingAlert] ?? "No thermal stress"}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "0.6875rem",
+                        color: noThermalStress ? "#3d6b50" : "#78350f",
+                        marginTop: "0.1rem",
+                      }}
+                    >
+                      NOAA Coral Reef Watch
+                    </p>
+                  </div>
                 </div>
-                <div style={{ border: "1px solid #e2e8f0", borderRadius: "1rem", padding: "1.25rem" }}>
-                  <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.5rem" }}>Tier B — site-specific</p>
-                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "#334155" }}>
-                    {site.diveTypes.includes("large-pelagics")
-                      ? "Wide-angle lens, blue-water focus, reef hook for current dives."
-                      : site.diveTypes.includes("macro")
-                      ? "Macro lens, focus light, strobe with snoot."
-                      : site.diveTypes.includes("wrecks")
-                      ? "Torch, wreck reel, penetration training recommended."
-                      : "Camera system matched to the site's signature subjects."}
-                  </p>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "0.5rem",
+                    marginTop: "0.875rem",
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: "0.625rem",
+                      borderRadius: "0.5rem",
+                      border: "1px solid #e2e8f0",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "0.5rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: "#64748b",
+                        marginBottom: "0.2rem",
+                      }}
+                    >
+                      DHW
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "0.875rem",
+                        fontWeight: 700,
+                        color: "#0f172a",
+                      }}
+                    >
+                      {dhw.toFixed(1)} °C·wk
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      padding: "0.625rem",
+                      borderRadius: "0.5rem",
+                      border: "1px solid #e2e8f0",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "0.5rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: "#64748b",
+                        marginBottom: "0.2rem",
+                      }}
+                    >
+                      SST anomaly
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "0.875rem",
+                        fontWeight: 700,
+                        color: "#0f172a",
+                      }}
+                    >
+                      {sstAnomaly >= 0 ? "+" : ""}{sstAnomaly.toFixed(1)} °C
+                    </p>
+                  </div>
                 </div>
               </div>
-              <p style={{ marginTop: "0.75rem", fontSize: "0.75rem", color: "#64748b" }}>
-                Full gear recommendations on the <Link href="/gear" style={{ color: "#0089de", textDecoration: "none" }}>Gear page</Link>.
-              </p>
             </section>
 
             {/* ── HOW TO DIVE THIS SITE ── */}
@@ -1424,212 +1557,10 @@ export default async function SiteDetailPage({
                     border: "1px solid rgba(255,255,255,0.1)",
                   }}
                 >
-                  View location data →
+                  View location & plan your trip →
                 </Link>
               </div>
             ) : null}
-
-            {/* Thermal status */}
-            <div
-              style={{
-                border: "1px solid #e2e8f0",
-                borderRadius: "1.25rem",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                style={{
-                  padding: "1rem 1.375rem",
-                  borderBottom: "1px solid #e2e8f0",
-                  background: "#f1f7fb",
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: "0.8125rem",
-                    fontWeight: 700,
-                    color: "#0f172a",
-                  }}
-                >
-                  Thermal status · live
-                </p>
-              </div>
-              <div style={{ padding: "1.25rem 1.375rem" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.75rem",
-                    padding: "0.875rem",
-                    borderRadius: "0.75rem",
-                    background: noThermalStress ? "#eef8f1" : "#fff8f0",
-                    border: noThermalStress ? "1px solid #cde9d6" : "1px solid #fde8cc",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 32,
-                      height: 32,
-                      borderRadius: "50%",
-                      background: noThermalStress ? "#e7f6ee" : "#fde8cc",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                        background: noThermalStress ? "#10b981" : "#f59e0b",
-                        boxShadow: `0 0 0 3px ${noThermalStress ? "rgba(16,185,129,0.25)" : "rgba(245,158,11,0.25)"}`,
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <p
-                      style={{
-                        fontSize: "0.8125rem",
-                        fontWeight: 700,
-                        color: noThermalStress ? "#15824c" : "#92400e",
-                      }}
-                    >
-                      {BLEACHING_LABEL[bleachingAlert] ?? "No thermal stress"}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "0.6875rem",
-                        color: noThermalStress ? "#3d6b50" : "#78350f",
-                        marginTop: "0.1rem",
-                      }}
-                    >
-                      NOAA Coral Reef Watch
-                    </p>
-                  </div>
-                </div>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "0.5rem",
-                    marginTop: "0.875rem",
-                  }}
-                >
-                  <div
-                    style={{
-                      padding: "0.625rem",
-                      borderRadius: "0.5rem",
-                      border: "1px solid #e2e8f0",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontSize: "0.5rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: "#64748b",
-                        marginBottom: "0.2rem",
-                      }}
-                    >
-                      DHW
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "0.875rem",
-                        fontWeight: 700,
-                        color: "#0f172a",
-                      }}
-                    >
-                      {dhw.toFixed(1)} °C-wk
-                    </p>
-                  </div>
-                  <div
-                    style={{
-                      padding: "0.625rem",
-                      borderRadius: "0.5rem",
-                      border: "1px solid #e2e8f0",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontSize: "0.5rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: "#64748b",
-                        marginBottom: "0.2rem",
-                      }}
-                    >
-                      SST anomaly
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "0.875rem",
-                        fontWeight: 700,
-                        color: "#0f172a",
-                      }}
-                    >
-                      {sstAnomaly >= 0 ? "+" : ""}{sstAnomaly.toFixed(1)} °C
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Plan Your Trip — compact sidebar version; full detail on location page */}
-            {location && (
-              <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.25rem", overflow: "hidden" }}>
-                <div style={{ padding: "1rem 1.375rem", borderBottom: "1px solid #e2e8f0", background: "#f1f7fb" }}>
-                  <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>Plan your trip</p>
-                </div>
-                <div style={{ padding: 0 }}>
-                  {[
-                    { label: "Getting there", text: site.getThere || `Fly into the nearest airport for ${location.name}.` },
-                    { label: "Where to stay", text: `Lodging options in ${location.name} range from guesthouses to liveaboards.` },
-                    { label: "Who to dive with", text: operators.length > 0 ? `${operators[0].label} and local operators run this site.` : `See operators on the ${location.name} page.` },
-                  ].map(({ label, text }) => (
-                    <div key={label} style={{ padding: "0.75rem 1.375rem", borderBottom: "1px solid #f1f5f9" }}>
-                      <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.2rem" }}>{label}</p>
-                      <p style={{ fontSize: "0.8125rem", lineHeight: 1.5, color: "#334155" }}>{text}</p>
-                    </div>
-                  ))}
-                  <div style={{ padding: "0.75rem 1.375rem" }}>
-                    <Link href={`/locations/${location.slug}`} style={{ fontSize: "0.8125rem", color: "#0089de", textDecoration: "none" }}>
-                      Full trip planning on {location.name} page →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Operators with affiliate links */}
-            {operators.length > 0 && (
-              <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.25rem", overflow: "hidden" }}>
-                <div style={{ padding: "1rem 1.375rem", borderBottom: "1px solid #e2e8f0", background: "#f1f7fb" }}>
-                  <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>Operators</p>
-                </div>
-                <div style={{ padding: 0 }}>
-                  {operators.map((op, i) => (
-                    <div key={op.url} style={{ padding: "0.875rem 1.375rem", borderBottom: i < operators.length - 1 ? "1px solid #e2e8f0" : "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>{op.label}</p>
-                      <AffiliateLink url={op.url} event="operator_click" partner={op.label} siteId={site.id} isAffiliate={!!op.isAffiliate} className="shrink-0">
-                        <span style={{ fontSize: "0.75rem", fontWeight: 600, color: op.isAffiliate ? "#0089de" : "#64748b" }}>
-                          {op.isAffiliate ? "Book →" : "Visit →"}
-                        </span>
-                      </AffiliateLink>
-                    </div>
-                  ))}
-                  {operators.some((op) => op.isAffiliate) && (
-                    <div style={{ padding: "0.5rem 1.375rem" }}>
-                      <AffiliateDisclosure />
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>

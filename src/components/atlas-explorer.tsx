@@ -277,7 +277,7 @@ export function AtlasExplorer({
 
           {/* Count */}
           <div className="mb-5 mt-6 flex flex-wrap items-center gap-3">
-            <span className="text-sm text-slate-600">
+            <span className="text-sm text-slate-600" role="status" aria-live="polite">
               <strong className="text-slate-900">{results.length}</strong> of{" "}
               {locations.length} locations
             </span>

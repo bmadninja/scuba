@@ -9,6 +9,7 @@ import { locationSchema } from "@/lib/schema-org";
 import { getAllLocations, getLocationBySlug } from "@/lib/data/locations";
 import { buildAtlasLocation } from "@/lib/atlas-location";
 import { getSitesByLocationId } from "@/lib/data/sites";
+import { getGearById } from "@/lib/data/gear";
 import { getEncountersByLocationId } from "@/lib/data/encounters";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
@@ -162,6 +163,74 @@ function dedupePartnerLinks(links: PartnerLink[]): PartnerLink[] {
   return out;
 }
 
+type BasicKitItem = { icon: string; name: string; note: string; gearId?: string };
+
+// Map a region's coldest water temperature to a correct wetsuit recommendation.
+// Accuracy is mandatory — a wrong thickness breaks trust (§4.14). Returns the
+// matching basic-tier gearId when one exists so the Shop link resolves.
+function wetsuitForTemp(minTempC: number | null): {
+  name: string;
+  note: string;
+  gearId?: string;
+} {
+  if (minTempC === null) {
+    return {
+      name: "Wetsuit",
+      note: "Match thickness to the water temperature on the day. Operators can advise.",
+    };
+  }
+  if (minTempC >= 28) {
+    return {
+      name: "3mm shorty or dive skin",
+      note: `Matched to warm ${minTempC}°C water — light exposure protection is plenty.`,
+      gearId: "wetsuit-bare-3mm-full",
+    };
+  }
+  if (minTempC >= 24) {
+    return {
+      name: "3mm full wetsuit",
+      note: `Matched to ${minTempC}°C water — a full 3mm keeps you comfortable across a day of diving.`,
+      gearId: "wetsuit-bare-3mm-full",
+    };
+  }
+  if (minTempC >= 19) {
+    return {
+      name: "5mm full wetsuit",
+      note: `Matched to cooler ${minTempC}°C water — a 5mm with hood and gloves on the colder dives.`,
+    };
+  }
+  return {
+    name: "7mm wetsuit or drysuit",
+    note: `Matched to cold ${minTempC}°C water — a 7mm semidry or a drysuit, plus hood and gloves.`,
+  };
+}
+
+// Decorative emoji for a site-specific gear item, inferred from its name.
+function siteGearIcon(name: string): string {
+  const n = name.toLowerCase();
+  if (/reef hook/.test(n)) return "🪝";
+  if (/smb|surface marker|buoy/.test(n)) return "🎈";
+  if (/reel/.test(n)) return "🧵";
+  if (/light|torch/.test(n)) return "🔦";
+  if (/glove/.test(n)) return "🧤";
+  if (/hood/.test(n)) return "🥽";
+  if (/camera/.test(n)) return "📷";
+  if (/patience|respect/.test(n)) return "🧘";
+  if (/computer/.test(n)) return "⌚";
+  if (/knife|cutting/.test(n)) return "🔪";
+  return "🌊";
+}
+
+// Resolve a gearId to its Amazon product URL + partner for an AffiliateLink.
+function gearShopLink(gearId?: string): { url: string; partner: string; productId?: string; isAffiliate: boolean } | null {
+  if (!gearId) return null;
+  const g = getGearById(gearId);
+  if (!g) return null;
+  const amazon = g.partners.find((p) => p.partner === "amazon") ?? g.partners[0];
+  if (!amazon) return null;
+  return { url: amazon.url, partner: amazon.partner, productId: amazon.productId, isAffiliate: true };
+}
+
 // Gradient palettes for species/site thumbnails (ocean tones)
 const OCEAN_GRADIENTS = [
   "linear-gradient(145deg,#0a3060,#0a6b8a,#087a6e)",
@@ -271,6 +340,11 @@ export default async function LocationPage({
 
   const atlasLoc = buildAtlasLocation(location);
   const isWitnessing = atlasLoc.state === "change";
+
+  // Hero photo: borrowed underwater photo from the location's own sites
+  // (computed in atlas-location.ts), falling back through underwaterPhotoUrl()
+  // to a real underwater placeholder — never a bare gradient as the surface.
+  const heroPhotoUrl = underwaterPhotoUrl(atlasLoc.heroImageUrl);
   const statePill = STATE_PILL_STYLE[atlasLoc.state];
   const stateColor = STATE_COLOR[atlasLoc.state];
 
@@ -318,6 +392,70 @@ export default async function LocationPage({
   // Partner links
   const lodging = dedupePartnerLinks(sites.flatMap((s) => s.lodging));
   const operators = dedupePartnerLinks(sites.flatMap((s) => s.operators));
+
+  // --- Plan your trip data shaping (§4.13a) -----------------------------
+  // Operators render ONLY when backed by a real/affiliate URL. A synthesized
+  // generic search (dive-shop-search) or a bare homepage is not a real lead.
+  const isGenericSearchUrl = (url: string) =>
+    !url || url.includes("dive-shop-search") || url.includes("/dive-shop");
+  const realOperators = operators.filter(
+    (op) => op.isAffiliate || !isGenericSearchUrl(op.url),
+  );
+  // Lodging split: liveaboards that cover diving sit in "Where to stay" with a
+  // "stay + dive" tag and suppress a redundant separate operator (a liveaboard
+  // IS the dive op).
+  const liveaboards = lodging.filter((l) => l.kind === "liveaboard");
+  const hasDiveCapableLodging = liveaboards.length > 0;
+  const stayItems = lodging.slice(0, 4).map((l) => ({
+    ...l,
+    isLiveaboard: l.kind === "liveaboard",
+  }));
+  // When a dive-capable liveaboard is present, suppress the operators peer
+  // group (the liveaboard already covers the diving).
+  const operatorsToShow = hasDiveCapableLodging ? [] : realOperators.slice(0, 4);
+  const hasWhatToBook = stayItems.length > 0 || operatorsToShow.length > 0;
+
+  // --- Gear section data (§4.14) ---------------------------------------
+  // Region water temperature across the location's sites → wetsuit thickness.
+  const allTemps = sites.flatMap((s) =>
+    s.conditionsByMonth.flatMap((c) => [c.waterTempC.min, c.waterTempC.max]),
+  );
+  const minWaterTemp = allTemps.length > 0 ? Math.min(...allTemps) : null;
+  const wetsuit = wetsuitForTemp(minWaterTemp);
+
+  // Layer A — basic kit for the location.
+  const basicKit: BasicKitItem[] = [
+    {
+      icon: "🤿",
+      name: "Mask and fins",
+      note: "Your own well fitted mask and fins make every dive better. Rental kit is available from operators.",
+      gearId: "mask-cressi-f1",
+    },
+    {
+      icon: "🦺",
+      name: "BCD and regulator",
+      note: "Rental available from operators if you travel light.",
+      gearId: "bcd-scubapro-hydros-pro",
+    },
+    {
+      icon: "🌡️",
+      name: wetsuit.name,
+      note: wetsuit.note,
+      gearId: wetsuit.gearId,
+    },
+    {
+      icon: "⌚",
+      name: "Dive computer",
+      note: "Tracks depth and no decompression limits across repetitive profiles.",
+      gearId: "computer-shearwater-peregrine",
+    },
+  ];
+
+  // Layer B — site-specific add-ons grouped by site. Only sites with add-ons.
+  const gearBySite = sites
+    .map((s) => ({ site: s, items: s.siteSpecificGear }))
+    .filter((g) => g.items.length > 0);
+  const hasSiteGear = gearBySite.length > 0;
 
   // Reef health derived values
   const observed = reefHealth?.observed ?? null;
@@ -410,34 +548,36 @@ export default async function LocationPage({
           overflow: "hidden",
         }}
       >
-        {/* Ocean gradient background */}
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            background: "linear-gradient(155deg,#041c33 0%,#063a52 20%,#065a70 40%,#087a8a 58%,#0a9a88 75%,#0a8070 100%)",
-          }}
-        />
-        {/* Shimmer texture */}
+        {/* Ocean gradient — decorative base layer UNDER the photo only */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage:
-              "repeating-linear-gradient(96deg,transparent 0,transparent 44px,rgba(0,180,220,.04) 44px,rgba(0,180,220,.04) 46px)",
+            background: "linear-gradient(155deg,#041c33 0%,#063a52 20%,#065a70 40%,#087a8a 58%,#0a9a88 75%,#0a8070 100%)",
           }}
         />
-        {/* Fade to white at bottom */}
+        {/* Borrowed underwater photo — the visible hero surface (§5.5a) */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={heroPhotoUrl}
+          alt={`Underwater reef at ${location.name}`}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+        {/* Dark legibility overlay — keeps white hero content ≥4.5:1 on any photo */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: 300,
-            background: "linear-gradient(to bottom,transparent,#fff)",
+            inset: 0,
+            background:
+              "linear-gradient(to bottom,rgba(4,18,32,0.15) 0%,rgba(4,18,32,0.05) 35%,rgba(4,18,32,0.45) 72%,rgba(4,18,32,0.82) 100%)",
           }}
         />
         {/* Photo credit top-right */}
@@ -512,7 +652,8 @@ export default async function LocationPage({
               fontWeight: 800,
               letterSpacing: "-0.035em",
               lineHeight: 1.02,
-              color: "#0f172a",
+              color: "#fff",
+              textShadow: "0 2px 18px rgba(4,18,32,0.5)",
             }}
           >
             {location.name}
@@ -522,9 +663,10 @@ export default async function LocationPage({
               fontFamily: "var(--font-serif),'Source Serif 4',Georgia,serif",
               fontStyle: "italic",
               fontSize: "1.05rem",
-              color: "#64748b",
+              color: "rgba(255,255,255,0.92)",
               marginTop: "0.75rem",
               lineHeight: 1.6,
+              textShadow: "0 1px 12px rgba(4,18,32,0.5)",
             }}
           >
             {location.country}
@@ -1306,6 +1448,194 @@ export default async function LocationPage({
               </section>
             ) : null}
 
+            {/* ------------------------------------------------------------ */}
+            {/* GEAR SECTION (§4.14) — Layer A basic kit + Layer B add-ons    */}
+            {/* ------------------------------------------------------------ */}
+            <section id="gear" style={{ marginTop: "2.5rem" }}>
+              <p
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#64748b",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                What to pack
+              </p>
+              <h2
+                style={{
+                  fontSize: "1.5rem",
+                  fontWeight: 800,
+                  letterSpacing: "-0.025em",
+                  color: "#0f172a",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                Gear for diving here
+              </h2>
+              <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.6, marginBottom: "1.5rem" }}>
+                {minWaterTemp !== null
+                  ? `Basic kit matched to ${minWaterTemp}°C water, plus what specific sites demand.`
+                  : "Basic kit for the location, plus what specific sites demand."}
+              </p>
+
+              <div
+                style={{
+                  border: "1px solid #e2e8f0",
+                  borderRadius: "1.25rem",
+                  padding: "1.5rem",
+                }}
+              >
+                {/* Layer A — basic kit */}
+                <p
+                  style={{
+                    fontSize: "0.5875rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "#1d5d90",
+                    marginBottom: "0.875rem",
+                  }}
+                >
+                  Basic kit — the same across {location.name}
+                </p>
+                <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", margin: 0, padding: 0, listStyle: "none" }}>
+                  {basicKit.map((item) => {
+                    const shop = gearShopLink(item.gearId);
+                    return (
+                      <li
+                        key={item.name}
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "0.75rem",
+                          padding: "0.75rem 0.875rem",
+                          borderRadius: "0.75rem",
+                          background: "#f1f7fb",
+                        }}
+                      >
+                        <span aria-hidden="true" style={{ fontSize: "1.1rem", lineHeight: 1.3, flexShrink: 0 }}>
+                          {item.icon}
+                        </span>
+                        <span style={{ flex: 1, minWidth: 0 }}>
+                          <span style={{ display: "block", fontSize: "0.875rem", fontWeight: 700, color: "#0f172a" }}>
+                            {item.name}
+                          </span>
+                          <span style={{ display: "block", fontSize: "0.75rem", color: "#64748b", lineHeight: 1.5, marginTop: "0.1rem" }}>
+                            {item.note}
+                          </span>
+                        </span>
+                        {shop ? (
+                          <AffiliateLink
+                            url={shop.url}
+                            event="gear_click"
+                            partner={shop.partner}
+                            productId={shop.productId}
+                            siteId={location.id}
+                            isAffiliate={shop.isAffiliate}
+                            className="flex-shrink-0 self-center rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-[12px] font-bold text-[#1d5d90] no-underline transition hover:border-[#0089de]/40"
+                          >
+                            <span aria-hidden="true">Shop →</span>
+                            <span style={{ border: 0, width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap", position: "absolute" }}>
+                              Shop {item.name} (opens in new tab)
+                            </span>
+                          </AffiliateLink>
+                        ) : null}
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                {/* Layer B — site-specific add-ons grouped by site */}
+                {hasSiteGear ? (
+                  <div style={{ marginTop: "1.75rem", borderTop: "1px solid #e2e8f0", paddingTop: "1.5rem" }}>
+                    <p
+                      style={{
+                        fontSize: "0.5875rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "#1d5d90",
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      What specific sites demand
+                    </p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                      {gearBySite.map(({ site: gs, items }) => (
+                        <div key={gs.id}>
+                          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                            <span style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>{gs.name}</span>
+                            <Link
+                              href={`/sites/${gs.slug}`}
+                              style={{ fontSize: "0.6875rem", fontWeight: 600, color: "#0089de", textDecoration: "none", flexShrink: 0 }}
+                            >
+                              view site <span aria-hidden="true">→</span>
+                            </Link>
+                          </div>
+                          <ul style={{ display: "flex", flexDirection: "column", gap: "0.4rem", margin: 0, padding: 0, listStyle: "none" }}>
+                            {items.map((it, i) => {
+                              const shop = gearShopLink(it.gearId);
+                              return (
+                                <li
+                                  key={`${gs.id}-${it.name}-${i}`}
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "flex-start",
+                                    gap: "0.75rem",
+                                    padding: "0.6rem 0.8rem",
+                                    borderRadius: "0.6rem",
+                                    background: "rgba(232,150,47,0.06)",
+                                    border: "1px solid rgba(232,150,47,0.2)",
+                                  }}
+                                >
+                                  <span aria-hidden="true" style={{ fontSize: "1.05rem", lineHeight: 1.3, flexShrink: 0 }}>
+                                    {siteGearIcon(it.name)}
+                                  </span>
+                                  <span style={{ flex: 1, minWidth: 0 }}>
+                                    <span style={{ display: "block", fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>
+                                      {it.name}
+                                    </span>
+                                    <span style={{ display: "block", fontSize: "0.75rem", color: "#64748b", lineHeight: 1.5, marginTop: "0.1rem" }}>
+                                      {it.reason}
+                                    </span>
+                                  </span>
+                                  {shop ? (
+                                    <AffiliateLink
+                                      url={shop.url}
+                                      event="gear_click"
+                                      partner={shop.partner}
+                                      productId={shop.productId}
+                                      siteId={location.id}
+                                      isAffiliate={shop.isAffiliate}
+                                      className="flex-shrink-0 self-center rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-[12px] font-bold text-[#1d5d90] no-underline transition hover:border-[#0089de]/40"
+                                    >
+                                      <span aria-hidden="true">Shop →</span>
+                                      <span style={{ border: 0, width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap", position: "absolute" }}>
+                                        Shop {it.name} (opens in new tab)
+                                      </span>
+                                    </AffiliateLink>
+                                  ) : null}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                {/* Section-level disclosure — one quiet line */}
+                <p style={{ fontSize: "0.6875rem", color: "#94a3b8", lineHeight: 1.5, marginTop: "1.5rem", borderTop: "1px solid #e2e8f0", paddingTop: "1rem" }}>
+                  Some shop links earn us a commission at no cost to you — full disclosure on the{" "}
+                  <Link href="/about" style={{ color: "#64748b", fontWeight: 600 }}>About page</Link>.
+                </p>
+              </div>
+            </section>
+
             {/* Diver quotes */}
             {details && details.quotes.length > 0 ? (
               <section style={{ marginTop: "2.5rem" }}>
@@ -1470,100 +1800,21 @@ export default async function LocationPage({
               </div>
             </div>
 
-            {/* Trip planning CTA */}
-            <div
-              style={{
-                background: "#0b1e32",
-                borderRadius: "1.25rem",
-                padding: "1.5rem",
-                textAlign: "center",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "0.625rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.35)",
-                  marginBottom: "0.75rem",
-                }}
-              >
-                Plan a trip
-              </p>
-              <h3
-                style={{
-                  fontSize: "1.0625rem",
-                  fontWeight: 800,
-                  color: "#fff",
-                  letterSpacing: "-0.02em",
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {isWitnessing ? "Plan thoughtfully" : "Operators, lodges & liveaboards"}
-              </h3>
-              <p
-                style={{
-                  fontSize: "0.8125rem",
-                  lineHeight: 1.6,
-                  color: "rgba(255,255,255,0.45)",
-                  marginBottom: "1.25rem",
-                }}
-              >
-                {isWitnessing
-                  ? "Choose operators committed to reef monitoring and low-impact diving."
-                  : "Curated operators with real diver reviews, not commission rankings. Includes budget and luxury options."}
-              </p>
-              {operators.length > 0 ? (
-                <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1rem", textAlign: "left" }}>
-                  {operators.slice(0, 3).map((op) => (
-                    <li key={`${op.partner}-${op.label}`}>
-                      <AffiliateLink
-                        url={op.url || "#"}
-                        event="operator_click"
-                        partner={op.partner}
-                        query={op.label}
-                        productId={op.productId}
-                        siteId={location.id}
-                        isAffiliate={op.isAffiliate}
-                        className="flex items-center justify-between rounded-lg px-3.5 py-2 text-[13px] font-medium no-underline opacity-80 hover:opacity-100 transition-opacity"
-                      >
-                        <span style={{ color: "rgba(255,255,255,0.8)" }}>{op.label}</span>
-                        <span style={{ color: "rgba(255,255,255,0.3)" }}>→</span>
-                      </AffiliateLink>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              <a
-                href={`https://www.padi.com/dive-shop-search?q=${encodeURIComponent(location.name)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "block",
-                  padding: "0.75rem 1.25rem",
-                  borderRadius: "0.75rem",
-                  background: "#0089de",
-                  color: "#fff",
-                  fontSize: "0.875rem",
-                  fontWeight: 700,
-                  textDecoration: "none",
-                  textAlign: "center",
-                }}
-              >
-                See trip options →
-              </a>
-            </div>
-
-            {/* Getting there */}
-            {(getThere || getThereStructured) ? (
+            {/* ---------------------------------------------------------- */}
+            {/* PLAN YOUR TRIP — one block: getting there leads, then       */}
+            {/* what to book (where to stay + operators as equal peers).    */}
+            {/* §4.13a. Witnessing change: muted "Plan thoughtfully".       */}
+            {/* ---------------------------------------------------------- */}
+            {(getThere || getThereStructured || hasWhatToBook) ? (
               <div
                 style={{
                   border: "1px solid #e2e8f0",
                   borderRadius: "1.25rem",
                   overflow: "hidden",
+                  opacity: isWitnessing ? 0.92 : 1,
                 }}
               >
+                {/* Block header */}
                 <div
                   style={{
                     padding: "1.125rem 1.375rem",
@@ -1571,91 +1822,169 @@ export default async function LocationPage({
                     background: "#f1f7fb",
                   }}
                 >
-                  <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>Getting there</p>
+                  <p
+                    style={{
+                      fontSize: "0.5875rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "#64748b",
+                      marginBottom: "0.25rem",
+                    }}
+                  >
+                    Plan a trip
+                  </p>
+                  <p style={{ fontSize: "0.9375rem", fontWeight: 800, letterSpacing: "-0.01em", color: "#0f172a" }}>
+                    {isWitnessing ? "Plan thoughtfully" : "Plan your trip"}
+                  </p>
+                  {isWitnessing ? (
+                    <p style={{ fontSize: "0.75rem", color: "#475569", lineHeight: 1.55, marginTop: "0.35rem" }}>
+                      Choose operators committed to reef monitoring and low impact diving.
+                    </p>
+                  ) : null}
                 </div>
-                <div style={{ padding: "1.25rem 1.375rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  {getThereStructured ? (
-                    <>
-                      {/* Section 1: Nearest hub */}
-                      <div>
-                        <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.3rem" }}>
-                          Nearest hub
+
+                <div style={{ padding: "1.25rem 1.375rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+
+                  {/* 1. GETTING THERE — leads */}
+                  {(getThere || getThereStructured) ? (
+                    <div>
+                      <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#1d5d90", marginBottom: "0.75rem" }}>
+                        Getting there
+                      </p>
+                      {getThereStructured ? (
+                        <div style={{ display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+                          <div>
+                            <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.25rem" }}>
+                              Nearest hub
+                            </p>
+                            <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>
+                              {getThereStructured.nearestHubName}
+                            </p>
+                            <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem", lineHeight: 1.5 }}>
+                              {getThereStructured.nearestHubDescription}
+                            </p>
+                          </div>
+                          <div>
+                            <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.25rem" }}>
+                              Transfer to sites
+                            </p>
+                            <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>
+                              {getThereStructured.transferToSitesName}
+                            </p>
+                            <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem", lineHeight: 1.5 }}>
+                              {getThereStructured.transferToSitesDescription}
+                            </p>
+                          </div>
+                          {getThereStructured.liveaboardDescription ? (
+                            <div>
+                              <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.25rem" }}>
+                                Liveaboard option
+                              </p>
+                              <p style={{ fontSize: "0.75rem", color: "#64748b", lineHeight: 1.5 }}>
+                                {getThereStructured.liveaboardDescription}
+                              </p>
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : (
+                        <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "#334155" }}>
+                          {getThere}
                         </p>
-                        <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>
-                          {getThereStructured.nearestHubName}
-                        </p>
-                        <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem" }}>
-                          {getThereStructured.nearestHubDescription}
-                        </p>
-                      </div>
-                      {/* Section 2: Transfer to sites */}
-                      <div style={{ borderTop: "1px solid #e2e8f0", paddingTop: "1rem" }}>
-                        <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.3rem" }}>
-                          Transfer to sites
-                        </p>
-                        <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>
-                          {getThereStructured.transferToSitesName}
-                        </p>
-                        <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem" }}>
-                          {getThereStructured.transferToSitesDescription}
-                        </p>
-                      </div>
-                      {/* Section 3: Live-aboard option (if applicable) */}
-                      {getThereStructured.liveaboardDescription ? (
-                        <div style={{ borderTop: "1px solid #e2e8f0", paddingTop: "1rem" }}>
-                          <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.3rem" }}>
-                            Live-aboard option
+                      )}
+                    </div>
+                  ) : null}
+
+                  {/* 2. WHAT TO BOOK — where to stay + operators as equal peers */}
+                  {hasWhatToBook ? (
+                    <div style={{ borderTop: (getThere || getThereStructured) ? "1px solid #e2e8f0" : "none", paddingTop: (getThere || getThereStructured) ? "1.5rem" : 0, display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+
+                      {/* Where to stay */}
+                      {stayItems.length > 0 ? (
+                        <div>
+                          <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#1d5d90", marginBottom: "0.6rem" }}>
+                            Where to stay
                           </p>
-                          <p style={{ fontSize: "0.75rem", color: "#64748b" }}>
-                            {getThereStructured.liveaboardDescription}
-                          </p>
+                          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                            {stayItems.map((l) => (
+                              <AffiliateLink
+                                key={`stay-${l.partner}-${l.label}`}
+                                url={l.url || "#"}
+                                event="lodging_click"
+                                partner={l.partner}
+                                query={l.label}
+                                productId={l.productId}
+                                siteId={location.id}
+                                isAffiliate={l.isAffiliate}
+                                className="flex items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] font-medium text-slate-900 no-underline transition hover:border-[#0089de]/40"
+                              >
+                                <span style={{ display: "flex", alignItems: "center", gap: "0.4rem", minWidth: 0 }}>
+                                  <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                    {l.label} (opens in new tab)
+                                  </span>
+                                  {l.isLiveaboard ? (
+                                    <span
+                                      style={{
+                                        flexShrink: 0,
+                                        fontSize: "0.5625rem",
+                                        fontWeight: 700,
+                                        letterSpacing: "0.04em",
+                                        textTransform: "uppercase",
+                                        padding: "0.1rem 0.4rem",
+                                        borderRadius: 999,
+                                        background: "#e7f6ee",
+                                        color: "#15824c",
+                                      }}
+                                    >
+                                      stay + dive
+                                    </span>
+                                  ) : null}
+                                </span>
+                                <span aria-hidden="true" style={{ color: "#94a3b8", flexShrink: 0 }}>→</span>
+                              </AffiliateLink>
+                            ))}
+                          </div>
                         </div>
                       ) : null}
-                    </>
-                  ) : (
-                    <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "#334155" }}>
-                      {getThere}
-                    </p>
-                  )}
-                </div>
-              </div>
-            ) : null}
 
-            {/* Lodging (if available) */}
-            {lodging.length > 0 ? (
-              <div
-                style={{
-                  border: "1px solid #e2e8f0",
-                  borderRadius: "1.25rem",
-                  overflow: "hidden",
-                }}
-              >
-                <div
-                  style={{
-                    padding: "1.125rem 1.375rem",
-                    borderBottom: "1px solid #e2e8f0",
-                    background: "#f1f7fb",
-                  }}
-                >
-                  <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>Where to stay</p>
-                </div>
-                <div style={{ padding: "1.25rem 1.375rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  {lodging.slice(0, 4).map((l) => (
-                    <AffiliateLink
-                      key={`${l.partner}-${l.label}`}
-                      url={l.url || "#"}
-                      event="lodging_click"
-                      partner={l.partner}
-                      query={l.label}
-                      productId={l.productId}
-                      siteId={location.id}
-                      isAffiliate={l.isAffiliate}
-                      className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] font-medium text-slate-900 no-underline transition hover:border-[#0089de]/40"
-                    >
-                      <span>{l.label}</span>
-                      <span style={{ color: "#94a3b8" }}>→</span>
-                    </AffiliateLink>
-                  ))}
+                      {/* Operators — equal-weight peer, same treatment */}
+                      {operatorsToShow.length > 0 ? (
+                        <div>
+                          <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#1d5d90", marginBottom: "0.6rem" }}>
+                            Operators
+                          </p>
+                          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                            {operatorsToShow.map((op) => (
+                              <AffiliateLink
+                                key={`op-${op.partner}-${op.label}`}
+                                url={op.url || "#"}
+                                event="operator_click"
+                                partner={op.partner}
+                                query={op.label}
+                                productId={op.productId}
+                                siteId={location.id}
+                                isAffiliate={op.isAffiliate}
+                                className="flex items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] font-medium text-slate-900 no-underline transition hover:border-[#0089de]/40"
+                              >
+                                <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                  {op.label} (opens in new tab)
+                                </span>
+                                <span aria-hidden="true" style={{ color: "#94a3b8", flexShrink: 0 }}>→</span>
+                              </AffiliateLink>
+                            ))}
+                          </div>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+
+                  {/* Section-level affiliate disclosure — one quiet line */}
+                  {hasWhatToBook ? (
+                    <p style={{ fontSize: "0.6875rem", color: "#94a3b8", lineHeight: 1.5, borderTop: "1px solid #e2e8f0", paddingTop: "0.875rem" }}>
+                      Some shop and booking links earn us a commission at no cost to you — full disclosure on the{" "}
+                      <Link href="/about" style={{ color: "#64748b", fontWeight: 600 }}>About page</Link>.
+                    </p>
+                  ) : null}
                 </div>
               </div>
             ) : null}
