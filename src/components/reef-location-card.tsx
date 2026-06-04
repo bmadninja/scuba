@@ -20,7 +20,7 @@ export type ReefLocationCardData = {
 
 const STATE_BADGE: Record<ReefState, string> = {
   thriving: "bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200",
-  pressure: "bg-[#eaf1fe] text-[#1f57c8] ring-1 ring-inset ring-[#2f6ced]/20",
+  pressure: "bg-[#eaf1fe] text-[#0369a1] ring-1 ring-inset ring-[#0089de]/20",
   change: "bg-rose-50 text-rose-700 ring-1 ring-inset ring-rose-200",
 };
 
@@ -44,10 +44,16 @@ export function ReefLocationCard({ r }: { r: ReefLocationCardData }) {
       ? new Date().getFullYear() - Math.floor(r.lastSurveyDays / 365)
       : null;
 
+  // Witnessing change cards do NOT lift on hover — only Thriving and Under pressure do
+  const hoverClasses =
+    r.state === "change"
+      ? "group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white"
+      : "group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-[3px] hover:border-[#0089de]/40 hover:shadow-[0_1px_2px_rgba(16,40,70,.03),0_14px_30px_-20px_rgba(16,40,70,.18)]";
+
   return (
     <Link
       href={`/locations/${r.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-[3px] hover:border-[#0089de]/40 hover:shadow-[0_1px_2px_rgba(16,40,70,.03),0_14px_30px_-20px_rgba(16,40,70,.18)]"
+      className={hoverClasses}
       style={{ boxShadow: "0 1px 2px rgba(16,40,70,.03), 0 12px 30px -20px rgba(16,40,70,.12)" }}
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-[#f1f7fb]">
@@ -63,9 +69,13 @@ export function ReefLocationCard({ r }: { r: ReefLocationCardData }) {
           </span>
           {r.inSeason ? (
             <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200">
-              In season now
+              ● In season
             </span>
-          ) : null}
+          ) : (
+            <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-500 ring-1 ring-inset ring-slate-200">
+              ○ Off season
+            </span>
+          )}
         </div>
         {/* Skill badge — bottom-right of image */}
         <span

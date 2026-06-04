@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Dive sites — mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--ink:#0b1e32;--white:#fff;--body:#334155;--muted:#64748b;--hairline:#e2e8f0;--surface:#f1f7fb;--thriving:#10b981;--pressure:#0089de;--change:#f43f5e;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;flex-shrink:0;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a.active{color:var(--brand);}
+
+/* PAGE HEADER */
+.page-header{background:var(--ink);padding:4rem 3rem 5rem;}
+.page-header-inner{max-width:1320px;margin:0 auto;}
+.page-eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand);margin-bottom:1rem;}
+.page-h1{font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:0.875rem;}
+.page-sub{font-family:'Source Serif 4',serif;font-style:italic;font-size:1.05rem;color:rgba(255,255,255,0.45);max-width:480px;line-height:1.65;margin-bottom:2rem;}
+
+/* SEARCH BAR */
+.search-wrap{position:relative;max-width:480px;}
+.search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.35);pointer-events:none;}
+.search-input{width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:999px;padding:0.75rem 1.25rem 0.75rem 2.75rem;font-size:0.9375rem;font-family:inherit;color:rgba(255,255,255,0.7);outline:none;}
+.search-input::placeholder{color:rgba(255,255,255,0.3);}
+
+/* FILTER STRIP */
+.filter-strip{background:var(--surface);border-bottom:1px solid var(--hairline);padding:1rem 3rem;position:sticky;top:62px;z-index:40;}
+.filter-strip-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.chip{display:inline-flex;align-items:center;gap:0.35rem;padding:0.45rem 0.9375rem;border-radius:999px;border:1px solid var(--hairline);background:var(--white);font-size:0.8125rem;font-weight:500;color:#475569;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.chip.active{background:#e8f0fe;border-color:transparent;color:#1d5d90;font-weight:600;}
+.chip .dot{width:6px;height:6px;border-radius:50%;display:inline-block;}
+.chip-sort{margin-left:auto;display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--muted);}
+.chip-sort select{border:1px solid var(--hairline);border-radius:0.5rem;padding:0.4rem 0.75rem;font-size:0.8125rem;font-family:inherit;background:var(--white);color:#0f172a;}
+.result-count{font-size:0.8125rem;color:var(--muted);white-space:nowrap;padding-left:0.5rem;}
+.result-count strong{color:#0f172a;}
+
+/* GRID */
+.sites-grid-wrap{max-width:1320px;margin:0 auto;padding:3rem;}
+.sites-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+
+/* SITE CARD */
+.site-card{border-radius:1.25rem;overflow:hidden;border:1px solid var(--hairline);background:var(--white);text-decoration:none;color:inherit;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(16,40,70,.03),0 8px 24px -12px rgba(16,40,70,.09);transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;}
+.site-card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(16,40,70,.04),0 18px 36px -12px rgba(16,40,70,.17);border-color:rgba(0,137,222,0.25);}
+.site-card-img-wrap{position:relative;height:220px;overflow:hidden;}
+.site-card-img{width:100%;height:100%;transition:transform 0.5s;}
+.site-card:hover .site-card-img{transform:scale(1.04);}
+.site-card-shimmer{position:absolute;inset:0;background-image:repeating-linear-gradient(95deg,transparent 0,transparent 50px,rgba(0,160,220,.03) 50px,rgba(0,160,220,.03) 52px);pointer-events:none;}
+.site-card-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,20,40,.5) 0%,transparent 55%);pointer-events:none;}
+.site-card-badges{position:absolute;top:.875rem;left:.875rem;display:flex;gap:.375rem;z-index:2;flex-wrap:wrap;}
+.site-card-skill{position:absolute;bottom:.875rem;right:.875rem;font-size:.5875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.275rem .65rem;border-radius:999px;background:rgba(0,0,0,.42);color:rgba(255,255,255,.65);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.1);z-index:2;}
+.badge{font-size:.625rem;font-weight:700;padding:.275rem .625rem;border-radius:999px;backdrop-filter:blur(8px);}
+.b-thriving{background:rgba(16,185,129,.14);color:#6ee7b7;border:1px solid rgba(16,185,129,.22);}
+.b-pressure{background:rgba(0,137,222,.16);color:#93c5fd;border:1px solid rgba(0,137,222,.25);}
+.b-change{background:rgba(244,63,94,.14);color:#fca5a5;border:1px solid rgba(244,63,94,.2);}
+.b-season{background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.15);}
+
+/* gradients per site */
+.s1{background:linear-gradient(155deg,#041c33,#065566,#0a7a6b);}
+.s2{background:linear-gradient(150deg,#0a3060,#0a6b8a,#087a6e);}
+.s3{background:linear-gradient(158deg,#0d4a7a,#0a6b9a,#08a0b2);}
+.s4{background:linear-gradient(145deg,#0e2240,#122f55,#1a4060);}
+.s5{background:linear-gradient(152deg,#031522,#064466,#0b829f);}
+.s6{background:linear-gradient(148deg,#041c33,#063a52,#086b7a);}
+
+.site-card-body{padding:1.25rem 1.375rem 1.375rem;flex:1;display:flex;flex-direction:column;}
+.site-card-location{font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.site-card-name{font-size:1.0625rem;font-weight:700;letter-spacing:-.015em;color:#0f172a;margin-bottom:.5rem;transition:color .15s;}
+.site-card:hover .site-card-name{color:var(--brand);}
+.site-card-desc{font-family:'Source Serif 4',serif;font-size:.875rem;line-height:1.65;color:#475569;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.site-card-sighting{display:flex;align-items:center;gap:.375rem;margin-top:.75rem;font-size:.6875rem;color:var(--muted);}
+.sight-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.site-card-chips{display:flex;gap:.375rem;flex-wrap:wrap;margin-top:.875rem;padding-top:.875rem;border-top:1px solid var(--hairline);}
+.site-chip-sm{font-size:.5875rem;font-weight:600;padding:.2rem .55rem;border-radius:999px;background:var(--surface);color:var(--muted);}
+.site-chip-blue{background:#e8f0fe;color:#1d5d90;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="homepage.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark">
+      <span class="nav-wm-top">scuba</span>
+      <span class="nav-wm-bot">Season.fun</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="homepage.html" class="active">Atlas</a></li>
+    <li><a href="method.html">Method</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Catalogue</p>
+    <h1 class="page-h1">All dive sites</h1>
+    <p class="page-sub">Every curated site — filtered by what you want to see, not what's easiest to sell.</p>
+    <div class="search-wrap">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input class="search-input" type="text" placeholder="Search by site name, animal, or location…"/>
+    </div>
+  </div>
+</header>
+
+<div class="filter-strip">
+  <div class="filter-strip-inner">
+    <button class="chip active"><span class="dot" style="background:var(--thriving)"></span>Thriving</button>
+    <button class="chip" style="color:#94a3b8;border-color:#e2e8f0;background:#f8fafc;"><span class="dot" style="background:#cbd5e1"></span>Under pressure</button>
+    <button class="chip" style="color:#94a3b8;border-color:#e2e8f0;background:#f8fafc;"><span class="dot" style="background:#cbd5e1"></span>Witnessing change</button>
+    <button class="chip">Certification</button>
+    <button class="chip">Wildlife</button>
+    <button class="chip">Dive type</button>
+    <button class="chip">Month</button>
+    <div class="chip-sort">Sort <select><option>In season now</option><option>Oldest surveys</option><option>Name</option></select></div>
+    <span class="result-count"><strong>18</strong> sites</span>
+  </div>
+</div>
+
+<div style="max-width:1320px;margin:0 auto;padding:0.875rem 3rem;display:flex;align-items:center;gap:0.75rem;border-bottom:1px solid var(--hairline);background:var(--white);">
+  <span style="font-size:0.8125rem;color:#64748b;">Showing</span>
+  <span style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.3rem 0.75rem;border-radius:999px;background:#e7f6ee;border:1px solid rgba(16,185,129,0.2);font-size:0.8125rem;font-weight:600;color:#15824c;">
+    <span style="width:6px;height:6px;border-radius:50%;background:#10b981;display:inline-block;"></span>Thriving
+  </span>
+  <span style="font-size:0.8125rem;color:#64748b;">only · 18 sites</span>
+  <button style="margin-left:auto;font-size:0.8125rem;color:#64748b;background:none;border:none;cursor:pointer;font-family:inherit;">Clear filter ×</button>
+</div>
+
+<div class="sites-grid-wrap">
+  <div class="sites-grid">
+
+    <a href="#" class="site-card">
+      <div class="site-card-img-wrap">
+        <div class="site-card-img s1"></div>
+        <div class="site-card-shimmer" aria-hidden="true"></div>
+        <div class="site-card-gradient" aria-hidden="true"></div>
+        <div class="site-card-badges"><span class="badge b-thriving">Thriving</span><span class="badge b-season">In season</span></div>
+        <span class="site-card-skill">Open water+</span>
+      </div>
+      <div class="site-card-body">
+        <p class="site-card-location">Raja Ampat · Indonesia</p>
+        <h3 class="site-card-name">Manta Sandy</h3>
+        <p class="site-card-desc">Resident manta ray cleaning station. Year-round sightings at 8–15 m over a sandy slope ringed by hard coral.</p>
+        <div class="site-card-sighting"><span class="sight-dot" style="background:#10b981"></span>Manta ray · confirmed 3 days ago</div>
+        <div class="site-card-chips">
+          <span class="site-chip-sm">8–18 m</span>
+          <span class="site-chip-sm site-chip-blue">Manta · Reef</span>
+          <span class="site-chip-sm">Current: mild</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="site-card">
+      <div class="site-card-img-wrap">
+        <div class="site-card-img s2"></div>
+        <div class="site-card-shimmer" aria-hidden="true"></div>
+        <div class="site-card-gradient" aria-hidden="true"></div>
+        <div class="site-card-badges"><span class="badge b-thriving">Thriving</span></div>
+        <span class="site-card-skill">Advanced+</span>
+      </div>
+      <div class="site-card-body">
+        <p class="site-card-location">Rarotonga · Cook Islands</p>
+        <h3 class="site-card-name">The Passage</h3>
+        <p class="site-card-desc">A narrow cut through the outer reef with a resident school of grey reef sharks. Strong current — plan for slack tide.</p>
+        <div class="site-card-sighting"><span class="sight-dot" style="background:#10b981"></span>Grey reef shark · confirmed 8 days ago</div>
+        <div class="site-card-chips">
+          <span class="site-chip-sm">10–30 m</span>
+          <span class="site-chip-sm site-chip-blue">Sharks · Drift</span>
+          <span class="site-chip-sm">Current: strong</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="site-card">
+      <div class="site-card-img-wrap">
+        <div class="site-card-img s3"></div>
+        <div class="site-card-shimmer" aria-hidden="true"></div>
+        <div class="site-card-gradient" aria-hidden="true"></div>
+        <div class="site-card-badges"><span class="badge b-thriving">Thriving</span><span class="badge b-season">In season</span></div>
+        <span class="site-card-skill">Open water+</span>
+      </div>
+      <div class="site-card-body">
+        <p class="site-card-location">Tubbataha · Philippines</p>
+        <h3 class="site-card-name">Amos Rock</h3>
+        <p class="site-card-desc">Pristine UNESCO reef wall teeming with schooling jacks and reef sharks. One of the healthiest coral ecosystems in the Coral Triangle.</p>
+        <div class="site-card-sighting"><span class="sight-dot" style="background:#10b981"></span>Whitetip reef shark · confirmed 2 days ago</div>
+        <div class="site-card-chips">
+          <span class="site-chip-sm">5–35 m</span>
+          <span class="site-chip-sm site-chip-blue">Sharks · Wall</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="site-card">
+      <div class="site-card-img-wrap">
+        <div class="site-card-img s4"></div>
+        <div class="site-card-shimmer" aria-hidden="true"></div>
+        <div class="site-card-gradient" aria-hidden="true"></div>
+        <div class="site-card-badges"><span class="badge b-thriving">Thriving</span></div>
+        <span class="site-card-skill">Advanced+</span>
+      </div>
+      <div class="site-card-body">
+        <p class="site-card-location">Fakarava · French Polynesia</p>
+        <h3 class="site-card-name">Tetamanu Pass</h3>
+        <p class="site-card-desc">A UNESCO biosphere reserve pass with hundreds of resting grey reef sharks at depth. Coral gardens in excellent condition throughout.</p>
+        <div class="site-card-sighting"><span class="sight-dot" style="background:#10b981"></span>Grey reef shark · confirmed 5 days ago</div>
+        <div class="site-card-chips">
+          <span class="site-chip-sm">10–40 m</span>
+          <span class="site-chip-sm site-chip-blue">Sharks · Pass</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="site-card">
+      <div class="site-card-img-wrap">
+        <div class="site-card-img s5"></div>
+        <div class="site-card-shimmer" aria-hidden="true"></div>
+        <div class="site-card-gradient" aria-hidden="true"></div>
+        <div class="site-card-badges"><span class="badge b-thriving">Thriving</span></div>
+        <span class="site-card-skill">Open water+</span>
+      </div>
+      <div class="site-card-body">
+        <p class="site-card-location">Palau · Micronesia</p>
+        <h3 class="site-card-name">Jellyfish Lake</h3>
+        <p class="site-card-desc">Snorkelling only — millions of stingless jellyfish in a marine lake cut off from the Pacific. Nothing else like it.</p>
+        <div class="site-card-sighting"><span class="sight-dot" style="background:#10b981"></span>Mastigias jellyfish · confirmed today</div>
+        <div class="site-card-chips">
+          <span class="site-chip-sm">0–5 m</span>
+          <span class="site-chip-sm site-chip-blue">Jellyfish · Snorkel</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="site-card">
+      <div class="site-card-img-wrap">
+        <div class="site-card-img s6"></div>
+        <div class="site-card-shimmer" aria-hidden="true"></div>
+        <div class="site-card-gradient" aria-hidden="true"></div>
+        <div class="site-card-badges"><span class="badge b-thriving">Thriving</span></div>
+        <span class="site-card-skill">Advanced+</span>
+      </div>
+      <div class="site-card-body">
+        <p class="site-card-location">Komodo · Indonesia</p>
+        <h3 class="site-card-name">Batu Bolong</h3>
+        <p class="site-card-desc">Pinnacle rising from 40 m with extraordinary coral diversity and fish biomass. Consistently ranked among the world's top reef dives.</p>
+        <div class="site-card-sighting"><span class="sight-dot" style="background:#10b981"></span>Napoleon wrasse · confirmed 6 days ago</div>
+        <div class="site-card-chips">
+          <span class="site-chip-sm">5–40 m</span>
+          <span class="site-chip-sm site-chip-blue">Reef · Pinnacle</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+</body>
+</html>

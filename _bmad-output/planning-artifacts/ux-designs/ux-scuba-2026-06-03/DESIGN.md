@@ -8,6 +8,8 @@ meta:
   ui_framework: shadcn/ui base-nova + Tailwind v4
   icon_library: lucide
   mode: light-first  # dark class defined but layout body uses bg-white text-slate-900
+  status: final
+  updated: 2026-06-04
 
 colors:
   brand:
@@ -20,8 +22,9 @@ colors:
 
   surfaces:
     page: "#ffffff"             # body background (atlas-bg / atlas-paper)
-    muted: "#f1f7fb"            # nav bg, footer bg, search input, row hover, card skeleton (atlas-surface)
+    muted: "#f1f7fb"            # nav bg, search input, row hover, card skeleton, location stat strip (atlas-surface)
     card: "#ffffff"             # all card backgrounds
+    footer: "#0b1e32"           # dark ink — footer, dark hero, reef-states section, inspiration section
     live_panel_bg: "#eef8f1"    # home live status panel
     live_panel_border: "#cde9d6"
     info_block: "#f8fafc"       # slate-50 used for detail info blocks
@@ -126,9 +129,9 @@ typography:
     sans:
       family: "Noto Sans"
       variable: "--font-sans"
-      weights: [400, 500, 600, 700]
+      weights: [300, 400, 500, 600, 700, 900]
       fallback: "system-ui, -apple-system, sans-serif"
-      role: All UI text — headings, body, labels, navigation
+      role: All UI text — headings, body, labels, navigation. Weight 300 (Light) used for wordmark "scuba" line. Weight 900 (Black) used for wordmark "Season.fun" line.
     mono:
       family: "IBM Plex Mono"
       variable: "--font-mono"
@@ -270,9 +273,11 @@ The overall feel is: a well-designed reference tool. Not a travel brochure. Trus
 
 **Three semantic colors anchor data meaning:**
 
-- Emerald/green — health, thriving reefs, fresh data, good conditions
-- Blue — the brand color *and* the "Under pressure" reef state (this is intentional — blue reads as "caution" in the ocean context without invoking the panic of red)
-- Rose/red — decline, witnessing change, cold/missing data, danger
+- Emerald/green (`#10b981`) — health, thriving reefs, fresh data, good conditions
+- Blue (`#0089de`) — the brand color *and* the "Under pressure" reef state (this is intentional — blue reads as "caution" in the ocean context without invoking the panic of red)
+- Rose/red (`#f43f5e`) — decline, witnessing change, cold/missing data, danger
+
+**Dark hero layout** — The homepage uses a full-bleed dark hero section (`height: 100vh`) with a deep ocean gradient (`#021422` → `#041c33` → `#052745` → `#073060`), caustic ray texture overlays, and a vignette. Nav is `position: absolute` with no background. All hero text is white or rgba(255,255,255,x). Below the hero, the page transitions to a white surface. Dark-ink sections (reef states explainer, inspiration grid) reuse `background: #0b1e32` as section-level backgrounds, not the page body.
 
 ---
 
@@ -293,8 +298,9 @@ The overall feel is: a well-designed reference tool. Not a travel brochure. Trus
 | Role | Value |
 |---|---|
 | Page background | `#ffffff` |
-| Muted surface (`--atlas-surface`) | `#f1f7fb` — nav bg, footer bg, search input, row hover |
+| Muted surface (`--atlas-surface`) | `#f1f7fb` — nav bg, location stat strip, search input, row hover |
 | Card background | `#ffffff` |
+| Dark ink (footer, hero, ink sections) | `#0b1e32` |
 | Live panel background | `#eef8f1` with `#cde9d6` border |
 | Info block (detail page) | `bg-slate-50` (`#f8fafc`) |
 
@@ -348,7 +354,7 @@ All freshness pills share: `rounded-full px-2.5 py-0.5 text-[10.5px] font-semibo
 
 Three typefaces are loaded; at runtime all CSS aliases resolve to Noto Sans:
 
-- **Noto Sans** (`--font-sans`) — all UI text. Weights: 400, 500, 600, 700.
+- **Noto Sans** (`--font-sans`) — all UI text. Weights: 300, 400, 500, 600, 700, 900. Weight 300 (Light) is used exclusively for the wordmark "scuba" line. Weight 900 (Black) is used exclusively for the wordmark "Season.fun" line.
 - **IBM Plex Mono** (`--font-mono`) — loaded and available for eyebrow labels and badges that need the mono character but not all components use it explicitly.
 - **Source Serif 4** (`--font-serif`) — loaded and available; CSS aliases currently map it back to sans for production rendering.
 
@@ -540,7 +546,22 @@ Additionally, the hero image inside ReefLocationCard scales up on hover: `group-
 
 Sticky top header. `sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur`.
 
-- Logo: `text-lg font-semibold tracking-tight text-slate-900` with `.fun` suffix in `text-[#0089de]`
+On the dark hero (homepage), the nav renders with `position: absolute` over the hero with no background — white/translucent text treatment. On all inner pages it is sticky with `bg-white/95 backdrop-blur`.
+
+**Logo mark (Option D)**
+
+SVG `viewBox="0 0 36 36"`. Circle: `cx="18" cy="18" r="16" fill="#0089de"`. Two wave paths, both `stroke-linecap="round" fill="none"`:
+- Primary wave: `d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16"` `stroke="#fff"` `stroke-width="2"`
+- Secondary wave: `d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21"` `stroke="rgba(255,255,255,0.4)"` `stroke-width="1.5"`
+
+**Wordmark — stacked, weight-split, line-height 1.0**
+
+| Line | Text | Weight | Size | Letter-spacing | Color (light bg) | Color (dark bg) |
+|---|---|---|---|---|---|---|
+| Top | `scuba` | 300 (Light) | 0.6875rem | 0.08em | `#94a3b8` | `rgba(255,255,255,0.35)` |
+| Bottom | `Season.fun` | 900 (Black) | 1.05rem | −0.05em | `#0f172a` | `#ffffff` |
+
+No color treatment on the `.fun` suffix — it is plain black/white matching the rest of the bottom line. The `.fun` color treatment in the old spec is removed.
 - Search: `rounded-full border border-slate-200 bg-[#f1f7fb] py-2 pl-9 pr-4 text-sm` — focus state: `focus:border-[#0089de] focus:bg-white focus:ring-2 focus:ring-[#0089de]/30`
 - Nav links: `rounded-full px-3 py-1.5 text-sm font-medium` — active: `text-[#0089de]`, default: `text-slate-700 hover:text-[#0089de]`
 - No underline active indicator on nav — color change only
@@ -549,7 +570,20 @@ Sticky top header. `sticky top-0 z-50 border-b border-slate-200 bg-white/90 back
 
 ### AtlasFooter
 
-`border-t border-slate-200 bg-[#f1f7fb]`. Two-column grid at sm: left brand block + right nav links. Bottom bar: `border-t border-slate-200 pt-6` with `text-xs text-slate-400` on both sides.
+Dark ink background: `background: #0b1e32`. Padding: `4rem 3rem 3rem`.
+
+**Three-column grid** (`grid-template-columns: 1fr 1fr 1fr; gap: 3rem`):
+- Col 1 — Logo mark + stacked wordmark + tagline (`Source Serif 4` italic, 0.875rem, `rgba(255,255,255,0.35)`, max-width 260px)
+- Col 2 — Site links. Column header: 0.625rem/700/tracking-[0.16em] uppercase `rgba(255,255,255,0.25)`. Links: 0.875rem/500 `rgba(255,255,255,0.5)`, hover `#fff`
+- Col 3 — Contact. Email: 0.9375rem/600 `#0089de`, hover `#38b0ff`. Note copy: 0.8125rem `rgba(255,255,255,0.3)`
+
+**Hairline divider** between top grid and bottom bar: `border-bottom: 1px solid rgba(255,255,255,0.08)`. `padding-bottom: 3rem` on top grid.
+
+**Bottom bar** (`padding-top: 1.5rem`, flex space-between):
+- Copyright: 0.75rem `rgba(255,255,255,0.2)`
+- Data attribution note: same size, right-aligned, inline link `rgba(255,255,255,0.3)`
+
+Wordmark in footer uses same weight-split treatment as nav (300/900), colors `rgba(255,255,255,0.3)` / `#fff`.
 
 ### ReefLocationCard
 
@@ -667,11 +701,18 @@ Checkbox indicator inside CheckOpt — `h-4 w-4 rounded border`:
 
 `live-dot` animation: `livepulse` keyframes — `opacity: 1, scale: 1` → `opacity: 0.35, scale: 0.8` at 50%, 2.2s ease-in-out. Disabled at `prefers-reduced-motion`.
 
-### Hero stat strip (home)
+### StatStrip
 
-`flex items-stretch divide-x divide-slate-200`. Each cell: `flex flex-col gap-0.5 px-5 first:pl-0`.
-- Number: `text-xl font-extrabold leading-none text-[#0e2742]`
-- Label: `text-[11px] font-semibold uppercase tracking-[0.08em] text-[#718498]`
+Used in two contexts: (1) the home hero strip below the H1, and (2) the location page stat bar below the hero image.
+
+**Home hero strip** — `flex items-stretch` with `border-left: 1px solid rgba(255,255,255,0.1)` between cells (no divide on first). Each cell `flex flex-col gap-0.2rem padding: 0 2.25rem; first: padding-left 0`.
+- Value: `font-size: 1.625rem; font-weight: 800; color: #fff; letter-spacing: -0.025em; line-height: 1`
+- Label: `font-size: 0.5875rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.32)`
+
+**Location page stat strip** — full-width bar `background: #f1f7fb; border-bottom: 1px solid #e2e8f0`. Inner: `max-width 1320px; padding: 0 3rem`. Cells: `padding: 1.125rem 2rem; border-right: 1px solid #e2e8f0; first: padding-left 0`.
+- Label: `font-size: 0.5875rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #64748b`
+- Value: `font-size: 1rem; font-weight: 700; color: #0f172a; letter-spacing: -0.01em`
+- Note (optional third line): `font-size: 0.6875rem; color: #64748b`
 
 ### Empty state (no dive sites)
 
@@ -684,6 +725,70 @@ Checkbox indicator inside CheckOpt — `h-4 w-4 rounded border`:
 `rounded-xl border border-slate-200 bg-slate-50 p-5`
 - Label eyebrow: `text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]`
 - Value: `mt-2 text-sm leading-6 text-slate-700`
+
+### LiveBadge
+
+Reusable pulsing "live" indicator. Used in the home numbers section and anywhere a live-data freshness signal is needed outside the hero.
+
+Container pill: `display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.875rem 0.45rem 0.625rem; border-radius: 999px; background: rgba(21,160,92,0.1); border: 1px solid rgba(21,160,92,0.2); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: #15804d`
+
+Inner dot: `width: 7px; height: 7px; border-radius: 50%; background: #15a05c; box-shadow: 0 0 0 3px rgba(21,160,92,0.25)`. Animated with `live-dot` / `livepulse` keyframes (see Live panel section for animation spec).
+
+Not the same as the hero live-dot eyebrow (which is larger and uses `box-shadow: 0 0 0 3px rgba(21,160,92,0.3)` at 7px) — the badge wraps the dot in a pill container.
+
+### FreshnessDot system
+
+Three-state 5px dot used in card footers and sighting rows to signal data recency.
+
+| State | Color | Hex | Use |
+|---|---|---|---|
+| Fresh | Emerald | `#10b981` | Survey within freshness threshold |
+| Stale | Amber | `#e8962f` | Aging survey data |
+| Cold | Red | `#e23a3a` | Survey very old or unknown |
+
+Rendered as `width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0`. In card footers: `h-1.5 w-1.5` (6px). Always `aria-hidden`.
+
+### SightingRow
+
+Flex row inside sightings lists on location and site pages.
+
+Container: `display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.375rem; border-bottom: 1px solid #e2e8f0; last-child: border-bottom none`
+
+- **Dot**: 8px circle, freshness-colored (`#10b981` / `#e8962f` / `#e23a3a`), `margin-top: 4px; flex-shrink: 0`
+- **Species name**: `font-size: 0.875rem; font-weight: 600; color: #0f172a`
+- **Meta line**: `font-size: 0.75rem; color: #64748b; margin-top: 0.15rem`
+- **Source label**: `font-size: 0.6875rem; color: #94a3b8; font-family: 'IBM Plex Mono', monospace`
+- **Date**: `font-size: 0.75rem; color: #64748b; white-space: nowrap; flex-shrink: 0` — right-aligned
+
+The sightings list container is `border: 1px solid #e2e8f0; border-radius: 1.25rem; overflow: hidden`.
+
+### EditorialHook
+
+A text block on location pages that provides the editorial voice context above the species and reef-science sections.
+
+```
+font-family: 'Source Serif 4', serif;
+font-size: 1.0625rem;
+line-height: 1.8;
+color: #334155;
+max-width: 640px;
+```
+
+Appears immediately after the stat strip, before the species strip. No heading — just the italic serif paragraph. This is the only component in the product that uses Source Serif 4 for body text (not just decorative italic in the hero sub).
+
+### FilterSummaryBar
+
+Active filter summary shown above the atlas card grid when one or more filters are applied.
+
+Layout: `display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem`
+
+Active filter pills use reef-state color families:
+- Thriving filter active: emerald bg/text (`bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200`)
+- Under pressure filter active: blue bg/text (`bg-[#eaf1fe] text-[#1f57c8] ring-1 ring-inset ring-[#2f6ced]/20`)
+- Witnessing change filter active: rose bg/text (`bg-rose-50 text-rose-700 ring-1 ring-inset ring-rose-200`)
+- Other active filters: `bg-slate-100 text-slate-700 ring-1 ring-inset ring-slate-200`
+
+"Clear filter ×" button: right-aligned, `text-xs font-medium text-slate-500 hover:text-[#0089de]`
 
 ---
 
@@ -711,7 +816,7 @@ Checkbox indicator inside CheckOpt — `h-4 w-4 rounded border`:
 
 ### Don't
 
-- **DON'T** use a dark background as the default page surface. The site is light-mode first. `bg-white text-slate-900` is the body.
+- **DON'T** use a dark background as the default page surface. The site is light-mode first. `bg-white text-slate-900` is the body. Dark ink (`#0b1e32`) is only used for the full-bleed hero, section-level ink blocks (reef states explainer, inspiration grid), and the footer.
 - **DON'T** use `rounded-xl` for cards — it is reserved for sub-card info blocks.
 - **DON'T** use `rounded-lg` for primary card containers.
 - **DON'T** use Tailwind's default shadow scale (`shadow-sm`, `shadow-lg`) for primary content cards — use the `rgba(16,40,70)` formula only.

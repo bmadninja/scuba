@@ -64,6 +64,34 @@
 - **Affiliate plumbing:** single `<AffiliateLink>` component handles rendering + analytics event + disclosure marker. URLs pre-tagged at JSON write time.
 - **Risk register surfaced:** scraper fragility, JSON-scale ceiling, link rot, globe perf with 500+ markers.
 
+## 2026-06-03 — PRD Update pass (sync to current reality)
+
+- **Intent:** Update. PRD was written 2026-05-15 when the site was a landing page concept. Now 356 sites, 10 routes, full data layer live.
+- **Reframed positioning:** "reef intelligence platform" — not just a trip planner. Moat = depth + honesty.
+- **IA updated** to all 10 live routes.
+- **Features restructured:** F1–F5 from original PRD promoted to F1–F8; marked Built vs. In scope next. F6 (cert landing pages) and F7 (affiliate) elevated to named features. F8 (data transparency) added — was not in original PRD.
+- **Reef health layer added as core product surface:** NOAA thermal, coral cover, GFW fishing pressure, water quality, reef state classification — these are live features not in the original PRD.
+- **User flows added** (UF1–UF4): species chaser, beginner, conservation-curious, returning diver. These were absent from the original PRD.
+- **Open questions reset** from original build-blockers (now resolved) to current gaps: sighting evidence backfill (OQ-1), MERMAID API (OQ-2), `/plan` completeness (OQ-3), IUCN licensing (OQ-6).
+- **Success metrics updated** to reflect grant/partnership credibility signals alongside affiliate revenue.
+- **Breadth pause confirmed** in assumptions: Colab Gemini Blitz paused per PM directive.
+- **Addendum** (personas-encounters-climate-research-addendum.md) referenced but not re-ingested — personas now live inline in UF1–UF4 per PRD conventions.
+
+## 2026-06-03 — Finalize pass
+
+- **Reviewer gate:** CONDITIONAL PASS. 9 findings resolved across reconciliation + quality + structural + prose passes.
+- **Critical fix:** In-scope-next items now have stub FRs (F9 sighting backfill, F10 MERMAID, F11 homepage positioning) with acceptance criteria.
+- **Site count corrected:** 380 throughout (was inconsistently 356 in some sections).
+- **UF5 added:** direct SEO cold landing on site detail page — highest-volume acquisition path, was missing.
+- **OQ-9 added:** GBIF/OBIS/iNaturalist commercial licensing — more urgent than IUCN (OQ-6), affects entire sighting evidence layer.
+- **IUCN clarified:** 258 species have data in dataset; display is feature-flagged pending commercial license. PRD previously conflated data existence with display status.
+- **Weekly refresh workflows documented:** FR8.6 added; IUCN + GFW refresh on weekly automated schedule.
+- **Success metrics anchored:** industry benchmark context added for CTR targets; acquisition signals added for grant/partnership reviewers.
+- **Confidence indicator:** FR9.3 — evidence badge on site cards during backfill. From PM log; now in PRD.
+- **Prose standardized:** "species chaser" (noun) / "species-chaser" (compound modifier); DHW, AIS, viz expanded; missing hyphens fixed.
+- **§11 Done list trimmed:** cross-reference to §1 to eliminate redundancy.
+- **Status set to: final.**
+
 ## Outstanding before build
 
 1. ~~Dataset source~~ — RESOLVED (scraped). New sub-questions Q-scrape-1..3 above.

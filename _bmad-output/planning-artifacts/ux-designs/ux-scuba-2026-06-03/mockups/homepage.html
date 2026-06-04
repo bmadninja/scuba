@@ -3,734 +3,981 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>scubaSeason.fun — Homepage mockup</title>
+<title>scubaSeason.fun — Homepage mockup v2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --brand:     #0089de;
-    --brand-dk:  #1d5d90;
-    --ink:       #0e1c2e;
-    --ink-2:     #1a2f47;
-    --body:      #334155;
-    --muted:     #64748b;
-    --hairline:  #e2e8f0;
-    --surface:   #f1f7fb;
-    --white:     #ffffff;
+:root {
+  --brand:    #0089de;
+  --brand-dk: #1d5d90;
+  --ink:      #0b1e32;
+  --ink-2:    #142a40;
+  --body:     #334155;
+  --muted:    #64748b;
+  --hairline: #e2e8f0;
+  --surface:  #f1f7fb;
+  --white:    #ffffff;
+  --thriving: #10b981;
+  --pressure: #0089de;
+  --change:   #f43f5e;
+}
 
-    --thriving:  #10b981;
-    --pressure:  #0089de;
-    --change:    #f43f5e;
-  }
+body {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  background: var(--white);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
 
-  body {
-    font-family: 'Noto Sans', system-ui, sans-serif;
-    background: var(--white);
-    color: #0f172a;
-    -webkit-font-smoothing: antialiased;
-  }
+/* ─── NAV ─────────────────────────────────────────────────── */
+.nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem 3rem;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1.0; }
+.nav-wm-top { font-size: 0.6875rem; font-weight: 300; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); }
+.nav-wm-bot { font-size: 1.05rem; font-weight: 900; letter-spacing: -0.05em; color: #fff; }
+.nav-search-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+  margin-left: auto;
+}
+.nav-search-wrap svg {
+  position: absolute;
+  left: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.4);
+  pointer-events: none;
+}
+.nav-search {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  font-size: 0.8125rem;
+  font-family: inherit;
+  color: rgba(255,255,255,0.55);
+  outline: none;
+}
+.nav-links {
+  display: flex;
+  gap: 0.125rem;
+  list-style: none;
+  flex-shrink: 0;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  padding: 0.45rem 0.875rem;
+  border-radius: 999px;
+}
+.nav-links a:hover { color: #fff; }
 
-  /* ── NAV ───────────────────────────────────────────────── */
-  .nav {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 1.25rem 3rem;
-  }
-  .nav-logo {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #fff;
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--brand); }
-  .nav-links {
-    display: flex;
-    gap: 0.25rem;
-    margin-left: auto;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    padding: 0.5rem 0.875rem;
-    border-radius: 999px;
-    transition: color 0.15s;
-  }
-  .nav-links a:hover { color: #fff; }
-  .nav-search {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 999px;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
-    font-size: 0.8125rem;
-    color: rgba(255,255,255,0.6);
-    width: 220px;
-    position: relative;
-  }
-  .nav-search-wrap { position: relative; }
-  .nav-search-wrap svg {
-    position: absolute;
-    left: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255,255,255,0.45);
-  }
+/* ─── HERO ────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 65% 25%, rgba(0,137,222,0.2) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 35% at 30% 60%, rgba(0,184,212,0.12) 0%, transparent 60%),
+    linear-gradient(175deg, #021422 0%, #041c33 18%, #052745 38%, #073060 55%, #052540 72%, #031928 100%);
+}
+.hero-rays {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(96deg, transparent 0px, transparent 44px, rgba(0,160,220,0.035) 44px, rgba(0,160,220,0.035) 47px),
+    repeating-linear-gradient(84deg, transparent 0px, transparent 70px, rgba(0,200,230,0.025) 70px, rgba(0,200,230,0.025) 73px);
+}
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 120% 100% at 50% 50%, transparent 40%, rgba(2,12,24,0.6) 100%);
+}
+.hero-fade {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 260px;
+  background: linear-gradient(to bottom, transparent, var(--ink));
+}
 
-  /* ── HERO ───────────────────────────────────────────────── */
-  .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 680px;
-    overflow: hidden;
-  }
+.hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 3rem 5.5rem;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 1.25rem;
+}
+.live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #15a05c;
+  box-shadow: 0 0 0 3px rgba(21,160,92,0.3);
+  flex-shrink: 0;
+}
+.hero-h1 {
+  font-size: clamp(3rem, 6.5vw, 5.75rem);
+  font-weight: 800;
+  line-height: 1.01;
+  letter-spacing: -0.035em;
+  color: #fff;
+  max-width: 760px;
+  margin-bottom: 1.4rem;
+}
+.hero-sub {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.175rem);
+  color: rgba(255,255,255,0.52);
+  max-width: 480px;
+  line-height: 1.65;
+  margin-bottom: 2.75rem;
+}
+.hero-stats {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0 2.25rem;
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+.hero-stat:first-child { padding-left: 0; border-left: none; }
+.hero-stat-val {
+  font-size: 1.625rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+.hero-stat-lbl {
+  font-size: 0.5875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.32);
+}
 
-  /* Underwater light simulation */
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 60% 30%,
-        rgba(0,137,222,0.22) 0%,
-        transparent 65%),
-      radial-gradient(ellipse 40% 30% at 35% 55%,
-        rgba(0,184,212,0.14) 0%,
-        transparent 60%),
-      linear-gradient(
-        180deg,
-        #03111f 0%,
-        #041c33 20%,
-        #052540 40%,
-        #062d4e 55%,
-        #04223c 75%,
-        #021628 100%
-      );
-  }
+/* ─── DARK: REEF STATES ───────────────────────────────────── */
+.section-ink {
+  background: var(--ink);
+  padding: 5rem 3rem;
+}
+.section-ink-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.ink-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 1.25rem;
+}
+.ink-h2 {
+  font-size: clamp(1.75rem, 3vw, 2.625rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+.ink-body {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1.025rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.45);
+  max-width: 400px;
+}
+.ink-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+}
+.reef-states {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.reef-state-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.375rem 1.5rem;
+  background: #0f2438;
+}
+.reef-state-row:hover { background: #142f48; }
+.state-marker {
+  width: 3px;
+  align-self: stretch;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.reef-state-name {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+.reef-state-def {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.4);
+}
+.reef-state-count {
+  margin-left: auto;
+  font-size: 1.375rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: rgba(255,255,255,0.14);
+  flex-shrink: 0;
+  padding-top: 1px;
+  font-variant-numeric: tabular-nums;
+}
 
-  /* Caustic light rays */
-  .hero-rays {
-    position: absolute;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(
-        97deg,
-        transparent 0px,
-        transparent 38px,
-        rgba(0,160,220,0.04) 38px,
-        rgba(0,160,220,0.04) 42px
-      ),
-      repeating-linear-gradient(
-        83deg,
-        transparent 0px,
-        transparent 60px,
-        rgba(0,184,212,0.03) 60px,
-        rgba(0,184,212,0.03) 63px
-      );
-  }
+/* ─── INSPIRATION: WHAT'S REMARKABLE ─────────────────────── */
+.section-inspire {
+  background: var(--ink);
+  padding: 0 3rem 5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.section-inspire-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.inspire-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  padding-top: 1px;
+}
+.inspire-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 0.35rem;
+}
+.inspire-h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #fff;
+}
+.inspire-see-all {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.inspire-grid {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+.inspire-card {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+.inspire-card:hover .inspire-img { transform: scale(1.04); }
+.inspire-card:hover .inspire-overlay { opacity: 1; }
 
-  /* Subtle grain texture */
-  .hero-grain {
-    position: absolute;
-    inset: 0;
-    opacity: 0.35;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
-    background-size: 200px 200px;
-  }
+.inspire-img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  transition: transform 0.5s ease;
+  display: block;
+}
+.inspire-card:nth-child(2) .inspire-img,
+.inspire-card:nth-child(3) .inspire-img { min-height: 160px; }
 
-  /* Bottom fade into ink section */
-  .hero-fade {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 220px;
-    background: linear-gradient(to bottom, transparent, #0b1e32);
-  }
+/* Ocean gradients per destination */
+.dest-raja {
+  background: linear-gradient(160deg, #041c33 0%, #063a52 25%, #065a66 45%, #086b7a 65%, #0a7a6b 100%);
+}
+.dest-palau {
+  background: linear-gradient(155deg, #031522 0%, #042338 25%, #064466 50%, #0a6b8a 75%, #0b829f 100%);
+}
+.dest-azores {
+  background: linear-gradient(150deg, #0a1f38 0%, #0d2e4e 30%, #103a5e 55%, #124870 80%, #0f3d61 100%);
+}
+.dest-galapagos {
+  background: linear-gradient(145deg, #0e2240 0%, #122f55 30%, #1a4060 55%, #0e5570 80%, #0a6878 100%);
+}
 
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 3rem 5rem;
-    max-width: 1320px;
-    margin: 0 auto;
-  }
+/* Caustic shimmer layer */
+.inspire-shimmer {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    94deg,
+    transparent 0px, transparent 30px,
+    rgba(0,160,220,0.04) 30px, rgba(0,160,220,0.04) 32px
+  );
+  pointer-events: none;
+}
 
-  .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--brand);
-    margin-bottom: 1.25rem;
-  }
-  .live-dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: #15a05c;
-    box-shadow: 0 0 0 3px rgba(21,160,92,0.25);
-  }
+.inspire-grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2,14,28,0.9) 0%, rgba(2,14,28,0.3) 50%, transparent 100%);
+  pointer-events: none;
+}
+.inspire-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,137,222,0.1);
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+.inspire-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1.5rem 1.625rem;
+  z-index: 2;
+}
+.inspire-card:nth-child(n+2) .inspire-content {
+  padding: 1rem 1.25rem 1.25rem;
+}
+.inspire-region {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.35rem;
+}
+.inspire-name {
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+.inspire-card:nth-child(n+2) .inspire-name {
+  font-size: 1.0625rem;
+}
+.inspire-hook {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.6);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.inspire-card:nth-child(n+2) .inspire-hook { display: none; }
 
-  .hero-h1 {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: clamp(2.75rem, 6.5vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.02;
-    letter-spacing: -0.03em;
-    color: #fff;
-    max-width: 820px;
-    margin-bottom: 1.5rem;
-  }
+.inspire-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.875rem;
+  flex-wrap: wrap;
+}
+.ibadge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+}
+.ibadge-state-thriving {
+  background: rgba(16,185,129,0.14);
+  color: #6ee7b7;
+  border: 1px solid rgba(16,185,129,0.22);
+}
+.ibadge-state-pressure {
+  background: rgba(0,137,222,0.16);
+  color: #93c5fd;
+  border: 1px solid rgba(0,137,222,0.25);
+}
+.ibadge-state-change {
+  background: rgba(244,63,94,0.14);
+  color: #fca5a5;
+  border: 1px solid rgba(244,63,94,0.2);
+}
+.ibadge-season {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+.ibadge-animal {
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.1);
+}
 
-  .hero-sub {
-    font-family: 'Source Serif 4', serif;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    font-style: italic;
-    color: rgba(255,255,255,0.6);
-    max-width: 520px;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-  }
+/* Small cards stacked on right side of featured */
+.inspire-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px;
+}
 
-  .hero-stats {
-    display: flex;
-    gap: 0;
-    align-items: stretch;
-  }
-  .hero-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    padding: 0 2rem;
-    border-left: 1px solid rgba(255,255,255,0.12);
-  }
-  .hero-stat:first-child { padding-left: 0; border-left: none; }
-  .hero-stat-val {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: -0.02em;
-    line-height: 1;
-  }
-  .hero-stat-lbl {
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.38);
-  }
+/* ─── EXPLORER ────────────────────────────────────────────── */
+.section-explorer {
+  background: var(--white);
+  padding: 5rem 3rem;
+}
+.section-explorer-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.explorer-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--hairline);
+  gap: 1rem;
+}
+.explorer-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.explorer-h2 {
+  font-size: 1.875rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+}
+.explorer-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+.explorer-meta strong { color: #0f172a; font-weight: 700; }
 
-  /* ── DARK SECTION ────────────────────────────────────────── */
-  .section-ink {
-    background: #0b1e32;
-    padding: 5rem 3rem;
-  }
-  .section-ink-inner {
-    max-width: 1320px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
+/* Filter pills */
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.0625rem;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  background: var(--white);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.12s;
+  font-family: inherit;
+}
+.filter-chip:hover { border-color: #94a3b8; color: #0f172a; }
+.filter-chip.active {
+  background: #e8f0fe;
+  border-color: transparent;
+  color: #1d5d90;
+  font-weight: 600;
+}
+.filter-chip .swatch {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.filter-sort {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  font-family: inherit;
+}
+.filter-sort select {
+  border: 1px solid var(--hairline);
+  border-radius: 0.5rem;
+  padding: 0.4375rem 0.75rem;
+  font-size: 0.8125rem;
+  color: #0f172a;
+  background: var(--white);
+  font-family: inherit;
+}
 
-  .ink-editorial {
-    color: rgba(255,255,255,0.85);
-  }
-  .ink-label {
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--brand);
-    margin-bottom: 1.25rem;
-  }
-  .ink-h2 {
-    font-size: clamp(1.75rem, 3vw, 2.75rem);
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
-    color: #fff;
-    margin-bottom: 1.25rem;
-  }
-  .ink-body {
-    font-family: 'Source Serif 4', serif;
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.55);
-    max-width: 420px;
-  }
-  .ink-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 1.75rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--brand);
-    text-decoration: none;
-  }
+/* ─── CARDS ───────────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.card-featured { grid-column: span 2; }
 
-  /* Reef state cards */
-  .reef-states {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 1.25rem;
-    overflow: hidden;
-  }
-  .reef-state-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding: 1.4rem 1.6rem;
-    background: #0f2438;
-    transition: background 0.15s;
-  }
-  .reef-state-row:hover { background: #14304a; }
-  .state-dot {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    margin-top: 5px;
-    flex-shrink: 0;
-  }
-  .reef-state-name {
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 0.3rem;
-  }
-  .reef-state-def {
-    font-size: 0.8125rem;
-    line-height: 1.55;
-    color: rgba(255,255,255,0.45);
-  }
-  .reef-state-count {
-    margin-left: auto;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: rgba(255,255,255,0.2);
-    flex-shrink: 0;
-    padding-top: 2px;
-  }
+.card {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--hairline);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 1px 2px rgba(16,40,70,.03), 0 8px 28px -14px rgba(16,40,70,.1);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(16,40,70,.04), 0 18px 36px -12px rgba(16,40,70,.18);
+  border-color: rgba(0,137,222,0.25);
+}
+.card-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.card .card-img-wrap { height: 228px; }
+.card-featured .card-img-wrap { height: 360px; }
 
-  /* ── EXPLORER SECTION ────────────────────────────────────── */
-  .section-explorer {
-    background: var(--white);
-    padding: 5rem 3rem;
-  }
-  .section-explorer-inner {
-    max-width: 1320px;
-    margin: 0 auto;
-  }
+.card-img {
+  width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+}
+.card:hover .card-img { transform: scale(1.04); }
 
-  .explorer-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--hairline);
-  }
-  .explorer-label {
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.4rem;
-  }
-  .explorer-h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    color: #0f172a;
-  }
-  .explorer-meta {
-    font-size: 0.875rem;
-    color: var(--muted);
-  }
-  .explorer-meta strong { color: #0f172a; }
+/* Destination ocean gradients */
+.dest-rarotonga {
+  background: linear-gradient(158deg, #0a3d6b 0%, #0c4e82 30%, #0a6b8a 55%, #087a6e 78%, #0a5e58 100%);
+}
+.dest-raja2 {
+  background: linear-gradient(150deg, #041c33 0%, #063a52 25%, #065566 45%, #086b7a 65%, #0a7a6b 100%);
+}
+.dest-maldives {
+  background: linear-gradient(168deg, #0d4a7a 0%, #0a6b9a 40%, #08a0b2 70%, #07b8c4 100%);
+}
+.dest-galapagos2 {
+  background: linear-gradient(148deg, #0e2240 0%, #122f55 30%, #1a4060 55%, #0e5570 80%, #0a6878 100%);
+}
 
-  /* Filter row */
-  .filter-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-  }
-  .filter-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    border: 1px solid var(--hairline);
-    background: var(--white);
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: #334155;
-    cursor: pointer;
-    transition: all 0.12s;
-    white-space: nowrap;
-  }
-  .filter-chip:hover {
-    border-color: var(--brand);
-    color: var(--brand);
-  }
-  .filter-chip.active {
-    background: #e8f0fe;
-    border-color: transparent;
-    color: #1d5d90;
-    font-weight: 600;
-  }
-  .filter-chip .swatch {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  .filter-sort {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8125rem;
-    color: var(--muted);
-  }
-  .filter-sort select {
-    border: 1px solid var(--hairline);
-    border-radius: 0.5rem;
-    padding: 0.4rem 0.75rem;
-    font-size: 0.8125rem;
-    color: #0f172a;
-    background: var(--white);
-  }
+/* Shimmer overlay on cards */
+.card-shimmer {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    95deg, transparent 0px, transparent 50px,
+    rgba(0,160,220,0.03) 50px, rgba(0,160,220,0.03) 52px
+  );
+  pointer-events: none;
+}
+.card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4,20,40,0.55) 0%, transparent 55%);
+  pointer-events: none;
+}
 
-  /* ── CARDS ───────────────────────────────────────────────── */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
+/* Card overlay badges */
+.card-badges-top {
+  position: absolute;
+  top: 0.875rem; left: 0.875rem;
+  display: flex; gap: 0.375rem; flex-wrap: wrap; z-index: 2;
+}
+.card-badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 0.275rem 0.625rem;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.cb-thriving {
+  background: rgba(16,185,129,0.14);
+  color: #6ee7b7;
+  border: 1px solid rgba(16,185,129,0.22);
+}
+.cb-pressure {
+  background: rgba(0,137,222,0.16);
+  color: #93c5fd;
+  border: 1px solid rgba(0,137,222,0.25);
+}
+.cb-change {
+  background: rgba(244,63,94,0.14);
+  color: #fca5a5;
+  border: 1px solid rgba(244,63,94,0.2);
+}
+.cb-season {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.card-skill {
+  position: absolute;
+  bottom: 0.875rem; right: 0.875rem;
+  font-size: 0.5875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.275rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.42);
+  color: rgba(255,255,255,0.65);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.1);
+  z-index: 2;
+}
 
-  /* Featured card — spans 2 cols */
-  .card-featured {
-    grid-column: span 2;
-  }
+/* Card body */
+.card-body {
+  padding: 1.25rem 1.375rem 1.375rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-country {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.325rem;
+}
+.card-name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  transition: color 0.15s;
+}
+.card-featured .card-name { font-size: 1.3125rem; }
+.card:hover .card-name { color: var(--brand); }
 
-  .card {
-    border-radius: 1.25rem;
-    overflow: hidden;
-    background: var(--white);
-    border: 1px solid var(--hairline);
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 1px 2px rgba(16,40,70,.03), 0 8px 24px -12px rgba(16,40,70,.1);
-  }
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1px 2px rgba(16,40,70,.04), 0 16px 32px -12px rgba(16,40,70,.18);
-  }
+.card-hook {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #475569;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-featured .card-hook {
+  font-size: 0.9375rem;
+  -webkit-line-clamp: 3;
+}
 
-  .card-img-wrap {
-    position: relative;
-    overflow: hidden;
-  }
-  .card .card-img-wrap { height: 220px; }
-  .card-featured .card-img-wrap { height: 340px; }
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--hairline);
+}
+.card-data-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.card-data-lbl {
+  font-size: 0.5875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.card-data-val {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.card-freshness {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-left: auto;
+  font-size: 0.6875rem;
+  color: var(--muted);
+}
+.fresh-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 
-  .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-  }
-  .card:hover .card-img { transform: scale(1.03); }
+/* ─── EDITORIAL NUMBERS ───────────────────────────────────── */
+.section-numbers {
+  background: #f8fafc;
+  border-top: 1px solid var(--hairline);
+  padding: 4rem 3rem;
+}
+.section-numbers-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+.num-item {}
+.num-val {
+  font-size: 3.25rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: #e2e8f0;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+.num-lbl {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.num-desc {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #475569;
+}
+.num-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.875rem 0.45rem 0.625rem;
+  border-radius: 999px;
+  background: rgba(21,160,92,0.1);
+  border: 1px solid rgba(21,160,92,0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #15804d;
+  margin-bottom: 0.75rem;
+}
+.num-live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #15a05c;
+  box-shadow: 0 0 0 3px rgba(21,160,92,0.25);
+  flex-shrink: 0;
+}
 
-  /* Underwater gradient placeholder */
-  .img-placeholder {
-    width: 100%; height: 100%;
-  }
-  .img-rarotonga {
-    background: linear-gradient(160deg, #0a3d6b 0%, #0c4d82 30%, #0a6b8a 55%, #087a6e 75%, #0a5e55 100%);
-  }
-  .img-raja {
-    background: linear-gradient(150deg, #041c33 0%, #063a52 25%, #065566 45%, #086b7a 65%, #0a7a6b 100%);
-  }
-  .img-maldives {
-    background: linear-gradient(170deg, #0d4a7a 0%, #0a6b9a 40%, #08a0b2 70%, #06b8c4 100%);
-  }
-  .img-galapagos {
-    background: linear-gradient(145deg, #0e2240 0%, #122f55 30%, #1a4060 55%, #0e5570 80%, #0a6878 100%);
-  }
-
-  /* Simulated fish silhouettes */
-  .img-rarotonga::after {
-    content: '';
-    display: block;
-    width: 100%; height: 100%;
-    background:
-      radial-gradient(ellipse 18px 8px at 62% 55%, rgba(255,255,255,0.06) 0%, transparent 100%),
-      radial-gradient(ellipse 10px 5px at 38% 42%, rgba(255,255,255,0.04) 0%, transparent 100%),
-      radial-gradient(ellipse 80% 40% at 50% 70%, rgba(0,100,160,0.2) 0%, transparent 100%);
-  }
-  .img-raja::after {
-    content: '';
-    display: block;
-    width: 100%; height: 100%;
-    background:
-      radial-gradient(ellipse 70% 30% at 50% 80%, rgba(0,60,100,0.3) 0%, transparent 100%),
-      radial-gradient(ellipse 12px 6px at 55% 45%, rgba(255,255,255,0.05) 0%, transparent 100%);
-  }
-
-  .card-badges {
-    position: absolute;
-    top: 1rem; left: 1rem;
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-    z-index: 2;
-  }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    padding: 0.3rem 0.75rem;
-    border-radius: 999px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-  .badge-thriving {
-    background: rgba(16,185,129,0.15);
-    color: #6ee7b7;
-    border: 1px solid rgba(16,185,129,0.25);
-  }
-  .badge-pressure {
-    background: rgba(0,137,222,0.18);
-    color: #93c5fd;
-    border: 1px solid rgba(0,137,222,0.28);
-  }
-  .badge-change {
-    background: rgba(244,63,94,0.15);
-    color: #fca5a5;
-    border: 1px solid rgba(244,63,94,0.22);
-  }
-  .badge-season {
-    background: rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.8);
-    border: 1px solid rgba(255,255,255,0.18);
-  }
-
-  .card-skill-badge {
-    position: absolute;
-    bottom: 1rem; right: 1rem;
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.7rem;
-    border-radius: 999px;
-    background: rgba(0,0,0,0.45);
-    color: rgba(255,255,255,0.75);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255,255,255,0.12);
-  }
-
-  .card-body {
-    padding: 1.25rem 1.5rem 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .card-country {
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.35rem;
-  }
-  .card-name {
-    font-size: 1.125rem;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-    line-height: 1.25;
-  }
-  .card-featured .card-name {
-    font-size: 1.375rem;
-  }
-  .card-hook {
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.875rem;
-    line-height: 1.6;
-    color: #475569;
-    flex: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .card-featured .card-hook {
-    font-size: 0.9375rem;
-    -webkit-line-clamp: 3;
-  }
-
-  .card-footer {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-    padding-top: 0.875rem;
-    border-top: 1px solid var(--hairline);
-  }
-  .card-data {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
-  .card-data-lbl {
-    font-size: 0.625rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .card-data-val {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    color: #0f172a;
-  }
-  .card-freshness {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-left: auto;
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-  .fresh-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-  }
-
-  /* ── EDITORIAL STRIP ──────────────────────────────────────── */
-  .section-editorial {
-    background: #f8fafc;
-    padding: 4rem 3rem;
-    border-top: 1px solid var(--hairline);
-    border-bottom: 1px solid var(--hairline);
-  }
-  .section-editorial-inner {
-    max-width: 1320px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
-  }
-  .editorial-item {}
-  .editorial-number {
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    color: #e2e8f0;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .editorial-label {
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.4rem;
-  }
-  .editorial-desc {
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.9375rem;
-    line-height: 1.65;
-    color: #475569;
-  }
-
-  /* ── RESPONSIVE HELPERS ──────────────────────────────────── */
-  .divider { width: 100%; height: 1px; background: var(--hairline); }
-
-  .annotation {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    background: #fef3c7;
-    color: #92400e;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 0.75rem;
-  }
+/* ─── FOOTER ─────────────────────────────────────────────── */
+.footer {
+  background: var(--ink);
+  padding: 4rem 3rem 3rem;
+}
+.footer-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.footer-wm { display: flex; flex-direction: column; line-height: 1.0; }
+.footer-wm-top { font-size: 0.6875rem; font-weight: 300; letter-spacing: 0.08em; color: rgba(255,255,255,0.3); }
+.footer-wm-bot { font-size: 1.05rem; font-weight: 900; letter-spacing: -0.05em; color: #fff; }
+.footer-tagline {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.35);
+  max-width: 260px;
+}
+.footer-col-title {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 1.25rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.footer-links a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-links a:hover { color: #fff; }
+.footer-contact-email {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.875rem;
+}
+.footer-contact-email:hover { color: #38b0ff; }
+.footer-contact-note {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.3);
+}
+.footer-bottom {
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.footer-copy {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+}
+.footer-data-note {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+}
 </style>
 </head>
 <body>
 
-<!-- ── NAV ────────────────────────────────────────────────── -->
+<!-- NAV -->
 <nav class="nav">
-  <a href="#" class="nav-logo">scubaSeason<span>.fun</span></a>
+  <a href="#" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark">
+      <span class="nav-wm-top">scuba</span>
+      <span class="nav-wm-bot">Season.fun</span>
+    </div>
+  </a>
   <div class="nav-search-wrap">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-    <div class="nav-search">Search reefs, regions…</div>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input class="nav-search" type="text" placeholder="Search reefs, regions…" aria-label="Search reefs" />
   </div>
   <ul class="nav-links">
-    <li><a href="#">Atlas</a></li>
     <li><a href="#">Method</a></li>
     <li><a href="#">About</a></li>
   </ul>
 </nav>
 
-<!-- ── HERO ────────────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-rays"></div>
-  <div class="hero-grain"></div>
-  <div class="hero-fade"></div>
-
+<!-- HERO -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-rays" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-fade" aria-hidden="true"></div>
+  <!-- Photo credit — will point to actual underwater photo in production -->
+  <div style="position:absolute;top:1.5rem;right:2rem;z-index:20;font-size:0.5875rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:0.4rem;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+    Photo · Raja Ampat, West Papua
+  </div>
   <div class="hero-content">
-    <div class="hero-eyebrow">
+    <div class="hero-eyebrow" aria-hidden="true">
       <span class="live-dot"></span>
-      Live · NOAA Coral Reef Watch · updated tonight
+      Live · NOAA Coral Reef Watch
     </div>
-
     <h1 class="hero-h1">A data atlas<br>for the living<br>ocean.</h1>
-
     <p class="hero-sub">Ongoing science and daily monitoring — not a one-time write-up.</p>
-
-    <div class="hero-stats">
-      <div class="hero-stat">
+    <div class="hero-stats" role="list">
+      <div class="hero-stat" role="listitem">
         <span class="hero-stat-val">47</span>
         <span class="hero-stat-lbl">Reefs tracked</span>
       </div>
-      <div class="hero-stat">
-        <span class="hero-stat-val">Nightly</span>
-        <span class="hero-stat-lbl">NOAA thermal sync</span>
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-val">5 km</span>
+        <span class="hero-stat-lbl">Satellite resolution</span>
       </div>
-      <div class="hero-stat">
+      <div class="hero-stat" role="listitem">
         <span class="hero-stat-val">38</span>
         <span class="hero-stat-lbl">Data sources</span>
       </div>
@@ -738,71 +985,133 @@
   </div>
 </section>
 
-<!-- ── DARK SECTION ────────────────────────────────────────── -->
+<!-- REEF STATES (dark) -->
 <section class="section-ink">
   <div class="section-ink-inner">
-    <div class="ink-editorial">
-      <p class="ink-label">How the atlas works</p>
+    <div>
+      <p class="ink-label">How the atlas reads a reef</p>
       <h2 class="ink-h2">What a reef is actually doing right now.</h2>
-      <p class="ink-body">Every location on this atlas carries a reef state — a judgment call about what the science says is happening on the ground. Not a marketing label. Not a star rating.</p>
-      <a href="#" class="ink-link">
-        How we calculate this →
-      </a>
+      <p class="ink-body">Every location carries a reef state — a judgment call about what the science says is happening on the ground. Not a marketing label. Not a star rating.</p>
+      <a href="#" class="ink-link">How we calculate this →</a>
     </div>
-    <div class="reef-states">
-      <div class="reef-state-row">
-        <span class="state-dot" style="background: var(--thriving)"></span>
+    <div class="reef-states" role="list">
+      <div class="reef-state-row" role="listitem">
+        <div class="state-marker" style="background: var(--thriving)"></div>
         <div>
           <p class="reef-state-name">Thriving</p>
           <p class="reef-state-def">Coral cover holding, pressure low. A reef with room to surprise you.</p>
         </div>
-        <span class="reef-state-count">18</span>
+        <span class="reef-state-count" aria-label="18 locations">18</span>
       </div>
-      <div class="reef-state-row">
-        <span class="state-dot" style="background: var(--pressure)"></span>
+      <div class="reef-state-row" role="listitem">
+        <div class="state-marker" style="background: var(--pressure)"></div>
         <div>
           <p class="reef-state-name">Under pressure</p>
-          <p class="reef-state-def">Degraded or stressed but still actively diving. Worth watching closely.</p>
+          <p class="reef-state-def">Degraded or stressed but actively diving. Worth watching closely.</p>
         </div>
-        <span class="reef-state-count">21</span>
+        <span class="reef-state-count" aria-label="21 locations">21</span>
       </div>
-      <div class="reef-state-row">
-        <span class="state-dot" style="background: var(--change)"></span>
+      <div class="reef-state-row" role="listitem">
+        <div class="state-marker" style="background: var(--change)"></div>
         <div>
           <p class="reef-state-name">Witnessing change</p>
           <p class="reef-state-def">The reef has fundamentally shifted. Go to see what's actually there — not what the brochures say.</p>
         </div>
-        <span class="reef-state-count">8</span>
+        <span class="reef-state-count" aria-label="8 locations">8</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── ATLAS EXPLORER ──────────────────────────────────────── -->
-<section class="section-explorer">
+<!-- INSPIRATION: WHAT'S REMARKABLE -->
+<section class="section-inspire" aria-label="Featured destinations">
+  <div class="section-inspire-inner">
+    <div class="inspire-header">
+      <div>
+        <p class="inspire-label">Worth going for</p>
+        <h2 class="inspire-h2">Something remarkable, right now</h2>
+      </div>
+      <a href="#" class="inspire-see-all">Browse all 47 →</a>
+    </div>
+
+    <div class="inspire-grid">
+      <!-- Featured left -->
+      <a href="#" class="inspire-card">
+        <div class="inspire-img dest-raja" style="min-height:380px;"></div>
+        <div class="inspire-shimmer" aria-hidden="true"></div>
+        <div class="inspire-grad" aria-hidden="true"></div>
+        <div class="inspire-overlay" aria-hidden="true"></div>
+        <div class="inspire-content">
+          <p class="inspire-region">Indonesia · Asia Pacific</p>
+          <h3 class="inspire-name">Raja Ampat</h3>
+          <p class="inspire-hook">The highest recorded marine biodiversity on Earth. Wobbegong sharks, walking sharks, and neon anthias clouds on every dive.</p>
+          <div class="inspire-badges">
+            <span class="ibadge ibadge-state-thriving">Thriving</span>
+            <span class="ibadge ibadge-season">In season now</span>
+            <span class="ibadge ibadge-animal">Sharks · Mantas</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Right stack -->
+      <div class="inspire-stack">
+        <a href="#" class="inspire-card">
+          <div class="inspire-img dest-palau" style="min-height:100%;"></div>
+          <div class="inspire-shimmer" aria-hidden="true"></div>
+          <div class="inspire-grad" aria-hidden="true"></div>
+          <div class="inspire-overlay" aria-hidden="true"></div>
+          <div class="inspire-content">
+            <p class="inspire-region">Micronesia</p>
+            <h3 class="inspire-name">Palau</h3>
+            <div class="inspire-badges">
+              <span class="ibadge ibadge-state-thriving">Thriving</span>
+              <span class="ibadge ibadge-animal">Sharks · Jellyfish</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="inspire-card">
+          <div class="inspire-img dest-azores" style="min-height:100%;"></div>
+          <div class="inspire-shimmer" aria-hidden="true"></div>
+          <div class="inspire-grad" aria-hidden="true"></div>
+          <div class="inspire-overlay" aria-hidden="true"></div>
+          <div class="inspire-content">
+            <p class="inspire-region">Portugal · Atlantic</p>
+            <h3 class="inspire-name">Azores</h3>
+            <div class="inspire-badges">
+              <span class="ibadge ibadge-state-pressure">Under pressure</span>
+              <span class="ibadge ibadge-animal">Dolphins · Whales</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATLAS EXPLORER -->
+<section class="section-explorer" aria-label="Atlas explorer">
   <div class="section-explorer-inner">
 
     <div class="explorer-header">
       <div>
-        <p class="explorer-label">The atlas</p>
+        <p class="explorer-label">The full atlas</p>
         <h2 class="explorer-h2">Browse every tracked reef</h2>
       </div>
-      <span class="explorer-meta"><strong>47</strong> locations across 5 regions</span>
+      <div style="text-align:right;">
+        <p class="explorer-meta"><strong>47</strong> locations · 5 regions</p>
+        <p class="explorer-meta" style="font-size:0.75rem;margin-top:0.15rem;">Filter, sort, or search above</p>
+      </div>
     </div>
 
-    <!-- Filter row -->
-    <div class="filter-row">
+    <div class="filter-row" role="group" aria-label="Filters">
       <button class="filter-chip active">
-        <span class="swatch" style="background: var(--thriving)"></span>
-        Thriving
+        <span class="swatch" style="background:var(--thriving)"></span>Thriving
       </button>
       <button class="filter-chip active">
-        <span class="swatch" style="background: var(--pressure)"></span>
-        Under pressure
+        <span class="swatch" style="background:var(--pressure)"></span>Under pressure
       </button>
       <button class="filter-chip active">
-        <span class="swatch" style="background: var(--change)"></span>
-        Witnessing change
+        <span class="swatch" style="background:var(--change)"></span>Witnessing change
       </button>
       <button class="filter-chip">Certification</button>
       <button class="filter-chip">Region</button>
@@ -810,158 +1119,192 @@
       <button class="filter-chip">Wildlife</button>
       <div class="filter-sort">
         Sort
-        <select><option>Best season</option></select>
+        <select aria-label="Sort order"><option>Best season</option><option>Oldest surveys</option><option>Thermal stress</option><option>Name</option></select>
       </div>
     </div>
 
-    <!-- Card grid -->
     <div class="card-grid">
 
-      <!-- Featured card (2-col wide) -->
+      <!-- Featured 2-col -->
       <a href="#" class="card card-featured">
         <div class="card-img-wrap">
-          <div class="img-placeholder img-rarotonga card-img"></div>
-          <div class="card-badges">
-            <span class="badge badge-thriving">
-              <span style="width:6px;height:6px;border-radius:50%;background:#6ee7b7;display:inline-block"></span>
-              Thriving
-            </span>
-            <span class="badge badge-season">In season now</span>
+          <div class="card-img dest-rarotonga"></div>
+          <div class="card-shimmer" aria-hidden="true"></div>
+          <div class="card-gradient" aria-hidden="true"></div>
+          <div class="card-badges-top">
+            <span class="card-badge cb-thriving">Thriving</span>
+            <span class="card-badge cb-season">In season now</span>
           </div>
-          <span class="card-skill-badge">Open water+</span>
+          <span class="card-skill">Open water+</span>
         </div>
         <div class="card-body">
           <p class="card-country">Cook Islands</p>
           <h3 class="card-name">Rarotonga</h3>
-          <p class="card-hook">Bommies thick with anthias, regular grey reef and whitetip sharks, and one of the Pacific's most intact shallow reef systems. Survey freshness is exceptional — eyes were underwater here eight months ago.</p>
+          <p class="card-hook">Bommies thick with anthias, regular grey reef and whitetip sharks, and one of the Pacific's most intact shallow reef systems. Survey freshness is exceptional.</p>
           <div class="card-footer">
-            <div class="card-data">
+            <div class="card-data-item">
               <span class="card-data-lbl">Coral cover</span>
               <span class="card-data-val">58% · 2024</span>
             </div>
-            <div class="card-data">
+            <div class="card-data-item">
               <span class="card-data-lbl">Best season</span>
               <span class="card-data-val">May – Oct</span>
             </div>
             <div class="card-freshness">
-              <span class="fresh-dot" style="background: #15a05c"></span>
-              Survey: 8 mo ago
+              <span class="fresh-dot" style="background:#15a05c"></span>
+              8 months ago
             </div>
           </div>
         </div>
       </a>
 
-      <!-- Standard card -->
+      <!-- Standard -->
       <a href="#" class="card">
         <div class="card-img-wrap">
-          <div class="img-placeholder img-maldives card-img"></div>
-          <div class="card-badges">
-            <span class="badge badge-pressure">
-              <span style="width:6px;height:6px;border-radius:50%;background:#93c5fd;display:inline-block"></span>
-              Under pressure
-            </span>
+          <div class="card-img dest-maldives"></div>
+          <div class="card-shimmer" aria-hidden="true"></div>
+          <div class="card-gradient" aria-hidden="true"></div>
+          <div class="card-badges-top">
+            <span class="card-badge cb-pressure">Under pressure</span>
           </div>
-          <span class="card-skill-badge">Advanced+</span>
+          <span class="card-skill">Advanced+</span>
         </div>
         <div class="card-body">
           <p class="card-country">Maldives</p>
           <h3 class="card-name">North Malé Atoll</h3>
-          <p class="card-hook">Mantas reliably at cleaning stations year-round. Bleaching has reduced cover significantly since 2016 — the survey data is honest about that.</p>
+          <p class="card-hook">Mantas reliably at cleaning stations year-round. Cover has declined since 2016 — the data is honest about that.</p>
           <div class="card-footer">
-            <div class="card-data">
+            <div class="card-data-item">
               <span class="card-data-lbl">Coral cover</span>
               <span class="card-data-val">31% · 2023</span>
             </div>
             <div class="card-freshness">
-              <span class="fresh-dot" style="background: #e8962f"></span>
-              Survey: 2 yr ago
+              <span class="fresh-dot" style="background:#e8962f"></span>
+              2 years ago
             </div>
           </div>
         </div>
       </a>
 
-      <!-- Standard card -->
+      <!-- Standard -->
       <a href="#" class="card">
         <div class="card-img-wrap">
-          <div class="img-placeholder img-raja card-img"></div>
-          <div class="card-badges">
-            <span class="badge badge-thriving">
-              <span style="width:6px;height:6px;border-radius:50%;background:#6ee7b7;display:inline-block"></span>
-              Thriving
-            </span>
+          <div class="card-img dest-raja2"></div>
+          <div class="card-shimmer" aria-hidden="true"></div>
+          <div class="card-gradient" aria-hidden="true"></div>
+          <div class="card-badges-top">
+            <span class="card-badge cb-thriving">Thriving</span>
           </div>
-          <span class="card-skill-badge">Open water+</span>
+          <span class="card-skill">Open water+</span>
         </div>
         <div class="card-body">
           <p class="card-country">Indonesia</p>
           <h3 class="card-name">Raja Ampat</h3>
-          <p class="card-hook">The highest recorded marine biodiversity on Earth. Wobbegong, walking sharks, and neon anthias clouds on every dive.</p>
+          <p class="card-hook">Walking sharks and neon anthias clouds. Highest recorded marine biodiversity on Earth.</p>
           <div class="card-footer">
-            <div class="card-data">
+            <div class="card-data-item">
               <span class="card-data-lbl">Coral cover</span>
               <span class="card-data-val">74% · 2024</span>
             </div>
             <div class="card-freshness">
-              <span class="fresh-dot" style="background: #15a05c"></span>
-              Survey: 4 mo ago
+              <span class="fresh-dot" style="background:#15a05c"></span>
+              4 months ago
             </div>
           </div>
         </div>
       </a>
 
-      <!-- Standard card -->
+      <!-- Standard -->
       <a href="#" class="card">
         <div class="card-img-wrap">
-          <div class="img-placeholder img-galapagos card-img"></div>
-          <div class="card-badges">
-            <span class="badge badge-change">
-              <span style="width:6px;height:6px;border-radius:50%;background:#fca5a5;display:inline-block"></span>
-              Witnessing change
-            </span>
+          <div class="card-img dest-galapagos2"></div>
+          <div class="card-shimmer" aria-hidden="true"></div>
+          <div class="card-gradient" aria-hidden="true"></div>
+          <div class="card-badges-top">
+            <span class="card-badge cb-change">Witnessing change</span>
           </div>
-          <span class="card-skill-badge">Advanced+</span>
+          <span class="card-skill">Advanced+</span>
         </div>
         <div class="card-body">
           <p class="card-country">Ecuador</p>
           <h3 class="card-name">Galápagos Islands</h3>
-          <p class="card-hook">Hammerhead schools, whale sharks, marine iguanas feeding on the reef. The coral is diminished — but the pelagics are extraordinary.</p>
+          <p class="card-hook">Hammerhead schools, whale sharks, marine iguanas feeding on the reef. Coral diminished — pelagics extraordinary.</p>
           <div class="card-footer">
-            <div class="card-data">
+            <div class="card-data-item">
               <span class="card-data-lbl">Coral cover</span>
               <span class="card-data-val">18% · 2023</span>
             </div>
             <div class="card-freshness">
-              <span class="fresh-dot" style="background: #e23a3a"></span>
-              Survey: 3 yr ago
+              <span class="fresh-dot" style="background:#e23a3a"></span>
+              3 years ago
             </div>
           </div>
         </div>
       </a>
 
-    </div><!-- /card-grid -->
+    </div>
   </div>
 </section>
 
-<!-- ── EDITORIAL NUMBERS ───────────────────────────────────── -->
-<section class="section-editorial">
-  <div class="section-editorial-inner">
-    <div class="editorial-item">
-      <p class="editorial-number">38</p>
-      <p class="editorial-label">Data sources</p>
-      <p class="editorial-desc">NOAA Coral Reef Watch, AIMS, IUCN Red List, Global Fishing Watch, iNaturalist, NCRMP, and 32 more program-specific monitoring datasets.</p>
+<!-- NUMBERS -->
+<section class="section-numbers" aria-label="About the data">
+  <div class="section-numbers-inner">
+    <div class="num-item">
+      <p class="num-val">38</p>
+      <p class="num-lbl">Data sources</p>
+      <p class="num-desc">NOAA Coral Reef Watch, AIMS, IUCN Red List, Global Fishing Watch, iNaturalist, NCRMP, and 32 more program-specific monitoring datasets.</p>
     </div>
-    <div class="editorial-item">
-      <p class="editorial-number">Nightly</p>
-      <p class="editorial-label">Thermal refresh</p>
-      <p class="editorial-desc">Every reef on the atlas is re-checked against NOAA's 5 km satellite feed every night. No cached status labels. No stale alerts.</p>
+    <div class="num-item">
+      <div class="num-live-badge"><span class="num-live-dot"></span>Updated tonight</div>
+      <p class="num-lbl">Thermal data</p>
+      <p class="num-desc">Every reef is re-checked against NOAA's 5 km satellite feed each night. Three signals: bleaching alert level, degree heating weeks, and SST anomaly.</p>
     </div>
-    <div class="editorial-item">
-      <p class="editorial-number">0</p>
-      <p class="editorial-label">Marketing adjectives</p>
-      <p class="editorial-desc">If the data says a reef is degraded, we say so. "Limited survey data available" is always better than a hopeful description we can't back up.</p>
+    <div class="num-item">
+      <p class="num-val">0</p>
+      <p class="num-lbl">Marketing adjectives</p>
+      <p class="num-desc">"Limited survey data available" is always better than a hopeful description we can't back up. If the data says a reef is degraded, we say so.</p>
     </div>
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div>
+        <a href="#" class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="footer-wm">
+            <span class="footer-wm-top">scuba</span>
+            <span class="footer-wm-bot">Season.fun</span>
+          </div>
+        </a>
+        <p class="footer-tagline">A data atlas for the living ocean. Science-backed, honestly labeled, free to read.</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Site</p>
+        <ul class="footer-links">
+          <li><a href="#">Atlas</a></li>
+          <li><a href="#">Method</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Get in touch</p>
+        <a href="mailto:hello@scubaseason.fun" class="footer-contact-email">hello@scubaseason.fun</a>
+        <p class="footer-contact-note">Spotted wrong data? Want to collaborate? Working on reef monitoring and think there's a fit? All of it welcome.</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 scubaSeason.fun</p>
+      <p class="footer-data-note">Thermal data: NOAA Coral Reef Watch v3.1 · refreshed nightly · <a href="#" style="color:rgba(255,255,255,0.3);text-decoration:none;">All sources →</a></p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

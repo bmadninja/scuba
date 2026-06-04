@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About — mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--ink:#0b1e32;--white:#fff;--body:#334155;--muted:#64748b;--hairline:#e2e8f0;--surface:#f1f7fb;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a.active{color:var(--brand);}
+
+/* HEADER */
+.page-header{padding:5rem 3rem 4rem;border-bottom:1px solid var(--hairline);}
+.page-header-inner{max-width:800px;margin:0 auto;}
+.page-eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand);margin-bottom:1rem;}
+.page-h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.035em;line-height:1.04;color:#0f172a;margin-bottom:1.5rem;}
+.page-intro{font-family:'Source Serif 4',serif;font-size:1.2rem;line-height:1.75;color:#475569;max-width:640px;}
+
+/* BODY */
+.page-body{max-width:800px;margin:0 auto;padding:4rem 3rem;}
+
+.prose p{font-size:1rem;line-height:1.8;color:var(--body);margin-bottom:1.25rem;}
+.prose p:last-child{margin-bottom:0;}
+.prose strong{color:#0f172a;font-weight:600;}
+
+.section-break{margin:3.5rem 0 2.5rem;}
+.section-break h2{font-size:1.625rem;font-weight:800;letter-spacing:-0.025em;color:#0f172a;margin-bottom:0.5rem;}
+.section-break p{font-size:0.9375rem;line-height:1.7;color:var(--body);}
+
+/* ROADMAP CARDS */
+.roadmap{display:flex;flex-direction:column;gap:1px;border-radius:1.25rem;overflow:hidden;background:var(--hairline);margin-top:1.5rem;}
+.roadmap-item{padding:1.5rem 1.75rem;display:flex;gap:1.25rem;align-items:flex-start;}
+.roadmap-now{background:#e7f6ee;}
+.roadmap-next{background:#fef9ed;}
+.roadmap-later{background:#f8fafc;}
+.roadmap-marker{width:48px;flex-shrink:0;margin-top:0.1rem;}
+.roadmap-tag{font-size:0.5875rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:0.25rem 0.625rem;border-radius:999px;}
+.tag-now{background:#10b981;color:#fff;}
+.tag-next{background:#f59e0b;color:#fff;}
+.tag-later{background:#94a3b8;color:#fff;}
+.roadmap-content h3{font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.375rem;}
+.roadmap-content ul{padding-left:1.25rem;display:flex;flex-direction:column;gap:0.375rem;}
+.roadmap-content li{font-size:0.875rem;line-height:1.6;color:var(--body);}
+
+/* PRINCIPLES */
+.principles{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;}
+.principle{padding:1.5rem;border-radius:1rem;border:1px solid var(--hairline);}
+.principle-num{font-size:2rem;font-weight:900;letter-spacing:-0.04em;color:var(--hairline);line-height:1;margin-bottom:0.75rem;}
+.principle-title{font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.4rem;}
+.principle-body{font-size:0.875rem;line-height:1.65;color:var(--body);}
+
+/* CONTACT */
+.contact-strip{margin-top:3.5rem;padding:2rem;border-radius:1.25rem;background:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.contact-text h3{font-size:1.125rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:0.375rem;}
+.contact-text p{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.6;}
+.contact-link{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:0.75rem;background:var(--brand);color:#fff;font-size:0.875rem;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+
+/* FOOTER */
+.footer{background:#0b1e32;padding:4rem 3rem 3rem;}
+.footer-inner{max-width:800px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;margin-bottom:1rem;}
+.footer-wm{display:flex;flex-direction:column;line-height:1.0;}
+.footer-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.3);}
+.footer-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#fff;}
+.footer-tagline{font-family:'Source Serif 4',serif;font-size:0.875rem;line-height:1.65;color:rgba(255,255,255,0.35);max-width:220px;}
+.footer-col-title{font-size:0.625rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1.25rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.625rem;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:500;}
+.footer-links a:hover{color:#fff;}
+.footer-contact-email{font-size:0.9375rem;font-weight:600;color:#0089de;text-decoration:none;display:block;margin-bottom:0.875rem;}
+.footer-contact-note{font-size:0.8125rem;line-height:1.6;color:rgba(255,255,255,0.3);}
+.footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
+.footer-data-note{font-size:0.75rem;color:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="homepage.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark">
+      <span class="nav-wm-top">scuba</span>
+      <span class="nav-wm-bot">Season.fun</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="method.html">Method</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+  </ul>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">About</p>
+    <h1 class="page-h1">What this site is, and why it exists.</h1>
+    <p class="page-intro">Born out of love for the ocean, and honestly a fair amount of frustration too.</p>
+  </div>
+</header>
+
+<div class="page-body">
+  <div class="prose">
+    <p>Dive site information online is scattered — old forum threads, operator brochures, trip reports from a decade ago. Most of it is stale or just wrong. When you're trying to plan a trip around what you actually want to see underwater, that's a hard place to start.</p>
+    <p>I've been caught out too many times. Booked trips chasing species that hadn't been spotted in years. Showed up in the wrong season. Paid good money for dives that weren't close to what was advertised. Every time it happens it's a small heartbreak — and after enough of them, I figured other divers probably feel the same.</p>
+    <p>This is a public atlas and citizen science project. Keep dive site information as honest and current as possible, in one place, so the next person planning a trip has something real to work from.</p>
+    <p>Ongoing work, built by one person — me. Imperfect, always being updated, and genuinely trying.</p>
+  </div>
+
+  <div class="section-break">
+    <h2>Editorial principles</h2>
+    <p>Four things that don't change regardless of what's convenient.</p>
+  </div>
+
+  <div class="principles">
+    <div class="principle">
+      <p class="principle-num">01</p>
+      <p class="principle-title">Honest about data age</p>
+      <p class="principle-body">Every number has a date. If a coral cover figure is from 2014, it says 2014. If we don't know, it says we don't know.</p>
+    </div>
+    <div class="principle">
+      <p class="principle-num">02</p>
+      <p class="principle-title">No gates on information</p>
+      <p class="principle-body">No modals, no account prompts, no paywalls interrupting the data. If it's on this site, you can read it.</p>
+    </div>
+    <div class="principle">
+      <p class="principle-num">03</p>
+      <p class="principle-title">Affiliate links don't steer editorial</p>
+      <p class="principle-body">Commission rates don't affect site rankings. Operator listings include independent options wherever we know of them.</p>
+    </div>
+    <div class="principle">
+      <p class="principle-num">04</p>
+      <p class="principle-title">Degraded reefs get honest labels</p>
+      <p class="principle-body">"Witnessing change" is not a polite way of saying avoid it. It means go and see what's actually there — not what the brochure says.</p>
+    </div>
+  </div>
+
+  <div class="section-break">
+    <h2>Roadmap</h2>
+    <p>What's built, what's next, and the longer arc. Nothing in "later" is a promise.</p>
+  </div>
+
+  <div class="roadmap">
+    <div class="roadmap-item roadmap-now">
+      <div class="roadmap-marker"><span class="roadmap-tag tag-now">Now</span></div>
+      <div class="roadmap-content">
+        <h3>Live today</h3>
+        <ul>
+          <li>NOAA Coral Reef Watch thermal stress on every reef, refreshed nightly</li>
+          <li>Honest freshness labels distinguishing live data from snapshot surveys</li>
+          <li>Operators, lodging, gear, and season windows for trip planning</li>
+          <li>IUCN Red List species conservation status on every dive site species</li>
+        </ul>
+      </div>
+    </div>
+    <div class="roadmap-item roadmap-next">
+      <div class="roadmap-marker"><span class="roadmap-tag tag-next">Next</span></div>
+      <div class="roadmap-content">
+        <h3>In progress</h3>
+        <ul>
+          <li>Real coral cover ingestion for US and Caribbean sites (NOAA NCRMP + AGRRA)</li>
+          <li>Global Fishing Watch pressure layer per site</li>
+          <li>Diver log submission — add your own sighting evidence</li>
+        </ul>
+      </div>
+    </div>
+    <div class="roadmap-item roadmap-later">
+      <div class="roadmap-marker"><span class="roadmap-tag tag-later">Later</span></div>
+      <div class="roadmap-content">
+        <h3>The longer arc</h3>
+        <ul>
+          <li>Targeted citizen missions in regions where monitoring is thin</li>
+          <li>Evidence infrastructure for conservation funders built around bleaching event data</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <div class="contact-text">
+      <h3>Spotted something wrong? Want to collaborate?</h3>
+      <p>Good, bad, weird, unfinished — all of it welcome.</p>
+    </div>
+    <a href="mailto:hello@scubaseason.fun" class="contact-link">hello@scubaseason.fun →</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="homepage.html" class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="footer-wm"><span class="footer-wm-top">scuba</span><span class="footer-wm-bot">Season.fun</span></div>
+        </a>
+        <p class="footer-tagline">A data atlas for the living ocean. Science-backed, honestly labeled, free to read.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Site</p>
+        <ul class="footer-links">
+          <li><a href="homepage.html">Atlas</a></li>
+          <li><a href="method.html">Method</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Get in touch</p>
+        <a href="mailto:hello@scubaseason.fun" class="footer-contact-email">hello@scubaseason.fun</a>
+        <p class="footer-contact-note">Spotted wrong data? Want to collaborate? All of it welcome.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 scubaSeason.fun</p>
+      <p class="footer-data-note">Thermal data: NOAA Coral Reef Watch v3.1 · refreshed nightly</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

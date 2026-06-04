@@ -1,8 +1,8 @@
 ---
 title: scubaSeason.Fun — Experience
-status: draft
+status: final
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-06-04
 companion: DESIGN.md
 scope: >
   Information architecture, voice and tone, component behavior, state
@@ -30,16 +30,23 @@ The experience is built on three behavioral promises:
 ### 2.1 Route hierarchy
 
 ```
-/                          Home — Atlas Explorer (globe + filter + location cards)
-/locations/[slug]          Location detail (reef science, sites, species, planning)
-/sites                     Sites catalogue (search + filter)
-/sites/[slug]              Site detail (briefing, species, conditions, planning)
-/where-to-see/[species]    Species encounter page (cross-site evidence)
-/for/[cert]                Cert-level landing pages (never-dived → tech)
-/data                      Data methodology + transparency index
-/about                     About + affiliate disclosure + roadmap
-/faq                       FAQ (metric calculation explanations)
+/                               Home — Atlas Explorer (globe + filter + location cards)
+/locations/[slug]               Location detail (reef science, sites, species, planning)
+/locations/[slug]?state=stressed  Same template — Witnessing change / Under pressure variant
+/sites                          Sites catalogue (search + filter)
+/sites/[slug]                   Site detail (briefing, species, conditions, planning)
+/where-to-see/[species]         Species encounter page (cross-site evidence)
+/{location}/{site}/species/[slug]  Species detail page (full species profile at a site)
+/search?q=                      Search results page (full results beyond nav dropdown)
+/for/[cert]                     Cert-level landing pages (never-dived → tech)
+/data                           Data methodology + transparency index
+/about                          About + affiliate disclosure + roadmap
+/faq                            FAQ (metric calculation explanations)
 ```
+
+**Note on mobile:** All routes above respond to mobile viewports — same URL, responsive layout. Mobile-specific layout behavior (filter drawer, stat strip horizontal scroll) is described per-component below.
+
+**Note on stressed/witnessing location variant:** `/locations/[slug]` uses the same template for all reef states. Reef state is a data property — the UI adapts (see §7.2 and §5.6), not the route.
 
 ### 2.2 Conceptual hierarchy
 
@@ -51,9 +58,9 @@ The Atlas Explorer operates at the Location level. The Sites catalogue operates 
 
 **AtlasNav** is the only global navigation surface. It is sticky at the top of every page.
 
-- Logo: `scubaSeason.Fun` — the `.fun` segment renders in {colors.brand-ocean}. Clicks go to `/`.
+- Logo: `scubaSeason.Fun` — the `.fun` segment renders in {colors.brand}. Clicks go to `/`.
 - Three primary nav links: **Atlas** (`/`), **Method** (`/data`), **About** (`/about`).
-- Active state: {colors.brand-ocean} text. No underline, no background, no heavy indicator — the active link is distinguished by color alone.
+- Active state: {colors.brand} text. No underline, no background, no heavy indicator — the active link is distinguished by color alone.
 - **Global reef search** lives inline in the nav, right of the links.
 
 **AtlasFooter** appears on every page below the main content:
@@ -109,7 +116,7 @@ Affiliate links are labeled inline at the point of use. The about page contains 
 
 **Trigger:** Input receives focus.
 **Open state:** Dropdown renders below the input, max 8 results, filtered by `name + country + region` against the query string.
-**Result rows:** Each row shows the location name, country, and a reef-state pill ({colors.reef-thriving/pressure/witnessing} background).
+**Result rows:** Each row shows the location name, country, and a reef-state pill ({colors.reef-states.thriving} / {colors.reef-states.pressure} / {colors.reef-states.change} background, per state).
 **Keyboard behavior:**
 - `ArrowDown` / `ArrowUp` move the selection cursor through results; the cursor wraps at ends.
 - `Enter` navigates to `/locations/[slug]` for the selected result.
@@ -117,11 +124,11 @@ Affiliate links are labeled inline at the point of use. The about page contains 
 **Mouse behavior:** Click on a result navigates to that location. Click outside the search widget (detected via `mousedown` on `document`) closes the dropdown.
 **Close behavior:** Input clears on navigation (`setQ("")`). Dropdown closes on Escape, outside click, or successful navigation.
 **Empty query:** Dropdown does not open; no results shown.
-**No results:** Dropdown does not render (no "no results" state in the search widget — the filter rail handles that at the explorer level).
+**No results (dropdown):** Dropdown does not render — no "no results" state in the nav dropdown. For full results, the user is directed to `/search?q=` (see §4.9).
 
 ### 4.2 AtlasFilterRail
 
-Left column of the AtlasExplorer grid (`grid lg:grid-cols-[260px_1fr]`). Always visible on desktop. Behavior on mobile not specified in codebase — assume collapsed/drawer pattern follows DESIGN.md FilterBar spec.
+Left column of the AtlasExplorer grid (`grid lg:grid-cols-[260px_1fr]`). Always visible on desktop. On mobile: collapsed by default, opens as a full-height drawer from the left edge. A "Filters" button in the card grid header triggers the drawer. Drawer backdrop click or an in-drawer "Done" button closes it.
 
 **Filter groups:**
 1. **Reef state** — three checkboxes: Thriving / Under pressure / Witnessing change. All three on by default. Toggling removes that reef state from results. Unchecking all three produces a no-results state.
@@ -140,7 +147,9 @@ Left column of the AtlasExplorer grid (`grid lg:grid-cols-[260px_1fr]`). Always 
 
 **URL sync:** All filter state is persisted to the querystring on every change using `router.replace` (no full navigation). Parameters: `c` (conditions), `m` (months), `s` (skill), `r` (region), `h` (heat), `a` (animals), `fresh` (fresh-only toggle), `sort`. Default values are omitted from the URL.
 
-**Active filter chips:** When any non-default filter is active, chips render in the results header area showing each active filter value. Each chip has an × dismiss button that removes only that value. A "Reset all filters" text link resets to defaults.
+**Active filter chips:** When any non-default filter is active, a filter summary bar appears directly below the filter strip (above the card grid). Each active value renders as a colored pill with an × dismiss button that removes only that value. Pill color matches the filter category (reef state pills use the reef-state token; other filters use {colors.brand}/10 tint with {colors.brand} text). A "Reset all filters" text link at the right end of the bar resets all filters to defaults. Card count updates live in the bar ("Showing 12 locations"). On mobile, this bar appears below the "Filters" button row.
+
+**Chip overflow:** If the active filter bar contains more chips than fit in one line, it wraps to a second line (no truncation, no "…more" expand). Chip ordering: reef state first, then cert, then region, then month, then thermal, then wildlife, then fresh-only.
 
 **No-results state:** When filtered results are empty, show:
 1. A summary of which filters are active (as chips with individual remove buttons).
@@ -160,15 +169,17 @@ Destination-level card. Links to `/locations/[slug]`.
 - Image scales to `scale(1.02)` on card hover (500ms transition).
 
 **Body:**
-- Location name: `text-base font-semibold`, transitions to {colors.brand-ocean} on hover.
-- Country: `text-sm`, {colors.text-muted}.
+- Location name: `text-base font-semibold`, transitions to {colors.brand} on hover.
+- Country: `text-sm`, {colors.muted}.
 - Hook: 2-line clamp, `text-sm leading-6`.
 - **Freshness line** (below a thin divider): two dot + label pairs at `text-[11px]`.
   - Thermal dot: always green (`#15a05c`) + "Thermal: today" — thermal data is always from the nightly sync.
   - Survey dot: color computed from `lastSurveyDays` via `freshness()` — green (<365d), amber (1–3y), red (>3y), red if null. Label: "Last eyes underwater: [year]" or "Last eyes underwater: unknown".
 - Coral cover and best season stats render below the freshness line (exact layout per DESIGN.md).
 
-**Hover state:** Card lifts 3px (`-translate-y-[3px]`), border transitions to {colors.brand-ocean}/40, shadow increases.
+**Hover state:** Card lifts 3px (`-translate-y-[3px]`), border transitions to {colors.brand}/40, shadow increases.
+
+**Witnessing change variant:** Cards in the "Witnessing change" reef state do not receive the hover lift or shadow increase. The card is visually quieter — the reef is fading, and the interaction should reflect that. The reef state badge still renders; no cheerful animations are applied.
 
 **Globe-selection state:** When the corresponding globe marker is clicked, the card receives `ring-2 ring-[#0089de] ring-offset-2`. This is the only way a card can appear "selected" — there is no persistent selection state.
 
@@ -183,12 +194,12 @@ Site-level card. Links to `/sites/[slug]`.
 **Body:**
 - Country (uppercase, tracking-wider, muted) + in-season pill, inline row.
 - In-season pill: "● In season" (emerald) or "○ Off season" (slate). Color and fill both change — not color alone.
-- Site name: `text-lg font-bold`, transitions to {colors.brand-ocean} on hover.
+- Site name: `text-lg font-bold`, transitions to {colors.brand} on hover.
 - Description: 2-line clamp.
 - **Headline sighting row:** confidence dot + species common name (bold) + "· last confirmed [relative time]". If no sighting data: muted dot + "Sighting evidence pending." Never blank — always shows a state.
 - **Chip row:** depth range chip, skill level chip (with `+` suffix to indicate "this level or above"), and up to one dive-type chip. Chips are `rounded-full` pill style.
 
-**Hover state:** Border transitions to {colors.brand-ocean}/40, shadow appears.
+**Hover state:** Border transitions to {colors.brand}/40, shadow appears.
 
 ### 4.5 DataFreshnessLabel
 
@@ -203,13 +214,13 @@ All variants render at `text-[10.5px] font-semibold uppercase tracking-[0.1em]`.
 
 ### 4.6 IucnBadge
 
-Inline badge on species cards. Renders the IUCN Red List status abbreviation (LC, NT, VU, EN, CR, EW, EX, DD). Flat, no elevation — consistent with {components.ReefStateBadge} flatness rule.
+Inline badge on species cards. Renders the IUCN Red List status abbreviation (LC, NT, VU, EN, CR, EW, EX, DD). Flat, no elevation — consistent with ReefStateBadge flatness rule.
 
 ### 4.7 Methodology disclosure (details/summary)
 
 Used wherever a data claim needs explanation. Implemented as a native HTML `<details>/<summary>` element.
 
-- Summary row: info circle icon (lucide:info, 14px, {colors.text-muted}) + short label (e.g. "How is this calculated?").
+- Summary row: info circle icon (lucide:info, 14px, {colors.muted}) + short label (e.g. "How is this calculated?").
 - Expanded: full methodology text + source list.
 - No animation required — native browser disclosure behavior.
 - Never modal. Always inline at the point of the claim.
@@ -217,6 +228,77 @@ Used wherever a data claim needs explanation. Implemented as a native HTML `<det
 ### 4.8 AffiliateLink
 
 Wraps any commercial partner link. Behavior: renders as an external link with a visible disclosure marker. The affiliate disclosure is stated on the About page; individual links do not duplicate the full disclosure text.
+
+### 4.9 Search results page (`/search?q=`)
+
+When the user presses Enter in the nav search input (rather than selecting a dropdown result), or submits a query that yields no dropdown results, they are routed to `/search?q=[query]`.
+
+**Layout:** Full-page results surface. Sticky nav at top. Results grid below.
+
+**Result types (in priority order):**
+1. Location matches (name + country + region).
+2. Site matches (name + location name).
+3. Species matches (common name + scientific name).
+
+**Each result row:** Category pill (Location / Site / Species) + primary name + secondary metadata (country or location name) + reef state pill (for location and site results).
+
+**No results state:** "No results for '[query]'" heading. Suggestions: "Try searching for a location name, species common name, or a country." No illustration.
+
+**URL:** Query state in `?q=` parameter. Shareable and server-renderable.
+
+### 4.10 Active filter state (filter summary bar)
+
+See §4.2 for full behavioral spec. Summary:
+- Filter summary bar appears below the filter strip when any non-default filter is active.
+- Active value renders as a colored pill with × dismiss.
+- Pill colors: reef state uses reef-state tokens; all other filters use {colors.brand}/10 tint + {colors.brand} text.
+- "Reset all filters" link at right end.
+- Card count ("Showing N locations") updates live.
+- On mobile: bar appears below the "Filters" trigger button, not inside the drawer.
+
+### 4.11 Live sightings feed
+
+A feed surface showing recent iNaturalist observations for a location or site. Sorted by recency, newest first.
+
+**Freshness indicator per entry:**
+- Green dot: observation within 30 days.
+- Amber dot: observation 31–90 days ago.
+- Slate dot: observation >90 days ago.
+
+**Each entry shows:** freshness dot + species common name + site name + iNaturalist observation ID (linked to `inaturalist.org/observations/[id]`) + date (in `<time dateTime="[ISO]">` element).
+
+**No entries state:** "No recent sightings recorded. Be the first — submit via iNaturalist." (Links to iNaturalist project page if configured.)
+
+**Update cadence:** Feed data syncs from iNaturalist nightly. The feed header shows "Updated [date]" using the DataFreshnessLabel live variant.
+
+**Streaming/polling:** No real-time streaming. Static nightly sync. Do not imply live push updates.
+
+### 4.12 Stat strip
+
+A horizontal row of 6 key facts about the Atlas, rendered in the hero area of the homepage above the AtlasExplorer grid.
+
+**Structure per stat:** Label (e.g. "Locations tracked") / Value (e.g. "94") / Note (e.g. "across 6 regions"). All three fields required.
+
+**Layout:** Horizontal flex row. Hairline vertical dividers between stats (`border-r border-ink/10`). Background: {colors.surface}. Padding: consistent with hero section.
+
+**Responsive:** On mobile, the stat strip scrolls horizontally (`overflow-x-auto`, no visible scrollbar). All 6 stats remain accessible via swipe.
+
+**Sourcing:** Values are pulled from the same data layer as the Atlas cards at build time. The stat strip does not show stale counts — it rebuilds on each deploy.
+
+**Animation:** Numbers do not animate or count up. Static values only. No scroll-triggered counters.
+
+### 4.13 How-to-dive section
+
+A numbered instructional section explaining the dive planning methodology. Appears on the homepage below the AtlasExplorer and on cert-level landing pages.
+
+**Structure:** 4 steps, numbered 01–04.
+
+**Per step layout:**
+- Step number: large muted display figure (`text-7xl font-bold`, color: {colors.muted}/30, `select-none`).
+- Step title: bold, `text-xl font-semibold`.
+- Step description: Source Serif 4, italic, `text-base`.
+
+**Arrangement:** 2-column grid on desktop (steps 01–02 left, 03–04 right), single column on mobile.
 
 ---
 
@@ -265,6 +347,17 @@ No illustrations, no calls to action beyond resetting filters.
 | Last survey | `lastSurveyDays` null | "Last eyes underwater: unknown" with red freshness dot |
 | Fishing pressure | `fishingPressure === "unknown"` | Reef science stamp not rendered on site detail |
 
+### 5.6 Stressed / Witnessing change location variant
+
+When a location's reef state is "Under pressure" or "Witnessing change," the location detail page applies the following behavioral differences:
+
+- **Planning CTAs suppressed:** The `PlanYourTripBlock` renders in a muted style — operator links still appear but the primary "Book this trip" heading is replaced with "Plan thoughtfully." No CTA is removed, but the hierarchy is softened.
+- **Reef science panel leads:** The coral cover and fishing pressure panels are promoted to the top of the Overview section, above the descriptive copy. The data tells the story first.
+- **Degraded-reef honest label:** An inline callout (not a banner, not a modal) states: "This reef is experiencing documented loss. Survey data, depth, and species records are current." Tone is informational, never discouraging.
+- **No hover lift on location cards:** See §4.3 Witnessing change variant — lift animation is suppressed.
+- **Species evidence expectations:** In the "What you'll see" section, uncertain and presence-only records are more likely. The evidence framing (outlined ghost dots, "presence data only" labels) must be accurate and not softened.
+- **Under pressure** state: CTAs are not suppressed — only Witnessing change applies the muted CTA treatment. Under pressure locations render planning CTAs at full prominence.
+
 ---
 
 ## 6. Interaction primitives
@@ -286,9 +379,9 @@ No illustrations, no calls to action beyond resetting filters.
 ### 6.3 Card hover
 
 On both ReefLocationCard and SiteCard:
-- Site/location name transitions to {colors.brand-ocean}.
-- Card border transitions to {colors.brand-ocean}/40.
-- Card or image has a subtle lift/scale (see §4.3 and §4.4).
+- Site/location name transitions to {colors.brand}.
+- Card border transitions to {colors.brand}/40.
+- Card or image has a subtle lift/scale (see §4.3 and §4.4; suppressed for Witnessing change cards).
 - Transition duration: 200–500ms depending on property.
 
 ### 6.4 External link behavior
@@ -306,13 +399,14 @@ All methodology and source disclosures use `<details>/<summary>`. No JavaScript 
 ### 7.1 Home — Atlas Explorer flow
 
 1. User lands on `/`.
-2. Above the fold: hero area with stat row (reef count, source count, update cadence) and a brief product hook.
-3. Below: `AtlasExplorer` fills the viewport — globe left, filter rail left, card grid right.
-4. Default state: all reef states active, no month/skill/region/wildlife filters, sorted by best season.
-5. Globe auto-rotates at low speed. Markers are colored by reef state ({colors.reef-thriving/pressure/witnessing}).
-6. User can interact via globe (click marker → highlight card) or filter rail (narrow by any facet).
-7. Every filter change updates the URL. Card count + sort row updates above the grid.
-8. User clicks a ReefLocationCard → navigates to `/locations/[slug]`.
+2. Above the fold: stat strip (§4.12) — 6 key facts, horizontal row — and a brief product hook.
+3. How-to-dive section (§4.13) renders below the hero, before the AtlasExplorer grid.
+4. `AtlasExplorer` fills the viewport — globe left, filter rail left, card grid right.
+5. Default state: all reef states active, no month/skill/region/wildlife filters, sorted by best season.
+6. Globe auto-rotates at low speed. Markers are colored by reef state: {colors.reef-states.thriving} / {colors.reef-states.pressure} / {colors.reef-states.change}.
+7. User can interact via globe (click marker → highlight card) or filter rail (narrow by any facet).
+8. Every filter change updates the URL. Card count + sort row updates above the grid. Active filter summary bar appears when any filter is active.
+9. User clicks a ReefLocationCard → navigates to `/locations/[slug]`.
 
 ### 7.2 Location detail flow
 
@@ -321,7 +415,9 @@ All methodology and source disclosures use `<details>/<summary>`. No JavaScript 
 3. Reef state pill (dot + label) directly below breadcrumb.
 4. H1: location name. Metadata row: country · region · best season.
 5. Jump nav tabs (Overview / Conditions / Dive sites) — in-page anchor links.
-6. **Overview section:** description paragraph, optional extended description.
+6. **Overview section:**
+   - If reef state is Witnessing change: reef science panel (coral cover bars, fishing pressure) renders first, before descriptive copy. Degraded-reef honest label renders (§5.6).
+   - Otherwise: description paragraph, optional extended description, then reef science data.
 7. **Conditions section:**
    - Good season month grid (12 cells, current month highlighted with `ring-2`).
    - Coral cover panel: two horizontal bars — decade ago and today. Each bar has a `DataFreshnessLabel` (snapshot variant).
@@ -330,7 +426,7 @@ All methodology and source disclosures use `<details>/<summary>`. No JavaScript 
 8. **Dive sites section:** grid of SiteCards for all sites at this location. Each card is in-season aware.
 9. Species encounters by location (encounter cards — cinematic 21:9 ratio per DESIGN.md).
 10. Operators / lodging / gear: affiliate links, clearly labeled.
-11. Planning block: `getThere` text, conditions summary.
+11. Planning block: `getThere` text, conditions summary. If reef state is Witnessing change, renders in muted style per §5.6.
 
 ### 7.3 Site detail flow
 
@@ -359,20 +455,43 @@ All methodology and source disclosures use `<details>/<summary>`. No JavaScript 
     - "Book this trip" CTA card: routes to parent location page (`/locations/[slug]`).
 13. Duplicate "Planning a trip?" inline block at bottom: also routes to location page.
 
-### 7.4 Species encounter flow
+### 7.4 Species encounter flow (`/where-to-see/[species]`)
 
-1. Entry point: species name links within the site detail "What you'll see" section.
+1. Entry point: species name links within the site detail "What you'll see" section, or direct SEO arrival.
 2. Route: `/where-to-see/[species]`.
-3. Content: all sites across the Atlas where the species has confirmed or likely presence, ordered by confidence then recency.
-4. Each result links to the relevant `/sites/[slug]`.
+3. **Species hero:** full-width underwater hero image for the species. Ethics note (if applicable). IUCN badge. Best months strip.
+4. **Site list:** all sites across the Atlas where the species has confirmed or likely presence, ordered by confidence then recency. Each site renders as a SiteCard with the species sighting row foregrounded.
+5. **Filter/sort controls:** filter by region and reef state; sort by confidence (default), recency, or alphabetical.
+6. **No sites state:** "No sites with recorded [species name] sightings. Records are updated nightly from iNaturalist." Link to submit an observation.
 
-### 7.5 Cert-level landing flow
+### 7.5 Species detail flow (`/{location}/{site}/species/[slug]`)
+
+1. Entry point: species card click within a site detail "What you'll see" section.
+2. Route: `/{location}/{site}/species/[slug]`.
+3. **Species hero:** full-width underwater photo of the species, captioned with iNaturalist attribution.
+4. **Breadcrumb:** Atlas / Location / Site / Species name.
+5. **Species profile block:** common name (H1), scientific name (italic subtitle), IUCN badge, description paragraph.
+6. **At this site:** sighting evidence rows — confidence dot, record count, radius, last confirmed date, iNaturalist observation IDs (linked). DataFreshnessLabel for the sighting data.
+7. **Seasonality:** 12-month calendar showing which months have observation records. Current month `ring-2`.
+8. **Methodology disclosure:** `<details>/<summary>` — "How confidence is calculated."
+9. **Also seen nearby:** up to 3 other sites within the same location where the species has records.
+10. **See all [species name] sites:** link to `/where-to-see/[species]`.
+
+### 7.6 Search results flow (`/search?q=`)
+
+1. **Entry:** User presses Enter in the nav search input, or is routed from the dropdown's "See all results" link (if configured).
+2. **Layout:** Full page. Results grouped by type (Locations / Sites / Species) with type headers.
+3. **Result rendering:** See §4.9 for row layout.
+4. **No results:** "No results for '[query]'" + suggestions (§4.9).
+5. **Refine:** Search input is pre-populated with the current query. Editing and re-submitting updates results without a page reload.
+
+### 7.7 Cert-level landing flow
 
 Routes: `/for/never-dived`, `/for/open-water`, `/for/advanced`, `/for/rescue`, `/for/divemaster`, `/for/tech`.
 
 These pages filter the Atlas to locations accessible at the given certification level, using the same cumulative skill filter logic as AtlasFilterRail. They serve as SEO entry points and wayfinders — the diver selects their level once and lands on a pre-filtered Atlas view.
 
-### 7.6 Data / methodology flow
+### 7.8 Data / methodology flow
 
 Route: `/data`.
 
@@ -402,9 +521,9 @@ These behaviors are required on all surfaces:
 | Images | `alt` attribute on every `<img>`. Decorative images: `alt=""`. Informative images: meaningful description (site name at minimum) |
 | Confidence indicators | Always pair confidence dot with a text label (e.g. "Confirmed," "Likely," or the confidence value). Never dot alone |
 | In-season indicator | Pill uses both a filled/empty circle character (● / ○) and text ("In season" / "Off season") — not color alone |
-| Links | All links have a visible focus state (browser default or custom `ring-2` focus ring in {colors.brand-ocean}) |
+| Links | All links have a visible focus state (browser default or custom `ring-2` focus ring in {colors.brand}) |
 | Keyboard navigation | Search dropdown: full arrow key + Enter + Escape support. All interactive elements reachable by Tab in DOM order |
-| Color contrast | Text on all surface layers must meet WCAG AA (4.5:1 for small text, 3:1 for large text) against {colors.surface-base} and {colors.surface-card} |
+| Color contrast | Text on all surface layers must meet WCAG AA (4.5:1 for small text, 3:1 for large text) against {colors.surface} background |
 
 ---
 
@@ -440,3 +559,177 @@ Affiliate and operator partner links are:
 - Grouped in "Operators" / "Lodging" sections on location pages and in the "Gear & planning" / "Book this trip" sections on site pages.
 - Never interleaved with data claims or editorial descriptions.
 - Accompanied by the full affiliate disclosure on the About page.
+
+---
+
+## 10. Named user journeys
+
+These journeys describe **intent-driven paths** — a real person with a specific goal moving across multiple pages. They complement the page flows in §7, which describe what renders on each route. These describe *why* someone arrives and *what they need to feel* at the climax.
+
+Design implication for each journey: every surface that appears as a step must be self-orienting. A user arriving cold on `/sites/[slug]` from Google must reach a booking decision without ever visiting the Atlas.
+
+---
+
+### 10.0 — Susan: the casual browser on her phone
+
+**Protagonist:** Susan, 34, open-water certified, casual diver. On her phone, planning a trip for later this year. Wants to discover something remarkable — not filter a database.
+
+**Trigger:** A friend shares a link to scubaseason.fun. Susan taps it, lands on the Atlas home `/` on her phone.
+
+**Journey:**
+
+1. **Homepage — mobile Atlas** — Susan sees the stat strip first: "94 locations tracked across 6 regions." The globe renders below the fold; above it, the how-to-dive steps (§4.13) orient her in 4 numbered sentences. She scrolls past. The filter rail is collapsed — a "Filters" button sits above the card grid.
+
+2. **Browsing without filtering** — Susan does not tap Filters. She scrolls the card grid. Each card: 4:3 hero image (underwater, always), reef state badge, in-season badge. She's drawn to an "In season now" card for Raja Ampat. Reef state: Thriving. She taps it.
+
+3. **Location detail — Raja Ampat** — Reef state pill ("Thriving") is the first thing she reads below the breadcrumb. Coral cover bars: 42% (2014) → 38% (2022). The {colors.reef-states.thriving} teal pill and the "Snapshot · AIMS · surveyed 2022 (4 years ago)" freshness label are both visible without scrolling. Susan doesn't read the methodology — she trusts the tone. She scrolls to dive sites, taps Manta Sandy.
+
+4. **Site detail** — Hero image: mantas in open water. Meta badges: depth 5–28m, Open water+. "What you'll see": manta ray with a filled confidence dot — "Seasonal · Oct–Apr · Last confirmed 3 months ago · 34 records within 12km." The date is a `<time>` element. Susan screenshots the page.
+
+   **Climax beat — success path:** Susan sees the sticky `PlanYourTripBlock`. "Getting there: fly Sorong." Two lodging options. She taps a dive resort affiliate link. New tab opens. She texts her dive buddy the location URL. Session ends with 3 pages, 1 affiliate tap, 1 share.
+
+5. **Failure path A — Witnessing change location:**
+
+   Susan browses to a location showing "Witnessing change" — she taps a card she saw near the Great Barrier Reef. The location detail loads. The reef science panel is at the top (§5.6): coral cover bars show 28% (2014) → 14% (2022). The degraded-reef honest label reads: "This reef is experiencing documented loss. Survey data, depth, and species records are current."
+
+   The `PlanYourTripBlock` renders in muted style: heading reads "Plan thoughtfully" rather than "Book this trip." Operator links are still present. Susan pauses. She reads the coral cover bars. She decides not to book — but she copies the URL and shares it with her dive club with a note: "I had no idea it was this bad."
+
+   **Design intent:** The honest label does not deter all users — it converts the motivated conservationist (Mia) and deters the casual tourist who would have been disappointed. Susan's share is a success state even without an affiliate click. The product told the truth.
+
+6. **Failure path B — species search, no results:**
+
+   Susan taps the search input and types "lionfish." The dropdown shows 0 matching locations (lionfish is a widespread invasive — no Atlas locations are tagged with it specifically). The dropdown does not render.
+
+   Susan presses Enter. She is routed to `/search?q=lionfish`. The results page shows: 0 location matches, 0 site matches, 2 species record matches (presence data only, no site with tagged sightings). The no-results heading reads: "No dive sites with recorded lionfish sightings." Suggestion copy: "Try searching for a location name, a country, or a species commonly associated with a destination (e.g. 'manta ray', 'whale shark')."
+
+   Susan taps the search input and types "manta" instead. The dropdown shows 6 results. She taps Raja Ampat. She's back on track.
+
+   **Design intent:** The search failure is a soft dead-end — it names the problem, gives a plausible next query, and does not abandon the user. The "/search" route always renders something (even if that something is a clear no-results message with direction).
+
+**Critical design requirement:** Susan never filled a filter form. She discovered by browsing. The card grid at default state must be legible and tempting without any filter interaction — reef state badges, in-season badges, and hero images are the primary discovery surface for casual mobile browsers.
+
+---
+
+### 10.1 — Rafa: the species chaser
+
+**Protagonist:** Rafa, 34, Divemaster, 200+ logged dives. Specifically wants whale sharks. Plans 3–6 months in advance. Uses dive forums and Google to research.
+
+**Trigger:** Google search "best time to see whale sharks scuba diving." Lands on `/where-to-see/whale-sharks`.
+
+**Journey:**
+
+1. **Species landing** (`/where-to-see/whale-sharks`) — Hero names the encounter. IucnBadge (when enabled), ethics note, best months strip. Rafa scans the top 6 sites; each SiteCard shows a confidence dot ({colors.evidence-confirmed} coral, filled) and "Last confirmed [relative time]." He needs to see a *date* — not a category — to trust the record.
+
+2. **Decision point — region selection.** Primary regions are listed with reef state pills: {colors.reef-states.thriving} for Thriving, {colors.reef-states.pressure} for Under pressure, {colors.reef-states.change} for Witnessing change. Rafa picks a Thriving region. Clicks through to `/locations/ningaloo`.
+
+3. **Location page** — Reef state pill (Thriving, {colors.reef-states.thriving} teal) appears directly below the breadcrumb — Rafa sees it before reading anything else. Coral cover bars show current vs. decade-ago. Fishing pressure panel. He scrolls to the site grid, clicks `Navy Pier, Exmouth`.
+
+4. **Site detail** — Hero image (underwater, always). Meta badges row: depth range, skill level, season status, reef state. "What you'll see" section: whale shark card — {colors.evidence-confirmed} filled dot, "Seasonal · April–June · Last confirmed [date] · 12 records within 20km." `<time dateTime="...">` element on the date (screen readers read it correctly).
+
+   **Climax beat:** Rafa checks the 12-month conditions grid for April. Water temp 23°C, visibility 15–25m, current: mild. He sees what he needs. He scrolls right — the sticky `PlanYourTripBlock` is already in view. He clicks the Skyscanner affiliate link.
+
+5. **Exit state:** New tab opens on Skyscanner pre-filled for Exmouth. Rafa has his decision and his search open. Session ends with 4+ pages viewed, one affiliate click.
+
+**Critical design requirement:** The confidence dot on the species card must pair with a *specific date* and *record count*, not a category label alone. "12 records" is evidence. "High confidence" is not.
+
+---
+
+### 10.2 — Priya: the new Open Water diver
+
+**Protagonist:** Priya, 26, just certified Open Water last month. Wants a "safe first real trip." Has no gear yet.
+
+**Trigger:** Instagram reel about Maldives diving. Taps a link that opens `/for/open-water`.
+
+**Journey:**
+
+1. **Cert landing page** (`/for/open-water`) — Page immediately frames her experience level back to her (depth limit, training context, safety note with DAN link). She feels seen, not sold to. Location grid shows only Open Water-accessible sites. She browses.
+
+2. **Filter interaction** — Priya taps the month chip for December (her travel window). Grid narrows. She sees "Thriving" badges ({colors.reef-states.thriving} teal) and gravitates toward them.
+
+3. **Decision point — location.** She clicks a Maldives location card. On the ReefLocationCard: 4:3 hero image scales slightly on hover, reef state badge top-left, in-season badge alongside it. She clicks through to `/locations/maldives`.
+
+4. **Location detail** — Season calendar shows December is in-season (cell has {colors.brand} fill). Coral cover shows "Snapshot · AIMS · surveyed 2022 (4 years ago)" — the amber freshness dot signals this is real data with an honest age. She clicks into Banana Reef.
+
+5. **Site detail** — Depth range: 5–18m (reassuring). Skill level pill: "Open water+." "What you'll see": mantas, reef sharks — each with a filled confidence dot. Gear section shows Layer A: BCD, regulator, 3mm shorty (for 28°C water). Layer B: "No reef hook needed — current is mild." Amazon Associates affiliate link on the BCD.
+
+   **Climax beat:** Priya taps the BCD link. New tab opens on Amazon. She also taps the lodging affiliate link for a resort. She doesn't book yet, but she has two tabs open and a specific destination in mind.
+
+6. **Exit state:** 5+ pages, 2 affiliate clicks (gear + lodging). Highest-value affiliate session type — beginner full-kit purchase intent.
+
+**Critical design requirement:** Layer A gear items must visibly adapt to the site's water temperature (wetsuit thickness) and skill level. A 3mm shorty recommendation for 22°C water breaks trust. The gear recommendation must be accurate or it must be absent.
+
+---
+
+### 10.3 — Mia: the conservation reader
+
+**Protagonist:** Mia, 41, Advanced diver, dives 2–3x per year. Cares deeply about reef health. Has read about coral bleaching. Not actively planning a trip.
+
+**Trigger:** Google search "great barrier reef coral bleaching diving." Lands on `/data` or `/faq`.
+
+**Journey:**
+
+1. **Data transparency page** (`/data`) — Mia reads the live vs. snapshot distinction. She trusts the product immediately because it says what it can't see. The `<details>/<summary>` methodology drawers (§4.7) let her go as deep as she wants without the page feeling dense. Progressive disclosure hierarchy (§9.3) is working.
+
+2. **Atlas exploration** — She navigates to `/` (Atlas link in nav). She selects the "Witnessing change" filter ({colors.reef-states.change} in the rail). Globe dims to show only degraded locations. Cards carry the ReefStateBadge in the "witnessing" state.
+
+3. **Location detail — degraded reef** — She clicks a card in the Great Barrier Reef. Reef science panel leads (§5.6, §7.2): coral cover bars — decade ago (28%) and today (14%). The `DataFreshnessLabel` (snapshot variant, amber dot) shows "Snapshot · AIMS LTMP · surveyed 2022 (4 years ago)." Fishing pressure: High. DHW bleaching alert: Watch. Degraded-reef honest label renders. Diving outlook note present.
+
+4. **Site detail** — She reads the reef science stamp (inline banner: coral cover 14%, fishing level high, links to parent location). "What you'll see" section: some species show {colors.evidence-uncertain} outlined ghost dots — rare, uncertain, historical records only. She notices the honest framing and trusts it.
+
+   **Climax beat:** Mia copies the location page URL and shares it in her dive club WhatsApp group with a note about the data. She hasn't booked anything. This is a success — she's an organic acquisition channel.
+
+5. **Exit state:** `/data` → Atlas → location → site. No affiliate click expected. Value: social share, return visit, grant reviewer credibility pathway.
+
+**Critical design requirement:** The "Witnessing change" state must never be softened visually. The {colors.reef-states.change} value is intentionally more alarming than Thriving — the reef is in loss, and the color should reflect that. Do not apply hover lifts or cheerful animations to witnessing-change cards (§4.3 and §5.6).
+
+---
+
+### 10.4 — James: the returning diver
+
+**Protagonist:** James, 38, AOW, hasn't dived in 3 years. Wants "somewhere easy to shake the rust off." Planning a January trip.
+
+**Trigger:** Direct URL from a friend. Lands on the Atlas home `/`.
+
+**Journey:**
+
+1. **Atlas home** — Globe auto-rotates. James sees the filter rail. He clicks "Advanced" in the Certification facet (cumulative — shows all AOW-appropriate and below). He clicks "January" in the Month facet. The URL updates; the globe and card grid re-filter live.
+
+2. **First-visit banner** (if built — OQ-4) — The inline banner between the filter bar and globe: "Tell us your dive level — we'll tailor sites & gear." James selects "Advanced Open Water" + "2+ years ago." The banner dismisses; `localStorage.diverProfile` is set. Filter rail pre-fills to match.
+
+3. **Location card scanning** — Cards show in-season badge, reef state, survey freshness dot. James gravitates toward Thriving ({colors.reef-states.thriving} teal) locations in Asia for January.
+
+4. **Location detail** — Good season grid: January cell is highlighted. Conditions summary shows water temp, visibility. He reads the dive style copy ("relaxed drift with strong thermoclines — ideal for a refresher").
+
+5. **Site detail** — Depth range within AOW limits. "What you'll see" section has well-documented species with filled confidence dots. Gear section Layer A: "5mm wetsuit, BCD, computer" — correct for Advanced.
+
+   **Climax beat:** He clicks an operator affiliate link that has the note "refresh course available." New tab opens.
+
+6. **Exit state:** 4+ pages, operator affiliate click. If the first-visit banner is not built, the journey still works — the cert filter achieves the same result, just with more friction.
+
+**Critical design requirement:** The "cumulative cert filter" behavior (§4.2 — selecting Advanced shows Beginner + OW + Advanced sites) must be clearly communicated to the user at the filter UI level. A tooltip or inline label — "Shows all sites accessible at this level or below" — prevents confusion.
+
+---
+
+### 10.5 — Alex: the cold SEO arrival
+
+**Protagonist:** Alex, any cert, Googles "best time to dive Komodo" and lands directly on `/sites/batu-bolong`. Has never seen the Atlas. No prior context.
+
+**Trigger:** Google organic result. Lands cold on a site detail page.
+
+**Journey:**
+
+1. **Cold landing — site detail** — Alex has no context about the product. The page must orient them in 3 seconds. The hero strip delivers: site name (4xl, bold), location breadcrumb ("Komodo, Indonesia"), reef state badge (ReefStateBadge), in-season badge. The hero image is underwater (always — enforced by `underwaterPhotoUrl()` utility).
+
+2. **Search intent resolved** — Alex's query was "best time to dive Komodo." The 12-month conditions grid (§7.3 step 11) answers this immediately — the current month column has `ring-2`, and the best months strip shows which months are peak season.
+
+3. **Species curiosity** — "What you'll see" section is the second thing Alex reads. Bumphead parrotfish: {colors.evidence-confirmed} filled dot, "Year round · Last confirmed [date] · 8 records within 15km." Manta ray: {colors.evidence-likely} outlined ring — "Seasonal · April–October."
+
+4. **Decision point — plan or bounce?** The sticky `PlanYourTripBlock` is visible in the right column the entire time Alex has been reading. Getting there (Labuan Bajo hub), two lodging options, two dive operators. Alex hasn't had to scroll to find this — it followed them down the page.
+
+   **Climax beat:** Alex clicks a lodging affiliate link. This is a cold-to-conversion without ever visiting the Atlas.
+
+5. **Related sites** — At the bottom of the page, "Related Sites" shows 3 nearby Komodo sites. Alex clicks one — now they're in the product, not just on one page.
+
+6. **Exit state:** 2+ pages (cold single-page → related site click is a win), 1 affiliate click. This is the highest-volume acquisition path — SEO rankings on site + species queries drive the majority of new visitors.
+
+**Critical design requirement:** The site detail page is the product's front door for most users. Every section must make sense without the Atlas. The breadcrumb ("Atlas / Indonesia / Komodo / Batu Bolong") is navigational context, not required for comprehension. The `PlanYourTripBlock` must be sticky before the user reaches the conditions grid — the booking call to action must never require scrolling to find.

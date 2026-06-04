@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Logo options</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:#f8fafc;color:#0f172a;padding:4rem 3rem;}
+h1{font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#64748b;margin-bottom:3rem;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem;}
+
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:1.25rem;padding:2.5rem 2rem;display:flex;flex-direction:column;gap:2.5rem;}
+.card-label{font-size:0.625rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#94a3b8;}
+.card-name{font-size:0.9375rem;font-weight:800;color:#0f172a;margin-top:0.25rem;margin-bottom:0.125rem;}
+.card-desc{font-size:0.8125rem;line-height:1.6;color:#64748b;}
+
+.logo-row{display:flex;align-items:center;gap:0.75rem;}
+.wordmark{font-size:1.0625rem;font-weight:800;letter-spacing:-0.03em;color:#0f172a;}
+.wordmark span{color:#0089de;}
+
+/* show at multiple sizes */
+.sizes{display:flex;align-items:center;gap:1.5rem;padding-top:1.5rem;border-top:1px solid #f1f5f9;}
+.sz-label{font-size:0.6875rem;color:#94a3b8;font-weight:600;}
+
+/* dark preview */
+.dark-preview{background:#0b1e32;border-radius:0.75rem;padding:1rem 1.25rem;display:flex;align-items:center;gap:0.75rem;}
+.dark-preview .wordmark{color:#fff;}
+</style>
+</head>
+<body>
+
+<h1>scubaSeason.fun — logo directions</h1>
+
+<div class="grid">
+
+  <!-- OPTION A: Depth rings -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option A</p>
+      <p class="card-name">Depth rings</p>
+      <p class="card-desc">Concentric arcs — like sonar, like looking down through water layers. Simple, geometric, timeless.</p>
+    </div>
+    <div class="logo-row">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="16" stroke="#0089de" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="10" stroke="#0089de" stroke-width="1.5" opacity="0.5"/>
+        <circle cx="18" cy="18" r="4" fill="#0089de"/>
+      </svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+    <div class="sizes">
+      <span class="sz-label">Sizes</span>
+      <svg width="48" height="48" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" stroke="#0089de" stroke-width="1.5"/><circle cx="18" cy="18" r="10" stroke="#0089de" stroke-width="1.5" opacity="0.5"/><circle cx="18" cy="18" r="4" fill="#0089de"/></svg>
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" stroke="#0089de" stroke-width="1.5"/><circle cx="18" cy="18" r="10" stroke="#0089de" stroke-width="1.5" opacity="0.5"/><circle cx="18" cy="18" r="4" fill="#0089de"/></svg>
+      <svg width="20" height="20" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" stroke="#0089de" stroke-width="1.5"/><circle cx="18" cy="18" r="10" stroke="#0089de" stroke-width="1.5" opacity="0.5"/><circle cx="18" cy="18" r="4" fill="#0089de"/></svg>
+    </div>
+    <div class="dark-preview">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" stroke="#0089de" stroke-width="1.5"/><circle cx="18" cy="18" r="10" stroke="#0089de" stroke-width="1.5" opacity="0.5"/><circle cx="18" cy="18" r="4" fill="#0089de"/></svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+  </div>
+
+  <!-- OPTION B: Diver silhouette -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option B</p>
+      <p class="card-name">Diver down</p>
+      <p class="card-desc">A swimmer descending — instantly reads as diving. Solid fill, no outlines. Scales to favicon cleanly.</p>
+    </div>
+    <div class="logo-row">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <!-- body -->
+        <ellipse cx="18" cy="14" rx="4" ry="5.5" fill="#0089de"/>
+        <!-- head -->
+        <circle cx="18" cy="7" r="3" fill="#0089de"/>
+        <!-- left arm out -->
+        <path d="M14 13 Q8 12 7 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- right arm -->
+        <path d="M22 13 Q28 12 29 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- fins -->
+        <path d="M15 19.5 Q12 24 10 26 Q14 25 16 22" fill="#0089de"/>
+        <path d="M21 19.5 Q24 24 26 26 Q22 25 20 22" fill="#0089de"/>
+      </svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+    <div class="sizes">
+      <span class="sz-label">Sizes</span>
+      <svg width="48" height="48" viewBox="0 0 36 36" fill="none"><ellipse cx="18" cy="14" rx="4" ry="5.5" fill="#0089de"/><circle cx="18" cy="7" r="3" fill="#0089de"/><path d="M14 13 Q8 12 7 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M22 13 Q28 12 29 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M15 19.5 Q12 24 10 26 Q14 25 16 22" fill="#0089de"/><path d="M21 19.5 Q24 24 26 26 Q22 25 20 22" fill="#0089de"/></svg>
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><ellipse cx="18" cy="14" rx="4" ry="5.5" fill="#0089de"/><circle cx="18" cy="7" r="3" fill="#0089de"/><path d="M14 13 Q8 12 7 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M22 13 Q28 12 29 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M15 19.5 Q12 24 10 26 Q14 25 16 22" fill="#0089de"/><path d="M21 19.5 Q24 24 26 26 Q22 25 20 22" fill="#0089de"/></svg>
+      <svg width="20" height="20" viewBox="0 0 36 36" fill="none"><ellipse cx="18" cy="14" rx="4" ry="5.5" fill="#0089de"/><circle cx="18" cy="7" r="3" fill="#0089de"/><path d="M14 13 Q8 12 7 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M22 13 Q28 12 29 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M15 19.5 Q12 24 10 26 Q14 25 16 22" fill="#0089de"/><path d="M21 19.5 Q24 24 26 26 Q22 25 20 22" fill="#0089de"/></svg>
+    </div>
+    <div class="dark-preview">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><ellipse cx="18" cy="14" rx="4" ry="5.5" fill="#0089de"/><circle cx="18" cy="7" r="3" fill="#0089de"/><path d="M14 13 Q8 12 7 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M22 13 Q28 12 29 16" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M15 19.5 Q12 24 10 26 Q14 25 16 22" fill="#0089de"/><path d="M21 19.5 Q24 24 26 26 Q22 25 20 22" fill="#0089de"/></svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+  </div>
+
+  <!-- OPTION C: Wave S monogram -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option C</p>
+      <p class="card-name">Wave S</p>
+      <p class="card-desc">The initial S drawn as a continuous ocean wave. Doubles as a monogram. No circle container — stands free.</p>
+    </div>
+    <div class="logo-row">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M26 9 Q26 6 22 6 Q14 6 14 12 Q14 18 22 18 Q30 18 30 24 Q30 30 22 30 Q14 30 10 27" stroke="#0089de" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+    <div class="sizes">
+      <span class="sz-label">Sizes</span>
+      <svg width="48" height="48" viewBox="0 0 36 36" fill="none"><path d="M26 9 Q26 6 22 6 Q14 6 14 12 Q14 18 22 18 Q30 18 30 24 Q30 30 22 30 Q14 30 10 27" stroke="#0089de" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><path d="M26 9 Q26 6 22 6 Q14 6 14 12 Q14 18 22 18 Q30 18 30 24 Q30 30 22 30 Q14 30 10 27" stroke="#0089de" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+      <svg width="20" height="20" viewBox="0 0 36 36" fill="none"><path d="M26 9 Q26 6 22 6 Q14 6 14 12 Q14 18 22 18 Q30 18 30 24 Q30 30 22 30 Q14 30 10 27" stroke="#0089de" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+    </div>
+    <div class="dark-preview">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M26 9 Q26 6 22 6 Q14 6 14 12 Q14 18 22 18 Q30 18 30 24 Q30 30 22 30 Q14 30 10 27" stroke="#0089de" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+  </div>
+
+  <!-- OPTION D: Filled ocean drop -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option D</p>
+      <p class="card-name">Ocean drop</p>
+      <p class="card-desc">A solid filled circle — ocean blue — with a white wave cut through it. Bold at any size. Works as app icon.</p>
+    </div>
+    <div class="logo-row">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="16" fill="#0089de"/>
+        <path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+    <div class="sizes">
+      <span class="sz-label">Sizes</span>
+      <svg width="48" height="48" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <svg width="20" height="20" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    </div>
+    <div class="dark-preview">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+  </div>
+
+  <!-- OPTION E: Coral branch -->
+  <div class="card">
+    <div>
+      <p class="card-label">Option E</p>
+      <p class="card-name">Coral branch</p>
+      <p class="card-desc">Abstract branching coral. Unique to the ocean — nothing else looks like this. Delicate but distinctive.</p>
+    </div>
+    <div class="logo-row">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <!-- trunk -->
+        <path d="M18 30 L18 20" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- main left branch -->
+        <path d="M18 22 L10 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/>
+        <!-- main right branch -->
+        <path d="M18 22 L26 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/>
+        <!-- sub left -->
+        <path d="M13 17 L9 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 17 L16 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- sub right -->
+        <path d="M23 17 L20 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M23 17 L27 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- center upper -->
+        <path d="M18 20 L18 13" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- tips -->
+        <circle cx="9" cy="11" r="1.5" fill="#0089de"/>
+        <circle cx="16" cy="11" r="1.5" fill="#0089de"/>
+        <circle cx="20" cy="11" r="1.5" fill="#0089de"/>
+        <circle cx="27" cy="11" r="1.5" fill="#0089de"/>
+        <circle cx="18" cy="13" r="1.5" fill="#0089de"/>
+      </svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+    <div class="sizes">
+      <span class="sz-label">Sizes</span>
+      <svg width="48" height="48" viewBox="0 0 36 36" fill="none"><path d="M18 30 L18 20" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M18 22 L10 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/><path d="M18 22 L26 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/><path d="M13 17 L9 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M13 17 L16 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M23 17 L20 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M23 17 L27 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M18 20 L18 13" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="11" r="1.5" fill="#0089de"/><circle cx="16" cy="11" r="1.5" fill="#0089de"/><circle cx="20" cy="11" r="1.5" fill="#0089de"/><circle cx="27" cy="11" r="1.5" fill="#0089de"/><circle cx="18" cy="13" r="1.5" fill="#0089de"/></svg>
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><path d="M18 30 L18 20" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M18 22 L10 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/><path d="M18 22 L26 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/><path d="M13 17 L9 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M13 17 L16 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M23 17 L20 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M23 17 L27 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M18 20 L18 13" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="11" r="1.5" fill="#0089de"/><circle cx="16" cy="11" r="1.5" fill="#0089de"/><circle cx="20" cy="11" r="1.5" fill="#0089de"/><circle cx="27" cy="11" r="1.5" fill="#0089de"/><circle cx="18" cy="13" r="1.5" fill="#0089de"/></svg>
+      <svg width="20" height="20" viewBox="0 0 36 36" fill="none"><path d="M18 30 L18 20" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M18 22 L10 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/><path d="M18 22 L26 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/><path d="M13 17 L9 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M13 17 L16 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M23 17 L20 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M23 17 L27 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M18 20 L18 13" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="11" r="1.5" fill="#0089de"/><circle cx="16" cy="11" r="1.5" fill="#0089de"/><circle cx="20" cy="11" r="1.5" fill="#0089de"/><circle cx="27" cy="11" r="1.5" fill="#0089de"/><circle cx="18" cy="13" r="1.5" fill="#0089de"/></svg>
+    </div>
+    <div class="dark-preview">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M18 30 L18 20" stroke="#0089de" stroke-width="2.5" stroke-linecap="round"/><path d="M18 22 L10 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/><path d="M18 22 L26 14" stroke="#0089de" stroke-width="2" stroke-linecap="round"/><path d="M13 17 L9 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M13 17 L16 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M23 17 L20 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M23 17 L27 11" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><path d="M18 20 L18 13" stroke="#0089de" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="11" r="1.5" fill="#0089de"/><circle cx="16" cy="11" r="1.5" fill="#0089de"/><circle cx="20" cy="11" r="1.5" fill="#0089de"/><circle cx="27" cy="11" r="1.5" fill="#0089de"/><circle cx="18" cy="13" r="1.5" fill="#0089de"/></svg>
+      <span class="wordmark">scubaSeason<span>.fun</span></span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

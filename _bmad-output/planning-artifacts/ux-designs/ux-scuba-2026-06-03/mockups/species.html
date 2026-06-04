@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Oceanic manta ray — species detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#0089de;--ink:#0b1e32;--white:#fff;
+  --body:#334155;--muted:#64748b;
+  --hairline:#e2e8f0;--surface:#f1f7fb;
+  --thriving:#10b981;--pressure:#0089de;--change:#f43f5e;
+  --vu-bg:#fde8cc;--vu-fg:#9a3412;
+}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;flex-shrink:0;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--muted);margin-left:2rem;}
+.nav-breadcrumb a{color:var(--muted);text-decoration:none;}
+.nav-breadcrumb a:hover{color:var(--brand);}
+.nav-breadcrumb .sep{color:#cbd5e1;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a:hover{color:#0f172a;}
+
+/* HERO */
+.hero{position:relative;height:50vh;min-height:420px;overflow:hidden;}
+.hero-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#021420 0%,#042038 20%,#053a58 40%,#066878 58%,#078878 75%,#067060 100%);
+}
+.hero-shimmer{position:absolute;inset:0;background-image:repeating-linear-gradient(96deg,transparent 0,transparent 44px,rgba(0,180,220,.04) 44px,rgba(0,180,220,.04) 46px);}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:240px;background:linear-gradient(to bottom,transparent,#fff);}
+.hero-photo-credit{position:absolute;top:1.5rem;right:2rem;z-index:20;font-size:0.5875rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:0.4rem;}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 3rem 3rem;max-width:1320px;margin:0 auto;}
+.hero-pill{display:inline-flex;align-items:center;gap:0.5rem;padding:0.375rem 0.875rem;border-radius:999px;background:rgba(253,232,204,0.18);border:1px solid rgba(154,52,18,0.25);font-size:0.625rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fde8cc;margin-bottom:1rem;backdrop-filter:blur(8px);}
+.hero-h1{font-size:clamp(2.25rem,4.5vw,3.75rem);font-weight:800;letter-spacing:-0.03em;line-height:1.04;color:#0f172a;}
+.hero-sub{font-family:'Source Serif 4',serif;font-style:italic;font-size:1rem;color:var(--muted);margin-top:0.625rem;}
+
+/* STAT STRIP */
+.stat-strip{border-bottom:1px solid var(--hairline);background:var(--surface);}
+.stat-strip-inner{max-width:1320px;margin:0 auto;padding:0 3rem;display:flex;align-items:stretch;flex-wrap:wrap;}
+.stat-item{display:flex;flex-direction:column;gap:0.2rem;padding:1.125rem 2rem;border-right:1px solid var(--hairline);}
+.stat-item:first-child{padding-left:0;}
+.stat-lbl{font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.stat-val{font-size:1rem;font-weight:700;color:#0f172a;letter-spacing:-0.01em;}
+.stat-note{font-size:0.6875rem;color:var(--muted);}
+
+/* BODY */
+.body-wrap{max-width:1320px;margin:0 auto;padding:3.5rem 3rem;}
+.body-grid{display:grid;grid-template-columns:1fr 320px;gap:4rem;align-items:start;}
+
+.section-label{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;}
+.section-h2{font-size:1.375rem;font-weight:800;letter-spacing:-0.025em;color:#0f172a;margin-bottom:1.25rem;}
+.section-block{margin-bottom:2.75rem;}
+
+/* PROSE */
+.body-prose{font-family:'Source Serif 4',serif;font-size:1.0625rem;line-height:1.82;color:#334155;max-width:620px;}
+
+/* LOCATION ROWS */
+.location-list{display:flex;flex-direction:column;gap:0.875rem;margin-bottom:0;}
+.location-row{display:flex;gap:1.25rem;align-items:center;padding:1rem 1.25rem;border-radius:1.1rem;border:1px solid var(--hairline);background:var(--white);text-decoration:none;color:inherit;transition:border-color 0.15s,box-shadow 0.15s;}
+.location-row:hover{border-color:rgba(0,137,222,0.3);box-shadow:0 4px 16px -6px rgba(0,137,222,0.12);}
+.loc-thumb{width:52px;height:52px;border-radius:0.75rem;flex-shrink:0;}
+.loc-thumb-1{background:linear-gradient(145deg,#0a3060,#0a6b8a,#087a6e);}
+.loc-thumb-2{background:linear-gradient(145deg,#042030,#0a5a70,#087888);}
+.loc-thumb-3{background:linear-gradient(145deg,#0a2040,#085878,#0a6870);}
+.loc-info{flex:1;min-width:0;}
+.loc-name{font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.2rem;}
+.loc-sub{font-size:0.75rem;color:var(--muted);}
+.loc-meta{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.35rem;}
+.loc-chip{font-size:0.625rem;font-weight:600;padding:0.2rem 0.5rem;border-radius:999px;background:var(--surface);color:var(--muted);}
+.loc-chip-season{background:#e7f6ee;color:#15824c;}
+.loc-chip-off{background:#fef3c7;color:#92400e;}
+.loc-sighting{font-size:0.6875rem;color:var(--muted);display:flex;align-items:center;gap:0.375rem;margin-top:0.25rem;}
+.sight-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.loc-arrow{color:#cbd5e1;font-size:1.25rem;flex-shrink:0;}
+
+/* SIGHTINGS LOG */
+.sightings-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;margin-bottom:0;}
+.sighting-row{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.375rem;border-bottom:1px solid var(--hairline);}
+.sighting-row:last-child{border-bottom:none;}
+.sighting-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.sighting-info{flex:1;}
+.sighting-species{font-size:0.875rem;font-weight:600;color:#0f172a;}
+.sighting-meta{font-size:0.75rem;color:var(--muted);margin-top:0.15rem;}
+.sighting-source{font-size:0.6875rem;color:#94a3b8;font-family:'IBM Plex Mono',monospace;margin-top:0.2rem;}
+.sighting-date{font-size:0.75rem;color:var(--muted);white-space:nowrap;flex-shrink:0;}
+
+/* CONSERVATION CARD */
+.conservation-card{border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;}
+.conservation-header{padding:1.25rem 1.5rem;background:var(--surface);border-bottom:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between;}
+.conservation-title{font-size:0.875rem;font-weight:700;color:#0f172a;}
+.conservation-body{padding:1.5rem;}
+.con-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem;}
+.con-item{padding:0.875rem 1rem;border-radius:0.875rem;border:1px solid var(--hairline);}
+.con-lbl{font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.35rem;}
+.con-val{font-size:0.9375rem;font-weight:700;color:#0f172a;}
+.con-threats{padding:1rem;border-radius:0.875rem;border:1px solid var(--hairline);margin-bottom:1.25rem;}
+.con-key-fact{padding:1rem 1.125rem;border-radius:0.875rem;background:#fdf8f5;border:1px solid #fde8cc;display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1rem;}
+.con-fact-text{font-size:0.875rem;line-height:1.6;color:#7c2d12;font-family:'Source Serif 4',serif;font-style:italic;}
+.con-link{font-size:0.8125rem;font-weight:600;color:var(--brand);text-decoration:none;}
+.con-link:hover{text-decoration:underline;}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1.5rem;}
+.sidebar-card{border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;}
+.sidebar-card-header{padding:1.125rem 1.375rem;border-bottom:1px solid var(--hairline);background:var(--surface);}
+.sidebar-card-title{font-size:0.8125rem;font-weight:700;color:#0f172a;}
+.sidebar-card-body{padding:1.25rem 1.375rem;}
+
+/* IUCN BIG STATUS CARD */
+.iucn-status-card{border:1px solid #fde8cc;border-radius:1.25rem;overflow:hidden;background:#fffaf7;}
+.iucn-status-header{padding:1.5rem 1.375rem;display:flex;align-items:center;gap:1rem;}
+.iucn-vu-badge{width:60px;height:60px;border-radius:0.875rem;background:var(--vu-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.iucn-vu-badge span{font-size:1.5rem;font-weight:900;letter-spacing:-0.04em;color:var(--vu-fg);}
+.iucn-status-info{}
+.iucn-status-name{font-size:1rem;font-weight:800;color:#7c2d12;letter-spacing:-0.02em;}
+.iucn-status-sub{font-size:0.75rem;color:#9a3412;margin-top:0.2rem;}
+.iucn-status-body{padding:0 1.375rem 1.375rem;}
+.iucn-detail-row{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid #fde8cc;}
+.iucn-detail-row:last-child{border-bottom:none;}
+.iucn-detail-lbl{font-size:0.6875rem;color:#9a3412;}
+.iucn-detail-val{font-size:0.75rem;font-weight:600;color:#7c2d12;}
+.iucn-dl-link{display:block;margin-top:0.875rem;padding:0.625rem 1rem;border-radius:0.625rem;background:rgba(154,52,18,0.07);color:#9a3412;font-size:0.8125rem;font-weight:600;text-decoration:none;text-align:center;border:1px solid rgba(154,52,18,0.15);}
+
+/* TAXONOMY */
+.taxonomy-table{width:100%;border-collapse:collapse;}
+.taxonomy-table tr{border-bottom:1px solid var(--hairline);}
+.taxonomy-table tr:last-child{border-bottom:none;}
+.taxonomy-table td{padding:0.55rem 0;font-size:0.8125rem;}
+.taxonomy-table td:first-child{font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);width:44%;}
+.taxonomy-table td:last-child{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#0f172a;font-weight:500;}
+
+/* SITE CHIPS */
+.site-chips{display:flex;flex-direction:column;gap:0.5rem;}
+.site-chip-link{display:flex;align-items:center;justify-content:space-between;padding:0.625rem 0.875rem;border-radius:0.75rem;border:1px solid var(--hairline);text-decoration:none;color:inherit;transition:border-color 0.15s;}
+.site-chip-link:hover{border-color:rgba(0,137,222,0.3);}
+.scl-name{font-size:0.8125rem;font-weight:600;color:#0f172a;}
+.scl-sub{font-size:0.6875rem;color:var(--muted);margin-top:0.1rem;}
+.scl-arrow{color:#cbd5e1;font-size:0.875rem;}
+
+/* DATA SOURCES */
+.source-rows{display:flex;flex-direction:column;gap:0.625rem;}
+.source-row{display:flex;align-items:flex-start;gap:0.625rem;}
+.source-dot{width:6px;height:6px;border-radius:50%;background:var(--brand);flex-shrink:0;margin-top:4px;}
+.source-text{font-size:0.75rem;line-height:1.55;color:var(--muted);}
+.source-text strong{font-weight:600;color:#0f172a;}
+
+/* FOOTER */
+.footer{background:#0b1e32;padding:4rem 3rem 3rem;}
+.footer-inner{max-width:1320px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;margin-bottom:1rem;}
+.footer-wm{display:flex;flex-direction:column;line-height:1.0;}
+.footer-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.3);}
+.footer-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#fff;}
+.footer-tagline{font-family:'Source Serif 4',serif;font-size:0.875rem;line-height:1.65;color:rgba(255,255,255,0.35);max-width:260px;}
+.footer-col-title{font-size:0.625rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1.25rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.625rem;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:500;}
+.footer-contact-email{font-size:0.9375rem;font-weight:600;color:#0089de;text-decoration:none;display:block;margin-bottom:0.875rem;}
+.footer-contact-note{font-size:0.8125rem;line-height:1.6;color:rgba(255,255,255,0.3);}
+.footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="homepage.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark"><span class="nav-wm-top">scuba</span><span class="nav-wm-bot">Season.fun</span></div>
+  </a>
+  <nav class="nav-breadcrumb">
+    <a href="homepage.html">Atlas</a>
+    <span class="sep">/</span>
+    <a href="#">Species</a>
+    <span class="sep">/</span>
+    <span style="color:#0f172a;font-weight:600;">Oceanic manta ray</span>
+  </nav>
+  <ul class="nav-links">
+    <li><a href="method.html">Method</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-shimmer" aria-hidden="true"></div>
+  <div class="hero-fade" aria-hidden="true"></div>
+  <div class="hero-photo-credit">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+    Photo · Manta Sandy, Raja Ampat · iNaturalist
+  </div>
+  <div class="hero-content">
+    <div class="hero-pill">IUCN Vulnerable</div>
+    <h1 class="hero-h1">Oceanic manta ray</h1>
+    <p class="hero-sub"><em>Mobula birostris</em> &middot; Vulnerable &middot; Population decreasing</p>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-item">
+      <span class="stat-lbl">IUCN Status</span>
+      <span class="stat-val" style="color:#9a3412;">Vulnerable</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Population trend</span>
+      <span class="stat-val">Decreasing</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Wingspan</span>
+      <span class="stat-val">Up to 7 m</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Confirmed sightings</span>
+      <span class="stat-val">14 on atlas</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Sites where seen</span>
+      <span class="stat-val">3 locations</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-lbl">Last confirmed</span>
+      <span class="stat-val" style="color:#10b981;">3 days ago</span>
+      <span class="stat-note">Manta Sandy · iNaturalist</span>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-wrap">
+  <div class="body-grid">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <!-- ABOUT -->
+      <div class="section-block">
+        <p class="section-label">About this species</p>
+        <h2 class="section-h2">Oceanic manta ray</h2>
+        <p class="body-prose">One of the ocean's largest animals and among its most reliably predictable encounters. Oceanic mantas aggregate at cleaning stations — specific sites where they hover while small fish remove parasites — making them unusual among pelagic species in that you can plan to see them. The trade driving population decline is the gill raker market, primarily in China, where dried gill plates are sold as a health product with no scientific basis.</p>
+      </div>
+
+      <!-- WHERE TO SEE IT -->
+      <div class="section-block">
+        <p class="section-label">Where to see it on this atlas</p>
+        <h2 class="section-h2">3 confirmed locations</h2>
+        <div class="location-list">
+
+          <a href="dive-site.html" class="location-row">
+            <div class="loc-thumb loc-thumb-1"></div>
+            <div class="loc-info">
+              <p class="loc-name">Manta Sandy</p>
+              <p class="loc-sighting"><span class="sight-dot" style="background:#10b981"></span>Confirmed 3 days ago</p>
+              <div class="loc-meta">
+                <span class="loc-chip">Raja Ampat, Indonesia</span>
+                <span class="loc-chip loc-chip-season">In season</span>
+              </div>
+            </div>
+            <span class="loc-arrow">→</span>
+          </a>
+
+          <a href="#" class="location-row">
+            <div class="loc-thumb loc-thumb-2"></div>
+            <div class="loc-info">
+              <p class="loc-name">Hanifaru Bay</p>
+              <p class="loc-sighting"><span class="sight-dot" style="background:#e8962f"></span>Confirmed 18 days ago</p>
+              <div class="loc-meta">
+                <span class="loc-chip">Maldives</span>
+                <span class="loc-chip loc-chip-off">Off season</span>
+              </div>
+            </div>
+            <span class="loc-arrow">→</span>
+          </a>
+
+          <a href="#" class="location-row">
+            <div class="loc-thumb loc-thumb-3"></div>
+            <div class="loc-info">
+              <p class="loc-name">Cocos Island</p>
+              <p class="loc-sighting"><span class="sight-dot" style="background:#94a3b8"></span>Confirmed 45 days ago</p>
+              <div class="loc-meta">
+                <span class="loc-chip">Costa Rica</span>
+              </div>
+            </div>
+            <span class="loc-arrow">→</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- RECENT SIGHTINGS -->
+      <div class="section-block">
+        <p class="section-label">Recent confirmed sightings</p>
+        <h2 class="section-h2">iNaturalist research grade observations</h2>
+        <div class="sightings-list">
+
+          <div class="sighting-row">
+            <span class="sighting-dot" style="background:#10b981"></span>
+            <div class="sighting-info">
+              <p class="sighting-species">Oceanic manta ray</p>
+              <p class="sighting-meta">Cleaning station behaviour observed · 2 individuals · depth 8 m · Manta Sandy</p>
+              <p class="sighting-source">iNaturalist · obs #228441092</p>
+            </div>
+            <span class="sighting-date">3 days ago</span>
+          </div>
+
+          <div class="sighting-row">
+            <span class="sighting-dot" style="background:#10b981"></span>
+            <div class="sighting-info">
+              <p class="sighting-species">Oceanic manta ray</p>
+              <p class="sighting-meta">Single individual on surface approach · Hanifaru Bay channel</p>
+              <p class="sighting-source">iNaturalist · obs #227889340</p>
+            </div>
+            <span class="sighting-date">8 days ago</span>
+          </div>
+
+          <div class="sighting-row">
+            <span class="sighting-dot" style="background:#10b981"></span>
+            <div class="sighting-info">
+              <p class="sighting-species">Oceanic manta ray</p>
+              <p class="sighting-meta">Three individuals in formation at cleaning station · mid-water 12 m · Manta Sandy</p>
+              <p class="sighting-source">iNaturalist · obs #227601112</p>
+            </div>
+            <span class="sighting-date">12 days ago</span>
+          </div>
+
+          <div class="sighting-row">
+            <span class="sighting-dot" style="background:#e8962f"></span>
+            <div class="sighting-info">
+              <p class="sighting-species">Oceanic manta ray</p>
+              <p class="sighting-meta">Night feeding aggregation observed from boat · Hanifaru Bay</p>
+              <p class="sighting-source">iNaturalist · obs #227120884</p>
+            </div>
+            <span class="sighting-date">18 days ago</span>
+          </div>
+
+          <div class="sighting-row">
+            <span class="sighting-dot" style="background:#94a3b8"></span>
+            <div class="sighting-info">
+              <p class="sighting-species">Oceanic manta ray</p>
+              <p class="sighting-meta">Confirmed at Cocos cleaning station · depth 15 m · school of 6</p>
+              <p class="sighting-source">iNaturalist · obs #225984003</p>
+            </div>
+            <span class="sighting-date">31 days ago</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CONSERVATION STATUS -->
+      <div class="section-block">
+        <p class="section-label">Conservation status</p>
+        <h2 class="section-h2">IUCN Red List assessment</h2>
+        <div class="conservation-card">
+          <div class="conservation-header">
+            <span class="conservation-title">IUCN Red List · <em>Mobula birostris</em></span>
+            <span style="display:inline-block;padding:0.25rem 0.625rem;border-radius:999px;font-size:0.6875rem;font-weight:700;background:var(--vu-bg);color:var(--vu-fg);">Vulnerable</span>
+          </div>
+          <div class="conservation-body">
+            <div class="con-grid">
+              <div class="con-item">
+                <p class="con-lbl">Assessment year</p>
+                <p class="con-val">2022</p>
+              </div>
+              <div class="con-item">
+                <p class="con-lbl">Population trend</p>
+                <p class="con-val" style="color:#9a3412;">Decreasing</p>
+              </div>
+            </div>
+            <div class="con-threats">
+              <p style="font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.625rem;">Primary threats</p>
+              <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+                <span style="padding:0.25rem 0.625rem;border-radius:999px;background:#fde8cc;color:#9a3412;font-size:0.6875rem;font-weight:600;">Targeted fisheries</span>
+                <span style="padding:0.25rem 0.625rem;border-radius:999px;background:#fde8cc;color:#9a3412;font-size:0.6875rem;font-weight:600;">Bycatch</span>
+                <span style="padding:0.25rem 0.625rem;border-radius:999px;background:#fde8cc;color:#9a3412;font-size:0.6875rem;font-weight:600;">Gill raker trade</span>
+                <span style="padding:0.25rem 0.625rem;border-radius:999px;background:#fde8cc;color:#9a3412;font-size:0.6875rem;font-weight:600;">Boat strike</span>
+              </div>
+            </div>
+            <div class="con-key-fact">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9a3412" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              <p class="con-fact-text">Global population estimated at fewer than 23,000 mature individuals.</p>
+            </div>
+            <a href="#" class="con-link">Full IUCN assessment →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- IUCN STATUS CARD -->
+      <div class="iucn-status-card">
+        <div class="iucn-status-header">
+          <div class="iucn-vu-badge"><span>VU</span></div>
+          <div class="iucn-status-info">
+            <p class="iucn-status-name">Vulnerable</p>
+            <p class="iucn-status-sub">IUCN Red List 2022</p>
+          </div>
+        </div>
+        <div class="iucn-status-body">
+          <div class="iucn-detail-row">
+            <span class="iucn-detail-lbl">Full name</span>
+            <span class="iucn-detail-val">Oceanic manta ray</span>
+          </div>
+          <div class="iucn-detail-row">
+            <span class="iucn-detail-lbl">Scientific name</span>
+            <span class="iucn-detail-val" style="font-family:'IBM Plex Mono',monospace;font-size:0.6875rem;font-style:italic;">Mobula birostris</span>
+          </div>
+          <div class="iucn-detail-row">
+            <span class="iucn-detail-lbl">Assessment</span>
+            <span class="iucn-detail-val">2022</span>
+          </div>
+          <div class="iucn-detail-row">
+            <span class="iucn-detail-lbl">Trend</span>
+            <span class="iucn-detail-val">Decreasing</span>
+          </div>
+          <a href="#" class="iucn-dl-link">Download assessment PDF →</a>
+        </div>
+      </div>
+
+      <!-- TAXONOMY -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header"><p class="sidebar-card-title">Taxonomy</p></div>
+        <div class="sidebar-card-body">
+          <table class="taxonomy-table">
+            <tr>
+              <td>Class</td>
+              <td>Chondrichthyes</td>
+            </tr>
+            <tr>
+              <td>Order</td>
+              <td>Myliobatiformes</td>
+            </tr>
+            <tr>
+              <td>Family</td>
+              <td>Mobulidae</td>
+            </tr>
+            <tr>
+              <td>Genus</td>
+              <td>Mobula</td>
+            </tr>
+            <tr>
+              <td>Species</td>
+              <td>birostris</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- ALSO SEEN AT -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header"><p class="sidebar-card-title">Also seen at these sites</p></div>
+        <div class="sidebar-card-body">
+          <div class="site-chips">
+            <a href="#" class="site-chip-link">
+              <div>
+                <p class="scl-name">Hanifaru Bay</p>
+                <p class="scl-sub">Maldives · 18 days ago</p>
+              </div>
+              <span class="scl-arrow">→</span>
+            </a>
+            <a href="#" class="site-chip-link">
+              <div>
+                <p class="scl-name">Cocos Island</p>
+                <p class="scl-sub">Costa Rica · 45 days ago</p>
+              </div>
+              <span class="scl-arrow">→</span>
+            </a>
+            <a href="dive-site.html" class="site-chip-link">
+              <div>
+                <p class="scl-name">Manta Sandy</p>
+                <p class="scl-sub">Raja Ampat · 3 days ago</p>
+              </div>
+              <span class="scl-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATA SOURCES -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-header"><p class="sidebar-card-title">Data sources</p></div>
+        <div class="sidebar-card-body">
+          <div class="source-rows">
+            <div class="source-row">
+              <span class="source-dot"></span>
+              <p class="source-text"><strong>iNaturalist Research Grade</strong> — all sightings shown have passed community ID review and met research grade criteria.</p>
+            </div>
+            <div class="source-row">
+              <span class="source-dot"></span>
+              <p class="source-text"><strong>IUCN Red List</strong> — conservation status, population trend, and threat data from the 2022 assessment of <em>Mobula birostris</em>.</p>
+            </div>
+            <div class="source-row" style="margin-top:0.25rem;padding-top:0.75rem;border-top:1px solid var(--hairline);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              <p class="source-text" style="color:#94a3b8;font-size:0.6875rem;">Species thumbnails are iNaturalist photos. All rights retained by original observers — see individual attribution on each image.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="homepage.html" class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="footer-wm"><span class="footer-wm-top">scuba</span><span class="footer-wm-bot">Season.fun</span></div>
+        </a>
+        <p class="footer-tagline">A data atlas for the living ocean. Science-backed, honestly labeled, free to read.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Site</p>
+        <ul class="footer-links">
+          <li><a href="homepage.html">Atlas</a></li>
+          <li><a href="method.html">Method</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Get in touch</p>
+        <a href="mailto:hello@scubaseason.fun" class="footer-contact-email">hello@scubaseason.fun</a>
+        <p class="footer-contact-note">Spotted wrong data? Want to collaborate? All of it welcome.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 scubaSeason.fun</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.2);">Sighting data: iNaturalist Research Grade · Conservation: IUCN Red List 2022</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -18,6 +18,7 @@ import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
+import { StatStrip } from "@/components/stat-strip";
 import type { Site } from "@/lib/data/types";
 
 const FISHING_LEVEL_LABEL: Record<string, string> = {
@@ -295,9 +296,59 @@ export default async function SiteDetailPage({
         ) : null}
       </div>
 
-      <h1 className="mt-3 mb-8 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+      <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
         {site.name}
       </h1>
+
+      {/* Stat strip */}
+      {(() => {
+        const latestSighting = sightings
+          .filter((s) => s.lastConfirmedAt)
+          .sort((a, b) => (b.lastConfirmedAt ?? "").localeCompare(a.lastConfirmedAt ?? ""))[0];
+        const condMonth = site.conditionsByMonth.find((c) => c.month === currentMonth);
+        const stripStats = [
+          {
+            label: "Depth",
+            value: `${site.depthRange.min}–${site.depthRange.max} m`,
+          },
+          { label: "Cert level", value: skillText(site.skillLevel) },
+          ...(condMonth
+            ? [
+                {
+                  label: "Visibility",
+                  value: `${condMonth.visibilityM.min}–${condMonth.visibilityM.max} m`,
+                  note: "typical this month",
+                },
+                {
+                  label: "Current",
+                  value: condMonth.currentStrength.charAt(0).toUpperCase() + condMonth.currentStrength.slice(1),
+                },
+              ]
+            : []),
+          {
+            label: "Best season",
+            value: site.bestMonths.length === 12
+              ? "Year round"
+              : MONTH_ABBR[site.bestMonths[0] - 1] + (site.bestMonths.length > 1 ? "–" + MONTH_ABBR[site.bestMonths[site.bestMonths.length - 1] - 1] : ""),
+          },
+          ...(latestSighting?.lastConfirmedAt
+            ? [
+                {
+                  label: "Last sighting",
+                  value: latestSighting.speciesCommon,
+                  note: new Date(
+                    latestSighting.lastConfirmedAt + "T00:00:00Z",
+                  ).toLocaleDateString("en-US", {
+                    month: "short",
+                    year: "numeric",
+                    timeZone: "UTC",
+                  }),
+                },
+              ]
+            : []),
+        ];
+        return <StatStrip stats={stripStats} className="mt-4 mb-6" />;
+      })()}
 
       {/* ── ABOUT ── */}
       <section>
