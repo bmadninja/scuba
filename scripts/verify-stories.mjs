@@ -106,6 +106,7 @@ function walk(dir, exts = [".ts", ".tsx", ".js", ".jsx", ".mjs"]) {
 }
 
 const FLAGSHIP = "raja-ampat-cape-kri";
+const FLAGSHIP_LOCATION = "raja-ampat-indonesia"; // Plan Your Trip + Gear + Operators moved here (7.8/7.9)
 const SEASONAL = "raja-ampat-blue-magic";
 
 const STORIES = {
@@ -152,8 +153,10 @@ const STORIES = {
     for (const h of ["Overview", "What you'll see", "Conditions", "Season calendar", "Gear"]) {
       record("B2", `heading:${h}`, r.body.includes(h));
     }
+    // Plan Your Trip moved to location page per story 7.8/7.9 — check there
+    const rl = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
     for (const sub of ["Getting there", "Where to stay", "Who to dive with"]) {
-      record("B2", `sub:${sub}`, r.body.includes(sub));
+      record("B2", `sub:${sub}`, rl.body.includes(sub));
     }
   },
   async B3() {
@@ -173,15 +176,17 @@ const STORIES = {
     record("B4", "current", /mild|moderate|strong/i.test(r.body));
   },
   async B5() {
-    const r = await fetchText(`/sites/${FLAGSHIP}`);
+    // Affiliate links + disclosure moved to location page per story 7.8/7.9
+    const r = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
     record("B5", "sponsored-rel", /rel="nofollow sponsored noopener"/.test(r.body));
     record("B5", "disclosure", /commission/i.test(r.body));
   },
   async B6() {
-    const r = await fetchText(`/sites/${FLAGSHIP}`);
-    record("B6", "gear-heading", />Gear<\/h2>/.test(r.body) || /Gear</.test(r.body));
-    record("B6", "tier-a-base", /base kit/i.test(r.body));
-    record("B6", "tier-b-site", /site-specific/i.test(r.body));
+    // Gear section moved to location page per story 7.9; site page has Gear heading via footer nav
+    const rl = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
+    record("B6", "gear-heading", /Gear</.test(rl.body));
+    record("B6", "tier-a-base", /base kit/i.test(rl.body));
+    record("B6", "tier-b-site", /site-specific/i.test(rl.body));
   },
   async B7() {
     const r = await fetchText(`/sites/${FLAGSHIP}`);

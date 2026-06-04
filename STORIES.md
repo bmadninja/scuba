@@ -41,8 +41,8 @@ Conventions for the loop:
 ### B2 — All PRD-required sections render
 - AC1: Detail HTML contains the headings: `Overview`, `What you'll see`,
   `Conditions`, `Season calendar`, `Gear`.
-- AC2: The Plan-Your-Trip aside contains `Getting there`, `Where to stay`,
-  `Who to dive with`.
+- AC2: The Plan-Your-Trip block (on the location page, per story 7.8/7.9)
+  contains `Getting there`, `Where to stay`, `Who to dive with`.
 
 ### B3 — Species reliability + best months
 - AC1: At least one species shows a reliability label (`year-round`,
@@ -55,12 +55,12 @@ Conventions for the loop:
   strength.
 
 ### B5 — Trip-booking affiliate links (FR1.5 / F5)
-- AC1: At least one outbound link with `rel="nofollow sponsored noopener"`.
-- AC2: Affiliate disclosure text "commission" appears on the page.
+- AC1: Location page has at least one outbound link with `rel="nofollow sponsored noopener"`.
+- AC2: Location page affiliate disclosure text "commission" appears.
 
 ### B6 — Gear block with Tier A + Tier B (FR1.4)
-- AC1: Section heading `Gear` is present.
-- AC2: Page mentions both `base kit` and `site-specific` (Tier A / Tier B).
+- AC1: Location page `Gear` section heading is present.
+- AC2: Location page mentions both `base kit` and `site-specific` (Tier A / Tier B).
 
 ### B7 — SEO metadata
 - AC1: `<title>` contains the site name and is not the Next.js default.

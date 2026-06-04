@@ -1499,7 +1499,7 @@ export default async function LocationPage({
                     marginBottom: "0.875rem",
                   }}
                 >
-                  Basic kit — the same across {location.name}
+                  base kit — the same across {location.name}
                 </p>
                 <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", margin: 0, padding: 0, listStyle: "none" }}>
                   {basicKit.map((item) => {
@@ -1561,7 +1561,7 @@ export default async function LocationPage({
                         marginBottom: "1rem",
                       }}
                     >
-                      What specific sites demand
+                      site-specific add-ons
                     </p>
                     <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                       {gearBySite.map(({ site: gs, items }) => (
@@ -1947,12 +1947,17 @@ export default async function LocationPage({
                         </div>
                       ) : null}
 
-                      {/* Operators — equal-weight peer, same treatment */}
-                      {operatorsToShow.length > 0 ? (
+                      {/* Who to dive with — equal-weight peer, same treatment */}
+                      {(operatorsToShow.length > 0 || hasDiveCapableLodging) ? (
                         <div>
                           <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#1d5d90", marginBottom: "0.6rem" }}>
-                            Operators
+                            Who to dive with
                           </p>
+                          {hasDiveCapableLodging && operatorsToShow.length === 0 && (
+                            <p style={{ fontSize: "0.8125rem", color: "#64748b", lineHeight: 1.55 }}>
+                              Diving covered by the liveaboard — see Where to stay above.
+                            </p>
+                          )}
                           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                             {operatorsToShow.map((op) => (
                               <AffiliateLink
