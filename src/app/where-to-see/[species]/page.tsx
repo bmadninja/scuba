@@ -123,13 +123,7 @@ export default async function SpeciesLandingPage({
 
       <div className="mx-auto w-full max-w-6xl px-6 py-12">
       <div className="mx-auto w-full max-w-4xl">
-        <Link
-          href="/encounters"
-          className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 hover:text-[#0089de]"
-        >
-          ← All encounters
-        </Link>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900">
           Where to see {e.name} in 2026
         </h1>
         {e.speciesCommon ? (

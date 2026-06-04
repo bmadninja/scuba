@@ -5,10 +5,8 @@ import { JsonLd } from "@/components/json-ld";
 import { certLandingSchema } from "@/lib/schema-org";
 import { getAllLocations } from "@/lib/data/locations";
 import { getAllSites } from "@/lib/data/sites";
-import { getAllEncounters } from "@/lib/data/encounters";
 import { getAllGear } from "@/lib/data/gear";
 import type {
-  EncounterDifficulty,
   SkillLevel,
   Site,
 } from "@/lib/data/types";
@@ -52,15 +50,6 @@ const SKILL_RANK: Record<SkillLevel, number> = {
   rescue: 3,
   divemaster: 4,
   tech: 5,
-};
-
-const DIFFICULTY_FOR_CERT: Record<SkillLevel, EncounterDifficulty[]> = {
-  "never-dived": ["beginner"],
-  "open-water": ["beginner"],
-  advanced: ["beginner", "intermediate"],
-  rescue: ["beginner", "intermediate", "advanced"],
-  divemaster: ["intermediate", "advanced", "expert"],
-  tech: ["advanced", "expert"],
 };
 
 export function generateStaticParams() {
@@ -120,11 +109,6 @@ export default async function CertLandingPage({
     .filter((x): x is { location: ReturnType<typeof getAllLocations>[number]; minRank: number; sites: Site[] } => Boolean(x))
     .sort((a, b) => a.minRank - b.minRank)
     .slice(0, 12);
-
-  const matchedDifficulties = DIFFICULTY_FOR_CERT[cert];
-  const encounters = getAllEncounters()
-    .filter((e) => matchedDifficulties.includes(e.difficulty))
-    .slice(0, 8);
 
   const gear = getAllGear().filter((g) => g.levels.includes(cert)).slice(0, 8);
 
@@ -210,35 +194,6 @@ export default async function CertLandingPage({
             </ul>
           )}
         </section>
-
-        {encounters.length > 0 ? (
-          <section className="mt-8 border-t border-slate-200 pt-6">
-            <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0089de]">
-              What you&rsquo;ll typically see at this level
-            </h2>
-            <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-              {encounters.map((e) => (
-                <li
-                  key={e.id}
-                  className="rounded-xl border border-slate-200 bg-white p-4"
-                >
-                  <Link
-                    href={`/where-to-see/${e.slug}`}
-                    className="font-semibold text-slate-900 hover:text-[#0089de]"
-                  >
-                    {e.name}
-                  </Link>
-                  <p className="text-[11px] uppercase tracking-wider text-slate-500">
-                    {e.difficulty}
-                  </p>
-                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-700">
-                    {e.shortDescription}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
 
         {gear.length > 0 ? (
           <section className="mt-8 border-t border-slate-200 pt-6">
