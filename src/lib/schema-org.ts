@@ -89,7 +89,7 @@ export function organizationSchema() {
     url: SITE_URL,
     description:
       "Research-grade dive trip planning. Find dive sites by species, season, conditions and skill level.",
-    email: "hi@scubaseason.fun",
+    email: "hello@scubaseason.fun",
   };
 }
 
