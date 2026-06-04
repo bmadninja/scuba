@@ -15,7 +15,6 @@ type SearchEntry = {
 };
 
 const NAV = [
-  { href: "/", label: "Atlas", key: "atlas" },
   { href: "/data", label: "Method", key: "method" },
   { href: "/about", label: "About", key: "about" },
 ];
