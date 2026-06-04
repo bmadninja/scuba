@@ -659,6 +659,9 @@ export default async function SiteDetailPage({
         </div>
       </section>
 
+      {/* ── HOW TO DIVE THIS SITE ── */}
+      <HowToDiveSection site={site} />
+
       {/* ── GEAR & PLANNING ── */}
       {(gear.length > 0 || wrecks.length > 0 || location) && (
         <section className="mt-12">
@@ -742,5 +745,92 @@ export default async function SiteDetailPage({
         </div>
       ) : null}
     </div>
+  );
+}
+
+/** How-to-dive numbered sequence (Story 4.5) */
+function HowToDiveSection({ site }: { site: Site }) {
+  // Build 4 steps from available site data
+  const conditions = site.conditionsByMonth;
+  const hasConditions = conditions.length > 0;
+
+  // Find best conditions month for timing advice
+  const bestMonth = site.bestMonths[0]
+    ? MONTH_ABBR[site.bestMonths[0] - 1]
+    : null;
+  const bestCond = hasConditions
+    ? conditions.find((c) => site.bestMonths.includes(c.month))
+    : null;
+
+  const currentStr = bestCond?.currentStrength ?? "moderate";
+  const visDesc =
+    bestCond
+      ? `${bestCond.visibilityM.min}–${bestCond.visibilityM.max} m`
+      : "varies";
+  const depthDesc = `${site.depthRange.min}–${site.depthRange.max} m`;
+
+  const steps = [
+    {
+      num: "01",
+      title: "Time your arrival",
+      description: bestMonth
+        ? `Peak season runs ${site.bestMonths.map((m) => MONTH_ABBR[m - 1]).join(", ")}. Arrive at the site early — first light brings calmer conditions and less boat traffic.`
+        : "Check local conditions before heading out. Early morning often means calmer surface conditions and better light below.",
+    },
+    {
+      num: "02",
+      title: "Descend and orient",
+      description: `This site runs ${depthDesc}. Descend slowly along the reef wall or slope and take a moment at depth to check current direction before moving further.`,
+    },
+    {
+      num: "03",
+      title: "Work with the current",
+      description: currentStr === "strong" || currentStr === "moderate"
+        ? `Current here can be ${currentStr}. Position yourself up-current from your target area, then let the drift work for you — this is how the best encounters happen.`
+        : `Current is typically ${currentStr} at this site. Follow the reef edge and let slow drift guide you past the key features at your own pace.`,
+    },
+    {
+      num: "04",
+      title: "Surface and debrief",
+      description: `Visibility averages ${visDesc} here. After your dive, deploy your SMB at the 5 m safety stop. Log sightings on iNaturalist — every confirmed record helps the atlas stay accurate.`,
+    },
+  ];
+
+  return (
+    <section className="mt-12">
+      <div className="mb-8 flex items-end justify-between border-b border-slate-200 pb-4">
+        <h2 className="text-xl font-bold tracking-tight text-slate-900">
+          How to dive this site
+        </h2>
+      </div>
+      <div className="grid gap-6 sm:grid-cols-2">
+        {steps.map((step) => (
+          <div key={step.num} className="flex gap-4">
+            {/* Muted display figure */}
+            <span
+              aria-hidden="true"
+              className="select-none text-7xl font-black leading-none text-slate-900/10"
+              style={{ flexShrink: 0, lineHeight: 1 }}
+            >
+              {step.num}
+            </span>
+            <div className="pt-1">
+              <p className="font-bold text-slate-900">{step.title}</p>
+              <p
+                className="mt-1 text-sm leading-6"
+                style={{
+                  fontFamily:
+                    "var(--font-serif), 'Source Serif 4', Georgia, serif",
+                  fontStyle: "italic",
+                  color: "#334155",
+                }}
+              >
+                {step.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

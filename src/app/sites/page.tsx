@@ -20,20 +20,59 @@ export default function SitesPage() {
   const currentMonth = new Date().getUTCMonth() + 1;
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-6 py-12">
-        <div className="mb-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+    <>
+      {/* Dark ink header */}
+      <div
+        style={{
+          background: "#0b1e32",
+          padding: "3.5rem 3rem 3rem",
+        }}
+      >
+        <div
+          style={{ maxWidth: 1320, margin: "0 auto" }}
+        >
+          <p
+            style={{
+              fontSize: "0.6875rem",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#0089de",
+              marginBottom: "0.5rem",
+            }}
+          >
             Catalogue
           </p>
-          <h1 className="mt-1 text-4xl font-bold tracking-tight text-slate-900">
-            All dive sites
+          <h1
+            style={{
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 800,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.08,
+              color: "#fff",
+              marginBottom: "0.75rem",
+            }}
+          >
+            Dive sites
           </h1>
-          <p className="mt-2 max-w-2xl text-base leading-7 text-slate-600">
-            Search across every curated dive site. Filter by cert level, dive type,
-            or what&rsquo;s in season this month.
+          <p
+            style={{
+              fontFamily:
+                "var(--font-serif), 'Source Serif 4', Georgia, serif",
+              fontStyle: "italic",
+              fontSize: "1rem",
+              lineHeight: 1.65,
+              color: "rgba(255,255,255,0.5)",
+              maxWidth: 480,
+            }}
+          >
+            {sites.length} curated sites. Search by name, species, or
+            location — or filter by cert level and dive type.
           </p>
         </div>
+      </div>
 
+      <div className="mx-auto w-full max-w-6xl px-6 py-8">
         <Suspense fallback={null}>
           <SitesExplorer
             sites={sites}
@@ -41,6 +80,7 @@ export default function SitesPage() {
             currentMonth={currentMonth}
           />
         </Suspense>
-    </div>
+      </div>
+    </>
   );
 }
