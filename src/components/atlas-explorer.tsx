@@ -175,8 +175,66 @@ export function AtlasExplorer({
     [results],
   );
 
+  const toggleState = (state: string) => {
+    setFilters((prev) => {
+      const has = prev.condition.includes(state);
+      return {
+        ...prev,
+        condition: has
+          ? prev.condition.filter((s) => s !== state)
+          : [...prev.condition, state],
+      };
+    });
+  };
+
   return (
     <section className="mt-8">
+      {/* ── Horizontal pill filter bar (desktop) ── */}
+      <div className="mb-6 flex flex-wrap items-center gap-2">
+        {/* Reef state chips */}
+        {STATE_VALUES.map((state) => {
+          const active = filters.condition.includes(state);
+          return (
+            <button
+              key={state}
+              type="button"
+              onClick={() => toggleState(state)}
+              className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-all"
+              style={{
+                borderColor: active ? "transparent" : "#e2e8f0",
+                background: active ? "#e8f0fe" : "#ffffff",
+                color: active ? "#1d5d90" : "#475569",
+                fontWeight: active ? 600 : 500,
+              }}
+            >
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full flex-shrink-0"
+                style={{ background: STATE_COLOR[state as ReefState] }}
+              />
+              {STATE_LABEL[state]}
+            </button>
+          );
+        })}
+
+        {/* Sort select pushed to the right */}
+        <label className="ml-auto flex items-center gap-2 text-sm text-slate-500">
+          Sort
+          <select
+            value={filters.sort}
+            onChange={(e) =>
+              setFilters((p) => ({ ...p, sort: e.target.value as SortKey }))
+            }
+            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-900 focus:border-[#0089de] focus:outline-none"
+          >
+            {SORT_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.label}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[260px_1fr]">
         <AtlasFilterRail
           filters={filters}
@@ -217,28 +275,12 @@ export function AtlasExplorer({
             </Link>
           </div>
 
-          {/* Count + sort */}
-          <div className="mb-5 mt-6 flex flex-wrap items-center justify-between gap-3">
+          {/* Count */}
+          <div className="mb-5 mt-6 flex flex-wrap items-center gap-3">
             <span className="text-sm text-slate-600">
               <strong className="text-slate-900">{results.length}</strong> of{" "}
               {locations.length} locations
             </span>
-            <label className="flex items-center gap-2 text-sm text-slate-600">
-              Sort
-              <select
-                value={filters.sort}
-                onChange={(e) =>
-                  setFilters((p) => ({ ...p, sort: e.target.value as SortKey }))
-                }
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-900 focus:border-[#0089de] focus:outline-none"
-              >
-                {SORT_OPTIONS.map((o) => (
-                  <option key={o.value} value={o.value}>
-                    {o.label}
-                  </option>
-                ))}
-              </select>
-            </label>
           </div>
 
           {results.length > 0 ? (
