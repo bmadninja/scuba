@@ -12,9 +12,9 @@ import sourcesData from "@/data/sources.json";
 import { AtlasNav } from "@/components/atlas-nav";
 import { HideLayoutNav } from "@/components/hide-layout-nav";
 
-// Homepage hero — manta ray, Bali, Indonesia. Unsplash free license · Nott Peera
+// Homepage hero — manta ray, Grand Cayman. Unsplash free license
 const HERO_IMAGE_URL =
-  "https://images.unsplash.com/photo-1692810122794-f321b05c74ad?w=3840&q=90&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1675829604010-509cca710300?w=3840&q=90&auto=format&fit=crop";
 
 export const metadata: Metadata = {
   title: "scubaSeason.fun — a data atlas for the living ocean",
@@ -217,40 +217,6 @@ export default function Home() {
           }}
         />
 
-        {/* Photo credit — bottom right, below the nav */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            bottom: "calc(260px + 1rem)",
-            right: "2rem",
-            zIndex: 20,
-            fontSize: "0.5875rem",
-            fontWeight: 500,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.25)",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.4rem",
-          }}
-        >
-          <svg
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-            <circle cx="12" cy="13" r="4" />
-          </svg>
-          Photo · Manta ray, Bali · Nott Peera / Unsplash
-        </div>
 
         {/* Hero content — pinned to bottom with flex-end */}
         <div
