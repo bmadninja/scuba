@@ -12,9 +12,9 @@ import sourcesData from "@/data/sources.json";
 import { AtlasNav } from "@/components/atlas-nav";
 import { HideLayoutNav } from "@/components/hide-layout-nav";
 
-// Homepage hero — reef manta ray at Raja Ampat. CC BY 2.0 · iNaturalist / Wikimedia Commons
+// Homepage hero — manta ray ascending, German Channel, Palau. CC BY 2.0 · Wikimedia Commons
 const HERO_IMAGE_URL =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Reef_manta_ray_%28Manta_alfredi%29_-_49878449092.jpg/3840px-Reef_manta_ray_%28Manta_alfredi%29_-_49878449092.jpg";
+  "https://upload.wikimedia.org/wikipedia/commons/2/2f/Manta_diving_up_German_Channel_Palau_%2812672672343%29.jpg";
 
 export const metadata: Metadata = {
   title: "scubaSeason.fun — a data atlas for the living ocean",
@@ -189,7 +189,7 @@ export default function Home() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(175deg, rgba(2,20,34,0.55) 0%, rgba(4,28,51,0.45) 30%, rgba(5,39,69,0.35) 55%, rgba(5,37,64,0.50) 72%, rgba(3,25,40,0.65) 100%)",
+              "linear-gradient(175deg, rgba(2,20,34,0.45) 0%, rgba(4,28,51,0.35) 30%, rgba(5,39,69,0.25) 55%, rgba(5,37,64,0.40) 72%, rgba(3,25,40,0.55) 100%)",
           }}
         />
         {/* Caustic ray texture */}
@@ -249,7 +249,7 @@ export default function Home() {
             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
             <circle cx="12" cy="13" r="4" />
           </svg>
-          Photo · Reef manta ray, Raja Ampat · CC BY 2.0
+          Photo · Manta ray, German Channel, Palau · CC BY 2.0
         </div>
 
         {/* Hero content — pinned to bottom with flex-end */}
