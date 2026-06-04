@@ -16,10 +16,10 @@ export function AtlasFooter() {
               reach out. Always happy to hear from you.
             </p>
             <a
-              href="mailto:hello@scubaseason.fun"
+              href="mailto:hi@scubaseason.fun"
               className="mt-3 inline-block text-sm text-[#0089de] transition-colors hover:text-[#006fb5]"
             >
-              hello@scubaseason.fun
+              hi@scubaseason.fun
             </a>
           </div>
 
