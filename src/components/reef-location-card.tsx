@@ -63,26 +63,12 @@ export function ReefLocationCard({ r }: { r: ReefLocationCardData }) {
           alt={r.name}
           className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
         />
-        <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
+        {/* Reef-state badge only on photo */}
+        <div className="absolute left-3 top-3">
           <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${STATE_BADGE[r.state]}`}>
             {STATE_TEXT[r.state]}
           </span>
-          {r.inSeason ? (
-            <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200">
-              ● In season
-            </span>
-          ) : (
-            <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-500 ring-1 ring-inset ring-slate-200">
-              ○ Off season
-            </span>
-          )}
         </div>
-        {/* Skill badge — bottom-right of image */}
-        <span
-          className={`absolute bottom-3 right-3 rounded-full px-2.5 py-1 text-xs font-medium ${SKILL_BADGE[r.skill] ?? "bg-slate-100 text-slate-600 ring-1 ring-inset ring-slate-200"}`}
-        >
-          {r.skill}
-        </span>
       </div>
 
       <div className="flex flex-1 flex-col p-4">
@@ -90,6 +76,23 @@ export function ReefLocationCard({ r }: { r: ReefLocationCardData }) {
           {r.name}
         </h3>
         <p className="mt-0.5 text-sm text-slate-500">{r.country}</p>
+        {/* Meta row — skill + in-season, moved off photo */}
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          {r.skill && (
+            <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${SKILL_BADGE[r.skill] ?? "bg-slate-100 text-slate-600 ring-1 ring-inset ring-slate-200"}`}>
+              {r.skill}
+            </span>
+          )}
+          {r.inSeason ? (
+            <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200">
+              ● In season
+            </span>
+          ) : (
+            <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-500 ring-1 ring-inset ring-slate-200">
+              ○ Off season
+            </span>
+          )}
+        </div>
         <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">{r.hook}</p>
 
         {/* Freshness line */}

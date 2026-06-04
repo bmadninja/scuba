@@ -516,6 +516,99 @@ export default async function SiteDetailPage({
         >
           {/* ── LEFT COLUMN ── */}
           <div>
+            {/* ── ABOUT / DESCRIPTION (first per 7.10) ── */}
+            {(site.description || site.notes || wrecks.length > 0) ? (
+              <section style={{ marginBottom: "2.5rem" }}>
+                <p
+                  style={{
+                    fontSize: "0.6875rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "#64748b",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  Overview
+                </p>
+                {site.description ? (
+                  <p
+                    style={{
+                      fontSize: "0.9375rem",
+                      lineHeight: 1.75,
+                      color: "#334155",
+                      marginBottom: "1.25rem",
+                    }}
+                  >
+                    {site.description}
+                  </p>
+                ) : null}
+                {site.notes ? (
+                  <div
+                    style={{
+                      borderRadius: "1rem",
+                      border: "1px solid #e2e8f0",
+                      background: "#f1f7fb",
+                      padding: "1rem 1.25rem",
+                      marginBottom: "1.25rem",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "0.625rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: "#1d5d90",
+                        marginBottom: "0.375rem",
+                      }}
+                    >
+                      Briefing note
+                    </p>
+                    <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "#334155" }}>
+                      {site.notes}
+                    </p>
+                  </div>
+                ) : null}
+                {wrecks.length > 0 ? (
+                  <div style={{ marginTop: "1.25rem" }}>
+                    <p
+                      style={{
+                        fontSize: "0.625rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: "#64748b",
+                        marginBottom: "0.75rem",
+                      }}
+                    >
+                      The wreck
+                    </p>
+                    <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                      {wrecks.map((w) => (
+                        <li
+                          key={w.id}
+                          style={{
+                            border: "1px solid #e2e8f0",
+                            borderRadius: "1rem",
+                            padding: "1rem 1.25rem",
+                          }}
+                        >
+                          <p style={{ fontWeight: 700, color: "#0f172a" }}>{w.vesselName}</p>
+                          <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: 2, textTransform: "capitalize" }}>
+                            {w.vesselType} · Sunk {w.sunk}
+                          </p>
+                          <p style={{ fontSize: "0.8125rem", lineHeight: 1.65, color: "#334155", marginTop: "0.5rem" }}>
+                            {w.history}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+              </section>
+            ) : null}
+
             {/* ── SPECIES GRID ── */}
             <p
               style={{
@@ -1189,98 +1282,6 @@ export default async function SiteDetailPage({
             {/* ── HOW TO DIVE THIS SITE ── */}
             <HowToDiveSection site={site} />
 
-            {/* ── ABOUT / DESCRIPTION ── */}
-            {(site.description || site.notes || wrecks.length > 0) ? (
-              <section style={{ marginTop: "2.5rem" }}>
-                <p
-                  style={{
-                    fontSize: "0.6875rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: "#64748b",
-                    marginBottom: "0.75rem",
-                  }}
-                >
-                  Overview
-                </p>
-                {site.description ? (
-                  <p
-                    style={{
-                      fontSize: "0.9375rem",
-                      lineHeight: 1.75,
-                      color: "#334155",
-                      marginBottom: "1.25rem",
-                    }}
-                  >
-                    {site.description}
-                  </p>
-                ) : null}
-                {site.notes ? (
-                  <div
-                    style={{
-                      borderRadius: "1rem",
-                      border: "1px solid #e2e8f0",
-                      background: "#f1f7fb",
-                      padding: "1rem 1.25rem",
-                      marginBottom: "1.25rem",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontSize: "0.625rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.12em",
-                        textTransform: "uppercase",
-                        color: "#1d5d90",
-                        marginBottom: "0.375rem",
-                      }}
-                    >
-                      Briefing note
-                    </p>
-                    <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "#334155" }}>
-                      {site.notes}
-                    </p>
-                  </div>
-                ) : null}
-                {wrecks.length > 0 ? (
-                  <div style={{ marginTop: "1.25rem" }}>
-                    <p
-                      style={{
-                        fontSize: "0.625rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.12em",
-                        textTransform: "uppercase",
-                        color: "#64748b",
-                        marginBottom: "0.75rem",
-                      }}
-                    >
-                      The wreck
-                    </p>
-                    <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                      {wrecks.map((w) => (
-                        <li
-                          key={w.id}
-                          style={{
-                            border: "1px solid #e2e8f0",
-                            borderRadius: "1rem",
-                            padding: "1rem 1.25rem",
-                          }}
-                        >
-                          <p style={{ fontWeight: 700, color: "#0f172a" }}>{w.vesselName}</p>
-                          <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: 2, textTransform: "capitalize" }}>
-                            {w.vesselType} · Sunk {w.sunk}
-                          </p>
-                          <p style={{ fontSize: "0.8125rem", lineHeight: 1.65, color: "#334155", marginTop: "0.5rem" }}>
-                            {w.history}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-              </section>
-            ) : null}
           </div>
 
           {/* ── SIDEBAR ── */}
@@ -1578,158 +1579,17 @@ export default async function SiteDetailPage({
               </div>
             </div>
 
-            {/* Operators */}
-            <div
-              style={{
-                border: "1px solid #e2e8f0",
-                borderRadius: "1.25rem",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                style={{
-                  padding: "1rem 1.375rem",
-                  borderBottom: "1px solid #e2e8f0",
-                  background: "#f1f7fb",
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: "0.8125rem",
-                    fontWeight: 700,
-                    color: "#0f172a",
-                  }}
-                >
-                  Operators running this site
+            {/* Operators + Plan Your Trip moved to location page per story 7.9/7.10 */}
+            {location && (
+              <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.25rem", padding: "1rem 1.375rem" }}>
+                <p style={{ fontSize: "0.75rem", color: "#64748b", lineHeight: 1.6 }}>
+                  Operators, lodging, and trip planning on the{" "}
+                  <Link href={`/locations/${location.slug}`} style={{ color: "#0089de", textDecoration: "none" }}>
+                    {location.name} location page →
+                  </Link>
                 </p>
               </div>
-              <div style={{ padding: 0 }}>
-                {operators.length > 0 ? (
-                  operators.map((op, i) => (
-                    <div
-                      key={op.url}
-                      style={{
-                        padding: "1rem 1.375rem",
-                        borderBottom: i < operators.length - 1 ? "1px solid #e2e8f0" : "none",
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                      }}
-                    >
-                      <div>
-                        <p
-                          style={{
-                            fontSize: "0.875rem",
-                            fontWeight: 600,
-                            color: "#0f172a",
-                          }}
-                        >
-                          {op.label}
-                        </p>
-                        <p
-                          style={{
-                            fontSize: "0.75rem",
-                            color: "#64748b",
-                            marginTop: "0.125rem",
-                          }}
-                        >
-                          {op.kind ? op.kind.charAt(0).toUpperCase() + op.kind.slice(1) : "Day boat"}
-                          {op.isAffiliate ? " · affiliate" : ""}
-                        </p>
-                      </div>
-                      <AffiliateLink
-                        url={op.url}
-                        event="operator_click"
-                        partner={op.label}
-                        siteId={site.id}
-                        isAffiliate={!!op.isAffiliate}
-                        className="shrink-0"
-                      >
-                        <span style={{ fontSize: "0.75rem", fontWeight: 600, color: op.isAffiliate ? "#0089de" : "#64748b", textDecoration: "none" }}>
-                          {op.isAffiliate ? "Book →" : "Visit →"}
-                        </span>
-                      </AffiliateLink>
-                    </div>
-                  ))
-                ) : location ? (
-                  <div style={{ padding: "1rem 1.375rem" }}>
-                    <p style={{ fontSize: "0.8125rem", color: "#64748b", lineHeight: 1.5 }}>
-                      Operators listed on the{" "}
-                      <Link
-                        href={`/locations/${location.slug}`}
-                        style={{ color: "#0089de", textDecoration: "none" }}
-                      >
-                        {location.name} location page
-                      </Link>
-                      .
-                    </p>
-                  </div>
-                ) : (
-                  <div style={{ padding: "1rem 1.375rem" }}>
-                    <p style={{ fontSize: "0.8125rem", color: "#94a3b8" }}>
-                      No operators listed yet.
-                    </p>
-                  </div>
-                )}
-              </div>
-              {operators.some((op) => op.isAffiliate) && (
-                <div style={{ padding: "0.75rem 1.375rem" }}>
-                  <AffiliateDisclosure />
-                </div>
-              )}
-            </div>
-
-            {/* ── PLAN YOUR TRIP ── */}
-            <div
-              style={{
-                border: "1px solid #e2e8f0",
-                borderRadius: "1.25rem",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                style={{
-                  padding: "1rem 1.375rem",
-                  borderBottom: "1px solid #e2e8f0",
-                  background: "#f1f7fb",
-                }}
-              >
-                <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>
-                  Plan your trip
-                </p>
-              </div>
-              <div style={{ padding: 0 }}>
-                {[
-                  {
-                    label: "Getting there",
-                    text: site.getThere || (location ? `Fly into the nearest airport and arrange a transfer to ${location.name}.` : "Check with local operators for access details."),
-                  },
-                  {
-                    label: "Where to stay",
-                    text: location ? `Accommodation options range from budget guesthouses to liveaboards based out of ${location.name}.` : "Options range from budget guesthouses to liveaboards.",
-                  },
-                  {
-                    label: "Who to dive with",
-                    text: operators.length > 0 ? `${operators[0].label}${operators.length > 1 ? ` and ${operators.length - 1} other operator${operators.length > 2 ? "s" : ""} run` : " runs"} this site.` : "Check the location page for vetted local operators.",
-                  },
-                ].map(({ label, text }) => (
-                  <div
-                    key={label}
-                    style={{
-                      padding: "0.875rem 1.375rem",
-                      borderBottom: "1px solid #f1f5f9",
-                    }}
-                  >
-                    <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.25rem" }}>
-                      {label}
-                    </p>
-                    <p style={{ fontSize: "0.8125rem", lineHeight: 1.55, color: "#334155" }}>
-                      {text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

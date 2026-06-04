@@ -126,9 +126,16 @@ Affiliate links are labeled inline at the point of use. The about page contains 
 **Empty query:** Dropdown does not open; no results shown.
 **No results (dropdown):** Dropdown does not render — no "no results" state in the nav dropdown. For full results, the user is directed to `/search?q=` (see §4.9).
 
-### 4.2 AtlasFilterRail
+### 4.2 Atlas filter (AtlasFilterRail)
 
-Left column of the AtlasExplorer grid (`grid lg:grid-cols-[260px_1fr]`). Always visible on desktop. On mobile: collapsed by default, opens as a full-height drawer from the left edge. A "Filters" button in the card grid header triggers the drawer. Drawer backdrop click or an in-drawer "Done" button closes it.
+**Layout — two approved arrangements (chosen at build time).** The filter behavior below is layout-agnostic. Two visual arrangements are approved as peers; either may be implemented and both inherit the identical behavior, taxonomy, and state rules in this section. Mockups: [mockups/filter-layout-A-horizontal-bar.html](mockups/filter-layout-A-horizontal-bar.html), [mockups/filter-layout-B-left-rail.html](mockups/filter-layout-B-left-rail.html). See DESIGN.md for the visual spec of each.
+
+- **Layout A — horizontal filter bar.** A bar above the results, one dropdown per filter category. Wildlife is a single dropdown holding the full categorised taxonomy. Frees the result grid to run full-width (photo-forward, suits casual discovery). The globe sits above or below at full width.
+- **Layout B — left rail with collapsible groups.** A left column (`grid lg:grid-cols-[260px_1fr]`), each filter category a collapsible `<details>` group. Wildlife is one facet containing nested, collapsible sub-groups. All facets are reachable without leaving the rail (power filtering).
+
+**Sticky behavior (both layouts):** The filter surface is sticky and scrolls independently of the results. Only the results list scrolls under it — the filter never scrolls away with the cards. Layout A: the bar pins to the top of the viewport on scroll. Layout B: the rail is `position: sticky` with its own overflow scroll (`max-height: calc(100vh - …)`), pinned while the result grid scrolls beside it. *(This corrects the prior behavior where scrolling the card grid also moved the filter side.)*
+
+**Mobile:** Filters collapse behind a "Filters" button in the results header and open as a full-height drawer. Drawer backdrop click or an in-drawer "Done" button closes it. The wildlife taxonomy renders as collapsible sub-groups inside the drawer.
 
 **Filter groups:**
 1. **Reef state** — three checkboxes: Thriving / Under pressure / Witnessing change. All three on by default. Toggling removes that reef state from results. Unchecking all three produces a no-results state.
@@ -136,8 +143,26 @@ Left column of the AtlasExplorer grid (`grid lg:grid-cols-[260px_1fr]`). Always 
 3. **Region** — five checkboxes by continent order: Asia / Oceania / Indian Ocean / Americas / Atlantic & Mediterranean.
 4. **Month** — twelve checkboxes Jan–Dec. Filters to locations where that month is within `bestMonths`. Multiple months are OR logic (show locations in season for any selected month).
 5. **Thermal stress** — four checkboxes: No stress / Watch / Elevated / Heat alert. Maps to `heatLevel` integer buckets (0 / 1 / 2 / ≥3).
-6. **Wildlife** — six checkboxes: Sharks / Mantas / Turtles / Whales / Dolphins / Dugongs. Filters on `animalTags`.
+6. **Wildlife — categorised taxonomy.** Replaces the prior 6 flat tags. The underlying data is rich (536 distinct species across 356 sites); `animalTags` is derived at build time in `atlas-location.ts`. Wildlife is presented as **named sub-groups**, each holding individual encounter tags. Proposed grouping (final tags subject to the data-coverage rule below):
+
+   | Sub-group | Tags |
+   |---|---|
+   | **Sharks & rays** | Sharks · Hammerheads · Rays & mantas · Eagle rays |
+   | **Marine mammals** | Whales · Dolphins · Seals & sea lions · Dugongs |
+   | **Reptiles & pelagics** | Sea turtles · Large pelagics · Reef fish |
+   | **Macro & critters** | Cephalopods · Frogfish & seahorses · Nudibranchs · Corals & inverts |
+
+   **Data-coverage rule (no empty filters):** Every tag must resolve to ≥1 location in the live data or it is not rendered. Each new tag requires a corresponding derivation rule in `atlas-location.ts` mapping it to species actually present at sites. Tags are filtered on the derived `animalTags`; selecting tags across sub-groups is OR logic. A sub-group header may show a count badge of active tags within it.
 7. **Fresh eyes only** — single toggle. When on, shows only locations where `lastSurveyDays` is null (unknown) or high (stale/cold). Used to find reefs that need new survey data.
+
+**Accessibility of the filter controls (required — extends §8).** *The `.working/`/`mockups/` filter files are static visual references; production controls must meet the following, which the mockups do not themselves demonstrate.*
+- **Real, focusable controls.** Every filter option is a native `<input type="checkbox">` inside its `<label>`, or a `<button role="checkbox" aria-checked>` / `aria-pressed` toggle. No non-focusable `<span>` toggles. Every option is Tab-reachable and operable with Space/Enter (WCAG 2.1.1, 4.1.2).
+- **Layout A dropdown triggers.** Each category button has `aria-expanded`, `aria-controls` (pointing at its panel), and `aria-haspopup="true"`. `Escape` closes the open panel and returns focus to its trigger. Opening a panel moves focus into it; closing returns focus to the trigger.
+- **Layout B groups.** Use native `<details>/<summary>` for facet groups and wildlife sub-groups (browser-handled expand/collapse state, no ARIA workaround) — this is the model to follow.
+- **Mobile drawer.** On open, move focus to the drawer's first control and **trap focus** within it; `Escape` and the "Done" button close it and return focus to the "Filters" trigger. Background content is `inert`/`aria-hidden` while open.
+- **Count badges.** Every numeric active-count badge (category button, sub-group header) pairs the number with visually-hidden text, e.g. "2 active filters" — never a bare digit.
+- **Sticky filter + scroll.** The sticky bar/rail must not trap focus or obscure focused results; ensure focused result cards scroll into view and the sticky surface reflows (does not clip) at 200% zoom. (The sticky bar is not modal — no focus trap; the trap requirement is the mobile drawer only.)
+- **Live result count.** The "Showing N locations" count updates on every filter change, so it lives in an `aria-live="polite"` / `role="status"` region — screen-reader users hear the new count when they toggle a filter.
 
 **Sort options** (rendered as a select or segmented control at the top of the card grid):
 - Best season (default)
@@ -162,15 +187,16 @@ Destination-level card. Links to `/locations/[slug]`.
 
 **Layout:** Stack — 4:3 hero image, then body content.
 
-**Image area:**
-- 4:3 aspect ratio, `object-cover`, full card width.
-- Top-left overlay: reef state badge + "In season now" badge (if `inSeason === true`). Both are pill-shaped with ring-inset border.
-- Bottom-right overlay: skill badge (Beginner / Open water / Advanced / Technical), same pill style.
+**Image area:** *(Single-signal photo — overlays reduced to keep the underwater photo clean.)*
+- 4:3 aspect ratio, `object-cover`, full card width. Always a real underwater photograph (see §5.5 / DESIGN.md photo policy).
+- **Top-left overlay: reef state badge only.** Pill-shaped, dot + label, ring-inset border. This is the *only* element overlaid on the photo.
+- No skill badge and no "In season now" badge on the photo — these move into the card body meta row (below). The photo carries one status signal, not three.
 - Image scales to `scale(1.02)` on card hover (500ms transition).
 
 **Body:**
 - Location name: `text-base font-semibold`, transitions to {colors.brand} on hover.
 - Country: `text-sm`, {colors.muted}.
+- **Meta row** (relocated off the photo): skill/cert chip (Beginner / Open water / Advanced / Technical) + "In season now" chip (when `inSeason === true`). Quiet pill style, sits beneath the title/country. The in-season chip uses both a fill/empty mark and text, never color alone (see §8).
 - Hook: 2-line clamp, `text-sm leading-6`.
 - **Freshness line** (below a thin divider): two dot + label pairs at `text-[11px]`.
   - Thermal dot: always green (`#15a05c`) + "Thermal: today" — thermal data is always from the nightly sync.
@@ -228,6 +254,10 @@ Used wherever a data claim needs explanation. Implemented as a native HTML `<det
 ### 4.8 AffiliateLink
 
 Wraps any commercial partner link. Behavior: renders as an external link with a visible disclosure marker. The affiliate disclosure is stated on the About page; individual links do not duplicate the full disclosure text.
+
+**Accessibility (required, applies everywhere AffiliateLink appears — Plan-your-trip, Gear, sidebar operators):**
+- **New-tab announcement.** Since these open `target="_blank"` (§6.4), the accessible name must include "(opens in new tab)" (visible or visually-hidden). Unannounced context changes fail expectations for SR and cognitive users.
+- **Self-describing name.** The accessible name must identify the destination, e.g. "Book Damai II liveaboard (opens in new tab)" — not a bare operator/hotel name, and not just a "→". A trailing "→" glyph is decorative and `aria-hidden="true"`. Any inline tag ("stay + dive", "affiliate") is part of the accessible name.
 
 ### 4.9 Search results page (`/search?q=`)
 
@@ -300,6 +330,43 @@ A numbered instructional section explaining the dive planning methodology. Appea
 
 **Arrangement:** 2-column grid on desktop (steps 01–02 left, 03–04 right), single column on mobile.
 
+### 4.13a Plan your trip block (location detail)
+
+The single planning surface — and it lives on the **location page only** (the dive-site page carries no booking; see §7.3). Mockup: [mockups/location-plan-your-trip.html](mockups/location-plan-your-trip.html). Replaces the prior arrangement where a dark, high-emphasis operators block visually dominated a quiet getting-there + lodging list, and a hardcoded "See trip options" button always linked to a generic PADI search.
+
+**Information order (top to bottom) — answers "how do I get there, and what do I book?":**
+1. **Getting there** (leads). Renders the structured `getThereStructured` when present (nearest hub → transfer to sites → optional liveaboard note); falls back to the `getThere` text. This is the first thing a trip planner needs.
+2. **What to book** — accommodation and operators sit **directly next to each other as two labeled, equal-weight peer groups**: a "**Where to stay**" group immediately followed by an "**Operators**" group, same card/list treatment and heading scale. Neither dominates; they read as a pair, not a hierarchy.
+
+**Booking-type logic:**
+- **Liveaboard that covers diving** → surfaced as a single combined "Stay + dive" option. When present and covering the dive, a redundant separate operator entry for the same trip is suppressed (a liveaboard *is* the dive operation). Data signal: lodging `kind: "liveaboard"`.
+- **Hotel/resort accommodation** → "Where to stay" peer block. If a resort also books dives, note it inline ("books dives on site") so the user knows an operator is not separately required.
+- **Operators** → shown only when backed by a **real or affiliate URL** (`isAffiliate === true`, or a non-template partner URL). Synthesized generic-search URLs (e.g. `padi.com/dive-shop-search?q={name}`) are **not** rendered as operators — this removes the dead Ogasawara-style link.
+- **No real operator and no dive-capable lodging** → show Getting there + accommodation only. Do not invent operators, do not show a generic search button.
+
+**Affiliate treatment:** Each commercial link uses `AffiliateLink` and is clearly marked (§9.5). The full disclosure lives on the About page.
+
+**Witnessing change variant:** Muted treatment per §5.6 — heading softens to "Plan thoughtfully," links remain, hierarchy quiets. No links removed.
+
+**Sticky:** The block remains sticky in the location page's right column on desktop, consistent with prior behavior, so the booking path is reachable without hunting.
+
+### 4.14 Gear section
+
+Tells divers what kit they need. Mockup: [mockups/location-gear-section.html](mockups/location-gear-section.html). **Lives on the location page only** — the dive-site page carries no gear section (it links up to the location page, alongside booking; see §7.3). Built from the intact data layer (`Site.gearIds`, `Site.siteSpecificGear: SiteGearItem[]`), aggregated across the location's sites. Two layers:
+
+- **Layer A — basic kit (location level).** The standard set for the location, adapting to the region's **water temperature** (wetsuit thickness) and **skill level**. One list for the whole location. Accuracy is mandatory: a wrong wetsuit thickness for the water temp breaks trust — the recommendation must be correct or absent (see journey §10.2 critical requirement).
+- **Layer B — site-specific add-ons, grouped by site.** Specialist gear individual sites demand, e.g. a **reef hook for strong current** at one site, dive light for overhangs at another, SMB for blue-water drift exits. Aggregated from each site's `siteSpecificGear` and **grouped under the site name**, with each group linking down to that site. Only renders items present in data; a site with no add-ons does not appear in Layer B.
+
+**Placement:**
+- **Location detail page** — full Layer A + Layer B, in the page body (§7.2). Each gear item has a quiet "Shop →" link (`AffiliateLink`, Amazon Associates). **No per-item "affiliate" badge** — disclosure is handled once at the section level (see Disclosure below).
+- **Dive-site page** — no gear section; the site sidebar's "Part of [location]" card links up to the location page where gear lives.
+
+**Disclosure:** One quiet disclosure line at the foot of the section ("Some shop links earn us a commission at no cost to you — full disclosure on the About page"). This satisfies the marked-not-hidden affiliate policy (§9.5) at the section level instead of badging every row.
+
+**Empty state:** If a site has no `siteSpecificGear`, render Layer A only; never show an empty Layer B heading.
+
+**Accessibility:** Each layer is a semantic list — `<ul>` with one `<li>` per gear item — so screen readers get item count and list boundaries. The leading emoji/icon per item is decorative (`aria-hidden="true"`); the text name and reason carry the meaning (e.g. the Layer B reason "Reef hook — strong current on the corner" is text, not conveyed by the icon). Gear shop links follow the AffiliateLink rules in §4.8.
+
 ---
 
 ## 5. State patterns
@@ -342,6 +409,17 @@ No illustrations, no calls to action beyond resetting filters.
 | Data type | When absent | Display |
 |---|---|---|
 | Hero image | `heroImageUrl` null | `underwaterPhotoUrl()` falls back to a placeholder; never a broken image |
+
+#### 5.5a Photo sourcing policy (locations & inspiration cards)
+
+Every location-representing surface must render a **real underwater photograph of the place it represents** — never a CSS gradient as the primary surface, never a mismatched stock image. The reference standard is the `where-to-see/[species]` page, which renders real underwater photos.
+
+- **Source of truth:** Locations carry no image of their own. The location's photo is **borrowed from its own dive sites** — `atlas-location.ts` already computes this, preferring a site photo that passes `isUnderwaterQualityPhoto()` (underwater-only gate, per the project rule that every hero must be an underwater photograph). Because the photo comes from the location's sites, it matches the location.
+- **Surfaces that must render the borrowed photo:**
+  - **Location detail hero** — currently draws a gradient only; must render the borrowed underwater photo behind the hero content. **Alt text:** informative, naming the location (and ideally the source site), e.g. "Underwater reef at [location]" — never `alt=""`. The gradient base layer (when a photo is present) is decorative. Hero content must sit within the dark bottom band of the legibility overlay so white text holds 4.5:1 on any photo (add a localized scrim behind the H1/breadcrumb if needed).
+  - **Homepage inspiration grid** ("Worth going for" / "Something remarkable") — featured cards currently draw gradients; must render the borrowed underwater photo.
+- **Fallback order:** (1) location's own `heroImageUrl` if ever populated → (2) first site photo passing the underwater check → (3) any site photo → (4) the underwater placeholder from `underwaterPhotoUrl()`. The gradient may remain only as a base layer *under* the photo (for load-in / letterboxing), never as the visible surface when a photo exists.
+- **Underwater-only:** Reject surface/dock/specimen/illustration images at every tier (project rule `hero_must_be_underwater`).
 | Coral cover | No records | Panel not rendered; no empty bar |
 | Sighting evidence | No `sightings` records for site | "Sighting evidence pending" chip on SiteCard; no species section on site detail |
 | Last survey | `lastSurveyDays` null | "Last eyes underwater: unknown" with red freshness dot |
@@ -411,49 +489,56 @@ All methodology and source disclosures use `<details>/<summary>`. No JavaScript 
 ### 7.2 Location detail flow
 
 1. Arrive from: Atlas card click, global search result, or direct link.
-2. Breadcrumb: "← Atlas" / country.
-3. Reef state pill (dot + label) directly below breadcrumb.
-4. H1: location name. Metadata row: country · region · best season.
-5. Jump nav tabs (Overview / Conditions / Dive sites) — in-page anchor links.
-6. **Overview section:**
+2. **Hero image:** real underwater photograph borrowed from the location's own dive sites (§5.5a). Renders behind the hero content (breadcrumb, reef-state pill, H1). No bare gradient — the gradient is at most a base layer under the photo.
+3. Breadcrumb: "← Atlas" / country.
+4. Reef state pill (dot + label) directly below breadcrumb.
+5. H1: location name. Metadata row: country · region · best season.
+6. Jump nav tabs (Overview / Conditions / Dive sites) — in-page anchor links.
+7. **Overview section:**
    - If reef state is Witnessing change: reef science panel (coral cover bars, fishing pressure) renders first, before descriptive copy. Degraded-reef honest label renders (§5.6).
    - Otherwise: description paragraph, optional extended description, then reef science data.
-7. **Conditions section:**
+8. **Conditions section:**
    - Good season month grid (12 cells, current month highlighted with `ring-2`).
    - Coral cover panel: two horizontal bars — decade ago and today. Each bar has a `DataFreshnessLabel` (snapshot variant).
    - Fishing pressure panel: labeled level (Low / Moderate / High / Very high) with `DataFreshnessLabel`.
    - Bleaching alert: NOAA CRW current level label with `DataFreshnessLabel` (live variant).
-8. **Dive sites section:** grid of SiteCards for all sites at this location. Each card is in-season aware.
-9. Species encounters by location (encounter cards — cinematic 21:9 ratio per DESIGN.md).
-10. Operators / lodging / gear: affiliate links, clearly labeled.
-11. Planning block: `getThere` text, conditions summary. If reef state is Witnessing change, renders in muted style per §5.6.
+9. **Dive sites section:** grid of SiteCards for all sites at this location. Each card is in-season aware.
+10. Species encounters by location (encounter cards — cinematic 21:9 ratio per DESIGN.md).
+11. **Gear section** (full — see §4.14): Layer A basic kit for the location (region water temp + skill), then Layer B site-specific add-ons aggregated across the location's sites and grouped by site name (e.g. "Blue Corner — reef hook for strong current"), each group linking down to that site. Gear lives here, not on the dive-site page. Never invents gear absent from site data.
+12. **Plan your trip block** (restructured — see §4.13a): logical order with equal weight across booking types — **Getting there leads**, then **what to book** (accommodation and operators as peers). Liveaboard lodging that covers diving is surfaced as a combined "stay + dive" option and suppresses a redundant separate operator. No generic-search CTA button. If reef state is Witnessing change, renders in muted style per §5.6.
 
 ### 7.3 Site detail flow
 
+**Two-column model (clarified).** Mockup: [mockups/site-layout-resequence.html](mockups/site-layout-resequence.html). The confusing prior flow mixed marine conditions into the planning sidebar (sidebar ran depth profile → location → thermal conditions → operators, so "conditions" sat between context and booking). Corrected split:
+- **Centre column = the dive itself**, read top to bottom: **about this site (first)** → what you'll see → conditions → how to dive. All marine-conditions content (including the thermal/live panel) lives here, in the Conditions section, where conditions belong. Gear is not on the dive-site page — it lives on the location page (§4.14).
+- **Right sidebar = orient only**, a short clean narrative: Depth profile (visual orientation) → Part of [location] (geographic context, links up to plan the trip). **No booking on the dive site** — operators and accommodation live on the location page (§4.13a). No conditions content competes in the sidebar. Nothing is rendered in two competing places.
+
+**Centre column order — About leads.** "About this site" is **first**: orient the reader on what the site *is* before listing species and data.
 1. Arrive from: SiteCard click, location page sites section, direct link.
 2. Breadcrumb: Atlas / Location / Site name.
 3. "← Back to [Location]" link below breadcrumb.
-4. **Meta badges row:** "Dive site" label · country · depth range · skill level · season status · reef state pill (ml-auto, right-aligned).
+4. **Meta badges row:** "Dive site" label · country · depth range · skill level · season status · reef state pill (ml-auto, right-aligned). This is the single source of depth/skill/season meta — not duplicated in the sidebar.
 5. H1: site name.
 6. Hero image: `h-72 rounded-2xl object-cover`. Always an underwater photograph.
-7. Description paragraph.
-8. Optional briefing note: blue-tinted panel with site-specific diver advisory.
-9. Optional reef science stamp: inline banner showing coral cover %, fishing level. Links to the parent location page. Only rendered when `coralCover` or `fishingPressure` data exists.
-10. **"What you'll see" section:**
+7. **"About this site" (first content section):** description / history — what the site is (the wall, the current-swept corner, any wreck history). Optional briefing note (blue-tinted advisory) and optional reef science stamp (coral cover %, fishing level, links to parent location; only when data exists) sit here.
+8. **"What you'll see" section:**
     - Top-right: `DataFreshnessLabel` showing survey method and date.
     - Methodology disclosure (`<details>/<summary>`, "How is this calculated?").
     - Species grid: each card shows photo, common name, scientific name, IUCN badge, reliability label (Year round / Seasonal / Rare), best months chips, and sighting evidence row (confidence dot + record count + radius + last confirmed `<time datetime="...">` element).
     - Sources disclosure: collapsible list of data sources.
     - Photo credits disclosure: collapsible list of iNaturalist attributions.
-11. **"Conditions" section:**
+9. **"Conditions" section:**
     - Season calendar: 12 monthly cells. Current month gets `ring-2` (not color alone).
     - Conditions table: month × (water temp / visibility / current). Current month column is highlighted.
     - Current level chips: color-coded by strength (none / mild / moderate / strong).
-12. **"Gear & planning" section:**
-    - Site-specific gear list.
-    - Wreck details (if applicable).
-    - "Book this trip" CTA card: routes to parent location page (`/locations/[slug]`).
-13. Duplicate "Planning a trip?" inline block at bottom: also routes to location page.
+    - **Thermal status (NOAA CRW live panel)** — relocated here from the sidebar. DHW + SST anomaly + status label with `DataFreshnessLabel` (live variant). This is conditions content and belongs in the Conditions section.
+10. **"How to dive this site" section:** numbered sequence (time arrival → descend & orient → work with current → surface & debrief). This is the last centre-column section — gear is not here; it lives on the location page (§4.14).
+
+**Right sidebar order (orient only):**
+- **Depth profile** — depth visualization, min/max labels.
+- **Part of [location]** — parent location card, with a "View location & plan your trip →" link to the location page (where getting-there, operators, accommodation, **and gear** live). No operators list and no gear on the site page.
+
+*(Removed: operators / booking from the sidebar — planning is location-page only; the standalone thermal panel — now in Conditions; the duplicate bottom "Planning a trip?" block.)*
 
 ### 7.4 Species encounter flow (`/where-to-see/[species]`)
 
@@ -555,9 +640,10 @@ Filter state (AtlasExplorer), page routes, and all navigational state live in th
 
 Affiliate and operator partner links are:
 - Rendered via the `AffiliateLink` component.
-- Visually distinguishable from editorial links.
-- Grouped in "Operators" / "Lodging" sections on location pages and in the "Gear & planning" / "Book this trip" sections on site pages.
+- Visually distinguishable from editorial links (a "Shop →" / booking affordance, not an inline editorial link).
+- Grouped in the "Where to stay" / "Operators" peer groups on location pages (booking is location-page only, §4.13a) and in the Gear section on site pages.
 - Never interleaved with data claims or editorial descriptions.
+- **Disclosed at the group/section level, not badged per item.** For repeated commercial lists (gear items, operator/lodging rows) a single quiet disclosure line at the foot of the section satisfies "marked, not hidden" — individual rows do not carry an "affiliate" tag.
 - Accompanied by the full affiliate disclosure on the About page.
 
 ---

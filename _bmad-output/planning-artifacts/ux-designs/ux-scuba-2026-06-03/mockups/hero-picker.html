@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0b1e32;font-family:system-ui,sans-serif;padding:2rem;}
+h1{color:#fff;font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0.5;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.option{position:relative;border-radius:1rem;overflow:hidden;aspect-ratio:16/9;cursor:pointer;border:2px solid transparent;transition:border-color 0.2s;}
+.option:hover{border-color:#0089de;}
+.option img{width:100%;height:100%;object-fit:cover;}
+.overlay{position:absolute;inset:0;background:linear-gradient(175deg,rgba(2,20,34,0.45) 0%,rgba(4,28,51,0.35) 30%,rgba(5,39,69,0.25) 55%,rgba(3,25,40,0.55) 100%);}
+.label{position:absolute;bottom:1rem;left:1rem;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:rgba(0,0,0,0.4);padding:0.3rem 0.6rem;border-radius:4px;backdrop-filter:blur(4px);}
+</style>
+</head>
+<body>
+<h1>Hero photo options — click to preview full screen</h1>
+<div class="grid">
+
+<div class="option" onclick="open(this.querySelector('img').src.split('?')[0]+'?w=3840&q=95&fit=crop','_blank')">
+  <img src="https://images.unsplash.com/photo-1675829604010-509cca710300?w=900&q=85&fit=crop" alt=""/>
+  <div class="overlay"></div>
+  <div class="label">A — Manta ray · Grand Cayman</div>
+</div>
+
+<div class="option" onclick="open(this.querySelector('img').src.split('?')[0]+'?w=3840&q=95&fit=crop','_blank')">
+  <img src="https://images.unsplash.com/photo-1692810122794-f321b05c74ad?w=900&q=85&fit=crop" alt=""/>
+  <div class="overlay"></div>
+  <div class="label">B — Manta ray · Bali</div>
+</div>
+
+<div class="option" onclick="open(this.querySelector('img').src.split('?')[0]+'?w=3840&q=95&fit=crop','_blank')">
+  <img src="https://images.unsplash.com/photo-1717292741411-2db0332fbf3c?w=900&q=85&fit=crop" alt=""/>
+  <div class="overlay"></div>
+  <div class="label">C — Manta ray · Australia</div>
+</div>
+
+<div class="option" onclick="open(this.querySelector('img').src.split('?')[0]+'?w=3840&q=95&fit=crop','_blank')">
+  <img src="https://images.unsplash.com/photo-1464925029952-5d9ca1cf4f64?w=900&q=85&fit=crop" alt=""/>
+  <div class="overlay"></div>
+  <div class="label">D — Whale shark · open water</div>
+</div>
+
+<div class="option" onclick="open(this.querySelector('img').src.split('?')[0]+'?w=3840&q=95&fit=crop','_blank')">
+  <img src="https://images.unsplash.com/photo-1628341854537-467051b49414?w=900&q=85&fit=crop" alt=""/>
+  <div class="overlay"></div>
+  <div class="label">E — Sea turtle · open blue</div>
+</div>
+
+<div class="option" onclick="open(this.querySelector('img').src.split('?')[0]+'?w=3840&q=95&fit=crop','_blank')">
+  <img src="https://images.unsplash.com/photo-1518829882080-dd4170e69d7e?w=900&q=85&fit=crop" alt=""/>
+  <div class="overlay"></div>
+  <div class="label">F — Manta ray · grey blue</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Location — Gear section (basic kit + site-specific add-ons)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--ink:#0f172a;--body:#334155;--muted:#64748b;--dim:#94a3b8;--hairline:#e2e8f0;--surface:#f1f7fb;--white:#fff;--amber:#e8962f;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:#f6f9fc;color:var(--ink);-webkit-font-smoothing:antialiased;padding:2.5rem;}
+.note{max-width:700px;margin:0 auto 1.5rem;background:#0b1e32;color:#cfe6f7;padding:0.85rem 1.2rem;border-radius:0.7rem;font-size:0.82rem;line-height:1.5;}
+.note b{color:#fff;}
+.card{max-width:700px;margin:0 auto;border:1px solid var(--hairline);border-radius:1rem;background:#fff;box-shadow:0 10px 30px -16px rgba(16,40,70,0.25);padding:1.6rem 1.8rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand);}
+.kicker{font-size:0.82rem;color:var(--muted);margin-top:0.2rem;}
+.layer{margin-top:1.3rem;}
+.layer-lbl{font-family:'IBM Plex Mono',monospace;font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.5rem;}
+.layer-lbl .ln{flex:1;height:1px;background:var(--hairline);}
+ul.items{list-style:none;}
+.item{display:flex;align-items:flex-start;gap:0.75rem;padding:0.55rem 0;}
+.item .ic{font-size:1.1rem;line-height:1.4;width:1.6rem;text-align:center;flex-shrink:0;}
+.item .tx{flex:1;}
+.item .nm{font-size:0.9rem;font-weight:600;}
+.item .nt{font-size:0.78rem;color:var(--muted);margin-top:0.1rem;}
+.item a.buy{font-size:0.72rem;font-weight:600;color:var(--brand);text-decoration:none;white-space:nowrap;}
+/* site-grouped add-ons */
+.siteadd{margin-top:0.5rem;}
+.site-name{font-size:0.74rem;font-weight:700;color:var(--ink);margin:0.7rem 0 0.1rem;display:flex;align-items:center;gap:0.4rem;}
+.site-name a{color:var(--brand);text-decoration:none;font-size:0.66rem;font-weight:600;}
+.layerB .item{background:rgba(232,150,47,0.06);border:1px solid rgba(232,150,47,0.2);border-radius:0.6rem;padding:0.6rem 0.8rem;margin-top:0.35rem;}
+.layerB .nt b{color:var(--amber);}
+.disc{font-size:0.66rem;color:var(--dim);margin-top:1.2rem;border-top:1px solid var(--hairline);padding-top:0.8rem;}
+</style>
+</head>
+<body>
+<div class="note">LOCATION ONLY · <b>Gear section</b>. Gear now lives on the <b>location page</b> (not the dive site). <b>Layer A</b> = basic kit for the region's water temp + skill. <b>Layer B</b> = site-specific add-ons aggregated across the location's sites, grouped by site (each links down to that site). No per item affiliate badges.</div>
+
+<div class="card">
+  <div class="eyebrow">Gear for Palau</div>
+  <div class="kicker">Basic kit for 28°C water and Advanced diving, plus what specific sites demand.</div>
+
+  <!-- LAYER A — basic kit for the location -->
+  <div class="layer">
+    <div class="layer-lbl">Basic kit — the same across Palau<span class="ln"></span></div>
+    <ul class="items">
+      <li class="item"><span class="ic" aria-hidden="true">🤿</span><span class="tx"><div class="nm">Mask, fins, snorkel</div><div class="nt">Standard set. Bring your own for fit.</div></span></li>
+      <li class="item"><span class="ic" aria-hidden="true">🦺</span><span class="tx"><div class="nm">BCD + regulator</div><div class="nt">Rental available from operators.</div></span><a class="buy" href="#">Shop →</a></li>
+      <li class="item"><span class="ic" aria-hidden="true">🌡️</span><span class="tx"><div class="nm">3mm shorty or skin</div><div class="nt">Matched to 28°C water — light exposure protection.</div></span><a class="buy" href="#">Shop →</a></li>
+      <li class="item"><span class="ic" aria-hidden="true">⌚</span><span class="tx"><div class="nm">Dive computer</div><div class="nt">Required for the depth and repetitive profiles here.</div></span><a class="buy" href="#">Shop →</a></li>
+    </ul>
+  </div>
+
+  <!-- LAYER B — site-specific, grouped by site -->
+  <div class="layer layerB">
+    <div class="layer-lbl">What specific sites demand<span class="ln"></span></div>
+
+    <div class="siteadd">
+      <div class="site-name">Blue Corner <a href="#">view site →</a></div>
+      <ul class="items">
+        <li class="item"><span class="ic" aria-hidden="true">🪝</span><span class="tx"><div class="nm">Reef hook</div><div class="nt"><b>Strong current on the corner.</b> Hook in at the plateau edge to hold position while the sharks and jacks come through.</div></span><a class="buy" href="#">Shop →</a></li>
+      </ul>
+    </div>
+
+    <div class="siteadd">
+      <div class="site-name">Blue Holes <a href="#">view site →</a></div>
+      <ul class="items">
+        <li class="item"><span class="ic" aria-hidden="true">🔦</span><span class="tx"><div class="nm">Dive light</div><div class="nt"><b>Cavern swim-throughs.</b> Light the chambers and signal in low ambient light.</div></span><a class="buy" href="#">Shop →</a></li>
+      </ul>
+    </div>
+
+    <div class="siteadd">
+      <div class="site-name">German Channel <a href="#">view site →</a></div>
+      <ul class="items">
+        <li class="item"><span class="ic" aria-hidden="true">🎈</span><span class="tx"><div class="nm">SMB + reel</div><div class="nt"><b>Blue-water drift exits.</b> Deploy before you leave the cleaning station so the boat can track you.</div></span><a class="buy" href="#">Shop →</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="disc">Basic kit adapts to the location's water temperature and certification level; add-ons reflect each site's conditions. Some shop links earn us a commission at no cost to you — full disclosure on the About page.</div>
+</div>
+</body>
+</html>

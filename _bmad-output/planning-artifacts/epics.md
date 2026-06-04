@@ -5,6 +5,13 @@ inputDocuments:
   - _bmad-output/planning-artifacts/scubaseason-prd/architecture.md
   - _bmad-output/planning-artifacts/ux-designs/ux-scuba-2026-06-03/DESIGN.md
   - _bmad-output/planning-artifacts/ux-designs/ux-scuba-2026-06-03/EXPERIENCE.md
+  - _bmad-output/planning-artifacts/ux-designs/ux-scuba-2026-06-03/.decision-log.md
+  - _bmad-output/planning-artifacts/ux-designs/ux-scuba-2026-06-03/review-accessibility.md
+session2Update:
+  date: 2026-06-04
+  scope: 10 homepage/location/site refinements from the Session 2 UX update
+  appendedEpic: "Epic 7: Session 2 UX Refinements"
+  stepsCompleted: ["step-01-validate-prerequisites", "step-02-design-epics", "step-03-create-stories", "step-04-final-validation"]
 ---
 
 # scubaSeason.Fun - Epic Breakdown
@@ -139,6 +146,41 @@ UX-DR29: EditorialHook — Source Serif 4 serif, 1.0625rem, line-height 1.8, col
 | NFR5–6 | Epic 1 | Data integrity + compliance |
 | All UX-DRs | Epics 1–4 | Components in Epic 1, applied in Epics 2–4 |
 
+## Session 2 — UX Refinement Requirements (2026-06-04)
+
+These UX Design Requirements capture the delta introduced by the Session 2 UX update (decision log D06–D18 + accessibility review). They modify behavior specified in Epics 1–4 and are decomposed in **Epic 7** below. Two items are open build-time decisions, flagged inline.
+
+| ID | Requirement | Decision log | Touches |
+|---|---|---|---|
+| UX-DR-S2-1 | **Location card photo overlay reduced to one signal.** Only the reef-state badge sits on the card photo (top-left). The in-season and skill/cert indicators move OFF the photo into a body meta row beneath the title. In-season chip uses mark + text (●/text), not color alone. | D06 | `reef-location-card.tsx` |
+| UX-DR-S2-2 | **Expand the wildlife filter to a categorised taxonomy.** Replace the 6 flat tags with named sub-groups (Sharks & rays / Marine mammals / Reptiles & pelagics / Macro & critters) holding individual encounter tags. Requires expanding the `animalTags` derivation in `atlas-location.ts` so every new tag maps to species actually present at sites. Cross-group selection is OR logic. | D07 | `atlas-filter-rail.tsx`, `atlas-location.ts` |
+| UX-DR-S2-3 | **🔶 OPEN — Wildlife-tag data-coverage pass.** Every proposed tag must resolve to ≥1 location in the live data or be dropped (no empty filters). Run a coverage check against `atlas-location.ts` derivation to finalize the tag list before the taxonomy ships. | D07 | `atlas-location.ts` (investigation) |
+| UX-DR-S2-4 | **🔶 OPEN — Filter layout choice (A vs B).** Two approved layouts: A horizontal sticky bar with category dropdowns; B left rail with collapsible groups (wildlife as nested sub-groups). Both inherit the same behavior/taxonomy/a11y. Pick one to implement (B is closest to current code; A is more photo-forward). | D08 | `atlas-filter-rail.tsx`, `atlas-explorer.tsx` |
+| UX-DR-S2-5 | **Sticky filter, scrolling results.** The filter surface is sticky/pinned and scrolls independently; only the results list scrolls. Layout A bar pins to top on scroll; Layout B rail is `position: sticky` with its own overflow. | D09 | `atlas-explorer.tsx`, `atlas-filter-rail.tsx` |
+| UX-DR-S2-6 | **Render real underwater photos on location hero + homepage inspiration cards.** Replace CSS gradients with the borrowed underwater site photo (already computed in `atlas-location.ts:105` via `isUnderwaterQualityPhoto`). Photo matches the location (borrowed from its own sites); underwater-only; gradient is base/letterbox only. Informative alt names the location. | D10 | `page.tsx`, `locations/[slug]/page.tsx`, `atlas-location.ts` |
+| UX-DR-S2-7 | **Rebuild the location "Plan your trip" block.** Getting there leads; then "Where to stay" and "Operators" as two adjacent equal-weight peer groups (no dominant dark operators panel). Liveaboard covering diving → combined "stay + dive" row, suppresses redundant operator. Drop the hardcoded generic-PADI "See trip options" button. Operators only when backed by a real/affiliate URL. Section-level disclosure, not per-item badges. **Location page only.** | D11, D17 | `locations/[slug]/page.tsx` |
+| UX-DR-S2-8 | **Gear section on the LOCATION page only.** Layer A basic kit for the location (region water temp + skill); Layer B site-specific add-ons aggregated from `siteSpecificGear`, grouped by site name, each linking down to its site. Quiet "Shop →" links, no per-item affiliate badge, section-level disclosure. **Remove gear from the dive-site page entirely.** | D12, D18 | `locations/[slug]/page.tsx`, `sites/[slug]/page.tsx` |
+| UX-DR-S2-9 | **Re-sequence the dive-site detail page.** Centre column About-first: About → What you'll see → Conditions (incl. the relocated NOAA thermal/live panel) → How to dive. Sidebar = orient only: Depth profile → Part of [location] (links up to plan + gear). Remove from sidebar: operators/booking, the standalone thermal panel, and the duplicate bottom "Planning a trip?" block. | D13, D17, D18 | `sites/[slug]/page.tsx` |
+| UX-DR-S2-10 | **Filter-control accessibility.** Real focusable controls (native checkbox / `aria-pressed`). Layout A dropdown triggers: `aria-expanded` + `aria-controls` + `aria-haspopup`, Escape closes + returns focus. Layout B: native `<details>`. Mobile drawer: focus trap + `aria-modal` + background `inert`, focus returns to trigger. Count badges carry visually-hidden text ("2 active filters"). Result count in `aria-live="polite"`/`role="status"`. | a11y review (BLOCK 1–4) | `atlas-filter-rail.tsx` |
+| UX-DR-S2-11 | **Contrast + link semantics.** Active chip/tag/button tinted text `#0089de` → `#1d5d90` (AA on brand tint). AffiliateLink accessible name includes "(opens in new tab)" + self-describing destination; decorative `→` `aria-hidden`. Gear layers as `<ul>/<li>`; leading emoji `aria-hidden`. Hero/inspiration `<img>` informative alt naming the location. | a11y review (FLAG-1/3/4/5, NOTE-3) | `atlas-filter-rail.tsx`, `affiliate-link.tsx`, gear + hero render sites |
+
+**Traceability:** UX-DR-S2-1→9 map to the 10 user-reported issues (Issues 7 & 8 both land in UX-DR-S2-7). UX-DR-S2-10/11 bundle the accessibility-review findings folded into the spines. The two 🔶 OPEN items are surfaced as explicit stories in Epic 7.
+
+### Epic 7 story sequence & coverage (approved 2026-06-04)
+
+| Story | Covers | Gated by |
+|---|---|---|
+| 7.1 — 🔶 Decision: filter layout A (bar) vs B (rail) | S2-4 | — (decide first) |
+| 7.2 — 🔶 Wildlife-tag coverage pass (finalize tags in `atlas-location.ts`) | S2-3 | — (investigation) |
+| 7.3 — Categorised wildlife filter taxonomy | S2-2 | 7.1, 7.2 |
+| 7.4 — Sticky filter, scrolling results | S2-5 | 7.1 |
+| 7.5 — Filter-control accessibility | S2-10, S2-11 (filter) | 7.1, 7.3 |
+| 7.6 — Location card: single-signal photo + body meta row | S2-1 | — |
+| 7.7 — Real underwater photos (location hero + inspiration grid) | S2-6, S2-11 (alt) | — |
+| 7.8 — Location "Plan your trip" rebuild | S2-7, S2-11 (links) | — |
+| 7.9 — Gear section on location page (remove from site) | S2-8 | — |
+| 7.10 — Dive-site re-sequence (About first; sidebar orient-only) | S2-9 | 7.9 |
+
 ## Epic List
 
 ### Epic 1: Design System & Core Components
@@ -164,6 +206,10 @@ The species-chaser promise becomes honest — zero-evidence site count drops bel
 ### Epic 6: Data Depth — MERMAID & IUCN
 Reef health shows a trend, not just a snapshot. Coral cover displays multi-year trajectory via MERMAID. IUCN conservation status badges go live (non-commercial use — no license blocker).
 **FRs covered:** FR36, UX-DR6 (IucnBadge activate), NFR2
+
+### Epic 7: Session 2 UX Refinements
+The 10 homepage/location/site refinements from the Session 2 UX update land: a cleaner card photo, a much richer categorised wildlife filter that stays put while results scroll, real underwater photos on locations, a clearer location planning block, gear consolidated onto the location page, and a re-sequenced dive-site page that reads as "the dive." Accessibility-review findings ship with the changes. Two open build-time decisions (filter layout, wildlife-tag coverage) are resolved first.
+**Requirements covered:** UX-DR-S2-1 … UX-DR-S2-11
 
 ---
 
@@ -1380,3 +1426,333 @@ So that I can understand how every number is calculated and navigate fully by ke
 **Given** any text on any surface
 **When** contrast is measured
 **Then** meets WCAG AA: 4.5:1 small text, 3:1 large text
+
+---
+
+## Epic 7: Session 2 UX Refinements
+
+The 10 homepage/location/site refinements from the Session 2 UX update (decision log D06–D18, accessibility review). Modifies surfaces from Epics 2–4; stands alone. Stories are ordered so the two open build-time decisions (7.1, 7.2) resolve before the filter work they gate, and gear leaves the site page (7.9) before the site re-sequence (7.10). Source of truth: DESIGN.md + EXPERIENCE.md (final 2026-06-04).
+
+### Story 7.1: Decide and record the filter layout (A vs B)
+
+As the product owner,
+I want one filter layout chosen and recorded,
+So that the filter stories build against a single target without rework.
+
+**Acceptance Criteria:**
+
+**Given** the two approved layouts (A horizontal bar, B left rail) in EXPERIENCE.md §4.2 and mockups `filter-layout-A-horizontal-bar.html` / `filter-layout-B-left-rail.html`
+**When** a layout is chosen
+**Then** the decision is recorded in the UX decision log and EXPERIENCE.md §4.2 marks the chosen layout as selected, retaining the other as the rejected alternative
+
+**Given** the current implementation is already a left rail
+**When** the choice is weighed
+**Then** the decision notes migration cost explicitly (B ≈ minimal churn, A = restructure plus globe relayout)
+
+**Given** this decision is open
+**When** filter stories 7.3–7.5 are scheduled
+**Then** none of them start until 7.1 is closed
+
+> Decision/doc story — no production code beyond the spine/log update.
+
+---
+
+### Story 7.2: Wildlife-tag data-coverage pass
+
+As a developer,
+I want every proposed wildlife tag verified against live data,
+So that no filter option ever returns zero locations.
+
+**Acceptance Criteria:**
+
+**Given** the proposed taxonomy (Sharks & rays / Marine mammals / Reptiles & pelagics / Macro & critters and their tags, EXPERIENCE.md §4.2)
+**When** the `animalTags` derivation in `atlas-location.ts` is extended and run
+**Then** each candidate tag maps to ≥1 location via species actually present at that location's sites
+
+**Given** a candidate tag resolves to 0 locations
+**When** the list is finalized
+**Then** that tag is dropped from the shipped taxonomy and the drop is logged
+
+**Given** the pass is complete
+**When** handing off to Story 7.3
+**Then** the finalized tag list and per-tag location counts are recorded
+
+**Given** the change
+**When** building
+**Then** it remains build-time only (data shape unchanged beyond the expanded `animalTags`)
+
+---
+
+### Story 7.3: Categorised wildlife filter taxonomy
+
+As a diver,
+I want to filter locations by a rich set of categorised wildlife encounters,
+So that I can find where to see specific animals.
+
+**Acceptance Criteria:**
+
+**Given** the finalized tag list (7.2) and chosen layout (7.1)
+**When** the wildlife facet renders
+**Then** tags appear under named sub-groups (Sharks & rays / Marine mammals / Reptiles & pelagics / Macro & critters), replacing the 6 flat tags
+
+**Given** the user selects tags across multiple sub-groups
+**When** results compute
+**Then** matching is OR logic on the derived `animalTags`
+
+**Given** a sub-group has active selections
+**When** it renders
+**Then** its header shows an active-count badge
+
+**Given** a wildlife filter changes
+**When** state updates
+**Then** the `a` querystring param updates via `router.replace`, default omitted, and the view is shareable
+
+**Given** mobile
+**When** the filter drawer opens
+**Then** the taxonomy renders as collapsible sub-groups
+
+---
+
+### Story 7.4: Sticky filter, scrolling results
+
+As a diver,
+I want the filter to stay in place while I scroll results,
+So that I can refine without losing the controls.
+
+**Acceptance Criteria:**
+
+**Given** Layout A
+**When** the user scrolls
+**Then** the filter bar pins to the top of the viewport and only the results grid scrolls beneath it
+
+**Given** Layout B
+**When** the user scrolls
+**Then** the rail is `position: sticky` with its own overflow (`max-height: calc(100vh - …)`) and the results grid scrolls beside it
+
+**Given** long result content
+**When** scrolling
+**Then** the filter surface never scrolls away with the cards (corrects the prior behavior where the card-grid scroll moved the filter)
+
+---
+
+### Story 7.5: Filter-control accessibility
+
+As a keyboard or screen-reader user,
+I want fully operable, announced filter controls,
+So that I can filter without a mouse.
+
+**Acceptance Criteria:**
+
+**Given** any filter option
+**When** focused
+**Then** it is a real control (native `<input type="checkbox">` or `<button aria-pressed>`), reachable by Tab and togglable by Space/Enter
+
+**Given** a Layout A dropdown trigger
+**When** rendered
+**Then** it has `aria-expanded` + `aria-controls` + `aria-haspopup`; Escape closes and returns focus to the trigger; opening moves focus into the panel
+
+**Given** Layout B facet and wildlife sub-groups
+**When** rendered
+**Then** they use native `<details>/<summary>`
+
+**Given** the mobile filter drawer is open
+**When** navigating by keyboard
+**Then** focus is trapped within it, `aria-modal="true"` + a label are set, the background is `inert`; Done/backdrop close returns focus to the "Filters" trigger
+
+**Given** an active-count badge
+**When** announced
+**Then** it carries visually-hidden text (e.g. "2 active filters"), never a bare digit
+
+**Given** a filter toggles
+**When** results change
+**Then** the "Showing N locations" count sits in an `aria-live="polite"` / `role="status"` region
+
+**Given** any active chip/tag/button tinted text
+**When** rendered
+**Then** it uses `#1d5d90` (not `#0089de`) for AA on the brand tint, and each chip `×` has an accessible label
+
+---
+
+### Story 7.6: Location card — single-signal photo + body meta row
+
+As a casual browser,
+I want a clean card photo with status in the body,
+So that the image isn't cluttered.
+
+**Acceptance Criteria:**
+
+**Given** a ReefLocationCard
+**When** rendered
+**Then** only the reef-state badge overlays the photo (top-left); no skill badge and no in-season badge on the photo
+
+**Given** the card body
+**When** rendered
+**Then** a meta row beneath the title/country shows the skill/cert chip and, when `inSeason`, an in-season chip
+
+**Given** the in-season chip
+**When** rendered
+**Then** it uses a `●`/text mark plus label (not color alone)
+
+**Given** a Witnessing change card
+**When** rendered
+**Then** the quietness rules (no hover lift, no cheerful animation) are unchanged
+
+---
+
+### Story 7.7: Real underwater photos on location hero + inspiration grid
+
+As a diver,
+I want real underwater photos that match each place,
+So that the product feels authentic, not decorative.
+
+**Acceptance Criteria:**
+
+**Given** a location detail hero
+**When** rendered
+**Then** it shows the borrowed underwater site photo (`atlas-location.ts` via `isUnderwaterQualityPhoto`), not a bare gradient; the gradient is at most a base/letterbox layer under the photo
+
+**Given** the homepage inspiration grid cards ("Worth going for")
+**When** rendered
+**Then** each shows the borrowed underwater photo, not a CSS gradient
+
+**Given** no underwater-passing site photo exists
+**When** falling back
+**Then** the order is location `heroImageUrl` → first underwater-passing site photo → any site photo → `underwaterPhotoUrl()` placeholder
+
+**Given** any hero/inspiration `<img>`
+**When** rendered
+**Then** its `alt` is informative and names the location (never `alt=""`)
+
+**Given** hero content sits over the photo
+**When** rendered
+**Then** it stays within the dark overlay band (local scrim if needed) so white text holds 4.5:1
+
+---
+
+### Story 7.8: Location "Plan your trip" rebuild
+
+As a trip planner,
+I want clear getting-there plus equal accommodation and operators,
+So that I know how to get there and what to book.
+
+**Acceptance Criteria:**
+
+**Given** the Plan your trip block (location page only)
+**When** rendered
+**Then** Getting there leads — structured `getThereStructured` when present (nearest hub → transfer → optional liveaboard note), else the `getThere` text
+
+**Given** the booking section
+**When** rendered
+**Then** "Where to stay" and "Operators" appear as two adjacent labeled equal-weight peer groups, same row treatment, neither using the old dark `#0b1e32` dominant panel
+
+**Given** a liveaboard lodging that covers diving
+**When** rendered
+**Then** it shows as a combined "stay + dive" row under Where to stay and suppresses a redundant separate operator
+
+**Given** an operator backed only by a template/generic-search URL
+**When** rendering operators
+**Then** it is not shown, and the hardcoded generic-PADI "See trip options" button is removed
+
+**Given** no real/affiliate operator and no dive-capable lodging
+**When** rendered
+**Then** only Getting there + accommodation show; no invented operators and no generic-search button
+
+**Given** commercial links in the block
+**When** rendered
+**Then** disclosure is a single section-level line (no per-row affiliate badge), and each `AffiliateLink` accessible name includes "(opens in new tab)" + the destination; the decorative `→` is `aria-hidden`
+
+**Given** a Witnessing change location
+**When** rendered
+**Then** the muted "Plan thoughtfully" treatment applies, links retained, text held ≥4.5:1
+
+**Given** a dive-site page
+**When** rendered
+**Then** this block does NOT appear there
+
+---
+
+### Story 7.9: Gear section on the location page (removed from site)
+
+As a diver,
+I want gear consolidated on the location page,
+So that I see basic kit plus what specific sites demand in one place.
+
+**Acceptance Criteria:**
+
+**Given** a location page
+**When** rendered
+**Then** a Gear section shows Layer A basic kit for the location (region water temp + skill) as a `<ul>`
+
+**Given** site-specific add-ons exist
+**When** Layer B renders
+**Then** it aggregates `siteSpecificGear` across the location's sites, grouped by site name, each group linking down to its site (e.g. "Blue Corner — reef hook for strong current")
+
+**Given** a site with no `siteSpecificGear`
+**When** Layer B renders
+**Then** that site does not appear and no empty heading shows
+
+**Given** gear shop links
+**When** rendered
+**Then** they are quiet "Shop →" links (`AffiliateLink`, Amazon), with no per-item affiliate badge and one section-level disclosure line
+
+**Given** a dive-site page
+**When** rendered
+**Then** it has NO gear section; the sidebar "Part of [location]" card links up to the location where gear lives
+
+**Given** each gear item
+**When** rendered
+**Then** the leading emoji/icon is `aria-hidden` and the text name + reason carry the meaning (Layer A as `<li>`)
+
+**Given** Layer A's wetsuit recommendation
+**When** water-temperature data is wrong or absent
+**Then** the recommendation is correct or omitted — never a misleading thickness
+
+---
+
+### Story 7.10: Dive-site re-sequence (About first, sidebar orient-only)
+
+As a cold SEO arrival,
+I want the dive-site page to read as the dive,
+So that I'm oriented before I hit the data.
+
+**Acceptance Criteria:**
+
+**Given** the dive-site centre column
+**When** rendered
+**Then** the order is About this site (first) → What you'll see → Conditions → How to dive
+
+**Given** the Conditions section
+**When** rendered
+**Then** it includes the NOAA thermal/live panel (DHW + SST anomaly + status with the live `DataFreshnessLabel`), relocated from the sidebar
+
+**Given** the right sidebar
+**When** rendered
+**Then** it contains only Depth profile → Part of [location] (orient only); no operators/booking, no standalone thermal panel, and no duplicate bottom "Planning a trip?" block
+
+**Given** depth / skill / season meta
+**When** rendered
+**Then** it appears once in the meta badges row, not duplicated in the sidebar
+
+**Given** gear placement
+**When** this story is built
+**Then** Story 7.9 has already moved gear to the location page (this story removes it from the site flow)
+
+---
+
+## Epic 7 — coverage check
+
+| UX-DR | Story | Covered |
+|---|---|---|
+| S2-1 | 7.6 | ✅ |
+| S2-2 | 7.3 | ✅ |
+| S2-3 | 7.2 | ✅ |
+| S2-4 | 7.1 | ✅ |
+| S2-5 | 7.4 | ✅ |
+| S2-6 | 7.7 | ✅ |
+| S2-7 | 7.8 | ✅ |
+| S2-8 | 7.9 | ✅ |
+| S2-9 | 7.10 | ✅ |
+| S2-10 | 7.5 | ✅ |
+| S2-11 | 7.5 (filter), 7.7 (alt), 7.8 (links) | ✅ |
+
+All 11 Session 2 UX-DRs covered by at least one story.
