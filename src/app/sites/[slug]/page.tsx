@@ -1579,15 +1579,55 @@ export default async function SiteDetailPage({
               </div>
             </div>
 
-            {/* Operators + Plan Your Trip moved to location page per story 7.9/7.10 */}
+            {/* Plan Your Trip — compact sidebar version; full detail on location page */}
             {location && (
-              <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.25rem", padding: "1rem 1.375rem" }}>
-                <p style={{ fontSize: "0.75rem", color: "#64748b", lineHeight: 1.6 }}>
-                  Operators, lodging, and trip planning on the{" "}
-                  <Link href={`/locations/${location.slug}`} style={{ color: "#0089de", textDecoration: "none" }}>
-                    {location.name} location page →
-                  </Link>
-                </p>
+              <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.25rem", overflow: "hidden" }}>
+                <div style={{ padding: "1rem 1.375rem", borderBottom: "1px solid #e2e8f0", background: "#f1f7fb" }}>
+                  <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>Plan your trip</p>
+                </div>
+                <div style={{ padding: 0 }}>
+                  {[
+                    { label: "Getting there", text: site.getThere || `Fly into the nearest airport for ${location.name}.` },
+                    { label: "Where to stay", text: `Lodging options in ${location.name} range from guesthouses to liveaboards.` },
+                    { label: "Who to dive with", text: operators.length > 0 ? `${operators[0].label} and local operators run this site.` : `See operators on the ${location.name} page.` },
+                  ].map(({ label, text }) => (
+                    <div key={label} style={{ padding: "0.75rem 1.375rem", borderBottom: "1px solid #f1f5f9" }}>
+                      <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.2rem" }}>{label}</p>
+                      <p style={{ fontSize: "0.8125rem", lineHeight: 1.5, color: "#334155" }}>{text}</p>
+                    </div>
+                  ))}
+                  <div style={{ padding: "0.75rem 1.375rem" }}>
+                    <Link href={`/locations/${location.slug}`} style={{ fontSize: "0.8125rem", color: "#0089de", textDecoration: "none" }}>
+                      Full trip planning on {location.name} page →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Operators with affiliate links */}
+            {operators.length > 0 && (
+              <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.25rem", overflow: "hidden" }}>
+                <div style={{ padding: "1rem 1.375rem", borderBottom: "1px solid #e2e8f0", background: "#f1f7fb" }}>
+                  <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>Operators</p>
+                </div>
+                <div style={{ padding: 0 }}>
+                  {operators.map((op, i) => (
+                    <div key={op.url} style={{ padding: "0.875rem 1.375rem", borderBottom: i < operators.length - 1 ? "1px solid #e2e8f0" : "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>{op.label}</p>
+                      <AffiliateLink url={op.url} event="operator_click" partner={op.label} siteId={site.id} isAffiliate={!!op.isAffiliate} className="shrink-0">
+                        <span style={{ fontSize: "0.75rem", fontWeight: 600, color: op.isAffiliate ? "#0089de" : "#64748b" }}>
+                          {op.isAffiliate ? "Book →" : "Visit →"}
+                        </span>
+                      </AffiliateLink>
+                    </div>
+                  ))}
+                  {operators.some((op) => op.isAffiliate) && (
+                    <div style={{ padding: "0.5rem 1.375rem" }}>
+                      <AffiliateDisclosure />
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </div>
