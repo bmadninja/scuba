@@ -7,6 +7,7 @@ import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
+import { getAllEncounters } from "@/lib/data/encounters";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { buildAtlasLocation } from "@/lib/atlas-location";
@@ -102,15 +103,6 @@ function mergeCreatures(site: Site, sightings: SightingRecord[]): Creature[] {
   return order.map((k) => byKey.get(k)!);
 }
 
-function iNaturalistObsUrl(site: Site, speciesName?: string): string {
-  const params = new URLSearchParams({
-    latitude: site.lat.toFixed(6),
-    longitude: site.lng.toFixed(6),
-    place_guess: site.name,
-  });
-  if (speciesName) params.set("taxon_name", speciesName);
-  return `https://www.inaturalist.org/observations/new?${params}`;
-}
 
 function formatLastConfirmed(iso: string): string {
   try {
@@ -120,7 +112,7 @@ function formatLastConfirmed(iso: string): string {
     if (diffDays === 0) return "today";
     if (diffDays === 1) return "yesterday";
     if (diffDays < 30) return `${diffDays} days ago`;
-    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    if (diffDays < 365) { const m = Math.floor(diffDays / 30); return `${m} ${m === 1 ? "month" : "months"} ago`; }
     return `${Math.floor(diffDays / 365)} years ago`;
   } catch {
     return iso;
@@ -215,6 +207,20 @@ export default async function SiteDetailPage({
   const atlasLoc = locationFull ? buildAtlasLocation(locationFull) : null;
   const creatures = mergeCreatures(site, sightings);
   const hasSpeciesData = creatures.length > 0;
+
+  // Build a lookup from normalised species name → encounter slug so each
+  // creature card can link to its /where-to-see/[slug] page when a match exists.
+  const encounterSlugBySpecies = new Map<string, string>();
+  for (const enc of getAllEncounters()) {
+    if (enc.speciesCommon) {
+      encounterSlugBySpecies.set(enc.speciesCommon.toLowerCase(), enc.slug);
+    }
+    if (enc.speciesScientific) {
+      for (const sci of enc.speciesScientific.split(",").map((s) => s.trim())) {
+        if (sci) encounterSlugBySpecies.set(sci.toLowerCase(), enc.slug);
+      }
+    }
+  }
   // Photo provenance for the creatures shown, so we can credit iNaturalist
   // photographers (most photos are CC-licensed and require attribution).
   const photoCredits = creatures
@@ -336,9 +342,27 @@ export default async function SiteDetailPage({
 
       {/* ── WHAT YOU'LL SEE ── */}
       <section className="mt-12">
-        <h2 className="mb-5 text-xl font-bold tracking-tight text-slate-900">
-          What you&rsquo;ll see
-        </h2>
+        <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="text-xl font-bold tracking-tight text-slate-900">
+            What you&rsquo;ll see
+          </h2>
+          {(() => {
+            const latestConfirmed = sightings
+              .map((s) => s.lastConfirmedAt)
+              .filter(Boolean)
+              .sort()
+              .at(-1);
+            if (!latestConfirmed) return null;
+            return (
+              <time
+                dateTime={latestConfirmed}
+                className="text-[11px] font-medium text-slate-400"
+              >
+                Last confirmed {formatLastConfirmed(latestConfirmed)}
+              </time>
+            );
+          })()}
+        </div>
 
         {hasSpeciesData ? (
           <>
@@ -378,6 +402,11 @@ export default async function SiteDetailPage({
                 const iucn = IUCN_ENABLED ? getIucnStatus(c.scientificName) : null;
                 const hasRecords =
                   typeof c.recentRecordCount === "number" && c.recentRecordCount > 0;
+                const encounterSlug =
+                  (c.scientificName &&
+                    encounterSlugBySpecies.get(c.scientificName.toLowerCase())) ||
+                  encounterSlugBySpecies.get(c.commonName.toLowerCase()) ||
+                  null;
                 return (
                   <li
                     key={creatureKey(c.scientificName, c.commonName)}
@@ -403,7 +432,16 @@ export default async function SiteDetailPage({
                     )}
                     <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                       <div className="flex flex-col gap-2">
-                        <p className="text-base font-bold text-slate-900">{c.commonName}</p>
+                        {encounterSlug ? (
+                          <Link
+                            href={`/where-to-see/${encounterSlug}`}
+                            className="text-base font-bold text-slate-900 hover:text-[#0089de]"
+                          >
+                            {c.commonName}
+                          </Link>
+                        ) : (
+                          <p className="text-base font-bold text-slate-900">{c.commonName}</p>
+                        )}
                         <div className="flex flex-wrap items-center gap-2">
                           {iucn ? <IucnBadge status={iucn} /> : null}
                           {c.reliability ? (
@@ -428,14 +466,6 @@ export default async function SiteDetailPage({
                             Peak: {c.bestMonths.map((m) => MONTH_ABBR[m - 1]).join(" · ")}
                           </span>
                         ) : null}
-                        <a
-                          href={iNaturalistObsUrl(site, c.scientificName ?? c.commonName)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[12px] font-semibold text-[#0089de] hover:text-[#1d5d90]"
-                        >
-                          Log on iNaturalist →
-                        </a>
                       </div>
                     </div>
                   </li>
@@ -476,21 +506,6 @@ export default async function SiteDetailPage({
             </p>
           </div>
         )}
-
-        {/* Log a sighting CTA */}
-        <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl border border-slate-200 bg-[#f1f7fb] p-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[13px] leading-6 text-slate-700">
-            Dived here? Add what you saw. Every log keeps this record living and current.
-          </p>
-          <a
-            href={iNaturalistObsUrl(site)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 rounded-lg bg-[#0089de] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1d5d90]"
-          >
-            Log a sighting on iNaturalist →
-          </a>
-        </div>
 
         {/* Photo credits — iNaturalist photos are mostly CC-licensed and
             require attribution to the photographer. */}

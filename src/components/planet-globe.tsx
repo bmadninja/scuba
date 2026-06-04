@@ -376,10 +376,23 @@ export function PlanetGlobe({
               </div>
             </div>
           ) : (
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-2 text-[11px] text-slate-600/80">
-              <span>Click a location to inspect details</span>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-3">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-medium text-slate-600 shadow-sm backdrop-blur">
+                <svg className="h-3 w-3 text-slate-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden>
+                  <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+                </svg>
+                Click any reef to inspect
+              </span>
             </div>
           )}
+
+          {/* Updated nightly chip — top-left */}
+          <div className="pointer-events-none absolute left-3 top-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 px-2.5 py-1 text-[10.5px] font-semibold text-white backdrop-blur">
+              <span className="live-dot h-1.5 w-1.5 rounded-full bg-[#15a05c]" aria-hidden />
+              Updated nightly
+            </span>
+          </div>
         </div>
       </div>
 

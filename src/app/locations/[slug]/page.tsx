@@ -1,26 +1,26 @@
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { AffiliateLink } from "@/components/affiliate-link";
-import { AffiliateDisclosure } from "@/components/affiliate-disclosure";
 import { JsonLd } from "@/components/json-ld";
 import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { locationSchema } from "@/lib/schema-org";
 import { getAllLocations, getLocationBySlug } from "@/lib/data/locations";
+import { buildAtlasLocation } from "@/lib/atlas-location";
 import { getSitesByLocationId } from "@/lib/data/sites";
+import { getEncountersByLocationId } from "@/lib/data/encounters";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getAllGear, getGearById } from "@/lib/data/gear";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getWaterQualityByLocationId } from "@/lib/data/water-quality";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
-import { getFishingPressureForLocation } from "@/lib/data/fishing-pressure";
-import { CoralCoverPanel } from "@/components/coral-cover-panel";
-import { FishingPressurePanel } from "@/components/fishing-pressure-panel";
+import { getFishingPressureForLocation, getFishingPressureLastBuiltAt } from "@/lib/data/fishing-pressure";
 import { getSourceById } from "@/lib/data/sources";
 import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import { DataFreshnessLabel } from "@/components/data-freshness-label";
+import { STATE_TEXT, STATE_DEF, freshness, getLastSurveyDays, getReefState } from "@/lib/data/reef-state";
+import { HowCalculated } from "./how-calculated";
 import type {
   BleachingAlertLevel,
   PartnerLink,
@@ -35,12 +35,16 @@ const ALERT_LABEL: Record<BleachingAlertLevel, string> = {
   "alert-2": "Alert level 2",
 };
 
-const ALERT_RING: Record<BleachingAlertLevel, string> = {
-  "no-stress": "bg-emerald-50 text-emerald-800 ring-emerald-200",
-  watch: "bg-amber-50 text-amber-800 ring-amber-200",
-  warning: "bg-orange-50 text-orange-800 ring-orange-200",
-  "alert-1": "bg-rose-50 text-rose-800 ring-rose-200",
-  "alert-2": "bg-rose-100 text-rose-900 ring-rose-300",
+const STATE_PILL: Record<string, string> = {
+  thriving: "bg-emerald-50 text-emerald-700",
+  pressure: "bg-[#eaf1fe] text-[#1f57c8]",
+  change: "bg-rose-50 text-rose-700",
+};
+
+const STATE_DOT: Record<string, string> = {
+  thriving: "bg-emerald-500",
+  pressure: "bg-[#2f6ced]",
+  change: "bg-rose-500",
 };
 
 const formatSurveyDate = (iso: string) => {
@@ -118,29 +122,78 @@ export default async function LocationPage({
   const operators = dedupePartnerLinks(sites.flatMap((s) => s.operators));
   const getThere = sites.map((s) => s.getThere).find((t) => t && t.trim().length > 0);
 
-  return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <JsonLd data={locationSchema(location, sites.length)} />
-      <SiteHeader activeHref="/sites" />
+  const atlasLoc = buildAtlasLocation(location);
+  const encounters = getEncountersByLocationId(location.id);
 
-      <main className="mx-auto w-full max-w-6xl px-6 py-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-          {location.country} · {location.region}
-        </p>
-        <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900">
+  return (
+    <div className="mx-auto w-full max-w-6xl px-6 py-12">
+      <JsonLd data={locationSchema(location, sites.length)} />
+
+        {/* Breadcrumb / back nav */}
+        <nav className="flex items-center gap-2 text-sm font-medium text-slate-500">
+          <Link href="/" className="transition hover:text-[#0089de]">
+            ← Atlas
+          </Link>
+          <span className="text-slate-300">/</span>
+          <span className="text-slate-600">{location.country}</span>
+        </nav>
+
+        {/* State chip */}
+        <div className="mt-4">
+          <span
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[12px] font-semibold ${STATE_PILL[atlasLoc.state]}`}
+          >
+            <span className={`h-2 w-2 rounded-full ${STATE_DOT[atlasLoc.state]}`} aria-hidden />
+            {STATE_TEXT[atlasLoc.state]}
+          </span>
+        </div>
+
+        {/* Location name */}
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
           {location.name}
         </h1>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700">
-          {location.description}
-        </p>
 
-        {details ? (
-          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
-            {details.extendedDescription}
+        {/* Metadata row */}
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-sm font-medium text-slate-500">
+          <span>{location.country}</span>
+          <span className="text-slate-300">·</span>
+          <span>{location.region}</span>
+          <span className="text-slate-300">·</span>
+          <span>Best diving {atlasLoc.season}</span>
+        </div>
+
+        {/* Jump nav */}
+        <div className="mt-6 flex gap-6 border-b border-slate-200 text-sm font-semibold">
+          <a href="#overview" className="border-b-2 border-[#0089de] pb-3 text-slate-900">
+            Overview
+          </a>
+          <a href="#conditions" className="border-b-2 border-transparent pb-3 text-slate-500 transition hover:text-slate-900">
+            Conditions
+          </a>
+          <a href="#sites" className="border-b-2 border-transparent pb-3 text-slate-500 transition hover:text-slate-900">
+            Dive sites
+          </a>
+        </div>
+
+        {/* Overview */}
+        <section id="overview" className="pt-8">
+          <p className="max-w-3xl text-base leading-7 text-slate-700">
+            {location.description}
           </p>
-        ) : null}
+          {details?.extendedDescription ? (
+            <p className="mt-4 max-w-3xl text-[15px] leading-7 text-slate-600">
+              {details.extendedDescription}
+            </p>
+          ) : null}
+        </section>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,_1.55fr)_minmax(0,_1fr)]">
+        {/* Conditions section */}
+        <section id="conditions" className="mt-10 border-t border-slate-200 pt-10">
+          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Conditions
+          </p>
+
+        <div className="mt-0 grid gap-10 lg:grid-cols-[minmax(0,_1.55fr)_minmax(0,_1fr)]">
           <div className="space-y-12">
             <section>
               <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
@@ -202,22 +255,20 @@ export default async function LocationPage({
             ) : null}
 
             {reefHealth ? (
-              <ReefHealthPanel record={reefHealth} />
+              <ReefHealthPanel
+                record={reefHealth}
+                reefPressure={reefPressure}
+                waterQuality={waterQuality}
+                coralCoverSnapshot={coralCover}
+                fishingPressure={fishingPressure}
+                lastSurveyDays={getLastSurveyDays(location.id)}
+                gfwLastBuiltAt={getFishingPressureLastBuiltAt()}
+              />
             ) : (
               <UnknownReefHealthPanel />
             )}
 
-            {coralCover ? <CoralCoverPanel snapshot={coralCover} /> : null}
-
-            {fishingPressure ? (
-              <FishingPressurePanel record={fishingPressure} />
-            ) : null}
-
-            {reefPressure ? <ReefPressurePanel record={reefPressure} /> : null}
-
-            {waterQuality ? <WaterQualityPanel record={waterQuality} /> : null}
-
-            <section>
+            <section id="sites">
               <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
                 <h2 className="text-2xl font-bold tracking-tight text-slate-900">
                   Dive sites here
@@ -279,6 +330,54 @@ export default async function LocationPage({
 
             <GearSection locationId={location.id} sites={sites} />
 
+            {encounters.length > 0 ? (
+              <section>
+                <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
+                  <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+                    Wildlife encounters here
+                  </h2>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    {encounters.length} encounter{encounters.length === 1 ? "" : "s"}
+                  </span>
+                </div>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {encounters.map((enc) => (
+                    <li key={enc.id}>
+                      <Link
+                        href={`/where-to-see/${enc.slug}`}
+                        className="group flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-[#0089de]/40 hover:shadow-sm"
+                      >
+                        {enc.heroImageUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={enc.heroImageUrl}
+                            alt={enc.name}
+                            width={56}
+                            height={56}
+                            style={{ width: 56, height: 56, minWidth: 56 }}
+                            className="shrink-0 rounded-lg object-cover"
+                          />
+                        ) : (
+                          <div className="size-14 shrink-0 rounded-lg bg-slate-100" />
+                        )}
+                        <div className="min-w-0">
+                          <p className="font-semibold text-slate-900 group-hover:text-[#0089de]">
+                            {enc.name}
+                          </p>
+                          {enc.speciesCommon ? (
+                            <p className="mt-0.5 text-[12px] text-slate-500">{enc.speciesCommon}</p>
+                          ) : null}
+                          <p className="mt-1 line-clamp-2 text-[12px] leading-5 text-slate-600">
+                            {enc.shortDescription}
+                          </p>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
+
             {details && details.quotes.length > 0 ? (
               <section>
                 <h2 className="text-2xl font-bold tracking-tight text-slate-900">
@@ -336,11 +435,31 @@ export default async function LocationPage({
                 event="operator_click"
                 locationId={location.id}
               />
+              {!operators.length && (
+                <div className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                  <p className="flex items-center gap-2 text-sm font-bold text-slate-900">
+                    <span className="text-base">🤿</span>
+                    Who to dive with
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    We&rsquo;re still curating verified operators here. Search for local dive
+                    centres to arrange guided dives, try-dive experiences, or certification
+                    courses.
+                  </p>
+                  <a
+                    href={`https://www.padi.com/dive-shop-search?q=${encodeURIComponent(location.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0089de] hover:underline"
+                  >
+                    Find PADI operators near {location.name} →
+                  </a>
+                </div>
+              )}
             </div>
-            <AffiliateDisclosure />
           </aside>
         </div>
-      </main>
+        </section>{/* end #conditions */}
     </div>
   );
 }
@@ -769,23 +888,9 @@ function computeVerdict(record: {
     label: "Mixed",
     tone: "ok",
     headline:
-      "Some loss since the 2010s, but the reef still has plenty to dive. Pick depth and shoulder-season carefully.",
+      "Some loss since the 2010s, but the reef still has plenty to dive. Pick your depth and shoulder season carefully.",
   };
 }
-
-const VERDICT_STRIP: Record<Verdict["tone"], string> = {
-  good: "bg-emerald-50 border-emerald-200 text-emerald-900",
-  ok: "bg-sky-50 border-sky-200 text-sky-900",
-  warn: "bg-amber-50 border-amber-200 text-amber-900",
-  bad: "bg-rose-50 border-rose-200 text-rose-900",
-};
-
-const VERDICT_BADGE: Record<Verdict["tone"], string> = {
-  good: "bg-emerald-600 text-white",
-  ok: "bg-sky-600 text-white",
-  warn: "bg-amber-600 text-white",
-  bad: "bg-rose-600 text-white",
-};
 
 const ALERT_CONSEQUENCE: Record<BleachingAlertLevel, string> = {
   "no-stress": "No abnormal heat right now. Corals stay coloured.",
@@ -835,20 +940,100 @@ function CoverBar({
   );
 }
 
+const SIGNAL_TONE: Record<"good" | "ok" | "warn" | "bad" | "neutral", string> = {
+  good: "bg-emerald-50 text-emerald-700",
+  ok: "bg-sky-50 text-sky-700",
+  warn: "bg-amber-50 text-amber-800",
+  bad: "bg-rose-50 text-rose-700",
+  neutral: "bg-slate-100 text-slate-600",
+};
+
+const ALERT_TONE: Record<BleachingAlertLevel, "good" | "ok" | "warn" | "bad"> = {
+  "no-stress": "good",
+  watch: "ok",
+  warning: "warn",
+  "alert-1": "bad",
+  "alert-2": "bad",
+};
+
+const FISHING_SIGNAL: Record<
+  string,
+  { label: string; tone: "good" | "ok" | "warn" | "bad" | "neutral" }
+> = {
+  low: { label: "Low", tone: "good" },
+  moderate: { label: "Moderate", tone: "ok" },
+  high: { label: "High", tone: "warn" },
+  "very-high": { label: "Very high", tone: "bad" },
+  unknown: { label: "Not enough data", tone: "neutral" },
+};
+
+const FRESHNESS_TONE: Record<string, "good" | "warn" | "neutral"> = {
+  fresh: "good",
+  stale: "warn",
+  cold: "neutral",
+};
+
+/** One clean product-styled key-signal card. */
+function SignalCard({
+  label,
+  value,
+  badgeTone,
+  note,
+}: {
+  label: string;
+  value: string;
+  badgeTone?: "good" | "ok" | "warn" | "bad" | "neutral";
+  note?: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-[#0089de]/40 hover:shadow-md">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+        {label}
+      </p>
+      {badgeTone ? (
+        <span
+          className={`mt-3 inline-flex rounded-full px-3 py-1 text-sm font-semibold ${SIGNAL_TONE[badgeTone]}`}
+        >
+          {value}
+        </span>
+      ) : (
+        <p className="mt-2 text-2xl font-bold text-slate-900">{value}</p>
+      )}
+      {note ? (
+        <p className="mt-2.5 text-[13px] leading-5 text-slate-600">{note}</p>
+      ) : null}
+    </div>
+  );
+}
+
 function ReefHealthPanel({
   record,
+  reefPressure,
+  waterQuality,
+  coralCoverSnapshot,
+  fishingPressure,
+  lastSurveyDays,
+  gfwLastBuiltAt,
 }: {
   record: NonNullable<ReturnType<typeof getReefHealthByLocationId>>[number];
+  reefPressure: ReturnType<typeof getReefPressureByLocationId>;
+  waterQuality: ReturnType<typeof getWaterQualityByLocationId>;
+  coralCoverSnapshot: ReturnType<typeof getCoralCoverForLocation>;
+  fishingPressure: ReturnType<typeof getFishingPressureForLocation>;
+  lastSurveyDays: number | null;
+  gfwLastBuiltAt: string;
 }) {
+  const fishingPressureLevel = reefPressure?.fishingPressure ?? null;
   const observed = record.observed;
   const thermal = record.thermalStress;
   const projection = record.projection;
   const verdict = computeVerdict(record);
+  const state = record.locationId ? getReefState(record.locationId) : null;
 
   const methods = record.methodologyClaimIds
     .map(getMethodologyByClaimId)
     .filter((m): m is NonNullable<typeof m> => Boolean(m));
-  // Sources displayed in the drawer = sources directly cited by this
+  // Sources displayed in the disclosure = sources directly cited by this
   // record PLUS sources referenced by the methodology notes that govern
   // its claims. That way registry expansions surface here.
   const sourceIds = Array.from(
@@ -872,164 +1057,293 @@ function ReefHealthPanel({
     ? new Date(observed.surveyDate + "T00:00:00Z").getUTCFullYear()
     : null;
 
+  const coverTrend =
+    coverNow !== null && coverBefore !== null
+      ? Math.round((coverNow - coverBefore) * 10) / 10
+      : null;
+  const coverNote =
+    coverTrend !== null
+      ? `${coverBefore}% ${historicalYear ?? "then"} → ${coverNow}% ${surveyYear ?? "now"}${
+          coverTrend < 0
+            ? `, down ${Math.abs(coverTrend)} points`
+            : coverTrend > 0
+              ? `, up ${coverTrend} points`
+              : ", holding steady"
+        }`
+      : surveyYear
+        ? `Live hard coral, surveyed ${surveyYear}`
+        : "Live hard coral cover";
+
+  const surveyStamp =
+    surveyYear && observed?.surveyMethod
+      ? `Surveyed ${surveyYear} · ${observed.surveyMethod}`
+      : surveyYear
+        ? `Surveyed ${surveyYear}`
+        : null;
+
+  const fish = FISHING_SIGNAL[fishingPressureLevel ?? "unknown"] ?? FISHING_SIGNAL.unknown;
+  const fresh =
+    lastSurveyDays !== null ? freshness(lastSurveyDays) : null;
+
+  // Fishing pressure — fold the single most useful GFW number (trend vs the
+  // historical baseline year) into the one fishing card.
+  const gfwTrend =
+    fishingPressure?.historical &&
+    fishingPressure.historical.fishingHours > 0
+      ? Math.round(
+          ((fishingPressure.current.fishingHours -
+            fishingPressure.historical.fishingHours) /
+            fishingPressure.historical.fishingHours) *
+            100,
+        )
+      : null;
+  const fishingNote =
+    gfwTrend !== null && fishingPressure
+      ? `Visible fishing ${
+          gfwTrend > 0
+            ? `up ${gfwTrend}%`
+            : gfwTrend < 0
+              ? `down ${Math.abs(gfwTrend)}%`
+              : "flat"
+        } vs ${fishingPressure.historical!.year}. Global Fishing Watch · ${fishingPressure.current.year}.`
+      : fishingPressure
+        ? `Global Fishing Watch · ${fishingPressure.current.year}.`
+        : "Visible fishing activity near the reef from satellite tracking.";
+
+  // Protection — promote MPA status from the old ReefPressurePanel.
+  const mpa = reefPressure
+    ? MPA_STATUS[reefPressure.mpaStatus] ?? MPA_STATUS["no-protection"]
+    : null;
+  const mpaNote =
+    reefPressure && reefPressure.mpaName
+      ? `${reefPressure.mpaName}${
+          reefPressure.mpaSinceYear ? ` · since ${reefPressure.mpaSinceYear}` : ""
+        }`
+      : mpa
+        ? mpa.copy
+        : null;
+
+  // Water quality — promote the single highest-severity event (or
+  // microplastics) from the old WaterQualityPanel, only if a record exists.
+  const WQ_ORDER: Record<string, number> = { watch: 1, concerning: 2, severe: 3 };
+  const worstEvent =
+    waterQuality && waterQuality.events.length > 0
+      ? [...waterQuality.events].sort(
+          (a, b) => (WQ_ORDER[b.severity] ?? 0) - (WQ_ORDER[a.severity] ?? 0),
+        )[0]
+      : null;
+  const wqSignal = worstEvent
+    ? {
+        value: WQ_SEVERITY_LABEL[worstEvent.severity] ?? worstEvent.severity,
+        tone:
+          worstEvent.severity === "severe"
+            ? ("bad" as const)
+            : worstEvent.severity === "concerning"
+              ? ("warn" as const)
+              : ("ok" as const),
+        note: worstEvent.title,
+      }
+    : waterQuality?.microplasticsLevel
+      ? {
+          value: WQ_MICROPLASTICS_LABEL[waterQuality.microplasticsLevel],
+          tone:
+            waterQuality.microplasticsLevel === "very-high"
+              ? ("bad" as const)
+              : waterQuality.microplasticsLevel === "high"
+                ? ("warn" as const)
+                : waterQuality.microplasticsLevel === "moderate"
+                  ? ("ok" as const)
+                  : ("good" as const),
+          note: "Ambient microplastics in the water column.",
+        }
+      : null;
+
   return (
     <section>
-      <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
+      <div className="mb-3 flex items-end justify-between border-b border-slate-200 pb-3">
         <h2 className="text-2xl font-bold tracking-tight text-slate-900">
           Reef health
         </h2>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-          What you&rsquo;ll actually find
-        </span>
+        <div className="flex flex-col items-end gap-1.5">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Updated from ongoing science
+          </span>
+          {observed?.surveyDate ? (
+            <DataFreshnessLabel
+              variant="snapshot"
+              surveyMethod={observed.surveyMethod ?? "field survey"}
+              surveyDate={observed.surveyDate}
+            />
+          ) : null}
+        </div>
       </div>
 
-      {/* Verdict strip — the single-sentence takeaway */}
-      <div
-        className={`flex flex-col gap-3 rounded-2xl border p-5 sm:flex-row sm:items-start sm:gap-5 ${VERDICT_STRIP[verdict.tone]}`}
-      >
-        <span
-          className={`shrink-0 self-start rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${VERDICT_BADGE[verdict.tone]}`}
-        >
-          {verdict.label}
-        </span>
-        <p className="text-[14px] leading-6">{verdict.headline}</p>
-      </div>
+      <p className="max-w-2xl text-[13px] leading-6 text-slate-600">
+        These signals come from ongoing surveys and daily satellite
+        monitoring, not a one-time write-up.
+      </p>
 
-      {/* Coral reef health — this site's trajectory */}
-      {coverNow !== null ? (
-        <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
-          <div className="flex items-start justify-between gap-3">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-              Coral reef health
+      {/* Key signals — clean, digestible */}
+      <div className="mt-5 grid gap-4 sm:grid-cols-2">
+        {state ? (
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-[#0089de]/40 hover:shadow-md sm:col-span-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Reef state
             </p>
-            <Link
-              href="/faq#coral-cover"
-              className="text-[11px] font-medium text-slate-500 hover:text-[#0089de] hover:underline"
+            <span
+              className={`mt-3 inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold ${STATE_PILL[state]}`}
             >
-              How is this calculated?
-            </Link>
+              <span className={`h-2 w-2 rounded-full ${STATE_DOT[state]}`} aria-hidden />
+              {STATE_TEXT[state]}
+            </span>
+            <p className="mt-2.5 max-w-2xl text-[13px] leading-6 text-slate-600">
+              {STATE_DEF[state].short}
+            </p>
           </div>
-          {observed?.surveyMethod ? (
-            <div className="mt-2">
-              <DataFreshnessLabel
-                variant="snapshot"
-                surveyMethod={observed.surveyMethod}
-                surveyDate={observed.surveyDate}
-              />
+        ) : null}
+
+        {coverNow !== null ? (
+          <SignalCard
+            label="Coral cover now"
+            value={`${coverNow}%`}
+            note={surveyStamp ? `${coverNote}. ${surveyStamp}.` : coverNote}
+          />
+        ) : null}
+
+        {thermal ? (
+          <SignalCard
+            label="Heat stress right now"
+            value={ALERT_LABEL[thermal.alertLevel]}
+            badgeTone={ALERT_TONE[thermal.alertLevel]}
+            note={`${ALERT_CONSEQUENCE[thermal.alertLevel]} NOAA Coral Reef Watch · updated ${formatSurveyDate(thermal.asOf)}.`}
+          />
+        ) : null}
+
+        <SignalCard
+          label="Fishing pressure"
+          value={fish.label}
+          badgeTone={fish.tone}
+          note={fishingNote}
+        />
+
+        {mpa ? (
+          <SignalCard
+            label="Protection status"
+            value={mpa.label}
+            badgeTone={mpa.tone}
+            note={mpaNote ?? undefined}
+          />
+        ) : null}
+
+        {wqSignal ? (
+          <SignalCard
+            label="Water quality"
+            value={wqSignal.value}
+            badgeTone={wqSignal.tone}
+            note={wqSignal.note}
+          />
+        ) : null}
+
+        {fresh ? (
+          <SignalCard
+            label="Last eyes underwater"
+            value={fresh.label}
+            badgeTone={FRESHNESS_TONE[fresh.k]}
+            note={
+              lastSurveyDays !== null
+                ? `Most recent survey about ${Math.round(lastSurveyDays / 30)} months ago — ${fresh.note}.`
+                : fresh.note
+            }
+          />
+        ) : null}
+      </div>
+
+      {record.divingOutlook ? (
+        <div className="mt-4 rounded-2xl border border-sky-200 bg-sky-50 p-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-700">
+            What to expect on a dive
+          </p>
+          <p className="mt-2 text-[14px] leading-6 text-sky-900">
+            {record.divingOutlook}
+          </p>
+        </div>
+      ) : null}
+
+      {reefPressure?.visitorImpactNote ? (
+        <div className="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700">
+            What you can do
+          </p>
+          <p className="mt-2 text-[14px] leading-6 text-emerald-900">
+            {reefPressure.visitorImpactNote}
+          </p>
+        </div>
+      ) : null}
+
+      {/* How this is calculated — raw methodology lives here */}
+      <HowCalculated>
+        <div className="space-y-5">
+          <p className="text-[13px] leading-6 text-slate-600">
+            {verdict.headline}
+          </p>
+
+          {coverNow !== null ? (
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                  Coral cover trajectory
+                </p>
+                {observed?.surveyMethod ? (
+                  <DataFreshnessLabel
+                    variant="snapshot"
+                    surveyMethod={observed.surveyMethod}
+                    surveyDate={observed.surveyDate}
+                  />
+                ) : null}
+              </div>
+              <div className="mt-3 space-y-2.5">
+                {coverBefore !== null ? (
+                  <CoverBar
+                    label="A decade ago"
+                    sublabel={historicalYear ? `Survey ${historicalYear}` : undefined}
+                    percent={coverBefore}
+                    tone="before"
+                  />
+                ) : null}
+                <CoverBar
+                  label="Today"
+                  sublabel={surveyYear ? `Survey ${surveyYear}` : undefined}
+                  percent={coverNow}
+                  tone="now"
+                />
+              </div>
+              {(() => {
+                const proj = computeCoverProjection({
+                  coverNow,
+                  coverBefore,
+                  surveyYear,
+                  historicalYear,
+                });
+                if (!proj) return null;
+                return (
+                  <p className="mt-3 rounded-lg bg-rose-50 px-3 py-2 text-[12px] leading-5 text-rose-900">
+                    <span className="font-semibold">
+                      On current trend, no live coral by about {proj.zeroYear}.
+                    </span>{" "}
+                    Losing roughly {proj.perYear}% cover per year — about{" "}
+                    {proj.yearsLeft} years of reef left if nothing changes.
+                  </p>
+                );
+              })()}
             </div>
           ) : null}
-          <div className="mt-4 space-y-2.5">
-            {coverBefore !== null ? (
-              <CoverBar
-                label="A decade ago"
-                sublabel={historicalYear ? `Survey ${historicalYear}` : undefined}
-                percent={coverBefore}
-                tone="before"
-              />
-            ) : null}
-            <CoverBar
-              label="Today"
-              sublabel={surveyYear ? `Survey ${surveyYear}` : undefined}
-              percent={coverNow}
-              tone="now"
-            />
-          </div>
-          {(() => {
-            const projection = computeCoverProjection({
-              coverNow,
-              coverBefore,
-              surveyYear,
-              historicalYear,
-            });
-            if (!projection) return null;
-            return (
-              <p className="mt-4 rounded-lg bg-rose-50 px-3 py-2 text-[12px] leading-5 text-rose-900">
-                <span className="font-semibold">
-                  On current trend, no live coral by ~{projection.zeroYear}.
-                </span>{" "}
-                Losing about {projection.perYear}% cover per year — roughly{" "}
-                {projection.yearsLeft} years of reef left to see if nothing
-                changes.
-              </p>
-            );
-          })()}
-        </div>
-      ) : null}
 
-      {/* Heat stress + dive outlook side by side */}
-      <div className="mt-5 grid gap-4 lg:grid-cols-2">
-        {thermal ? (
-          <div className="rounded-2xl border border-slate-200 bg-white p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-              Heat stress right now
-            </p>
-            <div className="mt-2">
-              {thermal.source === "noaa-crw-live" ? (
-                <DataFreshnessLabel
-                  variant="live"
-                  source="NOAA CRW"
-                  updatedAt={thermal.fetchedAt ?? thermal.asOf}
-                />
-              ) : (
-                <DataFreshnessLabel
-                  variant="snapshot"
-                  surveyMethod="NOAA CRW (scaffolding)"
-                  surveyDate={thermal.asOf}
-                />
-              )}
-            </div>
-            <div
-              className={`mt-3 inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-[12px] font-bold uppercase tracking-wider ring-1 ring-inset ${ALERT_RING[thermal.alertLevel]}`}
-            >
-              {ALERT_LABEL[thermal.alertLevel]}
-            </div>
-            <p className="mt-3 text-[13px] leading-6 text-slate-700">
-              {ALERT_CONSEQUENCE[thermal.alertLevel]}
-            </p>
-            <p className="mt-3 text-[11px] leading-5 text-slate-500">
-              NOAA Coral Reef Watch · updated {formatSurveyDate(thermal.asOf)}
-              {typeof thermal.degreeHeatingWeeks === "number"
-                ? ` · ${thermal.degreeHeatingWeeks} °C-week heat dose`
-                : ""}
-            </p>
-          </div>
-        ) : null}
-
-        {record.divingOutlook ? (
-          <div className="rounded-2xl border border-slate-200 bg-white p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-              What to expect on a dive
-            </p>
-            <p className="mt-3 text-[13px] leading-6 text-slate-700">
-              {record.divingOutlook}
-            </p>
-          </div>
-        ) : null}
-      </div>
-
-      {projection ? (
-        <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-            Projection · {projection.scenario}
-          </p>
-          <p className="mt-3 text-[13px] leading-6 text-slate-700">
-            {projection.statement}
-          </p>
-          <p className="mt-2 text-[11px] leading-5 text-slate-500">
-            Uncertainty: {projection.uncertainty}
-          </p>
-        </div>
-      ) : null}
-
-      <details className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4 text-[12px] leading-5 text-slate-700">
-        <summary className="cursor-pointer text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600">
-          Sources, methodology, and the raw numbers
-        </summary>
-        <div className="mt-3 space-y-3">
           {observed ? (
             <div>
-              <p className="font-semibold text-slate-800">Raw observed numbers</p>
-              <ul className="mt-1 list-disc space-y-0.5 pl-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                Raw observed numbers
+              </p>
+              <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
                 {typeof observed.coralCoverPercent === "number" ? (
                   <li>
                     Coral cover: <strong>{observed.coralCoverPercent}%</strong> (survey{" "}
@@ -1050,38 +1364,233 @@ function ReefHealthPanel({
               </ul>
             </div>
           ) : null}
+
+          {coralCoverSnapshot ? (
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                Jurisdiction scale reference
+              </p>
+              <p className="mt-1.5 text-[13px] leading-6">
+                The headline coral cover above is the site survey on file. For
+                wider context, {coralCoverSnapshot.program} reports a{" "}
+                {coralCoverSnapshot.label} mean of{" "}
+                <strong>{coralCoverSnapshot.current.coverPercent}%</strong> in{" "}
+                {coralCoverSnapshot.current.year}
+                {coralCoverSnapshot.historical
+                  ? `, against ${coralCoverSnapshot.historical.coverPercent}% in ${coralCoverSnapshot.historical.year}`
+                  : ""}
+                . {coralCoverSnapshot.method}.
+                {coralCoverSnapshot.notes ? ` ${coralCoverSnapshot.notes}` : ""}{" "}
+                Reported at the jurisdiction scale, not this single reef.{" "}
+                <a
+                  href={coralCoverSnapshot.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0089de] hover:underline"
+                >
+                  {coralCoverSnapshot.sourceLabel} →
+                </a>
+              </p>
+            </div>
+          ) : null}
+
           {thermal ? (
             <div>
-              <p className="font-semibold text-slate-800">Raw thermal numbers</p>
-              <ul className="mt-1 list-disc space-y-0.5 pl-5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                  Thermal stress mechanics
+                </p>
+                {thermal.source === "noaa-crw-live" ? (
+                  <DataFreshnessLabel
+                    variant="live"
+                    source="NOAA CRW"
+                    updatedAt={thermal.fetchedAt ?? thermal.asOf}
+                  />
+                ) : (
+                  <DataFreshnessLabel
+                    variant="snapshot"
+                    surveyMethod="NOAA CRW (scaffolding)"
+                    surveyDate={thermal.asOf}
+                  />
+                )}
+              </div>
+              <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
                 <li>
-                  NOAA CRW alert level:{" "}
-                  <strong>{ALERT_LABEL[thermal.alertLevel]}</strong>
+                  NOAA Coral Reef Watch alert level:{" "}
+                  <strong>{ALERT_LABEL[thermal.alertLevel]}</strong> — updated{" "}
+                  {formatSurveyDate(thermal.asOf)}
                 </li>
                 {typeof thermal.degreeHeatingWeeks === "number" ? (
                   <li>
                     Degree Heating Weeks:{" "}
-                    <strong>{thermal.degreeHeatingWeeks} °C-wk</strong>
+                    <strong>{thermal.degreeHeatingWeeks} °C-wk</strong> (cumulative heat dose)
                   </li>
                 ) : null}
                 {typeof thermal.sstAnomalyC === "number" ? (
                   <li>
-                    SST anomaly: <strong>+{thermal.sstAnomalyC} °C</strong>
+                    Sea surface temperature anomaly:{" "}
+                    <strong>+{thermal.sstAnomalyC} °C</strong>
                   </li>
                 ) : null}
+                <li>
+                  Alert scale: no stress → watch → warning → alert level 1 →
+                  alert level 2. Bleaching becomes likely at alert level 1.
+                </li>
               </ul>
             </div>
           ) : null}
+
+          <div>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                Fishing pressure method
+              </p>
+              <DataFreshnessLabel
+                variant="live"
+                source="Global Fishing Watch"
+                updatedAt={fishingPressure?.fetchedAt ?? gfwLastBuiltAt}
+              />
+            </div>
+            <p className="mt-1.5 text-[13px] leading-6">
+              Fishing pressure is a proxy from Global Fishing Watch satellite
+              AIS tracking, counting visible fishing hours within a fixed radius
+              of the reef and comparing recent activity to a historical baseline.
+            </p>
+            {fishingPressure ? (
+              <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
+                <li>
+                  Apparent fishing hours within {fishingPressure.radiusKm} km:{" "}
+                  <strong>
+                    {fishingPressure.current.fishingHours.toLocaleString()} h
+                  </strong>{" "}
+                  in {fishingPressure.current.year}
+                  {fishingPressure.historical
+                    ? `, against ${fishingPressure.historical.fishingHours.toLocaleString()} h in ${fishingPressure.historical.year}`
+                    : ""}
+                  .
+                </li>
+                {reefPressure && reefPressure.topPressures.length > 0 ? (
+                  <li>
+                    Dominant pressures: {reefPressure.topPressures.join(", ")}.
+                  </li>
+                ) : null}
+              </ul>
+            ) : null}
+            <p className="mt-2 rounded-lg bg-amber-50 px-3 py-2 text-[12px] leading-5 text-amber-900">
+              <strong>Important caveat.</strong> GFW only sees vessels
+              broadcasting AIS. Small artisanal boats, most under 12 metre
+              vessels, and any operator deliberately running dark are invisible
+              here. A low number is not evidence of low fishing pressure in
+              artisanal dominated regions.
+            </p>
+          </div>
+
+          {mpa ? (
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                Protection status
+              </p>
+              <p className="mt-1.5 text-[13px] leading-6">{mpa.copy}</p>
+              <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
+                {reefPressure?.mpaName ? (
+                  <li>
+                    {reefPressure.mpaName}
+                    {reefPressure.mpaSinceYear
+                      ? ` · designated ${reefPressure.mpaSinceYear}`
+                      : ""}
+                    .
+                  </li>
+                ) : null}
+                {typeof reefPressure?.greenFinsOperatorCount === "number" &&
+                reefPressure.greenFinsOperatorCount > 0 ? (
+                  <li>
+                    {reefPressure.greenFinsOperatorCount} Green Fins verified
+                    operator
+                    {reefPressure.greenFinsOperatorCount === 1 ? "" : "s"} known
+                    at this location.
+                  </li>
+                ) : null}
+              </ul>
+              <p className="mt-1.5 text-[12px] leading-5 text-slate-500">
+                Protection status sourced from Protected Planet / WDPA and
+                refined with the Marine Protection Atlas.
+              </p>
+            </div>
+          ) : null}
+
+          {waterQuality && waterQuality.events.length > 0 ? (
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                Pollution and water quality
+              </p>
+              <ul className="mt-1.5 space-y-2 text-[13px] leading-6">
+                {waterQuality.events.map((e, i) => (
+                  <li key={i}>
+                    <strong>
+                      {e.title} ({WQ_SEVERITY_LABEL[e.severity] ?? e.severity})
+                    </strong>{" "}
+                    — since {e.since}
+                    {e.worstMonths && e.worstMonths.length > 0
+                      ? `, worst ${e.worstMonths
+                          .map((m) => MONTH_NAMES[m - 1])
+                          .join(", ")}`
+                      : ""}
+                    . {e.description}
+                  </li>
+                ))}
+              </ul>
+              {waterQuality.microplasticsLevel ? (
+                <p className="mt-1.5 text-[13px] leading-6">
+                  {WQ_MICROPLASTICS_LABEL[waterQuality.microplasticsLevel]} in
+                  the water column.
+                </p>
+              ) : null}
+              {waterQuality.divingImpactNote ? (
+                <p className="mt-1.5 text-[13px] leading-6 text-slate-600">
+                  {waterQuality.divingImpactNote}
+                </p>
+              ) : null}
+            </div>
+          ) : null}
+
+          {state ? (
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                How the reef state is classified
+              </p>
+              <p className="mt-1.5 text-[13px] leading-6">
+                {STATE_DEF[state].signal}
+              </p>
+            </div>
+          ) : null}
+
+          {projection ? (
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                Projection · {projection.scenario}
+              </p>
+              <p className="mt-1.5 text-[13px] leading-6">{projection.statement}</p>
+              <p className="mt-1 text-[12px] text-slate-500">
+                Uncertainty: {projection.uncertainty}
+              </p>
+            </div>
+          ) : null}
+
           {methods.map((m) => (
             <div key={m.claimId}>
-              <p className="font-semibold text-slate-800">How we summarise this</p>
-              <p className="mt-1">{m.limitations}</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                How we summarise this
+              </p>
+              <p className="mt-1.5 text-[13px] leading-6">{m.limitations}</p>
             </div>
           ))}
+
           {sources.length > 0 ? (
             <div>
-              <p className="font-semibold text-slate-800">Sources</p>
-              <ul className="mt-1 list-disc space-y-0.5 pl-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
+                Sources
+              </p>
+              <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
                 {sources.map((src) => (
                   <li key={src.id}>
                     {src.url ? (
@@ -1105,12 +1614,12 @@ function ReefHealthPanel({
             </div>
           ) : null}
         </div>
-      </details>
+      </HowCalculated>
 
       <p className="mt-3 text-[12px] leading-5 text-slate-500">
         Reef condition changes year to year. If you visit, consider supporting{" "}
         <Link href="/about" className="text-[#0089de] hover:underline">
-          responsible-travel and conservation
+          responsible travel and conservation
         </Link>{" "}
         operators on the ground.
       </p>
@@ -1141,122 +1650,6 @@ const MPA_STATUS: Record<string, { label: string; tone: "good" | "ok" | "warn"; 
   },
 };
 
-const FISHING_PRESSURE: Record<string, { label: string; tone: "good" | "ok" | "warn" | "bad" }> = {
-  low: { label: "Low fishing pressure", tone: "good" },
-  moderate: { label: "Moderate fishing pressure", tone: "ok" },
-  high: { label: "High fishing pressure", tone: "warn" },
-  "very-high": { label: "Very high fishing pressure", tone: "bad" },
-  unknown: { label: "Fishing pressure unknown", tone: "ok" },
-};
-
-const PRESSURE_BADGE_TONE = {
-  good: "bg-emerald-50 text-emerald-800 ring-emerald-200",
-  ok: "bg-sky-50 text-sky-800 ring-sky-200",
-  warn: "bg-amber-50 text-amber-800 ring-amber-200",
-  bad: "bg-rose-50 text-rose-800 ring-rose-200",
-} as const;
-
-function ReefPressurePanel({
-  record,
-}: {
-  record: NonNullable<ReturnType<typeof getReefPressureByLocationId>>;
-}) {
-  const mpa = MPA_STATUS[record.mpaStatus] ?? MPA_STATUS["no-protection"];
-  const fishing = FISHING_PRESSURE[record.fishingPressure] ?? FISHING_PRESSURE.unknown;
-  return (
-    <section>
-      <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-          Pressure on this reef
-        </h2>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-          Protection · fishing · what you can do
-        </span>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 bg-white p-5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-            Protected-area status
-          </p>
-          <span
-            className={`mt-3 inline-flex rounded-lg px-3 py-1.5 text-[12px] font-bold uppercase tracking-wider ring-1 ring-inset ${PRESSURE_BADGE_TONE[mpa.tone]}`}
-          >
-            {mpa.label}
-          </span>
-          <p className="mt-3 text-[13px] leading-6 text-slate-700">{mpa.copy}</p>
-          {record.mpaName ? (
-            <p className="mt-2 text-[11px] text-slate-500">
-              {record.mpaName}
-              {record.mpaSinceYear ? ` · since ${record.mpaSinceYear}` : ""}
-            </p>
-          ) : null}
-        </div>
-
-        <div className="rounded-2xl border border-slate-200 bg-white p-5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-            Fishing pressure
-          </p>
-          <span
-            className={`mt-3 inline-flex rounded-lg px-3 py-1.5 text-[12px] font-bold uppercase tracking-wider ring-1 ring-inset ${PRESSURE_BADGE_TONE[fishing.tone]}`}
-          >
-            {fishing.label}
-          </span>
-          {record.topPressures.length > 0 ? (
-            <>
-              <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Dominant pressures
-              </p>
-              <ul className="mt-1.5 flex flex-wrap gap-1.5">
-                {record.topPressures.map((p) => (
-                  <li
-                    key={p}
-                    className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700"
-                  >
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : null}
-          {typeof record.greenFinsOperatorCount === "number" &&
-          record.greenFinsOperatorCount > 0 ? (
-            <p className="mt-3 text-[11px] text-slate-500">
-              {record.greenFinsOperatorCount} Green Fins-verified operator
-              {record.greenFinsOperatorCount === 1 ? "" : "s"} known at this location.
-            </p>
-          ) : null}
-        </div>
-      </div>
-
-      <div className="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700">
-          What you can do
-        </p>
-        <p className="mt-2 text-[14px] leading-6 text-emerald-900">
-          {record.visitorImpactNote}
-        </p>
-      </div>
-
-      <p className="mt-3 text-[12px] leading-5 text-slate-500">
-        Protection status sourced from Protected Planet / WDPA and refined with
-        Marine Protection Atlas. Fishing pressure proxy is Global Fishing Watch
-        AIS data. See the{" "}
-        <Link href="/about" className="text-[#0089de] hover:underline">
-          methodology
-        </Link>{" "}
-        for what these sources can and can&rsquo;t prove.
-      </p>
-    </section>
-  );
-}
-
-const WQ_SEVERITY_TONE: Record<string, string> = {
-  watch: "bg-amber-50 text-amber-800 ring-1 ring-inset ring-amber-200",
-  concerning: "bg-orange-50 text-orange-800 ring-1 ring-inset ring-orange-200",
-  severe: "bg-rose-50 text-rose-800 ring-1 ring-inset ring-rose-200",
-};
-
 const WQ_SEVERITY_LABEL: Record<string, string> = {
   watch: "WATCH",
   concerning: "CONCERNING",
@@ -1269,78 +1662,3 @@ const WQ_MICROPLASTICS_LABEL: Record<string, string> = {
   high: "High microplastics",
   "very-high": "Very high microplastics",
 };
-
-const WQ_MICROPLASTICS_TONE: Record<string, string> = {
-  low: "bg-emerald-50 text-emerald-800 ring-emerald-200",
-  moderate: "bg-amber-50 text-amber-800 ring-amber-200",
-  high: "bg-orange-50 text-orange-800 ring-orange-200",
-  "very-high": "bg-rose-50 text-rose-800 ring-rose-200",
-};
-
-function WaterQualityPanel({
-  record,
-}: {
-  record: NonNullable<ReturnType<typeof getWaterQualityByLocationId>>;
-}) {
-  return (
-    <section>
-      <div className="mb-6 flex items-end justify-between border-b border-slate-200 pb-3">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-          Pollution & water-quality
-        </h2>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-          What divers should know
-        </span>
-      </div>
-
-      <ul className="space-y-3">
-        {record.events.map((e, i) => (
-          <li
-            key={i}
-            className="rounded-2xl border border-slate-200 bg-white p-5"
-          >
-            <div className="flex flex-wrap items-start justify-between gap-2">
-              <h3 className="text-base font-bold text-slate-900">{e.title}</h3>
-              <span
-                className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${WQ_SEVERITY_TONE[e.severity]}`}
-              >
-                {WQ_SEVERITY_LABEL[e.severity]}
-              </span>
-            </div>
-            <p className="mt-1 text-[11px] uppercase tracking-wider text-slate-500">
-              Since {e.since}
-              {e.worstMonths && e.worstMonths.length > 0
-                ? " · worst " +
-                  e.worstMonths
-                    .map((m) => ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m - 1])
-                    .join(", ")
-                : ""}
-            </p>
-            <p className="mt-3 text-[13px] leading-6 text-slate-700">
-              {e.description}
-            </p>
-          </li>
-        ))}
-      </ul>
-
-      {record.microplasticsLevel ? (
-        <div className="mt-4">
-          <span
-            className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider ring-1 ring-inset ${WQ_MICROPLASTICS_TONE[record.microplasticsLevel]}`}
-          >
-            {WQ_MICROPLASTICS_LABEL[record.microplasticsLevel]}
-          </span>
-        </div>
-      ) : null}
-
-      <div className="mt-4 rounded-2xl border border-sky-200 bg-sky-50 p-5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-700">
-          What this means for your trip
-        </p>
-        <p className="mt-2 text-[14px] leading-6 text-sky-900">
-          {record.divingImpactNote}
-        </p>
-      </div>
-    </section>
-  );
-}
