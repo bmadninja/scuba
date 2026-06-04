@@ -671,6 +671,69 @@ export default function DataPage() {
             </tbody>
           </table>
         </section>
+
+        {/* ─── HOW METRICS ARE CALCULATED (merged from /faq) ─── */}
+        <section id="how-calculated" style={{ marginBottom: "4rem", paddingBottom: "4rem", borderBottom: "1px solid #e2e8f0" }}>
+          <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.75rem" }}>
+            How metrics work
+          </p>
+          <h2 style={{ fontSize: "1.625rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#0f172a", marginBottom: "1.25rem" }}>
+            How reef metrics are calculated
+          </h2>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+
+            <div>
+              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>Coral cover</h3>
+              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+                <p>The number we show is <strong>live coral cover</strong> — the percentage of the seafloor at the dive location that is covered by living, healthy coral. It comes from in water surveys (line or point intercept transects) done by reef monitoring programs.</p>
+                <p>Higher is better. A healthy tropical reef sits around <strong>50% live cover</strong>. Anything under 30% is a reef that has lost a lot, and under 20% is severely degraded.</p>
+                <p>We show two snapshots of the same site so you can see its trajectory, not a generic baseline: a decade ago (the earlier survey on file) and today (the most recent). The year of each survey is shown under the bar.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>The &ldquo;at this rate&rdquo; projection</h3>
+              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+                <p>When a reef is losing cover, we extend the line forward. The math is deliberately simple: take the difference between the two surveys, divide by the years between them to get annual loss, then divide today&rsquo;s cover by that rate to get years until zero.</p>
+                <p>This is a <strong>linear extrapolation</strong>, not a forecast. Treat the year as a &ldquo;if nothing changes, you&rsquo;ve got this long&rdquo; signal, not a prediction. We don&rsquo;t show a projection when a reef is holding steady or recovering, or when we only have one survey on file.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>NOAA bleaching alert levels</h3>
+              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+                <p>The five levels track how much heat the reef has absorbed, measured in <strong>degree heating weeks</strong> (°C-weeks):</p>
+                <ul style={{ paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.375rem" }}>
+                  <li><strong>No stress</strong> — sea surface temperature at or below the warmest monthly mean.</li>
+                  <li><strong>Watch</strong> — SST above the warmest monthly mean, DHW still near zero.</li>
+                  <li><strong>Warning</strong> — DHW between roughly 0 and 4 °C-weeks. Possible bleaching, mortality unlikely.</li>
+                  <li><strong>Alert 1</strong> — DHW ≥ 4 °C-weeks. Significant bleaching expected.</li>
+                  <li><strong>Alert 2</strong> — DHW ≥ 8 °C-weeks. Widespread bleaching and significant mortality likely.</li>
+                </ul>
+                <p>These are categorical thresholds, not predictions. A reef shown at Alert 2 may still recover; one shown at No Stress can be hit by next month&rsquo;s heatwave.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>Can you tell me if a reef is dying?</h3>
+              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+                <p>Honestly — no, not from what we have today. We can tell you the current thermal stress alert level, what live coral cover was at the last in water survey, and what that survey measured a decade earlier when both snapshots exist.</p>
+                <p>What we <em>cannot</em> defensibly say: that fish populations are declining, that sharks are &ldquo;disappearing,&rdquo; or that a reef is on a terminal trajectory. Sightings without an effort denominator don&rsquo;t support trend claims, and we won&rsquo;t pretend they do.</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>How is scubaSeason funded?</h3>
+              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+                <p>Today: affiliate links to operators, lodging, and gear. If you book through one of those links, the site earns a commission. Editorial recommendations and source disclosures don&rsquo;t change based on commission rates — see <a href="/about" style={{ color: "#0089de" }}>About → Editorial independence</a>.</p>
+                <p>Longer term, the affiliate income is a floor, not the plan. The wedges we&rsquo;re looking at are research and NGO data subscriptions, and evidence infrastructure for conservation funders after bleaching events. Neither exists yet.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
       </div>
     </>
   );
