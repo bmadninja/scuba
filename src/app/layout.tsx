@@ -5,6 +5,7 @@ import "./globals.css";
 import { JsonLd } from "@/components/json-ld";
 import { AtlasNav } from "@/components/atlas-nav";
 import { AtlasFooter } from "@/components/atlas-footer";
+import { NavProvider } from "@/components/nav-context";
 import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { organizationSchema, websiteSchema } from "@/lib/schema-org";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
@@ -67,8 +68,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans">
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
-        <AtlasNav entries={entries} />
-        <main className="flex-1">{children}</main>
+        <NavProvider>
+          <AtlasNav entries={entries} />
+          <main className="flex-1">{children}</main>
+        </NavProvider>
         <AtlasFooter />
         <Analytics />
       </body>

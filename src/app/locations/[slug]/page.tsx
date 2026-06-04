@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { SetNavBreadcrumb } from "@/components/set-nav-breadcrumb";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { JsonLd } from "@/components/json-ld";
 import { underwaterPhotoUrl } from "@/lib/photo-quality";
@@ -312,6 +313,7 @@ export default async function LocationPage({
 
   // Getting-there from first site that has data
   const getThere = sites.map((s) => s.getThere).find((t) => t && t.trim().length > 0);
+  const getThereStructured = sites.map((s) => s.getThereStructured).find((t) => Boolean(t)) ?? null;
 
   // Partner links
   const lodging = dedupePartnerLinks(sites.flatMap((s) => s.lodging));
@@ -390,6 +392,12 @@ export default async function LocationPage({
   return (
     <>
       <JsonLd data={locationSchema(location, sites.length)} />
+      <SetNavBreadcrumb
+        items={[
+          { label: "Atlas", href: "/" },
+          { label: location.name },
+        ]}
+      />
 
       {/* ------------------------------------------------------------------ */}
       {/* HERO                                                                 */}
@@ -633,7 +641,7 @@ export default async function LocationPage({
               </div>
             )}
 
-            {/* Editorial hook — before reef science for thriving/pressure, after for witnessing */}
+            {/* Editorial hook — before reef science for thriving/pressure */}
             {!isWitnessing && (details?.extendedDescription) ? (
               <div style={{ paddingTop: "2.5rem", paddingBottom: "1.25rem" }}>
                 <EditorialHook text={details.extendedDescription} />
@@ -641,10 +649,11 @@ export default async function LocationPage({
             ) : null}
 
             {/* ------------------------------------------------------------ */}
-            {/* SPECIES HIGHLIGHTS STRIP                                       */}
+            {/* SPECIES HIGHLIGHTS STRIP — thriving/pressure only             */}
+            {/* (witnessing change renders this after reef science + hook)    */}
             {/* ------------------------------------------------------------ */}
-            {highlightedSpecies.length > 0 ? (
-              <section style={{ marginBottom: "2.5rem", marginTop: !isWitnessing && details?.extendedDescription ? "1.5rem" : "2.5rem" }}>
+            {!isWitnessing && highlightedSpecies.length > 0 ? (
+              <section style={{ marginBottom: "2.5rem", marginTop: details?.extendedDescription ? "1.5rem" : "2.5rem" }}>
                 <p
                   style={{
                     fontSize: "0.6875rem",
@@ -809,6 +818,199 @@ export default async function LocationPage({
               <div style={{ margin: "2rem 0" }}>
                 <EditorialHook text={details.extendedDescription} />
               </div>
+            ) : null}
+
+            {/* ------------------------------------------------------------ */}
+            {/* SPECIES HIGHLIGHTS STRIP — witnessing change only             */}
+            {/* (position: after reef science + editorial hook)               */}
+            {/* ------------------------------------------------------------ */}
+            {isWitnessing && highlightedSpecies.length > 0 ? (
+              <section style={{ marginBottom: "2.5rem", marginTop: "2.5rem" }}>
+                <p
+                  style={{
+                    fontSize: "0.6875rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "#64748b",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  What you&apos;ll find here
+                </p>
+                <h2
+                  style={{
+                    fontSize: "1.5rem",
+                    fontWeight: 800,
+                    letterSpacing: "-0.025em",
+                    color: "#0f172a",
+                    marginBottom: "1.25rem",
+                  }}
+                >
+                  Notable species across all sites
+                </h2>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3,1fr)",
+                    gap: "0.75rem",
+                  }}
+                >
+                  {highlightedSpecies.map((sv, i) => {
+                    const days = daysSince(sv.lastConfirmedAt);
+                    const dot = dotColor(days);
+                    const relDate = fmtRelative(days, sv.lastConfirmedAt);
+                    const iucn = IUCN_ENABLED ? getIucnStatus(sv.speciesScientific) : null;
+                    const badgeStyle = iucn ? IUCN_BADGE[iucn.category] : null;
+                    const siteLink = sv.siteSlug ? `/sites/${sv.siteSlug}` : null;
+                    const CardEl = siteLink ? Link : "div";
+                    return (
+                      <CardEl
+                        key={`${sv.speciesCommon}-${i}`}
+                        // @ts-expect-error polymorphic href
+                        href={siteLink ?? undefined}
+                        style={{
+                          border: "1px solid #e2e8f0",
+                          borderRadius: "1rem",
+                          overflow: "hidden",
+                          textDecoration: "none",
+                          color: "inherit",
+                          display: "block",
+                        }}
+                      >
+                        <div
+                          style={{
+                            height: 88,
+                            background: OCEAN_GRADIENTS[i % OCEAN_GRADIENTS.length],
+                          }}
+                        />
+                        <div style={{ padding: "0.75rem" }}>
+                          <p
+                            style={{
+                              fontSize: "0.8125rem",
+                              fontWeight: 700,
+                              color: "#0f172a",
+                              marginBottom: "0.2rem",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "0.4rem",
+                              flexWrap: "wrap",
+                            }}
+                          >
+                            {sv.speciesCommon}
+                            {badgeStyle && iucn ? (
+                              <span
+                                style={{
+                                  display: "inline-block",
+                                  fontSize: "0.5rem",
+                                  fontWeight: 700,
+                                  letterSpacing: "0.06em",
+                                  textTransform: "uppercase",
+                                  padding: "0.15rem 0.4rem",
+                                  borderRadius: 3,
+                                  background: badgeStyle.bg,
+                                  color: badgeStyle.color,
+                                  flexShrink: 0,
+                                }}
+                              >
+                                {iucn.category}
+                              </span>
+                            ) : null}
+                          </p>
+                          {sv.speciesScientific ? (
+                            <p
+                              style={{
+                                fontSize: "0.6875rem",
+                                fontStyle: "italic",
+                                color: "#64748b",
+                                marginBottom: "0.4rem",
+                              }}
+                            >
+                              {sv.speciesScientific}
+                            </p>
+                          ) : null}
+                          <p
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "0.375rem",
+                              fontSize: "0.6875rem",
+                              color: "#64748b",
+                            }}
+                          >
+                            <span
+                              style={{
+                                width: 5,
+                                height: 5,
+                                borderRadius: "50%",
+                                background: dot,
+                                flexShrink: 0,
+                              }}
+                            />
+                            {relDate}{sv.siteName ? ` · ${sv.siteName}` : ""}
+                          </p>
+                        </div>
+                      </CardEl>
+                    );
+                  })}
+                </div>
+              </section>
+            ) : null}
+
+            {/* ------------------------------------------------------------ */}
+            {/* LIVE SIGHTINGS FEED — witnessing change: before sites          */}
+            {/* ------------------------------------------------------------ */}
+            {isWitnessing && allSightings.length > 0 ? (
+              <section style={{ marginTop: "2.5rem" }}>
+                <p
+                  style={{
+                    fontSize: "0.6875rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "#64748b",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  Live from iNaturalist
+                </p>
+                <h2
+                  style={{
+                    fontSize: "1.5rem",
+                    fontWeight: 800,
+                    letterSpacing: "-0.025em",
+                    color: "#0f172a",
+                    marginBottom: "1.25rem",
+                  }}
+                >
+                  Recent sightings across all sites
+                </h2>
+                <div
+                  style={{
+                    border: "1px solid #e2e8f0",
+                    borderRadius: "1.25rem",
+                    overflow: "hidden",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  {allSightings.map((sv, i) => (
+                    <SightingRow
+                      key={`${sv.siteId}-${sv.speciesCommon}-${i}`}
+                      speciesCommon={sv.speciesCommon}
+                      speciesScientific={sv.speciesScientific}
+                      siteName={sv.siteName}
+                      date={sv.lastConfirmedAt}
+                      obsId={sv.obsId}
+                    />
+                  ))}
+                </div>
+                <p style={{ fontSize: "0.75rem", color: "#94a3b8", marginBottom: "2rem" }}>
+                  Sightings from iNaturalist Research Grade observations.{" "}
+                  <Link href="/data" style={{ color: "#0089de", textDecoration: "none", fontWeight: 600 }}>
+                    How we verify this data →
+                  </Link>
+                </p>
+              </section>
             ) : null}
 
             {/* ------------------------------------------------------------ */}
@@ -984,9 +1186,9 @@ export default async function LocationPage({
             )}
 
             {/* ------------------------------------------------------------ */}
-            {/* LIVE SIGHTINGS FEED                                            */}
+            {/* LIVE SIGHTINGS FEED — thriving/pressure: after sites           */}
             {/* ------------------------------------------------------------ */}
-            {allSightings.length > 0 ? (
+            {!isWitnessing && allSightings.length > 0 ? (
               <section style={{ marginTop: "2.5rem" }}>
                 <p
                   style={{
@@ -1026,6 +1228,7 @@ export default async function LocationPage({
                       speciesScientific={sv.speciesScientific}
                       siteName={sv.siteName}
                       date={sv.lastConfirmedAt}
+                      obsId={sv.obsId}
                     />
                   ))}
                 </div>
@@ -1200,7 +1403,7 @@ export default async function LocationPage({
                   {thermalBadge.label}
                 </p>
                 <p style={{ fontSize: "0.6875rem", color: thermalBadge.subColor, marginTop: "0.15rem" }}>
-                  NOAA Coral Reef Watch · updated nightly
+                  NOAA Coral Reef Watch · updated tonight
                 </p>
               </div>
             </div>
@@ -1353,7 +1556,7 @@ export default async function LocationPage({
             </div>
 
             {/* Getting there */}
-            {getThere ? (
+            {(getThere || getThereStructured) ? (
               <div
                 style={{
                   border: "1px solid #e2e8f0",
@@ -1370,10 +1573,50 @@ export default async function LocationPage({
                 >
                   <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>Getting there</p>
                 </div>
-                <div style={{ padding: "1.25rem 1.375rem" }}>
-                  <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "#334155" }}>
-                    {getThere}
-                  </p>
+                <div style={{ padding: "1.25rem 1.375rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+                  {getThereStructured ? (
+                    <>
+                      {/* Section 1: Nearest hub */}
+                      <div>
+                        <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.3rem" }}>
+                          Nearest hub
+                        </p>
+                        <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>
+                          {getThereStructured.nearestHubName}
+                        </p>
+                        <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem" }}>
+                          {getThereStructured.nearestHubDescription}
+                        </p>
+                      </div>
+                      {/* Section 2: Transfer to sites */}
+                      <div style={{ borderTop: "1px solid #e2e8f0", paddingTop: "1rem" }}>
+                        <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.3rem" }}>
+                          Transfer to sites
+                        </p>
+                        <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>
+                          {getThereStructured.transferToSitesName}
+                        </p>
+                        <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem" }}>
+                          {getThereStructured.transferToSitesDescription}
+                        </p>
+                      </div>
+                      {/* Section 3: Live-aboard option (if applicable) */}
+                      {getThereStructured.liveaboardDescription ? (
+                        <div style={{ borderTop: "1px solid #e2e8f0", paddingTop: "1rem" }}>
+                          <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.3rem" }}>
+                            Live-aboard option
+                          </p>
+                          <p style={{ fontSize: "0.75rem", color: "#64748b" }}>
+                            {getThereStructured.liveaboardDescription}
+                          </p>
+                        </div>
+                      ) : null}
+                    </>
+                  ) : (
+                    <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "#334155" }}>
+                      {getThere}
+                    </p>
+                  )}
                 </div>
               </div>
             ) : null}

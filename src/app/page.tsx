@@ -9,6 +9,8 @@ import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { getAllLocations } from "@/lib/data/locations";
 import { STATE_DEF } from "@/lib/data/reef-state";
 import sourcesData from "@/data/sources.json";
+import { AtlasNav } from "@/components/atlas-nav";
+import { HideLayoutNav } from "@/components/hide-layout-nav";
 
 // Homepage hero — reef manta ray at Raja Ampat. CC BY 2.0 · iNaturalist / Wikimedia Commons
 const HERO_IMAGE_URL =
@@ -96,6 +98,15 @@ export default function Home() {
   const allLocs = getAllAtlasLocations();
   const rawBySlug = new Map(getAllLocations().map((l) => [l.slug, l]));
 
+  // Search entries for the hero nav (same shape as layout.tsx passes to AtlasNav)
+  const navEntries = allLocs.map((l) => ({
+    slug: l.slug,
+    name: l.name,
+    country: l.country,
+    region: l.region,
+    state: l.state,
+  }));
+
   const currentMonth = new Date().getUTCMonth() + 1;
   const inSeason = (months: number[]) => months.includes(currentMonth);
 
@@ -146,6 +157,9 @@ export default function Home() {
 
   return (
     <>
+      {/* Hide the sticky layout nav — we render our own inside the hero */}
+      <HideLayoutNav />
+
       {/* ─── HERO ─────────────────────────────────────────────────── */}
       <section
         aria-label="Hero"
@@ -156,6 +170,8 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
+        {/* Hero-variant transparent nav, absolutely positioned over the photo */}
+        <AtlasNav entries={navEntries} variant="hero" />
         {/* Hero photo — reef manta ray, Raja Ampat */}
         <Image
           src={HERO_IMAGE_URL}
@@ -600,13 +616,12 @@ export default function Home() {
               </a>
             </div>
 
-            {/* 3-column asymmetric grid: featured + 2 stacked */}
+            {/* 2-column asymmetric grid: large featured left + 2 stacked right */}
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1.65fr 1fr 1fr",
-                gap: 1,
-                background: "rgba(255,255,255,0.05)",
+                gridTemplateColumns: "1.65fr 1fr",
+                gap: "1rem",
                 borderRadius: "1.25rem",
                 overflow: "hidden",
               }}
@@ -625,6 +640,8 @@ export default function Home() {
                       overflow: "hidden",
                       textDecoration: "none",
                       background: DEST_GRADIENT[loc.slug] ?? DEST_GRADIENT.default,
+                      borderRadius: "1.25rem",
+                      minHeight: 380,
                     }}
                   >
                     {/* Image placeholder with min-height */}
@@ -748,13 +765,12 @@ export default function Home() {
                 );
               })()}
 
-              {/* Right stack — two smaller cards */}
+              {/* Right stack — two smaller cards stacked vertically */}
               <div
                 style={{
-                  display: "grid",
-                  gridTemplateRows: "1fr 1fr",
-                  gap: 1,
-                  gridColumn: "span 2",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
                 }}
               >
                 {inspirationLocs.slice(1, 3).map((loc) => {
@@ -771,6 +787,8 @@ export default function Home() {
                         textDecoration: "none",
                         background:
                           DEST_GRADIENT[loc!.slug] ?? DEST_GRADIENT.default,
+                        borderRadius: "1.25rem",
+                        flex: 1,
                       }}
                     >
                       {/* Min-height placeholder */}

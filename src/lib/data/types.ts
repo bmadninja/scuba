@@ -114,6 +114,14 @@ export type SiteGearItem = {
   gearId?: string;
 };
 
+export type GetThereStructured = {
+  nearestHubName: string;
+  nearestHubDescription: string;
+  transferToSitesName: string;
+  transferToSitesDescription: string;
+  liveaboardDescription?: string;
+};
+
 export type Site = {
   id: string;
   slug: string;
@@ -131,6 +139,8 @@ export type Site = {
   editorialRank: number;
   heroImageUrl?: string;
   getThere: string;
+  /** Structured breakdown of travel logistics. When present, renders as 3 labeled sections. */
+  getThereStructured?: GetThereStructured;
   lodging: PartnerLink[];
   operators: PartnerLink[];
   gearIds: string[];
@@ -265,6 +275,8 @@ export type SightingEvidence = {
   sourceIds: string[];
   methodologyClaimIds: string[];
   notes?: string;
+  /** iNaturalist observation ID. When present, links to the source observation. */
+  obsId?: string;
 };
 
 /**

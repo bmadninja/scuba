@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
+import { SetNavBreadcrumb } from "@/components/set-nav-breadcrumb";
 import { IucnBadge } from "@/components/iucn-badge";
 import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { siteSchema } from "@/lib/schema-org";
@@ -242,6 +243,15 @@ export default async function SiteDetailPage({
   return (
     <>
       <JsonLd data={siteSchema(site, location)} />
+      <SetNavBreadcrumb
+        items={[
+          { label: "Atlas", href: "/" },
+          ...(location
+            ? [{ label: location.name, href: `/locations/${location.slug}` }]
+            : []),
+          { label: site.name },
+        ]}
+      />
 
       {/* ── HERO ── */}
       <section
@@ -707,101 +717,143 @@ export default async function SiteDetailPage({
             ) : null}
 
             {/* ── SIGHTINGS LOG ── */}
-            {sightings.length > 0 ? (
-              <>
-                <p
-                  style={{
-                    fontSize: "0.6875rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: "#64748b",
-                    marginBottom: "0.75rem",
-                  }}
-                >
-                  Recent sightings
-                </p>
-                <h2
-                  style={{
-                    fontSize: "1.375rem",
-                    fontWeight: 800,
-                    letterSpacing: "-0.025em",
-                    color: "#0f172a",
-                    marginBottom: "1.25rem",
-                  }}
-                >
-                  iNaturalist research grade observations
-                </h2>
+            <p
+              style={{
+                fontSize: "0.6875rem",
+                fontWeight: 700,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#64748b",
+                marginBottom: "0.75rem",
+              }}
+            >
+              Recent sightings
+            </p>
+            <h2
+              style={{
+                fontSize: "1.375rem",
+                fontWeight: 800,
+                letterSpacing: "-0.025em",
+                color: "#0f172a",
+                marginBottom: "1.25rem",
+              }}
+            >
+              iNaturalist research grade observations
+            </h2>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 0,
+                border: "1px solid #e2e8f0",
+                borderRadius: "1.25rem",
+                overflow: "hidden",
+                marginBottom: "2.5rem",
+              }}
+            >
+              {sightings.filter((s) => s.lastConfirmedAt).length === 0 ? (
                 <div
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 0,
-                    border: "1px solid #e2e8f0",
-                    borderRadius: "1.25rem",
-                    overflow: "hidden",
-                    marginBottom: "2.5rem",
+                    padding: "2rem 1.5rem",
+                    textAlign: "center",
                   }}
                 >
-                  {sightings
-                    .filter((s) => s.lastConfirmedAt)
-                    .sort((a, b) => (b.lastConfirmedAt ?? "").localeCompare(a.lastConfirmedAt ?? ""))
-                    .slice(0, 5)
-                    .map((s, i, arr) => {
-                      const dotColor = sightingDotColor(s.lastConfirmedAt);
-                      return (
-                        <div
-                          key={s.id}
+                  <p
+                    style={{
+                      fontSize: "0.875rem",
+                      fontWeight: 600,
+                      color: "#64748b",
+                      marginBottom: "0.375rem",
+                    }}
+                  >
+                    No recent sightings recorded.
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "0.75rem",
+                      color: "#94a3b8",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    Dived here? Log what you saw on iNaturalist to help keep this record current.
+                  </p>
+                </div>
+              ) : (
+                sightings
+                  .filter((s) => s.lastConfirmedAt)
+                  .sort((a, b) => (b.lastConfirmedAt ?? "").localeCompare(a.lastConfirmedAt ?? ""))
+                  .slice(0, 5)
+                  .map((s, i, arr) => {
+                    const dotColor = sightingDotColor(s.lastConfirmedAt);
+                    const obsId = s.sourceIds[0] ?? null;
+                    return (
+                      <div
+                        key={s.id}
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "1rem",
+                          padding: "1rem 1.375rem",
+                          borderBottom: i < arr.length - 1 ? "1px solid #e2e8f0" : "none",
+                        }}
+                      >
+                        <span
                           style={{
-                            display: "flex",
-                            alignItems: "flex-start",
-                            gap: "1rem",
-                            padding: "1rem 1.375rem",
-                            borderBottom: i < arr.length - 1 ? "1px solid #e2e8f0" : "none",
+                            width: 8,
+                            height: 8,
+                            borderRadius: "50%",
+                            background: dotColor,
+                            flexShrink: 0,
+                            marginTop: 4,
+                            display: "inline-block",
                           }}
-                        >
-                          <span
+                        />
+                        <div style={{ flex: 1 }}>
+                          <p
                             style={{
-                              width: 8,
-                              height: 8,
-                              borderRadius: "50%",
-                              background: dotColor,
-                              flexShrink: 0,
-                              marginTop: 4,
-                              display: "inline-block",
+                              fontSize: "0.875rem",
+                              fontWeight: 600,
+                              color: "#0f172a",
                             }}
-                          />
-                          <div style={{ flex: 1 }}>
+                          >
+                            {s.speciesCommon}
+                          </p>
+                          {s.notes ? (
                             <p
                               style={{
-                                fontSize: "0.875rem",
-                                fontWeight: 600,
-                                color: "#0f172a",
+                                fontSize: "0.75rem",
+                                color: "#64748b",
+                                marginTop: "0.15rem",
                               }}
                             >
-                              {s.speciesCommon}
+                              {s.notes}
                             </p>
-                            {s.notes ? (
-                              <p
-                                style={{
-                                  fontSize: "0.75rem",
-                                  color: "#64748b",
-                                  marginTop: "0.15rem",
-                                }}
-                              >
-                                {s.notes}
-                              </p>
-                            ) : (
-                              <p
-                                style={{
-                                  fontSize: "0.75rem",
-                                  color: "#64748b",
-                                  marginTop: "0.15rem",
-                                }}
-                              >
-                                {s.recentRecordCount} record{s.recentRecordCount === 1 ? "" : "s"} within {s.proximityRadiusKm} km
-                              </p>
-                            )}
+                          ) : (
+                            <p
+                              style={{
+                                fontSize: "0.75rem",
+                                color: "#64748b",
+                                marginTop: "0.15rem",
+                              }}
+                            >
+                              {s.recentRecordCount} record{s.recentRecordCount === 1 ? "" : "s"} within {s.proximityRadiusKm} km
+                            </p>
+                          )}
+                          {obsId ? (
+                            <a
+                              href={`https://www.inaturalist.org/observations/${obsId}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+                                fontSize: "0.6875rem",
+                                color: "#94a3b8",
+                                textDecoration: "none",
+                              }}
+                            >
+                              obs/{obsId} →
+                            </a>
+                          ) : (
                             <p
                               style={{
                                 fontSize: "0.6875rem",
@@ -809,25 +861,25 @@ export default async function SiteDetailPage({
                                 fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
                               }}
                             >
-                              iNaturalist · {s.sourceIds[0] ?? "research grade"}
+                              iNaturalist · research grade
                             </p>
-                          </div>
-                          <span
-                            style={{
-                              fontSize: "0.75rem",
-                              color: "#64748b",
-                              whiteSpace: "nowrap",
-                              flexShrink: 0,
-                            }}
-                          >
-                            {s.lastConfirmedAt ? formatRelativeTime(s.lastConfirmedAt) : ""}
-                          </span>
+                          )}
                         </div>
-                      );
-                    })}
-                </div>
-              </>
-            ) : null}
+                        <span
+                          style={{
+                            fontSize: "0.75rem",
+                            color: "#64748b",
+                            whiteSpace: "nowrap",
+                            flexShrink: 0,
+                          }}
+                        >
+                          {s.lastConfirmedAt ? formatRelativeTime(s.lastConfirmedAt) : ""}
+                        </span>
+                      </div>
+                    );
+                  })
+              )}
+            </div>
 
             {/* ── CONDITIONS GRID ── */}
             <p
@@ -1454,7 +1506,7 @@ function StatStripItem({
         display: "flex",
         flexDirection: "column",
         gap: "0.2rem",
-        padding: `1.125rem ${first ? "2rem 1.125rem 0" : "1.125rem 2rem"}`,
+        padding: first ? "1.125rem 2rem 1.125rem 0" : "1.125rem 2rem",
         borderRight: "1px solid #e2e8f0",
         flexShrink: 0,
       }}

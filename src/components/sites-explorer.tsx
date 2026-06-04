@@ -62,6 +62,24 @@ const DIVE_TYPE_OPTIONS = [
   { value: "blackwater", label: "Blackwater" },
 ];
 
+const WILDLIFE_OPTIONS = [
+  { value: "sharks", label: "Sharks", keywords: ["shark"] },
+  { value: "mantas", label: "Mantas", keywords: ["manta"] },
+  { value: "turtles", label: "Turtles", keywords: ["turtle"] },
+  { value: "whales", label: "Whales", keywords: ["whale"] },
+  { value: "dolphins", label: "Dolphins", keywords: ["dolphin"] },
+  { value: "dugongs", label: "Dugongs", keywords: ["dugong"] },
+] as const;
+
+type WildlifeValue = typeof WILDLIFE_OPTIONS[number]["value"];
+
+function siteHasWildlife(site: Site, wildlifeValue: WildlifeValue): boolean {
+  const keywords = WILDLIFE_OPTIONS.find((o) => o.value === wildlifeValue)?.keywords ?? [];
+  return site.species.some((sp) =>
+    keywords.some((kw) => sp.commonName.toLowerCase().includes(kw)),
+  );
+}
+
 /** Reef state config — ordered as in the mockup strip */
 const REEF_STATES: { value: ReefState; label: string }[] = [
   { value: "thriving", label: "Thriving" },
@@ -135,6 +153,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
   const reefState = (params.get("reef") as ReefState | null) ?? null;
   const certFilter = (params.get("cert") as SkillLevel | null) ?? null;
   const diveTypeFilter = params.get("type") ?? null;
+  const wildlifeFilter = (params.get("wildlife") as WildlifeValue | null) ?? null;
   const monthFilter = params.get("month") ? Number(params.get("month")) : null;
   const sortKey = (params.get("sort") as SortKey | null) ?? "season";
 
@@ -170,6 +189,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
       if (reefState && reefStateByLocationId[s.locationId] !== reefState) return false;
       if (certFilter && SKILL_RANK[s.skillLevel] > SKILL_RANK[certFilter]) return false;
       if (diveTypeFilter && !s.diveTypes.includes(diveTypeFilter as never)) return false;
+      if (wildlifeFilter && !siteHasWildlife(s, wildlifeFilter)) return false;
       if (monthFilter && !s.bestMonths.includes(monthFilter)) return false;
       if (q) {
         const hay = [
@@ -204,13 +224,14 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
     }
 
     return result;
-  }, [sites, locationsById, query, reefState, certFilter, diveTypeFilter, monthFilter, sortKey, currentMonth, reefStateByLocationId]);
+  }, [sites, locationsById, query, reefState, certFilter, diveTypeFilter, wildlifeFilter, monthFilter, sortKey, currentMonth, reefStateByLocationId]);
 
   // ── active filter summary ─────────────────────────────────────────────────────
   const hasActiveFilter =
     reefState !== null ||
     certFilter !== null ||
     diveTypeFilter !== null ||
+    wildlifeFilter !== null ||
     monthFilter !== null ||
     query !== "";
 
@@ -423,6 +444,36 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             ))}
           </FilterDropdownChip>
 
+          {/* Wildlife dropdown chip */}
+          <FilterDropdownChip
+            label="Wildlife"
+            active={wildlifeFilter !== null}
+            onClear={() => setParam("wildlife", null)}
+          >
+            {WILDLIFE_OPTIONS.map((o) => (
+              <button
+                key={o.value}
+                type="button"
+                onClick={() => setParam("wildlife", wildlifeFilter === o.value ? null : o.value)}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  textAlign: "left",
+                  padding: "0.45rem 0.875rem",
+                  fontSize: "0.8125rem",
+                  fontFamily: "inherit",
+                  background: wildlifeFilter === o.value ? "#e8f0fe" : "transparent",
+                  color: wildlifeFilter === o.value ? "#1d5d90" : "#0f172a",
+                  border: "none",
+                  cursor: "pointer",
+                  borderRadius: "0.375rem",
+                }}
+              >
+                {o.label}
+              </button>
+            ))}
+          </FilterDropdownChip>
+
           {/* Month dropdown chip */}
           <FilterDropdownChip
             label="Month"
@@ -566,6 +617,11 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             {diveTypeFilter && (
               <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>
                 {DIVE_TYPE_OPTIONS.find((o) => o.value === diveTypeFilter)?.label}
+              </span>
+            )}
+            {wildlifeFilter && (
+              <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>
+                {WILDLIFE_OPTIONS.find((o) => o.value === wildlifeFilter)?.label}
               </span>
             )}
             {monthFilter && (

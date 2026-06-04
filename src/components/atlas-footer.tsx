@@ -91,12 +91,11 @@ export function AtlasFooter() {
               className="mb-4 text-[10px] font-semibold uppercase tracking-[0.14em]"
               style={{ color: "rgba(255,255,255,0.3)" }}
             >
-              Explore
+              Site
             </p>
             <ul className="space-y-2.5">
               {[
                 { href: "/", label: "Atlas" },
-                { href: "/sites", label: "Dive sites" },
                 { href: "/data", label: "Method" },
                 { href: "/about", label: "About" },
               ].map((item) => (
@@ -140,8 +139,10 @@ export function AtlasFooter() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
         >
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.28)" }}>
-            Data aggregated from public sources (NOAA, IUCN, GFW) and may not
-            reflect current conditions. Always dive with a local guide.
+            Thermal data: NOAA Coral Reef Watch v3.1 · refreshed nightly ·{" "}
+            <Link href="/data" className="underline hover:text-white/60 transition-colors">
+              All sources →
+            </Link>
           </p>
           <p className="shrink-0 text-xs" style={{ color: "rgba(255,255,255,0.28)" }}>
             &copy; 2026 scubaSeason.fun
