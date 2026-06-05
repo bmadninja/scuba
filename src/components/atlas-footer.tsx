@@ -97,8 +97,6 @@ export function AtlasFooter() {
               {[
                 { href: "/", label: "Atlas" },
                 { href: "/sites", label: "Sites" },
-                { href: "/gear", label: "Gear" },
-                { href: "/faq",  label: "FAQ" },
                 { href: "/data", label: "Method" },
                 { href: "/about", label: "About" },
               ].map((item) => (

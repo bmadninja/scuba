@@ -8,7 +8,6 @@ import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
-import { getAllEncounters } from "@/lib/data/encounters";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { skillText } from "@/lib/data/reef-state";
@@ -163,19 +162,6 @@ export default async function SiteDetailPage({
   const reefHealthRecords = location ? getReefHealthByLocationId(location.id) : [];
 
   const creatures = mergeCreatures(site, sightings);
-
-  // Build encounter slug lookup
-  const encounterSlugBySpecies = new Map<string, string>();
-  for (const enc of getAllEncounters()) {
-    if (enc.speciesCommon) {
-      encounterSlugBySpecies.set(enc.speciesCommon.toLowerCase(), enc.slug);
-    }
-    if (enc.speciesScientific) {
-      for (const sci of enc.speciesScientific.split(",").map((s) => s.trim())) {
-        if (sci) encounterSlugBySpecies.set(sci.toLowerCase(), enc.slug);
-      }
-    }
-  }
 
   const photoCredits = creatures
     .filter((c) => c.imageUrl)
@@ -640,13 +626,15 @@ export default async function SiteDetailPage({
               >
                 {creatures.map((c) => {
                   const iucn = IUCN_ENABLED ? getIucnStatus(c.scientificName) : null;
-                  const encounterSlug =
-                    (c.scientificName &&
-                      encounterSlugBySpecies.get(c.scientificName.toLowerCase())) ||
-                    encounterSlugBySpecies.get(c.commonName.toLowerCase()) ||
-                    null;
                   const dotColor = sightingDotColor(c.lastConfirmedAt);
-                  const href = encounterSlug ? `/where-to-see/${encounterSlug}` : "#";
+                  // Every confirmed species links to its per-site species detail
+                  // page (which itself links onward to /where-to-see when a
+                  // curated encounter exists). No dead "#" links.
+                  const speciesSlug = c.commonName
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/[^a-z0-9-]/g, "");
+                  const href = `/sites/${site.slug}/species/${speciesSlug}`;
 
                   // Gradient backgrounds cycling through 6 variants
                   const gradients = [

@@ -1,12 +1,4 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 import sourcesData from "@/data/sources.json";
-
-export const metadata: Metadata = {
-  title: "FAQ — How we calculate it | scubaSeason.fun",
-  description:
-    "How scubaSeason.fun calculates coral cover, reef state, DHW thermal stress, sighting evidence, and dive conditions. Every metric explained with its source and confidence level.",
-};
 
 const CONFIDENCE_COLOR: Record<string, string> = {
   high: "#10b981",
@@ -94,45 +86,30 @@ const FAQS: {
 
 type Source = { id: string; name: string; url?: string; description?: string };
 
-export default function FaqPage() {
+/**
+ * Frequently asked questions — how every metric is calculated. Merged into the
+ * Method (/data) page so there is a single methodology reference. Native
+ * details/summary disclosures; no client JS.
+ */
+export function FaqSection() {
   const sources = sourcesData as Source[];
   const sourceMap = new Map(sources.map((s) => [s.id, s]));
 
   return (
-    <div style={{ maxWidth: 860, margin: "0 auto", padding: "3.5rem 3rem" }}>
-      <nav style={{ marginBottom: "1.5rem", fontSize: "0.8125rem", color: "#64748b" }}>
-        <Link href="/" style={{ color: "#64748b", textDecoration: "none" }}>← Atlas</Link>
-        <span style={{ margin: "0 0.5rem" }}>·</span>
-        <Link href="/data" style={{ color: "#64748b", textDecoration: "none" }}>Data</Link>
-      </nav>
-
+    <section id="faq" style={{ marginBottom: "4rem" }}>
       <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.5rem" }}>
         FAQ
       </p>
-      <h1 style={{ fontSize: "2rem", fontWeight: 800, letterSpacing: "-0.03em", color: "#0f172a", marginBottom: "0.75rem" }}>
+      <h2 style={{ fontSize: "1.625rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#0f172a", marginBottom: "0.75rem" }}>
         How we calculate it
-      </h1>
-      <p style={{ fontSize: "0.9375rem", color: "#475569", lineHeight: 1.7, marginBottom: "0.5rem", maxWidth: 640 }}>
-        Every metric on this atlas traces to a specific data source and methodology. This page explains the calculations behind reef state, coral cover, DHW, conditions, species reliability, and more.
-      </p>
-      <p style={{ fontSize: "0.8125rem", color: "#94a3b8", marginBottom: "3rem" }}>
-        {FAQS.length} questions · See also:{" "}
-        <Link href="/data" style={{ color: "#0089de", textDecoration: "none" }}>Data sources</Link>
-        {" · "}
-        <Link href="/about" style={{ color: "#0089de", textDecoration: "none" }}>About &amp; editorial policy</Link>
+      </h2>
+      <p style={{ fontSize: "0.9375rem", color: "#475569", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
+        {FAQS.length} questions on the calculations behind reef state, coral cover, DHW, conditions, species reliability, and more. Each answer names its source and confidence level.
       </p>
 
-      {/* FAQ list */}
       <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
         {FAQS.map((faq, i) => (
-          <details
-            key={i}
-            style={{
-              border: "1px solid #e2e8f0",
-              borderRadius: "1rem",
-              overflow: "hidden",
-            }}
-          >
+          <details key={i} style={{ border: "1px solid #e2e8f0", borderRadius: "1rem", overflow: "hidden" }}>
             <summary
               style={{
                 padding: "1.25rem 1.5rem",
@@ -188,18 +165,6 @@ export default function FaqPage() {
           </details>
         ))}
       </div>
-
-      {/* Footer note */}
-      <div style={{ marginTop: "3rem", padding: "1.5rem", background: "#f1f7fb", borderRadius: "1.25rem", border: "1px solid #e2e8f0" }}>
-        <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.5rem" }}>
-          Something missing or wrong?
-        </p>
-        <p style={{ fontSize: "0.8125rem", color: "#475569", lineHeight: 1.6 }}>
-          If you spot a factual error, an outdated data point, or a methodology question this page doesn&apos;t answer,{" "}
-          <a href="mailto:hello@scubaseason.fun" style={{ color: "#0089de", textDecoration: "none" }}>email us</a>.
-          We update this page when methodologies change.
-        </p>
-      </div>
-    </div>
+    </section>
   );
 }
