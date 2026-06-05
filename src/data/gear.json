@@ -89,7 +89,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Power fins for current diving (Galápagos, Komodo, Socorro). Heavier but worth it where current matters.",
+    "description": "Power fins for current diving (Gal\u00e1pagos, Komodo, Socorro). Heavier but worth it where current matters.",
     "priceRangeUsd": {
       "min": 120,
       "max": 180
@@ -168,7 +168,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Thicker suit for cool water — Socorro, Galápagos, Cocos. Same line as the 3mm. Add when sites dip below 75°F.",
+    "description": "Thicker suit for cool water \u2014 Socorro, Gal\u00e1pagos, Cocos. Same line as the 3mm. Add when sites dip below 75\u00b0F.",
     "priceRangeUsd": {
       "min": 280,
       "max": 380
@@ -341,7 +341,7 @@
   },
   {
     "id": "light-bigblue-al1200",
-    "name": "BigBlue AL1200XWP-II Dive Torch",
+    "name": "BigBlue AL1300 Dive Light",
     "category": "light",
     "tier": "addon",
     "levels": [
@@ -393,13 +393,13 @@
   },
   {
     "id": "light-bigblue-vl5500p",
-    "name": "BigBlue VL5500P Tech Light",
+    "name": "BigBlue VL4600 Video Light",
     "category": "light",
     "tier": "addon",
     "levels": [
       "tech"
     ],
-    "description": "5500-lumen flood primary for wrecks, caverns, deep tech. Li-ion — check airline rules.",
+    "description": "5500-lumen flood primary for wrecks, caverns, deep tech. Li-ion \u2014 check airline rules.",
     "priceRangeUsd": {
       "min": 350,
       "max": 450
@@ -443,7 +443,7 @@
   },
   {
     "id": "spool-dgx-100",
-    "name": "DGX 100ft Finger Spool",
+    "name": "100ft Scuba Finger Spool",
     "category": "reel-smb",
     "tier": "addon",
     "levels": [
@@ -470,7 +470,7 @@
   },
   {
     "id": "reef-hook-innovative",
-    "name": "Innovative Scuba Reef Hook",
+    "name": "Stainless Steel Reef Hook",
     "category": "reef-hook",
     "tier": "addon",
     "levels": [
@@ -479,7 +479,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Stainless hook + 4ft line + clip. Add for ripping-current sites — Palau Blue Corner, Komodo, Galápagos. Hooks into dead reef only.",
+    "description": "Stainless hook + 4ft line + clip. Add for ripping-current sites \u2014 Palau Blue Corner, Komodo, Gal\u00e1pagos. Hooks into dead reef only.",
     "priceRangeUsd": {
       "min": 20,
       "max": 35
@@ -530,7 +530,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Cold-water hood for upwellings (Galápagos, Cocos, Channel Islands).",
+    "description": "Cold-water hood for upwellings (Gal\u00e1pagos, Cocos, Channel Islands).",
     "priceRangeUsd": {
       "min": 45,
       "max": 70
@@ -574,7 +574,7 @@
   },
   {
     "id": "save-a-dive-kit",
-    "name": "Trident Save-A-Dive Kit",
+    "name": "Ultimate Save-A-Dive Kit",
     "category": "specialty",
     "tier": "addon",
     "levels": [
@@ -584,7 +584,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "O-rings, mouthpiece, zip ties, mask strap. Never travel without one — saves a trip.",
+    "description": "O-rings, mouthpiece, zip ties, mask strap. Never travel without one \u2014 saves a trip.",
     "priceRangeUsd": {
       "min": 25,
       "max": 40
@@ -612,7 +612,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Reef-safe defog — won't poison the corals you came to see.",
+    "description": "Reef-safe defog \u2014 won't poison the corals you came to see.",
     "priceRangeUsd": {
       "min": 10,
       "max": 15
@@ -629,7 +629,7 @@
   },
   {
     "id": "starter-kit-package",
-    "name": "Beginner Mask/Snorkel/Fin Set",
+    "name": "Beginner Mask/Fin/Snorkel Set (ZEEPORTE)",
     "category": "specialty",
     "tier": "addon",
     "levels": [
@@ -653,7 +653,7 @@
   },
   {
     "id": "pony-bottle-19cf",
-    "name": "Catalina 19cf Pony Bottle Setup",
+    "name": "Catalina 13cf Pony Bottle Setup",
     "category": "specialty",
     "tier": "addon",
     "levels": [
@@ -678,7 +678,7 @@
   },
   {
     "id": "muck-stick-trident",
-    "name": "Trident Stainless Muck Stick",
+    "name": "Aluminum Muck Stick Pointer",
     "category": "specialty",
     "tier": "addon",
     "levels": [
@@ -686,7 +686,7 @@
       "rescue",
       "divemaster"
     ],
-    "description": "For macro photography on sand bottoms — only where operator rules allow.",
+    "description": "For macro photography on sand bottoms \u2014 only where operator rules allow.",
     "priceRangeUsd": {
       "min": 30,
       "max": 45
@@ -714,7 +714,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Wide-angle action camera. The default underwater rig for travel — small, durable, native waterproof to 33ft, dive housing extends deeper.",
+    "description": "Wide-angle action camera. The default underwater rig for travel \u2014 small, durable, native waterproof to 33ft, dive housing extends deeper.",
     "priceRangeUsd": {
       "min": 300,
       "max": 450
@@ -764,7 +764,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Personal locator beacon for surface separations. Standard kit at remote sites — Galápagos, Cocos, Socorro. Transmits to satellite SAR.",
+    "description": "Personal locator beacon for surface separations. Standard kit at remote sites \u2014 Gal\u00e1pagos, Cocos, Socorro. Transmits to satellite SAR.",
     "priceRangeUsd": {
       "min": 300,
       "max": 400
@@ -814,7 +814,7 @@
       "divemaster",
       "tech"
     ],
-    "description": "Dark-color gloves for baited shark dives. Bright skin/gloves can attract bites — operators require dark covers.",
+    "description": "Dark-color gloves for baited shark dives. Bright skin/gloves can attract bites \u2014 operators require dark covers.",
     "priceRangeUsd": {
       "min": 25,
       "max": 50
