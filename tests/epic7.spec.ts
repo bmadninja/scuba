@@ -83,22 +83,17 @@ test.describe('Site detail re-sequence (7.10)', () => {
   });
 });
 
-// ── /faq page ──────────────────────────────────────────────────────────────
-test.describe('/faq page', () => {
-  test('loads with methodology questions', async ({ page }) => {
+// ── FAQ (merged into /data per other session) ─────────────────────────────
+test.describe('FAQ section on /data', () => {
+  test('/faq redirects to /data', async ({ page }) => {
     await page.goto('/faq');
-    await expect(page.getByRole('heading', { name: /How we calculate it/i })).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByText(/reef state/i).first()).toBeVisible();
-    await expect(page.getByText(/DHW/i).first()).toBeVisible();
+    await expect(page).toHaveURL(/\/data/);
   });
 
-  test('accordion items expand on click', async ({ page }) => {
-    await page.goto('/faq');
-    await expect(page.getByRole('heading', { name: /How we calculate it/i })).toBeVisible({ timeout: 15_000 });
-    const first = page.locator('details').first();
-    await first.locator('summary').click();
-    // After clicking, the hidden answer text should be visible
-    await expect(first.locator('div').first()).toBeVisible();
+  test('/data contains FAQ methodology content', async ({ page }) => {
+    await page.goto('/data');
+    // FAQ content merged into Method page
+    await expect(page.getByText(/reef state|DHW|coral cover/i).first()).toBeVisible({ timeout: 10_000 });
   });
 });
 

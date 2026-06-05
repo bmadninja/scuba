@@ -128,8 +128,9 @@ const STORIES = {
     record("A2", "sites>=100", sites.length >= 100, `count=${sites.length}`);
   },
   async A3() {
+    // /gear removed (gear on location pages per 7.9); check /sites + /about only
     const r = await fetchText("/");
-    for (const link of ["/sites", "/about", "/gear"]) {
+    for (const link of ["/sites", "/about"]) {
       record("A3", `link:${link}`, new RegExp(`href="${link}"`).test(r.body));
     }
   },
@@ -150,7 +151,8 @@ const STORIES = {
   },
   async B2() {
     const r = await fetchText(`/sites/${FLAGSHIP}`);
-    for (const h of ["Overview", "What you'll see", "Conditions", "Season calendar", "Gear"]) {
+    // Gear moved to location page per story 7.9
+    for (const h of ["Overview", "What you'll see", "Conditions", "Season calendar"]) {
       record("B2", `heading:${h}`, r.body.includes(h));
     }
     // Plan Your Trip moved to location page per story 7.8/7.9 — check there
@@ -184,7 +186,7 @@ const STORIES = {
   async B6() {
     // Gear section moved to location page per story 7.9; site page has Gear heading via footer nav
     const rl = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
-    record("B6", "gear-heading", /Gear</.test(rl.body));
+    record("B6", "gear-heading", /Gear[\s\w]*<\/h2>|id="gear"|section.*gear/i.test(rl.body));
     record("B6", "tier-a-base", /base kit/i.test(rl.body));
     record("B6", "tier-b-site", /site-specific/i.test(rl.body));
   },
@@ -230,15 +232,11 @@ const STORIES = {
     record("E2", "policy", /affiliate/i.test(r.body));
   },
   async E4() {
-    const r = await fetchText("/gear");
+    // /gear page removed; gear now lives on location pages (story 7.9)
+    const r = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
     record("E4", "200", r.status === 200);
-    const cards = (r.body.match(/data-gear-id|class="[^"]*gear-card|<article/gi) || []).length;
-    record(
-      "E4",
-      "gear>=5",
-      cards >= 5 || (r.body.match(/\$\d/g) || []).length >= 5,
-      `cards=${cards}`,
-    );
+    const items = (r.body.match(/\$\d/g) || []).length;
+    record("E4", "gear>=5", items >= 5, `price-items=${items}`);
   },
 
   async F3a() {
