@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { FaqSection } from "@/components/faq-section";
 
 export const metadata: Metadata = {
   title: "Method — what's live, what's a snapshot, what we can't see",
   description:
-    "Plain English data freshness for scubaSeason.fun. NOAA Coral Reef Watch is live nightly; coral cover is a snapshot from named monitoring programs.",
+    "Plain English data freshness for scubaSeason.fun. NOAA Coral Reef Watch is live nightly; coral cover is a snapshot from named monitoring programs. Includes the full FAQ on how every metric is calculated.",
 };
 
 export default function DataPage() {
@@ -733,6 +734,9 @@ export default function DataPage() {
 
           </div>
         </section>
+
+        {/* FAQ — how every metric is calculated (merged from the former /faq page) */}
+        <FaqSection />
 
       </div>
     </>

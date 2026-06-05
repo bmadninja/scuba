@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
+  async redirects() {
+    return [
+      // FAQ merged into the Method page — keep old links + SEO working.
+      { source: "/faq", destination: "/data", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
