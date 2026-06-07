@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
@@ -133,6 +133,35 @@ export function AtlasExplorer({
   // Slug of the location the user last clicked on the globe, used to highlight
   // its card in the grid.
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  // Count non-default active filters for the badge on the mobile Filters button.
+  const activeFilterCount = useMemo(() => {
+    let n = 0;
+    if (filters.condition.length !== STATE_VALUES.length) n++;
+    n += filters.months.length ? 1 : 0;
+    n += filters.skill.length ? 1 : 0;
+    n += filters.region.length ? 1 : 0;
+    n += filters.heat.length ? 1 : 0;
+    n += filters.animals.length ? 1 : 0;
+    if (filters.freshOnly) n++;
+    return n;
+  }, [filters]);
+
+  // Close drawer on Escape.
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setDrawerOpen(false); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [drawerOpen]);
+
+  // Prevent body scroll while drawer is open.
+  useEffect(() => {
+    document.body.style.overflow = drawerOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [drawerOpen]);
 
   // Keep the URL in sync so a filtered view is shareable / refreshable.
   useEffect(() => {
@@ -235,6 +264,75 @@ export function AtlasExplorer({
         </label>
       </div>
 
+      {/* Mobile "Filters" button — hidden on lg+ where the sidebar is always visible */}
+      <div className="mb-4 flex items-center lg:hidden">
+        <button
+          type="button"
+          onClick={() => setDrawerOpen(true)}
+          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-[#0089de] hover:text-[#0089de]"
+        >
+          <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+            <path fillRule="evenodd" d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.032c0 .384-.22.735-.57.899l-2.5 1.25a.75.75 0 01-1.056-.575v-4.606a2.25 2.25 0 00-.659-1.59L2.659 6.219A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z" clipRule="evenodd" />
+          </svg>
+          Filters
+          {activeFilterCount > 0 && (
+            <span className="inline-flex items-center rounded-full bg-[#0089de] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white">
+              {activeFilterCount}
+            </span>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile filter drawer */}
+      {drawerOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Filters">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={() => setDrawerOpen(false)}
+            aria-hidden
+          />
+          {/* Panel */}
+          <div
+            ref={drawerRef}
+            className="absolute inset-y-0 left-0 flex w-80 max-w-[90vw] flex-col bg-white shadow-2xl"
+          >
+            <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
+              <span className="text-sm font-semibold text-slate-900">Filters</span>
+              <button
+                type="button"
+                onClick={() => setDrawerOpen(false)}
+                className="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+                aria-label="Close filters"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                </svg>
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto">
+              <AtlasFilterRail
+                filters={filters}
+                onChange={setFilters}
+                onReset={reset}
+                regions={regions}
+                skills={skills}
+                className="h-full"
+              />
+            </div>
+            <div className="border-t border-slate-100 p-4">
+              <button
+                type="button"
+                onClick={() => setDrawerOpen(false)}
+                className="w-full rounded-xl bg-[#0089de] py-2.5 text-sm font-semibold text-white transition hover:bg-[#1d5d90]"
+              >
+                Show {results.length} location{results.length !== 1 ? "s" : ""}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[260px_1fr]">
         <AtlasFilterRail
           filters={filters}
@@ -242,6 +340,7 @@ export function AtlasExplorer({
           onReset={reset}
           regions={regions}
           skills={skills}
+          className="hidden lg:sticky lg:top-24 lg:block lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto"
         />
 
         {/* min-w-0 keeps this 1fr track purely flexible. Without it the track's

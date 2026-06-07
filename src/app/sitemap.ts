@@ -2,8 +2,6 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site-config";
 import { getAllLocations } from "@/lib/data/locations";
 import { getAllSites } from "@/lib/data/sites";
-import { getAllEncounters } from "@/lib/data/encounters";
-
 const CERTS = [
   "never-dived","open-water","advanced","rescue","divemaster","tech",
 ];
@@ -34,15 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const speciesLandingRoutes: MetadataRoute.Sitemap = getAllEncounters().map(
-    (e) => ({
-      url: `${SITE_URL}/where-to-see/${e.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.75,
-    }),
-  );
-
   const certLandingRoutes: MetadataRoute.Sitemap = CERTS.map((c) => ({
     url: `${SITE_URL}/for/${c}`,
     lastModified: now,
@@ -54,7 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...siteRoutes,
     ...locationRoutes,
-    ...speciesLandingRoutes,
     ...certLandingRoutes,
   ];
 }

@@ -7,7 +7,11 @@
     "speciesCommon": "Southern African pilchard",
     "speciesScientific": "Sardinops sagax",
     "shortDescription": "Annual northward migration of billions of sardines along South Africa's Wild Coast, attracting common dolphins, bronze whalers, dusky sharks, Bryde's whales, and Cape gannets into spectacular bait-ball feeding events.",
-    "bestMonths": [5, 6, 7],
+    "bestMonths": [
+      5,
+      6,
+      7
+    ],
     "difficulty": "advanced",
     "requiredExperience": "Comfortable in cold open water, surface conditions, and rapid boat entries. Open Water minimum; Advanced strongly recommended. Most operators run snorkel-and-scuba hybrid trips.",
     "ethicsNotes": "Maintain distance from cetaceans; do not chase or block bait balls. Follow operator briefings on minimum distance from whales.",
@@ -20,31 +24,53 @@
         "country": "South Africa",
         "status": "primary",
         "whyHere": "Most reliable operator base during the peak weeks of the run, with short steam to the action along the Transkei coast.",
-        "bestMonthsAtRegion": [5, 6, 7],
-        "nearbyAtlasLocationIds": ["aliwal-south-africa"]
+        "bestMonthsAtRegion": [
+          5,
+          6,
+          7
+        ],
+        "nearbyAtlasLocationIds": [
+          "aliwal-south-africa"
+        ]
       },
       {
         "name": "Coffee Bay",
         "country": "South Africa",
         "status": "secondary",
         "whyHere": "Alternative staging point further south along the Wild Coast; smaller operator footprint.",
-        "bestMonthsAtRegion": [5, 6, 7],
-        "nearbyAtlasLocationIds": ["aliwal-south-africa"]
+        "bestMonthsAtRegion": [
+          5,
+          6,
+          7
+        ],
+        "nearbyAtlasLocationIds": [
+          "aliwal-south-africa"
+        ]
       },
       {
         "name": "East London",
         "country": "South Africa",
         "status": "emerging",
         "whyHere": "Used in seasons when the run pushes further south than usual.",
-        "bestMonthsAtRegion": [5, 6],
+        "bestMonthsAtRegion": [
+          5,
+          6
+        ],
         "statusNote": "Year-to-year availability depends on water temperature."
       }
     ],
-    "operatorIds": ["offshore-africa", "blue-wilderness-sardine"],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-sardine-run-seasonality"],
-    "bucketListRank": 1,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Underwater_view_of_the_sardine_run_as_a_dolphin_hunts_within_dense_schools_of_sardines.jpg"
+    "operatorIds": [
+      "offshore-africa",
+      "blue-wilderness-sardine"
+    ],
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-sardine-run-seasonality"
+    ],
+    "bucketListRank": 1
   },
   {
     "id": "great-white-cage-diving",
@@ -54,7 +80,13 @@
     "speciesCommon": "Great white shark",
     "speciesScientific": "Carcharodon carcharias",
     "shortDescription": "Surface-cage encounters with white sharks at established aggregation sites. Non-decompression, no certification required at most operators.",
-    "bestMonths": [5, 6, 7, 8, 9],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "difficulty": "beginner",
     "requiredExperience": "No certification required for surface cage. Free-diving extensions require breath-hold competence.",
     "ethicsNotes": "Only book operators with permitted, regulated chumming practices. Avoid operators that bait sharks toward divers outside cages.",
@@ -67,14 +99,26 @@
         "country": "South Africa",
         "status": "primary",
         "whyHere": "Currently the strongest South African cage operation — white shark presence has shifted east from Gansbaai over the past decade.",
-        "bestMonthsAtRegion": [5, 6, 7, 8, 9]
+        "bestMonthsAtRegion": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
       },
       {
         "name": "Gansbaai",
         "country": "South Africa",
         "status": "secondary",
         "whyHere": "Historically the world's busiest cage-diving hub; trip success now depends heavily on local orca activity and seasonal shark presence.",
-        "bestMonthsAtRegion": [5, 6, 7, 8, 9],
+        "bestMonthsAtRegion": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
         "statusNote": "Sightings have been intermittent since orca predation pressure increased around 2017."
       },
       {
@@ -82,14 +126,33 @@
         "country": "Australia",
         "status": "primary",
         "whyHere": "Year-round white shark presence with strict government permit caps on cage operators.",
-        "bestMonthsAtRegion": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonthsAtRegion": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "name": "Guadalupe Island",
         "country": "Mexico",
         "status": "closed",
         "whyHere": "Historically the world's clearest-water great white site; closed to tourism by the Mexican federal government.",
-        "bestMonthsAtRegion": [7, 8, 9, 10, 11],
+        "bestMonthsAtRegion": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
         "statusNote": "All commercial cage operations were suspended in 2023 pending a long-term management plan. No currently bookable trips."
       }
     ],
@@ -98,10 +161,15 @@
       "marine-dynamics-gansbaai",
       "calypso-star-neptunes"
     ],
-    "sourceIds": ["gbif", "dan"],
-    "methodologyClaimIds": ["encounter-great-white-cage-presence"],
+    "sourceIds": [
+      "gbif",
+      "dan"
+    ],
+    "methodologyClaimIds": [
+      "encounter-great-white-cage-presence"
+    ],
     "bucketListRank": 2,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Guadalupe_Island_Great_White_Shark_Underwater_Tourism.jpg/3840px-Guadalupe_Island_Great_White_Shark_Underwater_Tourism.jpg"
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Guadalupe_Island_Great_White_Shark_Underwater.jpg/3840px-Guadalupe_Island_Great_White_Shark_Underwater.jpg"
   },
   {
     "id": "hammerhead-schools",
@@ -111,7 +179,14 @@
     "speciesCommon": "Scalloped hammerhead",
     "speciesScientific": "Sphyrna lewini",
     "shortDescription": "Daytime schooling aggregations of scalloped hammerheads at seamounts and current-swept island walls.",
-    "bestMonths": [6, 7, 8, 9, 10, 11],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "difficulty": "advanced",
     "requiredExperience": "Advanced Open Water minimum, comfort with strong current, blue-water hangs, and deep multilevel profiles. Reef-hook training recommended.",
     "ethicsNotes": "Stay grouped, breathe shallowly, no flash photography at the school. Operator briefings supersede general guidance.",
@@ -125,7 +200,14 @@
         "status": "primary",
         "inAtlasLocationId": "cocos-costa-rica",
         "whyHere": "Liveaboard-only seamount with reliable hammerhead aggregations at cleaning stations.",
-        "bestMonthsAtRegion": [6, 7, 8, 9, 10, 11]
+        "bestMonthsAtRegion": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
       },
       {
         "name": "Wolf Island",
@@ -133,7 +215,14 @@
         "status": "primary",
         "inAtlasLocationId": "wolf-galapagos-ecuador",
         "whyHere": "Northern Galápagos current convergence; one of the densest schooling sites in the world.",
-        "bestMonthsAtRegion": [6, 7, 8, 9, 10, 11]
+        "bestMonthsAtRegion": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
       },
       {
         "name": "Darwin Island",
@@ -141,7 +230,14 @@
         "status": "primary",
         "inAtlasLocationId": "darwin-galapagos-ecuador",
         "whyHere": "Sister site to Wolf with comparable aggregation density.",
-        "bestMonthsAtRegion": [6, 7, 8, 9, 10, 11]
+        "bestMonthsAtRegion": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
       },
       {
         "name": "Malpelo",
@@ -149,7 +245,14 @@
         "status": "primary",
         "inAtlasLocationId": "malpelo-colombia",
         "whyHere": "UNESCO-protected seamount with hammerhead and silky shark aggregations.",
-        "bestMonthsAtRegion": [6, 7, 8, 9, 10, 11]
+        "bestMonthsAtRegion": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
       },
       {
         "name": "Socorro",
@@ -157,14 +260,28 @@
         "status": "secondary",
         "inAtlasLocationId": "socorro-mexico",
         "whyHere": "Hammerheads appear seasonally alongside the more famous giant manta encounters.",
-        "bestMonthsAtRegion": [11, 12, 1, 2, 3, 4]
+        "bestMonthsAtRegion": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
       }
     ],
-    "operatorIds": ["undersea-hunter-cocos", "galapagos-master"],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-hammerhead-schools-presence"],
-    "bucketListRank": 3,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Scalloped_hammerhead_school_izu.jpg"
+    "operatorIds": [
+      "undersea-hunter-cocos",
+      "galapagos-master"
+    ],
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-hammerhead-schools-presence"
+    ],
+    "bucketListRank": 3
   },
   {
     "id": "whale-sharks",
@@ -174,7 +291,14 @@
     "speciesCommon": "Whale shark",
     "speciesScientific": "Rhincodon typus",
     "shortDescription": "Predictable seasonal aggregations of the world's largest fish, typically at plankton or fish-spawning hotspots.",
-    "bestMonths": [3, 4, 5, 6, 7, 8],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "difficulty": "beginner",
     "requiredExperience": "Most encounters are surface snorkel or shallow scuba. Open Water minimum where scuba is permitted; many regulated sites are snorkel-only.",
     "ethicsNotes": "Maintain minimum approach distance (typically 3 m head, 4 m tail), no touching, no flash. Follow national whale-shark codes of conduct.",
@@ -188,7 +312,13 @@
         "status": "primary",
         "inAtlasLocationId": "ningaloo-australia",
         "whyHere": "Permit-capped, well-managed snorkel operation timed to the post-coral-spawn plankton bloom.",
-        "bestMonthsAtRegion": [3, 4, 5, 6, 7]
+        "bestMonthsAtRegion": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
       },
       {
         "name": "Ari Atoll",
@@ -196,28 +326,54 @@
         "status": "primary",
         "inAtlasLocationId": "ari-atoll-maldives",
         "whyHere": "Year-round sightings along the south reef edges with predictable seasonal density.",
-        "bestMonthsAtRegion": [5, 6, 7, 8, 9, 10, 11]
+        "bestMonthsAtRegion": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
       },
       {
         "name": "Isla Mujeres",
         "country": "Mexico",
         "status": "primary",
         "whyHere": "Largest known whale shark aggregation in the world ('afuera'), feeding on bonito tuna spawn.",
-        "bestMonthsAtRegion": [6, 7, 8, 9]
+        "bestMonthsAtRegion": [
+          6,
+          7,
+          8,
+          9
+        ]
       },
       {
         "name": "Donsol",
         "country": "Philippines",
         "status": "primary",
         "whyHere": "Community-run, no-touch encounters; the original ethical whale shark site after Oslob's bait-feeding controversy.",
-        "bestMonthsAtRegion": [2, 3, 4, 5]
+        "bestMonthsAtRegion": [
+          2,
+          3,
+          4,
+          5
+        ]
       }
     ],
-    "operatorIds": ["ningaloo-whale-sharks-n-more", "maldives-whale-shark-program"],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-whale-shark-seasonality"],
+    "operatorIds": [
+      "ningaloo-whale-sharks-n-more",
+      "maldives-whale-shark-program"
+    ],
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-whale-shark-seasonality"
+    ],
     "bucketListRank": 4,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Whale_shark_%28Rhincodon_typus%29_%2815600945944%29.jpg"
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Whale_Shark_%28Rhincodon_typus%29_with_open_mouth_in_La_Paz%2C_Mexico.jpg/3840px-Whale_Shark_%28Rhincodon_typus%29_with_open_mouth_in_La_Paz%2C_Mexico.jpg"
   },
   {
     "id": "manta-cleaning-stations",
@@ -227,7 +383,20 @@
     "speciesCommon": "Reef manta and oceanic manta",
     "speciesScientific": "Mobula alfredi, Mobula birostris",
     "shortDescription": "Reliable cleaning-station encounters where mantas hover for wrasse and butterflyfish cleaners.",
-    "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
     "difficulty": "intermediate",
     "requiredExperience": "Open Water; current and reef-hook experience helpful at Pacific channel sites.",
     "ethicsNotes": "Stay below or beside the cleaning station, never above the mantas. No touching, no chasing.",
@@ -241,7 +410,13 @@
         "status": "primary",
         "inAtlasLocationId": "manta-ridge-yap",
         "whyHere": "Manta Ridge channel hosts reliable resident reef manta cleaning behavior.",
-        "bestMonthsAtRegion": [12, 1, 2, 3, 4]
+        "bestMonthsAtRegion": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "name": "Raja Ampat",
@@ -249,7 +424,15 @@
         "status": "primary",
         "inAtlasLocationId": "raja-ampat-indonesia",
         "whyHere": "Manta Sandy and Magic Mountain are well-known reef and oceanic manta cleaning stations.",
-        "bestMonthsAtRegion": [10, 11, 12, 1, 2, 3, 4]
+        "bestMonthsAtRegion": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "name": "Kona",
@@ -257,14 +440,32 @@
         "status": "secondary",
         "inAtlasLocationId": "kona-hawaii-usa",
         "whyHere": "Night manta dives target plankton-light aggregations, not classical cleaning stations.",
-        "bestMonthsAtRegion": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonthsAtRegion": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       }
     ],
     "operatorIds": [],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-manta-cleaning-presence"],
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-manta-cleaning-presence"
+    ],
     "bucketListRank": 5,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Reef_manta_ray_%28Manta_alfredi%29_-_49877611243.jpg/3840px-Reef_manta_ray_%28Manta_alfredi%29_-_49877611243.jpg"
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Reef_Manta_with_cleaner_fish.JPG"
   },
   {
     "id": "thresher-sharks",
@@ -274,7 +475,20 @@
     "speciesCommon": "Pelagic thresher shark",
     "speciesScientific": "Alopias pelagicus",
     "shortDescription": "Dawn dives on Monad Shoal where pelagic threshers ascend from deep water to be cleaned by wrasses.",
-    "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
     "difficulty": "advanced",
     "requiredExperience": "Advanced Open Water; comfortable with pre-dawn entry, 25-30 m depth, and motionless hangs behind the rope line.",
     "ethicsNotes": "Stay behind the designated rope; no flash; do not approach the threshers in open water.",
@@ -288,14 +502,31 @@
         "status": "primary",
         "inAtlasLocationId": "malapascua-philippines",
         "whyHere": "Monad Shoal is one of the only reliable daily thresher shark sites in the world.",
-        "bestMonthsAtRegion": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonthsAtRegion": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       }
     ],
     "operatorIds": [],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-thresher-cleaning-presence"],
-    "bucketListRank": 6,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Tresher1.jpg"
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-thresher-cleaning-presence"
+    ],
+    "bucketListRank": 6
   },
   {
     "id": "mobula-ray-aggregations",
@@ -305,7 +536,12 @@
     "speciesCommon": "Munk's devil ray",
     "speciesScientific": "Mobula munkiana",
     "shortDescription": "Vast schools of Munk's devil rays moving through the Sea of Cortez, with leaping displays at the surface.",
-    "bestMonths": [4, 5, 6, 7],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7
+    ],
     "difficulty": "intermediate",
     "requiredExperience": "Open Water; comfort with freediving / snorkel encounters and rapid in-out boat work.",
     "ethicsNotes": "Do not swim through schools; let rays pass. No flash photography close to schools.",
@@ -318,21 +554,34 @@
         "country": "Mexico",
         "status": "primary",
         "whyHere": "Spring aggregations of Munk's devil rays form vast schools in the southern Sea of Cortez.",
-        "bestMonthsAtRegion": [4, 5, 6, 7]
+        "bestMonthsAtRegion": [
+          4,
+          5,
+          6,
+          7
+        ]
       },
       {
         "name": "Cabo Pulmo",
         "country": "Mexico",
         "status": "secondary",
         "whyHere": "Protected marine park within day-trip range of La Paz; smaller but well-managed.",
-        "bestMonthsAtRegion": [5, 6, 7]
+        "bestMonthsAtRegion": [
+          5,
+          6,
+          7
+        ]
       }
     ],
     "operatorIds": [],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-mobula-aggregation-presence"],
-    "bucketListRank": 7,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Mobula_birostris_179661621.jpg"
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-mobula-aggregation-presence"
+    ],
+    "bucketListRank": 7
   },
   {
     "id": "blackwater-diving",
@@ -340,7 +589,20 @@
     "name": "Blackwater Diving",
     "category": "blackwater",
     "shortDescription": "Open-ocean night dives over deep water, tethered to a lighted drift line, observing larval and pelagic invertebrates ascending in the diel migration.",
-    "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
     "difficulty": "advanced",
     "requiredExperience": "Advanced Open Water + Night specialty strongly recommended. Comfort with neutral buoyancy in featureless water, tether discipline, and small-subject photography.",
     "ethicsNotes": "Do not collect specimens. Avoid touching gelatinous animals (siphonophores can sting through skin).",
@@ -354,19 +616,46 @@
         "status": "primary",
         "inAtlasLocationId": "kona-hawaii-usa",
         "whyHere": "One of the longest-running commercial blackwater operations, with reliable deep water close to shore.",
-        "bestMonthsAtRegion": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonthsAtRegion": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "name": "Anilao",
         "country": "Philippines",
         "status": "primary",
         "whyHere": "Macro-photography hub with established blackwater operations and exceptional larval diversity.",
-        "bestMonthsAtRegion": [10, 11, 12, 1, 2, 3, 4, 5]
+        "bestMonthsAtRegion": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
       }
     ],
     "operatorIds": [],
-    "sourceIds": ["obis", "padi"],
-    "methodologyClaimIds": ["encounter-blackwater-conduct"],
+    "sourceIds": [
+      "obis",
+      "padi"
+    ],
+    "methodologyClaimIds": [
+      "encounter-blackwater-conduct"
+    ],
     "bucketListRank": 8
   },
   {
@@ -375,7 +664,11 @@
     "name": "Mass Coral Spawning",
     "category": "spawning-event",
     "shortDescription": "Synchronized broadcast spawning of stony corals, typically a few nights after a full moon in late spring or summer.",
-    "bestMonths": [10, 11, 12],
+    "bestMonths": [
+      10,
+      11,
+      12
+    ],
     "difficulty": "intermediate",
     "requiredExperience": "Open Water + Night specialty. Comfort with low-vis night reef diving and minimal-light protocols.",
     "ethicsNotes": "Reduce dive-light intensity during gamete release. No touching or finning above coral heads.",
@@ -389,7 +682,11 @@
         "status": "primary",
         "inAtlasLocationId": "cod-hole-australia",
         "whyHere": "Spawning is well-documented a few nights after the November or early-December full moon.",
-        "bestMonthsAtRegion": [10, 11, 12],
+        "bestMonthsAtRegion": [
+          10,
+          11,
+          12
+        ],
         "statusNote": "Exact spawn night is announced ~1 week in advance by AIMS researchers."
       },
       {
@@ -398,14 +695,22 @@
         "status": "primary",
         "inAtlasLocationId": "ningaloo-australia",
         "whyHere": "March–April spawning event tied to autumn full moon, distinct from the GBR season.",
-        "bestMonthsAtRegion": [3, 4]
+        "bestMonthsAtRegion": [
+          3,
+          4
+        ]
       }
     ],
     "operatorIds": [],
-    "sourceIds": ["aims-ltmp", "gcrmn"],
-    "methodologyClaimIds": ["encounter-coral-spawning-seasonality"],
+    "sourceIds": [
+      "aims-ltmp",
+      "gcrmn"
+    ],
+    "methodologyClaimIds": [
+      "encounter-coral-spawning-seasonality"
+    ],
     "bucketListRank": 9,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Coral_Spawning_%2838797556434%29.jpg"
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Coral_Chimera_Acropora_kenti_by_SciReef.jpg"
   },
   {
     "id": "mandarin-fish-dusk-spawning",
@@ -415,7 +720,20 @@
     "speciesCommon": "Mandarin fish",
     "speciesScientific": "Synchiropus splendidus",
     "shortDescription": "Daily dusk mating ascents of mandarin fish above rubble patches, observable on a single short shallow dive.",
-    "bestMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
     "difficulty": "beginner",
     "requiredExperience": "Open Water; excellent buoyancy and patience matter more than depth experience.",
     "ethicsNotes": "Minimal dive lights, no strobes during the ascent itself. Do not crowd known spawning rubble.",
@@ -429,7 +747,20 @@
         "status": "primary",
         "inAtlasLocationId": "moalboal-philippines",
         "whyHere": "Established mandarin rubble patches with daily dusk dives, near the sardine ball at Panagsama.",
-        "bestMonthsAtRegion": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonthsAtRegion": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       },
       {
         "name": "Raja Ampat",
@@ -437,14 +768,32 @@
         "status": "primary",
         "inAtlasLocationId": "raja-ampat-indonesia",
         "whyHere": "Multiple house-reef rubble sites with reliable evening mandarin behavior.",
-        "bestMonthsAtRegion": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        "bestMonthsAtRegion": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
       }
     ],
     "operatorIds": [],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-mandarin-spawning-presence"],
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-mandarin-spawning-presence"
+    ],
     "bucketListRank": 10,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flamboyant_cuttlefish_%28Ascarosepion_pfefferi%29_%2814217841147%29.jpg/3840px-Flamboyant_cuttlefish_%28Ascarosepion_pfefferi%29_%2814217841147%29.jpg"
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Peces_mandar%C3%ADn_%28Synchiropus_splendidus%29%2C_Anilao%2C_Filipinas%2C_2023-08-24%2C_DD_233.jpg"
   },
   {
     "id": "giant-cuttlefish-aggregation",
@@ -454,7 +803,12 @@
     "speciesCommon": "Giant Australian cuttlefish",
     "speciesScientific": "Sepia apama",
     "shortDescription": "Annual breeding aggregation of giant cuttlefish in the shallow waters of upper Spencer Gulf, with elaborate male display and mating behavior.",
-    "bestMonths": [5, 6, 7, 8],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
     "difficulty": "beginner",
     "requiredExperience": "Open Water; shore-entry, cold-water, and dry/thick-suit comfort. Many divers do this as snorkel.",
     "ethicsNotes": "Do not handle cuttlefish; avoid contact with eggs on the reef underside.",
@@ -467,13 +821,23 @@
         "country": "Australia",
         "status": "primary",
         "whyHere": "The world's only known giant cuttlefish breeding aggregation; shore-accessible from Whyalla.",
-        "bestMonthsAtRegion": [5, 6, 7, 8]
+        "bestMonthsAtRegion": [
+          5,
+          6,
+          7,
+          8
+        ]
       }
     ],
     "operatorIds": [],
-    "sourceIds": ["gbif", "obis"],
-    "methodologyClaimIds": ["encounter-giant-cuttlefish-seasonality"],
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
+    "methodologyClaimIds": [
+      "encounter-giant-cuttlefish-seasonality"
+    ],
     "bucketListRank": 11,
-    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Sepia_apama_2.jpg"
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Giant_Cuttlefish-sepia_apama_%2811258129224%29.jpg/3840px-Giant_Cuttlefish-sepia_apama_%2811258129224%29.jpg"
   }
 ]

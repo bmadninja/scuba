@@ -66,6 +66,16 @@ type WorldAtlasTopology = {
   };
 };
 
+// react-globe.gl uses Three.js internals that trigger a deprecation warning for
+// THREE.Clock on every frame. Suppress it so it doesn't flood the console.
+if (typeof window !== "undefined") {
+  const _warn = console.warn.bind(console);
+  console.warn = (...args: unknown[]) => {
+    if (typeof args[0] === "string" && args[0].includes("THREE.Clock")) return;
+    _warn(...args);
+  };
+}
+
 const DEFAULT_FOCUS_POINT = {
   lat: 12,
   lng: -135,

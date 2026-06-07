@@ -6,7 +6,7 @@ import Link from "next/link";
 
 // Types for search results
 type ResultItem = {
-  type: "location" | "site" | "encounter";
+  type: "location" | "site";
   slug: string;
   href: string;
   name: string;
@@ -34,13 +34,12 @@ function SearchInner() {
   const [results, setResults] = useState<{
     locations: ResultItem[];
     sites: ResultItem[];
-    encounters: ResultItem[];
-  }>({ locations: [], sites: [], encounters: [] });
+  }>({ locations: [], sites: [] });
 
   // Perform search against all data
   const doSearch = useCallback(async (query: string) => {
     if (!query.trim()) {
-      setResults({ locations: [], sites: [], encounters: [] });
+      setResults({ locations: [], sites: [] });
       return;
     }
     const term = query.trim().toLowerCase();
@@ -49,12 +48,10 @@ function SearchInner() {
     const [
       { getAllAtlasLocations },
       { getAllSites },
-      { getAllEncounters },
       { getLocationById },
     ] = await Promise.all([
       import("@/lib/atlas-location"),
       import("@/lib/data/sites"),
-      import("@/lib/data/encounters"),
       import("@/lib/data/locations"),
     ]);
 
@@ -107,30 +104,9 @@ function SearchInner() {
         };
       });
 
-    // Encounters
-    const encounterResults: ResultItem[] = getAllEncounters()
-      .filter(
-        (e) =>
-          matchLocation(e.name) ||
-          matchLocation(e.speciesCommon ?? "") ||
-          matchLocation(e.speciesScientific ?? "") ||
-          matchLocation(e.shortDescription),
-      )
-      .slice(0, 6)
-      .map((e) => ({
-        type: "encounter" as const,
-        slug: e.slug,
-        href: `/where-to-see/${e.slug}`,
-        name: e.name,
-        subtext: e.speciesCommon
-          ? `${e.speciesCommon}${e.speciesScientific ? ` · ${e.speciesScientific}` : ""}`
-          : e.shortDescription.slice(0, 80),
-      }));
-
     setResults({
       locations: locationResults,
       sites: siteResults,
-      encounters: encounterResults,
     });
   }, []);
 
@@ -146,7 +122,7 @@ function SearchInner() {
   };
 
   const total =
-    results.locations.length + results.sites.length + results.encounters.length;
+    results.locations.length + results.sites.length;
   const hasQuery = q.trim().length > 0;
   const noResults = hasQuery && total === 0;
 
@@ -301,48 +277,15 @@ function SearchInner() {
             </section>
           )}
 
-          {/* Encounters / Species */}
-          {results.encounters.length > 0 && (
-            <section>
-              <div className="mb-3 flex items-center gap-2 border-b border-slate-100 pb-2">
-                <span className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">
-                  Species encounters
-                </span>
-                <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600">
-                  {results.encounters.length}
-                </span>
-              </div>
-              <ul className="space-y-1">
-                {results.encounters.map((r) => (
-                  <li key={r.href}>
-                    <Link
-                      href={r.href}
-                      className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-[#f1f7fb]"
-                    >
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-semibold text-slate-900 group-hover:text-[#0089de]">
-                          {highlightMatch(r.name, q)}
-                        </span>
-                        <span className="block text-xs text-slate-500">
-                          {r.subtext}
-                        </span>
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
         </div>
       )}
 
       {/* Default state — no query */}
       {!hasQuery && (
         <p className="text-sm text-slate-500">
-          Search across {" "}
-          <span className="font-semibold text-slate-700">locations</span>,{" "}
-          <span className="font-semibold text-slate-700">dive sites</span>, and{" "}
-          <span className="font-semibold text-slate-700">species</span>.
+          Search across{" "}
+          <span className="font-semibold text-slate-700">locations</span> and{" "}
+          <span className="font-semibold text-slate-700">dive sites</span>.
         </p>
       )}
     </div>

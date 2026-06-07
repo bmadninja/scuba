@@ -10,7 +10,6 @@ import { getAllLocations, getLocationBySlug } from "@/lib/data/locations";
 import { buildAtlasLocation } from "@/lib/atlas-location";
 import { getSitesByLocationId } from "@/lib/data/sites";
 import { getGearById } from "@/lib/data/gear";
-import { getEncountersByLocationId } from "@/lib/data/encounters";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
@@ -332,8 +331,6 @@ export default async function LocationPage({
   const coralCover = getCoralCoverForLocation(location.id);
   const fishingPressure = getFishingPressureForLocation(location.id);
   const details = getLocationDetailsById(location.id);
-  const encounters = getEncountersByLocationId(location.id);
-
   const bestMonthsSet = new Set(location.bestMonths);
   const currentMonth = new Date().getMonth() + 1; // 1-12
   const isInSeason = bestMonthsSet.has(currentMonth);
@@ -1380,71 +1377,6 @@ export default async function LocationPage({
                     How we verify this data →
                   </Link>
                 </p>
-              </section>
-            ) : null}
-
-            {/* Encounters (wildlife encounter pages) */}
-            {encounters.length > 0 ? (
-              <section style={{ marginTop: "2.5rem" }}>
-                <div
-                  style={{
-                    marginBottom: "1.5rem",
-                    paddingBottom: "0.75rem",
-                    borderBottom: "1px solid #e2e8f0",
-                    display: "flex",
-                    alignItems: "flex-end",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <h2 style={{ fontSize: "1.5rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#0f172a" }}>
-                    Wildlife encounters here
-                  </h2>
-                  <span style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#64748b" }}>
-                    {encounters.length} encounter{encounters.length === 1 ? "" : "s"}
-                  </span>
-                </div>
-                <ul style={{ display: "grid", gap: "0.75rem", gridTemplateColumns: "1fr 1fr" }}>
-                  {encounters.map((enc) => (
-                    <li key={enc.id}>
-                      <Link
-                        href={`/where-to-see/${enc.slug}`}
-                        style={{
-                          display: "flex",
-                          alignItems: "flex-start",
-                          gap: "0.75rem",
-                          borderRadius: "0.875rem",
-                          border: "1px solid #e2e8f0",
-                          background: "#fff",
-                          padding: "1rem",
-                          textDecoration: "none",
-                          color: "inherit",
-                        }}
-                      >
-                        {enc.heroImageUrl ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={enc.heroImageUrl}
-                            alt={enc.name}
-                            width={56}
-                            height={56}
-                            style={{ width: 56, height: 56, minWidth: 56, borderRadius: "0.5rem", objectFit: "cover" }}
-                          />
-                        ) : (
-                          <div style={{ width: 56, height: 56, minWidth: 56, borderRadius: "0.5rem", background: "#f1f5f9" }} />
-                        )}
-                        <div style={{ minWidth: 0 }}>
-                          <p style={{ fontWeight: 600, color: "#0f172a", fontSize: "0.875rem" }}>{enc.name}</p>
-                          {enc.speciesCommon ? (
-                            <p style={{ marginTop: 2, fontSize: "0.75rem", color: "#64748b" }}>{enc.speciesCommon}</p>
-                          ) : null}
-                          <p style={{ marginTop: 4, fontSize: "0.75rem", lineHeight: 1.5, color: "#475569", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-                            {enc.shortDescription}
-                          </p>
-                        </div>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
               </section>
             ) : null}
 

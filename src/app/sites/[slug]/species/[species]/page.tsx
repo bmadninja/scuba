@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
-import { getAllEncounters } from "@/lib/data/encounters";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { IucnBadge } from "@/components/iucn-badge";
 import { MethodologyDisclosure } from "@/components/methodology-disclosure";
@@ -87,17 +86,6 @@ export default async function SpeciesDetailPage({
 
   // IUCN status
   const iucn = IUCN_ENABLED ? getIucnStatus(scientificName) : null;
-
-  // Find encounter page link
-  const encounterSlug =
-    getAllEncounters()
-      .find(
-        (e) =>
-          e.speciesCommon?.toLowerCase() === commonName.toLowerCase() ||
-          (scientificName &&
-            e.speciesScientific?.toLowerCase() === scientificName.toLowerCase()),
-      )
-      ?.slug ?? null;
 
   // Best months seasonality from sighting data or curated data
   const seasonalityMonths =
@@ -304,24 +292,6 @@ export default async function SpeciesDetailPage({
         </section>
       ) : null}
 
-      {/* Link to where-to-see */}
-      {encounterSlug ? (
-        <div className="rounded-xl border border-[#0089de]/20 bg-[#f1f7fb] px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#0089de]">
-            Global encounter guide
-          </p>
-          <p className="mt-1.5 text-sm text-slate-700">
-            See all atlas locations where {commonName} has been confirmed, with
-            best seasons and confidence scores.
-          </p>
-          <Link
-            href={`/where-to-see/${encounterSlug}`}
-            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0089de] hover:text-[#1d5d90]"
-          >
-            View {commonName} encounter guide →
-          </Link>
-        </div>
-      ) : null}
     </div>
   );
 }

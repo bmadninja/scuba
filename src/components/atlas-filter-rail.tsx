@@ -428,12 +428,14 @@ export function AtlasFilterRail({
   onReset,
   regions,
   skills = SKILL_OPTIONS,
+  className,
 }: {
   filters: Filters;
   onChange: (next: Filters) => void;
   onReset: () => void;
   regions: string[];
   skills?: string[];
+  className?: string;
 }) {
   const toggle = (
     facet: "condition" | "months" | "skill" | "region" | "heat" | "animals",
@@ -455,7 +457,7 @@ export function AtlasFilterRail({
   };
 
   return (
-    <aside className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto">
+    <aside className={className ?? "lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto"}>
       <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5" style={{ boxShadow: "0 1px 2px rgba(16,40,70,.03), 0 12px 30px -20px rgba(16,40,70,.12)" }}>
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold text-slate-900">Filters</h3>

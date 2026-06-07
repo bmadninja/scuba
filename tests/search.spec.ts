@@ -27,10 +27,10 @@ test.describe('Search (/search)', () => {
     await expect(page.getByRole('link', { name: /palau/i }).first()).toBeVisible({ timeout: 15_000 });
   });
 
-  test('searching "manta" returns species encounter results', async ({ page }) => {
+  test('searching "manta" returns site results', async ({ page }) => {
     await page.goto('/search');
     await searchFor(page, 'manta');
-    await expect(page.getByText(/species encounters/i)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(/dive sites/i)).toBeVisible({ timeout: 15_000 });
   });
 
   test('searching gibberish shows no-results state', async ({ page }) => {

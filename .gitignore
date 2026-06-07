@@ -19,6 +19,7 @@
 
 # production
 /build
+/ios/.derivedData/
 
 # misc
 .DS_Store

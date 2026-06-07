@@ -35,9 +35,24 @@ Run with: `npm test` or `npx playwright test`
 - `FEATURED_SLUGS` on homepage don't match location slugs — grid falls back to first 3 atlas locations (Ari Atoll, North Male Atoll, Raja Ampat); tests reflect actual rendered content
 - `workers: 3` locally to avoid overwhelming the dev server
 
+## Epic 7 Follow-up Tests (2026-06-05)
+
+Added `tests/epic7-followup.spec.ts` — 14 new tests, all passing.
+
+| Feature | Tests |
+|---|---|
+| `/gear` returns 404 (page removed) | 1 |
+| Location-first nav (Atlas/Method/About, no Sites) | 1 |
+| Species cards are clickable links on site detail | 2 |
+| Per-site species detail `/sites/[slug]/species/[species]` | 4 |
+| Where-to-see landing `/where-to-see/[species]` | 3 |
+| Cert landing pages `/for/[cert]` | 3 |
+
+**Total: 34/34 tests passing**
+
 ## Next Steps
 
 - Run in CI (set `CI=true` for single-worker, no server reuse)
 - Add filter tests for the Atlas filter rail on `/sites`
-- Add species page tests (`/where-to-see/[species]`)
-- Add `/for/[cert]` cert-level page tests
+- Add tests for all 6 cert levels on `/for/[cert]`
+- Add iNaturalist attribution display tests on species pages
