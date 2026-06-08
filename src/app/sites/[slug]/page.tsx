@@ -10,11 +10,12 @@ import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
-import { skillText } from "@/lib/data/reef-state";
+import { skillText, getReefState, STATE_TEXT, STATE_DEF, STATE_COLOR } from "@/lib/data/reef-state";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getWrecksBySiteId } from "@/lib/data/wrecks";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
+import { ScienceContextModule } from "@/components/science-context-module";
 import type { Site } from "@/lib/data/types";
 
 const MONTH_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -223,6 +224,8 @@ export default async function SiteDetailPage({
 
   const noThermalStress = bleachingAlert === "no-stress";
 
+  const reefState = location ? getReefState(location.id) : null;
+
   return (
     <>
       <JsonLd data={siteSchema(site, location)} />
@@ -378,6 +381,80 @@ export default async function SiteDetailPage({
         </div>
       </section>
 
+      {/* ── REEF STATUS BAND ── */}
+      {reefState ? (
+        <div
+          style={{
+            borderBottom: "1px solid #e2e8f0",
+            background: "#fff",
+            padding: "1.5rem 3rem",
+          }}
+        >
+          <style>{`@media (max-width: 640px) { .reef-status-band { padding: 1.25rem 1.25rem !important; } }`}</style>
+          <div
+            className="reef-status-band"
+            style={{
+              maxWidth: 1320,
+              margin: "0 auto",
+              padding: "0",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                marginBottom: "0.375rem",
+              }}
+            >
+              <span
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: "50%",
+                  background: STATE_COLOR[reefState],
+                  display: "inline-block",
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: STATE_COLOR[reefState],
+                }}
+              >
+                {STATE_TEXT[reefState]}
+              </span>
+            </div>
+            <p
+              style={{
+                fontSize: "0.9rem",
+                color: "#475569",
+                margin: 0,
+                maxWidth: 680,
+                lineHeight: 1.6,
+              }}
+            >
+              {STATE_DEF[reefState].short}
+            </p>
+          </div>
+        </div>
+      ) : null}
+
+      {/* ── SCIENCE CONTEXT MODULE ── */}
+      <div
+        style={{
+          maxWidth: 1320,
+          margin: "0 auto",
+          padding: "1.5rem 3rem 0",
+        }}
+      >
+        <ScienceContextModule />
+      </div>
+
       {/* ── STAT STRIP ── */}
       <div
         style={{
@@ -412,7 +489,7 @@ export default async function SiteDetailPage({
             value={
               condMonth
                 ? `${condMonth.visibilityM.min} – ${condMonth.visibilityM.max} m`
-                : "15 – 25 m"
+                : "Not available"
             }
           />
           {/* Current */}
@@ -421,7 +498,7 @@ export default async function SiteDetailPage({
             value={
               condMonth
                 ? condMonth.currentStrength.charAt(0).toUpperCase() + condMonth.currentStrength.slice(1)
-                : "Moderate"
+                : "Not available"
             }
             note="Check tides — site is current-dependent"
           />
@@ -695,7 +772,7 @@ export default async function SiteDetailPage({
                         >
                           {c.commonName}
                           {iucn ? (
-                            <IucnBadge status={iucn} />
+                            <IucnBadge status={iucn} noLink />
                           ) : null}
                         </p>
                         {c.scientificName ? (
@@ -1112,7 +1189,7 @@ export default async function SiteDetailPage({
                 value={
                   condMonth
                     ? condMonth.currentStrength.charAt(0).toUpperCase() + condMonth.currentStrength.slice(1)
-                    : "Moderate"
+                    : "Not available"
                 }
                 note="Incoming tide can bring pelagics and better visibility. Plan arrival around tide times."
               />
@@ -1122,7 +1199,7 @@ export default async function SiteDetailPage({
                 value={
                   condMonth
                     ? `${condMonth.visibilityM.min} – ${condMonth.visibilityM.max} m typical`
-                    : "15 – 25 m typical"
+                    : "Not available"
                 }
                 note="Can drop after heavy rain. Check conditions day-of with your operator."
               />
@@ -1132,7 +1209,7 @@ export default async function SiteDetailPage({
                 value={
                   condMonth
                     ? `${condMonth.waterTempC.min} – ${condMonth.waterTempC.max}°C`
-                    : "27 – 29°C"
+                    : "Not available"
                 }
                 note={condMonth?.suitRecommendation || "3 mm wetsuit comfortable for most divers."}
               />

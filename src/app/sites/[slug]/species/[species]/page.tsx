@@ -95,19 +95,19 @@ export default async function SpeciesDetailPage({
         ).sort((a, b) => a - b)
       : ("bestMonths" in speciesEntry ? speciesEntry.bestMonths ?? [] : []);
 
-  // Also seen at nearby sites (other sites in the same location)
-  const nearbySites =
-    location
-      ? (await import("@/lib/data/sites"))
-          .getSitesByLocationId(location.id)
-          .filter((s) => s.id !== site.id)
-          .filter((s) =>
-            s.species.some(
-              (sp) => sp.commonName.toLowerCase() === commonName.toLowerCase(),
-            ),
-          )
-          .slice(0, 3)
-      : [];
+  // Also seen at — search all sites in the database, sorted by reliability
+  const RELIABILITY_RANK: Record<string, number> = { "year-round": 3, seasonal: 2, rare: 1 };
+  const nearbySites = getAllSites()
+    .filter((s) => s.id !== site.id)
+    .filter((s) =>
+      s.species.some((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase()),
+    )
+    .sort((a, b) => {
+      const ra = a.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
+      const rb = b.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
+      return (RELIABILITY_RANK[rb?.reliability ?? ""] ?? 0) - (RELIABILITY_RANK[ra?.reliability ?? ""] ?? 0);
+    })
+    .slice(0, 5);
 
   return (
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
@@ -161,6 +161,13 @@ export default async function SpeciesDetailPage({
           {location ? `, ${location.name}` : ""}
         </p>
       </div>
+
+      {/* Ecological description */}
+      {speciesEntry.ecologicalDescription ? (
+        <p className="mb-8 text-[0.9375rem] leading-relaxed text-slate-600">
+          {speciesEntry.ecologicalDescription}
+        </p>
+      ) : null}
 
       {/* Sighting evidence */}
       <section className="mb-8">
@@ -270,11 +277,11 @@ export default async function SpeciesDetailPage({
         </p>
       </MethodologyDisclosure>
 
-      {/* Also seen nearby */}
+      {/* Also seen at other sites */}
       {nearbySites.length > 0 ? (
         <section className="mb-8">
           <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-slate-500">
-            Also seen nearby
+            Also seen at other sites
           </h2>
           <ul className="space-y-2">
             {nearbySites.map((s) => (

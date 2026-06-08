@@ -77,7 +77,7 @@ export function AtlasFooter() {
                 color: "rgba(255,255,255,0.55)",
               }}
             >
-              A data atlas for the living ocean.
+              A nonprofit ocean atlas. Dive data for science.
             </p>
             <p className="mt-3 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
               Built from a diver&apos;s frustration — the kind you get when you
