@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { InfoTooltip } from "@/components/info-tooltip";
 import { freshness } from "@/lib/data/reef-state";
 import type { FreshnessKey } from "@/lib/data/reef-state";
 import { WILDLIFE_TAXONOMY, WILDLIFE_TAGS } from "@/lib/atlas-location";
@@ -255,17 +256,20 @@ function FacetGroup({
   children,
   defaultOpen = true,
   badge,
+  tooltip,
 }: {
   title: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
   badge?: React.ReactNode;
+  tooltip?: string;
 }) {
   return (
     <details open={defaultOpen} className="group border-b border-slate-100 pb-4">
       <summary className="mb-2 flex cursor-pointer list-none items-center justify-between text-xs font-semibold uppercase tracking-wide text-slate-500 [&::-webkit-details-marker]:hidden">
         <span className="flex items-center gap-2">
           {title}
+          {tooltip ? <InfoTooltip text={tooltip} /> : null}
           {badge}
         </span>
         <span className="text-slate-400 transition group-open:rotate-90" aria-hidden>
@@ -487,24 +491,6 @@ export function AtlasFilterRail({
           <CheckOpt on={f.freshOnly} onClick={() => onChange({ ...f, freshOnly: !f.freshOnly })}>
             Needs fresh eyes
           </CheckOpt>
-          <p className="px-2.5 pt-1 text-xs leading-5 text-slate-500">
-            Surfaces reefs whose last in water survey is stale or cold.
-          </p>
-        </FacetGroup>
-
-        <FacetGroup title="Thermal stress">
-          {HEAT_BUCKETS.map((b) => (
-            <CheckOpt
-              key={b.value}
-              on={f.heat.includes(b.value)}
-              onClick={() => toggle("heat", b.value)}
-            >
-              <span className="flex flex-col">
-                <span>{b.label}</span>
-                <span className="text-xs text-slate-400">{b.hint}</span>
-              </span>
-            </CheckOpt>
-          ))}
         </FacetGroup>
 
         <FacetGroup
@@ -547,10 +533,7 @@ export function AtlasFilterRail({
         </FacetGroup>
 
         {skills.length > 0 && (
-          <FacetGroup title="Certification level">
-            <p className="px-2.5 pb-1 text-xs leading-5 text-slate-500">
-              Shows all locations accessible at or below this level.
-            </p>
+          <FacetGroup title="Certification level" tooltip="The minimum certification recommended for the dive conditions at this location.">
             {skills.map((s) => (
               <CheckOpt key={s} on={f.skill.includes(s)} onClick={() => toggle("skill", s)}>
                 {s}

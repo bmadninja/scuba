@@ -226,13 +226,28 @@ export default function Home() {
               letterSpacing: "-0.035em",
               color: "#fff",
               maxWidth: 760,
-              marginBottom: "1.75rem",
+              marginBottom: "1rem",
             }}
           >
             Find where
             <br />
             to dive.
           </h1>
+
+          {/* Subline */}
+          <p
+            style={{
+              fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+              fontWeight: 400,
+              color: "rgba(255,255,255,0.55)",
+              letterSpacing: "-0.01em",
+              marginBottom: "1.75rem",
+              maxWidth: 520,
+              lineHeight: 1.5,
+            }}
+          >
+            Browse {reefCount} dive locations — filter by season, species, or reef health.
+          </p>
 
           {/* CTA links */}
           <div
@@ -253,7 +268,7 @@ export default function Home() {
                 letterSpacing: "-0.01em",
               }}
             >
-              What do you want to see? →
+              Browse all locations →
             </a>
             <a
               href="#in-season"
@@ -265,7 +280,7 @@ export default function Home() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Where&apos;s in season now? →
+              Best spots this month →
             </a>
           </div>
 
@@ -571,8 +586,7 @@ export default function Home() {
                 maxWidth: 440,
               }}
             >
-              When you dive a site that needs data, we&apos;ll tell you exactly what to do
-              and where to submit it.
+              We&apos;ll point you to programs that need data from sites like these.
             </p>
 
             {/* Citizen science rows */}
@@ -587,31 +601,22 @@ export default function Home() {
               {[
                 {
                   icon: "📸",
-                  title: "Photo ID",
-                  desc: "Photograph a manta's belly spots. AI matches it to known individuals across years and oceans.",
-                  link: "https://www.mantamatcher.org",
-                  linkLabel: "Manta Matcher ↗",
+                  desc: "Photograph a manta's belly spots — AI matches it to known individuals across years and oceans.",
                   effort: "Zero effort",
                 },
                 {
                   icon: "🪸",
-                  title: "Coral health",
-                  desc: "Color-match 10 corals against a chart. Helps track bleaching during the 4th global event.",
-                  link: "https://coralwatch.org",
-                  linkLabel: "CoralWatch ↗",
+                  desc: "Color-match 10 corals against a chart. Helps track bleaching across the reef.",
                   effort: "15 minutes",
                 },
                 {
                   icon: "🐟",
-                  title: "Fish count",
-                  desc: "10-min timed swim at a marked site. Citizen surveys match federally-funded fisheries surveys in accuracy.",
-                  link: "https://www.reef.org",
-                  linkLabel: "REEF ↗",
+                  desc: "10-min fish count at a marked site. Citizen surveys match federally funded fisheries surveys in accuracy.",
                   effort: "Free training",
                 },
-              ].map(({ icon, title, desc, link, linkLabel, effort }) => (
+              ].map(({ icon, desc, effort }) => (
                 <div
-                  key={title}
+                  key={effort}
                   style={{
                     display: "flex",
                     gap: "1rem",
@@ -627,56 +632,25 @@ export default function Home() {
                   <div>
                     <p
                       style={{
-                        fontSize: "0.9375rem",
-                        fontWeight: 700,
-                        color: "#fff",
-                        marginBottom: "0.2rem",
-                      }}
-                    >
-                      {title}
-                    </p>
-                    <p
-                      style={{
                         fontSize: "0.8125rem",
                         lineHeight: 1.6,
-                        color: "rgba(255,255,255,0.45)",
+                        color: "rgba(255,255,255,0.65)",
                         marginBottom: "0.35rem",
                       }}
                     >
                       {desc}
                     </p>
-                    <div
+                    <span
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.75rem",
+                        fontSize: "0.6875rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        color: "rgba(255,255,255,0.25)",
                       }}
                     >
-                      <a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
-                          color: "#0089de",
-                          textDecoration: "none",
-                        }}
-                      >
-                        {linkLabel}
-                      </a>
-                      <span
-                        style={{
-                          fontSize: "0.6875rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.08em",
-                          textTransform: "uppercase",
-                          color: "rgba(255,255,255,0.25)",
-                        }}
-                      >
-                        {effort}
-                      </span>
-                    </div>
+                      {effort}
+                    </span>
                   </div>
                 </div>
               ))}

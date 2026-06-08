@@ -15,16 +15,13 @@ import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getWaterQualityByLocationId } from "@/lib/data/water-quality";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
-import { getFishingPressureForLocation, getFishingPressureLastBuiltAt } from "@/lib/data/fishing-pressure";
+import { getFishingPressureForLocation } from "@/lib/data/fishing-pressure";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
-import { getSourceById } from "@/lib/data/sources";
-import { getMethodologyByClaimId } from "@/lib/data/methodologies";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
-import { DataFreshnessLabel } from "@/components/data-freshness-label";
+import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import { EditorialHook } from "@/components/editorial-hook";
-import { SightingRow } from "@/components/sighting-row";
-import { STATE_TEXT, STATE_DEF, freshness, getLastSurveyDays, getReefState, bestMonthsText, STATE_COLOR } from "@/lib/data/reef-state";
-import { HowCalculated } from "./how-calculated";
+import { STATE_TEXT, freshness, getLastSurveyDays, bestMonthsText, STATE_COLOR } from "@/lib/data/reef-state";
+import { InfoTooltip } from "@/components/info-tooltip";
 import type {
   BleachingAlertLevel,
   PartnerLink,
@@ -42,6 +39,23 @@ const ALERT_LABEL: Record<BleachingAlertLevel, string> = {
   "alert-1": "Alert level 1",
   "alert-2": "Alert level 2",
 };
+
+const THERMAL_PLAIN: Record<BleachingAlertLevel, { label: string; desc: string; color: string }> = {
+  "no-stress": { label: "Normal",        desc: "no thermal stress",                              color: "#065f46" },
+  watch:       { label: "Watch",         desc: "sea temp above normal, no active bleaching",     color: "#92400e" },
+  warning:     { label: "Warning",       desc: "elevated heat stress, bleaching risk elevated",  color: "#b45309" },
+  "alert-1":   { label: "Alert Level 1", desc: "active bleaching likely",                        color: "#b91c1c" },
+  "alert-2":   { label: "Alert Level 2", desc: "severe bleaching in progress",                   color: "#991b1b" },
+};
+
+function getSpeciesIcon(name: string): string {
+  const n = name.toLowerCase();
+  if (/shark|ray|skate|manta|sawfish/.test(n)) return "🦈";
+  if (/turtle|tortoise/.test(n)) return "🐢";
+  if (/whale|dolphin|porpoise|dugong|manatee/.test(n)) return "🐬";
+  if (/octopus|squid|cuttlefish/.test(n)) return "🐙";
+  return "🐠";
+}
 
 const MONTH_NAMES = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -140,7 +154,7 @@ function fmtRelative(days: number | null, iso: string | null): string {
   if (days === 0) return "Today";
   if (days === 1) return "Yesterday";
   if (days < 30) return `${days} days ago`;
-  if (days < 365) return `${Math.floor(days / 30)} months ago`;
+  if (days < 365) { const m = Math.floor(days / 30); return `${m} ${m === 1 ? "month" : "months"} ago`; }
   const d = new Date(iso + "T00:00:00Z");
   return d.toLocaleDateString("en-US", { year: "numeric", month: "short", timeZone: "UTC" });
 }
@@ -711,9 +725,17 @@ export default async function LocationPage({
                   textTransform: "uppercase",
                   color: "#64748b",
                   whiteSpace: "nowrap",
+                  display: "inline-flex",
+                  alignItems: "center",
                 }}
               >
                 {stat.label}
+                {stat.label === "Reef state" ? (
+                  <InfoTooltip text="Our overall judgment of what the science says is happening on this reef. Not a star rating." />
+                ) : null}
+                {stat.label === "Coral cover" ? (
+                  <InfoTooltip text="Percentage of the reef surface covered by live coral, from the most recent survey." />
+                ) : null}
               </span>
               <span
                 style={{
@@ -814,7 +836,7 @@ export default async function LocationPage({
                     marginBottom: "1.25rem",
                   }}
                 >
-                  Notable species across all sites
+                  What you&apos;ll see here
                 </h2>
                 <div
                   style={{
@@ -831,6 +853,9 @@ export default async function LocationPage({
                     const badgeStyle = iucn ? IUCN_BADGE[iucn.category] : null;
                     const siteLink = sv.siteSlug ? `/sites/${sv.siteSlug}` : null;
                     const CardEl = siteLink ? Link : "div";
+                    const photoCredit = sv.speciesScientific
+                      ? getSpeciesPhotoCredit(sv.speciesScientific)
+                      : null;
                     return (
                       <CardEl
                         key={`${sv.speciesCommon}-${i}`}
@@ -845,13 +870,27 @@ export default async function LocationPage({
                           display: "block",
                         }}
                       >
-                        {/* Species image gradient */}
-                        <div
-                          style={{
-                            height: 88,
-                            background: OCEAN_GRADIENTS[i % OCEAN_GRADIENTS.length],
-                          }}
-                        />
+                        {photoCredit?.imageUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={photoCredit.imageUrl.replace("/square.", "/medium.")}
+                            alt={sv.speciesCommon}
+                            style={{ width: "100%", height: 88, objectFit: "cover", display: "block" }}
+                          />
+                        ) : (
+                          <div
+                            style={{
+                              height: 88,
+                              background: "#f1f5f9",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontSize: "2rem",
+                            }}
+                          >
+                            {getSpeciesIcon(sv.speciesCommon)}
+                          </div>
+                        )}
                         <div style={{ padding: "0.75rem" }}>
                           <p
                             style={{
@@ -867,36 +906,26 @@ export default async function LocationPage({
                           >
                             {sv.speciesCommon}
                             {badgeStyle && iucn ? (
-                              <span
-                                style={{
-                                  display: "inline-block",
-                                  fontSize: "0.5rem",
-                                  fontWeight: 700,
-                                  letterSpacing: "0.06em",
-                                  textTransform: "uppercase",
-                                  padding: "0.15rem 0.4rem",
-                                  borderRadius: 3,
-                                  background: badgeStyle.bg,
-                                  color: badgeStyle.color,
-                                  flexShrink: 0,
-                                }}
-                              >
-                                {iucn.category}
+                              <span style={{ display: "inline-flex", alignItems: "center", gap: 2, flexShrink: 0 }}>
+                                <span
+                                  style={{
+                                    display: "inline-block",
+                                    fontSize: "0.5rem",
+                                    fontWeight: 700,
+                                    letterSpacing: "0.06em",
+                                    textTransform: "uppercase",
+                                    padding: "0.15rem 0.4rem",
+                                    borderRadius: 3,
+                                    background: badgeStyle.bg,
+                                    color: badgeStyle.color,
+                                  }}
+                                >
+                                  {iucn.category}
+                                </span>
+                                <InfoTooltip text="Conservation status from the IUCN Red List. CR=Critically Endangered, EN=Endangered, VU=Vulnerable, NT=Near Threatened, LC=Least Concern." />
                               </span>
                             ) : null}
                           </p>
-                          {sv.speciesScientific ? (
-                            <p
-                              style={{
-                                fontSize: "0.6875rem",
-                                fontStyle: "italic",
-                                color: "#64748b",
-                                marginBottom: "0.4rem",
-                              }}
-                            >
-                              {sv.speciesScientific}
-                            </p>
-                          ) : null}
                           <p
                             style={{
                               display: "flex",
@@ -915,7 +944,7 @@ export default async function LocationPage({
                                 flexShrink: 0,
                               }}
                             />
-                            {relDate}{sv.siteName ? ` · ${sv.siteName}` : ""}
+                            {relDate ? `Seen ${relDate}` : ""}
                           </p>
                         </div>
                       </CardEl>
@@ -937,7 +966,7 @@ export default async function LocationPage({
                 fishingPressure={fishingPressure}
                 lastSurveyDays={lastSurveyDays}
                 lastSurveyMonths={lastSurveyMonths}
-                gfwLastBuiltAt={getFishingPressureLastBuiltAt()}
+                gfwLastBuiltAt={""}
                 atlasState={atlasLoc.state}
                 coverNow={coverNow}
                 coverBefore={coverBefore}
@@ -986,7 +1015,7 @@ export default async function LocationPage({
                     marginBottom: "1.25rem",
                   }}
                 >
-                  Notable species across all sites
+                  What you&apos;ll see here
                 </h2>
                 <div
                   style={{
@@ -1003,6 +1032,9 @@ export default async function LocationPage({
                     const badgeStyle = iucn ? IUCN_BADGE[iucn.category] : null;
                     const siteLink = sv.siteSlug ? `/sites/${sv.siteSlug}` : null;
                     const CardEl = siteLink ? Link : "div";
+                    const photoCredit = sv.speciesScientific
+                      ? getSpeciesPhotoCredit(sv.speciesScientific)
+                      : null;
                     return (
                       <CardEl
                         key={`${sv.speciesCommon}-${i}`}
@@ -1017,12 +1049,27 @@ export default async function LocationPage({
                           display: "block",
                         }}
                       >
-                        <div
-                          style={{
-                            height: 88,
-                            background: OCEAN_GRADIENTS[i % OCEAN_GRADIENTS.length],
-                          }}
-                        />
+                        {photoCredit?.imageUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={photoCredit.imageUrl.replace("/square.", "/medium.")}
+                            alt={sv.speciesCommon}
+                            style={{ width: "100%", height: 88, objectFit: "cover", display: "block" }}
+                          />
+                        ) : (
+                          <div
+                            style={{
+                              height: 88,
+                              background: "#f1f5f9",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontSize: "2rem",
+                            }}
+                          >
+                            {getSpeciesIcon(sv.speciesCommon)}
+                          </div>
+                        )}
                         <div style={{ padding: "0.75rem" }}>
                           <p
                             style={{
@@ -1038,36 +1085,26 @@ export default async function LocationPage({
                           >
                             {sv.speciesCommon}
                             {badgeStyle && iucn ? (
-                              <span
-                                style={{
-                                  display: "inline-block",
-                                  fontSize: "0.5rem",
-                                  fontWeight: 700,
-                                  letterSpacing: "0.06em",
-                                  textTransform: "uppercase",
-                                  padding: "0.15rem 0.4rem",
-                                  borderRadius: 3,
-                                  background: badgeStyle.bg,
-                                  color: badgeStyle.color,
-                                  flexShrink: 0,
-                                }}
-                              >
-                                {iucn.category}
+                              <span style={{ display: "inline-flex", alignItems: "center", gap: 2, flexShrink: 0 }}>
+                                <span
+                                  style={{
+                                    display: "inline-block",
+                                    fontSize: "0.5rem",
+                                    fontWeight: 700,
+                                    letterSpacing: "0.06em",
+                                    textTransform: "uppercase",
+                                    padding: "0.15rem 0.4rem",
+                                    borderRadius: 3,
+                                    background: badgeStyle.bg,
+                                    color: badgeStyle.color,
+                                  }}
+                                >
+                                  {iucn.category}
+                                </span>
+                                <InfoTooltip text="Conservation status from the IUCN Red List. CR=Critically Endangered, EN=Endangered, VU=Vulnerable, NT=Near Threatened, LC=Least Concern." />
                               </span>
                             ) : null}
                           </p>
-                          {sv.speciesScientific ? (
-                            <p
-                              style={{
-                                fontSize: "0.6875rem",
-                                fontStyle: "italic",
-                                color: "#64748b",
-                                marginBottom: "0.4rem",
-                              }}
-                            >
-                              {sv.speciesScientific}
-                            </p>
-                          ) : null}
                           <p
                             style={{
                               display: "flex",
@@ -1086,69 +1123,13 @@ export default async function LocationPage({
                                 flexShrink: 0,
                               }}
                             />
-                            {relDate}{sv.siteName ? ` · ${sv.siteName}` : ""}
+                            {relDate ? `Seen ${relDate}` : ""}
                           </p>
                         </div>
                       </CardEl>
                     );
                   })}
                 </div>
-              </section>
-            ) : null}
-
-            {/* ------------------------------------------------------------ */}
-            {/* LIVE SIGHTINGS FEED — witnessing change: before sites          */}
-            {/* ------------------------------------------------------------ */}
-            {isWitnessing && allSightings.length > 0 ? (
-              <section style={{ marginTop: "2.5rem" }}>
-                <p
-                  style={{
-                    fontSize: "0.6875rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: "#64748b",
-                    marginBottom: "0.75rem",
-                  }}
-                >
-                  Live from iNaturalist
-                </p>
-                <h2
-                  style={{
-                    fontSize: "1.5rem",
-                    fontWeight: 800,
-                    letterSpacing: "-0.025em",
-                    color: "#0f172a",
-                    marginBottom: "1.25rem",
-                  }}
-                >
-                  Recent sightings across all sites
-                </h2>
-                <div
-                  style={{
-                    border: "1px solid #e2e8f0",
-                    borderRadius: "1.25rem",
-                    overflow: "hidden",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {allSightings.map((sv, i) => (
-                    <SightingRow
-                      key={`${sv.siteId}-${sv.speciesCommon}-${i}`}
-                      speciesCommon={sv.speciesCommon}
-                      speciesScientific={sv.speciesScientific}
-                      siteName={sv.siteName}
-                      date={sv.lastConfirmedAt}
-                      obsId={sv.obsId}
-                    />
-                  ))}
-                </div>
-                <p style={{ fontSize: "0.75rem", color: "#94a3b8", marginBottom: "2rem" }}>
-                  Sightings from iNaturalist Research Grade observations.{" "}
-                  <Link href="/data" style={{ color: "#0089de", textDecoration: "none", fontWeight: 600 }}>
-                    How we verify this data →
-                  </Link>
-                </p>
               </section>
             ) : null}
 
@@ -1325,63 +1306,7 @@ export default async function LocationPage({
             )}
 
             {/* ------------------------------------------------------------ */}
-            {/* LIVE SIGHTINGS FEED — thriving/pressure: after sites           */}
-            {/* ------------------------------------------------------------ */}
-            {!isWitnessing && allSightings.length > 0 ? (
-              <section style={{ marginTop: "2.5rem" }}>
-                <p
-                  style={{
-                    fontSize: "0.6875rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: "#64748b",
-                    marginBottom: "0.75rem",
-                  }}
-                >
-                  Live from iNaturalist
-                </p>
-                <h2
-                  style={{
-                    fontSize: "1.5rem",
-                    fontWeight: 800,
-                    letterSpacing: "-0.025em",
-                    color: "#0f172a",
-                    marginBottom: "1.25rem",
-                  }}
-                >
-                  Recent sightings across all sites
-                </h2>
-                <div
-                  style={{
-                    border: "1px solid #e2e8f0",
-                    borderRadius: "1.25rem",
-                    overflow: "hidden",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {allSightings.map((sv, i) => (
-                    <SightingRow
-                      key={`${sv.siteId}-${sv.speciesCommon}-${i}`}
-                      speciesCommon={sv.speciesCommon}
-                      speciesScientific={sv.speciesScientific}
-                      siteName={sv.siteName}
-                      date={sv.lastConfirmedAt}
-                      obsId={sv.obsId}
-                    />
-                  ))}
-                </div>
-                <p style={{ fontSize: "0.75rem", color: "#94a3b8", marginBottom: "2rem" }}>
-                  Sightings from iNaturalist Research Grade observations.{" "}
-                  <Link href="/data" style={{ color: "#0089de", textDecoration: "none", fontWeight: 600 }}>
-                    How we verify this data →
-                  </Link>
-                </p>
-              </section>
-            ) : null}
-
-            {/* ------------------------------------------------------------ */}
-            {/* GEAR SECTION (§4.14) — Layer A basic kit + Layer B add-ons    */}
+            {/* GEAR SECTION (§4.14) — Layer A basic kit                      */}
             {/* ------------------------------------------------------------ */}
             <section id="gear" style={{ marginTop: "2.5rem" }}>
               <p
@@ -1409,8 +1334,8 @@ export default async function LocationPage({
               </h2>
               <p style={{ fontSize: "0.875rem", color: "#64748b", lineHeight: 1.6, marginBottom: "1.5rem" }}>
                 {minWaterTemp !== null
-                  ? `Basic kit matched to ${minWaterTemp}°C water, plus what specific sites demand.`
-                  : "Basic kit for the location, plus what specific sites demand."}
+                  ? `Basic kit matched to ${minWaterTemp}°C water.`
+                  : "Basic kit for the location."}
               </p>
 
               <div
@@ -1420,19 +1345,6 @@ export default async function LocationPage({
                   padding: "1.5rem",
                 }}
               >
-                {/* Layer A — basic kit */}
-                <p
-                  style={{
-                    fontSize: "0.5875rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                    color: "#1d5d90",
-                    marginBottom: "0.875rem",
-                  }}
-                >
-                  base kit — the same across {location.name}
-                </p>
                 <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", margin: 0, padding: 0, listStyle: "none" }}>
                   {basicKit.map((item) => {
                     const shop = gearShopLink(item.gearId);
@@ -1460,111 +1372,26 @@ export default async function LocationPage({
                           </span>
                         </span>
                         {shop ? (
-                          <AffiliateLink
-                            url={shop.url}
-                            event="gear_click"
-                            partner={shop.partner}
-                            productId={shop.productId}
-                            siteId={location.id}
-                            isAffiliate={shop.isAffiliate}
-                            className="flex-shrink-0 self-center rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-[12px] font-bold text-[#1d5d90] no-underline transition hover:border-[#0089de]/40"
+                          <a
+                            href={shop.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              flexShrink: 0,
+                              alignSelf: "center",
+                              fontSize: "0.75rem",
+                              fontWeight: 600,
+                              color: "#1d5d90",
+                              textDecoration: "none",
+                            }}
                           >
-                            <span aria-hidden="true">Shop →</span>
-                            <span style={{ border: 0, width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap", position: "absolute" }}>
-                              Shop {item.name} (opens in new tab)
-                            </span>
-                          </AffiliateLink>
+                            Shop
+                          </a>
                         ) : null}
                       </li>
                     );
                   })}
                 </ul>
-
-                {/* Layer B — site-specific add-ons grouped by site */}
-                {hasSiteGear ? (
-                  <div style={{ marginTop: "1.75rem", borderTop: "1px solid #e2e8f0", paddingTop: "1.5rem" }}>
-                    <p
-                      style={{
-                        fontSize: "0.5875rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "#1d5d90",
-                        marginBottom: "1rem",
-                      }}
-                    >
-                      site-specific add-ons
-                    </p>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                      {gearBySite.map(({ site: gs, items }) => (
-                        <div key={gs.id}>
-                          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "0.5rem", marginBottom: "0.5rem" }}>
-                            <span style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>{gs.name}</span>
-                            <Link
-                              href={`/sites/${gs.slug}`}
-                              style={{ fontSize: "0.6875rem", fontWeight: 600, color: "#0089de", textDecoration: "none", flexShrink: 0 }}
-                            >
-                              view site <span aria-hidden="true">→</span>
-                            </Link>
-                          </div>
-                          <ul style={{ display: "flex", flexDirection: "column", gap: "0.4rem", margin: 0, padding: 0, listStyle: "none" }}>
-                            {items.map((it, i) => {
-                              const shop = gearShopLink(it.gearId);
-                              return (
-                                <li
-                                  key={`${gs.id}-${it.name}-${i}`}
-                                  style={{
-                                    display: "flex",
-                                    alignItems: "flex-start",
-                                    gap: "0.75rem",
-                                    padding: "0.6rem 0.8rem",
-                                    borderRadius: "0.6rem",
-                                    background: "rgba(232,150,47,0.06)",
-                                    border: "1px solid rgba(232,150,47,0.2)",
-                                  }}
-                                >
-                                  <span aria-hidden="true" style={{ fontSize: "1.05rem", lineHeight: 1.3, flexShrink: 0 }}>
-                                    {siteGearIcon(it.name)}
-                                  </span>
-                                  <span style={{ flex: 1, minWidth: 0 }}>
-                                    <span style={{ display: "block", fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a" }}>
-                                      {it.name}
-                                    </span>
-                                    <span style={{ display: "block", fontSize: "0.75rem", color: "#64748b", lineHeight: 1.5, marginTop: "0.1rem" }}>
-                                      {it.reason}
-                                    </span>
-                                  </span>
-                                  {shop ? (
-                                    <AffiliateLink
-                                      url={shop.url}
-                                      event="gear_click"
-                                      partner={shop.partner}
-                                      productId={shop.productId}
-                                      siteId={location.id}
-                                      isAffiliate={shop.isAffiliate}
-                                      className="flex-shrink-0 self-center rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-[12px] font-bold text-[#1d5d90] no-underline transition hover:border-[#0089de]/40"
-                                    >
-                                      <span aria-hidden="true">Shop →</span>
-                                      <span style={{ border: 0, width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap", position: "absolute" }}>
-                                        Shop {it.name} (opens in new tab)
-                                      </span>
-                                    </AffiliateLink>
-                                  ) : null}
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
-
-                {/* Section-level disclosure — one quiet line */}
-                <p style={{ fontSize: "0.6875rem", color: "#94a3b8", lineHeight: 1.5, marginTop: "1.5rem", borderTop: "1px solid #e2e8f0", paddingTop: "1rem" }}>
-                  Some shop links earn us a commission at no cost to you — full disclosure on the{" "}
-                  <Link href="/about" style={{ color: "#64748b", fontWeight: 600 }}>About page</Link>.
-                </p>
               </div>
             </section>
 
@@ -1950,26 +1777,15 @@ export default async function LocationPage({
 }
 
 // ---------------------------------------------------------------------------
-// Reef Science Panel
+// Reef Health Panel (simplified — max 3 data points)
 // ---------------------------------------------------------------------------
 
 function ReefSciencePanel({
-  record,
-  reefPressure,
-  waterQuality,
-  coralCoverSnapshot,
-  fishingPressure,
-  lastSurveyDays,
-  lastSurveyMonths,
-  gfwLastBuiltAt,
-  atlasState,
   coverNow,
   coverBefore,
   surveyYear,
   historicalYear,
   coverTrend,
-  fish,
-  freshData,
   thermal,
 }: {
   record: NonNullable<ReturnType<typeof getReefHealthByLocationId>>[number];
@@ -1990,88 +1806,24 @@ function ReefSciencePanel({
   freshData: ReturnType<typeof freshness> | null;
   thermal: NonNullable<ReturnType<typeof getReefHealthByLocationId>>[number]["thermalStress"] | null;
 }) {
-  const observed = record.observed;
-  const thermalAlert = thermal?.alertLevel ?? "no-stress";
+  const thermalAlert = thermal?.alertLevel ?? null;
 
-  // Fishing pressure badge
-  const gfwTrend =
-    fishingPressure?.historical && fishingPressure.historical.fishingHours > 0
-      ? Math.round(
-          ((fishingPressure.current.fishingHours - fishingPressure.historical.fishingHours) /
-            fishingPressure.historical.fishingHours) *
-            100,
-        )
-      : null;
-  const fishingNote =
-    gfwTrend !== null && fishingPressure
-      ? `Visible fishing ${gfwTrend > 0 ? `up ${gfwTrend}%` : gfwTrend < 0 ? `down ${Math.abs(gfwTrend)}%` : "flat"} vs ${fishingPressure.historical!.year}. Global Fishing Watch · ${fishingPressure.current.year}.`
-      : fishingPressure
-        ? `Global Fishing Watch · ${fishingPressure.current.year}.`
-        : "Visible fishing activity near the reef from satellite tracking.";
+  // Trend indicator
+  const trendIndicator =
+    coverTrend === null ? null :
+    coverTrend > 0 ? "↑" :
+    coverTrend < 0 ? "↓" : "→";
 
-  const mpa = reefPressure
-    ? MPA_STATUS[reefPressure.mpaStatus] ?? MPA_STATUS["no-protection"]
-    : null;
-  const mpaNote =
-    reefPressure && reefPressure.mpaName
-      ? `${reefPressure.mpaName}${reefPressure.mpaSinceYear ? ` · since ${reefPressure.mpaSinceYear}` : ""}`
-      : mpa ? mpa.copy : null;
+  const trendNote =
+    coverTrend === null ? null :
+    coverTrend < 0
+      ? `down ${Math.abs(coverTrend)} pts since ${historicalYear ?? "last survey"}`
+      : coverTrend > 0
+        ? `up ${coverTrend} pts since ${historicalYear ?? "last survey"}`
+        : `flat since ${historicalYear ?? "last survey"}`;
 
-  const WQ_ORDER: Record<string, number> = { watch: 1, concerning: 2, severe: 3 };
-  const worstEvent =
-    waterQuality && waterQuality.events.length > 0
-      ? [...waterQuality.events].sort((a, b) => (WQ_ORDER[b.severity] ?? 0) - (WQ_ORDER[a.severity] ?? 0))[0]
-      : null;
-  const wqSignal = worstEvent
-    ? {
-        value: WQ_SEVERITY_LABEL[worstEvent.severity] ?? worstEvent.severity,
-        tone: worstEvent.severity === "severe" ? ("bad" as const) : worstEvent.severity === "concerning" ? ("warn" as const) : ("ok" as const),
-        note: worstEvent.title,
-      }
-    : waterQuality?.microplasticsLevel
-      ? {
-          value: WQ_MICROPLASTICS_LABEL[waterQuality.microplasticsLevel],
-          tone:
-            waterQuality.microplasticsLevel === "very-high" ? ("bad" as const) :
-            waterQuality.microplasticsLevel === "high" ? ("warn" as const) :
-            waterQuality.microplasticsLevel === "moderate" ? ("ok" as const) :
-            ("good" as const),
-          note: "Ambient microplastics in the water column.",
-        }
-      : null;
-
-  // Trend box style
-  const trendIsUp = coverTrend !== null && coverTrend > 0;
-  const trendStyle = trendIsUp
-    ? { bg: "#e7f6ee", border: "#a7f3d0", color: "#065f46" }
-    : coverTrend !== null && coverTrend < 0
-      ? { bg: "#fef2f2", border: "#fecaca", color: "#b91c1c" }
-      : { bg: "#f1f7fb", border: "#e2e8f0", color: "#334155" };
-
-  const methods = record.methodologyClaimIds
-    .map(getMethodologyByClaimId)
-    .filter((m): m is NonNullable<typeof m> => Boolean(m));
-
-  const sourceIds = Array.from(
-    new Set([
-      ...(observed?.sourceIds ?? []),
-      ...(thermal?.sourceIds ?? []),
-      ...(record.projection?.sourceIds ?? []),
-      ...methods.flatMap((m) => m.sourceIds),
-    ]),
-  );
-  const sources = sourceIds
-    .map(getSourceById)
-    .filter((s): s is NonNullable<typeof s> => Boolean(s));
-
-  const reefState = getReefState(record.locationId ?? "");
-  const statePillStyle = STATE_PILL_STYLE[reefState];
-
-  // Pressure badge helper
-  const pb = (tone: string) => PRESSURE_BADGE[tone] ?? PRESSURE_BADGE.neutral;
-
-  // Projection
-  const proj = computeCoverProjection({ coverNow, coverBefore, surveyYear, historicalYear });
+  const hasAnyData = coverNow !== null || thermalAlert !== null;
+  if (!hasAnyData) return null;
 
   return (
     <section style={{ marginBottom: "2.5rem" }}>
@@ -2085,7 +1837,7 @@ function ReefSciencePanel({
           marginBottom: "0.75rem",
         }}
       >
-        Reef science
+        Reef health
       </p>
       <h2
         style={{
@@ -2096,554 +1848,69 @@ function ReefSciencePanel({
           marginBottom: "1.25rem",
         }}
       >
-        What the data says
+        Reef condition
       </h2>
 
       <div
         style={{
           border: "1px solid #e2e8f0",
           borderRadius: "1.25rem",
-          overflow: "hidden",
+          padding: "1.5rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
         }}
       >
-        {/* Panel header */}
-        <div
-          style={{
-            padding: "1.25rem 1.5rem",
-            background: "#f1f7fb",
-            borderBottom: "1px solid #e2e8f0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "0.5rem",
-          }}
-        >
-          <span style={{ fontSize: "0.875rem", fontWeight: 700, color: "#0f172a" }}>
-            Coral cover — live coral as % of seafloor
-          </span>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.75rem", color: "#64748b" }}>
-            <span
-              style={{
-                width: 5,
-                height: 5,
-                borderRadius: "50%",
-                background: freshData?.k === "fresh" ? "#15a05c" : freshData?.k === "stale" ? "#f59e0b" : "#94a3b8",
-                flexShrink: 0,
-              }}
-            />
-            {lastSurveyMonths !== null
-              ? `Last survey ${lastSurveyMonths} month${lastSurveyMonths === 1 ? "" : "s"} ago`
-              : observed?.surveyDate
-                ? `Last survey ${formatSurveyDate(observed.surveyDate)}`
-                : "Survey date unknown"}
-          </div>
-        </div>
-
-        <div style={{ padding: "1.5rem" }}>
-          {/* Coral cover bars */}
-          {coverNow !== null ? (
-            <>
-              {coverBefore !== null ? (
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.25rem" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-                    <span style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#64748b" }}>
-                      A decade ago{historicalYear ? ` · ${historicalYear}` : ""}
-                    </span>
-                    <span style={{ fontSize: "1.125rem", fontWeight: 800, letterSpacing: "-0.02em", color: "#0f172a" }}>
-                      {coverBefore}%
-                    </span>
-                  </div>
-                  <div style={{ height: 8, borderRadius: 4, background: "#e2e8f0", overflow: "hidden" }}>
-                    <div
-                      style={{
-                        height: "100%",
-                        width: `${Math.max(0, Math.min(100, coverBefore))}%`,
-                        borderRadius: 4,
-                        background: "#10b981",
-                        opacity: 0.4,
-                      }}
-                    />
-                  </div>
-                </div>
-              ) : null}
-
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1rem" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-                  <span style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#64748b" }}>
-                    Most recent{surveyYear ? ` · ${surveyYear}` : ""}
-                  </span>
+        {/* Coral cover */}
+        {coverNow !== null ? (
+          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap" }}>
+            <span style={{ display: "flex", alignItems: "center", fontSize: "0.8125rem", fontWeight: 600, color: "#475569" }}>
+              Coral cover
+              <InfoTooltip text="Percentage of the reef surface covered by live coral, from the most recent survey." />
+            </span>
+            <span style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", flexWrap: "wrap" }}>
+              <span style={{ fontSize: "1.25rem", fontWeight: 800, letterSpacing: "-0.02em", color: "#0f172a" }}>
+                {coverNow}%
+                {trendIndicator ? (
                   <span
                     style={{
-                      fontSize: "1.125rem",
-                      fontWeight: 800,
-                      letterSpacing: "-0.02em",
-                      color: coverTrend !== null && coverTrend > 0 ? "#10b981" : "#0f172a",
+                      fontSize: "1rem",
+                      marginLeft: "0.25rem",
+                      color: coverTrend! > 0 ? "#10b981" : coverTrend! < 0 ? "#ef4444" : "#64748b",
                     }}
                   >
-                    {coverNow}%
+                    {trendIndicator}
                   </span>
-                </div>
-                <div style={{ height: 8, borderRadius: 4, background: "#e2e8f0", overflow: "hidden" }}>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: `${Math.max(0, Math.min(100, coverNow))}%`,
-                      borderRadius: 4,
-                      background: "#10b981",
-                    }}
-                  />
-                </div>
-              </div>
-
-              {/* Trend callout */}
-              {coverTrend !== null ? (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                    marginTop: "0.875rem",
-                    padding: "0.625rem 0.875rem",
-                    borderRadius: "0.75rem",
-                    background: trendStyle.bg,
-                    border: `1px solid ${trendStyle.border}`,
-                  }}
-                >
-                  <span style={{ fontSize: "0.8125rem", color: trendStyle.color, fontWeight: 500 }}>
-                    {coverTrend > 0
-                      ? `↑ Cover has increased since ${historicalYear ?? "the historical survey"} — one of the few locations on this atlas showing genuine recovery.`
-                      : coverTrend < 0
-                        ? `↓ Cover has declined by ${Math.abs(coverTrend)} points since ${historicalYear ?? "the historical survey"}.`
-                        : "→ Cover is holding steady since the historical survey."}
-                  </span>
-                </div>
-              ) : null}
-
-              {/* Doom projection for declining cover */}
-              {proj ? (
-                <p
-                  style={{
-                    marginTop: "0.75rem",
-                    borderRadius: "0.625rem",
-                    background: "#fef2f2",
-                    padding: "0.5rem 0.75rem",
-                    fontSize: "0.75rem",
-                    lineHeight: 1.5,
-                    color: "#991b1b",
-                  }}
-                >
-                  <strong>On current trend, no live coral by about {proj.zeroYear}.</strong>{" "}
-                  Losing roughly {proj.perYear}% cover per year.
-                </p>
-              ) : null}
-            </>
-          ) : (
-            <p style={{ fontSize: "0.875rem", color: "#64748b" }}>No coral cover survey on file for this location.</p>
-          )}
-
-          {/* 2x2 pressure grid */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "1rem",
-              marginTop: "1.5rem",
-            }}
-          >
-            {/* Fishing pressure */}
-            <div
-              style={{
-                padding: "1rem",
-                borderRadius: "0.875rem",
-                border: "1px solid #e2e8f0",
-                background: "#fff",
-              }}
-            >
-              <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.4rem" }}>
-                Fishing pressure
-              </p>
-              <span
-                style={{
-                  display: "inline-block",
-                  padding: "0.25rem 0.625rem",
-                  borderRadius: 999,
-                  fontSize: "0.6875rem",
-                  fontWeight: 700,
-                  background: pb(fish.tone).bg,
-                  color: pb(fish.tone).color,
-                }}
-              >
-                {fish.label}
-              </span>
-            </div>
-
-            {/* Thermal stress */}
-            <div
-              style={{
-                padding: "1rem",
-                borderRadius: "0.875rem",
-                border: "1px solid #e2e8f0",
-                background: "#fff",
-              }}
-            >
-              <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.4rem" }}>
-                Thermal stress
-              </p>
-              <span
-                style={{
-                  display: "inline-block",
-                  padding: "0.25rem 0.625rem",
-                  borderRadius: 999,
-                  fontSize: "0.6875rem",
-                  fontWeight: 700,
-                  background: pb(ALERT_TONE[thermalAlert]).bg,
-                  color: pb(ALERT_TONE[thermalAlert]).color,
-                }}
-              >
-                {thermalAlert === "no-stress" ? "No stress" : ALERT_LABEL[thermalAlert]}
-              </span>
-            </div>
-
-            {/* Bleaching alert */}
-            <div
-              style={{
-                padding: "1rem",
-                borderRadius: "0.875rem",
-                border: "1px solid #e2e8f0",
-                background: "#fff",
-              }}
-            >
-              <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.4rem" }}>
-                Bleaching alert
-              </p>
-              <span
-                style={{
-                  display: "inline-block",
-                  padding: "0.25rem 0.625rem",
-                  borderRadius: 999,
-                  fontSize: "0.6875rem",
-                  fontWeight: 700,
-                  background: pb(ALERT_TONE[thermalAlert]).bg,
-                  color: pb(ALERT_TONE[thermalAlert]).color,
-                }}
-              >
-                {thermalAlert === "no-stress" ? "No alert" : ALERT_LABEL[thermalAlert]}
-              </span>
-            </div>
-
-            {/* Reef state */}
-            <div
-              style={{
-                padding: "1rem",
-                borderRadius: "0.875rem",
-                border: "1px solid #e2e8f0",
-                background: "#fff",
-              }}
-            >
-              <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.4rem" }}>
-                Reef state
-              </p>
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.375rem",
-                  padding: "0.25rem 0.625rem",
-                  borderRadius: 999,
-                  fontSize: "0.6875rem",
-                  fontWeight: 700,
-                  background: statePillStyle.bg,
-                  color: statePillStyle.color,
-                }}
-              >
-                <span
-                  style={{
-                    width: 5,
-                    height: 5,
-                    borderRadius: "50%",
-                    background: statePillStyle.color,
-                    flexShrink: 0,
-                  }}
-                  aria-hidden
-                />
-                {STATE_TEXT[reefState]}
-              </span>
-            </div>
-          </div>
-
-          {/* Method callout */}
-          <div
-            style={{
-              marginTop: "1.25rem",
-              padding: "1rem 1.125rem",
-              borderRadius: "0.875rem",
-              background: "#f8fafc",
-              border: "1px solid #e2e8f0",
-              display: "flex",
-              alignItems: "flex-start",
-              gap: "0.75rem",
-            }}
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#94a3b8"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{ flexShrink: 0, marginTop: 1 }}
-            >
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 16v-4M12 8h.01"/>
-            </svg>
-            <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "#64748b" }}>
-              Bleaching alert runs from{" "}
-              <strong style={{ color: "#0f172a", fontWeight: 600 }}>
-                No stress → Watch → Warning → Alert 1 → Alert 2
-              </strong>
-              . Reef state combines thermal data, coral cover, and fishing pressure into a single judgment.{" "}
-              <Link href="/data" style={{ color: "#0089de", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" }}>
-                How we calculate this →
-              </Link>
-            </p>
-          </div>
-
-          {/* Additional context cards */}
-          {record.divingOutlook ? (
-            <div
-              style={{
-                marginTop: "1rem",
-                borderRadius: "0.875rem",
-                border: "1px solid #bae6fd",
-                background: "#f0f9ff",
-                padding: "1rem 1.125rem",
-              }}
-            >
-              <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#0284c7", marginBottom: "0.4rem" }}>
-                What to expect on a dive
-              </p>
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "#0c4a6e" }}>{record.divingOutlook}</p>
-            </div>
-          ) : null}
-
-          {reefPressure?.visitorImpactNote ? (
-            <div
-              style={{
-                marginTop: "1rem",
-                borderRadius: "0.875rem",
-                border: "1px solid #a7f3d0",
-                background: "#ecfdf5",
-                padding: "1rem 1.125rem",
-              }}
-            >
-              <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#065f46", marginBottom: "0.4rem" }}>
-                What you can do
-              </p>
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "#064e3b" }}>{reefPressure.visitorImpactNote}</p>
-            </div>
-          ) : null}
-
-          {/* Full methodology disclosure */}
-          <HowCalculated>
-            <div className="space-y-5">
-              {observed ? (
-                <div>
-                  <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-                      Coral cover trajectory
-                    </p>
-                    {observed.surveyDate ? (
-                      <DataFreshnessLabel
-                        variant="snapshot"
-                        surveyMethod={observed.surveyMethod ?? "field survey"}
-                        surveyDate={observed.surveyDate}
-                      />
-                    ) : null}
-                  </div>
-                  <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
-                    {typeof observed.coralCoverPercent === "number" ? (
-                      <li>
-                        Coral cover: <strong>{observed.coralCoverPercent}%</strong> (survey{" "}
-                        {formatSurveyDate(observed.surveyDate)}, {observed.surveyMethod})
-                      </li>
-                    ) : null}
-                    {typeof observed.bleachedPercent === "number" ? (
-                      <li>Bleached: <strong>{observed.bleachedPercent}%</strong></li>
-                    ) : null}
-                    {typeof observed.mortalityPercent === "number" ? (
-                      <li>Recent mortality: <strong>{observed.mortalityPercent}%</strong></li>
-                    ) : null}
-                    {observed.notes ? <li>{observed.notes}</li> : null}
-                  </ul>
-                </div>
-              ) : null}
-
-              {coralCoverSnapshot ? (
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-                    Jurisdiction scale reference
-                  </p>
-                  <p className="mt-1.5 text-[13px] leading-6">
-                    The headline coral cover above is the site survey on file. For wider context,{" "}
-                    {coralCoverSnapshot.program} reports a {coralCoverSnapshot.label} mean of{" "}
-                    <strong>{coralCoverSnapshot.current.coverPercent}%</strong> in{" "}
-                    {coralCoverSnapshot.current.year}
-                    {coralCoverSnapshot.historical
-                      ? `, against ${coralCoverSnapshot.historical.coverPercent}% in ${coralCoverSnapshot.historical.year}`
-                      : ""}
-                    . {coralCoverSnapshot.method}.
-                    {coralCoverSnapshot.notes ? ` ${coralCoverSnapshot.notes}` : ""}{" "}
-                    Reported at the jurisdiction scale, not this single reef.{" "}
-                    <a
-                      href={coralCoverSnapshot.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#0089de] hover:underline"
-                    >
-                      {coralCoverSnapshot.sourceLabel} →
-                    </a>
-                  </p>
-                </div>
-              ) : null}
-
-              {thermal ? (
-                <div>
-                  <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-                      Thermal stress mechanics
-                    </p>
-                    {thermal.source === "noaa-crw-live" ? (
-                      <DataFreshnessLabel variant="live" source="NOAA CRW" updatedAt={thermal.fetchedAt ?? thermal.asOf} />
-                    ) : (
-                      <DataFreshnessLabel variant="snapshot" surveyMethod="NOAA CRW (scaffolding)" surveyDate={thermal.asOf} />
-                    )}
-                  </div>
-                  <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
-                    <li>
-                      NOAA Coral Reef Watch alert level:{" "}
-                      <strong>{ALERT_LABEL[thermal.alertLevel]}</strong> — updated {formatSurveyDate(thermal.asOf)}
-                    </li>
-                    {typeof thermal.degreeHeatingWeeks === "number" ? (
-                      <li>Degree Heating Weeks: <strong>{thermal.degreeHeatingWeeks} °C-wk</strong></li>
-                    ) : null}
-                    {typeof thermal.sstAnomalyC === "number" ? (
-                      <li>Sea surface temperature anomaly: <strong>+{thermal.sstAnomalyC} °C</strong></li>
-                    ) : null}
-                    <li>Alert scale: no stress → watch → warning → alert level 1 → alert level 2.</li>
-                  </ul>
-                </div>
-              ) : null}
-
-              <div>
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-                    Fishing pressure method
-                  </p>
-                  <DataFreshnessLabel
-                    variant="live"
-                    source="Global Fishing Watch"
-                    updatedAt={fishingPressure?.fetchedAt ?? gfwLastBuiltAt}
-                  />
-                </div>
-                <p className="mt-1.5 text-[13px] leading-6">
-                  Fishing pressure is a proxy from Global Fishing Watch satellite AIS tracking.
-                </p>
-                {fishingPressure ? (
-                  <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
-                    <li>
-                      Apparent fishing hours within {fishingPressure.radiusKm} km:{" "}
-                      <strong>{fishingPressure.current.fishingHours.toLocaleString()} h</strong>{" "}
-                      in {fishingPressure.current.year}
-                      {fishingPressure.historical
-                        ? `, against ${fishingPressure.historical.fishingHours.toLocaleString()} h in ${fishingPressure.historical.year}`
-                        : ""}.
-                    </li>
-                    {reefPressure && reefPressure.topPressures.length > 0 ? (
-                      <li>Dominant pressures: {reefPressure.topPressures.join(", ")}.</li>
-                    ) : null}
-                  </ul>
                 ) : null}
-                <p className="mt-2 rounded-lg bg-amber-50 px-3 py-2 text-[12px] leading-5 text-amber-900">
-                  <strong>Important caveat.</strong> GFW only sees vessels broadcasting AIS. Small artisanal boats and any operator running dark are invisible here.
-                </p>
-              </div>
+              </span>
+              {trendNote ? (
+                <span style={{ fontSize: "0.6875rem", color: "#64748b" }}>
+                  {trendNote}{surveyYear ? ` · ${surveyYear}` : ""}
+                </span>
+              ) : (
+                surveyYear ? (
+                  <span style={{ fontSize: "0.6875rem", color: "#64748b" }}>{surveyYear}</span>
+                ) : null
+              )}
+            </span>
+          </div>
+        ) : null}
 
-              {mpa ? (
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">Protection status</p>
-                  <p className="mt-1.5 text-[13px] leading-6">{mpa.copy}</p>
-                  <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
-                    {reefPressure?.mpaName ? (
-                      <li>
-                        {reefPressure.mpaName}
-                        {reefPressure.mpaSinceYear ? ` · designated ${reefPressure.mpaSinceYear}` : ""}.
-                      </li>
-                    ) : null}
-                  </ul>
-                </div>
-              ) : null}
-
-              {waterQuality && waterQuality.events.length > 0 ? (
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">Pollution and water quality</p>
-                  <ul className="mt-1.5 space-y-2 text-[13px] leading-6">
-                    {waterQuality.events.map((e, i) => (
-                      <li key={i}>
-                        <strong>{e.title} ({WQ_SEVERITY_LABEL[e.severity] ?? e.severity})</strong>{" "}
-                        — since {e.since}. {e.description}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-
-              {reefState ? (
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">How the reef state is classified</p>
-                  <p className="mt-1.5 text-[13px] leading-6">{STATE_DEF[reefState].signal}</p>
-                </div>
-              ) : null}
-
-              {record.projection ? (
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">
-                    Projection · {record.projection.scenario}
-                  </p>
-                  <p className="mt-1.5 text-[13px] leading-6">{record.projection.statement}</p>
-                  <p className="mt-1 text-[12px] text-slate-500">Uncertainty: {record.projection.uncertainty}</p>
-                </div>
-              ) : null}
-
-              {methods.map((m) => (
-                <div key={m.claimId}>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">How we summarise this</p>
-                  <p className="mt-1.5 text-[13px] leading-6">{m.limitations}</p>
-                </div>
-              ))}
-
-              {sources.length > 0 ? (
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0089de]">Sources</p>
-                  <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-[13px]">
-                    {sources.map((src) => (
-                      <li key={src.id}>
-                        {src.url ? (
-                          <a href={src.url} target="_blank" rel="noreferrer noopener" className="text-[#0089de] hover:underline">
-                            {src.name}
-                          </a>
-                        ) : src.name}
-                        {src.publisher ? <span className="text-slate-500"> — {src.publisher}</span> : null}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
-          </HowCalculated>
-        </div>
+        {/* Thermal status */}
+        {thermalAlert !== null ? (
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap" }}>
+            <span style={{ display: "flex", alignItems: "center", fontSize: "0.8125rem", fontWeight: 600, color: "#475569" }}>
+              Thermal status
+              <InfoTooltip text="Current heat stress level from NOAA's satellite feed. Watch and Alert levels indicate bleaching risk." />
+            </span>
+            <span style={{ fontSize: "0.8125rem", fontWeight: 600, color: THERMAL_PLAIN[thermalAlert].color }}>
+              {THERMAL_PLAIN[thermalAlert].label}
+              <span style={{ fontWeight: 400, color: "#64748b" }}>
+                {" "}— {THERMAL_PLAIN[thermalAlert].desc}
+              </span>
+            </span>
+          </div>
+        ) : null}
       </div>
     </section>
   );
@@ -2666,7 +1933,7 @@ function UnknownReefHealthPanel() {
           marginBottom: "0.75rem",
         }}
       >
-        Reef science
+        Reef health
       </p>
       <h2
         style={{

@@ -78,7 +78,6 @@ export function SightingRow({
       {/* Info */}
       <div className="min-w-0 flex-1">
         <p
-          className="truncate"
           style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}
         >
           {speciesCommon}
