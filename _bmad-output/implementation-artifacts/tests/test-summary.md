@@ -1,58 +1,57 @@
 # Test Automation Summary
 
-## Framework
+## E2E Tests — 17/17 passing (`tests/recent-changes.spec.ts`)
 
-**Playwright** — installed as `@playwright/test`, Chromium browser only (local). Config at `playwright.config.ts`.
+| Group | Test | Status |
+|---|---|---|
+| Homepage copy | Shows new subline with dive location count | ✅ |
+| Homepage copy | Hero CTA reads "Browse all locations →" | ✅ |
+| Homepage copy | Hero CTA reads "Best spots this month →" | ✅ |
+| Homepage copy | Old copy "What do you want to see?" is gone | ✅ |
+| Homepage copy | Old copy "Where's in season now?" is gone | ✅ |
+| Atlas filter | "Thermal stress" section heading removed | ✅ |
+| Atlas filter | "Certification level" has InfoTooltip button | ✅ |
+| Atlas filter | InfoTooltip button is inside section summary | ✅ |
+| InfoTooltip | Tooltip text hidden by default | ✅ |
+| InfoTooltip | Click opens; click overlay closes | ✅ |
+| Location stats | "Reef state" label has InfoTooltip button | ✅ |
+| Location stats | "Coral cover" label has InfoTooltip button | ✅ |
+| Location stats | Clicking "Reef state" ? shows definition | ✅ |
+| Location stats | Clicking "Coral cover" ? shows definition | ✅ |
+| Location page | Live sightings feed removed | ✅ |
+| IUCN badges | Badged species have InfoTooltip button | ✅ |
+| IUCN badges | Clicking shows Red List explanation | ✅ |
 
-Run with: `npm test` or `npx playwright test`
+## Hero Photo Underwater Audit — 452 images
 
-## Generated Tests
-
-### E2E Tests
-
-- [x] `tests/homepage.spec.ts` — Hero loads, reef state counts visible, featured destinations, nav link, click-through navigation
-- [x] `tests/search.spec.ts` — Empty state, search by location (palau), search by species (manta), no-results, URL pre-fill, result click-through
-- [x] `tests/sites.spec.ts` — Sites listing loads with site names, site detail page heading, 404 on unknown slug
-- [x] `tests/locations.spec.ts` — Location detail page loads, 404 on unknown slug, /about and /data static pages
-
-## Results
-
-**20/20 tests passing** (3.1s, Chromium)
-
-## Coverage
-
-| Area | Tests |
+| Result | Count |
 |---|---|
-| Homepage | 5 |
-| Search (client-side React) | 6 |
-| Sites listing + detail | 5 |
-| Locations + static pages | 4 |
+| Passed (genuine underwater) | 375 |
+| Failed (not underwater) | 77 |
+| Pass rate | 83% |
 
-## Key notes
+### Failure categories
 
-- All homepage/sites tests use `waitUntil: 'domcontentloaded'` to avoid waiting for the Unsplash hero image
-- Search tests navigate with full `load` wait so React hydrates before `fill()` interactions
-- `FEATURED_SLUGS` on homepage don't match location slugs — grid falls back to first 3 atlas locations (Ari Atoll, North Male Atoll, Raja Ampat); tests reflect actual rendered content
-- `workers: 3` locally to avoid overwhelming the dev server
-
-## Epic 7 Follow-up Tests (2026-06-05)
-
-Added `tests/epic7-followup.spec.ts` — 14 new tests, all passing.
-
-| Feature | Tests |
+| Category | Examples |
 |---|---|
-| `/gear` returns 404 (page removed) | 1 |
-| Location-first nav (Atlas/Method/About, no Sites) | 1 |
-| Species cards are clickable links on site detail | 2 |
-| Per-site species detail `/sites/[slug]/species/[species]` | 4 |
-| Where-to-see landing `/where-to-see/[species]` | 3 |
-| Cert landing pages `/for/[cert]` | 3 |
+| Satellite/aerial | Ari Atoll ESA, Mergui MODIS, Dahlak, Osprey Reef diagram |
+| Aquarium tanks | Mahé (Georgia Aquarium whale shark), Beqa (Sentosa nurse shark), Cod Hole (grouper tank), El Hierro (Atlantis tunnel) |
+| Surface/dock | Koh Tao arrivals dock, Milford Sound fjord, Speyside harbour |
+| Above-water coastal | Havelock Island beach, Bocas del Toro, Fujairah shoreline, Channel Islands hillside |
+| Specimen on white | Saba Marine Park shark cutout, Tiger Beach surface shot |
+| Wrong subject entirely | Watamu Kenya (Utah desert canyon), Jeju Island (indoor auditorium) |
+| Illustrations/diagrams | Blue Magic site (1888 fish on rack), Cuba Black Coral 2 (reef zone diagram) |
 
-**Total: 34/34 tests passing**
+### Remediation applied
+
+- **68 replaced** with genuine underwater Wikimedia Commons photos found by parallel agents
+- **9 cleared** — no suitable Commons image exists; fallback cenote photo shown
+  - Mergui Archipelago, Jeju Island, Speyside Tobago, B-17 Wreck Croatia (Vis),
+    HMAS Brisbane, HMAS Tobruk, First Cathedral Lanai Hawaii,
+    Eden Rock Grand Cayman, Million Hope Wreck Egypt
 
 ## Next Steps
 
-- Run in CI (set `CI=true` for single-worker, no server reuse)
-- Add filter tests for the Atlas filter rail on `/sites`
-- Add tests for all 6 cert levels on `/for/[cert]`
-- Add iNaturalist attribution display tests on species pages
+- Re-run audit after any new hero images are added
+- Find underwater replacements for the 9 locations where Commons has nothing
+- Add filename pattern guards to `photo-quality.ts` for satellite (ESA, MODIS, NASA Goddard) and aquarium patterns
