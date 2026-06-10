@@ -595,12 +595,17 @@ rounded-2xl border border-slate-200 bg-white
 hover:[-translate-y-[3px] border-[#0089de]/40 shadow-hover-formula]
 ```
 
+**Photo overlay policy (single signal):** Only the reef-state badge sits on the photo. The skill badge and the in-season badge move into the card body meta row. This keeps the underwater photo clean (resolves the "too noisy" overlays). Image must be a real underwater photograph (§ Photo policy below).
+
 1. **Image area** — `aspect-[4/3] overflow-hidden bg-[#f1f7fb]`. Image: `h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]`
-2. **State badge** — `absolute left-3 top-3`, `rounded-full px-2.5 py-1 text-xs font-medium` with semantic bg/text/ring
-3. **Skill badge** — `absolute bottom-3 right-3 rounded-full px-2.5 py-1 text-xs font-medium` with semantic bg/text/ring
+2. **State badge** — `absolute left-3 top-3`, `rounded-full px-2.5 py-1 text-xs font-medium` with semantic bg/text/ring. **This is the only overlay on the photo.**
+3. *(removed from photo)* Skill badge and in-season badge are no longer overlaid — see body meta row below.
 4. **Body** — `p-4`
    - Title: `text-base font-semibold text-slate-900 group-hover:text-[#0089de]`
    - Country: `text-sm text-slate-500`
+   - **Meta row** (relocated off photo) — `mt-2 flex flex-wrap items-center gap-1.5`:
+     - Skill chip: `rounded-full bg-[#e8f0fe] px-2 py-0.5 text-[11px] font-semibold text-[#1d5d90]`
+     - In-season chip (when `inSeason`): `rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-700`, rendered with a `●` fill + "In season" text (mark + text, not color alone)
    - Hook: `mt-2 line-clamp-2 text-sm leading-6 text-slate-600`
    - Freshness row: `mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-slate-100 pt-2.5 text-[11px] text-slate-600`
      - Each item: dot `h-1.5 w-1.5 rounded-full [freshness-color]` + label text
@@ -651,27 +656,30 @@ inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10.5px] font-s
 
 Followed by variant tone classes. Each variant prefixes a `h-1.5 w-1.5 rounded-full [dot-color]` dot.
 
-### AtlasFilterRail
+### Atlas filter — two approved layouts
 
-Container: `rounded-2xl border border-slate-200 bg-white p-5` with card shadow formula. Sticky at `lg:top-24`.
+Behavior is in EXPERIENCE.md §4.2. Two visual layouts are approved as peers; the chosen one is decided at build. Both share the token set below. Mockups: [mockups/filter-layout-A-horizontal-bar.html](mockups/filter-layout-A-horizontal-bar.html), [mockups/filter-layout-B-left-rail.html](mockups/filter-layout-B-left-rail.html).
 
-**FacetGroup** — `border-b border-slate-100 pb-4` wrapper. Header: `mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500`
+**Layout A — horizontal filter bar.** Sticky bar above results, pins on scroll.
+- Bar: `sticky top-0 z-40 bg-white/92 backdrop-blur border-y border-slate-200`, inner `px-12 py-3 flex items-center gap-2 flex-wrap`.
+- Category button: `rounded-full border border-slate-300 bg-white px-3.5 py-1.5 text-[13px] font-semibold text-slate-700 hover:border-[#0089de] hover:text-[#1d5d90]`. Active: `bg-[#0089de]/8 border-[#0089de] text-[#1d5d90]` with a count badge `rounded-full bg-[#0089de] px-1.5 text-[11px] text-white`. *(Active/tinted text uses `#1d5d90`, not `#0089de` — `#0089de` on a brand tint falls below WCAG AA at this size.)*
+- Dropdown panel: `bg-white border border-slate-200 rounded-[0.9rem] shadow-[0_12px_40px_-8px_rgba(15,23,42,0.18)] p-3.5`, min-width 240px (wildlife panel wider, ~420px).
+- Wildlife sub-group header: `font-mono text-[0.66rem] tracking-[0.14em] uppercase text-slate-400`. Tags as pill options: `rounded-full border border-slate-300 px-2.5 py-1 text-[0.78rem]`; on = `bg-[#0089de]/10 border-[#0089de] text-[#1d5d90] font-semibold` (darkened from `#0089de` for AA on the tint).
+- Result grid runs full-width (3-up).
 
-**CheckOpt** button — `rounded-lg px-2.5 py-1.5 text-left text-sm`:
-- Off: `text-slate-600 hover:bg-slate-50`
-- On: `bg-[#e8f0fe] text-slate-900`
+**Layout B — left rail with collapsible groups.** Two-column `grid-cols-[262px_1fr] gap-10`.
+- Rail: `sticky top-5 max-h-[calc(100vh-2.5rem)] overflow-y-auto`. Results scroll independently beside it.
+- Facet = `<details>`: summary header `font-mono text-[0.7rem] tracking-[0.12em] uppercase text-slate-500` + chevron rotating on open; active-count badge `rounded-full bg-[#0089de] px-1.5 text-[0.62rem] text-white`.
+- Checkbox row: `flex items-center gap-2 text-[0.82rem] text-slate-700`; box `h-[15px] w-[15px] rounded border-[1.5px] border-slate-300`; on = `bg-[#0089de] border-[#0089de]` white ✓, label `text-slate-900 font-semibold`.
+- **Wildlife nested sub-groups:** inner `<details class="subgrp">`; summary `font-mono text-[0.64rem] tracking-[0.1em] uppercase text-slate-400`; sub-checks indented under a `border-l border-slate-200 pl-2`.
 
-Checkbox indicator inside CheckOpt — `h-4 w-4 rounded border`:
-- Off: `border-slate-300 bg-white`
-- On: `border-[#0089de] bg-[#0089de]` with `text-white` checkmark
-
-**Month chips** — `rounded-lg px-1 py-1.5 text-xs font-medium`:
-- Off: `bg-slate-50 text-slate-600 hover:bg-[#e8f0fe]`
-- On: `bg-[#0089de] text-white`
-
-**Region continent row** — expand/collapse accordion. Continent checkbox: `h-5 w-5 rounded border`. Count badge when active: `rounded-full bg-[#0089de] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white`. Nested region list: `ml-6 border-l border-slate-100 pl-2`.
-
-**Reset link** — `text-xs font-medium text-[#0089de] hover:underline`
+**Shared tokens (legacy rail, retained for B):**
+- **FacetGroup** — `border-b border-slate-100 pb-4`. Header: `mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500`
+- **CheckOpt** — `rounded-lg px-2.5 py-1.5 text-left text-sm`; off `text-slate-600 hover:bg-slate-50`; on `bg-[#e8f0fe] text-slate-900`. Indicator `h-4 w-4 rounded border`; off `border-slate-300 bg-white`; on `border-[#0089de] bg-[#0089de]` white ✓.
+- **Month chips** — `rounded-lg px-1 py-1.5 text-xs font-medium`; off `bg-slate-50 text-slate-600 hover:bg-[#e8f0fe]`; on `bg-[#0089de] text-white`.
+- **Region continent row** — accordion; continent checkbox `h-5 w-5 rounded border`; count badge `rounded-full bg-[#0089de] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white`; nested list `ml-6 border-l border-slate-100 pl-2`.
+- **Reset link** — `text-xs font-medium text-[#0089de] hover:underline`
+- **Active chips bar** — pill `bg-[#0089de]/10 text-[#1d5d90] rounded-full px-2.5 py-0.5 text-[0.76rem] font-semibold` with `×` (text `#1d5d90`, not `#0089de`, for AA on the tint); reef-state chips use the reef-state token tints. Each `×` control carries an accessible label, e.g. "Remove Sharks filter."
 
 ### Season calendar (location detail page)
 
@@ -790,6 +798,45 @@ Active filter pills use reef-state color families:
 
 "Clear filter ×" button: right-aligned, `text-xs font-medium text-slate-500 hover:text-[#0089de]`
 
+### Location hero (location detail)
+
+Full-bleed hero, `height: 68vh; min-height: 520px; overflow: hidden`.
+- **Photo layer (required):** real underwater photograph borrowed from the location's own dive sites (EXPERIENCE.md §5.5a), `object-cover`. No bare gradient as the visible surface.
+- **Base layer:** the ocean gradient (`linear-gradient(155deg,#041c33,#063a52,#065a70,#087a8a,#0a9a88,#0a8070)`) may sit *under* the photo as a load-in/letterbox base only.
+- **Legibility overlay:** dark top-to-bottom gradient `linear-gradient(175deg, rgba(2,20,34,0.45) 0%, rgba(5,39,69,0.25) 55%, rgba(3,25,40,0.55) 100%)` so hero content stays readable on any photo.
+- **Bottom fade:** `height: 260px` fade into the next section's background.
+- Hero content (breadcrumb, reef-state pill, H1) pinned to the bottom.
+
+The same photo policy applies to the **homepage inspiration grid** cards ("Worth going for" / "Something remarkable"): render the borrowed underwater site photo with `object-cover`, gradient only as a base under it.
+
+### Plan your trip block (location detail)
+
+One sticky right-column block (`rounded-2xl border border-slate-200`, card shadow), **location page only** — not on dive-site pages. Behavior in EXPERIENCE.md §4.13a. Mockup: [mockups/location-plan-your-trip.html](mockups/location-plan-your-trip.html). Visual rule: **equal weight across booking types** — no dominant dark operators panel over a quiet lodging list.
+
+- **Block heading:** `text-[0.95rem] font-bold` + `Getting there` eyebrow.
+- **Getting there (leads):** light block `bg-[#f1f7fb] border border-slate-200 rounded-xl p-4`. Structured rows — label `font-mono text-[0.5875rem] uppercase tracking-wide text-slate-500`, content `text-[0.875rem] text-slate-700`.
+- **What to book — two adjacent peer groups.** Under a single "What to book" eyebrow, render a **"Where to stay"** sub-group immediately followed by an **"Operators"** sub-group. Each sub-group label: `text-[0.74rem] font-bold text-slate-900` (a `subeyebrow`). Both groups use the identical row treatment and sit directly next to each other — accommodation and operators read as a pair, neither emphasized. Neither uses the old dark `#0b1e32` panel.
+  - Each row: `AffiliateLink`, `flex items-center justify-between border border-slate-200 rounded-lg px-3 py-2.5 hover:border-[#0089de]/40`, name `text-[0.86rem] font-semibold` + decorative `→` (`aria-hidden`) in `text-slate-400`. A meta line carries a small `font-mono` tag ("stay + dive" / "books dives on site") and an optional price level.
+  - **Combined "Stay + dive"** (liveaboard covering diving): sits in "Where to stay" with the "stay + dive" tag; suppresses a redundant operator row.
+  - **No per-row "affiliate" badge** — a single quiet disclosure line at the foot of the block ("Some shop and booking links earn us a commission at no cost to you — full disclosure on the About page"), per §9.5.
+- **Removed:** the hardcoded blue "See trip options" button (generic PADI search). No generic-search CTA renders.
+- **Witnessing change:** muted treatment per §5.6 — heading "Plan thoughtfully," reduced contrast, links retained (hold text ≥4.5:1).
+
+### Gear section
+
+Behavior in EXPERIENCE.md §4.14. Mockup: [mockups/location-gear-section.html](mockups/location-gear-section.html). **On the location page only** (not dive-site pages). Two layers.
+- **Section eyebrow:** `font-mono text-xs uppercase tracking-[0.18em] text-[#0089de]` — "Gear for [location]". Sub-kicker `text-slate-500` — e.g. "Basic kit for 28°C water and Advanced diving, plus what specific sites demand".
+- **Layer A (basic kit, location level):** `<ul>` of items, each an emoji/icon (`aria-hidden`) + name + short note (e.g. "3mm shorty — 28°C water"). One list for the whole location. Commercial items get a quiet "Shop →" link (`AffiliateLink`, Amazon). **No per-item "affiliate" badge.**
+- **Layer B (site-specific add-ons, grouped by site):** under a "What specific sites demand" label, items are grouped under each **site name** (`text-[0.74rem] font-bold` + a "view site →" link). Each add-on uses a visually distinct advisory treatment (amber-tinted item cards `bg-[#e8962f]/6 border border-[#e8962f]/20 rounded-lg`) with a one-line reason (e.g. "Reef hook — strong current on the corner"). A site with no add-ons does not appear; no empty heading.
+- **Disclosure:** one quiet line at the section foot ("Some shop links earn us a commission at no cost to you — full disclosure on the About page"), per §9.5 — not badged per item.
+
+### Photo policy (locations & inspiration)
+
+- Every location-representing surface (location hero, inspiration cards) renders a **real underwater photograph of that location**, sourced by borrowing from the location's own dive sites and gated by `isUnderwaterQualityPhoto()`.
+- **Never** a bare CSS gradient as the visible surface; gradient is base/letterbox only.
+- **Underwater only** — reject surface, dock, specimen-on-white, studio, and illustration images (project rule `hero_must_be_underwater`).
+- Fallback order: location `heroImageUrl` → first underwater-passing site photo → any site photo → `underwaterPhotoUrl()` placeholder.
+
 ---
 
 ## Do's and Don'ts
@@ -828,5 +875,8 @@ Active filter pills use reef-state color families:
 - **DON'T** use modals for methodology explanations — use the `<details>/<summary>` pattern.
 - **DON'T** mix the freshness dot sizes — use `h-1.5 w-1.5` inside card footers and `h-2 w-2` for the hero live-dot badge.
 - **DON'T** render a dive site hero without it being an underwater photograph. The `underwaterPhotoUrl()` utility enforces this server-side.
+- **DON'T** render a location hero or homepage inspiration card as a bare gradient. Borrow a real underwater photo from the location's own sites (§ Photo policy). Gradient is base/letterbox only.
+- **DON'T** stack reef-state, in-season, and skill badges on a location card photo. Only the reef-state badge sits on the photo; in-season and skill move into the card body meta row.
+- **DON'T** give the operators block more visual weight than accommodation on the location page. They are booking peers. And **DON'T** render a synthesized generic-search link (e.g. `padi.com/dive-shop-search?q=…`) as an operator — operators require a real or affiliate URL.
 - **DON'T** add active underline indicators to nav links — use color change only (`text-[#0089de]`).
 - **DON'T** use `font-bold` for card body text — body is `font-normal` (400). Only card titles, eyebrows, and stat numbers use bold/semibold/extrabold.

@@ -106,6 +106,7 @@ function walk(dir, exts = [".ts", ".tsx", ".js", ".jsx", ".mjs"]) {
 }
 
 const FLAGSHIP = "raja-ampat-cape-kri";
+const FLAGSHIP_LOCATION = "raja-ampat-indonesia"; // Plan Your Trip + Gear + Operators moved here (7.8/7.9)
 const SEASONAL = "raja-ampat-blue-magic";
 
 const STORIES = {
@@ -127,8 +128,9 @@ const STORIES = {
     record("A2", "sites>=100", sites.length >= 100, `count=${sites.length}`);
   },
   async A3() {
+    // /gear removed (gear on location pages per 7.9); check /sites + /about only
     const r = await fetchText("/");
-    for (const link of ["/sites", "/about", "/gear"]) {
+    for (const link of ["/sites", "/about"]) {
       record("A3", `link:${link}`, new RegExp(`href="${link}"`).test(r.body));
     }
   },
@@ -149,11 +151,14 @@ const STORIES = {
   },
   async B2() {
     const r = await fetchText(`/sites/${FLAGSHIP}`);
-    for (const h of ["Overview", "What you'll see", "Conditions", "Season calendar", "Gear"]) {
+    // Gear moved to location page per story 7.9
+    for (const h of ["Overview", "What you'll see", "Conditions", "Season calendar"]) {
       record("B2", `heading:${h}`, r.body.includes(h));
     }
+    // Plan Your Trip moved to location page per story 7.8/7.9 — check there
+    const rl = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
     for (const sub of ["Getting there", "Where to stay", "Who to dive with"]) {
-      record("B2", `sub:${sub}`, r.body.includes(sub));
+      record("B2", `sub:${sub}`, rl.body.includes(sub));
     }
   },
   async B3() {
@@ -173,15 +178,17 @@ const STORIES = {
     record("B4", "current", /mild|moderate|strong/i.test(r.body));
   },
   async B5() {
-    const r = await fetchText(`/sites/${FLAGSHIP}`);
+    // Affiliate links + disclosure moved to location page per story 7.8/7.9
+    const r = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
     record("B5", "sponsored-rel", /rel="nofollow sponsored noopener"/.test(r.body));
     record("B5", "disclosure", /commission/i.test(r.body));
   },
   async B6() {
-    const r = await fetchText(`/sites/${FLAGSHIP}`);
-    record("B6", "gear-heading", />Gear<\/h2>/.test(r.body) || /Gear</.test(r.body));
-    record("B6", "tier-a-base", /base kit/i.test(r.body));
-    record("B6", "tier-b-site", /site-specific/i.test(r.body));
+    // Gear section moved to location page per story 7.9; site page has Gear heading via footer nav
+    const rl = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
+    record("B6", "gear-heading", /Gear[\s\w]*<\/h2>|id="gear"|section.*gear/i.test(rl.body));
+    record("B6", "tier-a-base", /base kit/i.test(rl.body));
+    record("B6", "tier-b-site", /site-specific/i.test(rl.body));
   },
   async B7() {
     const r = await fetchText(`/sites/${FLAGSHIP}`);
@@ -225,15 +232,11 @@ const STORIES = {
     record("E2", "policy", /affiliate/i.test(r.body));
   },
   async E4() {
-    const r = await fetchText("/gear");
+    // /gear page removed; gear now lives on location pages (story 7.9)
+    const r = await fetchText(`/locations/${FLAGSHIP_LOCATION}`);
     record("E4", "200", r.status === 200);
-    const cards = (r.body.match(/data-gear-id|class="[^"]*gear-card|<article/gi) || []).length;
-    record(
-      "E4",
-      "gear>=5",
-      cards >= 5 || (r.body.match(/\$\d/g) || []).length >= 5,
-      `cards=${cards}`,
-    );
+    const items = (r.body.match(/\$\d/g) || []).length;
+    record("E4", "gear>=5", items >= 5, `price-items=${items}`);
   },
 
   async F3a() {

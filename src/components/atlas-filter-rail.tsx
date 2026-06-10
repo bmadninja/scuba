@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { InfoTooltip } from "@/components/info-tooltip";
 import { freshness } from "@/lib/data/reef-state";
 import type { FreshnessKey } from "@/lib/data/reef-state";
+import { WILDLIFE_TAXONOMY, WILDLIFE_TAGS } from "@/lib/atlas-location";
 import type { ReefLocationCardData } from "./reef-location-card";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -35,7 +37,10 @@ export type Filters = {
 
 export const STATE_VALUES = ["thriving", "pressure", "change"];
 
-export const ANIMAL_OPTIONS = ["Sharks", "Mantas", "Turtles", "Whales", "Dolphins", "Dugongs"];
+// The shipped wildlife tags (flat) come from the build-time taxonomy in
+// atlas-location.ts — the single source of truth (Story 7.2/7.3). Only tags that
+// survived the data-coverage pass appear here.
+export const ANIMAL_OPTIONS = WILDLIFE_TAGS;
 
 export const DEFAULT_FILTERS: Filters = {
   condition: [...STATE_VALUES],
@@ -216,12 +221,104 @@ function CheckOpt({
   );
 }
 
-function FacetGroup({ title, children }: { title: string; children: React.ReactNode }) {
+/** Visually-hidden text that remains available to screen readers. */
+function VisuallyHidden({ children }: { children: React.ReactNode }) {
   return (
-    <div className="border-b border-slate-100 pb-4">
-      <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">{title}</h4>
+    <span className="absolute h-px w-px overflow-hidden whitespace-nowrap border-0 p-0 [clip:rect(0,0,0,0)]">
+      {children}
+    </span>
+  );
+}
+
+/**
+ * Active-count badge. Pairs the digit with visually-hidden text ("N active
+ * filters") so screen-reader users hear meaning, not a bare number (WCAG, §8).
+ * Uses #1d5d90 text on a brand tint for AA contrast at this small size.
+ */
+function CountBadge({ count }: { count: number }) {
+  if (count <= 0) return null;
+  return (
+    <span className="inline-flex items-center rounded-full bg-[#e8f0fe] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-[#1d5d90]">
+      <span aria-hidden>{count}</span>
+      <VisuallyHidden>
+        {count} active {count === 1 ? "filter" : "filters"}
+      </VisuallyHidden>
+    </span>
+  );
+}
+
+/**
+ * A filter facet rendered as a native <details>/<summary> collapsible (Layout B,
+ * Story 7.5). `defaultOpen` controls the initial expanded state.
+ */
+function FacetGroup({
+  title,
+  children,
+  defaultOpen = true,
+  badge,
+  tooltip,
+}: {
+  title: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+  badge?: React.ReactNode;
+  tooltip?: string;
+}) {
+  return (
+    <details open={defaultOpen} className="group border-b border-slate-100 pb-4">
+      <summary className="mb-2 flex cursor-pointer list-none items-center justify-between text-xs font-semibold uppercase tracking-wide text-slate-500 [&::-webkit-details-marker]:hidden">
+        <span className="flex items-center gap-2">
+          {title}
+          {tooltip ? <InfoTooltip text={tooltip} /> : null}
+          {badge}
+        </span>
+        <span className="text-slate-400 transition group-open:rotate-90" aria-hidden>
+          ▸
+        </span>
+      </summary>
       <div className="space-y-0.5">{children}</div>
-    </div>
+    </details>
+  );
+}
+
+/**
+ * Nested wildlife sub-group, a native <details>/<summary> inside the Wildlife
+ * facet (Story 7.3). Header shows a CountBadge when tags within it are active.
+ */
+function WildlifeSubGroup({
+  group,
+  tags,
+  selected,
+  onToggle,
+}: {
+  group: string;
+  tags: string[];
+  selected: string[];
+  onToggle: (tag: string) => void;
+}) {
+  const activeCount = tags.filter((t) => selected.includes(t)).length;
+  return (
+    <details
+      open={activeCount > 0}
+      className="group/sub rounded-lg"
+    >
+      <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-2.5 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+        <span className="flex items-center gap-2">
+          {group}
+          <CountBadge count={activeCount} />
+        </span>
+        <span className="text-slate-400 transition group-open/sub:rotate-90" aria-hidden>
+          ▸
+        </span>
+      </summary>
+      <div className="ml-3 mt-0.5 space-y-0.5 border-l border-slate-100 pl-2">
+        {tags.map((t) => (
+          <CheckOpt key={t} on={selected.includes(t)} onClick={() => onToggle(t)}>
+            {t}
+          </CheckOpt>
+        ))}
+      </div>
+    </details>
   );
 }
 
@@ -279,12 +376,12 @@ function RegionFilter({
                   type="button"
                   aria-pressed={allSelected}
                   onClick={() => onToggleContinent(regs)}
-                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border text-[10px] font-bold text-white transition ${
+                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border text-[10px] font-bold transition ${
                     allSelected
-                      ? "border-[#0089de] bg-[#0089de]"
+                      ? "border-[#0089de] bg-[#0089de] text-white"
                       : activeCount > 0
-                        ? "border-[#0089de] bg-[#e8f0fe]"
-                        : "border-slate-300 bg-white"
+                        ? "border-[#1d5d90] bg-[#e8f0fe] text-[#1d5d90]"
+                        : "border-slate-300 bg-white text-white"
                   }`}
                   title={allSelected ? `Deselect all in ${continent}` : `Select all in ${continent}`}
                   aria-label={allSelected ? `Deselect all in ${continent}` : `Select all in ${continent}`}
@@ -335,12 +432,14 @@ export function AtlasFilterRail({
   onReset,
   regions,
   skills = SKILL_OPTIONS,
+  className,
 }: {
   filters: Filters;
   onChange: (next: Filters) => void;
   onReset: () => void;
   regions: string[];
   skills?: string[];
+  className?: string;
 }) {
   const toggle = (
     facet: "condition" | "months" | "skill" | "region" | "heat" | "animals",
@@ -362,7 +461,7 @@ export function AtlasFilterRail({
   };
 
   return (
-    <aside className="lg:sticky lg:top-24 lg:self-start">
+    <aside className={className ?? "lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto"}>
       <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5" style={{ boxShadow: "0 1px 2px rgba(16,40,70,.03), 0 12px 30px -20px rgba(16,40,70,.12)" }}>
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-semibold text-slate-900">Filters</h3>
@@ -392,32 +491,23 @@ export function AtlasFilterRail({
           <CheckOpt on={f.freshOnly} onClick={() => onChange({ ...f, freshOnly: !f.freshOnly })}>
             Needs fresh eyes
           </CheckOpt>
-          <p className="px-2.5 pt-1 text-xs leading-5 text-slate-500">
-            Surfaces reefs whose last in water survey is stale or cold.
-          </p>
         </FacetGroup>
 
-        <FacetGroup title="Thermal stress">
-          {HEAT_BUCKETS.map((b) => (
-            <CheckOpt
-              key={b.value}
-              on={f.heat.includes(b.value)}
-              onClick={() => toggle("heat", b.value)}
-            >
-              <span className="flex flex-col">
-                <span>{b.label}</span>
-                <span className="text-xs text-slate-400">{b.hint}</span>
-              </span>
-            </CheckOpt>
-          ))}
-        </FacetGroup>
-
-        <FacetGroup title="Wildlife">
-          {ANIMAL_OPTIONS.map((a) => (
-            <CheckOpt key={a} on={f.animals.includes(a)} onClick={() => toggle("animals", a)}>
-              {a}
-            </CheckOpt>
-          ))}
+        <FacetGroup
+          title="Wildlife"
+          badge={<CountBadge count={f.animals.length} />}
+        >
+          <div className="space-y-0.5">
+            {WILDLIFE_TAXONOMY.map((g) => (
+              <WildlifeSubGroup
+                key={g.group}
+                group={g.group}
+                tags={g.tags.map((t) => t.tag)}
+                selected={f.animals}
+                onToggle={(tag) => toggle("animals", tag)}
+              />
+            ))}
+          </div>
         </FacetGroup>
 
         <FacetGroup title="Diveable in">
@@ -443,10 +533,7 @@ export function AtlasFilterRail({
         </FacetGroup>
 
         {skills.length > 0 && (
-          <FacetGroup title="Certification level">
-            <p className="px-2.5 pb-1 text-xs leading-5 text-slate-500">
-              Shows all locations accessible at or below this level.
-            </p>
+          <FacetGroup title="Certification level" tooltip="The minimum certification recommended for the dive conditions at this location.">
             {skills.map((s) => (
               <CheckOpt key={s} on={f.skill.includes(s)} onClick={() => toggle("skill", s)}>
                 {s}

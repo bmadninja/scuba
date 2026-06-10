@@ -2,7 +2,6 @@ import { getAllLocations, getLocationById } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
-import { isUnderwaterQualityPhoto } from "@/lib/photo-quality";
 import {
   getReefState,
   getReefHeatLevel,
@@ -40,6 +39,66 @@ export type AtlasLocation = {
   heroImageUrl?: string;
   animalTags: string[];
 };
+
+// ─── Wildlife taxonomy (Story 7.2 / 7.3) ──────────────────────────────────────
+// Categorised wildlife tags, each derived at build time from a regex over the
+// species common names + site descriptions aggregated per location. This array
+// is the single source of truth for the filter UI (atlas-filter-rail.tsx imports
+// WILDLIFE_TAXONOMY) and for the per-location `animalTags`.
+//
+// Data-coverage rule (Story 7.2): every tag below resolves to ≥1 location in the
+// live data (verified 2026-06-04 across 113 locations). Per-tag counts:
+//   Sharks 87 · Hammerheads 27 · Rays & mantas 71 · Eagle rays 37 ·
+//   Whales 31 · Dolphins 17 · Seals & sea lions 6 · Dugongs 2 ·
+//   Sea turtles 64 · Large pelagics 74 · Reef fish 79 ·
+//   Cephalopods 27 · Frogfish & seahorses 27 · Nudibranchs 16 · Corals & inverts 80
+// No candidate tag resolved to 0, so none were dropped. If site data changes and
+// a tag falls to 0 locations, drop it here and from the UI's survivor set.
+export type WildlifeTag = { tag: string; test: RegExp };
+export type WildlifeSubGroup = { group: string; tags: WildlifeTag[] };
+
+export const WILDLIFE_TAXONOMY: WildlifeSubGroup[] = [
+  {
+    group: "Sharks & rays",
+    tags: [
+      { tag: "Sharks", test: /shark/ },
+      { tag: "Hammerheads", test: /hammerhead/ },
+      { tag: "Rays & mantas", test: /manta|stingray|devil ray|\bray\b/ },
+      { tag: "Eagle rays", test: /eagle ray/ },
+    ],
+  },
+  {
+    group: "Marine mammals",
+    tags: [
+      { tag: "Whales", test: /whale/ },
+      { tag: "Dolphins", test: /dolphin/ },
+      { tag: "Seals & sea lions", test: /seal|sea lion/ },
+      { tag: "Dugongs", test: /dugong|manatee/ },
+    ],
+  },
+  {
+    group: "Reptiles & pelagics",
+    tags: [
+      { tag: "Sea turtles", test: /turtle/ },
+      { tag: "Large pelagics", test: /tuna|trevally|jack|barracuda|marlin|sailfish|wahoo|mola|sunfish/ },
+      { tag: "Reef fish", test: /wrasse|parrotfish|grouper|snapper|angelfish|butterflyfish|anthias|damselfish|fusilier/ },
+    ],
+  },
+  {
+    group: "Macro & critters",
+    tags: [
+      { tag: "Cephalopods", test: /octopus|cuttlefish|squid|nautilus/ },
+      { tag: "Frogfish & seahorses", test: /frogfish|seahorse|pipefish|seadragon/ },
+      { tag: "Nudibranchs", test: /nudibranch|sea slug/ },
+      { tag: "Corals & inverts", test: /coral|gorgonian|sea fan|lobster|\bcrab\b|shrimp|anemone/ },
+    ],
+  },
+];
+
+/** Flat list of every shipped wildlife tag, in taxonomy order. */
+export const WILDLIFE_TAGS: string[] = WILDLIFE_TAXONOMY.flatMap((g) =>
+  g.tags.map((t) => t.tag),
+);
 
 /** Deterministic 24-month synthetic heat trace for a location */
 function buildHeatTrace(baseHeat: number, lat: number): number[] {
@@ -102,25 +161,20 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     }
   }
 
-  // Locations carry no image of their own — borrow a representative hero from
-  // the location's dive sites, preferring one that passes the underwater check.
-  const heroImageUrl =
-    location.heroImageUrl ??
-    sites.find((s) => isUnderwaterQualityPhoto(s.heroImageUrl))?.heroImageUrl ??
-    sites.find((s) => s.heroImageUrl)?.heroImageUrl;
+  // Every location uses its OWN hero photo. We deliberately do not borrow a
+  // dive site's photo here — that produced duplicate images across the atlas.
+  // A location without its own photo shows a gradient placeholder (handled in
+  // the card/hero components), never a borrowed one.
+  const heroImageUrl = location.heroImageUrl ?? undefined;
 
   // Derive animal tags from species common names across all sites.
   const allSpeciesText = sites
     .flatMap((s) => s.species.map((sp) => sp.commonName.toLowerCase()))
     .concat(sites.map((s) => s.description.toLowerCase()))
     .join(" ");
-  const animalTags: string[] = [];
-  if (/shark|hammerhead|thresher|whitetip|blacktip|reef shark/.test(allSpeciesText)) animalTags.push("Sharks");
-  if (/manta/.test(allSpeciesText)) animalTags.push("Mantas");
-  if (/turtle/.test(allSpeciesText)) animalTags.push("Turtles");
-  if (/whale/.test(allSpeciesText)) animalTags.push("Whales");
-  if (/dolphin/.test(allSpeciesText)) animalTags.push("Dolphins");
-  if (/dugong|manatee/.test(allSpeciesText)) animalTags.push("Dugongs");
+  const animalTags: string[] = WILDLIFE_TAXONOMY.flatMap((g) => g.tags)
+    .filter((t) => t.test.test(allSpeciesText))
+    .map((t) => t.tag);
 
   const heatLevel = getReefHeatLevel(location.id);
   const [x, y] = geoToMapXY(location.lat, location.lng);

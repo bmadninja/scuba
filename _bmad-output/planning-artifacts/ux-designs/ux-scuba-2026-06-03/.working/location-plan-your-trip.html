@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Location — Plan your trip block (restructured)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#0089de;--ink:#0f172a;--body:#334155;--muted:#64748b;--dim:#94a3b8;
+  --hairline:#e2e8f0;--hairline-str:#cbd5e1;--surface:#f1f7fb;--white:#fff;--thriving:#10b981;
+}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:#f6f9fc;color:var(--ink);-webkit-font-smoothing:antialiased;padding:2.5rem;}
+.note{max-width:760px;margin:0 auto 1.5rem;background:#0b1e32;color:#cfe6f7;padding:0.85rem 1.2rem;border-radius:0.7rem;font-size:0.82rem;}
+.note b{color:#fff;}
+.split{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start;}
+.col-main h2{font-size:1.1rem;font-weight:800;margin-bottom:0.5rem;}
+.col-main p{color:var(--muted);font-size:0.9rem;line-height:1.6;}
+.ghost{height:200px;border:1px dashed var(--hairline-str);border-radius:0.9rem;margin-top:1rem;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:0.8rem;}
+
+/* Plan your trip block */
+.plan{position:sticky;top:1.5rem;border:1px solid var(--hairline);border-radius:1rem;background:#fff;box-shadow:0 10px 30px -16px rgba(16,40,70,0.25);overflow:hidden;}
+.plan-head{padding:1rem 1.1rem 0.4rem;}
+.plan-head h3{font-size:0.95rem;font-weight:800;}
+.plan-head .sub{font-size:0.78rem;color:var(--muted);margin-top:0.15rem;}
+.grp{padding:1rem 1.1rem;border-top:1px solid var(--hairline);}
+.grp:first-of-type{border-top:1px solid var(--hairline);}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);margin-bottom:0.6rem;}
+.subeyebrow{font-size:0.74rem;font-weight:700;color:var(--ink);margin:0.7rem 0 0.4rem;}
+.subeyebrow:first-of-type{margin-top:0;}
+
+/* getting there — leads, light block */
+.getthere{background:var(--surface);}
+.gt-row+.gt-row{margin-top:0.7rem;}
+.gt-lbl{font-family:'IBM Plex Mono',monospace;font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.gt-val{font-size:0.84rem;color:var(--body);line-height:1.45;margin-top:0.1rem;}
+
+/* what to book — peers */
+.book-row{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--hairline);border-radius:0.7rem;padding:0.6rem 0.8rem;text-decoration:none;color:var(--ink);transition:border-color .15s;margin-top:0.5rem;}
+.book-row:first-of-type{margin-top:0;}
+.book-row:hover{border-color:rgba(0,137,222,0.4);}
+.br-main{display:flex;flex-direction:column;gap:0.15rem;}
+.br-name{font-size:0.86rem;font-weight:600;}
+.br-meta{font-size:0.68rem;color:var(--muted);display:flex;align-items:center;gap:0.4rem;}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:0.56rem;letter-spacing:0.06em;text-transform:uppercase;background:rgba(16,185,129,0.12);color:#0f766e;border-radius:999px;padding:0.12rem 0.45rem;}
+.tag.aff{background:rgba(0,137,222,0.1);color:var(--brand);}
+.arrow{color:var(--dim);font-size:0.9rem;}
+.price{font-size:0.66rem;color:var(--dim);letter-spacing:0.05em;}
+.disc{font-size:0.62rem;color:var(--dim);margin-top:0.6rem;}
+</style>
+</head>
+<body>
+<div class="note">LOCATION ONLY · <b>Plan your trip</b>. <b>Getting there leads</b>; then <b>Where to stay</b> and <b>Operators</b> sit right next to each other as equal peers. A liveaboard that covers diving shows as a combined <b>stay + dive</b> row and suppresses a redundant operator. No generic-search button; no per item affiliate badges (one quiet disclosure line). This block does not appear on dive site pages.</div>
+
+<div class="split">
+  <div class="col-main">
+    <h2>Raja Ampat, Indonesia</h2>
+    <p>The richest reef fish diversity on Earth. Reef mantas at cleaning stations October to April; wobbegongs and walking sharks on the slopes year round.</p>
+    <div class="ghost">↑ page content (overview, conditions, sites, gear summary)</div>
+  </div>
+
+  <aside class="plan">
+    <div class="plan-head">
+      <h3>Plan your trip</h3>
+      <div class="sub">How to get there, and what to book.</div>
+    </div>
+
+    <!-- 1. GETTING THERE — leads -->
+    <div class="grp getthere">
+      <div class="eyebrow">Getting there</div>
+      <div class="gt-row"><div class="gt-lbl">Nearest hub</div><div class="gt-val">Fly to Sorong (SOQ) via Jakarta or Makassar.</div></div>
+      <div class="gt-row"><div class="gt-lbl">Transfer to sites</div><div class="gt-val">Ferry or charter to Waisai, then speedboat to the homestays and resorts.</div></div>
+      <div class="gt-row"><div class="gt-lbl">Liveaboard option</div><div class="gt-val">Most divers board in Sorong; 7 to 10 night itineraries cover the central and southern sites.</div></div>
+    </div>
+
+    <!-- 2. WHAT TO BOOK — accommodation + operators as adjacent equal peers -->
+    <div class="grp">
+      <div class="eyebrow">What to book</div>
+
+      <!-- Where to stay -->
+      <div class="subeyebrow">Where to stay</div>
+      <a class="book-row" href="#">
+        <span class="br-main">
+          <span class="br-name">Damai II liveaboard</span>
+          <span class="br-meta"><span class="tag">stay + dive</span><span class="price">$$$$</span></span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="book-row" href="#">
+        <span class="br-main">
+          <span class="br-name">Papua Paradise Eco Resort</span>
+          <span class="br-meta"><span class="tag">books dives on site</span><span class="price">$$$</span></span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- Operators — sits right beside accommodation, equal weight -->
+      <div class="subeyebrow">Operators</div>
+      <a class="book-row" href="#">
+        <span class="br-main">
+          <span class="br-name">Papua Diving — day boats</span>
+          <span class="br-meta"><span class="price">from Waisai</span></span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <div class="disc">Some shop and booking links earn us a commission at no cost to you — full disclosure on the About page.</div>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

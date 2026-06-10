@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getReefState, STATE_TEXT, STATE_COLOR } from "@/lib/data/reef-state";
 import { getHeadlineSightingForSite, formatLastConfirmed } from "@/lib/data/sightings";
-import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { EvidenceDot } from "@/components/evidence-dot";
 import type { Location, Site, SkillLevel } from "@/lib/data/types";
 import type { ReefState } from "@/lib/data/reef-state";
@@ -106,9 +105,9 @@ const REEF_STATE_BADGE: Record<ReefState, { bg: string; color: string; border: s
     border: "1px solid rgba(16,185,129,0.22)",
   },
   pressure: {
-    bg: "rgba(0,137,222,0.16)",
-    color: "#93c5fd",
-    border: "1px solid rgba(0,137,222,0.25)",
+    bg: "rgba(245,158,11,0.16)",
+    color: "#fbbf24",
+    border: "1px solid rgba(245,158,11,0.28)",
   },
   change: {
     bg: "rgba(244,63,94,0.14)",
@@ -117,26 +116,26 @@ const REEF_STATE_BADGE: Record<ReefState, { bg: string; color: string; border: s
   },
 };
 
-/** Active filter summary bar pill styles (light, on white) */
+/** Active filter summary bar pill styles (dark) */
 const REEF_STATE_SUMMARY_PILL: Record<
   ReefState,
   { bg: string; color: string; border: string; dot: string }
 > = {
   thriving: {
-    bg: "#e7f6ee",
-    color: "#15824c",
-    border: "1px solid rgba(16,185,129,0.2)",
+    bg: "rgba(16,185,129,0.15)",
+    color: "#6ee7b7",
+    border: "1px solid rgba(16,185,129,0.22)",
     dot: "#10b981",
   },
   pressure: {
-    bg: "#e8f0fe",
-    color: "#1d5d90",
-    border: "1px solid rgba(0,137,222,0.2)",
-    dot: "#0089de",
+    bg: "rgba(245,158,11,0.14)",
+    color: "#fbbf24",
+    border: "1px solid rgba(245,158,11,0.28)",
+    dot: "#f59e0b",
   },
   change: {
-    bg: "#fde8ec",
-    color: "#9f1239",
+    bg: "rgba(244,63,94,0.14)",
+    color: "#fca5a5",
     border: "1px solid rgba(244,63,94,0.2)",
     dot: "#f43f5e",
   },
@@ -246,7 +245,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
               fontWeight: 700,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#0089de",
+              color: "#00d4ff",
               marginBottom: "1rem",
             }}
           >
@@ -324,8 +323,8 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
       {/* ── Sticky filter strip ──────────────────────────────────────────────── */}
       <div
         style={{
-          background: "#f1f7fb",
-          borderBottom: "1px solid #e2e8f0",
+          background: "#0a1628",
+          borderBottom: "1px solid rgba(255,255,255,0.1)",
           padding: "1rem 3rem",
           position: "sticky",
           top: 62,
@@ -345,7 +344,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           {/* Reef state chips */}
           {REEF_STATES.map(({ value, label }) => {
             const isActive = reefState === value;
-            const dotColor = isActive ? STATE_COLOR[value] : "#cbd5e1";
+            const dotColor = isActive ? STATE_COLOR[value] : "#8b9db8";
             return (
               <button
                 key={value}
@@ -357,11 +356,11 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                   gap: "0.35rem",
                   padding: "0.45rem 0.9375rem",
                   borderRadius: 999,
-                  border: `1px solid ${isActive ? "transparent" : "#e2e8f0"}`,
-                  background: isActive ? "#e8f0fe" : isActive ? "#fff" : "#f8fafc",
+                  border: `1px solid ${isActive ? "#00d4ff" : "rgba(255,255,255,0.1)"}`,
+                  background: isActive ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)",
                   fontSize: "0.8125rem",
                   fontWeight: isActive ? 600 : 500,
-                  color: isActive ? "#1d5d90" : "#94a3b8",
+                  color: isActive ? "#00d4ff" : "#8b9db8",
                   cursor: "pointer",
                   fontFamily: "inherit",
                   whiteSpace: "nowrap",
@@ -402,8 +401,8 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                   padding: "0.45rem 0.875rem",
                   fontSize: "0.8125rem",
                   fontFamily: "inherit",
-                  background: certFilter === o.value ? "#e8f0fe" : "transparent",
-                  color: certFilter === o.value ? "#1d5d90" : "#0f172a",
+                  background: certFilter === o.value ? "rgba(0,212,255,0.12)" : "transparent",
+                  color: certFilter === o.value ? "#00d4ff" : "#f0f4f8",
                   border: "none",
                   cursor: "pointer",
                   borderRadius: "0.375rem",
@@ -432,8 +431,8 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                   padding: "0.45rem 0.875rem",
                   fontSize: "0.8125rem",
                   fontFamily: "inherit",
-                  background: diveTypeFilter === o.value ? "#e8f0fe" : "transparent",
-                  color: diveTypeFilter === o.value ? "#1d5d90" : "#0f172a",
+                  background: diveTypeFilter === o.value ? "rgba(0,212,255,0.12)" : "transparent",
+                  color: diveTypeFilter === o.value ? "#00d4ff" : "#f0f4f8",
                   border: "none",
                   cursor: "pointer",
                   borderRadius: "0.375rem",
@@ -462,8 +461,8 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                   padding: "0.45rem 0.875rem",
                   fontSize: "0.8125rem",
                   fontFamily: "inherit",
-                  background: wildlifeFilter === o.value ? "#e8f0fe" : "transparent",
-                  color: wildlifeFilter === o.value ? "#1d5d90" : "#0f172a",
+                  background: wildlifeFilter === o.value ? "rgba(0,212,255,0.12)" : "transparent",
+                  color: wildlifeFilter === o.value ? "#00d4ff" : "#f0f4f8",
                   border: "none",
                   cursor: "pointer",
                   borderRadius: "0.375rem",
@@ -494,8 +493,8 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                     padding: "0.45rem 0.875rem",
                     fontSize: "0.8125rem",
                     fontFamily: "inherit",
-                    background: monthFilter === m ? "#e8f0fe" : "transparent",
-                    color: monthFilter === m ? "#1d5d90" : m === currentMonth ? "#0089de" : "#0f172a",
+                    background: monthFilter === m ? "rgba(0,212,255,0.12)" : "transparent",
+                    color: monthFilter === m ? "#00d4ff" : m === currentMonth ? "#00d4ff" : "#f0f4f8",
                     fontWeight: m === currentMonth ? 600 : 400,
                     border: "none",
                     cursor: "pointer",
@@ -516,7 +515,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
               alignItems: "center",
               gap: "0.5rem",
               fontSize: "0.8125rem",
-              color: "#64748b",
+              color: "#8b9db8",
             }}
           >
             Sort{" "}
@@ -524,13 +523,13 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
               value={sortKey}
               onChange={(e) => setParam("sort", e.target.value === "season" ? null : e.target.value)}
               style={{
-                border: "1px solid #e2e8f0",
+                border: "1px solid rgba(255,255,255,0.1)",
                 borderRadius: "0.5rem",
                 padding: "0.4rem 0.75rem",
                 fontSize: "0.8125rem",
                 fontFamily: "inherit",
-                background: "#fff",
-                color: "#0f172a",
+                background: "#0a1628",
+                color: "#f0f4f8",
                 cursor: "pointer",
               }}
             >
@@ -544,12 +543,12 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           <span
             style={{
               fontSize: "0.8125rem",
-              color: "#64748b",
+              color: "#8b9db8",
               whiteSpace: "nowrap",
               paddingLeft: "0.5rem",
             }}
           >
-            <strong style={{ color: "#0f172a" }}>{filtered.length}</strong> sites
+            <strong style={{ color: "#f0f4f8" }}>{filtered.length}</strong> sites
           </span>
         </div>
       </div>
@@ -559,8 +558,8 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
         <div
           style={{
             maxWidth: "100%",
-            borderBottom: "1px solid #e2e8f0",
-            background: "#fff",
+            borderBottom: "1px solid rgba(255,255,255,0.1)",
+            background: "#0a1628",
             padding: "0.875rem 3rem",
           }}
         >
@@ -574,7 +573,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
               flexWrap: "wrap",
             }}
           >
-            <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>Showing</span>
+            <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>Showing</span>
 
             {/* Reef state pill */}
             {reefState && (() => {
@@ -610,27 +609,27 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
 
             {/* Other active filters */}
             {certFilter && (
-              <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>
+              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
                 {CERT_OPTIONS.find((o) => o.value === certFilter)?.label}
               </span>
             )}
             {diveTypeFilter && (
-              <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>
+              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
                 {DIVE_TYPE_OPTIONS.find((o) => o.value === diveTypeFilter)?.label}
               </span>
             )}
             {wildlifeFilter && (
-              <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>
+              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
                 {WILDLIFE_OPTIONS.find((o) => o.value === wildlifeFilter)?.label}
               </span>
             )}
             {monthFilter && (
-              <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>
+              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
                 {MONTH_LABELS[monthFilter - 1]}
               </span>
             )}
             {query && (
-              <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>
+              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
                 &ldquo;{query}&rdquo;
               </span>
             )}
@@ -645,7 +644,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
               style={{
                 marginLeft: "auto",
                 fontSize: "0.8125rem",
-                color: "#64748b",
+                color: "#8b9db8",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -664,16 +663,16 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           <div
             style={{
               borderRadius: "0.75rem",
-              border: "1px dashed #cbd5e1",
-              background: "#f8fafc",
+              border: "1px dashed rgba(255,255,255,0.1)",
+              background: "rgba(255,255,255,0.04)",
               padding: "3rem 1.5rem",
               textAlign: "center",
             }}
           >
-            <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#334155" }}>
+            <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#aebcd0" }}>
               No matches.
             </p>
-            <p style={{ marginTop: "0.25rem", fontSize: "0.9375rem", color: "#64748b" }}>
+            <p style={{ marginTop: "0.25rem", fontSize: "0.9375rem", color: "#8b9db8" }}>
               Try clearing a filter or broadening the search.
             </p>
           </div>
@@ -693,6 +692,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                 inSeason={site.bestMonths.includes(monthFilter ?? currentMonth)}
                 reefState={reefStateByLocationId[site.locationId]}
                 gradientIndex={idx % OCEAN_GRADIENTS.length}
+                currentMonth={currentMonth}
               />
             ))}
           </div>
@@ -710,12 +710,14 @@ function SiteCard({
   inSeason,
   reefState,
   gradientIndex,
+  currentMonth,
 }: {
   site: Site;
   location?: Location | null;
   inSeason: boolean;
   reefState: ReefState;
   gradientIndex: number;
+  currentMonth: number;
 }) {
   const sighting = getHeadlineSightingForSite(site.id);
   const badgeStyle = REEF_STATE_BADGE[reefState];
@@ -735,9 +737,10 @@ function SiteCard({
     .map((t) => t.replace("-", " "))
     .join("");
 
-  // current strength from best current month conditions, fallback none
+  // current strength from best current month conditions, fallback none.
+  // currentMonth comes from the server so SSR and client agree (no hydration drift).
   const currentStrength =
-    site.conditionsByMonth.find((c) => c.month === new Date().getUTCMonth() + 1)
+    site.conditionsByMonth.find((c) => c.month === currentMonth)
       ?.currentStrength ??
     site.conditionsByMonth[0]?.currentStrength ??
     null;
@@ -749,8 +752,8 @@ function SiteCard({
     sighting?.confidence === "high"
       ? "#10b981"
       : sighting?.confidence === "medium"
-        ? "#0089de"
-        : "#94a3b8";
+        ? "#00d4ff"
+        : "#8b9db8";
 
   return (
     <Link
@@ -758,8 +761,8 @@ function SiteCard({
       style={{
         borderRadius: "1.25rem",
         overflow: "hidden",
-        border: "1px solid #e2e8f0",
-        background: "#fff",
+        border: "1px solid rgba(255,255,255,0.1)",
+        background: "#0a1628",
         textDecoration: "none",
         color: "inherit",
         display: "flex",
@@ -787,7 +790,7 @@ function SiteCard({
         {site.heroImageUrl && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={underwaterPhotoUrl(site.heroImageUrl)}
+            src={site.heroImageUrl}
             alt={site.name}
             style={{
               position: "absolute",
@@ -908,7 +911,7 @@ function SiteCard({
             fontWeight: 700,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
-            color: "#64748b",
+            color: "#8b9db8",
             marginBottom: "0.3rem",
           }}
         >
@@ -921,7 +924,7 @@ function SiteCard({
             fontSize: "1.0625rem",
             fontWeight: 700,
             letterSpacing: "-0.015em",
-            color: "#0f172a",
+            color: "#f0f4f8",
             marginBottom: "0.5rem",
             transition: "color 0.15s",
           }}
@@ -936,7 +939,7 @@ function SiteCard({
             fontFamily: "'Source Serif 4', Georgia, serif",
             fontSize: "0.875rem",
             lineHeight: 1.65,
-            color: "#475569",
+            color: "#aebcd0",
             flex: 1,
             display: "-webkit-box",
             WebkitLineClamp: 2,
@@ -955,7 +958,7 @@ function SiteCard({
             gap: "0.375rem",
             marginTop: "0.75rem",
             fontSize: "0.6875rem",
-            color: "#64748b",
+            color: "#8b9db8",
           }}
         >
           {sighting ? (
@@ -976,7 +979,7 @@ function SiteCard({
             <EvidenceDot
               confidence={null}
               showTooltip
-              className="text-[11px] leading-5 text-slate-500"
+              className="text-[11px] leading-5 text-[#8b9db8]"
             />
           )}
         </div>
@@ -989,7 +992,7 @@ function SiteCard({
             flexWrap: "wrap",
             marginTop: "0.875rem",
             paddingTop: "0.875rem",
-            borderTop: "1px solid #e2e8f0",
+            borderTop: "1px solid rgba(255,255,255,0.1)",
           }}
         >
           <span
@@ -998,8 +1001,8 @@ function SiteCard({
               fontWeight: 600,
               padding: "0.2rem 0.55rem",
               borderRadius: 999,
-              background: "#f1f7fb",
-              color: "#64748b",
+              background: "rgba(255,255,255,0.05)",
+              color: "#8b9db8",
             }}
           >
             {depthChip}
@@ -1011,8 +1014,8 @@ function SiteCard({
                 fontWeight: 600,
                 padding: "0.2rem 0.55rem",
                 borderRadius: 999,
-                background: "#e8f0fe",
-                color: "#1d5d90",
+                background: "rgba(0,212,255,0.12)",
+                color: "#00d4ff",
                 textTransform: "capitalize",
               }}
             >
@@ -1026,8 +1029,8 @@ function SiteCard({
                 fontWeight: 600,
                 padding: "0.2rem 0.55rem",
                 borderRadius: 999,
-                background: "#f1f7fb",
-                color: "#64748b",
+                background: "rgba(255,255,255,0.05)",
+                color: "#8b9db8",
                 textTransform: "capitalize",
               }}
             >
@@ -1063,11 +1066,11 @@ function FilterDropdownChip({
           gap: "0.25rem",
           padding: "0.45rem 0.9375rem",
           borderRadius: 999,
-          border: `1px solid ${active ? "transparent" : "#e2e8f0"}`,
-          background: active ? "#e8f0fe" : "#fff",
+          border: `1px solid ${active ? "#00d4ff" : "rgba(255,255,255,0.1)"}`,
+          background: active ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)",
           fontSize: "0.8125rem",
           fontWeight: active ? 600 : 500,
-          color: active ? "#1d5d90" : "#475569",
+          color: active ? "#00d4ff" : "#8b9db8",
           cursor: "pointer",
           fontFamily: "inherit",
           whiteSpace: "nowrap",
@@ -1093,10 +1096,10 @@ function FilterDropdownChip({
             top: "calc(100% + 0.375rem)",
             left: 0,
             zIndex: 50,
-            background: "#fff",
-            border: "1px solid #e2e8f0",
+            background: "#0a1628",
+            border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: "0.625rem",
-            boxShadow: "0 4px 16px -4px rgba(16,40,70,0.14)",
+            boxShadow: "0 4px 16px -4px rgba(0,0,0,0.4)",
             padding: "0.375rem",
             minWidth: 180,
             display: "none",

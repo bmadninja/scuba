@@ -1,0 +1,26 @@
+name: Affiliate Link Lint
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/data/sites.json"
+      - "src/data/gear.json"
+      - "scripts/verify-affiliate-links.mjs"
+  pull_request:
+    paths:
+      - "src/data/sites.json"
+      - "src/data/gear.json"
+      - "scripts/verify-affiliate-links.mjs"
+
+jobs:
+  lint:
+    name: Check affiliate URL integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Run offline affiliate checks
+        run: node scripts/verify-affiliate-links.mjs

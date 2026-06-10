@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
-import { getAllEncounters } from "@/lib/data/encounters";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { IucnBadge } from "@/components/iucn-badge";
 import { MethodologyDisclosure } from "@/components/methodology-disclosure";
@@ -88,17 +87,6 @@ export default async function SpeciesDetailPage({
   // IUCN status
   const iucn = IUCN_ENABLED ? getIucnStatus(scientificName) : null;
 
-  // Find encounter page link
-  const encounterSlug =
-    getAllEncounters()
-      .find(
-        (e) =>
-          e.speciesCommon?.toLowerCase() === commonName.toLowerCase() ||
-          (scientificName &&
-            e.speciesScientific?.toLowerCase() === scientificName.toLowerCase()),
-      )
-      ?.slug ?? null;
-
   // Best months seasonality from sighting data or curated data
   const seasonalityMonths =
     evidence.flatMap((e) => e.seasonalityMonths).length > 0
@@ -107,19 +95,19 @@ export default async function SpeciesDetailPage({
         ).sort((a, b) => a - b)
       : ("bestMonths" in speciesEntry ? speciesEntry.bestMonths ?? [] : []);
 
-  // Also seen at nearby sites (other sites in the same location)
-  const nearbySites =
-    location
-      ? (await import("@/lib/data/sites"))
-          .getSitesByLocationId(location.id)
-          .filter((s) => s.id !== site.id)
-          .filter((s) =>
-            s.species.some(
-              (sp) => sp.commonName.toLowerCase() === commonName.toLowerCase(),
-            ),
-          )
-          .slice(0, 3)
-      : [];
+  // Also seen at — search all sites in the database, sorted by reliability
+  const RELIABILITY_RANK: Record<string, number> = { "year-round": 3, seasonal: 2, rare: 1 };
+  const nearbySites = getAllSites()
+    .filter((s) => s.id !== site.id)
+    .filter((s) =>
+      s.species.some((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase()),
+    )
+    .sort((a, b) => {
+      const ra = a.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
+      const rb = b.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
+      return (RELIABILITY_RANK[rb?.reliability ?? ""] ?? 0) - (RELIABILITY_RANK[ra?.reliability ?? ""] ?? 0);
+    })
+    .slice(0, 5);
 
   return (
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
@@ -173,6 +161,13 @@ export default async function SpeciesDetailPage({
           {location ? `, ${location.name}` : ""}
         </p>
       </div>
+
+      {/* Ecological description */}
+      {speciesEntry.ecologicalDescription ? (
+        <p className="mb-8 text-[0.9375rem] leading-relaxed text-slate-600">
+          {speciesEntry.ecologicalDescription}
+        </p>
+      ) : null}
 
       {/* Sighting evidence */}
       <section className="mb-8">
@@ -282,11 +277,11 @@ export default async function SpeciesDetailPage({
         </p>
       </MethodologyDisclosure>
 
-      {/* Also seen nearby */}
+      {/* Also seen at other sites */}
       {nearbySites.length > 0 ? (
         <section className="mb-8">
           <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-slate-500">
-            Also seen nearby
+            Also seen at other sites
           </h2>
           <ul className="space-y-2">
             {nearbySites.map((s) => (
@@ -304,24 +299,6 @@ export default async function SpeciesDetailPage({
         </section>
       ) : null}
 
-      {/* Link to where-to-see */}
-      {encounterSlug ? (
-        <div className="rounded-xl border border-[#0089de]/20 bg-[#f1f7fb] px-5 py-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[#0089de]">
-            Global encounter guide
-          </p>
-          <p className="mt-1.5 text-sm text-slate-700">
-            See all atlas locations where {commonName} has been confirmed, with
-            best seasons and confidence scores.
-          </p>
-          <Link
-            href={`/where-to-see/${encounterSlug}`}
-            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0089de] hover:text-[#1d5d90]"
-          >
-            View {commonName} encounter guide →
-          </Link>
-        </div>
-      ) : null}
     </div>
   );
 }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dive site — corrected layout (centre = the dive · sidebar = orient → plan)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--ink:#0f172a;--body:#334155;--muted:#64748b;--dim:#94a3b8;--hairline:#e2e8f0;--surface:#f1f7fb;--white:#fff;--thriving:#10b981;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:#f6f9fc;color:var(--ink);-webkit-font-smoothing:antialiased;padding:2rem;}
+.note{max-width:1080px;margin:0 auto 1.5rem;background:#0b1e32;color:#cfe6f7;padding:0.85rem 1.2rem;border-radius:0.7rem;font-size:0.82rem;line-height:1.5;}
+.note b{color:#fff;}
+.wrap{max-width:1080px;margin:0 auto;}
+
+/* meta badges row — single source */
+.badges{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;font-size:0.74rem;margin-bottom:0.6rem;}
+.badges .b{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);}
+.badges .sep{color:#cbd5e1;}
+.badges .state{margin-left:auto;display:inline-flex;align-items:center;gap:0.35rem;background:rgba(16,185,129,0.12);color:#0f766e;border-radius:999px;padding:0.2rem 0.6rem;font-weight:700;}
+.badges .state .d{width:6px;height:6px;border-radius:50%;background:var(--thriving);}
+h1{font-size:1.8rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem;}
+
+.layout{display:grid;grid-template-columns:1fr 320px;gap:2.5rem;align-items:start;}
+
+/* generic section block */
+.sec{border:1px solid var(--hairline);border-radius:0.9rem;background:#fff;padding:1.1rem 1.2rem;margin-bottom:1.1rem;}
+.sec .lab{font-family:'IBM Plex Mono',monospace;font-size:0.64rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand);margin-bottom:0.5rem;}
+.sec h3{font-size:1rem;font-weight:700;margin-bottom:0.3rem;}
+.sec p{font-size:0.82rem;color:var(--muted);line-height:1.55;}
+.sec.hl{border-color:rgba(0,137,222,0.35);background:linear-gradient(180deg,rgba(0,137,222,0.04),#fff);}
+.pos{font-size:0.62rem;font-family:'IBM Plex Mono',monospace;color:var(--dim);text-transform:uppercase;letter-spacing:0.1em;float:right;}
+
+/* sidebar */
+.rail{position:sticky;top:1.5rem;display:flex;flex-direction:column;gap:1.1rem;}
+.scard{border:1px solid var(--hairline);border-radius:0.9rem;background:#fff;padding:1rem 1.1rem;}
+.scard .lab{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;}
+.scard.dark{background:#0b1e32;border-color:#0b1e32;color:#dbeafe;}
+.scard.dark .lab{color:rgba(255,255,255,0.45);}
+.scard.dark h4{color:#fff;font-size:0.95rem;}
+.depth{display:flex;align-items:flex-end;gap:3px;height:54px;margin-bottom:0.5rem;}
+.depth span{flex:1;background:linear-gradient(180deg,#7cc6f0,#0089de);border-radius:2px 2px 0 0;}
+.dmeta{font-size:0.7rem;color:var(--muted);display:flex;justify-content:space-between;}
+.scard h4{font-size:0.9rem;font-weight:700;margin-bottom:0.15rem;}
+.scard .ct{font-size:0.74rem;color:var(--muted);}
+.op{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--hairline);padding:0.5rem 0;font-size:0.8rem;}
+.op:first-of-type{border-top:none;}
+.op .ar{color:var(--dim);}
+.btn{display:block;text-align:center;background:var(--brand);color:#fff;border-radius:0.6rem;padding:0.55rem;font-size:0.78rem;font-weight:600;text-decoration:none;margin-top:0.6rem;}
+
+.col-lbl{font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);margin-bottom:0.7rem;}
+.removed{font-size:0.72rem;color:#b45309;background:#fffbeb;border:1px solid #fde68a;border-radius:0.5rem;padding:0.5rem 0.7rem;margin-top:0.5rem;}
+</style>
+</head>
+<body>
+<div class="note">DIVE SITE · <b>corrected flow</b>. <b>Centre column = the dive</b> (<b>about this site first</b> → what you'll see → conditions, incl. thermal → how to dive). <b>Right sidebar = orient only</b> (depth → part of location). <b>Booking AND gear moved off the dive site</b> — operators, accommodation, and gear all live on the location page; the sidebar just links there. Thermal moved into Conditions; duplicate bottom planning block gone.</div>
+
+<div class="wrap">
+  <div class="badges">
+    <span class="b">Dive site</span><span class="sep">·</span>
+    <span class="b">Palau</span><span class="sep">·</span>
+    <span class="b">12–30m</span><span class="sep">·</span>
+    <span class="b">Advanced+</span><span class="sep">·</span>
+    <span class="b">In season</span>
+    <span class="state"><span class="d"></span>Thriving</span>
+  </div>
+  <h1>Blue Corner</h1>
+
+  <div class="layout">
+    <!-- CENTRE = THE DIVE -->
+    <div>
+      <div class="col-lbl">Centre column — the dive, top to bottom</div>
+      <div class="sec"><span class="pos">1</span><div class="lab">About this site</div><h3>The wall and the corner</h3><p>What this site is, in a sentence or two — the reef wall, the famous current-swept corner, any wreck history. Orients the reader first, before the data.</p></div>
+      <div class="sec"><span class="pos">2</span><div class="lab">What you'll see</div><h3>Confirmed species at this site</h3><p>Grey reef sharks, schooling jacks and barracuda, the occasional eagle ray on the plateau. Sighting evidence with dates and record counts.</p></div>
+      <div class="sec"><span class="pos">3</span><div class="lab">Conditions</div><h3>What to expect in the water</h3><p>Season calendar, month × temp / visibility / current table — <b>and the NOAA thermal status (live)</b>, relocated here from the sidebar because it is conditions content.</p></div>
+      <div class="sec"><span class="pos">4</span><div class="lab">How to dive this site</div><h3>Sequence and positioning</h3><p>Time arrival → descend and orient → hook in and work the current → surface and debrief.</p></div>
+    </div>
+
+    <!-- SIDEBAR = ORIENT → PLAN -->
+    <aside class="rail">
+      <div class="col-lbl">Sidebar — orient, then plan</div>
+      <div class="scard">
+        <div class="lab">Depth profile</div>
+        <div class="depth"><span style="height:30%"></span><span style="height:45%"></span><span style="height:60%"></span><span style="height:80%"></span><span style="height:100%"></span><span style="height:75%"></span><span style="height:55%"></span><span style="height:40%"></span></div>
+        <div class="dmeta"><span>12m</span><span>30m max</span></div>
+      </div>
+      <div class="scard dark">
+        <div class="lab">Part of</div>
+        <h4>Palau</h4>
+        <div class="ct" style="color:rgba(255,255,255,0.6)">Micronesia · Western Pacific</div>
+        <a class="btn" href="#">View location &amp; plan your trip →</a>
+      </div>
+      <div class="removed">Removed from sidebar: <b>operators / booking</b> (planning lives on the location page only — getting there, operators and accommodation are all on the Palau page) · standalone thermal panel (now in Conditions) · the duplicate bottom "Planning a trip?" block.</div>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

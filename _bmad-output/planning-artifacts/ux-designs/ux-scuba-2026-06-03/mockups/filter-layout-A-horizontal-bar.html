@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Homepage filter — Option A · Horizontal bar with category dropdowns</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#0089de;--brand-dk:#1d5d90;--ink:#0f172a;--body:#334155;
+  --muted:#64748b;--dim:#94a3b8;--hairline:#e2e8f0;--hairline-str:#cbd5e1;
+  --surface:#f1f7fb;--white:#fff;
+  --thriving:#10b981;--pressure:#0089de;--change:#f43f5e;
+}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.wrap{max-width:1320px;margin:0 auto;padding:0 3rem;}
+
+/* annotation banner */
+.note{background:#0b1e32;color:#cfe6f7;padding:0.85rem 3rem;font-size:0.8rem;letter-spacing:0.01em;}
+.note b{color:#fff;}
+
+/* page head */
+.head{padding:2.5rem 0 1.25rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand);}
+.head h1{font-size:1.6rem;font-weight:800;letter-spacing:-0.025em;margin-top:0.4rem;}
+.head p{color:var(--muted);font-size:0.95rem;margin-top:0.3rem;max-width:560px;}
+
+/* ── OPTION A: sticky horizontal filter bar ──────────────── */
+.fbar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);
+  border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+}
+.fbar-inner{max-width:1320px;margin:0 auto;padding:0.75rem 3rem;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.fdrop{position:relative;}
+.fbtn{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  border:1px solid var(--hairline-str);background:var(--white);
+  border-radius:999px;padding:0.45rem 0.85rem;font-size:0.8125rem;font-weight:600;
+  color:var(--body);cursor:pointer;white-space:nowrap;transition:all .15s;
+}
+.fbtn:hover{border-color:var(--brand);color:var(--brand);}
+.fbtn .chev{font-size:0.65rem;color:var(--dim);}
+.fbtn.has{background:rgba(0,137,222,0.08);border-color:var(--brand);color:var(--brand);}
+.fbtn .count{background:var(--brand);color:#fff;border-radius:999px;font-size:0.66rem;padding:0.05rem 0.4rem;font-weight:700;}
+.fspacer{flex:1;}
+.fsort{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--muted);}
+.fsort select{font-family:inherit;font-size:0.8rem;border:1px solid var(--hairline-str);border-radius:999px;padding:0.4rem 0.7rem;color:var(--body);background:#fff;}
+
+/* dropdown panel */
+.panel{
+  position:absolute;top:calc(100% + 0.5rem);left:0;z-index:50;
+  background:#fff;border:1px solid var(--hairline);border-radius:0.9rem;
+  box-shadow:0 12px 40px -8px rgba(15,23,42,0.18);padding:0.9rem;min-width:240px;
+}
+.panel.wide{min-width:420px;}
+.panel-grp+.panel-grp{margin-top:0.85rem;padding-top:0.85rem;border-top:1px solid var(--hairline);}
+.panel-grp h4{font-family:'IBM Plex Mono',monospace;font-size:0.66rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);margin-bottom:0.55rem;}
+.opts{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.opt{
+  display:inline-flex;align-items:center;gap:0.35rem;
+  border:1px solid var(--hairline-str);border-radius:999px;
+  padding:0.32rem 0.7rem;font-size:0.78rem;color:var(--body);cursor:pointer;transition:all .12s;
+}
+.opt:hover{border-color:var(--brand);}
+.opt.on{background:rgba(0,137,222,0.1);border-color:var(--brand);color:var(--brand);font-weight:600;}
+.opt .dot{width:7px;height:7px;border-radius:50%;}
+
+/* active chips row */
+.chips{max-width:1320px;margin:0 auto;padding:0.7rem 3rem 0;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.chips .lbl{font-size:0.78rem;color:var(--muted);}
+.chip{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(0,137,222,0.1);color:var(--brand);border-radius:999px;padding:0.28rem 0.65rem;font-size:0.76rem;font-weight:600;}
+.chip .x{cursor:pointer;opacity:0.6;}
+.chip.state{background:rgba(244,63,94,0.1);color:#e11d48;}
+.reset{margin-left:auto;font-size:0.78rem;color:var(--brand);font-weight:600;cursor:pointer;}
+
+/* results */
+.results{padding:1.5rem 0 4rem;}
+.count-row{font-size:0.82rem;color:var(--muted);margin-bottom:1rem;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.card{border:1px solid var(--hairline);border-radius:1rem;overflow:hidden;cursor:pointer;transition:all .2s;}
+.card:hover{border-color:rgba(0,137,222,0.4);transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(15,23,42,0.2);}
+.card-img{height:150px;position:relative;background-size:cover;background-position:center;}
+.card-img.i1{background-image:linear-gradient(160deg,#041c33,#065a66,#0a7a6b);}
+.card-img.i2{background-image:linear-gradient(155deg,#031522,#064466,#0b829f);}
+.card-img.i3{background-image:linear-gradient(150deg,#03182a,#0a5060,#0a9080);}
+.card-img.i4{background-image:linear-gradient(160deg,#0d2030,#0a6b8a,#087a6e);}
+.card-img.i5{background-image:linear-gradient(155deg,#041c33,#063a52,#0a9a88);}
+.card-img.i6{background-image:linear-gradient(150deg,#031824,#054054,#0a7a8a);}
+.state-pill{position:absolute;top:0.7rem;left:0.7rem;display:inline-flex;align-items:center;gap:0.35rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);border-radius:999px;padding:0.25rem 0.6rem;font-size:0.66rem;font-weight:700;letter-spacing:0.03em;}
+.state-pill .d{width:6px;height:6px;border-radius:50%;}
+.card-body{padding:0.85rem 1rem 1rem;}
+.card-body h3{font-size:0.98rem;font-weight:700;}
+.card-meta{display:flex;gap:0.45rem;margin-top:0.45rem;flex-wrap:wrap;}
+.tag{font-size:0.68rem;font-weight:600;color:var(--muted);background:var(--surface);border-radius:999px;padding:0.18rem 0.55rem;}
+.tag.season{color:var(--thriving);background:rgba(16,185,129,0.1);}
+.card-body p{font-size:0.8rem;color:var(--body);margin-top:0.55rem;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="note">OPTION A — <b>Horizontal filter bar</b> with category dropdowns. Bar is <b>sticky</b> (pins on scroll); only the results grid scrolls. Wildlife is one dropdown holding the full categorised taxonomy. Compare with Option B (left rail).</div>
+
+<div class="wrap head">
+  <div class="eyebrow">The Atlas</div>
+  <h1>Where the season is right</h1>
+  <p>94 reef locations, filtered by what you want to see and when you can go.</p>
+</div>
+
+<!-- sticky filter bar -->
+<div class="fbar">
+  <div class="fbar-inner">
+    <div class="fdrop">
+      <button class="fbtn"><span>Reef state</span><span class="chev">▾</span></button>
+    </div>
+    <div class="fdrop">
+      <button class="fbtn"><span>Cert level</span><span class="chev">▾</span></button>
+    </div>
+    <div class="fdrop">
+      <button class="fbtn"><span>Region</span><span class="chev">▾</span></button>
+    </div>
+    <div class="fdrop">
+      <button class="fbtn"><span>Month</span><span class="chev">▾</span></button>
+    </div>
+    <!-- wildlife dropdown, OPEN to show categorised taxonomy -->
+    <div class="fdrop">
+      <button class="fbtn has"><span>Wildlife</span><span class="count">2</span><span class="chev">▴</span></button>
+      <div class="panel wide">
+        <div class="panel-grp">
+          <h4>Sharks &amp; rays</h4>
+          <div class="opts">
+            <span class="opt on">Sharks</span>
+            <span class="opt">Hammerheads</span>
+            <span class="opt on">Rays &amp; mantas</span>
+            <span class="opt">Eagle rays</span>
+          </div>
+        </div>
+        <div class="panel-grp">
+          <h4>Marine mammals</h4>
+          <div class="opts">
+            <span class="opt">Whales</span>
+            <span class="opt">Dolphins</span>
+            <span class="opt">Seals &amp; sea lions</span>
+            <span class="opt">Dugongs</span>
+          </div>
+        </div>
+        <div class="panel-grp">
+          <h4>Reptiles &amp; pelagics</h4>
+          <div class="opts">
+            <span class="opt">Sea turtles</span>
+            <span class="opt">Large pelagics</span>
+            <span class="opt">Reef fish</span>
+          </div>
+        </div>
+        <div class="panel-grp">
+          <h4>Macro &amp; critters</h4>
+          <div class="opts">
+            <span class="opt">Cephalopods</span>
+            <span class="opt">Frogfish &amp; seahorses</span>
+            <span class="opt">Nudibranchs</span>
+            <span class="opt">Corals &amp; inverts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fdrop">
+      <button class="fbtn"><span>Thermal stress</span><span class="chev">▾</span></button>
+    </div>
+    <div class="fspacer"></div>
+    <div class="fsort">
+      <span>Sort</span>
+      <select><option>Best season</option><option>Oldest surveys</option><option>Highest stress</option><option>Name</option></select>
+    </div>
+  </div>
+</div>
+
+<!-- active chips -->
+<div class="chips">
+  <span class="lbl">Filtering by</span>
+  <span class="chip">Sharks <span class="x">×</span></span>
+  <span class="chip">Rays &amp; mantas <span class="x">×</span></span>
+  <span class="reset">Reset all</span>
+</div>
+
+<div class="wrap results">
+  <div class="count-row">Showing 18 locations with sharks or rays</div>
+  <div class="grid">
+    <div class="card"><div class="card-img i1"><span class="state-pill"><span class="d" style="background:#10b981"></span>Thriving</span></div><div class="card-body"><h3>Raja Ampat</h3><div class="card-meta"><span class="tag">Open water+</span><span class="tag season">In season</span></div><p>Reef mantas at cleaning stations; wobbegongs on the slopes.</p></div></div>
+    <div class="card"><div class="card-img i2"><span class="state-pill"><span class="d" style="background:#0089de"></span>Under pressure</span></div><div class="card-body"><h3>Tubbataha</h3><div class="card-meta"><span class="tag">Advanced+</span><span class="tag season">In season</span></div><p>Grey reef sharks patrol the walls in good numbers.</p></div></div>
+    <div class="card"><div class="card-img i3"><span class="state-pill"><span class="d" style="background:#10b981"></span>Thriving</span></div><div class="card-body"><h3>Cocos Island</h3><div class="card-meta"><span class="tag">Technical</span></div><p>Schooling hammerheads, a defining big-animal site.</p></div></div>
+    <div class="card"><div class="card-img i4"><span class="state-pill"><span class="d" style="background:#10b981"></span>Thriving</span></div><div class="card-body"><h3>Ningaloo</h3><div class="card-meta"><span class="tag">Open water+</span><span class="tag season">In season</span></div><p>Manta rays year round; whale sharks Apr–Jul.</p></div></div>
+    <div class="card"><div class="card-img i5"><span class="state-pill"><span class="d" style="background:#0089de"></span>Under pressure</span></div><div class="card-body"><h3>Malpelo</h3><div class="card-meta"><span class="tag">Technical</span></div><p>Silky and hammerhead aggregations off the wall.</p></div></div>
+    <div class="card"><div class="card-img i6"><span class="state-pill"><span class="d" style="background:#10b981"></span>Thriving</span></div><div class="card-body"><h3>Maldives — Ari</h3><div class="card-meta"><span class="tag">Open water+</span><span class="tag season">In season</span></div><p>Manta cleaning stations and reef sharks on the channels.</p></div></div>
+  </div>
+</div>
+</body>
+</html>

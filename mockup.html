@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>scubaSeason.fun — Homepage Redesign Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #0b1e32; color: #fff; }
+  a { text-decoration: none; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 3rem;
+  }
+  .nav-logo { font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+  .nav-logo span { color: #0089de; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    height: 100vh; min-height: 700px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg,
+      #020f1c 0%, #031830 15%, #041f3e 30%,
+      #052840 45%, #063555 60%, #042a47 75%, #021424 100%);
+  }
+  /* Simulated underwater caustic light */
+  .hero-caustics {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 120px 80px at 20% 30%, rgba(0,160,220,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 200px 120px at 65% 20%, rgba(0,180,240,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 80px 60px at 80% 50%, rgba(0,200,255,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 160px 100px at 35% 65%, rgba(0,140,200,0.05) 0%, transparent 70%),
+      repeating-linear-gradient(98deg, transparent 0, transparent 42px, rgba(0,160,220,0.02) 42px, rgba(0,160,220,0.02) 44px),
+      repeating-linear-gradient(82deg, transparent 0, transparent 68px, rgba(0,200,230,0.015) 68px, rgba(0,200,230,0.015) 70px);
+  }
+  /* Simulated manta ray silhouette */
+  .hero-manta {
+    position: absolute;
+    right: 8%; top: 18%;
+    width: 420px; height: 280px;
+    opacity: 0.12;
+    background: radial-gradient(ellipse 200px 60px at 50% 50%, rgba(120,180,220,0.8) 0%, transparent 70%),
+      radial-gradient(ellipse 60px 200px at 50% 50%, rgba(100,160,210,0.5) 0%, transparent 70%);
+    transform: rotate(-8deg) skewX(-10deg);
+    border-radius: 50%;
+  }
+  .hero-fade {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 280px;
+    background: linear-gradient(to bottom, transparent, #0b1e32);
+  }
+  .hero-content {
+    position: relative; z-index: 10;
+    max-width: 1320px; margin: 0 auto; width: 100%;
+    padding: 0 3rem 5rem;
+  }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #0089de; margin-bottom: 1.5rem;
+  }
+  .live-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #15a05c; box-shadow: 0 0 0 3px rgba(21,160,92,0.3);
+    flex-shrink: 0; animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(21,160,92,0.3); } 50% { box-shadow: 0 0 0 5px rgba(21,160,92,0.15); } }
+  .hero h1 {
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 800; line-height: 1.0; letter-spacing: -0.04em;
+    color: #fff; margin-bottom: 1rem; max-width: 700px;
+  }
+  .hero-sub {
+    font-size: 1.0625rem; font-weight: 500;
+    color: rgba(255,255,255,0.5); margin-bottom: 2.5rem;
+    letter-spacing: 0.01em;
+  }
+  .hero-ctas { display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.5rem; border-radius: 0.625rem;
+    font-size: 0.9375rem; font-weight: 600; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .cta-primary {
+    background: #0089de; color: #fff;
+    box-shadow: 0 0 0 1px rgba(0,137,222,0.4), 0 4px 20px rgba(0,137,222,0.25);
+  }
+  .cta-primary:hover { background: #0099f0; }
+  .cta-secondary {
+    background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .cta-secondary:hover { background: rgba(255,255,255,0.12); }
+  .hero-stats { display: flex; gap: 0; flex-wrap: wrap; }
+  .hero-stat {
+    display: flex; flex-direction: column; gap: 0.2rem;
+    padding: 0 2rem 0 0; border-right: 1px solid rgba(255,255,255,0.1);
+    margin-right: 2rem;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .stat-val { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1; }
+  .stat-lbl { font-size: 0.5875rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+  /* ─── SHARED SECTION STYLES ─── */
+  .section { padding: 5rem 3rem; }
+  .section-inner { max-width: 1320px; margin: 0 auto; }
+  .eyebrow { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .section-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 2.5rem; }
+
+  /* ─── IN SEASON NOW ─── */
+  .season-section { background: #0b1e32; padding: 5rem 3rem 4rem; }
+  .season-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; }
+  .season-link { font-size: 0.875rem; font-weight: 600; color: #0089de; }
+  .season-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .season-card {
+    position: relative; border-radius: 1rem; overflow: hidden;
+    min-height: 220px; cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .season-card:hover { transform: translateY(-3px); }
+  .sc-bg-1 { background: linear-gradient(160deg, #041c33 0%, #063a52 30%, #065a66 60%, #0a7a6b 100%); }
+  .sc-bg-2 { background: linear-gradient(155deg, #0a1f38 0%, #0d2e4e 35%, #103a5e 65%, #124870 100%); }
+  .sc-bg-3 { background: linear-gradient(150deg, #1a0d2e 0%, #2d1254 35%, #3d1a6b 65%, #4a2080 100%); }
+  .sc-bg-4 { background: linear-gradient(160deg, #0d2a1f 0%, #0f3d2e 35%, #0e4d38 65%, #0f5c42 100%); }
+  .season-card-img {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+  }
+  .season-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(2,14,28,0.92) 0%, rgba(2,14,28,0.3) 55%, transparent 100%);
+  }
+  .season-card-content {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1.25rem;
+  }
+  .card-region { font-size: 0.5875rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.3rem; }
+  .card-name { font-size: 1.0625rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1.15; margin-bottom: 0.5rem; }
+  .card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .badge {
+    font-size: 0.5875rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.2rem 0.55rem; border-radius: 999px;
+    backdrop-filter: blur(8px);
+  }
+  .badge-thriving { background: rgba(16,185,129,0.14); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.22); }
+  .badge-season { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.14); }
+  .badge-animal { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.1); }
+  .badge-pressure { background: rgba(0,137,222,0.16); color: #93c5fd; border: 1px solid rgba(0,137,222,0.25); }
+
+  /* ─── SPECIES ─── */
+  .species-section { background: #fff; padding: 5rem 3rem; }
+  .species-section .eyebrow { color: #64748b; }
+  .species-section .section-h2 { color: #0f172a; margin-bottom: 2rem; }
+  .species-group { margin-bottom: 1.25rem; }
+  .species-group-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 0.625rem; }
+  .species-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .pill {
+    padding: 0.5rem 1.125rem; border-radius: 999px;
+    font-size: 0.875rem; font-weight: 600; cursor: pointer;
+    border: 1.5px solid #e2e8f0; color: #334155; background: #fff;
+    transition: all 0.15s;
+  }
+  .pill:hover { background: #0089de; color: #fff; border-color: #0089de; }
+  .species-footnote { margin-top: 1.75rem; font-size: 0.875rem; color: #94a3b8; font-style: italic; font-family: 'Source Serif 4', Georgia, serif; }
+
+  /* ─── DIVE WITH PURPOSE ─── */
+  .purpose-section { background: #071526; padding: 5rem 3rem; }
+  .purpose-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .purpose-left {}
+  .purpose-left .eyebrow { color: #0089de; }
+  .purpose-h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; color: #fff; margin-bottom: 0.875rem; }
+  .purpose-sub { font-size: 0.9375rem; line-height: 1.65; color: rgba(255,255,255,0.45); max-width: 400px; margin-bottom: 2rem; font-family: 'Source Serif 4', Georgia, serif; font-style: italic; }
+  .science-cards { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+  .science-card {
+    display: flex; gap: 1rem;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0.875rem; padding: 1.125rem 1.25rem;
+    transition: background 0.2s;
+  }
+  .science-card:hover { background: rgba(0,137,222,0.08); border-color: rgba(0,137,222,0.2); }
+  .science-icon { font-size: 1.5rem; flex-shrink: 0; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; }
+  .science-card-body { flex: 1; }
+  .science-card-title { font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+  .science-card-desc { font-size: 0.8125rem; line-height: 1.55; color: rgba(255,255,255,0.45); margin-bottom: 0.5rem; }
+  .science-card-meta { display: flex; align-items: center; justify-content: space-between; }
+  .science-card-link { font-size: 0.75rem; font-weight: 600; color: #0089de; }
+  .science-card-effort { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  .purpose-cta-link { font-size: 0.9375rem; font-weight: 600; color: #0089de; display: inline-flex; align-items: center; gap: 0.375rem; }
+
+  /* Right column */
+  .purpose-right {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 1.25rem; padding: 2.5rem;
+  }
+  .purpose-right .eyebrow { color: rgba(255,255,255,0.3); margin-bottom: 0.75rem; }
+  .right-h2 { font-size: 1.625rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; color: #fff; margin-bottom: 1.25rem; }
+  .right-sub { font-size: 0.9375rem; line-height: 1.65; color: rgba(255,255,255,0.45); margin-bottom: 0.5rem; font-family: 'Source Serif 4', Georgia, serif; font-style: italic; }
+  .gap-stat {
+    display: flex; align-items: baseline; gap: 0.625rem;
+    margin: 1.5rem 0;
+    padding: 1.25rem; background: rgba(244,63,94,0.07); border: 1px solid rgba(244,63,94,0.15); border-radius: 0.75rem;
+  }
+  .gap-number { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em; color: rgba(255,255,255,0.15); line-height: 1; font-variant-numeric: tabular-nums; }
+  .gap-label { font-size: 0.8125rem; line-height: 1.5; color: rgba(255,255,255,0.45); }
+  .gap-label strong { color: rgba(255,255,255,0.7); font-weight: 600; }
+  .right-cta {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.5rem; border-radius: 0.625rem;
+    background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.12); font-size: 0.9375rem; font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  /* ─── ATLAS ─── */
+  .atlas-section { background: #fff; padding: 4rem 3rem 2rem; }
+  .atlas-header { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; margin-bottom: 2rem; }
+  .atlas-header-left .eyebrow { color: #64748b; }
+  .atlas-header-left h2 { font-size: 1.875rem; font-weight: 800; letter-spacing: -0.025em; color: #0f172a; }
+  .filter-rail {
+    display: flex; gap: 0.625rem; flex-wrap: wrap;
+    padding: 1rem 0 1.5rem;
+  }
+  .filter-chip {
+    padding: 0.4375rem 1rem; border-radius: 999px;
+    font-size: 0.8125rem; font-weight: 600; cursor: pointer;
+    border: 1.5px solid #e2e8f0; color: #64748b; background: #fff;
+  }
+  .filter-chip.active { background: #0f172a; color: #fff; border-color: #0f172a; }
+  .atlas-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+  .atlas-card {
+    border-radius: 0.875rem; overflow: hidden;
+    border: 1px solid #e2e8f0; min-height: 160px; position: relative; cursor: pointer;
+  }
+  .ac-1 { background: linear-gradient(160deg, #041c33, #065a66); }
+  .ac-2 { background: linear-gradient(155deg, #0a1f38, #103a5e); }
+  .ac-3 { background: linear-gradient(150deg, #0d2a1f, #0e4d38); }
+  .ac-4 { background: linear-gradient(160deg, #1a0d2e, #3d1a6b); }
+  .ac-5 { background: linear-gradient(155deg, #1f1205, #4a2e0a); }
+  .atlas-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.875rem; }
+  .ac-region { font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.2rem; }
+  .ac-name { font-size: 0.875rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 0.375rem; }
+  .atlas-more { text-align: center; padding: 2rem; color: #64748b; font-size: 0.875rem; }
+
+  /* ─── TRUST ─── */
+  .trust-section { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 3rem 3rem; }
+  .trust-items { max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.125rem; }
+  .trust-item { display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.9375rem; line-height: 1.6; color: #475569; }
+  .trust-item strong { color: #0f172a; font-weight: 700; }
+  .trust-link { color: #0089de; font-weight: 600; font-size: 0.875rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #071526; border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between;
+  }
+  footer p { font-size: 0.8125rem; color: rgba(255,255,255,0.3); }
+
+  /* ─── ANNOTATION LABELS (mockup only) ─── */
+  .annotation {
+    position: absolute; top: 1rem; right: 1rem;
+    font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    background: rgba(255,200,0,0.15); color: rgba(255,200,0,0.9);
+    border: 1px solid rgba(255,200,0,0.3); padding: 0.2rem 0.5rem; border-radius: 4px;
+  }
+  .section-wrap { position: relative; }
+  .new-badge {
+    display: inline-flex; align-items: center; gap: 0.375rem;
+    font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    background: rgba(0,200,100,0.12); color: #4ade80; border: 1px solid rgba(0,200,100,0.2);
+    padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.75rem; vertical-align: middle;
+  }
+  .changed-badge {
+    display: inline-flex; align-items: center; gap: 0.375rem;
+    font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    background: rgba(0,137,222,0.12); color: #60a5fa; border: 1px solid rgba(0,137,222,0.2);
+    padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.75rem; vertical-align: middle;
+  }
+  .deleted-badge {
+    display: inline-flex;
+    font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    background: rgba(244,63,94,0.12); color: #f87171; border: 1px solid rgba(244,63,94,0.2);
+    padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.75rem; vertical-align: middle;
+  }
+  .section-label {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  }
+  .sl-changed { background: #0089de; }
+  .sl-new { background: #4ade80; }
+  .sl-deleted { background: #f43f5e; opacity: 0.4; }
+</style>
+</head>
+<body>
+
+<!-- ═══ SECTION 1: HERO ═══ -->
+<div class="section-wrap">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-caustics"></div>
+    <div class="hero-manta"></div>
+    <div class="hero-fade"></div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">scuba<span>Season</span>.fun</div>
+      <div class="nav-links">
+        <a href="#">Locations</a>
+        <a href="#">Species</a>
+        <a href="#">Data</a>
+        <a href="#">About</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="live-dot"></span>
+        Live · NOAA Coral Reef Watch
+      </div>
+
+      <h1>Find where<br>to dive.</h1>
+
+      <p class="hero-sub">In season now. Real sighting records.</p>
+
+      <div class="hero-ctas">
+        <a class="cta-btn cta-primary" href="#">What do you want to see? →</a>
+        <a class="cta-btn cta-secondary" href="#">Where's in season now? →</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-val">113</span>
+          <span class="stat-lbl">Locations</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-val">18</span>
+          <span class="stat-lbl">In season in June</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-val">38</span>
+          <span class="stat-lbl">Data sources</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div style="position:absolute;top:1.5rem;right:1.5rem;z-index:30">
+    <span class="changed-badge">CHANGED</span>
+  </div>
+</div>
+
+<!-- ═══ SECTION 2: IN SEASON NOW (was: hardcoded 3-card grid) ═══ -->
+<div class="section-wrap">
+  <div class="section-label sl-changed"></div>
+  <section class="season-section">
+    <div class="section-inner">
+      <div class="season-header">
+        <div>
+          <p class="eyebrow" style="color:rgba(255,255,255,0.3)">Diving this month</p>
+          <h2 class="section-h2" style="color:#fff;margin-bottom:0">
+            Best season right now — June 2026
+            <span class="changed-badge">WAS: 3 hardcoded cards</span>
+          </h2>
+        </div>
+        <a class="season-link" href="#">View all 18 in-season locations →</a>
+      </div>
+
+      <div class="season-grid">
+        <div class="season-card sc-bg-1">
+          <div class="season-card-overlay"></div>
+          <div class="season-card-content">
+            <p class="card-region">Coral Sea</p>
+            <h3 class="card-name">Raja Ampat</h3>
+            <div class="card-badges">
+              <span class="badge badge-thriving">Thriving</span>
+              <span class="badge badge-season">● In season</span>
+              <span class="badge badge-animal">Sharks · Mantas</span>
+            </div>
+          </div>
+        </div>
+        <div class="season-card sc-bg-2">
+          <div class="season-card-overlay"></div>
+          <div class="season-card-content">
+            <p class="card-region">North Atlantic</p>
+            <h3 class="card-name">Azores</h3>
+            <div class="card-badges">
+              <span class="badge badge-thriving">Thriving</span>
+              <span class="badge badge-season">● In season</span>
+              <span class="badge badge-animal">Whales · Dolphins</span>
+            </div>
+          </div>
+        </div>
+        <div class="season-card sc-bg-3">
+          <div class="season-card-overlay"></div>
+          <div class="season-card-content">
+            <p class="card-region">Indian Ocean</p>
+            <h3 class="card-name">Maldives</h3>
+            <div class="card-badges">
+              <span class="badge badge-thriving">Thriving</span>
+              <span class="badge badge-season">● In season</span>
+              <span class="badge badge-animal">Rays & mantas</span>
+            </div>
+          </div>
+        </div>
+        <div class="season-card sc-bg-4">
+          <div class="season-card-overlay"></div>
+          <div class="season-card-content">
+            <p class="card-region">Pacific</p>
+            <h3 class="card-name">Cocos Island</h3>
+            <div class="card-badges">
+              <span class="badge badge-pressure">Under pressure</span>
+              <span class="badge badge-season">● In season</span>
+              <span class="badge badge-animal">Sharks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ DELETED: Reef states explainer section ═══ -->
+<div class="section-wrap">
+  <div class="section-label sl-deleted"></div>
+  <section style="background:#091b2d;padding:1.5rem 3rem;border-top:1px dashed rgba(244,63,94,0.2);border-bottom:1px dashed rgba(244,63,94,0.2)">
+    <div class="section-inner" style="display:flex;align-items:center;gap:1rem;opacity:0.4">
+      <span class="deleted-badge">DELETED</span>
+      <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5)">Reef states explainer section — "Thriving / Under pressure / Witnessing change" full section removed. Reef state badges appear inline on every card. Saves 1 full scroll.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ SECTION 3: FIND BY SPECIES (new) ═══ -->
+<div class="section-wrap">
+  <div class="section-label sl-new"></div>
+  <section class="species-section">
+    <div class="section-inner">
+      <p class="eyebrow">Find by species</p>
+      <h2 class="section-h2">
+        What do you want to see?
+        <span class="new-badge">NEW</span>
+      </h2>
+
+      <div class="species-group">
+        <p class="species-group-label">Sharks & rays</p>
+        <div class="species-pills">
+          <a class="pill" href="#">Sharks</a>
+          <a class="pill" href="#">Hammerheads</a>
+          <a class="pill" href="#">Rays & mantas</a>
+          <a class="pill" href="#">Eagle rays</a>
+        </div>
+      </div>
+
+      <div class="species-group" style="margin-top:1.25rem">
+        <p class="species-group-label">Marine mammals</p>
+        <div class="species-pills">
+          <a class="pill" href="#">Whales</a>
+          <a class="pill" href="#">Dolphins</a>
+          <a class="pill" href="#">Seals & sea lions</a>
+          <a class="pill" href="#">Dugongs</a>
+        </div>
+      </div>
+
+      <div class="species-group" style="margin-top:1.25rem">
+        <p class="species-group-label">Reptiles & pelagics</p>
+        <div class="species-pills">
+          <a class="pill" href="#">Sea turtles</a>
+          <a class="pill" href="#">Large pelagics</a>
+        </div>
+      </div>
+
+      <div class="species-group" style="margin-top:1.25rem">
+        <p class="species-group-label">Reef life</p>
+        <div class="species-pills">
+          <a class="pill" href="#">Reef fish</a>
+          <a class="pill" href="#">Cephalopods</a>
+          <a class="pill" href="#">Frogfish & seahorses</a>
+          <a class="pill" href="#">Nudibranchs</a>
+          <a class="pill" href="#">Corals & inverts</a>
+        </div>
+      </div>
+
+      <p class="species-footnote">Sighting records from verified dive reports — not marketing copy.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ SECTION 4: DIVE WITH PURPOSE (new) ═══ -->
+<div class="section-wrap">
+  <div class="section-label sl-new"></div>
+  <section class="purpose-section">
+    <div class="section-inner">
+      <div class="purpose-grid">
+
+        <!-- LEFT: FOR DIVERS -->
+        <div class="purpose-left">
+          <p class="eyebrow" style="color:#0089de;margin-bottom:0.75rem">For divers</p>
+          <h2 class="purpose-h2">
+            Make your dive count.
+            <span class="new-badge">NEW</span>
+          </h2>
+          <p class="purpose-sub">When you dive a site that needs data, we'll tell you exactly what to do and where to submit it.</p>
+
+          <div class="science-cards">
+            <div class="science-card">
+              <div class="science-icon">📸</div>
+              <div class="science-card-body">
+                <p class="science-card-title">Photo ID</p>
+                <p class="science-card-desc">Photograph a manta's belly spots. AI matches it to known individuals across years and oceans.</p>
+                <div class="science-card-meta">
+                  <a class="science-card-link" href="#">Manta Matcher ↗</a>
+                  <span class="science-card-effort">Zero effort</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="science-card">
+              <div class="science-icon">🪸</div>
+              <div class="science-card-body">
+                <p class="science-card-title">Coral health</p>
+                <p class="science-card-desc">Color-match 10 corals against a chart. Helps track bleaching in real time during the 4th global bleaching event.</p>
+                <div class="science-card-meta">
+                  <a class="science-card-link" href="#">CoralWatch ↗</a>
+                  <span class="science-card-effort">15 minutes</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="science-card">
+              <div class="science-icon">🐟</div>
+              <div class="science-card-body">
+                <p class="science-card-title">Fish count</p>
+                <p class="science-card-desc">10-min timed swim at a marked site. Citizen diver surveys match federally-funded fisheries surveys in accuracy.</p>
+                <div class="science-card-meta">
+                  <a class="science-card-link" href="#">REEF ↗</a>
+                  <span class="science-card-effort">Free training</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a class="purpose-cta-link" href="#">See which sites need your eyes →</a>
+        </div>
+
+        <!-- RIGHT: FOR RESEARCHERS -->
+        <div class="purpose-right">
+          <p class="eyebrow">For researchers</p>
+          <h2 class="right-h2">Monitoring a reef?<br>We'll send you fresh eyes.</h2>
+          <p class="right-sub">Tell us where you need divers and we'll direct them there.</p>
+
+          <div class="gap-stat">
+            <span class="gap-number">136</span>
+            <p class="gap-label"><strong>sites in our atlas have no sighting records.</strong><br>We're actively closing that gap — and we can direct traffic to where you need it most.</p>
+          </div>
+
+          <a class="right-cta" href="mailto:hello@scubaseason.fun">Get in touch →</a>
+          <p style="font-size:0.75rem;color:rgba(255,255,255,0.25);margin-top:0.75rem">hello@scubaseason.fun</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ SECTION 5: FULL ATLAS ═══ -->
+<div class="section-wrap">
+  <div class="section-label sl-changed"></div>
+  <section class="atlas-section">
+    <div class="section-inner">
+      <div class="atlas-header">
+        <div class="atlas-header-left">
+          <p class="eyebrow">All locations <span class="changed-badge">HEADER SIMPLIFIED</span></p>
+          <h2>113 reefs across 9 regions</h2>
+        </div>
+      </div>
+
+      <div class="filter-rail">
+        <span class="filter-chip active">All</span>
+        <span class="filter-chip">Thriving</span>
+        <span class="filter-chip">Under pressure</span>
+        <span class="filter-chip">In season</span>
+        <span class="filter-chip">Sharks</span>
+        <span class="filter-chip">Mantas</span>
+        <span class="filter-chip">Indo-Pacific</span>
+        <span class="filter-chip">Caribbean</span>
+        <span class="filter-chip">Beginner friendly</span>
+      </div>
+
+      <div class="atlas-grid">
+        <div class="atlas-card ac-1">
+          <div class="season-card-overlay"></div>
+          <div class="atlas-card-content">
+            <p class="ac-region">Coral Sea</p>
+            <p class="ac-name">Raja Ampat</p>
+            <div class="card-badges"><span class="badge badge-thriving">Thriving</span></div>
+          </div>
+        </div>
+        <div class="atlas-card ac-2">
+          <div class="season-card-overlay"></div>
+          <div class="atlas-card-content">
+            <p class="ac-region">Pacific</p>
+            <p class="ac-name">Blue Corner, Palau</p>
+            <div class="card-badges"><span class="badge badge-pressure">Under pressure</span></div>
+          </div>
+        </div>
+        <div class="atlas-card ac-3">
+          <div class="season-card-overlay"></div>
+          <div class="atlas-card-content">
+            <p class="ac-region">North Atlantic</p>
+            <p class="ac-name">Azores</p>
+            <div class="card-badges"><span class="badge badge-thriving">Thriving</span></div>
+          </div>
+        </div>
+        <div class="atlas-card ac-4">
+          <div class="season-card-overlay"></div>
+          <div class="atlas-card-content">
+            <p class="ac-region">Indian Ocean</p>
+            <p class="ac-name">Maldives</p>
+            <div class="card-badges"><span class="badge badge-thriving">Thriving</span></div>
+          </div>
+        </div>
+        <div class="atlas-card ac-5">
+          <div class="season-card-overlay"></div>
+          <div class="atlas-card-content">
+            <p class="ac-region">Red Sea</p>
+            <p class="ac-name">Ras Mohammed</p>
+            <div class="card-badges"><span class="badge badge-pressure">Under pressure</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="atlas-more">+ 108 more locations — use filters above to narrow down</p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ SECTION 6: TRUST STRIP (radically simplified) ═══ -->
+<div class="section-wrap">
+  <div class="section-label sl-changed"></div>
+  <section class="trust-section">
+    <div class="trust-items">
+      <p class="changed-badge" style="display:inline-flex;width:fit-content;margin-bottom:0.5rem">WAS: 3 columns with paragraphs</p>
+      <div class="trust-item">
+        <strong>38 data sources</strong> — NOAA, AIMS, IUCN, GFW, iNaturalist and more.
+        <a class="trust-link" href="#" style="margin-left:0.5rem">Full source list →</a>
+      </div>
+      <div class="trust-item">
+        <strong>Live thermal data</strong> — re-checked against NOAA's 5 km satellite feed every night.
+      </div>
+      <div class="trust-item">
+        <strong>0 marketing adjectives</strong> — if a reef is degraded, we say so.
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>© 2026 scubaSeason.fun</p>
+  <p>Data updated nightly · <a href="#" style="color:rgba(255,255,255,0.4)">Methodology →</a></p>
+</footer>
+
+<!-- LEGEND -->
+<div style="position:fixed;bottom:1.5rem;right:1.5rem;background:rgba(7,21,38,0.95);border:1px solid rgba(255,255,255,0.12);border-radius:0.75rem;padding:1rem 1.25rem;font-size:0.75rem;z-index:999;backdrop-filter:blur(12px)">
+  <p style="color:rgba(255,255,255,0.5);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;font-size:0.625rem">Mockup legend</p>
+  <div style="display:flex;flex-direction:column;gap:0.375rem">
+    <div style="display:flex;align-items:center;gap:0.5rem"><div style="width:12px;height:3px;background:#4ade80;border-radius:2px"></div><span style="color:rgba(255,255,255,0.6)">New section</span></div>
+    <div style="display:flex;align-items:center;gap:0.5rem"><div style="width:12px;height:3px;background:#0089de;border-radius:2px"></div><span style="color:rgba(255,255,255,0.6)">Changed section</span></div>
+    <div style="display:flex;align-items:center;gap:0.5rem"><div style="width:12px;height:3px;background:#f43f5e;border-radius:2px;opacity:0.5"></div><span style="color:rgba(255,255,255,0.6)">Deleted</span></div>
+  </div>
+</div>
+
+</body>
+</html>
