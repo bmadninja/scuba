@@ -46,10 +46,7 @@ export function HeroPhoto({
       />
     );
   }
-  // Route through Next.js image optimization: resizes server-side and serves
-  // a cached, WebP-converted copy. Avoids relying on Wikimedia's thumbnail CDN
-  // generating on-demand sizes, which can fail for newly-uploaded files.
-  const src = `/_next/image?url=${encodeURIComponent(raw)}&w=1200&q=80`;
+  const src = raw;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img

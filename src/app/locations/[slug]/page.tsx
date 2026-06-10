@@ -221,10 +221,7 @@ export default async function LocationPage({
 
   const atlasLoc = buildAtlasLocation(location);
   const isWitnessing = atlasLoc.state === "change";
-  const _rawHeroUrl = underwaterPhotoUrl(atlasLoc.heroImageUrl);
-  const heroPhotoUrl = _rawHeroUrl
-    ? `/_next/image?url=${encodeURIComponent(_rawHeroUrl)}&w=1200&q=80`
-    : null;
+  const heroPhotoUrl = underwaterPhotoUrl(atlasLoc.heroImageUrl);
   const stateColor = STATE_COLOR[atlasLoc.state];
 
   // --- Sightings aggregated across sites, newest first ----------------------

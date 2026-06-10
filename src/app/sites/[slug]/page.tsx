@@ -257,10 +257,7 @@ export default async function SiteDetailPage({
   const currentMonth = new Date().getUTCMonth() + 1;
   const inSeason = site.bestMonths.includes(currentMonth);
   const sightings = getSightingsBySiteId(site.id);
-  const _rawSiteHeroUrl = underwaterPhotoUrl(site.heroImageUrl);
-  const heroPhotoUrl = _rawSiteHeroUrl
-    ? `/_next/image?url=${encodeURIComponent(_rawSiteHeroUrl)}&w=1200&q=80`
-    : null;
+  const heroPhotoUrl = underwaterPhotoUrl(site.heroImageUrl);
   const bestMonthsSet = new Set(site.bestMonths);
 
   // --- Hero chips: most-recent confirmed sighting + peak season --------------
