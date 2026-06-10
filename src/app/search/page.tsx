@@ -14,6 +14,18 @@ type ResultItem = {
   reefState?: string;
 };
 
+type SpeciesResultItem = {
+  commonName: string;
+  scientificName?: string;
+  href: string;
+  siteCount: number;
+  firstSiteName: string;
+};
+
+function slugifySpecies(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
+
 const STATE_TEXT: Record<string, string> = {
   thriving: "Thriving",
   pressure: "Under pressure",
@@ -34,12 +46,13 @@ function SearchInner() {
   const [results, setResults] = useState<{
     locations: ResultItem[];
     sites: ResultItem[];
-  }>({ locations: [], sites: [] });
+    species: SpeciesResultItem[];
+  }>({ locations: [], sites: [], species: [] });
 
   // Perform search against all data
   const doSearch = useCallback(async (query: string) => {
     if (!query.trim()) {
-      setResults({ locations: [], sites: [] });
+      setResults({ locations: [], sites: [], species: [] });
       return;
     }
     const term = query.trim().toLowerCase();
@@ -104,9 +117,43 @@ function SearchInner() {
         };
       });
 
+    // Species — collect unique species across all sites, deduplicate by common name
+    const speciesMap = new Map<
+      string,
+      { commonName: string; scientificName?: string; sites: { slug: string; name: string }[] }
+    >();
+    for (const site of getAllSites()) {
+      for (const sp of site.species) {
+        const key = sp.commonName.toLowerCase();
+        if (
+          !matchLocation(sp.commonName) &&
+          !matchLocation(sp.scientificName ?? "")
+        )
+          continue;
+        if (!speciesMap.has(key)) {
+          speciesMap.set(key, {
+            commonName: sp.commonName,
+            scientificName: sp.scientificName,
+            sites: [],
+          });
+        }
+        speciesMap.get(key)!.sites.push({ slug: site.slug, name: site.name });
+      }
+    }
+    const speciesResults: SpeciesResultItem[] = Array.from(speciesMap.values())
+      .slice(0, 8)
+      .map((sp) => ({
+        commonName: sp.commonName,
+        scientificName: sp.scientificName,
+        href: `/sites/${sp.sites[0].slug}/species/${slugifySpecies(sp.commonName)}`,
+        siteCount: sp.sites.length,
+        firstSiteName: sp.sites[0].name,
+      }));
+
     setResults({
       locations: locationResults,
       sites: siteResults,
+      species: speciesResults,
     });
   }, []);
 
@@ -122,7 +169,7 @@ function SearchInner() {
   };
 
   const total =
-    results.locations.length + results.sites.length;
+    results.locations.length + results.sites.length + results.species.length;
   const hasQuery = q.trim().length > 0;
   const noResults = hasQuery && total === 0;
 
@@ -277,6 +324,44 @@ function SearchInner() {
             </section>
           )}
 
+          {/* Species */}
+          {results.species.length > 0 && (
+            <section>
+              <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
+                <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8b9db8]">
+                  Species
+                </span>
+                <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs font-semibold text-[#8b9db8]">
+                  {results.species.length}
+                </span>
+              </div>
+              <ul className="space-y-1">
+                {results.species.map((r) => (
+                  <li key={r.commonName}>
+                    <Link
+                      href={r.href}
+                      className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-white/5"
+                    >
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-sm font-semibold text-[#f0f4f8] group-hover:text-[#00d4ff]">
+                          {highlightMatch(r.commonName, q)}
+                        </span>
+                        <span className="block text-xs text-[#8b9db8]">
+                          {r.scientificName && (
+                            <span className="italic">{r.scientificName} · </span>
+                          )}
+                          {r.siteCount === 1
+                            ? r.firstSiteName
+                            : `${r.firstSiteName} + ${r.siteCount - 1} more site${r.siteCount > 2 ? "s" : ""}`}
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
         </div>
       )}
 
@@ -284,8 +369,9 @@ function SearchInner() {
       {!hasQuery && (
         <p className="text-sm text-[#8b9db8]">
           Search across{" "}
-          <span className="font-semibold text-[#aebcd0]">locations</span> and{" "}
-          <span className="font-semibold text-[#aebcd0]">dive sites</span>.
+          <span className="font-semibold text-[#aebcd0]">locations</span>,{" "}
+          <span className="font-semibold text-[#aebcd0]">dive sites</span>, and{" "}
+          <span className="font-semibold text-[#aebcd0]">species</span>.
         </p>
       )}
     </div>
