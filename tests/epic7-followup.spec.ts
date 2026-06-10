@@ -25,21 +25,25 @@ test.describe('Location-first nav', () => {
   });
 });
 
-// ── Clickable species cards ───────────────────────────────────────────────
-test.describe('Clickable species on site detail (Epic 7 follow-up)', () => {
-  test('species card is a link to per-site species page', async ({ page }) => {
+// ── Site detail → species (Epic 7 follow-up, redesign) ────────────────────
+// The redesign renders encounter rows on the site page as a read-only list,
+// with a single "See all species recorded here →" link to the per-site
+// species index. From there, each species row links to its detail page.
+test.describe('Species access from site detail (Epic 7 follow-up)', () => {
+  test('site detail links to the per-site species index', async ({ page }) => {
     await page.goto(`/sites/${SITE_SLUG}`);
-    // The "What you'll see" section renders creature cards as links
+    const link = page.getByRole('link', { name: /see all species recorded here/i });
+    await expect(link).toBeVisible({ timeout: 15_000 });
+    const href = await link.getAttribute('href');
+    expect(href).toMatch(/\/sites\/raja-ampat-cape-kri\/species$/);
+  });
+
+  test('species index rows link to per-site species detail pages', async ({ page }) => {
+    await page.goto(`/sites/${SITE_SLUG}/species`);
     const link = page.getByRole('link', { name: /blacktip reef shark/i }).first();
     await expect(link).toBeVisible({ timeout: 15_000 });
     const href = await link.getAttribute('href');
     expect(href).toMatch(/\/sites\/raja-ampat-cape-kri\/species\//);
-  });
-
-  test('clicking a species card navigates to the species detail page', async ({ page }) => {
-    await page.goto(`/sites/${SITE_SLUG}`);
-    const link = page.getByRole('link', { name: /blacktip reef shark/i }).first();
-    await expect(link).toBeVisible({ timeout: 15_000 });
     await link.click();
     await expect(page).toHaveURL(/\/sites\/raja-ampat-cape-kri\/species\//);
   });

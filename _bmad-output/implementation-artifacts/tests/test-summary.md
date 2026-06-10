@@ -1,57 +1,77 @@
 # Test Automation Summary
 
-## E2E Tests — 17/17 passing (`tests/recent-changes.spec.ts`)
+Framework: **Playwright** (`@playwright/test`), the project's existing harness.
 
-| Group | Test | Status |
-|---|---|---|
-| Homepage copy | Shows new subline with dive location count | ✅ |
-| Homepage copy | Hero CTA reads "Browse all locations →" | ✅ |
-| Homepage copy | Hero CTA reads "Best spots this month →" | ✅ |
-| Homepage copy | Old copy "What do you want to see?" is gone | ✅ |
-| Homepage copy | Old copy "Where's in season now?" is gone | ✅ |
-| Atlas filter | "Thermal stress" section heading removed | ✅ |
-| Atlas filter | "Certification level" has InfoTooltip button | ✅ |
-| Atlas filter | InfoTooltip button is inside section summary | ✅ |
-| InfoTooltip | Tooltip text hidden by default | ✅ |
-| InfoTooltip | Click opens; click overlay closes | ✅ |
-| Location stats | "Reef state" label has InfoTooltip button | ✅ |
-| Location stats | "Coral cover" label has InfoTooltip button | ✅ |
-| Location stats | Clicking "Reef state" ? shows definition | ✅ |
-| Location stats | Clicking "Coral cover" ? shows definition | ✅ |
-| Location page | Live sightings feed removed | ✅ |
-| IUCN badges | Badged species have InfoTooltip button | ✅ |
-| IUCN badges | Clicking shows Red List explanation | ✅ |
+## Generated Tests (this session)
 
-## Hero Photo Underwater Audit — 452 images
+### E2E — redesigned atlas (`tests/redesign-atlas.spec.ts`)
+Covers the live atlas stage on the homepage, which previously had no dedicated
+coverage:
+- [x] Seasonal split + "Great at other times of year" divider (present in Best
+      season sort, absent in flat sorts)
+- [x] Sort dropdown (default, Name, Oldest, URL round-trip)
+- [x] Month filter (12 month buttons, single + multi-month URL state)
+- [x] "Needs fresh eyes" evidence-gap toggle reduces the reef count
+- [x] Certification level filter
+- [x] Cards / Map (globe) view toggle
+- [x] Reef-count `aria-live` region updates after filtering
+- [x] Reef-state filter checkboxes + URL persistence
+- [x] Empty state
 
-| Result | Count |
-|---|---|
-| Passed (genuine underwater) | 375 |
-| Failed (not underwater) | 77 |
-| Pass rate | 83% |
+22 tests — all passing (run with `--workers=1`; see perf note below).
 
-### Failure categories
+### E2E — redesigned location page (`tests/redesign-location.spec.ts`)
+Covers the new location detail page + `location-page-body.tsx` (715-line client
+body that previously had only a "loads" + "404" smoke test). Fixture: Ari Atoll.
+- [x] Reef-condition section renders with the coral-cover chart (SVG `role="img"`)
+- [x] Reef-state metric + info trigger present
+- [x] "Plan your trip" rail with Best months
+- [x] "Where to stay" expander reveals booking links; "Getting there" present
+- [x] "What you'll see" species cards with recency line
+- [x] Dive-site rows link to `/sites/[slug]` and navigate on click
+- [x] Info (i) popup opens a modal dialog and closes (hydration-safe retry)
+- [x] **Mobile (390×844):** no horizontal overflow, sections stack, popup works
 
-| Category | Examples |
-|---|---|
-| Satellite/aerial | Ari Atoll ESA, Mergui MODIS, Dahlak, Osprey Reef diagram |
-| Aquarium tanks | Mahé (Georgia Aquarium whale shark), Beqa (Sentosa nurse shark), Cod Hole (grouper tank), El Hierro (Atlantis tunnel) |
-| Surface/dock | Koh Tao arrivals dock, Milford Sound fjord, Speyside harbour |
-| Above-water coastal | Havelock Island beach, Bocas del Toro, Fujairah shoreline, Channel Islands hillside |
-| Specimen on white | Saba Marine Park shark cutout, Tiger Beach surface shot |
-| Wrong subject entirely | Watamu Kenya (Utah desert canyon), Jeju Island (indoor auditorium) |
-| Illustrations/diagrams | Blue Magic site (1888 fish on rack), Cuba Black Coral 2 (reef zone diagram) |
+13 tests — all passing.
 
-### Remediation applied
+### Data integrity — hero photos (`tests/hero-photos.spec.ts`)
+Guards the photo rules so the duplicate/fallback bug cannot recur:
+- [x] Every hero URL is globally unique across all locations AND sites
+- [x] `photo-quality.ts` exports no hardcoded fallback image
+- [x] No stored hero matches a known surface/aerial/specimen/satellite pattern
+- [x] All hero URLs are absolute https image URLs
 
-- **68 replaced** with genuine underwater Wikimedia Commons photos found by parallel agents
-- **9 cleared** — no suitable Commons image exists; fallback cenote photo shown
-  - Mergui Archipelago, Jeju Island, Speyside Tobago, B-17 Wreck Croatia (Vis),
-    HMAS Brisbane, HMAS Tobruk, First Cathedral Lanai Hawaii,
-    Eden Rock Grand Cayman, Million Hope Wreck Egypt
+4 tests — all passing.
+
+## Hero-photo remediation (done this session)
+- Deleted the hardcoded `UNDERWATER_PHOTO_FALLBACK` (one cenote photo that was
+  rendering on every reef with a missing/rejected photo — the visible bug).
+- Missing photos now render a deterministic ocean-gradient placeholder
+  (`src/components/hero-photo.tsx`), never a borrowed/duplicate image.
+- Stopped locations borrowing a dive site's photo (`atlas-location.ts`).
+- Re-sourced ~96 photos to be globally unique, underwater, good quality
+  (>=1200px sites / >=1400px locations), and subject-appropriate — locations are
+  sourced by their signature species (what the reef is known for).
+  Script: `scripts/dedupe-and-fill-heroes.mjs`.
+- 11 niche sites/locations (caves, cenotes, a few remote spots) intentionally
+  show the gradient — no acceptable unique underwater photo found, never a dup.
+
+## Coverage
+- Atlas stage interactions: covered (new).
+- Hero-photo data invariants: covered (new).
+- Location/site detail, search, sites explorer: covered by existing specs.
+
+## Pre-existing issues found (out of scope, NOT caused by this work)
+1. `homepage.spec.ts:26` "nav has a search box" — the nav search box's
+   accessible name does not match `/search reefs/i`. Likely a stale assertion
+   after the nav redesign.
+2. `epic7.spec.ts` / `epic7-followup.spec.ts` — several tests time out (120s)
+   when the suite runs with multiple workers, because the redesigned location
+   and site pages are heavy in dev mode (large client bundle + THREE.js globe).
+   The pages return HTTP 200 with the expected content; the failures are
+   dev-server compile/hydration timeouts, not functional regressions. Mitigation:
+   run with `--workers=1`, or add a production-build CI step.
 
 ## Next Steps
-
-- Re-run audit after any new hero images are added
-- Find underwater replacements for the 9 locations where Commons has nothing
-- Add filename pattern guards to `photo-quality.ts` for satellite (ESA, MODIS, NASA Goddard) and aquarium patterns
+- Wire `tests/hero-photos.spec.ts` into CI as a hard gate on the photo rules.
+- Triage the two pre-existing issues above separately.
