@@ -287,7 +287,7 @@ export default function AboutPage() {
                 </li>
                 <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
                   Species conservation status from the{" "}
-                  <a href="/method" style={{ color: "#00d4ff" }}>IUCN Red List</a>,
+                  <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener noreferrer" style={{ color: "#00d4ff" }}>IUCN Red List</a>,
                   on every dive site
                 </li>
                 <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
@@ -300,7 +300,7 @@ export default function AboutPage() {
               </ul>
               <p className="text-sm leading-[1.6]" style={{ color: "#8b9db8", marginTop: "0.625rem" }}>
                 Full source details and methodology on the{" "}
-                <a href="/method" style={{ color: "#00d4ff" }}>method page</a>.
+                <a href="/data" style={{ color: "#00d4ff" }}>method page</a>.
               </p>
             </div>
           </div>
