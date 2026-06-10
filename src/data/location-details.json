@@ -246,6 +246,10 @@
     ],
     "goodToKnow": [
       {
+        "title": "Getting there",
+        "body": "Fly to Baltra (GPS) or San Cristóbal (SCY) via Guayaquil or Quito. Liveaboards depart from Puerto Ayora (Santa Cruz) — the Darwin and Wolf run is an 8–12h crossing from the main Galápagos islands."
+      },
+      {
         "title": "Combined with Darwin",
         "body": "There is no Wolf-only trip. Logistics, permits and fees match Darwin."
       },
@@ -270,6 +274,10 @@
     ],
     "goodToKnow": [
       {
+        "title": "Getting there",
+        "body": "Fly to Philip Goldson International (BZE) in Belize City, or direct to San Pedro (SPR) on Ambergris Caye. Day-trip boats depart Ambergris Caye and Caye Caulker early morning — the round trip is 5–8h including the 2–4h crossing each way."
+      },
+      {
         "title": "Long boat ride",
         "body": "2.5–4h each way from Ambergris. Take Bonine the night before."
       },
@@ -293,6 +301,10 @@
       }
     ],
     "goodToKnow": [
+      {
+        "title": "Getting there",
+        "body": "Fly to San José (SJO). Liveaboards depart from Puntarenas on Costa Rica's Pacific coast, roughly a 2h bus or shuttle from SJO. The ocean crossing to Cocos is 32–36h each way."
+      },
       {
         "title": "Crossing",
         "body": "32–36h each way from Puntarenas. Bring scopolamine."
@@ -350,6 +362,10 @@
     ],
     "goodToKnow": [
       {
+        "title": "Getting there",
+        "body": "Fly to Reykjavík (KEF). Þingvellir National Park (where Silfra is) is 45 minutes by car from Reykjavík — most operators run shuttle transfers. Book early; daily diver slots are strictly capped by the park."
+      },
+      {
         "title": "Drysuit cert mandatory",
         "body": "Bring your card and log. Operators will turn you away without it."
       },
@@ -377,6 +393,10 @@
       }
     ],
     "goodToKnow": [
+      {
+        "title": "Getting there",
+        "body": "Fly to Hurghada (HRG) — well-served from Europe. Liveaboards depart Hurghada Marina; the crossing to the Brothers Islands is approximately 5–8h overnight. Day-trip access is not permitted."
+      },
       {
         "title": "Park closure",
         "body": "Closed roughly December–April. Confirm dates with your operator."
@@ -546,6 +566,10 @@
     ],
     "goodToKnow": [
       {
+        "title": "Getting there",
+        "body": "Fly to Flamingo Airport (BON) — direct from Amsterdam (KLM) and several US hubs. Most dive resorts are on the leeward west coast, 10–20 minutes from the airport. Rent a pickup truck on arrival."
+      },
+      {
         "title": "Marine park tag",
         "body": "$45 STINAPA tag mandatory; valid one calendar year."
       },
@@ -569,9 +593,18 @@
       }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Malé (MLE), then seaplane or speedboat (45 min – 2h) to your resort/liveaboard." },
-      { "title": "Alcohol rules", "body": "The Maldives is a Muslim country — alcohol is only available on resort islands and liveaboards. Local islands are dry." },
-      { "title": "Green tax", "body": "$6/day per guest, collected by your accommodation." }
+      {
+        "title": "Getting there",
+        "body": "Fly Malé (MLE), then seaplane or speedboat (45 min – 2h) to your resort/liveaboard."
+      },
+      {
+        "title": "Alcohol rules",
+        "body": "The Maldives is a Muslim country — alcohol is only available on resort islands and liveaboards. Local islands are dry."
+      },
+      {
+        "title": "Green tax",
+        "body": "$6/day per guest, collected by your accommodation."
+      }
     ]
   },
   {
@@ -588,8 +621,18 @@
       }
     ],
     "goodToKnow": [
-      { "title": "Transfer", "body": "Speedboat from Malé to most resorts is 20–60 minutes — far cheaper than seaplane." },
-      { "title": "Protected species", "body": "All sharks and rays are protected nationally. Spearfishing and shark feeding are banned." }
+      {
+        "title": "Getting there",
+        "body": "Fly into Velana International (MLE) in Malé. Resort transfer is by speedboat (20–60 min) or seaplane (15–25 min). Liveaboards board directly from the marina adjacent to the airport."
+      },
+      {
+        "title": "Transfer",
+        "body": "Speedboat from Malé to most resorts is 20–60 minutes — far cheaper than seaplane."
+      },
+      {
+        "title": "Protected species",
+        "body": "All sharks and rays are protected nationally. Spearfishing and shark feeding are banned."
+      }
     ]
   },
   {
@@ -600,11 +643,20 @@
     "diveStyle": "Wall and drift diving with mild current; easy buoyancy practice.",
     "diveLevel": "Open Water; the walls are forgiving and the marine park is well-managed.",
     "quotes": [
-      { "text": "Bunaken's walls feel infinite. You drift along the top and the reef just falls away below you forever.", "attribution": "Guest review" }
+      {
+        "text": "Bunaken's walls feel infinite. You drift along the top and the reef just falls away below you forever.",
+        "attribution": "Guest review"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Manado (MDC) via Jakarta or Singapore, then boat to Bunaken (45 min)." },
-      { "title": "Combine trips", "body": "Most divers pair Bunaken with Lembeh's muck diving — opposite sides of the same peninsula." }
+      {
+        "title": "Getting there",
+        "body": "Fly Manado (MDC) via Jakarta or Singapore, then boat to Bunaken (45 min)."
+      },
+      {
+        "title": "Combine trips",
+        "body": "Most divers pair Bunaken with Lembeh's muck diving — opposite sides of the same peninsula."
+      }
     ]
   },
   {
@@ -615,11 +667,20 @@
     "diveStyle": "Wall and reef-edge drift; moderate current.",
     "diveLevel": "Advanced Open Water recommended.",
     "quotes": [
-      { "text": "Apo is what every Philippines reef wishes it still looked like — protected, busy with sharks, and quiet on the surface.", "attribution": "Liveaboard guest" }
+      {
+        "text": "Apo is what every Philippines reef wishes it still looked like — protected, busy with sharks, and quiet on the surface.",
+        "attribution": "Liveaboard guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Manila → Coron (USU) or Puerto Galera by ferry from Batangas." },
-      { "title": "Park fee", "body": "~PHP 2,000 (~$35) marine park fee." }
+      {
+        "title": "Getting there",
+        "body": "Fly Manila → Coron (USU) or Puerto Galera by ferry from Batangas."
+      },
+      {
+        "title": "Park fee",
+        "body": "~PHP 2,000 (~$35) marine park fee."
+      }
     ]
   },
   {
@@ -630,11 +691,20 @@
     "diveStyle": "Shore and short-boat diving on walls and the sardine ball. Mild current.",
     "diveLevel": "Open Water; great place to log dives independently.",
     "quotes": [
-      { "text": "Walking into the ocean from the beach and being inside a million sardines within five minutes never stops feeling absurd.", "attribution": "Repeat visitor" }
+      {
+        "text": "Walking into the ocean from the beach and being inside a million sardines within five minutes never stops feeling absurd.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Cebu (CEB), then 3h drive to Moalboal." },
-      { "title": "Marine sanctuary fee", "body": "~PHP 100/day at Pescador, collected by your op." }
+      {
+        "title": "Getting there",
+        "body": "Fly Cebu (CEB), then 3h drive to Moalboal."
+      },
+      {
+        "title": "Marine sanctuary fee",
+        "body": "~PHP 100/day at Pescador, collected by your op."
+      }
     ]
   },
   {
@@ -645,11 +715,20 @@
     "diveStyle": "Boat diving to pinnacles 15–30 min away; mild current.",
     "diveLevel": "Beginner-friendly; this is where most Asian divers learn.",
     "quotes": [
-      { "text": "I came for ten days for my Open Water and stayed three months. That's the Koh Tao story.", "attribution": "Divemaster trainee" }
+      {
+        "text": "I came for ten days for my Open Water and stayed three months. That's the Koh Tao story.",
+        "attribution": "Divemaster trainee"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Bangkok → Chumphon or Surat Thani, then ferry (2–3h). Or fly Koh Samui (USM) + ferry." },
-      { "title": "Crowds", "body": "Major sites get busy. Ask your shop about smaller boats and off-hours trips." }
+      {
+        "title": "Getting there",
+        "body": "Fly Bangkok → Chumphon or Surat Thani, then ferry (2–3h). Or fly Koh Samui (USM) + ferry."
+      },
+      {
+        "title": "Crowds",
+        "body": "Major sites get busy. Ask your shop about smaller boats and off-hours trips."
+      }
     ]
   },
   {
@@ -660,11 +739,24 @@
     "diveStyle": "Multiple loops around the pinnacle; moderate current possible.",
     "diveLevel": "Advanced Open Water recommended for the current and depth.",
     "quotes": [
-      { "text": "Richelieu in March with a whale shark sliding around the rock — I've chased that dive every year since.", "attribution": "Repeat liveaboard guest" }
+      {
+        "text": "Richelieu in March with a whale shark sliding around the rock — I've chased that dive every year since.",
+        "attribution": "Repeat liveaboard guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Park closure", "body": "Closed mid-May to mid-October. Confirm yearly." },
-      { "title": "Liveaboard preferred", "body": "Day-trips are 4h each way; liveaboards do it before/after the crowds." }
+      {
+        "title": "Getting there",
+        "body": "Fly to Phuket (HKT) or Krabi (KBV). Day-trips depart from Khao Lak (3h north of Phuket) — the site is a 4h boat ride from Khao Lak. Liveaboards from Phuket or Khao Lak cover it as part of a Similan Islands route."
+      },
+      {
+        "title": "Park closure",
+        "body": "Closed mid-May to mid-October. Confirm yearly."
+      },
+      {
+        "title": "Liveaboard preferred",
+        "body": "Day-trips are 4h each way; liveaboards do it before/after the crowds."
+      }
     ]
   },
   {
@@ -675,11 +767,20 @@
     "diveStyle": "Slow guided macro hunts in shallow muck; very little current.",
     "diveLevel": "Open Water; buoyancy matters for the photographer-led pace.",
     "quotes": [
-      { "text": "Sipadan is why people come. Mabul is why they stay an extra week.", "attribution": "Resort owner" }
+      {
+        "text": "Sipadan is why people come. Mabul is why they stay an extra week.",
+        "attribution": "Resort owner"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly KL → Tawau, then transfer to Semporna and boat to Mabul." },
-      { "title": "Safety advisory", "body": "Check current government travel advisories for east Sabah." }
+      {
+        "title": "Getting there",
+        "body": "Fly KL → Tawau, then transfer to Semporna and boat to Mabul."
+      },
+      {
+        "title": "Safety advisory",
+        "body": "Check current government travel advisories for east Sabah."
+      }
     ]
   },
   {
@@ -690,11 +791,20 @@
     "diveStyle": "Wall and blue-water diving with negative entries for hammerheads.",
     "diveLevel": "Advanced + comfort in deep blue water.",
     "quotes": [
-      { "text": "Hammerheads at Layang aren't a maybe — they're a routine 30m descent.", "attribution": "Resort divemaster" }
+      {
+        "text": "Hammerheads at Layang aren't a maybe — they're a routine 30m descent.",
+        "attribution": "Resort divemaster"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Charter flight from Kota Kinabalu (BKI), operated only on resort schedule." },
-      { "title": "Book ahead", "body": "Single small resort, short season — book 6–12 months out." }
+      {
+        "title": "Getting there",
+        "body": "Charter flight from Kota Kinabalu (BKI), operated only on resort schedule."
+      },
+      {
+        "title": "Book ahead",
+        "body": "Single small resort, short season — book 6–12 months out."
+      }
     ]
   },
   {
@@ -705,11 +815,24 @@
     "diveStyle": "Wall and pinnacle drifts; some current.",
     "diveLevel": "Advanced + 50 dives recommended.",
     "quotes": [
-      { "text": "We didn't see another dive boat for six days. That alone is becoming impossible elsewhere.", "attribution": "Trip report" }
+      {
+        "text": "We didn't see another dive boat for six days. That alone is becoming impossible elsewhere.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Visa", "body": "Most trips check you out of Thailand and into Myanmar at sea — your operator handles paperwork." },
-      { "title": "Political situation", "body": "Check current advisories before booking. Conditions on the ground have been unstable." }
+      {
+        "title": "Getting there",
+        "body": "Fly to Bangkok (BKK/DMK) or Phuket (HKT), then transfer to Ranong or Kawthaung by road or domestic flight. Liveaboard operators handle the border crossing into Myanmar waters from there."
+      },
+      {
+        "title": "Visa",
+        "body": "Most trips check you out of Thailand and into Myanmar at sea — your operator handles paperwork."
+      },
+      {
+        "title": "Political situation",
+        "body": "Check current advisories before booking. Conditions on the ground have been unstable."
+      }
     ]
   },
   {
@@ -720,11 +843,20 @@
     "diveStyle": "Shallow boat diving with mild current.",
     "diveLevel": "Beginner-friendly; popular for certification courses.",
     "quotes": [
-      { "text": "Not the most spectacular reef in Southeast Asia but the cheapest and most chill cert I've seen.", "attribution": "OW student" }
+      {
+        "text": "Not the most spectacular reef in Southeast Asia but the cheapest and most chill cert I've seen.",
+        "attribution": "OW student"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Sihanoukville (KOS) or bus from Phnom Penh, then 45-min ferry from Sihanoukville pier." },
-      { "title": "Bioluminescence", "body": "Many shops run free bio-luminescent plankton swims at night — worth doing." }
+      {
+        "title": "Getting there",
+        "body": "Fly Sihanoukville (KOS) or bus from Phnom Penh, then 45-min ferry from Sihanoukville pier."
+      },
+      {
+        "title": "Bioluminescence",
+        "body": "Many shops run free bio-luminescent plankton swims at night — worth doing."
+      }
     ]
   },
   {
@@ -735,11 +867,20 @@
     "diveStyle": "Boat day-trips; mild current; mostly shallow.",
     "diveLevel": "Open Water; popular for certifications.",
     "quotes": [
-      { "text": "Don't come to Nha Trang for the diving — come for everything else and dive while you're here.", "attribution": "Honest dive shop owner" }
+      {
+        "text": "Don't come to Nha Trang for the diving — come for everything else and dive while you're here.",
+        "attribution": "Honest dive shop owner"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Cam Ranh (CXR) direct from Hanoi or Saigon." },
-      { "title": "Manage expectations", "body": "Reefs are recovering; not in the same league as Indonesia or the Philippines." }
+      {
+        "title": "Getting there",
+        "body": "Fly Cam Ranh (CXR) direct from Hanoi or Saigon."
+      },
+      {
+        "title": "Manage expectations",
+        "body": "Reefs are recovering; not in the same league as Indonesia or the Philippines."
+      }
     ]
   },
   {
@@ -750,11 +891,20 @@
     "diveStyle": "Wall and shore diving on volcanic topography; moderate current.",
     "diveLevel": "Advanced for the hammerhead sites; Open Water for the easier walls.",
     "quotes": [
-      { "text": "Diving a volcanic seafloor with hammerheads cruising at 30m and then soaking in a seaside hot spring after — only in Taiwan.", "attribution": "Returning visitor" }
+      {
+        "text": "Diving a volcanic seafloor with hammerheads cruising at 30m and then soaking in a seaside hot spring after — only in Taiwan.",
+        "attribution": "Returning visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly or train to Taitung, then ferry (1h) or short flight to Green Island." },
-      { "title": "Typhoons", "body": "July–September has typhoon risk; build flexibility into return travel." }
+      {
+        "title": "Getting there",
+        "body": "Fly or train to Taitung, then ferry (1h) or short flight to Green Island."
+      },
+      {
+        "title": "Typhoons",
+        "body": "July–September has typhoon risk; build flexibility into return travel."
+      }
     ]
   },
   {
@@ -765,11 +915,20 @@
     "diveStyle": "Drift diving in current; some deep blue-water hammerhead descents.",
     "diveLevel": "Advanced + cold-water and current experience.",
     "quotes": [
-      { "text": "Whether the monument is natural or built, swimming over those right-angle terraces with hammerheads above is unforgettable.", "attribution": "Tech diver, monument enthusiast" }
+      {
+        "text": "Whether the monument is natural or built, swimming over those right-angle terraces with hammerheads above is unforgettable.",
+        "attribution": "Tech diver, monument enthusiast"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Naha (OKA) → Yonaguni (OGN) via Ryukyu Air Commuter." },
-      { "title": "Water temp", "body": "16–22°C in winter — 7mm or drysuit recommended." }
+      {
+        "title": "Getting there",
+        "body": "Fly Naha (OKA) → Yonaguni (OGN) via Ryukyu Air Commuter."
+      },
+      {
+        "title": "Water temp",
+        "body": "16–22°C in winter — 7mm or drysuit recommended."
+      }
     ]
   },
   {
@@ -780,11 +939,20 @@
     "diveStyle": "Wall and pelagic diving; some current.",
     "diveLevel": "Advanced + 50 dives.",
     "quotes": [
-      { "text": "The 24-hour boat ride is part of the trip. By the time you arrive, you've earned the diving.", "attribution": "Ogasawara regular" }
+      {
+        "text": "The 24-hour boat ride is part of the trip. By the time you arrive, you've earned the diving.",
+        "attribution": "Ogasawara regular"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Ogasawara Maru ferry from Takeshiba pier (Tokyo) → Chichijima. ~24h, weekly departures." },
-      { "title": "Permits", "body": "World Heritage site rules limit dive impact. Book through licensed local ops only." }
+      {
+        "title": "Getting there",
+        "body": "Ogasawara Maru ferry from Takeshiba pier (Tokyo) → Chichijima. ~24h, weekly departures."
+      },
+      {
+        "title": "Permits",
+        "body": "World Heritage site rules limit dive impact. Book through licensed local ops only."
+      }
     ]
   },
   {
@@ -795,11 +963,20 @@
     "diveStyle": "Shore and boat diving on volcanic topography; mild current.",
     "diveLevel": "Open Water; Advanced helps for lava-tube sites.",
     "quotes": [
-      { "text": "Diving Jeju and watching the haenyeo work the same coastline by lung power was a humbling combination.", "attribution": "Trip report" }
+      {
+        "text": "Diving Jeju and watching the haenyeo work the same coastline by lung power was a humbling combination.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Seoul → Jeju (CJU) — one of the busiest air routes in the world." },
-      { "title": "Water temp", "body": "5mm year-round; 7mm in winter." }
+      {
+        "title": "Getting there",
+        "body": "Fly Seoul → Jeju (CJU) — one of the busiest air routes in the world."
+      },
+      {
+        "title": "Water temp",
+        "body": "5mm year-round; 7mm in winter."
+      }
     ]
   },
   {
@@ -810,11 +987,20 @@
     "diveStyle": "Shallow boat diving; very mild current.",
     "diveLevel": "Beginner; primarily a cert market.",
     "quotes": [
-      { "text": "If you're already in Hainan, dive. If you're picking a destination, fly somewhere else.", "attribution": "Expat diver" }
+      {
+        "text": "If you're already in Hainan, dive. If you're picking a destination, fly somewhere else.",
+        "attribution": "Expat diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Sanya (SYX) direct from most Chinese cities." },
-      { "title": "Bring your cards", "body": "PADI/SSI cards expected; instruction is mostly in Mandarin." }
+      {
+        "title": "Getting there",
+        "body": "Fly Sanya (SYX) direct from most Chinese cities."
+      },
+      {
+        "title": "Bring your cards",
+        "body": "PADI/SSI cards expected; instruction is mostly in Mandarin."
+      }
     ]
   },
   {
@@ -825,11 +1011,20 @@
     "diveStyle": "Boat diving to walls and pinnacles; mild-to-moderate current.",
     "diveLevel": "Open Water; Advanced for the deeper pinnacles.",
     "quotes": [
-      { "text": "India's diving secret. Healthy reefs, almost no other divers, and the food is fantastic.", "attribution": "Repeat visitor" }
+      {
+        "text": "India's diving secret. Healthy reefs, almost no other divers, and the food is fantastic.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Chennai or Kolkata → Port Blair (IXZ), then 2h ferry to Havelock." },
-      { "title": "Permit", "body": "Foreign nationals need a Restricted Area Permit, issued on arrival." }
+      {
+        "title": "Getting there",
+        "body": "Fly Chennai or Kolkata → Port Blair (IXZ), then 2h ferry to Havelock."
+      },
+      {
+        "title": "Permit",
+        "body": "Foreign nationals need a Restricted Area Permit, issued on arrival."
+      }
     ]
   },
   {
@@ -840,11 +1035,20 @@
     "diveStyle": "Wall and lagoon diving; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Maldivian water clarity at a fraction of the cost, and you almost certainly won't see another foreigner.", "attribution": "Trip report" }
+      {
+        "text": "Maldivian water clarity at a fraction of the cost, and you almost certainly won't see another foreigner.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Permit", "body": "Foreign nationals need a special permit; the resort handles it." },
-      { "title": "Getting there", "body": "Fly Kochi (COK) → Agatti (AGX), then boat to Bangaram." }
+      {
+        "title": "Permit",
+        "body": "Foreign nationals need a special permit; the resort handles it."
+      },
+      {
+        "title": "Getting there",
+        "body": "Fly Kochi (COK) → Agatti (AGX), then boat to Bangaram."
+      }
     ]
   },
   {
@@ -855,11 +1059,20 @@
     "diveStyle": "Shore and short-boat diving; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Easy diving with a beach town vibe. Combine with whales out of Mirissa and you've got a great week.", "attribution": "Guest review" }
+      {
+        "text": "Easy diving with a beach town vibe. Combine with whales out of Mirissa and you've got a great week.",
+        "attribution": "Guest review"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Colombo (CMB), 2h drive south." },
-      { "title": "Whales nearby", "body": "Mirissa (1h south) runs blue-whale tours December–April." }
+      {
+        "title": "Getting there",
+        "body": "Fly Colombo (CMB), 2h drive south."
+      },
+      {
+        "title": "Whales nearby",
+        "body": "Mirissa (1h south) runs blue-whale tours December–April."
+      }
     ]
   },
   {
@@ -870,11 +1083,20 @@
     "diveStyle": "Shore and boat diving on reefs and wrecks; mild current.",
     "diveLevel": "Open Water; Advanced for the wrecks at 30m+.",
     "quotes": [
-      { "text": "Reef sharks in Pigeon Island's lagoon, a 25m wreck in the afternoon, and dinner overlooking a temple — Sri Lanka does that.", "attribution": "Trip report" }
+      {
+        "text": "Reef sharks in Pigeon Island's lagoon, a 25m wreck in the afternoon, and dinner overlooking a temple — Sri Lanka does that.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Colombo, 5–6h drive or domestic flight to China Bay (TRR)." },
-      { "title": "Park fee", "body": "Pigeon Island has a modest national park entry fee." }
+      {
+        "title": "Getting there",
+        "body": "Fly Colombo, 5–6h drive or domestic flight to China Bay (TRR)."
+      },
+      {
+        "title": "Park fee",
+        "body": "Pigeon Island has a modest national park entry fee."
+      }
     ]
   },
   {
@@ -885,11 +1107,20 @@
     "diveStyle": "Shore diving; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "An underwater Apache helicopter in 28m of blue water — Jordan does dive sites differently.", "attribution": "Guest review" }
+      {
+        "text": "An underwater Apache helicopter in 28m of blue water — Jordan does dive sites differently.",
+        "attribution": "Guest review"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Aqaba (AQJ) direct or Amman + 4h drive south." },
-      { "title": "Combine with Petra", "body": "2h drive to Petra. Plan at least 2 non-dive days." }
+      {
+        "title": "Getting there",
+        "body": "Fly Aqaba (AQJ) direct or Amman + 4h drive south."
+      },
+      {
+        "title": "Combine with Petra",
+        "body": "2h drive to Petra. Plan at least 2 non-dive days."
+      }
     ]
   },
   {
@@ -900,11 +1131,20 @@
     "diveStyle": "Boat day-trips to the islands; mild current.",
     "diveLevel": "Open Water; Advanced for some deeper sites.",
     "quotes": [
-      { "text": "An hour from a five-star Muscat hotel to a school of whale sharks. Unfairly easy.", "attribution": "Trip report" }
+      {
+        "text": "An hour from a five-star Muscat hotel to a school of whale sharks. Unfairly easy.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Muscat (MCT) direct; dive ops on the Seeb coast 30 min from the airport." },
-      { "title": "Park rules", "body": "No anchoring on reef; permits managed by ops." }
+      {
+        "title": "Getting there",
+        "body": "Fly Muscat (MCT) direct; dive ops on the Seeb coast 30 min from the airport."
+      },
+      {
+        "title": "Park rules",
+        "body": "No anchoring on reef; permits managed by ops."
+      }
     ]
   },
   {
@@ -915,11 +1155,20 @@
     "diveStyle": "Boat and shore diving on shallow reefs and wrecks.",
     "diveLevel": "Open Water; Advanced for the Inchcape 2 at 30m.",
     "quotes": [
-      { "text": "Better than any expat would expect. Whale shark season is the bonus.", "attribution": "Dubai-based diver" }
+      {
+        "text": "Better than any expat would expect. Whale shark season is the bonus.",
+        "attribution": "Dubai-based diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "1.5h drive from Dubai; many ops include transfer." },
-      { "title": "Avoid summer", "body": "June–August can hit 35°C surface water and 3m viz." }
+      {
+        "title": "Getting there",
+        "body": "1.5h drive from Dubai; many ops include transfer."
+      },
+      {
+        "title": "Avoid summer",
+        "body": "June–August can hit 35°C surface water and 3m viz."
+      }
     ]
   },
   {
@@ -930,11 +1179,24 @@
     "diveStyle": "Wall and reef diving with moderate current.",
     "diveLevel": "Advanced recommended.",
     "quotes": [
-      { "text": "The reefs look like Egypt 40 years ago. The Kingdom has been protected by inaccessibility.", "attribution": "Photographer, early Saudi trip" }
+      {
+        "text": "The reefs look like Egypt 40 years ago. The Kingdom has been protected by inaccessibility.",
+        "attribution": "Photographer, early Saudi trip"
+      }
     ],
     "goodToKnow": [
-      { "title": "Visa", "body": "Saudi e-visa available to most nationalities since 2019." },
-      { "title": "Dress code", "body": "Cover-up rules on the surface; standard exposure suits underwater." }
+      {
+        "title": "Getting there",
+        "body": "Fly into King Abdulaziz International (JED) — Saudi e-visa available for most nationalities online. Dive centres operate from the Corniche and King Abdullah Economic City areas north of Jeddah."
+      },
+      {
+        "title": "Visa",
+        "body": "Saudi e-visa available to most nationalities since 2019."
+      },
+      {
+        "title": "Dress code",
+        "body": "Cover-up rules on the surface; standard exposure suits underwater."
+      }
     ]
   },
   {
@@ -945,11 +1207,24 @@
     "diveStyle": "Wall and pinnacle drift; strong current. Negative entries.",
     "diveLevel": "Advanced + 50 dives.",
     "quotes": [
-      { "text": "Cousteau's habitat is still there at 10m. The diving above it has barely changed in 60 years.", "attribution": "Liveaboard guest" }
+      {
+        "text": "Cousteau's habitat is still there at 10m. The diving above it has barely changed in 60 years.",
+        "attribution": "Liveaboard guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Visa", "body": "Sudan visa required; situation has been politically volatile — check current advisories." },
-      { "title": "Logistics", "body": "Most trips run through Egyptian operators; flight to Port Sudan." }
+      {
+        "title": "Getting there",
+        "body": "Most trips fly into Cairo (CAI) or fly directly to Port Sudan (PZU). Liveaboards depart Port Sudan. Check current safety advisories; some routes transit via Hurghada, Egypt, for the northern Red Sea crossing."
+      },
+      {
+        "title": "Visa",
+        "body": "Sudan visa required; situation has been politically volatile — check current advisories."
+      },
+      {
+        "title": "Logistics",
+        "body": "Most trips run through Egyptian operators; flight to Port Sudan."
+      }
     ]
   },
   {
@@ -960,11 +1235,24 @@
     "diveStyle": "Exploratory; unmapped sites, wall and pinnacle.",
     "diveLevel": "Advanced + 100 dives; expedition mentality required.",
     "quotes": [
-      { "text": "We were probably the first divers on at least three of the sites we hit. That's almost impossible to find now.", "attribution": "Expedition leader" }
+      {
+        "text": "We were probably the first divers on at least three of the sites we hit. That's almost impossible to find now.",
+        "attribution": "Expedition leader"
+      }
     ],
     "goodToKnow": [
-      { "title": "Visa", "body": "Eritrean visa required and slow to obtain." },
-      { "title": "Limited departures", "body": "Only a handful of trips per year operate. Book through specialty operators." }
+      {
+        "title": "Getting there",
+        "body": "Fly to Asmara (ASM) via Addis Ababa or Cairo, then transfer to Massawa port (about 100 km). Expedition liveaboards depart from Massawa; most operators arrange the Massawa transfer as part of the trip."
+      },
+      {
+        "title": "Visa",
+        "body": "Eritrean visa required and slow to obtain."
+      },
+      {
+        "title": "Limited departures",
+        "body": "Only a handful of trips per year operate. Book through specialty operators."
+      }
     ]
   },
   {
@@ -975,11 +1263,20 @@
     "diveStyle": "Snorkel-first; some easy reef dives.",
     "diveLevel": "All levels for snorkel; Open Water for scuba.",
     "quotes": [
-      { "text": "Twelve whale sharks under a single skiff. The numbers Djibouti puts up in November are unbeatable.", "attribution": "Whale shark research expedition" }
+      {
+        "text": "Twelve whale sharks under a single skiff. The numbers Djibouti puts up in November are unbeatable.",
+        "attribution": "Whale shark research expedition"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Djibouti (JIB) via Addis Ababa or Dubai." },
-      { "title": "Whale shark code", "body": "Strict no-touch, no-flash rules. Operators enforce." }
+      {
+        "title": "Getting there",
+        "body": "Fly Djibouti (JIB) via Addis Ababa or Dubai."
+      },
+      {
+        "title": "Whale shark code",
+        "body": "Strict no-touch, no-flash rules. Operators enforce."
+      }
     ]
   },
   {
@@ -990,11 +1287,20 @@
     "diveStyle": "Boat diving on the atoll reef; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Dive in the morning, walk Stone Town in the afternoon, that's the trip.", "attribution": "Repeat visitor" }
+      {
+        "text": "Dive in the morning, walk Stone Town in the afternoon, that's the trip.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Zanzibar (ZNZ) via Dar es Salaam or direct from Europe." },
-      { "title": "Marine conservation fee", "body": "Modest fee collected at the atoll." }
+      {
+        "title": "Getting there",
+        "body": "Fly Zanzibar (ZNZ) via Dar es Salaam or direct from Europe."
+      },
+      {
+        "title": "Marine conservation fee",
+        "body": "Modest fee collected at the atoll."
+      }
     ]
   },
   {
@@ -1005,11 +1311,20 @@
     "diveStyle": "Short-boat diving on park reefs; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Kenya's diving is underrated and the safari add-on makes it unbeatable as a combination trip.", "attribution": "Combination-trip diver" }
+      {
+        "text": "Kenya's diving is underrated and the safari add-on makes it unbeatable as a combination trip.",
+        "attribution": "Combination-trip diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Mombasa (MBA) or Malindi (MYD); 1–2h drive." },
-      { "title": "Safari combo", "body": "Tsavo East is 3h inland — easy to bolt on." }
+      {
+        "title": "Getting there",
+        "body": "Fly Mombasa (MBA) or Malindi (MYD); 1–2h drive."
+      },
+      {
+        "title": "Safari combo",
+        "body": "Tsavo East is 3h inland — easy to bolt on."
+      }
     ]
   },
   {
@@ -1020,11 +1335,20 @@
     "diveStyle": "Long boat rides through surf to deep reefs (Manta Reef, Manta Reef 2); moderate current.",
     "diveLevel": "Advanced recommended for the deeper manta sites (24–30m).",
     "quotes": [
-      { "text": "Two mantas circling above me and a whale shark passing on the surface, all on the same dive. Tofo does that.", "attribution": "Trip report" }
+      {
+        "text": "Two mantas circling above me and a whale shark passing on the surface, all on the same dive. Tofo does that.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Inhambane (INH) via Johannesburg, then 30 min to Tofo." },
-      { "title": "Surf launches", "body": "Boats launch through surf. Hold on." }
+      {
+        "title": "Getting there",
+        "body": "Fly Inhambane (INH) via Johannesburg, then 30 min to Tofo."
+      },
+      {
+        "title": "Surf launches",
+        "body": "Boats launch through surf. Hold on."
+      }
     ]
   },
   {
@@ -1035,11 +1359,20 @@
     "diveStyle": "Boat diving in often-rough seas with surf launches; baited shark dives; moderate current.",
     "diveLevel": "Advanced + comfort in current and around sharks.",
     "quotes": [
-      { "text": "A wall of sand tigers slowly circling at 25m. Patient, calm sharks — nothing like their teeth suggest.", "attribution": "Repeat diver" }
+      {
+        "text": "A wall of sand tigers slowly circling at 25m. Patient, calm sharks — nothing like their teeth suggest.",
+        "attribution": "Repeat diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Durban (DUR), 1h drive south." },
-      { "title": "Surf launches", "body": "Inflatables launch through breaking waves; expect a wet ride." }
+      {
+        "title": "Getting there",
+        "body": "Fly Durban (DUR), 1h drive south."
+      },
+      {
+        "title": "Surf launches",
+        "body": "Inflatables launch through breaking waves; expect a wet ride."
+      }
     ]
   },
   {
@@ -1050,11 +1383,20 @@
     "diveStyle": "Surf-launch boat diving to named reefs; moderate current.",
     "diveLevel": "Open Water for nearer reefs; Advanced for 7- and 9-Mile.",
     "quotes": [
-      { "text": "Surf launches at dawn, four dives a day, kudu walking past camp at night — Sodwana is its own ecosystem.", "attribution": "Camping diver" }
+      {
+        "text": "Surf launches at dawn, four dives a day, kudu walking past camp at night — Sodwana is its own ecosystem.",
+        "attribution": "Camping diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Durban or Richards Bay, then 4h drive." },
-      { "title": "Park fees", "body": "iSimangaliso daily conservation fee." }
+      {
+        "title": "Getting there",
+        "body": "Fly Durban or Richards Bay, then 4h drive."
+      },
+      {
+        "title": "Park fees",
+        "body": "iSimangaliso daily conservation fee."
+      }
     ]
   },
   {
@@ -1065,11 +1407,20 @@
     "diveStyle": "Boat diving to nearby islands and pinnacles; mild-to-moderate current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Whale sharks every day for a week, plus humpbacks on the boat ride. Madagascar punches above its weight.", "attribution": "Trip report" }
+      {
+        "text": "Whale sharks every day for a week, plus humpbacks on the boat ride. Madagascar punches above its weight.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Nosy Be (NOS) via Antananarivo or direct from European hubs." },
-      { "title": "Cyclones", "body": "January–March cyclone risk; many ops close." }
+      {
+        "title": "Getting there",
+        "body": "Fly Nosy Be (NOS) via Antananarivo or direct from European hubs."
+      },
+      {
+        "title": "Cyclones",
+        "body": "January–March cyclone risk; many ops close."
+      }
     ]
   },
   {
@@ -1080,11 +1431,20 @@
     "diveStyle": "Boat diving on granite reefs; moderate current.",
     "diveLevel": "Open Water; Advanced for outer sites.",
     "quotes": [
-      { "text": "Diving among house-sized granite boulders is geologically unlike anything else in the Indian Ocean.", "attribution": "Repeat visitor" }
+      {
+        "text": "Diving among house-sized granite boulders is geologically unlike anything else in the Indian Ocean.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Mahé (SEZ) direct from Europe, Dubai, or Nairobi." },
-      { "title": "Park fees", "body": "Marine park fees included by ops on most sites." }
+      {
+        "title": "Getting there",
+        "body": "Fly Mahé (SEZ) direct from Europe, Dubai, or Nairobi."
+      },
+      {
+        "title": "Park fees",
+        "body": "Marine park fees included by ops on most sites."
+      }
     ]
   },
   {
@@ -1095,10 +1455,16 @@
     "diveStyle": "Boat diving on granite formations; mild-to-moderate current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Praslin is the more relaxed Seychelles — fewer tourists, same boulders.", "attribution": "Guest" }
+      {
+        "text": "Praslin is the more relaxed Seychelles — fewer tourists, same boulders.",
+        "attribution": "Guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Inter-island flight or ferry from Mahé (1h)." }
+      {
+        "title": "Getting there",
+        "body": "Inter-island flight or ferry from Mahé (1h)."
+      }
     ]
   },
   {
@@ -1109,11 +1475,20 @@
     "diveStyle": "Boat diving on volcanic walls; some current.",
     "diveLevel": "Advanced recommended.",
     "quotes": [
-      { "text": "The Comoros is the unknown corner of the Indian Ocean. Going for the rarity, not the comfort.", "attribution": "Adventure diver" }
+      {
+        "text": "The Comoros is the unknown corner of the Indian Ocean. Going for the rarity, not the comfort.",
+        "attribution": "Adventure diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Moroni (HAH) via Addis or Dar es Salaam." },
-      { "title": "Limited infrastructure", "body": "One or two dive ops; book ahead." }
+      {
+        "title": "Getting there",
+        "body": "Fly Moroni (HAH) via Addis or Dar es Salaam."
+      },
+      {
+        "title": "Limited infrastructure",
+        "body": "One or two dive ops; book ahead."
+      }
     ]
   },
   {
@@ -1124,11 +1499,20 @@
     "diveStyle": "Boat diving on volcanic topography; moderate current.",
     "diveLevel": "Open Water; Advanced for the deeper sites.",
     "quotes": [
-      { "text": "Lemon sharks in a sand bowl, dozens at a time. An off-the-beaten-track shark experience.", "attribution": "Trip report" }
+      {
+        "text": "Lemon sharks in a sand bowl, dozens at a time. An off-the-beaten-track shark experience.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Sal (SID) direct from Europe (TAP, TUI, etc.)." },
-      { "title": "Atlantic surge", "body": "Long-period swell on the east coast; choose sites accordingly." }
+      {
+        "title": "Getting there",
+        "body": "Fly Sal (SID) direct from Europe (TAP, TUI, etc.)."
+      },
+      {
+        "title": "Atlantic surge",
+        "body": "Long-period swell on the east coast; choose sites accordingly."
+      }
     ]
   },
   {
@@ -1139,11 +1523,20 @@
     "diveStyle": "Boat diving on volcanic reefs; moderate current.",
     "diveLevel": "Advanced recommended for some sites.",
     "quotes": [
-      { "text": "Equatorial Atlantic diving with humpbacks in the background. There's nowhere else quite like São Tomé.", "attribution": "Returning visitor" }
+      {
+        "text": "Equatorial Atlantic diving with humpbacks in the background. There's nowhere else quite like São Tomé.",
+        "attribution": "Returning visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly STP via Lisbon (TAP) or Accra/Libreville." },
-      { "title": "Combine with Príncipe", "body": "Smaller, even quieter sister island for biodiversity and turtles." }
+      {
+        "title": "Getting there",
+        "body": "Fly STP via Lisbon (TAP) or Accra/Libreville."
+      },
+      {
+        "title": "Combine with Príncipe",
+        "body": "Smaller, even quieter sister island for biodiversity and turtles."
+      }
     ]
   },
   {
@@ -1154,12 +1547,24 @@
     "diveStyle": "Guided cavern diving along permanent guidelines; no current; depths 5–18m for cavern routes.",
     "diveLevel": "Open Water for cavern lines; Cave certification for further penetration.",
     "quotes": [
-      { "text": "Sunbeams through the entrance of Dos Ojos like cathedral glass underwater. I'll keep coming back forever.", "attribution": "Photographer" }
+      {
+        "text": "Sunbeams through the entrance of Dos Ojos like cathedral glass underwater. I'll keep coming back forever.",
+        "attribution": "Photographer"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Cancún (CUN), drive south to Playa or Tulum." },
-      { "title": "Mask seal", "body": "Bring a backup. Fresh water + no current means tiny leaks are noticed." },
-      { "title": "Stay on the line", "body": "Even in cavern zones, treat the guideline as sacred. Pull yourself along it." }
+      {
+        "title": "Getting there",
+        "body": "Fly Cancún (CUN), drive south to Playa or Tulum."
+      },
+      {
+        "title": "Mask seal",
+        "body": "Bring a backup. Fresh water + no current means tiny leaks are noticed."
+      },
+      {
+        "title": "Stay on the line",
+        "body": "Even in cavern zones, treat the guideline as sacred. Pull yourself along it."
+      }
     ]
   },
   {
@@ -1170,11 +1575,20 @@
     "diveStyle": "Wall and drift diving; moderate current at the Elbow.",
     "diveLevel": "Open Water; Advanced for the Elbow.",
     "quotes": [
-      { "text": "Belize's Blue Hole gets the headlines, but Turneffe is the diving worth flying for.", "attribution": "Repeat visitor" }
+      {
+        "text": "Belize's Blue Hole gets the headlines, but Turneffe is the diving worth flying for.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Belize City (BZE), then boat to Turneffe (1.5–2h)." },
-      { "title": "Combine with Blue Hole", "body": "Most Turneffe trips include the Blue Hole as a day excursion." }
+      {
+        "title": "Getting there",
+        "body": "Belize City (BZE), then boat to Turneffe (1.5–2h)."
+      },
+      {
+        "title": "Combine with Blue Hole",
+        "body": "Most Turneffe trips include the Blue Hole as a day excursion."
+      }
     ]
   },
   {
@@ -1185,11 +1599,20 @@
     "diveStyle": "Boat diving on shallow reefs; mild current.",
     "diveLevel": "Beginner-friendly.",
     "quotes": [
-      { "text": "Got my Open Water for $300, swam with two whale sharks the next week. Utila is unfair value.", "attribution": "OW grad" }
+      {
+        "text": "Got my Open Water for $300, swam with two whale sharks the next week. Utila is unfair value.",
+        "attribution": "OW grad"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Roatán (RTB) + ferry, or fly direct La Ceiba + small plane/ferry." },
-      { "title": "Whale shark protocol", "body": "No touching, no chasing. Ops will brief you." }
+      {
+        "title": "Getting there",
+        "body": "Fly Roatán (RTB) + ferry, or fly direct La Ceiba + small plane/ferry."
+      },
+      {
+        "title": "Whale shark protocol",
+        "body": "No touching, no chasing. Ops will brief you."
+      }
     ]
   },
   {
@@ -1200,11 +1623,20 @@
     "diveStyle": "Wall and reef diving from short boat rides; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "The east-end ops feel like Utila with better water and bigger walls.", "attribution": "Guest review" }
+      {
+        "text": "The east-end ops feel like Utila with better water and bigger walls.",
+        "attribution": "Guest review"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly RTB direct from many US hubs." },
-      { "title": "Pick your side", "body": "West end is busy/cruise-heavy; east end is quieter." }
+      {
+        "title": "Getting there",
+        "body": "Fly RTB direct from many US hubs."
+      },
+      {
+        "title": "Pick your side",
+        "body": "West end is busy/cruise-heavy; east end is quieter."
+      }
     ]
   },
   {
@@ -1215,11 +1647,20 @@
     "diveStyle": "Pinnacle and reef diving with moderate-to-strong current; some surge.",
     "diveLevel": "Advanced recommended.",
     "quotes": [
-      { "text": "Pacific Costa Rica isn't the prettiest water, but the manta odds in August are absurd.", "attribution": "Local divemaster" }
+      {
+        "text": "Pacific Costa Rica isn't the prettiest water, but the manta odds in August are absurd.",
+        "attribution": "Local divemaster"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Liberia (LIR), 30 min to Playas del Coco." },
-      { "title": "Water temp swings", "body": "Thermoclines can drop 8°C. 5mm and a hooded vest are sensible." }
+      {
+        "title": "Getting there",
+        "body": "Fly Liberia (LIR), 30 min to Playas del Coco."
+      },
+      {
+        "title": "Water temp swings",
+        "body": "Thermoclines can drop 8°C. 5mm and a hooded vest are sensible."
+      }
     ]
   },
   {
@@ -1230,11 +1671,20 @@
     "diveStyle": "Pinnacle and seamount diving with moderate-to-strong current.",
     "diveLevel": "Advanced + 50 dives.",
     "quotes": [
-      { "text": "Coiba is what Cocos was before Cocos got famous. Still empty in the water.", "attribution": "Trip report" }
+      {
+        "text": "Coiba is what Cocos was before Cocos got famous. Still empty in the water.",
+        "attribution": "Trip report"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Panama City (PTY), 6h drive or domestic flight to Santa Catalina area." },
-      { "title": "Park fees", "body": "Daily park entry fee, usually included by ops." }
+      {
+        "title": "Getting there",
+        "body": "Fly Panama City (PTY), 6h drive or domestic flight to Santa Catalina area."
+      },
+      {
+        "title": "Park fees",
+        "body": "Daily park entry fee, usually included by ops."
+      }
     ]
   },
   {
@@ -1245,11 +1695,20 @@
     "diveStyle": "Shallow boat diving; mild current.",
     "diveLevel": "Beginner-friendly.",
     "quotes": [
-      { "text": "Not the best diving in Panama, but a wonderful place to learn and chill.", "attribution": "Cert student" }
+      {
+        "text": "Not the best diving in Panama, but a wonderful place to learn and chill.",
+        "attribution": "Cert student"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Bocas del Toro (BOC) direct from Panama City." },
-      { "title": "Town vs. island", "body": "Stay on outer islands if you want quiet; Bocas Town is busy." }
+      {
+        "title": "Getting there",
+        "body": "Fly Bocas del Toro (BOC) direct from Panama City."
+      },
+      {
+        "title": "Town vs. island",
+        "body": "Stay on outer islands if you want quiet; Bocas Town is busy."
+      }
     ]
   },
   {
@@ -1260,11 +1719,24 @@
     "diveStyle": "Wall and blue-water diving with negative entries; strong current.",
     "diveLevel": "Advanced + 50–100 dives. Most ops require nitrox.",
     "quotes": [
-      { "text": "Pacific Colombia's Galápagos. Same hammerheads, half the divers, deeper culture.", "attribution": "Liveaboard guest" }
+      {
+        "text": "Pacific Colombia's Galápagos. Same hammerheads, half the divers, deeper culture.",
+        "attribution": "Liveaboard guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Crossing", "body": "36h each way from Buenaventura. Pre-medicate." },
-      { "title": "Permits", "body": "Limited vessels permitted; book 12+ months ahead." }
+      {
+        "title": "Getting there",
+        "body": "Fly to Cali (CLO) or Bogotá (BOG), then connect to Buenaventura by road (2–3h) or short domestic flight. Liveaboards depart Buenaventura; the crossing to Malpelo is 36h each way."
+      },
+      {
+        "title": "Crossing",
+        "body": "36h each way from Buenaventura. Pre-medicate."
+      },
+      {
+        "title": "Permits",
+        "body": "Limited vessels permitted; book 12+ months ahead."
+      }
     ]
   },
   {
@@ -1275,11 +1747,20 @@
     "diveStyle": "Wall and reef diving with mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "It's a long way to get there and that's exactly why the diving still feels like the 1980s.", "attribution": "Repeat visitor" }
+      {
+        "text": "It's a long way to get there and that's exactly why the diving still feels like the 1980s.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Bogotá → San Andrés → Providencia (small plane)." },
-      { "title": "Limited infrastructure", "body": "Two or three dive ops on island. Book ahead." }
+      {
+        "title": "Getting there",
+        "body": "Fly Bogotá → San Andrés → Providencia (small plane)."
+      },
+      {
+        "title": "Limited infrastructure",
+        "body": "Two or three dive ops on island. Book ahead."
+      }
     ]
   },
   {
@@ -1290,11 +1771,20 @@
     "diveStyle": "Boat diving on walls and pinnacles; moderate current.",
     "diveLevel": "Open Water; Advanced for the deeper walls.",
     "quotes": [
-      { "text": "Brazil's most beautiful place to dive, by a long way. Dolphins on every boat ride.", "attribution": "Brazilian diver" }
+      {
+        "text": "Brazil's most beautiful place to dive, by a long way. Dolphins on every boat ride.",
+        "attribution": "Brazilian diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly FEN from Recife or Natal." },
-      { "title": "Daily fees", "body": "Environmental preservation fee + national marine park fee. Add up to $50–100/day." }
+      {
+        "title": "Getting there",
+        "body": "Fly FEN from Recife or Natal."
+      },
+      {
+        "title": "Daily fees",
+        "body": "Environmental preservation fee + national marine park fee. Add up to $50–100/day."
+      }
     ]
   },
   {
@@ -1305,11 +1795,20 @@
     "diveStyle": "Boat diving on rocky points; moderate current.",
     "diveLevel": "Open Water; Advanced for deeper sites.",
     "quotes": [
-      { "text": "Cold-water upwellings 2h from Rio give you fish you wouldn't expect at that latitude.", "attribution": "Local divemaster" }
+      {
+        "text": "Cold-water upwellings 2h from Rio give you fish you wouldn't expect at that latitude.",
+        "attribution": "Local divemaster"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "2.5h drive from Rio (GIG)." },
-      { "title": "Water temp swings", "body": "Can drop from 25°C to 16°C with upwelling. Bring a 5mm." }
+      {
+        "title": "Getting there",
+        "body": "2.5h drive from Rio (GIG)."
+      },
+      {
+        "title": "Water temp swings",
+        "body": "Can drop from 25°C to 16°C with upwelling. Bring a 5mm."
+      }
     ]
   },
   {
@@ -1320,11 +1819,20 @@
     "diveStyle": "Boat diving on protected reefs; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Caribbean diving frozen in time. The political cost has kept the reefs healthy.", "attribution": "Returning visitor" }
+      {
+        "text": "Caribbean diving frozen in time. The political cost has kept the reefs healthy.",
+        "attribution": "Returning visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Charter flight from Caracas; political situation can affect access — check current advisories." },
-      { "title": "Cash economy", "body": "Bring USD; cards rarely work." }
+      {
+        "title": "Getting there",
+        "body": "Charter flight from Caracas; political situation can affect access — check current advisories."
+      },
+      {
+        "title": "Cash economy",
+        "body": "Bring USD; cards rarely work."
+      }
     ]
   },
   {
@@ -1335,11 +1843,20 @@
     "diveStyle": "Shore and short-boat wall diving; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Curaçao west end is what Bonaire was 15 years ago — quieter and just as good.", "attribution": "Caribbean regular" }
+      {
+        "text": "Curaçao west end is what Bonaire was 15 years ago — quieter and just as good.",
+        "attribution": "Caribbean regular"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Curaçao (CUR), 45 min drive to Westpunt." },
-      { "title": "Rental car", "body": "Essential for shore diving the west end." }
+      {
+        "title": "Getting there",
+        "body": "Fly Curaçao (CUR), 45 min drive to Westpunt."
+      },
+      {
+        "title": "Rental car",
+        "body": "Essential for shore diving the west end."
+      }
     ]
   },
   {
@@ -1350,11 +1867,20 @@
     "diveStyle": "Baited shark dive in 5–8m on sand; no current; spend the dive kneeling on the bottom.",
     "diveLevel": "Advanced + shark-dive comfort. Most ops require previous shark dive experience.",
     "quotes": [
-      { "text": "A 4m tiger shark sliding past your shoulder at arm's length, knowing she's choosing not to bite — most intense calm I've ever felt.", "attribution": "Photographer" }
+      {
+        "text": "A 4m tiger shark sliding past your shoulder at arm's length, knowing she's choosing not to bite — most intense calm I've ever felt.",
+        "attribution": "Photographer"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Freeport (FPO), boat to West End." },
-      { "title": "Shark dive ethics", "body": "Discussed debate; understand the baiting model before booking." }
+      {
+        "title": "Getting there",
+        "body": "Fly Freeport (FPO), boat to West End."
+      },
+      {
+        "title": "Shark dive ethics",
+        "body": "Discussed debate; understand the baiting model before booking."
+      }
     ]
   },
   {
@@ -1365,11 +1891,20 @@
     "diveStyle": "Boat diving on healthy reefs and blue-hole entrances; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "The Exumas are the Bahamas postcards come to life. Diving is the bonus.", "attribution": "Repeat visitor" }
+      {
+        "text": "The Exumas are the Bahamas postcards come to life. Diving is the bonus.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Great Exuma (GGT) direct from US East Coast." },
-      { "title": "Park rules", "body": "Strict no-take in the marine park. Fines for non-compliance." }
+      {
+        "title": "Getting there",
+        "body": "Fly Great Exuma (GGT) direct from US East Coast."
+      },
+      {
+        "title": "Park rules",
+        "body": "Strict no-take in the marine park. Fines for non-compliance."
+      }
     ]
   },
   {
@@ -1380,11 +1915,20 @@
     "diveStyle": "Wall diving from short boat rides; mild current.",
     "diveLevel": "Open Water; Advanced for the deeper wall.",
     "quotes": [
-      { "text": "Drop in at 5m, look down, and try not to panic at the vertigo. Bloody Bay does that to first-timers.", "attribution": "Returning Cayman diver" }
+      {
+        "text": "Drop in at 5m, look down, and try not to panic at the vertigo. Bloody Bay does that to first-timers.",
+        "attribution": "Returning Cayman diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Grand Cayman (GCM), then small plane to Little Cayman (LYB)." },
-      { "title": "Park fee", "body": "Marine park fee included by most ops." }
+      {
+        "title": "Getting there",
+        "body": "Fly Grand Cayman (GCM), then small plane to Little Cayman (LYB)."
+      },
+      {
+        "title": "Park fee",
+        "body": "Marine park fee included by most ops."
+      }
     ]
   },
   {
@@ -1395,11 +1939,20 @@
     "diveStyle": "Shallow (3–4m), no current, sandy bottom.",
     "diveLevel": "Open Water or even snorkel-only.",
     "quotes": [
-      { "text": "Touristy and worth it. The rays are absurdly habituated and the photos are inevitable.", "attribution": "Guest review" }
+      {
+        "text": "Touristy and worth it. The rays are absurdly habituated and the photos are inevitable.",
+        "attribution": "Guest review"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Boats from West Bay or Rum Point on Grand Cayman." },
-      { "title": "Ethics", "body": "Decades-long feeding interaction has clear ecological tradeoffs; aware divers should understand the model." }
+      {
+        "title": "Getting there",
+        "body": "Boats from West Bay or Rum Point on Grand Cayman."
+      },
+      {
+        "title": "Ethics",
+        "body": "Decades-long feeding interaction has clear ecological tradeoffs; aware divers should understand the model."
+      }
     ]
   },
   {
@@ -1410,11 +1963,20 @@
     "diveStyle": "Pinnacle and wall diving with moderate current.",
     "diveLevel": "Advanced for the pinnacles.",
     "quotes": [
-      { "text": "Saba has the Caribbean's best-protected reefs and basically no people. The math works.", "attribution": "Returning visitor" }
+      {
+        "text": "Saba has the Caribbean's best-protected reefs and basically no people. The math works.",
+        "attribution": "Returning visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly St. Maarten (SXM), then small plane (12 minutes, Saba's airstrip is the shortest commercial runway in the world)." },
-      { "title": "Park fee", "body": "$3/dive marine park fee." }
+      {
+        "title": "Getting there",
+        "body": "Fly St. Maarten (SXM), then small plane (12 minutes, Saba's airstrip is the shortest commercial runway in the world)."
+      },
+      {
+        "title": "Park fee",
+        "body": "$3/dive marine park fee."
+      }
     ]
   },
   {
@@ -1425,11 +1987,20 @@
     "diveStyle": "Wreck and reef diving on volcanic topography; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Statia is Saba's quieter sibling. If 'fewer divers' is your priority, you've found it.", "attribution": "Caribbean veteran" }
+      {
+        "text": "Statia is Saba's quieter sibling. If 'fewer divers' is your priority, you've found it.",
+        "attribution": "Caribbean veteran"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly St. Maarten + small plane to EUX." },
-      { "title": "Park fee", "body": "$6/dive marine park fee." }
+      {
+        "title": "Getting there",
+        "body": "Fly St. Maarten + small plane to EUX."
+      },
+      {
+        "title": "Park fee",
+        "body": "$6/dive marine park fee."
+      }
     ]
   },
   {
@@ -1440,11 +2011,20 @@
     "diveStyle": "Deep wreck diving with current; reef and sculpture park as easier dives.",
     "diveLevel": "Advanced + 50 dives for the Bianca C; Open Water for sculpture park.",
     "quotes": [
-      { "text": "Swimming over the Bianca C's bow at 30m as schools of jacks pour past — one of the best wrecks I've dived anywhere.", "attribution": "Wreck enthusiast" }
+      {
+        "text": "Swimming over the Bianca C's bow at 30m as schools of jacks pour past — one of the best wrecks I've dived anywhere.",
+        "attribution": "Wreck enthusiast"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Grenada (GND) direct from many US/UK hubs." },
-      { "title": "Sculpture park", "body": "Worth a separate dive — Jason deCaires Taylor's installation." }
+      {
+        "title": "Getting there",
+        "body": "Fly Grenada (GND) direct from many US/UK hubs."
+      },
+      {
+        "title": "Sculpture park",
+        "body": "Worth a separate dive — Jason deCaires Taylor's installation."
+      }
     ]
   },
   {
@@ -1455,11 +2035,20 @@
     "diveStyle": "Cavern/cave diving; no current; depths 5–40m.",
     "diveLevel": "Open Water for cavern lines; Cave certification for further.",
     "quotes": [
-      { "text": "Mexico's cenotes get all the press but Belize has its own. Often you'll have it to yourself.", "attribution": "Cave diver" }
+      {
+        "text": "Mexico's cenotes get all the press but Belize has its own. Often you'll have it to yourself.",
+        "attribution": "Cave diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Belize City + inland drive. Combine with reef diving for variety." },
-      { "title": "Bring lights", "body": "Strong primary plus backup is mandatory; ops can rent." }
+      {
+        "title": "Getting there",
+        "body": "Belize City + inland drive. Combine with reef diving for variety."
+      },
+      {
+        "title": "Bring lights",
+        "body": "Strong primary plus backup is mandatory; ops can rent."
+      }
     ]
   },
   {
@@ -1470,11 +2059,20 @@
     "diveStyle": "Boat diving on volcanic walls and caves; mild-to-moderate current.",
     "diveLevel": "Open Water; Advanced for some swim-throughs and depth.",
     "quotes": [
-      { "text": "Subtropical fish that shouldn't be at this latitude, in water that shouldn't be this clear. Poor Knights breaks the rules.", "attribution": "Kiwi divemaster" }
+      {
+        "text": "Subtropical fish that shouldn't be at this latitude, in water that shouldn't be this clear. Poor Knights breaks the rules.",
+        "attribution": "Kiwi divemaster"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Auckland, 2.5h drive north to Tutukaka." },
-      { "title": "Cold water", "body": "7mm year-round; many divers use semi-dry or drysuit in winter." }
+      {
+        "title": "Getting there",
+        "body": "Fly Auckland, 2.5h drive north to Tutukaka."
+      },
+      {
+        "title": "Cold water",
+        "body": "7mm year-round; many divers use semi-dry or drysuit in winter."
+      }
     ]
   },
   {
@@ -1485,11 +2083,20 @@
     "diveStyle": "Drysuit diving on fjord walls; no current.",
     "diveLevel": "Drysuit cert required; Advanced helps.",
     "quotes": [
-      { "text": "Deep-water animals at 15m because the fresh water blocks their light — unlike anywhere else in diving.", "attribution": "Marine biologist" }
+      {
+        "text": "Deep-water animals at 15m because the fresh water blocks their light — unlike anywhere else in diving.",
+        "attribution": "Marine biologist"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Queenstown, 4h drive to Milford. Or charter flight." },
-      { "title": "Water temp", "body": "10–14°C; drysuit only." }
+      {
+        "title": "Getting there",
+        "body": "Fly Queenstown, 4h drive to Milford. Or charter flight."
+      },
+      {
+        "title": "Water temp",
+        "body": "10–14°C; drysuit only."
+      }
     ]
   },
   {
@@ -1500,11 +2107,20 @@
     "diveStyle": "Reef and pinnacle diving with moderate current; sand-bowl interaction at the Cod Hole.",
     "diveLevel": "Open Water for Cod Hole; Advanced for Osprey Reef and deeper sites.",
     "quotes": [
-      { "text": "A 60kg potato cod gently bumping your fin is the most personable interaction I've ever had on a reef.", "attribution": "Liveaboard guest" }
+      {
+        "text": "A 60kg potato cod gently bumping your fin is the most personable interaction I've ever had on a reef.",
+        "attribution": "Liveaboard guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Cairns (CNS), boat from there." },
-      { "title": "Reef tax", "body": "Australian reef tax + park fees added by operator." }
+      {
+        "title": "Getting there",
+        "body": "Fly Cairns (CNS), boat from there."
+      },
+      {
+        "title": "Reef tax",
+        "body": "Australian reef tax + park fees added by operator."
+      }
     ]
   },
   {
@@ -1515,11 +2131,20 @@
     "diveStyle": "Snorkel for whale sharks; scuba on fringing reef and outer reef.",
     "diveLevel": "Snorkel for whale shark trips; Open Water for scuba.",
     "quotes": [
-      { "text": "Walking onto a beach, looking left and seeing whale sharks two minutes offshore — Ningaloo makes it feel ordinary.", "attribution": "Repeat visitor" }
+      {
+        "text": "Walking onto a beach, looking left and seeing whale sharks two minutes offshore — Ningaloo makes it feel ordinary.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Perth → Learmonth (LEA), 30 min to Exmouth." },
-      { "title": "Whale shark code", "body": "Strict no-touch, distance rules. Operators enforce." }
+      {
+        "title": "Getting there",
+        "body": "Fly Perth → Learmonth (LEA), 30 min to Exmouth."
+      },
+      {
+        "title": "Whale shark code",
+        "body": "Strict no-touch, distance rules. Operators enforce."
+      }
     ]
   },
   {
@@ -1530,11 +2155,20 @@
     "diveStyle": "Boat diving (15-min ride) on a small pinnacle; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Grey nurse sharks at the Cod Hole at Julian Rocks — accessible big-shark diving without leaving NSW.", "attribution": "Local diver" }
+      {
+        "text": "Grey nurse sharks at the Cod Hole at Julian Rocks — accessible big-shark diving without leaving NSW.",
+        "attribution": "Local diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Gold Coast (OOL) or Ballina (BNK), drive to Byron Bay." },
-      { "title": "Marine park", "body": "Strict protections; no fishing, no touching." }
+      {
+        "title": "Getting there",
+        "body": "Fly Gold Coast (OOL) or Ballina (BNK), drive to Byron Bay."
+      },
+      {
+        "title": "Marine park",
+        "body": "Strict protections; no fishing, no touching."
+      }
     ]
   },
   {
@@ -1545,11 +2179,20 @@
     "diveStyle": "Reef and pinnacle diving with mild-to-moderate current.",
     "diveLevel": "Open Water; Advanced for deeper pinnacles.",
     "quotes": [
-      { "text": "Coral biodiversity that makes Indonesia look thin. PNG is the secret nobody talks about.", "attribution": "Marine biologist" }
+      {
+        "text": "Coral biodiversity that makes Indonesia look thin. PNG is the secret nobody talks about.",
+        "attribution": "Marine biologist"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Port Moresby → Hoskins (HKN), 1h transfer." },
-      { "title": "Malaria zone", "body": "Prophylaxis essential." }
+      {
+        "title": "Getting there",
+        "body": "Fly Port Moresby → Hoskins (HKN), 1h transfer."
+      },
+      {
+        "title": "Malaria zone",
+        "body": "Prophylaxis essential."
+      }
     ]
   },
   {
@@ -1560,11 +2203,20 @@
     "diveStyle": "Slow muck diving and reef drift; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Bob Halstead literally invented muck diving here. The critters are still showing up.", "attribution": "Muck diver" }
+      {
+        "text": "Bob Halstead literally invented muck diving here. The critters are still showing up.",
+        "attribution": "Muck diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Port Moresby → Gurney (GUR) at Alotau." },
-      { "title": "Malaria", "body": "Prophylaxis essential." }
+      {
+        "title": "Getting there",
+        "body": "Fly Port Moresby → Gurney (GUR) at Alotau."
+      },
+      {
+        "title": "Malaria",
+        "body": "Prophylaxis essential."
+      }
     ]
   },
   {
@@ -1575,11 +2227,20 @@
     "diveStyle": "Baited shark dive at 18–25m; mild current. Plus surrounding soft-coral reefs.",
     "diveLevel": "Advanced for the shark dive.",
     "quotes": [
-      { "text": "Eight bull sharks in formation at 20m — Beqa has the count and the chumming protocol nailed.", "attribution": "Repeat shark diver" }
+      {
+        "text": "Eight bull sharks in formation at 20m — Beqa has the count and the chumming protocol nailed.",
+        "attribution": "Repeat shark diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Nadi (NAN), 3h drive to Pacific Harbour." },
-      { "title": "Conservation fee", "body": "Levy supports local village conservation." }
+      {
+        "title": "Getting there",
+        "body": "Fly Nadi (NAN), 3h drive to Pacific Harbour."
+      },
+      {
+        "title": "Conservation fee",
+        "body": "Levy supports local village conservation."
+      }
     ]
   },
   {
@@ -1590,11 +2251,20 @@
     "diveStyle": "Wall and drift diving with moderate-to-strong current.",
     "diveLevel": "Advanced recommended.",
     "quotes": [
-      { "text": "A wall of white soft coral pulsing in current is one of the prettiest sights underwater. Fiji owns it.", "attribution": "Underwater photographer" }
+      {
+        "text": "A wall of white soft coral pulsing in current is one of the prettiest sights underwater. Fiji owns it.",
+        "attribution": "Underwater photographer"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Nadi → Taveuni (TVU) or Savusavu (SVU)." },
-      { "title": "Current timing", "body": "Soft coral blooms only with current. Dive guides time the slack carefully." }
+      {
+        "title": "Getting there",
+        "body": "Fly Nadi → Taveuni (TVU) or Savusavu (SVU)."
+      },
+      {
+        "title": "Current timing",
+        "body": "Soft coral blooms only with current. Dive guides time the slack carefully."
+      }
     ]
   },
   {
@@ -1605,11 +2275,20 @@
     "diveStyle": "Snorkel-only for Jellyfish Lake; scuba on surrounding island walls and channels.",
     "diveLevel": "All levels for jellyfish snorkel; Advanced for Rock Island dives.",
     "quotes": [
-      { "text": "Floating in a million pulsing golden jellies in a lake on top of an island — Palau's strangest hour underwater.", "attribution": "Guest" }
+      {
+        "text": "Floating in a million pulsing golden jellies in a lake on top of an island — Palau's strangest hour underwater.",
+        "attribution": "Guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Boat from Koror." },
-      { "title": "Permit", "body": "Rock Islands permit ($100, 10-day) required." }
+      {
+        "title": "Getting there",
+        "body": "Boat from Koror."
+      },
+      {
+        "title": "Permit",
+        "body": "Rock Islands permit ($100, 10-day) required."
+      }
     ]
   },
   {
@@ -1620,11 +2299,20 @@
     "diveStyle": "Channel diving with moderate current; bottom-kneeling at cleaning stations.",
     "diveLevel": "Open Water for cleaning stations; Advanced for channel drifts.",
     "quotes": [
-      { "text": "Sitting still on the sand while a manta hovers a meter above you for two minutes — Yap's signature moment.", "attribution": "Repeat visitor" }
+      {
+        "text": "Sitting still on the sand while a manta hovers a meter above you for two minutes — Yap's signature moment.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly United island-hopper via Guam to YAP." },
-      { "title": "Cultural respect", "body": "Yapese village protocols; ask before photographing people on land." }
+      {
+        "title": "Getting there",
+        "body": "Fly United island-hopper via Guam to YAP."
+      },
+      {
+        "title": "Cultural respect",
+        "body": "Yapese village protocols; ask before photographing people on land."
+      }
     ]
   },
   {
@@ -1635,11 +2323,20 @@
     "diveStyle": "Shore-entry wreck diving (yes, you walk in); penetration on most dives; depths 20–60m.",
     "diveLevel": "Advanced + wreck specialty required; tech training for deeper sections.",
     "quotes": [
-      { "text": "I've dived the Coolidge thirty times and still find new corridors. It's a wreck-diver's career destination.", "attribution": "Local wreck specialist" }
+      {
+        "text": "I've dived the Coolidge thirty times and still find new corridors. It's a wreck-diver's career destination.",
+        "attribution": "Local wreck specialist"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Port Vila → Santo (SON)." },
-      { "title": "Bring nitrox", "body": "Many dives sit at 30–40m for long stretches." }
+      {
+        "title": "Getting there",
+        "body": "Fly Port Vila → Santo (SON)."
+      },
+      {
+        "title": "Bring nitrox",
+        "body": "Many dives sit at 30–40m for long stretches."
+      }
     ]
   },
   {
@@ -1650,11 +2347,20 @@
     "diveStyle": "Pass diving on incoming current with negative entries; safety stops in blue water.",
     "diveLevel": "Advanced + current comfort.",
     "quotes": [
-      { "text": "Dolphins joined our pass dive at Tiputa and surfed the current with us. Polynesia's signature moment.", "attribution": "Repeat guest" }
+      {
+        "text": "Dolphins joined our pass dive at Tiputa and surfed the current with us. Polynesia's signature moment.",
+        "attribution": "Repeat guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Air Tahiti RGI from Papeete." },
-      { "title": "Combine with Fakarava", "body": "Most divers do both Tuamotu atolls in one trip." }
+      {
+        "title": "Getting there",
+        "body": "Air Tahiti RGI from Papeete."
+      },
+      {
+        "title": "Combine with Fakarava",
+        "body": "Most divers do both Tuamotu atolls in one trip."
+      }
     ]
   },
   {
@@ -1665,11 +2371,20 @@
     "diveStyle": "Shore-entry wreck diving; penetration on Bonegi 1.",
     "diveLevel": "Open Water for exterior; Advanced + wreck for penetration.",
     "quotes": [
-      { "text": "Walking into the ocean and onto a Japanese transport from the Solomon campaign — history at hand.", "attribution": "WWII history enthusiast" }
+      {
+        "text": "Walking into the ocean and onto a Japanese transport from the Solomon campaign — history at hand.",
+        "attribution": "WWII history enthusiast"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Honiara (HIR) via Brisbane or Port Moresby." },
-      { "title": "Safety advisory", "body": "Check current advisories before traveling to Guadalcanal." }
+      {
+        "title": "Getting there",
+        "body": "Fly Honiara (HIR) via Brisbane or Port Moresby."
+      },
+      {
+        "title": "Safety advisory",
+        "body": "Check current advisories before traveling to Guadalcanal."
+      }
     ]
   },
   {
@@ -1680,11 +2395,20 @@
     "diveStyle": "Cave and cavern diving in limestone; mild current.",
     "diveLevel": "Advanced for cave routes; Open Water for outer reefs.",
     "quotes": [
-      { "text": "We were 18m down in a lava tube and heard humpback song through the rock. Nowhere else.", "attribution": "Niue regular" }
+      {
+        "text": "We were 18m down in a lava tube and heard humpback song through the rock. Nowhere else.",
+        "attribution": "Niue regular"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "One weekly flight from Auckland." },
-      { "title": "Whale swim", "body": "Niue has a special permit allowing in-water humpback swims — book ahead." }
+      {
+        "title": "Getting there",
+        "body": "One weekly flight from Auckland."
+      },
+      {
+        "title": "Whale swim",
+        "body": "Niue has a special permit allowing in-water humpback swims — book ahead."
+      }
     ]
   },
   {
@@ -1695,11 +2419,20 @@
     "diveStyle": "Boat diving on rocky walls and pinnacles; mild current.",
     "diveLevel": "Open Water; Advanced for the deeper sites.",
     "quotes": [
-      { "text": "Forty years of protection and you can taste it underwater. The grouper come up to look at you.", "attribution": "Mediterranean diver" }
+      {
+        "text": "Forty years of protection and you can taste it underwater. The grouper come up to look at you.",
+        "attribution": "Mediterranean diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Barcelona (BCN), 1.5h drive to L'Estartit." },
-      { "title": "Park permits", "body": "Daily diver quotas; book ahead in summer." }
+      {
+        "title": "Getting there",
+        "body": "Fly Barcelona (BCN), 1.5h drive to L'Estartit."
+      },
+      {
+        "title": "Park permits",
+        "body": "Daily diver quotas; book ahead in summer."
+      }
     ]
   },
   {
@@ -1710,11 +2443,20 @@
     "diveStyle": "Shore and boat diving on volcanic walls and lava flows; mild current.",
     "diveLevel": "Open Water; Advanced for deeper sites.",
     "quotes": [
-      { "text": "Atlantic biodiversity meets new volcanic geology. The 2011 eruption site is alive and well.", "attribution": "Marine biologist" }
+      {
+        "text": "Atlantic biodiversity meets new volcanic geology. The 2011 eruption site is alive and well.",
+        "attribution": "Marine biologist"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Tenerife + ferry to El Hierro (3h)." },
-      { "title": "Quiet island", "body": "El Hierro has fewer than 11,000 residents. Slow pace." }
+      {
+        "title": "Getting there",
+        "body": "Fly Tenerife + ferry to El Hierro (3h)."
+      },
+      {
+        "title": "Quiet island",
+        "body": "El Hierro has fewer than 11,000 residents. Slow pace."
+      }
     ]
   },
   {
@@ -1725,11 +2467,20 @@
     "diveStyle": "Boat diving on walls and wrecks; mild current.",
     "diveLevel": "Open Water; Advanced for the deeper wrecks (40m+).",
     "quotes": [
-      { "text": "A B-17 sitting on a sand bottom at 70m, intact. Vis is for wreck divers willing to come this far.", "attribution": "Wreck specialist" }
+      {
+        "text": "A B-17 sitting on a sand bottom at 70m, intact. Vis is for wreck divers willing to come this far.",
+        "attribution": "Wreck specialist"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Split, then ferry to Vis (2h)." },
-      { "title": "Deep wrecks", "body": "Several wrecks sit at 50–70m+. Tech training opens them up." }
+      {
+        "title": "Getting there",
+        "body": "Fly Split, then ferry to Vis (2h)."
+      },
+      {
+        "title": "Deep wrecks",
+        "body": "Several wrecks sit at 50–70m+. Tech training opens them up."
+      }
     ]
   },
   {
@@ -1740,11 +2491,20 @@
     "diveStyle": "Shore diving on limestone topography; some swim-throughs and caverns.",
     "diveLevel": "Open Water; Advanced for the deeper caves and tunnels.",
     "quotes": [
-      { "text": "Pull up to a roadside parking, walk down stone steps, drop into a 25m blue hole. Gozo does Mediterranean shore diving better than anywhere.", "attribution": "European diver" }
+      {
+        "text": "Pull up to a roadside parking, walk down stone steps, drop into a 25m blue hole. Gozo does Mediterranean shore diving better than anywhere.",
+        "attribution": "European diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Malta (MLA), ferry to Gozo (25 min)." },
-      { "title": "Rental car essential", "body": "Most sites are roadside; a car makes the whole island accessible." }
+      {
+        "title": "Getting there",
+        "body": "Fly Malta (MLA), ferry to Gozo (25 min)."
+      },
+      {
+        "title": "Rental car essential",
+        "body": "Most sites are roadside; a car makes the whole island accessible."
+      }
     ]
   },
   {
@@ -1755,11 +2515,20 @@
     "diveStyle": "Blue-water diving at offshore seamounts; some current.",
     "diveLevel": "Advanced + pelagic comfort.",
     "quotes": [
-      { "text": "Hundreds of mobula rays in formation at Princess Alice Bank. The Azores is Portugal's hidden big-animal site.", "attribution": "Photographer" }
+      {
+        "text": "Hundreds of mobula rays in formation at Princess Alice Bank. The Azores is Portugal's hidden big-animal site.",
+        "attribution": "Photographer"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Lisbon → Ponta Delgada or Santa Maria." },
-      { "title": "Long boat rides", "body": "Some seamounts are 2h offshore; pre-medicate." }
+      {
+        "title": "Getting there",
+        "body": "Fly Lisbon → Ponta Delgada or Santa Maria."
+      },
+      {
+        "title": "Long boat rides",
+        "body": "Some seamounts are 2h offshore; pre-medicate."
+      }
     ]
   },
   {
@@ -1770,11 +2539,20 @@
     "diveStyle": "Boat diving on walls and historic wrecks; mild current.",
     "diveLevel": "Open Water; Advanced for the deeper wrecks.",
     "quotes": [
-      { "text": "Romans sank ships here 2,000 years ago and the amphorae are still on the bottom. Where else.", "attribution": "Italian diver" }
+      {
+        "text": "Romans sank ships here 2,000 years ago and the amphorae are still on the bottom. Where else.",
+        "attribution": "Italian diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Cagliari (CAG), 1h drive to Villasimius." },
-      { "title": "Archaeological rules", "body": "Strict no-touch on wrecks; criminal penalties for removal." }
+      {
+        "title": "Getting there",
+        "body": "Fly Cagliari (CAG), 1h drive to Villasimius."
+      },
+      {
+        "title": "Archaeological rules",
+        "body": "Strict no-touch on wrecks; criminal penalties for removal."
+      }
     ]
   },
   {
@@ -1785,11 +2563,20 @@
     "diveStyle": "Boat diving on walls; mild current.",
     "diveLevel": "Open Water; Advanced for the deeper walls.",
     "quotes": [
-      { "text": "Sailing the Kornati with a tank rack on the deck — the Mediterranean as it should be done.", "attribution": "Sailor-diver" }
+      {
+        "text": "Sailing the Kornati with a tank rack on the deck — the Mediterranean as it should be done.",
+        "attribution": "Sailor-diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Zadar (ZAD) or Split (SPU), boat from Murter or Šibenik." },
-      { "title": "Park fee", "body": "Modest entry fee per day in the marine park." }
+      {
+        "title": "Getting there",
+        "body": "Fly Zadar (ZAD) or Split (SPU), boat from Murter or Šibenik."
+      },
+      {
+        "title": "Park fee",
+        "body": "Modest entry fee per day in the marine park."
+      }
     ]
   },
   {
@@ -1800,11 +2587,20 @@
     "diveStyle": "Boat diving on reef and wreck; mild-to-moderate current.",
     "diveLevel": "Open Water for most reef; Advanced for the deeper wrecks (30m).",
     "quotes": [
-      { "text": "The Vandenberg is one of the great Americas wreck dives. Two days isn't enough to see all of it.", "attribution": "Wreck diver" }
+      {
+        "text": "The Vandenberg is one of the great Americas wreck dives. Two days isn't enough to see all of it.",
+        "attribution": "Wreck diver"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Miami (MIA) or Key West (EYW); drive the Overseas Highway." },
-      { "title": "Coral status", "body": "Reefs have been hit hard by bleaching and disease; protected sites are recovering." }
+      {
+        "title": "Getting there",
+        "body": "Fly Miami (MIA) or Key West (EYW); drive the Overseas Highway."
+      },
+      {
+        "title": "Coral status",
+        "body": "Reefs have been hit hard by bleaching and disease; protected sites are recovering."
+      }
     ]
   },
   {
@@ -1815,11 +2611,20 @@
     "diveStyle": "Reef diving by day, night manta dive at a sand bowl, optional blackwater diving offshore.",
     "diveLevel": "Open Water for manta dive (snorkel option too); Advanced for blackwater.",
     "quotes": [
-      { "text": "A manta with a 4m wingspan barrel-rolling six inches from my mask in a halo of light — the Kona night dive is on the bucket list for a reason.", "attribution": "First-time visitor" }
+      {
+        "text": "A manta with a 4m wingspan barrel-rolling six inches from my mask in a halo of light — the Kona night dive is on the bucket list for a reason.",
+        "attribution": "First-time visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Kona (KOA) direct from US West Coast." },
-      { "title": "Blackwater", "body": "Offshore drift in 3,000m of water at night, looking at planktonic critters. Once-in-a-life experience." }
+      {
+        "title": "Getting there",
+        "body": "Fly Kona (KOA) direct from US West Coast."
+      },
+      {
+        "title": "Blackwater",
+        "body": "Offshore drift in 3,000m of water at night, looking at planktonic critters. Once-in-a-life experience."
+      }
     ]
   },
   {
@@ -1830,11 +2635,20 @@
     "diveStyle": "Boat diving in kelp; mild current; cold water.",
     "diveLevel": "Open Water + cold-water comfort; drysuit recommended.",
     "quotes": [
-      { "text": "Floating through a kelp cathedral with sea lions zipping past — California gives you something the tropics can't.", "attribution": "Repeat visitor" }
+      {
+        "text": "Floating through a kelp cathedral with sea lions zipping past — California gives you something the tropics can't.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Drive to Santa Barbara or Ventura, day-boats from there." },
-      { "title": "Water temp", "body": "7mm + hooded vest minimum; drysuit common." }
+      {
+        "title": "Getting there",
+        "body": "Drive to Santa Barbara or Ventura, day-boats from there."
+      },
+      {
+        "title": "Water temp",
+        "body": "7mm + hooded vest minimum; drysuit common."
+      }
     ]
   },
   {
@@ -1845,11 +2659,20 @@
     "diveStyle": "Wall and reef diving with mild-to-moderate current; baited shark dives.",
     "diveLevel": "Advanced recommended.",
     "quotes": [
-      { "text": "Caribbean reefs as they looked in 1950. Cuba's diving secret has been the embargo.", "attribution": "Caribbean veteran" }
+      {
+        "text": "Caribbean reefs as they looked in 1950. Cuba's diving secret has been the embargo.",
+        "attribution": "Caribbean veteran"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Havana, transfer to Júcaro (6h)." },
-      { "title": "US travelers", "body": "Check current US travel regulations to Cuba; rules have shifted multiple times." }
+      {
+        "title": "Getting there",
+        "body": "Fly Havana, transfer to Júcaro (6h)."
+      },
+      {
+        "title": "US travelers",
+        "body": "Check current US travel regulations to Cuba; rules have shifted multiple times."
+      }
     ]
   },
   {
@@ -1860,11 +2683,20 @@
     "diveStyle": "Snorkel only — scuba is not permitted at Silver Bank.",
     "diveLevel": "Comfortable swimmer; freediving experience helpful but not required.",
     "quotes": [
-      { "text": "Eye contact with a humpback calf and its mother holding station 5m below — I'll never see anything more powerful.", "attribution": "Repeat guest" }
+      {
+        "text": "Eye contact with a humpback calf and its mother holding station 5m below — I'll never see anything more powerful.",
+        "attribution": "Repeat guest"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Puerto Plata (POP)." },
-      { "title": "Swim ethics", "body": "Strict in-water rules: 30m approach distance, no chasing, guide-led only." }
+      {
+        "title": "Getting there",
+        "body": "Fly Puerto Plata (POP)."
+      },
+      {
+        "title": "Swim ethics",
+        "body": "Strict in-water rules: 30m approach distance, no chasing, guide-led only."
+      }
     ]
   },
   {
@@ -1875,11 +2707,20 @@
     "diveStyle": "Shore and short-boat diving on volcanic slopes; mild current.",
     "diveLevel": "Open Water.",
     "quotes": [
-      { "text": "Wade off the beach beneath the Pitons and find a seahorse in five minutes. Saint Lucia diving is underrated.", "attribution": "Repeat visitor" }
+      {
+        "text": "Wade off the beach beneath the Pitons and find a seahorse in five minutes. Saint Lucia diving is underrated.",
+        "attribution": "Repeat visitor"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Saint Lucia (UVF), 1.5h drive to Soufrière." },
-      { "title": "Marine reserve", "body": "Anse Chastanet sits in a marine protected area; ops handle daily fees." }
+      {
+        "title": "Getting there",
+        "body": "Fly Saint Lucia (UVF), 1.5h drive to Soufrière."
+      },
+      {
+        "title": "Marine reserve",
+        "body": "Anse Chastanet sits in a marine protected area; ops handle daily fees."
+      }
     ]
   },
   {
@@ -1890,11 +2731,116 @@
     "diveStyle": "Drift diving in strong Atlantic current; negative entries.",
     "diveLevel": "Advanced + current comfort.",
     "quotes": [
-      { "text": "Strongest current I've drifted in the Caribbean. Mantas hover into it; we just blew past.", "attribution": "Caribbean veteran" }
+      {
+        "text": "Strongest current I've drifted in the Caribbean. Mantas hover into it; we just blew past.",
+        "attribution": "Caribbean veteran"
+      }
     ],
     "goodToKnow": [
-      { "title": "Getting there", "body": "Fly Tobago (TAB), 1.5h drive to Speyside." },
-      { "title": "Atlantic side", "body": "Conditions can be rough; trips cancel for swell." }
+      {
+        "title": "Getting there",
+        "body": "Fly Tobago (TAB), 1.5h drive to Speyside."
+      },
+      {
+        "title": "Atlantic side",
+        "body": "Conditions can be rough; trips cancel for swell."
+      }
+    ]
+  },
+  {
+    "id": "larnaca-cyprus",
+    "extendedDescription": "Larnaca is Cyprus's main dive hub — the Zenobia, a 170m ferry that sank in 1980, sits upright at 18–42m and is consistently ranked among Europe's top ten wreck dives. The rest of the coastline offers reef and cave diving in calm, warm Mediterranean water.",
+    "seasonNotes": "May–October is dive season. July–August is warmest (27°C) but busiest. Spring and autumn offer calmer water and fewer crowds.",
+    "tripDuration": "3–5 days; easily combined with Paphos or Nicosia.",
+    "diveStyle": "Wreck penetration and reef diving; easy conditions, mild current.",
+    "diveLevel": "Open Water for the reef; Advanced or guided for full Zenobia penetration.",
+    "quotes": [
+      {
+        "text": "The Zenobia gets ranked with Truk and the SS Thistlegorm — that's not hype. It's genuinely that good for a wreck.",
+        "attribution": "European dive instructor"
+      }
+    ],
+    "goodToKnow": [
+      {
+        "title": "Getting there",
+        "body": "Fly to Larnaca International (LCA) — well-served from across Europe. Dive centres are 5–10 minutes from the airport and will meet you there."
+      },
+      {
+        "title": "Zenobia tip",
+        "body": "Book the wreck early — morning slots before other operators arrive have the best viz inside the truck deck."
+      }
+    ]
+  },
+  {
+    "id": "salt-island-bvi",
+    "extendedDescription": "Salt Island's main draw is the RMS Rhone, a 310-ft Royal Mail Ship that went down in an 1867 hurricane in two pieces — bow at 24m, stern at 6m. The wreck is home to thousands of fish, soft coral overgrowth and the occasional spotted drum. The shallow stern section is accessible to Open Water divers.",
+    "seasonNotes": "December–May is the dry season with best conditions. June–November is hurricane season — offshore weather can close the site on short notice.",
+    "tripDuration": "1–2 days from Tortola; typically a day-trip from Road Town.",
+    "diveStyle": "Wreck diving; the stern is shallow and friendly, the bow rewards more advanced divers.",
+    "diveLevel": "Open Water for the stern; Advanced for the bow section.",
+    "quotes": [
+      {
+        "text": "The Rhone is what got me into wreck diving. Once you see a ship that big sitting on the seafloor it rewires something.",
+        "attribution": "Caribbean dive guide"
+      }
+    ],
+    "goodToKnow": [
+      {
+        "title": "Getting there",
+        "body": "Fly to Terrence B. Lettsome International (EIS) on Beef Island, or via San Juan (SJU). Day-boat operators run from Road Town, Tortola — Salt Island is a 30–40 minute boat ride."
+      },
+      {
+        "title": "Park permit",
+        "body": "BVI National Parks Trust day permit required. Most operators include it."
+      }
+    ]
+  },
+  {
+    "id": "osprey-reef-australia",
+    "extendedDescription": "Osprey Reef is a remote Coral Sea atoll 350km from Cairns with no roads, no hotels and no day-trippers — only liveaboards. The walls drop 1,000m in every direction and the North Horn shark feed has been running for decades. Silvertips and grey reef sharks come in close.",
+    "seasonNotes": "August–November is the classic season when the trades ease. August–September has the best visibility. The atoll is reachable year-round but July and October are the most reliable weather windows.",
+    "tripDuration": "7–10 day liveaboard from Cairns; often combined with Ribbon Reefs.",
+    "diveStyle": "Wall diving and open-ocean blue-water; strong current possible.",
+    "diveLevel": "Advanced; 50+ dives recommended for the shark feed and wall dives.",
+    "quotes": [
+      {
+        "text": "Nothing in the Great Barrier Reef proper prepares you for how clear and blue the water is out here.",
+        "attribution": "Coral Sea liveaboard captain"
+      }
+    ],
+    "goodToKnow": [
+      {
+        "title": "Getting there",
+        "body": "Fly to Cairns (CNS). Liveaboards depart Cairns Marina — operators pick up from Cairns accommodation. The crossing is roughly 15–18 hours overnight."
+      },
+      {
+        "title": "Seasickness",
+        "body": "The Coral Sea crossing can be rough. Pre-medicate the night before departure."
+      }
+    ]
+  },
+  {
+    "id": "malmok-aruba",
+    "extendedDescription": "Malmok beach on Aruba's leeward northwest shore sits above the Antilla, a 400-ft German freighter scuttled in 1940 — the Caribbean's largest accessible wreck. The site's sheltered from Aruba's near-constant trade wind, giving year-round diveable conditions in warm, clear water.",
+    "seasonNotes": "Year-round. Aruba is outside the hurricane belt and gets consistent 27–29°C water. May–August brings the calmest seas.",
+    "tripDuration": "4–6 nights; Aruba is a full island destination with plenty to do above water.",
+    "diveStyle": "Wreck and reef diving; calm conditions, easy entry.",
+    "diveLevel": "Open Water; the Antilla's upper structure is accessible at 18m.",
+    "quotes": [
+      {
+        "text": "The Antilla is the rare Caribbean wreck where you can genuinely spend a whole week diving the same site and still find new rooms.",
+        "attribution": "Aruba-based dive instructor"
+      }
+    ],
+    "goodToKnow": [
+      {
+        "title": "Getting there",
+        "body": "Fly to Queen Beatrix International (AUA) — direct flights from most US hubs and Europe. Malmok is a 15-minute drive north from the airport along the leeward coast."
+      },
+      {
+        "title": "Truck rental",
+        "body": "Most dive ops offer a gear-and-truck package. Worth it for the independence to hit the site before the crowds."
+      }
     ]
   }
 ]
