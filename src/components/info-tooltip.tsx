@@ -11,8 +11,8 @@ export function InfoTooltip({ text }: { text: string }) {
         style={{
           display: "inline-flex", alignItems: "center", justifyContent: "center",
           width: 16, height: 16, borderRadius: "50%",
-          background: "rgba(100,116,139,0.12)", border: "1px solid rgba(100,116,139,0.25)",
-          color: "#64748b", fontSize: "0.6rem", fontWeight: 700,
+          background: "rgba(139,157,184,0.12)", border: "1px solid rgba(139,157,184,0.25)",
+          color: "#8b9db8", fontSize: "0.6rem", fontWeight: 700,
           cursor: "pointer", lineHeight: 1, marginLeft: "0.3rem", flexShrink: 0,
         }}
       >?</button>

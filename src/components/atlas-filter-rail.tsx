@@ -70,7 +70,7 @@ const STATE_LABEL: Record<string, string> = {
 
 const STATE_SWATCH: Record<string, string> = {
   thriving: "#10b981",
-  pressure: "#0089de",
+  pressure: "#f59e0b",
   change: "#f43f5e",
 };
 
@@ -93,7 +93,12 @@ const SKILL_RANK: Record<string, number> = {
   "Technical":  3,
 };
 
-const CONTINENT_ORDER = ["Asia", "Oceania", "Indian Ocean", "Americas", "Atlantic & Mediterranean"];
+export const CONTINENT_ORDER = ["Asia", "Oceania", "Indian Ocean", "Americas", "Atlantic & Mediterranean"];
+
+/** Map a reef's sub-region (e.g. "Caribbean") to its continent bucket. */
+export function regionContinent(region: string): string {
+  return REGION_CONTINENT[region] ?? "Other";
+}
 
 // ─── Filter logic (pure) ──────────────────────────────────────────────────────
 
@@ -198,12 +203,12 @@ function CheckOpt({
       onClick={onClick}
       aria-pressed={on}
       className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left text-sm transition ${
-        on ? "bg-[#e8f0fe] text-slate-900" : "text-slate-600 hover:bg-slate-50"
+        on ? "bg-[rgba(0,212,255,0.12)] text-[#f0f4f8]" : "text-[#8b9db8] hover:bg-white/5"
       }`}
     >
       <span
-        className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border text-[10px] font-bold text-white transition ${
-          on ? "border-[#0089de] bg-[#0089de]" : "border-slate-300 bg-white"
+        className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border text-[10px] font-bold transition ${
+          on ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]" : "border-white/10 bg-[#0a1628] text-white"
         }`}
         aria-hidden
       >
@@ -233,12 +238,12 @@ function VisuallyHidden({ children }: { children: React.ReactNode }) {
 /**
  * Active-count badge. Pairs the digit with visually-hidden text ("N active
  * filters") so screen-reader users hear meaning, not a bare number (WCAG, §8).
- * Uses #1d5d90 text on a brand tint for AA contrast at this small size.
+ * Uses aqua (#00d4ff) text on a brand tint for AA contrast at this small size.
  */
 function CountBadge({ count }: { count: number }) {
   if (count <= 0) return null;
   return (
-    <span className="inline-flex items-center rounded-full bg-[#e8f0fe] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-[#1d5d90]">
+    <span className="inline-flex items-center rounded-full bg-[rgba(0,212,255,0.12)] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-[#00d4ff]">
       <span aria-hidden>{count}</span>
       <VisuallyHidden>
         {count} active {count === 1 ? "filter" : "filters"}
@@ -265,14 +270,14 @@ function FacetGroup({
   tooltip?: string;
 }) {
   return (
-    <details open={defaultOpen} className="group border-b border-slate-100 pb-4">
-      <summary className="mb-2 flex cursor-pointer list-none items-center justify-between text-xs font-semibold uppercase tracking-wide text-slate-500 [&::-webkit-details-marker]:hidden">
+    <details open={defaultOpen} className="group border-b border-white/10 pb-4">
+      <summary className="mb-2 flex cursor-pointer list-none items-center justify-between text-xs font-semibold uppercase tracking-wide text-[#8b9db8] [&::-webkit-details-marker]:hidden">
         <span className="flex items-center gap-2">
           {title}
           {tooltip ? <InfoTooltip text={tooltip} /> : null}
           {badge}
         </span>
-        <span className="text-slate-400 transition group-open:rotate-90" aria-hidden>
+        <span className="text-[#8b9db8] transition group-open:rotate-90" aria-hidden>
           ▸
         </span>
       </summary>
@@ -302,16 +307,16 @@ function WildlifeSubGroup({
       open={activeCount > 0}
       className="group/sub rounded-lg"
     >
-      <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-2.5 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg px-2.5 py-1.5 text-sm font-medium text-[#aebcd0] hover:bg-white/5 [&::-webkit-details-marker]:hidden">
         <span className="flex items-center gap-2">
           {group}
           <CountBadge count={activeCount} />
         </span>
-        <span className="text-slate-400 transition group-open/sub:rotate-90" aria-hidden>
+        <span className="text-[#8b9db8] transition group-open/sub:rotate-90" aria-hidden>
           ▸
         </span>
       </summary>
-      <div className="ml-3 mt-0.5 space-y-0.5 border-l border-slate-100 pl-2">
+      <div className="ml-3 mt-0.5 space-y-0.5 border-l border-white/10 pl-2">
         {tags.map((t) => (
           <CheckOpt key={t} on={selected.includes(t)} onClick={() => onToggle(t)}>
             {t}
@@ -359,8 +364,8 @@ function RegionFilter({
   const toggleOpen = (c: string) => setOpen((prev) => ({ ...prev, [c]: !isOpen(c) }));
 
   return (
-    <div className="border-b border-slate-100 pb-4">
-      <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">Region</h4>
+    <div className="border-b border-white/10 pb-4">
+      <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#8b9db8]">Region</h4>
       <div className="space-y-1">
         {continents.map((continent) => {
           const regs = grouped[continent] ?? [];
@@ -378,10 +383,10 @@ function RegionFilter({
                   onClick={() => onToggleContinent(regs)}
                   className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border text-[10px] font-bold transition ${
                     allSelected
-                      ? "border-[#0089de] bg-[#0089de] text-white"
+                      ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
                       : activeCount > 0
-                        ? "border-[#1d5d90] bg-[#e8f0fe] text-[#1d5d90]"
-                        : "border-slate-300 bg-white text-white"
+                        ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
+                        : "border-white/10 bg-[#0a1628] text-white"
                   }`}
                   title={allSelected ? `Deselect all in ${continent}` : `Select all in ${continent}`}
                   aria-label={allSelected ? `Deselect all in ${continent}` : `Select all in ${continent}`}
@@ -393,22 +398,22 @@ function RegionFilter({
                 <button
                   type="button"
                   onClick={() => toggleOpen(continent)}
-                  className="flex flex-1 items-center justify-between rounded-lg px-2 py-1.5 text-left text-sm font-medium text-slate-700 hover:bg-slate-50"
+                  className="flex flex-1 items-center justify-between rounded-lg px-2 py-1.5 text-left text-sm font-medium text-[#aebcd0] hover:bg-white/5"
                 >
                   <span className="flex items-center gap-2">
                     {continent}
                     {activeCount > 0 && (
-                      <span className="rounded-full bg-[#0089de] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white">
+                      <span className="rounded-full bg-[#00d4ff] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-[#0a1628]">
                         {activeCount}
                       </span>
                     )}
                   </span>
-                  <span className="text-slate-400">{expanded ? "▾" : "▸"}</span>
+                  <span className="text-[#8b9db8]">{expanded ? "▾" : "▸"}</span>
                 </button>
               </div>
 
               {expanded && (
-                <div className="ml-6 mt-0.5 space-y-0.5 border-l border-slate-100 pl-2">
+                <div className="ml-6 mt-0.5 space-y-0.5 border-l border-white/10 pl-2">
                   {regs.map((r) => (
                     <CheckOpt key={r} on={selected.includes(r)} onClick={() => onToggle(r)}>
                       {r}
@@ -462,13 +467,13 @@ export function AtlasFilterRail({
 
   return (
     <aside className={className ?? "lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto"}>
-      <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5" style={{ boxShadow: "0 1px 2px rgba(16,40,70,.03), 0 12px 30px -20px rgba(16,40,70,.12)" }}>
+      <div className="space-y-4 rounded-2xl border border-white/10 bg-[#0a1628] p-5" style={{ boxShadow: "0 1px 2px rgba(16,40,70,.03), 0 12px 30px -20px rgba(16,40,70,.12)" }}>
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-semibold text-slate-900">Filters</h3>
+          <h3 className="text-sm font-semibold text-[#f0f4f8]">Filters</h3>
           <button
             type="button"
             onClick={onReset}
-            className="text-xs font-medium text-[#0089de] hover:underline"
+            className="text-xs font-medium text-[#00d4ff] hover:underline"
           >
             Reset
           </button>
@@ -521,8 +526,8 @@ export function AtlasFilterRail({
                   type="button"
                   aria-pressed={on}
                   onClick={() => toggle("months", month)}
-                  className={`rounded-lg px-1 py-1.5 text-xs font-medium transition ${
-                    on ? "bg-[#0089de] text-white" : "bg-slate-50 text-slate-600 hover:bg-[#e8f0fe]"
+                  className={`rounded-lg border px-1 py-1.5 text-xs font-medium transition ${
+                    on ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]" : "border-white/10 bg-white/5 text-[#8b9db8] hover:border-white/20"
                   }`}
                 >
                   {m}

@@ -79,7 +79,7 @@ if (typeof window !== "undefined") {
 const DEFAULT_FOCUS_POINT = {
   lat: 12,
   lng: -135,
-  altitude: 2.1,
+  altitude: 1.75,
 };
 
 const WORLD_ATLAS_URL =
@@ -89,7 +89,7 @@ const EARTH_TEXTURE_URL =
   "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg";
 
 // Brand palette
-const IN_SEASON = "#0089de"; // PADI blue
+const IN_SEASON = "#00d4ff"; // aqua accent
 const OUT_OF_SEASON = "#f23d4e"; // coral accent
 
 export function PlanetGlobe({
@@ -118,8 +118,9 @@ export function PlanetGlobe({
     const updateSize = () => {
       if (!containerRef.current) return;
       const width = containerRef.current.offsetWidth;
-      // Prominent in a wide column: scale up to 620px tall, never below 380px.
-      const height = Math.min(Math.max(width * 0.66, 380), 620);
+      // Fill the (near-square) container generously: track width closely so the
+      // sphere reads large, scaling up to 860px tall, never below 420px.
+      const height = Math.min(Math.max(width * 0.92, 420), 860);
       // Only re-render when the size actually changes. ResizeObserver can fire
       // with identical dimensions; an unconditional setState would hand the
       // Globe new accessor functions each time and make it rebuild every
@@ -300,11 +301,11 @@ export function PlanetGlobe({
                   (iso3 && highlightedSet.has(iso3)) ||
                   (name && highlightedSet.has(name));
                 return isHighlighted
-                  ? "rgba(0, 137, 222, 0.32)"
-                  : "rgba(255, 255, 255, 0.18)";
+                  ? "rgba(0, 212, 255, 0.28)"
+                  : "rgba(255, 255, 255, 0.12)";
               }}
-              polygonSideColor={() => "rgba(0, 137, 222, 0.08)"}
-              polygonStrokeColor={() => "rgba(29, 93, 144, 0.25)"}
+              polygonSideColor={() => "rgba(0, 212, 255, 0.06)"}
+              polygonStrokeColor={() => "rgba(0, 212, 255, 0.18)"}
               polygonsTransitionDuration={300}
               pointsData={visibleMarkers}
               pointLat="lat"
@@ -327,12 +328,12 @@ export function PlanetGlobe({
           ) : null}
 
           {dimensions.width > 0 && visibleMarkers.length === 0 ? (
-            <div className="absolute inset-4 flex items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white/70 px-6 text-center">
+            <div className="absolute inset-4 flex items-center justify-center rounded-xl border border-dashed border-white/10 bg-[#030712]/70 px-6 text-center">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b9db8]">
                   No matches
                 </p>
-                <p className="mt-2 max-w-md text-sm leading-6 text-slate-600">
+                <p className="mt-2 max-w-md text-sm leading-6 text-[#8b9db8]">
                   Try clearing one of the filters to broaden the search.
                 </p>
               </div>
@@ -340,7 +341,7 @@ export function PlanetGlobe({
           ) : null}
 
           {loadError ? (
-            <div className="absolute inset-x-4 bottom-10 rounded-xl border border-slate-200 bg-white/95 px-4 py-3 text-left text-sm text-slate-700 shadow">
+            <div className="absolute inset-x-4 bottom-10 rounded-xl border border-white/10 bg-[#0a1628]/95 px-4 py-3 text-left text-sm text-[#aebcd0] shadow">
               World atlas data couldn&rsquo;t load. The globe will still spin —
               country highlights are disabled.
             </div>
@@ -348,8 +349,8 @@ export function PlanetGlobe({
 
           {selectedMarker ? (
             <div className="absolute bottom-3 left-3 right-3 sm:left-auto sm:right-3 sm:max-w-xs">
-              <div className="rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-md backdrop-blur">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold text-slate-900">
+              <div className="rounded-2xl border border-white/10 bg-[#0a1628]/95 p-4 shadow-md backdrop-blur">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#f0f4f8]">
                   {selectedMarker.color ? (
                     <span
                       className="h-2.5 w-2.5 rounded-full"
@@ -358,22 +359,22 @@ export function PlanetGlobe({
                   ) : null}
                   {selectedMarker.stateLabel ?? "Reef"}
                 </span>
-                <h3 className="mt-1.5 text-base font-semibold leading-tight text-slate-900">
+                <h3 className="mt-1.5 text-base font-semibold leading-tight text-[#f0f4f8]">
                   {selectedMarker.site ?? selectedMarker.label}
                 </h3>
                 {selectedMarker.country ? (
-                  <p className="mt-0.5 text-sm text-slate-500">
+                  <p className="mt-0.5 text-sm text-[#8b9db8]">
                     {selectedMarker.country}
                   </p>
                 ) : null}
                 {selectedMarker.seasonText ? (
-                  <p className="mt-2 text-xs text-slate-600">
+                  <p className="mt-2 text-xs text-[#8b9db8]">
                     Best season{" "}
-                    <span className="font-semibold text-[#1d5d90]">
+                    <span className="font-semibold text-[#00d4ff]">
                       {selectedMarker.seasonText}
                     </span>
                     {selectedMarker.isInSeason ? (
-                      <span className="ml-2 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200">
+                      <span className="ml-2 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-300 ring-1 ring-inset ring-emerald-500/20">
                         In season now
                       </span>
                     ) : null}
@@ -382,7 +383,7 @@ export function PlanetGlobe({
                 {selectedMarker.slug ? (
                   <Link
                     href={`/locations/${selectedMarker.slug}`}
-                    className="mt-3 inline-flex text-sm font-medium text-[#0089de] hover:underline"
+                    className="mt-3 inline-flex text-sm font-medium text-[#00d4ff] hover:underline"
                   >
                     View location →
                   </Link>
@@ -391,8 +392,8 @@ export function PlanetGlobe({
             </div>
           ) : (
             <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-medium text-slate-600 shadow-sm backdrop-blur">
-                <svg className="h-3 w-3 text-slate-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0a1628]/90 px-3 py-1.5 text-[11px] font-medium text-[#8b9db8] shadow-sm backdrop-blur border border-white/10">
+                <svg className="h-3 w-3 text-[#8b9db8]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden>
                   <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
                 </svg>
                 Click any reef to inspect

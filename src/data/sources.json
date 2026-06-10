@@ -54,9 +54,9 @@
     "url": "https://www.gbif.org/",
     "publisher": "GBIF Secretariat",
     "sourceType": "occurrence-record",
-    "accessedAt": "2026-05-24",
+    "accessedAt": "2026-06-09",
     "license": "Per-dataset; mostly CC0 or CC BY",
-    "notes": "Aggregated species occurrence records. Confirms presence and seasonality clustering, never per-dive probability without effort data."
+    "notes": "Aggregated species occurrence records. Confirms presence and seasonality clustering, never per-dive probability without effort data. Live fallback source for the weekly sightings ingest (scripts/fetch-sightings-live.mjs) when iNaturalist has no research-grade record for a site/species."
   },
   {
     "id": "obis",
@@ -102,9 +102,9 @@
     "url": "https://www.inaturalist.org/",
     "publisher": "California Academy of Sciences & National Geographic Society",
     "sourceType": "citizen-science",
-    "accessedAt": "2026-05-24",
+    "accessedAt": "2026-06-09",
     "license": "CC0 / CC BY / CC BY-NC (per record)",
-    "notes": "Photo- and date-verified species occurrence records from citizen scientists. Strong recency signal; combine with GBIF/OBIS for presence and seasonality."
+    "notes": "Photo- and date-verified research-grade observations from citizen scientists. Primary live source for the weekly sightings ingest (scripts/fetch-sightings-live.mjs): supplies lastConfirmedAt, recentRecordCount, and observed-month seasonality per site/species. Strong recency signal; combine with GBIF/OBIS for presence."
   },
   {
     "id": "reef-check",

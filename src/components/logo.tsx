@@ -1,8 +1,10 @@
 /**
- * Option D logo mark + weight-split wordmark.
+ * scubaseason logo — Kimi rebrand.
  *
- * Light variant (default): "scuba" weight-300 #94a3b8 / "Season.fun" weight-900 #0f172a
- * Dark variant: "scuba" rgba(255,255,255,0.3) / "Season.fun" #ffffff
+ * Aqua water-drop mark + single-line wordmark: "scuba" (ivory) · "season" (aqua),
+ * set in the Space Grotesk display face. The whole site sits on a dark surface,
+ * so both variants use the ivory/aqua treatment; `dark` is kept for API
+ * compatibility and only nudges the "scuba" weight on photo overlays.
  */
 
 type LogoProps = {
@@ -12,63 +14,40 @@ type LogoProps = {
   className?: string;
 };
 
-export function Logo({ dark = false, size = 32, className = "" }: LogoProps) {
-  const topColor = dark ? "rgba(255,255,255,0.35)" : "#94a3b8";
-  const botColor = dark ? "#ffffff" : "#0f172a";
+export function Logo({ dark = false, size = 28, className = "" }: LogoProps) {
+  const scubaColor = dark ? "rgba(255,255,255,0.92)" : "#f0f4f8";
 
   return (
-    <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* Option D SVG mark */}
+    <div className={`flex items-center gap-2 ${className}`}>
+      {/* Water-drop mark */}
       <svg
         width={size}
         height={size}
-        viewBox="0 0 36 36"
+        viewBox="0 0 24 24"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        stroke="#00d4ff"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         aria-hidden="true"
       >
-        <circle cx="18" cy="18" r="16" fill="#0089de" />
-        {/* Primary wave — full white, asymmetric naturalistic shape */}
-        <path
-          d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-          fill="none"
-        />
-        {/* Secondary wave — semi-transparent white */}
-        <path
-          d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21"
-          stroke="rgba(255,255,255,0.4)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          fill="none"
-        />
+        <path d="M12 2C8 6 4 10 4 14c0 4.4 3.6 8 8 8s8-3.6 8-8c0-4-4-8-8-12z" />
+        <path d="M12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
       </svg>
 
-      {/* Weight-split wordmark */}
-      <div className="flex flex-col" style={{ lineHeight: 1.0 }}>
-        <span
-          style={{
-            fontWeight: 300,
-            letterSpacing: "0.08em",
-            fontSize: "0.6875rem",
-            color: topColor,
-          }}
-        >
-          scuba
-        </span>
-        <span
-          style={{
-            fontWeight: 900,
-            letterSpacing: "-0.05em",
-            fontSize: "1.05rem",
-            color: botColor,
-          }}
-        >
-          Season.fun
-        </span>
-      </div>
+      {/* Wordmark — single line, Space Grotesk display */}
+      <span
+        style={{
+          fontFamily: 'var(--font-serif), "Space Grotesk", system-ui, sans-serif',
+          fontWeight: 700,
+          fontSize: "1.25rem",
+          letterSpacing: "-0.01em",
+          lineHeight: 1,
+        }}
+      >
+        <span style={{ color: scubaColor }}>scuba</span>
+        <span style={{ color: "#00d4ff" }}>season</span>
+      </span>
     </div>
   );
 }

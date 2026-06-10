@@ -60,7 +60,7 @@ export function SightingRow({
 
   return (
     <div
-      className={`flex items-start gap-3 border-b border-slate-100 py-3 last:border-b-0 ${className}`}
+      className={`flex items-start gap-3 border-b border-white/10 py-3 last:border-b-0 ${className}`}
     >
       {/* Color dot */}
       <span
@@ -78,14 +78,14 @@ export function SightingRow({
       {/* Info */}
       <div className="min-w-0 flex-1">
         <p
-          style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}
+          style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f0f4f8" }}
         >
           {speciesCommon}
         </p>
         <p
           style={{
             fontSize: "0.75rem",
-            color: "#64748b",
+            color: "#8b9db8",
             fontStyle: speciesScientific ? "italic" : "normal",
           }}
         >

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans, IBM_Plex_Mono, Source_Serif_4 } from "next/font/google";
+import { Inter, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { JsonLd } from "@/components/json-ld";
@@ -10,7 +10,8 @@ import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { organizationSchema, websiteSchema } from "@/lib/schema-org";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
 
-const notoSans = Noto_Sans({
+// Body sans — Inter, matching the Kimi rebrand.
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -24,10 +25,12 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const sourceSerif4 = Source_Serif_4({
+// Display / heading — Space Grotesk, the Kimi rebrand display face.
+// Mapped onto --font-serif so the existing --atlas-serif heading token picks it up.
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -64,8 +67,8 @@ export default function RootLayout({
   }));
 
   return (
-    <html lang="en" className={`${notoSans.variable} ${ibmPlexMono.variable} ${sourceSerif4.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans">
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${spaceGrotesk.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-[#030712] text-[#F0F4F8] font-sans">
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
         <NavProvider>

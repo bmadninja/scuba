@@ -47,6 +47,16 @@ export type DeclineChart = {
   zeroYear: number | null;
 };
 
+// Two-point coral-cover chart for reefs that are holding steady or recovering,
+// so every reef with a before/after shows a chart, not just declining ones.
+export type CoverTrend = {
+  fromPct: number;
+  fromYear: number;
+  toPct: number;
+  toYear: number;
+  direction: "up" | "flat";
+};
+
 export type ConditionPill = {
   label: string;
   tone: "warm" | "good" | "neutral";
@@ -99,6 +109,7 @@ export type LocationBodyProps = {
   // Reef condition
   conditionSentence: string;
   decline: DeclineChart | null;
+  coverTrend: CoverTrend | null;
   coverNow: number | null;
   coverYear: number | null;
   coverTrendNote: string | null;
@@ -128,7 +139,7 @@ const LABEL_STYLE: React.CSSProperties = {
   fontWeight: 700,
   letterSpacing: "0.18em",
   textTransform: "uppercase",
-  color: "#64748b",
+  color: "#8b9db8",
   marginBottom: "1rem",
   display: "flex",
   alignItems: "center",
@@ -136,9 +147,9 @@ const LABEL_STYLE: React.CSSProperties = {
 };
 
 const PILL_STYLE: Record<"warm" | "good" | "neutral", React.CSSProperties> = {
-  warm: { background: "#fcf2e2", color: "#b9751a" },
-  good: { background: "#e7f6ee", color: "#15824c" },
-  neutral: { background: "#f1f5f9", color: "#475569" },
+  warm: { background: "rgba(245,158,11,0.15)", color: "#fcd34d" },
+  good: { background: "rgba(16,185,129,0.15)", color: "#6ee7b7" },
+  neutral: { background: "rgba(255,255,255,0.10)", color: "#8b9db8" },
 };
 
 function ExternalIcon() {
@@ -166,8 +177,8 @@ function DeclineSvg({ d }: { d: DeclineChart }) {
     (d.zeroYear ? `, projected toward near zero by ${d.zeroYear}` : "");
   return (
     <svg viewBox="0 0 520 190" width="100%" height="190" role="img" aria-label={label}>
-      <line x1="20" y1="150" x2="500" y2="150" stroke="#e2e8f0" strokeWidth="1" />
-      <line x1="20" y1="30" x2="500" y2="30" stroke="#f1f5f9" strokeWidth="1" />
+      <line x1="20" y1="150" x2="500" y2="150" stroke="rgba(255,255,255,0.10)" strokeWidth="1" />
+      <line x1="20" y1="30" x2="500" y2="30" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
       <text x="20" y="24" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{top}%</text>
       <text x="20" y="165" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">0%</text>
       <path d={`M${x0},${yFrom} L${xNow},${yNow} L${xNow},150 L${x0},150 Z`} fill="#fdecea" opacity="0.7" />
@@ -176,7 +187,7 @@ function DeclineSvg({ d }: { d: DeclineChart }) {
         <polyline points={`${xNow},${yNow} ${xEnd},${yEnd}`} fill="none" stroke="#c0392f" strokeWidth="2" strokeDasharray="5 5" opacity="0.55" />
       ) : null}
       <circle cx={x0} cy={yFrom} r="3.5" fill="#c0392f" />
-      <circle cx={xNow} cy={yNow} r="4.5" fill="#c0392f" stroke="#fff" strokeWidth="2" />
+      <circle cx={xNow} cy={yNow} r="4.5" fill="#c0392f" stroke="#0a1628" strokeWidth="2" />
       <text x={x0} y={yFrom - 10} fontSize="11" fontWeight="700" fill="#c0392f" fontFamily="Noto Sans">{d.fromPct}%</text>
       <text x="300" y={yNow + 19} fontSize="12" fontWeight="800" fill="#c0392f" fontFamily="Noto Sans">{d.toPct}% today</text>
       {d.zeroYear ? (
@@ -191,13 +202,49 @@ function DeclineSvg({ d }: { d: DeclineChart }) {
   );
 }
 
+// ─── Coral-cover chart for holding/recovering reefs (SVG, deterministic) ──────
+
+function CoverTrendSvg({ c }: { c: CoverTrend }) {
+  // Scale the y-axis to the data so values above 35% still fit, rounded up to
+  // the next 10. Green for recovery, neutral grey for holding steady.
+  const top = Math.max(40, Math.ceil(Math.max(c.fromPct, c.toPct) / 10) * 10);
+  const yFor = (pct: number) => 150 - (pct / top) * 120;
+  const x0 = 20;
+  const xNow = 326;
+  const yFrom = yFor(c.fromPct);
+  const yNow = yFor(c.toPct);
+  const up = c.direction === "up";
+  const stroke = up ? "#10b981" : "#8b9db8";
+  const fill = up ? "rgba(16,185,129,0.12)" : "rgba(255,255,255,0.05)";
+  const label =
+    up
+      ? `Coral cover recovering from ${c.fromPct}% in ${c.fromYear} to ${c.toPct}% today`
+      : `Coral cover holding around ${c.toPct}% since ${c.fromYear}`;
+  return (
+    <svg viewBox="0 0 520 190" width="100%" height="190" role="img" aria-label={label}>
+      <line x1="20" y1="150" x2="500" y2="150" stroke="rgba(255,255,255,0.10)" strokeWidth="1" />
+      <line x1="20" y1="30" x2="500" y2="30" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+      <text x="20" y="165" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">0%</text>
+      <path d={`M${x0},${yFrom} L${xNow},${yNow} L${xNow},150 L${x0},150 Z`} fill={fill} />
+      <polyline points={`${x0},${yFrom} ${xNow},${yNow}`} fill="none" stroke={stroke} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx={x0} cy={yFrom} r="3.5" fill={stroke} />
+      <circle cx={xNow} cy={yNow} r="4.5" fill={stroke} stroke="#0a1628" strokeWidth="2" />
+      <text x={x0} y={yFrom - 10} fontSize="11" fontWeight="700" fill={stroke} fontFamily="Noto Sans">{c.fromPct}%</text>
+      {yFrom >= 42 && <text x="20" y="24" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{top}%</text>}
+      <text x="300" y={yNow - 12} fontSize="12" fontWeight="800" fill={stroke} fontFamily="Noto Sans">{c.toPct}% today</text>
+      <text x="14" y="178" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{c.fromYear}</text>
+      <text x="306" y="178" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{c.toYear}</text>
+    </svg>
+  );
+}
+
 // ─── Dropdown (native <details>) for Getting there / Where to stay ────────────
 
 function Expand({ summary, children }: { summary: string; children: React.ReactNode }) {
   return (
     <details
       open
-      style={{ borderTop: "1px solid #e2e8f0" }}
+      style={{ borderTop: "1px solid rgba(255,255,255,0.10)" }}
       className="trip-expand"
     >
       <summary
@@ -207,16 +254,16 @@ function Expand({ summary, children }: { summary: string; children: React.ReactN
           padding: "0.9rem 1.6rem",
           fontSize: "0.8125rem",
           fontWeight: 600,
-          color: "#0f172a",
+          color: "#f0f4f8",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
         {summary}
-        <span aria-hidden="true" className="trip-chev" style={{ color: "#94a3b8", transition: "transform .2s" }}>⌄</span>
+        <span aria-hidden="true" className="trip-chev" style={{ color: "#8b9db8", transition: "transform .2s" }}>⌄</span>
       </summary>
-      <div style={{ padding: "0 1.6rem 1.2rem", fontSize: "0.8125rem", color: "#334155", lineHeight: 1.6 }}>
+      <div style={{ padding: "0 1.6rem 1.2rem", fontSize: "0.8125rem", color: "#aebcd0", lineHeight: 1.6 }}>
         {children}
       </div>
     </details>
@@ -233,6 +280,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     intro,
     conditionSentence,
     decline,
+    coverTrend,
     coverNow,
     coverYear,
     coverTrendNote,
@@ -285,7 +333,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                   fontFamily: "var(--font-serif),'Source Serif 4',Georgia,serif",
                   fontSize: "1.2rem",
                   lineHeight: 1.7,
-                  color: "#1e293b",
+                  color: "#aebcd0",
                   marginBottom: "1.75rem",
                   maxWidth: 680,
                 }}
@@ -293,30 +341,30 @@ export function LocationPageBody(props: LocationBodyProps) {
                 {conditionSentence}
               </p>
 
-              <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.25rem", overflow: "hidden" }}>
+              <div style={{ border: "1px solid rgba(255,255,255,0.10)", borderRadius: "1.25rem", overflow: "hidden" }}>
                 {/* Chart header + coral cover (shown once) */}
                 <div style={{ padding: "1.4rem 1.6rem 0.5rem" }}>
-                  <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.4rem" }}>
+                  <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.4rem" }}>
                     Coral cover over time
                   </p>
                   {decline ? (
-                    <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#0f172a", lineHeight: 1.45 }}>
+                    <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#f0f4f8", lineHeight: 1.45, overflowWrap: "break-word" }}>
                       Live coral has fallen from <b>{decline.fromPct}%</b>{" "}
                       to <span style={{ color: "#c0392f" }}>{decline.toPct}%</span> since {decline.fromYear}.{" "}
                       {decline.zeroYear ? (
-                        <span style={{ color: "#64748b", fontWeight: 500 }}>
+                        <span style={{ color: "#aebcd0", fontWeight: 500 }}>
                           If the decline holds, little would remain by around {decline.zeroYear}.
                         </span>
                       ) : null}
                     </p>
                   ) : coverNow !== null ? (
-                    <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#0f172a", lineHeight: 1.45 }}>
+                    <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#f0f4f8", lineHeight: 1.45, overflowWrap: "break-word" }}>
                       Live coral covers <b>{coverNow}%</b> of the reef
                       {coverYear ? ` as of ${coverYear}` : ""}.
-                      {coverTrendNote ? <span style={{ color: "#64748b", fontWeight: 500 }}> {coverTrendNote}</span> : null}
+                      {coverTrendNote ? <span style={{ color: "#aebcd0", fontWeight: 500 }}> {coverTrendNote}</span> : null}
                     </p>
                   ) : (
-                    <p style={{ fontSize: "0.9375rem", color: "#64748b", lineHeight: 1.5 }}>
+                    <p style={{ fontSize: "0.9375rem", color: "#8b9db8", lineHeight: 1.5 }}>
                       No coral cover survey is on file for this reef yet.
                     </p>
                   )}
@@ -326,10 +374,14 @@ export function LocationPageBody(props: LocationBodyProps) {
                   <div style={{ padding: "0.5rem 1rem 0" }}>
                     <DeclineSvg d={decline} />
                   </div>
+                ) : coverTrend ? (
+                  <div style={{ padding: "0.5rem 1rem 0" }}>
+                    <CoverTrendSvg c={coverTrend} />
+                  </div>
                 ) : null}
 
                 {/* Foot: heat / fishing / reef state — each once, plain words */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 0, borderTop: "1px solid #e2e8f0", background: "#f1f7fb" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 0, borderTop: "1px solid rgba(255,255,255,0.10)", background: "rgba(255,255,255,0.04)" }}>
                   {heat ? (
                     <Metric>
                       <MetricLabel>
@@ -341,9 +393,9 @@ export function LocationPageBody(props: LocationBodyProps) {
                           {heat.label}
                         </span>
                       </p>
-                      <p style={{ fontSize: "0.6875rem", color: "#64748b", marginTop: "0.15rem" }}>{heat.sub}</p>
+                      <p style={{ fontSize: "0.6875rem", color: "#8b9db8", marginTop: "0.15rem" }}>{heat.sub}</p>
                       {heat.detail ? (
-                        <p style={{ fontSize: "0.6875rem", color: "#475569", marginTop: "0.35rem", lineHeight: 1.45 }}>{heat.detail}</p>
+                        <p style={{ fontSize: "0.6875rem", color: "#aebcd0", marginTop: "0.35rem", lineHeight: 1.45 }}>{heat.detail}</p>
                       ) : null}
                     </Metric>
                   ) : null}
@@ -359,7 +411,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                           {fishing.label}
                         </span>
                       </p>
-                      <p style={{ fontSize: "0.6875rem", color: "#64748b", marginTop: "0.15rem" }}>{fishing.sub}</p>
+                      <p style={{ fontSize: "0.6875rem", color: "#8b9db8", marginTop: "0.15rem" }}>{fishing.sub}</p>
                     </Metric>
                   ) : null}
 
@@ -371,7 +423,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     <p style={{ fontSize: "0.95rem", fontWeight: 700, color: reefStateColor, margin: 0 }}>
                       {reefStateLabel}
                     </p>
-                    <p style={{ fontSize: "0.6875rem", color: "#64748b", marginTop: "0.15rem" }}>{reefStateSub}</p>
+                    <p style={{ fontSize: "0.6875rem", color: "#8b9db8", marginTop: "0.15rem" }}>{reefStateSub}</p>
                   </Metric>
                 </div>
               </div>
@@ -394,32 +446,33 @@ export function LocationPageBody(props: LocationBodyProps) {
                       // @ts-expect-error polymorphic href
                       href={sp.href ?? undefined}
                       style={{
-                        border: "1px solid #e2e8f0",
+                        border: "1px solid rgba(255,255,255,0.10)",
                         borderRadius: "1rem",
                         overflow: "hidden",
                         textDecoration: "none",
                         color: "inherit",
                         display: "block",
+                        background: "#0a1628",
                       }}
                     >
                       {sp.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={sp.imageUrl} alt={sp.commonName} style={{ width: "100%", height: 96, objectFit: "cover", display: "block" }} />
                       ) : (
-                        <div style={{ height: 96, background: "#eef2f6", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem" }}>
+                        <div style={{ height: 96, background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem" }}>
                           {sp.icon}
                         </div>
                       )}
                       <div style={{ padding: "0.75rem" }}>
-                        <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.3rem", display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap" }}>
+                        <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#f0f4f8", marginBottom: "0.3rem" }}>
                           {sp.commonName}
-                          {sp.iucnLabel && sp.iucnBadge ? (
-                            <span style={{ display: "inline-block", fontSize: "0.5625rem", fontWeight: 700, padding: "0.15rem 0.5rem", borderRadius: 999, whiteSpace: "nowrap", background: sp.iucnBadge.bg, color: sp.iucnBadge.color }}>
-                              {sp.iucnLabel}
-                            </span>
-                          ) : null}
                         </p>
-                        <p style={{ display: "flex", alignItems: "center", gap: "0.375rem", fontSize: "0.6875rem", color: "#64748b" }}>
+                        {sp.iucnLabel && sp.iucnBadge ? (
+                          <span style={{ display: "inline-block", fontSize: "0.5625rem", fontWeight: 700, padding: "0.15rem 0.5rem", borderRadius: 999, whiteSpace: "nowrap", background: sp.iucnBadge.bg, color: sp.iucnBadge.color, marginBottom: "0.4rem" }}>
+                            {sp.iucnLabel}
+                          </span>
+                        ) : null}
+                        <p style={{ display: "flex", alignItems: "center", gap: "0.375rem", fontSize: "0.6875rem", color: "#8b9db8" }}>
                           <span aria-hidden="true" style={{ width: 5, height: 5, borderRadius: "50%", background: sp.dotColor, flexShrink: 0 }} />
                           {sp.seenText}
                         </p>
@@ -446,8 +499,8 @@ export function LocationPageBody(props: LocationBodyProps) {
                       alignItems: "center",
                       padding: "1rem 1.25rem",
                       borderRadius: "1rem",
-                      border: "1px solid #e2e8f0",
-                      background: "#fff",
+                      border: "1px solid rgba(255,255,255,0.10)",
+                      background: "#0a1628",
                       textDecoration: "none",
                       color: "inherit",
                     }}
@@ -459,12 +512,12 @@ export function LocationPageBody(props: LocationBodyProps) {
                       ) : null}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <p style={{ fontSize: "0.9375rem", fontWeight: 700, color: "#0f172a" }}>{s.name}</p>
+                      <p style={{ fontSize: "0.9375rem", fontWeight: 700, color: "#f0f4f8" }}>{s.name}</p>
                       {s.speciesLine ? (
-                        <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem" }}>{s.speciesLine}</p>
+                        <p style={{ fontSize: "0.75rem", color: "#8b9db8", marginTop: "0.15rem" }}>{s.speciesLine}</p>
                       ) : null}
                     </div>
-                    <span aria-hidden="true" style={{ color: "#cbd5e1", fontSize: "1.2rem", flexShrink: 0 }}>→</span>
+                    <span aria-hidden="true" style={{ color: "#8b9db8", fontSize: "1.2rem", flexShrink: 0 }}>→</span>
                   </Link>
                 ))}
               </div>
@@ -475,11 +528,11 @@ export function LocationPageBody(props: LocationBodyProps) {
           {gearGroups.length > 0 ? (
             <section id="gear" style={{ marginBottom: "3rem" }}>
               <p style={LABEL_STYLE}>Gear</p>
-              <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.25rem", padding: "1.1rem 1.4rem" }}>
+              <div style={{ border: "1px solid rgba(255,255,255,0.10)", borderRadius: "1.25rem", padding: "1.1rem 1.4rem" }}>
                 <ul style={{ display: "flex", flexDirection: "column", gap: 0, listStyle: "none", margin: 0, padding: 0 }}>
                   {gearGroups.map((group, gi) => (
                     <li key={group.label} style={{ listStyle: "none" }}>
-                      <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", margin: gi === 0 ? "0 0 0.2rem" : "1.1rem 0 0.2rem" }}>
+                      <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", margin: gi === 0 ? "0 0 0.2rem" : "1.1rem 0 0.2rem" }}>
                         {group.label}
                       </p>
                       <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
@@ -491,16 +544,16 @@ export function LocationPageBody(props: LocationBodyProps) {
                               alignItems: "center",
                               gap: "0.75rem",
                               padding: "0.65rem 0",
-                              borderTop: ii === 0 ? "none" : "1px solid #e2e8f0",
+                              borderTop: ii === 0 ? "none" : "1px solid rgba(255,255,255,0.10)",
                             }}
                           >
                             <span aria-hidden="true" style={{ fontSize: "1.05rem", width: "1.4rem", textAlign: "center", flexShrink: 0 }}>{item.icon}</span>
-                            <span style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a", flex: 1 }}>
+                            <span style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f0f4f8", flex: 1 }}>
                               {item.name}
-                              {item.extra ? <span style={{ fontWeight: 400, color: "#64748b", fontSize: "0.8125rem" }}> · {item.extra}</span> : null}
+                              {item.extra ? <span style={{ fontWeight: 400, color: "#8b9db8", fontSize: "0.8125rem" }}> · {item.extra}</span> : null}
                             </span>
                             {item.shopUrl ? (
-                              <a href={item.shopUrl} target="_blank" rel="noopener noreferrer" aria-label={`Where to buy ${item.name} (opens in new tab)`} style={{ color: "#cbd5e1", flexShrink: 0, display: "flex" }}>
+                              <a href={item.shopUrl} target="_blank" rel="noopener noreferrer" aria-label={`Where to buy ${item.name} (opens in new tab)`} style={{ color: "#8b9db8", flexShrink: 0, display: "flex" }}>
                                 <ExternalIcon />
                               </a>
                             ) : null}
@@ -517,9 +570,9 @@ export function LocationPageBody(props: LocationBodyProps) {
 
         {/* ============================ RIGHT — Plan a trip ============================ */}
         <aside style={{ position: "sticky", top: "5rem", alignSelf: "flex-start" }}>
-          <div style={{ border: "1px solid #e2e8f0", borderRadius: "1.4rem", boxShadow: "0 12px 40px -16px rgba(15,23,42,0.22)", overflow: "hidden", opacity: isWitnessing ? 0.96 : 1 }}>
+          <div style={{ border: "1px solid rgba(255,255,255,0.10)", borderRadius: "1.4rem", boxShadow: "0 12px 40px -16px rgba(0,0,0,0.5)", overflow: "hidden", opacity: isWitnessing ? 0.96 : 1, background: "#0a1628" }}>
             <div style={{ padding: "1.5rem 1.6rem 1.1rem" }}>
-              <p style={{ fontSize: "1.3rem", fontWeight: 800, letterSpacing: "-0.02em", color: "#0f172a", lineHeight: 1.15 }}>
+              <p style={{ fontSize: "1.3rem", fontWeight: 800, letterSpacing: "-0.02em", color: "#f0f4f8", lineHeight: 1.15 }}>
                 Plan your trip
               </p>
             </div>
@@ -528,9 +581,9 @@ export function LocationPageBody(props: LocationBodyProps) {
               <div style={{ padding: "0 1.6rem", display: "flex", flexDirection: "column" }}>
                 {monthCells.length > 0 ? (
                   <div style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.85rem 0", borderTop: "none" }}>
-                    <div style={{ width: 30, height: 30, borderRadius: "0.55rem", background: "#f1f7fb", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "0.95rem" }} aria-hidden="true">📅</div>
+                    <div style={{ width: 30, height: 30, borderRadius: "0.55rem", background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "0.95rem" }} aria-hidden="true">📅</div>
                     <div style={{ flex: 1 }}>
-                      <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#64748b" }}>Best months</p>
+                      <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8b9db8" }}>Best months</p>
                       <div style={{ display: "flex", gap: 3, marginTop: "0.4rem" }}>
                         {monthCells.map((c, i) => (
                           <span
@@ -544,9 +597,9 @@ export function LocationPageBody(props: LocationBodyProps) {
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
-                              background: c.on ? "#e7f6ee" : "#f1f5f9",
-                              color: c.on ? "#15824c" : "#94a3b8",
-                              outline: c.now ? "2px solid #0089de" : undefined,
+                              background: c.on ? "rgba(16,185,129,0.15)" : "rgba(255,255,255,0.05)",
+                              color: c.on ? "#6ee7b7" : "#8b9db8",
+                              outline: c.now ? "2px solid #00d4ff" : undefined,
                               outlineOffset: c.now ? 1 : undefined,
                             }}
                           >
@@ -559,11 +612,11 @@ export function LocationPageBody(props: LocationBodyProps) {
                 ) : null}
 
                 {tripFacts.map((f) => (
-                  <div key={f.label} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.85rem 0", borderTop: "1px solid #e2e8f0" }}>
-                    <div style={{ width: 30, height: 30, borderRadius: "0.55rem", background: "#f1f7fb", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "0.95rem" }} aria-hidden="true">{f.icon}</div>
+                  <div key={f.label} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.85rem 0", borderTop: "1px solid rgba(255,255,255,0.10)" }}>
+                    <div style={{ width: 30, height: 30, borderRadius: "0.55rem", background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "0.95rem" }} aria-hidden="true">{f.icon}</div>
                     <div style={{ flex: 1 }}>
-                      <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#64748b" }}>{f.label}</p>
-                      <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a", marginTop: "0.1rem" }}>{f.value}</p>
+                      <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8b9db8" }}>{f.label}</p>
+                      <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f0f4f8", marginTop: "0.1rem" }}>{f.value}</p>
                     </div>
                   </div>
                 ))}
@@ -575,26 +628,26 @@ export function LocationPageBody(props: LocationBodyProps) {
             {/* Getting there */}
             {getThere && getThere.kind === "prose" ? (
               <Expand summary="Getting there">
-                <p style={{ fontSize: "0.8125rem", color: "#334155", lineHeight: 1.6 }}>{getThere.text}</p>
+                <p style={{ fontSize: "0.8125rem", color: "#aebcd0", lineHeight: 1.6 }}>{getThere.text}</p>
               </Expand>
             ) : null}
             {getThere && getThere.kind === "structured" ? (
               <Expand summary="Getting there">
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   <div>
-                    <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.2rem" }}>Nearest hub</p>
-                    <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#0f172a" }}>{getThere.nearestHubName}</p>
-                    <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.1rem", lineHeight: 1.5 }}>{getThere.nearestHubDescription}</p>
+                    <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.2rem" }}>Nearest hub</p>
+                    <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#f0f4f8" }}>{getThere.nearestHubName}</p>
+                    <p style={{ fontSize: "0.75rem", color: "#8b9db8", marginTop: "0.1rem", lineHeight: 1.5 }}>{getThere.nearestHubDescription}</p>
                   </div>
                   <div>
-                    <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.2rem" }}>Transfer to the sites</p>
-                    <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#0f172a" }}>{getThere.transferToSitesName}</p>
-                    <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.1rem", lineHeight: 1.5 }}>{getThere.transferToSitesDescription}</p>
+                    <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.2rem" }}>Transfer to the sites</p>
+                    <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#f0f4f8" }}>{getThere.transferToSitesName}</p>
+                    <p style={{ fontSize: "0.75rem", color: "#8b9db8", marginTop: "0.1rem", lineHeight: 1.5 }}>{getThere.transferToSitesDescription}</p>
                   </div>
                   {getThere.liveaboardDescription ? (
                     <div>
-                      <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.2rem" }}>Liveaboard option</p>
-                      <p style={{ fontSize: "0.75rem", color: "#64748b", lineHeight: 1.5 }}>{getThere.liveaboardDescription}</p>
+                      <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.2rem" }}>Liveaboard option</p>
+                      <p style={{ fontSize: "0.75rem", color: "#8b9db8", lineHeight: 1.5 }}>{getThere.liveaboardDescription}</p>
                     </div>
                   ) : null}
                 </div>
@@ -605,15 +658,15 @@ export function LocationPageBody(props: LocationBodyProps) {
                 nested below so a stay and an operator can be booked together. */}
             {hasStay ? (
               <Expand summary="Where to stay">
-                <p style={{ fontSize: "0.75rem", color: "#64748b", lineHeight: 1.55, marginBottom: "0.75rem" }}>
-                  Most divers book a place to stay and a dive operator together. Each link goes to the provider&apos;s own site. We do not take a commission on operators.
+                <p style={{ fontSize: "0.75rem", color: "#8b9db8", lineHeight: 1.55, marginBottom: "0.75rem" }}>
+                  Most divers book a place to stay and a dive operator together. Each link goes to the provider&apos;s own site.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {stayTiers
                     .filter((tier) => tier.items.length > 0)
                     .map((tier) => (
                       <div key={`tier-${tier.label}`}>
-                        <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.4rem" }}>
+                        <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.4rem" }}>
                           {tier.label}
                         </p>
                         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -627,19 +680,19 @@ export function LocationPageBody(props: LocationBodyProps) {
                               productId={l.productId}
                               siteId={locationId}
                               isAffiliate={l.isAffiliate}
-                              className="flex items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] font-medium text-slate-900 no-underline transition hover:border-[#0089de]/40"
+                              className="flex items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-[13px] font-medium text-[#f0f4f8] no-underline transition hover:border-[#00d4ff]/40"
                             >
                               <span style={{ display: "flex", alignItems: "center", gap: "0.4rem", minWidth: 0 }}>
                                 <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                   {l.label}
                                 </span>
                                 {l.isLiveaboard ? (
-                                  <span style={{ flexShrink: 0, fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", padding: "0.1rem 0.4rem", borderRadius: 999, background: "#e7f6ee", color: "#15824c" }}>
+                                  <span style={{ flexShrink: 0, fontSize: "0.5625rem", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", padding: "0.1rem 0.4rem", borderRadius: 999, background: "rgba(16,185,129,0.15)", color: "#6ee7b7" }}>
                                     stay + dive
                                   </span>
                                 ) : null}
                               </span>
-                              <span aria-hidden="true" style={{ color: "#94a3b8", flexShrink: 0 }}>→</span>
+                              <span aria-hidden="true" style={{ color: "#8b9db8", flexShrink: 0 }}>→</span>
                             </AffiliateLink>
                           ))}
                         </div>
@@ -648,7 +701,7 @@ export function LocationPageBody(props: LocationBodyProps) {
 
                   {operators.length > 0 ? (
                     <div>
-                      <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.4rem" }}>
+                      <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.4rem" }}>
                         Dive operators
                       </p>
                       <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -662,12 +715,12 @@ export function LocationPageBody(props: LocationBodyProps) {
                             productId={op.productId}
                             siteId={locationId}
                             isAffiliate={op.isAffiliate}
-                            className="flex items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-[13px] font-medium text-slate-900 no-underline transition hover:border-[#0089de]/40"
+                            className="flex items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-[13px] font-medium text-[#f0f4f8] no-underline transition hover:border-[#00d4ff]/40"
                           >
                             <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
                               {op.label}
                             </span>
-                            <span aria-hidden="true" style={{ color: "#94a3b8", flexShrink: 0 }}>→</span>
+                            <span aria-hidden="true" style={{ color: "#8b9db8", flexShrink: 0 }}>→</span>
                           </AffiliateLink>
                         ))}
                       </div>
@@ -700,7 +753,7 @@ export function LocationPageBody(props: LocationBodyProps) {
 
 function Metric({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ flex: 1, minWidth: 150, padding: "1rem 1.4rem", borderRight: "1px solid #e2e8f0" }}>
+    <div style={{ flex: 1, minWidth: 150, padding: "1rem 1.4rem", borderRight: "1px solid rgba(255,255,255,0.10)" }}>
       {children}
     </div>
   );
@@ -708,7 +761,7 @@ function Metric({ children }: { children: React.ReactNode }) {
 
 function MetricLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.35rem", display: "flex", alignItems: "center", gap: "0.35rem" }}>
+    <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.35rem", display: "flex", alignItems: "center", gap: "0.35rem" }}>
       {children}
     </p>
   );

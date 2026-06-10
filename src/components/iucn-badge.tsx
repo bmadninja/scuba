@@ -5,15 +5,15 @@ import type { IucnStatus } from "@/lib/data/types";
 type IucnTone = { bg: string; text: string; chip: string };
 
 const FLAT_TONE: Record<IucnStatus["category"], IucnTone> = {
-  EX: { bg: "#f1f5f9", text: "#1e293b", chip: "#1e293b" },
-  EW: { bg: "#f1f5f9", text: "#1e293b", chip: "#334155" },
-  CR: { bg: "#fdecea", text: "#c0392f", chip: "#b91c1c" },
-  EN: { bg: "#fdecea", text: "#c0392f", chip: "#e23a3a" },
-  VU: { bg: "#fcf2e2", text: "#b9751a", chip: "#e8962f" },
-  NT: { bg: "#f3fce8", text: "#3f6212", chip: "#65a30d" },
-  LC: { bg: "#e7f6ee", text: "#15824c", chip: "#15a05c" },
-  DD: { bg: "#f1f5f9", text: "#64748b", chip: "#94a3b8" },
-  NE: { bg: "#f1f5f9", text: "#94a3b8", chip: "#cbd5e1" },
+  EX: { bg: "rgba(255,255,255,0.06)", text: "#aebcd0", chip: "#aebcd0" },
+  EW: { bg: "rgba(255,255,255,0.06)", text: "#aebcd0", chip: "#8b9db8" },
+  CR: { bg: "rgba(239,68,68,0.12)", text: "#fca5a5", chip: "#ef4444" },
+  EN: { bg: "rgba(239,68,68,0.12)", text: "#fca5a5", chip: "#f87171" },
+  VU: { bg: "rgba(245,158,11,0.12)", text: "#fbbf24", chip: "#f59e0b" },
+  NT: { bg: "rgba(132,204,22,0.12)", text: "#bef264", chip: "#84cc16" },
+  LC: { bg: "rgba(16,185,129,0.12)", text: "#6ee7b7", chip: "#10b981" },
+  DD: { bg: "rgba(255,255,255,0.06)", text: "#8b9db8", chip: "#8b9db8" },
+  NE: { bg: "rgba(255,255,255,0.06)", text: "#8b9db8", chip: "#8b9db8" },
 };
 
 const TREND_LABEL: Record<NonNullable<IucnStatus["populationTrend"]>, string> = {
@@ -73,13 +73,13 @@ export function IucnBadge({
 
 export function IucnAttribution() {
   return (
-    <p className="mt-2 text-[11px] leading-5 text-slate-500">
+    <p className="mt-2 text-[11px] leading-5 text-[#8b9db8]">
       Threat category from the{" "}
       <a
         href="https://www.iucnredlist.org/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#0089de] hover:underline"
+        className="text-[#00d4ff] hover:underline"
       >
         IUCN Red List of Threatened Species
       </a>

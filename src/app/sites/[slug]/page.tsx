@@ -379,12 +379,14 @@ export default async function SiteDetailPage({
     { icon: "⌚", name: "Dive computer", extra: null, shopUrl: gearShopUrl("computer-shearwater-peregrine") },
   ];
 
-  const siteGearItems: GearItem[] = site.siteSpecificGear.map((g) => ({
-    icon: siteGearIcon(g.name),
-    name: g.name,
-    extra: g.reason,
-    shopUrl: gearShopUrl(g.gearId),
-  }));
+  const siteGearItems: GearItem[] = site.siteSpecificGear
+    .filter((g) => g && g.name)
+    .map((g) => ({
+      icon: siteGearIcon(g.name),
+      name: g.name,
+      extra: g.reason,
+      shopUrl: gearShopUrl(g.gearId),
+    }));
 
   const gearGroups: GearGroup[] = [{ label: "Basic kit", items: basicItems }];
   if (siteGearItems.length > 0) {

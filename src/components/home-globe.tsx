@@ -9,8 +9,8 @@ const DynamicPlanetGlobe = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="w-full overflow-hidden rounded-2xl border border-slate-200 bg-[#eaf4fb] p-4 shadow-sm">
-        <div className="min-h-[340px] animate-pulse rounded-xl bg-white/60" />
+      <div className="w-full overflow-hidden rounded-2xl border border-white/10 bg-[#030712] p-4 shadow-sm">
+        <div className="min-h-[340px] animate-pulse rounded-xl bg-white/5" />
       </div>
     ),
   },

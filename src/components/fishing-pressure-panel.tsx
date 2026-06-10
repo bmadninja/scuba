@@ -18,23 +18,23 @@ export function FishingPressurePanel({
     : null;
   const trendTone =
     trend === null
-      ? "text-slate-500"
+      ? "text-[#8b9db8]"
       : trend > 10
-        ? "text-rose-700"
+        ? "text-rose-400"
         : trend < -10
-          ? "text-emerald-700"
-          : "text-slate-600";
+          ? "text-emerald-300"
+          : "text-[#8b9db8]";
   const trendArrow =
     trend === null ? "" : trend > 0 ? "↑" : trend < 0 ? "↓" : "→";
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-5">
+    <section className="rounded-2xl border border-white/10 bg-[#0a1628] p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8b9db8]">
             Fishing pressure — Global Fishing Watch
           </p>
-          <h3 className="mt-1 text-base font-bold text-slate-900">
+          <h3 className="mt-1 text-base font-bold text-[#f0f4f8]">
             Visible fishing within {record.radiusKm} km
           </h3>
         </div>
@@ -42,25 +42,25 @@ export function FishingPressurePanel({
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-[#8b9db8]">
             Apparent fishing hours
           </p>
           <p className="mt-1">
-            <span className="text-3xl font-bold text-slate-900">
+            <span className="text-3xl font-bold text-[#f0f4f8]">
               {record.current.fishingHours.toLocaleString()}
             </span>
-            <span className="ml-2 text-sm text-slate-500">
+            <span className="ml-2 text-sm text-[#8b9db8]">
               in {record.current.year}
             </span>
           </p>
         </div>
         {record.historical ? (
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#8b9db8]">
               Trend vs {record.historical.year}
             </p>
             <p className="mt-1">
-              <span className="text-2xl font-semibold text-slate-700">
+              <span className="text-2xl font-semibold text-[#aebcd0]">
                 {record.historical.fishingHours.toLocaleString()} h
               </span>
             </p>
@@ -74,13 +74,13 @@ export function FishingPressurePanel({
         ) : null}
       </div>
 
-      <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-[12px] leading-5 text-amber-900">
+      <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-[12px] leading-5 text-amber-300">
         <strong>Important caveat.</strong> GFW sees vessels that broadcast{" "}
         <a
           href="https://en.wikipedia.org/wiki/Automatic_identification_system"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-amber-700/40 hover:decoration-amber-700"
+          className="underline decoration-amber-300/40 hover:decoration-amber-300"
         >
           AIS
         </a>
@@ -90,12 +90,12 @@ export function FishingPressurePanel({
         artisanal-dominated regions.
       </p>
 
-      <p className="mt-3 text-[11.5px] leading-5 text-slate-500">
+      <p className="mt-3 text-[11.5px] leading-5 text-[#8b9db8]">
         <a
           href="https://globalfishingwatch.org/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#0089de] hover:underline"
+          className="text-[#00d4ff] hover:underline"
         >
           Global Fishing Watch →
         </a>{" "}
