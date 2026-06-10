@@ -262,7 +262,6 @@ export default function DataPage() {
           style={{
             position: "sticky",
             top: "5rem",
-            display: "flex",
             flexDirection: "column",
             gap: "0.1rem",
             alignSelf: "start",
@@ -900,6 +899,7 @@ export default function DataPage() {
       {/* Layout + responsive rules scoped to this page only. */}
       <style>{`
         .method-wrap{max-width:1180px;margin:0 auto;padding:3rem;display:grid;grid-template-columns:210px 1fr;gap:3.5rem;align-items:start;}
+        .method-toc{display:flex;}
         .method-state-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
         .method-sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
         .method-pipe{display:flex;flex-wrap:wrap;gap:0;margin-top:0.5rem;}
