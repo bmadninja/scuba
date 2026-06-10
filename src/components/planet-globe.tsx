@@ -176,7 +176,11 @@ export function PlanetGlobe({
   useEffect(() => {
     if (!globeRef.current || dimensions.width === 0) return;
     const controls = globeRef.current.controls();
-    controls.autoRotate = true;
+    // Honor prefers-reduced-motion: no auto-rotate for users who opt out.
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    controls.autoRotate = !prefersReducedMotion;
     controls.autoRotateSpeed = 0.2;
     controls.enablePan = false;
     controls.minDistance = 180;
@@ -271,7 +275,7 @@ export function PlanetGlobe({
     <div className="w-full">
       <div
         ref={containerRef}
-        className="relative mx-auto w-full overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-b from-[#eaf4fb] to-[#dfecf6] p-4 shadow-sm"
+        className="relative mx-auto w-full overflow-hidden rounded-2xl bg-transparent p-4"
       >
         <div className="relative min-h-[340px]">
           {dimensions.width > 0 && visibleMarkers.length > 0 ? (
@@ -395,14 +399,6 @@ export function PlanetGlobe({
               </span>
             </div>
           )}
-
-          {/* Updated nightly chip — top-left */}
-          <div className="pointer-events-none absolute left-3 top-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 px-2.5 py-1 text-[10.5px] font-semibold text-white backdrop-blur">
-              <span className="live-dot h-1.5 w-1.5 rounded-full bg-[#15a05c]" aria-hidden />
-              Updated nightly
-            </span>
-          </div>
         </div>
       </div>
 
