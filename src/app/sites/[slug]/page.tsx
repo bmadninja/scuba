@@ -49,29 +49,12 @@ const IUCN_LABEL: Record<string, string> = {
 
 // ─── Plain-language helpers ───────────────────────────────────────────────────
 
-function getSpeciesIcon(name: string): string {
-  const n = name.toLowerCase();
-  if (/shark/.test(n)) return "🦈";
-  if (/ray|skate|manta|sawfish|mobula/.test(n)) return "🐠";
-  if (/turtle|tortoise/.test(n)) return "🐢";
-  if (/whale|dolphin|porpoise|dugong|manatee/.test(n)) return "🐬";
-  if (/octopus|squid|cuttlefish|nautilus/.test(n)) return "🐙";
-  if (/grouper|trevally|jack|barracuda|tuna|snapper/.test(n)) return "🐟";
-  return "🐠";
+function getSpeciesIcon(_name: string): string {
+  return "";
 }
 
-function siteGearIcon(name: string): string {
-  const n = name.toLowerCase();
-  if (/reef hook/.test(n)) return "🪝";
-  if (/smb|surface marker|buoy/.test(n)) return "🎈";
-  if (/reel/.test(n)) return "🧵";
-  if (/light|torch/.test(n)) return "🔦";
-  if (/glove/.test(n)) return "🧤";
-  if (/hood/.test(n)) return "🥽";
-  if (/camera/.test(n)) return "📷";
-  if (/computer/.test(n)) return "⌚";
-  if (/knife|cutting/.test(n)) return "🔪";
-  return "🌊";
+function siteGearIcon(_name: string): string {
+  return "";
 }
 
 function gearShopUrl(gearId?: string): string | null {
@@ -312,25 +295,25 @@ export default async function SiteDetailPage({
 
   const conditions: ConditionCard[] = [
     {
-      icon: "📏",
+      icon: "",
       label: "Depth",
       value: `${site.depthRange.min} to ${site.depthRange.max} m`,
       sub: depthSuitability(site.depthRange.min, site.depthRange.max),
     },
     {
-      icon: "🌊",
+      icon: "",
       label: "Current",
       value: condMonth ? (CURRENT_VALUE[condMonth.currentStrength] ?? "Variable") : "Variable",
       sub: "Can pick up on the edge",
     },
     {
-      icon: "👁️",
+      icon: "",
       label: "Visibility",
       value: condMonth ? `${condMonth.visibilityM.min} to ${condMonth.visibilityM.max} m` : "Varies",
       sub: "Clearest in the calm season",
     },
     {
-      icon: "🌡️",
+      icon: "",
       label: "Water",
       value:
         minWaterTemp !== null && maxWaterTemp !== null
@@ -373,10 +356,10 @@ export default async function SiteDetailPage({
   // --- Gear (two layers) -----------------------------------------------------
   const wetsuit = wetsuitForTemp(minWaterTemp);
   const basicItems: GearItem[] = [
-    { icon: "🤿", name: "Mask and fins", extra: null, shopUrl: gearShopUrl("mask-cressi-f1") },
-    { icon: "🦺", name: "BCD and regulator", extra: null, shopUrl: gearShopUrl("bcd-scubapro-hydros-pro") },
-    { icon: "🌡️", name: wetsuit.name, extra: wetsuit.note, shopUrl: gearShopUrl(wetsuit.gearId) },
-    { icon: "⌚", name: "Dive computer", extra: null, shopUrl: gearShopUrl("computer-shearwater-peregrine") },
+    { icon: "", name: "Mask and fins", extra: null, shopUrl: gearShopUrl("mask-cressi-f1") },
+    { icon: "", name: "BCD and regulator", extra: null, shopUrl: gearShopUrl("bcd-scubapro-hydros-pro") },
+    { icon: "", name: wetsuit.name, extra: wetsuit.note, shopUrl: gearShopUrl(wetsuit.gearId) },
+    { icon: "", name: "Dive computer", extra: null, shopUrl: gearShopUrl("computer-shearwater-peregrine") },
   ];
 
   const siteGearItems: GearItem[] = site.siteSpecificGear
@@ -395,7 +378,7 @@ export default async function SiteDetailPage({
 
   // --- Plan your dive --------------------------------------------------------
   const tripFacts: TripFact[] = [
-    { icon: "🎓", label: "Certification", value: `${skillText(site.skillLevel)} and up` },
+    { icon: "", label: "Certification", value: `${skillText(site.skillLevel)} and up` },
   ];
 
   const monthCells = MONTH_LETTERS.map((letter, i) => ({

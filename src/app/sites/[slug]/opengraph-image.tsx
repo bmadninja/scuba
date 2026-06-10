@@ -41,20 +41,6 @@ export default async function Image({
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 12,
-              background: "rgba(255,255,255,0.15)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 36,
-            }}
-          >
-            🌊
-          </div>
           <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: -0.4 }}>
             {SITE_NAME}
           </div>
