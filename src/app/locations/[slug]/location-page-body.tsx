@@ -164,8 +164,8 @@ function ExternalIcon() {
 // ─── Coral-cover decline chart (SVG, deterministic) ───────────────────────────
 
 function DeclineSvg({ d }: { d: DeclineChart }) {
-  // Map values onto a 520x190 viewBox. Top = 35% line at y=30, bottom = 0% at y=150.
-  const top = 35;
+  // Map values onto a 520x190 viewBox. Scale top to the data so values above 35% fit.
+  const top = Math.max(40, Math.ceil(Math.max(d.fromPct, d.toPct) / 10) * 10);
   const yFor = (pct: number) => 150 - (pct / top) * 120;
   const x0 = 20;
   const xNow = 326;
@@ -180,7 +180,7 @@ function DeclineSvg({ d }: { d: DeclineChart }) {
     <svg viewBox="0 0 520 190" width="100%" height="190" role="img" aria-label={label}>
       <line x1="20" y1="150" x2="500" y2="150" stroke="rgba(255,255,255,0.10)" strokeWidth="1" />
       <line x1="20" y1="30" x2="500" y2="30" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-      <text x="20" y="24" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{top}%</text>
+      {yFrom >= 42 && <text x="20" y="24" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{top}%</text>}
       <text x="20" y="165" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">0%</text>
       <path d={`M${x0},${yFrom} L${xNow},${yNow} L${xNow},150 L${x0},150 Z`} fill="#fdecea" opacity="0.7" />
       <polyline points={`${x0},${yFrom} ${xNow},${yNow}`} fill="none" stroke="#c0392f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
