@@ -452,7 +452,8 @@ export function LocationPageBody(props: LocationBodyProps) {
                         overflow: "hidden",
                         textDecoration: "none",
                         color: "inherit",
-                        display: "block",
+                        display: "flex",
+                        flexDirection: "column",
                         background: "#0a1628",
                       }}
                     >
