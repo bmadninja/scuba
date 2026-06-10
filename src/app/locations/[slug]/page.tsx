@@ -19,6 +19,7 @@ import { LocationPageBody } from "./location-page-body";
 import type {
   ConditionPill,
   DeclineChart,
+  CoverTrend,
   GearGroup,
   GearItem,
   OperatorItem,
@@ -208,7 +209,7 @@ export async function generateMetadata({
       description,
       url: `/locations/${location.slug}`,
       type: "article",
-      images: [{ url: metadataImageUrl }],
+      images: metadataImageUrl ? [{ url: metadataImageUrl }] : undefined,
     },
   };
 }
@@ -361,8 +362,11 @@ export default async function LocationPage({
     ? new Date(observed.historicalSurveyDate + "T00:00:00Z").getUTCFullYear()
     : null;
 
-  // Decline chart only when we have a real before/after that fell.
+  // A two-point coral-cover chart whenever we have a real before/after: a red
+  // decline (with projection to zero), or a green/neutral trend for reefs that
+  // are recovering or holding steady.
   let decline: DeclineChart | null = null;
+  let coverTrend: CoverTrend | null = null;
   let coverTrendNote: string | null = null;
   if (
     coverNow !== null &&
@@ -384,8 +388,22 @@ export default async function LocationPage({
       };
     } else if (coverNow > coverBefore) {
       coverTrendNote = `Up from ${Math.round(coverBefore)}% in ${historicalYear}.`;
+      coverTrend = {
+        fromPct: Math.round(coverBefore),
+        fromYear: historicalYear,
+        toPct: Math.round(coverNow),
+        toYear: surveyYear,
+        direction: "up",
+      };
     } else {
       coverTrendNote = `Holding steady since ${historicalYear}.`;
+      coverTrend = {
+        fromPct: Math.round(coverBefore),
+        fromYear: historicalYear,
+        toPct: Math.round(coverNow),
+        toYear: surveyYear,
+        direction: "flat",
+      };
     }
   }
 
@@ -442,6 +460,25 @@ export default async function LocationPage({
   const fishing = fishingPill(reefPressure?.mpaStatus ?? null, reefPressure?.fishingPressure ?? null);
   const hasReefData = coverNow !== null || decline !== null || heat !== null || fishing !== null;
 
+  // For a flat coral-cover trend, append a forward-looking sentence based on current
+  // heat stress and fishing pressure so the note reads as an honest outlook, not just
+  // a historical observation.
+  if (coverTrendNote && coverTrendNote.startsWith("Holding steady")) {
+    const heatOk = thermalAlert === "no-stress" || thermalAlert === "watch";
+    const fp = reefPressure?.fishingPressure ?? "unknown";
+    const mpa = reefPressure?.mpaStatus ?? "no-protection";
+    const fishingOk = fp === "low" || mpa === "strict-mpa" || mpa === "no-take";
+    if (!heatOk && (fp === "high" || fp === "very-high")) {
+      coverTrendNote += " Both elevated heat and high fishing pressure put this stability at risk.";
+    } else if (!heatOk) {
+      coverTrendNote += " Current heat stress could disturb this balance.";
+    } else if (fp === "high" || fp === "very-high") {
+      coverTrendNote += " High fishing pressure could undermine this stability over time.";
+    } else if (heatOk && fishingOk) {
+      coverTrendNote += " If conditions stay this way, this reef should hold its ground.";
+    }
+  }
+
   // One plain condition sentence, honest, never "still worth diving".
   const conditionSentence = (() => {
     const parts: string[] = [];
@@ -468,7 +505,10 @@ export default async function LocationPage({
 
   // --- Plan a trip ----------------------------------------------------------
   const getThereStructured = sites.map((s) => s.getThereStructured).find((t) => Boolean(t)) ?? null;
-  const getThereProse = sites.map((s) => s.getThere).find((t) => t && t.trim().length > 0) ?? null;
+  const getThereProse =
+    sites.map((s) => s.getThere).find((t) => t && t.trim().length > 0) ??
+    details?.goodToKnow.find((g) => g.title.toLowerCase().includes("getting there"))?.body ??
+    null;
   const lodging = dedupePartnerLinks(sites.flatMap((s) => s.lodging));
   const operatorsRaw = dedupePartnerLinks(sites.flatMap((s) => s.operators));
 
@@ -523,6 +563,15 @@ export default async function LocationPage({
       value: `${minWaterTemp} to ${maxWaterTemp}°C`,
     });
   }
+  if (details?.diveLevel) {
+    tripFacts.push({ icon: "🎓", label: "Level", value: details.diveLevel });
+  }
+  if (details?.diveStyle) {
+    tripFacts.push({ icon: "🤿", label: "Dive style", value: details.diveStyle });
+  }
+  if (details?.tripDuration) {
+    tripFacts.push({ icon: "🗓️", label: "Trip length", value: details.tripDuration });
+  }
   // "Best months" already carried by the season strip; keep the fact list lean.
   const monthCells = MONTH_LETTERS.map((letter, i) => ({
     letter,
@@ -573,12 +622,14 @@ export default async function LocationPage({
               "linear-gradient(155deg,#041c33 0%,#063a52 20%,#065a70 40%,#087a8a 58%,#0a9a88 75%,#0a8070 100%)",
           }}
         />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={heroPhotoUrl}
-          alt={`Underwater reef at ${location.name}`}
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-        />
+        {heroPhotoUrl && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={heroPhotoUrl}
+            alt={`Underwater reef at ${location.name}`}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        )}
         <div
           aria-hidden="true"
           style={{
@@ -636,6 +687,7 @@ export default async function LocationPage({
         intro={intro}
         conditionSentence={conditionSentence}
         decline={decline}
+        coverTrend={coverTrend}
         coverNow={coverNow}
         coverYear={surveyYear}
         coverTrendNote={coverTrendNote}

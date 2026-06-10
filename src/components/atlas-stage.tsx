@@ -16,7 +16,7 @@ import type { FilterLocation, Filters, SortKey } from "./atlas-filter-rail";
 import { WILDLIFE_TAXONOMY } from "@/lib/atlas-location";
 import { freshness } from "@/lib/data/reef-state";
 import type { FreshnessKey } from "@/lib/data/reef-state";
-import { underwaterPhotoUrl } from "@/lib/photo-quality";
+import { HeroPhoto } from "./hero-photo";
 import { HomeGlobe } from "./home-globe";
 import type { PlanetMarker } from "./planet-globe";
 import { STATE_COLOR, STATE_TEXT } from "@/lib/data/reef-state";
@@ -37,7 +37,7 @@ const STATE_LABEL: Record<string, string> = {
 
 const STATE_SWATCH: Record<string, string> = {
   thriving: "#10b981",
-  pressure: "#2f6ced",
+  pressure: "#f59e0b",
   change: "#f43f5e",
 };
 
@@ -90,13 +90,13 @@ function FilterSection({
   defaultOpen?: boolean;
 }) {
   return (
-    <details open={defaultOpen} className="group border-t border-slate-200">
-      <summary className="flex cursor-pointer list-none items-center gap-1.5 py-3 text-[0.72rem] font-bold uppercase tracking-[0.08em] text-slate-500 [&::-webkit-details-marker]:hidden">
+    <details open={defaultOpen} className="group border-t border-white/10">
+      <summary className="flex cursor-pointer list-none items-center gap-1.5 py-3 text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#8b9db8] [&::-webkit-details-marker]:hidden">
         {title}
         {infoKey && onInfo && (
           <InfoButton onClick={() => onInfo(infoKey)} label="How this works" />
         )}
-        <span className="ml-auto text-[0.7rem] text-slate-400 transition group-open:rotate-0 [.group:not([open])_&]:-rotate-90" aria-hidden>
+        <span className="ml-auto text-[0.7rem] text-[#8b9db8] transition group-open:rotate-0 [.group:not([open])_&]:-rotate-90" aria-hidden>
           ▾
         </span>
       </summary>
@@ -125,12 +125,12 @@ function CheckRow({
       aria-checked={on}
       onClick={onClick}
       className={`flex w-full items-center gap-2.5 rounded-lg px-2 py-2 text-left text-sm font-medium transition ${
-        on && tint ? "bg-[#eef4ff] text-slate-900" : "text-slate-900 hover:bg-slate-50"
+        on && tint ? "bg-[rgba(0,212,255,0.12)] text-[#f0f4f8]" : "text-[#f0f4f8] hover:bg-white/5"
       }`}
     >
       <span
         className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[5px] border-2 text-[10px] font-bold text-white transition ${
-          on ? "border-[#0089de] bg-[#0089de]" : "border-slate-300 bg-white"
+          on ? "border-[#00d4ff] bg-[#00d4ff]" : "border-white/10 bg-[#0a1628]"
         }`}
         aria-hidden
       >
@@ -159,10 +159,10 @@ function TaxoGroup({
 }) {
   const count = tags.filter((t) => selected.includes(t)).length;
   return (
-    <details open={count > 0} className="group/cat overflow-hidden rounded-[0.6rem] border border-slate-200">
-      <summary className="flex cursor-pointer list-none items-center gap-2 px-2.5 py-2 text-[0.8125rem] font-bold text-slate-900 [&::-webkit-details-marker]:hidden">
+    <details open={count > 0} className="group/cat overflow-hidden rounded-[0.6rem] border border-white/10">
+      <summary className="flex cursor-pointer list-none items-center gap-2 px-2.5 py-2 text-[0.8125rem] font-bold text-[#f0f4f8] [&::-webkit-details-marker]:hidden">
         {group}
-        <span className="ml-auto text-slate-400 transition group-open/cat:rotate-180" aria-hidden>
+        <span className="ml-auto text-[#8b9db8] transition group-open/cat:rotate-180" aria-hidden>
           ⌄
         </span>
       </summary>
@@ -177,8 +177,8 @@ function TaxoGroup({
               onClick={() => onToggle(t)}
               className={`rounded-full border px-2.5 py-1 text-xs font-semibold transition ${
                 on
-                  ? "border-slate-900 bg-slate-900 text-white"
-                  : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
+                  ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
+                  : "border-white/10 bg-white/5 text-[#8b9db8] hover:border-white/20"
               }`}
             >
               {t}
@@ -210,7 +210,7 @@ function RegionTree({
         const allOn = countries.length > 0 && activeCount === countries.length;
         return (
           <details key={continent} open={activeCount > 0} className="group/reg">
-            <summary className="flex cursor-pointer list-none items-center gap-2.5 rounded-lg px-2 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer list-none items-center gap-2.5 rounded-lg px-2 py-2 text-sm font-medium text-[#f0f4f8] hover:bg-white/5 [&::-webkit-details-marker]:hidden">
               <span
                 role="checkbox"
                 aria-checked={allOn ? "true" : activeCount > 0 ? "mixed" : "false"}
@@ -222,20 +222,20 @@ function RegionTree({
                 }}
                 className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[5px] border-2 text-[10px] font-bold transition ${
                   allOn
-                    ? "border-[#0089de] bg-[#0089de] text-white"
+                    ? "border-[#00d4ff] bg-[#00d4ff] text-[#0a1628]"
                     : activeCount > 0
-                      ? "border-[#0089de] bg-[#e8f0fe] text-[#0089de]"
-                      : "border-slate-300 bg-white text-white"
+                      ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
+                      : "border-white/10 bg-[#0a1628] text-white"
                 }`}
               >
                 {allOn ? "✓" : activeCount > 0 ? "–" : ""}
               </span>
               {continent}
-              <span className="ml-auto text-[0.7rem] text-slate-400 transition group-open/reg:rotate-180" aria-hidden>
+              <span className="ml-auto text-[0.7rem] text-[#8b9db8] transition group-open/reg:rotate-180" aria-hidden>
                 ⌄
               </span>
             </summary>
-            <div className="ml-[26px] mt-0.5 flex flex-col gap-0.5 border-l border-slate-100 pl-2">
+            <div className="ml-[26px] mt-0.5 flex flex-col gap-0.5 border-l border-white/10 pl-2">
               {countries.map((country) => (
                 <CheckRow
                   key={country}
@@ -269,60 +269,53 @@ function ReefCard({
   return (
     <Link
       href={`/locations/${r.slug}`}
-      className={`group relative block h-[175px] overflow-hidden rounded-2xl text-inherit no-underline ${
-        lift ? "transition hover:-translate-y-[3px] hover:shadow-[0_16px_34px_-14px_rgba(4,18,32,0.45)]" : ""
+      className={`group block overflow-hidden rounded-2xl border border-white/10 bg-[#0a1628] text-inherit no-underline ${
+        lift
+          ? "transition hover:-translate-y-[3px] hover:border-[#00d4ff]/30 hover:shadow-[0_16px_34px_-14px_rgba(0,0,0,0.5)]"
+          : ""
       }`}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={underwaterPhotoUrl(r.heroImageUrl)}
-        alt={`Underwater reef at ${r.name}`}
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to bottom,rgba(4,18,32,0.05) 28%,rgba(4,18,32,0.5) 64%,rgba(4,18,32,0.92))",
-        }}
-      />
-      <div className="absolute inset-x-0 bottom-0 p-[0.85rem_0.95rem]">
-        <p className="mb-0.5 flex items-center gap-1.5 text-[0.5625rem] font-bold uppercase tracking-[0.13em] text-white/60">
-          <span>{r.region}</span>
-          <span className="text-white/30" aria-hidden>·</span>
-          <span className="inline-flex items-center gap-1 text-white/75">
-            <span
-              className="h-[5px] w-[5px] shrink-0 rounded-full"
-              style={{ background: STATE_SWATCH[r.state] }}
-              aria-hidden
-            />
-            {STATE_LABEL[r.state]}
+      {/* Photo — text lives below it on the card, not overlaid */}
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <HeroPhoto
+          url={r.heroImageUrl}
+          alt={`Underwater reef at ${r.name}`}
+          seed={r.slug ?? r.name}
+          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+        />
+        {showFreshPill && freshEyes && (
+          <span
+            className="absolute left-2.5 top-2.5 inline-flex items-center rounded-full border px-2 py-[0.2rem] text-[0.6rem] font-bold backdrop-blur-[6px]"
+            style={{
+              background: "rgba(8,20,34,0.55)",
+              color: "#fcd34d",
+              borderColor: "rgba(252,211,77,0.45)",
+            }}
+          >
+            Needs fresh eyes
           </span>
-        </p>
+        )}
+      </div>
+
+      {/* Label block */}
+      <div className="p-[0.85rem_1rem_1rem]">
         <p
-          className="mb-2 text-[0.9375rem] font-extrabold tracking-[-0.01em] text-white"
-          style={{ textShadow: "0 1px 12px rgba(4,18,32,0.4)" }}
+          className="mb-1.5 flex items-center gap-1.5 text-[0.625rem] font-bold uppercase tracking-[0.13em]"
+          style={{ color: STATE_SWATCH[r.state] }}
         >
+          <span
+            className="h-[6px] w-[6px] shrink-0 rounded-full"
+            style={{ background: STATE_SWATCH[r.state] }}
+            aria-hidden
+          />
+          {STATE_LABEL[r.state]}
+        </p>
+        <p className="text-[1.0625rem] font-extrabold tracking-[-0.01em] text-[#f0f4f8]">
           {r.name}
         </p>
-        {/* Ghost pills — only where they change the read */}
-        {showFreshPill && freshEyes && (
-          <div className="flex flex-wrap gap-1.5">
-            {showFreshPill && freshEyes && (
-              <span
-                className="inline-flex items-center rounded-full border px-2 py-[0.22rem] text-[0.6rem] font-bold backdrop-blur-[6px]"
-                style={{
-                  background: "rgba(8,20,34,0.3)",
-                  color: "#fcd34d",
-                  borderColor: "rgba(252,211,77,0.45)",
-                }}
-              >
-                Needs fresh eyes
-              </span>
-            )}
-          </div>
-        )}
+        <p className="mt-1 text-[0.8125rem] text-[#8b9db8]">
+          {r.country} <span className="text-[#8b9db8]/50" aria-hidden>·</span> {r.region}
+        </p>
       </div>
     </Link>
   );
@@ -484,11 +477,11 @@ export function AtlasStage({
       {/* ── FILTER RAIL ── */}
       <aside className="lg:sticky lg:top-[78px] lg:max-h-[calc(100vh-96px)] lg:self-start lg:overflow-auto lg:pr-1">
         <div className="flex items-center justify-between pb-1.5">
-          <span className="text-[1.05rem] font-extrabold text-slate-900">Filters</span>
+          <span className="text-[1.05rem] font-extrabold text-[#f0f4f8]">Filters</span>
           <button
             type="button"
             onClick={reset}
-            className="text-[0.8125rem] font-semibold text-[#0089de] hover:underline"
+            className="text-[0.8125rem] font-semibold text-[#00d4ff] hover:underline"
           >
             Reset
           </button>
@@ -508,8 +501,8 @@ export function AtlasStage({
                   onClick={() => toggle("months", month)}
                   className={`rounded-lg border px-1 py-1.5 text-center text-[0.78rem] font-semibold transition ${
                     on
-                      ? "border-[rgba(47,108,237,0.3)] bg-[#e8f0fe] text-[#1d5d90]"
-                      : "border-transparent bg-[#f1f7fb] text-slate-500 hover:border-slate-300"
+                      ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
+                      : "border-white/10 bg-white/5 text-[#8b9db8] hover:border-white/20"
                   }`}
                 >
                   {m}
@@ -585,19 +578,19 @@ export function AtlasStage({
       {/* ── RESULTS ── */}
       <main className="min-w-0">
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-[1.1rem] font-extrabold tracking-[-0.02em] text-slate-900" role="status" aria-live="polite">
+          <h2 className="text-[1.1rem] font-extrabold tracking-[-0.02em] text-[#f0f4f8]" role="status" aria-live="polite">
             {matched.length} reef{matched.length === 1 ? "" : "s"}
           </h2>
           <div className="flex flex-wrap items-center gap-4">
             {effectiveView === "cards" && (
-              <label className="flex items-center gap-2 text-[0.8125rem] text-slate-500">
+              <label className="flex items-center gap-2 text-[0.8125rem] text-[#8b9db8]">
                 Sort
                 <select
                   value={filters.sort}
                   onChange={(e) =>
                     setFilters((p) => ({ ...p, sort: e.target.value as SortKey }))
                   }
-                  className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[0.8125rem] font-semibold text-slate-900 focus:border-[#0089de] focus:outline-none"
+                  className="rounded-lg border border-white/10 bg-[#0a1628] px-2.5 py-1.5 text-[0.8125rem] font-semibold text-[#f0f4f8] focus:border-[#00d4ff] focus:outline-none"
                 >
                   {SORT_OPTIONS.map((o) => (
                     <option key={o.value} value={o.value}>
@@ -607,15 +600,15 @@ export function AtlasStage({
                 </select>
               </label>
             )}
-            <div className="inline-flex rounded-full bg-[#f1f7fb] p-[3px]">
+            <div className="inline-flex rounded-full border border-white/10 bg-white/5 p-[3px]">
               <button
                 type="button"
                 aria-pressed={effectiveView === "cards"}
                 onClick={() => setView("cards")}
                 className={`rounded-full px-[0.95rem] py-[0.35rem] text-[0.8125rem] font-bold transition ${
                   effectiveView === "cards"
-                    ? "bg-white text-slate-900 shadow-[0_1px_3px_rgba(15,23,42,0.14)]"
-                    : "text-slate-500"
+                    ? "bg-[#00d4ff] text-[#0a1628] shadow-[0_1px_3px_rgba(15,23,42,0.14)]"
+                    : "text-[#8b9db8]"
                 }`}
               >
                 Cards
@@ -627,8 +620,8 @@ export function AtlasStage({
                   onClick={() => setView("map")}
                   className={`rounded-full px-[0.95rem] py-[0.35rem] text-[0.8125rem] font-bold transition ${
                     effectiveView === "map"
-                      ? "bg-white text-slate-900 shadow-[0_1px_3px_rgba(15,23,42,0.14)]"
-                      : "text-slate-500"
+                      ? "bg-[#00d4ff] text-[#0a1628] shadow-[0_1px_3px_rgba(15,23,42,0.14)]"
+                      : "text-[#8b9db8]"
                   }`}
                 >
                   Map
@@ -645,10 +638,10 @@ export function AtlasStage({
                 <>
                   {inSeason.map(renderCard)}
                   {offSeason.length > 0 && (
-                    <div className="col-span-full mb-1 mt-3 flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.08em] text-slate-500">
-                      <span className="h-px flex-1 bg-slate-200" aria-hidden />
+                    <div className="col-span-full mb-1 mt-3 flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#8b9db8]">
+                      <span className="h-px flex-1 bg-white/10" aria-hidden />
                       Great at other times of year
-                      <span className="h-px flex-1 bg-slate-200" aria-hidden />
+                      <span className="h-px flex-1 bg-white/10" aria-hidden />
                     </div>
                   )}
                   {offSeason.map(renderCard)}
@@ -658,12 +651,12 @@ export function AtlasStage({
               )}
             </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-slate-200 p-12 text-center text-slate-500">
+            <div className="rounded-2xl border border-dashed border-white/10 p-12 text-center text-[#8b9db8]">
               No reefs match this combination. Remove a filter to widen the search.
             </div>
           )
         ) : (
-          <div className="relative mx-auto aspect-square w-full max-w-[560px]">
+          <div className="relative mx-auto aspect-square w-full max-w-[920px]">
             <HomeGlobe markers={markers} highlightedCountries={highlightedCountries} />
           </div>
         )}

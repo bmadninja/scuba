@@ -2,7 +2,6 @@ import { getAllLocations, getLocationById } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
-import { isUnderwaterQualityPhoto } from "@/lib/photo-quality";
 import {
   getReefState,
   getReefHeatLevel,
@@ -162,12 +161,11 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     }
   }
 
-  // Locations carry no image of their own — borrow a representative hero from
-  // the location's dive sites, preferring one that passes the underwater check.
-  const heroImageUrl =
-    location.heroImageUrl ??
-    sites.find((s) => isUnderwaterQualityPhoto(s.heroImageUrl))?.heroImageUrl ??
-    sites.find((s) => s.heroImageUrl)?.heroImageUrl;
+  // Every location uses its OWN hero photo. We deliberately do not borrow a
+  // dive site's photo here — that produced duplicate images across the atlas.
+  // A location without its own photo shows a gradient placeholder (handled in
+  // the card/hero components), never a borrowed one.
+  const heroImageUrl = location.heroImageUrl ?? undefined;
 
   // Derive animal tags from species common names across all sites.
   const allSpeciesText = sites
