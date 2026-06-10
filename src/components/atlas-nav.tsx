@@ -15,7 +15,6 @@ type SearchEntry = {
 };
 
 const NAV = [
-  { href: "/",      label: "Atlas",  key: "atlas"  },
   { href: "/data",  label: "Method", key: "method" },
   { href: "/about", label: "About",  key: "about"  },
 ];
@@ -27,10 +26,101 @@ const STATE_TEXT: Record<string, string> = {
 };
 
 const STATE_PILL: Record<string, string> = {
-  thriving: "bg-emerald-50 text-emerald-700",
-  pressure: "bg-amber-50 text-amber-700",
-  change: "bg-rose-50 text-rose-700",
+  thriving: "bg-emerald-500/15 text-emerald-300",
+  pressure: "bg-amber-500/15 text-amber-300",
+  change: "bg-rose-500/15 text-rose-300",
 };
+
+/**
+ * Hamburger menu shown only below the `sm` breakpoint, where the inline nav
+ * links are hidden. Surfaces the same NAV destinations in a dropdown so the
+ * header is navigable on phones.
+ */
+function MobileNavMenu({
+  active = "",
+  dark = false,
+}: {
+  active?: string;
+  dark?: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative shrink-0 sm:hidden">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-label="Menu"
+        aria-expanded={open}
+        className="flex h-10 w-10 items-center justify-center rounded-full"
+        style={{
+          color: dark ? "rgba(255,255,255,0.85)" : "#aebcd0",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+        }}
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden
+        >
+          {open ? (
+            <>
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </>
+          ) : (
+            <>
+              <path d="M4 7h16" />
+              <path d="M4 12h16" />
+              <path d="M4 17h16" />
+            </>
+          )}
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full z-50 mt-2 min-w-[160px] overflow-hidden rounded-2xl border border-white/10 bg-[#0a1628] shadow-md">
+          <nav
+            aria-label="Mobile navigation"
+            className="flex flex-col py-1"
+          >
+            {NAV.map((n) => (
+              <Link
+                key={n.key}
+                href={n.href}
+                onClick={() => setOpen(false)}
+                className={`px-4 py-2.5 text-sm font-medium ${
+                  active === n.key ? "text-[#00d4ff]" : "text-[#f0f4f8]"
+                }`}
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
+    </div>
+  );
+}
 
 type AtlasNavProps = {
   entries?: SearchEntry[];
@@ -131,17 +221,7 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
   return (
     <div
       ref={sentinelRef}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        display: "flex",
-        alignItems: "center",
-        gap: "2rem",
-        padding: "1.25rem 3rem",
-      }}
+      className="absolute inset-x-0 top-0 z-50 flex items-center gap-3 px-5 py-4 sm:gap-8 sm:px-12 sm:py-5"
     >
       <Link href="/" aria-label="scubaSeason.fun — home" style={{ flexShrink: 0 }}>
         <Logo size={28} dark />
@@ -181,7 +261,7 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={onKeyDown}
-          placeholder="Search reefs by name, country or region"
+          placeholder="Search"
           aria-label="Search reefs"
           style={{
             width: "100%",
@@ -197,7 +277,7 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
         />
 
         {open && query && (
-          <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
+          <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-white/10 bg-[#0a1628] shadow-md">
             {results.length ? (
               <ul className="max-h-80 overflow-y-auto py-1">
                 {results.map((r, i) => (
@@ -207,20 +287,20 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
                       onMouseEnter={() => setSel(i)}
                       onClick={() => go(r)}
                       className={`flex w-full items-center gap-3 px-4 py-2.5 text-left ${
-                        i === sel ? "bg-[#f1f7fb]" : ""
+                        i === sel ? "bg-white/5" : ""
                       }`}
                     >
                       <span
                         className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-medium ${
-                          STATE_PILL[r.state] ?? "bg-slate-100 text-slate-600"
+                          STATE_PILL[r.state] ?? "bg-white/10 text-[#8b9db8]"
                         }`}
                       >
                         {STATE_TEXT[r.state] ?? r.state}
                       </span>
-                      <span className="text-sm font-medium text-slate-900">
+                      <span className="text-sm font-medium text-[#f0f4f8]">
                         {r.name}
                       </span>
-                      <span className="ml-auto text-xs text-slate-500">
+                      <span className="ml-auto text-xs text-[#8b9db8]">
                         {r.country}
                       </span>
                     </button>
@@ -228,7 +308,7 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
                 ))}
               </ul>
             ) : (
-              <div className="px-4 py-4 text-center text-sm text-slate-500">
+              <div className="px-4 py-4 text-center text-sm text-[#8b9db8]">
                 No reefs match &ldquo;{q}&rdquo;.
               </div>
             )}
@@ -259,6 +339,8 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
           </Link>
         ))}
       </nav>
+
+      <MobileNavMenu dark />
     </div>
   );
 }
@@ -335,11 +417,9 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
   if (hideLayoutNav) return null;
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
-      <div
-        className="mx-auto flex max-w-[1320px] items-center"
-        style={{ padding: "1rem 3rem", gap: "2rem" }}
-      >
+    <header className="sticky top-0 z-50 bg-[#030712]/80 backdrop-blur border-b border-white/10">
+      <div className="mx-auto flex max-w-[1320px] items-center gap-3 px-5 py-4 sm:gap-8 sm:px-12">
+
         <Link href="/" className="shrink-0" aria-label="scubaSeason.fun — home">
           <Logo size={28} />
         </Link>
@@ -352,7 +432,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             style={{
               gap: "0.5rem",
               fontSize: "0.8125rem",
-              color: "#64748b",
+              color: "#8b9db8",
               marginLeft: "0.5rem",
             }}
           >
@@ -361,7 +441,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                 {i > 0 && (
                   <span
                     aria-hidden="true"
-                    style={{ color: "#cbd5e1", marginRight: "0.25rem" }}
+                    style={{ color: "rgba(0,212,255,0.28)", marginRight: "0.25rem" }}
                   >
                     /
                   </span>
@@ -370,15 +450,15 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                   <Link
                     href={crumb.href}
                     style={{
-                      color: "#64748b",
+                      color: "#8b9db8",
                       textDecoration: "none",
                     }}
-                    className="hover:text-[#0089de] transition-colors"
+                    className="hover:text-[#00d4ff] transition-colors"
                   >
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span style={{ color: "#0f172a", fontWeight: 500 }}>
+                  <span style={{ color: "#f0f4f8", fontWeight: 500 }}>
                     {crumb.label}
                   </span>
                 )}
@@ -394,7 +474,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
         >
           <div
             className="pointer-events-none absolute inset-y-0 flex items-center"
-            style={{ left: "0.875rem", color: "rgba(0,0,0,0.35)" }}
+            style={{ left: "0.875rem", color: "#8b9db8" }}
           >
             <svg
               width="14"
@@ -421,9 +501,9 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             }}
             onFocus={() => setOpen(true)}
             onKeyDown={onKeyDown}
-            placeholder="Search reefs by name, country or region"
+            placeholder="Search"
             aria-label="Search reefs"
-            className="w-full rounded-full border border-slate-200 bg-[#f1f7fb] pr-4 text-slate-900 placeholder:text-slate-400 focus:border-[#0089de] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0089de]/30"
+            className="w-full rounded-full border border-white/10 bg-white/5 pr-4 text-[#f0f4f8] placeholder:text-[#8b9db8] focus:border-[#00d4ff] focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#00d4ff]/30"
             style={{
               padding: "0.5rem 1rem 0.5rem 2.5rem",
               fontSize: "0.8125rem",
@@ -431,7 +511,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
           />
 
           {open && query && (
-            <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
+            <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-white/10 bg-[#0a1628] shadow-md">
               {results.length ? (
                 <ul className="max-h-80 overflow-y-auto py-1">
                   {results.map((r, i) => (
@@ -441,20 +521,20 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                         onMouseEnter={() => setSel(i)}
                         onClick={() => go(r)}
                         className={`flex w-full items-center gap-3 px-4 py-2.5 text-left ${
-                          i === sel ? "bg-[#f1f7fb]" : ""
+                          i === sel ? "bg-white/5" : ""
                         }`}
                       >
                         <span
                           className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-medium ${
-                            STATE_PILL[r.state] ?? "bg-slate-100 text-slate-600"
+                            STATE_PILL[r.state] ?? "bg-white/10 text-[#8b9db8]"
                           }`}
                         >
                           {STATE_TEXT[r.state] ?? r.state}
                         </span>
-                        <span className="text-sm font-medium text-slate-900">
+                        <span className="text-sm font-medium text-[#f0f4f8]">
                           {r.name}
                         </span>
-                        <span className="ml-auto text-xs text-slate-500">
+                        <span className="ml-auto text-xs text-[#8b9db8]">
                           {r.country}
                         </span>
                       </button>
@@ -462,7 +542,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                   ))}
                 </ul>
               ) : (
-                <div className="px-4 py-4 text-center text-sm text-slate-500">
+                <div className="px-4 py-4 text-center text-sm text-[#8b9db8]">
                   No reefs match &ldquo;{q}&rdquo;.
                 </div>
               )}
@@ -481,8 +561,8 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
               href={n.href}
               className={`text-sm font-medium transition-colors ${
                 active === n.key
-                  ? "text-[#0089de]"
-                  : "text-slate-700 hover:text-slate-900"
+                  ? "text-[#00d4ff]"
+                  : "text-[#aebcd0] hover:text-[#f0f4f8]"
               }`}
               style={{ padding: "0.45rem 0.875rem" }}
             >
@@ -490,6 +570,8 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             </Link>
           ))}
         </nav>
+
+        <MobileNavMenu active={active} />
       </div>
     </header>
   );
