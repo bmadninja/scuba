@@ -15,7 +15,6 @@ type SearchEntry = {
 };
 
 const NAV = [
-  { href: "/",      label: "Atlas",  key: "atlas"  },
   { href: "/data",  label: "Method", key: "method" },
   { href: "/about", label: "About",  key: "about"  },
 ];
@@ -181,7 +180,7 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={onKeyDown}
-          placeholder="Search reefs by name, country or region"
+          placeholder=""
           aria-label="Search reefs"
           style={{
             width: "100%",
@@ -421,7 +420,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             }}
             onFocus={() => setOpen(true)}
             onKeyDown={onKeyDown}
-            placeholder="Search reefs by name, country or region"
+            placeholder=""
             aria-label="Search reefs"
             className="w-full rounded-full border border-slate-200 bg-[#f1f7fb] pr-4 text-slate-900 placeholder:text-slate-400 focus:border-[#0089de] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0089de]/30"
             style={{
