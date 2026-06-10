@@ -1,4 +1,4 @@
-import { underwaterPhotoUrl, resizePhotoUrl } from "@/lib/photo-quality";
+import { underwaterPhotoUrl } from "@/lib/photo-quality";
 
 // Ocean-toned gradients used as a placeholder when a reef genuinely has no
 // hero photo. We deliberately do NOT borrow another reef's photo — a missing
@@ -46,7 +46,10 @@ export function HeroPhoto({
       />
     );
   }
-  const src = resizePhotoUrl(raw, 1200) ?? raw;
+  // Route through Next.js image optimization: resizes server-side and serves
+  // a cached, WebP-converted copy. Avoids relying on Wikimedia's thumbnail CDN
+  // generating on-demand sizes, which can fail for newly-uploaded files.
+  const src = `/_next/image?url=${encodeURIComponent(raw)}&w=1200&q=80`;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
