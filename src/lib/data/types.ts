@@ -86,6 +86,7 @@ export type SpeciesEntry = {
   sourceIds?: string[];
   methodologyClaimIds?: string[];
   imageUrl?: string;
+  ecologicalDescription?: string;
 };
 
 export type ConditionsMonth = {

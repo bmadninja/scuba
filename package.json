@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
     "lint": "eslint",
     "migrate": "node --experimental-strip-types scripts/migrate.ts",
     "verify:stories": "node scripts/verify-stories.mjs",
@@ -35,6 +37,7 @@
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

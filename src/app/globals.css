@@ -751,15 +751,16 @@ header input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
-/* ── Homepage dark sections (reef states + inspiration grid) ─── */
-.home-reef-states-section { padding: 5rem 3rem; }
+/* ── Homepage layout classes ─────────────────────────────────── */
+.home-section-pad   { padding: 5rem 3rem; }
+.home-section-pad-b { padding: 0 3rem 5rem; }
+.home-hero-content  { padding: 0 3rem 5.5rem; }
 .home-reef-states-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 5rem;
   align-items: center;
 }
-.home-inspire-section { padding: 0 3rem 5rem; }
 .home-inspire-grid {
   display: grid;
   grid-template-columns: 1.65fr 1fr;
@@ -767,11 +768,11 @@ header input[type="search"]::-webkit-search-cancel-button {
   border-radius: 1.25rem;
   overflow: hidden;
 }
-@media (max-width: 768px) {
-  .home-reef-states-section { padding: 3rem 1.25rem; }
-  .home-reef-states-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .home-inspire-section { padding: 0 1.25rem 3rem; }
-  .home-inspire-grid { grid-template-columns: 1fr; }
+.home-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  align-items: start;
 }
 
 /* ── Responsive ───────────────────────────────────────────────── */
@@ -783,6 +784,9 @@ header input[type="search"]::-webkit-search-cancel-button {
   .atlas-foot-inner { grid-template-columns: 1fr 1fr; }
   .gap-row { grid-template-columns: 1fr auto; }
   .heat-row { grid-template-columns: 12px 1fr auto; }
+  .home-reef-states-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .home-inspire-grid { grid-template-columns: 1fr; }
+  .home-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 }
 @media (max-width: 640px) {
   .atlas-wrap { padding: 0 18px; }
@@ -794,4 +798,8 @@ header input[type="search"]::-webkit-search-cancel-button {
   .atlas-cta-band { flex-direction: column; padding: 28px 24px; }
   .atlas-section-head { grid-template-columns: 1fr; }
   .gap-stat-3 { grid-template-columns: 1fr; }
+  .home-section-pad   { padding: 3rem 1.25rem; }
+  .home-section-pad-b { padding: 0 1.25rem 3rem; }
+  .home-hero-content  { padding: 0 1.25rem 3.5rem; }
+  .home-stats-grid { grid-template-columns: 1fr; gap: 2rem; }
 }

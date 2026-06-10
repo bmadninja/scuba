@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Homepage filter — Option B · Left rail with collapsible groups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#0089de;--brand-dk:#1d5d90;--ink:#0f172a;--body:#334155;
+  --muted:#64748b;--dim:#94a3b8;--hairline:#e2e8f0;--hairline-str:#cbd5e1;
+  --surface:#f1f7fb;--white:#fff;
+  --thriving:#10b981;--pressure:#0089de;--change:#f43f5e;
+}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1320px;margin:0 auto;padding:0 3rem;}
+.note{background:#0b1e32;color:#cfe6f7;padding:0.85rem 3rem;font-size:0.8rem;}
+.note b{color:#fff;}
+
+.head{padding:2.5rem 0 1.25rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand);}
+.head h1{font-size:1.6rem;font-weight:800;letter-spacing:-0.025em;margin-top:0.4rem;}
+.head p{color:var(--muted);font-size:0.95rem;margin-top:0.3rem;max-width:560px;}
+
+/* ── OPTION B: two-column, sticky rail + scrolling results ── */
+.layout{display:grid;grid-template-columns:262px 1fr;gap:2.5rem;align-items:start;padding-bottom:4rem;}
+
+/* sticky rail */
+.rail{position:sticky;top:1.25rem;max-height:calc(100vh - 2.5rem);overflow-y:auto;padding-right:0.5rem;}
+.rail-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.9rem;}
+.rail-head h2{font-size:0.95rem;font-weight:800;}
+.rail-head .reset{font-size:0.74rem;color:var(--brand);font-weight:600;cursor:pointer;}
+
+.facet{border-top:1px solid var(--hairline);padding:0.9rem 0;}
+.facet:first-of-type{border-top:none;padding-top:0;}
+.facet-sum{display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none;}
+.facet-sum h3{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.facet-sum .chev{font-size:0.7rem;color:var(--dim);transition:transform .15s;}
+.facet[open] .facet-sum .chev{transform:rotate(180deg);}
+.facet-sum .badge{background:var(--brand);color:#fff;border-radius:999px;font-size:0.62rem;padding:0.05rem 0.38rem;font-weight:700;margin-left:auto;margin-right:0.5rem;}
+.facet-body{margin-top:0.7rem;}
+.checks{display:flex;flex-direction:column;gap:0.5rem;}
+.chk{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--body);cursor:pointer;}
+.chk .box{width:15px;height:15px;border:1.5px solid var(--hairline-str);border-radius:4px;flex-shrink:0;}
+.chk.on .box{background:var(--brand);border-color:var(--brand);position:relative;}
+.chk.on .box::after{content:"✓";color:#fff;font-size:0.62rem;position:absolute;top:-1px;left:2px;}
+.chk.on{color:var(--ink);font-weight:600;}
+.chk .sd{width:8px;height:8px;border-radius:50%;margin-left:auto;}
+
+/* nested wildlife sub-groups */
+.subgrp{margin-top:0.55rem;}
+.subgrp summary{list-style:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:0.35rem;padding:0.2rem 0;}
+.subgrp summary .c{font-size:0.6rem;}
+.subgrp[open] summary .c{transform:rotate(180deg);}
+.subchecks{display:flex;flex-direction:column;gap:0.4rem;margin:0.35rem 0 0.3rem 0.4rem;padding-left:0.5rem;border-left:1px solid var(--hairline);}
+
+/* results */
+.res-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.res-head .count{font-size:0.82rem;color:var(--muted);}
+.res-head select{font-family:inherit;font-size:0.8rem;border:1px solid var(--hairline-str);border-radius:999px;padding:0.4rem 0.7rem;color:var(--body);background:#fff;}
+.chips{display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;margin-bottom:1rem;}
+.chip{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(0,137,222,0.1);color:var(--brand);border-radius:999px;padding:0.26rem 0.6rem;font-size:0.74rem;font-weight:600;}
+.chip .x{cursor:pointer;opacity:0.6;}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+.card{border:1px solid var(--hairline);border-radius:1rem;overflow:hidden;cursor:pointer;transition:all .2s;}
+.card:hover{border-color:rgba(0,137,222,0.4);transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(15,23,42,0.2);}
+.card-img{height:160px;position:relative;background-size:cover;background-position:center;}
+.card-img.i1{background-image:linear-gradient(160deg,#041c33,#065a66,#0a7a6b);}
+.card-img.i2{background-image:linear-gradient(155deg,#031522,#064466,#0b829f);}
+.card-img.i3{background-image:linear-gradient(150deg,#03182a,#0a5060,#0a9080);}
+.card-img.i4{background-image:linear-gradient(160deg,#0d2030,#0a6b8a,#087a6e);}
+.state-pill{position:absolute;top:0.7rem;left:0.7rem;display:inline-flex;align-items:center;gap:0.35rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);border-radius:999px;padding:0.25rem 0.6rem;font-size:0.66rem;font-weight:700;}
+.state-pill .d{width:6px;height:6px;border-radius:50%;}
+.card-body{padding:0.85rem 1rem 1rem;}
+.card-body h3{font-size:1rem;font-weight:700;}
+.card-meta{display:flex;gap:0.45rem;margin-top:0.45rem;flex-wrap:wrap;}
+.tag{font-size:0.68rem;font-weight:600;color:var(--muted);background:var(--surface);border-radius:999px;padding:0.18rem 0.55rem;}
+.tag.season{color:var(--thriving);background:rgba(16,185,129,0.1);}
+.card-body p{font-size:0.8rem;color:var(--body);margin-top:0.55rem;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="note">OPTION B — <b>Left rail with collapsible facet groups</b>. Rail is <b>sticky</b> and scrolls independently; results scroll on the right. Wildlife is one facet holding nested, collapsible sub-groups so the full taxonomy lives in the rail without overwhelming it.</div>
+
+<div class="wrap head">
+  <div class="eyebrow">The Atlas</div>
+  <h1>Where the season is right</h1>
+  <p>94 reef locations, filtered by what you want to see and when you can go.</p>
+</div>
+
+<div class="wrap layout">
+  <!-- STICKY RAIL -->
+  <aside class="rail">
+    <div class="rail-head"><h2>Filters</h2><span class="reset">Reset all</span></div>
+
+    <details class="facet" open>
+      <summary class="facet-sum"><h3>Reef state</h3><span class="chev">▾</span></summary>
+      <div class="facet-body"><div class="checks">
+        <label class="chk on"><span class="box"></span>Thriving<span class="sd" style="background:#10b981"></span></label>
+        <label class="chk on"><span class="box"></span>Under pressure<span class="sd" style="background:#0089de"></span></label>
+        <label class="chk on"><span class="box"></span>Witnessing change<span class="sd" style="background:#f43f5e"></span></label>
+      </div></div>
+    </details>
+
+    <details class="facet">
+      <summary class="facet-sum"><h3>Cert level</h3><span class="chev">▾</span></summary>
+      <div class="facet-body"><div class="checks">
+        <label class="chk"><span class="box"></span>Beginner</label>
+        <label class="chk"><span class="box"></span>Open water</label>
+        <label class="chk"><span class="box"></span>Advanced</label>
+        <label class="chk"><span class="box"></span>Technical</label>
+      </div></div>
+    </details>
+
+    <!-- WILDLIFE — open, with nested collapsible sub-groups -->
+    <details class="facet" open>
+      <summary class="facet-sum"><h3>Wildlife</h3><span class="badge">2</span><span class="chev">▾</span></summary>
+      <div class="facet-body">
+        <details class="subgrp" open>
+          <summary><span class="c">▾</span>Sharks &amp; rays</summary>
+          <div class="subchecks">
+            <label class="chk on"><span class="box"></span>Sharks</label>
+            <label class="chk"><span class="box"></span>Hammerheads</label>
+            <label class="chk on"><span class="box"></span>Rays &amp; mantas</label>
+            <label class="chk"><span class="box"></span>Eagle rays</label>
+          </div>
+        </details>
+        <details class="subgrp">
+          <summary><span class="c">▾</span>Marine mammals</summary>
+          <div class="subchecks">
+            <label class="chk"><span class="box"></span>Whales</label>
+            <label class="chk"><span class="box"></span>Dolphins</label>
+            <label class="chk"><span class="box"></span>Seals &amp; sea lions</label>
+            <label class="chk"><span class="box"></span>Dugongs</label>
+          </div>
+        </details>
+        <details class="subgrp">
+          <summary><span class="c">▾</span>Reptiles &amp; pelagics</summary>
+          <div class="subchecks">
+            <label class="chk"><span class="box"></span>Sea turtles</label>
+            <label class="chk"><span class="box"></span>Large pelagics</label>
+            <label class="chk"><span class="box"></span>Reef fish</span></label>
+          </div>
+        </details>
+        <details class="subgrp">
+          <summary><span class="c">▾</span>Macro &amp; critters</summary>
+          <div class="subchecks">
+            <label class="chk"><span class="box"></span>Cephalopods</label>
+            <label class="chk"><span class="box"></span>Frogfish &amp; seahorses</label>
+            <label class="chk"><span class="box"></span>Nudibranchs</label>
+            <label class="chk"><span class="box"></span>Corals &amp; inverts</label>
+          </div>
+        </details>
+      </div>
+    </details>
+
+    <details class="facet">
+      <summary class="facet-sum"><h3>Region</h3><span class="chev">▾</span></summary>
+      <div class="facet-body"><div class="checks">
+        <label class="chk"><span class="box"></span>Asia</label>
+        <label class="chk"><span class="box"></span>Oceania</label>
+        <label class="chk"><span class="box"></span>Indian Ocean</label>
+        <label class="chk"><span class="box"></span>Americas</label>
+        <label class="chk"><span class="box"></span>Atlantic &amp; Med</label>
+      </div></div>
+    </details>
+
+    <details class="facet">
+      <summary class="facet-sum"><h3>Month</h3><span class="chev">▾</span></summary>
+      <div class="facet-body"><div class="checks"><label class="chk"><span class="box"></span>Any month selected here…</label></div></div>
+    </details>
+
+    <details class="facet">
+      <summary class="facet-sum"><h3>Thermal stress</h3><span class="chev">▾</span></summary>
+      <div class="facet-body"><div class="checks">
+        <label class="chk"><span class="box"></span>No stress</label>
+        <label class="chk"><span class="box"></span>Watch</label>
+        <label class="chk"><span class="box"></span>Elevated</label>
+        <label class="chk"><span class="box"></span>Heat alert</label>
+      </div></div>
+    </details>
+  </aside>
+
+  <!-- RESULTS -->
+  <main>
+    <div class="res-head">
+      <span class="count">Showing 18 locations with sharks or rays</span>
+      <select><option>Best season</option><option>Oldest surveys</option><option>Highest stress</option><option>Name</option></select>
+    </div>
+    <div class="chips">
+      <span class="chip">Sharks <span class="x">×</span></span>
+      <span class="chip">Rays &amp; mantas <span class="x">×</span></span>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="card-img i1"><span class="state-pill"><span class="d" style="background:#10b981"></span>Thriving</span></div><div class="card-body"><h3>Raja Ampat</h3><div class="card-meta"><span class="tag">Open water+</span><span class="tag season">In season</span></div><p>Reef mantas at cleaning stations; wobbegongs on the slopes.</p></div></div>
+      <div class="card"><div class="card-img i2"><span class="state-pill"><span class="d" style="background:#0089de"></span>Under pressure</span></div><div class="card-body"><h3>Tubbataha</h3><div class="card-meta"><span class="tag">Advanced+</span><span class="tag season">In season</span></div><p>Grey reef sharks patrol the walls in good numbers.</p></div></div>
+      <div class="card"><div class="card-img i3"><span class="state-pill"><span class="d" style="background:#10b981"></span>Thriving</span></div><div class="card-body"><h3>Cocos Island</h3><div class="card-meta"><span class="tag">Technical</span></div><p>Schooling hammerheads, a defining big-animal site.</p></div></div>
+      <div class="card"><div class="card-img i4"><span class="state-pill"><span class="d" style="background:#10b981"></span>Thriving</span></div><div class="card-body"><h3>Ningaloo</h3><div class="card-meta"><span class="tag">Open water+</span><span class="tag season">In season</span></div><p>Manta rays year round; whale sharks Apr–Jul.</p></div></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

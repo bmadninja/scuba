@@ -75,6 +75,19 @@ export default function AboutPage() {
             Ongoing work, built by one person — me. Imperfect, always being
             updated, and genuinely trying.
           </p>
+          <p>
+            scubaseason.fun is a nonprofit project. Affiliate commissions from
+            hotels, liveaboards, and gear cover hosting and development costs —
+            this site has no investors and earns no profit.
+          </p>
+          <p>
+            The long-term goal is to become more than a planning tool.
+            Recreational divers collectively observe reef systems that science
+            cannot afford to monitor continuously — and this platform is building
+            toward a system that routes those observations to scientific
+            databases, helping close the gap between ocean fieldwork and the
+            people already in the water.
+          </p>
         </div>
 
         {/* EDITORIAL PRINCIPLES */}

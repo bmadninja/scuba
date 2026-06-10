@@ -7,41 +7,21 @@ import { AtlasExplorer } from "@/components/atlas-explorer";
 import type { FilterLocation } from "@/components/atlas-filter-rail";
 import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { getAllLocations } from "@/lib/data/locations";
-import { STATE_DEF } from "@/lib/data/reef-state";
+import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import sourcesData from "@/data/sources.json";
 import { AtlasNav } from "@/components/atlas-nav";
 import { HideLayoutNav } from "@/components/hide-layout-nav";
+import { getSitesByLocationId } from "@/lib/data/sites";
+import { getSightingsBySiteId } from "@/lib/data/sightings";
 
 // Homepage hero — manta ray, Grand Cayman. Unsplash free license
 const HERO_IMAGE_URL =
   "https://images.unsplash.com/photo-1675829604010-509cca710300?w=3840&q=90&auto=format&fit=crop";
 
 export const metadata: Metadata = {
-  title: "scubaSeason.fun — a data atlas for the living ocean",
+  title: "scubaSeason.fun — find where to dive",
   description:
-    "Browse every tracked reef by coral health, thermal stress and survey freshness. Built on ongoing science and daily monitoring, not a one-time write-up.",
-};
-
-// Top 3 featured destinations for the inspiration grid
-const FEATURED_SLUGS = ["raja-ampat", "palau", "azores"];
-
-// Animal tags per featured slug (curated for inspiration grid)
-const ANIMAL_TAGS: Record<string, string[]> = {
-  "raja-ampat": ["Sharks", "Mantas"],
-  palau: ["Sharks", "Jellyfish"],
-  azores: ["Dolphins", "Whales"],
-};
-
-// Destination gradient backgrounds
-const DEST_GRADIENT: Record<string, string> = {
-  "raja-ampat":
-    "linear-gradient(160deg, #041c33 0%, #063a52 25%, #065a66 45%, #086b7a 65%, #0a7a6b 100%)",
-  palau:
-    "linear-gradient(155deg, #031522 0%, #042338 25%, #064466 50%, #0a6b8a 75%, #0b829f 100%)",
-  azores:
-    "linear-gradient(150deg, #0a1f38 0%, #0d2e4e 30%, #103a5e 55%, #124870 80%, #0f3d61 100%)",
-  default:
-    "linear-gradient(155deg, #0b1e32 0%, #0d2e4e 30%, #0e3d5e 60%, #094a6a 100%)",
+    "Find dive sites in season now, with real sighting records and live reef health data.",
 };
 
 const STATE_TEXT: Record<string, string> = {
@@ -50,7 +30,7 @@ const STATE_TEXT: Record<string, string> = {
   change: "Witnessing change",
 };
 
-// Badge style per state — matches mockup ibadge-state-* classes
+// Badge style per state
 const STATE_BADGE_STYLE: Record<string, React.CSSProperties> = {
   thriving: {
     background: "rgba(16,185,129,0.14)",
@@ -81,13 +61,6 @@ const BADGE_BASE: React.CSSProperties = {
   whiteSpace: "nowrap",
 };
 
-const SEASON_BADGE: React.CSSProperties = {
-  ...BADGE_BASE,
-  background: "rgba(255,255,255,0.1)",
-  color: "rgba(255,255,255,0.7)",
-  border: "1px solid rgba(255,255,255,0.14)",
-};
-
 const ANIMAL_BADGE: React.CSSProperties = {
   ...BADGE_BASE,
   background: "rgba(255,255,255,0.07)",
@@ -99,7 +72,7 @@ export default function Home() {
   const allLocs = getAllAtlasLocations();
   const rawBySlug = new Map(getAllLocations().map((l) => [l.slug, l]));
 
-  // Search entries for the hero nav (same shape as layout.tsx passes to AtlasNav)
+  // Search entries for the hero nav
   const navEntries = allLocs.map((l) => ({
     slug: l.slug,
     name: l.name,
@@ -109,6 +82,13 @@ export default function Home() {
   }));
 
   const currentMonth = new Date().getUTCMonth() + 1;
+  const currentYear = new Date().getUTCFullYear();
+  const MONTH_NAMES = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+  ];
+  const currentMonthName = MONTH_NAMES[currentMonth - 1];
+
   const inSeason = (months: number[]) => months.includes(currentMonth);
 
   const filterLocs: FilterLocation[] = allLocs.flatMap((l) => {
@@ -144,17 +124,23 @@ export default function Home() {
   const reefCount = allLocs.length;
   const sourceCount = (sourcesData as unknown[]).length;
 
-  // State counts
-  const thrivingCount = allLocs.filter((l) => l.state === "thriving").length;
-  const pressureCount = allLocs.filter((l) => l.state === "pressure").length;
-  const changeCount = allLocs.filter((l) => l.state === "change").length;
+  // In season now — compute full list before slicing (for count in stat strip)
+  const inSeasonLocs = allLocs
+    .filter((l) => inSeason(l.bestMonths))
+    .sort((a, b) => {
+      const order: Record<string, number> = { thriving: 0, pressure: 1, change: 2 };
+      const diff = (order[a.state] ?? 3) - (order[b.state] ?? 3);
+      return diff !== 0 ? diff : a.name.localeCompare(b.name);
+    });
+  const inSeasonCount = inSeasonLocs.length;
+  const inSeasonDisplay = inSeasonLocs.slice(0, 6);
 
-  // Featured destinations for inspiration grid
-  const featuredLocs = FEATURED_SLUGS.map((slug) => allLocs.find((l) => l.slug === slug))
-    .filter(Boolean)
-    .slice(0, 3);
-  const inspirationLocs =
-    featuredLocs.length >= 2 ? featuredLocs : allLocs.slice(0, 3);
+  // Locations with no sighting records (for Dive With Purpose section)
+  const rawLocs = getAllLocations();
+  const noSightingsCount = rawLocs.filter((rawLoc) => {
+    const sites = getSitesByLocationId(rawLoc.id);
+    return !sites.some((site) => getSightingsBySiteId(site.id).length > 0);
+  }).length;
 
   return (
     <>
@@ -205,7 +191,7 @@ export default function Home() {
             `,
           }}
         />
-        {/* Bottom fade into reef states section */}
+        {/* Bottom fade into next section */}
         <div
           aria-hidden="true"
           style={{
@@ -218,9 +204,9 @@ export default function Home() {
           }}
         />
 
-
         {/* Hero content — pinned to bottom with flex-end */}
         <div
+          className="home-hero-content"
           style={{
             position: "relative",
             zIndex: 10,
@@ -228,42 +214,11 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-end",
-            padding: "0 3rem 5.5rem",
             maxWidth: 1320,
             margin: "0 auto",
           }}
         >
-          {/* Eyebrow */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              fontSize: "0.6875rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#0089de",
-              marginBottom: "1.25rem",
-            }}
-          >
-            <span
-              className="live-dot"
-              aria-hidden="true"
-              style={{
-                display: "inline-block",
-                width: 7,
-                height: 7,
-                borderRadius: "50%",
-                background: "#15a05c",
-                boxShadow: "0 0 0 3px rgba(21,160,92,0.3)",
-                flexShrink: 0,
-              }}
-            />
-            Live · NOAA Coral Reef Watch
-          </div>
-
-          {/* H1 — three lines per mockup */}
+          {/* H1 */}
           <h1
             style={{
               fontSize: "clamp(3rem, 6.5vw, 5.75rem)",
@@ -272,31 +227,63 @@ export default function Home() {
               letterSpacing: "-0.035em",
               color: "#fff",
               maxWidth: 760,
-              marginBottom: "1.4rem",
+              marginBottom: "1rem",
             }}
           >
-            A data atlas
+            Find where
             <br />
-            for the living
-            <br />
-            ocean.
+            to dive.
           </h1>
 
-          {/* Serif italic subline */}
+          {/* Subline */}
           <p
             style={{
-              fontFamily:
-                "var(--font-serif), 'Source Serif 4', Georgia, serif",
-              fontStyle: "italic",
-              fontSize: "clamp(1rem, 1.4vw, 1.175rem)",
-              color: "rgba(255,255,255,0.52)",
-              maxWidth: 480,
-              lineHeight: 1.65,
-              marginBottom: "2.75rem",
+              fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+              fontWeight: 400,
+              color: "rgba(255,255,255,0.55)",
+              letterSpacing: "-0.01em",
+              marginBottom: "1.75rem",
+              maxWidth: 520,
+              lineHeight: 1.5,
             }}
           >
-            Ongoing science and daily monitoring — not a one-time write-up.
+            Browse {reefCount} dive locations — filter by season, species, or reef health.
           </p>
+
+          {/* CTA links */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "1.5rem",
+              marginBottom: "2.25rem",
+            }}
+          >
+            <a
+              href="#atlas"
+              style={{
+                fontSize: "1rem",
+                fontWeight: 600,
+                color: "rgba(255,255,255,0.85)",
+                textDecoration: "none",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Browse all locations →
+            </a>
+            <a
+              href="#in-season"
+              style={{
+                fontSize: "1rem",
+                fontWeight: 600,
+                color: "rgba(255,255,255,0.85)",
+                textDecoration: "none",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Best spots this month →
+            </a>
+          </div>
 
           {/* Stat strip */}
           <div
@@ -309,8 +296,8 @@ export default function Home() {
             }}
           >
             {[
-              { val: String(reefCount), lbl: "Reefs tracked" },
-              { val: "5 km", lbl: "Satellite resolution" },
+              { val: String(reefCount), lbl: "Locations" },
+              { val: String(inSeasonCount), lbl: `In season in ${currentMonthName}` },
               { val: String(sourceCount), lbl: "Data sources" },
             ].map(({ val, lbl }, i) => (
               <div
@@ -353,184 +340,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── REEF STATES ─────────────────────────────────────────── */}
-      <section
-        className="home-reef-states-section"
-        style={{ background: "#0b1e32" }}
-        aria-label="Reef states"
-      >
-        <div
-          className="home-reef-states-grid"
-          style={{
-            maxWidth: 1320,
-            margin: "0 auto",
-          }}
-        >
-          <div>
-            <p
-              style={{
-                fontSize: "0.6875rem",
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "#0089de",
-                marginBottom: "1.25rem",
-              }}
-            >
-              How the atlas reads a reef
-            </p>
-            <h2
-              style={{
-                fontSize: "clamp(1.75rem, 3vw, 2.625rem)",
-                fontWeight: 800,
-                letterSpacing: "-0.03em",
-                lineHeight: 1.08,
-                color: "#fff",
-                marginBottom: "1.25rem",
-              }}
-            >
-              What a reef is actually doing right now.
-            </h2>
-            <p
-              style={{
-                fontFamily:
-                  "var(--font-serif), 'Source Serif 4', Georgia, serif",
-                fontSize: "1.025rem",
-                lineHeight: 1.75,
-                color: "rgba(255,255,255,0.45)",
-                maxWidth: 400,
-              }}
-            >
-              Every location carries a reef state — a judgment call about what
-              the science says is happening on the ground. Not a marketing
-              label. Not a star rating.
-            </p>
-            <a
-              href="#"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.375rem",
-                marginTop: "2rem",
-                fontSize: "0.875rem",
-                fontWeight: 600,
-                color: "#0089de",
-                textDecoration: "none",
-              }}
-            >
-              How we calculate this →
-            </a>
-          </div>
-
-          {/* Reef state rows */}
-          <div
-            role="list"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 1,
-              background: "rgba(255,255,255,0.05)",
-              borderRadius: "1.25rem",
-              overflow: "hidden",
-              border: "1px solid rgba(255,255,255,0.06)",
-            }}
-          >
-            {(
-              [
-                {
-                  key: "thriving" as const,
-                  color: "#10b981",
-                  count: thrivingCount,
-                  def: "Coral cover holding, pressure low. A reef with room to surprise you.",
-                },
-                {
-                  key: "pressure" as const,
-                  color: "#0089de",
-                  count: pressureCount,
-                  def: "Degraded or stressed but actively diving. Worth watching closely.",
-                },
-                {
-                  key: "change" as const,
-                  color: "#f43f5e",
-                  count: changeCount,
-                  def: "The reef has fundamentally shifted. Go to see what's actually there — not what the brochures say.",
-                },
-              ] as const
-            ).map(({ key, color, count, def }) => (
-              <div
-                key={key}
-                role="listitem"
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "1.25rem",
-                  padding: "1.375rem 1.5rem",
-                  background: "#0f2438",
-                }}
-              >
-                <div
-                  aria-hidden="true"
-                  style={{
-                    width: 3,
-                    alignSelf: "stretch",
-                    borderRadius: 2,
-                    flexShrink: 0,
-                    marginTop: 2,
-                    background: color,
-                  }}
-                />
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <p
-                    style={{
-                      fontSize: "0.9375rem",
-                      fontWeight: 700,
-                      color: "#fff",
-                      marginBottom: "0.3rem",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {STATE_TEXT[key]}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: "0.8125rem",
-                      lineHeight: 1.55,
-                      color: "rgba(255,255,255,0.4)",
-                    }}
-                  >
-                    {def}
-                  </p>
-                </div>
-                <span
-                  aria-label={`${count} locations`}
-                  style={{
-                    marginLeft: "auto",
-                    fontSize: "1.375rem",
-                    fontWeight: 900,
-                    letterSpacing: "-0.03em",
-                    color: "rgba(255,255,255,0.14)",
-                    flexShrink: 0,
-                    paddingTop: 1,
-                    fontVariantNumeric: "tabular-nums",
-                  }}
-                >
-                  {count}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── INSPIRATION GRID ─────────────────────────────────────── */}
-      {inspirationLocs.length >= 2 && (
+      {/* ─── IN SEASON NOW ────────────────────────────────────────── */}
+      {inSeasonDisplay.length > 0 && (
         <section
-          className="home-inspire-section"
-          style={{
-            background: "#0b1e32",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
-          }}
-          aria-label="Featured destinations"
+          id="in-season"
+          aria-label="In season now"
+          className="home-section-pad"
+          style={{ background: "#0b1e32" }}
         >
           <div style={{ maxWidth: 1320, margin: "0 auto" }}>
             {/* Header */}
@@ -540,7 +356,8 @@ export default function Home() {
                 alignItems: "baseline",
                 justifyContent: "space-between",
                 marginBottom: "1.75rem",
-                paddingTop: 1,
+                flexWrap: "wrap",
+                gap: "0.75rem",
               }}
             >
               <div>
@@ -554,7 +371,7 @@ export default function Home() {
                     marginBottom: "0.35rem",
                   }}
                 >
-                  Worth going for
+                  Diving this month
                 </p>
                 <h2
                   style={{
@@ -564,11 +381,11 @@ export default function Home() {
                     color: "#fff",
                   }}
                 >
-                  Something remarkable, right now
+                  Best season right now — {currentMonthName} {currentYear}
                 </h2>
               </div>
               <a
-                href="#atlas"
+                href="/#atlas"
                 style={{
                   fontSize: "0.8125rem",
                   fontWeight: 600,
@@ -577,49 +394,46 @@ export default function Home() {
                   flexShrink: 0,
                 }}
               >
-                Browse all {reefCount} →
+                View all {inSeasonCount} in-season locations →
               </a>
             </div>
 
-            {/* 2-column asymmetric grid: large featured left + 2 stacked right */}
-            <div className="home-inspire-grid">
-              {/* Large featured card */}
-              {(() => {
-                const loc = inspirationLocs[0]!;
-                const animals = ANIMAL_TAGS[loc.slug] ?? loc.animalTags ?? [];
-                const seasonal = inSeason(loc.bestMonths);
+            {/* Card grid — up to 6 cards, 3 per row */}
+            <div
+              className="home-inseason-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: "1rem",
+              }}
+            >
+              {inSeasonDisplay.map((loc) => {
+                const animals = loc.animalTags ?? [];
                 return (
                   <Link
+                    key={loc.slug}
                     href={`/locations/${loc.slug}`}
                     style={{
                       position: "relative",
                       display: "block",
                       overflow: "hidden",
                       textDecoration: "none",
-                      background: DEST_GRADIENT[loc.slug] ?? DEST_GRADIENT.default,
+                      background: "#0f2438",
                       borderRadius: "1.25rem",
-                      minHeight: 380,
+                      minHeight: 240,
                     }}
                   >
-                    {/* Image placeholder with min-height */}
-                    <div
-                      style={{
-                        width: "100%",
-                        minHeight: 380,
-                        display: "block",
-                      }}
-                    />
-                    {/* Caustic shimmer */}
-                    <div
-                      aria-hidden="true"
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        backgroundImage:
-                          "repeating-linear-gradient(94deg, transparent 0px, transparent 30px, rgba(0,160,220,0.04) 30px, rgba(0,160,220,0.04) 32px)",
-                        pointerEvents: "none",
-                      }}
-                    />
+                    {/* Min-height base layer */}
+                    <div aria-hidden="true" style={{ width: "100%", minHeight: 240 }} />
+                    {loc.heroImageUrl && (
+                      <Image
+                        src={underwaterPhotoUrl(loc.heroImageUrl)}
+                        alt={`Underwater reef at ${loc.name}`}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 33vw"
+                        style={{ objectFit: "cover" }}
+                      />
+                    )}
                     {/* Gradient overlay */}
                     <div
                       aria-hidden="true"
@@ -627,20 +441,7 @@ export default function Home() {
                         position: "absolute",
                         inset: 0,
                         background:
-                          "linear-gradient(to top, rgba(2,14,28,0.9) 0%, rgba(2,14,28,0.3) 50%, transparent 100%)",
-                        pointerEvents: "none",
-                      }}
-                    />
-                    {/* Hover blue overlay */}
-                    <div
-                      aria-hidden="true"
-                      className="inspire-hover-overlay"
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        background: "rgba(0,137,222,0.1)",
-                        opacity: 0,
-                        transition: "opacity 0.25s",
+                          "linear-gradient(to top, rgba(2,14,28,0.92) 0%, rgba(2,14,28,0.3) 50%, transparent 100%)",
                         pointerEvents: "none",
                       }}
                     />
@@ -651,7 +452,7 @@ export default function Home() {
                         bottom: 0,
                         left: 0,
                         right: 0,
-                        padding: "1.5rem 1.5rem 1.625rem",
+                        padding: "1rem 1.25rem 1.25rem",
                         zIndex: 2,
                       }}
                     >
@@ -662,14 +463,14 @@ export default function Home() {
                           letterSpacing: "0.16em",
                           textTransform: "uppercase",
                           color: "rgba(255,255,255,0.45)",
-                          marginBottom: "0.35rem",
+                          marginBottom: "0.25rem",
                         }}
                       >
                         {loc.region}
                       </p>
                       <h3
                         style={{
-                          fontSize: "1.375rem",
+                          fontSize: "1.0625rem",
                           fontWeight: 800,
                           letterSpacing: "-0.02em",
                           color: "#fff",
@@ -679,38 +480,44 @@ export default function Home() {
                       >
                         {loc.name}
                       </h3>
-                      <p
-                        style={{
-                          fontFamily:
-                            "var(--font-serif), 'Source Serif 4', Georgia, serif",
-                          fontStyle: "italic",
-                          fontSize: "0.875rem",
-                          lineHeight: 1.55,
-                          color: "rgba(255,255,255,0.6)",
-                          display: "-webkit-box",
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: "vertical",
-                          overflow: "hidden",
-                        } as React.CSSProperties}
-                      >
-                        {loc.hook}
-                      </p>
                       {/* Badges */}
                       <div
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          gap: "0.5rem",
-                          marginTop: "0.875rem",
+                          gap: "0.4rem",
                           flexWrap: "wrap",
                         }}
                       >
+                        {/* Reef state badge */}
                         <span style={{ ...BADGE_BASE, ...STATE_BADGE_STYLE[loc.state] }}>
                           {STATE_TEXT[loc.state]}
                         </span>
-                        {seasonal && (
-                          <span style={SEASON_BADGE}>In season now</span>
-                        )}
+                        {/* Green in-season dot indicator */}
+                        <span
+                          style={{
+                            ...BADGE_BASE,
+                            background: "rgba(21,160,92,0.15)",
+                            color: "#6ee7b7",
+                            border: "1px solid rgba(21,160,92,0.25)",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "0.3rem",
+                          }}
+                        >
+                          <span
+                            aria-hidden="true"
+                            style={{
+                              display: "inline-block",
+                              width: 5,
+                              height: 5,
+                              borderRadius: "50%",
+                              background: "#15a05c",
+                              flexShrink: 0,
+                            }}
+                          />
+                          In season
+                        </span>
                         {animals.length > 0 && (
                           <span style={ANIMAL_BADGE}>
                             {animals.slice(0, 2).join(" · ")}
@@ -720,147 +527,251 @@ export default function Home() {
                     </div>
                   </Link>
                 );
-              })()}
-
-              {/* Right stack — two smaller cards stacked vertically */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                }}
-              >
-                {inspirationLocs.slice(1, 3).map((loc) => {
-                  const animals = ANIMAL_TAGS[loc!.slug] ?? loc!.animalTags ?? [];
-                  const seasonal = inSeason(loc!.bestMonths);
-                  return (
-                    <Link
-                      key={loc!.slug}
-                      href={`/locations/${loc!.slug}`}
-                      style={{
-                        position: "relative",
-                        display: "block",
-                        overflow: "hidden",
-                        textDecoration: "none",
-                        background:
-                          DEST_GRADIENT[loc!.slug] ?? DEST_GRADIENT.default,
-                        borderRadius: "1.25rem",
-                        flex: 1,
-                      }}
-                    >
-                      {/* Min-height placeholder */}
-                      <div style={{ width: "100%", minHeight: 160 }} />
-                      {/* Caustic shimmer */}
-                      <div
-                        aria-hidden="true"
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          backgroundImage:
-                            "repeating-linear-gradient(94deg, transparent 0px, transparent 30px, rgba(0,160,220,0.04) 30px, rgba(0,160,220,0.04) 32px)",
-                          pointerEvents: "none",
-                        }}
-                      />
-                      {/* Gradient overlay */}
-                      <div
-                        aria-hidden="true"
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          background:
-                            "linear-gradient(to top, rgba(2,14,28,0.9) 0%, rgba(2,14,28,0.3) 50%, transparent 100%)",
-                          pointerEvents: "none",
-                        }}
-                      />
-                      {/* Hover blue overlay */}
-                      <div
-                        aria-hidden="true"
-                        className="inspire-hover-overlay"
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          background: "rgba(0,137,222,0.1)",
-                          opacity: 0,
-                          transition: "opacity 0.25s",
-                          pointerEvents: "none",
-                        }}
-                      />
-                      {/* Content */}
-                      <div
-                        style={{
-                          position: "absolute",
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          padding: "1rem 1.25rem 1.25rem",
-                          zIndex: 2,
-                        }}
-                      >
-                        <p
-                          style={{
-                            fontSize: "0.625rem",
-                            fontWeight: 700,
-                            letterSpacing: "0.16em",
-                            textTransform: "uppercase",
-                            color: "rgba(255,255,255,0.45)",
-                            marginBottom: "0.35rem",
-                          }}
-                        >
-                          {loc!.region}
-                        </p>
-                        <h3
-                          style={{
-                            fontSize: "1.0625rem",
-                            fontWeight: 800,
-                            letterSpacing: "-0.02em",
-                            color: "#fff",
-                            lineHeight: 1.15,
-                            marginBottom: "0.4rem",
-                          }}
-                        >
-                          {loc!.name}
-                        </h3>
-                        {/* Badges */}
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.5rem",
-                            flexWrap: "wrap",
-                          }}
-                        >
-                          <span
-                            style={{
-                              ...BADGE_BASE,
-                              ...STATE_BADGE_STYLE[loc!.state],
-                            }}
-                          >
-                            {STATE_TEXT[loc!.state]}
-                          </span>
-                          {seasonal && (
-                            <span style={SEASON_BADGE}>In season</span>
-                          )}
-                          {animals.length > 0 && (
-                            <span style={ANIMAL_BADGE}>
-                              {animals.slice(0, 2).join(" · ")}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
+              })}
             </div>
           </div>
         </section>
       )}
 
+      {/* ─── DIVE WITH PURPOSE ───────────────────────────────────── */}
+      <section
+        aria-label="Dive with purpose"
+        className="home-section-pad"
+        style={{ background: "#071526" }}
+      >
+        <div
+          className="home-purpose-grid"
+          style={{
+            maxWidth: 1320,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "4rem",
+            alignItems: "start",
+          }}
+        >
+          {/* Left — For divers */}
+          <div>
+            <p
+              style={{
+                fontSize: "0.6875rem",
+                fontWeight: 700,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#0089de",
+                marginBottom: "0.75rem",
+              }}
+            >
+              For divers
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.025em",
+                color: "#fff",
+                marginBottom: "0.875rem",
+                lineHeight: 1.1,
+              }}
+            >
+              Make your dive count.
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+                fontStyle: "italic",
+                fontSize: "1rem",
+                lineHeight: 1.7,
+                color: "rgba(255,255,255,0.45)",
+                marginBottom: "2rem",
+                maxWidth: 440,
+              }}
+            >
+              We&apos;ll point you to programs that need data from sites like these.
+            </p>
+
+            {/* Citizen science rows */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.5rem",
+                marginBottom: "2rem",
+              }}
+            >
+              {[
+                {
+                  icon: "📸",
+                  desc: "Photograph a manta's belly spots — AI matches it to known individuals across years and oceans.",
+                  effort: "Zero effort",
+                },
+                {
+                  icon: "🪸",
+                  desc: "Color-match 10 corals against a chart. Helps track bleaching across the reef.",
+                  effort: "15 minutes",
+                },
+                {
+                  icon: "🐟",
+                  desc: "10-min fish count at a marked site. Citizen surveys match federally funded fisheries surveys in accuracy.",
+                  effort: "Free training",
+                },
+              ].map(({ icon, desc, effort }) => (
+                <div
+                  key={effort}
+                  style={{
+                    display: "flex",
+                    gap: "1rem",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{ fontSize: "1.375rem", lineHeight: 1, flexShrink: 0, marginTop: 2 }}
+                  >
+                    {icon}
+                  </span>
+                  <div>
+                    <p
+                      style={{
+                        fontSize: "0.8125rem",
+                        lineHeight: 1.6,
+                        color: "rgba(255,255,255,0.65)",
+                        marginBottom: "0.35rem",
+                      }}
+                    >
+                      {desc}
+                    </p>
+                    <span
+                      style={{
+                        fontSize: "0.6875rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        color: "rgba(255,255,255,0.25)",
+                      }}
+                    >
+                      {effort}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="/#atlas"
+              style={{
+                fontSize: "0.9375rem",
+                fontWeight: 600,
+                color: "#0089de",
+                textDecoration: "none",
+              }}
+            >
+              See which sites need your eyes →
+            </a>
+          </div>
+
+          {/* Right — For researchers */}
+          <div
+            style={{
+              border: "1px solid rgba(255,255,255,0.07)",
+              borderRadius: "1.25rem",
+              padding: "2rem",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "0.6875rem",
+                fontWeight: 700,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.3)",
+                marginBottom: "0.75rem",
+              }}
+            >
+              For researchers
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(1.25rem, 2vw, 1.625rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.025em",
+                color: "#fff",
+                marginBottom: "0.75rem",
+                lineHeight: 1.15,
+              }}
+            >
+              Monitoring a reef? We&apos;ll send you fresh eyes.
+            </h2>
+            <p
+              style={{
+                fontSize: "0.875rem",
+                lineHeight: 1.65,
+                color: "rgba(255,255,255,0.45)",
+                marginBottom: "1.5rem",
+              }}
+            >
+              Tell us where you need divers and we&apos;ll direct them there.
+            </p>
+
+            {/* Highlight box */}
+            <div
+              style={{
+                background: "rgba(244,63,94,0.06)",
+                border: "1px solid rgba(244,63,94,0.2)",
+                borderRadius: "0.75rem",
+                padding: "1rem 1.25rem",
+                marginBottom: "1.75rem",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "0.875rem",
+                  lineHeight: 1.6,
+                  color: "rgba(255,255,255,0.6)",
+                }}
+              >
+                <strong style={{ color: "#fca5a5", fontWeight: 700 }}>
+                  {noSightingsCount} sites
+                </strong>{" "}
+                in our atlas still have no sighting records.
+              </p>
+            </div>
+
+            {/* CTA button */}
+            <a
+              href="mailto:hello@scubaseason.fun"
+              style={{
+                display: "inline-block",
+                padding: "0.75rem 1.5rem",
+                background: "#0089de",
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: "0.9375rem",
+                borderRadius: "0.625rem",
+                textDecoration: "none",
+                marginBottom: "0.875rem",
+              }}
+            >
+              Get in touch →
+            </a>
+            <p
+              style={{
+                fontSize: "0.75rem",
+                color: "rgba(255,255,255,0.25)",
+              }}
+            >
+              hello@scubaseason.fun
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ─── ATLAS EXPLORER ──────────────────────────────────────── */}
       <section
         id="atlas"
         aria-label="Atlas explorer"
-        style={{ background: "#ffffff", padding: "5rem 3rem" }}
+        className="home-section-pad"
+        style={{ background: "#ffffff" }}
       >
         <div style={{ maxWidth: 1320, margin: "0 auto" }}>
           {/* Explorer header */}
@@ -886,7 +797,7 @@ export default function Home() {
                   marginBottom: "0.4rem",
                 }}
               >
-                The full atlas
+                All locations
               </p>
               <h2
                 style={{
@@ -896,19 +807,8 @@ export default function Home() {
                   color: "#0f172a",
                 }}
               >
-                Browse every tracked reef
+                {reefCount} reefs across {regions.length} regions
               </h2>
-            </div>
-            <div style={{ textAlign: "right" }}>
-              <p style={{ fontSize: "0.875rem", color: "#64748b", marginBottom: "0.2rem" }}>
-                <strong style={{ color: "#0f172a", fontWeight: 700 }}>
-                  {reefCount}
-                </strong>{" "}
-                locations · {regions.length} regions
-              </p>
-              <p style={{ fontSize: "0.75rem", color: "#64748b", marginTop: "0.15rem" }}>
-                Filter, sort, or search above
-              </p>
             </div>
           </div>
 
@@ -922,166 +822,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── NUMBERS / EDITORIAL STATS ───────────────────────────── */}
+      {/* ─── TRUST STRIP ─────────────────────────────────────────── */}
       <section
         aria-label="About the data"
+        className="home-section-pad"
         style={{
           background: "#f8fafc",
           borderTop: "1px solid #e2e8f0",
-          padding: "4rem 3rem",
         }}
       >
         <div
           style={{
             maxWidth: 1320,
             margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "3rem",
-            alignItems: "start",
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.75rem",
           }}
         >
-          {/* 38 data sources */}
-          <div>
-            <p
-              style={{
-                fontSize: "3.25rem",
-                fontWeight: 900,
-                letterSpacing: "-0.05em",
-                color: "#e2e8f0",
-                lineHeight: 1,
-                marginBottom: "0.75rem",
-                fontVariantNumeric: "tabular-nums",
-              }}
+          <p
+            style={{
+              fontSize: "0.9375rem",
+              lineHeight: 1.6,
+              color: "#475569",
+            }}
+          >
+            <strong style={{ color: "#0f172a", fontWeight: 700 }}>
+              {sourceCount} data sources
+            </strong>{" "}
+            — NOAA, AIMS, IUCN, GFW, iNaturalist and more.{" "}
+            <Link
+              href="/data"
+              style={{ color: "#0089de", textDecoration: "none", fontWeight: 600 }}
             >
-              {sourceCount}
-            </p>
-            <p
-              style={{
-                fontSize: "0.6875rem",
-                fontWeight: 700,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "#64748b",
-                marginBottom: "0.5rem",
-              }}
-            >
-              Data sources
-            </p>
-            <p
-              style={{
-                fontFamily:
-                  "var(--font-serif), 'Source Serif 4', Georgia, serif",
-                fontSize: "0.9375rem",
-                lineHeight: 1.65,
-                color: "#475569",
-              }}
-            >
-              NOAA Coral Reef Watch, AIMS, IUCN Red List, Global Fishing Watch,
-              iNaturalist, NCRMP, and {sourceCount > 6 ? sourceCount - 6 : "more"} additional program-specific monitoring datasets.
-            </p>
-          </div>
-
-          {/* Updated tonight — live badge */}
-          <div>
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                padding: "0.45rem 0.875rem 0.45rem 0.625rem",
-                borderRadius: 999,
-                background: "rgba(21,160,92,0.1)",
-                border: "1px solid rgba(21,160,92,0.2)",
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                letterSpacing: "0.04em",
-                color: "#15804d",
-                marginBottom: "0.75rem",
-              }}
-            >
-              <span
-                className="live-dot"
-                style={{
-                  width: 7,
-                  height: 7,
-                  borderRadius: "50%",
-                  background: "#15a05c",
-                  boxShadow: "0 0 0 3px rgba(21,160,92,0.25)",
-                  flexShrink: 0,
-                  display: "inline-block",
-                }}
-              />
-              Updated tonight
-            </div>
-            <p
-              style={{
-                fontSize: "0.6875rem",
-                fontWeight: 700,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "#64748b",
-                marginBottom: "0.5rem",
-              }}
-            >
-              Thermal data
-            </p>
-            <p
-              style={{
-                fontFamily:
-                  "var(--font-serif), 'Source Serif 4', Georgia, serif",
-                fontSize: "0.9375rem",
-                lineHeight: 1.65,
-                color: "#475569",
-              }}
-            >
-              Every reef is re-checked against NOAA&apos;s 5 km satellite feed
-              each night. Three signals: bleaching alert level, degree heating
-              weeks, and SST anomaly.
-            </p>
-          </div>
-
-          {/* 0 marketing adjectives */}
-          <div>
-            <p
-              style={{
-                fontSize: "3.25rem",
-                fontWeight: 900,
-                letterSpacing: "-0.05em",
-                color: "#e2e8f0",
-                lineHeight: 1,
-                marginBottom: "0.75rem",
-                fontVariantNumeric: "tabular-nums",
-              }}
-            >
-              0
-            </p>
-            <p
-              style={{
-                fontSize: "0.6875rem",
-                fontWeight: 700,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "#64748b",
-                marginBottom: "0.5rem",
-              }}
-            >
-              Marketing adjectives
-            </p>
-            <p
-              style={{
-                fontFamily:
-                  "var(--font-serif), 'Source Serif 4', Georgia, serif",
-                fontSize: "0.9375rem",
-                lineHeight: 1.65,
-                color: "#475569",
-              }}
-            >
-              &ldquo;Limited survey data available&rdquo; is always better than a hopeful
-              description we can&apos;t back up. If the data says a reef is
-              degraded, we say so.
-            </p>
-          </div>
+              Full source list →
+            </Link>
+          </p>
+          <p
+            style={{
+              fontSize: "0.9375rem",
+              lineHeight: 1.6,
+              color: "#475569",
+            }}
+          >
+            <strong style={{ color: "#0f172a", fontWeight: 700 }}>
+              Live thermal data
+            </strong>{" "}
+            — re-checked against NOAA&apos;s 5 km satellite feed every night.
+          </p>
+          <p
+            style={{
+              fontSize: "0.9375rem",
+              lineHeight: 1.6,
+              color: "#475569",
+            }}
+          >
+            <strong style={{ color: "#0f172a", fontWeight: 700 }}>
+              0 marketing adjectives
+            </strong>{" "}
+            — if a reef is degraded, we say so.
+          </p>
         </div>
       </section>
     </>

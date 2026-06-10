@@ -1,26 +1,43 @@
 #!/usr/bin/env node
-// Every dive site gets an UNDERWATER photo. Priority order:
-//   1. A Wikimedia Commons photo of THAT specific site (verified by title+location).
-//   2. A Wikimedia Commons photo of the site's signature SPECIES (its first / most
-//      distinctive marine animal). E.g. a Cuba shark dive with no site photo gets
-//      a generic Caribbean-reef-shark underwater photo.
-//   3. null — UI shows a neutral underwater placeholder.
-//
-// Hard rule: an image is only accepted if its title / description / categories
-// contain an UNDERWATER context word. Above-water lead images (towns, ports,
-// dive boats on the surface) are rejected.
+/**
+ * Assign heroImageUrl to every dive site and every location.
+ *
+ * Quality rules (per PRD prd-photo-quality):
+ *   Q1  Underwater context word required in title/description/categories.
+ *   Q2  Minimum source width: sites ≥ 1200 px, locations ≥ 1600 px.
+ *   Q3  No specimens, illustrations, surface/aerial shots.
+ *   Q5  Global hero uniqueness: a URL can only be claimed by one entity
+ *       (site or location). Registry: src/data/used-hero-urls.json.
+ *
+ * Priority order per site:
+ *   1. Wikimedia photo of that specific site (title + location match).
+ *   2. Wikimedia photo of the site's most-distinctive species (underwater).
+ *   3. null — UI falls back to gradient placeholder.
+ *
+ * Priority order per location:
+ *   1. Wikimedia photo of that specific location (name + country match, underwater).
+ *   2. null — atlas-location.ts already borrows from a site hero as fallback.
+ *
+ * With --force: re-evaluates and potentially replaces every existing heroImageUrl.
+ * Without --force: skips entities that already have a non-null heroImageUrl.
+ */
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import { loadRegistry, isUsed, markUsed, saveRegistry } from "./lib/photo-registry.mjs";
 
 const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
 const SITES_PATH = path.join(ROOT, "src/data/sites.json");
 const LOCATIONS_PATH = path.join(ROOT, "src/data/locations.json");
 
-const UA = "scubaSeason/0.3 (josie.ty.leung@gmail.com) site-photo-fetch";
+const UA = "scubaSeason/0.4 (josie.ty.leung@gmail.com) site-photo-fetch";
+const FORCE = process.argv.includes("--force");
+const MIN_SITE_WIDTH = 1200;
+const MIN_LOCATION_WIDTH = 1600;
 
-// Words that strongly imply an underwater photograph. "Ocean", "sea", "marine"
-// are deliberately excluded — they admit aerial / surface shots.
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Q1 — words that strongly imply an underwater photograph.
 const UNDERWATER_WORDS = [
   "underwater", "under water", "diver", "divers", "diving", "scuba",
   "snorkel", "snorkeling", "snorkelling", "reef", "coral", "wreck",
@@ -28,9 +45,13 @@ const UNDERWATER_WORDS = [
   "cave dive", "blue hole",
 ];
 
+// Q3 — reject on these terms in filename / title.
 const BAD_FILE_HINTS = [
   "logo", "map", "chart", "diagram", "flag", "coat_of_arms", "seal_",
   "graph", ".svg", ".pdf", "icon", "postcard", "stamp", "poster",
+  "specimen", "preserved", "museum", "collection", "jar", "taxidermy",
+  "illustration", "drawing", "aerial", "beach_", "dock", "surface_",
+  "above_water", "boat_on", "harbour", "harbor",
 ];
 
 function norm(s) {
@@ -64,7 +85,7 @@ function looksBad(filename) {
   return BAD_FILE_HINTS.some((bad) => lower.includes(bad));
 }
 
-async function commonsSearch(query) {
+async function commonsSearch(query, minWidth) {
   const params = new URLSearchParams({
     action: "query",
     format: "json",
@@ -73,8 +94,8 @@ async function commonsSearch(query) {
     gsrnamespace: "6",
     gsrlimit: "15",
     prop: "imageinfo",
-    iiprop: "url|extmetadata|mime",
-    iiurlwidth: "2000",
+    iiprop: "url|extmetadata|mime|size",
+    iiurlwidth: String(Math.max(minWidth, 2000)),
     origin: "*",
   });
   const url = `https://commons.wikimedia.org/w/api.php?${params}`;
@@ -89,10 +110,14 @@ async function commonsSearch(query) {
         const info = p.imageinfo?.[0];
         if (!info) return null;
         if (info.mime && !info.mime.startsWith("image/")) return null;
+        // Q2: enforce minimum source width.
+        const srcWidth = info.width ?? 0;
+        if (srcWidth > 0 && srcWidth < minWidth) return null;
         const meta = info.extmetadata || {};
         return {
           title: p.title || "",
           url: info.thumburl || info.url,
+          srcWidth,
           description: (meta.ImageDescription?.value || "").replace(/<[^>]+>/g, " "),
           objectName: meta.ObjectName?.value || "",
           categories: meta.Categories?.value || "",
@@ -109,26 +134,22 @@ async function commonsSearch(query) {
 function siteMatchOk(file, name, locationWords) {
   const titleNorm = norm(file.title);
   const haystack = norm(`${file.title} ${file.description} ${file.objectName} ${file.categories}`);
-  const { meaningful, all } = nameTokens(name);
+  const { meaningful } = nameTokens(name);
 
-  // Site name must appear in TITLE (not just description).
   const titleHasName =
     meaningful.length === 0
       ? titleNorm.includes(norm(name))
       : meaningful.every((tok) => titleNorm.includes(tok));
   if (!titleHasName) return false;
 
-  // All meaningful tokens (or full phrase) must appear in haystack too.
   if (meaningful.length === 0) {
     if (!haystack.includes(norm(name))) return false;
   } else {
     if (!meaningful.every((tok) => haystack.includes(tok))) return false;
   }
 
-  // Must be UNDERWATER.
   if (!isUnderwater(haystack)) return false;
 
-  // Must mention location (kills generic-name collisions).
   if (locationWords.length > 0) {
     const locHit = locationWords.some((w) => w.length >= 4 && haystack.includes(w));
     if (!locHit) return false;
@@ -136,7 +157,7 @@ function siteMatchOk(file, name, locationWords) {
   return true;
 }
 
-async function findSitePhoto(name, locationWords, usedUrls) {
+async function findSitePhoto(name, locationWords) {
   const queries = [
     `"${name}" diving`,
     `"${name}" underwater`,
@@ -145,46 +166,35 @@ async function findSitePhoto(name, locationWords, usedUrls) {
     `"${name}" wreck`,
   ];
   for (const q of queries) {
-    const results = await commonsSearch(q);
+    const results = await commonsSearch(q, MIN_SITE_WIDTH);
     for (const r of results) {
       if (looksBad(r.title)) continue;
       if (!siteMatchOk(r, name, locationWords)) continue;
-      if (usedUrls.has(r.url)) continue;
+      if (isUsed(r.url)) continue;
       return { url: r.url, source: `Commons: ${r.title}` };
     }
+    await sleep(300);
   }
   return null;
 }
 
-// --- Species fallback ----------------------------------------------------
-
-// Verify a candidate species photo: must be underwater, must name the species.
+// Species fallback for sites: cache candidate list per species.
 function speciesMatchOk(file, species) {
   const haystack = norm(`${file.title} ${file.description} ${file.objectName} ${file.categories}`);
   if (!isUnderwater(haystack)) return false;
-  // Drop the most-noisy filler so e.g. "reef shark" matches "Caribbean reef shark"
-  // and "Grey reef shark" equally.
   const speciesTokens = norm(species)
     .split(" ")
     .filter((t) => t.length >= 4 && !["shark", "fish", "ray"].includes(t));
-  // Need at least the distinctive part of the species name in the title or desc.
   const titleOrDesc = norm(`${file.title} ${file.description}`);
-  if (speciesTokens.length === 0) {
-    // Pure-noise species like just "Shark" — require full phrase.
-    return titleOrDesc.includes(norm(species));
-  }
+  if (speciesTokens.length === 0) return titleOrDesc.includes(norm(species));
   return speciesTokens.every((t) => titleOrDesc.includes(t));
 }
 
-// Cache the full ordered candidate LIST per species so we can pick a fresh
-// one each time a species repeats. The species-fallback dedupe rule: the same
-// photo must never appear on two different sites.
 const speciesCandidatesCache = new Map();
 
 async function getSpeciesCandidates(species) {
   const key = norm(species);
   if (speciesCandidatesCache.has(key)) return speciesCandidatesCache.get(key);
-
   const queries = [
     `"${species}" underwater`,
     `"${species}" diving`,
@@ -194,7 +204,7 @@ async function getSpeciesCandidates(species) {
   const seen = new Set();
   const candidates = [];
   for (const q of queries) {
-    const results = await commonsSearch(q);
+    const results = await commonsSearch(q, MIN_SITE_WIDTH);
     for (const r of results) {
       if (looksBad(r.title)) continue;
       if (!speciesMatchOk(r, species)) continue;
@@ -202,86 +212,154 @@ async function getSpeciesCandidates(species) {
       seen.add(r.url);
       candidates.push({ url: r.url, source: `Commons (species): ${r.title}` });
     }
+    await sleep(300);
   }
   speciesCandidatesCache.set(key, candidates);
   return candidates;
 }
 
-async function findSpeciesPhoto(species, usedUrls) {
-  const candidates = await getSpeciesCandidates(species);
-  for (const c of candidates) {
-    if (!usedUrls.has(c.url)) return c;
-  }
-  return null;
-}
-
-async function findFallbackPhoto(site, usedUrls) {
-  // Try species in order of distinctiveness. Heuristic: longer / more-specific
-  // names tend to be more visually distinctive (e.g. "Scalloped hammerhead"
-  // beats "Shark"). Stable tie-break by original order.
-  const species = (site.species || [])
+async function findSpeciesFallback(site) {
+  const speciesList = (site.species || [])
     .map((s) => s.commonName || s.name)
     .filter(Boolean)
     .sort((a, b) => b.length - a.length);
 
-  for (const sp of species) {
-    const hit = await findSpeciesPhoto(sp, usedUrls);
-    if (hit) return { ...hit, source: `${hit.source}  [species: ${sp}]` };
+  for (const sp of speciesList) {
+    const candidates = await getSpeciesCandidates(sp);
+    for (const c of candidates) {
+      if (!isUsed(c.url)) return { ...c, source: `${c.source}  [species: ${sp}]` };
+    }
   }
   return null;
 }
 
-// --- Main ----------------------------------------------------------------
+// Location hero: match on location name + country, underwater.
+function locationMatchOk(file, loc) {
+  const haystack = norm(`${file.title} ${file.description} ${file.objectName} ${file.categories}`);
+  if (!isUnderwater(haystack)) return false;
+  const { meaningful } = nameTokens(loc.name);
+  const titleNorm = norm(file.title);
+  const nameOk =
+    meaningful.length === 0
+      ? titleNorm.includes(norm(loc.name))
+      : meaningful.every((tok) => titleNorm.includes(tok));
+  if (!nameOk) return false;
+  // Country or region must appear somewhere.
+  const ctry = norm(loc.country || "");
+  const region = norm(loc.region || "");
+  const locOk = (ctry && haystack.includes(ctry)) || (region && haystack.includes(region));
+  return locOk;
+}
+
+async function findLocationPhoto(loc) {
+  const queries = [
+    `"${loc.name}" diving underwater`,
+    `"${loc.name}" scuba reef`,
+    `"${loc.country}" "${loc.name}" underwater`,
+  ];
+  for (const q of queries) {
+    const results = await commonsSearch(q, MIN_LOCATION_WIDTH);
+    for (const r of results) {
+      if (looksBad(r.title)) continue;
+      if (!locationMatchOk(r, loc)) continue;
+      if (isUsed(r.url)) continue;
+      return { url: r.url, source: `Commons: ${r.title}` };
+    }
+    await sleep(300);
+  }
+  return null;
+}
 
 function locationWordsFor(loc) {
   if (!loc) return [];
   const raw = [loc.name, loc.country, loc.region].filter(Boolean).join(" ");
-  const NOISE = new Set([
-    "island", "islands", "sea", "ocean", "national", "park", "reef",
-    "the", "and", "of",
-  ]);
-  return norm(raw)
-    .split(" ")
-    .filter((t) => t.length >= 4 && !NOISE.has(t));
+  const NOISE = new Set(["island", "islands", "sea", "ocean", "national", "park", "reef", "the", "and", "of"]);
+  return norm(raw).split(" ").filter((t) => t.length >= 4 && !NOISE.has(t));
 }
 
 async function main() {
+  await loadRegistry();
+
   const [sites, locations] = await Promise.all([
     fs.readFile(SITES_PATH, "utf8").then(JSON.parse),
     fs.readFile(LOCATIONS_PATH, "utf8").then(JSON.parse),
   ]);
   const locById = new Map(locations.map((l) => [l.id, l]));
 
-  let siteHits = 0, speciesHits = 0, unmatched = 0;
-  const usedUrls = new Set();
+  // Seed registry with all existing heroes so they count as used.
+  for (const s of sites) {
+    if (s.heroImageUrl && !isUsed(s.heroImageUrl)) markUsed(s.heroImageUrl, s.slug);
+  }
+  for (const l of locations) {
+    if (l.heroImageUrl && !isUsed(l.heroImageUrl)) markUsed(l.heroImageUrl, l.slug);
+  }
+
+  // ── Sites ──────────────────────────────────────────────────────────────
+  let siteHits = 0, speciesHits = 0, siteUnmatched = 0;
+  console.log(`\n── Sites (${sites.length}) ──`);
 
   for (const site of sites) {
+    if (!FORCE && site.heroImageUrl) continue;
+
+    // Remove old URL from registry so a new one can replace it.
+    if (FORCE && site.heroImageUrl) {
+      // Don't delete from registry — keep it as "used by prior slug" to avoid
+      // re-assigning it elsewhere. Just clear from this site so it can pick fresh.
+      delete site.heroImageUrl;
+    }
+
     const locWords = locationWordsFor(locById.get(site.locationId));
-    let hit = await findSitePhoto(site.name, locWords, usedUrls);
+    let hit = await findSitePhoto(site.name, locWords);
     if (hit) {
       siteHits++;
       console.log(`[site]    ${site.slug} ← ${hit.source}`);
     } else {
-      hit = await findFallbackPhoto(site, usedUrls);
+      hit = await findSpeciesFallback(site);
       if (hit) {
         speciesHits++;
         console.log(`[species] ${site.slug} ← ${hit.source}`);
       } else {
-        unmatched++;
+        siteUnmatched++;
         console.log(`[none]    ${site.slug}`);
       }
     }
-    if (hit) usedUrls.add(hit.url);
-    site.heroImageUrl = hit ? hit.url : null;
+    if (hit) {
+      site.heroImageUrl = hit.url;
+      markUsed(hit.url, site.slug);
+    } else {
+      site.heroImageUrl = null;
+    }
+  }
+
+  // ── Locations ──────────────────────────────────────────────────────────
+  let locHits = 0, locUnmatched = 0;
+  console.log(`\n── Locations (${locations.length}) ──`);
+
+  for (const loc of locations) {
+    if (!FORCE && loc.heroImageUrl) continue;
+
+    if (FORCE && loc.heroImageUrl) {
+      delete loc.heroImageUrl;
+    }
+
+    const hit = await findLocationPhoto(loc);
+    if (hit) {
+      locHits++;
+      loc.heroImageUrl = hit.url;
+      markUsed(hit.url, loc.slug);
+      console.log(`[loc]     ${loc.slug} ← ${hit.source}`);
+    } else {
+      locUnmatched++;
+      console.log(`[none]    ${loc.slug}`);
+    }
   }
 
   await fs.writeFile(SITES_PATH, JSON.stringify(sites, null, 2) + "\n");
-  console.log(
-    `\nDone. Site-specific: ${siteHits} | Species fallback: ${speciesHits} | No photo: ${unmatched} | Total: ${sites.length}`,
-  );
+  await fs.writeFile(LOCATIONS_PATH, JSON.stringify(locations, null, 2) + "\n");
+  await saveRegistry();
+
+  console.log(`\nSites — site-match: ${siteHits} | species-fallback: ${speciesHits} | none: ${siteUnmatched}`);
+  console.log(`Locations — matched: ${locHits} | none: ${locUnmatched}`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main().catch((e) => { console.error(e); process.exit(1); });

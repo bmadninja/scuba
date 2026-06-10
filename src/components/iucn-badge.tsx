@@ -26,9 +26,11 @@ const TREND_LABEL: Record<NonNullable<IucnStatus["populationTrend"]>, string> = 
 export function IucnBadge({
   status,
   className = "",
+  noLink = false,
 }: {
   status: IucnStatus;
   className?: string;
+  noLink?: boolean;
 }) {
   const tone = FLAT_TONE[status.category] ?? FLAT_TONE.NE;
   const trend = status.populationTrend ? TREND_LABEL[status.populationTrend] : null;
@@ -53,7 +55,7 @@ export function IucnBadge({
       ) : null}
     </span>
   );
-  if (status.assessmentUrl) {
+  if (status.assessmentUrl && !noLink) {
     return (
       <a
         href={status.assessmentUrl}
