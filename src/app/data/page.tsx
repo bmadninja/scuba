@@ -1,744 +1,1160 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import sourcesData from "@/data/sources.json";
 import { FaqSection } from "@/components/faq-section";
 
 export const metadata: Metadata = {
-  title: "Method — what's live, what's a snapshot, what we can't see",
+  title: "Method — how we read the reefs",
   description:
-    "Plain English data freshness for scubaSeason.fun. NOAA Coral Reef Watch is live nightly; coral cover is a snapshot from named monitoring programs. Includes the full FAQ on how every metric is calculated.",
+    "How scubaSeason.fun turns public science into plain reef labels. Reef state from NOAA heat, reef surveys and Global Fishing Watch; sightings from iNaturalist and GBIF. Every source named and linked.",
 };
 
+type Source = {
+  id: string;
+  name: string;
+  url?: string;
+};
+
+// Curated grouping over the real source ids. Names and links are pulled live
+// from sources.json so this list can never drift from the data we actually use.
+const SOURCE_GROUPS: { heading: string; ids: string[] }[] = [
+  {
+    heading: "Heat and ocean physics",
+    ids: [
+      "noaa-crw",
+      "nasa-podaac",
+      "copernicus-marine",
+      "noaa-coastwatch",
+      "nasa-ocean-color",
+      "argo",
+      "noaa-ndbc",
+      "imos-aodn",
+      "noaa-co-ops",
+      "hycom",
+      "gebco",
+    ],
+  },
+  {
+    heading: "Coral reef health and monitoring",
+    ids: [
+      "allen-coral-atlas",
+      "gcrmn",
+      "aims-ltmp",
+      "reef-life-survey",
+      "ncrmp",
+      "gbrmpa",
+      "agrra",
+      "icri",
+      "wri-reefs-at-risk",
+      "ocean-health-index",
+      "global-mangrove-watch",
+    ],
+  },
+  {
+    heading: "Species and biodiversity records",
+    ids: [
+      "gbif",
+      "obis",
+      "iucn-red-list",
+      "obis-seamap",
+      "worms",
+      "fishbase",
+      "atlas-living-australia",
+      "manta-trust",
+      "wildbook",
+      "happywhale",
+      "ocean-tracking-network",
+    ],
+  },
+  {
+    heading: "Citizen science you can join",
+    ids: ["inaturalist", "reef-check", "coralwatch", "reef-org", "green-fins"],
+  },
+  {
+    heading: "Fishing and protection",
+    ids: ["global-fishing-watch", "wdpa", "mpatlas"],
+  },
+  {
+    heading: "Water quality and hazards",
+    ids: [
+      "ncei-microplastics",
+      "noaa-erma",
+      "emodnet-chemistry",
+      "noaa-hab-forecast",
+      "haedat",
+      "goa-on",
+      "noaa-mussel-watch",
+    ],
+  },
+  {
+    heading: "Weather, storms and seafloor",
+    ids: ["ecmwf-open", "era5", "ibtracs", "smithsonian-gvp", "usgs-earthquake"],
+  },
+  {
+    heading: "Wrecks, charts and navigation",
+    ids: ["usn-nhhc", "noaa-enc-direct", "noaa-maritime-heritage", "openseamap"],
+  },
+  {
+    heading: "Diver training and safety",
+    ids: ["dan", "padi", "ssi", "dema"],
+  },
+  {
+    heading: "Climate science and editorial",
+    ids: ["ipcc-srocc", "editorial-curation"],
+  },
+];
+
+// Reef-state palette (DESIGN.md reef_states, carried unchanged).
+const THRIVING = "#15a05c";
+const PRESSURE = "#f59e0b";
+const CHANGE = "#e23a3a";
+const INK = "#f0f4f8";
+const BODY = "#aebcd0";
+const MUTED = "#8b9db8";
+const HAIRLINE = "rgba(255,255,255,0.1)";
+const BRAND = "#00d4ff";
+
+const mono = "var(--font-mono), 'IBM Plex Mono', monospace";
+const serif = "var(--font-serif), 'Source Serif 4', serif";
+
+function code(text: string) {
+  return (
+    <code
+      style={{
+        fontFamily: mono,
+        fontSize: "0.9em",
+        background: "rgba(255,255,255,0.08)",
+        padding: "0.05rem 0.3rem",
+        borderRadius: 4,
+        color: INK,
+      }}
+    >
+      {text}
+    </code>
+  );
+}
+
+function Conj({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      style={{
+        fontSize: "0.6875rem",
+        fontWeight: 700,
+        letterSpacing: "0.06em",
+        color: "#8b9db8",
+      }}
+    >
+      {children}
+    </span>
+  );
+}
+
 export default function DataPage() {
+  const sourceMap = new Map((sourcesData as Source[]).map((s) => [s.id, s]));
+  const totalSources = (sourcesData as Source[]).length;
+
+  const groupTitleStyle: React.CSSProperties = {
+    fontSize: "1.9rem",
+    fontWeight: 800,
+    letterSpacing: "-0.03em",
+    color: INK,
+    paddingBottom: "0.7rem",
+    borderBottom: `2px solid rgba(255,255,255,0.2)`,
+  };
+  const groupIntroStyle: React.CSSProperties = {
+    fontSize: "0.9375rem",
+    lineHeight: 1.7,
+    color: BODY,
+    margin: "1.1rem 0 0",
+    maxWidth: 660,
+  };
+  const subHStyle: React.CSSProperties = {
+    fontSize: "1.2rem",
+    fontWeight: 800,
+    color: INK,
+    marginBottom: "0.7rem",
+  };
+  const subPStyle: React.CSSProperties = {
+    fontSize: "0.9375rem",
+    lineHeight: 1.7,
+    color: BODY,
+    marginBottom: "1rem",
+    maxWidth: 660,
+  };
+
+  const tocLink = (
+    href: string,
+    label: string,
+    kind: "group" | "sub",
+  ) => (
+    <a
+      href={href}
+      style={{
+        fontSize: kind === "group" ? "0.8125rem" : "0.78rem",
+        fontWeight: kind === "group" ? 700 : 500,
+        color: kind === "group" ? INK : MUTED,
+        textDecoration: "none",
+        padding:
+          kind === "group" ? "0.4rem 0.7rem" : "0.4rem 0.7rem 0.4rem 1.3rem",
+        borderLeft: `2px solid ${kind === "group" ? "rgba(255,255,255,0.15)" : HAIRLINE}`,
+      }}
+    >
+      {label}
+    </a>
+  );
+
   return (
     <>
-      {/* PAGE HEADER — surface background */}
+      {/* ===== HERO ===== */}
       <header
         style={{
-          background: "#f1f7fb",
-          borderBottom: "1px solid #e2e8f0",
-          padding: "5rem 3rem 4rem",
+          background: "linear-gradient(180deg,#0b1e32,#0d2942)",
+          color: "#fff",
+          padding: "4rem 3rem 3.5rem",
         }}
       >
-        <div style={{ maxWidth: 800, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
           <p
             style={{
               fontSize: "0.6875rem",
               fontWeight: 700,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#0089de",
+              color: "#7dd3fc",
               marginBottom: "1rem",
             }}
           >
-            Method
+            How this works
           </p>
           <h1
             style={{
-              fontSize: "clamp(2.25rem, 4.5vw, 3.5rem)",
+              fontSize: "clamp(2.25rem,4vw,3.25rem)",
               fontWeight: 800,
               letterSpacing: "-0.03em",
-              lineHeight: 1.06,
-              color: "#0f172a",
-              marginBottom: "1.25rem",
+              lineHeight: 1.05,
+              maxWidth: 760,
             }}
           >
-            What&rsquo;s live, what&rsquo;s a snapshot, what we can&rsquo;t
-            see.
+            How we read the reefs
           </h1>
           <p
             style={{
-              fontFamily: "var(--font-serif), 'Source Serif 4', serif",
-              fontSize: "1.1rem",
-              lineHeight: 1.75,
-              color: "#475569",
+              fontFamily: serif,
+              fontSize: "1.2rem",
+              lineHeight: 1.65,
+              color: "rgba(255,255,255,0.7)",
+              marginTop: "1.1rem",
+              maxWidth: 640,
             }}
           >
-            scubaSeason mixes daily satellite data with much older in-water
-            survey snapshots. The labels next to every reef number on the site
-            tell you which is which. This page lays out the whole picture.
+            Every label on this site comes from public science, not opinion.
+            Here is exactly where the data comes from, how we turn it into plain
+            language, and how you can help fill the gaps.
           </p>
-          {/* TOC pills */}
-          <nav
-            aria-label="Page sections"
-            style={{ display: "flex", gap: "1.5rem", marginTop: "2.5rem", flexWrap: "wrap" }}
-          >
-            {[
-              { href: "#live", label: "What’s live daily" },
-              { href: "#snapshots", label: "Coral cover snapshots" },
-              { href: "#freshness", label: "Freshness labels" },
-              { href: "#reef-state", label: "Reef state" },
-              { href: "#sources", label: "All sources" },
-            ].map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                style={{
-                  fontSize: "0.8125rem",
-                  fontWeight: 600,
-                  color: "#0089de",
-                  textDecoration: "none",
-                  padding: "0.4rem 0.875rem",
-                  borderRadius: 999,
-                  border: "1px solid rgba(0,137,222,0.25)",
-                  background: "rgba(0,137,222,0.06)",
-                }}
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
         </div>
       </header>
 
-      {/* PAGE BODY */}
-      <div style={{ maxWidth: 800, margin: "0 auto", padding: "4rem 3rem" }}>
-
-        {/* SECTION: What updates every night */}
-        <section
-          id="live"
+      {/* ===== BODY: sticky TOC + content ===== */}
+      <div className="method-wrap">
+        <nav
+          className="method-toc"
+          aria-label="Page sections"
           style={{
-            marginBottom: "4rem",
-            paddingBottom: "4rem",
-            borderBottom: "1px solid #e2e8f0",
-            scrollMarginTop: "6rem",
+            position: "sticky",
+            top: "5rem",
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.1rem",
+            alignSelf: "start",
           }}
         >
-          <p
-            style={{
-              fontSize: "0.6875rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#64748b",
-              marginBottom: "0.75rem",
-            }}
-          >
-            Daily satellite
-          </p>
-          <h2
-            style={{
-              fontSize: "1.625rem",
-              fontWeight: 800,
-              letterSpacing: "-0.025em",
-              color: "#0f172a",
-              marginBottom: "1.25rem",
-            }}
-          >
-            What updates every night
-          </h2>
-          <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", marginBottom: "1.5rem" }}>
-            Three signals pulled nightly from NOAA&rsquo;s public ERDDAP
-            endpoint against the lat/lng of every reef on the atlas.
-          </p>
+          {tocLink("#reefstate", "Reef state", "group")}
+          {tocLink("#rs-label", "The label and the rule", "sub")}
+          {tocLink("#rs-signals", "The signals behind it", "sub")}
+          {tocLink("#sightings", "Sightings", "group")}
+          {tocLink("#si-chances", "Your chances", "sub")}
+          {tocLink("#si-verify", "How we verify", "sub")}
+          {tocLink("#si-labels", "Conservation labels", "sub")}
+          {tocLink("#divers", "For divers", "group")}
+          {tocLink("#researchers", "For researchers", "group")}
+          {tocLink("#sources", "All sources", "group")}
+        </nav>
 
-          {/* Live data card */}
-          <div
-            style={{
-              border: "1px solid #a7f3d0",
-              borderRadius: "1.25rem",
-              overflow: "hidden",
-              margin: "1.5rem 0",
-            }}
+        <div className="method-content" style={{ minWidth: 0 }}>
+          {/* ============ REEF STATE ============ */}
+          <section
+            id="reefstate"
+            style={{ marginBottom: "4rem", scrollMarginTop: "5rem" }}
           >
+            {/* Keep legacy /data#reef-state deep links landing here too. */}
+            <span id="reef-state" style={{ position: "absolute", marginTop: "-5rem" }} aria-hidden="true" />
+            <h2 style={groupTitleStyle}>Reef state</h2>
+            <p style={groupIntroStyle}>
+              We read three signals for every reef and turn them into one plain
+              word that describes <b style={{ color: INK }}>what is happening</b>{" "}
+              there. It is not a ranking and not a score. Every reef is worth
+              diving.
+            </p>
+
             <div
-              style={{
-                padding: "1rem 1.375rem",
-                background: "#e7f6ee",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.75rem",
-              }}
+              id="rs-label"
+              style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
             >
-              <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  background: "#10b981",
-                  flexShrink: 0,
-                  display: "inline-block",
-                }}
-              />
-              <span
-                style={{
-                  fontSize: "0.6875rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "#065f46",
-                }}
-              >
-                NOAA Coral Reef Watch &middot; 5&nbsp;km &middot; v3.1 &middot;
-                refreshed nightly
-              </span>
-            </div>
-            <div style={{ padding: "1.25rem 1.375rem" }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
-                {[
-                  {
-                    name: "Bleaching Alert Area",
-                    note: "No stress / Watch / Warning / Alert 1 / Alert 2",
-                  },
-                  {
-                    name: "Degree Heating Weeks",
-                    note: "°C-weeks of accumulated thermal stress",
-                  },
-                  {
-                    name: "SST anomaly",
-                    note: "°C above or below climatology baseline",
-                  },
-                ].map(({ name, note }) => (
-                  <div
-                    key={name}
-                    style={{ display: "flex", alignItems: "center", gap: "0.875rem", fontSize: "0.875rem" }}
+              <h3 style={subHStyle}>One honest label per reef</h3>
+              <p style={subPStyle}>
+                We read three numbers —{" "}
+                <b style={{ color: INK }}>coral cover</b> (live coral percent,
+                from reef surveys), <b style={{ color: INK }}>heat stress</b>{" "}
+                (the NOAA bleaching alert), and{" "}
+                <b style={{ color: INK }}>fishing pressure</b>. Each label below
+                is the plain meaning, plus the exact rule that produces it.
+              </p>
+
+              <div className="method-state-cards">
+                {/* Thriving */}
+                <div
+                  style={{
+                    border: `1px solid ${HAIRLINE}`,
+                    borderRadius: "1rem",
+                    padding: "1.25rem",
+                    borderTop: `3px solid ${THRIVING}`,
+                    background: "#0a1628",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: "1rem",
+                      fontWeight: 800,
+                      marginBottom: "0.5rem",
+                      color: "#15824c",
+                    }}
                   >
-                    <span
+                    Thriving
+                  </p>
+                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
+                    Near its natural baseline and steady. Recovering or healthy,
+                    not perfect or untouched.
+                  </p>
+                  <div
+                    style={{
+                      marginTop: "0.9rem",
+                      paddingTop: "0.85rem",
+                      borderTop: `1px solid ${HAIRLINE}`,
+                    }}
+                  >
+                    <p
                       style={{
-                        width: 6,
-                        height: 6,
-                        borderRadius: "50%",
-                        background: "#10b981",
-                        flexShrink: 0,
-                        display: "inline-block",
-                      }}
-                    />
-                    <span
-                      style={{
-                        fontWeight: 600,
-                        color: "#0f172a",
-                        minWidth: 220,
+                        fontSize: "0.5875rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: MUTED,
+                        marginBottom: "0.35rem",
                       }}
                     >
-                      {name}
-                    </span>
-                    <span style={{ color: "#64748b" }}>{note}</span>
+                      The rule
+                    </p>
+                    <ul
+                      style={{
+                        listStyle: "none",
+                        margin: "0.45rem 0 0",
+                        padding: 0,
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.35rem",
+                      }}
+                    >
+                      <li style={condLi}>
+                        <span style={condDot} aria-hidden="true" />
+                        Coral cover {code("40% or more")} (or not yet surveyed){" "}
+                        <Conj>AND</Conj>
+                      </li>
+                      <li style={condLi}>
+                        <span style={condDot} aria-hidden="true" />
+                        Heat no worse than {code("Watch")} <Conj>AND</Conj>
+                      </li>
+                      <li style={condLi}>
+                        <span style={condDot} aria-hidden="true" />
+                        Fishing {code("low")}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Under pressure */}
+                <div
+                  style={{
+                    border: `1px solid ${HAIRLINE}`,
+                    borderRadius: "1rem",
+                    padding: "1.25rem",
+                    borderTop: `3px solid ${PRESSURE}`,
+                    background: "#0a1628",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: "1rem",
+                      fontWeight: 800,
+                      marginBottom: "0.5rem",
+                      color: "#1f57c8",
+                    }}
+                  >
+                    Under pressure
+                  </p>
+                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
+                    Below its baseline or slipping, from heat or fishing, but the
+                    reef structure and fish life still hold.
+                  </p>
+                  <div
+                    style={{
+                      marginTop: "0.9rem",
+                      paddingTop: "0.85rem",
+                      borderTop: `1px solid ${HAIRLINE}`,
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "0.5875rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: MUTED,
+                        marginBottom: "0.35rem",
+                      }}
+                    >
+                      The rule
+                    </p>
+                    <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
+                      Everything between the other two.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Witnessing change */}
+                <div
+                  style={{
+                    border: `1px solid ${HAIRLINE}`,
+                    borderRadius: "1rem",
+                    padding: "1.25rem",
+                    borderTop: `3px solid ${CHANGE}`,
+                    background: "#0a1628",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: "1rem",
+                      fontWeight: 800,
+                      marginBottom: "0.5rem",
+                      color: "#c0392f",
+                    }}
+                  >
+                    Witnessing change
+                  </p>
+                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
+                    Heavy recent loss or bleaching. Diving here is a chance to
+                    document what remains, not a write off.
+                  </p>
+                  <div
+                    style={{
+                      marginTop: "0.9rem",
+                      paddingTop: "0.85rem",
+                      borderTop: `1px solid ${HAIRLINE}`,
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "0.5875rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: MUTED,
+                        marginBottom: "0.35rem",
+                      }}
+                    >
+                      The rule
+                    </p>
+                    <ul
+                      style={{
+                        listStyle: "none",
+                        margin: "0.45rem 0 0",
+                        padding: 0,
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.35rem",
+                      }}
+                    >
+                      <li style={condLi}>
+                        <span style={condDot} aria-hidden="true" />
+                        Coral cover {code("below 25%")} <Conj>OR</Conj>
+                      </li>
+                      <li style={condLi}>
+                        <span style={condDot} aria-hidden="true" />
+                        Heat at {code("Alert Level 1")} or higher
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="rs-signals"
+              style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
+            >
+              <h3 style={subHStyle}>The signals behind it</h3>
+              <p style={subPStyle}>
+                Three public sources feed that rule. We don&rsquo;t run our own
+                boats or labs, we stand on the organisations who do.
+              </p>
+              <div className="method-sig-grid">
+                <SignalCard
+                  name="Heat stress"
+                  body="How warm the water is against what is normal for the season. Brief warmth is fine; it is sustained heat over weeks that bleaches coral."
+                  href="https://coralreefwatch.noaa.gov/"
+                  linkText="NOAA Coral Reef Watch"
+                  metaRight={<span style={{ color: "#15824c", fontWeight: 600 }}>Live, nightly</span>}
+                />
+                <SignalCard
+                  name="Coral cover"
+                  body="How much of the seabed is live coral, from reef surveys. For some reefs we only have a couple of survey years, so we show the trend as a guide."
+                  href="https://www.reefcheck.org/"
+                  linkText="Reef Check"
+                  linkSuffix=" and partners"
+                  metaRight={<span>Per survey</span>}
+                />
+                <SignalCard
+                  name="Fishing pressure"
+                  body="How heavily a reef is fished, and whether it sits inside a protected area. Strong protection lets a reef recover faster."
+                  href="https://globalfishingwatch.org/"
+                  linkText="Global Fishing Watch"
+                  metaRight={<span>Weekly</span>}
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* ============ SIGHTINGS ============ */}
+          <section
+            id="sightings"
+            style={{ marginBottom: "4rem", scrollMarginTop: "5rem" }}
+          >
+            <h2 style={groupTitleStyle}>Sightings</h2>
+            <p style={groupIntroStyle}>
+              On every dive site we show which animals you are likely to see, and
+              where. Each one is a{" "}
+              <b style={{ color: INK }}>real diver photo</b>, nothing invented.
+            </p>
+
+            <div
+              id="si-chances"
+              style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
+            >
+              <h3 style={subHStyle}>Your chances of seeing each animal</h3>
+              <p style={subPStyle}>
+                The chance comes from{" "}
+                <b style={{ color: INK }}>
+                  how often divers have logged that animal at this site over the
+                  past year
+                </b>{" "}
+                — their photo records on{" "}
+                <a href="https://www.inaturalist.org/" target="_blank" rel="noopener" style={{ color: BRAND }}>
+                  iNaturalist
+                </a>
+                , each confirmed to research grade and pulled in through GBIF.
+                These sightings are ingested live, so a fresh log shows up
+                without us waiting on a snapshot. We turn that frequency into one
+                plain label:
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  border: `1px solid ${HAIRLINE}`,
+                  borderRadius: "1rem",
+                  overflow: "hidden",
+                  margin: "0.5rem 0 1.25rem",
+                  maxWidth: 520,
+                  background: "#0a1628",
+                }}
+              >
+                <Band color="#15824c" label="Almost always" range="80% or more of recent dives" first />
+                <Band color="#15824c" label="Very likely" range="60 to 80%" />
+                <Band color="#15824c" label="Likely" range="40 to 60%" />
+                <Band color="#b9751a" label="Sometimes" range="20 to 40%" />
+                <Band color={MUTED} label="Rare" range="under 20%" />
+              </div>
+              <p style={subPStyle}>
+                Wildlife moves and seasons shift, so we treat every figure as a
+                guide, never a promise. When a site has few recent records we say
+                its data is thin rather than guess.
+              </p>
+            </div>
+
+            <div
+              id="si-verify"
+              style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
+            >
+              <h3 style={subHStyle}>How we verify a sighting</h3>
+              <p style={subPStyle}>
+                Every sighting starts as a real photograph and is checked before
+                we count it.
+              </p>
+              <div
+                className="method-pipe"
+                style={{
+                  border: `1px solid ${HAIRLINE}`,
+                  borderRadius: "1rem",
+                  overflow: "hidden",
+                  background: "#0a1628",
+                }}
+              >
+                <PipeStep n="Step 1" title="Diver photo">
+                  A diver photographs an animal and tags where they saw it.
+                </PipeStep>
+                <PipeStep n="Step 2" title="Community check">
+                  The{" "}
+                  <a href="https://www.inaturalist.org/" target="_blank" rel="noopener" style={pipeLink}>
+                    iNaturalist
+                  </a>{" "}
+                  community confirms the species until it reaches research grade.
+                </PipeStep>
+                <PipeStep n="Step 3" title="GBIF">
+                  It flows into{" "}
+                  <a href="https://www.gbif.org/" target="_blank" rel="noopener" style={pipeLink}>
+                    GBIF
+                  </a>
+                  , the global biodiversity database.
+                </PipeStep>
+                <PipeStep n="Step 4" title="IUCN Red List" last>
+                  GBIF records feed the assessments behind each animal&rsquo;s
+                  status.
+                </PipeStep>
+              </div>
+            </div>
+
+            <div
+              id="si-labels"
+              style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
+            >
+              <h3 style={subHStyle}>What the conservation labels mean</h3>
+              <p style={subPStyle}>
+                Each animal carries its status from the{" "}
+                <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener" style={{ color: BRAND }}>
+                  IUCN Red List
+                </a>
+                , the global standard for how threatened a species is in the
+                wild.
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  border: `1px solid ${HAIRLINE}`,
+                  borderRadius: "1rem",
+                  overflow: "hidden",
+                  maxWidth: 680,
+                  background: "#0a1628",
+                }}
+              >
+                <IucnRow tag="Least concern" bg="rgba(21,160,92,0.15)" fg="#4ade80" first>
+                  Widespread and not currently at risk.
+                </IucnRow>
+                <IucnRow tag="Near threatened" bg="rgba(63,98,18,0.2)" fg="#86efac">
+                  Could become at risk in the near future.
+                </IucnRow>
+                <IucnRow tag="Vulnerable" bg="rgba(185,117,26,0.15)" fg="#fbbf24">
+                  High risk of extinction in the wild.
+                </IucnRow>
+                <IucnRow tag="Endangered" bg="rgba(192,57,47,0.15)" fg="#f87171">
+                  Very high risk of extinction in the wild.
+                </IucnRow>
+                <IucnRow tag="Critically endangered" bg="rgba(185,28,28,0.15)" fg="#fca5a5">
+                  Extremely high risk, one step from extinct in the wild.
+                </IucnRow>
+              </div>
+            </div>
+          </section>
+
+          {/* ============ FOR DIVERS ============ */}
+          <section
+            id="divers"
+            style={{ marginBottom: "4rem", scrollMarginTop: "5rem" }}
+          >
+            <h2 style={groupTitleStyle}>For divers</h2>
+            <p style={groupIntroStyle}>
+              Many reefs in the atlas have no recent records at all. We never hide
+              that. A reef with thin data is not abandoned, it just{" "}
+              <b style={{ color: INK }}>needs fresh eyes</b>, and a single trip
+              can change that.
+            </p>
+
+            <div style={{ marginTop: "2.5rem" }}>
+              <h3 style={subHStyle}>Add what you see</h3>
+              <p style={subPStyle}>
+                Every dive can add to the record. Pick how involved you want to
+                be, from a single photo to a full survey.
+              </p>
+              <div className="method-plat-grid">
+                <PlatformCard
+                  href="https://www.inaturalist.org/"
+                  name="iNaturalist"
+                  effort="Zero training"
+                >
+                  Photograph any animal and upload it with the location. The
+                  community confirms the species, and once it reaches research
+                  grade it joins the record scientists use.
+                </PlatformCard>
+                <PlatformCard
+                  href="https://www.coralwatch.org/"
+                  name="CoralWatch"
+                  effort="A few minutes"
+                >
+                  Match coral colour against a simple chart to record bleaching.
+                  It takes a few minutes and helps track heat stress over time.
+                </PlatformCard>
+                <PlatformCard
+                  href="https://www.reefcheck.org/"
+                  name="Reef Check"
+                  effort="Free training"
+                  effortMid
+                >
+                  Run a standard reef survey: count fish, invertebrates and coral
+                  health along a set line. This feeds long term monitoring.
+                </PlatformCard>
+              </div>
+            </div>
+
+            <div
+              style={{
+                border: "1px solid rgba(251,191,36,0.2)",
+                background: "rgba(251,191,36,0.06)",
+                borderRadius: "1rem",
+                padding: "1.5rem 1.6rem",
+                marginTop: "1.5rem",
+              }}
+            >
+              <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: INK, marginBottom: "0.5rem" }}>
+                Diving somewhere quiet?
+              </h3>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: BODY, maxWidth: 600 }}>
+                If you are heading to a reef with few records, you are exactly who
+                that reef needs. Log what you see and it becomes part of the
+                public picture.
+              </p>
+              <Link
+                href="/"
+                style={{
+                  display: "inline-block",
+                  marginTop: "0.9rem",
+                  padding: "0.7rem 1.2rem",
+                  borderRadius: "0.7rem",
+                  background: BRAND,
+                  color: "#0a1628",
+                  fontSize: "0.875rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                Find reefs that need eyes →
+              </Link>
+            </div>
+          </section>
+
+          {/* ============ FOR RESEARCHERS ============ */}
+          <section
+            id="researchers"
+            style={{ marginBottom: "4rem", scrollMarginTop: "5rem" }}
+          >
+            <h2 style={groupTitleStyle}>For researchers</h2>
+            <p style={groupIntroStyle}>
+              If you run a monitoring programme and need eyes on specific sites,
+              tell us where. We can point divers toward the reefs and the
+              platforms where their records help you most. scubaSeason is a
+              nonprofit, free to read, with every source credited.
+            </p>
+            <div
+              style={{
+                border: "1px solid rgba(21,160,92,0.2)",
+                background: "rgba(21,160,92,0.06)",
+                borderRadius: "1rem",
+                padding: "1.5rem 1.6rem",
+                marginTop: "1.5rem",
+              }}
+            >
+              <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: INK, marginBottom: "0.5rem" }}>
+                Work with us
+              </h3>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: BODY, maxWidth: 600 }}>
+                Spotted wrong data, or want to direct divers to your sites? All of
+                it is welcome.
+              </p>
+              <a
+                href="mailto:hello@scubaseason.fun"
+                style={{
+                  display: "inline-block",
+                  marginTop: "0.9rem",
+                  padding: "0.7rem 1.2rem",
+                  borderRadius: "0.7rem",
+                  background: BRAND,
+                  color: "#0a1628",
+                  fontSize: "0.875rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                hello@scubaseason.fun
+              </a>
+            </div>
+          </section>
+
+          {/* ============ ALL SOURCES ============ */}
+          <section
+            id="sources"
+            style={{ marginBottom: "4rem", scrollMarginTop: "5rem" }}
+          >
+            <h2 style={groupTitleStyle}>Every source we credit</h2>
+            <p style={groupIntroStyle}>
+              Everything on this site is built from public data, none of our own.{" "}
+              <b style={{ color: INK }}>Reef state</b> comes from NOAA heat, reef
+              surveys and Global Fishing Watch.{" "}
+              <b style={{ color: INK }}>Sightings</b> come from iNaturalist and
+              GBIF. Beyond those, dozens more cover water conditions, currents,
+              charts, wreck histories and diver safety. All {totalSources} are
+              named and linked below.
+            </p>
+            <details style={{ marginTop: "1.25rem" }}>
+              <summary
+                className="method-src-summary"
+                style={{
+                  listStyle: "none",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                  fontSize: "0.875rem",
+                  fontWeight: 700,
+                  color: BRAND,
+                  padding: "0.5rem 0",
+                }}
+              >
+                Show all {totalSources} sources
+              </summary>
+              <div className="method-src-groups">
+                {SOURCE_GROUPS.map((group) => (
+                  <div key={group.heading}>
+                    <h4
+                      style={{
+                        fontSize: "0.6875rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: MUTED,
+                        marginBottom: "0.55rem",
+                      }}
+                    >
+                      {group.heading}
+                    </h4>
+                    <ul
+                      style={{
+                        listStyle: "none",
+                        margin: 0,
+                        padding: 0,
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.4rem",
+                      }}
+                    >
+                      {group.ids.map((id) => {
+                        const src = sourceMap.get(id);
+                        if (!src) return null;
+                        return (
+                          <li key={id}>
+                            <a
+                              href={src.url ?? "#"}
+                              target="_blank"
+                              rel="noopener"
+                              style={{
+                                fontSize: "0.8125rem",
+                                color: BODY,
+                                textDecoration: "none",
+                                borderBottom: "1px solid transparent",
+                              }}
+                            >
+                              {src.name}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
+            </details>
+          </section>
 
-          <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155" }}>
-            These three signals drive the thermal stress indicator on every
-            location page. It tells you what&rsquo;s happening right now —
-            not what happened last year.
-          </p>
-        </section>
-
-        {/* SECTION: Coral cover — a snapshot */}
-        <section
-          id="snapshots"
-          style={{
-            marginBottom: "4rem",
-            paddingBottom: "4rem",
-            borderBottom: "1px solid #e2e8f0",
-            scrollMarginTop: "6rem",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "0.6875rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#64748b",
-              marginBottom: "0.75rem",
-            }}
-          >
-            In-water surveys
-          </p>
-          <h2
-            style={{
-              fontSize: "1.625rem",
-              fontWeight: 800,
-              letterSpacing: "-0.025em",
-              color: "#0f172a",
-              marginBottom: "1.25rem",
-            }}
-          >
-            Coral cover — a snapshot, not a live feed
-          </h2>
-          <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155" }}>
-            <p style={{ marginBottom: "1rem" }}>
-              The coral cover percentage comes from in-water scientific surveys
-              — line transects and point intercept surveys done by reef
-              monitoring programs. We show two data points per site so you can
-              see the trajectory, not just a number: the earliest survey on file
-              and the most recent.
-            </p>
-            <p>
-              This is not live data. Surveys happen infrequently. For many reefs
-              outside established monitoring programs, the most recent number is
-              years old. We label the year on every figure so you know exactly
-              what you&rsquo;re looking at.
-            </p>
-          </div>
-
-          {/* Snapshot card */}
-          <div
-            style={{
-              border: "1px solid #e2e8f0",
-              borderRadius: "1.25rem",
-              overflow: "hidden",
-              margin: "1.5rem 0",
-            }}
-          >
-            <div
-              style={{
-                padding: "1rem 1.375rem",
-                background: "#f1f7fb",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "0.6875rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "#64748b",
-                }}
-              >
-                Survey baseline by region
-              </span>
-              <span style={{ fontSize: "0.75rem", color: "#64748b" }}>
-                When continuous monitoring began
-              </span>
-            </div>
-            {[
-              {
-                region: "Great Barrier Reef",
-                year: "1986",
-                note: "AIMS Long Term Monitoring Program — the longest continuous reef survey on Earth.",
-              },
-              {
-                region: "Florida Keys & Caribbean US",
-                year: "1995",
-                note: "NOAA NCRMP + earlier Florida Reef Tract programs.",
-              },
-              {
-                region: "Indo-Pacific (most sites)",
-                year: "2014",
-                note: "Most sites only have a baseline from the Third Global Coral Bleaching Event. For many, that’s the first quantitative measurement on record.",
-              },
-              {
-                region: "Western Indian Ocean",
-                year: "Single survey",
-                note: "Some sites have one survey ever. Treat the displayed cover as a single observation, not a trend.",
-              },
-            ].map(({ region, year, note }) => (
-              <div
-                key={region}
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "1rem",
-                  padding: "1rem 1.375rem",
-                  borderTop: "1px solid #e2e8f0",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: "0.875rem",
-                    fontWeight: 600,
-                    color: "#0f172a",
-                    minWidth: 220,
-                    flexShrink: 0,
-                  }}
-                >
-                  {region}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
-                    fontSize: "0.75rem",
-                    fontWeight: 500,
-                    color: "#0089de",
-                    background: "#e8f0fe",
-                    padding: "0.15rem 0.5rem",
-                    borderRadius: 4,
-                    flexShrink: 0,
-                    width: 96,
-                    textAlign: "center",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {year}
-                </span>
-                <span style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "#64748b" }}>
-                  {note}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* SECTION: Freshness key */}
-        <section
-          id="freshness"
-          style={{
-            marginBottom: "4rem",
-            paddingBottom: "4rem",
-            borderBottom: "1px solid #e2e8f0",
-            scrollMarginTop: "6rem",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "0.6875rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#64748b",
-              marginBottom: "0.75rem",
-            }}
-          >
-            Data freshness
-          </p>
-          <h2
-            style={{
-              fontSize: "1.625rem",
-              fontWeight: 800,
-              letterSpacing: "-0.025em",
-              color: "#0f172a",
-              marginBottom: "1.25rem",
-            }}
-          >
-            How we label data age
-          </h2>
-          <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", marginBottom: "1.5rem" }}>
-            Every data point that can go stale carries a freshness dot. There
-            are three states:
-          </p>
-          <div
-            style={{ display: "flex", gap: "1.5rem", margin: "1.5rem 0", flexWrap: "wrap" }}
-          >
-            {[
-              { color: "#10b981", label: "Fresh", note: "Survey within the last year" },
-              { color: "#e8962f", label: "Stale", note: "1–3 years since last survey" },
-              { color: "#e23a3a", label: "Cold", note: "More than 3 years ago" },
-            ].map(({ color, label, note }) => (
-              <div
-                key={label}
-                style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}
-              >
-                <span
-                  style={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: "50%",
-                    background: color,
-                    flexShrink: 0,
-                    display: "inline-block",
-                  }}
-                />
-                <div>
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#0f172a" }}>
-                    {label}
-                  </p>
-                  <p style={{ fontSize: "0.8125rem", color: "#64748b" }}>{note}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155" }}>
-            Thermal stress is always Fresh — it&rsquo;s pulled nightly. Coral
-            cover and fishing pressure are almost always Stale or Cold for most
-            of the world. That&rsquo;s honest. We&rsquo;d rather show a Cold
-            number with a clear label than hide it behind an optimistic bar
-            chart.
-          </p>
-        </section>
-
-        {/* SECTION: Reef state */}
-        <section
-          id="reef-state"
-          style={{
-            marginBottom: "4rem",
-            paddingBottom: "4rem",
-            borderBottom: "1px solid #e2e8f0",
-            scrollMarginTop: "6rem",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "0.6875rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#64748b",
-              marginBottom: "0.75rem",
-            }}
-          >
-            Classification
-          </p>
-          <h2
-            style={{
-              fontSize: "1.625rem",
-              fontWeight: 800,
-              letterSpacing: "-0.025em",
-              color: "#0f172a",
-              marginBottom: "1.25rem",
-            }}
-          >
-            How reef state is assigned
-          </h2>
-          <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155" }}>
-            <p style={{ marginBottom: "1rem" }}>
-              Reef state is a judgment call made from the combination of live
-              thermal data, coral cover (where we have it), and fishing
-              pressure. It&rsquo;s not a score or an average — it&rsquo;s an
-              editorial decision that tries to answer:{" "}
-              <strong>what is this reef actually doing right now?</strong>
-            </p>
-            <p>
-              When data is thin or contradictory, we default to &ldquo;Under
-              pressure&rdquo; rather than &ldquo;Thriving.&rdquo; The bias is
-              toward honesty, not hope.
-            </p>
-          </div>
-        </section>
-
-        {/* SECTION: All 38 data sources */}
-        <section
-          id="sources"
-          style={{ scrollMarginTop: "6rem" }}
-        >
-          <p
-            style={{
-              fontSize: "0.6875rem",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#64748b",
-              marginBottom: "0.75rem",
-            }}
-          >
-            Sources
-          </p>
-          <h2
-            style={{
-              fontSize: "1.625rem",
-              fontWeight: 800,
-              letterSpacing: "-0.025em",
-              color: "#0f172a",
-              marginBottom: "1.25rem",
-            }}
-          >
-            All 38 data sources
-          </h2>
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              marginTop: "1.5rem",
-              fontSize: "0.875rem",
-            }}
-          >
-            <thead>
-              <tr>
-                {["Source", "Type", "Used for"].map((h) => (
-                  <th
-                    key={h}
-                    style={{
-                      textAlign: "left",
-                      padding: "0.625rem 0.875rem",
-                      fontSize: "0.625rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      color: "#64748b",
-                      background: "#f1f7fb",
-                      borderBottom: "1px solid #e2e8f0",
-                    }}
-                  >
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                {
-                  name: "NOAA Coral Reef Watch v3.1",
-                  live: true,
-                  usedFor: "Thermal stress, bleaching alerts, SST anomaly",
-                },
-                {
-                  name: "AIMS Long Term Monitoring Program",
-                  live: false,
-                  usedFor: "GBR coral cover time series",
-                },
-                {
-                  name: "IUCN Red List of Threatened Species",
-                  live: false,
-                  usedFor: "Species conservation status, population trend",
-                },
-                {
-                  name: "Global Fishing Watch AIS data",
-                  live: true,
-                  usedFor: "Fishing pressure per location",
-                },
-                {
-                  name: "NOAA NCRMP",
-                  live: false,
-                  usedFor: "US Pacific and Caribbean coral cover",
-                },
-                {
-                  name: "iNaturalist Research Grade observations",
-                  live: true,
-                  usedFor: "Species sighting evidence, occurrence records",
-                },
-                {
-                  name: "AGRRA Atlantic and Gulf Rapid Reef Assessment",
-                  live: false,
-                  usedFor: "Caribbean reef condition",
-                },
-                {
-                  name: "+ 31 more program-specific datasets",
-                  live: null,
-                  usedFor: "Regional baselines, site-specific surveys",
-                },
-              ].map(({ name, live, usedFor }, i) => (
-                <tr key={name}>
-                  <td
-                    style={{
-                      padding: "0.875rem",
-                      borderBottom: i < 7 ? "1px solid #e2e8f0" : undefined,
-                      fontWeight: 600,
-                      color: "#0f172a",
-                      verticalAlign: "top",
-                    }}
-                  >
-                    {name}
-                  </td>
-                  <td
-                    style={{
-                      padding: "0.875rem",
-                      borderBottom: i < 7 ? "1px solid #e2e8f0" : undefined,
-                      color: "#334155",
-                      verticalAlign: "top",
-                    }}
-                  >
-                    {live === null ? (
-                      <span style={{ color: "#94a3b8" }}>—</span>
-                    ) : live ? (
-                      <span
-                        style={{
-                          display: "inline-block",
-                          fontSize: "0.5875rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.08em",
-                          textTransform: "uppercase",
-                          padding: "0.2rem 0.5rem",
-                          borderRadius: 4,
-                          background: "#e7f6ee",
-                          color: "#065f46",
-                        }}
-                      >
-                        Live
-                      </span>
-                    ) : (
-                      <span
-                        style={{
-                          display: "inline-block",
-                          fontSize: "0.5875rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.08em",
-                          textTransform: "uppercase",
-                          padding: "0.2rem 0.5rem",
-                          borderRadius: 4,
-                          background: "#f1f7fb",
-                          color: "#64748b",
-                        }}
-                      >
-                        Snapshot
-                      </span>
-                    )}
-                  </td>
-                  <td
-                    style={{
-                      padding: "0.875rem",
-                      borderBottom: i < 7 ? "1px solid #e2e8f0" : undefined,
-                      color: "#334155",
-                      verticalAlign: "top",
-                    }}
-                  >
-                    {usedFor}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-
-        {/* ─── HOW METRICS ARE CALCULATED (merged from /faq) ─── */}
-        <section id="how-calculated" style={{ marginBottom: "4rem", paddingBottom: "4rem", borderBottom: "1px solid #e2e8f0" }}>
-          <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.75rem" }}>
-            How metrics work
-          </p>
-          <h2 style={{ fontSize: "1.625rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#0f172a", marginBottom: "1.25rem" }}>
-            How reef metrics are calculated
-          </h2>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-
-            <div>
-              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>Coral cover</h3>
-              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-                <p>The number we show is <strong>live coral cover</strong> — the percentage of the seafloor at the dive location that is covered by living, healthy coral. It comes from in water surveys (line or point intercept transects) done by reef monitoring programs.</p>
-                <p>Higher is better. A healthy tropical reef sits around <strong>50% live cover</strong>. Anything under 30% is a reef that has lost a lot, and under 20% is severely degraded.</p>
-                <p>We show two snapshots of the same site so you can see its trajectory, not a generic baseline: a decade ago (the earlier survey on file) and today (the most recent). The year of each survey is shown under the bar.</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>The &ldquo;at this rate&rdquo; projection</h3>
-              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-                <p>When a reef is losing cover, we extend the line forward. The math is deliberately simple: take the difference between the two surveys, divide by the years between them to get annual loss, then divide today&rsquo;s cover by that rate to get years until zero.</p>
-                <p>This is a <strong>linear extrapolation</strong>, not a forecast. Treat the year as a &ldquo;if nothing changes, you&rsquo;ve got this long&rdquo; signal, not a prediction. We don&rsquo;t show a projection when a reef is holding steady or recovering, or when we only have one survey on file.</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>NOAA bleaching alert levels</h3>
-              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-                <p>The five levels track how much heat the reef has absorbed, measured in <strong>degree heating weeks</strong> (°C-weeks):</p>
-                <ul style={{ paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.375rem" }}>
-                  <li><strong>No stress</strong> — sea surface temperature at or below the warmest monthly mean.</li>
-                  <li><strong>Watch</strong> — SST above the warmest monthly mean, DHW still near zero.</li>
-                  <li><strong>Warning</strong> — DHW between roughly 0 and 4 °C-weeks. Possible bleaching, mortality unlikely.</li>
-                  <li><strong>Alert 1</strong> — DHW ≥ 4 °C-weeks. Significant bleaching expected.</li>
-                  <li><strong>Alert 2</strong> — DHW ≥ 8 °C-weeks. Widespread bleaching and significant mortality likely.</li>
-                </ul>
-                <p>These are categorical thresholds, not predictions. A reef shown at Alert 2 may still recover; one shown at No Stress can be hit by next month&rsquo;s heatwave.</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>Can you tell me if a reef is dying?</h3>
-              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-                <p>Honestly — no, not from what we have today. We can tell you the current thermal stress alert level, what live coral cover was at the last in water survey, and what that survey measured a decade earlier when both snapshots exist.</p>
-                <p>What we <em>cannot</em> defensibly say: that fish populations are declining, that sharks are &ldquo;disappearing,&rdquo; or that a reef is on a terminal trajectory. Sightings without an effort denominator don&rsquo;t support trend claims, and we won&rsquo;t pretend they do.</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#0f172a", marginBottom: "0.875rem" }}>How is scubaSeason funded?</h3>
-              <div style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#334155", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-                <p>Today: affiliate links to operators, lodging, and gear. If you book through one of those links, the site earns a commission. Editorial recommendations and source disclosures don&rsquo;t change based on commission rates — see <a href="/about" style={{ color: "#0089de" }}>About → Editorial independence</a>.</p>
-                <p>Longer term, the affiliate income is a floor, not the plan. The wedges we&rsquo;re looking at are research and NGO data subscriptions, and evidence infrastructure for conservation funders after bleaching events. Neither exists yet.</p>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* FAQ — how every metric is calculated (merged from the former /faq page) */}
-        <FaqSection />
-
+          {/* FAQ — how every metric is calculated (reused) */}
+          <FaqSection />
+        </div>
       </div>
+
+      {/* Layout + responsive rules scoped to this page only. */}
+      <style>{`
+        .method-wrap{max-width:1180px;margin:0 auto;padding:3rem;display:grid;grid-template-columns:210px 1fr;gap:3.5rem;align-items:start;}
+        .method-state-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
+        .method-sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
+        .method-pipe{display:flex;flex-wrap:wrap;gap:0;margin-top:0.5rem;}
+        .method-plat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
+        .method-src-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 2.5rem;margin-top:1.25rem;}
+        .method-src-summary::-webkit-details-marker{display:none;}
+        .method-src-summary::after{content:"⌄";}
+        details[open] > .method-src-summary::after{content:"⌃";}
+        @media(max-width:920px){
+          .method-wrap{grid-template-columns:1fr;}
+          .method-toc{display:none;}
+          .method-state-cards,.method-sig-grid,.method-plat-grid,.method-src-groups{grid-template-columns:1fr;}
+        }
+      `}</style>
     </>
+  );
+}
+
+const condLi: React.CSSProperties = {
+  fontSize: "0.8125rem",
+  lineHeight: 1.45,
+  color: BODY,
+  paddingLeft: "0.95rem",
+  position: "relative",
+};
+const condDot: React.CSSProperties = {
+  position: "absolute",
+  left: 0,
+  top: "0.55em",
+  width: 5,
+  height: 5,
+  borderRadius: "50%",
+  background: "rgba(255,255,255,0.2)",
+};
+const pipeLink: React.CSSProperties = { color: BRAND, textDecoration: "none" };
+
+function SignalCard({
+  name,
+  body,
+  href,
+  linkText,
+  linkSuffix,
+  metaRight,
+}: {
+  name: string;
+  body: string;
+  href: string;
+  linkText: string;
+  linkSuffix?: string;
+  metaRight: React.ReactNode;
+}) {
+  return (
+    <div style={{ border: `1px solid ${HAIRLINE}`, borderRadius: "1rem", padding: "1.25rem", background: "#0a1628" }}>
+      <p style={{ fontSize: "0.9375rem", fontWeight: 700, color: INK, marginBottom: "0.6rem" }}>
+        {name}
+      </p>
+      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY, marginBottom: "0.7rem" }}>
+        {body}
+      </p>
+      <div
+        style={{
+          fontSize: "0.6875rem",
+          fontFamily: mono,
+          color: MUTED,
+          display: "flex",
+          justifyContent: "space-between",
+          gap: "0.5rem",
+          borderTop: `1px solid ${HAIRLINE}`,
+          paddingTop: "0.6rem",
+          flexWrap: "wrap",
+        }}
+      >
+        <span>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener"
+            style={{ color: MUTED, textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.15)" }}
+          >
+            {linkText}
+          </a>
+          {linkSuffix}
+        </span>
+        {metaRight}
+      </div>
+    </div>
+  );
+}
+
+function Band({
+  color,
+  label,
+  range,
+  first,
+}: {
+  color: string;
+  label: string;
+  range: string;
+  first?: boolean;
+}) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "0.7rem 1.1rem",
+        borderTop: first ? "none" : `1px solid ${HAIRLINE}`,
+        fontSize: "0.875rem",
+        fontWeight: 700,
+        color,
+      }}
+    >
+      {label}
+      <span style={{ color: MUTED, fontFamily: mono, fontSize: "0.75rem", fontWeight: 400 }}>
+        {range}
+      </span>
+    </div>
+  );
+}
+
+function PipeStep({
+  n,
+  title,
+  children,
+  last,
+}: {
+  n: string;
+  title: string;
+  children: React.ReactNode;
+  last?: boolean;
+}) {
+  return (
+    <div
+      style={{
+        flex: 1,
+        minWidth: 150,
+        padding: "1.1rem 1.2rem",
+        borderRight: last ? "none" : `1px solid ${HAIRLINE}`,
+      }}
+    >
+      <p
+        style={{
+          fontSize: "0.625rem",
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          color: BRAND,
+          marginBottom: "0.35rem",
+        }}
+      >
+        {n}
+      </p>
+      <p style={{ fontSize: "0.875rem", fontWeight: 700, color: INK, marginBottom: "0.2rem" }}>
+        {title}
+      </p>
+      <p style={{ fontSize: "0.75rem", lineHeight: 1.5, color: MUTED }}>{children}</p>
+    </div>
+  );
+}
+
+function IucnRow({
+  tag,
+  bg,
+  fg,
+  children,
+  first,
+}: {
+  tag: string;
+  bg: string;
+  fg: string;
+  children: React.ReactNode;
+  first?: boolean;
+}) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: "0.85rem",
+        alignItems: "flex-start",
+        padding: "0.85rem 1.1rem",
+        borderTop: first ? "none" : `1px solid ${HAIRLINE}`,
+      }}
+    >
+      <span
+        style={{
+          display: "inline-block",
+          fontSize: "0.6875rem",
+          fontWeight: 700,
+          padding: "0.2rem 0.6rem",
+          borderRadius: 999,
+          whiteSpace: "nowrap",
+          flexShrink: 0,
+          background: bg,
+          color: fg,
+        }}
+      >
+        {tag}
+      </span>
+      <span style={{ fontSize: "0.8125rem", color: BODY, lineHeight: 1.5, paddingTop: "0.1rem" }}>
+        {children}
+      </span>
+    </div>
+  );
+}
+
+function PlatformCard({
+  href,
+  name,
+  effort,
+  effortMid,
+  children,
+}: {
+  href: string;
+  name: string;
+  effort: string;
+  effortMid?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <div style={{ border: `1px solid ${HAIRLINE}`, borderRadius: "1rem", padding: "1.25rem", background: "#0a1628" }}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener"
+        style={{
+          fontSize: "1.05rem",
+          fontWeight: 800,
+          color: INK,
+          textDecoration: "none",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.35rem",
+          marginBottom: "0.4rem",
+        }}
+      >
+        {name} <span style={{ fontSize: "0.85em", color: BRAND }}>↗</span>
+      </a>
+      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY, marginBottom: "0.85rem" }}>
+        {children}
+      </p>
+      <span
+        style={{
+          fontSize: "0.6875rem",
+          fontWeight: 700,
+          letterSpacing: "0.04em",
+          textTransform: "uppercase",
+          padding: "0.25rem 0.6rem",
+          borderRadius: 999,
+          background: effortMid ? "rgba(185,117,26,0.15)" : "rgba(21,160,92,0.15)",
+          color: effortMid ? "#fbbf24" : "#4ade80",
+        }}
+      >
+        {effort}
+      </span>
+    </div>
   );
 }
