@@ -340,7 +340,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
     <header
       className={`sticky top-0 z-50 transition-colors duration-200 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-sm border-b border-slate-100"
+          ? "bg-[#030712]/95 backdrop-blur-sm border-b border-white/10"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -357,7 +357,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             style={{
               gap: "0.5rem",
               fontSize: "0.8125rem",
-              color: scrolled ? "#64748b" : "rgba(255,255,255,0.6)",
+              color: "rgba(255,255,255,0.6)",
               marginLeft: "0.5rem",
             }}
           >
@@ -366,7 +366,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                 {i > 0 && (
                   <span
                     aria-hidden="true"
-                    style={{ color: scrolled ? "#cbd5e1" : "rgba(255,255,255,0.3)", marginRight: "0.25rem" }}
+                    style={{ color: "rgba(255,255,255,0.3)", marginRight: "0.25rem" }}
                   >
                     /
                   </span>
@@ -375,7 +375,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                   <Link
                     href={crumb.href}
                     style={{
-                      color: scrolled ? "#64748b" : "rgba(255,255,255,0.6)",
+                      color: "rgba(255,255,255,0.6)",
                       textDecoration: "none",
                     }}
                     className="hover:text-[#0089de] transition-colors"
@@ -383,7 +383,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span style={{ color: scrolled ? "#0f172a" : "rgba(255,255,255,0.9)", fontWeight: 500 }}>
+                  <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 500 }}>
                     {crumb.label}
                   </span>
                 )}
@@ -400,7 +400,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
         >
           <div
             className="pointer-events-none absolute inset-y-0 flex items-center"
-            style={{ left: "0.875rem", color: scrolled ? "rgba(0,0,0,0.35)" : "rgba(255,255,255,0.4)" }}
+            style={{ left: "0.875rem", color: "rgba(255,255,255,0.4)" }}
           >
             <svg
               width="14"
@@ -429,11 +429,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             onKeyDown={onKeyDown}
             placeholder=""
             aria-label="Search reefs"
-            className={`w-full rounded-full pr-4 focus:outline-none focus:ring-2 focus:ring-[#0089de]/30 ${
-              scrolled
-                ? "border border-slate-200 bg-[#f1f7fb] text-slate-900 placeholder:text-slate-400 focus:border-[#0089de] focus:bg-white"
-                : "border border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-white/40 focus:bg-white/15"
-            }`}
+            className="w-full rounded-full pr-4 focus:outline-none focus:ring-2 focus:ring-[#0089de]/30 border border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-white/40 focus:bg-white/15"
             style={{
               padding: "0.5rem 1rem 0.5rem 2.5rem",
               fontSize: "0.8125rem",
@@ -493,9 +489,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
               className={`text-sm font-medium transition-colors ${
                 active === n.key
                   ? "text-[#0089de]"
-                  : scrolled
-                    ? "text-slate-700 hover:text-slate-900"
-                    : "text-white/70 hover:text-white"
+                  : "text-white/70 hover:text-white"
               }`}
               style={{ padding: "0.45rem 0.75rem" }}
             >
@@ -507,7 +501,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
           <Link
             href="/search"
             className={`sm:hidden flex items-center justify-center rounded-full transition-colors ${
-              scrolled ? "text-slate-600 hover:text-slate-900" : "text-white/70 hover:text-white"
+              "text-white/70 hover:text-white"
             }`}
             style={{ padding: "0.45rem 0.5rem" }}
             aria-label="Search"
