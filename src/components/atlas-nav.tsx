@@ -130,42 +130,24 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
   return (
     <div
       ref={sentinelRef}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        display: "flex",
-        alignItems: "center",
-        gap: "2rem",
-        padding: "1.25rem 3rem",
-      }}
+      className="flex items-center gap-3 px-4 py-5 sm:gap-8 sm:px-12"
+      style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 50 }}
     >
       <Link href="/" aria-label="scubaSeason.fun — home" style={{ flexShrink: 0 }}>
         <Logo size={28} dark />
       </Link>
 
-      {/* Search */}
+      {/* Desktop: search input */}
       <div
         ref={wrapRef}
-        style={{ position: "relative", marginLeft: "auto", width: "100%", maxWidth: 300 }}
+        className="relative ml-auto hidden sm:block"
+        style={{ width: "100%", maxWidth: 300 }}
       >
         <div
           className="pointer-events-none absolute inset-y-0 flex items-center"
           style={{ left: "0.875rem", color: "rgba(255,255,255,0.4)" }}
         >
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
-          >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
           </svg>
@@ -235,10 +217,10 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
         )}
       </div>
 
-      {/* Nav links */}
+      {/* Nav links — always visible */}
       <nav
-        className="hidden shrink-0 items-center sm:flex"
-        style={{ gap: "0.125rem" }}
+        className="flex shrink-0 items-center"
+        style={{ gap: "0.125rem", marginLeft: "auto" }}
         aria-label="Main navigation"
       >
         {NAV.map((n) => (
@@ -250,13 +232,26 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
               fontWeight: 500,
               color: "rgba(255,255,255,0.65)",
               textDecoration: "none",
-              padding: "0.45rem 0.875rem",
+              padding: "0.45rem 0.75rem",
               borderRadius: 999,
             }}
           >
             {n.label}
           </Link>
         ))}
+
+        {/* Mobile: search icon */}
+        <Link
+          href="/search"
+          className="sm:hidden flex items-center justify-center"
+          style={{ color: "rgba(255,255,255,0.65)", padding: "0.45rem 0.5rem" }}
+          aria-label="Search"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </Link>
       </nav>
     </div>
   );
@@ -349,10 +344,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div
-        className="mx-auto flex max-w-[1320px] items-center"
-        style={{ padding: "1rem 3rem", gap: "2rem" }}
-      >
+      <div className="mx-auto flex max-w-[1320px] items-center gap-3 px-4 py-4 sm:gap-8 sm:px-12">
         <Link href="/" className="shrink-0" aria-label="scubaSeason.fun — home">
           <Logo size={28} dark />
         </Link>
@@ -400,9 +392,10 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
           </nav>
         )}
 
+        {/* Desktop: full search input */}
         <div
           ref={wrapRef}
-          className="relative ml-auto"
+          className="relative ml-auto hidden sm:block"
           style={{ width: "100%", maxWidth: "300px" }}
         >
           <div
@@ -487,8 +480,9 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
           )}
         </div>
 
+        {/* Nav links — always visible */}
         <nav
-          className="hidden shrink-0 items-center sm:flex"
+          className="ml-auto flex shrink-0 items-center sm:ml-0"
           style={{ gap: "0.125rem" }}
           aria-label="Main navigation"
         >
@@ -503,11 +497,26 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                     ? "text-slate-700 hover:text-slate-900"
                     : "text-white/70 hover:text-white"
               }`}
-              style={{ padding: "0.45rem 0.875rem" }}
+              style={{ padding: "0.45rem 0.75rem" }}
             >
               {n.label}
             </Link>
           ))}
+
+          {/* Mobile: search icon */}
+          <Link
+            href="/search"
+            className={`sm:hidden flex items-center justify-center rounded-full transition-colors ${
+              scrolled ? "text-slate-600 hover:text-slate-900" : "text-white/70 hover:text-white"
+            }`}
+            style={{ padding: "0.45rem 0.5rem" }}
+            aria-label="Search"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </Link>
         </nav>
       </div>
     </header>
