@@ -1,0 +1,25 @@
+name: Image reachability
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    name: Probe hero + species image URLs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install deps
+        run: npm ci
+
+      # No browser binary needed — tests make direct HTTP requests
+      - name: Run image reachability check
+        run: npx playwright test --config=playwright.image-check.config.ts
