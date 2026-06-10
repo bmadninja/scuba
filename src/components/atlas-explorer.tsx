@@ -85,8 +85,8 @@ function NoResults({
   }
 
   return (
-    <div className="rounded-2xl border border-dashed border-slate-300 p-10 text-center">
-      <p className="text-sm font-medium text-slate-700">No locations match these filters.</p>
+    <div className="rounded-2xl border border-dashed border-white/10 p-10 text-center">
+      <p className="text-sm font-medium text-[#aebcd0]">No locations match these filters.</p>
       {chips.length > 0 && (
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           {chips.map((c) => (
@@ -94,10 +94,10 @@ function NoResults({
               key={c.label}
               type="button"
               onClick={c.onRemove}
-              className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:border-rose-300 hover:bg-rose-50 hover:text-rose-700"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-[#8b9db8] transition hover:border-rose-500/30 hover:bg-rose-500/15 hover:text-rose-300"
             >
               {c.label}
-              <span aria-hidden className="text-slate-400">×</span>
+              <span aria-hidden className="text-[#8b9db8]">×</span>
             </button>
           ))}
         </div>
@@ -105,7 +105,7 @@ function NoResults({
       <button
         type="button"
         onClick={onReset}
-        className="mt-4 text-xs font-medium text-[#0089de] hover:underline"
+        className="mt-4 text-xs font-medium text-[#00d4ff] hover:underline"
       >
         Reset all filters
       </button>
@@ -230,9 +230,9 @@ export function AtlasExplorer({
               onClick={() => toggleState(state)}
               className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-all"
               style={{
-                borderColor: active ? "transparent" : "#e2e8f0",
-                background: active ? "#e8f0fe" : "#ffffff",
-                color: active ? "#1d5d90" : "#475569",
+                borderColor: active ? "#00d4ff" : "rgba(255,255,255,0.1)",
+                background: active ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)",
+                color: active ? "#00d4ff" : "#8b9db8",
                 fontWeight: active ? 600 : 500,
               }}
             >
@@ -246,14 +246,14 @@ export function AtlasExplorer({
         })}
 
         {/* Sort select pushed to the right */}
-        <label className="ml-auto flex items-center gap-2 text-sm text-slate-500">
+        <label className="ml-auto flex items-center gap-2 text-sm text-[#8b9db8]">
           Sort
           <select
             value={filters.sort}
             onChange={(e) =>
               setFilters((p) => ({ ...p, sort: e.target.value as SortKey }))
             }
-            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-900 focus:border-[#0089de] focus:outline-none"
+            className="rounded-lg border border-white/10 bg-[#0a1628] px-3 py-1.5 text-sm text-[#f0f4f8] focus:border-[#00d4ff] focus:outline-none"
           >
             {SORT_OPTIONS.map((o) => (
               <option key={o.value} value={o.value}>
@@ -269,14 +269,14 @@ export function AtlasExplorer({
         <button
           type="button"
           onClick={() => setDrawerOpen(true)}
-          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-[#0089de] hover:text-[#0089de]"
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-[#aebcd0] shadow-sm transition hover:border-[#00d4ff] hover:text-[#00d4ff]"
         >
           <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
             <path fillRule="evenodd" d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.032c0 .384-.22.735-.57.899l-2.5 1.25a.75.75 0 01-1.056-.575v-4.606a2.25 2.25 0 00-.659-1.59L2.659 6.219A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z" clipRule="evenodd" />
           </svg>
           Filters
           {activeFilterCount > 0 && (
-            <span className="inline-flex items-center rounded-full bg-[#0089de] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-white">
+            <span className="inline-flex items-center rounded-full bg-[#00d4ff] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-[#0a1628]">
               {activeFilterCount}
             </span>
           )}
@@ -295,14 +295,14 @@ export function AtlasExplorer({
           {/* Panel */}
           <div
             ref={drawerRef}
-            className="absolute inset-y-0 left-0 flex w-80 max-w-[90vw] flex-col bg-white shadow-2xl"
+            className="absolute inset-y-0 left-0 flex w-80 max-w-[90vw] flex-col bg-[#0a1628] shadow-2xl"
           >
-            <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-              <span className="text-sm font-semibold text-slate-900">Filters</span>
+            <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+              <span className="text-sm font-semibold text-[#f0f4f8]">Filters</span>
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-lg p-1.5 text-[#8b9db8] hover:bg-white/5 hover:text-[#f0f4f8]"
                 aria-label="Close filters"
               >
                 <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
@@ -320,11 +320,11 @@ export function AtlasExplorer({
                 className="h-full"
               />
             </div>
-            <div className="border-t border-slate-100 p-4">
+            <div className="border-t border-white/10 p-4">
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="w-full rounded-xl bg-[#0089de] py-2.5 text-sm font-semibold text-white transition hover:bg-[#1d5d90]"
+                className="w-full rounded-xl bg-[#00d4ff] py-2.5 text-sm font-semibold text-[#0a1628] transition hover:bg-[#33ddff]"
               >
                 Show {results.length} location{results.length !== 1 ? "s" : ""}
               </button>
@@ -355,7 +355,7 @@ export function AtlasExplorer({
           />
 
           {/* Thin inline reef-state legend */}
-          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 px-1 text-xs text-slate-600">
+          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 px-1 text-xs text-[#8b9db8]">
             {LEGEND_STATES.map((s) => (
               <span
                 key={s}
@@ -369,15 +369,15 @@ export function AtlasExplorer({
                 {STATE_TEXT[s]}
               </span>
             ))}
-            <Link href="/data" className="font-medium text-[#0089de] hover:underline">
+            <Link href="/data" className="font-medium text-[#00d4ff] hover:underline">
               What these mean
             </Link>
           </div>
 
           {/* Count */}
           <div className="mb-5 mt-6 flex flex-wrap items-center gap-3">
-            <span className="text-sm text-slate-600" role="status" aria-live="polite">
-              <strong className="text-slate-900">{results.length}</strong> of{" "}
+            <span className="text-sm text-[#8b9db8]" role="status" aria-live="polite">
+              <strong className="text-[#f0f4f8]">{results.length}</strong> of{" "}
               {locations.length} locations
             </span>
           </div>
@@ -389,7 +389,7 @@ export function AtlasExplorer({
                   key={r.slug}
                   className={
                     activeSlug === r.slug
-                      ? "rounded-2xl ring-2 ring-[#0089de] ring-offset-2"
+                      ? "rounded-2xl ring-2 ring-[#00d4ff] ring-offset-2"
                       : undefined
                   }
                 >

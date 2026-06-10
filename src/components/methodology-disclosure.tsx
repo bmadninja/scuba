@@ -19,11 +19,11 @@ export function MethodologyDisclosure({
 }: MethodologyDisclosureProps) {
   return (
     <details
-      className={`rounded border border-slate-200 bg-white ${className}`}
+      className={`rounded border border-white/10 bg-[#0a1628] ${className}`}
       style={{ overflow: "hidden" }}
     >
       <summary
-        className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-slate-600 hover:bg-slate-50"
+        className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#8b9db8] hover:bg-white/5"
         style={{ userSelect: "none" }}
       >
         {/* Info circle icon */}
@@ -37,7 +37,7 @@ export function MethodologyDisclosure({
           strokeLinecap="round"
           strokeLinejoin="round"
           aria-hidden="true"
-          style={{ flexShrink: 0, color: "#64748b" }}
+          style={{ flexShrink: 0, color: "#8b9db8" }}
         >
           <circle cx="12" cy="12" r="10" />
           <line x1="12" y1="16" x2="12" y2="12" />
@@ -56,12 +56,12 @@ export function MethodologyDisclosure({
           strokeLinejoin="round"
           aria-hidden="true"
           className="details-chevron ml-auto"
-          style={{ color: "#94a3b8", transition: "transform 0.15s" }}
+          style={{ color: "#8b9db8", transition: "transform 0.15s" }}
         >
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </summary>
-      <div className="border-t border-slate-100 px-4 py-4 text-[13px] leading-6 text-slate-600">
+      <div className="border-t border-white/10 px-4 py-4 text-[13px] leading-6 text-[#8b9db8]">
         {children}
       </div>
     </details>

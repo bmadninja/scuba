@@ -82,6 +82,18 @@ const FAQS: {
     a: "Yes. Operator, lodging, and gear links are curated based on diver reviews, local reputation, and relevance to the site — not based on whether a commission is paid. Affiliate links are labelled. Non-affiliate links to excellent operators are included freely. Commission rates do not influence which operators appear or their sort order. Full policy at /about.",
     confidence: "high",
   },
+  {
+    q: "Can you tell me if a reef is dying?",
+    a: "Honestly — no, not from what we have today. We can tell you the current thermal stress alert level, what live coral cover was at the last in-water survey, and what that survey measured a decade earlier when both snapshots exist. What we cannot defensibly say: that fish populations are declining, that sharks are 'disappearing,' or that a reef is on a terminal trajectory. Sightings without an effort denominator don't support trend claims, and we won't pretend they do.",
+    sourceIds: ["noaa-crw", "aims-ltmp", "gcrmn"],
+    confidence: "medium",
+    caveat: "Our data limitations are real. 'Under pressure' and 'Witnessing change' are grounded in the signals we have — not a comprehensive diagnosis. A reef could be declining faster or recovering faster than our data shows.",
+  },
+  {
+    q: "How is scubaSeason funded?",
+    a: "Today: affiliate links to operators, lodging, and gear. If you book through one of those links, the site earns a commission. Editorial recommendations and source disclosures don't change based on commission rates — see About → Editorial principles. Longer term, the affiliate income is a floor, not the plan. The wedges we're looking at are research and NGO data subscriptions, and evidence infrastructure for conservation funders after bleaching events. Neither exists yet.",
+    confidence: "high",
+  },
 ];
 
 type Source = { id: string; name: string; url?: string; description?: string };
@@ -97,25 +109,25 @@ export function FaqSection() {
 
   return (
     <section id="faq" style={{ marginBottom: "4rem" }}>
-      <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#64748b", marginBottom: "0.5rem" }}>
+      <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.5rem" }}>
         FAQ
       </p>
-      <h2 style={{ fontSize: "1.625rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#0f172a", marginBottom: "0.75rem" }}>
+      <h2 style={{ fontSize: "1.625rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#f0f4f8", marginBottom: "0.75rem" }}>
         How we calculate it
       </h2>
-      <p style={{ fontSize: "0.9375rem", color: "#475569", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
+      <p style={{ fontSize: "0.9375rem", color: "#aebcd0", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
         {FAQS.length} questions on the calculations behind reef state, coral cover, DHW, conditions, species reliability, and more. Each answer names its source and confidence level.
       </p>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
         {FAQS.map((faq, i) => (
-          <details key={i} style={{ border: "1px solid #e2e8f0", borderRadius: "1rem", overflow: "hidden" }}>
+          <details key={i} style={{ border: "1px solid rgba(255,255,255,0.1)", borderRadius: "1rem", overflow: "hidden" }}>
             <summary
               style={{
                 padding: "1.25rem 1.5rem",
                 fontSize: "0.9375rem",
                 fontWeight: 600,
-                color: "#0f172a",
+                color: "#f0f4f8",
                 cursor: "pointer",
                 listStyle: "none",
                 display: "flex",
@@ -125,24 +137,24 @@ export function FaqSection() {
               }}
             >
               <span>{faq.q}</span>
-              <span style={{ fontSize: "1.25rem", color: "#94a3b8", flexShrink: 0 }}>+</span>
+              <span style={{ fontSize: "1.25rem", color: "#8b9db8", flexShrink: 0 }}>+</span>
             </summary>
 
-            <div style={{ padding: "0 1.5rem 1.5rem", borderTop: "1px solid #f1f5f9" }}>
-              <p style={{ fontSize: "0.9rem", lineHeight: 1.75, color: "#334155", marginTop: "1rem", marginBottom: faq.caveat || (faq.sourceIds && faq.sourceIds.length > 0) ? "1rem" : 0 }}>
+            <div style={{ padding: "0 1.5rem 1.5rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+              <p style={{ fontSize: "0.9rem", lineHeight: 1.75, color: "#aebcd0", marginTop: "1rem", marginBottom: faq.caveat || (faq.sourceIds && faq.sourceIds.length > 0) ? "1rem" : 0 }}>
                 {faq.a}
               </p>
 
               {faq.caveat && (
-                <div style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: "0.75rem", padding: "0.75rem 1rem", marginBottom: "1rem" }}>
-                  <p style={{ fontSize: "0.75rem", fontWeight: 700, color: "#92400e", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.25rem" }}>Caveat</p>
-                  <p style={{ fontSize: "0.8125rem", color: "#78350f", lineHeight: 1.6 }}>{faq.caveat}</p>
+                <div style={{ background: "rgba(245,158,11,0.12)", border: "1px solid rgba(245,158,11,0.3)", borderRadius: "0.75rem", padding: "0.75rem 1rem", marginBottom: "1rem" }}>
+                  <p style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.25rem" }}>Caveat</p>
+                  <p style={{ fontSize: "0.8125rem", color: "#fde68a", lineHeight: 1.6 }}>{faq.caveat}</p>
                 </div>
               )}
 
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem" }}>
                 {faq.confidence && (
-                  <span style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: CONFIDENCE_COLOR[faq.confidence] ?? "#64748b", border: `1px solid ${CONFIDENCE_COLOR[faq.confidence] ?? "#e2e8f0"}`, borderRadius: 999, padding: "0.2rem 0.6rem" }}>
+                  <span style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: CONFIDENCE_COLOR[faq.confidence] ?? "#8b9db8", border: `1px solid ${CONFIDENCE_COLOR[faq.confidence] ?? "rgba(255,255,255,0.1)"}`, borderRadius: 999, padding: "0.2rem 0.6rem" }}>
                     {faq.confidence} confidence
                   </span>
                 )}
@@ -154,7 +166,7 @@ export function FaqSection() {
                       href={src.url ?? "#"}
                       target="_blank"
                       rel="nofollow noopener"
-                      style={{ fontSize: "0.6875rem", color: "#0089de", textDecoration: "none", border: "1px solid #e2e8f0", borderRadius: 999, padding: "0.2rem 0.6rem" }}
+                      style={{ fontSize: "0.6875rem", color: "#00d4ff", textDecoration: "none", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 999, padding: "0.2rem 0.6rem" }}
                     >
                       {src.name}
                     </a>

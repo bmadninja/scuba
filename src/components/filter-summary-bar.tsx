@@ -12,9 +12,9 @@ const MONTH_ABBR = [
 ];
 
 const STATE_PILL_STYLE: Record<string, { bg: string; color: string }> = {
-  thriving: { bg: "rgba(16,185,129,0.12)", color: "#065f46" },
-  pressure: { bg: "rgba(0,137,222,0.12)", color: "#0369a1" },
-  change: { bg: "rgba(244,63,94,0.12)", color: "#9f1239" },
+  thriving: { bg: "rgba(16,185,129,0.15)", color: "#6ee7b7" },
+  pressure: { bg: "rgba(245,158,11,0.15)", color: "#fcd34d" },
+  change: { bg: "rgba(244,63,94,0.15)", color: "#fca5a5" },
 };
 
 type FilterSummaryBarProps = {
@@ -97,13 +97,13 @@ export function FilterSummaryBar({
 
   if (!hasSomething) return null;
 
-  const brandPill = { bg: "rgba(0,137,222,0.1)", color: "#0089de" };
+  const brandPill = { bg: "rgba(0,212,255,0.1)", color: "#00d4ff" };
 
   return (
     <div
       className={`flex flex-wrap items-center gap-2 py-2 ${className}`}
     >
-      <span className="text-[11px] font-semibold text-slate-500">
+      <span className="text-[11px] font-semibold text-[#8b9db8]">
         Showing {totalCount}
       </span>
 
@@ -173,7 +173,7 @@ export function FilterSummaryBar({
       <button
         type="button"
         onClick={onReset}
-        className="ml-auto text-[11px] font-semibold text-slate-500 underline hover:text-slate-900"
+        className="ml-auto text-[11px] font-semibold text-[#8b9db8] underline hover:text-[#f0f4f8]"
       >
         Reset all filters
       </button>

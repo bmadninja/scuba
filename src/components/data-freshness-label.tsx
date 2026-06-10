@@ -54,9 +54,9 @@ const PILL_BASE =
   "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.1em] ring-1 ring-inset";
 
 const TONE: Record<Variant, string> = {
-  live: "bg-emerald-50 text-emerald-800 ring-emerald-200",
-  snapshot: "bg-amber-50 text-amber-800 ring-amber-200",
-  presence: "bg-slate-100 text-slate-700 ring-slate-200",
+  live: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30",
+  snapshot: "bg-amber-500/15 text-amber-300 ring-amber-500/30",
+  presence: "bg-white/10 text-[#8b9db8] ring-white/10",
 };
 
 export function DataFreshnessLabel(props: DataFreshnessLabelProps) {
@@ -83,7 +83,7 @@ export function DataFreshnessLabel(props: DataFreshnessLabelProps) {
   }
   return (
     <Link href="/data" className={className} title="What's live vs snapshot">
-      <span className="h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#8b9db8]" aria-hidden />
       Presence data · {props.source ?? "GBIF/OBIS"} · no population trend
     </Link>
   );

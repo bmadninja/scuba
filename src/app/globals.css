@@ -7,12 +7,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans), "Noto Sans", system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans), "Noto Sans", system-ui, sans-serif;
-  --color-brand: #0089de;
-  --color-brand-dark: #1d5d90;
-  --color-brand-accent: #f23d4e;
+  --font-sans: var(--font-sans), "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+  --font-heading: var(--font-serif), "Space Grotesk", system-ui, sans-serif;
+  --color-brand: #00d4ff;
+  --color-brand-dark: #0a1628;
+  --color-brand-accent: #ff6b6b;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -52,38 +52,39 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* Kimi dark ocean base — shadcn primitives inherit these */
+  --background: #030712;
+  --foreground: #f0f4f8;
+  --card: #0a1628;
+  --card-foreground: #f0f4f8;
+  --popover: #0a1628;
+  --popover-foreground: #f0f4f8;
+  --primary: #00d4ff;
+  --primary-foreground: #0a1628;
+  --secondary: rgba(255,255,255,0.06);
+  --secondary-foreground: #f0f4f8;
+  --muted: rgba(255,255,255,0.04);
+  --muted-foreground: #8b9db8;
+  --accent: rgba(0,212,255,0.12);
+  --accent-foreground: #f0f4f8;
+  --destructive: #ff6b6b;
+  --border: rgba(0,212,255,0.12);
+  --input: rgba(255,255,255,0.08);
+  --ring: rgba(0,212,255,0.45);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #0a1628;
+  --sidebar-foreground: #f0f4f8;
+  --sidebar-primary: #00d4ff;
+  --sidebar-primary-foreground: #0a1628;
+  --sidebar-accent: rgba(0,212,255,0.12);
+  --sidebar-accent-foreground: #f0f4f8;
+  --sidebar-border: rgba(0,212,255,0.12);
+  --sidebar-ring: rgba(0,212,255,0.45);
 }
 
 .dark {
@@ -132,21 +133,25 @@
   }
 }
 
-/* ── Atlas design tokens (product aesthetic) ─────────────────── */
+/* ── Atlas design tokens (Kimi dark ocean rebrand) ───────────── */
 :root {
-  /* surfaces: white / light blue product palette */
-  --atlas-bg:            #ffffff;
-  --atlas-paper:         #ffffff;
-  --atlas-surface:       #f1f7fb;
-  --atlas-hairline:      #e2e8f0;          /* slate-200 */
-  --atlas-hairline-str:  #cbd5e1;          /* slate-300 */
-  /* text: slate scale */
-  --atlas-ink:           #0f172a;          /* slate-900 */
-  --atlas-ink-2:         #334155;          /* slate-700 */
-  --atlas-mute:          #64748b;          /* slate-500 */
-  /* deep / brand contexts */
-  --atlas-deep:          #1d5d90;
-  --atlas-deep-2:        #0089de;
+  /* surfaces: deep ocean abyss + navy panels */
+  --atlas-bg:            #030712;          /* abyss page background */
+  --atlas-paper:         #0a1628;          /* navy panel/card surface */
+  --atlas-surface:       rgba(255,255,255,0.04);  /* subtle raised fill */
+  --atlas-hairline:      rgba(0,212,255,0.12);    /* aqua-tinted hairline */
+  --atlas-hairline-str:  rgba(0,212,255,0.28);    /* stronger hairline */
+  /* text: ivory → slate-blue scale */
+  --atlas-ink:           #f0f4f8;          /* primary text */
+  --atlas-ink-2:         #aebcd0;          /* secondary text */
+  --atlas-mute:          #8b9db8;          /* muted text */
+  /* deep / brand contexts → aqua accent */
+  --atlas-deep:          #33ddff;
+  --atlas-deep-2:        #00d4ff;
+  /* aqua accent + soft fill for selected / active states */
+  --atlas-accent:        #00d4ff;
+  --atlas-accent-ink:    #0a1628;          /* text on a solid aqua fill */
+  --atlas-accent-soft:   rgba(0,212,255,0.12);
 
   /* heat ramp (kept for thermal visualization components) */
   --a0: oklch(0.92 0.02 215);
@@ -156,18 +161,18 @@
   --a4: oklch(0.60 0.19 32);
   --a5: oklch(0.50 0.20 20);
 
-  /* reef state colors — canonical tokens (do not override) */
-  --thriving: #10b981;
-  --pressure: #0089de;
-  --change:   #f43f5e;
+  /* reef state colors — canonical tokens (Kimi: green / aqua / coral) */
+  --thriving: #22c55e;
+  --pressure: #f59e0b;
+  --change:   #ff6b6b;
 
-  /* font aliases: all map to the product sans stack (no serif body, no mono UI) */
-  --atlas-serif: var(--font-sans), "Noto Sans", system-ui, sans-serif;
-  --atlas-sans:  var(--font-sans), "Noto Sans", system-ui, sans-serif;
-  --atlas-mono:  var(--font-sans), "Noto Sans", system-ui, sans-serif;
+  /* font aliases: Space Grotesk display, Inter body, mono for data labels */
+  --atlas-serif: var(--font-serif), "Space Grotesk", system-ui, sans-serif;
+  --atlas-sans:  var(--font-sans), "Inter", system-ui, sans-serif;
+  --atlas-mono:  var(--font-mono), ui-monospace, monospace;
 }
 
-/* ── Atlas base surface (product: white bg, slate text, Noto Sans) ── */
+/* ── Atlas base surface (Kimi dark: abyss bg, ivory text) ─────── */
 .atlas-root {
   font-family: var(--atlas-sans);
   background: var(--atlas-bg);
@@ -401,7 +406,7 @@
 .atlas-scrubber .scrub-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
 .atlas-scrubber .scrub-now { font-family: var(--atlas-serif); font-size: 28px; letter-spacing: -0.01em; color: var(--atlas-ink); }
 .atlas-scrubber .scrub-hint { font-size: 11px; color: var(--atlas-mute); max-width: 160px; text-align: right; line-height: 1.4; }
-.atlas-scrubber input[type=range] { width: 100%; accent-color: var(--atlas-ink); }
+.atlas-scrubber input[type=range] { width: 100%; accent-color: var(--atlas-accent); }
 .atlas-scrubber .scrub-axis { display: flex; justify-content: space-between; font-family: var(--atlas-mono); font-size: 10px; color: var(--atlas-mute); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
 
 /* ── Freshness bar ────────────────────────────────────────────── */
@@ -423,8 +428,8 @@
   background: var(--atlas-surface);
   border-radius: 2px;
 }
-.season-strip .sm.best { background: var(--atlas-ink); color: var(--atlas-paper); }
-.season-strip .sm.now  { outline: 2px solid var(--atlas-ink); outline-offset: 2px; }
+.season-strip .sm.best { background: var(--atlas-accent); color: var(--atlas-accent-ink); }
+.season-strip .sm.now  { outline: 2px solid var(--atlas-accent); outline-offset: 2px; }
 
 /* ── Atlas filter rail ────────────────────────────────────────── */
 .atlas-layout { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start; }
@@ -450,7 +455,7 @@
   font-size: 9px; flex-shrink: 0; background: var(--atlas-paper);
   transition: background 0.1s, border-color 0.1s;
 }
-.atlas-facet-opt.on .ck { background: var(--atlas-ink); border-color: var(--atlas-ink); color: var(--atlas-paper); }
+.atlas-facet-opt.on .ck { background: var(--atlas-accent); border-color: var(--atlas-accent); color: var(--atlas-accent-ink); }
 .atlas-facet-clear { font-size: 12px; color: var(--atlas-mute); text-decoration: none; padding: 6px 0; display: block; }
 .atlas-facet-clear:hover { color: var(--atlas-ink); }
 .months-pick { display: flex; flex-wrap: wrap; gap: 4px; }
@@ -460,7 +465,7 @@
   background: var(--atlas-surface); border: 1px solid var(--atlas-hairline);
   color: var(--atlas-ink-2); cursor: pointer; transition: background 0.1s;
 }
-.mchip.on { background: var(--atlas-ink); color: var(--atlas-paper); border-color: var(--atlas-ink); }
+.mchip.on { background: var(--atlas-accent-soft); color: var(--atlas-accent); border-color: var(--atlas-accent); }
 
 /* ── ⌘K search palette ────────────────────────────────────────── */
 .cmdk-back {
@@ -545,10 +550,10 @@
   padding: 11px 20px; border-radius: 3px; font-size: 13px; font-weight: 500;
   text-decoration: none; cursor: pointer; transition: background 0.15s, color 0.15s;
 }
-.atlas-btn.primary { background: var(--atlas-ink); color: var(--atlas-paper); }
-.atlas-btn.primary:hover { background: var(--atlas-deep); }
-.atlas-btn.secondary { background: var(--atlas-paper); color: var(--atlas-ink); border: 1px solid var(--atlas-hairline); }
-.atlas-btn.secondary:hover { background: var(--atlas-surface); border-color: var(--atlas-hairline-str); }
+.atlas-btn.primary { background: var(--atlas-accent); color: var(--atlas-accent-ink); font-weight: 600; }
+.atlas-btn.primary:hover { background: var(--atlas-deep); box-shadow: 0 8px 24px rgba(0,212,255,0.22); }
+.atlas-btn.secondary { background: transparent; color: var(--atlas-accent); border: 1px solid var(--atlas-hairline-str); }
+.atlas-btn.secondary:hover { background: var(--atlas-accent-soft); border-color: var(--atlas-accent); }
 .atlas-live-badge {
   display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--atlas-mono); font-size: 10px;
@@ -594,7 +599,7 @@
   transition: color 0.12s, border-color 0.12s;
 }
 .loc-jump a:hover { color: var(--atlas-ink); }
-.loc-jump a.active { color: var(--atlas-ink); border-bottom-color: var(--atlas-ink); }
+.loc-jump a.active { color: var(--atlas-accent); border-bottom-color: var(--atlas-accent); }
 
 /* ── Coral bars ───────────────────────────────────────────────── */
 .coral-bars { margin: 16px 0; }
@@ -602,8 +607,8 @@
 .coral-bars .cb-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .coral-bars .cb-yr { font-family: var(--atlas-mono); font-size: 11px; color: var(--atlas-mute); width: 36px; flex-shrink: 0; }
 .coral-bars .cb-track { flex: 1; height: 8px; background: var(--atlas-surface); border-radius: 2px; overflow: hidden; }
-.coral-bars .cb-fill { height: 100%; border-radius: 2px; background: var(--atlas-ink-2); transition: width 0.4s; }
-.coral-bars .cb-fill.now { background: var(--atlas-ink); }
+.coral-bars .cb-fill { height: 100%; border-radius: 2px; background: var(--atlas-mute); transition: width 0.4s; }
+.coral-bars .cb-fill.now { background: var(--atlas-accent); }
 .coral-bars .cb-pct { font-size: 13px; font-weight: 600; color: var(--atlas-ink); width: 40px; text-align: right; }
 .coral-bars .cb-delta { font-size: 12px; color: var(--change); margin-top: 4px; }
 .coral-bars .cb-delta.gain { color: var(--thriving); }
@@ -620,7 +625,7 @@
   white-space: nowrap;
 }
 .site-tabs a:hover, .site-tabs button:hover { color: var(--atlas-ink); }
-.site-tabs a.active, .site-tabs button.active { color: var(--atlas-ink); border-bottom-color: var(--atlas-ink); }
+.site-tabs a.active, .site-tabs button.active { color: var(--atlas-accent); border-bottom-color: var(--atlas-accent); }
 
 /* ── IUCN badge ───────────────────────────────────────────────── */
 .iucn-badge {
@@ -683,7 +688,7 @@
   background: var(--atlas-surface); border: 1px solid var(--atlas-hairline);
   color: var(--atlas-ink-2); cursor: pointer; transition: background 0.1s;
 }
-.gap-pill.active { background: var(--atlas-ink); color: var(--atlas-paper); border-color: var(--atlas-ink); }
+.gap-pill.active { background: var(--atlas-accent-soft); color: var(--atlas-accent); border-color: var(--atlas-accent); }
 
 /* ── Freshness stat band ──────────────────────────────────────── */
 .gap-stat-3 { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--atlas-hairline); border-radius: 4px; overflow: hidden; background: var(--atlas-paper); margin-bottom: 24px; }
@@ -699,14 +704,16 @@
 
 /* ── CTA band ─────────────────────────────────────────────────── */
 .atlas-cta-band {
-  background: var(--atlas-ink); color: var(--atlas-paper);
-  border-radius: 4px; padding: 40px 48px;
+  background: linear-gradient(135deg, #0a1628 0%, #030712 100%);
+  color: var(--atlas-ink);
+  border: 1px solid var(--atlas-hairline);
+  border-radius: 16px; padding: 40px 48px;
   margin: 40px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .atlas-cta-band h2 { font-family: var(--atlas-serif); font-size: 28px; letter-spacing: -0.01em; margin: 0 0 8px; }
-.atlas-cta-band p { font-size: 14px; color: color-mix(in oklch, var(--atlas-paper) 70%, transparent); margin: 0; }
-.atlas-cta-btn { background: var(--atlas-paper); color: var(--atlas-ink); padding: 12px 24px; border-radius: 3px; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: background 0.15s; }
-.atlas-cta-btn:hover { background: var(--atlas-surface); }
+.atlas-cta-band p { font-size: 14px; color: var(--atlas-mute); margin: 0; }
+.atlas-cta-btn { background: var(--atlas-accent); color: var(--atlas-accent-ink); padding: 12px 24px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: background 0.15s, box-shadow 0.15s; }
+.atlas-cta-btn:hover { background: var(--atlas-deep); box-shadow: 0 8px 24px rgba(0,212,255,0.22); }
 
 /* ── Breadcrumb ───────────────────────────────────────────────── */
 .atlas-crumb {
@@ -754,7 +761,7 @@ header input[type="search"]::-webkit-search-cancel-button {
 /* ── Homepage layout classes ─────────────────────────────────── */
 .home-section-pad   { padding: 5rem 3rem; }
 .home-section-pad-b { padding: 0 3rem 5rem; }
-.home-hero-content  { padding: 0 3rem 5.5rem; }
+.home-hero-content  { padding: 0 3rem 4rem; }
 .home-reef-states-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -800,6 +807,7 @@ header input[type="search"]::-webkit-search-cancel-button {
   .gap-stat-3 { grid-template-columns: 1fr; }
   .home-section-pad   { padding: 3rem 1.25rem; }
   .home-section-pad-b { padding: 0 1.25rem 3rem; }
-  .home-hero-content  { padding: 0 1.25rem 3.5rem; }
+  .home-hero-content  { padding: 0 1.25rem 2.5rem; }
   .home-stats-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .home-atlas-stage { padding: 2rem 1.25rem 3rem !important; }
 }

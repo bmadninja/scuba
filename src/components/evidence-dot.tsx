@@ -52,7 +52,7 @@ export function EvidenceDot({
   showLabel = true,
 }: EvidenceDotProps) {
   const hasRecords = confidence != null;
-  const dotClass = hasRecords ? DOT_CLASS[confidence] : "bg-slate-300";
+  const dotClass = hasRecords ? DOT_CLASS[confidence] : "bg-[#8b9db8]";
   const label = hasRecords ? (LABEL[confidence] ?? confidence) : "No sighting records yet";
 
   return (

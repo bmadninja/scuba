@@ -113,32 +113,28 @@ export default async function SpeciesDetailPage({
     <div className="mx-auto w-full max-w-3xl px-6 py-12">
       {/* Breadcrumb */}
       <nav
-        className="mb-6 flex flex-wrap items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-slate-500"
+        className="mb-6 flex flex-wrap items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#8b9db8]"
         aria-label="Breadcrumb"
       >
-        <Link href="/" className="hover:text-[#0089de]">
-          Atlas
-        </Link>
-        <span className="text-slate-300">/</span>
         {location ? (
           <>
             <Link
               href={`/locations/${location.slug}`}
-              className="hover:text-[#0089de]"
+              className="hover:text-[#00d4ff]"
             >
               {location.name}
             </Link>
-            <span className="text-slate-300">/</span>
+            <span className="text-[#8b9db8]">/</span>
           </>
         ) : null}
         <Link
           href={`/sites/${site.slug}`}
-          className="hover:text-[#0089de]"
+          className="hover:text-[#00d4ff]"
         >
           {site.name}
         </Link>
-        <span className="text-slate-300">/</span>
-        <span className="text-slate-700">{commonName}</span>
+        <span className="text-[#8b9db8]">/</span>
+        <span className="text-[#f0f4f8]">{commonName}</span>
       </nav>
 
       {/* Header */}
@@ -148,15 +144,15 @@ export default async function SpeciesDetailPage({
             <IucnBadge status={iucn} />
           </div>
         ) : null}
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+        <h1 className="text-3xl font-bold tracking-tight text-[#f0f4f8]">
           {commonName}
         </h1>
         {scientificName ? (
-          <p className="mt-1 text-base italic text-slate-500">
+          <p className="mt-1 text-base italic text-[#8b9db8]">
             {scientificName}
           </p>
         ) : null}
-        <p className="mt-2 text-sm text-slate-600">
+        <p className="mt-2 text-sm text-[#aebcd0]">
           Sighting evidence at <strong>{site.name}</strong>
           {location ? `, ${location.name}` : ""}
         </p>
@@ -164,38 +160,38 @@ export default async function SpeciesDetailPage({
 
       {/* Ecological description */}
       {speciesEntry.ecologicalDescription ? (
-        <p className="mb-8 text-[0.9375rem] leading-relaxed text-slate-600">
+        <p className="mb-8 text-[0.9375rem] leading-relaxed text-[#aebcd0]">
           {speciesEntry.ecologicalDescription}
         </p>
       ) : null}
 
       {/* Sighting evidence */}
       <section className="mb-8">
-        <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-slate-500">
+        <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-[#8b9db8]">
           Evidence at this site
         </h2>
         {evidence.length > 0 ? (
-          <div className="rounded-xl border border-slate-200 bg-white">
+          <div className="rounded-xl border border-white/10 bg-[#0a1628]">
             {evidence.map((ev, i) => (
               <div
                 key={i}
-                className="flex flex-col gap-1 border-b border-slate-100 px-4 py-3 last:border-b-0 sm:flex-row sm:items-start sm:gap-4"
+                className="flex flex-col gap-1 border-b border-white/10 px-4 py-3 last:border-b-0 sm:flex-row sm:items-start sm:gap-4"
               >
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-slate-900">
+                  <p className="text-sm font-semibold text-[#f0f4f8]">
                     {ev.recentRecordCount} record
                     {ev.recentRecordCount === 1 ? "" : "s"} within{" "}
                     {ev.proximityRadiusKm} km
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-[#8b9db8]">
                     Confidence:{" "}
                     <span
                       className={`font-semibold ${
                         ev.confidence === "high"
-                          ? "text-emerald-700"
+                          ? "text-emerald-300"
                           : ev.confidence === "medium"
-                            ? "text-amber-700"
-                            : "text-slate-600"
+                            ? "text-amber-300"
+                            : "text-[#8b9db8]"
                       }`}
                     >
                       {ev.confidence}
@@ -206,7 +202,7 @@ export default async function SpeciesDetailPage({
                 {ev.lastConfirmedAt ? (
                   <time
                     dateTime={ev.lastConfirmedAt}
-                    className="text-xs text-slate-400"
+                    className="text-xs text-[#8b9db8]"
                   >
                     Last confirmed{" "}
                     {new Date(
@@ -218,7 +214,7 @@ export default async function SpeciesDetailPage({
                     })}
                   </time>
                 ) : (
-                  <span className="text-xs text-slate-400">
+                  <span className="text-xs text-[#8b9db8]">
                     No date on file
                   </span>
                 )}
@@ -226,11 +222,11 @@ export default async function SpeciesDetailPage({
             ))}
           </div>
         ) : (
-          <div className="rounded-xl border border-dashed border-slate-200 px-5 py-8 text-center">
-            <p className="text-sm font-semibold text-slate-700">
+          <div className="rounded-xl border border-dashed border-white/10 px-5 py-8 text-center">
+            <p className="text-sm font-semibold text-[#aebcd0]">
               No confirmed records on file at this site
             </p>
-            <p className="mt-1.5 text-xs text-slate-500">
+            <p className="mt-1.5 text-xs text-[#8b9db8]">
               {commonName} is listed as a curated species here based on
               historical reports.
             </p>
@@ -241,7 +237,7 @@ export default async function SpeciesDetailPage({
       {/* 12-month seasonality calendar */}
       {seasonalityMonths.length > 0 ? (
         <section className="mb-8">
-          <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-slate-500">
+          <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-[#8b9db8]">
             Seasonality
           </h2>
           <div className="grid grid-cols-6 gap-1.5 sm:grid-cols-12">
@@ -253,9 +249,9 @@ export default async function SpeciesDetailPage({
                   key={m}
                   className={`rounded-lg px-1 py-2 text-center text-[11px] font-semibold ${
                     isPeak
-                      ? "bg-[#0089de] text-white"
-                      : "bg-slate-100 text-slate-500"
-                  } ${isNow ? "ring-2 ring-inset ring-[#0f172a]" : ""}`}
+                      ? "bg-[#00d4ff] text-[#0a1628]"
+                      : "bg-white/5 text-[#8b9db8]"
+                  } ${isNow ? "ring-2 ring-inset ring-[#00d4ff]" : ""}`}
                 >
                   {m}
                 </div>
@@ -280,7 +276,7 @@ export default async function SpeciesDetailPage({
       {/* Also seen at other sites */}
       {nearbySites.length > 0 ? (
         <section className="mb-8">
-          <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-slate-500">
+          <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-[#8b9db8]">
             Also seen at other sites
           </h2>
           <ul className="space-y-2">
@@ -288,10 +284,10 @@ export default async function SpeciesDetailPage({
               <li key={s.id}>
                 <Link
                   href={`/sites/${s.slug}/species/${speciesSlug}`}
-                  className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-900 transition hover:border-[#0089de]/40 hover:text-[#0089de]"
+                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-[#0a1628] px-4 py-3 text-sm font-semibold text-[#f0f4f8] transition hover:border-[#00d4ff]/40 hover:text-[#00d4ff]"
                 >
                   {s.name}
-                  <span className="ml-auto text-slate-400">→</span>
+                  <span className="ml-auto text-[#8b9db8]">→</span>
                 </Link>
               </li>
             ))}

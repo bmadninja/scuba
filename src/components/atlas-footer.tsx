@@ -1,60 +1,36 @@
 import Link from "next/link";
 
-/** Logo component — used in footer (dark variant only here) */
+/** Footer logo — Kimi droplet mark + single-line wordmark. */
 function LogoDark() {
   return (
-    <div className="flex items-center gap-2.5">
-      {/* Option D mark: solid #0089de circle + two white wave paths */}
+    <div className="flex items-center gap-2">
       <svg
-        width="36"
-        height="36"
-        viewBox="0 0 36 36"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        stroke="#00d4ff"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         aria-hidden="true"
       >
-        <circle cx="18" cy="18" r="16" fill="#0089de" />
-        {/* Primary wave */}
-        <path
-          d="M6 18 Q10 14, 14 18 Q18 22, 22 18 Q26 14, 30 18"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-          fill="none"
-          opacity="1.0"
-        />
-        {/* Secondary wave */}
-        <path
-          d="M6 22 Q10 18, 14 22 Q18 26, 22 22 Q26 18, 30 22"
-          stroke="rgba(255,255,255,0.4)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          fill="none"
-        />
+        <path d="M12 2C8 6 4 10 4 14c0 4.4 3.6 8 8 8s8-3.6 8-8c0-4-4-8-8-12z" />
+        <path d="M12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
       </svg>
-      {/* Weight-split wordmark — dark variant */}
-      <div className="flex flex-col leading-[1.0]">
-        <span
-          style={{
-            fontWeight: 300,
-            letterSpacing: "0.08em",
-            fontSize: "0.6875rem",
-            color: "rgba(255,255,255,0.3)",
-          }}
-        >
-          scuba
-        </span>
-        <span
-          style={{
-            fontWeight: 900,
-            letterSpacing: "-0.05em",
-            fontSize: "1.05rem",
-            color: "#ffffff",
-          }}
-        >
-          Season.fun
-        </span>
-      </div>
+      <span
+        style={{
+          fontFamily: 'var(--font-serif), "Space Grotesk", system-ui, sans-serif',
+          fontWeight: 700,
+          fontSize: "1.25rem",
+          letterSpacing: "-0.01em",
+          lineHeight: 1,
+        }}
+      >
+        <span style={{ color: "#f0f4f8" }}>scuba</span>
+        <span style={{ color: "#00d4ff" }}>season</span>
+        <span style={{ color: "rgba(255,255,255,0.4)" }}>.fun</span>
+      </span>
     </div>
   );
 }
@@ -77,11 +53,8 @@ export function AtlasFooter() {
                 color: "rgba(255,255,255,0.55)",
               }}
             >
-              A nonprofit ocean atlas. Dive data for science.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
-              Built from a diver&apos;s frustration — the kind you get when you
-              can&apos;t find good conditions data before a trip.
+              A free, public reef atlas. Science backed, honestly labelled, free
+              to read.
             </p>
           </div>
 
@@ -95,8 +68,7 @@ export function AtlasFooter() {
             </p>
             <ul className="space-y-2.5">
               {[
-                { href: "/", label: "Atlas" },
-                { href: "/sites", label: "Sites" },
+                { href: "/", label: "Find a reef" },
                 { href: "/data", label: "Method" },
                 { href: "/about", label: "About" },
               ].map((item) => (
@@ -118,35 +90,29 @@ export function AtlasFooter() {
               className="mb-4 text-[10px] font-semibold uppercase tracking-[0.14em]"
               style={{ color: "rgba(255,255,255,0.3)" }}
             >
-              Contact
+              Get in touch
             </p>
             <a
               href="mailto:hello@scubaseason.fun"
               className="text-sm transition-colors"
-              style={{ color: "#0089de" }}
+              style={{ color: "#00d4ff" }}
             >
               hello@scubaseason.fun
             </a>
             <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
-              Spot a mistake or want to collaborate? Always happy to hear from
-              you.
+              Spotted wrong data? Want to collaborate? All of it welcome.
             </p>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div
-          className="mt-10 flex flex-col gap-2 pt-6 sm:flex-row sm:items-center sm:justify-between"
+          className="mt-10 pt-6"
           style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
         >
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.28)" }}>
-            Thermal data: NOAA Coral Reef Watch v3.1 · refreshed nightly ·{" "}
-            <Link href="/data" className="underline hover:text-white/60 transition-colors">
-              All sources →
-            </Link>
-          </p>
-          <p className="shrink-0 text-xs" style={{ color: "rgba(255,255,255,0.28)" }}>
-            &copy; 2026 scubaSeason.fun
+            &copy; 2026 scubaSeason.fun · Live data from NOAA, Reef Check,
+            iNaturalist and 60 more public sources
           </p>
         </div>
       </div>

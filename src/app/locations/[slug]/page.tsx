@@ -104,7 +104,7 @@ const IUCN_LABEL: Record<string, string> = {
 const MONTH_LETTERS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
 function getSpeciesIcon(name: string): string {
-  const n = name.toLowerCase();
+  const n = (name ?? "").toLowerCase();
   if (/shark|ray|skate|manta|sawfish/.test(n)) return "🦈";
   if (/turtle|tortoise/.test(n)) return "🐢";
   if (/whale|dolphin|porpoise|dugong|manatee/.test(n)) return "🐬";
@@ -113,7 +113,7 @@ function getSpeciesIcon(name: string): string {
 }
 
 function siteGearIcon(name: string): string {
-  const n = name.toLowerCase();
+  const n = (name ?? "").toLowerCase();
   if (/reef hook/.test(n)) return "🪝";
   if (/smb|surface marker|buoy/.test(n)) return "🎈";
   if (/reel/.test(n)) return "🧵";
@@ -299,7 +299,8 @@ export default async function LocationPage({
     if (names.length === 0) {
       for (const h of siteHeadline.get(s.id) ?? []) {
         if (names.length >= 4) break;
-        if (!names.includes(h.speciesCommon)) names.push(h.speciesCommon);
+        if (h.speciesCommon && !names.includes(h.speciesCommon))
+          names.push(h.speciesCommon);
       }
     }
     const speciesLine =
@@ -507,7 +508,7 @@ export default async function LocationPage({
   const getThereStructured = sites.map((s) => s.getThereStructured).find((t) => Boolean(t)) ?? null;
   const getThereProse =
     sites.map((s) => s.getThere).find((t) => t && t.trim().length > 0) ??
-    details?.goodToKnow.find((g) => g.title.toLowerCase().includes("getting there"))?.body ??
+    details?.goodToKnow.find((g) => g.title?.toLowerCase().includes("getting there"))?.body ??
     null;
   const lodging = dedupePartnerLinks(sites.flatMap((s) => s.lodging));
   const operatorsRaw = dedupePartnerLinks(sites.flatMap((s) => s.operators));
