@@ -1,0 +1,52 @@
+name: Fill data gaps (lodging / operators / species photos)
+
+on:
+  schedule:
+    # Daily 07:45 UTC — offset from discover-sites (07:12) so they don't contend
+    - cron: "45 7 * * *"
+  workflow_dispatch:
+    inputs:
+      gap_type:
+        description: "Which gap to fill (lodging | operators | species | auto)"
+        default: "auto"
+      max_species:
+        description: "Max species photo patches per run"
+        default: "10"
+      dry_run:
+        description: "Print patch JSON but don't write files"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run gap filler
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GAP_TYPE: ${{ inputs.gap_type != 'auto' && inputs.gap_type || '' }}
+          MAX_SPECIES: ${{ inputs.max_species || '10' }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: |
+          set +e
+          node scripts/fill-gaps.mjs | tee fill-gaps.log
+          code=${PIPESTATUS[0]}
+          if [ $code -eq 2 ]; then
+            echo "Nothing to fill this run — skipping."
+            exit 0
+          fi
+          exit $code
