@@ -261,7 +261,7 @@ export default async function LocationPage({
     return {
       key: `${sv.speciesCommon}-${i}`,
       commonName: sv.speciesCommon,
-      href: sv.siteSlug ? `/sites/${sv.siteSlug}` : null,
+      href: sv.siteSlug ? `/sites/${sv.siteSlug}/species/${sv.speciesCommon.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}` : null,
       imageUrl: photoCredit?.imageUrl ? photoCredit.imageUrl.replace("/square.", "/medium.") : null,
       icon: getSpeciesIcon(sv.speciesCommon),
       seenText: fmtRelative(days, sv.lastConfirmedAt),

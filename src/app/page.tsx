@@ -12,9 +12,8 @@ const HERO_IMAGE_URL =
   "https://images.unsplash.com/photo-1675829604010-509cca710300?w=3840&q=90&auto=format&fit=crop";
 
 export const metadata: Metadata = {
-  title: "scubaSeason.fun — find where to dive",
-  description:
-    "Find dive sites in season now, with real sighting records and live reef health data.",
+  title: "scubaSeason.fun — live coral health for every reef",
+  description: "Plan your next dive around real conditions.",
 };
 
 export default function Home() {

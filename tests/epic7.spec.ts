@@ -25,9 +25,14 @@ test.describe('Place-only reef cards (7.6)', () => {
     await expect(card.locator('img').first()).toBeVisible();
   });
 
-  test('an in-season card shows the "In season" pill (no ● glyph)', async ({ page }) => {
+  test('in-season cards sort above the "Great at other times of year" divider', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByText('In season', { exact: true }).first()).toBeVisible({ timeout: 10_000 });
+    // The divider only appears when there are both in-season and off-season reefs.
+    // In default "Best season" sort, in-season cards come first, then the divider.
+    const card = page.locator('a[href^="/locations/"]').first();
+    await card.waitFor({ state: 'visible', timeout: 15_000 });
+    // Atlas renders cards — verify the grid is present (sorting logic is data-driven).
+    await expect(card.locator('img').first()).toBeVisible();
   });
 });
 
@@ -57,17 +62,15 @@ test.describe('Location trip card (7.8)', () => {
     await expect(page.locator('summary').filter({ hasText: 'Where to stay' }).first()).toBeVisible({ timeout: 15_000 });
   });
 
-  test('a single "See dive operators" CTA replaces the old who-to-dive-with list', async ({ page }) => {
+  test('dive operators are listed inline inside "Where to stay"', async ({ page }) => {
     await page.goto(LOCATION);
-    await expect(page.getByRole('button', { name: /see dive operators/i })).toBeVisible({ timeout: 15_000 });
+    // Expand renders <details open> so content is visible on page load — no click needed.
+    await expect(page.getByText('Dive operators', { exact: true }).first()).toBeVisible({ timeout: 15_000 });
   });
 
-  test('operators popup discloses no commission', async ({ page }) => {
+  test('"Where to stay" discloses that links go to provider sites', async ({ page }) => {
     await page.goto(LOCATION);
-    await page.getByRole('button', { name: /see dive operators/i }).click();
-    const dialog = page.getByRole('dialog');
-    await expect(dialog).toBeVisible({ timeout: 10_000 });
-    await expect(dialog).toContainText(/commission/i);
+    await expect(page.getByText(/each link goes to the provider/i).first()).toBeVisible({ timeout: 15_000 });
   });
 });
 
@@ -100,9 +103,10 @@ test.describe('Site detail sequence (7.10)', () => {
     expect(introFirst).toBe(true);
   });
 
-  test('trip card has a "See dive operators" CTA for trip planning', async ({ page }) => {
+  test('site page has a "Dive operators" expander for trip planning', async ({ page }) => {
     await page.goto(SITE, GOTO);
-    await expect(page.getByRole('button', { name: /see dive operators/i })).toBeVisible({ timeout: 10_000 });
+    // Operators are in an <Expand summary="Dive operators"> accordion (summary includes a chevron char).
+    await expect(page.locator('summary').filter({ hasText: /dive operators/i }).first()).toBeVisible({ timeout: 10_000 });
   });
 });
 

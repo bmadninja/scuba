@@ -18,7 +18,7 @@ test.describe('Homepage atlas', () => {
 
   test('shows the filter rail and a live reef count', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByText('Filters', { exact: true })).toBeVisible();
+    await expect(page.getByText('Filters', { exact: true }).first()).toBeVisible();
     // The result count is an aria-live status region ("N reefs").
     await expect(page.getByRole('status')).toContainText(/reefs/i);
   });

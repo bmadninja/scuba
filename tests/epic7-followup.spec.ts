@@ -14,14 +14,14 @@ test.describe('Gear page removed', () => {
 
 // ── Location-first nav ────────────────────────────────────────────────────
 test.describe('Location-first nav', () => {
-  test('nav has Atlas, Method, About — not Sites', async ({ page }) => {
+  test('nav has Method and About — not Sites or Atlas', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByRole('link', { name: /^Atlas$/i }).first()).toBeVisible();
+    // Atlas link was removed (fb10fcd); nav now has Method + About only.
     await expect(page.getByRole('link', { name: /^Method$/i }).first()).toBeVisible();
     await expect(page.getByRole('link', { name: /^About$/i }).first()).toBeVisible();
-    // Sites must not appear in the nav (it may still be in footer)
     const navEl = page.getByRole('navigation').first();
     await expect(navEl.getByRole('link', { name: /^Sites$/i })).toHaveCount(0);
+    await expect(navEl.getByRole('link', { name: /^Atlas$/i })).toHaveCount(0);
   });
 });
 

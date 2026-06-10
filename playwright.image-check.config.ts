@@ -5,7 +5,8 @@ import { defineConfig } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   testMatch: 'image-reachability.spec.ts',
-  fullyParallel: true,
+  fullyParallel: false,
+  workers: 3,
   retries: 1,
   reporter: 'line',
   projects: [{ name: 'node', use: {} }],

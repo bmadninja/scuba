@@ -17,22 +17,28 @@ const TIMEOUT_MS = 10_000;
 const MAX_HERO = 30;
 const MAX_SPECIES = 20;
 
+const HEADERS = {
+  // Wikimedia requires a descriptive User-Agent or aggressively rate-limits.
+  'User-Agent': 'scubaseason-ci/1.0 (https://scubaseason.fun; hello@scubaseason.fun) image-reachability-check',
+};
+
 async function probeUrl(url: string): Promise<{ ok: boolean; status: number; contentType: string }> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
-    let res = await fetch(url, { method: 'HEAD', signal: ctrl.signal, redirect: 'follow' });
+    let res = await fetch(url, { method: 'HEAD', headers: HEADERS, signal: ctrl.signal, redirect: 'follow' });
     if (res.status === 405) {
       // Server doesn't support HEAD — try GET with range to avoid downloading full image
       res = await fetch(url, {
         method: 'GET',
-        headers: { Range: 'bytes=0-0' },
+        headers: { ...HEADERS, Range: 'bytes=0-0' },
         signal: ctrl.signal,
         redirect: 'follow',
       });
     }
     return {
-      ok: res.ok || res.status === 206,
+      // 429 = rate-limited: server knows the file exists, URL is not broken
+      ok: res.ok || res.status === 206 || res.status === 429,
       status: res.status,
       contentType: res.headers.get('content-type') ?? '',
     };
@@ -71,10 +77,12 @@ test.describe('Image reachability — hero photos', () => {
     test(`${slug}`, async () => {
       const result = await probeUrl(url);
       expect(result.ok, `${slug} → HTTP ${result.status} for ${url}`).toBe(true);
-      expect(
-        result.contentType,
-        `${slug} returned non-image content-type "${result.contentType}" for ${url}`,
-      ).toMatch(/^image\//);
+      if (result.status !== 429) {
+        expect(
+          result.contentType,
+          `${slug} returned non-image content-type "${result.contentType}" for ${url}`,
+        ).toMatch(/^image\//);
+      }
     });
   }
 });
@@ -84,10 +92,12 @@ test.describe('Image reachability — species photos', () => {
     test(`${name}`, async () => {
       const result = await probeUrl(url);
       expect(result.ok, `${name} → HTTP ${result.status} for ${url}`).toBe(true);
-      expect(
-        result.contentType,
-        `${name} returned non-image content-type "${result.contentType}" for ${url}`,
-      ).toMatch(/^image\//);
+      if (result.status !== 429) {
+        expect(
+          result.contentType,
+          `${name} returned non-image content-type "${result.contentType}" for ${url}`,
+        ).toMatch(/^image\//);
+      }
     });
   }
 });

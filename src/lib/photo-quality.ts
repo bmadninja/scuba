@@ -79,6 +79,14 @@ export function underwaterPhotoUrl(url?: string | null): string | null {
  *   /photos/ID/large.jpg  →  /photos/ID/medium.jpg  (for heroes)
  *   /photos/ID/large.jpg  →  /photos/ID/small.jpg   (for thumbnails)
  */
+// Wikimedia now enforces a strict allowlist of thumbnail widths (as of mid-2026).
+// Requesting any other pixel value returns HTTP 400. Map our target widths to the
+// nearest valid size: 120, 960, 1280, 1920, 3840.
+const WIKIMEDIA_ALLOWED_SIZES = [120, 960, 1280, 1920, 3840] as const;
+function wikimediaSize(targetWidth: number): number {
+  return WIKIMEDIA_ALLOWED_SIZES.find((s) => s >= targetWidth) ?? 3840;
+}
+
 export function resizePhotoUrl(
   url: string | null | undefined,
   targetWidth: 1200 | 800 | 500 | 240 = 1200,
@@ -90,7 +98,8 @@ export function resizePhotoUrl(
     /^(https:\/\/upload\.wikimedia\.org\/wikipedia\/[^/]+\/thumb\/[a-f0-9]\/[a-f0-9]{2}\/[^/]+\/)\d+px-(.+)$/i,
   );
   if (wikiThumb) {
-    return `${wikiThumb[1]}${targetWidth}px-${wikiThumb[2]}`;
+    const w = wikimediaSize(targetWidth);
+    return `${wikiThumb[1]}${w}px-${wikiThumb[2]}`;
   }
 
   // Wikimedia non-thumb — construct thumb URL
@@ -99,7 +108,8 @@ export function resizePhotoUrl(
   );
   if (wikiDirect) {
     const filename = wikiDirect[3];
-    return `${wikiDirect[1]}thumb/${wikiDirect[2]}${filename}/${targetWidth}px-${filename}`;
+    const w = wikimediaSize(targetWidth);
+    return `${wikiDirect[1]}thumb/${wikiDirect[2]}${filename}/${w}px-${filename}`;
   }
 
   // iNaturalist — map targetWidth to their named sizes

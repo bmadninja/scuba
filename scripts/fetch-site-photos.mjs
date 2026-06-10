@@ -52,6 +52,14 @@ const BAD_FILE_HINTS = [
   "specimen", "preserved", "museum", "collection", "jar", "taxidermy",
   "illustration", "drawing", "aerial", "beach_", "dock", "surface_",
   "above_water", "boat_on", "harbour", "harbor",
+  // Ras Muhammad National Park (Egypt) photos dominate species searches; geographically wrong for non-Egyptian sites
+  "ras muhammad", "ras_muhammad",
+  // Aerial national park shots (parque_nacional_marinho = marine national park aerial, not underwater)
+  "parque_nacional_marinho", "parque nacional marinho",
+  // Satellite imagery
+  "modis", "copernicus", "esa221",
+  // Other known bad patterns from test suite
+  "the_great_blue_hole_in_belize", "agujero_azul", "burning_guadalcanal", "_burning",
 ];
 
 function norm(s) {

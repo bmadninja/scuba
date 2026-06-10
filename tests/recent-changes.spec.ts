@@ -11,7 +11,7 @@ test.describe('Homepage copy changes', () => {
   test('hero shows the redesigned headline', async ({ page }) => {
     await page.goto('/', GOTO);
     await expect(
-      page.getByRole('heading', { name: /find where to dive/i }).first(),
+      page.getByRole('heading', { name: /where to dive and what you.ll actually see/i }).first(),
     ).toBeVisible({ timeout: 15_000 });
   });
 

@@ -17,19 +17,25 @@ const sites: WithHero[] = readJson('src/data/sites.json');
 const locations: WithHero[] = readJson('src/data/locations.json');
 
 test.describe('Hero photo data integrity', () => {
-  test('every hero URL is globally unique across locations and sites', () => {
-    const seen = new Map<string, string>();
-    const collisions: string[] = [];
-    for (const e of [...locations, ...sites]) {
-      const url = e.heroImageUrl;
-      if (!url) continue;
-      if (seen.has(url)) {
-        collisions.push(`${e.slug} reuses photo already claimed by ${seen.get(url)}`);
-      } else {
-        seen.set(url, e.slug);
+  test('every hero URL is unique within locations, and unique within sites', () => {
+    // A site and its parent location may share a hero (borrowed hero pattern).
+    // Within each type, duplicates would cause two cards to show the same photo.
+    const check = (items: typeof locations, label: string) => {
+      const seen = new Map<string, string>();
+      const collisions: string[] = [];
+      for (const e of items) {
+        const url = e.heroImageUrl;
+        if (!url) continue;
+        if (seen.has(url)) {
+          collisions.push(`${e.slug} reuses photo already claimed by ${seen.get(url)}`);
+        } else {
+          seen.set(url, e.slug);
+        }
       }
-    }
-    expect(collisions, collisions.join('\n')).toHaveLength(0);
+      expect(collisions, `${label}:\n${collisions.join('\n')}`).toHaveLength(0);
+    };
+    check(locations, 'Location hero collisions');
+    check(sites, 'Site hero collisions');
   });
 
   test('photo-quality.ts exports no hardcoded fallback image', () => {

@@ -209,10 +209,26 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
                 ))}
               </ul>
             ) : (
-              <div className="px-4 py-4 text-center text-sm text-slate-500">
-                No reefs match &ldquo;{q}&rdquo;.
+              <div className="px-4 py-3 text-center text-sm text-slate-500">
+                No locations match &ldquo;{q}&rdquo;.
               </div>
             )}
+            <div className="border-t border-slate-100">
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  router.push(`/search?q=${encodeURIComponent(q.trim())}`);
+                  setQ("");
+                }}
+                className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0089de] hover:bg-[#f1f7fb]"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+                </svg>
+                Search sites &amp; species for &ldquo;{q}&rdquo;
+              </button>
+            </div>
           </div>
         )}
       </div>
@@ -468,10 +484,26 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                   ))}
                 </ul>
               ) : (
-                <div className="px-4 py-4 text-center text-sm text-slate-500">
-                  No reefs match &ldquo;{q}&rdquo;.
+                <div className="px-4 py-3 text-center text-sm text-slate-500">
+                  No locations match &ldquo;{q}&rdquo;.
                 </div>
               )}
+              <div className="border-t border-slate-100">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    router.push(`/search?q=${encodeURIComponent(q.trim())}`);
+                    setQ("");
+                  }}
+                  className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0089de] hover:bg-[#f1f7fb]"
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+                  </svg>
+                  Search sites &amp; species for &ldquo;{q}&rdquo;
+                </button>
+              </div>
             </div>
           )}
         </div>

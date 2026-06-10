@@ -18,6 +18,7 @@ import type {
   GearGroup,
   GearItem,
   GetThereView,
+  LodgingItem,
   OperatorItem,
   TripFact,
 } from "./site-page-body";
@@ -48,6 +49,10 @@ const IUCN_LABEL: Record<string, string> = {
 };
 
 // ─── Plain-language helpers ───────────────────────────────────────────────────
+
+function slugifySpecies(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
 
 function getSpeciesIcon(_name: string): string {
   return "";
@@ -336,6 +341,7 @@ export default async function SiteDetailPage({
     .slice(0, 8)
     .map(({ c, tier, iucn }, i): EncounterRow => ({
       key: `${creatureKey(c.scientificName, c.commonName)}-${i}`,
+      href: `/sites/${site.slug}/species/${slugifySpecies(c.commonName)}`,
       icon: getSpeciesIcon(c.commonName),
       imageUrl: resolveSpeciesPhoto(
         site.slug,
@@ -412,6 +418,17 @@ export default async function SiteDetailPage({
       productId: op.productId,
       isAffiliate: op.isAffiliate,
       detail: null,
+    }));
+
+  const lodging: LodgingItem[] = (site.lodging ?? [])
+    .slice(0, 8)
+    .map((l) => ({
+      partner: l.partner,
+      label: l.label,
+      url: l.url,
+      isAffiliate: l.isAffiliate,
+      priceLevel: (l.priceLevel ?? null) as LodgingItem["priceLevel"],
+      kind: (l.kind ?? "hotel") as LodgingItem["kind"],
     }));
 
   return (
@@ -536,6 +553,7 @@ export default async function SiteDetailPage({
         monthCells={monthCells}
         getThere={getThere}
         operators={operators}
+        lodging={lodging}
       />
     </>
   );

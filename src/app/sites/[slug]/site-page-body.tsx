@@ -17,6 +17,7 @@ export type ConditionCard = {
 
 export type EncounterRow = {
   key: string;
+  href: string;
   icon: string;
   imageUrl: string | null;
   name: string;
@@ -50,6 +51,15 @@ export type OperatorItem = {
   detail: string | null;
 };
 
+export type LodgingItem = {
+  partner: string;
+  label: string;
+  url: string;
+  isAffiliate: boolean;
+  priceLevel: 1 | 2 | 3 | 4 | null;
+  kind: "hotel" | "liveaboard";
+};
+
 export type GetThereView =
   | {
       kind: "structured";
@@ -75,6 +85,7 @@ export type SiteBodyProps = {
   monthCells: { letter: string; on: boolean; now: boolean }[];
   getThere: GetThereView;
   operators: OperatorItem[];
+  lodging: LodgingItem[];
 };
 
 const LABEL_STYLE: React.CSSProperties = {
@@ -150,7 +161,12 @@ export function SitePageBody(props: SiteBodyProps) {
     monthCells,
     getThere,
     operators,
+    lodging,
   } = props;
+
+  const hotels = lodging.filter((l) => l.kind === "hotel");
+  const liveaboards = lodging.filter((l) => l.kind === "liveaboard");
+  const PRICE_DOTS = ["·", "··", "···", "····"];
 
   return (
     <div style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem 3rem 4rem" }}>
@@ -211,14 +227,17 @@ export function SitePageBody(props: SiteBodyProps) {
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 0, border: "1px solid rgba(255,255,255,0.10)", borderRadius: "1.25rem", overflow: "hidden" }}>
                 {encounters.map((e, i) => (
-                  <div
+                  <Link
                     key={e.key}
+                    href={e.href}
                     style={{
                       display: "flex",
                       alignItems: "center",
                       gap: "1rem",
                       padding: "1.1rem 1.4rem",
                       borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.10)",
+                      textDecoration: "none",
+                      color: "inherit",
                     }}
                   >
                     {e.imageUrl ? (
@@ -251,7 +270,7 @@ export function SitePageBody(props: SiteBodyProps) {
                       </div>
                       <p style={{ fontSize: "0.6875rem", color: "#8b9db8", marginTop: "0.35rem" }}>{e.frequency}</p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
               <Link href={speciesIndexHref} style={{ display: "inline-block", marginTop: "0.95rem", fontSize: "0.8125rem", fontWeight: 600, color: "#00d4ff", textDecoration: "none" }}>
@@ -428,6 +447,82 @@ export function SitePageBody(props: SiteBodyProps) {
                       <p style={{ fontSize: "0.75rem", color: "#8b9db8", lineHeight: 1.5 }}>{getThere.liveaboardDescription}</p>
                     </div>
                   ) : null}
+                </div>
+              </Expand>
+            ) : null}
+
+            {/* Dive operators */}
+            {operators.length > 0 ? (
+              <Expand summary="Dive operators">
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  {operators.map((op) => (
+                    <AffiliateLink
+                      key={op.url}
+                      url={op.url}
+                      event="operator_click"
+                      partner={op.partner}
+                      productId={op.productId}
+                      siteId={siteId}
+                      isAffiliate={op.isAffiliate}
+                    >
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.55rem 0.75rem", borderRadius: "0.6rem", background: "rgba(255,255,255,0.05)", gap: "0.5rem" }}>
+                        <span style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#f0f4f8" }}>{op.label}</span>
+                        <ExternalIcon />
+                      </div>
+                    </AffiliateLink>
+                  ))}
+                </div>
+              </Expand>
+            ) : null}
+
+            {/* Where to stay */}
+            {hotels.length > 0 ? (
+              <Expand summary="Where to stay">
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  {hotels.map((h) => (
+                    <AffiliateLink
+                      key={h.url}
+                      url={h.url}
+                      event="lodging_click"
+                      partner={h.partner}
+                      siteId={siteId}
+                      isAffiliate={h.isAffiliate}
+                    >
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.55rem 0.75rem", borderRadius: "0.6rem", background: "rgba(255,255,255,0.05)", gap: "0.5rem" }}>
+                        <span style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#f0f4f8", flex: 1 }}>{h.label}</span>
+                        {h.priceLevel ? (
+                          <span style={{ fontSize: "0.6875rem", color: "#8b9db8", flexShrink: 0 }}>{PRICE_DOTS[h.priceLevel - 1]}</span>
+                        ) : null}
+                        <ExternalIcon />
+                      </div>
+                    </AffiliateLink>
+                  ))}
+                </div>
+              </Expand>
+            ) : null}
+
+            {/* Liveaboards */}
+            {liveaboards.length > 0 ? (
+              <Expand summary="Liveaboards">
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  {liveaboards.map((l) => (
+                    <AffiliateLink
+                      key={l.url}
+                      url={l.url}
+                      event="lodging_click"
+                      partner={l.partner}
+                      siteId={siteId}
+                      isAffiliate={l.isAffiliate}
+                    >
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.55rem 0.75rem", borderRadius: "0.6rem", background: "rgba(255,255,255,0.05)", gap: "0.5rem" }}>
+                        <span style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#f0f4f8", flex: 1 }}>{l.label}</span>
+                        {l.priceLevel ? (
+                          <span style={{ fontSize: "0.6875rem", color: "#8b9db8", flexShrink: 0 }}>{PRICE_DOTS[l.priceLevel - 1]}</span>
+                        ) : null}
+                        <ExternalIcon />
+                      </div>
+                    </AffiliateLink>
+                  ))}
                 </div>
               </Expand>
             ) : null}
