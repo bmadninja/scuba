@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { SetNavBreadcrumb } from "@/components/set-nav-breadcrumb";
 import { JsonLd } from "@/components/json-ld";
-import { underwaterPhotoUrl, resizePhotoUrl } from "@/lib/photo-quality";
+import { underwaterPhotoUrl } from "@/lib/photo-quality";
 import { locationSchema } from "@/lib/schema-org";
 import { getAllLocations, getLocationBySlug } from "@/lib/data/locations";
 import { buildAtlasLocation } from "@/lib/atlas-location";
@@ -221,7 +221,10 @@ export default async function LocationPage({
 
   const atlasLoc = buildAtlasLocation(location);
   const isWitnessing = atlasLoc.state === "change";
-  const heroPhotoUrl = resizePhotoUrl(underwaterPhotoUrl(atlasLoc.heroImageUrl), 1200);
+  const _rawHeroUrl = underwaterPhotoUrl(atlasLoc.heroImageUrl);
+  const heroPhotoUrl = _rawHeroUrl
+    ? `/_next/image?url=${encodeURIComponent(_rawHeroUrl)}&w=1200&q=80`
+    : null;
   const stateColor = STATE_COLOR[atlasLoc.state];
 
   // --- Sightings aggregated across sites, newest first ----------------------
