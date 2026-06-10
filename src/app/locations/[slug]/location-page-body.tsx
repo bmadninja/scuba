@@ -180,8 +180,6 @@ function DeclineSvg({ d }: { d: DeclineChart }) {
     <svg viewBox="0 0 520 190" width="100%" height="190" role="img" aria-label={label}>
       <line x1="20" y1="150" x2="500" y2="150" stroke="rgba(255,255,255,0.10)" strokeWidth="1" />
       <line x1="20" y1="30" x2="500" y2="30" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-      {yFrom >= 42 && <text x="20" y="24" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{top}%</text>}
-      <text x="20" y="165" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">0%</text>
       <path d={`M${x0},${yFrom} L${xNow},${yNow} L${xNow},150 L${x0},150 Z`} fill="#fdecea" opacity="0.7" />
       <polyline points={`${x0},${yFrom} ${xNow},${yNow}`} fill="none" stroke="#c0392f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       {d.zeroYear ? (
@@ -191,9 +189,6 @@ function DeclineSvg({ d }: { d: DeclineChart }) {
       <circle cx={xNow} cy={yNow} r="4.5" fill="#c0392f" stroke="#0a1628" strokeWidth="2" />
       <text x={x0} y={yFrom - 10} fontSize="11" fontWeight="700" fill="#c0392f" fontFamily="Noto Sans">{d.fromPct}%</text>
       <text x="300" y={yNow + 19} fontSize="12" fontWeight="800" fill="#c0392f" fontFamily="Noto Sans">{d.toPct}% today</text>
-      {d.zeroYear ? (
-        <text x="430" y={yEnd + 16} fontSize="9" fill="#b91c1c" fontFamily="Noto Sans" opacity="0.8">~{d.zeroYear}</text>
-      ) : null}
       <text x="14" y="178" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{d.fromYear}</text>
       <text x="306" y="178" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{d.toYear}</text>
       {d.zeroYear ? (
