@@ -460,9 +460,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={resizePhotoUrl(sp.imageUrl, 500) ?? sp.imageUrl} alt={sp.commonName} style={{ width: "100%", height: 96, objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                       ) : (
-                        <div style={{ height: 96, background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem" }}>
-                          {sp.icon}
-                        </div>
+                        <div style={{ height: 96, background: "rgba(255,255,255,0.05)" }} />
                       )}
                       <div style={{ padding: "0.75rem" }}>
                         <p style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#f0f4f8", marginBottom: "0.3rem" }}>
@@ -548,7 +546,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                               borderTop: ii === 0 ? "none" : "1px solid rgba(255,255,255,0.10)",
                             }}
                           >
-                            <span aria-hidden="true" style={{ fontSize: "1.05rem", width: "1.4rem", textAlign: "center", flexShrink: 0 }}>{item.icon}</span>
                             <span style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f0f4f8", flex: 1 }}>
                               {item.name}
                               {item.extra ? <span style={{ fontWeight: 400, color: "#8b9db8", fontSize: "0.8125rem" }}> · {item.extra}</span> : null}
@@ -582,7 +579,6 @@ export function LocationPageBody(props: LocationBodyProps) {
               <div style={{ padding: "0 1.6rem", display: "flex", flexDirection: "column" }}>
                 {monthCells.length > 0 ? (
                   <div style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.85rem 0", borderTop: "none" }}>
-                    <div style={{ width: 30, height: 30, borderRadius: "0.55rem", background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "0.95rem" }} aria-hidden="true">📅</div>
                     <div style={{ flex: 1 }}>
                       <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8b9db8" }}>Best months</p>
                       <div style={{ display: "flex", gap: 3, marginTop: "0.4rem" }}>
@@ -614,7 +610,6 @@ export function LocationPageBody(props: LocationBodyProps) {
 
                 {tripFacts.map((f) => (
                   <div key={f.label} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.85rem 0", borderTop: "1px solid rgba(255,255,255,0.10)" }}>
-                    <div style={{ width: 30, height: 30, borderRadius: "0.55rem", background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "0.95rem" }} aria-hidden="true">{f.icon}</div>
                     <div style={{ flex: 1 }}>
                       <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8b9db8" }}>{f.label}</p>
                       <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f0f4f8", marginTop: "0.1rem" }}>{f.value}</p>

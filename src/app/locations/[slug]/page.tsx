@@ -103,27 +103,12 @@ const IUCN_LABEL: Record<string, string> = {
 
 const MONTH_LETTERS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
-function getSpeciesIcon(name: string): string {
-  const n = (name ?? "").toLowerCase();
-  if (/shark|ray|skate|manta|sawfish/.test(n)) return "🦈";
-  if (/turtle|tortoise/.test(n)) return "🐢";
-  if (/whale|dolphin|porpoise|dugong|manatee/.test(n)) return "🐬";
-  if (/octopus|squid|cuttlefish/.test(n)) return "🐙";
-  return "🐠";
+function getSpeciesIcon(_name: string): string {
+  return "";
 }
 
-function siteGearIcon(name: string): string {
-  const n = (name ?? "").toLowerCase();
-  if (/reef hook/.test(n)) return "🪝";
-  if (/smb|surface marker|buoy/.test(n)) return "🎈";
-  if (/reel/.test(n)) return "🧵";
-  if (/light|torch/.test(n)) return "🔦";
-  if (/glove/.test(n)) return "🧤";
-  if (/hood/.test(n)) return "🥽";
-  if (/camera/.test(n)) return "📷";
-  if (/computer/.test(n)) return "⌚";
-  if (/knife|cutting/.test(n)) return "🔪";
-  return "🌊";
+function siteGearIcon(_name: string): string {
+  return "";
 }
 
 function daysSince(iso: string | null): number | null {
@@ -324,10 +309,10 @@ export default async function LocationPage({
   const wetsuit = wetsuitForTemp(minWaterTemp);
 
   const basicItems: GearItem[] = [
-    { icon: "🤿", name: "Mask and fins", extra: null, shopUrl: gearShopUrl("mask-cressi-f1") },
-    { icon: "🦺", name: "BCD and regulator", extra: null, shopUrl: gearShopUrl("bcd-scubapro-hydros-pro") },
-    { icon: "🌡️", name: wetsuit.name, extra: wetsuit.note, shopUrl: gearShopUrl(wetsuit.gearId) },
-    { icon: "⌚", name: "Dive computer", extra: null, shopUrl: gearShopUrl("computer-shearwater-peregrine") },
+    { icon: "", name: "Mask and fins", extra: null, shopUrl: gearShopUrl("mask-cressi-f1") },
+    { icon: "", name: "BCD and regulator", extra: null, shopUrl: gearShopUrl("bcd-scubapro-hydros-pro") },
+    { icon: "", name: wetsuit.name, extra: wetsuit.note, shopUrl: gearShopUrl(wetsuit.gearId) },
+    { icon: "", name: "Dive computer", extra: null, shopUrl: gearShopUrl("computer-shearwater-peregrine") },
   ];
 
   // Site-specific add-ons, deduped by name across sites.
@@ -555,23 +540,23 @@ export default async function LocationPage({
   ].filter((t) => t.items.length > 0);
 
   const tripFacts: TripFact[] = [
-    { icon: "📅", label: "Best months", value: bestMonthsText(location.bestMonths) },
+    { icon: "", label: "Best months", value: bestMonthsText(location.bestMonths) },
   ];
   if (minWaterTemp !== null && maxWaterTemp !== null) {
     tripFacts.push({
-      icon: "🌡️",
+      icon: "",
       label: "Water",
       value: `${minWaterTemp} to ${maxWaterTemp}°C`,
     });
   }
   if (details?.diveLevel) {
-    tripFacts.push({ icon: "🎓", label: "Level", value: details.diveLevel });
+    tripFacts.push({ icon: "", label: "Level", value: details.diveLevel });
   }
   if (details?.diveStyle) {
-    tripFacts.push({ icon: "🤿", label: "Dive style", value: details.diveStyle });
+    tripFacts.push({ icon: "", label: "Dive style", value: details.diveStyle });
   }
   if (details?.tripDuration) {
-    tripFacts.push({ icon: "🗓️", label: "Trip length", value: details.tripDuration });
+    tripFacts.push({ icon: "", label: "Trip length", value: details.tripDuration });
   }
   // "Best months" already carried by the season strip; keep the fact list lean.
   const monthCells = MONTH_LETTERS.map((letter, i) => ({
