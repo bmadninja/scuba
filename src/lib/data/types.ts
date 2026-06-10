@@ -278,6 +278,17 @@ export type SightingEvidence = {
   notes?: string;
   /** iNaturalist observation ID. When present, links to the source observation. */
   obsId?: string;
+  /**
+   * True when the most recent run of the live ingest
+   * (scripts/fetch-sightings-live.mjs) found at least one research-grade
+   * record for this site/species. False/absent means the value is carried
+   * over from a previous run or is hand-curated.
+   */
+  verified?: boolean;
+  /** Provenance tag set by the live ingest, e.g. "sightings-live". */
+  source?: string;
+  /** ISO timestamp of the live ingest run that last touched this record. */
+  fetchedAt?: string;
 };
 
 /**

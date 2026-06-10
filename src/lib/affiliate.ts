@@ -11,18 +11,19 @@ import type { Operator } from "./data/types";
 //
 // Set env vars on Vercel via dashboard or `vercel env add`. See docs/affiliate-setup.md.
 
-const env = (key: string): string => {
-  if (typeof process === "undefined") return "";
-  return process.env[key] ?? "";
-};
-
-const AMAZON_TAG = env("NEXT_PUBLIC_AMAZON_TAG");
-const BOOKING_AID = env("NEXT_PUBLIC_BOOKING_AID");
-const PADI_PARTNER = env("NEXT_PUBLIC_PADI_PARTNER");
-const TRAVELPAYOUTS_AID = env("NEXT_PUBLIC_TRAVELPAYOUTS_AID");
-const LIVEABOARD_AID = env("NEXT_PUBLIC_LIVEABOARD_AID");
-const DIVEBOOKER_PID = env("NEXT_PUBLIC_DIVEBOOKER_PID");
-const SCUBAPRO_AID = env("NEXT_PUBLIC_SCUBAPRO_AID");
+// NEXT_PUBLIC_* vars must be referenced as STATIC literals (not via a dynamic
+// `process.env[key]` lookup) so Next.js inlines them into the client bundle at
+// build time. A dynamic lookup is left untouched and resolves to `undefined`
+// in the browser (where `process` does not exist), which makes the same URL
+// render differently on the server vs the client and triggers a React
+// hydration mismatch. Keep these as direct property reads.
+const AMAZON_TAG = process.env.NEXT_PUBLIC_AMAZON_TAG ?? "";
+const BOOKING_AID = process.env.NEXT_PUBLIC_BOOKING_AID ?? "";
+const PADI_PARTNER = process.env.NEXT_PUBLIC_PADI_PARTNER ?? "";
+const TRAVELPAYOUTS_AID = process.env.NEXT_PUBLIC_TRAVELPAYOUTS_AID ?? "";
+const LIVEABOARD_AID = process.env.NEXT_PUBLIC_LIVEABOARD_AID ?? "";
+const DIVEBOOKER_PID = process.env.NEXT_PUBLIC_DIVEBOOKER_PID ?? "";
+const SCUBAPRO_AID = process.env.NEXT_PUBLIC_SCUBAPRO_AID ?? "";
 
 const setParam = (url: string, name: string, value: string): string => {
   if (!value) return url;

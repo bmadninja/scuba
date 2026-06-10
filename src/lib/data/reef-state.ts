@@ -32,7 +32,7 @@ export const STATE_TEXT: Record<ReefState, string> = {
  */
 export const STATE_COLOR: Record<ReefState, string> = {
   thriving: "#10b981",
-  pressure: "#0089de",
+  pressure: "#f59e0b",
   change: "#f43f5e",
 };
 
