@@ -335,16 +335,6 @@ export function AtlasStage({
   const [filters, setFilters] = useState<Filters>(() => parseFilters(searchParams));
   const [view, setView] = useState<"cards" | "map">("cards");
   const [info, setInfo] = useState<InfoKey | null>(null);
-  const [isDesktop, setIsDesktop] = useState(true);
-
-  // Globe is desktop/tablet only (>= ~700px). On mobile we fall back to cards.
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 700px)");
-    const sync = () => setIsDesktop(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
 
   // Keep the URL in sync so a filtered view is shareable / refreshable.
   useEffect(() => {
@@ -460,8 +450,7 @@ export function AtlasStage({
     [matched],
   );
 
-  // Map view degrades to cards on mobile.
-  const effectiveView = view === "map" && !isDesktop ? "cards" : view;
+  const effectiveView = view;
 
   const renderCard = (r: FilterLocation) => (
     <ReefCard
@@ -613,20 +602,18 @@ export function AtlasStage({
               >
                 Cards
               </button>
-              {isDesktop && (
-                <button
-                  type="button"
-                  aria-pressed={effectiveView === "map"}
-                  onClick={() => setView("map")}
-                  className={`rounded-full px-[0.95rem] py-[0.35rem] text-[0.8125rem] font-bold transition ${
-                    effectiveView === "map"
-                      ? "bg-[#00d4ff] text-[#0a1628] shadow-[0_1px_3px_rgba(15,23,42,0.14)]"
-                      : "text-[#8b9db8]"
-                  }`}
-                >
-                  Map
-                </button>
-              )}
+              <button
+                type="button"
+                aria-pressed={effectiveView === "map"}
+                onClick={() => setView("map")}
+                className={`rounded-full px-[0.95rem] py-[0.35rem] text-[0.8125rem] font-bold transition ${
+                  effectiveView === "map"
+                    ? "bg-[#00d4ff] text-[#0a1628] shadow-[0_1px_3px_rgba(15,23,42,0.14)]"
+                    : "text-[#8b9db8]"
+                }`}
+              >
+                Map
+              </button>
             </div>
           </div>
         </div>
