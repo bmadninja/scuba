@@ -92,14 +92,13 @@ const LABEL_STYLE: React.CSSProperties = {
 // The three citizen-science platforms. Static one-line descriptors, each
 // opens its own info popup; the section closes with a Method-page link.
 const CONTRIBUTE_PLATFORMS: {
-  icon: string;
   name: string;
   desc: string;
   info: InfoKey;
 }[] = [
-  { icon: "📷", name: "iNaturalist", desc: "Photograph anything you see. No training needed.", info: "inaturalist" },
-  { icon: "🎨", name: "CoralWatch", desc: "Match coral colour to a chart. A few minutes.", info: "coralwatch" },
-  { icon: "🐟", name: "Reef Check", desc: "Run a standard fish survey. Free training.", info: "reefcheck" },
+  { name: "iNaturalist", desc: "Photograph anything you see. No training needed.", info: "inaturalist" },
+  { name: "CoralWatch", desc: "Match coral colour to a chart. A few minutes.", info: "coralwatch" },
+  { name: "Reef Check", desc: "Run a standard fish survey. Free training.", info: "reefcheck" },
 ];
 
 function ExternalIcon() {
@@ -193,7 +192,6 @@ export function SitePageBody(props: SiteBodyProps) {
               <div className="cond-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "0.75rem" }}>
                 {conditions.map((c) => (
                   <div key={c.label} style={{ border: "1px solid rgba(255,255,255,0.10)", borderRadius: "1rem", padding: "1.1rem 1.2rem", background: "#0a1628" }}>
-                    <div aria-hidden="true" style={{ fontSize: "1.2rem", marginBottom: "0.5rem" }}>{c.icon}</div>
                     <p style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.25rem" }}>{c.label}</p>
                     <p style={{ fontSize: "1rem", fontWeight: 700, color: "#f0f4f8" }}>{c.value}</p>
                     {c.sub ? <p style={{ fontSize: "0.6875rem", color: "#8b9db8", marginTop: "0.15rem" }}>{c.sub}</p> : null}
@@ -233,9 +231,7 @@ export function SitePageBody(props: SiteBodyProps) {
                         style={{ width: "2.5rem", height: "2.5rem", borderRadius: "0.6rem", objectFit: "cover", flexShrink: 0, background: "rgba(255,255,255,0.05)" }}
                       />
                     ) : (
-                      <div aria-hidden="true" style={{ fontSize: "1.4rem", width: "2.5rem", height: "2.5rem", borderRadius: "0.6rem", background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                        {e.icon}
-                      </div>
+                      <div aria-hidden="true" style={{ width: "2.5rem", height: "2.5rem", borderRadius: "0.6rem", background: "rgba(255,255,255,0.05)", flexShrink: 0 }} />
                     )}
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <p style={{ fontSize: "0.9375rem", fontWeight: 700, color: "#f0f4f8", display: "flex", alignItems: "center", gap: "0.45rem", flexWrap: "wrap" }}>
@@ -296,7 +292,6 @@ export function SitePageBody(props: SiteBodyProps) {
                       color: "inherit",
                     }}
                   >
-                    <span aria-hidden="true" style={{ fontSize: "1.15rem", width: "1.6rem", textAlign: "center", flexShrink: 0 }}>{p.icon}</span>
                     <span style={{ flex: 1 }}>
                       <span style={{ display: "block", fontSize: "0.875rem", fontWeight: 700, color: "#f0f4f8" }}>{p.name}</span>
                       <span style={{ display: "block", fontSize: "0.75rem", color: "#8b9db8" }}>{p.desc}</span>
@@ -334,7 +329,6 @@ export function SitePageBody(props: SiteBodyProps) {
                               borderTop: ii === 0 ? "none" : "1px solid rgba(255,255,255,0.10)",
                             }}
                           >
-                            <span aria-hidden="true" style={{ fontSize: "1.05rem", width: "1.4rem", textAlign: "center", flexShrink: 0 }}>{item.icon}</span>
                             <span style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f0f4f8", flex: 1 }}>
                               {item.name}
                               {item.extra ? <span style={{ fontWeight: 400, color: "#8b9db8", fontSize: "0.8125rem" }}> · {item.extra}</span> : null}
@@ -369,7 +363,6 @@ export function SitePageBody(props: SiteBodyProps) {
               <div style={{ padding: "0 1.6rem", display: "flex", flexDirection: "column" }}>
                 {monthCells.length > 0 ? (
                   <div style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.85rem 0", borderTop: "none" }}>
-                    <div style={{ width: 30, height: 30, borderRadius: "0.55rem", background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "0.95rem" }} aria-hidden="true">📅</div>
                     <div style={{ flex: 1 }}>
                       <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8b9db8" }}>Best months</p>
                       <div style={{ display: "flex", gap: 3, marginTop: "0.4rem" }}>
@@ -401,7 +394,6 @@ export function SitePageBody(props: SiteBodyProps) {
 
                 {tripFacts.map((f) => (
                   <div key={f.label} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", padding: "0.85rem 0", borderTop: "1px solid rgba(255,255,255,0.10)" }}>
-                    <div style={{ width: 30, height: 30, borderRadius: "0.55rem", background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "0.95rem" }} aria-hidden="true">{f.icon}</div>
                     <div style={{ flex: 1 }}>
                       <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8b9db8" }}>{f.label}</p>
                       <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#f0f4f8", marginTop: "0.1rem" }}>{f.value}</p>
