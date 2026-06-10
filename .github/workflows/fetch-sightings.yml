@@ -1,0 +1,51 @@
+name: Fetch species sightings (iNaturalist / GBIF)
+
+on:
+  schedule:
+    # Weekly, Wednesday 08:00 UTC. Citizen-science observations trickle in
+    # daily, but a single site/species "last seen" rarely changes inside a
+    # week, and a full run makes ~1,300 paced iNaturalist calls (~25 min).
+    # Weekly keeps the "recently logged / last seen / needs fresh eyes"
+    # signal honest without hammering a free, unauthenticated public API.
+    # Offset from reef-health (daily 06:30) and IUCN (Mon 07:00) so the
+    # three ingests never contend.
+    - cron: "0 8 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch live species sightings
+        run: node scripts/fetch-sightings-live.mjs
+
+      - name: Open PR with refreshed sightings
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data: weekly live sightings refresh (iNaturalist/GBIF)"
+          branch: data/sightings-refresh
+          delete-branch: true
+          title: "data: weekly live sightings refresh"
+          body: |
+            Automated weekly refresh of `src/data/sightings.json` from
+            iNaturalist research-grade observations (GBIF fallback).
+
+            Updates `lastConfirmedAt`, `recentRecordCount`,
+            `seasonalityMonths`, and the `verified` provenance flag per
+            site/species. Hand-curated records (those carrying `notes`)
+            keep their curated numbers and only refresh live provenance.
+
+            Review the diff before merging — a large swing in record counts
+            or a drop in `verified` coverage may signal an upstream API
+            change.
+          add-paths: src/data/sightings.json
