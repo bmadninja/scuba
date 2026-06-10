@@ -40,9 +40,20 @@ test.describe('Hero photo data integrity', () => {
   });
 
   test('no stored hero matches a known surface/aerial/specimen pattern', () => {
+    // Filename/URL patterns that identify non-underwater images.
+    // If you need to add a legitimate exception, add it to the ALLOWED list below.
     const REJECTED = [
-      'copernicus', 'the_great_blue_hole_in_belize', 'agujero_azul',
-      'burning_guadalcanal', '_burning', 'aerial', 'satellite', 'lighthouse',
+      // Confirmed non-ocean contexts
+      'aquarium', 'oceanarium', 'oceanario',
+      // Aerial / satellite
+      'aerial', 'satellite', 'esa221', 'copernicus',
+      // Surface / landscape
+      'lighthouse', 'natural_park',
+      // Specific known-bad park shots (aerial; parque_nacional alone is fine — many are valid underwater)
+      'parque_nacional_marinho',
+      // Known bad files from past failures
+      'the_great_blue_hole_in_belize', 'agujero_azul',
+      'burning_guadalcanal', '_burning',
     ];
     const bad: string[] = [];
     for (const e of [...locations, ...sites]) {

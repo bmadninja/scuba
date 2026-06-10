@@ -33,6 +33,8 @@ const UNDERWATER_WORDS = [
 const BAD = [
   "logo","map","chart","diagram","flag",".svg",".pdf","icon",
   "stamp","poster","specimen","illustration","aerial","beach_","dock",
+  "aquarium","oceanario","natural_park","parque_nacional","satellite","esa221",
+  "lighthouse","landscape","panorama","coast","shore","island_view",
 ];
 
 function norm(s) {
@@ -113,8 +115,16 @@ async function main() {
 
     const locSites = sitesByLoc[loc.id] ?? [];
 
-    // Strategy A: borrow best site hero.
-    const bestSite = locSites.find(s => s.heroImageUrl);
+    // Strategy A: borrow best site hero — only if it passes the same underwater filter.
+    const bestSite = locSites.find(s => {
+      if (!s.heroImageUrl) return false;
+      const url = s.heroImageUrl.toLowerCase();
+      if (BAD.some(b => url.includes(b))) return false;
+      // Accept if URL filename itself contains an underwater word, or skip if uncertain.
+      // (We can't fetch the description here, so we require a filename signal.)
+      return UNDERWATER_WORDS.some(w => url.includes(w.replace(/\s+/g, "_").replace(/\s+/g, " ")))
+        || UNDERWATER_WORDS.some(w => url.replace(/_/g, " ").includes(w));
+    });
     if (bestSite) {
       loc.heroImageUrl = bestSite.heroImageUrl;
       // Don't mark as used in the registry — a site URL may also be a location hero.
