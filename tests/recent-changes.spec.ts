@@ -2,136 +2,149 @@ import { test, expect } from '@playwright/test';
 
 const GOTO = { waitUntil: 'domcontentloaded' } as const;
 
-// ── Homepage copy changes ─────────────────────────────────────────────────
+// ── Homepage copy changes (redesign) ──────────────────────────────────────
+// The redesign replaced the old hero CTA buttons ("Browse all locations →",
+// "Best spots this month →") and the "Where's in season now?" / "What do you
+// want to see?" hero copy with a live atlas stage below a photo hero. The
+// atlas rail now carries "What do you want to see?" as a filter section title.
 test.describe('Homepage copy changes', () => {
-  test('shows new subline with dive location count', async ({ page }) => {
+  test('hero shows the redesigned headline', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByText(/Browse \d+ dive locations/i).first()).toBeVisible({ timeout: 15_000 });
+    await expect(
+      page.getByRole('heading', { name: /find where to dive/i }).first(),
+    ).toBeVisible({ timeout: 15_000 });
   });
 
-  test('hero CTA reads "Browse all locations →"', async ({ page }) => {
+  test('old hero CTA "Browse all locations →" is gone', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByRole('link', { name: /browse all locations/i }).first()).toBeVisible();
+    await expect(page.getByRole('link', { name: /browse all locations/i })).toHaveCount(0);
   });
 
-  test('hero CTA reads "Best spots this month →"', async ({ page }) => {
+  test('old hero CTA "Best spots this month →" is gone', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByRole('link', { name: /best spots this month/i }).first()).toBeVisible();
+    await expect(page.getByRole('link', { name: /best spots this month/i })).toHaveCount(0);
   });
 
-  test('old CTA copy "What do you want to see?" is gone', async ({ page }) => {
+  test('"What do you want to see?" now exists as a filter section heading', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByText(/what do you want to see/i)).toHaveCount(0);
+    // Reused as a filter-rail section title in the redesigned atlas stage.
+    await expect(page.getByText(/what do you want to see/i).first()).toBeVisible({ timeout: 15_000 });
   });
 
-  test('old CTA copy "Where\'s in season now?" is gone', async ({ page }) => {
+  test('old hero copy "Where\'s in season now?" is gone', async ({ page }) => {
     await page.goto('/', GOTO);
     await expect(page.getByText(/where.s in season now/i)).toHaveCount(0);
   });
 });
 
-// ── Atlas filter rail changes ─────────────────────────────────────────────
-test.describe('Atlas filter rail changes', () => {
-  test('"Thermal stress" no longer appears as a filter section heading', async ({ page }) => {
+// ── Atlas filter rail (redesign) ──────────────────────────────────────────
+// The rail is a stack of <details>/<summary> FilterSections. Several headers
+// carry a small (i) InfoButton that opens the shared explainer popup.
+test.describe('Atlas filter rail', () => {
+  test('"Certification level" is a filter section heading', async ({ page }) => {
     await page.goto('/', GOTO);
-    // Wait for atlas filter rail to render
-    await expect(page.getByText('Certification level').first()).toBeVisible({ timeout: 15_000 });
-    // The facet group used a <details><summary>Thermal stress… — asserting the summary is gone.
-    // Note: the sort <select> still has an <option>"Highest thermal stress" — that's fine.
     await expect(
-      page.locator('summary').filter({ hasText: 'Thermal stress' })
-    ).toHaveCount(0);
+      page.locator('summary').filter({ hasText: 'Certification level' }).first(),
+    ).toBeVisible({ timeout: 15_000 });
   });
 
-  test('"Certification level" facet has an InfoTooltip button', async ({ page }) => {
+  test('"When" section header has an (i) info button', async ({ page }) => {
     await page.goto('/', GOTO);
-    const certSection = page.locator('details').filter({ hasText: 'Certification level' }).first();
-    await expect(certSection).toBeVisible({ timeout: 15_000 });
-    await expect(certSection.getByRole('button', { name: 'More information' })).toBeVisible();
+    const whenSummary = page.locator('summary').filter({ hasText: 'When' }).first();
+    await expect(whenSummary).toBeVisible({ timeout: 15_000 });
+    await expect(whenSummary.getByRole('button', { name: 'How this works' })).toBeVisible();
   });
 
-  test('"Certification level" InfoTooltip button is inside the section summary', async ({ page }) => {
+  test('"Certification level" header has an (i) info button', async ({ page }) => {
     await page.goto('/', GOTO);
-    // Verify the tooltip button is within the <summary> of the Certification level facet.
-    // (Interactive click test is covered by the location stat strip tests below.)
     const certSummary = page.locator('summary').filter({ hasText: 'Certification level' }).first();
     await expect(certSummary).toBeVisible({ timeout: 15_000 });
-    await expect(certSummary.getByRole('button', { name: 'More information' })).toBeVisible();
+    await expect(certSummary.getByRole('button', { name: 'How this works' })).toBeVisible();
   });
 });
 
-// ── InfoTooltip interactive behavior ─────────────────────────────────────
-// Test on the location page where InfoTooltip is in a plain span (no <details> toggle interference).
-// Wait for networkidle so React is hydrated before clicking client-side components.
-test.describe('InfoTooltip component (via location stat strip)', () => {
-  const SLUG = 'raja-ampat-indonesia';
-
-  test('tooltip text is hidden by default', async ({ page }) => {
-    await page.goto(`/locations/${SLUG}`);
-    await page.waitForLoadState('networkidle');
-    const statSpan = page.locator('span:has(button[aria-label="More information"])').filter({ hasText: 'Reef state' }).first();
-    await expect(statSpan).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByText(/overall judgment/i)).toBeHidden();
+// ── Atlas info popup interactive behavior ─────────────────────────────────
+// The old hover InfoTooltip is gone; the redesign uses a centered modal dialog
+// opened from the (i) InfoButton. Test it from the home filter rail.
+test.describe('Atlas info popup (via filter rail)', () => {
+  test('popup is hidden by default', async ({ page }) => {
+    await page.goto('/', GOTO);
+    await expect(
+      page.locator('summary').filter({ hasText: 'Certification level' }).first(),
+    ).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('dialog')).toHaveCount(0);
   });
 
-  test('clicking ? opens tooltip; clicking overlay closes it', async ({ page }) => {
-    await page.goto(`/locations/${SLUG}`);
-    await page.waitForLoadState('networkidle');
-    const statSpan = page.locator('span:has(button[aria-label="More information"])').filter({ hasText: 'Reef state' }).first();
-    await expect(statSpan).toBeVisible({ timeout: 15_000 });
-    const btn = statSpan.getByRole('button', { name: 'More information' });
+  test('clicking a (i) opens the dialog; Escape closes it', async ({ page }) => {
+    await page.goto('/', GOTO);
+    const certSummary = page.locator('summary').filter({ hasText: 'Certification level' }).first();
+    await expect(certSummary).toBeVisible({ timeout: 15_000 });
+    await certSummary.getByRole('button', { name: 'How this works' }).click();
 
-    // Scroll to center to avoid sticky-header occlusion, then open
-    await statSpan.evaluate(el => el.scrollIntoView({ block: 'center' }));
-    await btn.click({ force: true });
-    await expect(page.getByText(/overall judgment/i)).toBeVisible({ timeout: 5_000 });
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toBeVisible({ timeout: 5_000 });
+    await expect(dialog).toContainText(/experience level/i);
 
-    // The InfoTooltip overlay (aria-hidden fixed span, z-49) intercepts outside clicks.
-    // Click away from the header (top z-50) and tooltip text — bottom of viewport is safe.
-    await page.mouse.click(400, 700);
-    await expect(page.getByText(/overall judgment/i)).toBeHidden();
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('dialog')).toHaveCount(0);
+  });
+
+  test('info dialog links to the Method page', async ({ page }) => {
+    await page.goto('/', GOTO);
+    const stateSummary = page.locator('summary').filter({ hasText: 'Reef state' }).first();
+    await expect(stateSummary).toBeVisible({ timeout: 15_000 });
+    await stateSummary.getByRole('button', { name: 'How this works' }).click();
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toBeVisible({ timeout: 5_000 });
+    await expect(dialog.getByRole('link', { name: /method page/i })).toBeVisible();
   });
 });
 
-// ── Location page stat InfoTooltips ───────────────────────────────────────
-// raja-ampat-indonesia has full reef health data (reef state + coral cover)
-// Selector note: the label <span> contains "Reef state?" (button text included),
-// so we match with :has(button) filter instead of exact text.
-test.describe('Location page — InfoTooltip on stat labels', () => {
+// ── Location page — reef condition info popups (replaces old stat strip) ───
+// The old stat strip with hover InfoTooltips for "Reef state" / "Coral cover"
+// is gone. The redesigned "Reef condition" block shows Heat right now / Fishing
+// / Reef state metrics, each with an (i) InfoButton opening the shared popup.
+test.describe('Location page — reef condition info popups', () => {
   const SLUG = 'raja-ampat-indonesia';
 
-  test('"Reef state" stat label has an InfoTooltip button', async ({ page }) => {
+  test('"Reef state" metric has an (i) info button', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`, GOTO);
-    const statSpan = page.locator('span:has(button[aria-label="More information"])').filter({ hasText: 'Reef state' }).first();
-    await expect(statSpan).toBeVisible({ timeout: 15_000 });
-    await expect(statSpan.getByRole('button', { name: 'More information' })).toBeVisible();
+    const metric = page
+      .locator('p:has(button[aria-label])')
+      .filter({ hasText: 'Reef state' })
+      .first();
+    await expect(metric).toBeVisible({ timeout: 15_000 });
+    await expect(metric.getByRole('button', { name: 'How we judge this' })).toBeVisible();
   });
 
-  test('"Coral cover" stat label has an InfoTooltip button', async ({ page }) => {
-    await page.goto(`/locations/${SLUG}`, GOTO);
-    const statSpan = page.locator('span:has(button[aria-label="More information"])').filter({ hasText: 'Coral cover' }).first();
-    await expect(statSpan).toBeVisible({ timeout: 15_000 });
-    await expect(statSpan.getByRole('button', { name: 'More information' })).toBeVisible();
-  });
-
-  test('clicking "Reef state" ? shows the definition tooltip', async ({ page }) => {
+  test('clicking the "Reef state" (i) opens the reef-labels explainer', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`);
     await page.waitForLoadState('networkidle');
-    const statSpan = page.locator('span:has(button[aria-label="More information"])').filter({ hasText: 'Reef state' }).first();
-    await expect(statSpan).toBeVisible({ timeout: 15_000 });
-    await statSpan.evaluate(el => el.scrollIntoView({ block: 'center' }));
-    await statSpan.getByRole('button', { name: 'More information' }).click({ force: true });
-    await expect(page.getByText(/overall judgment/i)).toBeVisible({ timeout: 5_000 });
+    const metric = page
+      .locator('p:has(button[aria-label])')
+      .filter({ hasText: 'Reef state' })
+      .first();
+    await expect(metric).toBeVisible({ timeout: 15_000 });
+    await metric.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    await metric.getByRole('button', { name: 'How we judge this' }).click();
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toBeVisible({ timeout: 5_000 });
+    await expect(dialog).toContainText(/what the reef labels mean/i);
   });
 
-  test('clicking "Coral cover" ? shows the definition tooltip', async ({ page }) => {
+  test('"Heat right now" metric (i) opens the NOAA heat explainer', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`);
     await page.waitForLoadState('networkidle');
-    const statSpan = page.locator('span:has(button[aria-label="More information"])').filter({ hasText: 'Coral cover' }).first();
-    await expect(statSpan).toBeVisible({ timeout: 15_000 });
-    await statSpan.evaluate(el => el.scrollIntoView({ block: 'center' }));
-    await statSpan.getByRole('button', { name: 'More information' }).click({ force: true });
-    await expect(page.getByText(/percentage of the reef surface/i)).toBeVisible({ timeout: 5_000 });
+    const metric = page
+      .locator('p:has(button[aria-label])')
+      .filter({ hasText: 'Heat right now' })
+      .first();
+    await expect(metric).toBeVisible({ timeout: 15_000 });
+    await metric.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    await metric.getByRole('button', { name: 'What this means' }).click();
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toBeVisible({ timeout: 5_000 });
+    await expect(dialog).toContainText(/NOAA Coral Reef Watch/i);
   });
 });
 
@@ -144,28 +157,38 @@ test.describe('Location page — sightings feed removed', () => {
   });
 });
 
-// ── Location page — IUCN badge InfoTooltip ───────────────────────────────
-test.describe('Location page — IUCN badge InfoTooltip', () => {
-  // Ari Atoll has Grey reef shark (EN) and White-tip reef shark (VU) in sightings.json
-  // The species section heading is "What you'll see here" (rendered for non-witnessing locations).
+// ── Location page — IUCN explainer (replaces per-badge InfoTooltip) ────────
+// The old per-badge IUCN InfoTooltip is gone. The "What you'll see" species
+// section header carries a single (i) opening the conservation-labels popup,
+// and species cards render spelled-out IUCN labels inline.
+test.describe('Location page — IUCN explainer popup', () => {
+  // Ari Atoll has IUCN-listed sharks among its recorded species.
   const SLUG = 'ari-atoll-maldives';
 
-  test('IUCN-badged species have an InfoTooltip button', async ({ page }) => {
+  test('"What you\'ll see" header has an IUCN (i) info button', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`, GOTO);
-    await expect(page.getByRole('heading', { name: /what you.ll see here/i })).toBeVisible({ timeout: 15_000 });
-    // IUCN badge wrapper span: contains badge code (EN/VU/CR/…) + InfoTooltip button
-    const iucnBadgeSpan = page.locator('span:has(button[aria-label="More information"])').filter({ hasText: /\b(CR|EN|VU|NT|LC)\b/ }).first();
-    await expect(iucnBadgeSpan).toBeVisible({ timeout: 10_000 });
+    const header = page
+      .locator('p:has(button[aria-label])')
+      .filter({ hasText: /what you.ll see/i })
+      .first();
+    await expect(header).toBeVisible({ timeout: 15_000 });
+    await expect(
+      header.getByRole('button', { name: 'What the conservation labels mean' }),
+    ).toBeVisible();
   });
 
-  test('clicking IUCN InfoTooltip shows Red List explanation', async ({ page }) => {
+  test('clicking the IUCN (i) shows the Red List explanation', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`);
     await page.waitForLoadState('networkidle');
-    await expect(page.getByRole('heading', { name: /what you.ll see here/i })).toBeVisible({ timeout: 15_000 });
-    const iucnBadgeSpan = page.locator('span:has(button[aria-label="More information"])').filter({ hasText: /\b(CR|EN|VU|NT|LC)\b/ }).first();
-    await expect(iucnBadgeSpan).toBeVisible({ timeout: 10_000 });
-    await iucnBadgeSpan.scrollIntoViewIfNeeded();
-    await iucnBadgeSpan.getByRole('button', { name: 'More information' }).click({ force: true });
-    await expect(page.getByText(/IUCN Red List/i).first()).toBeVisible({ timeout: 5_000 });
+    const header = page
+      .locator('p:has(button[aria-label])')
+      .filter({ hasText: /what you.ll see/i })
+      .first();
+    await expect(header).toBeVisible({ timeout: 15_000 });
+    await header.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    await header.getByRole('button', { name: 'What the conservation labels mean' }).click();
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toBeVisible({ timeout: 5_000 });
+    await expect(dialog).toContainText(/IUCN Red List/i);
   });
 });

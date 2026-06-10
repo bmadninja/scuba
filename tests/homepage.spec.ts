@@ -2,38 +2,45 @@ import { test, expect } from '@playwright/test';
 
 const GOTO = { waitUntil: 'domcontentloaded' } as const;
 
-test.describe('Homepage', () => {
+test.describe('Homepage atlas', () => {
   test('loads with hero section', async ({ page }) => {
     await page.goto('/', GOTO);
     await expect(page).toHaveTitle(/scubaSeason\.fun/);
     await expect(page.getByRole('region', { name: 'Hero' })).toBeVisible();
   });
 
-  test('shows reef state counts', async ({ page }) => {
+  test('shows the three reef-state filter labels', async ({ page }) => {
     await page.goto('/', GOTO);
     await expect(page.getByText('Thriving').first()).toBeVisible();
     await expect(page.getByText('Under pressure').first()).toBeVisible();
     await expect(page.getByText('Witnessing change').first()).toBeVisible();
   });
 
-  test('featured destinations grid shows Raja Ampat, Palau, Azores', async ({ page }) => {
+  test('shows the filter rail and a live reef count', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByText('Raja Ampat').first()).toBeVisible();
-    await expect(page.getByText('Blue Corner').first()).toBeVisible();
-    await expect(page.getByText('Santa Maria').first()).toBeVisible();
+    await expect(page.getByText('Filters', { exact: true })).toBeVisible();
+    // The result count is an aria-live status region ("N reefs").
+    await expect(page.getByRole('status')).toContainText(/reefs/i);
   });
 
-  test('nav has Atlas link', async ({ page }) => {
+  test('nav has a search box', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByRole('link', { name: /atlas/i }).first()).toBeVisible();
+    await expect(
+      page.getByRole('textbox', { name: /search reefs/i }).first(),
+    ).toBeVisible();
   });
 
-  test('clicking a featured destination navigates to its location page', async ({ page }) => {
+  test('has a Cards / Map view toggle', async ({ page }) => {
     await page.goto('/', GOTO);
-    // Target the featured destinations region specifically to avoid matching
-    // atlas explorer cards lower on the page
-    const featured = page.getByRole('region', { name: 'Featured destinations' });
-    await featured.getByRole('link', { name: /Raja Ampat/i }).first().click();
-    await expect(page).toHaveURL(/raja-ampat/, { timeout: 10_000 });
+    await expect(page.getByRole('button', { name: 'Cards' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Map' })).toBeVisible();
+  });
+
+  test('clicking a reef card opens its location page', async ({ page }) => {
+    await page.goto('/', GOTO);
+    const card = page.locator('a[href^="/locations/"]').first();
+    await card.waitFor({ state: 'visible', timeout: 30_000 });
+    await card.click();
+    await expect(page).toHaveURL(/\/locations\//, { timeout: 15_000 });
   });
 });
