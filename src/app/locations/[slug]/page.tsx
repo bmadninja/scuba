@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { SetNavBreadcrumb } from "@/components/set-nav-breadcrumb";
 import { JsonLd } from "@/components/json-ld";
-import { underwaterPhotoUrl } from "@/lib/photo-quality";
+import { underwaterPhotoUrl, resizePhotoUrl } from "@/lib/photo-quality";
 import { locationSchema } from "@/lib/schema-org";
 import { getAllLocations, getLocationBySlug } from "@/lib/data/locations";
 import { buildAtlasLocation } from "@/lib/atlas-location";
@@ -236,7 +236,7 @@ export default async function LocationPage({
 
   const atlasLoc = buildAtlasLocation(location);
   const isWitnessing = atlasLoc.state === "change";
-  const heroPhotoUrl = underwaterPhotoUrl(atlasLoc.heroImageUrl);
+  const heroPhotoUrl = resizePhotoUrl(underwaterPhotoUrl(atlasLoc.heroImageUrl), 1200);
   const stateColor = STATE_COLOR[atlasLoc.state];
 
   // --- Sightings aggregated across sites, newest first ----------------------
@@ -612,8 +612,8 @@ export default async function LocationPage({
       <JsonLd data={locationSchema(location, sites.length)} />
       <SetNavBreadcrumb items={[{ label: location.name }]} />
 
-      {/* HERO */}
-      <section style={{ position: "relative", height: "58vh", minHeight: 440, overflow: "hidden" }}>
+      {/* HERO — extends behind the sticky nav via negative top margin */}
+      <section style={{ position: "relative", height: "calc(58vh + 60px)", minHeight: 500, overflow: "hidden", marginTop: "-60px" }}>
         <div
           aria-hidden="true"
           style={{
@@ -629,6 +629,9 @@ export default async function LocationPage({
             src={heroPhotoUrl}
             alt={`Underwater reef at ${location.name}`}
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
           />
         )}
         <div

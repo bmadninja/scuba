@@ -8,6 +8,7 @@ import {
   type InfoKey,
 } from "@/components/atlas-info-popup";
 import type { SpeciesGroup } from "@/lib/data/species-taxonomy";
+import { resizePhotoUrl } from "@/lib/photo-quality";
 
 /**
  * One fully resolved species row, computed on the server from real site +
@@ -183,7 +184,7 @@ export function SpeciesListClient({
               {r.imageUrl ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
-                  src={r.imageUrl}
+                  src={resizePhotoUrl(r.imageUrl, 240) ?? r.imageUrl}
                   alt={r.commonName}
                   style={{
                     width: "2.5rem",

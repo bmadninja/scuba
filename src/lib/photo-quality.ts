@@ -66,3 +66,54 @@ export function isUnderwaterQualityPhoto(url?: string | null) {
 export function underwaterPhotoUrl(url?: string | null): string | null {
   return url && url.trim() ? url : null;
 }
+
+/**
+ * Resizes a Wikimedia or iNaturalist URL to a narrower thumbnail so browsers
+ * don't download 3-8 MB originals for cards and hero images.
+ *
+ * Wikimedia thumb pattern:
+ *   .../commons/thumb/X/XX/Filename/NNNNpx-Filename  →  1200px-Filename
+ * Wikimedia non-thumb:
+ *   .../commons/X/XX/Filename  →  .../commons/thumb/X/XX/Filename/1200px-Filename
+ * iNaturalist:
+ *   /photos/ID/large.jpg  →  /photos/ID/medium.jpg  (for heroes)
+ *   /photos/ID/large.jpg  →  /photos/ID/small.jpg   (for thumbnails)
+ */
+export function resizePhotoUrl(
+  url: string | null | undefined,
+  targetWidth: 1200 | 800 | 500 | 240 = 1200,
+): string | null {
+  if (!url) return null;
+
+  // Wikimedia thumb URL — just replace the pixel dimension
+  const wikiThumb = url.match(
+    /^(https:\/\/upload\.wikimedia\.org\/wikipedia\/[^/]+\/thumb\/[a-f0-9]\/[a-f0-9]{2}\/[^/]+\/)\d+px-(.+)$/i,
+  );
+  if (wikiThumb) {
+    return `${wikiThumb[1]}${targetWidth}px-${wikiThumb[2]}`;
+  }
+
+  // Wikimedia non-thumb — construct thumb URL
+  const wikiDirect = url.match(
+    /^(https:\/\/upload\.wikimedia\.org\/wikipedia\/[^/]+\/)([a-f0-9]\/[a-f0-9]{2}\/)(.+)$/i,
+  );
+  if (wikiDirect) {
+    const filename = wikiDirect[3];
+    return `${wikiDirect[1]}thumb/${wikiDirect[2]}${filename}/${targetWidth}px-${filename}`;
+  }
+
+  // iNaturalist — map targetWidth to their named sizes
+  if (url.includes("inaturalist-open-data.s3.amazonaws.com")) {
+    const inatSize =
+      targetWidth >= 1200
+        ? "large"
+        : targetWidth >= 500
+          ? "medium"
+          : targetWidth >= 240
+            ? "small"
+            : "square";
+    return url.replace(/\/(square|small|medium|large|original)\./, `/${inatSize}.`);
+  }
+
+  return url;
+}

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
 import { SetNavBreadcrumb } from "@/components/set-nav-breadcrumb";
-import { underwaterPhotoUrl } from "@/lib/photo-quality";
+import { underwaterPhotoUrl, resizePhotoUrl } from "@/lib/photo-quality";
 import { siteSchema } from "@/lib/schema-org";
 import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
@@ -274,7 +274,7 @@ export default async function SiteDetailPage({
   const currentMonth = new Date().getUTCMonth() + 1;
   const inSeason = site.bestMonths.includes(currentMonth);
   const sightings = getSightingsBySiteId(site.id);
-  const heroPhotoUrl = underwaterPhotoUrl(site.heroImageUrl);
+  const heroPhotoUrl = resizePhotoUrl(underwaterPhotoUrl(site.heroImageUrl), 1200);
   const bestMonthsSet = new Set(site.bestMonths);
 
   // --- Hero chips: most-recent confirmed sighting + peak season --------------
@@ -458,6 +458,9 @@ export default async function SiteDetailPage({
             src={heroPhotoUrl}
             alt={`Underwater at ${site.name}`}
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
           />
         )}
         <div

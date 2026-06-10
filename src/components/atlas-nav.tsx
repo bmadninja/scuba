@@ -269,7 +269,15 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [sel, setSel] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const active =
     NAV.find((n) =>
@@ -334,13 +342,19 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
   if (hideLayoutNav) return null;
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
+    <header
+      className={`sticky top-0 z-50 transition-colors duration-200 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-sm border-b border-slate-100"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
       <div
         className="mx-auto flex max-w-[1320px] items-center"
         style={{ padding: "1rem 3rem", gap: "2rem" }}
       >
         <Link href="/" className="shrink-0" aria-label="scubaSeason.fun — home">
-          <Logo size={28} />
+          <Logo size={28} dark />
         </Link>
 
         {/* Breadcrumbs (location / site pages) */}
@@ -351,7 +365,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             style={{
               gap: "0.5rem",
               fontSize: "0.8125rem",
-              color: "#64748b",
+              color: scrolled ? "#64748b" : "rgba(255,255,255,0.6)",
               marginLeft: "0.5rem",
             }}
           >
@@ -360,7 +374,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                 {i > 0 && (
                   <span
                     aria-hidden="true"
-                    style={{ color: "#cbd5e1", marginRight: "0.25rem" }}
+                    style={{ color: scrolled ? "#cbd5e1" : "rgba(255,255,255,0.3)", marginRight: "0.25rem" }}
                   >
                     /
                   </span>
@@ -369,7 +383,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                   <Link
                     href={crumb.href}
                     style={{
-                      color: "#64748b",
+                      color: scrolled ? "#64748b" : "rgba(255,255,255,0.6)",
                       textDecoration: "none",
                     }}
                     className="hover:text-[#0089de] transition-colors"
@@ -377,7 +391,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span style={{ color: "#0f172a", fontWeight: 500 }}>
+                  <span style={{ color: scrolled ? "#0f172a" : "rgba(255,255,255,0.9)", fontWeight: 500 }}>
                     {crumb.label}
                   </span>
                 )}
@@ -393,7 +407,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
         >
           <div
             className="pointer-events-none absolute inset-y-0 flex items-center"
-            style={{ left: "0.875rem", color: "rgba(0,0,0,0.35)" }}
+            style={{ left: "0.875rem", color: scrolled ? "rgba(0,0,0,0.35)" : "rgba(255,255,255,0.4)" }}
           >
             <svg
               width="14"
@@ -422,7 +436,11 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             onKeyDown={onKeyDown}
             placeholder=""
             aria-label="Search reefs"
-            className="w-full rounded-full border border-slate-200 bg-[#f1f7fb] pr-4 text-slate-900 placeholder:text-slate-400 focus:border-[#0089de] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0089de]/30"
+            className={`w-full rounded-full pr-4 focus:outline-none focus:ring-2 focus:ring-[#0089de]/30 ${
+              scrolled
+                ? "border border-slate-200 bg-[#f1f7fb] text-slate-900 placeholder:text-slate-400 focus:border-[#0089de] focus:bg-white"
+                : "border border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-white/40 focus:bg-white/15"
+            }`}
             style={{
               padding: "0.5rem 1rem 0.5rem 2.5rem",
               fontSize: "0.8125rem",
@@ -481,7 +499,9 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
               className={`text-sm font-medium transition-colors ${
                 active === n.key
                   ? "text-[#0089de]"
-                  : "text-slate-700 hover:text-slate-900"
+                  : scrolled
+                    ? "text-slate-700 hover:text-slate-900"
+                    : "text-white/70 hover:text-white"
               }`}
               style={{ padding: "0.45rem 0.875rem" }}
             >

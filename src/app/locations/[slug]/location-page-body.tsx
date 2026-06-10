@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AffiliateLink } from "@/components/affiliate-link";
+import { resizePhotoUrl } from "@/lib/photo-quality";
 import { EditorialHook } from "@/components/editorial-hook";
 import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
@@ -457,7 +458,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     >
                       {sp.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={sp.imageUrl} alt={sp.commonName} style={{ width: "100%", height: 96, objectFit: "cover", display: "block" }} />
+                        <img src={resizePhotoUrl(sp.imageUrl, 500) ?? sp.imageUrl} alt={sp.commonName} style={{ width: "100%", height: 96, objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                       ) : (
                         <div style={{ height: 96, background: "rgba(255,255,255,0.05)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2rem" }}>
                           {sp.icon}
@@ -508,7 +509,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     <div style={{ width: 48, height: 48, borderRadius: "0.6rem", flexShrink: 0, background: s.gradient, overflow: "hidden" }}>
                       {s.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={s.imageUrl} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <img src={resizePhotoUrl(s.imageUrl, 240) ?? s.imageUrl} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
                       ) : null}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>

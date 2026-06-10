@@ -179,7 +179,11 @@ export function enhanceAffiliateUrl(
 
   if (p === "booking.com" || p === "booking") {
     if (isHomepage(url, "booking.com") && q) return bookingSearchFor(q);
-    return setParams(url, { aid: BOOKING_AID, label: "scubaseason" });
+    // Only tag with label when aid is present — Booking.com rejects label-without-aid
+    // and redirects to a search page instead of the hotel.
+    return BOOKING_AID
+      ? setParams(url, { aid: BOOKING_AID, label: "scubaseason" })
+      : url;
   }
 
   if (p === "direct") return url;

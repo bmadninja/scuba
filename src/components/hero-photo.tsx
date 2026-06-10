@@ -1,4 +1,4 @@
-import { underwaterPhotoUrl } from "@/lib/photo-quality";
+import { underwaterPhotoUrl, resizePhotoUrl } from "@/lib/photo-quality";
 
 // Ocean-toned gradients used as a placeholder when a reef genuinely has no
 // hero photo. We deliberately do NOT borrow another reef's photo — a missing
@@ -27,14 +27,16 @@ export function HeroPhoto({
   alt,
   seed,
   className = "",
+  priority = false,
 }: {
   url?: string | null;
   alt: string;
   seed: string;
   className?: string;
+  priority?: boolean;
 }) {
-  const src = underwaterPhotoUrl(url);
-  if (!src) {
+  const raw = underwaterPhotoUrl(url);
+  if (!raw) {
     return (
       <div
         role="img"
@@ -44,8 +46,16 @@ export function HeroPhoto({
       />
     );
   }
+  const src = resizePhotoUrl(raw, 1200) ?? raw;
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt={alt} className={className} />
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      loading={priority ? "eager" : "lazy"}
+      decoding={priority ? "sync" : "async"}
+      fetchPriority={priority ? "high" : "low"}
+    />
   );
 }
