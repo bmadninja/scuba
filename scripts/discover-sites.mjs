@@ -180,23 +180,52 @@ async function pickGap() {
     siteCount: sites.filter((s) => s.locationId === l.id).length,
   }));
 
+  // HARD GUARD: never leave a location with zero dive sites. As long as any
+  // empty location remains (and we haven't already burned this session's
+  // attempts on it), the picker MUST target an empty location — the LLM is not
+  // allowed to wander off to add a famous site in an already-covered spot.
+  // Only once every location has ≥1 site do we fall back to editorial discretion.
+  const emptyLocations = coverage.filter(
+    (c) => c.siteCount === 0 && !attemptedSites.has(`__location__${c.locationId}`),
+  );
+
   const sys = `You are the editorial director of scubaseason.fun, an authoritative dive-site guide.
 You decide which dive site to add next based on (a) gaps in existing coverage and (b) editorial importance (famous, frequently-searched, or culturally significant sites).
 You will be given coverage stats. Pick ONE site to add. Return strict JSON.`;
 
   const alreadyAttempted = [...attemptedSites].map(k => `- ${k}`).join("\n");
 
-  const user = `Existing locations with site counts:
+  let user;
+  if (emptyLocations.length > 0) {
+    // Deterministically lock onto one empty location; the LLM only names the
+    // single most notable real dive site within it.
+    const target = emptyLocations[0];
+    attemptedSites.add(`__location__${target.locationId}`);
+    console.log(`  [guard] ${emptyLocations.length} location(s) still have 0 sites — forcing target: ${target.name}`);
+
+    user = `This location currently has ZERO dive sites and MUST be filled:
+${JSON.stringify(target, null, 2)}
+
+Existing site names (for dedup awareness):
+${sites.map((s) => `- ${s.name} (${s.locationId})`).join("\n")}
+
+${alreadyAttempted ? `Sites already attempted this session (DO NOT pick these again):\n${alreadyAttempted}\n` : ""}
+Name the single most notable, real, well documented dive site within "${target.name}, ${target.country}" (locationId="${target.locationId}"). It must be a genuine, named dive site that you can corroborate from web sources — not invented.
+
+Return JSON: { "locationId": "${target.locationId}", "candidateName": "...", "reasoning": "..." }`;
+  } else {
+    user = `Existing locations with site counts:
 ${JSON.stringify(coverage, null, 2)}
 
 Existing site names (for dedup awareness):
 ${sites.map((s) => `- ${s.name} (${s.locationId})`).join("\n")}
 
 ${alreadyAttempted ? `Sites already attempted this session (DO NOT pick these again):\n${alreadyAttempted}\n` : ""}
-Pick the single best dive site to add next. Prefer locations with siteCount < 2, OR famous missing sites (e.g. SS Thistlegorm, Blue Hole Dahab, Manta Point) within existing locations.
+Every location now has at least one site. Pick the single best dive site to add next. Prefer locations with siteCount < 2, OR famous missing sites (e.g. SS Thistlegorm, Blue Hole Dahab, Manta Point) within existing locations.
 ${REGION_FOCUS ? `\nBIAS YOUR PICK toward these regions/countries: ${REGION_FOCUS}. If no good gap exists there, pick the best gap elsewhere.` : ""}
 
 Return JSON: { "locationId": "...", "candidateName": "...", "reasoning": "..." }`;
+  }
 
   const resp = await callClaude({
     system: sys,
@@ -296,6 +325,69 @@ Score <0.8 if: coordinates seem off, species list looks generic, depth range imp
   return extractJson(collectText(resp.content));
 }
 
+/* ---------- final audit: completeness attestation ---------- */
+
+// Required location fields. Numbers (lat/lng) are checked for finiteness rather
+// than truthiness so a legitimate 0 (equator / prime meridian) isn't flagged.
+const LOCATION_REQUIRED_STRINGS = ["id", "slug", "name", "country", "region", "countryCode", "description"];
+
+function auditLocation(loc) {
+  const missing = [];
+  for (const f of LOCATION_REQUIRED_STRINGS) {
+    if (typeof loc[f] !== "string" || loc[f].trim() === "") missing.push(f);
+  }
+  if (!Number.isFinite(loc.lat)) missing.push("lat");
+  if (!Number.isFinite(loc.lng)) missing.push("lng");
+  if (!Array.isArray(loc.bestMonths) || loc.bestMonths.length === 0) missing.push("bestMonths");
+  if (typeof loc.heroImageUrl !== "string" || loc.heroImageUrl.trim() === "") missing.push("heroImageUrl");
+  return missing;
+}
+
+// Re-reads sites fresh so the audit reflects whatever every worker (and other
+// sessions) have pushed — not just this process's in-memory copy.
+function auditCompleteness() {
+  const freshSites = loadSites();
+  console.log("\n=== Completeness audit ===");
+
+  const locsWithoutSites = [];
+  const locsMissingFields = [];
+  for (const loc of locations) {
+    const siteCount = freshSites.filter((s) => s.locationId === loc.id).length;
+    if (siteCount === 0) locsWithoutSites.push(loc);
+    const missing = auditLocation(loc);
+    if (missing.length) locsMissingFields.push({ id: loc.id, name: loc.name, missing });
+  }
+
+  const sitesInvalid = [];
+  for (const s of freshSites) {
+    const parsed = SiteSchema.safeParse(s);
+    if (!parsed.success) {
+      sitesInvalid.push({
+        id: s.id ?? "(no id)",
+        name: s.name ?? "(no name)",
+        issues: parsed.error.issues.slice(0, 6).map((i) => `${i.path.join(".") || "(root)"}: ${i.message}`),
+      });
+    }
+  }
+
+  console.log(`Locations: ${locations.length} | Sites: ${freshSites.length}`);
+  console.log(`Locations with NO dive site: ${locsWithoutSites.length}`);
+  for (const l of locsWithoutSites) console.log(`  ✗ ${l.name} (${l.id})`);
+  console.log(`Locations missing required fields: ${locsMissingFields.length}`);
+  for (const l of locsMissingFields) console.log(`  ✗ ${l.name} (${l.id}) → ${l.missing.join(", ")}`);
+  console.log(`Sites failing schema validation: ${sitesInvalid.length}`);
+  for (const s of sitesInvalid) console.log(`  ✗ ${s.name} (${s.id}) → ${s.issues.join("; ")}`);
+
+  const complete = !locsWithoutSites.length && !locsMissingFields.length && !sitesInvalid.length;
+  if (complete) {
+    console.log("✓ ATTESTATION PASSED: every location has ≥1 dive site and all required fields are populated.");
+  } else {
+    console.log("⚠ ATTESTATION INCOMPLETE: gaps remain (listed above). The next scheduled run will keep filling them.");
+  }
+  console.log("=== end audit ===\n");
+  return { complete, locsWithoutSites, locsMissingFields, sitesInvalid };
+}
+
 /* ---------- main ---------- */
 
 async function discoverOne() {
@@ -393,6 +485,7 @@ async function main() {
     // Batch write for non-blitz modes
     if (accepted.length === 0) {
       console.log("No sites accepted this run.");
+      auditCompleteness();
       process.exit(2); // signal to CI: nothing to PR
     }
     const out = DRY_RUN ? PROPOSED_PATH : SITES_PATH;
@@ -404,8 +497,16 @@ async function main() {
   } else {
     console.log(`\n✓ Blitz complete. Added ${accepted.length} sites.`);
     console.log("ADDED_SITES=" + accepted.map((s) => s.name).join(", "));
-    if (accepted.length === 0) process.exit(2);
+    if (accepted.length === 0) {
+      auditCompleteness();
+      process.exit(2);
+    }
   }
+
+  // Final attestation: confirm every location has a dive site and all required
+  // fields on locations and sites are populated. Reports gaps but does not fail
+  // the run — the daily routine converges over successive runs.
+  auditCompleteness();
 }
 
 main().catch((err) => {
