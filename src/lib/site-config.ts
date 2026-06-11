@@ -3,7 +3,6 @@
 
 export const SITE_URL = "https://scubaseason.fun";
 export const SITE_NAME = "scubaSeason.fun";
-export const SITE_TAGLINE =
-  "Dive condition atlas — where to go, and what's changing.";
+export const SITE_TAGLINE = "Where to dive and what you'll actually see.";
 export const SITE_DESCRIPTION =
-  "Dive condition atlas — where to go, and what's changing. Live NOAA Coral Reef Watch thermal stress on every reef, alongside trip planning with operators, lodging and gear.";
+  "A live dive atlas for sightings, reef health, conservation status, and ocean pressure.";
