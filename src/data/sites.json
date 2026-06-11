@@ -101776,32 +101776,222 @@
     "lat": 11.3885,
     "lng": 97.6685,
     "description": "An isolated limestone pinnacle rising from 40 m in Myanmar's Andaman Sea, Black Rock holds the most documented giant manta ray population in Burma — 48 of Myanmar's 50 individually identified oceanic mantas have been recorded here by marine biologist Dr. Andrea Marshall. The western wall drops sharply past gorgonian fans to ledges at 22 m and beyond 50 m, where silvertip and grey reef sharks patrol in open water. February to April brings peak manta gatherings alongside occasional whale sharks, though planktonic blooms cut visibility to 10 to 15 m during those months. December to January offers the clearest water — 30 to 40 m — with sharks present throughout the year. Accessible only by liveaboard.",
-    "depthRange": { "min": 10, "max": 40 },
+    "depthRange": {
+      "min": 10,
+      "max": 40
+    },
     "skillLevel": "advanced",
-    "diveTypes": ["large-pelagics", "coral"],
+    "diveTypes": [
+      "large-pelagics",
+      "coral"
+    ],
     "species": [
-      { "commonName": "Giant oceanic manta ray", "scientificName": "Mobula birostris", "reliability": "seasonal", "bestMonths": [2, 3, 4] },
-      { "commonName": "Whale shark", "scientificName": "Rhincodon typus", "reliability": "seasonal", "bestMonths": [2, 3, 4] },
-      { "commonName": "Silvertip shark", "scientificName": "Carcharhinus albimarginatus", "reliability": "year-round" },
-      { "commonName": "Grey reef shark", "scientificName": "Carcharhinus amblyrhynchos", "reliability": "year-round" },
-      { "commonName": "Spotted eagle ray", "scientificName": "Aetobatus narinari", "reliability": "year-round" },
-      { "commonName": "Great barracuda", "scientificName": "Sphyraena barracuda", "reliability": "year-round" }
+      {
+        "commonName": "Giant oceanic manta ray",
+        "scientificName": "Mobula birostris",
+        "reliability": "seasonal",
+        "bestMonths": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Silvertip shark",
+        "scientificName": "Carcharhinus albimarginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      }
     ],
     "conditionsByMonth": [
-      { "month": 1, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 2, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 15, "max": 25 }, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 3, "waterTempC": { "min": 28, "max": 30 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "strong", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 4, "waterTempC": { "min": 29, "max": 30 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 5, "waterTempC": { "min": 29, "max": 30 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 6, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 5, "max": 10 }, "currentStrength": "strong", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 7, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 5, "max": 10 }, "currentStrength": "strong", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 8, "waterTempC": { "min": 28, "max": 29 }, "visibilityM": { "min": 5, "max": 10 }, "currentStrength": "strong", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 9, "waterTempC": { "min": 27, "max": 28 }, "visibilityM": { "min": 5, "max": 15 }, "currentStrength": "strong", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 10, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 10, "max": 20 }, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 11, "waterTempC": { "min": 26, "max": 28 }, "visibilityM": { "min": 20, "max": 30 }, "currentStrength": "moderate", "suitRecommendation": "3 mm wetsuit" },
-      { "month": 12, "waterTempC": { "min": 27, "max": 29 }, "visibilityM": { "min": 25, "max": 35 }, "currentStrength": "mild", "suitRecommendation": "3 mm wetsuit" }
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3 mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 mm wetsuit"
+      }
     ],
-    "bestMonths": [12, 1, 2, 3, 4],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
     "editorialRank": 88,
     "getThere": "Fly to Bangkok (BKK) or Phuket (HKT), then transfer by road (5 hours) or direct flight (Bangkok Airways) to Ranong. Cross the Thai-Myanmar border at Ranong into Kawthaung (border fee approximately US$200 to 250 cash required). All liveaboards depart from Kawthaung; Black Rock is approximately 13 hours by boat to the northwest. No day trips operate — liveaboard trips run 5 to 10 nights and depart November to May only.",
     "lodging": [],
@@ -101809,5 +101999,313 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Myanmar border crossing fee (approximately US$200 to 250 cash) required at Kawthaung; most liveaboard operators include permit logistics in the booking. Season is November to May only — the Andaman Sea is unnavigable from June to October due to monsoon. Currents can be strong and unpredictable; advanced certification required by most operators."
+  },
+  {
+    "id": "providencia-colombia-blue-wall",
+    "slug": "providencia-colombia-blue-wall",
+    "locationId": "providencia-colombia",
+    "name": "Blue Wall (Pared Azul)",
+    "heroImageUrl": null,
+    "lat": 12.4967,
+    "lng": -81.7151,
+    "description": "San Andrés' outer barrier drops from a shallow coral plateau at 8 m down a sheer wall past 50 m. Caribbean reef sharks and nurse sharks cruise the top edge all year, while the wall hosts moray eels, large lobsters, and parrotfish feeding among 85 coral species. The site lies within the Seaflower Biosphere Reserve — the third largest barrier reef system in the Western Hemisphere.",
+    "depthRange": {
+      "min": 8,
+      "max": 50
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Caribbean reef shark",
+        "scientificName": "Carcharhinus perezi",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Green turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Spotted moray",
+        "scientificName": "Gymnothorax moringa",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Queen parrotfish",
+        "scientificName": "Scarus vetula",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Caribbean spiny lobster",
+        "scientificName": "Panulirus argus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      7,
+      8
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Gustavo Rojas Pinilla International Airport (ADZ) on San Andrés Island. Dive operators run boat trips of 15 to 20 minutes from the main pier in San Andrés town to the outer reef wall.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Located within the Seaflower Marine Protected Area. Depths below 30 m require advanced certification or guided supervision. Strong thermoclines possible below 40 m."
   }
 ]
