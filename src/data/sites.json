@@ -102307,5 +102307,536 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Located within the Seaflower Marine Protected Area. Depths below 30 m require advanced certification or guided supervision. Strong thermoclines possible below 40 m."
+  },
+  {
+    "id": "tela-punta-sal-coral-garden",
+    "slug": "tela-punta-sal-coral-garden",
+    "locationId": "tela-honduras",
+    "name": "Punta Sal Coral Garden",
+    "lat": 15.931,
+    "lng": -87.621,
+    "description": "The reef that launched a thousand research papers. The shallow coral garden at the tip of Punta Sal, inside Jeannette Kawas National Park, holds elkhorn and staghorn coral at densities not recorded anywhere else in the Caribbean for over thirty years. Scientists attribute the health partly to cold upwellings from the shelf edge that buffer temperatures during basin-wide bleaching events. Divers drift over formations that look like the Caribbean did before the 1980s die-offs — a living baseline the rest of the region has lost.",
+    "depthRange": {
+      "min": 5,
+      "max": 18
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "research"
+    ],
+    "species": [
+      {
+        "commonName": "Elkhorn coral",
+        "scientificName": "Acropora palmata",
+        "reliability": "year-round",
+        "ecologicalDescription": "Once the dominant shallow-water coral across the Caribbean, elkhorn coral was functionally lost from most of the basin by the early 2000s due to white-band disease, bleaching, and storms. A critical reef-builder, its branching structure creates the wave-breaking shallow-reef framework and provides shelter for juvenile fish. Critically endangered globally, with surviving populations now mostly restricted to isolated refugia. The Punta Sal garden is one of the largest continuous stands known in the western Caribbean — its presence here is the central evidence that Tela's reef is genuinely anomalous."
+      },
+      {
+        "commonName": "Staghorn coral",
+        "scientificName": "Acropora cervicornis",
+        "reliability": "year-round",
+        "ecologicalDescription": "Staghorn coral is the fast-growing branching species that historically built vast shallow thickets across the Caribbean, providing structural complexity for hundreds of reef fish and invertebrate species. Like elkhorn, it collapsed across the region in the 1980s–2000s and is now listed as critically endangered. At Tela, staghorn thickets cover stretches of reef between 4 and 12 m depth — scientists maintain tagged colonies and growth-rate records here as part of long-term resilience monitoring. Watching these thickets sway in the current, with damselfish territories mapped out in the branches, is a window into how the Caribbean reef used to function."
+      },
+      {
+        "commonName": "Parrotfish (mixed schools)",
+        "reliability": "year-round",
+        "ecologicalDescription": "Multiple parrotfish species — stoplight, rainbow, and queen parrotfish — graze the reef surface at Punta Sal in unusually large schools. Parrotfish are essential reef grazers; their feeding removes algae that would otherwise overgrow and smother coral, and their sand production supports the white beaches divers love. At most Caribbean sites, overfishing has decimated parrotfish populations and broken the grazing cycle — allowing algae to colonise bleached coral before it can recover. The dense parrotfish schools at Tela are considered one of the ecological mechanisms sustaining the reef's health. Their characteristic beak-scraping sound is constant throughout the dive."
+      },
+      {
+        "commonName": "Nassau grouper",
+        "scientificName": "Epinephelus striatus",
+        "reliability": "year-round",
+        "ecologicalDescription": "Once the dominant large predator on Caribbean reefs, Nassau grouper was fished nearly to extinction across the basin over the 20th century. Their absence has cascading effects — removing a top predator destabilises prey fish populations and indirectly weakens reef resilience. At Punta Sal, protected park status has allowed grouper populations to partially recover, and fish up to 70 cm are regularly observed hovering at cleaning stations or patrolling coral heads. Their presence is treated by scientists as a secondary indicator of ecosystem recovery alongside coral cover."
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/113188854/large.jpeg",
+        "ecologicalDescription": "One of the ocean's most visually striking reptiles, recognisable by its narrow, pointed beak and richly patterned shell. Hawksbills feed primarily on sponges, making them a keystone species on coral reefs — their grazing prevents sponges from overgrowing and smothering coral. Critically endangered due to historical shell trade and ongoing egg harvesting; global populations have partially recovered in protected areas. Their presence at Punta Sal, foraging among the elkhorn stands, is a sign that the trophic structure of the reef remains intact."
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 12, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 18, "max": 28 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 8, "max": 18 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 12, "max": 22 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 12, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [3, 4, 5, 6, 7],
+    "editorialRank": 88,
+    "getThere": "Fly into San Pedro Sula (SAP) and take the 1.5-hour road transfer to Tela. Dive operators depart from Tela's small pier and the boat ride to Punta Sal is approximately 45 minutes across the bay.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Telamar Resort",
+        "url": "https://www.booking.com/hotel/hn/telamar-resort.html",
+        "isAffiliate": true,
+        "priceLevel": 3,
+        "kind": "hotel"
+      },
+      {
+        "partner": "Booking.com",
+        "label": "Hotel Mango",
+        "url": "https://www.booking.com/hotel/hn/mango-tela.html",
+        "isAffiliate": true,
+        "priceLevel": 1,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Tela Dive Center",
+        "url": "https://www.teladivecenter.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Underwater camera",
+        "reason": "This is one of the few places on earth a diver can photograph wild stands of elkhorn and staghorn coral. Bring a wide-angle lens.",
+        "gearId": null
+      }
+    ],
+    "notes": "Diving inside Jeannette Kawas National Park requires a park entry permit. Do not anchor on or touch coral. Permanent monitoring plots are marked with small yellow tags — give them a wide berth.",
+    "heroImageUrl": null
+  },
+  {
+    "id": "tela-scientists-corner",
+    "slug": "tela-scientists-corner",
+    "locationId": "tela-honduras",
+    "name": "Scientists' Corner",
+    "lat": 15.882,
+    "lng": -87.541,
+    "description": "The working field site where marine biologists have been running coral health transects since the early 2000s. Permanent monitoring plots, temperature loggers anchored to the seafloor, and coral colonies tagged with numbered plaques make this look less like a dive site and more like an open-air laboratory. The question the data is trying to answer: why does this reef outperform every other Caribbean system — and can whatever protects it here be engineered or replicated elsewhere? Divers share the water with researchers mid-survey. The giant brain corals here are the largest documented specimens in the Mesoamerican system.",
+    "depthRange": {
+      "min": 8,
+      "max": 22
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "research"
+    ],
+    "species": [
+      {
+        "commonName": "Massive brain coral",
+        "scientificName": "Diploria labyrinthiformis",
+        "reliability": "year-round",
+        "ecologicalDescription": "Symmetrical brain coral is one of the longest-lived corals on Caribbean reefs, with large colonies reaching centuries in age. They are slow-growing but structurally resilient, often surviving bleaching events that kill faster-growing branching corals. At Scientists' Corner, colonies over two metres across have been tagged and monitored since 2003, with annual growth measurements now constituting one of the longest unbroken coral growth records in Honduras. Their labyrinthine surface pattern — the grooves formed by rows of polyps — is distinctive at any depth. Brain corals are considered 'anchor species' whose persistence through disturbance events stabilises the reef framework for recovering neighbours."
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/31735623/large.jpg",
+        "ecologicalDescription": "Elegant, wing-shaped rays recognised by a white-spotted black dorsum and a long, whip-like tail. Spotted eagle rays are active swimmers, covering large distances in open water and occasionally forming large feeding schools. They prey on buried molluscs and crustaceans, using their flat, plate-like teeth to crush shells. Often encountered cruising along reef edges or in blue water above the reef. Near threatened globally; highly susceptible to bycatch."
+      },
+      {
+        "commonName": "Queen angelfish",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/422126842/large.jpeg",
+        "ecologicalDescription": "One of the Caribbean's most visually striking reef fish, with electric blue and yellow colouring and a distinctive crown marking. Queen angelfish are sponge specialists — they bite through the otherwise chemically defended tissue of encrusting sponges, filling an ecological niche few other fish can exploit. Pairs are typically monogamous and highly territorial. Their presence at a reef in significant numbers is a proxy for sponge diversity and overall structural complexity, both of which are elevated at Tela."
+      },
+      {
+        "commonName": "Caribbean reef shark",
+        "reliability": "seasonal",
+        "bestMonths": [3, 4, 5, 6],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/225237037/large.jpg",
+        "ecologicalDescription": "The dominant large shark on Caribbean coral reefs, characterised by a stocky build and rounded snout. Caribbean reef sharks patrol reef edges and drop-offs, often in loose groups, and are the species most commonly encountered in Caribbean shark dives. Near threatened; heavily fished for fins and meat across their range. Their seasonal presence at Scientists' Corner, particularly in the dry season, aligns with prey fish aggregations over the research plots."
+      },
+      {
+        "commonName": "Bluehead wrasse",
+        "reliability": "year-round",
+        "ecologicalDescription": "One of the most abundant fish on healthy Caribbean reefs, with a complex social structure in which terminal males display brilliant blue heads and green bodies while initial-phase fish are yellow and white. Bluehead wrasse are important cleaners — they remove parasites from larger fish at designated cleaning stations — and their density is used by researchers as a proxy for reef fish community health. The unusually high density of bluehead wrasse at Scientists' Corner aligns with the high density of cleaning-station fish observed across the Tela reef system."
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 15, "max": 22 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 22, "max": 30 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 20, "max": 30 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 18, "max": 28 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 8, "max": 18 },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 27, "max": 28 },
+        "visibilityM": { "min": 10, "max": 20 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 15, "max": 22 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 24, "max": 26 },
+        "visibilityM": { "min": 15, "max": 22 },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [3, 4, 5, 6, 7],
+    "editorialRank": 85,
+    "getThere": "Fly into San Pedro Sula (SAP) and take the 1.5-hour road transfer to Tela. The site is a 25-minute boat ride from Tela pier into the middle of the bay.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Telamar Resort",
+        "url": "https://www.booking.com/hotel/hn/telamar-resort.html",
+        "isAffiliate": true,
+        "priceLevel": 3,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Tela Dive Center",
+        "url": "https://www.teladivecenter.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "Buoyancy control",
+        "reason": "Research plots and tagged coral colonies are everywhere. Perfect trim is expected — dragging a fin across a tagged brain coral would damage data that goes back twenty years.",
+        "gearId": null
+      }
+    ],
+    "notes": "Active research site. Respect yellow-flagged monitoring plots and tagged colonies — do not touch. Research teams may be in the water; give them space and follow guide instructions.",
+    "heroImageUrl": null
+  },
+  {
+    "id": "tela-punta-izopo-wall",
+    "slug": "tela-punta-izopo-wall",
+    "locationId": "tela-honduras",
+    "name": "Punta Izopo Wall",
+    "lat": 15.759,
+    "lng": -87.373,
+    "description": "At the eastern end of Tela Bay, the reef shelf drops sharply along the Punta Izopo headland, where the bay meets the open Caribbean and freshwater inputs from the Ulúa River delta create a unique mixing zone. Scientists believe the freshwater lens here — a regular pulse of cooler, nutrient-rich water mixing into the upper reef — may be one of the thermal refugia mechanisms that shields the Tela reef from the bleaching events that have devastated reefs to the east. The wall itself runs 20–25 m with unusually dense sponge cover and a resident population of Caribbean reef sharks. Large schools of snapper and grunt fill the mid-water column. An advanced dive for the depth and offshore exposure, but the shark and fish biomass alone justify the rating.",
+    "depthRange": {
+      "min": 12,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wall",
+      "coral",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Caribbean reef shark",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/225237037/large.jpg",
+        "ecologicalDescription": "The dominant large shark on Caribbean coral reefs, characterised by a stocky build and rounded snout. Caribbean reef sharks patrol reef edges and drop-offs, often in loose groups. At Punta Izopo, a resident population of 8–12 individuals has been photo-ID catalogued by researchers — these are the same animals seen on repeated dives, recognisable by fin notches. Near threatened; heavily fished across their range. Their consistent presence here, at a site with no shark feeding or baiting, is itself scientifically interesting: a wild, unfed population maintaining territory at natural density."
+      },
+      {
+        "commonName": "Cubera snapper",
+        "reliability": "year-round",
+        "ecologicalDescription": "The largest of the Caribbean snappers, reaching over a metre in length, with a distinctive heavy jaw and dull silver-grey colouring. Cubera snappers are a top predator and their presence in significant numbers indicates an unfished reef ecosystem with intact trophic structure. They aggregate in schools at predictable locations on reef walls and ledges, often mixing with grey snappers and schoolmaster snappers. Vulnerable globally due to overfishing; populations in protected areas like Tela are among the few places in the Caribbean where large schools of mature cuberas can still be reliably encountered."
+      },
+      {
+        "commonName": "Tarpon",
+        "scientificName": "Megalops atlanticus",
+        "reliability": "seasonal",
+        "bestMonths": [4, 5, 6, 7, 8],
+        "ecologicalDescription": "One of the ocean's most spectacular game fish — silver, prehistoric-looking, and capable of explosive leaps when hooked, though divers simply watch them from below. Atlantic tarpon gather in the shallow channels and river mouths around Punta Izopo during the wet-season months, using the freshwater-saltwater mixing zone as a spawning staging area. Underwater, a school of tarpon hovering in mid-water — reflecting the ambient light like a cloud of mirrors — is one of the Caribbean's great spectacles. Least concern globally, but heavily targeted by sport fishing; the protected bay and national park boundary provide meaningful buffer here."
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/31735623/large.jpg",
+        "ecologicalDescription": "Elegant, wing-shaped rays recognised by a white-spotted black dorsum and a long, whip-like tail. Spotted eagle rays are active swimmers, covering large distances in open water. They prey on buried molluscs and crustaceans. Often encountered cruising along reef edges or in blue water above the wall. Near threatened globally; highly susceptible to bycatch. A highlight of any dive — their wing-beat motion in open water is one of the ocean's most graceful sights."
+      },
+      {
+        "commonName": "Giant barrel sponge",
+        "reliability": "year-round",
+        "ecologicalDescription": "The dominant structure-forming sponge on Caribbean reef walls, sometimes called the 'redwood of the reef' for its longevity — individual barrels may be over 2,000 years old. Giant barrel sponges filter enormous volumes of water, removing bacteria and organic particles and cycling nutrients back into the reef ecosystem. The wall at Punta Izopo is notable for the density and size of its barrel sponge colonies — some exceeding 1.5 m in diameter — which scientists cite as another indicator of undisturbed conditions. Their deep red and purple hues dominate the wall below 15 m."
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": { "min": 24, "max": 25 },
+        "visibilityM": { "min": 12, "max": 22 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": { "min": 24, "max": 25 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 18, "max": 28 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 20, "max": 28 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 18, "max": 28 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": { "min": 28, "max": 29 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 15, "max": 25 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": { "min": 28, "max": 30 },
+        "visibilityM": { "min": 10, "max": 18 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": { "min": 27, "max": 29 },
+        "visibilityM": { "min": 8, "max": 15 },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": { "min": 26, "max": 28 },
+        "visibilityM": { "min": 10, "max": 18 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": { "min": 25, "max": 27 },
+        "visibilityM": { "min": 12, "max": 22 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": { "min": 24, "max": 25 },
+        "visibilityM": { "min": 12, "max": 22 },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [3, 4, 5, 6, 7],
+    "editorialRank": 82,
+    "getThere": "Fly into San Pedro Sula (SAP) and transfer by road to Tela (1.5 hours). Punta Izopo is on the eastern end of the bay — 35 minutes by boat from Tela pier. Some operators combine this site with a visit to the Cuero y Salado Wildlife Refuge mangroves.",
+    "lodging": [
+      {
+        "partner": "Booking.com",
+        "label": "Telamar Resort",
+        "url": "https://www.booking.com/hotel/hn/telamar-resort.html",
+        "isAffiliate": true,
+        "priceLevel": 3,
+        "kind": "hotel"
+      }
+    ],
+    "operators": [
+      {
+        "partner": "PADI Travel",
+        "label": "Tela Dive Center",
+        "url": "https://www.teladivecenter.com/",
+        "isAffiliate": true
+      }
+    ],
+    "gearIds": [
+      "mask-cressi-f1",
+      "fins-mares-avanti-quattro",
+      "bcd-scubapro-hydros-pro",
+      "reg-apeks-xtx200",
+      "wetsuit-tropical"
+    ],
+    "siteSpecificGear": [
+      {
+        "name": "SMB + reel",
+        "reason": "Offshore wall with boat traffic. Surface marker mandatory for ascent.",
+        "gearId": "smb-xs-scuba-deluxe"
+      },
+      {
+        "name": "Dive light",
+        "reason": "Dense sponge cover at depth benefits from a light to bring out the reds and purples that blue water filters out.",
+        "gearId": "light-bigblue-vl5500p"
+      }
+    ],
+    "notes": "Advanced certification required. Site is exposed to open Caribbean swell when nortes (cold fronts) pass November–February. Confirm sea state before departure. Current can be moderate at the point.",
+    "heroImageUrl": null
   }
 ]
