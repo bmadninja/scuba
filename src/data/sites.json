@@ -100918,5 +100918,286 @@
       }
     ],
     "notes": "Scheduled Monument and Historic Marine Protection Area — no artifact removal permitted within 100 m of the wreck. Dive permit required from Orkney Islands Council Harbour Authority (harbours@orkney.gov.uk); most operators arrange this as part of booking. Season typically runs Easter to early November."
+  },
+  {
+    "id": "sardinia-italy-asinara-marine-park",
+    "slug": "sardinia-italy-asinara-marine-park",
+    "locationId": "sardinia-italy",
+    "name": "Asinara Marine Park",
+    "heroImageUrl": null,
+    "lat": 40.998,
+    "lng": 8.313,
+    "description": "Asinara Island spent over a century as a maximum-security prison, leaving its waters among the least disturbed in the Mediterranean. Visibility regularly exceeds 30 metres over granite boulder fields where dusky groupers approach divers without hesitation and European lobsters retreat into deep crevices at 15 to 25 metres. The Posidonia oceanica meadows stretching between Cala d'Oliva and Cala Reale shelter critically endangered Pinna nobilis fan mussels — some reaching 80 cm — alongside Mediterranean seahorses and moray eels. All dives require a licensed park guide; Zone A is permanently closed. The western side faces the mistral and requires advanced experience; the sheltered eastern coast is the standard route.",
+    "depthRange": {
+      "min": 5,
+      "max": 35
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Dusky grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Noble pen shell",
+        "scientificName": "Pinna nobilis",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "European spiny lobster",
+        "scientificName": "Palinurus elephas",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Mediterranean moray",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Long-snouted seahorse",
+        "scientificName": "Hippocampus guttulatus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Ornate wrasse",
+        "scientificName": "Thalassoma pavo",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Loggerhead turtle",
+        "scientificName": "Caretta caretta",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit or 7mm semidry"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit or 7mm semidry"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semidry"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 14,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm semidry wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 17,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 20,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 23,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 16,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm semidry wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Drysuit or 7mm semidry"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 68,
+    "getThere": "Fly into Alghero-Fertilia Airport (AHO), then drive 48 km north to Stintino or 34 km to Porto Torres (about 50 minutes). Ferries run from both ports; Delcomar operates from Porto Torres (1 hr 15 min, €10-13). Dive operators in Stintino offer boat access to eastern-coast sites.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Diving permitted only in Zone B and Zone C with a licensed park guide — advance booking required via parcoasinara.org. Zone A is permanently closed to all water activities. Pinna nobilis and all marine life are strictly protected. Mistral winds can close the western side without warning."
   }
 ]
