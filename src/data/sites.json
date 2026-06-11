@@ -100522,5 +100522,401 @@
       }
     ],
     "notes": "Scheduled Monument and Historic Marine Protection Area — no artifact removal permitted within 100 m of the wreck. Dive permit required from Orkney Islands Council Harbour Authority (harbours@orkney.gov.uk); most operators arrange this as part of booking. Season typically runs Easter to early November; site is diveable outside these months in settled weather but operator services are limited."
+  },
+  {
+    "id": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "slug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "locationId": "scapa-flow-uk",
+    "name": "SMS Kronprinz Wilhelm",
+    "heroImageUrl": null,
+    "lat": 58.894,
+    "lng": -3.163,
+    "description": "The last König-class dreadnought built for the German Imperial Navy lies inverted on the sandy floor of Gutter Sound, scuttled alongside the entire High Seas Fleet on 21 June 1919. At 146 metres long with a 28-metre beam, Kronprinz Wilhelm is the most accessible of Scapa Flow's three remaining battleships: the hull rises to 12 metres, well within recreational limits. The defining feature lies deeper — five 30.5cm casemate guns protrude from the port bow section at 25-35 metres, the most visible main armament of any Scapa wreck. Every hollow and overhang shelters conger eels, European lobster, edible crab, and thick colonies of dead man's fingers coral and plumose anemones. Unlike sister ship SMS Markgraf, Kronprinz Wilhelm requires no technical certification and allows multi-level dive planning across the full hull.",
+    "depthRange": {
+      "min": 12,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks"
+    ],
+    "species": [
+      {
+        "commonName": "Pollock",
+        "scientificName": "Pollachius pollachius",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Atlantic Cod",
+        "scientificName": "Gadus morhua",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Ling",
+        "scientificName": "Molva molva",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Conger Eel",
+        "scientificName": "Conger conger",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "European Lobster",
+        "scientificName": "Homarus gammarus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Edible Crab",
+        "scientificName": "Cancer pagurus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Dead Man's Fingers",
+        "scientificName": "Alcyonium digitatum",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Plumose Anemone",
+        "scientificName": "Metridium senile",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Velvet Swimming Crab",
+        "scientificName": "Necora puber",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "King Scallop",
+        "scientificName": "Pecten maximus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 7,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 7,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 7,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 14
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 7,
+          "max": 8
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 8,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 9,
+          "max": 11
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 10,
+          "max": 12
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 8,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 14
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 7,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 87,
+    "getThere": "Fly into Kirkwall Airport (KOI) from Glasgow, Edinburgh, Aberdeen or Inverness (45–60 min, Loganair). Drive 29 km southwest to Stromness (30 min) or take bus 4 (1 hr). Dive operators Scapa Scuba and liveaboards MV Huskyan and MV Valkyrie depart from Stromness Harbour; most operators handle permit paperwork as part of booking.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [
+      {
+        "name": "Drysuit",
+        "reason": "Water temperatures of 7–14°C year-round make a drysuit essential for any dive of meaningful duration."
+      },
+      {
+        "name": "Surface marker buoy (SMB)",
+        "reason": "Open-water ascents in a busy anchorage require a highly visible SMB for boat traffic safety."
+      },
+      {
+        "name": "Torch",
+        "reason": "Penetration into casemate gun turrets and interior spaces requires a primary dive light."
+      }
+    ],
+    "notes": "Scheduled Monument and Historic Marine Protection Area — no artifact removal permitted within 100 m of the wreck. Dive permit required from Orkney Islands Council Harbour Authority (harbours@orkney.gov.uk); most operators arrange this as part of booking. Season typically runs Easter to early November."
   }
 ]
