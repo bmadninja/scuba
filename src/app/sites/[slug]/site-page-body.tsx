@@ -169,7 +169,7 @@ export function SitePageBody(props: SiteBodyProps) {
   const PRICE_DOTS = ["·", "··", "···", "····"];
 
   return (
-    <div style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem 3rem 4rem" }}>
+    <div style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem clamp(1rem, 4vw, 3rem) 4rem", overflowX: "hidden" }}>
       <div
         className="site-body-grid"
         style={{

@@ -300,7 +300,7 @@ export function LocationPageBody(props: LocationBodyProps) {
   const hasStay = stayTiers.some((t) => t.items.length > 0) || operators.length > 0;
 
   return (
-    <div style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem 3rem 4rem" }}>
+    <div style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem clamp(1rem, 4vw, 3rem) 4rem", overflowX: "hidden" }}>
       <div
         className="location-body-grid"
         style={{

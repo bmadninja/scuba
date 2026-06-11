@@ -39,11 +39,11 @@ export const STATE_COLOR: Record<ReefState, string> = {
 export const STATE_DEF: Record<ReefState, { short: string; signal: string }> = {
   thriving: {
     short: "High, stable or rising coral cover, low heat stress, light fishing pressure. The reef is close to its natural baseline.",
-    signal: "Coral cover at or above its long-term baseline and steady; thermal stress rarely past watch level; fishing pressure low or protected.",
+    signal: "Coral cover at or above its long term baseline and steady; thermal stress rarely past watch level; fishing pressure low or protected.",
   },
   pressure: {
     short: "Still rewarding to dive, but coral cover is moderate or slipping under fishing, warming, or both. Intact, not pristine.",
-    signal: "Coral cover below baseline and flat-to-declining; recurring warm seasons or rising fishing pressure — but the reef structure and fish life largely hold.",
+    signal: "Coral cover below baseline and declining or flat; recurring warm seasons or rising fishing pressure — but the reef structure and fish life largely hold.",
   },
   change: {
     short: "Visibly transforming after repeated bleaching or heavy loss. Diving here documents what remains.",

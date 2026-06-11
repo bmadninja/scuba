@@ -88,7 +88,7 @@ export function organizationSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "Research-grade dive trip planning. Find dive sites by species, season, conditions and skill level.",
+      "Thoroughly researched dive trip planning. Find dive sites by species, season, conditions and skill level.",
     email: "hello@scubaseason.fun",
   };
 }
@@ -173,7 +173,7 @@ export function speciesLandingSchema(
 ) {
   const seasonReadable =
     e.bestMonths.length === 12
-      ? "Year-round"
+      ? "Year round"
       : e.bestMonths.map((m) => MONTHS[m - 1]).join(", ");
   return {
     "@context": "https://schema.org",

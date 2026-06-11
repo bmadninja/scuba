@@ -113,8 +113,8 @@ const SITE_SIGHTINGS: Record<
   ],
   "komodo-national-park-indonesia": [
     { name: "Reef manta rays", likelihood: "High" },
-    { name: "White-tip reef sharks", likelihood: "Medium" },
-    { name: "Turtles on current-swept reefs", likelihood: "Medium" }
+    { name: "Whitetip reef sharks", likelihood: "Medium" },
+    { name: "Turtles on current swept reefs", likelihood: "Medium" }
   ],
   "malapascua-philippines": [
     { name: "Thresher sharks", likelihood: "High" },
@@ -194,11 +194,11 @@ const SITE_SIGHTINGS: Record<
   "gozo-malta": [
     { name: "Arches and caverns", likelihood: "High" },
     { name: "Mediterranean wrecks", likelihood: "Medium" },
-    { name: "Blue-water swim-throughs", likelihood: "High" }
+    { name: "Blue water swim throughs", likelihood: "High" }
   ],
   "silfra-iceland": [
     { name: "Freshwater fissure geology", likelihood: "High" },
-    { name: "Near-perfect visibility", likelihood: "High" },
+    { name: "Near perfect visibility", likelihood: "High" },
     { name: "Tectonic plates scenery", likelihood: "High" }
   ]
 };
@@ -206,34 +206,34 @@ const SITE_SIGHTINGS: Record<
 const SITE_DETAILS: Record<string, SiteDetailOverride> = {
   "raja-ampat-indonesia": {
     experienceLevel: "Intermediate to advanced. Many signature sites are drift dives with current management.",
-    conditions: "Warm water, nutrient-rich current, and sites that can swing from easy reef dives to challenging drift entries.",
-    gear: ["Reef hook for current-exposed sites", "Wide-angle lens plus macro option"],
+    conditions: "Warm water, nutrient rich current, and sites that can swing from easy reef dives to challenging drift entries.",
+    gear: ["Reef hook for current exposed sites", "Wide angle lens plus macro option"],
     waterTemp: "82 to 86 F (28 to 30 C)",
     suitRecommendation: "3 mm wetsuit or a full skin if you run warm",
     gettingThere: "Fly to Sorong, then connect onward by ferry or resort transfer toward Waisai or your liveaboard departure point.",
     stay: "Good base options are Waisai and resort properties on Waigeo or Gam if you are not doing a liveaboard."
   },
   "sipadan-malaysia": {
-    experienceLevel: "Intermediate to advanced. Best known sites are deep, current-prone and tightly permit-controlled.",
-    conditions: "Warm tropical water with schooling pelagics, turtles, and occasional strong current around drop-offs.",
-    gear: ["Surface marker buoy", "Reef-safe gloves only if operator rules allow for current handling"],
+    experienceLevel: "Intermediate to advanced. Best known sites are deep, current prone and tightly permit controlled.",
+    conditions: "Warm tropical water with schooling pelagics, turtles, and occasional strong current around drop offs.",
+    gear: ["Surface marker buoy", "Reef safe gloves only if operator rules allow for current handling"],
     waterTemp: "80 to 84 F (27 to 29 C)",
     suitRecommendation: "3 mm wetsuit for most divers",
-    gettingThere: "Fly to Tawau, transfer by road to Semporna, then continue by boat to Mabul/Kapalai-area resorts and day boats for Sipadan permits.",
+    gettingThere: "Fly to Tawau, transfer by road to Semporna, then continue by boat to Mabul and Kapalai area resorts and day boats for Sipadan permits.",
     stay: "Most divers stay in Semporna for budget logistics or on Mabul/Kapalai resorts for easier early departures."
   },
   "socorro-mexico": {
-    experienceLevel: "Advanced. Remote offshore diving with blue-water entries, current and exposed surface conditions.",
-    conditions: "Open-ocean conditions, giant mantas, dolphins, shark action and long-range crossings.",
+    experienceLevel: "Advanced. Remote offshore diving with blue water entries, current and exposed surface conditions.",
+    conditions: "Open ocean conditions, giant mantas, dolphins, shark action and long range crossings.",
     gear: ["Nautilus or personal locator if your operator recommends it", "Good seasickness prep"],
     waterTemp: "70 to 78 F (21 to 26 C)",
     suitRecommendation: "5 mm wetsuit for most divers",
     gettingThere: "Fly to Cabo San Lucas or San Jose del Cabo, then board a liveaboard from Cabo San Lucas marina.",
-    stay: "Overnight in Cabo San Lucas before and after the trip; marina-adjacent hotels make logistics easier."
+    stay: "Overnight in Cabo San Lucas before and after the trip; hotels near the marina make logistics easier."
   },
   "cocos-costa-rica": {
     experienceLevel: "Advanced. Strong current, surge and long liveaboard crossings are normal.",
-    conditions: "Powerful current, schooling hammerheads, lower visibility in the most action-packed season and rougher surface intervals.",
+    conditions: "Powerful current, schooling hammerheads, lower visibility in the most active season and rougher surface intervals.",
     gear: ["Reef hook if your operator uses them", "Seasickness medication"],
     waterTemp: "75 to 82 F (24 to 28 C)",
     suitRecommendation: "5 mm wetsuit if you get cold easily, otherwise a 3 mm to 5 mm suit works",
@@ -242,17 +242,17 @@ const SITE_DETAILS: Record<string, SiteDetailOverride> = {
   },
   "brothers-egypt": {
     experienceLevel: "Advanced. Deep walls and offshore current diving are the draw here.",
-    conditions: "Blue-water pelagic diving with current, exposed pickup conditions and variable thermoclines.",
+    conditions: "Blue water pelagic diving with current, exposed pickup conditions and variable thermoclines.",
     gear: ["SMB and reel", "Reef hook depending on operator style"],
     waterTemp: "72 to 82 F (22 to 28 C)",
     suitRecommendation: "3 mm to 5 mm wetsuit depending on season and cold tolerance",
     gettingThere: "Most trips route through Hurghada or Marsa Alam, then continue by liveaboard to offshore southern Red Sea itineraries.",
-    stay: "One-night transit stays in Hurghada or Marsa Alam are the easiest pre-boarding option."
+    stay: "One night transit stays in Hurghada or Marsa Alam are the easiest option before boarding."
   },
   "similan-islands-thailand": {
     experienceLevel: "Beginner to advanced depending on site. Boulder fields and exposed offshore pinnacles can be very different experiences.",
-    conditions: "Warm clear water in season, with easier reef sites and more current-prone offshore highlights like Richelieu Rock.",
-    gear: ["Surface marker buoy", "Torch for swim-throughs"],
+    conditions: "Warm clear water in season, with easier reef sites and more current prone offshore highlights like Richelieu Rock.",
+    gear: ["Surface marker buoy", "Torch for swim throughs"],
     waterTemp: "81 to 85 F (27 to 29 C)",
     suitRecommendation: "3 mm wetsuit or shorty for most divers",
     gettingThere: "Fly into Phuket or Khao Lak access points, then transfer to the pier for day boats or liveaboards.",
@@ -261,24 +261,24 @@ const SITE_DETAILS: Record<string, SiteDetailOverride> = {
   "silfra-iceland": {
     experienceLevel: "Drysuit certified or experienced drysuit divers only.",
     conditions: "Very cold freshwater, almost surreal visibility, calm water but strict thermal and certification requirements.",
-    gear: ["Dry gloves", "Cold-water hood"],
+    gear: ["Dry gloves", "Cold water hood"],
     waterTemp: "35 to 39 F (2 to 4 C)",
     suitRecommendation: "Drysuit with proper thermal undergarments is required",
-    gettingThere: "Base in Reykjavik and join a day trip or self-drive to Thingvellir National Park.",
+    gettingThere: "Base in Reykjavik and join a day trip or drive yourself to Thingvellir National Park.",
     stay: "Reykjavik is the easiest base; some divers split time with Golden Circle countryside lodges."
   },
   "bonaire-national-marine-park-bonaire": {
     experienceLevel: "Beginner to advanced. Bonaire is especially friendly for independent shore divers.",
-    conditions: "Easy entry sites, generally calm leeward conditions and strong reef health for self-paced diving.",
-    gear: ["Shore-diving booties", "Truck-friendly gear bins"],
+    conditions: "Easy entry sites, generally calm leeward conditions and strong reef health for self paced diving.",
+    gear: ["Shore diving booties", "Truck friendly gear bins"],
     waterTemp: "79 to 84 F (26 to 29 C)",
     suitRecommendation: "3 mm wetsuit or shorty for most divers",
-    gettingThere: "Fly into Bonaire directly or connect through major Caribbean hubs, then rent a pickup for shore-diving freedom.",
-    stay: "Stay near Kralendijk or along the leeward coast for the most convenient shore-diving access."
+    gettingThere: "Fly into Bonaire directly or connect through major Caribbean hubs, then rent a pickup for shore diving freedom.",
+    stay: "Stay near Kralendijk or along the leeward coast for the most convenient shore diving access."
   },
   "cozumel-mexico": {
     experienceLevel: "Open Water to advanced, though comfort with drift diving makes the trip much better.",
-    conditions: "Fast drifts, bright coral, swim-throughs and reliable boat diving on the lee side of the island.",
+    conditions: "Fast drifts, bright coral, swim throughs and reliable boat diving on the lee side of the island.",
     gear: ["SMB", "Good finning control for drift entries"],
     waterTemp: "78 to 82 F (26 to 28 C)",
     suitRecommendation: "3 mm wetsuit or lightweight full suit for most divers",
@@ -291,8 +291,8 @@ const SITE_DETAILS: Record<string, SiteDetailOverride> = {
     gear: ["Reef hook for current sites", "SMB"],
     waterTemp: "73 to 82 F (23 to 28 C)",
     suitRecommendation: "3 mm wetsuit for most dives, 5 mm if you run cold or expect cooler upwellings",
-    gettingThere: "Fly to Labuan Bajo and dive from town-based operators or a liveaboard.",
-    stay: "Labuan Bajo is the standard base; harbor-front hotels simplify early departures."
+    gettingThere: "Fly to Labuan Bajo and dive from town based operators or a liveaboard.",
+    stay: "Labuan Bajo is the standard base; hotels near the harbor simplify early departures."
   },
   "malapascua-philippines": {
     experienceLevel: "Open Water works for some dives, but the signature thresher experience is best for confident divers handling early deep profiles.",
@@ -310,7 +310,7 @@ const SITE_DETAILS: Record<string, SiteDetailOverride> = {
     waterTemp: "72 to 79 F (22 to 26 C)",
     suitRecommendation: "3 mm to 5 mm wetsuit depending on the month and your cold tolerance",
     gettingThere: "Fly to Learmonth for Exmouth or connect overland; Coral Bay works better by road trip or regional transfer.",
-    stay: "Exmouth suits divers wanting more operators and day-trip flexibility; Coral Bay is smaller and more laid-back."
+    stay: "Exmouth suits divers wanting more operators and day trip flexibility; Coral Bay is smaller and more relaxed."
   }
 };
 
@@ -338,7 +338,7 @@ const inferSightings = (entry: ScubaSeasonEntry) => {
   if (text.includes("wreck")) sightings.push({ name: "Wreck structure and artifacts", likelihood: "High" });
   if (text.includes("macro")) sightings.push({ name: "Macro life and critters", likelihood: "Medium" });
   if (text.includes("drift") || text.includes("current") || text.includes("pass")) {
-    sightings.push({ name: "Fast-moving fish schools in current", likelihood: "Medium" });
+    sightings.push({ name: "Fast moving fish schools in current", likelihood: "Medium" });
   }
   if (text.includes("cavern") || text.includes("cenote") || text.includes("fissure")) {
     sightings.push({ name: "Geology and exceptional visibility", likelihood: "High" });
@@ -365,14 +365,14 @@ const inferDiveStyle = (entry: ScubaSeasonEntry) => {
   }
 
   if (text.includes("shore")) {
-    return "Shore / resort-based";
+    return "Shore / resort based";
   }
 
   if (text.includes("island") || text.includes("reef") || text.includes("day boat")) {
-    return "Resort / day-boat";
+    return "Resort / day boat";
   }
 
-  return "Resort / day-boat";
+  return "Resort / day boat";
 };
 
 const inferTripMode = (
@@ -401,7 +401,7 @@ const inferExperienceLevel = (entry: ScubaSeasonEntry) => {
     text.includes("liveaboard") ||
     text.includes("shark")
   ) {
-    return "Intermediate to advanced. Expect current, blue-water or more demanding boat diving.";
+    return "Intermediate to advanced. Expect current, blue water or more demanding boat diving.";
   }
 
   if (text.includes("wreck") || text.includes("wall")) {
@@ -449,11 +449,11 @@ const inferConditions = (entry: ScubaSeasonEntry) => {
   const text = `${entry.site} ${entry.region} ${entry.notes}`.toLowerCase();
 
   if (text.includes("cold") || text.includes("fissure") || text.includes("iceland")) {
-    return "Cold-water conditions with a bigger thermal requirement than tropical destinations.";
+    return "Cold water conditions with a bigger thermal requirement than tropical destinations.";
   }
 
   if (text.includes("current") || text.includes("drift") || text.includes("pass")) {
-    return "Expect moving water and timing-sensitive entries rather than relaxed, static reef dives.";
+    return "Expect moving water and timing sensitive entries rather than relaxed, static reef dives.";
   }
 
   if (text.includes("wreck")) {
@@ -529,7 +529,7 @@ const inferGear = (entry: ScubaSeasonEntry) => {
   const gear: string[] = [];
 
   if (text.includes("cold") || text.includes("iceland")) {
-    return ["Dry gloves", "Cold-water hood"];
+    return ["Dry gloves", "Cold water hood"];
   }
 
   if (text.includes("current") || text.includes("drift") || text.includes("pass")) {
@@ -548,10 +548,10 @@ const inferGear = (entry: ScubaSeasonEntry) => {
 };
 
 const inferGettingThere = (entry: ScubaSeasonEntry) =>
-  `Plan around the nearest practical gateway to ${entry.site}, then a regional transfer or boat leg to the dive base. This is a good place to surface the nearest airport, transfer time and whether the trip is day-boat or liveaboard based.`;
+  `Plan around the nearest practical gateway to ${entry.site}, then a regional transfer or boat leg to the dive base. This is a good place to surface the nearest airport, transfer time and whether the trip is day boat or liveaboard based.`;
 
 const inferStay = (entry: ScubaSeasonEntry) =>
-  `Best hotel strategy is usually staying close to the main departure marina or dive-town base for ${entry.site}, so early check-ins and gear handling are easier.`;
+  `Best hotel strategy is usually staying close to the main departure marina or dive town base for ${entry.site}, so early arrivals and gear handling are easier.`;
 
 const inferInterestTags = (
   entry: ScubaSeasonEntry,

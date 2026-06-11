@@ -21,7 +21,7 @@ const CERT_ORDER: SkillLevel[] = [
 ];
 
 const CERT_LABELS: Record<SkillLevel, string> = {
-  "never-dived": "Never-dived / try-dive",
+  "never-dived": "Never dived / try dive",
   "open-water": "Open Water",
   advanced: "Advanced Open Water",
   rescue: "Rescue divers",
@@ -31,13 +31,13 @@ const CERT_LABELS: Record<SkillLevel, string> = {
 
 const CERT_INTROS: Record<SkillLevel, string> = {
   "never-dived":
-    "You haven't been certified yet. The right first trip is shallow, warm, and surrounded by patient instructors — discover-scuba and try-dive programmes let you breathe underwater under direct supervision before committing to Open Water.",
+    "You haven't been certified yet. The right first trip is shallow, warm, and surrounded by patient instructors — discover scuba and try dive programmes let you breathe underwater under direct supervision before committing to Open Water.",
   "open-water":
     "Open Water divers are limited to 18 m / 60 ft and direct ascent to the surface. The trips below stay within that envelope, with mild currents and forgiving viz so you can build dives without overrunning your training.",
   advanced:
-    "Advanced Open Water unlocks 30 m / 100 ft, deeper wreck penetration with a guide, and mild-current drift dives. These destinations reward a confident AOW with bucket-list animals at depth.",
+    "Advanced Open Water unlocks 30 m / 100 ft, deeper wreck penetration with a guide, and mild current drift dives. These destinations reward a confident AOW with bucket list animals at depth.",
   rescue:
-    "Rescue divers handle current, navigation, and incident management. These trips lean into demanding entries, exposed sites, and the conditions where rescue-level skill actually matters.",
+    "Rescue divers handle current, navigation, and incident management. These trips lean into demanding entries, exposed sites, and the conditions where rescue level skill actually matters.",
   divemaster:
     "Divemasters guide other divers and manage dive plans in real time. These itineraries pair challenging sites with the kind of operator that briefs at a professional level.",
   tech: "Technical divers run staged decompression, mixed gas, and overhead environments. The destinations below have the gas blending, support, and wrecks or walls that justify the kit.",
@@ -148,7 +148,7 @@ export default async function CertLandingPage({
             <p className="font-semibold">Safety first.</p>
             <p className="mt-1">
               {cert === "never-dived"
-                ? "Always dive under direct instructor supervision until you're certified. Read DAN's pre-dive medical guidance before booking — pulmonary, cardiac and ENT conditions can disqualify you from diving."
+                ? "Always dive under direct instructor supervision until you're certified. Read DAN's medical guidance before booking — pulmonary, cardiac and ENT conditions can disqualify you from diving."
                 : "Mind depth and current limits in your training. If a site exceeds 18 m or has a current you can't kick into, sit it out."}{" "}
               <a
                 href="https://dan.org/health-medicine/"
@@ -231,9 +231,9 @@ export default async function CertLandingPage({
               For each location we take the lowest skill floor across its
               sites. A location qualifies for {label} when that floor is at or
               below your certification rank — meaning at least one site there
-              is dive-able for you. Encounters are matched to your level
-              through the editorial difficulty rating, not a per-dive risk
-              score. Always confirm site-specific requirements with your
+              is diveable for you. Encounters are matched to your level
+              through the editorial difficulty rating, not a per dive risk
+              score. Always confirm site specific requirements with your
               operator&rsquo;s morning briefing.
             </p>
           </details>
