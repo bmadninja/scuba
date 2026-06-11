@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { STATE_TEXT, freshness } from "@/lib/data/reef-state";
+import { STATE_TEXT } from "@/lib/data/reef-state";
 import type { ReefState } from "@/lib/data/reef-state";
 import { HeroPhoto } from "@/components/hero-photo";
 
@@ -24,12 +24,6 @@ const STATE_BADGE: Record<ReefState, string> = {
   change: "bg-rose-500/15 text-rose-300 ring-1 ring-inset ring-rose-500/20",
 };
 
-const FRESHNESS_DOT: Record<string, string> = {
-  fresh: "#15a05c",
-  stale: "#e8962f",
-  cold: "#e23a3a",
-};
-
 const SKILL_BADGE: Record<string, string> = {
   "Beginner":   "bg-emerald-500/15 text-emerald-300 ring-1 ring-inset ring-emerald-500/20",
   "Open water": "bg-sky-500/15 text-sky-300 ring-1 ring-inset ring-sky-500/20",
@@ -38,12 +32,6 @@ const SKILL_BADGE: Record<string, string> = {
 };
 
 export function ReefLocationCard({ r }: { r: ReefLocationCardData }) {
-  const surveyFreshness = r.lastSurveyDays != null ? freshness(r.lastSurveyDays) : null;
-  const surveyYear =
-    r.lastSurveyDays != null
-      ? new Date().getFullYear() - Math.floor(r.lastSurveyDays / 365)
-      : null;
-
   // Witnessing change cards do NOT lift on hover — only Thriving and Under pressure do
   const hoverClasses =
     r.state === "change"
@@ -63,70 +51,34 @@ export function ReefLocationCard({ r }: { r: ReefLocationCardData }) {
           seed={r.slug ?? r.name}
           className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
         />
-        {/* Reef-state badge only on photo */}
-        <div className="absolute left-3 top-3">
-          <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${STATE_BADGE[r.state]}`}>
+        <div className="absolute left-2 top-2">
+          <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${STATE_BADGE[r.state]}`}>
             {STATE_TEXT[r.state]}
           </span>
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-base font-semibold text-[#f0f4f8] group-hover:text-[#00d4ff]">
+      <div className="flex flex-col p-3">
+        <h3 className="line-clamp-1 text-sm font-semibold text-[#f0f4f8] group-hover:text-[#00d4ff]">
           {r.name}
         </h3>
-        <p className="mt-0.5 text-sm text-[#8b9db8]">{r.country}</p>
-        {/* Meta row — skill + in-season, moved off photo */}
-        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+        <p className="mt-0.5 text-xs text-[#8b9db8]">{r.country}</p>
+        <div className="mt-1.5 flex flex-wrap items-center gap-1">
           {r.skill && (
-            <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${SKILL_BADGE[r.skill] ?? "bg-white/10 text-[#8b9db8] ring-1 ring-inset ring-white/10"}`}>
+            <span className={`rounded-full px-1.5 py-0.5 text-[10px] font-medium ${SKILL_BADGE[r.skill] ?? "bg-white/10 text-[#8b9db8] ring-1 ring-inset ring-white/10"}`}>
               {r.skill}
             </span>
           )}
           {r.inSeason ? (
-            <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-300 ring-1 ring-inset ring-emerald-500/20">
-              ● In season
+            <span className="rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-medium text-emerald-300 ring-1 ring-inset ring-emerald-500/20">
+              In season
             </span>
           ) : (
-            <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-medium text-[#8b9db8] ring-1 ring-inset ring-white/10">
-              ○ Off season
+            <span className="rounded-full bg-white/10 px-1.5 py-0.5 text-[10px] font-medium text-[#8b9db8] ring-1 ring-inset ring-white/10">
+              Off season
             </span>
           )}
         </div>
-        <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#aebcd0]">{r.hook}</p>
-
-        {/* Freshness line */}
-        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-white/10 pt-2.5 text-[11px] text-[#8b9db8]">
-          <span className="flex items-center gap-1">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#15a05c]" aria-hidden />
-            Thermal: today
-          </span>
-          <span className="flex items-center gap-1">
-            <span
-              className="inline-block h-1.5 w-1.5 rounded-full"
-              style={{ background: surveyFreshness ? FRESHNESS_DOT[surveyFreshness.k] : "#e23a3a" }}
-              aria-hidden
-            />
-            {surveyYear
-              ? `Last eyes underwater: ${surveyYear}`
-              : "Last eyes underwater: unknown"}
-          </span>
-        </div>
-
-        <dl className={`mt-3 grid gap-2 border-t border-white/10 pt-3 text-xs ${r.cover ? "grid-cols-2" : "grid-cols-1"}`}>
-          {r.cover ? (
-            <div>
-              <dt className="text-[#8b9db8]">
-                Coral cover{r.coverYear ? ` · ${r.coverYear}` : ""}
-              </dt>
-              <dd className="mt-0.5 font-semibold text-[#f0f4f8]">{r.cover}</dd>
-            </div>
-          ) : null}
-          <div>
-            <dt className="text-[#8b9db8]">Best season</dt>
-            <dd className="mt-0.5 font-semibold text-[#f0f4f8]">{r.season}</dd>
-          </div>
-        </dl>
       </div>
     </Link>
   );
