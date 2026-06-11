@@ -100938,5 +100938,48 @@
       }
     ],
     "notes": "Wreck sits at 46 m to 50 m, beyond recreational depth limits and trimix or accelerated decompression is standard. Two fatalities have occurred since the 1986 discovery. Penetration of the fuselage is discouraged due to narcosis at depth and silt or sharp interior hazards. Trips run from Tufi Resort only in settled weather; the open ocean crossing to Cape Vogel is weather dependent. The wreck is a war grave for any crew remains and an Australian war heritage protected site; no artefact removal."
+  },
+  {
+    "id": "gozo-malta-cirkewwa-arch",
+    "slug": "gozo-malta-cirkewwa-arch",
+    "locationId": "gozo-malta",
+    "name": "Cirkewwa Arch",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Entrada_de_cueva%2C_%C4%8Airkewwa%2C_Malta%2C_Malta%2C_2021-08-24%2C_DD_29.jpg",
+    "lat": 35.9904,
+    "lng": 14.3276,
+    "description": "A collapsed limestone cavern forms a natural arch at 12 m depth on the north tip of Malta, near the Gozo ferry terminal. The 6-metre swim-through opens onto sandy seabed 8 m below the arch roof, with dusky grouper, Mediterranean moray, and octopus settled into the surrounding crevices. The reef wall beyond the arch extends to 25 m, scattered with scorpionfish, saddled bream, and occasional barracuda. Shore-accessible year-round from a dedicated diver car park with handrail entry steps.",
+    "depthRange": { "min": 5, "max": 25 },
+    "skillLevel": "open-water",
+    "diveTypes": ["geology", "coral"],
+    "species": [
+      { "commonName": "Dusky Grouper", "scientificName": "Epinephelus marginatus", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Common Octopus", "scientificName": "Octopus vulgaris", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Mediterranean Moray", "scientificName": "Muraena helena", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Saddled Bream", "scientificName": "Oblada melanura", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] },
+      { "commonName": "Mediterranean Barracuda", "scientificName": "Sphyraena viridensis", "reliability": "seasonal", "bestMonths": [5,6,7,8,9,10] },
+      { "commonName": "Red Scorpionfish", "scientificName": "Scorpaena scrofa", "reliability": "year-round", "bestMonths": [1,2,3,4,5,6,7,8,9,10,11,12] }
+    ],
+    "conditionsByMonth": [
+      { "month": 1, "waterTempC": {"min": 13, "max": 15}, "visibilityM": {"min": 20, "max": 25}, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
+      { "month": 2, "waterTempC": {"min": 13, "max": 14}, "visibilityM": {"min": 20, "max": 25}, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
+      { "month": 3, "waterTempC": {"min": 14, "max": 16}, "visibilityM": {"min": 20, "max": 25}, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" },
+      { "month": 4, "waterTempC": {"min": 16, "max": 18}, "visibilityM": {"min": 25, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
+      { "month": 5, "waterTempC": {"min": 18, "max": 21}, "visibilityM": {"min": 25, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
+      { "month": 6, "waterTempC": {"min": 21, "max": 24}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 7, "waterTempC": {"min": 23, "max": 26}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 8, "waterTempC": {"min": 25, "max": 27}, "visibilityM": {"min": 25, "max": 35}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 9, "waterTempC": {"min": 24, "max": 26}, "visibilityM": {"min": 25, "max": 30}, "currentStrength": "mild", "suitRecommendation": "3mm wetsuit" },
+      { "month": 10, "waterTempC": {"min": 21, "max": 24}, "visibilityM": {"min": 20, "max": 30}, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
+      { "month": 11, "waterTempC": {"min": 17, "max": 20}, "visibilityM": {"min": 20, "max": 25}, "currentStrength": "mild", "suitRecommendation": "5mm wetsuit" },
+      { "month": 12, "waterTempC": {"min": 14, "max": 17}, "visibilityM": {"min": 20, "max": 25}, "currentStrength": "mild", "suitRecommendation": "7mm wetsuit" }
+    ],
+    "bestMonths": [5, 6, 7, 8, 9, 10],
+    "editorialRank": 72,
+    "getThere": "Fly into Malta International Airport (MLA), then drive north on the A1 motorway toward Mellieħa and follow signs for Cirkewwa ferry terminal — about 45 minutes from Valletta. A dedicated diver car park with free parking, handrail entry steps, and toilet facilities sits right at the dive site on the island's north tip.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Shore dive entry via concrete steps with handrail; display diver certification in vehicle at the car park to avoid a parking fine. Collecting marine life is prohibited in Maltese territorial waters. The P29 Patrol Boat wreck is a 5-minute surface swim to the northwest and can be combined into a single dive by advanced divers with good air management."
   }
 ]
