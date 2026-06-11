@@ -275,8 +275,8 @@ function ReefCard({
           : ""
       }`}
     >
-      {/* Photo — text lives below it on the card, not overlaid */}
-      <div className="relative aspect-[16/10] overflow-hidden">
+      {/* Photo */}
+      <div className="relative aspect-[4/3] overflow-hidden">
         <HeroPhoto
           url={r.heroImageUrl}
           alt={`Underwater reef at ${r.name}`}
@@ -285,35 +285,35 @@ function ReefCard({
         />
         {showFreshPill && freshEyes && (
           <span
-            className="absolute left-2.5 top-2.5 inline-flex items-center rounded-full border px-2 py-[0.2rem] text-[0.6rem] font-bold backdrop-blur-[6px]"
+            className="absolute left-2 top-2 inline-flex items-center rounded-full border px-1.5 py-[0.15rem] text-[0.55rem] font-bold backdrop-blur-[6px]"
             style={{
               background: "rgba(8,20,34,0.55)",
               color: "#fcd34d",
               borderColor: "rgba(252,211,77,0.45)",
             }}
           >
-            Needs fresh eyes
+            Fresh eyes
           </span>
         )}
       </div>
 
       {/* Label block */}
-      <div className="p-[0.85rem_1rem_1rem]">
+      <div className="p-2.5">
         <p
-          className="mb-1.5 flex items-center gap-1.5 text-[0.625rem] font-bold uppercase tracking-[0.13em]"
+          className="mb-1 flex items-center gap-1 text-[0.575rem] font-bold uppercase tracking-[0.12em]"
           style={{ color: STATE_SWATCH[r.state] }}
         >
           <span
-            className="h-[6px] w-[6px] shrink-0 rounded-full"
+            className="h-[5px] w-[5px] shrink-0 rounded-full"
             style={{ background: STATE_SWATCH[r.state] }}
             aria-hidden
           />
           {STATE_LABEL[r.state]}
         </p>
-        <p className="text-[1.0625rem] font-extrabold tracking-[-0.01em] text-[#f0f4f8]">
+        <p className="line-clamp-1 text-sm font-extrabold tracking-[-0.01em] text-[#f0f4f8]">
           {r.name}
         </p>
-        <p className="mt-1 text-[0.8125rem] text-[#8b9db8]">
+        <p className="mt-0.5 line-clamp-1 text-xs text-[#8b9db8]">
           {r.country} <span className="text-[#8b9db8]/50" aria-hidden>·</span> {r.region}
         </p>
       </div>
@@ -620,7 +620,7 @@ export function AtlasStage({
 
         {effectiveView === "cards" ? (
           matched.length > 0 ? (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 xl:grid-cols-3">
               {filters.sort === "season" ? (
                 <>
                   {inSeason.map(renderCard)}
