@@ -383,7 +383,7 @@ export function AtlasExplorer({
           </div>
 
           {results.length > 0 ? (
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 xl:grid-cols-3">
               {results.map((r) => (
                 <div
                   key={r.slug}
