@@ -2427,5 +2427,19 @@
     ],
     "heroImageUrl": null,
     "siteIds": []
+  },
+  {
+    "id": "tela-honduras",
+    "slug": "tela-honduras",
+    "name": "Tela",
+    "country": "Honduras",
+    "region": "North Coast",
+    "countryCode": "HN",
+    "lat": 15.783,
+    "lng": -87.459,
+    "description": "The Caribbean's 'Rebel Reef' — Tela's reefs are thriving while the rest of the region declines, and scientists are racing to understand why.",
+    "bestMonths": [3, 4, 5, 6, 7],
+    "siteIds": [],
+    "heroImageUrl": null
   }
 ]
