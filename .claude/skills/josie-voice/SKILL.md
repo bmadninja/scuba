@@ -53,3 +53,16 @@ Do you know of any conservation institutes or organizations who would be happy t
 I would love to bridge retail divers and conservation directly, where conservation institutes save money from sending divers or deploying robots to monitor reefs, and divers can get paid something like $20 per dive to take photos in a useful way and upload them.
 There is no real business model here, it is very much a public good service. I am happy to maintain the site but to really move forward I would need a bit more funding and help. If you know anyone who would be happy to fund something like this, for example the Mallorca lady you mentioned, I would love an introduction!
 Looking forward to hearing your thoughts!"
+
+**WhatsApp to a co-founder (Tiffany Duong, Tela Coral) — casual, warm, purpose-driven:**
+"Hey Tiffany! So gutted I cannot make the July trip, I have a friend's wedding in San Francisco that same weekend. I would genuinely love to make it to Tela though, so please do let me know if you end up organizing another one!
+
+On a separate note, I have been completely heads down building an ocean data platform called ScubaSeason, born from pure frustration as a diver because there is literally no live data anywhere showing reef health or sighting probabilities, and for me that is everything when deciding where to dive next. Also just such a powerful educational piece for others.
+
+So I pulled data from 63 different sources and mapped reefs globally, labelling each one as Thriving, Under Pressure, or Witnessing Change. Sending you a screenshot because you will love this: Tela is the only reef in the entire Caribbean labelled as Thriving. Every other one is under pressure or witnessing change. Kind of blew my mind when it came out that way!
+
+This is the first version and I am currently only working from public data sources, so if you know any conservation institutes or researchers who would be open to sharing data, I would love to add it, it would make the platform so much more powerful.
+
+In terms of where this is heading, I would love to turn it into a proper bridge between conservation and everyday divers, where institutes can flag which reefs need more eyes, divers get directed there, take photos, upload observations, maybe even earn something like $20 a dive. Way cheaper than flying out research teams or deploying monitoring robots, and it actually puts money into local diving communities too. I built this out of pocket and I am happy to keep it as a public good, but there is a lot of room to take it further if the right people are interested.
+
+Would love your take on it! xx"
