@@ -104,6 +104,13 @@ export type GetThereView =
   | { kind: "prose"; text: string }
   | null;
 
+export type ThreatenedStats = {
+  total: number;
+  cr: number;
+  en: number;
+  vu: number;
+};
+
 export type LocationBodyProps = {
   locationId: string;
   intro: string | null;
@@ -122,6 +129,7 @@ export type LocationBodyProps = {
   hasReefData: boolean;
   // Species
   species: SpeciesCard[];
+  threatenedStats: ThreatenedStats | null;
   // Sites
   sites: SiteRow[];
   // Gear
@@ -287,6 +295,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     reefStateSub,
     hasReefData,
     species,
+    threatenedStats,
     sites,
     gearGroups,
     tripFacts,
@@ -433,6 +442,25 @@ export function LocationPageBody(props: LocationBodyProps) {
                 What you&apos;ll see
                 <InfoButton onClick={() => setInfo("iucn")} label="What the conservation labels mean" />
               </p>
+              {threatenedStats && threatenedStats.total > 0 ? (
+                <p style={{ fontSize: "0.75rem", color: "#8b9db8", marginBottom: "0.9rem", lineHeight: 1.5 }}>
+                  {(() => {
+                    const parts: string[] = [];
+                    if (threatenedStats.cr > 0) {
+                      parts.push(`${threatenedStats.cr} Critically Endangered`);
+                    }
+                    if (threatenedStats.en > 0) {
+                      parts.push(`${threatenedStats.en} Endangered`);
+                    }
+                    if (threatenedStats.vu > 0) {
+                      parts.push(`${threatenedStats.vu} Vulnerable`);
+                    }
+                    const joined = parts.join(", ");
+                    const noun = threatenedStats.total === 1 ? "species" : "species";
+                    return `${threatenedStats.total} threatened ${noun} recorded here — ${joined}.`;
+                  })()}
+                </p>
+              ) : null}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.75rem" }}>
                 {species.map((sp) => {
                   const Card = sp.href ? Link : "div";

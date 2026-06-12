@@ -12,7 +12,7 @@ import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
-import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
+import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import { STATE_TEXT, STATE_COLOR, bestMonthsText } from "@/lib/data/reef-state";
 import { LocationPageBody } from "./location-page-body";
@@ -28,6 +28,7 @@ import type {
   StayItem,
   StayTier,
   TripFact,
+  ThreatenedStats,
 } from "./location-page-body";
 import type { BleachingAlertLevel, MpaStatus, PartnerLink } from "@/lib/data/types";
 
@@ -252,6 +253,12 @@ export default async function LocationPage({
       siteHeadline.set(sv.siteId, list);
     }
   }
+
+  // --- Threatened species count across all sightings at this location --------
+  // Uses all (not just the top 3 cards) so the stat reflects the full picture.
+  const threatenedStats: ThreatenedStats | null = IUCN_ENABLED
+    ? countThreatenedSpecies(allSightings.map((sv) => sv.speciesScientific))
+    : null;
 
   // --- Species cards --------------------------------------------------------
   const species: SpeciesCard[] = highlightedSpecies.slice(0, 3).map((sv, i) => {
@@ -687,6 +694,7 @@ export default async function LocationPage({
         reefStateSub={STATE_SUB[atlasLoc.state]}
         hasReefData={hasReefData}
         species={species}
+        threatenedStats={threatenedStats}
         sites={siteRows}
         gearGroups={gearGroups}
         tripFacts={leanTripFacts}
