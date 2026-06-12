@@ -1,5 +1,21 @@
 [
   {
+    "id": "reef-pressure-great-barrier-reef-australia-2026",
+    "locationId": "great-barrier-reef-australia",
+    "mpaStatus": "designated-multi-use",
+    "fishingPressure": "moderate",
+    "topPressures": [
+      "warming and bleaching",
+      "agricultural runoff (crown-of-thorns outbreaks)",
+      "coastal development"
+    ],
+    "visitorImpactNote": "The Great Barrier Reef Marine Park (344,400 km²) uses a zoning system. Roughly one third of the park is no-take zone; the remainder allows recreational and commercial fishing under permit. Crown-of-thorns starfish outbreaks, fuelled in part by nutrient runoff from cane farming, remain a significant pressure alongside thermal stress.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-06-12"
+  },
+  {
     "id": "reef-pressure-ari-atoll-maldives-2026",
     "locationId": "ari-atoll-maldives",
     "mpaStatus": "designated-multi-use",
