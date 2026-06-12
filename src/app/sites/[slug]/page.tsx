@@ -138,6 +138,7 @@ type SightingRecord = ReturnType<typeof getSightingsBySiteId>[number];
 
 function mergeCreatures(site: Site, sightings: SightingRecord[]): Creature[] {
   const byKey = new Map<string, Creature>();
+  const byCommonName = new Map<string, string>(); // common.lower → key
   const order: string[] = [];
 
   for (const s of site.species) {
@@ -149,14 +150,21 @@ function mergeCreatures(site: Site, sightings: SightingRecord[]): Creature[] {
       reliability: s.reliability,
       imageUrl: s.imageUrl,
     });
+    byCommonName.set(s.commonName.trim().toLowerCase(), key);
   }
 
   for (const ev of sightings) {
     const key = creatureKey(ev.speciesScientific, ev.speciesCommon);
-    const existing = byKey.get(key);
+    // Fall back to common-name match when the site species lacks a scientific name
+    const fallbackKey = byCommonName.get(ev.speciesCommon.trim().toLowerCase());
+    const existing = byKey.get(key) ?? (fallbackKey ? byKey.get(fallbackKey) : undefined);
     if (existing) {
       existing.lastConfirmedAt = ev.lastConfirmedAt;
       existing.recentRecordCount = ev.recentRecordCount;
+      // Backfill scientific name so IUCN lookups work
+      if (!existing.scientificName && ev.speciesScientific) {
+        existing.scientificName = ev.speciesScientific;
+      }
     } else {
       order.push(key);
       byKey.set(key, {
