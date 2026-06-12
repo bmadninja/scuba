@@ -22130,5 +22130,635 @@
     "matchedCommon": "Korean Crayfish",
     "license": null,
     "attribution": "(c) Kim, Hyun-tae, all rights reserved, uploaded by Kim, Hyun-tae"
+  },
+  "gozo-malta-cirkewwa-arch:epinephelus marginatus": {
+    "siteSlug": "gozo-malta-cirkewwa-arch",
+    "speciesKey": "epinephelus marginatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/116810002/large.jpeg",
+    "taxonId": 100119,
+    "observationId": 71719789,
+    "license": "cc-by-nc",
+    "attribution": "(c) carla corazza, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "gozo-malta-cirkewwa-arch:octopus vulgaris": {
+    "siteSlug": "gozo-malta-cirkewwa-arch",
+    "speciesKey": "octopus vulgaris",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308834888/large.jpeg",
+    "taxonId": 49315,
+    "observationId": 177561204,
+    "license": "cc-by-nc",
+    "attribution": "(c) Andrea Ruggeri, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "gozo-malta-cirkewwa-arch:muraena helena": {
+    "siteSlug": "gozo-malta-cirkewwa-arch",
+    "speciesKey": "muraena helena",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/166461816/large.jpeg",
+    "taxonId": 118590,
+    "observationId": 99808911,
+    "license": "cc-by-nc-nd",
+    "attribution": "(c) Susanne Spindler, some rights reserved (CC BY-NC-ND)",
+    "source": "inat-regional"
+  },
+  "gozo-malta-cirkewwa-arch:oblada melanura": {
+    "siteSlug": "gozo-malta-cirkewwa-arch",
+    "speciesKey": "oblada melanura",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/307334253/large.jpg",
+    "taxonId": 118662,
+    "observationId": 176751411,
+    "license": "cc-by-nc",
+    "attribution": "(c) eloisemarshall, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "gozo-malta-cirkewwa-arch:sphyraena viridensis": {
+    "siteSlug": "gozo-malta-cirkewwa-arch",
+    "speciesKey": "sphyraena viridensis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/408294871/large.jpeg",
+    "taxonId": 47260,
+    "observationId": 229931846,
+    "license": "cc-by-nc",
+    "attribution": "(c) Guillem Marti, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "gozo-malta-cirkewwa-arch:scorpaena scrofa": {
+    "siteSlug": "gozo-malta-cirkewwa-arch",
+    "speciesKey": "scorpaena scrofa",
+    "imageUrl": "https://static.inaturalist.org/photos/343566315/large.jpg",
+    "taxonId": 84861,
+    "observationId": 195312718,
+    "license": null,
+    "attribution": "(c) peterraskmoller, all rights reserved",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-markgraf:pollachius pollachius": {
+    "siteSlug": "scapa-flow-uk-sms-markgraf",
+    "speciesKey": "pollachius pollachius",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/306714641/large.jpg",
+    "taxonId": 228496,
+    "observationId": 176418359,
+    "license": "cc-by-nc",
+    "attribution": "(c) ewan_pritchard, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-markgraf:gadus morhua": {
+    "siteSlug": "scapa-flow-uk-sms-markgraf",
+    "speciesKey": "gadus morhua",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661280527/large.jpg",
+    "taxonId": 63740,
+    "observationId": 362313148,
+    "license": "cc-by-nc",
+    "attribution": "(c) owains, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-markgraf:conger conger": {
+    "siteSlug": "scapa-flow-uk-sms-markgraf",
+    "speciesKey": "conger conger",
+    "taxonId": 120125,
+    "matchedName": "Gymnothorax funebris",
+    "matchedCommon": "Green Moray",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/400873304/large.jpg",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Kevin Bryant, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-taxa"
+  },
+  "scapa-flow-uk-sms-markgraf:homarus gammarus": {
+    "siteSlug": "scapa-flow-uk-sms-markgraf",
+    "speciesKey": "homarus gammarus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/104806169/large.jpeg",
+    "taxonId": 62410,
+    "observationId": 65140808,
+    "license": "cc-by-nc",
+    "attribution": "(c) Jerome Viard, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-markgraf:cancer pagurus": {
+    "siteSlug": "scapa-flow-uk-sms-markgraf",
+    "speciesKey": "cancer pagurus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308186467/large.jpeg",
+    "taxonId": 120553,
+    "observationId": 177215207,
+    "license": "cc-by-nc",
+    "attribution": "(c) taylorr80, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-markgraf:metridium senile": {
+    "siteSlug": "scapa-flow-uk-sms-markgraf",
+    "speciesKey": "metridium senile",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/597166162/large.jpg",
+    "taxonId": 49071,
+    "observationId": 329437635,
+    "license": "cc-by-nc",
+    "attribution": "(c) Tony Gilbert, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:pollachius pollachius": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "pollachius pollachius",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/306714641/large.jpg",
+    "taxonId": 228496,
+    "observationId": 176418359,
+    "license": "cc-by-nc",
+    "attribution": "(c) ewan_pritchard, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:gadus morhua": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "gadus morhua",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661280527/large.jpg",
+    "taxonId": 63740,
+    "observationId": 362313148,
+    "license": "cc-by-nc",
+    "attribution": "(c) owains, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:molva molva": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "molva molva",
+    "taxonId": 52539,
+    "matchedName": "Ophiodon elongatus",
+    "matchedCommon": "Lingcod",
+    "imageUrl": "https://static.inaturalist.org/photos/121620546/large.jpg",
+    "license": null,
+    "attribution": "(c) Pat Webster @underwaterpat, all rights reserved, uploaded by Pat Webster @underwaterpat",
+    "source": "inat-taxa"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:conger conger": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "conger conger",
+    "taxonId": 120125,
+    "matchedName": "Gymnothorax funebris",
+    "matchedCommon": "Green Moray",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/400873304/large.jpg",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Kevin Bryant, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-taxa"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:homarus gammarus": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "homarus gammarus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/104806169/large.jpeg",
+    "taxonId": 62410,
+    "observationId": 65140808,
+    "license": "cc-by-nc",
+    "attribution": "(c) Jerome Viard, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:cancer pagurus": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "cancer pagurus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308186467/large.jpeg",
+    "taxonId": 120553,
+    "observationId": 177215207,
+    "license": "cc-by-nc",
+    "attribution": "(c) taylorr80, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:alcyonium digitatum": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "alcyonium digitatum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/497554534/large.jpg",
+    "taxonId": 363877,
+    "observationId": 277089951,
+    "license": "cc-by-nc",
+    "attribution": "(c) andywild, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:metridium senile": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "metridium senile",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/597166162/large.jpg",
+    "taxonId": 49071,
+    "observationId": 329437635,
+    "license": "cc-by-nc",
+    "attribution": "(c) Tony Gilbert, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:necora puber": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "necora puber",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/442650866/large.jpeg",
+    "taxonId": 210219,
+    "observationId": 247802363,
+    "license": "cc-by-nc",
+    "attribution": "(c) Georgia, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-kronprinz-wilhelm:pecten maximus": {
+    "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
+    "speciesKey": "pecten maximus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/17829222/large.jpeg",
+    "taxonId": 324563,
+    "observationId": 12374520,
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Nick Lambert, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-regional"
+  },
+  "sardinia-italy-asinara-marine-park:epinephelus marginatus": {
+    "siteSlug": "sardinia-italy-asinara-marine-park",
+    "speciesKey": "epinephelus marginatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/154762278/large.jpeg",
+    "taxonId": 100119,
+    "observationId": 93380832,
+    "license": "cc-by-nc",
+    "attribution": "(c) Sylvain Le Bris, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "sardinia-italy-asinara-marine-park:pinna nobilis": {
+    "siteSlug": "sardinia-italy-asinara-marine-park",
+    "speciesKey": "pinna nobilis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/554122764/large.jpg",
+    "taxonId": 118945,
+    "observationId": 307225345,
+    "license": "cc-by-nc",
+    "attribution": "(c) francesco_massidda, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "sardinia-italy-asinara-marine-park:palinurus elephas": {
+    "siteSlug": "sardinia-italy-asinara-marine-park",
+    "speciesKey": "palinurus elephas",
+    "imageUrl": "https://static.inaturalist.org/photos/38243891/large.jpg",
+    "taxonId": 324536,
+    "observationId": 24730219,
+    "license": null,
+    "attribution": "(c) Tim Cameron, all rights reserved",
+    "source": "inat-regional"
+  },
+  "sardinia-italy-asinara-marine-park:muraena helena": {
+    "siteSlug": "sardinia-italy-asinara-marine-park",
+    "speciesKey": "muraena helena",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/215678462/large.jpeg",
+    "taxonId": 118590,
+    "observationId": 127066499,
+    "license": "cc-by-nc",
+    "attribution": "(c) Roland Muller, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "sardinia-italy-asinara-marine-park:hippocampus guttulatus": {
+    "siteSlug": "sardinia-italy-asinara-marine-park",
+    "speciesKey": "hippocampus guttulatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2966622/large.JPG",
+    "taxonId": 102821,
+    "observationId": 2643651,
+    "license": "cc-by-nc-nd",
+    "attribution": "(c) Ronald Werson, some rights reserved (CC BY-NC-ND)",
+    "source": "inat-regional"
+  },
+  "sardinia-italy-asinara-marine-park:thalassoma pavo": {
+    "siteSlug": "sardinia-italy-asinara-marine-park",
+    "speciesKey": "thalassoma pavo",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2379956/large.jpg",
+    "taxonId": 50972,
+    "observationId": 1943424,
+    "license": "cc-by",
+    "attribution": "(c) Nicholas Moray Williams, some rights reserved (CC BY)",
+    "source": "inat-regional"
+  },
+  "sardinia-italy-asinara-marine-park:caretta caretta": {
+    "siteSlug": "sardinia-italy-asinara-marine-park",
+    "speciesKey": "caretta caretta",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/451827217/large.jpeg",
+    "taxonId": 39659,
+    "observationId": 252401197,
+    "license": "cc-by-nc",
+    "attribution": "(c) Delia, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-brummer:halichoerus grypus": {
+    "siteSlug": "scapa-flow-uk-sms-brummer",
+    "speciesKey": "halichoerus grypus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/25005899/large.jpg",
+    "taxonId": 41733,
+    "observationId": 16598188,
+    "license": "cc-by-nc",
+    "attribution": "(c) dagamb, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-brummer:pollachius pollachius": {
+    "siteSlug": "scapa-flow-uk-sms-brummer",
+    "speciesKey": "pollachius pollachius",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/306714641/large.jpg",
+    "taxonId": 228496,
+    "observationId": 176418359,
+    "license": "cc-by-nc",
+    "attribution": "(c) ewan_pritchard, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-brummer:conger conger": {
+    "siteSlug": "scapa-flow-uk-sms-brummer",
+    "speciesKey": "conger conger",
+    "taxonId": 120125,
+    "matchedName": "Gymnothorax funebris",
+    "matchedCommon": "Green Moray",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/400873304/large.jpg",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Kevin Bryant, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-taxa"
+  },
+  "scapa-flow-uk-sms-brummer:homarus gammarus": {
+    "siteSlug": "scapa-flow-uk-sms-brummer",
+    "speciesKey": "homarus gammarus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/104806169/large.jpeg",
+    "taxonId": 62410,
+    "observationId": 65140808,
+    "license": "cc-by-nc",
+    "attribution": "(c) Jerome Viard, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-brummer:labrus mixtus": {
+    "siteSlug": "scapa-flow-uk-sms-brummer",
+    "speciesKey": "labrus mixtus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/590152521/large.jpg",
+    "taxonId": 103913,
+    "observationId": 325903219,
+    "license": "cc-by-nc",
+    "attribution": "(c) Tony Gilbert, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-brummer:molva molva": {
+    "siteSlug": "scapa-flow-uk-sms-brummer",
+    "speciesKey": "molva molva",
+    "taxonId": 52539,
+    "matchedName": "Ophiodon elongatus",
+    "matchedCommon": "Lingcod",
+    "imageUrl": "https://static.inaturalist.org/photos/121620546/large.jpg",
+    "license": null,
+    "attribution": "(c) Pat Webster @underwaterpat, all rights reserved, uploaded by Pat Webster @underwaterpat",
+    "source": "inat-taxa"
+  },
+  "scapa-flow-uk-sms-dresden:pollachius pollachius": {
+    "siteSlug": "scapa-flow-uk-sms-dresden",
+    "speciesKey": "pollachius pollachius",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/306714641/large.jpg",
+    "taxonId": 228496,
+    "observationId": 176418359,
+    "license": "cc-by-nc",
+    "attribution": "(c) ewan_pritchard, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-dresden:gadus morhua": {
+    "siteSlug": "scapa-flow-uk-sms-dresden",
+    "speciesKey": "gadus morhua",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/661280527/large.jpg",
+    "taxonId": 63740,
+    "observationId": 362313148,
+    "license": "cc-by-nc",
+    "attribution": "(c) owains, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-dresden:molva molva": {
+    "siteSlug": "scapa-flow-uk-sms-dresden",
+    "speciesKey": "molva molva",
+    "taxonId": 52539,
+    "matchedName": "Ophiodon elongatus",
+    "matchedCommon": "Lingcod",
+    "imageUrl": "https://static.inaturalist.org/photos/121620546/large.jpg",
+    "license": null,
+    "attribution": "(c) Pat Webster @underwaterpat, all rights reserved, uploaded by Pat Webster @underwaterpat",
+    "source": "inat-taxa"
+  },
+  "scapa-flow-uk-sms-dresden:conger conger": {
+    "siteSlug": "scapa-flow-uk-sms-dresden",
+    "speciesKey": "conger conger",
+    "taxonId": 120125,
+    "matchedName": "Gymnothorax funebris",
+    "matchedCommon": "Green Moray",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/400873304/large.jpg",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Kevin Bryant, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-taxa"
+  },
+  "scapa-flow-uk-sms-dresden:homarus gammarus": {
+    "siteSlug": "scapa-flow-uk-sms-dresden",
+    "speciesKey": "homarus gammarus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/104806169/large.jpeg",
+    "taxonId": 62410,
+    "observationId": 65140808,
+    "license": "cc-by-nc",
+    "attribution": "(c) Jerome Viard, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-dresden:cancer pagurus": {
+    "siteSlug": "scapa-flow-uk-sms-dresden",
+    "speciesKey": "cancer pagurus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/308186467/large.jpeg",
+    "taxonId": 120553,
+    "observationId": 177215207,
+    "license": "cc-by-nc",
+    "attribution": "(c) taylorr80, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "scapa-flow-uk-sms-dresden:metridium senile": {
+    "siteSlug": "scapa-flow-uk-sms-dresden",
+    "speciesKey": "metridium senile",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/597166162/large.jpg",
+    "taxonId": 49071,
+    "observationId": 329437635,
+    "license": "cc-by-nc",
+    "attribution": "(c) Tony Gilbert, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "mergui-archipelago-myanmar-black-rock:mobula birostris": {
+    "siteSlug": "mergui-archipelago-myanmar-black-rock",
+    "speciesKey": "mobula birostris",
+    "imageUrl": "https://static.inaturalist.org/photos/152157706/large.jpg",
+    "taxonId": 623966,
+    "observationId": 91943830,
+    "license": null,
+    "attribution": "(c) Bert Klangpremchitt, all rights reserved",
+    "source": "inat-regional"
+  },
+  "mergui-archipelago-myanmar-black-rock:rhincodon typus": {
+    "siteSlug": "mergui-archipelago-myanmar-black-rock",
+    "speciesKey": "rhincodon typus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/423296545/large.jpeg",
+    "taxonId": 52188,
+    "observationId": 237814987,
+    "license": "cc-by-nc",
+    "attribution": "(c) lucio01, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "mergui-archipelago-myanmar-black-rock:carcharhinus albimarginatus": {
+    "siteSlug": "mergui-archipelago-myanmar-black-rock",
+    "speciesKey": "carcharhinus albimarginatus",
+    "imageUrl": "https://static.inaturalist.org/photos/70090025/large.jpg",
+    "taxonId": 52315,
+    "observationId": 44207734,
+    "license": null,
+    "attribution": "(c) Eden Fontes, all rights reserved",
+    "source": "inat-regional"
+  },
+  "mergui-archipelago-myanmar-black-rock:carcharhinus amblyrhynchos": {
+    "siteSlug": "mergui-archipelago-myanmar-black-rock",
+    "speciesKey": "carcharhinus amblyrhynchos",
+    "taxonId": 67970,
+    "matchedName": "Carcharhinus amblyrhynchos",
+    "matchedCommon": "Grey Reef Shark",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/668839239/large.jpg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Luis P. B., some rights reserved (CC BY-NC), uploaded by Luis P. B.",
+    "source": "inat-taxa"
+  },
+  "mergui-archipelago-myanmar-black-rock:aetobatus narinari": {
+    "siteSlug": "mergui-archipelago-myanmar-black-rock",
+    "speciesKey": "aetobatus narinari",
+    "taxonId": 49297,
+    "matchedName": "Aetobatus narinari",
+    "matchedCommon": "Spotted Eagle Ray",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/195315918/large.jpg",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) michel candel, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-taxa"
+  },
+  "mergui-archipelago-myanmar-black-rock:sphyraena barracuda": {
+    "siteSlug": "mergui-archipelago-myanmar-black-rock",
+    "speciesKey": "sphyraena barracuda",
+    "imageUrl": "https://static.inaturalist.org/photos/348577390/large.jpg",
+    "taxonId": 47251,
+    "observationId": 197852715,
+    "license": null,
+    "attribution": "(c) Kailash Cook, all rights reserved",
+    "source": "inat-regional"
+  },
+  "providencia-colombia-blue-wall:carcharhinus perezi": {
+    "siteSlug": "providencia-colombia-blue-wall",
+    "speciesKey": "carcharhinus perezi",
+    "imageUrl": "https://static.inaturalist.org/photos/468297620/large.jpeg",
+    "taxonId": 188767,
+    "observationId": 260739636,
+    "license": null,
+    "attribution": "(c) dapsang, all rights reserved",
+    "source": "inat-regional"
+  },
+  "providencia-colombia-blue-wall:ginglymostoma cirratum": {
+    "siteSlug": "providencia-colombia-blue-wall",
+    "speciesKey": "ginglymostoma cirratum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/465830703/large.jpeg",
+    "taxonId": 49964,
+    "observationId": 259497013,
+    "license": "cc-by",
+    "attribution": "(c) Gonzalo Romero, some rights reserved (CC BY)",
+    "source": "inat-regional"
+  },
+  "providencia-colombia-blue-wall:chelonia mydas": {
+    "siteSlug": "providencia-colombia-blue-wall",
+    "speciesKey": "chelonia mydas",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/165898589/large.jpeg",
+    "taxonId": 39659,
+    "observationId": 99510344,
+    "license": "cc-by-nc",
+    "attribution": "(c) Julius Stölzle, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "providencia-colombia-blue-wall:gymnothorax moringa": {
+    "siteSlug": "providencia-colombia-blue-wall",
+    "speciesKey": "gymnothorax moringa",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/20009044/large.jpeg",
+    "taxonId": 128105,
+    "observationId": 13600411,
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Sandra Rtpo, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-regional"
+  },
+  "providencia-colombia-blue-wall:scarus vetula": {
+    "siteSlug": "providencia-colombia-blue-wall",
+    "speciesKey": "scarus vetula",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5214474/large.jpeg",
+    "taxonId": 112169,
+    "observationId": 4343149,
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Erick Alexander Pinilla, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-regional"
+  },
+  "providencia-colombia-blue-wall:panulirus argus": {
+    "siteSlug": "providencia-colombia-blue-wall",
+    "speciesKey": "panulirus argus",
+    "imageUrl": "https://static.inaturalist.org/photos/16049766/large.jpg",
+    "taxonId": 47299,
+    "observationId": 10177457,
+    "license": null,
+    "attribution": "(c) tresfurieux, all rights reserved",
+    "source": "inat-regional"
+  },
+  "tela-punta-sal-coral-garden:acropora palmata": {
+    "siteSlug": "tela-punta-sal-coral-garden",
+    "speciesKey": "acropora palmata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/626779611/large.jpg",
+    "taxonId": 93312,
+    "observationId": 344026817,
+    "license": "cc-by-nc",
+    "attribution": "(c) Leona Kustra, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "tela-punta-sal-coral-garden:acropora cervicornis": {
+    "siteSlug": "tela-punta-sal-coral-garden",
+    "speciesKey": "acropora cervicornis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/197909773/large.jpeg",
+    "taxonId": 93234,
+    "observationId": 117204067,
+    "license": "cc-by-nc",
+    "attribution": "(c) Maleen Mund, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "tela-punta-sal-coral-garden:epinephelus striatus": {
+    "siteSlug": "tela-punta-sal-coral-garden",
+    "speciesKey": "epinephelus striatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/443731072/large.jpg",
+    "taxonId": 49746,
+    "observationId": 248353984,
+    "license": "cc-by-nc",
+    "attribution": "(c) Neil DeMaster, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "tela-scientists-corner:diploria labyrinthiformis": {
+    "siteSlug": "tela-scientists-corner",
+    "speciesKey": "diploria labyrinthiformis",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/181583334/large.jpg",
+    "taxonId": 504638,
+    "observationId": 107911746,
+    "license": "cc-by",
+    "attribution": "(c) Pauline Walsh Jacobson, some rights reserved (CC BY)",
+    "source": "inat-regional"
+  },
+  "tela-scientists-corner:bluehead wrasse": {
+    "siteSlug": "tela-scientists-corner",
+    "speciesKey": "bluehead wrasse",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/254689068/large.jpg",
+    "taxonId": 49491,
+    "observationId": 147954309,
+    "license": "cc-by-nc",
+    "attribution": "(c) Jason Headley, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "tela-punta-izopo-wall:cubera snapper": {
+    "siteSlug": "tela-punta-izopo-wall",
+    "speciesKey": "cubera snapper",
+    "taxonId": 51554,
+    "matchedName": "Lutjanus novemfasciatus",
+    "matchedCommon": "Pacific Cubera Snapper",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/352574462/large.jpg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Luis P. B., some rights reserved (CC BY-NC), uploaded by Luis P. B.",
+    "source": "inat-taxa"
+  },
+  "tela-punta-izopo-wall:megalops atlanticus": {
+    "siteSlug": "tela-punta-izopo-wall",
+    "speciesKey": "megalops atlanticus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/586862083/large.jpg",
+    "taxonId": 51402,
+    "observationId": 324257550,
+    "license": "cc-by-nc",
+    "attribution": "(c) Lucas Scott de Marcos, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "tela-punta-izopo-wall:giant barrel sponge": {
+    "siteSlug": "tela-punta-izopo-wall",
+    "speciesKey": "giant barrel sponge",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/527379051/large.jpg",
+    "taxonId": 130048,
+    "observationId": 293026363,
+    "license": "cc-by-nc",
+    "attribution": "(c) Raven Miranda, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
   }
 }
