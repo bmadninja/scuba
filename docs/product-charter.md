@@ -28,15 +28,20 @@ currently renders only the first half (see Positioning gap below).
 One sentence test for a new visitor: _"This is the site that tells me the truth about a
 reef — both what I'll actually see there and what shape it's in."_
 
-**Positioning gap — STATUS UPDATE 2026-06-10:** _substantially closed at the copy level._
-The committed homepage hero now leads with **"Where to dive and what you'll actually
-see"** + "A live dive atlas for sightings, reef health, conservation status, and ocean
-pressure." The species-chaser job is back in the H1. A large homepage redesign is also
-**in flight (staged, uncommitted: 13 files, ~298 insertions, rewriting `page.tsx` and
-`atlas-stage.tsx`)** — the hero copy is itself being reworked, so treat the exact wording
-as in flux. The remaining gap is no longer the hero; it is the **inbound front door**:
-the species-chaser's high-intent _search_ entry points (the `/where-to-see/[species]`
-landing pages) were removed. See the new spec and open decision below.
+**Positioning gap — STATUS UPDATE 2026-06-11: REOPENING in staged code, not closed.**
+The _committed / live-on-prod_ hero still leads with **"Where to dive and what you'll
+actually see"** — so prod is fine. BUT the in-flight redesign (still staged & uncommitted
+24h+ later) **swaps that text hero for a new `HeroCarousel`** whose lead slide H1 is
+**"Know the reef before you dive"** ("Live health status, species sightings, and
+conservation data for every site"), with a reef-health testimonial on slide 2. That hero
+leads with the _atlas/grant wrapper_ and demotes the _species-chaser job_ to one noun in a
+subhead list. **The moment this redesign lands, the positioning gap the 2026-06-10 entry
+called DONE reopens.** Do not trust "DONE" — the next positioning slot must read
+`src/components/hero-carousel.tsx` directly and decide: intended reef-first direction, or
+drift to correct (slide 1 should lead with "what you'll actually see / where & when").
+The _inbound front door_ gap (`/where-to-see/[species]` SEO pages removed) is **still open
+underneath this** — and if reef-first is deliberate, the species moat then has no front
+door at all, making the A2 SEO restore more urgent. See spec and open decision below.
 
 ---
 
@@ -208,10 +213,15 @@ search traffic that no atlas filter can recover. That answer decides whether the
 species-landing SEO spec (above) is the next build or a deliberate non-goal — and whether
 any surface still carries the booking/gear revenue funnel.
 
-Next positioning slot: the hero now makes the species promise (DONE). Shift the
-stress-test from "does the homepage say it" to **"can a diver who arrives from a search
-engine find us at all, and once here, act on the promise in one step?"** — i.e. inbound
-discoverability + the path from promise to the filtered atlas.
+Next positioning slot: **do NOT trust the "hero DONE" entry.** Open
+`src/components/hero-carousel.tsx` first. The staged redesign's lead hero is now "Know the
+reef before you dive" — reef-health-first, species job demoted to a subhead noun. Decide:
+is reef-first the intended grant face, or drift? Then carry the original question forward —
+**"can a diver who arrives from a search engine find us at all, and once here, act on the
+promise in one step?"** (inbound discoverability + path to the filtered atlas).
 
-Watch: the staged homepage redesign (13 files) — once it lands, re-verify the hero copy
-and the atlas wildlife-facet discoverability, since both are being reworked.
+Watch / decide: the staged homepage redesign (13 files, 298 insertions) has sat
+**uncommitted for 24h+**. It is the explicit blocker on the A2 SEO-restore build and it is
+quietly reworking the hero positioning. Resolve its status — land it or shelf it on a
+branch — rather than leaving it rotting in the index. Also confirm the slide-2 testimonial
+("Diver, Hong Kong") is real/approved before it ships.
