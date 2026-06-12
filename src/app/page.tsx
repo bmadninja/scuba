@@ -271,7 +271,7 @@ export default function Home() {
       {/* ══ STATS STRIP ══════════════════════════════════════════════ */}
       <div style={{ borderBottom: `1px solid ${C.border}` }}>
         <div
-          className="lp-wrap"
+          className="lp-wrap lp-stats-strip"
           style={{
             maxWidth: 1320,
             margin: "0 auto",
@@ -571,6 +571,7 @@ export default function Home() {
                     {card.hook}
                   </div>
                   <div
+                    className="lp-card-chips"
                     style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem", marginTop: "0.5rem" }}
                   >
                     {card.chips.map((c) => (
@@ -1221,7 +1222,7 @@ export default function Home() {
           </div>
 
           {/* text — right */}
-          <div>
+          <div className="lp-04-text">
             <SecLabel n="§ 04" label="Plan your trip" />
             <h2
               style={{
