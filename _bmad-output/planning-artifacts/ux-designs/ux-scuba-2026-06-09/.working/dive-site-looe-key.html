@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Looe Key — dive site page (review mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#0089de;--brand-dk:#1d5d90;--brand-hover:#007bc7;
+  --ink:#0b1e32;--white:#fff;--body:#334155;--muted:#64748b;
+  --hairline:#e2e8f0;--surface:#f1f7fb;
+  --thriving:#10b981;--pressure:#0089de;--change:#f43f5e;
+  --pressure-bg:#eaf1fe;--pressure-text:#1f57c8;--pressure-dot:#2f6ced;
+}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;flex-shrink:0;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--muted);margin-left:1.5rem;}
+.nav-breadcrumb a{color:var(--muted);text-decoration:none;}
+.nav-breadcrumb .sep{color:#cbd5e1;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a.active{color:var(--brand);}
+/* HERO */
+.hero{position:relative;height:54vh;min-height:420px;overflow:hidden;}
+.hero-img{width:100%;height:100%;background:linear-gradient(155deg,#04243a 0%,#0a4a63 30%,#0a6b7a 55%,#0a8a7a 80%,#0a7060 100%);}
+.hero-shimmer{position:absolute;inset:0;background-image:repeating-linear-gradient(96deg,transparent 0,transparent 44px,rgba(0,180,220,.04) 44px,rgba(0,180,220,.04) 46px);}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:240px;background:linear-gradient(to bottom,transparent,#fff);}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 3rem 2.5rem;max-width:1320px;margin:0 auto;}
+.hero-chips{display:flex;gap:0.6rem;margin-bottom:1rem;flex-wrap:wrap;}
+.hero-chip{display:inline-flex;align-items:center;gap:0.4rem;padding:0.35rem 0.85rem;border-radius:999px;font-size:0.6875rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;backdrop-filter:blur(8px);}
+.hc-confirm{background:rgba(16,185,129,0.22);border:1px solid rgba(16,185,129,0.45);color:#bbf7d0;}
+.hc-season{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.9);}
+.hero-h1{font-size:clamp(2.5rem,5vw,4.25rem);font-weight:800;letter-spacing:-0.035em;line-height:1.02;color:#fff;text-shadow:0 2px 18px rgba(4,18,32,0.5);}
+.hero-sub{font-size:0.9rem;font-weight:500;letter-spacing:0.02em;color:rgba(255,255,255,0.8);margin-top:0.6rem;text-transform:uppercase;}
+.hero-sub a{color:#fff;}
+/* BODY */
+.body-wrap{max-width:1320px;margin:0 auto;padding:3rem 3rem 4rem;}
+.body-grid{display:grid;grid-template-columns:1fr 360px;gap:4rem;align-items:start;}
+.section-label{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;}
+.block{margin-bottom:3rem;}
+.intro-text{font-family:'Source Serif 4',serif;font-size:1.25rem;line-height:1.75;color:#1e293b;max-width:700px;}
+/* CONDITIONS */
+.cond-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;}
+.cond-card{border:1px solid var(--hairline);border-radius:1rem;padding:1.1rem 1.2rem;}
+.cond-ico{font-size:1.2rem;margin-bottom:0.5rem;}
+.cond-lbl{font-size:0.5875rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;}
+.cond-val{font-size:1rem;font-weight:700;color:#0f172a;}
+.cond-sub{font-size:0.6875rem;color:var(--muted);margin-top:0.15rem;}
+/* SIGHTING LOG */
+.log-tabs{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.1rem;}
+.log-tab{padding:0.45rem 0.85rem;border-radius:999px;border:1px solid var(--hairline);background:#fff;font-size:0.8125rem;font-weight:600;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:0.45rem;}
+.log-tab.active{background:#0f172a;color:#fff;border-color:#0f172a;}
+.log-tab .iucn{font-size:0.5rem;}
+.log-list{border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;}
+.log-row{display:flex;align-items:flex-start;gap:0.875rem;padding:1rem 1.3rem;border-top:1px solid var(--hairline);}
+.log-row:first-child{border-top:none;}
+.log-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.log-main{flex:1;}
+.log-count{font-size:0.875rem;font-weight:700;color:#0f172a;}
+.log-note{font-size:0.8125rem;color:var(--muted);margin-top:0.1rem;}
+.log-date{font-size:0.75rem;color:#94a3b8;white-space:nowrap;flex-shrink:0;font-family:'IBM Plex Mono',monospace;margin-top:2px;}
+.log-none .log-count{color:#94a3b8;}
+.log-source{font-size:0.75rem;color:var(--muted);margin-top:0.9rem;line-height:1.5;}
+.log-source a{color:var(--brand);text-decoration:none;font-weight:600;}
+.iucn{display:inline-block;font-size:0.5625rem;font-weight:700;letter-spacing:0.01em;padding:0.15rem 0.5rem;border-radius:999px;white-space:nowrap;}
+.iucn-lc{background:#e7f6ee;color:#15824c;}.iucn-nt{background:#f3fce8;color:#3f6212;}
+.iucn-vu{background:#fcf2e2;color:#b9751a;}.iucn-en{background:#fdecea;color:#c0392f;}.iucn-cr{background:#fdecea;color:#b91c1c;}
+.log-tab.active .iucn{filter:brightness(1.1);}
+.log-ico{font-size:1.05rem;flex-shrink:0;width:1.5rem;text-align:center;margin-top:1px;}
+.feed-more{display:inline-block;margin-top:0.95rem;font-size:0.8125rem;font-weight:600;color:var(--brand);text-decoration:none;}
+.contribute-rows{display:flex;flex-direction:column;gap:0;margin-bottom:0.25rem;}
+.contribute-row{display:flex;align-items:center;gap:0.85rem;padding:0.75rem 0;border-top:1px solid #d7ebdd;cursor:pointer;text-decoration:none;color:inherit;}
+.contribute-row:first-child{border-top:none;}
+.cr-ico{font-size:1.15rem;width:1.6rem;text-align:center;flex-shrink:0;}
+.cr-name{font-size:0.875rem;font-weight:700;color:#0f172a;}
+.cr-desc{font-size:0.75rem;color:var(--muted);}
+.cr-go{margin-left:auto;color:#15824c;flex-shrink:0;font-size:1.1rem;}
+.contribute-method{font-size:0.8125rem;font-weight:600;color:var(--brand);text-decoration:none;display:inline-block;margin-top:0.85rem;}
+/* ENCOUNTER ODDS */
+.enc-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;}
+.enc-row{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;border-top:1px solid var(--hairline);}
+.enc-row:first-child{border-top:none;}
+.enc-ico{font-size:1.4rem;width:2.5rem;height:2.5rem;border-radius:0.6rem;background:#eef2f6;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.enc-main{flex:1;min-width:0;}
+.enc-name{font-size:0.9375rem;font-weight:700;color:#0f172a;display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;}
+.enc-where{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
+.enc-odds{width:160px;flex-shrink:0;}
+.enc-odds-lbl{font-size:0.8125rem;font-weight:700;margin-bottom:0.35rem;}
+.enc-bar{height:6px;border-radius:3px;background:#eef2f6;overflow:hidden;}
+.enc-fill{height:100%;border-radius:3px;}
+.enc-freq{font-size:0.6875rem;color:var(--muted);margin-top:0.35rem;}
+@media(max-width:640px){.enc-odds{width:110px;}.enc-where{display:none;}}
+/* CONTRIBUTE */
+.contribute{border:1px solid #cde9d6;background:#f3faf5;border-radius:1.25rem;padding:1.5rem 1.6rem;}
+.contribute h3{font-size:1.1rem;font-weight:800;color:#0f172a;margin-bottom:0.4rem;letter-spacing:-0.02em;}
+.contribute p{font-size:0.875rem;color:var(--body);line-height:1.6;margin-bottom:1rem;max-width:560px;}
+.contribute-btns{display:flex;gap:0.6rem;flex-wrap:wrap;}
+.contribute-btn{padding:0.55rem 1rem;border-radius:0.7rem;background:#fff;border:1px solid var(--hairline);font-size:0.8125rem;font-weight:600;color:#0f172a;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;}
+.contribute-btn:hover{border-color:var(--brand);color:var(--brand);}
+/* GEAR */
+.gear-box{border:1px solid var(--hairline);border-radius:1.25rem;padding:1.1rem 1.4rem;}
+.gear-list{display:flex;flex-direction:column;gap:0;list-style:none;}
+.gear-group-lbl{font-size:0.625rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin:1.1rem 0 0.2rem;}
+.gear-group-lbl.first{margin-top:0;}
+.gear-item{display:flex;align-items:center;gap:0.75rem;padding:0.65rem 0;border-top:1px solid var(--hairline);}
+.gear-item.firstrow{border-top:none;}
+.gear-ico{font-size:1.05rem;width:1.4rem;text-align:center;flex-shrink:0;}
+.gear-name{font-size:0.875rem;font-weight:600;color:#0f172a;flex:1;}
+.gear-name a{color:inherit;text-decoration:none;}.gear-name a:hover{color:var(--brand);}
+.gear-extra{font-weight:400;color:var(--muted);font-size:0.8125rem;}
+.gear-link{color:#cbd5e1;flex-shrink:0;display:flex;}.gear-link:hover{color:var(--brand);}
+/* SIDEBAR trip card */
+.sidebar{position:sticky;top:5rem;}
+.trip-card{border:1px solid var(--hairline);border-radius:1.4rem;box-shadow:0 12px 40px -16px rgba(15,23,42,0.22);overflow:hidden;}
+.trip-head{padding:1.5rem 1.6rem 1.1rem;}
+.trip-kicker{font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+.trip-h3{font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;color:#0f172a;line-height:1.15;}
+.trip-facts{padding:0 1.6rem;display:flex;flex-direction:column;}
+.trip-fact{display:flex;gap:0.75rem;align-items:flex-start;padding:0.85rem 0;border-top:1px solid var(--hairline);}
+.trip-fact:first-child{border-top:none;}
+.trip-fact-ico{width:30px;height:30px;border-radius:0.55rem;background:var(--surface);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.95rem;}
+.trip-fact-lbl{font-size:0.625rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.trip-fact-val{font-size:0.875rem;font-weight:600;color:#0f172a;margin-top:0.1rem;}
+.mini-season{display:flex;gap:3px;margin-top:0.4rem;}
+.ms-cell{flex:1;height:20px;border-radius:3px;font-size:0.5rem;font-weight:700;display:flex;align-items:center;justify-content:center;color:#94a3b8;background:#f1f5f9;}
+.ms-on{background:#e7f6ee;color:#15824c;}.ms-now{outline:2px solid var(--brand);outline-offset:1px;}
+.trip-cta-wrap{padding:1.25rem 1.6rem 1.6rem;}
+.trip-cta{display:block;width:100%;padding:0.95rem 1.25rem;border-radius:0.85rem;background:var(--brand);color:#fff;font-size:1rem;font-weight:700;text-decoration:none;text-align:center;border:none;cursor:pointer;transition:background .15s;}
+.trip-cta:hover{background:var(--brand-hover);}
+.trip-expand{border-top:1px solid var(--hairline);}
+.trip-expand summary{list-style:none;cursor:pointer;padding:0.9rem 1.6rem;font-size:0.8125rem;font-weight:600;color:#0f172a;display:flex;align-items:center;justify-content:space-between;}
+.trip-expand summary::-webkit-details-marker{display:none;}
+.trip-expand .chev{color:#94a3b8;transition:transform .2s;}
+.trip-expand[open] .chev{transform:rotate(180deg);}
+.trip-expand-body{padding:0 1.6rem 1.2rem;font-size:0.8125rem;color:var(--body);line-height:1.6;}
+/* INFO BTN + MODAL */
+.info-btn{width:15px;height:15px;border-radius:50%;border:1.4px solid #94a3b8;color:#64748b;font-size:0.62rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;background:none;flex-shrink:0;line-height:1;}
+.info-btn:hover{border-color:var(--brand);color:var(--brand);}
+.modal-back{position:fixed;inset:0;background:rgba(8,15,30,0.5);backdrop-filter:blur(2px);z-index:100;display:none;align-items:center;justify-content:center;padding:1.5rem;}
+.modal-back.open{display:flex;}
+.modal{background:#fff;border-radius:1.25rem;max-width:480px;width:100%;padding:1.75rem;box-shadow:0 24px 64px -16px rgba(0,0,0,0.4);position:relative;max-height:85vh;overflow:auto;}
+.modal-close{position:absolute;top:1rem;right:1.1rem;background:none;border:none;font-size:1.4rem;color:#94a3b8;cursor:pointer;line-height:1;}
+.modal-title{font-size:1.2rem;font-weight:800;letter-spacing:-0.02em;color:#0f172a;margin-bottom:0.4rem;}
+.modal-sub{font-size:0.875rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.55;}
+.modal-row{display:flex;gap:0.75rem;padding:0.8rem 0;border-top:1px solid var(--hairline);}
+.modal-row .tag{flex-shrink:0;padding:0.15rem 0.55rem;border-radius:999px;font-size:0.7rem;font-weight:700;height:fit-content;}
+.modal-row .txt{font-size:0.8125rem;color:var(--body);line-height:1.5;}
+.modal-row .txt b{color:#0f172a;}
+.modal-para{font-size:0.875rem;color:var(--body);line-height:1.65;margin-bottom:0.8rem;}
+.modal-source{font-size:0.75rem;color:var(--muted);margin-top:0.9rem;padding-top:0.8rem;border-top:1px solid var(--hairline);line-height:1.5;}
+.modal-link{display:inline-block;margin-top:1rem;font-size:0.875rem;font-weight:600;color:var(--brand);text-decoration:none;}
+.modal-link:hover{text-decoration:underline;}
+.modal-op{display:flex;align-items:center;gap:0.875rem;padding:0.9rem 0;border-top:1px solid var(--hairline);text-decoration:none;color:inherit;}
+.modal-op:hover .modal-op-name{color:var(--brand);}
+.modal-op-info{flex:1;}.modal-op-name{font-size:0.9375rem;font-weight:700;color:#0f172a;}
+.modal-op-desc{font-size:0.75rem;color:var(--muted);margin-top:0.1rem;}
+.modal-op-go{font-size:0.8125rem;font-weight:600;color:var(--brand);white-space:nowrap;flex-shrink:0;}
+/* legend + banner */
+.legend{position:fixed;right:1.25rem;bottom:1.25rem;width:320px;max-height:70vh;overflow:auto;background:#0f172a;color:#fff;border-radius:1rem;padding:1.2rem 1.3rem;box-shadow:0 16px 48px -12px rgba(0,0,0,0.5);z-index:80;font-size:0.8rem;line-height:1.45;}
+.legend h4{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:#7dd3fc;margin-bottom:0.75rem;}
+.legend ul{margin:0;padding-left:1rem;display:flex;flex-direction:column;gap:0.5rem;}
+.legend .add{color:#86efac;}
+.legend-close{position:absolute;top:0.7rem;right:0.85rem;color:rgba(255,255,255,0.5);cursor:pointer;font-size:1.1rem;background:none;border:none;}
+.banner{background:#fef9c3;border-bottom:1px solid #fde68a;padding:0.6rem 3rem;font-size:0.8125rem;color:#854d0e;text-align:center;}
+@media(max-width:1080px){.body-grid{grid-template-columns:1fr;}.sidebar{position:static;}}
+@media(max-width:640px){.cond-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+
+<div class="banner">📐 <b>Dive site mockup</b> — Looe Key, same system as the location page. Try the species <b>tabs</b> and the <b>(i)</b> popups. Not production.</div>
+
+<nav class="nav">
+  <a href="atlas.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark"><span class="nav-wm-top">scuba</span><span class="nav-wm-bot">Season.fun</span></div>
+  </a>
+  <nav class="nav-breadcrumb"><a href="atlas.html">All reefs</a><span class="sep">/</span><a href="location-florida-keys-slim-v2.html">Florida Keys</a><span class="sep">/</span><span style="color:#0f172a;font-weight:600;">Looe Key</span></nav>
+  <ul class="nav-links">
+    <li><a href="method.html">Method</a></li><li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-shimmer"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-content">
+    <div class="hero-chips">
+      <span class="hero-chip hc-confirm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Goliath grouper confirmed 9 days ago</span>
+      <span class="hero-chip hc-season">Peak season now</span>
+    </div>
+    <h1 class="hero-h1">Looe Key</h1>
+    <p class="hero-sub"><a href="location-florida-keys-slim-v2.html">Florida Keys</a> · United States</p>
+  </div>
+</section>
+
+<div class="body-wrap">
+  <div class="body-grid">
+    <!-- LEFT -->
+    <div>
+
+      <!-- INTRO -->
+      <div class="block">
+        <p class="intro-text">A shallow, sunlit spur and groove reef inside the Looe Key sanctuary, named for a British frigate that wrecked here in 1744. Fishing has been banned for decades, so the coral heads are busy: schools of grunts, the occasional resident goliath grouper, and turtles grazing the flats. One of the easiest world class reef dives in the country.</p>
+      </div>
+
+      <!-- CONDITIONS -->
+      <div class="block">
+        <p class="section-label">Conditions <button class="info-btn" onclick="openModal('conditions')" aria-label="What these mean">i</button></p>
+        <div class="cond-grid">
+          <div class="cond-card"><div class="cond-ico">📏</div><p class="cond-lbl">Depth</p><p class="cond-val">5 to 18 m</p><p class="cond-sub">Good for beginners</p></div>
+          <div class="cond-card"><div class="cond-ico">🌊</div><p class="cond-lbl">Current</p><p class="cond-val">Usually gentle</p><p class="cond-sub">Can pick up on the edge</p></div>
+          <div class="cond-card"><div class="cond-ico">👁️</div><p class="cond-lbl">Visibility</p><p class="cond-val">15 to 25 m</p><p class="cond-sub">Clearest in summer</p></div>
+          <div class="cond-card"><div class="cond-ico">🌡️</div><p class="cond-lbl">Water</p><p class="cond-val">24 to 30°C</p><p class="cond-sub">Light wetsuit</p></div>
+        </div>
+      </div>
+
+      <!-- ENCOUNTER ODDS (per species: chance + where) -->
+      <div class="block">
+        <p class="section-label">Your chances of seeing each animal <button class="info-btn" onclick="openModal('log')" aria-label="How this is worked out">i</button></p>
+        <div class="enc-list">
+          <div class="enc-row">
+            <div class="enc-ico">🐠</div>
+            <div class="enc-main"><p class="enc-name">Parrotfish</p><p class="enc-where">Across the shallow coral</p></div>
+            <div class="enc-odds"><p class="enc-odds-lbl" style="color:#15824c;">Almost always</p><div class="enc-bar"><div class="enc-fill" style="width:95%;background:#15a05c;"></div></div><p class="enc-freq">Nearly every dive</p></div>
+          </div>
+          <div class="enc-row">
+            <div class="enc-ico">🐟</div>
+            <div class="enc-main"><p class="enc-name">Goliath grouper <span class="iucn iucn-vu">Vulnerable</span></p><p class="enc-where">At the wreck mooring and the main ledge</p></div>
+            <div class="enc-odds"><p class="enc-odds-lbl" style="color:#15824c;">Very likely</p><div class="enc-bar"><div class="enc-fill" style="width:85%;background:#15a05c;"></div></div><p class="enc-freq">Most dives</p></div>
+          </div>
+          <div class="enc-row">
+            <div class="enc-ico">🐢</div>
+            <div class="enc-main"><p class="enc-name">Green turtle <span class="iucn iucn-en">Endangered</span></p><p class="enc-where">Grazing on the reef flat</p></div>
+            <div class="enc-odds"><p class="enc-odds-lbl" style="color:#15824c;">Likely</p><div class="enc-bar"><div class="enc-fill" style="width:60%;background:#10b981;"></div></div><p class="enc-freq">About 6 in 10 dives</p></div>
+          </div>
+          <div class="enc-row">
+            <div class="enc-ico">🦈</div>
+            <div class="enc-main"><p class="enc-name">Nurse shark <span class="iucn iucn-lc">Least concern</span></p><p class="enc-where">Resting under coral ledges</p></div>
+            <div class="enc-odds"><p class="enc-odds-lbl" style="color:#b9751a;">Sometimes</p><div class="enc-bar"><div class="enc-fill" style="width:35%;background:#e8962f;"></div></div><p class="enc-freq">About 1 in 3 dives</p></div>
+          </div>
+          <div class="enc-row">
+            <div class="enc-ico">🐠</div>
+            <div class="enc-main"><p class="enc-name">Spotted eagle ray <span class="iucn iucn-en">Endangered</span></p><p class="enc-where">Passing along the drop off</p></div>
+            <div class="enc-odds"><p class="enc-odds-lbl" style="color:#64748b;">Rare</p><div class="enc-bar"><div class="enc-fill" style="width:15%;background:#94a3b8;"></div></div><p class="enc-freq">Now and then</p></div>
+          </div>
+        </div>
+        <a href="species-looe-key.html" class="feed-more">See all species recorded here →</a>
+      </div>
+
+      <!-- CONTRIBUTE -->
+      <div class="block">
+        <div class="contribute">
+          <h3>Diving here? Add what you see</h3>
+          <p>Your photos become part of the public record scientists use. Pick how involved you want to be.</p>
+          <div class="contribute-rows">
+            <a class="contribute-row" onclick="openModal('inat');return false;" href="#">
+              <span class="cr-ico">📷</span>
+              <span><span class="cr-name">iNaturalist</span><br><span class="cr-desc">Photograph anything you see. No training needed.</span></span>
+              <span class="cr-go">›</span>
+            </a>
+            <a class="contribute-row" onclick="openModal('coralwatch');return false;" href="#">
+              <span class="cr-ico">🎨</span>
+              <span><span class="cr-name">CoralWatch</span><br><span class="cr-desc">Match coral colour to a chart. A few minutes.</span></span>
+              <span class="cr-go">›</span>
+            </a>
+            <a class="contribute-row" onclick="openModal('reefcheck');return false;" href="#">
+              <span class="cr-ico">🐟</span>
+              <span><span class="cr-name">Reef Check</span><br><span class="cr-desc">Run a standard fish survey. Free training.</span></span>
+              <span class="cr-go">›</span>
+            </a>
+          </div>
+          <a href="method.html" class="contribute-method">See how submitting and verifying works on the Method page →</a>
+        </div>
+      </div>
+
+      <!-- GEAR -->
+      <div class="block">
+        <p class="section-label">Gear</p>
+        <div class="gear-box">
+          <ul class="gear-list">
+            <p class="gear-group-lbl first">Basic kit</p>
+            <li class="gear-item firstrow"><span class="gear-ico">🤿</span><span class="gear-name"><a href="#">Mask and fins</a></span><a href="#" class="gear-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></li>
+            <li class="gear-item"><span class="gear-ico">🦺</span><span class="gear-name"><a href="#">BCD and regulator</a></span><a href="#" class="gear-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></li>
+            <li class="gear-item"><span class="gear-ico">🌡️</span><span class="gear-name"><a href="#">3mm wetsuit</a> <span class="gear-extra">· warm water</span></span><a href="#" class="gear-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></li>
+            <li class="gear-item"><span class="gear-ico">⌚</span><span class="gear-name"><a href="#">Dive computer</a></span><a href="#" class="gear-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></li>
+            <p class="gear-group-lbl">For this site</p>
+            <li class="gear-item firstrow"><span class="gear-ico">🎈</span><span class="gear-name"><a href="#">Surface marker buoy</a> <span class="gear-extra">· busy boat traffic</span></span><a href="#" class="gear-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="sidebar">
+      <div class="trip-card">
+        <div class="trip-head"><p class="trip-kicker">Plan your dive</p><p class="trip-h3">Dive Looe Key</p></div>
+        <div class="trip-facts">
+          <div class="trip-fact"><div class="trip-fact-ico">📅</div><div style="flex:1;"><p class="trip-fact-lbl">Best months</p><p class="trip-fact-val">April to October</p><div class="mini-season"><span class="ms-cell">J</span><span class="ms-cell">F</span><span class="ms-cell">M</span><span class="ms-cell ms-on">A</span><span class="ms-cell ms-on">M</span><span class="ms-cell ms-on ms-now">J</span><span class="ms-cell ms-on">J</span><span class="ms-cell ms-on">A</span><span class="ms-cell ms-on">S</span><span class="ms-cell ms-on">O</span><span class="ms-cell">N</span><span class="ms-cell">D</span></div></div></div>
+          <div class="trip-fact"><div class="trip-fact-ico">🚤</div><div style="flex:1;"><p class="trip-fact-lbl">Getting on the water</p><p class="trip-fact-val">Boat from Big Pine Key</p></div></div>
+        </div>
+        <div class="trip-cta-wrap"><a href="#" class="trip-cta" onclick="openModal('operators');return false;">See dive operators →</a></div>
+        <details class="trip-expand"><summary>Getting there <span class="chev">⌄</span></summary><div class="trip-expand-body">Fly into <b>Key West (EYW)</b>, about 45 minutes by road, or <b>Miami (MIA)</b>, roughly 2.5 hours down the Overseas Highway. Operators run out from Big Pine Key and reach the reef in about 30 minutes.</div></details>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-back" id="modal-back" onclick="if(event.target===this)closeModal()">
+  <div class="modal"><button class="modal-close" onclick="closeModal()">×</button><div id="modal-content"></div></div>
+</div>
+
+<div class="legend" id="legend">
+  <button class="legend-close" onclick="document.getElementById('legend').style.display='none'">×</button>
+  <h4>Dive site — same system</h4>
+  <ul>
+    <li>Opens with a <span class="add">generic intro</span>, like the location page.</li>
+    <li><span class="add">Conditions grid</span> in plain words — no "vis", no jargon; (i) explains each.</li>
+    <li><span class="add">Encounter odds per species</span> — chance of seeing each animal + where, with a likelihood bar. Scales as a list. How it's worked out lives in the (i).</li>
+    <li>Contribute platforms now carry a <span class="add">one-liner each</span> + a "how submitting works" link to Method.</li>
+    <li>Gear two layers; one clear CTA (operators popup); getting there as a dropdown.</li>
+  </ul>
+</div>
+
+<script>
+const METHOD_LINK = '<a class="modal-link" href="#">See exactly how we do this on the Method page →</a>';
+const MODALS = {
+  conditions: { title:"What the conditions mean", sub:"A quick read on what to expect underwater. These are typical for the season, not a guarantee on the day — your operator briefs the actual plan.", rows:[
+    ["Depth","#eaf1fe","#1f57c8","<b>Depth.</b> The shallow and deep range of the dive. Looe Key is shallow, fine for newer divers."],
+    ["Current","#f1f5f9","#475569","<b>Current.</b> How much the water moves you along. Gentle here, stronger on the outer edge."],
+    ["Visibility","#eaf1fe","#1f57c8","<b>Visibility.</b> How far you can see underwater. Clearest in summer."],
+    ["Water","#fcf2e2","#b9751a","<b>Water.</b> Temperature range, which sets your wetsuit thickness."],
+  ]},
+  log: { title:"How we work out your chances", body:[
+    "The chance comes from how often divers have actually logged each animal here over the past year. <b>Most dives</b> means it showed up in the majority of recent records; <b>now and then</b> means only a few.",
+    "Every record is a real diver photo, confirmed by the iNaturalist community to <b>research grade</b>, then passed into GBIF, the global database that feeds IUCN Red List assessments. Nothing is invented.",
+    "Wildlife moves, so treat these as a guide, not a promise.",
+  ], source:"Source: iNaturalist research grade observations, via GBIF.", link:true },
+  iucn: { title:"What the conservation labels mean", sub:"Each animal carries its status from the IUCN Red List, the global standard for extinction risk.", rows:[
+    ["Least concern","#e7f6ee","#15824c","Widespread and not currently at risk."],
+    ["Near threatened","#f3fce8","#3f6212","Could become at risk in the near future."],
+    ["Vulnerable","#fcf2e2","#b9751a","High risk of extinction in the wild."],
+    ["Endangered","#fdecea","#c0392f","Very high risk of extinction in the wild."],
+    ["Critically endangered","#fdecea","#b91c1c","Extremely high risk — one step from extinct in the wild."],
+  ], link:true },
+  inat: { title:"Submitting to iNaturalist", body:["Photograph any animal and upload it with the location. The community confirms the species. Once it reaches research grade it joins the public record scientists use — the simplest way to contribute, no training needed."], link:true },
+  reefcheck: { title:"Submitting to Reef Check", body:["A structured reef survey method. With a short training course you can run a standard transect and log fish, invertebrates and coral health that feed long term monitoring."], link:true },
+  coralwatch: { title:"Submitting to CoralWatch", body:["Match coral colour against a simple chart to record bleaching. Takes a few minutes, needs no training, and helps track heat stress over time."], link:true },
+  operators: { title:"Dive operators for Looe Key", sub:"Operators that run trips to this site. We don't book or take a commission — each link goes to the operator's own site. (Example list.)", ops:[
+    ["Looe Key Dive Center","Big Pine Key · daily reef trips","#"],
+    ["Rainbow Reef Dive Center","Key Largo · good for newer divers","#"],
+    ["Conch Republic Divers","Tavernier · small group boats","#"],
+  ]},
+};
+function openModal(key){
+  const m = MODALS[key]; if(!m) return;
+  let html = '<p class="modal-title">'+m.title+'</p>';
+  if(m.sub) html += '<p class="modal-sub">'+m.sub+'</p>';
+  if(m.body) m.body.forEach(p=>{ html += '<p class="modal-para">'+p+'</p>'; });
+  if(m.rows) m.rows.forEach(r=>{ html += '<div class="modal-row"><span class="tag" style="background:'+r[1]+';color:'+r[2]+'">'+r[0]+'</span><span class="txt">'+r[3]+'</span></div>'; });
+  if(m.ops) m.ops.forEach(o=>{ html += '<a class="modal-op" href="'+o[2]+'" target="_blank" rel="noopener"><span class="modal-op-info"><span class="modal-op-name">'+o[0]+'</span><br><span class="modal-op-desc">'+o[1]+'</span></span><span class="modal-op-go">Visit site →</span></a>'; });
+  if(m.source) html += '<p class="modal-source">'+m.source+'</p>';
+  if(m.link) html += METHOD_LINK;
+  document.getElementById('modal-content').innerHTML = html;
+  document.getElementById('modal-back').classList.add('open');
+}
+function closeModal(){ document.getElementById('modal-back').classList.remove('open'); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeModal(); });
+</script>
+
+</body>
+</html>
+</content>

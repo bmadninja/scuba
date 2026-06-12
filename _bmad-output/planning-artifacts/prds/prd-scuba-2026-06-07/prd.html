@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citizen Science MVP — PRD</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 720px; margin: 0 auto; padding: 20px 16px 60px; color: #1a1a1a; line-height: 1.6; font-size: 16px; }
+  h1 { font-size: 1.5rem; margin-bottom: 4px; }
+  .meta { color: #666; font-size: 0.85rem; margin-bottom: 32px; }
+  h2 { font-size: 1.2rem; margin-top: 40px; padding-bottom: 6px; border-bottom: 2px solid #e0e0e0; }
+  h3 { font-size: 1rem; margin-top: 28px; color: #333; }
+  h4 { font-size: 0.95rem; margin-top: 20px; color: #555; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  .fr { background: #f7f7f7; border-left: 3px solid #0066cc; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 0.9rem; }
+  .fr strong { color: #0044aa; }
+  .nfr { background: #fffbf0; border-left: 3px solid #e6a817; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 0.9rem; }
+  .assumption { background: #fff8e1; border: 1px solid #ffe082; border-radius: 4px; padding: 2px 6px; font-size: 0.82rem; color: #795548; }
+  .value-chain { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 14px 16px; font-weight: 500; text-align: center; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 16px 0; }
+  th { background: #f0f0f0; text-align: left; padding: 8px 10px; }
+  td { padding: 8px 10px; border-bottom: 1px solid #e8e8e8; vertical-align: top; }
+  .tag-draft { background: #fff3cd; color: #856404; border-radius: 12px; padding: 2px 10px; font-size: 0.78rem; font-weight: 600; }
+  .section-intro { color: #555; font-style: italic; margin-bottom: 12px; font-size: 0.95rem; }
+  hr { border: none; border-top: 1px solid #e8e8e8; margin: 32px 0; }
+</style>
+</head>
+<body>
+
+<h1>scubaseason.fun — Citizen Science MVP</h1>
+<div class="meta"><span class="tag-draft">DRAFT</span> &nbsp; Created 2026-06-07</div>
+
+<h2>Problem Statement</h2>
+<p>9–14 million recreational divers enter the ocean every year and observe marine ecosystems that science institutes are struggling to monitor at scale. Those institutes default to expensive robots, remote sensing, and specialist expeditions — not because local expertise is inferior, but because they don't know where to find it and don't trust what they can't credential.</p>
+<p>Meanwhile, 78% of divers who would participate in citizen science programs have never been personally invited to one. The platforms that exist (iNaturalist, Reef Check, REEF, eOceans) each capture a slice of this, but none are integrated with where divers actually plan their trips. The feedback loop — showing divers what their data changed — is the #1 retention lever, and only 38% of current participants are satisfied with it.</p>
+<p>scubaseason.fun already sits at the highest-intent moment in a diver's journey: site research before a dive. This PRD scopes the MVP that adds a structured citizen science layer — turning site discovery into an observation pipeline — while extending participation to boat operators and dive guides, the local community members most consistently present at reef systems.</p>
+<div class="value-chain">diver → structured observation → validation → scientific database (GBIF/OBIS/GCRMN-compatible) → closed feedback loop back to diver</div>
+<p>No existing platform delivers this end-to-end.</p>
+
+<h2>Goals</h2>
+<ol>
+  <li>Enable recreational divers to submit structured observations (species sightings, debris, water conditions) tied to specific dive sites.</li>
+  <li>Apply AI-assisted species identification so divers with no taxonomy knowledge can contribute valid data.</li>
+  <li>Close the feedback loop: show every contributor how their data is being used and what it has revealed.</li>
+  <li>Extend contribution pathways to boat operators and dive guides — the local community members with the most consistent reef access.</li>
+  <li>Export observations in Darwin Core Archive (DwC-A) format compatible with GBIF/OBIS/GCRMN for ingestion by science partners.</li>
+  <li>Reinforce scubaseason.fun's nonprofit identity at every touchpoint: science participation is framed as contribution, not gamification.</li>
+</ol>
+
+<h3>Non-Goals (MVP)</h3>
+<ul>
+  <li>eDNA collection programs (Phase 3+)</li>
+  <li>Dive computer data integration / Seabed 2030 bathymetry (Phase 3+)</li>
+  <li>Corporate TNFD biodiversity data product (Phase 4)</li>
+  <li>New affiliate surfaces or revenue mechanisms</li>
+  <li>Native iOS/Android app (mobile web only)</li>
+  <li>Real-time bleaching event alerts (Phase 3+)</li>
+</ul>
+
+<h2>User Segments</h2>
+
+<h3>Recreational Divers</h3>
+<p>Certified divers visiting sites in the scubaseason.fun database. Motivated primarily by intrinsic factors: seeing what they found, knowing it mattered (82% cite field interest; 80% cite meaningful contribution). They have cameras or phones; most lack taxonomy knowledge. They need identification assistance and a visible feedback loop.</p>
+
+<h3>Boat Operators and Dive Guides</h3>
+<p>On the water daily. Observe reef conditions systematically without necessarily being certified scientists. They represent the "local expertise" that science institutes currently cannot locate or trust. <span class="assumption">ASSUMPTION: boat operators are the primary local community segment for MVP; fishermen and village-level guides are Phase 2+</span></p>
+
+<h3>Science Partners (read-only at MVP)</h3>
+<p>Marine research institutes, reef monitoring networks (GCRMN, GBIF, OBIS contributors), and NGOs seeking observation data from under-monitored shallow-water sites. Active partnership agreements and co-branding are Phase 2.</p>
+
+<h2>Features</h2>
+
+<h3>F1 — Dive Site Observation Submission</h3>
+<p class="section-intro">A structured form linked to each dive site page allowing divers (and boat operators) to log an observation from a specific site visit.</p>
+
+<div class="fr"><strong>FR-1.1</strong> Every dive site page must include an "Add observation" entry point visible without login. On tap/click, the user is prompted to sign in or create a free account before submitting.</div>
+
+<div class="fr"><strong>FR-1.2</strong> The observation form must capture:
+<ul>
+  <li>Site (pre-filled from the dive site page)</li>
+  <li>Date of dive (date picker, defaults to today)</li>
+  <li>Depth range (shallow / mid / deep)</li>
+  <li>Water visibility (poor / moderate / good / excellent)</li>
+  <li>Water temperature (°C or °F, optional)</li>
+  <li>Species observed (multi-select with AI assist)</li>
+  <li>Debris observed (yes/no; if yes: type + quantity)</li>
+  <li>Photo upload (optional; up to 5 images, max 10MB each)</li>
+  <li>Notes (free text, 500 char max, optional)</li>
+</ul></div>
+
+<div class="fr"><strong>FR-1.3</strong> Observations are stored with a unique ID, hashed contributor ID, site ID, and ISO 8601 timestamp.</div>
+<div class="fr"><strong>FR-1.4</strong> Submission confirmation must include: observation ID, a one-sentence summary of what was logged, and a link to the contributor's observation history.</div>
+<div class="fr"><strong>FR-1.5</strong> Boat operators and dive guides can self-identify during account creation. Their observations are flagged as higher-confidence for site-condition fields.</div>
+
+<h3>F2 — AI-Assisted Species Identification</h3>
+<p class="section-intro">Photo upload triggers an AI inference call that suggests the most likely species matches; the diver confirms or corrects.</p>
+
+<div class="fr"><strong>FR-2.1</strong> Photo upload triggers an AI species ID API call (CoralNet Deploy for coral/invertebrates; Fishial.AI for fish <span class="assumption">ASSUMPTION: confirmed at architecture phase</span>) returning up to 3 candidate species with confidence scores.</div>
+<div class="fr"><strong>FR-2.2</strong> Suggestions display common name, scientific name, and confidence %. Suggestions below 50% show a visible "uncertain" label.</div>
+<div class="fr"><strong>FR-2.3</strong> The diver can: accept a suggestion, reject all and type manually, or mark as "unknown species." All three outcomes are stored.</div>
+<div class="fr"><strong>FR-2.5</strong> Species suggestions are filtered to the biogeographic region of the dive site to reduce implausible results.</div>
+<div class="fr"><strong>FR-2.6</strong> AI inference must complete within 8 seconds or gracefully degrade — diver can skip to manual entry without losing form state.</div>
+
+<h3>F3 — Contribution Feedback Loop</h3>
+<p class="section-intro">Every contributor can see the aggregate impact of their data — and the community's data — at the site and species level.</p>
+
+<div class="fr"><strong>FR-3.1</strong> Each dive site page must display a "Community data" panel:
+<ul>
+  <li>Total observations at this site</li>
+  <li>Top 5 species (last 12 months)</li>
+  <li>Last observation date</li>
+  <li>Debris report rate (% of recent observations with debris)</li>
+</ul></div>
+
+<div class="fr"><strong>FR-3.2</strong> Contributor profile page shows: total observations, species recorded (unique), sites visited (unique), and a monthly "contribution impact" sentence (e.g. "Your 12 observations included 3 species not previously recorded at this site").</div>
+<div class="fr"><strong>FR-3.3</strong> When a contributor records a species not previously logged at a site, the site profile is updated and the contributor is notified.</div>
+<div class="fr"><strong>FR-3.4</strong> A public "Science impact" page shows site-wide aggregate numbers and, once exports occur, count of records sent to partner databases.</div>
+<div class="nfr"><strong>NFR-3.1</strong> Contribution metrics must be framed around discovery and impact — not points, badges, or leaderboards. Competitive gamification language is prohibited.</div>
+
+<h3>F4 — Boat Operator and Dive Guide Onboarding</h3>
+<p class="section-intro">A lightweight onboarding flow for local operators that surfaces their site-specific knowledge and makes their observations higher-value in the data pipeline.</p>
+
+<div class="fr"><strong>FR-4.1</strong> Operators selecting the appropriate role see a short (3–5 question) profile: primary operating site(s), years of experience, formal marine biology or survey training.</div>
+<div class="fr"><strong>FR-4.2</strong> Operator profiles are not publicly visible at MVP. <span class="assumption">ASSUMPTION: public profiles and trust badges are Phase 2</span></div>
+<div class="fr"><strong>FR-4.3</strong> Operator observation form includes one extra field: "Unusual conditions" free text (300 char) for anomalies (unexpected bleaching, storm damage, unusual species).</div>
+<div class="fr"><strong>FR-4.4</strong> Operators can opt in to a monthly site digest email: all community observations at their primary site(s), including new species records.</div>
+
+<h3>F5 — Science Data Export Pipeline</h3>
+<p class="section-intro">Structured export of validated observations in Darwin Core Archive format for ingestion by GBIF, OBIS, and GCRMN-compatible systems.</p>
+
+<div class="fr"><strong>FR-5.1</strong> Observations stored in a schema mapping to Darwin Core fields: occurrenceID, basisOfRecord (HumanObservation), decimalLatitude/Longitude, eventDate, scientificName, vernacularName, identificationRemarks, recordedBy (hashed), datasetName, institutionCode, license.</div>
+
+<div class="fr"><strong>FR-5.2</strong> Validation gate before export eligibility:
+<ul>
+  <li>Date must be in the past</li>
+  <li>Site coordinates must resolve to a known scubaseason.fun site</li>
+  <li>Species field must be non-empty</li>
+  <li>At least one other field (depth, visibility, temperature, or debris) must be filled</li>
+</ul></div>
+
+<div class="fr"><strong>FR-5.3</strong> DwC-A export endpoint for authenticated science partners (API key + signed agreement). Returns validated observations as a ZIP with occurrence.txt and meta.xml.</div>
+<div class="fr"><strong>FR-5.4</strong> Observation records licensed under CC BY 4.0 (GBIF-eligible). Uploaded photos licensed CC BY-NC 4.0. Contributors explicitly accept both on first submission.</div>
+<div class="fr"><strong>FR-5.5</strong> No PII in exports. Contributor IDs are hashed. <span class="assumption">ASSUMPTION: GDPR-adequate hashing; legal review at launch</span></div>
+<div class="nfr"><strong>NFR-5.1</strong> Science partner agreements are manual at MVP (email + API key). Automated onboarding is Phase 2.</div>
+
+<h3>F6 — Reef Status Education Layer</h3>
+<p class="section-intro">Contextual information on each dive site page explaining what science knows (and doesn't know) about that reef.</p>
+
+<div class="fr"><strong>FR-6.1</strong> Each dive site page must display the reef status indicator: Thriving / Under pressure / Witnessing change. (Field already exists in the data model; surface it prominently.)</div>
+<div class="fr"><strong>FR-6.2</strong> Each reef status links to a 200–300 word explanation: what is happening, what monitoring shows, what the diver can do.</div>
+<div class="fr"><strong>FR-6.3</strong> A "Why this matters" module on each site page explains the Seabed 2030 context in plain language: shallow-water reef systems are among the least-mapped areas of the ocean; diver observations fill a real gap; scubaseason.fun routes data to scientific databases.</div>
+<div class="fr"><strong>FR-6.4</strong> Sites with fewer than 3 observations in the last 12 months display a "Help us learn more about this site" CTA linking to the observation form.</div>
+
+<h2>Non-Functional Requirements</h2>
+<div class="nfr"><strong>NFR-P1 — Performance</strong> Observation form loads within 2 seconds on 4G. AI species ID completes within 8 seconds or gracefully degrades.</div>
+<div class="nfr"><strong>NFR-S1 — Privacy</strong> No PII in science exports. Contributor email never shared with partners. GDPR-compliant for EU users.</div>
+<div class="nfr"><strong>NFR-A1 — Accessibility</strong> Observation form meets WCAG 2.1 AA. Photo upload includes alt-text prompt.</div>
+<div class="nfr"><strong>NFR-M1 — Mobile-first</strong> Observation form fully functional on mobile browser. Camera/gallery upload works on iOS Safari and Android Chrome.</div>
+<div class="nfr"><strong>NFR-D1 — Data quality</strong> Invalid observations stored as pending_validation, not deleted. Not included in exports or aggregates until resolved.</div>
+<div class="nfr"><strong>NFR-T1 — Nonprofit tone</strong> No points, levels, or leaderboards. All copy reflects scientific contribution and community stewardship. Language review required before launch.</div>
+
+<h2>Success Metrics</h2>
+<table>
+  <tr><th>Metric</th><th>Target (6 months)</th><th>Counter-metric</th></tr>
+  <tr><td>Observations submitted</td><td>1,000 validated</td><td>Spam rate &lt;15%</td></tr>
+  <tr><td>Contributor activation</td><td>5% of site page visitors submit ≥1 observation</td><td>Abandonment rate</td></tr>
+  <tr><td>Feedback loop engagement</td><td>40% return to profile/impact panel within 30 days</td><td>Bounce rate on impact panel</td></tr>
+  <tr><td>Boat operator participation</td><td>50 operator accounts with ≥1 observation</td><td>Role misuse rate</td></tr>
+  <tr><td>Science export</td><td>≥1 partner agreement; ≥500 observations exported to GBIF/OBIS</td><td>Data rejection rate</td></tr>
+  <tr><td>Retention</td><td>30% submit a 2nd observation within 90 days</td><td>Single-observation churn</td></tr>
+</table>
+
+<h2>Open Questions</h2>
+<table>
+  <tr><th>#</th><th>Question</th><th>Owner</th><th>Status</th></tr>
+  <tr><td>OQ-1</td><td>Which AI species ID API — CoralNet, Fishial.AI, or both? Confirm rate limits and cost before architecture phase.</td><td>Engineering</td><td>Open</td></tr>
+  <tr><td>OQ-2</td><td>CC BY 4.0 for observation records vs. CC BY-NC for photos — verify dual-license satisfies GBIF data policy.</td><td>Josie / Legal</td><td>Open</td></tr>
+  <tr><td>OQ-3</td><td>Local community beyond boat operators: fishermen, village guides. What's their contribution pathway?</td><td>Josie</td><td>Deferred (Phase 2)</td></tr>
+  <tr><td>OQ-4</td><td>Seabed 2030 / IHO Crowdsourced Bathymetry: pilot with BlueDOT program (MARUM) for Phase 3.</td><td>Josie</td><td>Deferred (Phase 3)</td></tr>
+  <tr><td>OQ-5</td><td>GDPR: hashed contributor ID in DwC-A export — confirm legal adequacy before first export.</td><td>Josie / Legal</td><td>Open</td></tr>
+  <tr><td>OQ-6</td><td>TNFD corporate data product: verified buyer market exists (NatureMetrics, 500+ companies filing). Revisit as Phase 4.</td><td>Josie</td><td>Deferred (Phase 4)</td></tr>
+</table>
+
+<h2>Out of Scope</h2>
+<ul>
+  <li>eDNA collection kits or physical sampling programs</li>
+  <li>Native mobile app (iOS/Android)</li>
+  <li>Dive computer or dive log API integrations</li>
+  <li>Real-time bleaching event alerts</li>
+  <li>Corporate TNFD data product</li>
+  <li>New affiliate monetization surfaces</li>
+  <li>Automated science partner onboarding</li>
+  <li>Fishermen / non-diver local community pathways (Phase 2+)</li>
+  <li>GCRMN/Reef Check protocol-level structured survey methodology</li>
+</ul>
+
+</body>
+</html>

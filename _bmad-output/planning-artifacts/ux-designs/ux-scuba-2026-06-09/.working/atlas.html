@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>scubaSeason — find where to dive (review mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--brand-dk:#1d5d90;--brand-hover:#007bc7;--ink:#0b1e32;--white:#fff;--body:#334155;--muted:#64748b;--hairline:#e2e8f0;--surface:#f1f7fb;--thriving:#10b981;--pressure:#2f6ced;--change:#f43f5e;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:#fff;color:#0f172a;-webkit-font-smoothing:antialiased;}
+.banner{background:#fef9c3;border-bottom:1px solid #fde68a;padding:0.6rem 3rem;font-size:0.8125rem;color:#854d0e;text-align:center;}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;cursor:pointer;}
+.nav-wm{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;cursor:pointer;}
+.nav-links a:hover{color:#0f172a;}
+/* HERO */
+.hero{position:relative;min-height:56vh;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-photo{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1675829604010-509cca710300?w=2400&q=85&auto=format&fit=crop');background-size:cover;background-position:center 42%;}
+.hero-dark{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,18,32,0.32) 0%,rgba(4,18,32,0.18) 38%,rgba(4,18,32,0.82) 100%);}
+.hero-content{position:relative;z-index:2;width:100%;max-width:1320px;margin:0 auto;padding:0 3rem 2.75rem;}
+.live{display:inline-flex;align-items:center;gap:0.45rem;font-size:0.6875rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#86efac;margin-bottom:0.9rem;}
+.live .ld{width:7px;height:7px;border-radius:50%;background:#34d399;animation:pulse 2.2s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,0.5)}70%{box-shadow:0 0 0 7px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-0.035em;line-height:1.03;color:#fff;max-width:720px;text-shadow:0 2px 24px rgba(4,18,32,0.4);}
+.hero-sub{font-size:1.0625rem;line-height:1.55;color:rgba(255,255,255,0.85);margin-top:0.8rem;max-width:560px;}
+/* WORKING AREA */
+.stage{max-width:1320px;margin:0 auto;padding:2.5rem 3rem 4rem;display:grid;grid-template-columns:300px 1fr;gap:2.5rem;align-items:start;}
+.panel{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow:auto;padding-right:0.25rem;}
+.panel-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:0.4rem;}
+.panel-title{font-size:1.05rem;font-weight:800;color:#0f172a;}
+.reset{font-size:0.8125rem;font-weight:600;color:var(--brand);background:none;border:none;cursor:pointer;}
+.fsec{border-top:1px solid var(--hairline);}
+.fsec-sum{list-style:none;cursor:pointer;display:flex;align-items:center;gap:0.45rem;padding:0.85rem 0 0.55rem;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+.fsec-sum::-webkit-details-marker{display:none;}
+.fsec-sum .caret{margin-left:auto;color:#94a3b8;font-size:0.7rem;transition:transform .2s;}
+.fsec:not([open]) .fsec-sum .caret{transform:rotate(-90deg);}
+.fsec-body{padding-bottom:0.85rem;}
+.checks{display:flex;flex-direction:column;gap:0.1rem;}
+.ck{display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0.55rem;border-radius:0.5rem;font-size:0.875rem;font-weight:500;color:#0f172a;cursor:pointer;user-select:none;}
+.ck .box{width:18px;height:18px;border-radius:5px;border:2px solid #cbd5e1;flex-shrink:0;position:relative;}
+.ck.on .box{background:var(--brand);border-color:var(--brand);}
+.ck.on .box::after{content:"";position:absolute;left:4px;top:0;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);}
+.ck .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.ck.state.on{background:#eef4ff;}
+.fgroup{padding:1.1rem 0;border-bottom:1px solid var(--hairline);}
+.fgroup:first-child{padding-top:0;}
+.fgroup:last-child{border-bottom:none;}
+.fg-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.7rem;}
+.fg-title{font-size:0.8125rem;font-weight:800;color:#0f172a;}
+.fg-clear{font-size:0.7rem;font-weight:600;color:var(--brand);background:none;border:none;cursor:pointer;}
+.months{display:grid;grid-template-columns:repeat(4,1fr);gap:0.3rem;}
+.mcell{padding:0.45rem 0;text-align:center;font-size:0.78rem;font-weight:600;border-radius:0.5rem;background:var(--surface);color:var(--muted);cursor:pointer;border:1px solid transparent;user-select:none;}
+.mcell:hover{border-color:#cbd5e1;}
+.mcell.on{background:#e8f0fe;color:var(--brand-dk);border-color:rgba(47,108,237,0.3);}
+.mcell.now{outline:2px solid var(--brand);outline-offset:1px;}
+.taxo{display:flex;flex-direction:column;gap:0.4rem;}
+.cat{border:1px solid var(--hairline);border-radius:0.6rem;overflow:hidden;}
+.cat>summary{list-style:none;cursor:pointer;padding:0.5rem 0.7rem;display:flex;align-items:center;gap:0.4rem;font-size:0.8125rem;font-weight:700;color:#0f172a;}
+.cat>summary::-webkit-details-marker{display:none;}
+.cat>summary .chev{margin-left:auto;color:#94a3b8;transition:transform .2s;}
+.cat[open]>summary .chev{transform:rotate(180deg);}
+.cat-count{font-size:0.68rem;font-weight:700;color:#fff;background:var(--brand);border-radius:999px;padding:0.02rem 0.4rem;}
+.cat-count.zero{display:none;}
+.leaves{display:flex;flex-wrap:wrap;gap:0.35rem;padding:0 0.7rem 0.7rem;}
+.leaf{padding:0.3rem 0.6rem;border-radius:999px;border:1px solid var(--hairline);background:#fff;font-size:0.75rem;font-weight:600;color:var(--body);cursor:pointer;user-select:none;}
+.leaf:hover{border-color:#cbd5e1;}
+.leaf.on{background:#0f172a;color:#fff;border-color:#0f172a;}
+.endangered{margin-top:0.6rem;display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;font-weight:600;color:var(--body);cursor:pointer;user-select:none;}
+.tog{width:32px;height:19px;border-radius:999px;background:#cbd5e1;position:relative;transition:background .15s;flex-shrink:0;}
+.tog::after{content:"";position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:#fff;transition:transform .15s;}
+.endangered.on .tog{background:var(--change);}
+.endangered.on .tog::after{transform:translateX(13px);}
+.chips{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.chip{padding:0.4rem 0.75rem;border-radius:999px;border:1px solid var(--hairline);background:#fff;font-size:0.78rem;font-weight:600;color:var(--body);cursor:pointer;user-select:none;}
+.chip.on{background:#0f172a;color:#fff;border-color:#0f172a;}
+.chip.cert.on{background:var(--brand);border-color:var(--brand);}
+/* RESULTS */
+.results-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:0.75rem;}
+.results-h2{font-size:1.1rem;font-weight:800;letter-spacing:-0.02em;color:#0f172a;}
+.results-h2 .eyes{color:#15824c;font-size:0.85rem;font-weight:700;}
+.results-right{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.results-sort{font-size:0.8125rem;color:var(--muted);display:flex;align-items:center;gap:0.4rem;}
+.results-sort b{color:#0f172a;}
+.info-btn{width:15px;height:15px;border-radius:50%;border:1.4px solid #94a3b8;color:#64748b;font-size:0.62rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;background:none;flex-shrink:0;line-height:1;}
+.info-btn:hover{border-color:var(--brand);color:var(--brand);}
+.viewtoggle{display:inline-flex;background:var(--surface);border-radius:999px;padding:3px;}
+.vt{border:none;background:none;font-size:0.8125rem;font-weight:700;color:var(--muted);padding:0.35rem 0.95rem;border-radius:999px;cursor:pointer;}
+.vt.on{background:#fff;color:#0f172a;box-shadow:0 1px 3px rgba(15,23,42,0.14);}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.rcard{position:relative;height:175px;border-radius:1rem;overflow:hidden;display:block;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;}
+.rcard:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(4,18,32,0.45);}
+.rcard-photo{position:absolute;inset:0;}
+.rcard-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,18,32,0.05) 28%,rgba(4,18,32,0.5) 64%,rgba(4,18,32,0.92));}
+.rcard-content{position:absolute;left:0;right:0;bottom:0;padding:0.85rem 0.95rem;}
+.rcard-eyebrow{font-size:0.5625rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.2rem;}
+.rcard-name{font-size:0.9375rem;font-weight:800;color:#fff;letter-spacing:-0.01em;margin-bottom:0.5rem;text-shadow:0 1px 12px rgba(4,18,32,0.4);}
+.rcard-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.pill{font-size:0.6rem;font-weight:700;padding:0.22rem 0.55rem;border-radius:999px;border:1px solid;display:inline-flex;align-items:center;gap:0.3rem;background:rgba(8,20,34,0.3);backdrop-filter:blur(6px);}
+.pill-thr{color:#6ee7b7;border-color:rgba(110,231,183,0.45);}
+.pill-pre{color:#93c5fd;border-color:rgba(147,197,253,0.45);}
+.pill-chg{color:#fca5a5;border-color:rgba(252,165,165,0.45);}
+.pill-season{color:#6ee7b7;border-color:rgba(110,231,183,0.45);}
+.pill-season .pd{width:5px;height:5px;border-radius:50%;background:#34d399;}
+.pill-eyes{color:#fcd34d;border-color:rgba(252,211,77,0.45);}
+.pill-tags{color:rgba(255,255,255,0.72);border-color:rgba(255,255,255,0.24);}
+.empty{grid-column:1/-1;padding:3rem;text-align:center;color:var(--muted);border:1px dashed var(--hairline);border-radius:1rem;}
+.globeview{background:#0b1e32;border-radius:1.2rem;padding:2rem 1.5rem 1.75rem;}
+.globe-wrap-lg{position:relative;width:100%;max-width:560px;aspect-ratio:1/1;margin:0 auto;}
+.globe-glow{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(0,160,220,0.18),transparent 65%);pointer-events:none;}
+#globe{width:100%;height:100%;}
+.globe-cap{text-align:center;font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:1.1rem;}
+/* footer */
+.footer{background:#081626;padding:3.5rem 3rem 2.5rem;}
+.footer-inner{max-width:1320px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-wm{display:flex;flex-direction:column;line-height:1.0;margin-bottom:1rem;}
+.footer-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.3);}
+.footer-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#fff;}
+.footer-tag{font-size:0.875rem;line-height:1.6;color:rgba(255,255,255,0.4);max-width:280px;}
+.footer-ct{font-size:0.625rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:1.1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:500;cursor:pointer;}
+.footer-email{font-size:0.9375rem;font-weight:600;color:#34a9ec;text-decoration:none;display:block;margin-bottom:0.7rem;}
+.footer-bottom{padding-top:1.5rem;font-size:0.75rem;color:rgba(255,255,255,0.25);}
+/* modal */
+.modal-back{position:fixed;inset:0;background:rgba(8,15,30,0.5);backdrop-filter:blur(2px);z-index:100;display:none;align-items:center;justify-content:center;padding:1.5rem;}
+.modal-back.open{display:flex;}
+.modal{background:#fff;border-radius:1.25rem;max-width:460px;width:100%;padding:1.75rem;box-shadow:0 24px 64px -16px rgba(0,0,0,0.4);position:relative;}
+.modal-close{position:absolute;top:1rem;right:1.1rem;background:none;border:none;font-size:1.4rem;color:#94a3b8;cursor:pointer;}
+.modal-title{font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:0.4rem;}
+.modal-sub{font-size:0.875rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.55;}
+.modal-row{display:flex;gap:0.75rem;padding:0.8rem 0;border-top:1px solid var(--hairline);}
+.modal-row .tag{flex-shrink:0;padding:0.15rem 0.55rem;border-radius:999px;font-size:0.7rem;font-weight:700;height:fit-content;}
+.modal-row .txt{font-size:0.8125rem;color:var(--body);line-height:1.5;}
+.modal-row .txt b{color:#0f172a;}
+.modal-link{display:inline-block;margin-top:1rem;font-size:0.875rem;font-weight:600;color:var(--brand);text-decoration:none;}
+.modal-para{font-size:0.875rem;color:var(--body);line-height:1.65;margin-bottom:0.8rem;}.modal-para:last-child{margin-bottom:0;}.modal-para b{color:#0f172a;}
+.grid-divider{grid-column:1/-1;display:flex;align-items:center;gap:0.75rem;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:0.75rem 0 0.25rem;}
+.grid-divider::before,.grid-divider::after{content:"";flex:1;height:1px;background:var(--hairline);}
+@media(max-width:1000px){.stage{grid-template-columns:1fr;}.panel{position:static;max-height:none;}.grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:680px){.grid{grid-template-columns:1fr;}.nav,.hero-content,.stage,.banner{padding-left:1.25rem;padding-right:1.25rem;}.footer-top{grid-template-columns:1fr;gap:1.75rem;}}
+</style>
+</head>
+<body>
+
+<div class="banner">📐 <b>Homepage mockup</b> — hero up top, then scroll to the atlas: filters left, reef cards right, with a Cards / Map toggle. Filters update live.</div>
+
+<nav class="nav">
+  <a onclick="window.scrollTo({top:0,behavior:'smooth'})" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wm"><span class="nav-wm-top">scuba</span><span class="nav-wm-bot">Season.fun</span></div>
+  </a>
+  <ul class="nav-links"><li><a href="method.html">Method</a></li><li><a href="#">About</a></li></ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-dark"></div>
+  <div class="hero-content">
+    <p class="live"><span class="ld"></span>Live data</p>
+    <h1>Find where to dive, and where the ocean needs eyes.</h1>
+    <p class="hero-sub">A free, public platform that reads every reef by live coral health, heat and fishing pressure.</p>
+  </div>
+</section>
+
+<div class="stage">
+  <!-- FILTERS -->
+  <aside class="panel">
+    <div class="panel-head"><span class="panel-title">Filters</span><button class="reset" onclick="resetAll()">Reset</button></div>
+    <details class="fsec" open>
+      <summary class="fsec-sum">When <button class="info-btn" onclick="event.preventDefault();event.stopPropagation();openInfo('when')" aria-label="How this works">i</button><span class="caret">▾</span></summary>
+      <div class="fsec-body"><div class="months" id="months"></div></div>
+    </details>
+    <details class="fsec" open>
+      <summary class="fsec-sum">What do you want to see? <button class="info-btn" onclick="event.preventDefault();event.stopPropagation();openInfo('species')" aria-label="How this works">i</button><span class="caret">▾</span></summary>
+      <div class="fsec-body"><div class="taxo" id="taxo"></div></div>
+    </details>
+    <details class="fsec" open>
+      <summary class="fsec-sum">Region<span class="caret">▾</span></summary>
+      <div id="regions" class="fsec-body checks"></div>
+    </details>
+    <details class="fsec" open>
+      <summary class="fsec-sum">Reef state <button class="info-btn" onclick="event.preventDefault();event.stopPropagation();openInfo('state')" aria-label="What this means">i</button><span class="caret">▾</span></summary>
+      <div id="states" class="fsec-body checks"></div>
+    </details>
+    <details class="fsec" open>
+      <summary class="fsec-sum">Evidence gaps <button class="info-btn" onclick="event.preventDefault();event.stopPropagation();openInfo('evidence')" aria-label="What this means">i</button><span class="caret">▾</span></summary>
+      <div class="fsec-body checks"><label class="ck" id="eyesck" onclick="toggleEyes()"><span class="box"></span>Needs fresh eyes</label></div>
+    </details>
+    <details class="fsec" open>
+      <summary class="fsec-sum">Certification level <button class="info-btn" onclick="event.preventDefault();event.stopPropagation();openInfo('level')" aria-label="How this works">i</button><span class="caret">▾</span></summary>
+      <div id="certs" class="fsec-body checks"></div>
+    </details>
+  </aside>
+
+  <!-- RESULTS -->
+  <main>
+    <div class="results-head">
+      <h2 class="results-h2"><span id="rc-num">0</span> reefs</h2>
+      <div class="results-right">
+        <span class="results-sort" id="sort-note">Sorted by <b>in season first</b></span>
+        <div class="viewtoggle">
+          <button class="vt on" id="vt-cards" onclick="setView('cards')">Cards</button>
+          <button class="vt" id="vt-map" onclick="setView('map')">Map</button>
+        </div>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="globeview" id="globeview" style="display:none;">
+      <div class="globe-wrap-lg"><div class="globe-glow"></div><div id="globe"></div></div>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div><div class="footer-wm"><span class="footer-wm-top">scuba</span><span class="footer-wm-bot">Season.fun</span></div><p class="footer-tag">A free, public reef atlas. Science backed, honestly labelled, free to read.</p></div>
+      <div><p class="footer-ct">Site</p><ul class="footer-links"><li><a onclick="window.scrollTo({top:0,behavior:'smooth'})">Find a reef</a></li><li><a href="method.html">Method</a></li><li><a href="#">About</a></li></ul></div>
+      <div><p class="footer-ct">Get in touch</p><a href="mailto:hello@scubaseason.fun" class="footer-email">hello@scubaseason.fun</a><p class="footer-tag" style="margin:0;">Spotted wrong data? Want to collaborate? All of it welcome.</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 scubaSeason.fun · Live data from NOAA, Reef Check, iNaturalist and 60 more public sources</div>
+  </div>
+</footer>
+
+<div class="modal-back" id="modal-back" onclick="if(event.target===this)closeModal()">
+  <div class="modal"><button class="modal-close" onclick="closeModal()">×</button><div id="modal-content"></div></div>
+</div>
+
+<script>
+const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const NOW_MONTH=5;
+const STATES={thriving:["Thriving","st-thr","#10b981"],pressure:["Under pressure","st-pre","#2f6ced"],change:["Witnessing change","st-chg","#f43f5e"]};
+const TAXO=[["Sharks & rays",["Reef sharks","Hammerheads","Whale sharks","Manta rays","Eagle rays"]],["Turtles",["Green turtle","Hawksbill","Loggerhead"]],["Marine mammals",["Whales","Dolphins"]],["Fish & critters",["Reef fish","Schooling fish","Macro & critters"]],["Reef & wrecks",["Coral gardens","Wrecks"]]];
+const REGIONS=["Caribbean","Atlantic","Red Sea","Indian Ocean","Coral Triangle","Pacific","Great Barrier"];
+const CERTS=[["Beginner",0],["Open water",1],["Advanced",2],["Technical",3]];
+const CONTS=["Asia","Oceania","Indian Ocean","Americas","Atlantic & Mediterranean"];
+const CONT={Caribbean:"Americas",Atlantic:"Atlantic & Mediterranean","Red Sea":"Indian Ocean","Indian Ocean":"Indian Ocean","Coral Triangle":"Asia",Pacific:"Oceania","Great Barrier":"Oceania"};
+function reefCont(r){return CONT[r.region]||r.region;}
+const STATEDOT={thriving:"#10b981",pressure:"#2f6ced",change:"#f43f5e"};
+const PH=["linear-gradient(145deg,#0a3060,#0a6b8a,#087a6e)","linear-gradient(145deg,#041c33,#065566,#0a7a6b)","linear-gradient(145deg,#031522,#064466,#0b829f)","linear-gradient(145deg,#0d4060,#0a7090,#086878)","linear-gradient(145deg,#042030,#0a5060,#0a9080)","linear-gradient(145deg,#0a2840,#0a5878,#087068)"];
+const REEFS=[
+  {n:"Florida Keys",href:"location-florida-keys-slim-v2.html",lat:24.6,lng:-81.4,country:"United States",region:"Caribbean",st:"pressure",pm:[3,4,5,6,7,8,9],sp:["Green turtle","Loggerhead","Reef sharks","Wrecks","Reef fish"],tags:["Turtles","Wrecks","Goliath grouper"],lvl:0,eyes:false,en:true,ph:0},
+  {n:"Azores",href:"#",lat:38.5,lng:-28.0,country:"Portugal",region:"Atlantic",st:"change",pm:[6,7,8,9],sp:["Hammerheads","Whales","Dolphins","Manta rays"],tags:["Hammerheads","Whales","Mantas"],lvl:2,eyes:true,en:true,ph:1},
+  {n:"Red Sea",href:"#",lat:27,lng:34,country:"Egypt",region:"Red Sea",st:"thriving",pm:[2,3,4,5,9,10],sp:["Reef fish","Reef sharks","Coral gardens","Hawksbill"],tags:["Reef sharks","Coral","Turtles"],lvl:1,eyes:false,en:true,ph:2},
+  {n:"Chumbe",href:"#",lat:-6.3,lng:39.4,country:"Tanzania",region:"Indian Ocean",st:"pressure",pm:[5,6,7,8,9],sp:["Green turtle","Reef fish","Coral gardens"],tags:["Turtles","Reef fish","Coral"],lvl:1,eyes:true,en:true,ph:3},
+  {n:"Komodo",href:"#",lat:-8.5,lng:119.5,country:"Indonesia",region:"Coral Triangle",st:"thriving",pm:[4,5,6,7,8,9,10],sp:["Manta rays","Reef sharks","Reef fish"],tags:["Mantas","Sharks","Reef fish"],lvl:2,eyes:false,en:true,ph:4},
+  {n:"Raja Ampat",href:"#",lat:-0.5,lng:130.5,country:"Indonesia",region:"Coral Triangle",st:"thriving",pm:[9,10,11,0,1,2,3],sp:["Manta rays","Reef sharks","Macro & critters","Reef fish"],tags:["Mantas","Macro","Reef fish"],lvl:1,eyes:false,en:true,ph:5},
+  {n:"Sipadan",href:"#",lat:4.1,lng:118.6,country:"Malaysia",region:"Coral Triangle",st:"thriving",pm:[3,4,5,6,7,8,9,10,11],sp:["Green turtle","Hawksbill","Reef sharks","Schooling fish"],tags:["Turtles","Sharks","Schooling fish"],lvl:2,eyes:false,en:true,ph:0},
+  {n:"Tubbataha",href:"#",lat:8.9,lng:119.9,country:"Philippines",region:"Coral Triangle",st:"thriving",pm:[2,3,4,5],sp:["Reef sharks","Manta rays","Schooling fish"],tags:["Sharks","Mantas","Schooling fish"],lvl:2,eyes:false,en:true,ph:1},
+  {n:"Palau",href:"#",lat:7.3,lng:134.5,country:"Palau",region:"Pacific",st:"thriving",pm:[10,11,0,1,2,3,4],sp:["Reef sharks","Manta rays","Wrecks"],tags:["Sharks","Mantas","Wrecks"],lvl:2,eyes:false,en:true,ph:2},
+  {n:"Pulau Hantu",href:"#",lat:1.2,lng:103.7,country:"Singapore",region:"Coral Triangle",st:"change",pm:[0,1,2,3,4,5,6,7,8,9,10,11],sp:["Macro & critters","Coral gardens"],tags:["Macro","Coral"],lvl:1,eyes:true,en:false,ph:3},
+  {n:"Great Barrier",href:"#",lat:-18,lng:147,country:"Australia",region:"Great Barrier",st:"change",pm:[5,6,7,8,9,10],sp:["Coral gardens","Reef fish","Green turtle","Manta rays"],tags:["Coral","Turtles","Mantas"],lvl:1,eyes:true,en:true,ph:4},
+  {n:"Niue",href:"#",lat:-19,lng:-169.9,country:"Niue",region:"Pacific",st:"pressure",pm:[4,5,6,7,8,9],sp:["Whales","Reef fish","Coral gardens"],tags:["Whales","Reef fish","Coral"],lvl:1,eyes:true,en:true,ph:5},
+  {n:"Maldives",href:"#",lat:3.2,lng:73,country:"Maldives",region:"Indian Ocean",st:"pressure",pm:[0,1,2,3,4,11],sp:["Manta rays","Whale sharks","Reef fish"],tags:["Mantas","Whale sharks","Reef fish"],lvl:1,eyes:false,en:true,ph:0},
+  {n:"Cocos Island",href:"#",lat:5.5,lng:-87,country:"Costa Rica",region:"Pacific",st:"thriving",pm:[5,6,7,8,9,10,11],sp:["Hammerheads","Reef sharks","Schooling fish"],tags:["Hammerheads","Sharks","Schooling fish"],lvl:3,eyes:true,en:true,ph:1},
+];
+window.REEFS=REEFS;
+let selMonths=new Set(),selLeaves=new Set(),selRegions=new Set(),selCerts=new Set(),selStates=new Set(['thriving','pressure','change']),eyesOnly=false;
+
+function renderMonths(){document.getElementById('months').innerHTML=MONTHS.map((m,i)=>'<div class="mcell'+(selMonths.has(i)?' on':'')+(i===NOW_MONTH?' now':'')+'" onclick="toggleMonth('+i+')">'+m+'</div>').join('');}
+function renderTaxo(){document.getElementById('taxo').innerHTML=TAXO.map(([cat,leaves])=>{const c=leaves.filter(l=>selLeaves.has(l)).length;return '<details class="cat"><summary>'+cat+' <span class="cat-count'+(c?'':' zero')+'">'+c+'</span><span class="chev">⌄</span></summary><div class="leaves">'+leaves.map(l=>'<div class="leaf'+(selLeaves.has(l)?' on':'')+'" onclick="toggleLeaf(\''+l.replace(/'/g,"\\'")+'\',this)">'+l+'</div>').join('')+'</div></details>';}).join('');}
+function renderStates(){document.getElementById('states').innerHTML=[['thriving','Thriving'],['pressure','Under pressure'],['change','Witnessing change']].map(([k,lbl])=>'<label class="ck'+(selStates.has(k)?' on':'')+'" onclick="toggleState(\''+k+'\')"><span class="box"></span>'+lbl+'</label>').join('');}
+function toggleState(k){selStates.has(k)?selStates.delete(k):selStates.add(k);renderStates();update();}
+function toggleEyes(){eyesOnly=!eyesOnly;document.getElementById('eyesck').classList.toggle('on',eyesOnly);update();}
+function renderRegions(){document.getElementById('regions').innerHTML=CONTS.map(c=>'<label class="ck'+(selRegions.has(c)?' on':'')+'" onclick="toggleRegion(\''+c.replace(/'/g,"\\'")+'\')"><span class="box"></span>'+c+'</label>').join('');}
+function toggleRegion(c){selRegions.has(c)?selRegions.delete(c):selRegions.add(c);renderRegions();update();}
+function renderCerts(){document.getElementById('certs').innerHTML=CERTS.map(([lbl,rank])=>'<label class="ck'+(selCerts.has(rank)?' on':'')+'" onclick="toggleCert('+rank+')"><span class="box"></span>'+lbl+'</label>').join('');}
+function toggleCert(r){selCerts.has(r)?selCerts.delete(r):selCerts.add(r);renderCerts();update();}
+function toggleMonth(i){selMonths.has(i)?selMonths.delete(i):selMonths.add(i);renderMonths();update();}
+function clearMonths(){selMonths.clear();renderMonths();update();}
+function toggleLeaf(l,el){if(selLeaves.has(l)){selLeaves.delete(l);el.classList.remove('on');}else{selLeaves.add(l);el.classList.add('on');}const cat=el.closest('.cat'),b=cat.querySelector('.cat-count'),n=cat.querySelectorAll('.leaf.on').length;b.textContent=n;b.classList.toggle('zero',n===0);update();}
+function resetAll(){selStates=new Set(['thriving','pressure','change']);selLeaves.clear();selMonths.clear();selCerts.clear();selRegions.clear();eyesOnly=false;document.getElementById('eyesck').classList.remove('on');renderStates();renderTaxo();renderMonths();renderCerts();renderRegions();update();}
+function matched(){return REEFS.filter(r=>{
+  const stOk=selStates.has(r.st);
+  const spOk=selLeaves.size===0||[...selLeaves].some(l=>r.sp.includes(l));
+  const regOk=selRegions.size===0||selRegions.has(reefCont(r));
+  const lvlOk=selCerts.size===0||selCerts.has(r.lvl);
+  const eyesOk=!eyesOnly||r.eyes;
+  return stOk&&spOk&&regOk&&lvlOk&&eyesOk;
+});}
+function cardHTML(r){return '<a class="rcard" href="'+r.href+'"><div class="rcard-photo" style="background:'+PH[r.ph]+'"></div><div class="rcard-overlay"></div><div class="rcard-content"><p class="rcard-eyebrow">'+r.region+'</p><p class="rcard-name">'+r.n+'</p></div></a>';}
+function update(){
+  const hard=matched();
+  const inM=selMonths.size?selMonths:new Set([NOW_MONTH]);
+  const isIn=r=>[...inM].some(m=>r.pm.includes(m));
+  const inS=hard.filter(isIn).sort((a,b)=>a.n.localeCompare(b.n));
+  const off=hard.filter(r=>!isIn(r)).sort((a,b)=>a.n.localeCompare(b.n));
+  document.getElementById('rc-num').textContent=hard.length;
+  let html=inS.map(cardHTML).join('');
+  if(off.length) html+='<div class="grid-divider">Great at other times of year</div>'+off.map(cardHTML).join('');
+  if(!hard.length) html='<div class="empty">No reefs match this combination. Remove a filter to widen the search.</div>';
+  document.getElementById('grid').innerHTML=html;
+  const names=new Set(hard.map(r=>r.n));window.__lastMatches=names;
+  if(window.__setGlobeMatches)window.__setGlobeMatches(names);
+}
+function setView(v){
+  document.getElementById('grid').style.display=v==='cards'?'grid':'none';
+  document.getElementById('globeview').style.display=v==='map'?'block':'none';
+  document.getElementById('sort-note').style.visibility=v==='cards'?'visible':'hidden';
+  document.getElementById('vt-cards').classList.toggle('on',v==='cards');
+  document.getElementById('vt-map').classList.toggle('on',v==='map');
+  if(v==='map'&&window.__resizeGlobe)requestAnimationFrame(()=>window.__resizeGlobe());
+}
+const INFO={
+  state:{title:"What the reef labels mean",sub:"We read three live signals — coral cover, heat stress and fishing pressure — and turn them into one plain word for what is happening on the reef. It is not a ranking, and every reef is worth diving.",rows:[
+    ["Thriving","#e7f6ee","#15824c","Near its natural baseline and steady. Recovering or healthy, not perfect."],
+    ["Under pressure","#eaf1fe","#1f57c8","Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],
+    ["Witnessing change","#fdecec","#c0392f","Heavy recent loss or bleaching. Diving here documents what remains."],
+  ],link:true,anchor:"#reefstate",linkText:"See exactly how we calculate this on the Method page →"},
+  when:{title:"What “in season” means",body:[
+    "A reef's season is the stretch of months when it is at its best to dive: calm seas and gentle currents, clear water with good visibility, and the marine life you came for actually around. For many reefs that lines up with the dry season, when there is less rain and runoff to cloud the water.",
+    "Pick the months you can travel. Reefs in season for those months come first; the rest still show below, so you can plan around any time of year. Leave it blank and we sort by what is good to dive right now.",
+  ]},
+  species:{title:"What do you want to see",body:[
+    "Pick the animals you are hoping to see. We show only reefs where divers have actually recorded them.",
+    "Open a reef and its dive sites to see how likely each animal is to show up, worked out from how often divers have logged it over the past year.",
+  ],link:true},
+  level:{title:"How experience level works",body:[
+    "Tick the levels you are comfortable with and we show reefs whose dive sites suit them.",
+    "Beginner and Open Water cover most reef dives to about 18 metres. Advanced opens up deeper sites and stronger currents. Technical adds deep wrecks and overhead dives.",
+  ]},
+  evidence:{title:"What “needs fresh eyes” means",body:[
+    "Some reefs have no recent records from divers — nobody has logged what they saw there lately. We never call that “no data” or treat the reef as abandoned. It simply needs fresh eyes.",
+    "Tick this to find those reefs. Diving one and logging what you see, even a single photo, puts it back on the map for everyone.",
+  ],link:true,linkText:"How logging works on the Method page →"},
+};
+function openInfo(k){const m=INFO[k];if(!m)return;let h='<p class="modal-title">'+m.title+'</p>';
+  if(m.sub)h+='<p class="modal-sub">'+m.sub+'</p>';
+  if(m.body)m.body.forEach(p=>h+='<p class="modal-para">'+p+'</p>');
+  if(m.rows)m.rows.forEach(r=>h+='<div class="modal-row"><span class="tag" style="background:'+r[1]+';color:'+r[2]+'">'+r[0]+'</span><span class="txt">'+r[3]+'</span></div>');
+  if(m.link)h+='<a class="modal-link" href="method.html'+(m.anchor||'')+'">'+(m.linkText||'See how it all works on the Method page →')+'</a>';
+  document.getElementById('modal-content').innerHTML=h;document.getElementById('modal-back').classList.add('open');}
+function closeModal(){document.getElementById('modal-back').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+renderStates();renderMonths();renderTaxo();renderRegions();renderCerts();update();
+</script>
+
+<script type="module">
+import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+const cont=document.getElementById('globe');
+function size(){return [cont.clientWidth||0, cont.clientHeight||0];}
+let [w,h]=size();w=w||300;h=h||300;
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(42,w/h,0.1,100);camera.position.z=3.25;
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));renderer.setSize(w,h);
+cont.appendChild(renderer.domElement);
+const group=new THREE.Group();group.rotation.x=0.35;scene.add(group);
+group.add(new THREE.Mesh(new THREE.SphereGeometry(1,48,48),new THREE.MeshBasicMaterial({color:0x0a3350})));
+group.add(new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.SphereGeometry(1.002,20,14)),new THREE.LineBasicMaterial({color:0x1e6e9c,transparent:true,opacity:0.32})));
+const STc={thriving:0x10b981,pressure:0x2f6ced,change:0xf43f5e};
+function ll(lat,lng,r){const phi=(90-lat)*Math.PI/180,theta=(lng+180)*Math.PI/180;return new THREE.Vector3(-r*Math.sin(phi)*Math.cos(theta),r*Math.cos(phi),r*Math.sin(phi)*Math.sin(theta));}
+const dots=(window.REEFS||[]).map(reef=>{const m=new THREE.Mesh(new THREE.SphereGeometry(0.026,14,14),new THREE.MeshBasicMaterial({color:STc[reef.st],transparent:true}));m.position.copy(ll(reef.lat,reef.lng,1.02));m.userData={n:reef.n,st:reef.st};group.add(m);return m;});
+function upd(names){dots.forEach(d=>{const on=!names||names.has(d.userData.n);d.material.color.setHex(on?STc[d.userData.st]:0x64748b);d.material.opacity=on?1:0.22;d.scale.setScalar(on?1:0.6);});}
+window.__setGlobeMatches=upd;upd(window.__lastMatches);
+window.__resizeGlobe=()=>{const [w,h]=size();if(w>0&&h>0){camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);}};
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();
+renderer.domElement.style.cursor='pointer';
+renderer.domElement.addEventListener('click',e=>{const rect=renderer.domElement.getBoundingClientRect();mouse.x=((e.clientX-rect.left)/rect.width)*2-1;mouse.y=-((e.clientY-rect.top)/rect.height)*2+1;ray.setFromCamera(mouse,camera);const hits=ray.intersectObjects(dots);if(hits.length){const reef=(window.REEFS||[]).find(r=>r.n===hits[0].object.userData.n);if(reef&&reef.href&&reef.href!=='#')window.location.href=reef.href;}});
+(function animate(){requestAnimationFrame(animate);group.rotation.y+=0.0016;renderer.render(scene,camera);})();
+window.addEventListener('resize',()=>window.__resizeGlobe&&window.__resizeGlobe());
+</script>
+
+</body>
+</html>
+</content>

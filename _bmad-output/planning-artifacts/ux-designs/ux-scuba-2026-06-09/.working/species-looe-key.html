@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>All species at Looe Key — list page (review mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--brand-dk:#1d5d90;--brand-hover:#007bc7;--ink:#0b1e32;--white:#fff;--body:#334155;--muted:#64748b;--hairline:#e2e8f0;--surface:#f1f7fb;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;flex-shrink:0;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--muted);margin-left:1.5rem;flex-wrap:wrap;}
+.nav-breadcrumb a{color:var(--muted);text-decoration:none;}
+.nav-breadcrumb .sep{color:#cbd5e1;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a.active{color:var(--brand);}
+.wrap{max-width:920px;margin:0 auto;padding:3rem 3rem 5rem;}
+.eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;}
+h1{font-size:2.25rem;font-weight:800;letter-spacing:-0.03em;color:#0f172a;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.list-sub{font-size:0.9375rem;color:var(--muted);margin-top:0.6rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;}
+.list-sub .dot{color:#cbd5e1;}
+.linklike{background:none;border:none;color:var(--brand);font-weight:600;font-size:0.9375rem;cursor:pointer;padding:0;}
+.filters{display:flex;gap:0.5rem;flex-wrap:wrap;margin:1.75rem 0 1.5rem;}
+.filter-pill{padding:0.5rem 1rem;border-radius:999px;border:1px solid var(--hairline);background:#fff;font-size:0.8125rem;font-weight:600;color:var(--muted);cursor:pointer;}
+.filter-pill:hover{border-color:#cbd5e1;}
+.filter-pill.active{background:#0f172a;color:#fff;border-color:#0f172a;}
+.filter-pill .ct{opacity:0.55;margin-left:0.35rem;font-weight:500;}
+.enc-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--hairline);border-radius:1.25rem;overflow:hidden;}
+.enc-row{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;border-top:1px solid var(--hairline);}
+.enc-row:first-child{border-top:none;}
+.enc-ico{font-size:1.4rem;width:2.5rem;height:2.5rem;border-radius:0.6rem;background:#eef2f6;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.enc-main{flex:1;min-width:0;}
+.enc-name{font-size:0.9375rem;font-weight:700;color:#0f172a;display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;}
+.enc-where{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
+.enc-odds{width:165px;flex-shrink:0;}
+.enc-odds-lbl{font-size:0.8125rem;font-weight:700;margin-bottom:0.35rem;}
+.enc-bar{height:6px;border-radius:3px;background:#eef2f6;overflow:hidden;}
+.enc-fill{height:100%;border-radius:3px;}
+.enc-freq{font-size:0.6875rem;color:var(--muted);margin-top:0.35rem;}
+.iucn{display:inline-block;font-size:0.5625rem;font-weight:700;letter-spacing:0.01em;padding:0.15rem 0.5rem;border-radius:999px;white-space:nowrap;}
+.iucn-lc{background:#e7f6ee;color:#15824c;}.iucn-nt{background:#f3fce8;color:#3f6212;}
+.iucn-vu{background:#fcf2e2;color:#b9751a;}.iucn-en{background:#fdecea;color:#c0392f;}.iucn-cr{background:#fdecea;color:#b91c1c;}
+.empty{padding:2.5rem;text-align:center;color:var(--muted);font-size:0.875rem;}
+.info-btn{width:16px;height:16px;border-radius:50%;border:1.4px solid #94a3b8;color:#64748b;font-size:0.66rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;background:none;flex-shrink:0;line-height:1;}
+.info-btn:hover{border-color:var(--brand);color:var(--brand);}
+.modal-back{position:fixed;inset:0;background:rgba(8,15,30,0.5);backdrop-filter:blur(2px);z-index:100;display:none;align-items:center;justify-content:center;padding:1.5rem;}
+.modal-back.open{display:flex;}
+.modal{background:#fff;border-radius:1.25rem;max-width:480px;width:100%;padding:1.75rem;box-shadow:0 24px 64px -16px rgba(0,0,0,0.4);position:relative;max-height:85vh;overflow:auto;}
+.modal-close{position:absolute;top:1rem;right:1.1rem;background:none;border:none;font-size:1.4rem;color:#94a3b8;cursor:pointer;line-height:1;}
+.modal-title{font-size:1.2rem;font-weight:800;letter-spacing:-0.02em;color:#0f172a;margin-bottom:0.4rem;}
+.modal-sub{font-size:0.875rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.55;}
+.modal-row{display:flex;gap:0.75rem;padding:0.8rem 0;border-top:1px solid var(--hairline);}
+.modal-row .tag{flex-shrink:0;padding:0.15rem 0.55rem;border-radius:999px;font-size:0.7rem;font-weight:700;height:fit-content;}
+.modal-row .txt{font-size:0.8125rem;color:var(--body);line-height:1.5;}
+.modal-para{font-size:0.875rem;color:var(--body);line-height:1.65;margin-bottom:0.8rem;}
+.modal-para b{color:#0f172a;}
+.modal-source{font-size:0.75rem;color:var(--muted);margin-top:0.9rem;padding-top:0.8rem;border-top:1px solid var(--hairline);line-height:1.5;}
+.modal-link{display:inline-block;margin-top:1rem;font-size:0.875rem;font-weight:600;color:var(--brand);text-decoration:none;}
+.modal-link:hover{text-decoration:underline;}
+.banner{background:#fef9c3;border-bottom:1px solid #fde68a;padding:0.6rem 3rem;font-size:0.8125rem;color:#854d0e;text-align:center;}
+@media(max-width:640px){.enc-odds{width:110px;}.enc-where{display:none;}.wrap{padding:2rem 1.25rem 4rem;}}
+</style>
+</head>
+<body>
+
+<div class="banner">📐 <b>Species list mockup</b> — the "see all species" destination from the dive site. Try the <b>type filters</b> and the <b>(i)</b> popups.</div>
+
+<nav class="nav">
+  <a href="atlas.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark"><span class="nav-wm-top">scuba</span><span class="nav-wm-bot">Season.fun</span></div>
+  </a>
+  <nav class="nav-breadcrumb"><a href="atlas.html">All reefs</a><span class="sep">/</span><a href="location-florida-keys-slim-v2.html">Florida Keys</a><span class="sep">/</span><a href="dive-site-looe-key.html">Looe Key</a><span class="sep">/</span><span style="color:#0f172a;font-weight:600;">All species</span></nav>
+  <ul class="nav-links"><li><a href="method.html">Method</a></li><li><a href="#">About</a></li></ul>
+</nav>
+
+<div class="wrap">
+  <p class="eyebrow">Looe Key · Florida Keys</p>
+  <h1>Every animal recorded here <button class="info-btn" onclick="openModal('iucn')" aria-label="What the conservation labels mean">i</button></h1>
+  <p class="list-sub"><span id="count">14</span> species, most likely first <span class="dot">·</span> <button class="linklike" onclick="openModal('chances')">How chances work</button></p>
+
+  <div class="filters" id="filters"></div>
+  <div class="enc-list" id="list"></div>
+  <div class="empty" id="empty" style="display:none;">No species of this type recorded here yet.</div>
+</div>
+
+<div class="modal-back" id="modal-back" onclick="if(event.target===this)closeModal()">
+  <div class="modal"><button class="modal-close" onclick="closeModal()">×</button><div id="modal-content"></div></div>
+</div>
+
+<script>
+// species: [name, type, icon, iucnLabel, iucnClass, pct, oddsLabel, oddsColor, freq, where]
+const SP = [
+  ["Sergeant major","fish","🐠","Least concern","iucn-lc",92,"Almost always","#15824c","Nearly every dive","All over the coral"],
+  ["Parrotfish","fish","🐠","Least concern","iucn-lc",95,"Almost always","#15824c","Nearly every dive","Across the shallow coral"],
+  ["French grunt","fish","🐠","Least concern","iucn-lc",90,"Almost always","#15824c","Nearly every dive","Schooling round the coral heads"],
+  ["Christmas tree worms","invert","🪸","Least concern","iucn-lc",90,"Almost always","#15824c","Nearly every dive","Dotted over the coral heads"],
+  ["Goliath grouper","fish","🐟","Vulnerable","iucn-vu",85,"Very likely","#15824c","Most dives","At the wreck mooring and main ledge"],
+  ["Yellowtail snapper","fish","🐟","Least concern","iucn-lc",80,"Very likely","#15824c","Most dives","Hanging in the mid water"],
+  ["Green turtle","turtle","🐢","Endangered","iucn-en",60,"Likely","#10b981","About 6 in 10 dives","Grazing on the reef flat"],
+  ["Queen angelfish","fish","🐠","Least concern","iucn-lc",55,"Likely","#10b981","About 5 in 10 dives","Around the coral ledges"],
+  ["Barracuda","fish","🐟","Least concern","iucn-lc",50,"Likely","#10b981","About half of dives","Hanging over the reef"],
+  ["Caribbean spiny lobster","invert","🦞","Least concern","iucn-lc",50,"Likely","#10b981","About half of dives","Under the coral ledges"],
+  ["Nurse shark","shark","🦈","Least concern","iucn-lc",35,"Sometimes","#b9751a","About 1 in 3 dives","Resting under coral ledges"],
+  ["Southern stingray","shark","🦈","Near threatened","iucn-nt",30,"Sometimes","#b9751a","About 1 in 3 dives","On the sandy patches"],
+  ["Loggerhead turtle","turtle","🐢","Vulnerable","iucn-vu",25,"Sometimes","#b9751a","About 1 in 4 dives","Along the reef edge"],
+  ["Spotted eagle ray","shark","🦈","Endangered","iucn-en",15,"Rare","#64748b","Now and then","Passing along the drop off"],
+];
+const TYPES = [["all","All"],["fish","Fish"],["shark","Sharks & rays"],["turtle","Turtles"],["invert","Invertebrates"]];
+let activeType = "all";
+function renderFilters(){
+  document.getElementById('filters').innerHTML = TYPES.map(t=>{
+    const n = t[0]==="all" ? SP.length : SP.filter(s=>s[1]===t[0]).length;
+    return '<button class="filter-pill'+(activeType===t[0]?' active':'')+'" onclick="setType(\''+t[0]+'\')">'+t[1]+'<span class="ct">'+n+'</span></button>';
+  }).join('');
+}
+function renderList(){
+  const rows = SP.filter(s=>activeType==="all"||s[1]===activeType);
+  document.getElementById('count').textContent = rows.length;
+  document.getElementById('empty').style.display = rows.length? 'none':'block';
+  document.getElementById('list').style.display = rows.length? 'flex':'none';
+  document.getElementById('list').innerHTML = rows.map(s=>
+    '<div class="enc-row"><div class="enc-ico">'+s[2]+'</div>'+
+    '<div class="enc-main"><p class="enc-name">'+s[0]+' <span class="iucn '+s[4]+'">'+s[3]+'</span></p><p class="enc-where">'+s[9]+'</p></div>'+
+    '<div class="enc-odds"><p class="enc-odds-lbl" style="color:'+s[7]+';">'+s[6]+'</p><div class="enc-bar"><div class="enc-fill" style="width:'+s[5]+'%;background:'+s[7]+';"></div></div><p class="enc-freq">'+s[8]+'</p></div></div>'
+  ).join('');
+}
+function setType(t){ activeType=t; renderFilters(); renderList(); }
+renderFilters(); renderList();
+
+const METHOD_LINK = '<a class="modal-link" href="method.html">See exactly how we do this on the Method page →</a>';
+const MODALS = {
+  chances: { title:"How we work out your chances", body:[
+    "The chance comes from how often divers have actually logged each animal here over the past year. <b>Most dives</b> means it showed up in the majority of recent records; <b>now and then</b> means only a few.",
+    "Every record is a real diver photo, confirmed by the iNaturalist community to <b>research grade</b>, then passed into GBIF, the global database that feeds IUCN Red List assessments.",
+    "Wildlife moves, so treat these as a guide, not a promise.",
+  ], source:"Source: iNaturalist research grade observations, via GBIF.", link:true },
+  iucn: { title:"What the conservation labels mean", sub:"Each animal carries its status from the IUCN Red List, the global standard for extinction risk.", rows:[
+    ["Least concern","#e7f6ee","#15824c","Widespread and not currently at risk."],
+    ["Near threatened","#f3fce8","#3f6212","Could become at risk in the near future."],
+    ["Vulnerable","#fcf2e2","#b9751a","High risk of extinction in the wild."],
+    ["Endangered","#fdecea","#c0392f","Very high risk of extinction in the wild."],
+    ["Critically endangered","#fdecea","#b91c1c","Extremely high risk — one step from extinct in the wild."],
+  ], link:true },
+};
+function openModal(key){
+  const m = MODALS[key]; if(!m) return;
+  let html = '<p class="modal-title">'+m.title+'</p>';
+  if(m.sub) html += '<p class="modal-sub">'+m.sub+'</p>';
+  if(m.body) m.body.forEach(p=>{ html += '<p class="modal-para">'+p+'</p>'; });
+  if(m.rows) m.rows.forEach(r=>{ html += '<div class="modal-row"><span class="tag" style="background:'+r[1]+';color:'+r[2]+'">'+r[0]+'</span><span class="txt">'+r[3]+'</span></div>'; });
+  if(m.source) html += '<p class="modal-source">'+m.source+'</p>';
+  if(m.link) html += METHOD_LINK;
+  document.getElementById('modal-content').innerHTML = html;
+  document.getElementById('modal-back').classList.add('open');
+}
+function closeModal(){ document.getElementById('modal-back').classList.remove('open'); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeModal(); });
+</script>
+
+</body>
+</html>
+</content>

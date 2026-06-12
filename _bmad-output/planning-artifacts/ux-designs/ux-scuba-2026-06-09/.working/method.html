@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Method — how we read the reefs (review mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--brand:#0089de;--brand-dk:#1d5d90;--ink:#0b1e32;--white:#fff;--body:#334155;--muted:#64748b;--hairline:#e2e8f0;--surface:#f1f7fb;
+--thriving:#15a05c;--pressure:#2f6ced;--change:#e23a3a;}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--white);color:#0f172a;-webkit-font-smoothing:antialiased;}
+a{color:var(--brand);}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:1rem 3rem;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline);}
+.nav-logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;flex-shrink:0;}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.0;}
+.nav-wm-top{font-size:0.6875rem;font-weight:300;letter-spacing:0.08em;color:#94a3b8;}
+.nav-wm-bot{font-size:1.05rem;font-weight:900;letter-spacing:-0.05em;color:#0f172a;}
+.nav-links{display:flex;gap:0.125rem;list-style:none;margin-left:auto;}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.45rem 0.875rem;border-radius:999px;}
+.nav-links a.active{color:var(--brand);}
+.head{background:linear-gradient(180deg,#0b1e32,#0d2942);color:#fff;padding:4rem 3rem 3.5rem;}
+.head-inner{max-width:1180px;margin:0 auto;}
+.head-eyebrow{font-size:0.6875rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#7dd3fc;margin-bottom:1rem;}
+.head h1{font-size:clamp(2.25rem,4vw,3.25rem);font-weight:800;letter-spacing:-0.03em;line-height:1.05;max-width:760px;}
+.head p{font-family:'Source Serif 4',serif;font-size:1.2rem;line-height:1.65;color:rgba(255,255,255,0.7);margin-top:1.1rem;max-width:640px;}
+.wrap{max-width:1180px;margin:0 auto;padding:3rem;display:grid;grid-template-columns:210px 1fr;gap:3.5rem;align-items:start;}
+.toc{position:sticky;top:5rem;display:flex;flex-direction:column;gap:0.1rem;}
+.toc a{font-size:0.8125rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0.4rem 0.7rem;border-left:2px solid var(--hairline);}
+.toc a:hover{color:#0f172a;border-color:#cbd5e1;}
+.toc a.tg{font-weight:700;color:#0f172a;border-left-color:#cbd5e1;margin-top:0.5rem;}
+.toc a.tg:first-child{margin-top:0;}
+.toc a.ts{padding-left:1.3rem;font-size:0.78rem;}
+.content{min-width:0;}
+/* groups + subs */
+.group{margin-bottom:4rem;scroll-margin-top:5rem;}
+.group-title{font-size:1.9rem;font-weight:800;letter-spacing:-0.03em;color:#0f172a;padding-bottom:0.7rem;border-bottom:2px solid #0f172a;}
+.group-intro{font-size:0.9375rem;line-height:1.7;color:var(--body);margin:1.1rem 0 0;max-width:660px;}
+.group-intro b{color:#0f172a;}
+.sub{margin-top:2.5rem;scroll-margin-top:5rem;}
+.sub-h{font-size:1.2rem;font-weight:800;color:#0f172a;margin-bottom:0.7rem;}
+.sub p{font-size:0.9375rem;line-height:1.7;color:var(--body);margin-bottom:1rem;max-width:660px;}
+.sub p b{color:#0f172a;}
+/* state cards */
+.state-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
+.state-card{border:1px solid var(--hairline);border-radius:1rem;padding:1.25rem;border-top:3px solid;}
+.state-card.thr{border-top-color:var(--thriving);}.state-card.pre{border-top-color:var(--pressure);}.state-card.chg{border-top-color:var(--change);}
+.state-name{font-size:1rem;font-weight:800;margin-bottom:0.5rem;}
+.state-card.thr .state-name{color:#15824c;}.state-card.pre .state-name{color:#1f57c8;}.state-card.chg .state-name{color:#c0392f;}
+.state-def{font-size:0.8125rem;line-height:1.6;color:var(--body);}
+.state-rule{margin-top:0.9rem;padding-top:0.85rem;border-top:1px solid var(--hairline);font-size:0.8125rem;line-height:1.6;color:var(--body);}
+.state-rule-lbl{font-size:0.5875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.35rem;}
+.state-rule code{font-family:'IBM Plex Mono',monospace;font-size:0.9em;background:#eef2f6;padding:0.05rem 0.3rem;border-radius:4px;color:#0f172a;}
+.cond-list{list-style:none;margin-top:0.45rem;display:flex;flex-direction:column;gap:0.35rem;}
+.cond-list li{font-size:0.8125rem;line-height:1.45;color:var(--body);padding-left:0.95rem;position:relative;}
+.cond-list li::before{content:"";position:absolute;left:0;top:0.55em;width:5px;height:5px;border-radius:50%;background:#cbd5e1;}
+.conj{font-size:0.6875rem;font-weight:700;letter-spacing:0.06em;color:#94a3b8;}
+/* formula */
+.formula{border:1px solid var(--hairline);border-radius:1rem;overflow:hidden;margin-top:1.5rem;max-width:680px;}
+.formula-head{padding:0.9rem 1.25rem;background:var(--surface);border-bottom:1px solid var(--hairline);font-size:0.8125rem;line-height:1.55;color:var(--body);}
+.formula-head b{color:#0f172a;}
+.rule{display:flex;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid var(--hairline);}
+.rule:last-child{border-bottom:none;}
+.rule-n{flex-shrink:0;width:1.6rem;height:1.6rem;border-radius:50%;color:#fff;font-size:0.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.rule-name{font-size:0.9375rem;font-weight:800;margin-bottom:0.2rem;}
+.rule-cond{font-size:0.8125rem;line-height:1.6;color:var(--body);}
+.rule-cond code{font-family:'IBM Plex Mono',monospace;font-size:0.92em;background:#eef2f6;padding:0.05rem 0.35rem;border-radius:4px;color:#0f172a;}
+/* signal cards */
+.sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
+.sig-card{border:1px solid var(--hairline);border-radius:1rem;padding:1.25rem;}
+.sig-name{font-size:0.9375rem;font-weight:700;color:#0f172a;margin-bottom:0.6rem;}
+.sig-card p{font-size:0.8125rem;line-height:1.6;color:var(--body);margin-bottom:0.7rem;}
+.sig-meta{font-size:0.6875rem;font-family:'IBM Plex Mono',monospace;color:var(--muted);display:flex;justify-content:space-between;gap:0.5rem;border-top:1px solid var(--hairline);padding-top:0.6rem;flex-wrap:wrap;}
+.sig-live{color:#15824c;font-weight:600;}
+.sig-meta a{color:var(--muted);text-decoration:none;border-bottom:1px solid #cbd5e1;}
+.sig-meta a:hover{color:var(--brand);border-color:var(--brand);}
+/* bands */
+.bands{display:flex;flex-direction:column;gap:0;border:1px solid var(--hairline);border-radius:1rem;overflow:hidden;margin:0.5rem 0 1.25rem;max-width:520px;}
+.band{display:flex;justify-content:space-between;align-items:center;padding:0.7rem 1.1rem;border-top:1px solid var(--hairline);font-size:0.875rem;font-weight:700;}
+.band:first-child{border-top:none;}
+.band span{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;font-weight:400;}
+/* pipeline */
+.pipe{display:flex;flex-wrap:wrap;gap:0;margin-top:0.5rem;border:1px solid var(--hairline);border-radius:1rem;overflow:hidden;}
+.pipe-step{flex:1;min-width:150px;padding:1.1rem 1.2rem;border-right:1px solid var(--hairline);}
+.pipe-step:last-child{border-right:none;}
+.pipe-n{font-size:0.625rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand);margin-bottom:0.35rem;}
+.pipe-t{font-size:0.875rem;font-weight:700;color:#0f172a;margin-bottom:0.2rem;}
+.pipe-d{font-size:0.75rem;line-height:1.5;color:var(--muted);}
+/* iucn rows */
+.iucn-rows{display:flex;flex-direction:column;gap:0;border:1px solid var(--hairline);border-radius:1rem;overflow:hidden;margin-top:0.5rem;max-width:680px;}
+.iucn-r{display:flex;gap:0.85rem;align-items:flex-start;padding:0.85rem 1.1rem;border-top:1px solid var(--hairline);}
+.iucn-r:first-child{border-top:none;}
+.iucn{display:inline-block;font-size:0.6875rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:999px;white-space:nowrap;flex-shrink:0;}
+.iucn-lc{background:#e7f6ee;color:#15824c;}.iucn-nt{background:#f3fce8;color:#3f6212;}.iucn-vu{background:#fcf2e2;color:#b9751a;}.iucn-en{background:#fdecea;color:#c0392f;}.iucn-cr{background:#fdecea;color:#b91c1c;}
+.iucn-txt{font-size:0.8125rem;color:var(--body);line-height:1.5;padding-top:0.1rem;}
+/* platform cards */
+.plat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
+.plat-card{border:1px solid var(--hairline);border-radius:1rem;padding:1.25rem;}
+.plat-name{font-size:1.05rem;font-weight:800;color:#0f172a;margin-bottom:0.4rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem;}
+.plat-name:hover{color:var(--brand);}
+.ext{font-size:0.85em;color:var(--brand);}
+.plat-card p{font-size:0.8125rem;line-height:1.6;color:var(--body);margin-bottom:0.85rem;}
+.plat-effort{font-size:0.6875rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:999px;background:#e7f6ee;color:#15824c;}
+.plat-effort.mid{background:#fcf2e2;color:#b9751a;}
+/* callout */
+.callout{border:1px solid #cde9d6;background:#f3faf5;border-radius:1rem;padding:1.5rem 1.6rem;margin-top:1.5rem;}
+.callout.amber{border-color:#fde7c2;background:#fffaf0;}
+.callout h3{font-size:1.05rem;font-weight:800;color:#0f172a;margin-bottom:0.5rem;}
+.callout p{font-size:0.875rem;line-height:1.65;color:var(--body);margin-bottom:0.9rem;max-width:600px;}
+.callout a.btn{display:inline-block;padding:0.7rem 1.2rem;border-radius:0.7rem;background:var(--brand);color:#fff;font-size:0.875rem;font-weight:700;text-decoration:none;}
+/* sources */
+.src-expand{margin-top:1.25rem;}
+.src-summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.875rem;font-weight:700;color:var(--brand);padding:0.5rem 0;}
+.src-summary::-webkit-details-marker{display:none;}
+.src-summary::after{content:"⌄";}
+.src-expand[open] .src-summary::after{content:"⌃";}
+.src-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 2.5rem;margin-top:1.25rem;}
+.src-group h4{font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.55rem;}
+.src-group ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
+.src-group a{font-size:0.8125rem;color:var(--body);text-decoration:none;border-bottom:1px solid transparent;}
+.src-group a:hover{color:var(--brand);border-color:var(--brand);}
+.banner{background:#fef9c3;border-bottom:1px solid #fde68a;padding:0.6rem 3rem;font-size:0.8125rem;color:#854d0e;text-align:center;}
+@media(max-width:920px){.wrap{grid-template-columns:1fr;}.toc{display:none;}.state-cards,.sig-grid,.plat-grid,.src-groups{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="banner">📐 <b>Method page mockup</b> — restructured: Reef state · Sightings · For divers · For researchers · Sources. The destination of every "on the Method page →" link.</div>
+
+<nav class="nav">
+  <a href="atlas.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" fill="#0089de"/><path d="M5 20 Q9 14 14 17 Q18 20 22 15 Q26 10 31 16" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M5 25 Q9 20 13 22 Q17 24 21 20 Q25 16 31 21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <div class="nav-wordmark"><span class="nav-wm-top">scuba</span><span class="nav-wm-bot">Season.fun</span></div>
+  </a>
+  <ul class="nav-links"><li><a href="#" class="active">Method</a></li><li><a href="#">About</a></li></ul>
+</nav>
+
+<header class="head">
+  <div class="head-inner">
+    <p class="head-eyebrow">How this works</p>
+    <h1>How we read the reefs</h1>
+    <p>Every label on this site comes from public science, not opinion. Here is exactly where the data comes from, how we turn it into plain language, and how you can help fill the gaps.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc">
+    <a class="tg" href="#reefstate">Reef state</a>
+    <a class="ts" href="#rs-label">The label and the rule</a>
+    <a class="ts" href="#rs-signals">The signals behind it</a>
+    <a class="tg" href="#sightings">Sightings</a>
+    <a class="ts" href="#si-chances">Your chances</a>
+    <a class="ts" href="#si-verify">How we verify</a>
+    <a class="ts" href="#si-labels">Conservation labels</a>
+    <a class="tg" href="#divers">For divers</a>
+    <a class="tg" href="#researchers">For researchers</a>
+    <a class="tg" href="#sources">All sources</a>
+  </nav>
+
+  <div class="content">
+
+    <!-- ============ REEF STATE ============ -->
+    <section class="group" id="reefstate">
+      <h2 class="group-title">Reef state</h2>
+      <p class="group-intro">We read three signals for every reef and turn them into one plain word that describes <b>what is happening</b> there. It is not a ranking and not a score. Every reef is worth diving.</p>
+
+      <div class="sub" id="rs-label">
+        <h3 class="sub-h">One honest label per reef</h3>
+        <p>We read three numbers — <b>coral cover</b> (live coral percent, from reef surveys), <b>heat stress</b> (the NOAA bleaching alert), and <b>fishing pressure</b>. Each label below is the plain meaning, plus the exact rule that produces it.</p>
+        <div class="state-cards">
+          <div class="state-card thr">
+            <p class="state-name">Thriving</p>
+            <p class="state-def">Near its natural baseline and steady. Recovering or healthy, not perfect or untouched.</p>
+            <div class="state-rule"><p class="state-rule-lbl">The rule</p><ul class="cond-list"><li>Coral cover <code>40% or more</code> (or not yet surveyed) <span class="conj">AND</span></li><li>Heat no worse than <code>Watch</code> <span class="conj">AND</span></li><li>Fishing <code>low</code></li></ul></div>
+          </div>
+          <div class="state-card pre">
+            <p class="state-name">Under pressure</p>
+            <p class="state-def">Below its baseline or slipping, from heat or fishing, but the reef structure and fish life still hold.</p>
+            <div class="state-rule"><p class="state-rule-lbl">The rule</p>Everything between the other two.</div>
+          </div>
+          <div class="state-card chg">
+            <p class="state-name">Witnessing change</p>
+            <p class="state-def">Heavy recent loss or bleaching. Diving here is a chance to document what remains, not a write off.</p>
+            <div class="state-rule"><p class="state-rule-lbl">The rule</p><ul class="cond-list"><li>Coral cover <code>below 25%</code> <span class="conj">OR</span></li><li>Heat at <code>Alert Level 1</code> or higher</li></ul></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub" id="rs-signals">
+        <h3 class="sub-h">The signals behind it</h3>
+        <p>Three public sources feed that rule. We don't run our own boats or labs, we stand on the organisations who do.</p>
+        <div class="sig-grid">
+          <div class="sig-card"><p class="sig-name">Heat stress</p><p>How warm the water is against what is normal for the season. Brief warmth is fine; it is sustained heat over weeks that bleaches coral.</p><div class="sig-meta"><a href="https://coralreefwatch.noaa.gov/" target="_blank" rel="noopener">NOAA Coral Reef Watch</a><span class="sig-live">Live, nightly</span></div></div>
+          <div class="sig-card"><p class="sig-name">Coral cover</p><p>How much of the seabed is live coral, from reef surveys. For some reefs we only have a couple of survey years, so we show the trend as a guide.</p><div class="sig-meta"><a href="https://www.reefcheck.org/" target="_blank" rel="noopener">Reef Check</a> and partners<span>Per survey</span></div></div>
+          <div class="sig-card"><p class="sig-name">Fishing pressure</p><p>How heavily a reef is fished, and whether it sits inside a protected area. Strong protection lets a reef recover faster.</p><div class="sig-meta"><a href="https://globalfishingwatch.org/" target="_blank" rel="noopener">Global Fishing Watch</a><span>Weekly</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SIGHTINGS ============ -->
+    <section class="group" id="sightings">
+      <h2 class="group-title">Sightings</h2>
+      <p class="group-intro">On every dive site we show which animals you are likely to see, and where. Each one is a <b>real diver photo</b>, nothing invented.</p>
+
+      <div class="sub" id="si-chances">
+        <h3 class="sub-h">Your chances of seeing each animal</h3>
+        <p>The chance comes from <b>how often divers have logged that animal at this site over the past year</b> — their photo records on <a href="https://www.inaturalist.org/" target="_blank" rel="noopener">iNaturalist</a>, each confirmed to research grade and pulled in through GBIF (the same records explained in <a href="#si-verify">How we verify</a>, below). We turn that frequency into one plain label:</p>
+        <div class="bands">
+          <div class="band" style="color:#15824c;">Almost always <span>80% or more of recent dives</span></div>
+          <div class="band" style="color:#15824c;">Very likely <span>60 to 80%</span></div>
+          <div class="band" style="color:#15824c;">Likely <span>40 to 60%</span></div>
+          <div class="band" style="color:#b9751a;">Sometimes <span>20 to 40%</span></div>
+          <div class="band" style="color:#64748b;">Rare <span>under 20%</span></div>
+        </div>
+        <p>Wildlife moves and seasons shift, so we treat every figure as a guide, never a promise. When a site has few recent records we say its data is thin rather than guess.</p>
+      </div>
+
+      <div class="sub" id="si-verify">
+        <h3 class="sub-h">How we verify a sighting</h3>
+        <p>Every sighting starts as a real photograph and is checked before we count it.</p>
+        <div class="pipe">
+          <div class="pipe-step"><p class="pipe-n">Step 1</p><p class="pipe-t">Diver photo</p><p class="pipe-d">A diver photographs an animal and tags where they saw it.</p></div>
+          <div class="pipe-step"><p class="pipe-n">Step 2</p><p class="pipe-t">Community check</p><p class="pipe-d">The <a href="https://www.inaturalist.org/" target="_blank" rel="noopener">iNaturalist</a> community confirms the species until it reaches research grade.</p></div>
+          <div class="pipe-step"><p class="pipe-n">Step 3</p><p class="pipe-t">GBIF</p><p class="pipe-d">It flows into <a href="https://www.gbif.org/" target="_blank" rel="noopener">GBIF</a>, the global biodiversity database.</p></div>
+          <div class="pipe-step"><p class="pipe-n">Step 4</p><p class="pipe-t">IUCN Red List</p><p class="pipe-d">GBIF records feed the assessments behind each animal's status.</p></div>
+        </div>
+      </div>
+
+      <div class="sub" id="si-labels">
+        <h3 class="sub-h">What the conservation labels mean</h3>
+        <p>Each animal carries its status from the <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener">IUCN Red List</a>, the global standard for how threatened a species is in the wild.</p>
+        <div class="iucn-rows">
+          <div class="iucn-r"><span class="iucn iucn-lc">Least concern</span><span class="iucn-txt">Widespread and not currently at risk.</span></div>
+          <div class="iucn-r"><span class="iucn iucn-nt">Near threatened</span><span class="iucn-txt">Could become at risk in the near future.</span></div>
+          <div class="iucn-r"><span class="iucn iucn-vu">Vulnerable</span><span class="iucn-txt">High risk of extinction in the wild.</span></div>
+          <div class="iucn-r"><span class="iucn iucn-en">Endangered</span><span class="iucn-txt">Very high risk of extinction in the wild.</span></div>
+          <div class="iucn-r"><span class="iucn iucn-cr">Critically endangered</span><span class="iucn-txt">Extremely high risk, one step from extinct in the wild.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOR DIVERS ============ -->
+    <section class="group" id="divers">
+      <h2 class="group-title">For divers</h2>
+      <p class="group-intro">Many reefs in the atlas have no recent records at all. We never hide that. A reef with thin data is not abandoned, it just <b>needs fresh eyes</b>, and a single trip can change that.</p>
+
+      <div class="sub">
+        <h3 class="sub-h">Add what you see</h3>
+        <p>Every dive can add to the record. Pick how involved you want to be, from a single photo to a full survey.</p>
+        <div class="plat-grid">
+          <div class="plat-card"><a class="plat-name" href="https://www.inaturalist.org/" target="_blank" rel="noopener">iNaturalist <span class="ext">↗</span></a><p>Photograph any animal and upload it with the location. The community confirms the species, and once it reaches research grade it joins the record scientists use.</p><span class="plat-effort">Zero training</span></div>
+          <div class="plat-card"><a class="plat-name" href="https://www.coralwatch.org/" target="_blank" rel="noopener">CoralWatch <span class="ext">↗</span></a><p>Match coral colour against a simple chart to record bleaching. It takes a few minutes and helps track heat stress over time.</p><span class="plat-effort">A few minutes</span></div>
+          <div class="plat-card"><a class="plat-name" href="https://www.reefcheck.org/" target="_blank" rel="noopener">Reef Check <span class="ext">↗</span></a><p>Run a standard reef survey: count fish, invertebrates and coral health along a set line. This feeds long term monitoring.</p><span class="plat-effort mid">Free training</span></div>
+        </div>
+      </div>
+
+      <div class="callout amber">
+        <h3>Diving somewhere quiet?</h3>
+        <p>If you are heading to a reef with few records, you are exactly who that reef needs. Log what you see and it becomes part of the public picture.</p>
+        <a href="location-florida-keys-slim-v2.html" class="btn">Find reefs that need eyes →</a>
+      </div>
+    </section>
+
+    <!-- ============ FOR RESEARCHERS ============ -->
+    <section class="group" id="researchers">
+      <h2 class="group-title">For researchers</h2>
+      <p class="group-intro">If you run a monitoring programme and need eyes on specific sites, tell us where. We can point divers toward the reefs and the platforms where their records help you most. scubaSeason is a nonprofit, free to read, with every source credited.</p>
+      <div class="callout">
+        <h3>Work with us</h3>
+        <p>Spotted wrong data, or want to direct divers to your sites? All of it is welcome.</p>
+        <a href="mailto:hello@scubaseason.fun" class="btn">hello@scubaseason.fun</a>
+      </div>
+    </section>
+
+    <!-- ============ SOURCES (bottom, collapsed) ============ -->
+    <section class="group" id="sources">
+      <h2 class="group-title">Every source we credit</h2>
+      <p class="group-intro">Everything on this site is built from public data, none of our own. <b>Reef state</b> comes from NOAA heat, reef surveys and Global Fishing Watch. <b>Sightings</b> come from iNaturalist and GBIF. Beyond those, dozens more cover water conditions, currents, charts, wreck histories and diver safety. All 63 are named and linked below.</p>
+      <details class="src-expand"><summary class="src-summary">Show all 63 sources</summary>
+        <div class="src-groups">
+          <div class="src-group"><h4>Heat and ocean physics</h4><ul>
+            <li><a href="https://coralreefwatch.noaa.gov/" target="_blank" rel="noopener">NOAA Coral Reef Watch</a></li>
+            <li><a href="https://podaac.jpl.nasa.gov/" target="_blank" rel="noopener">NASA PO.DAAC</a></li>
+            <li><a href="https://data.marine.copernicus.eu/products" target="_blank" rel="noopener">Copernicus Marine Service</a></li>
+            <li><a href="https://coastwatch.noaa.gov/cwn/index.html" target="_blank" rel="noopener">NOAA CoastWatch / OceanWatch</a></li>
+            <li><a href="https://oceancolor.gsfc.nasa.gov/" target="_blank" rel="noopener">NASA Ocean Color (OB.DAAC)</a></li>
+            <li><a href="https://argo.ucsd.edu/" target="_blank" rel="noopener">Argo float network</a></li>
+            <li><a href="https://www.ndbc.noaa.gov/" target="_blank" rel="noopener">NOAA NDBC buoy network</a></li>
+            <li><a href="https://portal.aodn.org.au/" target="_blank" rel="noopener">IMOS / AODN</a></li>
+            <li><a href="https://tidesandcurrents.noaa.gov/" target="_blank" rel="noopener">NOAA Tides and Currents</a></li>
+            <li><a href="https://www.hycom.org/dataserver" target="_blank" rel="noopener">HYCOM ocean model</a></li>
+            <li><a href="https://www.gebco.net/" target="_blank" rel="noopener">GEBCO bathymetry grid</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Coral reef health and monitoring</h4><ul>
+            <li><a href="https://allencoralatlas.org/" target="_blank" rel="noopener">Allen Coral Atlas</a></li>
+            <li><a href="https://gcrmn.net/" target="_blank" rel="noopener">Global Coral Reef Monitoring Network</a></li>
+            <li><a href="https://www.aims.gov.au/research/monitoring/reef" target="_blank" rel="noopener">AIMS Long Term Monitoring Program</a></li>
+            <li><a href="https://reeflifesurvey.com/" target="_blank" rel="noopener">Reef Life Survey</a></li>
+            <li><a href="https://www.coris.noaa.gov/monitoring/" target="_blank" rel="noopener">NOAA National Coral Reef Monitoring</a></li>
+            <li><a href="https://www2.gbrmpa.gov.au/" target="_blank" rel="noopener">Great Barrier Reef Marine Park Authority</a></li>
+            <li><a href="https://www.agrra.org/" target="_blank" rel="noopener">Atlantic and Gulf Rapid Reef Assessment</a></li>
+            <li><a href="https://icriforum.org/" target="_blank" rel="noopener">International Coral Reef Initiative</a></li>
+            <li><a href="https://www.wri.org/research/reefs-risk-revisited" target="_blank" rel="noopener">WRI Reefs at Risk Revisited</a></li>
+            <li><a href="https://oceanhealthindex.org/" target="_blank" rel="noopener">Ocean Health Index</a></li>
+            <li><a href="https://www.globalmangrovewatch.org/" target="_blank" rel="noopener">Global Mangrove Watch</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Species and biodiversity records</h4><ul>
+            <li><a href="https://www.gbif.org/" target="_blank" rel="noopener">Global Biodiversity Information Facility</a></li>
+            <li><a href="https://obis.org/" target="_blank" rel="noopener">Ocean Biodiversity Information System</a></li>
+            <li><a href="https://www.iucnredlist.org/" target="_blank" rel="noopener">IUCN Red List of Threatened Species</a></li>
+            <li><a href="https://seamap.env.duke.edu/" target="_blank" rel="noopener">OBIS-SEAMAP</a></li>
+            <li><a href="https://www.marinespecies.org/" target="_blank" rel="noopener">WoRMS World Register of Marine Species</a></li>
+            <li><a href="https://www.fishbase.org/" target="_blank" rel="noopener">FishBase</a></li>
+            <li><a href="https://www.ala.org.au/" target="_blank" rel="noopener">Atlas of Living Australia</a></li>
+            <li><a href="https://www.mantatrust.org/idthemanta" target="_blank" rel="noopener">Manta Trust IDtheManta</a></li>
+            <li><a href="https://www.wildbook.org/" target="_blank" rel="noopener">Wildbook (Sharkbook, Manta Matcher)</a></li>
+            <li><a href="https://happywhale.com/" target="_blank" rel="noopener">Happywhale</a></li>
+            <li><a href="https://oceantrackingnetwork.org/" target="_blank" rel="noopener">Ocean Tracking Network</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Citizen science you can join</h4><ul>
+            <li><a href="https://www.inaturalist.org/" target="_blank" rel="noopener">iNaturalist</a></li>
+            <li><a href="https://www.reefcheck.org/" target="_blank" rel="noopener">Reef Check</a></li>
+            <li><a href="https://www.coralwatch.org/" target="_blank" rel="noopener">CoralWatch</a></li>
+            <li><a href="https://www.reef.org/" target="_blank" rel="noopener">REEF Volunteer Fish Survey</a></li>
+            <li><a href="https://greenfins.net/" target="_blank" rel="noopener">Green Fins</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Fishing and protection</h4><ul>
+            <li><a href="https://globalfishingwatch.org/" target="_blank" rel="noopener">Global Fishing Watch</a></li>
+            <li><a href="https://www.protectedplanet.net/" target="_blank" rel="noopener">Protected Planet (WDPA)</a></li>
+            <li><a href="https://mpatlas.org/" target="_blank" rel="noopener">Marine Protection Atlas</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Water quality and hazards</h4><ul>
+            <li><a href="https://www.ncei.noaa.gov/products/microplastics" target="_blank" rel="noopener">NCEI Marine Microplastics</a></li>
+            <li><a href="https://erma.noaa.gov/" target="_blank" rel="noopener">NOAA ERMA and IncidentNews</a></li>
+            <li><a href="https://emodnet.ec.europa.eu/en/chemistry" target="_blank" rel="noopener">EMODnet Chemistry</a></li>
+            <li><a href="https://oceanservice.noaa.gov/hazards/hab/" target="_blank" rel="noopener">NOAA HAB Operational Forecast</a></li>
+            <li><a href="http://haedat.iode.org/" target="_blank" rel="noopener">HAEDAT Harmful Algae Database</a></li>
+            <li><a href="https://www.goa-on.org/" target="_blank" rel="noopener">Global Ocean Acidification Network</a></li>
+            <li><a href="https://products.coastalscience.noaa.gov/nsandt_data/data.aspx" target="_blank" rel="noopener">NOAA Mussel Watch</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Weather, storms and seafloor</h4><ul>
+            <li><a href="https://www.ecmwf.int/en/forecasts/datasets/open-data" target="_blank" rel="noopener">ECMWF Open Data</a></li>
+            <li><a href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels" target="_blank" rel="noopener">ERA5 reanalysis</a></li>
+            <li><a href="https://www.ncei.noaa.gov/products/international-best-track-archive" target="_blank" rel="noopener">IBTrACS storm tracks</a></li>
+            <li><a href="https://volcano.si.edu/" target="_blank" rel="noopener">Smithsonian Global Volcanism Program</a></li>
+            <li><a href="https://earthquake.usgs.gov/earthquakes/search/" target="_blank" rel="noopener">USGS Earthquake Catalog</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Wrecks, charts and navigation</h4><ul>
+            <li><a href="https://www.history.navy.mil/research/histories/ship-histories/danfs.html" target="_blank" rel="noopener">Naval History and Heritage Command</a></li>
+            <li><a href="https://encdirect.noaa.gov/" target="_blank" rel="noopener">NOAA ENC Direct</a></li>
+            <li><a href="https://sanctuaries.noaa.gov/maritime/" target="_blank" rel="noopener">NOAA Maritime Heritage Program</a></li>
+            <li><a href="https://www.openseamap.org/" target="_blank" rel="noopener">OpenSeaMap</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Diver training and safety</h4><ul>
+            <li><a href="https://dan.org/" target="_blank" rel="noopener">Divers Alert Network</a></li>
+            <li><a href="https://www.padi.com/" target="_blank" rel="noopener">PADI</a></li>
+            <li><a href="https://www.divessi.com/" target="_blank" rel="noopener">SSI</a></li>
+            <li><a href="https://www.dema.org/" target="_blank" rel="noopener">DEMA</a></li>
+          </ul></div>
+          <div class="src-group"><h4>Climate science and editorial</h4><ul>
+            <li><a href="https://www.ipcc.ch/srocc/" target="_blank" rel="noopener">IPCC Ocean and Cryosphere report</a></li>
+            <li><a href="https://scubaseason.fun/about" target="_blank" rel="noopener">scubaSeason editorial</a></li>
+          </ul></div>
+        </div>
+      </details>
+    </section>
+
+  </div>
+</div>
+
+</body>
+</html>
+</content>
