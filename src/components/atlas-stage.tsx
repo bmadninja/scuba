@@ -310,7 +310,8 @@ function ReefCard({
           />
           {STATE_LABEL[r.state]}
         </p>
-        <p className="line-clamp-1 text-sm font-extrabold tracking-[-0.01em] text-[#f0f4f8]">
+        <p className="text-[1.0625rem] font-extrabold tracking-[-0.01em] text-[#f0f4f8] transition-colors group-hover:text-[#00d4ff]">
+
           {r.name}
         </p>
         <p className="mt-0.5 line-clamp-1 text-xs text-[#8b9db8]">
@@ -335,6 +336,7 @@ export function AtlasStage({
   const [filters, setFilters] = useState<Filters>(() => parseFilters(searchParams));
   const [view, setView] = useState<"cards" | "map">("cards");
   const [info, setInfo] = useState<InfoKey | null>(null);
+  const [sheetOpen, setSheetOpen] = useState(false);
 
   // Keep the URL in sync so a filtered view is shareable / refreshable.
   useEffect(() => {
@@ -452,6 +454,15 @@ export function AtlasStage({
 
   const effectiveView = view;
 
+  // Count active filters for the mobile badge
+  const activeFilterCount =
+    filters.months.length +
+    filters.animals.length +
+    filters.region.length +
+    filters.skill.length +
+    (filters.condition.length !== STATE_VALUES.length ? 1 : 0) +
+    (filters.freshOnly ? 1 : 0);
+
   const renderCard = (r: FilterLocation) => (
     <ReefCard
       key={r.slug}
@@ -461,10 +472,102 @@ export function AtlasStage({
     />
   );
 
+  // Shared filter panel content — rendered in sidebar (desktop) and bottom sheet (mobile)
+  const filterPanelContent = (
+    <>
+      {/* When */}
+      <FilterSection title="When" infoKey="when" onInfo={setInfo}>
+        <div className="grid grid-cols-4 gap-1.5">
+          {MONTH_ABBR.map((m, i) => {
+            const month = i + 1;
+            const on = filters.months.includes(month);
+            return (
+              <button
+                key={m}
+                type="button"
+                aria-pressed={on}
+                onClick={() => toggle("months", month)}
+                className={`rounded-lg border px-1 py-1.5 text-center text-[0.78rem] font-semibold transition ${
+                  on
+                    ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
+                    : "border-white/10 bg-white/5 text-[#8b9db8] hover:border-white/20"
+                }`}
+              >
+                {m}
+              </button>
+            );
+          })}
+        </div>
+      </FilterSection>
+
+      {/* What do you want to see? */}
+      <FilterSection title="What do you want to see?" infoKey="species" onInfo={setInfo}>
+        <div className="flex flex-col gap-1.5">
+          {WILDLIFE_TAXONOMY.map((g) => (
+            <TaxoGroup
+              key={g.group}
+              group={g.group}
+              tags={g.tags.map((t) => t.tag)}
+              selected={filters.animals}
+              onToggle={(tag) => toggle("animals", tag)}
+            />
+          ))}
+        </div>
+      </FilterSection>
+
+      {/* Region */}
+      <FilterSection title="Region">
+        <RegionTree
+          groups={regionGroups}
+          selected={filters.region}
+          onToggleCountry={(country) => toggle("region", country)}
+          onToggleContinent={toggleRegionContinent}
+        />
+      </FilterSection>
+
+      {/* Reef state */}
+      <FilterSection title="Reef state" infoKey="state" onInfo={setInfo}>
+        <div className="flex flex-col gap-0.5">
+          {STATE_VALUES.map((s) => (
+            <CheckRow
+              key={s}
+              on={filters.condition.includes(s)}
+              swatch={STATE_SWATCH[s]}
+              onClick={() => toggle("condition", s)}
+            >
+              {STATE_LABEL[s]}
+            </CheckRow>
+          ))}
+        </div>
+      </FilterSection>
+
+      {/* Evidence gaps */}
+      <FilterSection title="Evidence gaps" infoKey="evidence" onInfo={setInfo}>
+        <CheckRow
+          on={filters.freshOnly}
+          onClick={() => setFilters((p) => ({ ...p, freshOnly: !p.freshOnly }))}
+        >
+          Needs fresh eyes
+        </CheckRow>
+      </FilterSection>
+
+      {/* Certification level */}
+      <FilterSection title="Certification level" infoKey="level" onInfo={setInfo}>
+        <div className="flex flex-col gap-0.5">
+          {CERT_OPTIONS.map((s) => (
+            <CheckRow key={s} on={filters.skill.includes(s)} onClick={() => toggle("skill", s)}>
+              {s}
+            </CheckRow>
+          ))}
+        </div>
+      </FilterSection>
+    </>
+  );
+
   return (
     <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[300px_1fr]">
-      {/* ── FILTER RAIL ── */}
-      <aside className="lg:sticky lg:top-[78px] lg:max-h-[calc(100vh-96px)] lg:self-start lg:overflow-auto lg:pr-1">
+      {/* ── DESKTOP FILTER SIDEBAR (hidden on mobile) ── */}
+      <aside className="hidden lg:sticky lg:top-[78px] lg:block lg:max-h-[calc(100vh-96px)] lg:self-start lg:overflow-y-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
         <div className="flex items-center justify-between pb-1.5">
           <span className="text-[1.05rem] font-extrabold text-[#f0f4f8]">Filters</span>
           <button
@@ -475,120 +578,90 @@ export function AtlasStage({
             Reset
           </button>
         </div>
-
-        {/* When */}
-        <FilterSection title="When" infoKey="when" onInfo={setInfo}>
-          <div className="grid grid-cols-4 gap-1.5">
-            {MONTH_ABBR.map((m, i) => {
-              const month = i + 1;
-              const on = filters.months.includes(month);
-              return (
-                <button
-                  key={m}
-                  type="button"
-                  aria-pressed={on}
-                  onClick={() => toggle("months", month)}
-                  className={`rounded-lg border px-1 py-1.5 text-center text-[0.78rem] font-semibold transition ${
-                    on
-                      ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
-                      : "border-white/10 bg-white/5 text-[#8b9db8] hover:border-white/20"
-                  }`}
-                >
-                  {m}
-                </button>
-              );
-            })}
-          </div>
-        </FilterSection>
-
-        {/* What do you want to see? */}
-        <FilterSection title="What do you want to see?" infoKey="species" onInfo={setInfo}>
-          <div className="flex flex-col gap-1.5">
-            {WILDLIFE_TAXONOMY.map((g) => (
-              <TaxoGroup
-                key={g.group}
-                group={g.group}
-                tags={g.tags.map((t) => t.tag)}
-                selected={filters.animals}
-                onToggle={(tag) => toggle("animals", tag)}
-              />
-            ))}
-          </div>
-        </FilterSection>
-
-        {/* Region — continent expands to its countries */}
-        <FilterSection title="Region">
-          <RegionTree
-            groups={regionGroups}
-            selected={filters.region}
-            onToggleCountry={(country) => toggle("region", country)}
-            onToggleContinent={toggleRegionContinent}
-          />
-        </FilterSection>
-
-        {/* Reef state */}
-        <FilterSection title="Reef state" infoKey="state" onInfo={setInfo}>
-          <div className="flex flex-col gap-0.5">
-            {STATE_VALUES.map((s) => (
-              <CheckRow
-                key={s}
-                on={filters.condition.includes(s)}
-                swatch={STATE_SWATCH[s]}
-                onClick={() => toggle("condition", s)}
-              >
-                {STATE_LABEL[s]}
-              </CheckRow>
-            ))}
-          </div>
-        </FilterSection>
-
-        {/* Evidence gaps */}
-        <FilterSection title="Evidence gaps" infoKey="evidence" onInfo={setInfo}>
-          <CheckRow
-            on={filters.freshOnly}
-            onClick={() => setFilters((p) => ({ ...p, freshOnly: !p.freshOnly }))}
-          >
-            Needs fresh eyes
-          </CheckRow>
-        </FilterSection>
-
-        {/* Certification level */}
-        <FilterSection title="Certification level" infoKey="level" onInfo={setInfo}>
-          <div className="flex flex-col gap-0.5">
-            {CERT_OPTIONS.map((s) => (
-              <CheckRow key={s} on={filters.skill.includes(s)} onClick={() => toggle("skill", s)}>
-                {s}
-              </CheckRow>
-            ))}
-          </div>
-        </FilterSection>
+        {filterPanelContent}
       </aside>
+
+      {/* ── MOBILE BOTTOM SHEET ── */}
+      {sheetOpen && (
+        <>
+          {/* Scrim */}
+          <div
+            className="fixed inset-0 z-40 bg-black/60 lg:hidden"
+            onClick={() => setSheetOpen(false)}
+            aria-hidden
+          />
+          {/* Sheet */}
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Filters"
+            className="fixed bottom-0 left-0 right-0 z-50 flex max-h-[88vh] flex-col rounded-t-2xl border-t border-white/10 bg-[#0a1628] lg:hidden"
+            style={{ boxShadow: "0 -16px 48px rgba(0,0,0,0.5)" }}
+          >
+            {/* Sheet header */}
+            <div className="flex shrink-0 items-center justify-between border-b border-white/10 px-5 py-4">
+              <span className="text-[1.05rem] font-extrabold text-[#f0f4f8]">Filters</span>
+              <div className="flex items-center gap-4">
+                {activeFilterCount > 0 && (
+                  <button
+                    type="button"
+                    onClick={reset}
+                    className="text-[0.8125rem] font-semibold text-[#00d4ff] hover:underline"
+                  >
+                    Reset
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => setSheetOpen(false)}
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[#8b9db8] hover:bg-white/15"
+                  aria-label="Close filters"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+            {/* Scrollable filter content */}
+            <div className="flex-1 overflow-y-auto px-5 pb-8">
+              {filterPanelContent}
+            </div>
+            {/* Done button */}
+            <div className="shrink-0 border-t border-white/10 px-5 py-4">
+              <button
+                type="button"
+                onClick={() => setSheetOpen(false)}
+                className="w-full rounded-full bg-[#00d4ff] py-3 text-[0.9375rem] font-bold text-[#0a1628]"
+              >
+                Show {matched.length} reef{matched.length === 1 ? "" : "s"}
+              </button>
+            </div>
+          </div>
+        </>
+      )}
 
       {/* ── RESULTS ── */}
       <main className="min-w-0">
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-[1.1rem] font-extrabold tracking-[-0.02em] text-[#f0f4f8]" role="status" aria-live="polite">
-            {matched.length} reef{matched.length === 1 ? "" : "s"}
-          </h2>
-          <div className="flex flex-wrap items-center gap-4">
-            {effectiveView === "cards" && (
-              <label className="flex items-center gap-2 text-[0.8125rem] text-[#8b9db8]">
-                Sort
-                <select
-                  value={filters.sort}
-                  onChange={(e) =>
-                    setFilters((p) => ({ ...p, sort: e.target.value as SortKey }))
-                  }
-                  className="rounded-lg border border-white/10 bg-[#0a1628] px-2.5 py-1.5 text-[0.8125rem] font-semibold text-[#f0f4f8] focus:border-[#00d4ff] focus:outline-none"
-                >
-                  {SORT_OPTIONS.map((o) => (
-                    <option key={o.value} value={o.value}>
-                      {o.label}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            )}
+          <div className="flex items-center gap-3">
+            <h2 className="text-[1.1rem] font-extrabold tracking-[-0.02em] text-[#f0f4f8]" role="status" aria-live="polite">
+              {matched.length} reef{matched.length === 1 ? "" : "s"}
+            </h2>
+            {/* Mobile filters trigger */}
+            <button
+              type="button"
+              onClick={() => setSheetOpen(true)}
+              className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[0.8125rem] font-semibold text-[#f0f4f8] lg:hidden"
+            >
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+                <line x1="2" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="12" y2="8"/><line x1="6" y1="12" x2="10" y2="12"/>
+              </svg>
+              Filters
+              {activeFilterCount > 0 && (
+                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#00d4ff] text-[0.625rem] font-bold text-[#0a1628]">
+                  {activeFilterCount}
+                </span>
+              )}
+            </button>
             <div className="inline-flex rounded-full border border-white/10 bg-white/5 p-[3px]">
               <button
                 type="button"
@@ -616,6 +689,24 @@ export function AtlasStage({
               </button>
             </div>
           </div>
+          {effectiveView === "cards" && (
+            <label className="flex items-center gap-1.5 text-[0.8125rem] text-[#8b9db8]">
+              Sort
+              <select
+                value={filters.sort}
+                onChange={(e) =>
+                  setFilters((p) => ({ ...p, sort: e.target.value as SortKey }))
+                }
+                className="rounded-lg border border-white/10 bg-[#0a1628] px-2.5 py-1.5 text-[0.8125rem] font-semibold text-[#f0f4f8] focus:border-[#00d4ff] focus:outline-none"
+              >
+                {SORT_OPTIONS.map((o) => (
+                  <option key={o.value} value={o.value}>
+                    {o.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
         </div>
 
         {effectiveView === "cards" ? (

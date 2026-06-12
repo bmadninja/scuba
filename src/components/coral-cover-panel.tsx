@@ -57,6 +57,18 @@ export function CoralCoverPanel({
               in {snapshot.current.year}
             </span>
           </p>
+          {/* Visual bar */}
+          <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-white/10">
+            <div
+              className="h-full rounded-full transition-all"
+              style={{
+                width: `${Math.min(snapshot.current.coverPercent, 100)}%`,
+                background: trend
+                  ? trend.delta >= 0 ? "#10b981" : "#f43f5e"
+                  : "#00d4ff",
+              }}
+            />
+          </div>
         </div>
         {snapshot.historical ? (
           <div>
@@ -71,10 +83,17 @@ export function CoralCoverPanel({
                 in {snapshot.historical.year}
               </span>
             </p>
+            {/* Visual bar */}
+            <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-white/10">
+              <div
+                className="h-full rounded-full bg-white/30"
+                style={{ width: `${Math.min(snapshot.historical.coverPercent, 100)}%` }}
+              />
+            </div>
             {trend ? (
-              <p className={`mt-1 text-[12px] font-semibold ${trend.tone}`}>
+              <p className={`mt-1.5 text-[12px] font-semibold ${trend.tone}`}>
                 {trend.arrow} {trend.delta >= 0 ? "+" : ""}
-                {trend.delta} pts
+                {trend.delta} pts vs earlier survey
               </p>
             ) : null}
           </div>

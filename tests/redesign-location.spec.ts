@@ -38,7 +38,9 @@ test.describe('Location page — "Plan your trip" rail', () => {
   test('shows the trip card with Best months', async ({ page }) => {
     await page.goto(ARI, GOTO);
     await expect(page.getByText('Plan your trip')).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByText('Best months')).toBeVisible();
+    // Scope to #trip-planning to avoid strict-mode collision with TripSnapshot's
+    // "Best months" span elsewhere on the page.
+    await expect(page.locator('#trip-planning').getByText('Best months').first()).toBeVisible();
   });
 
   test('"Where to stay" expander reveals booking links', async ({ page }) => {
@@ -62,14 +64,17 @@ test.describe('Location page — "Plan your trip" rail', () => {
 test.describe('Location page — what you\'ll see (species)', () => {
   test('renders the species section heading', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    await expect(page.getByText("What you'll see")).toBeVisible({ timeout: 15_000 });
+    // Scope to #species to avoid strict-mode collision with the nav anchor link
+    // that also contains "What you'll see".
+    await expect(page.locator('#species')).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator('#species').getByText("What you'll see")).toBeVisible();
   });
 
   test('species cards show a "seen" recency line', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    await expect(page.getByText("What you'll see")).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator('#species')).toBeVisible({ timeout: 15_000 });
     // Each species card carries a "seen" recency string (e.g. "Seen this week").
-    await expect(page.getByText(/seen/i).first()).toBeVisible();
+    await expect(page.locator('#species').getByText(/seen/i).first()).toBeVisible();
   });
 });
 
@@ -112,7 +117,8 @@ test.describe('Location page — mobile', () => {
   test('reef condition, species, sites and trip rail all render stacked', async ({ page }) => {
     await page.goto(ARI, GOTO);
     await expect(page.locator('#reef-condition')).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByText("What you'll see")).toBeVisible();
+    // Use #species section rather than text to avoid strict-mode collision with nav link.
+    await expect(page.locator('#species')).toBeVisible();
     await expect(page.locator('#sites')).toBeVisible();
     await expect(page.getByText('Plan your trip')).toBeVisible();
   });

@@ -43,6 +43,11 @@ function SearchInner() {
   const router = useRouter();
   const initialQ = searchParams.get("q") ?? "";
   const [q, setQ] = useState(initialQ);
+
+  // Sync q when URL param changes (e.g. navigating from nav dropdown while already on /search)
+  useEffect(() => {
+    setQ(searchParams.get("q") ?? "");
+  }, [searchParams]);
   const [results, setResults] = useState<{
     locations: ResultItem[];
     sites: ResultItem[];

@@ -11,9 +11,11 @@ test.describe('Homepage atlas', () => {
 
   test('shows the three reef-state filter labels', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page.getByText('Thriving').first()).toBeVisible();
-    await expect(page.getByText('Under pressure').first()).toBeVisible();
-    await expect(page.getByText('Witnessing change').first()).toBeVisible();
+    // The filter rail uses role="checkbox" buttons; scope to the filter sidebar to
+    // avoid matching hidden <option> elements inside the sort <select>.
+    await expect(page.getByRole('checkbox', { name: 'Thriving' }).first()).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('checkbox', { name: 'Under pressure' }).first()).toBeVisible();
+    await expect(page.getByRole('checkbox', { name: 'Witnessing change' }).first()).toBeVisible();
   });
 
   test('shows the filter rail and a live reef count', async ({ page }) => {

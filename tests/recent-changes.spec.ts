@@ -10,8 +10,9 @@ const GOTO = { waitUntil: 'domcontentloaded' } as const;
 test.describe('Homepage copy changes', () => {
   test('hero shows the redesigned headline', async ({ page }) => {
     await page.goto('/', GOTO);
+    // The hero carousel's first slide uses "Know the reef before you dive."
     await expect(
-      page.getByRole('heading', { name: /where to dive and what you.ll actually see/i }).first(),
+      page.getByRole('heading', { name: /know the reef before you dive/i }).first(),
     ).toBeVisible({ timeout: 15_000 });
   });
 

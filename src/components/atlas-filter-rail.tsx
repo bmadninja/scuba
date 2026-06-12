@@ -516,7 +516,7 @@ export function AtlasFilterRail({
         </FacetGroup>
 
         <FacetGroup title="Diveable in">
-          <div className="grid grid-cols-4 gap-1.5 pt-1">
+          <div className="month-pill-row">
             {MONTH_ABBR.map((m, i) => {
               const month = i + 1;
               const on = f.months.includes(month);

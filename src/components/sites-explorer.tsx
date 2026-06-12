@@ -658,7 +658,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
       )}
 
       {/* ── Card grid ────────────────────────────────────────────────────────── */}
-      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem" }}>
+      <div style={{ maxWidth: 1320, margin: "0 auto" }} className="px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
         {filtered.length === 0 ? (
           <div
             style={{
@@ -677,13 +677,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             </p>
           </div>
         ) : (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "1.5rem",
-            }}
-          >
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5 lg:gap-6">
             {filtered.map((site, idx) => (
               <SiteCard
                 key={site.id}

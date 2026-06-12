@@ -123,11 +123,18 @@ test.describe('Evidence gaps — Needs fresh eyes', () => {
 });
 
 // ── Certification level filter ────────────────────────────────────────────
+// The filter rail uses role="checkbox" buttons (CheckRow). Scoping to the
+// "Certification level" <details> avoids matching <option> tags in the sort
+// <select> which also contains text like "Beginner".
 test.describe('Certification level filter', () => {
   test('cert options are visible: Beginner, Open water, Advanced, Technical', async ({ page }) => {
     await page.goto('/', GOTO);
+    const certSection = page.locator('details').filter({
+      has: page.locator('summary').filter({ hasText: 'Certification level' }),
+    }).first();
+    await expect(certSection).toBeVisible({ timeout: 15_000 });
     for (const cert of ['Beginner', 'Open water', 'Advanced', 'Technical']) {
-      await expect(page.getByText(cert, { exact: true }).first()).toBeVisible({ timeout: 15_000 });
+      await expect(certSection.getByRole('checkbox', { name: cert })).toBeVisible();
     }
   });
 
@@ -137,7 +144,10 @@ test.describe('Certification level filter', () => {
     await expect(status).toContainText(/reefs/i, { timeout: 15_000 });
     const before = parseInt(await status.innerText());
 
-    await page.getByText('Beginner', { exact: true }).first().click();
+    const certSection = page.locator('details').filter({
+      has: page.locator('summary').filter({ hasText: 'Certification level' }),
+    }).first();
+    await certSection.getByRole('checkbox', { name: 'Beginner' }).click();
     await expect(status).toContainText(/reefs/i, { timeout: 10_000 });
     const after = parseInt(await status.innerText());
     expect(after).toBeLessThanOrEqual(before);

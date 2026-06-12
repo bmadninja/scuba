@@ -221,12 +221,12 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
                   router.push(`/search?q=${encodeURIComponent(q.trim())}`);
                   setQ("");
                 }}
-                className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0089de] hover:bg-[#f1f7fb]"
+                className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0089de] hover:bg-[#f1f7fb] overflow-hidden"
               >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <svg className="shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                   <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
                 </svg>
-                Search sites &amp; species for &ldquo;{q}&rdquo;
+                <span className="truncate">Search sites &amp; species for &ldquo;{q}&rdquo;</span>
               </button>
             </div>
           </div>
@@ -496,12 +496,12 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                     router.push(`/search?q=${encodeURIComponent(q.trim())}`);
                     setQ("");
                   }}
-                  className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0089de] hover:bg-[#f1f7fb]"
+                  className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0089de] hover:bg-[#f1f7fb] overflow-hidden"
                 >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <svg className="shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                     <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
                   </svg>
-                  Search sites &amp; species for &ldquo;{q}&rdquo;
+                  <span className="truncate">Search sites &amp; species for &ldquo;{q}&rdquo;</span>
                 </button>
               </div>
             </div>

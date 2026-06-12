@@ -48,7 +48,7 @@ export function ScienceContextModule() {
           }}
         >
           Shallow coastal reefs are among the least monitored ecosystems on earth. As of 2026, only 25.7% of shallow
-          coastal waters have been mapped to navigational resolution — a gap that satellites and deep-sea surveys
+          coastal waters have been mapped to navigational resolution — a gap that satellites and deep sea surveys
           cannot fill. Every dive at a site like this generates direct observations of reef structure, species
           presence, and water conditions that no automated system currently captures at scale.
         </p>
