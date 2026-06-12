@@ -276,7 +276,7 @@ export function AtlasExplorer({
           </svg>
           Filters
           {activeFilterCount > 0 && (
-            <span className="inline-flex items-center rounded-full bg-[#00d4ff] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-[#0a1628]">
+            <span className="inline-flex items-center rounded-full bg-[#00d4ff] px-1.5 py-0.5 text-xs font-semibold leading-none text-[#0a1628]">
               {activeFilterCount}
             </span>
           )}

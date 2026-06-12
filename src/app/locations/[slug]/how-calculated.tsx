@@ -22,7 +22,7 @@ export function HowCalculated({ children }: { children: React.ReactNode }) {
           <span className="text-sm font-semibold text-[#f0f4f8]">
             How this is calculated
           </span>
-          <span className="rounded-full bg-[#00d4ff]/15 px-2 py-0.5 text-[11px] font-semibold text-[#00d4ff]">
+          <span className="rounded-full bg-[#00d4ff]/15 px-2 py-0.5 text-xs font-semibold text-[#00d4ff]">
             Sources, dates, and method
           </span>
         </span>

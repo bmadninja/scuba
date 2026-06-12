@@ -195,8 +195,8 @@ function DeclineSvg({ d }: { d: DeclineChart }) {
       ) : null}
       <circle cx={x0} cy={yFrom} r="3.5" fill="#c0392f" />
       <circle cx={xNow} cy={yNow} r="4.5" fill="#c0392f" stroke="#0a1628" strokeWidth="2" />
-      <text x={x0} y={yFrom - 10} fontSize="11" fontWeight="700" fill="#c0392f" fontFamily="Noto Sans">{d.fromPct}%</text>
-      <text x="300" y={yNow + 19} fontSize="12" fontWeight="800" fill="#c0392f" fontFamily="Noto Sans">{d.toPct}% today</text>
+      <text x={x0} y={yFrom - 10} fontSize="11" fontWeight="700" fill="#c0392f" fontFamily="IBM Plex Mono">{d.fromPct}%</text>
+      <text x="300" y={yNow + 19} fontSize="12" fontWeight="800" fill="#c0392f" fontFamily="IBM Plex Mono">{d.toPct}% today</text>
       <text x="14" y="178" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{d.fromYear}</text>
       <text x="306" y="178" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{d.toYear}</text>
       {d.zeroYear ? (
@@ -233,9 +233,9 @@ function CoverTrendSvg({ c }: { c: CoverTrend }) {
       <polyline points={`${x0},${yFrom} ${xNow},${yNow}`} fill="none" stroke={stroke} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       <circle cx={x0} cy={yFrom} r="3.5" fill={stroke} />
       <circle cx={xNow} cy={yNow} r="4.5" fill={stroke} stroke="#0a1628" strokeWidth="2" />
-      <text x={x0} y={yFrom - 10} fontSize="11" fontWeight="700" fill={stroke} fontFamily="Noto Sans">{c.fromPct}%</text>
+      <text x={x0} y={yFrom - 10} fontSize="11" fontWeight="700" fill={stroke} fontFamily="IBM Plex Mono">{c.fromPct}%</text>
       {yFrom >= 42 && <text x="20" y="24" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{top}%</text>}
-      <text x="300" y={yNow - 12} fontSize="12" fontWeight="800" fill={stroke} fontFamily="Noto Sans">{c.toPct}% today</text>
+      <text x="300" y={yNow - 12} fontSize="12" fontWeight="800" fill={stroke} fontFamily="IBM Plex Mono">{c.toPct}% today</text>
       <text x="14" y="178" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{c.fromYear}</text>
       <text x="306" y="178" fontSize="9" fill="#94a3b8" fontFamily="IBM Plex Mono">{c.toYear}</text>
     </svg>
@@ -335,7 +335,7 @@ export function LocationPageBody(props: LocationBodyProps) {
 
               <p
                 style={{
-                  fontFamily: "var(--font-serif),'Source Serif 4',Georgia,serif",
+                  fontFamily: "var(--font-sans)",
                   fontSize: "1.2rem",
                   lineHeight: 1.7,
                   color: "#aebcd0",
@@ -700,7 +700,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                               productId={l.productId}
                               siteId={locationId}
                               isAffiliate={l.isAffiliate}
-                              className="flex items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-[13px] font-medium text-[#f0f4f8] no-underline transition hover:border-[#00d4ff]/40"
+                              className="flex items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-[#f0f4f8] no-underline transition hover:border-[#00d4ff]/40"
                             >
                               <span style={{ display: "flex", alignItems: "center", gap: "0.4rem", minWidth: 0 }}>
                                 <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -735,7 +735,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                             productId={op.productId}
                             siteId={locationId}
                             isAffiliate={op.isAffiliate}
-                            className="flex items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-[13px] font-medium text-[#f0f4f8] no-underline transition hover:border-[#00d4ff]/40"
+                            className="flex items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-[#f0f4f8] no-underline transition hover:border-[#00d4ff]/40"
                           >
                             <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
                               {op.label}

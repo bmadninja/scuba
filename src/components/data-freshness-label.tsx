@@ -51,7 +51,7 @@ function yearsAgo(iso?: string): number | null {
 }
 
 const PILL_BASE =
-  "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.1em] ring-1 ring-inset";
+  "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase tracking-[0.1em] ring-1 ring-inset";
 
 const TONE: Record<Variant, string> = {
   live: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30",

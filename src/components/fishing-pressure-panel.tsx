@@ -31,7 +31,7 @@ export function FishingPressurePanel({
     <section className="rounded-2xl border border-white/10 bg-[#0a1628] p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8b9db8]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8b9db8]">
             Fishing pressure — Global Fishing Watch
           </p>
           <h3 className="mt-1 text-base font-bold text-[#f0f4f8]">
@@ -42,7 +42,7 @@ export function FishingPressurePanel({
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-[#8b9db8]">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#8b9db8]">
             Apparent fishing hours
           </p>
           <p className="mt-1">
@@ -56,7 +56,7 @@ export function FishingPressurePanel({
         </div>
         {record.historical ? (
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#8b9db8]">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#8b9db8]">
               Trend vs {record.historical.year}
             </p>
             <p className="mt-1">
@@ -65,7 +65,7 @@ export function FishingPressurePanel({
               </span>
             </p>
             {trend !== null ? (
-              <p className={`mt-1 text-[12px] font-semibold ${trendTone}`}>
+              <p className={`mt-1 text-xs font-semibold ${trendTone}`}>
                 {trendArrow} {trend > 0 ? "+" : ""}
                 {trend}%
               </p>
@@ -74,7 +74,7 @@ export function FishingPressurePanel({
         ) : null}
       </div>
 
-      <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-[12px] leading-5 text-amber-300">
+      <p className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-xs leading-5 text-amber-300">
         <strong>Important caveat.</strong> GFW sees vessels that broadcast{" "}
         <a
           href="https://en.wikipedia.org/wiki/Automatic_identification_system"
@@ -90,7 +90,7 @@ export function FishingPressurePanel({
         artisanal-dominated regions.
       </p>
 
-      <p className="mt-3 text-[11.5px] leading-5 text-[#8b9db8]">
+      <p className="mt-3 text-xs leading-5 text-[#8b9db8]">
         <a
           href="https://globalfishingwatch.org/"
           target="_blank"

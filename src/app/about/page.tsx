@@ -16,13 +16,13 @@ export default function AboutPage() {
       >
         <div className="mx-auto max-w-[800px]">
           <p
-            className="text-[0.6875rem] font-bold uppercase tracking-[0.18em]"
+            className="text-xs font-bold uppercase tracking-[0.18em]"
             style={{ color: "#00d4ff", marginBottom: "1rem" }}
           >
             About
           </p>
           <h1
-            className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.04] tracking-[-0.035em]"
+            className="text-5xl leading-[1.04] tracking-[-0.035em]"
             style={{
               fontWeight: 800,
               color: "#f0f4f8",
@@ -33,7 +33,7 @@ export default function AboutPage() {
           </h1>
           <p
             style={{
-              fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+              fontFamily: "var(--font-sans)",
               fontSize: "1.2rem",
               lineHeight: 1.75,
               color: "#8b9db8",
@@ -96,12 +96,12 @@ export default function AboutPage() {
         {/* EDITORIAL PRINCIPLES */}
         <div style={{ margin: "3.5rem 0 2.5rem" }}>
           <h2
-            className="text-[1.625rem] tracking-[-0.025em]"
+            className="text-2xl tracking-[-0.025em]"
             style={{ fontWeight: 800, color: "#f0f4f8", marginBottom: "0.5rem" }}
           >
             Editorial principles
           </h2>
-          <p className="text-[0.9375rem] leading-[1.7]" style={{ color: "#aebcd0" }}>
+          <p className="text-sm leading-[1.7]" style={{ color: "#aebcd0" }}>
             A few things I try to hold to, regardless of what would be easier.
           </p>
         </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
               01
             </p>
             <p
-              className="text-[0.9375rem]"
+              className="text-sm"
               style={{ fontWeight: 700, color: "#f0f4f8", marginBottom: "0.4rem" }}
             >
               Honest about data age
@@ -154,7 +154,7 @@ export default function AboutPage() {
               02
             </p>
             <p
-              className="text-[0.9375rem]"
+              className="text-sm"
               style={{ fontWeight: 700, color: "#f0f4f8", marginBottom: "0.4rem" }}
             >
               No gates on information
@@ -183,7 +183,7 @@ export default function AboutPage() {
               03
             </p>
             <p
-              className="text-[0.9375rem]"
+              className="text-sm"
               style={{ fontWeight: 700, color: "#f0f4f8", marginBottom: "0.4rem" }}
             >
               Affiliate links don&rsquo;t steer editorial
@@ -212,7 +212,7 @@ export default function AboutPage() {
               04
             </p>
             <p
-              className="text-[0.9375rem]"
+              className="text-sm"
               style={{ fontWeight: 700, color: "#f0f4f8", marginBottom: "0.4rem" }}
             >
               Degraded reefs get honest labels
@@ -228,12 +228,12 @@ export default function AboutPage() {
         {/* ROADMAP */}
         <div style={{ margin: "3.5rem 0 2.5rem" }}>
           <h2
-            className="text-[1.625rem] tracking-[-0.025em]"
+            className="text-2xl tracking-[-0.025em]"
             style={{ fontWeight: 800, color: "#f0f4f8", marginBottom: "0.5rem" }}
           >
             Roadmap
           </h2>
-          <p className="text-[0.9375rem] leading-[1.7]" style={{ color: "#aebcd0" }}>
+          <p className="text-sm leading-[1.7]" style={{ color: "#aebcd0" }}>
             Here is where things actually stand. What is live today, and what
             is on my wishlist.
           </p>
@@ -269,7 +269,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h3
-                className="text-[0.9375rem]"
+                className="text-sm"
                 style={{
                   fontWeight: 700,
                   color: "#f0f4f8",
@@ -326,7 +326,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h3
-                className="text-[0.9375rem]"
+                className="text-sm"
                 style={{
                   fontWeight: 700,
                   color: "#f0f4f8",
@@ -381,7 +381,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h3
-                className="text-[0.9375rem]"
+                className="text-sm"
                 style={{
                   fontWeight: 700,
                   color: "#f0f4f8",
@@ -414,7 +414,7 @@ export default function AboutPage() {
         >
           <div>
             <h3
-              className="text-[1.125rem] tracking-[-0.02em] text-white"
+              className="text-lg tracking-[-0.02em] text-white"
               style={{ fontWeight: 800, marginBottom: "0.375rem" }}
             >
               Spotted something wrong? Want to collaborate?

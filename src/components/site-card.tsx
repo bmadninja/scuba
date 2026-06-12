@@ -34,7 +34,7 @@ export function SiteCard({
             {location?.country ?? "—"}
           </p>
           <span
-            className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+            className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold ${
               inSeason
                 ? "bg-emerald-500/15 text-emerald-300 ring-1 ring-inset ring-emerald-500/20"
                 : "bg-white/10 text-[#8b9db8]"
@@ -53,7 +53,7 @@ export function SiteCard({
         {/* Sighting evidence row — never blank */}
         {sighting ? (
           <p
-            className="mt-2 flex items-center gap-1.5 text-[11px] leading-5 text-[#8b9db8]"
+            className="mt-2 flex items-center gap-1.5 text-xs leading-5 text-[#8b9db8]"
             title={`Confidence: ${sighting.confidence}. Based on ${sighting.recentRecordCount} confirmed records within ${sighting.proximityRadiusKm} km of this site.`}
           >
             {/* dot only — species name provides the label context */}
@@ -72,21 +72,21 @@ export function SiteCard({
           <EvidenceDot
             confidence={null}
             showTooltip
-            className="mt-2 text-[11px] leading-5 text-[#8b9db8]"
+            className="mt-2 text-xs leading-5 text-[#8b9db8]"
           />
         )}
 
         <div className="mt-3 flex flex-wrap items-center gap-1.5">
-          <span className="inline-block rounded-full border border-white/10 px-2 py-0.5 text-[11px] font-semibold text-[#00d4ff]">
+          <span className="inline-block rounded-full border border-white/10 px-2 py-0.5 text-xs font-semibold text-[#00d4ff]">
             {site.depthRange.min}–{site.depthRange.max} m
           </span>
-          <span className="inline-block rounded-full border border-white/10 px-2 py-0.5 text-[11px] font-semibold capitalize text-[#00d4ff]">
+          <span className="inline-block rounded-full border border-white/10 px-2 py-0.5 text-xs font-semibold capitalize text-[#00d4ff]">
             {site.skillLevel.replace("-", " ")}+
           </span>
           {site.diveTypes.slice(0, 1).map((t) => (
             <span
               key={t}
-              className="inline-block rounded-full border border-white/10 px-2 py-0.5 text-[11px] font-semibold capitalize text-[#00d4ff]"
+              className="inline-block rounded-full border border-white/10 px-2 py-0.5 text-xs font-semibold capitalize text-[#00d4ff]"
             >
               {t.replace("-", " ")}
             </span>

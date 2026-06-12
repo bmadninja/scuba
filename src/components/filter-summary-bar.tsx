@@ -103,7 +103,7 @@ export function FilterSummaryBar({
     <div
       className={`flex flex-wrap items-center gap-2 py-2 ${className}`}
     >
-      <span className="text-[11px] font-semibold text-[#8b9db8]">
+      <span className="text-xs font-semibold text-[#8b9db8]">
         Showing {totalCount}
       </span>
 
@@ -173,7 +173,7 @@ export function FilterSummaryBar({
       <button
         type="button"
         onClick={onReset}
-        className="ml-auto text-[11px] font-semibold text-[#8b9db8] underline hover:text-[#f0f4f8]"
+        className="ml-auto text-xs font-semibold text-[#8b9db8] underline hover:text-[#f0f4f8]"
       >
         Reset all filters
       </button>

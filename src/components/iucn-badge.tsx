@@ -36,12 +36,12 @@ export function IucnBadge({
   const trend = status.populationTrend ? TREND_LABEL[status.populationTrend] : null;
   const inner = (
     <span
-      className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11.5px] font-semibold ${className}`}
+      className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold ${className}`}
       style={{ background: tone.bg, color: tone.text }}
     >
       <span
         aria-hidden
-        className="rounded text-[10.5px] font-extrabold text-white"
+        className="rounded text-xs font-extrabold text-white"
         style={{ background: tone.chip, padding: "3px 6px" }}
       >
         {status.category}
@@ -73,7 +73,7 @@ export function IucnBadge({
 
 export function IucnAttribution() {
   return (
-    <p className="mt-2 text-[11px] leading-5 text-[#8b9db8]">
+    <p className="mt-2 text-xs leading-5 text-[#8b9db8]">
       Threat category from the{" "}
       <a
         href="https://www.iucnredlist.org/"

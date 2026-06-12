@@ -374,7 +374,7 @@ export function PlanetGlobe({
                       {selectedMarker.seasonText}
                     </span>
                     {selectedMarker.isInSeason ? (
-                      <span className="ml-2 rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-300 ring-1 ring-inset ring-emerald-500/20">
+                      <span className="ml-2 rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-medium text-emerald-300 ring-1 ring-inset ring-emerald-500/20">
                         In season now
                       </span>
                     ) : null}
@@ -392,7 +392,7 @@ export function PlanetGlobe({
             </div>
           ) : (
             <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-end px-3 pb-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0a1628]/90 px-3 py-1.5 text-[11px] font-medium text-[#8b9db8] shadow-sm backdrop-blur border border-white/10">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0a1628]/90 px-3 py-1.5 text-xs font-medium text-[#8b9db8] shadow-sm backdrop-blur border border-white/10">
                 <svg className="h-3 w-3 text-[#8b9db8]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden>
                   <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
                 </svg>

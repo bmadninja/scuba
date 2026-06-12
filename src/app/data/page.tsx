@@ -115,7 +115,7 @@ const HAIRLINE = "rgba(255,255,255,0.1)";
 const BRAND = "#00d4ff";
 
 const mono = "var(--font-mono), 'IBM Plex Mono', monospace";
-const serif = "var(--font-serif), 'Source Serif 4', serif";
+const serif = "var(--font-sans)";
 
 function code(text: string) {
   return (

@@ -425,7 +425,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           </h1>
           <p
             style={{
-              fontFamily: "'Source Serif 4', Georgia, serif",
+              fontFamily: "var(--font-sans)",
               fontStyle: "italic",
               fontSize: "1.05rem",
               lineHeight: 1.65,
@@ -1052,7 +1052,7 @@ function SiteCard({
         </h3>
         <p
           style={{
-            fontFamily: "'Source Serif 4', Georgia, serif",
+            fontFamily: "var(--font-sans)",
             fontSize: "0.875rem",
             lineHeight: 1.65,
             color: "#aebcd0",
@@ -1093,7 +1093,7 @@ function SiteCard({
             <EvidenceDot
               confidence={null}
               showTooltip
-              className="text-[11px] leading-5 text-[#8b9db8]"
+              className="text-xs leading-5 text-[#8b9db8]"
             />
           )}
         </div>

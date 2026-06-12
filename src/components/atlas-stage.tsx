@@ -108,12 +108,12 @@ function FilterSection({
 }) {
   return (
     <details open={defaultOpen} className="group border-t border-white/10">
-      <summary className="flex cursor-pointer list-none items-center gap-1.5 py-3 text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#8b9db8] [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-center gap-1.5 py-3 text-xs font-bold uppercase tracking-[0.08em] text-[#8b9db8] [&::-webkit-details-marker]:hidden">
         {title}
         {infoKey && onInfo && (
           <InfoButton onClick={() => onInfo(infoKey)} label="How this works" />
         )}
-        <span className="ml-auto text-[0.7rem] text-[#8b9db8] transition group-open:rotate-0 [.group:not([open])_&]:-rotate-90" aria-hidden>
+        <span className="ml-auto text-xs text-[#8b9db8] transition group-open:rotate-0 [.group:not([open])_&]:-rotate-90" aria-hidden>
           ▾
         </span>
       </summary>
@@ -146,7 +146,7 @@ function CheckRow({
       }`}
     >
       <span
-        className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[5px] border-2 text-[10px] font-bold text-white transition ${
+        className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[5px] border-2 text-xs font-bold text-white transition ${
           on ? "border-[#00d4ff] bg-[#00d4ff]" : "border-white/10 bg-[#0a1628]"
         }`}
         aria-hidden
@@ -177,7 +177,7 @@ function TaxoGroup({
   const count = tags.filter((t) => selected.includes(t)).length;
   return (
     <details open={count > 0} className="group/cat overflow-hidden rounded-[0.6rem] border border-white/10">
-      <summary className="flex cursor-pointer list-none items-center gap-2 px-2.5 py-2 text-[0.8125rem] font-bold text-[#f0f4f8] [&::-webkit-details-marker]:hidden">
+      <summary className="flex cursor-pointer list-none items-center gap-2 px-2.5 py-2 text-sm font-bold text-[#f0f4f8] [&::-webkit-details-marker]:hidden">
         {group}
         <span className="ml-auto text-[#8b9db8] transition group-open/cat:rotate-180" aria-hidden>
           ⌄
@@ -237,7 +237,7 @@ function RegionTree({
                   e.stopPropagation();
                   onToggleContinent(countries);
                 }}
-                className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[5px] border-2 text-[10px] font-bold transition ${
+                className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[5px] border-2 text-xs font-bold transition ${
                   allOn
                     ? "border-[#00d4ff] bg-[#00d4ff] text-[#0a1628]"
                     : activeCount > 0
@@ -248,7 +248,7 @@ function RegionTree({
                 {allOn ? "✓" : activeCount > 0 ? "–" : ""}
               </span>
               {continent}
-              <span className="ml-auto text-[0.7rem] text-[#8b9db8] transition group-open/reg:rotate-180" aria-hidden>
+              <span className="ml-auto text-xs text-[#8b9db8] transition group-open/reg:rotate-180" aria-hidden>
                 ⌄
               </span>
             </summary>
@@ -325,7 +325,7 @@ function ReefCard({
         />
         {/* State badge overlay */}
         <span
-          className="absolute left-2.5 top-2.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.5625rem] font-bold backdrop-blur-[6px]"
+          className="absolute left-2.5 top-2.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold backdrop-blur-[6px]"
           style={{
             background: "rgba(8,20,34,0.6)",
             color: STATE_SWATCH[r.state],
@@ -338,7 +338,7 @@ function ReefCard({
         {/* In-season indicator */}
         {r.inSeason && (
           <span
-            className="absolute right-2.5 top-2.5 rounded-full px-2 py-0.5 text-[0.5rem] font-bold backdrop-blur-[6px]"
+            className="absolute right-2.5 top-2.5 rounded-full px-2 py-0.5 text-xs font-bold backdrop-blur-[6px]"
             style={{ background: "rgba(16,185,129,0.25)", color: "#6ee7b7", border: "1px solid rgba(16,185,129,0.35)" }}
           >
             In season
@@ -346,7 +346,7 @@ function ReefCard({
         )}
         {showFreshPill && freshEyes && (
           <span
-            className="absolute bottom-2.5 left-2.5 inline-flex items-center rounded-full border px-1.5 py-[0.15rem] text-[0.55rem] font-bold backdrop-blur-[6px]"
+            className="absolute bottom-2.5 left-2.5 inline-flex items-center rounded-full border px-1.5 py-[0.15rem] text-xs font-bold backdrop-blur-[6px]"
             style={{ background: "rgba(8,20,34,0.55)", color: "#fcd34d", borderColor: "rgba(252,211,77,0.45)" }}
           >
             Needs fresh eyes
@@ -358,10 +358,10 @@ function ReefCard({
       <div className="flex flex-1 flex-col gap-1.5 p-3">
         {/* Name + location */}
         <div>
-          <p className="text-[1.0625rem] font-extrabold leading-tight tracking-[-0.01em] text-[#f0f4f8] transition-colors group-hover:text-[#00d4ff]">
+          <p className="text-base font-extrabold leading-tight tracking-[-0.01em] text-[#f0f4f8] transition-colors group-hover:text-[#00d4ff]">
             {r.name}
           </p>
-          <p className="mt-0.5 text-[0.6875rem] text-[#8b9db8]">
+          <p className="mt-0.5 text-xs text-[#8b9db8]">
             {r.country}
             {r.region ? <span className="text-[#8b9db8]/50"> · {r.region}</span> : null}
           </p>
@@ -369,7 +369,7 @@ function ReefCard({
 
         {/* Why line — editorial reason */}
         {whyLine && (
-          <p className="line-clamp-2 text-[0.6875rem] leading-relaxed text-[#aebcd0]">
+          <p className="line-clamp-2 text-xs leading-relaxed text-[#aebcd0]">
             {whyLine}
           </p>
         )}
@@ -380,7 +380,7 @@ function ReefCard({
             {r.animalTags.slice(0, 2).map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-white/10 px-1.5 py-px text-[0.5625rem] font-semibold text-[#8b9db8]"
+                className="rounded-full border border-white/10 px-1.5 py-px text-xs font-semibold text-[#8b9db8]"
               >
                 {tag}
               </span>
@@ -390,7 +390,7 @@ function ReefCard({
 
         {/* Footer: skill + data confidence */}
         <div className="mt-auto flex items-center justify-between pt-1">
-          <span className="text-[0.5625rem] font-semibold uppercase tracking-[0.08em] text-[#8b9db8]">
+          <span className="text-xs font-semibold uppercase tracking-[0.08em] text-[#8b9db8]">
             {r.skill}
           </span>
           <DataConfidenceBadge variant={confidenceVariant} />
@@ -398,7 +398,7 @@ function ReefCard({
 
         {/* CTA */}
         <div
-          className="mt-1 flex items-center justify-between rounded-lg border border-[#00d4ff]/20 bg-[#00d4ff]/8 px-3 py-2 text-[0.75rem] font-semibold text-[#00d4ff] transition group-hover:border-[#00d4ff]/40 group-hover:bg-[#00d4ff]/15"
+          className="mt-1 flex items-center justify-between rounded-lg border border-[#00d4ff]/20 bg-[#00d4ff]/8 px-3 py-2 text-xs font-semibold text-[#00d4ff] transition group-hover:border-[#00d4ff]/40 group-hover:bg-[#00d4ff]/15"
         >
           View site
           <span aria-hidden className="text-sm">→</span>
@@ -576,7 +576,7 @@ export function AtlasStage({
                 type="button"
                 aria-pressed={on}
                 onClick={() => toggle("months", month)}
-                className={`rounded-lg border px-1 py-1.5 text-center text-[0.78rem] font-semibold transition ${
+                className={`rounded-lg border px-1 py-3 min-h-[44px] text-center text-xs font-semibold transition flex items-center justify-center ${
                   on
                     ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
                     : "border-white/10 bg-white/5 text-[#8b9db8] hover:border-white/20"
@@ -682,7 +682,7 @@ export function AtlasStage({
             <CheckRow key={o.value} on={filters.current.includes(o.value)} onClick={() => toggle("current", o.value)}>
               <span className="flex flex-col">
                 <span>{o.label}</span>
-                <span className="text-[0.7rem] text-[#8b9db8]">{o.hint}</span>
+                <span className="text-xs text-[#8b9db8]">{o.hint}</span>
               </span>
             </CheckRow>
           ))}
@@ -696,11 +696,11 @@ export function AtlasStage({
       {/* ── DESKTOP FILTER SIDEBAR (hidden on mobile) ── */}
       <aside className="hidden lg:sticky lg:top-[78px] lg:block lg:max-h-[calc(100vh-96px)] lg:self-start lg:overflow-y-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
         <div className="flex items-center justify-between pb-1.5">
-          <span className="text-[1.05rem] font-extrabold text-[#f0f4f8]">Filters</span>
+          <span className="text-base font-extrabold text-[#f0f4f8]">Filters</span>
           <button
             type="button"
             onClick={reset}
-            className="text-[0.8125rem] font-semibold text-[#00d4ff] hover:underline"
+            className="text-sm font-semibold text-[#00d4ff] hover:underline"
           >
             Reset
           </button>
@@ -725,15 +725,19 @@ export function AtlasStage({
             className="fixed bottom-0 left-0 right-0 z-50 flex max-h-[88vh] flex-col rounded-t-2xl border-t border-white/10 bg-[#0a1628] lg:hidden"
             style={{ boxShadow: "0 -16px 48px rgba(0,0,0,0.5)" }}
           >
+            {/* Drag handle */}
+            <div style={{ display: "flex", justifyContent: "center", padding: "0.75rem 0 0" }}>
+              <div style={{ width: 40, height: 4, borderRadius: 999, background: "rgba(255,255,255,0.2)" }} />
+            </div>
             {/* Sheet header */}
             <div className="flex shrink-0 items-center justify-between border-b border-white/10 px-5 py-4">
-              <span className="text-[1.05rem] font-extrabold text-[#f0f4f8]">Filters</span>
+              <span className="text-base font-extrabold text-[#f0f4f8]">Filters</span>
               <div className="flex items-center gap-4">
                 {activeFilterCount > 0 && (
                   <button
                     type="button"
                     onClick={reset}
-                    className="text-[0.8125rem] font-semibold text-[#00d4ff] hover:underline"
+                    className="text-sm font-semibold text-[#00d4ff] hover:underline"
                   >
                     Reset
                   </button>
@@ -757,7 +761,7 @@ export function AtlasStage({
               <button
                 type="button"
                 onClick={() => setSheetOpen(false)}
-                className="w-full rounded-full bg-[#00d4ff] py-3 text-[0.9375rem] font-bold text-[#0a1628]"
+                className="w-full rounded-full bg-[#00d4ff] py-3 text-sm font-bold text-[#0a1628]"
               >
                 Show {matched.length} reef{matched.length === 1 ? "" : "s"}
               </button>
@@ -770,21 +774,21 @@ export function AtlasStage({
       <main className="min-w-0">
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <h2 className="text-[1.1rem] font-extrabold tracking-[-0.02em] text-[#f0f4f8]" role="status" aria-live="polite">
+            <h2 className="text-lg font-extrabold tracking-[-0.02em] text-[#f0f4f8]" role="status" aria-live="polite">
               {matched.length} reef{matched.length === 1 ? "" : "s"}
             </h2>
             {/* Mobile filters trigger */}
             <button
               type="button"
               onClick={() => setSheetOpen(true)}
-              className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[0.8125rem] font-semibold text-[#f0f4f8] lg:hidden"
+              className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-semibold text-[#f0f4f8] lg:hidden"
             >
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
                 <line x1="2" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="12" y2="8"/><line x1="6" y1="12" x2="10" y2="12"/>
               </svg>
               Filters
               {activeFilterCount > 0 && (
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#00d4ff] text-[0.625rem] font-bold text-[#0a1628]">
+                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#00d4ff] text-xs font-bold text-[#0a1628]">
                   {activeFilterCount}
                 </span>
               )}
@@ -794,7 +798,7 @@ export function AtlasStage({
                 type="button"
                 aria-pressed={effectiveView === "cards"}
                 onClick={() => setView("cards")}
-                className={`rounded-full px-[0.95rem] py-[0.35rem] text-[0.8125rem] font-bold transition ${
+                className={`rounded-full px-[0.95rem] py-[0.35rem] text-sm font-bold transition ${
                   effectiveView === "cards"
                     ? "bg-[#00d4ff] text-[#0a1628] shadow-[0_1px_3px_rgba(15,23,42,0.14)]"
                     : "text-[#8b9db8]"
@@ -806,7 +810,7 @@ export function AtlasStage({
                 type="button"
                 aria-pressed={effectiveView === "map"}
                 onClick={() => setView("map")}
-                className={`rounded-full px-[0.95rem] py-[0.35rem] text-[0.8125rem] font-bold transition ${
+                className={`rounded-full px-[0.95rem] py-[0.35rem] text-sm font-bold transition ${
                   effectiveView === "map"
                     ? "bg-[#00d4ff] text-[#0a1628] shadow-[0_1px_3px_rgba(15,23,42,0.14)]"
                     : "text-[#8b9db8]"
@@ -817,14 +821,14 @@ export function AtlasStage({
             </div>
           </div>
           {effectiveView === "cards" && (
-            <label className="flex items-center gap-1.5 text-[0.8125rem] text-[#8b9db8]">
+            <label className="flex items-center gap-1.5 text-sm text-[#8b9db8]">
               Sort
               <select
                 value={filters.sort}
                 onChange={(e) =>
                   setFilters((p) => ({ ...p, sort: e.target.value as SortKey }))
                 }
-                className="rounded-lg border border-white/10 bg-[#0a1628] px-2.5 py-1.5 text-[0.8125rem] font-semibold text-[#f0f4f8] focus:border-[#00d4ff] focus:outline-none"
+                className="rounded-lg border border-white/10 bg-[#0a1628] px-2.5 py-1.5 text-sm font-semibold text-[#f0f4f8] focus:border-[#00d4ff] focus:outline-none"
               >
                 {SORT_OPTIONS.map((o) => (
                   <option key={o.value} value={o.value}>
@@ -838,12 +842,12 @@ export function AtlasStage({
 
         {effectiveView === "cards" ? (
           matched.length > 0 ? (
-            <div className="grid grid-cols-2 gap-3 xl:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-3 xl:grid-cols-3">
               {filters.sort === "season" ? (
                 <>
                   {inSeason.map(renderCard)}
                   {offSeason.length > 0 && (
-                    <div className="col-span-full mb-1 mt-3 flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#8b9db8]">
+                    <div className="col-span-full mb-1 mt-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.08em] text-[#8b9db8]">
                       <span className="h-px flex-1 bg-white/10" aria-hidden />
                       Great at other times of year
                       <span className="h-px flex-1 bg-white/10" aria-hidden />

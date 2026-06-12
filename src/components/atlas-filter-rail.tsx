@@ -253,7 +253,7 @@ function CheckOpt({
       }`}
     >
       <span
-        className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border text-[10px] font-bold transition ${
+        className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border text-xs font-bold transition ${
           on ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]" : "border-white/10 bg-[#0a1628] text-white"
         }`}
         aria-hidden
@@ -289,7 +289,7 @@ function VisuallyHidden({ children }: { children: React.ReactNode }) {
 function CountBadge({ count }: { count: number }) {
   if (count <= 0) return null;
   return (
-    <span className="inline-flex items-center rounded-full bg-[rgba(0,212,255,0.12)] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-[#00d4ff]">
+    <span className="inline-flex items-center rounded-full bg-[rgba(0,212,255,0.12)] px-1.5 py-0.5 text-xs font-semibold leading-none text-[#00d4ff]">
       <span aria-hidden>{count}</span>
       <VisuallyHidden>
         {count} active {count === 1 ? "filter" : "filters"}
@@ -427,7 +427,7 @@ function RegionFilter({
                   type="button"
                   aria-pressed={allSelected}
                   onClick={() => onToggleContinent(regs)}
-                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border text-[10px] font-bold transition ${
+                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs font-bold transition ${
                     allSelected
                       ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
                       : activeCount > 0
@@ -449,7 +449,7 @@ function RegionFilter({
                   <span className="flex items-center gap-2">
                     {continent}
                     {activeCount > 0 && (
-                      <span className="rounded-full bg-[#00d4ff] px-1.5 py-0.5 text-[10px] font-semibold leading-none text-[#0a1628]">
+                      <span className="rounded-full bg-[#00d4ff] px-1.5 py-0.5 text-xs font-semibold leading-none text-[#0a1628]">
                         {activeCount}
                       </span>
                     )}
@@ -584,7 +584,7 @@ export function AtlasFilterRail({
               <CheckOpt key={o.value} on={f.current.includes(o.value)} onClick={() => toggle("current", o.value)}>
                 <span className="flex flex-col">
                   <span>{o.label}</span>
-                  <span className="text-[10px] text-[#8b9db8] leading-tight">{o.hint}</span>
+                  <span className="text-xs text-[#8b9db8] leading-tight">{o.hint}</span>
                 </span>
               </CheckOpt>
             ))}
@@ -602,7 +602,7 @@ export function AtlasFilterRail({
                   type="button"
                   aria-pressed={on}
                   onClick={() => toggle("months", month)}
-                  className={`rounded-lg border px-1 py-1.5 text-xs font-medium transition ${
+                  className={`rounded-lg border px-1 py-3 min-h-[44px] text-xs font-medium transition flex items-center justify-center ${
                     on ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]" : "border-white/10 bg-white/5 text-[#8b9db8] hover:border-white/20"
                   }`}
                 >

@@ -160,7 +160,7 @@ export default async function SpeciesDetailPage({
 
       {/* Ecological description */}
       {speciesEntry.ecologicalDescription ? (
-        <p className="mb-8 text-[0.9375rem] leading-relaxed text-[#aebcd0]">
+        <p className="mb-8 text-sm leading-relaxed text-[#aebcd0]">
           {speciesEntry.ecologicalDescription}
         </p>
       ) : null}
@@ -247,7 +247,7 @@ export default async function SpeciesDetailPage({
               return (
                 <div
                   key={m}
-                  className={`rounded-lg px-1 py-2 text-center text-[11px] font-semibold ${
+                  className={`rounded-lg px-1 py-2 text-center text-xs font-semibold ${
                     isPeak
                       ? "bg-[#00d4ff] text-[#0a1628]"
                       : "bg-white/5 text-[#8b9db8]"

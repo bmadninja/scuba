@@ -52,7 +52,7 @@ export function ReefLocationCard({ r }: { r: ReefLocationCardData }) {
           className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
         />
         <div className="absolute left-2 top-2">
-          <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${STATE_BADGE[r.state]}`}>
+          <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${STATE_BADGE[r.state]}`}>
             {STATE_TEXT[r.state]}
           </span>
         </div>
@@ -65,16 +65,16 @@ export function ReefLocationCard({ r }: { r: ReefLocationCardData }) {
         <p className="mt-0.5 text-xs text-[#8b9db8]">{r.country}</p>
         <div className="mt-1.5 flex flex-wrap items-center gap-1">
           {r.skill && (
-            <span className={`rounded-full px-1.5 py-0.5 text-[10px] font-medium ${SKILL_BADGE[r.skill] ?? "bg-white/10 text-[#8b9db8] ring-1 ring-inset ring-white/10"}`}>
+            <span className={`rounded-full px-1.5 py-0.5 text-xs font-medium ${SKILL_BADGE[r.skill] ?? "bg-white/10 text-[#8b9db8] ring-1 ring-inset ring-white/10"}`}>
               {r.skill}
             </span>
           )}
           {r.inSeason ? (
-            <span className="rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-medium text-emerald-300 ring-1 ring-inset ring-emerald-500/20">
+            <span className="rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-xs font-medium text-emerald-300 ring-1 ring-inset ring-emerald-500/20">
               In season
             </span>
           ) : (
-            <span className="rounded-full bg-white/10 px-1.5 py-0.5 text-[10px] font-medium text-[#8b9db8] ring-1 ring-inset ring-white/10">
+            <span className="rounded-full bg-white/10 px-1.5 py-0.5 text-xs font-medium text-[#8b9db8] ring-1 ring-inset ring-white/10">
               Off season
             </span>
           )}

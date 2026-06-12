@@ -49,7 +49,7 @@ export function AtlasFooter() {
               className="mt-3 text-sm leading-relaxed"
               style={{
                 fontStyle: "italic",
-                fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+                fontFamily: "var(--font-sans)",
                 color: "rgba(255,255,255,0.55)",
               }}
             >
@@ -61,7 +61,7 @@ export function AtlasFooter() {
           {/* Column 2: Site links */}
           <div>
             <p
-              className="mb-4 text-[10px] font-semibold uppercase tracking-[0.14em]"
+              className="mb-4 text-xs font-semibold uppercase tracking-[0.14em]"
               style={{ color: "rgba(255,255,255,0.3)" }}
             >
               Site
@@ -87,7 +87,7 @@ export function AtlasFooter() {
           {/* Column 3: Contact */}
           <div>
             <p
-              className="mb-4 text-[10px] font-semibold uppercase tracking-[0.14em]"
+              className="mb-4 text-xs font-semibold uppercase tracking-[0.14em]"
               style={{ color: "rgba(255,255,255,0.3)" }}
             >
               Get in touch

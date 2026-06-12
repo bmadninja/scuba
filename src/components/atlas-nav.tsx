@@ -192,7 +192,7 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
                       }`}
                     >
                       <span
-                        className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-medium ${
+                        className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${
                           STATE_PILL[r.state] ?? "bg-slate-100 text-slate-600"
                         }`}
                       >
@@ -243,6 +243,7 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
           <Link
             key={n.key}
             href={n.href}
+            className="hidden sm:block"
             style={{
               fontSize: "0.875rem",
               fontWeight: 500,
@@ -258,15 +259,15 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
 
         <Link
           href="/locations"
-          className="hidden sm:inline-flex"
+          className="inline-flex"
           style={{
             alignItems: "center",
             gap: "0.3rem",
             background: "#00d4ff",
             color: "#030712",
-            padding: "0.4rem 1rem",
+            padding: "0.4rem 0.75rem",
             borderRadius: 999,
-            fontSize: "0.8125rem",
+            fontSize: "0.75rem",
             fontWeight: 700,
             marginLeft: "0.375rem",
             textDecoration: "none",
@@ -486,7 +487,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
                         }`}
                       >
                         <span
-                          className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-medium ${
+                          className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${
                             STATE_PILL[r.state] ?? "bg-slate-100 text-slate-600"
                           }`}
                         >
@@ -537,7 +538,7 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             <Link
               key={n.key}
               href={n.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`hidden sm:block text-sm font-medium transition-colors ${
                 active === n.key
                   ? "text-[#0089de]"
                   : "text-white/70 hover:text-white"
@@ -550,15 +551,15 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
 
           <Link
             href="/locations"
-            className="hidden sm:inline-flex"
+            className="inline-flex"
             style={{
               alignItems: "center",
               gap: "0.3rem",
               background: "#00d4ff",
               color: "#030712",
-              padding: "0.4rem 1rem",
+              padding: "0.4rem 0.75rem",
               borderRadius: 999,
-              fontSize: "0.8125rem",
+              fontSize: "0.75rem",
               fontWeight: 700,
               marginLeft: "0.375rem",
               textDecoration: "none",

@@ -163,7 +163,7 @@ export default async function CertLandingPage({
         ) : null}
 
         <section className="mt-8 border-t border-white/10 pt-6">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
             Locations that fit your level
           </h2>
           {locations.length === 0 ? (
@@ -183,7 +183,7 @@ export default async function CertLandingPage({
                   >
                     {l.name}
                   </Link>
-                  <p className="text-[11px] uppercase tracking-wider text-[#8b9db8]">
+                  <p className="text-xs uppercase tracking-wider text-[#8b9db8]">
                     {l.country} · {sites.length} sites
                   </p>
                   <p className="mt-2 line-clamp-3 text-sm leading-6 text-[#aebcd0]">
@@ -197,7 +197,7 @@ export default async function CertLandingPage({
 
         {gear.length > 0 ? (
           <section className="mt-8 border-t border-white/10 pt-6">
-            <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
               Recommended gear
             </h2>
             <ul className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -207,7 +207,7 @@ export default async function CertLandingPage({
                   className="rounded-xl border border-white/10 bg-[#0a1628] p-4"
                 >
                   <p className="font-semibold text-[#f0f4f8]">{g.name}</p>
-                  <p className="text-[11px] uppercase tracking-wider text-[#8b9db8]">
+                  <p className="text-xs uppercase tracking-wider text-[#8b9db8]">
                     {g.category} · {g.tier}
                   </p>
                   <p className="mt-2 line-clamp-3 text-sm leading-6 text-[#aebcd0]">
@@ -220,7 +220,7 @@ export default async function CertLandingPage({
         ) : null}
 
         <section className="mt-10 border-t border-white/10 pt-6">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
             Methodology
           </h2>
           <details className="mt-3 rounded-xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-[#aebcd0]">

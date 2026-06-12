@@ -30,7 +30,7 @@ export function CoralCoverPanel({
     <section className="rounded-2xl border border-white/10 bg-[#0a1628] p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8b9db8]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8b9db8]">
             Benthic snapshot — {snapshot.program}
           </p>
           <h3 className="mt-1 text-base font-bold text-[#f0f4f8]">
@@ -46,7 +46,7 @@ export function CoralCoverPanel({
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-[#8b9db8]">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#8b9db8]">
             Current mean coral cover
           </p>
           <p className="mt-1">
@@ -72,7 +72,7 @@ export function CoralCoverPanel({
         </div>
         {snapshot.historical ? (
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#8b9db8]">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#8b9db8]">
               Earlier survey
             </p>
             <p className="mt-1">
@@ -91,7 +91,7 @@ export function CoralCoverPanel({
               />
             </div>
             {trend ? (
-              <p className={`mt-1.5 text-[12px] font-semibold ${trend.tone}`}>
+              <p className={`mt-1.5 text-xs font-semibold ${trend.tone}`}>
                 {trend.arrow} {trend.delta >= 0 ? "+" : ""}
                 {trend.delta} pts vs earlier survey
               </p>
@@ -100,12 +100,12 @@ export function CoralCoverPanel({
         ) : null}
       </div>
 
-      <p className="mt-4 text-[13px] leading-6 text-[#aebcd0]">
+      <p className="mt-4 text-sm leading-6 text-[#aebcd0]">
         {snapshot.method}.
         {snapshot.notes ? <> {snapshot.notes}</> : null}
       </p>
 
-      <p className="mt-3 text-[11.5px] leading-5 text-[#8b9db8]">
+      <p className="mt-3 text-xs leading-5 text-[#8b9db8]">
         Reported at the <strong>jurisdiction</strong> scale, not the dive
         site — the published surveys don&rsquo;t resolve a single reef.{" "}
         <a

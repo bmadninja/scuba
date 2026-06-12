@@ -370,7 +370,7 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
           <h1 style={{ fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.08, color: "#fff", marginBottom: "0.875rem" }}>
             All dive locations
           </h1>
-          <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontStyle: "italic", fontSize: "1.05rem", lineHeight: 1.65, color: "rgba(255,255,255,0.45)", maxWidth: 480, marginBottom: "2rem" }}>
+          <p style={{ fontFamily: "var(--font-sans)", fontStyle: "italic", fontSize: "1.05rem", lineHeight: 1.65, color: "rgba(255,255,255,0.45)", maxWidth: 480, marginBottom: "2rem" }}>
             Every reef location — filtered by what you want to see, when to go, and reef health.
           </p>
 
@@ -491,7 +491,10 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
       {drawerOpen && (
         <div className="fixed inset-0 z-50 sm:hidden" role="dialog" aria-modal="true" aria-label="Filters">
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setDrawerOpen(false)} aria-hidden />
-          <div className="absolute inset-y-0 left-0 flex w-80 max-w-[90vw] flex-col bg-[#0a1628] shadow-2xl">
+          <div className="absolute bottom-0 left-0 right-0 flex max-h-[88vh] flex-col rounded-t-2xl bg-[#0a1628]" style={{ boxShadow: "0 -16px 48px rgba(0,0,0,0.5)" }}>
+            <div style={{ display: "flex", justifyContent: "center", padding: "0.75rem 0 0" }}>
+              <div style={{ width: 40, height: 4, borderRadius: 999, background: "rgba(255,255,255,0.2)" }} />
+            </div>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "1rem 1.25rem" }}>
               <span style={{ fontSize: "0.875rem", fontWeight: 700, color: "#f0f4f8" }}>Filters</span>
               <button type="button" onClick={() => setDrawerOpen(false)} style={{ background: "none", border: "none", cursor: "pointer", color: "#8b9db8", padding: "0.25rem", borderRadius: "0.375rem", lineHeight: 1 }} aria-label="Close filters">
@@ -572,7 +575,7 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
 
       {/* ── Active filter summary bar ────────────────────────────────────────── */}
       {hasActiveFilter && (
-        <div className="le-filter-summary" style={{ maxWidth: "100%", borderBottom: "1px solid rgba(255,255,255,0.1)", background: "#0a1628", padding: "0.625rem 3rem" }}>
+        <div className="le-filter-summary hidden sm:block" style={{ maxWidth: "100%", borderBottom: "1px solid rgba(255,255,255,0.1)", background: "#0a1628", padding: "0.625rem 3rem" }}>
           <div style={{ maxWidth: 1320, margin: "0 auto", display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
             <span style={{ fontSize: "0.75rem", color: "#8b9db8" }}>{filtered.length} locations</span>
             {reefStates.map((rs) => <ActivePill key={rs} label={STATE_TEXT[rs]} onRemove={() => toggleMultiParam("reef", rs)} />)}
@@ -698,7 +701,7 @@ function LocationCard({
         <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, letterSpacing: "-0.015em", color: "#f0f4f8", marginBottom: "0.5rem", transition: "color 0.15s" }} className="site-card-name">
           {location.name}
         </h3>
-        <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: "0.875rem", lineHeight: 1.65, color: "#aebcd0", flex: 1, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+        <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.875rem", lineHeight: 1.65, color: "#aebcd0", flex: 1, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
           {location.hook}
         </p>
         <div style={{ display: "flex", gap: "0.375rem", flexWrap: "wrap", marginTop: "0.875rem", paddingTop: "0.875rem", borderTop: "1px solid rgba(255,255,255,0.1)" }}>
@@ -803,7 +806,7 @@ function ActivePill({ label, onRemove }: { label: string; onRemove: () => void }
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: "0.25rem", padding: "0.2rem 0.5rem 0.2rem 0.625rem", borderRadius: 999, background: "rgba(0,212,255,0.1)", border: "1px solid rgba(0,212,255,0.22)", fontSize: "0.75rem", color: "#00d4ff", fontWeight: 500 }}>
       {label}
-      <button type="button" onClick={onRemove} style={{ background: "none", border: "none", color: "#00d4ff", cursor: "pointer", padding: 0, lineHeight: 1, fontSize: "0.875rem", opacity: 0.6, fontFamily: "inherit" }}>×</button>
+      <button type="button" onClick={onRemove} style={{ background: "none", border: "none", color: "#00d4ff", cursor: "pointer", padding: "0.25rem 0.375rem", lineHeight: 1, fontSize: "1rem", opacity: 0.6, fontFamily: "inherit", minWidth: 32, minHeight: 32, display: "inline-flex", alignItems: "center", justifyContent: "center" }}>×</button>
     </span>
   );
 }

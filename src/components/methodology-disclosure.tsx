@@ -23,7 +23,7 @@ export function MethodologyDisclosure({
       style={{ overflow: "hidden" }}
     >
       <summary
-        className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#8b9db8] hover:bg-white/5"
+        className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-[0.1em] text-[#8b9db8] hover:bg-white/5"
         style={{ userSelect: "none" }}
       >
         {/* Info circle icon */}
@@ -61,7 +61,7 @@ export function MethodologyDisclosure({
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </summary>
-      <div className="border-t border-white/10 px-4 py-4 text-[13px] leading-6 text-[#8b9db8]">
+      <div className="border-t border-white/10 px-4 py-4 text-sm leading-6 text-[#8b9db8]">
         {children}
       </div>
     </details>

@@ -1,6 +1,6 @@
 /**
- * EditorialHook — italic serif paragraph above data sections.
- * Source Serif 4, 1.0625rem, line-height 1.8, #aebcd0, max-width 640px.
+ * EditorialHook — italic paragraph above data sections.
+ * Inter, 1.0625rem, line-height 1.8, #aebcd0, max-width 640px.
  * No marketing superlatives — honest editorial voice only.
  */
 
@@ -14,7 +14,7 @@ export function EditorialHook({ text, className = "" }: EditorialHookProps) {
     <p
       className={className}
       style={{
-        fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+        fontFamily: "var(--font-sans)",
         fontSize: "1.0625rem",
         lineHeight: 1.8,
         color: "#aebcd0",

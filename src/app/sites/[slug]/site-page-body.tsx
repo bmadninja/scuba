@@ -186,7 +186,7 @@ export function SitePageBody(props: SiteBodyProps) {
             <div style={{ marginBottom: "3rem" }}>
               <p
                 style={{
-                  fontFamily: "var(--font-serif),'Source Serif 4',Georgia,serif",
+                  fontFamily: "var(--font-sans)",
                   fontSize: "1.25rem",
                   lineHeight: 1.75,
                   color: "#aebcd0",
