@@ -128,20 +128,31 @@ export function geoToMapXY(lat: number, lng: number): [number, number] {
   return [x, y];
 }
 
-/** Convert bestMonths array to a human-readable range string */
+/** Convert bestMonths array to a human-readable range string.
+ *  Handles year-wrapping seasons (e.g. [10,11,12,1,2,3,4] → "Oct–Apr"). */
 export function bestMonthsText(months: number[]): string {
   if (months.length === 0) return "—";
   if (months.length === 12) return "Year round";
   const ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const sorted = [...months].sort((a, b) => a - b);
-  // Detect a contiguous range
-  const first = sorted[0];
-  const last = sorted[sorted.length - 1];
-  if (last - first === sorted.length - 1) {
-    return `${ABBR[first - 1]}–${ABBR[last - 1]}`;
+
+  // Find the largest gap between consecutive months (including year wrap-around).
+  // The season spans from right after the largest gap to the month before it.
+  let maxGap = 0;
+  let maxGapIdx = sorted.length - 1; // default: no internal gap, use wrap-around
+  for (let i = 0; i < sorted.length; i++) {
+    const curr = sorted[i];
+    const next = i === sorted.length - 1 ? sorted[0] + 12 : sorted[i + 1];
+    const gap = next - curr;
+    if (gap > maxGap) {
+      maxGap = gap;
+      maxGapIdx = i;
+    }
   }
-  // Non-contiguous: just list first and last
-  return `${ABBR[first - 1]}–${ABBR[last - 1]}`;
+
+  const startIdx = (maxGapIdx + 1) % sorted.length;
+  const endIdx = maxGapIdx;
+  return `${ABBR[sorted[startIdx] - 1]}–${ABBR[sorted[endIdx] - 1]}`;
 }
 
 /** Skill level canonical text */

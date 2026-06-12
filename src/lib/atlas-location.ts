@@ -38,6 +38,8 @@ export type AtlasLocation = {
   y: number;
   heroImageUrl?: string;
   animalTags: string[];
+  diveTypeTags: string[];
+  maxCurrentStrength: "none" | "mild" | "moderate" | "strong";
 };
 
 // ─── Wildlife taxonomy (Story 7.2 / 7.3) ──────────────────────────────────────
@@ -61,6 +63,7 @@ export const WILDLIFE_TAXONOMY: WildlifeSubGroup[] = [
   {
     group: "Sharks & rays",
     tags: [
+      { tag: "Whale sharks", test: /whale shark/ },
       { tag: "Sharks", test: /shark/ },
       { tag: "Hammerheads", test: /hammerhead/ },
       { tag: "Rays & mantas", test: /manta|stingray|devil ray|\bray\b/ },
@@ -176,6 +179,23 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     .filter((t) => t.test.test(allSpeciesText))
     .map((t) => t.tag);
 
+  // Derive dive type tags — union of all sites' diveTypes at this location.
+  const diveTypeTags: string[] = Array.from(
+    new Set(sites.flatMap((s) => s.diveTypes as string[])),
+  );
+
+  // Derive max current strength across all sites and all months.
+  const CURRENT_RANK: Record<string, number> = { none: 0, mild: 1, moderate: 2, strong: 3 };
+  let maxCurrentRank = 0;
+  for (const s of sites) {
+    for (const m of s.conditionsByMonth ?? []) {
+      const r = CURRENT_RANK[m.currentStrength] ?? 0;
+      if (r > maxCurrentRank) maxCurrentRank = r;
+    }
+  }
+  const RANK_TO_CURRENT = ["none", "mild", "moderate", "strong"] as const;
+  const maxCurrentStrength = RANK_TO_CURRENT[maxCurrentRank];
+
   const heatLevel = getReefHeatLevel(location.id);
   const [x, y] = geoToMapXY(location.lat, location.lng);
 
@@ -203,6 +223,8 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     y: Math.round(y * 10) / 10,
     heroImageUrl,
     animalTags,
+    diveTypeTags,
+    maxCurrentStrength,
   };
 }
 

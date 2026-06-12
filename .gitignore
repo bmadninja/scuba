@@ -45,6 +45,16 @@ next-env.d.ts
 node_modules/
 /test-results/
 /playwright-report/
+/playwright-report-prod/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Preview build artifacts
+/_preview/
+
+# Logs
+/logs/
+
+# Claude session data (transcripts, not config)
+/.claude/projects/

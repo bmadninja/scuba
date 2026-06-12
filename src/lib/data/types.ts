@@ -12,7 +12,21 @@ export type DiveType =
   | "macro"
   | "wrecks"
   | "geology"
-  | "blackwater";
+  | "blackwater"
+  | "drift"
+  | "cave"
+  | "wall"
+  | "night"
+  | "muck";
+
+export type PhotographyLensType = "macro" | "wide-angle" | "both";
+export type PhotographyVisibility = "excellent" | "good" | "variable";
+
+export type SitePhotography = {
+  lensType: PhotographyLensType;
+  visibility: PhotographyVisibility;
+  highlights: string[];
+};
 
 export type GearCategory =
   | "mask"
@@ -147,6 +161,7 @@ export type Site = {
   gearIds: string[];
   siteSpecificGear: SiteGearItem[];
   notes?: string;
+  photography?: SitePhotography;
   sourceIds?: string[];
   methodologyClaimIds?: string[];
 };
