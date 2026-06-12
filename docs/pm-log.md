@@ -4,6 +4,53 @@ Running log of product insights, decisions, and open questions. Newest at top.
 
 ---
 
+## 2026-06-10 3:03pm — Execution (slot fired; session spanned the date boundary)
+
+**Decision: do not write code this slot. Write a spec instead.** Two findings made
+unilateral code the wrong move, and the disciplined call was to surface a decision
+rather than presuppose it.
+
+**Finding 1 — the homepage is being actively reworked right now.** The lead priority
+item ("recouple the species moat to the homepage") was already half-done since I last
+looked: the committed hero (HEAD) leads with **"Where to dive and what you'll actually
+see"** + "A live dive atlas for sightings, reef health, conservation status, and ocean
+pressure." That is the species-chaser job restored to the H1 — gap A is substantially
+closed at the copy level. _And_ there is a large **uncommitted, staged redesign in
+flight**: 13 files, ~298 insertions, including an 88-line rewrite of `page.tsx` (the
+current hero H1 is being removed) and a 303-line rework of `atlas-stage.tsx`. Writing
+code on that surface would collide with work a human/agent is mid-stream on. Off-limits.
+
+**Finding 2 — the real moat regression is the removed species-landing SEO pages.** The
+`/where-to-see/[species]` route — built deliberately as "Phase 11: SEO landing pages —
+species, month, cert" (commit b2c9166) — was deleted in a checkpoint commit (3451ce0),
+part of a consistent pattern that also removed `/plan`, `/dive-in`, `/encounters`:
+the redesign is **consolidating everything into the atlas**. But the substrate is fully
+intact: `src/data/encounters.json` (11 marquee bucket-list encounters: sardine-run,
+hammerhead-schools, whale-sharks, manta-cleaning-stations, thresher-sharks, great-white,
+…), `src/lib/data/encounters.ts`, and the orphaned-but-present `speciesLandingSchema()`
+in `schema-org.ts`. The old page is 319 lines, recoverable from git.
+
+**Why this matters strategically.** Those 11 pages are the single highest-intent inbound
+SEO surface we have — people literally Google "where to see hammerheads diving." The
+per-site species depth (`/sites/[slug]/species/[species]`) still exists, so the moat's
+_depth_ survives; what was cut is the moat's _front door for search traffic_. Losing 11
+high-intent landing pages is a real funnel cost. But the removal is plausibly a
+**deliberate** atlas-first consolidation, not an accident — so I will not restore it by
+fiat during an autonomous run with no human present. That is Josie's strategy call.
+
+**What I did instead:** wrote a decision brief + restore spec into the charter (acceptance
+criteria + technical notes, scoped to the 11 encounters and the existing dark theme), and
+reconciled the charter with reality (hero already changed; redesign in flight; route
+removal confirmed deliberate-pattern; data substrate intact).
+
+**Open question carried into 5pm/tomorrow:** the atlas-first consolidation is now an
+explicit, repeated pattern (4 routes removed, all folding into the atlas). The strategy
+question is no longer "was `/plan` removal accidental?" — it reads deliberate. The real
+question is: **does an atlas-only architecture sacrifice inbound SEO that no atlas filter
+can replace?** A filter facet does not rank for "where to see whale sharks 2026"; a
+landing page does. Decide whether the 11 marquee pages come back as SEO entry points that
+deep-link _into_ the atlas (best of both) — that is the spec I wrote.
+
 ## 2026-06-05 4:07pm — Positioning & Strategy
 
 _(Run fired against the 9am positioning slot but the session spanned a pause across
