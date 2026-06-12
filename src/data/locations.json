@@ -2424,5 +2424,47 @@
     ],
     "siteIds": [],
     "heroImageUrl": null
+  },
+  {
+    "id": "wakatobi-indonesia",
+    "slug": "wakatobi-indonesia",
+    "name": "Wakatobi",
+    "country": "Indonesia",
+    "region": "Southeast Sulawesi",
+    "countryCode": "ID",
+    "lat": -5.7,
+    "lng": 124.0,
+    "description": "A UNESCO Biosphere Reserve at the heart of the Coral Triangle, Wakatobi is one of Indonesia's most intact reef systems. Operation Wallacea has run continuous scientific monitoring here since 1998 and documented steady coral recovery following a 2010 bleaching event. Hard coral cover held at nearly 30 percent park-wide in 2019 surveys while destructive fishing declined. In 2024 when 84 percent of the world's reefs experienced bleaching-level heat stress, Wakatobi showed no significant bleaching — an anomaly researchers attribute to locally evolved heat tolerance in the coral colonies.",
+    "bestMonths": [4, 5, 6, 7, 8, 9, 10],
+    "siteIds": [],
+    "heroImageUrl": null
+  },
+  {
+    "id": "sogod-bay-philippines",
+    "slug": "sogod-bay-philippines",
+    "name": "Sogod Bay",
+    "country": "Philippines",
+    "region": "Southern Leyte",
+    "countryCode": "PH",
+    "lat": 10.167,
+    "lng": 125.05,
+    "description": "Sogod Bay hosts the second largest whale shark aggregation in Asia, with LAMAVE researchers having identified more than 350 individual sharks over a decade of monitoring. The outer reefs around Panaon Island reached 60 to 70 percent live coral cover in 2020 Oceana surveys — roughly three times the Philippine national average. Panaon Island was formally designated a Protected Seascape under national law in August 2025. Few dive operators work here and crowds are minimal even during peak whale shark season from November through April.",
+    "bestMonths": [11, 12, 1, 2, 3, 4, 5],
+    "siteIds": [],
+    "heroImageUrl": null
+  },
+  {
+    "id": "derawan-archipelago-indonesia",
+    "slug": "derawan-archipelago-indonesia",
+    "name": "Derawan Archipelago",
+    "country": "Indonesia",
+    "region": "East Kalimantan",
+    "countryCode": "ID",
+    "lat": 2.25,
+    "lng": 118.417,
+    "description": "Derawan is one of the only places on Earth where reef manta rays are resident year-round. The Marine Megafauna Foundation has identified 155 individual mantas here — and 24 percent of the females have been observed pregnant, the only site in East Borneo where this is documented. With 500 plus coral species and 800 plus reef fish species the archipelago sits in the highest-diversity marine zone on the planet. The 285,549 hectare Berau MPA was declared in 2016 and active enforcement patrols with radar monitoring began in 2023.",
+    "bestMonths": [3, 4, 5, 6, 9, 10],
+    "siteIds": [],
+    "heroImageUrl": null
   }
 ]

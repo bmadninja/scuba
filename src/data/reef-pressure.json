@@ -1850,5 +1850,53 @@
       "human-pressure-mpa-context"
     ],
     "lastReviewedAt": "2026-06-12"
+  },
+  {
+    "id": "reef-pressure-wakatobi-indonesia-2026",
+    "locationId": "wakatobi-indonesia",
+    "mpaStatus": "designated-multi-use",
+    "fishingPressure": "medium",
+    "topPressures": [
+      "climate warming",
+      "overfishing and destructive fishing",
+      "enforcement gaps"
+    ],
+    "visitorImpactNote": "Wakatobi National Park covers 1.39 million hectares but strict no-take zones represent only 3.2% of total area. Wakatobi Dive Resort operates the Wakatobi Collaborative Reef Conservation Program — one of the world's largest privately-funded MPAs — with lease agreements covering all 17 villages in exchange for fishing restrictions. All resort guests sign a dive conduct agreement. Operation Wallacea runs annual scientific expeditions from Hoga Island Research Centre. Enforcement patrols dropped significantly after TNC and WWF scaled back in 2014-2015; community monitoring groups including Komunto (UN Equator Award 2010) continue voluntary protection. Choose operators aligned with the Wakatobi Resort conservation program or Operation Wallacea.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-06-12"
+  },
+  {
+    "id": "reef-pressure-sogod-bay-philippines-2026",
+    "locationId": "sogod-bay-philippines",
+    "mpaStatus": "designated-multi-use",
+    "fishingPressure": "high",
+    "topPressures": [
+      "overfishing and destructive fishing",
+      "climate warming",
+      "sedimentation and runoff"
+    ],
+    "visitorImpactNote": "Panaon Island Protected Seascape (61,204 ha) was declared under Philippine law in August 2025, encompassing the outer bay reefs. Southern Leyte has 82 community-managed MPAs covering approximately 1,400 hectares. Whale shark encounters are snorkel-only by local ordinance since 2008 — scuba diving with whale sharks is prohibited. Maximum 3-hour snorkel session per tour group; 3-meter minimum approach distance enforced. LAMAVE (Large Marine Vertebrates Research Institute) monitors the whale shark aggregation year-round and welcomes observer reports. Kasaka Fishermen's Association manages ecotourism at Son-ok MPA in Pintuyan. Inner bay fishing pressure remains high with documented illegal use of compressor rigs, cyanide, and vessels from neighbouring provinces.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-06-12"
+  },
+  {
+    "id": "reef-pressure-derawan-archipelago-indonesia-2026",
+    "locationId": "derawan-archipelago-indonesia",
+    "mpaStatus": "designated-multi-use",
+    "fishingPressure": "high",
+    "topPressures": [
+      "destructive fishing and poaching",
+      "climate warming",
+      "coastal development and sedimentation"
+    ],
+    "visitorImpactNote": "Berau MPA (285,549 ha, declared 2016) covers the archipelago with red no-take zones at Samama Island and green limited-use zones at Derawan and Sangalaki. Global Conservation deployed SMART patrol teams and 24/7 Marine Monitor radar across five islands in 2023-2024; 8 vessel seizures and a 2-year prison sentence for fish bombing followed in 2024. No formal visitor quota exists. Marine Megafauna Foundation researchers are based at Sangalaki and run manta ray photo-ID monitoring year-round — report encounters to contribute to the dataset. Turtle Foundation protects nesting beaches. Choose operators partnered with MMF or Global Conservation. Proximity to Indonesia's new capital Nusantara (160 km) is accelerating regional development pressure.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-06-12"
   }
 ]

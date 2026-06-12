@@ -3844,5 +3844,95 @@
       "reef-health-gcrmn-agrra"
     ],
     "lastReviewedAt": "2026-06-12"
+  },
+  {
+    "id": "reef-health-wakatobi-indonesia-2024",
+    "locationId": "wakatobi-indonesia",
+    "observed": {
+      "surveyDate": "2019-05-01",
+      "surveyMethod": "Reef health assessment across Wakatobi and Takabonerate parks (multi-site); Line Intercept Transects on Kaledupa and Hoga islands by Operation Wallacea / LIPI (2006-2019)",
+      "coralCoverPercent": 29,
+      "bleachedPercent": null,
+      "mortalityPercent": null,
+      "historicalCoralCoverPercent": 35,
+      "historicalSurveyDate": "2009-01-01",
+      "sourceIds": [
+        "opwall-wakatobi-longterm",
+        "hamdani-2024-bioconf",
+        "ocean-science-journal-2024-kaledupa"
+      ],
+      "notes": "Park-wide average 29.48% hard coral cover (May 2019 survey, Hamdani et al. BIO Web of Conferences 2024). Highest individual site: Wanci at 45.53%; Kaledupa fringing reef reached 46% in 2024 Ocean Science Journal study. Hard coral cover declined ~20% following the 2010 bleaching event (60% of park corals bleached, <5% mortality) then recovered steadily through 2019. In 2024 during the 4th global bleaching event — when 84% of world reefs experienced bleaching-level heat stress — Wakatobi recorded no significant bleaching, attributed to locally evolved heat tolerance. SST anomalies at Wakatobi are documented not to predict benthic composition changes (PMC9448965, 2022), an anomaly compared to other reef systems."
+    },
+    "thermalStress": {
+      "alertLevel": "no-stress",
+      "degreeHeatingWeeks": 0,
+      "source": "noaa-crw",
+      "notes": "No bleaching-level alert documented at Wakatobi during the 2024 global bleaching event. Reef scan photo surveys and eDNA sampling confirmed healthy reef condition. Nearest NOAA CRW gauge: Maluku, Indonesia regional product. Wakatobi corals show anomalous heat tolerance — SST anomalies do not predict benthic composition changes here as they do elsewhere."
+    },
+    "divingOutlook": "Wakatobi sits at the heart of the Coral Triangle with one of the longest continuous reef monitoring records in Indonesia. Coral cover near 30 percent park-wide with individual sites reaching 46 percent. The reef did not bleach in 2024 when most of the world's reefs did. Operation Wallacea runs research expeditions from Hoga Island annually — divers here are diving alongside active science.",
+    "methodologyClaimIds": [
+      "reef-health-gcrmn-agrra"
+    ],
+    "lastReviewedAt": "2026-06-12"
+  },
+  {
+    "id": "reef-health-sogod-bay-philippines-2024",
+    "locationId": "sogod-bay-philippines",
+    "observed": {
+      "surveyDate": "2020-10-01",
+      "surveyMethod": "Underwater diving surveys (belt transects and rapid assessments) by Oceana Philippines 22-day expedition; Coral Cay Conservation LIT baseline surveys 2002-2004",
+      "coralCoverPercent": 45,
+      "bleachedPercent": null,
+      "mortalityPercent": null,
+      "historicalCoralCoverPercent": 12,
+      "historicalSurveyDate": "2004-01-01",
+      "sourceIds": [
+        "oceana-panaon-2020",
+        "ccc-southern-leyte-baseline",
+        "lamave-sogod-bay"
+      ],
+      "notes": "Oceana Philippines 2020 expedition found outer Panaon Island reefs at 60-70% live coral cover — approximately 3x the Philippine national average (~20%). Inner bay coastal fringe surveys (CCC 2002-2004) recorded 10-15% cover, indicating strong spatial heterogeneity. The 45% figure used here represents a conservative middle estimate across the full bay. Panaon Island was identified by the 50 Reefs Initiative (Bloomberg Philanthropies) as among the 50 reefs globally most likely to survive climate change. LAMAVE has documented 350+ individual whale sharks at this site over 10+ years. No site-specific bleaching percentage data available for 2023-2024 global bleaching event. Crown-of-Thorns Starfish outbreak documented 2019-2022 (15-53 individuals per reef area)."
+    },
+    "thermalStress": {
+      "alertLevel": "watch",
+      "degreeHeatingWeeks": 4.0,
+      "source": "noaa-crw",
+      "notes": "Philippines broadly experienced Alert Level 1-2 conditions during the 2023-2024 global bleaching event. Panaon Island outer reefs are recognized by the 50 Reefs Initiative as among the most thermally resilient reefs globally. No site-specific Sogod Bay bleaching report published for 2024 as of June 2026. Estimate based on Eastern Philippines regional NOAA CRW gauge."
+    },
+    "divingOutlook": "The outer reefs around Panaon Island are among the healthiest in the Philippines — coral cover well above the national average and whale shark encounters virtually guaranteed from November through April. This is one of the quietest major aggregation sites in Asia. LAMAVE researchers are regularly in the water and welcome diver observations.",
+    "methodologyClaimIds": [
+      "reef-health-gcrmn-agrra"
+    ],
+    "lastReviewedAt": "2026-06-12"
+  },
+  {
+    "id": "reef-health-derawan-archipelago-indonesia-2024",
+    "locationId": "derawan-archipelago-indonesia",
+    "observed": {
+      "surveyDate": "2023-04-01",
+      "surveyMethod": "Underwater Photo Transect (UPT) using GoPro imagery analyzed on CoralNet platform (100 points per image); validated with video-recorded line transects and Sentinel-2 satellite imagery. Surveys conducted December 2022, February 2023, April 2023.",
+      "coralCoverPercent": 33,
+      "bleachedPercent": null,
+      "mortalityPercent": null,
+      "historicalCoralCoverPercent": 32,
+      "historicalSurveyDate": "2003-01-01",
+      "sourceIds": [
+        "researchgate-derawan-coral-recruitment-2023",
+        "pmc-mdpi-sensors-derawan-2024",
+        "wwf-indonesia-derawan"
+      ],
+      "notes": "UPT surveys Dec 2022-Apr 2023 found average hard coral cover 32.80% across stations (range 12.8% at Pulau Panjang to 45.9% at Sangalaki Island). Two-decade satellite/ML classification study (Landsat 7 / Sentinel-2 / UAV, MDPI Sensors 2024) shows cover at 31.78% in 2003, declining to 27.42% in 2011 following bleaching events, recovering to 31.68% in 2021. No site-specific bleaching percentage available for 2023-2024 global bleaching event; Coral Triangle broadly impacted. Fish bomb damage, cyanide fishing, and anchor dragging have caused localized acute damage but have not prevented system-level recovery. Marine Megafauna Foundation has documented 155 individual resident reef manta rays; 24% of females observed pregnant — the only known site in East Borneo with regular pregnant reef manta occurrences."
+    },
+    "thermalStress": {
+      "alertLevel": "watch",
+      "degreeHeatingWeeks": 5.0,
+      "source": "noaa-crw",
+      "notes": "Coral Triangle region experienced active HotSpots >1 degree C during the 4th global bleaching event (2023-2025). Bleaching warning events documented at Derawan in 2002-2003, 2010-2011, 2020, and 2021. No site-specific 2024 bleaching survey published for Derawan as of June 2026. Alert level estimated from NOAA CRW 5km product at 2.25N 118.42E."
+    },
+    "divingOutlook": "Sangalaki Island is one of a handful of places worldwide with year-round resident reef manta rays — and the only site in East Borneo where pregnant females regularly appear. Hard coral cover has recovered close to 2003 levels after the 2010-2011 bleaching impact. Enforcement patrols with 24/7 radar monitoring began in 2023; seizures and prosecutions for blast fishing increased sharply in 2024.",
+    "methodologyClaimIds": [
+      "reef-health-gcrmn-agrra"
+    ],
+    "lastReviewedAt": "2026-06-12"
   }
 ]
