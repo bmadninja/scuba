@@ -252,6 +252,7 @@ function getMultiParam(params: ReturnType<typeof useSearchParams>, key: string):
 export function LocationsExplorer({ locations, currentMonth }: Props) {
   const router = useRouter();
   const params = useSearchParams();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const query = params.get("q") ?? "";
   const reefStates = getMultiParam(params, "reef") as ReefState[];
@@ -262,6 +263,22 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
   const monthFilters = getMultiParam(params, "month").map(Number).filter((n) => n >= 1 && n <= 12);
   const sortKey = (params.get("sort") as SortKey | null) ?? "season";
   const viewMode = (params.get("view") as ViewMode | null) ?? "cards";
+
+  const activeFilterCount =
+    reefStates.length + certFilters.length + seeFilters.length +
+    regionFilters.length + (freshFilter ? 1 : 0) + monthFilters.length;
+
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setDrawerOpen(false); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [drawerOpen]);
+
+  useEffect(() => {
+    document.body.style.overflow = drawerOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [drawerOpen]);
 
   const setParam = useCallback(
     (key: string, value: string | null) => {
@@ -345,7 +362,7 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
   return (
     <>
       {/* ── Dark ink page header ─────────────────────────────────────────────── */}
-      <header style={{ background: "#0b1e32", padding: "4rem 3rem 5rem" }}>
+      <header className="le-header" style={{ background: "#0b1e32", padding: "4rem 3rem 5rem" }}>
         <div style={{ maxWidth: 1320, margin: "0 auto" }}>
           <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#00d4ff", marginBottom: "1rem" }}>
             Atlas
@@ -375,75 +392,187 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
       </header>
 
       {/* ── Sticky filter strip ──────────────────────────────────────────────── */}
-      <div style={{ background: "#0a1628", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "1rem 3rem", position: "sticky", top: 62, zIndex: 40 }}>
-        <div style={{ maxWidth: 1320, margin: "0 auto", display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+      <div className="le-filter-strip" style={{ background: "#0a1628", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "1rem 3rem", position: "sticky", top: 62, zIndex: 40 }}>
+        <div style={{ maxWidth: 1320, margin: "0 auto" }}>
 
-          {/* Reef state chips */}
-          {REEF_STATES.map(({ value, label }) => {
-            const isActive = reefStates.includes(value);
-            return (
-              <button key={value} type="button" onClick={() => toggleMultiParam("reef", value)} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", padding: "0.45rem 0.9375rem", borderRadius: 999, border: `1px solid ${isActive ? "#00d4ff" : "rgba(255,255,255,0.1)"}`, background: isActive ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)", fontSize: "0.8125rem", fontWeight: isActive ? 600 : 500, color: isActive ? "#00d4ff" : "#8b9db8", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", transition: "all 0.15s" }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: isActive ? STATE_COLOR[value] : "#8b9db8", display: "inline-block", flexShrink: 0 }} />
-                {label}
-              </button>
-            );
-          })}
-
-          {/* What to see */}
-          <FilterDropdown label="What to see" selectedCount={seeFilters.length}>
-            {WHAT_TO_SEE_GROUPS.map((group) => (
-              <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={seeFilters} onToggle={(v) => toggleMultiParam("see", v)} />
-            ))}
-          </FilterDropdown>
-
-          {/* Region */}
-          <FilterDropdown label="Region" selectedCount={regionFilters.length}>
-            {REGION_GROUPS.map((group) => (
-              <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={regionFilters} onToggle={(v) => toggleMultiParam("region", v)} />
-            ))}
-          </FilterDropdown>
-
-          {/* When */}
-          <FilterDropdown label="When" selectedCount={monthFilters.length}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.125rem", padding: "0.125rem" }}>
-              {MONTH_LABELS.map((lbl, i) => {
-                const m = i + 1;
-                const isSelected = monthFilters.includes(m);
-                const isCurrent = m === currentMonth;
-                return (
-                  <button key={lbl} type="button" onClick={() => toggleMultiParam("month", String(m))} style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.4rem 0.75rem", fontSize: "0.8125rem", fontFamily: "inherit", background: isSelected ? "rgba(0,212,255,0.12)" : "transparent", color: isSelected ? "#00d4ff" : isCurrent ? "#a8d4ff" : "#f0f4f8", fontWeight: isCurrent ? 600 : 400, border: "none", cursor: "pointer", borderRadius: "0.375rem", textAlign: "left" }}>
-                    <CheckBox checked={isSelected} />
-                    {lbl}
-                    {isCurrent && <span style={{ fontSize: "0.5625rem", color: "#00d4ff", marginLeft: "auto" }}>now</span>}
-                  </button>
-                );
-              })}
+          {/* Mobile: Filters button + view toggle */}
+          <div className="flex items-center gap-2 sm:hidden">
+            <button
+              type="button"
+              onClick={() => setDrawerOpen(true)}
+              style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.45rem 0.9375rem", borderRadius: 999, border: `1px solid ${activeFilterCount > 0 ? "#00d4ff" : "rgba(255,255,255,0.1)"}`, background: activeFilterCount > 0 ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)", fontSize: "0.8125rem", fontWeight: activeFilterCount > 0 ? 600 : 500, color: activeFilterCount > 0 ? "#00d4ff" : "#8b9db8", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap" }}
+            >
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                <path fillRule="evenodd" d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.032c0 .384-.22.735-.57.899l-2.5 1.25a.75.75 0 01-1.056-.575v-4.606a2.25 2.25 0 00-.659-1.59L2.659 6.219A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z" clipRule="evenodd" />
+              </svg>
+              Filters
+              {activeFilterCount > 0 && (
+                <span style={{ fontSize: "0.625rem", background: "#00d4ff", color: "#030712", borderRadius: 999, padding: "0.1rem 0.45rem", fontWeight: 700, lineHeight: 1.4 }}>
+                  {activeFilterCount}
+                </span>
+              )}
+            </button>
+            <div style={{ marginLeft: "auto", display: "inline-flex", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "0.5rem", overflow: "hidden" }}>
+              {(["cards", "map"] as ViewMode[]).map((v) => (
+                <button key={v} type="button" onClick={() => setParam("view", v === "cards" ? null : v)} style={{ padding: "0.35rem 0.875rem", fontSize: "0.8125rem", fontWeight: 600, fontFamily: "inherit", cursor: "pointer", border: "none", background: viewMode === v ? "#00d4ff" : "rgba(255,255,255,0.05)", color: viewMode === v ? "#030712" : "#8b9db8", textTransform: "capitalize", transition: "background 0.15s, color 0.15s" }}>
+                  {v.charAt(0).toUpperCase() + v.slice(1)}
+                </button>
+              ))}
             </div>
-          </FilterDropdown>
+          </div>
 
-          {/* Certification */}
-          <FilterDropdown label="Certification" selectedCount={certFilters.length}>
-            {CERT_OPTIONS.map((o) => {
-              const isSelected = certFilters.includes(o.value);
+          {/* Desktop: full filter strip */}
+          <div className="hidden sm:flex items-center gap-2 flex-wrap">
+            {/* Reef state chips */}
+            {REEF_STATES.map(({ value, label }) => {
+              const isActive = reefStates.includes(value);
               return (
-                <button key={o.value} type="button" onClick={() => toggleMultiParam("cert", o.value)} style={{ display: "flex", alignItems: "center", gap: "0.5rem", width: "100%", textAlign: "left", padding: "0.45rem 0.875rem", fontSize: "0.8125rem", fontFamily: "inherit", background: isSelected ? "rgba(0,212,255,0.12)" : "transparent", color: isSelected ? "#00d4ff" : "#f0f4f8", border: "none", cursor: "pointer", borderRadius: "0.375rem" }}>
-                  <CheckBox checked={isSelected} />
-                  {o.label}
+                <button key={value} type="button" onClick={() => toggleMultiParam("reef", value)} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", padding: "0.45rem 0.9375rem", borderRadius: 999, border: `1px solid ${isActive ? "#00d4ff" : "rgba(255,255,255,0.1)"}`, background: isActive ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)", fontSize: "0.8125rem", fontWeight: isActive ? 600 : 500, color: isActive ? "#00d4ff" : "#8b9db8", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", transition: "all 0.15s" }}>
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: isActive ? STATE_COLOR[value] : "#8b9db8", display: "inline-block", flexShrink: 0 }} />
+                  {label}
                 </button>
               );
             })}
-          </FilterDropdown>
 
-          {/* Needs fresh eyes */}
-          <button type="button" onClick={() => setParam("fresh", freshFilter ? null : "1")} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", padding: "0.45rem 0.9375rem", borderRadius: 999, border: `1px solid ${freshFilter ? "#00d4ff" : "rgba(255,255,255,0.1)"}`, background: freshFilter ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)", fontSize: "0.8125rem", fontWeight: freshFilter ? 600 : 500, color: freshFilter ? "#00d4ff" : "#8b9db8", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap" }}>
-            Needs fresh eyes
-          </button>
+            {/* What to see */}
+            <FilterDropdown label="What to see" selectedCount={seeFilters.length}>
+              {WHAT_TO_SEE_GROUPS.map((group) => (
+                <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={seeFilters} onToggle={(v) => toggleMultiParam("see", v)} />
+              ))}
+            </FilterDropdown>
+
+            {/* Region */}
+            <FilterDropdown label="Region" selectedCount={regionFilters.length}>
+              {REGION_GROUPS.map((group) => (
+                <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={regionFilters} onToggle={(v) => toggleMultiParam("region", v)} />
+              ))}
+            </FilterDropdown>
+
+            {/* When */}
+            <FilterDropdown label="When" selectedCount={monthFilters.length}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.125rem", padding: "0.125rem" }}>
+                {MONTH_LABELS.map((lbl, i) => {
+                  const m = i + 1;
+                  const isSelected = monthFilters.includes(m);
+                  const isCurrent = m === currentMonth;
+                  return (
+                    <button key={lbl} type="button" onClick={() => toggleMultiParam("month", String(m))} style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.4rem 0.75rem", fontSize: "0.8125rem", fontFamily: "inherit", background: isSelected ? "rgba(0,212,255,0.12)" : "transparent", color: isSelected ? "#00d4ff" : isCurrent ? "#a8d4ff" : "#f0f4f8", fontWeight: isCurrent ? 600 : 400, border: "none", cursor: "pointer", borderRadius: "0.375rem", textAlign: "left" }}>
+                      <CheckBox checked={isSelected} />
+                      {lbl}
+                      {isCurrent && <span style={{ fontSize: "0.5625rem", color: "#00d4ff", marginLeft: "auto" }}>now</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            </FilterDropdown>
+
+            {/* Certification */}
+            <FilterDropdown label="Certification" selectedCount={certFilters.length}>
+              {CERT_OPTIONS.map((o) => {
+                const isSelected = certFilters.includes(o.value);
+                return (
+                  <button key={o.value} type="button" onClick={() => toggleMultiParam("cert", o.value)} style={{ display: "flex", alignItems: "center", gap: "0.5rem", width: "100%", textAlign: "left", padding: "0.45rem 0.875rem", fontSize: "0.8125rem", fontFamily: "inherit", background: isSelected ? "rgba(0,212,255,0.12)" : "transparent", color: isSelected ? "#00d4ff" : "#f0f4f8", border: "none", cursor: "pointer", borderRadius: "0.375rem" }}>
+                    <CheckBox checked={isSelected} />
+                    {o.label}
+                  </button>
+                );
+              })}
+            </FilterDropdown>
+
+            {/* Needs fresh eyes */}
+            <button type="button" onClick={() => setParam("fresh", freshFilter ? null : "1")} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", padding: "0.45rem 0.9375rem", borderRadius: 999, border: `1px solid ${freshFilter ? "#00d4ff" : "rgba(255,255,255,0.1)"}`, background: freshFilter ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)", fontSize: "0.8125rem", fontWeight: freshFilter ? 600 : 500, color: freshFilter ? "#00d4ff" : "#8b9db8", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap" }}>
+              Needs fresh eyes
+            </button>
+          </div>
         </div>
       </div>
 
+      {/* ── Mobile filter drawer ─────────────────────────────────────────────── */}
+      {drawerOpen && (
+        <div className="fixed inset-0 z-50 sm:hidden" role="dialog" aria-modal="true" aria-label="Filters">
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setDrawerOpen(false)} aria-hidden />
+          <div className="absolute inset-y-0 left-0 flex w-80 max-w-[90vw] flex-col bg-[#0a1628] shadow-2xl">
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid rgba(255,255,255,0.1)", padding: "1rem 1.25rem" }}>
+              <span style={{ fontSize: "0.875rem", fontWeight: 700, color: "#f0f4f8" }}>Filters</span>
+              <button type="button" onClick={() => setDrawerOpen(false)} style={{ background: "none", border: "none", cursor: "pointer", color: "#8b9db8", padding: "0.25rem", borderRadius: "0.375rem", lineHeight: 1 }} aria-label="Close filters">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                </svg>
+              </button>
+            </div>
+            <div style={{ flex: 1, overflowY: "auto" }}>
+              <DrawerSection title="Reef state">
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                  {REEF_STATES.map(({ value, label }) => {
+                    const isActive = reefStates.includes(value);
+                    return (
+                      <button key={value} type="button" onClick={() => toggleMultiParam("reef", value)} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", padding: "0.45rem 0.875rem", borderRadius: 999, border: `1px solid ${isActive ? "#00d4ff" : "rgba(255,255,255,0.1)"}`, background: isActive ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)", fontSize: "0.8125rem", fontWeight: isActive ? 600 : 500, color: isActive ? "#00d4ff" : "#8b9db8", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", transition: "all 0.15s" }}>
+                        <span style={{ width: 6, height: 6, borderRadius: "50%", background: isActive ? STATE_COLOR[value] : "#8b9db8", display: "inline-block", flexShrink: 0 }} />
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </DrawerSection>
+              <DrawerSection title="What to see">
+                {WHAT_TO_SEE_GROUPS.map((group) => (
+                  <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={seeFilters} onToggle={(v) => toggleMultiParam("see", v)} />
+                ))}
+              </DrawerSection>
+              <DrawerSection title="Region">
+                {REGION_GROUPS.map((group) => (
+                  <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={regionFilters} onToggle={(v) => toggleMultiParam("region", v)} />
+                ))}
+              </DrawerSection>
+              <DrawerSection title="When">
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.125rem" }}>
+                  {MONTH_LABELS.map((lbl, i) => {
+                    const m = i + 1;
+                    const isSelected = monthFilters.includes(m);
+                    const isCurrent = m === currentMonth;
+                    return (
+                      <button key={lbl} type="button" onClick={() => toggleMultiParam("month", String(m))} style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.45rem 0.75rem", fontSize: "0.8125rem", fontFamily: "inherit", background: isSelected ? "rgba(0,212,255,0.12)" : "transparent", color: isSelected ? "#00d4ff" : isCurrent ? "#a8d4ff" : "#f0f4f8", fontWeight: isCurrent ? 600 : 400, border: "none", cursor: "pointer", borderRadius: "0.375rem", textAlign: "left" }}>
+                        <CheckBox checked={isSelected} />
+                        {lbl}
+                        {isCurrent && <span style={{ fontSize: "0.5625rem", color: "#00d4ff", marginLeft: "auto" }}>now</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              </DrawerSection>
+              <DrawerSection title="Certification">
+                {CERT_OPTIONS.map((o) => {
+                  const isSelected = certFilters.includes(o.value);
+                  return (
+                    <button key={o.value} type="button" onClick={() => toggleMultiParam("cert", o.value)} style={{ display: "flex", alignItems: "center", gap: "0.5rem", width: "100%", textAlign: "left", padding: "0.45rem 0.875rem", fontSize: "0.8125rem", fontFamily: "inherit", background: isSelected ? "rgba(0,212,255,0.12)" : "transparent", color: isSelected ? "#00d4ff" : "#f0f4f8", border: "none", cursor: "pointer", borderRadius: "0.375rem" }}>
+                      <CheckBox checked={isSelected} />
+                      {o.label}
+                    </button>
+                  );
+                })}
+              </DrawerSection>
+              <DrawerSection title="Other">
+                <button type="button" onClick={() => setParam("fresh", freshFilter ? null : "1")} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", padding: "0.45rem 0.9375rem", borderRadius: 999, border: `1px solid ${freshFilter ? "#00d4ff" : "rgba(255,255,255,0.1)"}`, background: freshFilter ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)", fontSize: "0.8125rem", fontWeight: freshFilter ? 600 : 500, color: freshFilter ? "#00d4ff" : "#8b9db8", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap" }}>
+                  Needs fresh eyes
+                </button>
+              </DrawerSection>
+            </div>
+            <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", padding: "1rem" }}>
+              <button
+                type="button"
+                onClick={() => setDrawerOpen(false)}
+                style={{ width: "100%", background: "#00d4ff", color: "#030712", borderRadius: "0.75rem", padding: "0.75rem", fontSize: "0.875rem", fontWeight: 700, border: "none", cursor: "pointer", fontFamily: "inherit" }}
+              >
+                Show {filtered.length} location{filtered.length !== 1 ? "s" : ""}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ── Active filter summary bar ────────────────────────────────────────── */}
       {hasActiveFilter && (
-        <div style={{ maxWidth: "100%", borderBottom: "1px solid rgba(255,255,255,0.1)", background: "#0a1628", padding: "0.625rem 3rem" }}>
+        <div className="le-filter-summary" style={{ maxWidth: "100%", borderBottom: "1px solid rgba(255,255,255,0.1)", background: "#0a1628", padding: "0.625rem 3rem" }}>
           <div style={{ maxWidth: 1320, margin: "0 auto", display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
             <span style={{ fontSize: "0.75rem", color: "#8b9db8" }}>{filtered.length} locations</span>
             {reefStates.map((rs) => <ActivePill key={rs} label={STATE_TEXT[rs]} onRemove={() => toggleMultiParam("reef", rs)} />)}
@@ -676,5 +805,18 @@ function ActivePill({ label, onRemove }: { label: string; onRemove: () => void }
       {label}
       <button type="button" onClick={onRemove} style={{ background: "none", border: "none", color: "#00d4ff", cursor: "pointer", padding: 0, lineHeight: 1, fontSize: "0.875rem", opacity: 0.6, fontFamily: "inherit" }}>×</button>
     </span>
+  );
+}
+
+// ─── DrawerSection ────────────────────────────────────────────────────────────
+
+function DrawerSection({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div style={{ borderBottom: "1px solid rgba(255,255,255,0.08)", padding: "0.875rem 1.25rem" }}>
+      <div style={{ fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.625rem" }}>
+        {title}
+      </div>
+      {children}
+    </div>
   );
 }

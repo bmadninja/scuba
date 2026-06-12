@@ -170,6 +170,7 @@ export default function Home() {
 
           {/* content */}
           <div
+            className="lp-hero-content"
             style={{
               position: "relative",
               zIndex: 2,
@@ -270,6 +271,7 @@ export default function Home() {
       {/* ══ STATS STRIP ══════════════════════════════════════════════ */}
       <div style={{ borderBottom: `1px solid ${C.border}` }}>
         <div
+          className="lp-wrap"
           style={{
             maxWidth: 1320,
             margin: "0 auto",
@@ -333,14 +335,16 @@ export default function Home() {
 
       {/* ══ §01 REEF STATES ══════════════════════════════════════════ */}
       <FadeInSection
+        className="lp-section"
         style={{
           padding: "6rem 0",
           borderBottom: `1px solid ${C.border}`,
         }}
       >
-        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 3rem" }}>
+        <div className="lp-wrap" style={{ maxWidth: 1320, margin: "0 auto", padding: "0 3rem" }}>
           {/* two-col: text + state pills */}
           <div
+            className="lp-2col"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
@@ -437,7 +441,7 @@ export default function Home() {
           </div>
 
           {/* 3-card grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.875rem" }}>
+          <div className="lp-loc-cards" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.875rem" }}>
             {[
               {
                 href: "/locations/raja-ampat-indonesia",
@@ -583,6 +587,7 @@ export default function Home() {
 
       {/* ══ §02 DATA SOURCES ══════════════════════════════════════════ */}
       <FadeInSection
+        className="lp-section"
         style={{
           padding: "6rem 0",
           borderBottom: `1px solid ${C.border}`,
@@ -590,6 +595,7 @@ export default function Home() {
         }}
       >
         <div
+          className="lp-wrap lp-2col"
           style={{
             maxWidth: 1320,
             margin: "0 auto",
@@ -603,6 +609,7 @@ export default function Home() {
           {/* sources grid — left on this section (flip) */}
           <div>
             <div
+              className="lp-sources-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(3,1fr)",
@@ -710,7 +717,7 @@ export default function Home() {
       </FadeInSection>
 
       {/* ══ TELA CALLOUT ══════════════════════════════════════════════ */}
-      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem 3rem 0" }}>
+      <div className="lp-tela" style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem 3rem 0" }}>
         <div
           style={{
             borderLeft: `3px solid ${C.thr}`,
@@ -813,9 +820,11 @@ export default function Home() {
 
       {/* ══ §03 CONFIRMED SIGHTINGS ══════════════════════════════════ */}
       <FadeInSection
+        className="lp-section"
         style={{ padding: "6rem 0", borderBottom: `1px solid ${C.border}` }}
       >
         <div
+          className="lp-wrap lp-2col"
           style={{
             maxWidth: 1320,
             margin: "0 auto",
@@ -1004,6 +1013,7 @@ export default function Home() {
 
       {/* ══ §04 PLAN YOUR TRIP ══════════════════════════════════════ */}
       <FadeInSection
+        className="lp-section"
         style={{
           padding: "6rem 0",
           borderBottom: `1px solid ${C.border}`,
@@ -1011,6 +1021,7 @@ export default function Home() {
         }}
       >
         <div
+          className="lp-wrap lp-2col"
           style={{
             maxWidth: 1320,
             margin: "0 auto",
@@ -1257,10 +1268,153 @@ export default function Home() {
         </div>
       </FadeInSection>
 
+      {/* ══ §05 EL NIÑO + SCIENCE CONTRIBUTION ══════════════════════ */}
+      <FadeInSection
+        className="lp-section"
+        style={{
+          padding: "6rem 0",
+          borderBottom: `1px solid ${C.border}`,
+          background: "rgba(251,113,133,0.03)",
+        }}
+      >
+        <div
+          className="lp-wrap lp-2col"
+          style={{
+            maxWidth: 1320,
+            margin: "0 auto",
+            padding: "0 3rem",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "5rem",
+            alignItems: "start",
+          }}
+        >
+          {/* left: context */}
+          <div>
+            <SecLabel n="§ 05" label="The bigger picture" />
+            <h2
+              style={{
+                fontSize: "clamp(1.875rem, 3.8vw, 3.125rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.035em",
+                lineHeight: 1.07,
+                marginBottom: "1.125rem",
+              }}
+            >
+              Every dive can be{" "}
+              <em style={{ fontStyle: "normal", color: C.chg }}>a data point.</em>
+            </h2>
+            <p
+              style={{
+                fontSize: "1.0625rem",
+                color: C.textMid,
+                lineHeight: 1.7,
+                maxWidth: 460,
+                marginBottom: "2.25rem",
+              }}
+            >
+              The 4th global bleaching event (2023 to 2025) hit 84% of the world&apos;s reefs.
+              A new El Niño is building. Every photo, colour score or survey transect you submit
+              feeds the databases that shape reef policy worldwide.
+            </p>
+            <Link
+              href="/data#sightings"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.375rem",
+                fontSize: "0.9375rem",
+                fontWeight: 600,
+                color: C.cyan,
+                border: `1px solid ${C.cyanRing}`,
+                padding: "0.625rem 1.25rem",
+                borderRadius: 999,
+              }}
+            >
+              How to submit your observations →
+            </Link>
+          </div>
+
+          {/* right: three org cards */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", paddingTop: "0.25rem" }}>
+            {[
+              {
+                name: "iNaturalist",
+                action: "Photograph anything you see",
+                detail: "One clear photo, uploaded after the dive. The community confirms the ID to research grade. Your record feeds GBIF, OBIS and the IUCN Red List.",
+                color: "#6ee7b7",
+                bg: "rgba(52,211,153,0.08)",
+                ring: "rgba(52,211,153,0.18)",
+              },
+              {
+                name: "CoralWatch",
+                action: "Match coral colour to a chart",
+                detail: "Hold the Coral Health Chart next to a coral and note the score. Takes a few minutes. Repeated scores at the same reef are how early bleaching gets caught.",
+                color: "#fcd34d",
+                bg: "rgba(251,191,36,0.08)",
+                ring: "rgba(251,191,36,0.18)",
+              },
+              {
+                name: "Reef Check",
+                action: "Run a standard survey transect",
+                detail: "Count set lists of fish and invertebrates along a measured transect. Free diver training available. The same method worldwide since 1997.",
+                color: "#fda4af",
+                bg: "rgba(251,113,133,0.08)",
+                ring: "rgba(251,113,133,0.18)",
+              },
+            ].map(({ name, action, detail, color, bg, ring }) => (
+              <div
+                key={name}
+                style={{
+                  background: bg,
+                  border: `1px solid ${ring}`,
+                  borderRadius: 14,
+                  padding: "1.125rem 1.25rem",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.625rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "0.7rem",
+                      fontWeight: 800,
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
+                      color,
+                    }}
+                  >
+                    {name}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "0.8125rem",
+                      fontWeight: 600,
+                      color: C.text,
+                    }}
+                  >
+                    — {action}
+                  </span>
+                </div>
+                <p style={{ fontSize: "0.8125rem", color: C.textMid, lineHeight: 1.6, margin: 0 }}>
+                  {detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeInSection>
+
       {/* ══ CTA BAND ════════════════════════════════════════════════ */}
       <FadeInSection>
-        <div style={{ maxWidth: 1320, margin: "0 auto", padding: "0 3rem" }}>
+        <div className="lp-wrap" style={{ maxWidth: 1320, margin: "0 auto", padding: "0 3rem" }}>
           <div
+            className="lp-cta-band"
             style={{
               background: "linear-gradient(135deg, #061428 0%, #0b1e36 50%, #060f20 100%)",
               border: "1px solid rgba(0,212,255,0.12)",
@@ -1359,6 +1513,9 @@ export default function Home() {
         @keyframes blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.25; }
+        }
+        @media (max-width: 640px) {
+          .lp-cta-band { padding: 2rem 1.5rem !important; }
         }
       `}</style>
     </>

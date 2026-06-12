@@ -42,7 +42,7 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     rows: [
       ["Thriving", "rgba(16,185,129,0.15)", "#6ee7b7", "Near its natural baseline and steady. Recovering or healthy, not perfect."],
       ["Under pressure", "rgba(245,158,11,0.14)", "#fbbf24", "Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],
-      ["Witnessing change", "rgba(244,63,94,0.14)", "#fca5a5", "Heavy recent loss or bleaching. Diving here documents what remains."],
+      ["Witnessing change", "rgba(244,63,94,0.14)", "#fca5a5", "Heavy recent loss or bleaching. The 4th global bleaching event (2023 to 2025) affected 84% of reefs worldwide, the worst on record, with a new El Niño now developing. Diving here documents what remains and adds to the scientific record."],
     ],
     link: true,
     anchor: "#reefstate",
