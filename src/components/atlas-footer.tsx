@@ -68,7 +68,7 @@ export function AtlasFooter() {
             </p>
             <ul className="space-y-2.5">
               {[
-                { href: "/", label: "Find a reef" },
+                { href: "/locations", label: "Find a reef" },
                 { href: "/data", label: "Method" },
                 { href: "/about", label: "About" },
               ].map((item) => (
