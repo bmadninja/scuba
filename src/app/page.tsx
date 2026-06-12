@@ -494,6 +494,7 @@ export default function Home() {
                 className="landing-loc-card"
               >
                 <div
+                  className="lp-card-photo"
                   style={{
                     position: "relative",
                     aspectRatio: "4/3",
@@ -562,10 +563,11 @@ export default function Home() {
                   >
                     {card.name}
                   </div>
-                  <div style={{ fontSize: "0.6875rem", color: C.textMuted, marginTop: "0.05rem" }}>
+                  <div className="lp-card-country" style={{ fontSize: "0.6875rem", color: C.textMuted, marginTop: "0.05rem" }}>
                     {card.country}
                   </div>
                   <div
+                    className="lp-card-hook"
                     style={{ fontSize: "0.8rem", color: C.textMid, lineHeight: 1.5, marginTop: "0.35rem" }}
                   >
                     {card.hook}
@@ -669,7 +671,7 @@ export default function Home() {
           </div>
 
           {/* text — right */}
-          <div>
+          <div className="lp-02-text">
             <SecLabel n="§ 02" label="Data sources" />
             <h2
               style={{
@@ -1517,7 +1519,19 @@ export default function Home() {
         }
         @media (max-width: 640px) {
           .lp-cta-band { padding: 2rem 1.5rem !important; }
-          .lp-loc-cards { grid-template-columns: repeat(2, 1fr) !important; gap: 0.625rem !important; }
+          .lp-loc-cards { grid-template-columns: repeat(3, 1fr) !important; gap: 0.375rem !important; }
+          /* compact location cards */
+          .landing-card-name { font-size: 0.6875rem !important; line-height: 1.2 !important; }
+          .lp-card-country { font-size: 0.5625rem !important; }
+          .lp-card-hook { display: none !important; }
+          .lp-card-photo { aspect-ratio: 1/1 !important; }
+          .lp-card-chips { display: none !important; }
+          .lp-loc-cards .landing-loc-card > div:last-child { padding: 0.5rem !important; gap: 0.15rem !important; }
+          /* §02 and §04 — text above panel */
+          .lp-02-text { order: -1 !important; }
+          .lp-04-text { order: -1 !important; }
+          /* stats strip — 2×2 grid */
+          .lp-stats-strip { display: grid !important; grid-template-columns: repeat(2, 1fr) !important; overflow-x: unset !important; }
         }
       `}</style>
     </>
