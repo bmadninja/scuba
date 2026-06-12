@@ -11,6 +11,8 @@ import {
   SORT_OPTIONS,
   CONTINENT_ORDER,
   regionContinent,
+  DIVE_TYPE_OPTIONS,
+  CURRENT_OPTIONS,
 } from "./atlas-filter-rail";
 import type { FilterLocation, Filters, SortKey } from "./atlas-filter-rail";
 import { WILDLIFE_TAXONOMY } from "@/lib/atlas-location";
@@ -22,6 +24,7 @@ import type { PlanetMarker } from "./planet-globe";
 import { STATE_COLOR, STATE_TEXT } from "@/lib/data/reef-state";
 import { AtlasInfoPopup, InfoButton } from "./atlas-info-popup";
 import type { InfoKey } from "./atlas-info-popup";
+import { DataConfidenceBadge, confidenceFromDays } from "./data-confidence-badge";
 
 const MONTH_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 // The current month is computed on the server and passed in as a prop so SSR and
@@ -64,6 +67,20 @@ function matches(r: FilterLocation, f: Filters): boolean {
   if (f.region.length && !f.region.includes(r.country)) return false;
 
   if (f.animals.length && !f.animals.some((a) => r.animalTags.includes(a))) return false;
+
+  if (f.diveTypes.length && !f.diveTypes.some((dt) => r.diveTypeTags.includes(dt))) return false;
+
+  if (f.current.length) {
+    const CURRENT_RANK: Record<string, number> = { none: 0, mild: 1, moderate: 2, strong: 3 };
+    const rank = CURRENT_RANK[r.maxCurrentStrength] ?? 0;
+    const ok = f.current.some((c) => {
+      if (c === "calm") return rank <= 1;
+      if (c === "moderate") return rank === 2;
+      if (c === "strong") return rank === 3;
+      return false;
+    });
+    if (!ok) return false;
+  }
 
   if (f.freshOnly) {
     const k: FreshnessKey | "none" =
@@ -253,70 +270,139 @@ function RegionTree({
   );
 }
 
-// ─── Place-only reef card ──────────────────────────────────────────────────────
+// ─── Improved editorial reef card ─────────────────────────────────────────────
+
+const MONTH_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function buildWhyLine(r: FilterLocation, selectedMonths: number[]): string {
+  const parts: string[] = [];
+  const isInS = selectedMonths.some((m) => r.bestMonths.includes(m));
+  if (isInS) {
+    const monthName = MONTH_SHORT[selectedMonths[0] - 1];
+    parts.push(`${monthName} is peak season`);
+  }
+  const topAnimals = r.animalTags.slice(0, 2);
+  if (topAnimals.length > 0) {
+    parts.push(topAnimals.map((t) => t.toLowerCase()).join(" & ") + " sightings");
+  }
+  if (r.state === "thriving") parts.push("healthy reef");
+  else if (r.heatLevel <= 1) parts.push("low heat stress");
+  if (parts.length === 0) return r.hook || "";
+  return parts.join(" · ");
+}
 
 function ReefCard({
   r,
   freshEyes,
   showFreshPill,
+  selectedMonths,
 }: {
   r: FilterLocation;
   freshEyes: boolean;
   showFreshPill: boolean;
+  selectedMonths: number[];
 }) {
-  // Witnessing-change cards do not lift on hover.
   const lift = r.state !== "change";
+  const whyLine = buildWhyLine(r, selectedMonths);
+  const confidenceVariant = confidenceFromDays(r.lastSurveyDays);
+
   return (
     <Link
       href={`/locations/${r.slug}`}
-      className={`group block overflow-hidden rounded-2xl border border-white/10 bg-[#0a1628] text-inherit no-underline ${
+      className={`group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a1628] text-inherit no-underline ${
         lift
           ? "transition hover:-translate-y-[3px] hover:border-[#00d4ff]/30 hover:shadow-[0_16px_34px_-14px_rgba(0,0,0,0.5)]"
           : ""
       }`}
     >
       {/* Photo */}
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative overflow-hidden" style={{ aspectRatio: "16/10" }}>
         <HeroPhoto
           url={r.heroImageUrl}
           alt={`Underwater reef at ${r.name}`}
           seed={r.slug ?? r.name}
           className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
         />
+        {/* State badge overlay */}
+        <span
+          className="absolute left-2.5 top-2.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.5625rem] font-bold backdrop-blur-[6px]"
+          style={{
+            background: "rgba(8,20,34,0.6)",
+            color: STATE_SWATCH[r.state],
+            border: `1px solid ${STATE_SWATCH[r.state]}40`,
+          }}
+        >
+          <span className="h-[5px] w-[5px] shrink-0 rounded-full" style={{ background: STATE_SWATCH[r.state] }} aria-hidden />
+          {STATE_LABEL[r.state]}
+        </span>
+        {/* In-season indicator */}
+        {r.inSeason && (
+          <span
+            className="absolute right-2.5 top-2.5 rounded-full px-2 py-0.5 text-[0.5rem] font-bold backdrop-blur-[6px]"
+            style={{ background: "rgba(16,185,129,0.25)", color: "#6ee7b7", border: "1px solid rgba(16,185,129,0.35)" }}
+          >
+            In season
+          </span>
+        )}
         {showFreshPill && freshEyes && (
           <span
-            className="absolute left-2 top-2 inline-flex items-center rounded-full border px-1.5 py-[0.15rem] text-[0.55rem] font-bold backdrop-blur-[6px]"
-            style={{
-              background: "rgba(8,20,34,0.55)",
-              color: "#fcd34d",
-              borderColor: "rgba(252,211,77,0.45)",
-            }}
+            className="absolute bottom-2.5 left-2.5 inline-flex items-center rounded-full border px-1.5 py-[0.15rem] text-[0.55rem] font-bold backdrop-blur-[6px]"
+            style={{ background: "rgba(8,20,34,0.55)", color: "#fcd34d", borderColor: "rgba(252,211,77,0.45)" }}
           >
-            Fresh eyes
+            Needs fresh eyes
           </span>
         )}
       </div>
 
-      {/* Label block */}
-      <div className="p-2.5">
-        <p
-          className="mb-1 flex items-center gap-1 text-[0.575rem] font-bold uppercase tracking-[0.12em]"
-          style={{ color: STATE_SWATCH[r.state] }}
-        >
-          <span
-            className="h-[5px] w-[5px] shrink-0 rounded-full"
-            style={{ background: STATE_SWATCH[r.state] }}
-            aria-hidden
-          />
-          {STATE_LABEL[r.state]}
-        </p>
-        <p className="text-[1.0625rem] font-extrabold tracking-[-0.01em] text-[#f0f4f8] transition-colors group-hover:text-[#00d4ff]">
+      {/* Content */}
+      <div className="flex flex-1 flex-col gap-1.5 p-3">
+        {/* Name + location */}
+        <div>
+          <p className="text-[1.0625rem] font-extrabold leading-tight tracking-[-0.01em] text-[#f0f4f8] transition-colors group-hover:text-[#00d4ff]">
+            {r.name}
+          </p>
+          <p className="mt-0.5 text-[0.6875rem] text-[#8b9db8]">
+            {r.country}
+            {r.region ? <span className="text-[#8b9db8]/50"> · {r.region}</span> : null}
+          </p>
+        </div>
 
-          {r.name}
-        </p>
-        <p className="mt-0.5 line-clamp-1 text-xs text-[#8b9db8]">
-          {r.country} <span className="text-[#8b9db8]/50" aria-hidden>·</span> {r.region}
-        </p>
+        {/* Why line — editorial reason */}
+        {whyLine && (
+          <p className="line-clamp-2 text-[0.6875rem] leading-relaxed text-[#aebcd0]">
+            {whyLine}
+          </p>
+        )}
+
+        {/* Tags row — top 2 animal tags */}
+        {r.animalTags.length > 0 && (
+          <div className="flex flex-wrap gap-1">
+            {r.animalTags.slice(0, 2).map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-white/10 px-1.5 py-px text-[0.5625rem] font-semibold text-[#8b9db8]"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Footer: skill + data confidence */}
+        <div className="mt-auto flex items-center justify-between pt-1">
+          <span className="text-[0.5625rem] font-semibold uppercase tracking-[0.08em] text-[#8b9db8]">
+            {r.skill}
+          </span>
+          <DataConfidenceBadge variant={confidenceVariant} />
+        </div>
+
+        {/* CTA */}
+        <div
+          className="mt-1 flex items-center justify-between rounded-lg border border-[#00d4ff]/20 bg-[#00d4ff]/8 px-3 py-2 text-[0.75rem] font-semibold text-[#00d4ff] transition group-hover:border-[#00d4ff]/40 group-hover:bg-[#00d4ff]/15"
+        >
+          View site
+          <span aria-hidden className="text-sm">→</span>
+        </div>
       </div>
     </Link>
   );
@@ -350,7 +436,7 @@ export function AtlasStage({
   );
 
   const toggle = (
-    facet: "condition" | "months" | "skill" | "region" | "animals",
+    facet: "condition" | "months" | "skill" | "region" | "animals" | "diveTypes" | "current",
     value: string | number,
   ) => {
     setFilters((prev) => {
@@ -460,6 +546,8 @@ export function AtlasStage({
     filters.animals.length +
     filters.region.length +
     filters.skill.length +
+    filters.diveTypes.length +
+    filters.current.length +
     (filters.condition.length !== STATE_VALUES.length ? 1 : 0) +
     (filters.freshOnly ? 1 : 0);
 
@@ -469,6 +557,7 @@ export function AtlasStage({
       r={r}
       freshEyes={freshEyes(r)}
       showFreshPill={filters.freshOnly}
+      selectedMonths={selectedMonths}
     />
   );
 
@@ -557,6 +646,44 @@ export function AtlasStage({
           {CERT_OPTIONS.map((s) => (
             <CheckRow key={s} on={filters.skill.includes(s)} onClick={() => toggle("skill", s)}>
               {s}
+            </CheckRow>
+          ))}
+        </div>
+      </FilterSection>
+
+      {/* Dive type */}
+      <FilterSection title="Dive type" defaultOpen={false}>
+        <div className="flex flex-wrap gap-1.5">
+          {DIVE_TYPE_OPTIONS.map((o) => {
+            const on = filters.diveTypes.includes(o.value);
+            return (
+              <button
+                key={o.value}
+                type="button"
+                aria-pressed={on}
+                onClick={() => toggle("diveTypes", o.value)}
+                className={`rounded-full border px-2.5 py-1 text-xs font-semibold transition ${
+                  on
+                    ? "border-[#00d4ff] bg-[rgba(0,212,255,0.12)] text-[#00d4ff]"
+                    : "border-white/10 bg-white/5 text-[#8b9db8] hover:border-white/20"
+                }`}
+              >
+                {o.label}
+              </button>
+            );
+          })}
+        </div>
+      </FilterSection>
+
+      {/* Current strength */}
+      <FilterSection title="Current" defaultOpen={false}>
+        <div className="flex flex-col gap-0.5">
+          {CURRENT_OPTIONS.map((o) => (
+            <CheckRow key={o.value} on={filters.current.includes(o.value)} onClick={() => toggle("current", o.value)}>
+              <span className="flex flex-col">
+                <span>{o.label}</span>
+                <span className="text-[0.7rem] text-[#8b9db8]">{o.hint}</span>
+              </span>
             </CheckRow>
           ))}
         </div>

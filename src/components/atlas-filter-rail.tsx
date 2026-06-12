@@ -18,6 +18,8 @@ export type FilterLocation = ReefLocationCardData & {
   lng: number;
   countryCode: string;
   animalTags: string[];
+  diveTypeTags: string[];
+  maxCurrentStrength: "none" | "mild" | "moderate" | "strong";
 };
 
 export type SortKey = "season" | "oldest" | "heat" | "name";
@@ -29,6 +31,8 @@ export type Filters = {
   region: string[];
   heat: string[];
   animals: string[];
+  diveTypes: string[];
+  current: string[];
   freshOnly: boolean;
   sort: SortKey;
 };
@@ -42,6 +46,26 @@ export const STATE_VALUES = ["thriving", "pressure", "change"];
 // survived the data-coverage pass appear here.
 export const ANIMAL_OPTIONS = WILDLIFE_TAGS;
 
+export const DIVE_TYPE_OPTIONS: { value: string; label: string }[] = [
+  { value: "coral", label: "Coral reef" },
+  { value: "large-pelagics", label: "Pelagics" },
+  { value: "wrecks", label: "Wrecks" },
+  { value: "geology", label: "Geology" },
+  { value: "wall", label: "Wall" },
+  { value: "drift", label: "Drift" },
+  { value: "cave", label: "Cave" },
+  { value: "macro", label: "Macro" },
+  { value: "muck", label: "Muck" },
+  { value: "night", label: "Night" },
+  { value: "blackwater", label: "Blackwater" },
+];
+
+export const CURRENT_OPTIONS: { value: string; label: string; hint: string }[] = [
+  { value: "calm", label: "Calm", hint: "Max mild current — good for beginners and photographers" },
+  { value: "moderate", label: "Moderate", hint: "Some current, manageable for most divers" },
+  { value: "strong", label: "Strong", hint: "Strong current — drift diving and advanced sites" },
+];
+
 export const DEFAULT_FILTERS: Filters = {
   condition: [...STATE_VALUES],
   months: [],
@@ -49,6 +73,8 @@ export const DEFAULT_FILTERS: Filters = {
   region: [],
   heat: [],
   animals: [],
+  diveTypes: [],
+  current: [],
   freshOnly: false,
   sort: "season",
 };
@@ -109,6 +135,8 @@ export function parseFilters(params: URLSearchParams): Filters {
   const r    = params.get("r");
   const h    = params.get("h");
   const a    = params.get("a");
+  const dt   = params.get("dt");
+  const cur  = params.get("cur");
   const sort = params.get("sort") as SortKey | null;
   return {
     condition: c ? c.split(",") : [...DEFAULT_FILTERS.condition],
@@ -117,6 +145,8 @@ export function parseFilters(params: URLSearchParams): Filters {
     region:    r ? r.split(",") : [],
     heat:      h ? h.split(",") : [],
     animals:   a ? a.split(",").filter((x) => ANIMAL_OPTIONS.includes(x)) : [],
+    diveTypes: dt ? dt.split(",").filter((x) => DIVE_TYPE_OPTIONS.some((o) => o.value === x)) : [],
+    current:   cur ? cur.split(",").filter((x) => CURRENT_OPTIONS.some((o) => o.value === x)) : [],
     freshOnly: params.get("fresh") === "1",
     sort:      sort && SORT_OPTIONS.some((o) => o.value === sort) ? sort : "season",
   };
@@ -127,12 +157,14 @@ export function filtersToParams(f: Filters): URLSearchParams {
   if (f.condition.length !== 3 || !STATE_VALUES.every((s) => f.condition.includes(s))) {
     params.set("c", f.condition.join(","));
   }
-  if (f.months.length)   params.set("m", f.months.join(","));
-  if (f.skill.length)    params.set("s", f.skill.join(","));
-  if (f.region.length)   params.set("r", f.region.join(","));
-  if (f.heat.length)     params.set("h", f.heat.join(","));
-  if (f.animals.length)  params.set("a", f.animals.join(","));
-  if (f.freshOnly)       params.set("fresh", "1");
+  if (f.months.length)    params.set("m", f.months.join(","));
+  if (f.skill.length)     params.set("s", f.skill.join(","));
+  if (f.region.length)    params.set("r", f.region.join(","));
+  if (f.heat.length)      params.set("h", f.heat.join(","));
+  if (f.animals.length)   params.set("a", f.animals.join(","));
+  if (f.diveTypes.length) params.set("dt", f.diveTypes.join(","));
+  if (f.current.length)   params.set("cur", f.current.join(","));
+  if (f.freshOnly)        params.set("fresh", "1");
   if (f.sort !== "season") params.set("sort", f.sort);
   return params;
 }
@@ -159,6 +191,20 @@ export function applyFilters(locs: FilterLocation[], f: Filters): FilterLocation
     }
 
     if (f.animals.length && !f.animals.some((a) => r.animalTags.includes(a))) return false;
+
+    if (f.diveTypes.length && !f.diveTypes.some((dt) => r.diveTypeTags.includes(dt))) return false;
+
+    if (f.current.length) {
+      const CURRENT_RANK: Record<string, number> = { none: 0, mild: 1, moderate: 2, strong: 3 };
+      const rank = CURRENT_RANK[r.maxCurrentStrength] ?? 0;
+      const matches = f.current.some((c) => {
+        if (c === "calm") return rank <= 1;
+        if (c === "moderate") return rank === 2;
+        if (c === "strong") return rank === 3;
+        return false;
+      });
+      if (!matches) return false;
+    }
 
     if (f.freshOnly) {
       const k: FreshnessKey | "none" = r.lastSurveyDays === null
@@ -447,7 +493,7 @@ export function AtlasFilterRail({
   className?: string;
 }) {
   const toggle = (
-    facet: "condition" | "months" | "skill" | "region" | "heat" | "animals",
+    facet: "condition" | "months" | "skill" | "region" | "heat" | "animals" | "diveTypes" | "current",
     value: string | number,
   ) => {
     const arr = f[facet] as (string | number)[];
@@ -511,6 +557,36 @@ export function AtlasFilterRail({
                 selected={f.animals}
                 onToggle={(tag) => toggle("animals", tag)}
               />
+            ))}
+          </div>
+        </FacetGroup>
+
+        <FacetGroup
+          title="Dive type"
+          badge={<CountBadge count={f.diveTypes.length} />}
+        >
+          <div className="space-y-0.5">
+            {DIVE_TYPE_OPTIONS.map((o) => (
+              <CheckOpt key={o.value} on={f.diveTypes.includes(o.value)} onClick={() => toggle("diveTypes", o.value)}>
+                {o.label}
+              </CheckOpt>
+            ))}
+          </div>
+        </FacetGroup>
+
+        <FacetGroup
+          title="Current"
+          badge={<CountBadge count={f.current.length} />}
+          tooltip="Max current strength across all sites at this location."
+        >
+          <div className="space-y-0.5">
+            {CURRENT_OPTIONS.map((o) => (
+              <CheckOpt key={o.value} on={f.current.includes(o.value)} onClick={() => toggle("current", o.value)}>
+                <span className="flex flex-col">
+                  <span>{o.label}</span>
+                  <span className="text-[10px] text-[#8b9db8] leading-tight">{o.hint}</span>
+                </span>
+              </CheckOpt>
             ))}
           </div>
         </FacetGroup>

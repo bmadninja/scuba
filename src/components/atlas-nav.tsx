@@ -256,6 +256,25 @@ function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
           </Link>
         ))}
 
+        <Link
+          href="/locations"
+          className="hidden sm:inline-flex"
+          style={{
+            alignItems: "center",
+            gap: "0.3rem",
+            background: "#00d4ff",
+            color: "#030712",
+            padding: "0.4rem 1rem",
+            borderRadius: 999,
+            fontSize: "0.8125rem",
+            fontWeight: 700,
+            marginLeft: "0.375rem",
+            textDecoration: "none",
+          }}
+        >
+          Explore
+        </Link>
+
         {/* Mobile: search icon */}
         <Link
           href="/search"
@@ -529,12 +548,29 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
             </Link>
           ))}
 
+          <Link
+            href="/locations"
+            className="hidden sm:inline-flex"
+            style={{
+              alignItems: "center",
+              gap: "0.3rem",
+              background: "#00d4ff",
+              color: "#030712",
+              padding: "0.4rem 1rem",
+              borderRadius: 999,
+              fontSize: "0.8125rem",
+              fontWeight: 700,
+              marginLeft: "0.375rem",
+              textDecoration: "none",
+            }}
+          >
+            Explore
+          </Link>
+
           {/* Mobile: search icon */}
           <Link
             href="/search"
-            className={`sm:hidden flex items-center justify-center rounded-full transition-colors ${
-              "text-white/70 hover:text-white"
-            }`}
+            className={`sm:hidden flex items-center justify-center rounded-full transition-colors ${"text-white/70 hover:text-white"}`}
             style={{ padding: "0.45rem 0.5rem" }}
             aria-label="Search"
           >

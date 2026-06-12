@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getReefState, STATE_TEXT, STATE_COLOR } from "@/lib/data/reef-state";
 import { getHeadlineSightingForSite, formatLastConfirmed } from "@/lib/data/sightings";
 import { EvidenceDot } from "@/components/evidence-dot";
+import { SitesGlobe } from "@/components/sites-globe";
 import type { Location, Site, SkillLevel } from "@/lib/data/types";
 import type { ReefState } from "@/lib/data/reef-state";
 
@@ -18,6 +19,7 @@ type Props = {
 };
 
 type SortKey = "season" | "oldest-survey" | "name";
+type ViewMode = "cards" | "map";
 
 // ─── constants ────────────────────────────────────────────────────────────────
 
@@ -45,38 +47,185 @@ const MONTH_LABELS = [
 ];
 
 const CERT_OPTIONS: { value: SkillLevel; label: string }[] = [
-  { value: "open-water", label: "Open Water" },
+  { value: "never-dived", label: "Beginner" },
+  { value: "open-water", label: "Open water" },
   { value: "advanced", label: "Advanced" },
-  { value: "rescue", label: "Rescue" },
-  { value: "divemaster", label: "Divemaster+" },
-  { value: "tech", label: "Tech" },
+  { value: "tech", label: "Technical" },
 ];
 
-const DIVE_TYPE_OPTIONS = [
-  { value: "large-pelagics", label: "Large pelagics" },
-  { value: "coral", label: "Coral" },
-  { value: "macro", label: "Macro" },
-  { value: "wrecks", label: "Wrecks" },
-  { value: "geology", label: "Geology" },
-  { value: "blackwater", label: "Blackwater" },
+// ─── "What to see" grouped sub-items ─────────────────────────────────────────
+
+const WHAT_TO_SEE_GROUPS: {
+  groupLabel: string;
+  items: { value: string; label: string; keywords: string[] }[];
+}[] = [
+  {
+    groupLabel: "Sharks & rays",
+    items: [
+      { value: "hammerhead-sharks", label: "Hammerhead sharks", keywords: ["hammerhead"] },
+      { value: "whale-sharks", label: "Whale sharks", keywords: ["whale shark"] },
+      { value: "manta-rays", label: "Manta rays", keywords: ["manta"] },
+      { value: "reef-sharks", label: "Reef sharks", keywords: ["reef shark", "whitetip", "blacktip", "silvertip", "grey reef"] },
+      { value: "nurse-wobbegong", label: "Nurse & wobbegong", keywords: ["nurse shark", "wobbegong", "tawny"] },
+    ],
+  },
+  {
+    groupLabel: "Marine mammals",
+    items: [
+      { value: "whales", label: "Whales", keywords: ["humpback", "sperm whale", "blue whale", "pilot whale", "minke whale"] },
+      { value: "dolphins", label: "Dolphins", keywords: ["dolphin", "orca", "porpoise"] },
+      { value: "dugongs", label: "Dugongs", keywords: ["dugong", "manatee"] },
+    ],
+  },
+  {
+    groupLabel: "Reptiles & pelagics",
+    items: [
+      { value: "sea-turtles", label: "Sea turtles", keywords: ["turtle"] },
+      { value: "barracuda-jacks", label: "Barracuda & jacks", keywords: ["barracuda", "trevally", "jack"] },
+      { value: "tuna-billfish", label: "Tuna & billfish", keywords: ["tuna", "marlin", "wahoo", "sailfish"] },
+    ],
+  },
+  {
+    groupLabel: "Macro & critters",
+    items: [
+      { value: "nudibranchs", label: "Nudibranchs", keywords: ["nudibranch"] },
+      { value: "seahorses-pipefish", label: "Seahorses & pipefish", keywords: ["seahorse", "pipefish"] },
+      { value: "octopus-cuttlefish", label: "Octopus & cuttlefish", keywords: ["octopus", "cuttlefish", "squid"] },
+      { value: "frogfish-gobies", label: "Frogfish & gobies", keywords: ["frogfish", "goby", "pygmy"] },
+    ],
+  },
 ];
 
-const WILDLIFE_OPTIONS = [
-  { value: "sharks", label: "Sharks", keywords: ["shark"] },
-  { value: "mantas", label: "Mantas", keywords: ["manta"] },
-  { value: "turtles", label: "Turtles", keywords: ["turtle"] },
-  { value: "whales", label: "Whales", keywords: ["whale"] },
-  { value: "dolphins", label: "Dolphins", keywords: ["dolphin"] },
-  { value: "dugongs", label: "Dugongs", keywords: ["dugong"] },
-] as const;
+const SEE_ITEM_MAP = new Map(
+  WHAT_TO_SEE_GROUPS.flatMap((g) => g.items.map((i) => [i.value, i]))
+);
 
-type WildlifeValue = typeof WILDLIFE_OPTIONS[number]["value"];
-
-function siteHasWildlife(site: Site, wildlifeValue: WildlifeValue): boolean {
-  const keywords = WILDLIFE_OPTIONS.find((o) => o.value === wildlifeValue)?.keywords ?? [];
+function siteMatchesSeeItem(site: Site, value: string): boolean {
+  const item = SEE_ITEM_MAP.get(value);
+  if (!item) return false;
   return site.species.some((sp) =>
-    keywords.some((kw) => sp.commonName.toLowerCase().includes(kw)),
+    item.keywords.some((kw) => sp.commonName.toLowerCase().includes(kw))
   );
+}
+
+// ─── Region grouped sub-items ─────────────────────────────────────────────────
+
+const REGION_GROUPS: {
+  groupLabel: string;
+  bucketValue: string;
+  items: { value: string; label: string; regions: string[] }[];
+}[] = [
+  {
+    groupLabel: "Asia",
+    bucketValue: "Asia",
+    items: [
+      { value: "indonesia", label: "Indonesia", regions: ["Bali", "North Sulawesi", "West Papua", "Lesser Sunda Islands", "South Central Coast", "Southwest Coast", "North Coast"] },
+      { value: "philippines", label: "Philippines", regions: ["Cebu", "Visayas", "Mindoro"] },
+      { value: "malaysia-borneo", label: "Malaysia & Borneo", regions: ["Sabah", "Sulu Sea", "South China Sea"] },
+      { value: "thailand-andaman", label: "Thailand & Andaman", regions: ["Andaman Sea", "Gulf of Thailand", "Andaman Islands"] },
+      { value: "japan-east-asia", label: "Japan & East Asia", regions: ["Bonin Islands", "Ryukyu Islands", "Korea Strait", "Hainan"] },
+      { value: "micronesia", label: "Micronesia & Pacific", regions: ["Micronesia", "Chuuk", "Yap"] },
+      { value: "south-asia", label: "South Asia", regions: ["Lakshadweep"] },
+    ],
+  },
+  {
+    groupLabel: "Oceania",
+    bucketValue: "Oceania",
+    items: [
+      { value: "australia", label: "Australia", regions: ["Great Barrier Reef", "Western Australia", "New South Wales", "Coral Sea"] },
+      { value: "fiji-pacific", label: "Fiji & South Pacific", regions: ["Somosomo Strait", "South Pacific", "Western Pacific", "Tuamotu Archipelago"] },
+      { value: "png-solomons", label: "PNG & Solomon Islands", regions: ["New Britain", "Guadalcanal", "Espiritu Santo"] },
+      { value: "new-zealand", label: "New Zealand", regions: ["Fiordland", "Northland"] },
+    ],
+  },
+  {
+    groupLabel: "Indian Ocean",
+    bucketValue: "Indian Ocean",
+    items: [
+      { value: "maldives", label: "Maldives & Sri Lanka", regions: ["Indian Ocean"] },
+      { value: "east-africa", label: "East Africa", regions: ["East Africa", "Mozambique Channel", "KwaZulu-Natal", "Zanzibar"] },
+      { value: "red-sea-gulf", label: "Red Sea & Gulf", regions: ["Red Sea", "Gulf of Aden", "Gulf of Oman", "Arabian Sea"] },
+    ],
+  },
+  {
+    groupLabel: "Americas",
+    bucketValue: "Americas",
+    items: [
+      { value: "caribbean", label: "Caribbean", regions: ["Caribbean", "Bay Islands", "Yucatán Peninsula"] },
+      { value: "eastern-pacific-galapagos", label: "Eastern Pacific & Galápagos", regions: ["Eastern Pacific", "Galápagos", "Guanacaste"] },
+      { value: "north-south-america", label: "North & South America", regions: ["California", "Hawaii", "Florida", "East Coast", "Southeast Brazil"] },
+    ],
+  },
+  {
+    groupLabel: "Atlantic & Mediterranean",
+    bucketValue: "Atlantic & Mediterranean",
+    items: [
+      { value: "mediterranean", label: "Mediterranean", regions: ["Mediterranean", "Adriatic Sea"] },
+      { value: "atlantic-islands", label: "Atlantic Islands", regions: ["Azores", "Canary Islands"] },
+      { value: "north-atlantic", label: "North Atlantic", regions: ["Atlantic Ocean", "Orkney"] },
+    ],
+  },
+];
+
+const SUB_REGION_MAP = new Map(
+  REGION_GROUPS.flatMap((g) => g.items.map((i) => [i.value, i.regions]))
+);
+
+const BROAD_REGION_VALUES = new Set(REGION_GROUPS.map((g) => g.bucketValue));
+
+const REGION_BUCKET: Record<string, string> = {
+  "Andaman Islands": "Asia", "Andaman Sea": "Asia", "Bali": "Asia",
+  "Bonin Islands": "Asia", "Cebu": "Asia", "Chuuk": "Asia",
+  "Gulf of Thailand": "Asia", "Hainan": "Asia", "Korea Strait": "Asia",
+  "Lakshadweep": "Asia", "Lesser Sunda Islands": "Asia", "Micronesia": "Asia",
+  "Mindoro": "Asia", "North Sulawesi": "Asia", "Ryukyu Islands": "Asia",
+  "Sabah": "Asia", "South China Sea": "Asia", "South Central Coast": "Asia",
+  "Southwest Coast": "Asia", "Sulu Sea": "Asia", "Visayas": "Asia",
+  "West Papua": "Asia", "Yap": "Asia", "North Coast": "Asia",
+  "Coral Sea": "Oceania", "Espiritu Santo": "Oceania", "Fiordland": "Oceania",
+  "Great Barrier Reef": "Oceania", "Guadalcanal": "Oceania", "New Britain": "Oceania",
+  "New South Wales": "Oceania", "Northland": "Oceania", "Somosomo Strait": "Oceania",
+  "South Pacific": "Oceania", "Tuamotu Archipelago": "Oceania",
+  "Western Australia": "Oceania", "Western Pacific": "Oceania",
+  "Arabian Sea": "Indian Ocean", "East Africa": "Indian Ocean",
+  "Gulf of Aden": "Indian Ocean", "Gulf of Oman": "Indian Ocean",
+  "Indian Ocean": "Indian Ocean", "KwaZulu-Natal": "Indian Ocean",
+  "Mozambique Channel": "Indian Ocean", "Red Sea": "Indian Ocean",
+  "Zanzibar": "Indian Ocean",
+  "Bay Islands": "Americas", "California": "Americas", "Caribbean": "Americas",
+  "East Coast": "Americas", "Eastern Pacific": "Americas", "Florida": "Americas",
+  "Galápagos": "Americas", "Guanacaste": "Americas", "Hawaii": "Americas",
+  "Southeast Brazil": "Americas", "Yucatán Peninsula": "Americas",
+  "Adriatic Sea": "Atlantic & Mediterranean", "Atlantic Ocean": "Atlantic & Mediterranean",
+  "Azores": "Atlantic & Mediterranean", "Canary Islands": "Atlantic & Mediterranean",
+  "Mediterranean": "Atlantic & Mediterranean", "Orkney": "Atlantic & Mediterranean",
+};
+
+function getRegionBucket(location: { region: string } | null | undefined): string {
+  if (!location) return "Other";
+  return REGION_BUCKET[location.region] ?? "Other";
+}
+
+function regionFilterMatches(filterValue: string, location: Location | null | undefined): boolean {
+  if (!location) return false;
+  if (BROAD_REGION_VALUES.has(filterValue)) {
+    return getRegionBucket(location) === filterValue;
+  }
+  const regions = SUB_REGION_MAP.get(filterValue);
+  return regions?.includes(location.region) ?? false;
+}
+
+function getRegionLabel(value: string): string {
+  if (BROAD_REGION_VALUES.has(value)) return value;
+  for (const g of REGION_GROUPS) {
+    const item = g.items.find((i) => i.value === value);
+    if (item) return item.label;
+  }
+  return value;
+}
+
+function getSeeLabel(value: string): string {
+  return SEE_ITEM_MAP.get(value)?.label ?? value;
 }
 
 /** Reef state config — ordered as in the mockup strip */
@@ -116,30 +265,13 @@ const REEF_STATE_BADGE: Record<ReefState, { bg: string; color: string; border: s
   },
 };
 
-/** Active filter summary bar pill styles (dark) */
-const REEF_STATE_SUMMARY_PILL: Record<
-  ReefState,
-  { bg: string; color: string; border: string; dot: string }
-> = {
-  thriving: {
-    bg: "rgba(16,185,129,0.15)",
-    color: "#6ee7b7",
-    border: "1px solid rgba(16,185,129,0.22)",
-    dot: "#10b981",
-  },
-  pressure: {
-    bg: "rgba(245,158,11,0.14)",
-    color: "#fbbf24",
-    border: "1px solid rgba(245,158,11,0.28)",
-    dot: "#f59e0b",
-  },
-  change: {
-    bg: "rgba(244,63,94,0.14)",
-    color: "#fca5a5",
-    border: "1px solid rgba(244,63,94,0.2)",
-    dot: "#f43f5e",
-  },
-};
+// ─── URL param helpers ────────────────────────────────────────────────────────
+
+function getMultiParam(params: ReturnType<typeof useSearchParams>, key: string): string[] {
+  const val = params.get(key);
+  if (!val) return [];
+  return val.split(",").filter(Boolean);
+}
 
 // ─── main component ───────────────────────────────────────────────────────────
 
@@ -149,14 +281,16 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
 
   // ── read params ──────────────────────────────────────────────────────────────
   const query = params.get("q") ?? "";
-  const reefState = (params.get("reef") as ReefState | null) ?? null;
-  const certFilter = (params.get("cert") as SkillLevel | null) ?? null;
-  const diveTypeFilter = params.get("type") ?? null;
-  const wildlifeFilter = (params.get("wildlife") as WildlifeValue | null) ?? null;
-  const monthFilter = params.get("month") ? Number(params.get("month")) : null;
+  const reefStates = getMultiParam(params, "reef") as ReefState[];
+  const certFilters = getMultiParam(params, "cert") as SkillLevel[];
+  const seeFilters = getMultiParam(params, "see");
+  const regionFilters = getMultiParam(params, "region");
+  const freshFilter = params.get("fresh") === "1";
+  const monthFilters = getMultiParam(params, "month").map(Number).filter((n) => n >= 1 && n <= 12);
   const sortKey = (params.get("sort") as SortKey | null) ?? "season";
+  const viewMode = (params.get("view") as ViewMode | null) ?? "cards";
 
-  // ── helpers ──────────────────────────────────────────────────────────────────
+  // ── URL mutators ─────────────────────────────────────────────────────────────
   const setParam = useCallback(
     (key: string, value: string | null) => {
       const next = new URLSearchParams(params.toString());
@@ -168,7 +302,23 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
     [params, router],
   );
 
-  const clearAll = () => router.replace("/sites", { scroll: false });
+  const toggleMultiParam = useCallback(
+    (key: string, value: string) => {
+      const next = new URLSearchParams(params.toString());
+      const current = (next.get(key) ?? "").split(",").filter(Boolean);
+      const idx = current.indexOf(value);
+      if (idx >= 0) current.splice(idx, 1);
+      else current.push(value);
+      if (current.length === 0) next.delete(key);
+      else next.set(key, current.join(","));
+      const qs = next.toString();
+      router.replace(qs ? `/sites?${qs}` : "/sites", { scroll: false });
+    },
+    [params, router],
+  );
+
+  const clearAll = () =>
+    router.replace(viewMode === "map" ? "/sites?view=map" : "/sites", { scroll: false });
 
   // ── reef state cache (per-site, keyed by locationId) ─────────────────────────
   const reefStateByLocationId = useMemo(() => {
@@ -185,11 +335,22 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     let result = sites.filter((s) => {
-      if (reefState && reefStateByLocationId[s.locationId] !== reefState) return false;
-      if (certFilter && SKILL_RANK[s.skillLevel] > SKILL_RANK[certFilter]) return false;
-      if (diveTypeFilter && !s.diveTypes.includes(diveTypeFilter as never)) return false;
-      if (wildlifeFilter && !siteHasWildlife(s, wildlifeFilter)) return false;
-      if (monthFilter && !s.bestMonths.includes(monthFilter)) return false;
+      // reef state — OR logic
+      if (reefStates.length > 0 && !reefStates.includes(reefStateByLocationId[s.locationId])) return false;
+      // cert — show sites accessible to the highest selected cert level
+      if (certFilters.length > 0) {
+        const maxRank = Math.max(...certFilters.map((c) => SKILL_RANK[c] ?? 0));
+        if (SKILL_RANK[s.skillLevel] > maxRank) return false;
+      }
+      // what to see — OR logic
+      if (seeFilters.length > 0 && !seeFilters.some((f) => siteMatchesSeeItem(s, f))) return false;
+      // region — OR logic
+      if (regionFilters.length > 0 && !regionFilters.some((f) => regionFilterMatches(f, locationsById[s.locationId]))) return false;
+      // fresh eyes
+      if (freshFilter && getHeadlineSightingForSite(s.id) !== null) return false;
+      // months — OR logic (in-season for any selected month)
+      if (monthFilters.length > 0 && !monthFilters.some((m) => s.bestMonths.includes(m))) return false;
+      // text search
       if (q) {
         const hay = [
           s.name,
@@ -213,7 +374,6 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
     } else if (sortKey === "oldest-survey") {
       result = [...result].sort((a, b) => b.editorialRank - a.editorialRank);
     } else {
-      // "season" — in-season first, then editorial rank
       result = [...result].sort((a, b) => {
         const aIn = a.bestMonths.includes(currentMonth) ? 1 : 0;
         const bIn = b.bestMonths.includes(currentMonth) ? 1 : 0;
@@ -223,15 +383,15 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
     }
 
     return result;
-  }, [sites, locationsById, query, reefState, certFilter, diveTypeFilter, wildlifeFilter, monthFilter, sortKey, currentMonth, reefStateByLocationId]);
+  }, [sites, locationsById, query, reefStates, certFilters, seeFilters, regionFilters, freshFilter, monthFilters, sortKey, currentMonth, reefStateByLocationId]);
 
-  // ── active filter summary ─────────────────────────────────────────────────────
   const hasActiveFilter =
-    reefState !== null ||
-    certFilter !== null ||
-    diveTypeFilter !== null ||
-    wildlifeFilter !== null ||
-    monthFilter !== null ||
+    reefStates.length > 0 ||
+    certFilters.length > 0 ||
+    seeFilters.length > 0 ||
+    regionFilters.length > 0 ||
+    freshFilter ||
+    monthFilters.length > 0 ||
     query !== "";
 
   return (
@@ -277,7 +437,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             Every curated site — filtered by what you want to see, not what&apos;s easiest to sell.
           </p>
 
-          {/* Search — pill dark glass */}
+          {/* Search */}
           <div style={{ position: "relative", maxWidth: 480 }}>
             <svg
               style={{
@@ -341,15 +501,14 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             flexWrap: "wrap",
           }}
         >
-          {/* Reef state chips */}
+          {/* Reef state chips — multi-select pills */}
           {REEF_STATES.map(({ value, label }) => {
-            const isActive = reefState === value;
-            const dotColor = isActive ? STATE_COLOR[value] : "#8b9db8";
+            const isActive = reefStates.includes(value);
             return (
               <button
                 key={value}
                 type="button"
-                onClick={() => setParam("reef", isActive ? null : value)}
+                onClick={() => toggleMultiParam("reef", value)}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -372,7 +531,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                     width: 6,
                     height: 6,
                     borderRadius: "50%",
-                    background: dotColor,
+                    background: isActive ? STATE_COLOR[value] : "#8b9db8",
                     display: "inline-block",
                     flexShrink: 0,
                   }}
@@ -382,174 +541,123 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             );
           })}
 
-          {/* Cert dropdown chip */}
-          <FilterDropdownChip
-            label="Certification"
-            active={certFilter !== null}
-            onClear={() => setParam("cert", null)}
-          >
-            {CERT_OPTIONS.map((o) => (
-              <button
-                key={o.value}
-                type="button"
-                onClick={() => setParam("cert", certFilter === o.value ? null : o.value)}
-                className={certFilter === o.value ? "active" : ""}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  textAlign: "left",
-                  padding: "0.45rem 0.875rem",
-                  fontSize: "0.8125rem",
-                  fontFamily: "inherit",
-                  background: certFilter === o.value ? "rgba(0,212,255,0.12)" : "transparent",
-                  color: certFilter === o.value ? "#00d4ff" : "#f0f4f8",
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "0.375rem",
-                }}
-              >
-                {o.label}
-              </button>
+          {/* What to see — grouped dropdown */}
+          <FilterDropdown label="What to see" selectedCount={seeFilters.length}>
+            {WHAT_TO_SEE_GROUPS.map((group) => (
+              <ExpandableGroup
+                key={group.groupLabel}
+                groupLabel={group.groupLabel}
+                items={group.items}
+                selectedValues={seeFilters}
+                onToggle={(v) => toggleMultiParam("see", v)}
+              />
             ))}
-          </FilterDropdownChip>
+          </FilterDropdown>
 
-          {/* Dive type dropdown chip */}
-          <FilterDropdownChip
-            label="Dive type"
-            active={diveTypeFilter !== null}
-            onClear={() => setParam("type", null)}
-          >
-            {DIVE_TYPE_OPTIONS.map((o) => (
-              <button
-                key={o.value}
-                type="button"
-                onClick={() => setParam("type", diveTypeFilter === o.value ? null : o.value)}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  textAlign: "left",
-                  padding: "0.45rem 0.875rem",
-                  fontSize: "0.8125rem",
-                  fontFamily: "inherit",
-                  background: diveTypeFilter === o.value ? "rgba(0,212,255,0.12)" : "transparent",
-                  color: diveTypeFilter === o.value ? "#00d4ff" : "#f0f4f8",
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "0.375rem",
-                }}
-              >
-                {o.label}
-              </button>
+          {/* Region — grouped dropdown */}
+          <FilterDropdown label="Region" selectedCount={regionFilters.length}>
+            {REGION_GROUPS.map((group) => (
+              <ExpandableGroup
+                key={group.groupLabel}
+                groupLabel={group.groupLabel}
+                items={group.items}
+                selectedValues={regionFilters}
+                onToggle={(v) => toggleMultiParam("region", v)}
+              />
             ))}
-          </FilterDropdownChip>
+          </FilterDropdown>
 
-          {/* Wildlife dropdown chip */}
-          <FilterDropdownChip
-            label="Wildlife"
-            active={wildlifeFilter !== null}
-            onClear={() => setParam("wildlife", null)}
-          >
-            {WILDLIFE_OPTIONS.map((o) => (
-              <button
-                key={o.value}
-                type="button"
-                onClick={() => setParam("wildlife", wildlifeFilter === o.value ? null : o.value)}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  textAlign: "left",
-                  padding: "0.45rem 0.875rem",
-                  fontSize: "0.8125rem",
-                  fontFamily: "inherit",
-                  background: wildlifeFilter === o.value ? "rgba(0,212,255,0.12)" : "transparent",
-                  color: wildlifeFilter === o.value ? "#00d4ff" : "#f0f4f8",
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "0.375rem",
-                }}
-              >
-                {o.label}
-              </button>
-            ))}
-          </FilterDropdownChip>
+          {/* When — multi-select months */}
+          <FilterDropdown label="When" selectedCount={monthFilters.length}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.125rem", padding: "0.125rem" }}>
+              {MONTH_LABELS.map((lbl, i) => {
+                const m = i + 1;
+                const isSelected = monthFilters.includes(m);
+                const isCurrent = m === currentMonth;
+                return (
+                  <button
+                    key={lbl}
+                    type="button"
+                    onClick={() => toggleMultiParam("month", String(m))}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.5rem",
+                      padding: "0.4rem 0.75rem",
+                      fontSize: "0.8125rem",
+                      fontFamily: "inherit",
+                      background: isSelected ? "rgba(0,212,255,0.12)" : "transparent",
+                      color: isSelected ? "#00d4ff" : isCurrent ? "#a8d4ff" : "#f0f4f8",
+                      fontWeight: isCurrent ? 600 : 400,
+                      border: "none",
+                      cursor: "pointer",
+                      borderRadius: "0.375rem",
+                      textAlign: "left",
+                    }}
+                  >
+                    <CheckBox checked={isSelected} />
+                    {lbl}
+                    {isCurrent && <span style={{ fontSize: "0.5625rem", color: "#00d4ff", marginLeft: "auto" }}>now</span>}
+                  </button>
+                );
+              })}
+            </div>
+          </FilterDropdown>
 
-          {/* Month dropdown chip */}
-          <FilterDropdownChip
-            label="Month"
-            active={monthFilter !== null}
-            onClear={() => setParam("month", null)}
-          >
-            {MONTH_LABELS.map((lbl, i) => {
-              const m = i + 1;
+          {/* Certification — multi-select */}
+          <FilterDropdown label="Certification" selectedCount={certFilters.length}>
+            {CERT_OPTIONS.map((o) => {
+              const isSelected = certFilters.includes(o.value);
               return (
                 <button
-                  key={lbl}
+                  key={o.value}
                   type="button"
-                  onClick={() => setParam("month", monthFilter === m ? null : String(m))}
+                  onClick={() => toggleMultiParam("cert", o.value)}
                   style={{
-                    display: "block",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
                     width: "100%",
                     textAlign: "left",
                     padding: "0.45rem 0.875rem",
                     fontSize: "0.8125rem",
                     fontFamily: "inherit",
-                    background: monthFilter === m ? "rgba(0,212,255,0.12)" : "transparent",
-                    color: monthFilter === m ? "#00d4ff" : m === currentMonth ? "#00d4ff" : "#f0f4f8",
-                    fontWeight: m === currentMonth ? 600 : 400,
+                    background: isSelected ? "rgba(0,212,255,0.12)" : "transparent",
+                    color: isSelected ? "#00d4ff" : "#f0f4f8",
                     border: "none",
                     cursor: "pointer",
                     borderRadius: "0.375rem",
                   }}
                 >
-                  {lbl}{m === currentMonth ? " ·" : ""}
+                  <CheckBox checked={isSelected} />
+                  {o.label}
                 </button>
               );
             })}
-          </FilterDropdownChip>
+          </FilterDropdown>
 
-          {/* Sort */}
-          <div
+          {/* Needs fresh eyes chip */}
+          <button
+            type="button"
+            onClick={() => setParam("fresh", freshFilter ? null : "1")}
             style={{
-              marginLeft: "auto",
-              display: "flex",
+              display: "inline-flex",
               alignItems: "center",
-              gap: "0.5rem",
+              gap: "0.35rem",
+              padding: "0.45rem 0.9375rem",
+              borderRadius: 999,
+              border: `1px solid ${freshFilter ? "#00d4ff" : "rgba(255,255,255,0.1)"}`,
+              background: freshFilter ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)",
               fontSize: "0.8125rem",
-              color: "#8b9db8",
-            }}
-          >
-            Sort{" "}
-            <select
-              value={sortKey}
-              onChange={(e) => setParam("sort", e.target.value === "season" ? null : e.target.value)}
-              style={{
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "0.5rem",
-                padding: "0.4rem 0.75rem",
-                fontSize: "0.8125rem",
-                fontFamily: "inherit",
-                background: "#0a1628",
-                color: "#f0f4f8",
-                cursor: "pointer",
-              }}
-            >
-              <option value="season">In season now</option>
-              <option value="oldest-survey">Oldest surveys</option>
-              <option value="name">Name</option>
-            </select>
-          </div>
-
-          {/* Result count */}
-          <span
-            style={{
-              fontSize: "0.8125rem",
-              color: "#8b9db8",
+              fontWeight: freshFilter ? 600 : 500,
+              color: freshFilter ? "#00d4ff" : "#8b9db8",
+              cursor: "pointer",
+              fontFamily: "inherit",
               whiteSpace: "nowrap",
-              paddingLeft: "0.5rem",
             }}
           >
-            <strong style={{ color: "#f0f4f8" }}>{filtered.length}</strong> sites
-          </span>
+            Needs fresh eyes
+          </button>
         </div>
       </div>
 
@@ -560,7 +668,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             maxWidth: "100%",
             borderBottom: "1px solid rgba(255,255,255,0.1)",
             background: "#0a1628",
-            padding: "0.875rem 3rem",
+            padding: "0.625rem 3rem",
           }}
         >
           <div
@@ -569,96 +677,131 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
               margin: "0 auto",
               display: "flex",
               alignItems: "center",
-              gap: "0.75rem",
+              gap: "0.5rem",
               flexWrap: "wrap",
             }}
           >
-            <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>Showing</span>
+            <span style={{ fontSize: "0.75rem", color: "#8b9db8" }}>{filtered.length} sites</span>
 
-            {/* Reef state pill */}
-            {reefState && (() => {
-              const s = REEF_STATE_SUMMARY_PILL[reefState];
-              return (
-                <span
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.35rem",
-                    padding: "0.3rem 0.75rem",
-                    borderRadius: 999,
-                    background: s.bg,
-                    border: s.border,
-                    fontSize: "0.8125rem",
-                    fontWeight: 600,
-                    color: s.color,
-                  }}
-                >
-                  <span
-                    style={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: "50%",
-                      background: s.dot,
-                      display: "inline-block",
-                    }}
-                  />
-                  {STATE_TEXT[reefState]}
-                </span>
-              );
-            })()}
-
-            {/* Other active filters */}
-            {certFilter && (
-              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
-                {CERT_OPTIONS.find((o) => o.value === certFilter)?.label}
-              </span>
-            )}
-            {diveTypeFilter && (
-              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
-                {DIVE_TYPE_OPTIONS.find((o) => o.value === diveTypeFilter)?.label}
-              </span>
-            )}
-            {wildlifeFilter && (
-              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
-                {WILDLIFE_OPTIONS.find((o) => o.value === wildlifeFilter)?.label}
-              </span>
-            )}
-            {monthFilter && (
-              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
-                {MONTH_LABELS[monthFilter - 1]}
-              </span>
+            {reefStates.map((rs) => (
+              <ActivePill key={rs} label={STATE_TEXT[rs]} onRemove={() => toggleMultiParam("reef", rs)} />
+            ))}
+            {seeFilters.map((f) => (
+              <ActivePill key={f} label={getSeeLabel(f)} onRemove={() => toggleMultiParam("see", f)} />
+            ))}
+            {regionFilters.map((f) => (
+              <ActivePill key={f} label={getRegionLabel(f)} onRemove={() => toggleMultiParam("region", f)} />
+            ))}
+            {monthFilters.map((m) => (
+              <ActivePill key={m} label={MONTH_LABELS[m - 1]} onRemove={() => toggleMultiParam("month", String(m))} />
+            ))}
+            {certFilters.map((c) => (
+              <ActivePill key={c} label={CERT_OPTIONS.find((o) => o.value === c)?.label ?? c} onRemove={() => toggleMultiParam("cert", c)} />
+            ))}
+            {freshFilter && (
+              <ActivePill label="Fresh eyes" onRemove={() => setParam("fresh", null)} />
             )}
             {query && (
-              <span style={{ fontSize: "0.8125rem", color: "#8b9db8" }}>
-                &ldquo;{query}&rdquo;
-              </span>
+              <ActivePill label={`"${query}"`} onRemove={() => setParam("q", null)} />
             )}
-
-            <span style={{ fontSize: "0.8125rem", color: "#64748b" }}>
-              only · {filtered.length} sites
-            </span>
 
             <button
               type="button"
               onClick={clearAll}
               style={{
                 marginLeft: "auto",
-                fontSize: "0.8125rem",
-                color: "#8b9db8",
+                fontSize: "0.75rem",
+                color: "#64748b",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
                 fontFamily: "inherit",
               }}
             >
-              Clear filter ×
+              Clear all
             </button>
           </div>
         </div>
       )}
 
+      {/* ── Grid header: count + sort + view toggle ─────────────────────────── */}
+      <div style={{ maxWidth: 1320, margin: "0 auto" }} className="px-5 pt-7 sm:px-8 lg:px-12">
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+          <span style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#f0f4f8" }}>
+            {filtered.length} reefs
+          </span>
+          <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem", color: "#8b9db8" }}>
+              Sort
+              <select
+                value={sortKey}
+                onChange={(e) => setParam("sort", e.target.value === "season" ? null : e.target.value)}
+                style={{
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "0.5rem",
+                  padding: "0.35rem 0.65rem",
+                  fontSize: "0.8125rem",
+                  fontFamily: "inherit",
+                  background: "#0a1628",
+                  color: "#f0f4f8",
+                  cursor: "pointer",
+                }}
+              >
+                <option value="season">Best season</option>
+                <option value="oldest-survey">Oldest surveys</option>
+                <option value="name">Name</option>
+              </select>
+            </div>
+            <div
+              style={{
+                display: "inline-flex",
+                border: "1px solid rgba(255,255,255,0.12)",
+                borderRadius: "0.5rem",
+                overflow: "hidden",
+              }}
+            >
+              {(["cards", "map"] as ViewMode[]).map((v) => (
+                <button
+                  key={v}
+                  type="button"
+                  onClick={() => setParam("view", v === "cards" ? null : v)}
+                  style={{
+                    padding: "0.35rem 0.875rem",
+                    fontSize: "0.8125rem",
+                    fontWeight: 600,
+                    fontFamily: "inherit",
+                    cursor: "pointer",
+                    border: "none",
+                    background: viewMode === v ? "#00d4ff" : "rgba(255,255,255,0.05)",
+                    color: viewMode === v ? "#030712" : "#8b9db8",
+                    textTransform: "capitalize",
+                    transition: "background 0.15s, color 0.15s",
+                  }}
+                >
+                  {v.charAt(0).toUpperCase() + v.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Map / Globe view ─────────────────────────────────────────────────── */}
+      {viewMode === "map" && (
+        <div style={{ maxWidth: 1320, margin: "0 auto" }} className="px-5 sm:px-8 lg:px-12">
+          <SitesGlobe
+            sites={filtered}
+            locationsById={locationsById}
+            reefStateByLocationId={reefStateByLocationId}
+          />
+        </div>
+      )}
+
       {/* ── Card grid ────────────────────────────────────────────────────────── */}
-      <div style={{ maxWidth: 1320, margin: "0 auto" }} className="px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+      <div
+        style={{ maxWidth: 1320, margin: "0 auto", display: viewMode === "cards" ? undefined : "none" }}
+        className="px-5 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-8"
+      >
         {filtered.length === 0 ? (
           <div
             style={{
@@ -683,7 +826,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                 key={site.id}
                 site={site}
                 location={locationsById[site.locationId] ?? null}
-                inSeason={site.bestMonths.includes(monthFilter ?? currentMonth)}
+                inSeason={site.bestMonths.includes(monthFilters.length > 0 ? monthFilters[0] : currentMonth)}
                 reefState={reefStateByLocationId[site.locationId]}
                 gradientIndex={idx % OCEAN_GRADIENTS.length}
                 currentMonth={currentMonth}
@@ -722,17 +865,13 @@ function SiteCard({
   const skillLabel =
     SKILL_LABEL[site.skillLevel] ?? site.skillLevel.replace("-", " ") + "+";
 
-  // depth chip
   const depthChip = `${site.depthRange.min}–${site.depthRange.max} m`;
 
-  // primary dive type chip
   const diveTypeChip = site.diveTypes
     .slice(0, 1)
     .map((t) => t.replace("-", " "))
     .join("");
 
-  // current strength from best current month conditions, fallback none.
-  // currentMonth comes from the server so SSR and client agree (no hydration drift).
   const currentStrength =
     site.conditionsByMonth.find((c) => c.month === currentMonth)
       ?.currentStrength ??
@@ -741,7 +880,6 @@ function SiteCard({
 
   const gradient = OCEAN_GRADIENTS[gradientIndex];
 
-  // Sighting dot color
   const sightDotColor =
     sighting?.confidence === "high"
       ? "#10b981"
@@ -769,7 +907,6 @@ function SiteCard({
     >
       {/* Image area */}
       <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
-        {/* Ocean gradient background */}
         <div
           style={{
             width: "100%",
@@ -779,8 +916,6 @@ function SiteCard({
           }}
           className="site-card-img"
         />
-
-        {/* Actual hero photo layered on top (objectFit cover) */}
         {site.heroImageUrl && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -797,8 +932,6 @@ function SiteCard({
             className="site-card-img"
           />
         )}
-
-        {/* Shimmer overlay */}
         <div
           aria-hidden="true"
           style={{
@@ -809,8 +942,6 @@ function SiteCard({
             pointerEvents: "none",
           }}
         />
-
-        {/* Bottom gradient scrim */}
         <div
           aria-hidden="true"
           style={{
@@ -821,8 +952,6 @@ function SiteCard({
             pointerEvents: "none",
           }}
         />
-
-        {/* Top-left badges: reef state + in season */}
         <div
           style={{
             position: "absolute",
@@ -865,8 +994,6 @@ function SiteCard({
             </span>
           )}
         </div>
-
-        {/* Bottom-right skill level badge */}
         <span
           style={{
             position: "absolute",
@@ -898,7 +1025,6 @@ function SiteCard({
           flexDirection: "column",
         }}
       >
-        {/* Location */}
         <p
           style={{
             fontSize: "0.625rem",
@@ -911,8 +1037,6 @@ function SiteCard({
         >
           {locationLabel || "—"}
         </p>
-
-        {/* Site name */}
         <h3
           style={{
             fontSize: "1.0625rem",
@@ -926,8 +1050,6 @@ function SiteCard({
         >
           {site.name}
         </h3>
-
-        {/* Description */}
         <p
           style={{
             fontFamily: "'Source Serif 4', Georgia, serif",
@@ -943,8 +1065,6 @@ function SiteCard({
         >
           {site.description}
         </p>
-
-        {/* Sighting row */}
         <div
           style={{
             display: "flex",
@@ -977,8 +1097,6 @@ function SiteCard({
             />
           )}
         </div>
-
-        {/* Chips row */}
         <div
           style={{
             display: "flex",
@@ -1037,54 +1155,93 @@ function SiteCard({
   );
 }
 
-// ─── FilterDropdownChip ───────────────────────────────────────────────────────
+// ─── FilterDropdown ───────────────────────────────────────────────────────────
 
-function FilterDropdownChip({
+function FilterDropdown({
   label,
-  active,
-  onClear,
+  selectedCount,
   children,
 }: {
   label: string;
-  active: boolean;
-  onClear: () => void;
+  selectedCount: number;
   children: React.ReactNode;
 }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    function onMouseDown(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onMouseDown);
+    return () => document.removeEventListener("mousedown", onMouseDown);
+  }, [open]);
+
+  const isActive = selectedCount > 0;
+
   return (
-    <div style={{ position: "relative", display: "inline-block" }} className="filter-dropdown-wrap">
+    <div ref={ref} style={{ position: "relative", display: "inline-block" }}>
       <button
         type="button"
+        onClick={() => setOpen((o) => !o)}
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "0.25rem",
+          gap: "0.35rem",
           padding: "0.45rem 0.9375rem",
           borderRadius: 999,
-          border: `1px solid ${active ? "#00d4ff" : "rgba(255,255,255,0.1)"}`,
-          background: active ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)",
+          border: `1px solid ${isActive || open ? "#00d4ff" : "rgba(255,255,255,0.1)"}`,
+          background: isActive || open ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)",
           fontSize: "0.8125rem",
-          fontWeight: active ? 600 : 500,
-          color: active ? "#00d4ff" : "#8b9db8",
+          fontWeight: isActive ? 600 : 500,
+          color: isActive || open ? "#00d4ff" : "#8b9db8",
           cursor: "pointer",
           fontFamily: "inherit",
           whiteSpace: "nowrap",
+          transition: "all 0.15s",
         }}
-        onClick={active ? onClear : undefined}
       >
         {label}
-        {active ? (
-          <span style={{ fontSize: "0.75rem", lineHeight: 1, opacity: 0.7 }}>×</span>
-        ) : (
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" style={{ opacity: 0.5 }}>
-            <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-          </svg>
+        {isActive && (
+          <span
+            style={{
+              fontSize: "0.625rem",
+              background: "#00d4ff",
+              color: "#030712",
+              borderRadius: 999,
+              padding: "0.1rem 0.45rem",
+              fontWeight: 700,
+              lineHeight: 1.4,
+            }}
+          >
+            {selectedCount}
+          </span>
         )}
+        <svg
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="none"
+          style={{
+            opacity: 0.5,
+            transform: open ? "rotate(180deg)" : "none",
+            transition: "transform 0.15s",
+          }}
+        >
+          <path
+            d="M2 3.5L5 6.5L8 3.5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </svg>
       </button>
 
-      {/* Dropdown — only when not active (active means a filter is set; click clears it) */}
-      {!active && (
+      {open && (
         <div
-          className="filter-dropdown-menu"
           style={{
             position: "absolute",
             top: "calc(100% + 0.375rem)",
@@ -1093,15 +1250,207 @@ function FilterDropdownChip({
             background: "#0a1628",
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: "0.625rem",
-            boxShadow: "0 4px 16px -4px rgba(0,0,0,0.4)",
+            boxShadow: "0 4px 24px -4px rgba(0,0,0,0.5)",
             padding: "0.375rem",
-            minWidth: 180,
-            display: "none",
+            minWidth: 220,
+            maxHeight: 420,
+            overflowY: "auto",
           }}
         >
           {children}
         </div>
       )}
     </div>
+  );
+}
+
+// ─── ExpandableGroup ──────────────────────────────────────────────────────────
+
+function ExpandableGroup({
+  groupLabel,
+  items,
+  selectedValues,
+  onToggle,
+}: {
+  groupLabel: string;
+  items: { value: string; label: string }[];
+  selectedValues: string[];
+  onToggle: (value: string) => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const selectedInGroup = items.filter((i) => selectedValues.includes(i.value)).length;
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => setExpanded((e) => !e)}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          width: "100%",
+          textAlign: "left",
+          padding: "0.45rem 0.875rem",
+          fontSize: "0.8125rem",
+          fontWeight: 600,
+          fontFamily: "inherit",
+          background: selectedInGroup > 0 ? "rgba(0,212,255,0.06)" : "transparent",
+          color: selectedInGroup > 0 ? "#00d4ff" : "#aebcd0",
+          border: "none",
+          cursor: "pointer",
+          borderRadius: "0.375rem",
+        }}
+      >
+        <svg
+          width="8"
+          height="8"
+          viewBox="0 0 8 8"
+          fill="none"
+          style={{
+            flexShrink: 0,
+            transform: expanded ? "rotate(90deg)" : "none",
+            transition: "transform 0.15s",
+          }}
+        >
+          <path
+            d="M2 1.5L5.5 4L2 6.5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        {groupLabel}
+        {selectedInGroup > 0 && (
+          <span
+            style={{
+              marginLeft: "auto",
+              fontSize: "0.625rem",
+              background: "rgba(0,212,255,0.2)",
+              color: "#00d4ff",
+              padding: "0.1rem 0.45rem",
+              borderRadius: 999,
+              fontWeight: 700,
+              lineHeight: 1.4,
+            }}
+          >
+            {selectedInGroup}
+          </span>
+        )}
+      </button>
+
+      {expanded && (
+        <div style={{ paddingBottom: "0.25rem" }}>
+          {items.map((item) => {
+            const isSelected = selectedValues.includes(item.value);
+            return (
+              <button
+                key={item.value}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggle(item.value);
+                }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  width: "100%",
+                  textAlign: "left",
+                  paddingLeft: "1.875rem",
+                  paddingRight: "0.875rem",
+                  paddingTop: "0.375rem",
+                  paddingBottom: "0.375rem",
+                  fontSize: "0.8125rem",
+                  fontFamily: "inherit",
+                  background: isSelected ? "rgba(0,212,255,0.1)" : "transparent",
+                  color: isSelected ? "#00d4ff" : "#f0f4f8",
+                  border: "none",
+                  cursor: "pointer",
+                  borderRadius: "0.375rem",
+                }}
+              >
+                <CheckBox checked={isSelected} />
+                {item.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── CheckBox ─────────────────────────────────────────────────────────────────
+
+function CheckBox({ checked }: { checked: boolean }) {
+  return (
+    <span
+      style={{
+        width: 14,
+        height: 14,
+        borderRadius: 3,
+        border: `1.5px solid ${checked ? "#00d4ff" : "rgba(255,255,255,0.25)"}`,
+        background: checked ? "#00d4ff" : "transparent",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+        transition: "background 0.1s, border-color 0.1s",
+      }}
+    >
+      {checked && (
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <path
+            d="M1 4l2 2 4-4"
+            stroke="#030712"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )}
+    </span>
+  );
+}
+
+// ─── ActivePill ───────────────────────────────────────────────────────────────
+
+function ActivePill({ label, onRemove }: { label: string; onRemove: () => void }) {
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "0.25rem",
+        padding: "0.2rem 0.5rem 0.2rem 0.625rem",
+        borderRadius: 999,
+        background: "rgba(0,212,255,0.1)",
+        border: "1px solid rgba(0,212,255,0.22)",
+        fontSize: "0.75rem",
+        color: "#00d4ff",
+        fontWeight: 500,
+      }}
+    >
+      {label}
+      <button
+        type="button"
+        onClick={onRemove}
+        style={{
+          background: "none",
+          border: "none",
+          color: "#00d4ff",
+          cursor: "pointer",
+          padding: 0,
+          lineHeight: 1,
+          fontSize: "0.875rem",
+          opacity: 0.6,
+          fontFamily: "inherit",
+        }}
+      >
+        ×
+      </button>
+    </span>
   );
 }
