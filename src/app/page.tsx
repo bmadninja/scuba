@@ -381,7 +381,7 @@ export default function Home() {
                 the rate of gain. Every reef is worth diving.
               </p>
               <Link
-                href="/sites"
+                href="/locations"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -394,7 +394,7 @@ export default function Home() {
                   borderRadius: 999,
                 }}
               >
-                Browse all 500+ sites →
+                Browse all locations →
               </Link>
             </div>
 
@@ -810,108 +810,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ══ CARIBBEAN COLLAPSE CALLOUT ════════════════════════════════ */}
-      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "1.5rem 3rem 0" }}>
-        <div
-          style={{
-            borderLeft: `3px solid ${C.chg}`,
-            padding: "1.75rem 2rem",
-            background: "rgba(251,113,133,0.04)",
-            display: "flex",
-            alignItems: "center",
-            gap: "3rem",
-            flexWrap: "wrap",
-          }}
-        >
-          <div style={{ flex: 1, minWidth: 260 }}>
-            <div
-              style={{
-                fontSize: "0.625rem",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: C.chg,
-                marginBottom: "0.625rem",
-              }}
-            >
-              Reef insight · Caribbean
-            </div>
-            <div
-              style={{
-                fontSize: "1.1875rem",
-                fontWeight: 700,
-                color: C.text,
-                lineHeight: 1.35,
-                letterSpacing: "-0.015em",
-              }}
-            >
-              14 of 19 Caribbean reefs on this atlas are Witnessing change.
-            </div>
-            <div
-              style={{
-                fontSize: "0.875rem",
-                color: C.textMid,
-                marginTop: "0.5rem",
-                lineHeight: 1.6,
-                maxWidth: 520,
-              }}
-            >
-              Jardines de la Reina, Cuba is the most intact — 38% coral cover inside a strict
-              no take marine reserve operating since 1996, the highest verified figure in the Caribbean.
-            </div>
-            <Link
-              href="/locations/cuba-jardines-de-la-reina"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.375rem",
-                fontSize: "0.8125rem",
-                fontWeight: 600,
-                color: C.thr,
-                marginTop: "0.875rem",
-                border: `1px solid ${C.thrRing}`,
-                padding: "0.4rem 0.875rem",
-                borderRadius: 999,
-              }}
-            >
-              See Jardines de la Reina →
-            </Link>
-          </div>
-          <div style={{ display: "flex", gap: "2.5rem", flexShrink: 0 }}>
-            {[
-              { n: "14",  sub: "Witnessing change", color: C.chg },
-              { n: "38%", sub: "Coral cover", color: C.thr },
-              { n: "19",  sub: "Caribbean tracked", color: C.text },
-            ].map((s) => (
-              <div key={s.sub} style={{ textAlign: "center" }}>
-                <div
-                  style={{
-                    fontSize: "2rem",
-                    fontWeight: 800,
-                    color: s.color,
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1,
-                  }}
-                >
-                  {s.n}
-                </div>
-                <div
-                  style={{
-                    fontSize: "0.5625rem",
-                    fontWeight: 600,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.1em",
-                    color: C.textMuted,
-                    marginTop: "0.25rem",
-                  }}
-                >
-                  {s.sub}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* ══ §03 CONFIRMED SIGHTINGS ══════════════════════════════════ */}
       <FadeInSection
@@ -1426,7 +1324,7 @@ export default function Home() {
               }}
             >
               <Link
-                href="/sites"
+                href="/locations"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -1440,7 +1338,7 @@ export default function Home() {
                   fontWeight: 700,
                 }}
               >
-                Explore dive sites →
+                Explore locations →
               </Link>
             </div>
           </div>

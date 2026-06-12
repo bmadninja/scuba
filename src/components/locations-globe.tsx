@@ -67,9 +67,9 @@ export function LocationsGlobe({ locations }: { locations: LocEntry[] }) {
         width={960}
         height={640}
         backgroundColor="rgba(0,0,0,0)"
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
-        atmosphereColor="#00d4ff"
-        atmosphereAltitude={0.12}
+        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+        atmosphereColor="#a8e6ff"
+        atmosphereAltitude={0.15}
         pointsData={points}
         pointLat="lat"
         pointLng="lng"

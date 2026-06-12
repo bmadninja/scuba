@@ -131,10 +131,10 @@ export default async function CertLandingPage({
       <div className="mx-auto w-full max-w-6xl px-6 py-12">
       <div className="mx-auto w-full max-w-5xl">
         <Link
-          href="/sites"
+          href="/locations"
           className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b9db8] hover:text-[#00d4ff]"
         >
-          ← All dive sites
+          ← All locations
         </Link>
         <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#f0f4f8]">
           Best dive trips for {label}
