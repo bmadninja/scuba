@@ -516,12 +516,12 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
               </DrawerSection>
               <DrawerSection title="What to see">
                 {WHAT_TO_SEE_GROUPS.map((group) => (
-                  <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={seeFilters} onToggle={(v) => toggleMultiParam("see", v)} />
+                  <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={seeFilters} onToggle={(v) => toggleMultiParam("see", v)} defaultExpanded />
                 ))}
               </DrawerSection>
               <DrawerSection title="Region">
                 {REGION_GROUPS.map((group) => (
-                  <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={regionFilters} onToggle={(v) => toggleMultiParam("region", v)} />
+                  <ExpandableGroup key={group.groupLabel} groupLabel={group.groupLabel} items={group.items} selectedValues={regionFilters} onToggle={(v) => toggleMultiParam("region", v)} defaultExpanded />
                 ))}
               </DrawerSection>
               <DrawerSection title="When">
@@ -756,8 +756,8 @@ function FilterDropdown({ label, selectedCount, children }: { label: string; sel
 
 // ─── ExpandableGroup ──────────────────────────────────────────────────────────
 
-function ExpandableGroup({ groupLabel, items, selectedValues, onToggle }: { groupLabel: string; items: { value: string; label: string }[]; selectedValues: string[]; onToggle: (value: string) => void }) {
-  const [expanded, setExpanded] = useState(false);
+function ExpandableGroup({ groupLabel, items, selectedValues, onToggle, defaultExpanded = false }: { groupLabel: string; items: { value: string; label: string }[]; selectedValues: string[]; onToggle: (value: string) => void; defaultExpanded?: boolean }) {
+  const [expanded, setExpanded] = useState(defaultExpanded);
   const selectedInGroup = items.filter((i) => selectedValues.includes(i.value)).length;
 
   return (

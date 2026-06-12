@@ -864,7 +864,7 @@ export default function Home() {
               confirmed sighting is across the entire atlas.
             </p>
             <Link
-              href="/sites/looe-key-florida-keys"
+              href="/sites/florida-keys-looe-key"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -1516,6 +1516,7 @@ export default function Home() {
         }
         @media (max-width: 640px) {
           .lp-cta-band { padding: 2rem 1.5rem !important; }
+          .lp-loc-cards { grid-template-columns: repeat(2, 1fr) !important; gap: 0.625rem !important; }
         }
       `}</style>
     </>
