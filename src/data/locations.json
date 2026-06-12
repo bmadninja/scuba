@@ -2381,6 +2381,27 @@
     "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Balaenoptera_acutorostrata_-_Minke_whale_-_Horta.jpg"
   },
   {
+    "id": "great-barrier-reef-australia",
+    "slug": "great-barrier-reef-australia",
+    "name": "Great Barrier Reef",
+    "country": "Australia",
+    "region": "Queensland",
+    "countryCode": "AU",
+    "lat": -18.286,
+    "lng": 147.7,
+    "description": "The world's largest coral reef system, stretching over 2,300km off Queensland. Back-to-back mass bleaching events in 2016, 2017, 2020, 2022, and 2024 have transformed large sections. Diving here documents what survives and where recovery is taking hold.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [],
+    "heroImageUrl": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=1600&q=80&auto=format&fit=crop"
+  },
+  {
     "id": "malmok-aruba",
     "slug": "malmok-aruba",
     "name": "Malmok",
