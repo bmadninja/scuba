@@ -14,7 +14,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -1181,7 +1182,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -1453,7 +1455,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -1731,7 +1734,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -2003,7 +2007,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -2281,7 +2286,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -2562,7 +2568,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "wrecks"
+      "wrecks",
+      "drift"
     ],
     "species": [
       {
@@ -3716,7 +3723,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -4326,7 +4334,8 @@
     "diveTypes": [
       "large-pelagics",
       "coral",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -4643,7 +4652,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -6810,7 +6820,8 @@
     "diveTypes": [
       "coral",
       "geology",
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -7327,7 +7338,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -8165,7 +8177,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -9248,7 +9261,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -9501,7 +9515,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "wrecks"
+      "wrecks",
+      "drift"
     ],
     "species": [
       {
@@ -10022,7 +10037,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -11374,7 +11390,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -11633,7 +11650,9 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave",
+      "drift"
     ],
     "species": [
       {
@@ -12184,7 +12203,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -12474,7 +12494,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -12758,7 +12779,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -13033,7 +13055,9 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave",
+      "drift"
     ],
     "species": [
       {
@@ -13306,7 +13330,9 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave",
+      "drift"
     ],
     "species": [
       {
@@ -13570,7 +13596,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -13828,7 +13855,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -14084,7 +14112,8 @@
     },
     "skillLevel": "tech",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -14335,7 +14364,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -14581,7 +14611,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -15131,7 +15162,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "coral",
-      "macro"
+      "macro",
+      "cave"
     ],
     "species": [
       {
@@ -15404,7 +15436,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -16215,7 +16248,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "wrecks",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -18579,7 +18613,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -19638,7 +19673,8 @@
     },
     "skillLevel": "open-water",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -20453,7 +20489,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -21495,7 +21532,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -22551,7 +22589,8 @@
     "diveTypes": [
       "geology",
       "coral",
-      "macro"
+      "macro",
+      "cave"
     ],
     "species": [
       {
@@ -24166,7 +24205,9 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "large-pelagics"
+      "large-pelagics",
+      "cave",
+      "drift"
     ],
     "species": [
       {
@@ -25026,7 +25067,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -26906,7 +26948,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -28013,7 +28056,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -29331,7 +29375,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -29837,7 +29882,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "wrecks"
+      "wrecks",
+      "cave"
     ],
     "species": [
       {
@@ -30353,7 +30399,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -32533,7 +32580,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -35204,7 +35252,8 @@
     "diveTypes": [
       "large-pelagics",
       "geology",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -35716,7 +35765,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -36583,7 +36633,8 @@
     "skillLevel": "tech",
     "diveTypes": [
       "wrecks",
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -37214,7 +37265,8 @@
     "diveTypes": [
       "coral",
       "geology",
-      "macro"
+      "macro",
+      "cave"
     ],
     "species": [
       {
@@ -37485,7 +37537,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -37812,7 +37865,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -38090,7 +38144,8 @@
     "diveTypes": [
       "geology",
       "coral",
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -38674,7 +38729,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -38954,7 +39010,8 @@
     "diveTypes": [
       "macro",
       "geology",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -39236,7 +39293,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -39847,7 +39905,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -40476,7 +40535,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -41684,7 +41744,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -42860,7 +42921,8 @@
     },
     "skillLevel": "open-water",
     "diveTypes": [
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -44628,7 +44690,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "wrecks",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -47301,7 +47364,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -47608,7 +47672,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -49353,7 +49418,8 @@
     },
     "skillLevel": "open-water",
     "diveTypes": [
-      "wrecks"
+      "wrecks",
+      "cave"
     ],
     "species": [
       {
@@ -50574,7 +50640,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -50852,7 +50919,8 @@
     "diveTypes": [
       "large-pelagics",
       "coral",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -51149,7 +51217,8 @@
     "diveTypes": [
       "large-pelagics",
       "coral",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -52228,7 +52297,8 @@
     "diveTypes": [
       "coral",
       "large-pelagics",
-      "macro"
+      "macro",
+      "drift"
     ],
     "species": [
       {
@@ -53792,7 +53862,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "coral",
-      "macro"
+      "macro",
+      "drift"
     ],
     "species": [
       {
@@ -55128,7 +55199,8 @@
     },
     "skillLevel": "tech",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -55365,7 +55437,8 @@
     },
     "skillLevel": "tech",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -55859,7 +55932,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -59097,7 +59171,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "wrecks"
+      "wrecks",
+      "cave"
     ],
     "species": [
       {
@@ -60523,7 +60598,8 @@
     "diveTypes": [
       "geology",
       "coral",
-      "macro"
+      "macro",
+      "cave"
     ],
     "species": [
       {
@@ -61088,7 +61164,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "coral",
-      "macro"
+      "macro",
+      "cave"
     ],
     "species": [
       {
@@ -61355,7 +61432,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -62180,7 +62258,9 @@
     "diveTypes": [
       "large-pelagics",
       "geology",
-      "coral"
+      "coral",
+      "cave",
+      "drift"
     ],
     "species": [
       {
@@ -63055,7 +63135,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -63942,7 +64023,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -65089,7 +65171,9 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave",
+      "drift"
     ],
     "species": [
       {
@@ -65371,7 +65455,8 @@
     "diveTypes": [
       "geology",
       "coral",
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -65613,7 +65698,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -66209,7 +66295,8 @@
     "diveTypes": [
       "large-pelagics",
       "coral",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -66486,7 +66573,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -66773,7 +66861,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -67079,7 +67168,8 @@
     "diveTypes": [
       "coral",
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -68208,7 +68298,8 @@
     "diveTypes": [
       "large-pelagics",
       "coral",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -68817,7 +68908,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -70230,7 +70322,8 @@
     "diveTypes": [
       "coral",
       "geology",
-      "large-pelagics"
+      "large-pelagics",
+      "cave"
     ],
     "species": [
       {
@@ -72098,7 +72191,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -72362,7 +72456,8 @@
     },
     "skillLevel": "open-water",
     "diveTypes": [
-      "wrecks"
+      "wrecks",
+      "cave"
     ],
     "species": [
       {
@@ -72956,7 +73051,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -74564,7 +74660,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -74890,7 +74987,8 @@
     "diveTypes": [
       "coral",
       "large-pelagics",
-      "macro"
+      "macro",
+      "drift"
     ],
     "species": [
       {
@@ -75450,7 +75548,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -76936,7 +77035,8 @@
     "diveTypes": [
       "coral",
       "large-pelagics",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -79469,7 +79569,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "macro"
+      "macro",
+      "cave"
     ],
     "species": [
       {
@@ -79745,7 +79846,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "geology",
-      "macro"
+      "macro",
+      "cave"
     ],
     "species": [
       {
@@ -81351,7 +81453,8 @@
     "diveTypes": [
       "coral",
       "geology",
-      "macro"
+      "macro",
+      "drift"
     ],
     "species": [
       {
@@ -81635,7 +81738,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -82842,7 +82946,8 @@
     "diveTypes": [
       "large-pelagics",
       "coral",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -83453,7 +83558,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "geology",
-      "macro"
+      "macro",
+      "cave"
     ],
     "species": [
       {
@@ -83740,7 +83846,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -84025,7 +84132,8 @@
     "diveTypes": [
       "large-pelagics",
       "coral",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -84331,7 +84439,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "geology",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -86413,7 +86522,8 @@
     },
     "skillLevel": "advanced",
     "diveTypes": [
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -88802,7 +88912,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "geology",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -90270,7 +90381,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -90626,7 +90738,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -91822,7 +91935,8 @@
     "diveTypes": [
       "macro",
       "coral",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -92233,7 +92347,8 @@
     "diveTypes": [
       "coral",
       "large-pelagics",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -92840,7 +92955,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -93788,7 +93904,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -94402,7 +94519,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "coral",
-      "geology"
+      "geology",
+      "cave"
     ],
     "species": [
       {
@@ -94727,7 +94845,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "wrecks",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -95387,7 +95506,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "coral",
-      "large-pelagics"
+      "large-pelagics",
+      "drift"
     ],
     "species": [
       {
@@ -96035,7 +96155,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {
@@ -97259,7 +97380,8 @@
     "diveTypes": [
       "coral",
       "large-pelagics",
-      "geology"
+      "geology",
+      "drift"
     ],
     "species": [
       {
@@ -99917,7 +100039,8 @@
     "skillLevel": "open-water",
     "diveTypes": [
       "geology",
-      "coral"
+      "coral",
+      "cave"
     ],
     "species": [
       {
@@ -101783,7 +101906,8 @@
     "skillLevel": "advanced",
     "diveTypes": [
       "large-pelagics",
-      "coral"
+      "coral",
+      "drift"
     ],
     "species": [
       {

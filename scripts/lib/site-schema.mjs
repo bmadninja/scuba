@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const SKILL_LEVELS = ["never-dived", "open-water", "advanced", "tech"];
-const DIVE_TYPES = ["large-pelagics", "coral", "geology", "wrecks", "macro"];
+const DIVE_TYPES = ["large-pelagics", "coral", "geology", "wrecks", "macro", "cave", "drift"];
 const RELIABILITY = ["year-round", "seasonal", "rare"];
 const CURRENT = ["none", "mild", "moderate", "strong"];
 
@@ -69,7 +69,7 @@ Return STRICT JSON for a dive site matching this TypeScript shape (no extra fiel
   description: string,     // 80-800 chars, evocative, factual, mention what makes it special
   depthRange: { min: number, max: number },     // meters, integers
   skillLevel: "never-dived" | "open-water" | "advanced" | "tech",
-  diveTypes: ("large-pelagics" | "coral" | "geology" | "wrecks" | "macro")[],   // 1+
+  diveTypes: ("large-pelagics" | "coral" | "geology" | "wrecks" | "macro" | "cave" | "drift")[],   // 1+
   species: [{
     commonName: string,
     scientificName?: string,

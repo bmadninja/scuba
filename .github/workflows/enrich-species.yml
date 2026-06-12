@@ -1,0 +1,82 @@
+name: Enrich species lists
+
+on:
+  schedule:
+    - cron: "30 8 * * *"   # daily 08:30 UTC — after discover-sites (07:12) and fill-gaps (07:45)
+  workflow_dispatch:
+    inputs:
+      min_species:
+        description: "Enrich sites with fewer than this many species"
+        default: "5"
+      target_species:
+        description: "Aim for this many species per site"
+        default: "8"
+      site_id:
+        description: "Process a single site by id (leave blank for all)"
+        default: ""
+      dry_run:
+        description: "Preview which sites qualify without writing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Enrich species
+        id: enrich
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MIN_SPECIES: ${{ inputs.min_species || '5' }}
+          TARGET_SPECIES: ${{ inputs.target_species || '8' }}
+          SITE_ID: ${{ inputs.site_id || '' }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          MODEL_RESEARCH: claude-haiku-4-5-20251001
+        run: |
+          set +e
+          node scripts/enrich-species.mjs | tee enrich-species.log
+          code=${PIPESTATUS[0]}
+          echo "exit_code=$code" >> $GITHUB_OUTPUT
+
+          enriched=$(grep -c '^\[' enrich-species.log || echo "0")
+          echo "enriched=$enriched" >> $GITHUB_OUTPUT
+          exit $code
+
+      - name: Add iNaturalist photos for new species
+        if: steps.enrich.outputs.exit_code == '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/fetch-species-photos.mjs
+
+      - name: Open PR
+        if: steps.enrich.outputs.exit_code == '0'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/enrich-species-${{ github.run_id }}
+          commit-message: "auto: enrich species lists"
+          title: "🐠 Species enrichment run"
+          body: |
+            Nightly species enrichment — added marine species to sites with fewer than ${{ inputs.min_species || '5' }} documented species, targeting ${{ inputs.target_species || '8' }} per site.
+
+            Vercel will attach a preview URL shortly — spot-check a few sites before merging.
+
+            <details><summary>Run log</summary>
+
+            ```
+            ${{ steps.enrich.outputs.enriched }}
+            ```
+            </details>
+          labels: automation,species
