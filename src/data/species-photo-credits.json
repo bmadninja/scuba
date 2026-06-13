@@ -22317,11 +22317,11 @@
   "scapa-flow-uk-sms-kronprinz-wilhelm:alcyonium digitatum": {
     "siteSlug": "scapa-flow-uk-sms-kronprinz-wilhelm",
     "speciesKey": "alcyonium digitatum",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/497554534/large.jpg",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/551838433/large.jpg",
     "taxonId": 363877,
-    "observationId": 277089951,
+    "observationId": 306030482,
     "license": "cc-by-nc",
-    "attribution": "(c) andywild, some rights reserved (CC BY-NC)",
+    "attribution": "(c) Bryan J, some rights reserved (CC BY-NC)",
     "source": "inat-regional"
   },
   "scapa-flow-uk-sms-kronprinz-wilhelm:metridium senile": {
@@ -22693,11 +22693,11 @@
   "tela-punta-sal-coral-garden:acropora cervicornis": {
     "siteSlug": "tela-punta-sal-coral-garden",
     "speciesKey": "acropora cervicornis",
-    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/197909773/large.jpeg",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/29563620/large.jpg",
     "taxonId": 93234,
-    "observationId": 117204067,
-    "license": "cc-by-nc",
-    "attribution": "(c) Maleen Mund, some rights reserved (CC BY-NC)",
+    "observationId": 19242722,
+    "license": "cc-by",
+    "attribution": "(c) Eric Knight, some rights reserved (CC BY)",
     "source": "inat-regional"
   },
   "tela-punta-sal-coral-garden:epinephelus striatus": {
@@ -22759,6 +22759,423 @@
     "observationId": 293026363,
     "license": "cc-by-nc",
     "attribution": "(c) Raven Miranda, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "raja-ampat-cape-kri:caranx ignobilis": {
+    "siteSlug": "raja-ampat-cape-kri",
+    "speciesKey": "caranx ignobilis",
+    "imageUrl": "https://static.inaturalist.org/photos/446141712/large.jpeg",
+    "taxonId": 153280,
+    "observationId": 249563700,
+    "license": null,
+    "attribution": "(c) Alexander Stubbs, all rights reserved",
+    "source": "inat-regional"
+  },
+  "raja-ampat-blue-magic:sphyraena qenie": {
+    "siteSlug": "raja-ampat-blue-magic",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/121944088/large.jpg",
+    "taxonId": 136601,
+    "observationId": 74600513,
+    "license": "cc-by-nc",
+    "attribution": "(c) Sabine Templeton, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "palau-blue-holes:caranx sexfasciatus": {
+    "siteSlug": "palau-blue-holes",
+    "speciesKey": "caranx sexfasciatus",
+    "imageUrl": "https://static.inaturalist.org/photos/432549308/large.jpeg",
+    "taxonId": 47228,
+    "observationId": 242623549,
+    "license": null,
+    "attribution": "(c) Matt Boyle, all rights reserved",
+    "source": "inat-regional"
+  },
+  "sipadan-barracuda-point:caranx sexfasciatus": {
+    "siteSlug": "sipadan-barracuda-point",
+    "speciesKey": "caranx sexfasciatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/24065877/large.jpg",
+    "taxonId": 47228,
+    "observationId": 16070722,
+    "license": "cc-by-nc",
+    "attribution": "(c) Taylor, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "maldives-fish-head:sphyraena qenie": {
+    "siteSlug": "maldives-fish-head",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/61324348/large.jpeg",
+    "taxonId": 136601,
+    "observationId": 38573857,
+    "license": "cc-by-nc",
+    "attribution": "(c) Ryan Yue Wah Chan, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "komodo-castle-rock:caranx sexfasciatus": {
+    "siteSlug": "komodo-castle-rock",
+    "speciesKey": "caranx sexfasciatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/641389108/large.jpg",
+    "taxonId": 47228,
+    "observationId": 351464671,
+    "license": "cc-by-nc",
+    "attribution": "(c) Shelly, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "apo-reef-binangaan-drop-off:sphyraena qenie": {
+    "siteSlug": "apo-reef-binangaan-drop-off",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://static.inaturalist.org/photos/464976059/large.jpg",
+    "taxonId": 136601,
+    "observationId": 259074525,
+    "license": null,
+    "attribution": "(c) Christian Luff, all rights reserved",
+    "source": "inat-regional"
+  },
+  "similan-elephant-head-rock:caesio cuning": {
+    "siteSlug": "similan-elephant-head-rock",
+    "speciesKey": "caesio cuning",
+    "imageUrl": "https://static.inaturalist.org/photos/397185748/large.jpg",
+    "taxonId": 135225,
+    "observationId": 224121784,
+    "license": null,
+    "attribution": "(c) Kailash Cook, all rights reserved",
+    "source": "inat-regional"
+  },
+  "similan-east-of-eden:parapriacanthus ransonneti": {
+    "siteSlug": "similan-east-of-eden",
+    "speciesKey": "parapriacanthus ransonneti",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/339648934/large.jpg",
+    "taxonId": 153277,
+    "observationId": 193355540,
+    "license": "cc-by",
+    "attribution": "(c) portioid, some rights reserved (CC BY)",
+    "source": "inat-regional"
+  },
+  "richelieu-rock:sphyraena qenie": {
+    "siteSlug": "richelieu-rock",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472227676/large.jpg",
+    "taxonId": 136601,
+    "observationId": 262915938,
+    "license": "cc-by-nc",
+    "attribution": "(c) Hubert Lagrange, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "layang-layang-wreck-point:sphyraena qenie": {
+    "siteSlug": "layang-layang-wreck-point",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/260768728/large.jpeg",
+    "taxonId": 136601,
+    "observationId": 151158838,
+    "license": "cc-by",
+    "attribution": "(c) Darren Obbard, some rights reserved (CC BY)",
+    "source": "inat-regional"
+  },
+  "kimbe-bradford-shoals:sphyraena qenie": {
+    "siteSlug": "kimbe-bradford-shoals",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/589974050/large.jpg",
+    "taxonId": 136601,
+    "observationId": 325817141,
+    "license": "cc-by-nc",
+    "attribution": "(c) Andy Dalton, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "milne-bay-black-magic:sphyraena qenie": {
+    "siteSlug": "milne-bay-black-magic",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/604997072/large.jpg",
+    "taxonId": 136601,
+    "observationId": 333261764,
+    "license": "cc-by-nc",
+    "attribution": "(c) Tony Strazzari, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "beqa-cathedral:caesio cuning": {
+    "siteSlug": "beqa-cathedral",
+    "speciesKey": "caesio cuning",
+    "taxonId": 135225,
+    "matchedName": "Caesio cuning",
+    "matchedCommon": "Yellowtail Fusilier",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2995124/large.jpg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Mark Rosenstein, some rights reserved (CC BY-NC), uploaded by Mark Rosenstein",
+    "source": "inat-taxa"
+  },
+  "rangiroa-tiputa-pass:sphyraena qenie": {
+    "siteSlug": "rangiroa-tiputa-pass",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412913214/large.jpg",
+    "taxonId": 136601,
+    "observationId": 232421670,
+    "license": "cc-by-nc",
+    "attribution": "(c) Malcolm Francis, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "fakarava-south-pass:sphyraena qenie": {
+    "siteSlug": "fakarava-south-pass",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412913214/large.jpg",
+    "taxonId": 136601,
+    "observationId": 232421670,
+    "license": "cc-by-nc",
+    "attribution": "(c) Malcolm Francis, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "fakarava-north-pass:sphyraena qenie": {
+    "siteSlug": "fakarava-north-pass",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412913214/large.jpg",
+    "taxonId": 136601,
+    "observationId": 232421670,
+    "license": "cc-by-nc",
+    "attribution": "(c) Malcolm Francis, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "cenotes-dos-ojos:astyanax mexicanus": {
+    "siteSlug": "cenotes-dos-ojos",
+    "speciesKey": "astyanax mexicanus",
+    "imageUrl": "https://static.inaturalist.org/photos/341998911/large.jpg",
+    "taxonId": 94765,
+    "observationId": 194545453,
+    "license": null,
+    "attribution": "(c) Paul Cervantes, all rights reserved",
+    "source": "inat-regional"
+  },
+  "cenotes-gran-cenote:trachemys venusta": {
+    "siteSlug": "cenotes-gran-cenote",
+    "speciesKey": "trachemys venusta",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/232190488/large.jpeg",
+    "taxonId": 39783,
+    "observationId": 136079347,
+    "license": "cc-by-nc",
+    "attribution": "(c) Elvis Jimenez, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "turneffe-the-elbow:caranx latus": {
+    "siteSlug": "turneffe-the-elbow",
+    "speciesKey": "caranx latus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462842905/large.jpg",
+    "taxonId": 47227,
+    "observationId": 258008903,
+    "license": "cc-by-nc",
+    "attribution": "(c) Vince Golder, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "utila-halliburton-wreck:caranx latus": {
+    "siteSlug": "utila-halliburton-wreck",
+    "speciesKey": "caranx latus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462842905/large.jpg",
+    "taxonId": 47227,
+    "observationId": 258008903,
+    "license": "cc-by-nc",
+    "attribution": "(c) Vince Golder, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "roatan-el-aguila-wreck:caranx latus": {
+    "siteSlug": "roatan-el-aguila-wreck",
+    "speciesKey": "caranx latus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/462842905/large.jpg",
+    "taxonId": 47227,
+    "observationId": 258008903,
+    "license": "cc-by-nc",
+    "attribution": "(c) Vince Golder, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "bonaire-hilma-hooker:caranx latus": {
+    "siteSlug": "bonaire-hilma-hooker",
+    "speciesKey": "caranx latus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/384402527/large.jpg",
+    "taxonId": 47227,
+    "observationId": 217296956,
+    "license": "cc-by",
+    "attribution": "(c) Pauline Walsh Jacobson, some rights reserved (CC BY)",
+    "source": "inat-regional"
+  },
+  "saba-diamond-rock:caranx latus": {
+    "siteSlug": "saba-diamond-rock",
+    "speciesKey": "caranx latus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/442917355/large.jpeg",
+    "taxonId": 47227,
+    "observationId": 247937933,
+    "license": "cc-by-nc",
+    "attribution": "(c) IHUNTA, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "florida-keys-uss-vandenberg:sphyraena qenie": {
+    "siteSlug": "florida-keys-uss-vandenberg",
+    "speciesKey": "sphyraena qenie",
+    "taxonId": 136601,
+    "matchedName": "Sphyraena qenie",
+    "matchedCommon": "Blackfin Barracuda",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2995795/large.jpg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Mark Rosenstein, some rights reserved (CC BY-NC), uploaded by Mark Rosenstein",
+    "source": "inat-taxa"
+  },
+  "kona-manta-heaven:triaenodon obesus": {
+    "siteSlug": "kona-manta-heaven",
+    "speciesKey": "triaenodon obesus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/174490690/large.jpg",
+    "taxonId": 52314,
+    "observationId": 104152974,
+    "license": "cc-by-nc",
+    "attribution": "(c) thegeckoguy907, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "kona-pinnacle:chelonia mydas": {
+    "siteSlug": "kona-pinnacle",
+    "speciesKey": "chelonia mydas",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/32849497/large.jpg",
+    "taxonId": 39659,
+    "observationId": 21247431,
+    "license": "cc-by-nc",
+    "attribution": "(c) naturalistdpf, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "ras-mohammed-shark-yolanda:sphyraena qenie": {
+    "siteSlug": "ras-mohammed-shark-yolanda",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/190616366/large.jpeg",
+    "taxonId": 136601,
+    "observationId": 112838457,
+    "license": "cc-by-nc",
+    "attribution": "(c) Sylvain Le Bris, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "sudan-shaab-rumi-south:sphyraena qenie": {
+    "siteSlug": "sudan-shaab-rumi-south",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/439506590/large.jpeg",
+    "taxonId": 136601,
+    "observationId": 246232858,
+    "license": "cc-by-nc",
+    "attribution": "(c) Sylvain Le Bris, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "mahe-brissare-rocks:lutjanus argentiventris": {
+    "siteSlug": "mahe-brissare-rocks",
+    "speciesKey": "lutjanus argentiventris",
+    "taxonId": 47293,
+    "matchedName": "Lutjanus argentiventris",
+    "matchedCommon": "Yellow Snapper",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54948027/large.jpg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Felipe Campos, some rights reserved (CC BY-NC), uploaded by Felipe Campos",
+    "source": "inat-taxa"
+  },
+  "mahe-shark-bank:sphyraena flavicauda": {
+    "siteSlug": "mahe-shark-bank",
+    "speciesKey": "sphyraena flavicauda",
+    "taxonId": 182586,
+    "matchedName": "Sphyraena flavicauda",
+    "matchedCommon": "Yellowtail Barracuda",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/36900962/large.jpeg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Terry Munyard, some rights reserved (CC BY-NC), uploaded by Terry Munyard",
+    "source": "inat-taxa"
+  },
+  "aliwal-raggie-cave:megaptera novaeangliae": {
+    "siteSlug": "aliwal-raggie-cave",
+    "speciesKey": "megaptera novaeangliae",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/530649147/large.jpg",
+    "taxonId": 41566,
+    "observationId": 294794000,
+    "license": "cc-by-nc",
+    "attribution": "(c) Dr Cleeve Robertson, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "ningaloo-navy-pier:epinephelus lanceolatus": {
+    "siteSlug": "ningaloo-navy-pier",
+    "speciesKey": "epinephelus lanceolatus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/61313004/large.jpeg",
+    "taxonId": 100111,
+    "observationId": 38566623,
+    "license": "cc-by-nc",
+    "attribution": "(c) Ren, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "vanuatu-president-coolidge:sphyraena qenie": {
+    "siteSlug": "vanuatu-president-coolidge",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/498396727/large.jpeg",
+    "taxonId": 136601,
+    "observationId": 277566863,
+    "license": "cc-by-nc",
+    "attribution": "(c) davibule, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "komodo-national-park-indonesia-hmas-perth-ii:paraplesiops bleekeri": {
+    "siteSlug": "komodo-national-park-indonesia-hmas-perth-ii",
+    "speciesKey": "paraplesiops bleekeri",
+    "taxonId": 513683,
+    "matchedName": "Paraplesiops bleekeri",
+    "matchedCommon": "Eastern Blue Devil",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/28241864/large.jpg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Erik Schlögl, some rights reserved (CC BY-NC), uploaded by Erik Schlögl",
+    "source": "inat-taxa"
+  },
+  "raja-ampat-indonesia-magic-point:eucrossorhinus dasypogon": {
+    "siteSlug": "raja-ampat-indonesia-magic-point",
+    "speciesKey": "eucrossorhinus dasypogon",
+    "taxonId": 63637,
+    "matchedName": "Eucrossorhinus dasypogon",
+    "matchedCommon": "Tasselled Wobbegong",
+    "imageUrl": "https://static.inaturalist.org/photos/63681167/large.jpg",
+    "license": null,
+    "attribution": "(c) Poul Erik Rasmussen, all rights reserved, uploaded by Poul Erik Rasmussen",
+    "source": "inat-taxa"
+  },
+  "praslin-south-marianne:lutjanus lutjanus": {
+    "siteSlug": "praslin-south-marianne",
+    "speciesKey": "lutjanus lutjanus",
+    "taxonId": 49509,
+    "matchedName": "Lutjanus griseus",
+    "matchedCommon": "Gray Snapper",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/413518733/large.jpg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Frank Krasovec, some rights reserved (CC BY-NC), uploaded by Frank Krasovec",
+    "source": "inat-taxa"
+  },
+  "rangiroa-french-polynesia-avatoru-pass:sphyraena qenie": {
+    "siteSlug": "rangiroa-french-polynesia-avatoru-pass",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/412913214/large.jpg",
+    "taxonId": 136601,
+    "observationId": 232421670,
+    "license": "cc-by-nc",
+    "attribution": "(c) Malcolm Francis, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "milne-bay-papua-new-guinea-b17-black-jack:sphyraena qenie": {
+    "siteSlug": "milne-bay-papua-new-guinea-b17-black-jack",
+    "speciesKey": "sphyraena qenie",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/604997072/large.jpg",
+    "taxonId": 136601,
+    "observationId": 333261764,
+    "license": "cc-by-nc",
+    "attribution": "(c) Tony Strazzari, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "tela-scientists-corner:thalassoma bifasciatum": {
+    "siteSlug": "tela-scientists-corner",
+    "speciesKey": "thalassoma bifasciatum",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/254689068/large.jpg",
+    "taxonId": 49491,
+    "observationId": 147954309,
+    "license": "cc-by-nc",
+    "attribution": "(c) Jason Headley, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "tela-punta-izopo-wall:lutjanus cyanopterus": {
+    "siteSlug": "tela-punta-izopo-wall",
+    "speciesKey": "lutjanus cyanopterus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/443731067/large.jpg",
+    "taxonId": 63418,
+    "observationId": 248353982,
+    "license": "cc-by-nc",
+    "attribution": "(c) Neil DeMaster, some rights reserved (CC BY-NC)",
     "source": "inat-regional"
   }
 }
