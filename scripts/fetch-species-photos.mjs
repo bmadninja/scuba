@@ -26,6 +26,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { eolSpeciesLookup, gbifSpeciesLookup } from "./lib/photo-sources.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -275,7 +276,7 @@ async function main() {
   console.log(`Sites: ${sites.length} | Species entries needing refresh: ${totalPairs} | FORCE=${FORCE}`);
 
   const credits = { ...existingCredits };
-  let processed = 0, found = 0, regional = 0, taxa = 0, wiki = 0, missed = 0;
+  let processed = 0, found = 0, regional = 0, taxa = 0, eol = 0, gbif = 0, wiki = 0, missed = 0;
 
   for (const site of sites) {
     const siteLat = site.lat ?? null;
@@ -309,7 +310,27 @@ async function main() {
         taxa++; found++;
       }
 
-      // Step 4: Wikimedia Commons fallback.
+      // Step 4: EOL (Encyclopedia of Life).
+      if (!hit) {
+        const eolHit = await eolSpeciesLookup(sci, common);
+        await sleep(500);
+        if (eolHit?.imageUrl) {
+          hit = eolHit;
+          eol++; found++;
+        }
+      }
+
+      // Step 5: GBIF occurrence media.
+      if (!hit) {
+        const gbifHit = await gbifSpeciesLookup(sci);
+        await sleep(500);
+        if (gbifHit?.imageUrl) {
+          hit = gbifHit;
+          gbif++; found++;
+        }
+      }
+
+      // Step 6: Wikimedia Commons fallback.
       if (!hit) {
         hit = await wikimediaSpeciesLookup(common, sci);
         if (hit) { wiki++; found++; }
@@ -319,7 +340,7 @@ async function main() {
       if (!hit) {
         missed++;
         if (processed % 50 === 0 || processed === totalPairs) {
-          console.log(`  ${processed}/${totalPairs} · found ${found} (reg:${regional} taxa:${taxa} wiki:${wiki} miss:${missed})`);
+          console.log(`  ${processed}/${totalPairs} · found ${found} (reg:${regional} taxa:${taxa} eol:${eol} gbif:${gbif} wiki:${wiki} miss:${missed})`);
         }
         continue;
       }
@@ -344,7 +365,7 @@ async function main() {
       };
 
       if (processed % 50 === 0 || processed === totalPairs) {
-        console.log(`  ${processed}/${totalPairs} · found ${found} (reg:${regional} taxa:${taxa} wiki:${wiki} miss:${missed})`);
+        console.log(`  ${processed}/${totalPairs} · found ${found} (reg:${regional} taxa:${taxa} eol:${eol} gbif:${gbif} wiki:${wiki} miss:${missed})`);
       }
     }
   }
@@ -354,7 +375,7 @@ async function main() {
 
   console.log(`\nDone.`);
   console.log(`  Processed: ${processed} | Found: ${found} | Missed: ${missed}`);
-  console.log(`  Regional iNat: ${regional} | Taxa default: ${taxa} | Wikimedia: ${wiki}`);
+  console.log(`  Regional iNat: ${regional} | Taxa default: ${taxa} | EOL: ${eol} | GBIF: ${gbif} | Wikimedia: ${wiki}`);
   console.log(`  Credits: ${Object.keys(credits).length} entries`);
 }
 

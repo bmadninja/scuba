@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "lastReviewedAt": "2026-06-15",
+  "description": "Cross-source discoveries mined or curated from scubaSeason reef health, pressure, sightings, encounters, and IUCN datasets. These are story-ready findings backed by explicit comparison signals.",
+  "originalityScale": [
+    {
+      "id": "known-public-story",
+      "meaning": "The core finding is already widely described by scientists, operators, media, or destination guides. Use as context, not as a scubaSeason discovery."
+    },
+    {
+      "id": "atlas-ranking",
+      "meaning": "The underlying fact is known, but scubaSeason independently ranked it against our own dataset."
+    },
+    {
+      "id": "cross-source-synthesis",
+      "meaning": "The finding comes from joining two or more datasets that are usually discussed separately."
+    },
+    {
+      "id": "candidate-original-discovery",
+      "meaning": "The comparison appears to be non-obvious publicly and should be reviewed before being promoted as an original scubaSeason finding."
+    }
+  ],
+  "discoveryTypes": [
+    {
+      "id": "reef-outperforming-neighborhood",
+      "label": "Reef outperforming its neighborhood",
+      "meaning": "A reef has a measured condition signal that is much stronger than its regional or peer baseline."
+    },
+    {
+      "id": "rare-encounter-stronghold",
+      "label": "Rare encounter stronghold",
+      "meaning": "A threatened, unusual, seasonal, or bucket-list species has unusually strong repeat evidence at a site or region."
+    },
+    {
+      "id": "heat-resilience-anomaly",
+      "label": "Heat resilience anomaly",
+      "meaning": "A reef has stayed comparatively intact despite thermal stress, bleaching history, or regional decline."
+    },
+    {
+      "id": "fresh-eyes-needed",
+      "label": "Fresh eyes needed",
+      "meaning": "The data is interesting but uncertainty is high because the latest direct survey or post-disturbance evidence is incomplete."
+    }
+  ],
+  "records": [
+    {
+      "id": "tela-caribbean-resilience-anomaly",
+      "type": "reef-outperforming-neighborhood",
+      "locationId": "tela-honduras",
+      "title": "Tela is the Caribbean reef that is still holding on",
+      "originality": {
+        "level": "known-public-story",
+        "publicKnownness": "high",
+        "scubaSeasonContribution": "Useful as a flagship explanation of the product, but the core resilience story predates our analysis.",
+        "promoteAsOriginalDiscovery": false
+      },
+      "dek": "Tela Bay has roughly 60 percent live coral cover after the 2023-2024 bleaching period, while the wider Caribbean/Mesoamerican baseline in the dataset is closer to the high teens or low twenties.",
+      "claim": "Tela is not just marked 'thriving'; it is a regional outlier with unusually high coral cover, dense Diadema urchins, and documented heat-tolerant coral symbionts.",
+      "whyItMatters": "This is the kind of reef divers can talk about as living research: scientists are trying to understand why it has resisted losses that damaged nearby Caribbean reefs.",
+      "comparison": {
+        "metric": "observed.coralCoverPercent",
+        "subjectValue": 60,
+        "subjectLabel": "Tela Bay conservative post-2024 estimate",
+        "baselineValue": 17,
+        "baselineLabel": "Caribbean/Mesoamerican regional average cited in reef-health notes",
+        "comparisonText": "about 3.5x the regional baseline",
+        "method": "Compare Tela's observed coral cover against the regional average cited in its reef-health notes and against other Caribbean post-2023 records in reef-health.json."
+      },
+      "reasonSignals": [
+        {
+          "kind": "observed-mechanism",
+          "label": "Diadema urchins are unusually dense",
+          "value": "2.5 per m2 at Tela vs roughly 1 per 100 m2 Caribbean average",
+          "sourceIds": [
+            "coral-reef-alliance-tela",
+            "operation-wallacea-tela",
+            "mongabay-2025-honduran-reef"
+          ],
+          "confidence": "medium-high"
+        },
+        {
+          "kind": "observed-mechanism",
+          "label": "Elkhorn corals host heat-tolerant symbionts",
+          "value": "University of Miami Baker lab sampling found clade D zooxanthellae in Tela elkhorn corals",
+          "sourceIds": [
+            "mongabay-2025-honduran-reef"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "kind": "management-context",
+          "label": "Formal protection is active",
+          "value": "AMATELA Marine Wildlife Refuge and Jeannette Kawas National Park are cited in pressure data; closed fishing seasons reportedly produced a roughly 500 percent fish biomass increase in coastal lagoons",
+          "sourceIds": [
+            "coral-reef-alliance-tela"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "uncertainty": "The 60 percent figure is a conservative post-2024 estimate; the file notes that no peer-reviewed post-2024 survey figure was published as of June 2026.",
+      "miningRecipe": {
+        "inputs": [
+          "reef-health.json",
+          "reef-pressure.json"
+        ],
+        "logic": [
+          "Find locations where observed.coralCoverPercent >= 2.5x an explicit regional baseline or peer average.",
+          "Require at least one explanatory reasonSignal from observed.notes, pressure.visitorImpactNote, or source-backed research notes.",
+          "Attach uncertainty when the latest survey is estimated, post-disturbance, or not peer-reviewed."
+        ]
+      },
+      "sourceRecordIds": [
+        "reef-health-tela-honduras-2024",
+        "reef-pressure-tela-honduras-2026"
+      ],
+      "confidence": "medium-high"
+    },
+    {
+      "id": "wakatobi-heat-tolerance-signal",
+      "type": "heat-resilience-anomaly",
+      "locationId": "wakatobi-indonesia",
+      "title": "Wakatobi did not behave like a normal heat-stressed reef",
+      "originality": {
+        "level": "known-public-story",
+        "publicKnownness": "medium",
+        "scubaSeasonContribution": "We can use the atlas to place the heat-tolerance signal beside travel relevance, but the resilience mechanism comes from existing monitoring and publications.",
+        "promoteAsOriginalDiscovery": false
+      },
+      "dek": "The reef-health notes say Wakatobi recorded no significant bleaching during the 2024 global bleaching event, even though 84 percent of the world's reefs experienced bleaching-level heat stress.",
+      "claim": "Wakatobi is a heat-resilience anomaly: its coral cover is not the highest in the atlas, but its response to heat is unusually strong.",
+      "whyItMatters": "This lets the site surface a more interesting discovery than a simple health badge: some reefs matter because they are high-cover, others because they appear unusually heat tolerant.",
+      "comparison": {
+        "metric": "thermalStress.alertLevel",
+        "subjectValue": "no-stress",
+        "subjectLabel": "Wakatobi 2024 thermal stress record",
+        "baselineValue": "84% of world reefs exposed to bleaching-level heat stress",
+        "baselineLabel": "global 2024 bleaching context in reef-health notes",
+        "comparisonText": "no significant bleaching while most world reefs experienced bleaching-level heat stress",
+        "method": "Compare Wakatobi's thermalStress and observed notes against the global 2024 bleaching context stored in reef-health.json."
+      },
+      "reasonSignals": [
+        {
+          "kind": "observed-mechanism",
+          "label": "Locally evolved heat tolerance is cited",
+          "value": "The reef-health notes state Wakatobi's 2024 non-bleaching was attributed to locally evolved heat tolerance",
+          "sourceIds": [
+            "opwall-wakatobi-longterm",
+            "hamdani-2024-bioconf",
+            "ocean-science-journal-2024-kaledupa"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "kind": "longitudinal-context",
+          "label": "Long monitoring record",
+          "value": "Operation Wallacea / LIPI monitoring is cited across 2006-2019, with site-level cover reaching 46 percent in newer survey notes",
+          "sourceIds": [
+            "opwall-wakatobi-longterm"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "uncertainty": "The park-wide coral cover value is from a 2019 survey; the 2024 resilience claim is stronger than the current cover number.",
+      "miningRecipe": {
+        "inputs": [
+          "reef-health.json"
+        ],
+        "logic": [
+          "Find records where thermalStress.alertLevel is no-stress or watch while notes cite a major regional/global bleaching event.",
+          "Promote only when notes include a mechanism or monitoring context, not just a low alert value."
+        ]
+      },
+      "sourceRecordIds": [
+        "reef-health-wakatobi-indonesia-2024"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "sogod-bay-panaon-whale-shark-and-reef-outlier",
+      "type": "rare-encounter-stronghold",
+      "locationId": "sogod-bay-philippines",
+      "title": "Sogod Bay combines a whale shark stronghold with unusually healthy outer reefs",
+      "originality": {
+        "level": "cross-source-synthesis",
+        "publicKnownness": "medium",
+        "scubaSeasonContribution": "The whale shark and reef-health facts are public separately; the stronger product finding is the join between a repeat megafauna record and an above-baseline reef-health signal.",
+        "promoteAsOriginalDiscovery": true
+      },
+      "dek": "The reef-health notes cite outer Panaon Island reefs at 60-70 percent live coral cover, about 3x the Philippine national average, plus 350+ individual whale sharks documented over more than a decade.",
+      "claim": "This is not just a place where whale sharks show up; the same location has a reef-health outlier signal and a long-running individual-identification record.",
+      "whyItMatters": "The comparison gives divers a stronger reason to care: the encounter is tied to a broader conservation and reef-health story, not only a bucket-list animal.",
+      "comparison": {
+        "metric": "observed.coralCoverPercent plus documented individual count",
+        "subjectValue": "60-70% outer reef cover; 350+ individual whale sharks",
+        "subjectLabel": "Panaon Island / Sogod Bay notes",
+        "baselineValue": "about 20% Philippine national average",
+        "baselineLabel": "reef-health notes",
+        "comparisonText": "outer reefs roughly 3x the national coral-cover average, with a decade-scale whale shark photo-ID record",
+        "method": "Read reef-health notes for explicit national-average comparison and encounter notes for documented individual-count evidence."
+      },
+      "reasonSignals": [
+        {
+          "kind": "encounter-evidence",
+          "label": "Whale shark individual records are unusually deep",
+          "value": "LAMAVE has documented 350+ individual whale sharks over 10+ years",
+          "sourceIds": [
+            "lamave-sogod-bay"
+          ],
+          "confidence": "high"
+        },
+        {
+          "kind": "reef-health-context",
+          "label": "Outer reefs are far above national average",
+          "value": "Oceana Philippines survey notes cite 60-70 percent live coral cover on outer Panaon Island reefs",
+          "sourceIds": [
+            "oceana-panaon-2020",
+            "ccc-southern-leyte-baseline"
+          ],
+          "confidence": "medium-high"
+        }
+      ],
+      "uncertainty": "The stored 45 percent coral-cover value is a conservative bay-wide midpoint; the strongest 60-70 percent signal applies to outer Panaon Island, not every site in Sogod Bay.",
+      "miningRecipe": {
+        "inputs": [
+          "reef-health.json",
+          "encounters.json",
+          "sightings.json"
+        ],
+        "logic": [
+          "Find threatened or bucket-list species with long-running individual-count or high repeated-sighting evidence.",
+          "Boost when the same location has a coral-cover comparison against a national or regional baseline.",
+          "Keep sub-area caveats when the strongest reef-health value applies to one part of the location."
+        ]
+      },
+      "sourceRecordIds": [
+        "reef-health-sogod-bay-philippines-2024",
+        "reef-pressure-sogod-bay-philippines-2026"
+      ],
+      "confidence": "medium-high"
+    },
+    {
+      "id": "osprey-reef-offshore-buffer",
+      "type": "reef-outperforming-neighborhood",
+      "locationId": "great-barrier-reef-australia",
+      "siteIds": [
+        "osprey-reef-north-horn",
+        "osprey-reef-admiralty-anchor"
+      ],
+      "title": "Osprey Reef looks buffered from the inshore GBR story",
+      "originality": {
+        "level": "atlas-ranking",
+        "publicKnownness": "medium-high",
+        "scubaSeasonContribution": "Remote outer-shelf buffering is publicly discussed; our current version needs a numeric peer comparison before it can be promoted as an original finding.",
+        "promoteAsOriginalDiscovery": false
+      },
+      "dek": "Osprey Reef's 2024 record shows 48 percent coral cover, 6 percent bleaching, and 1 percent mortality, with notes pointing to its remote Coral Sea position and cooler upwelling.",
+      "claim": "This is a peer comparison discovery: the reef-health record explicitly contrasts Osprey's minor bleaching with inshore GBR reefs affected more strongly by the 2024 mass-bleaching event.",
+      "whyItMatters": "It gives divers a concrete reason to understand place, not just condition: offshore geography can make the reef experience very different from better-known inshore reefs.",
+      "comparison": {
+        "metric": "observed.bleachedPercent and observed.mortalityPercent",
+        "subjectValue": "6% bleached; 1% mortality",
+        "subjectLabel": "Osprey Reef 2024 observed record",
+        "baselineValue": "inshore GBR reefs affected more severely",
+        "baselineLabel": "reef-health notes",
+        "comparisonText": "minor bleaching in a year that hit inshore GBR reefs harder",
+        "method": "Use Osprey's observed bleaching/mortality values and the explicit inshore-GBR contrast in reef-health notes."
+      },
+      "reasonSignals": [
+        {
+          "kind": "geographic-buffer",
+          "label": "Remote offshore atoll",
+          "value": "The notes place Osprey roughly 350 km from the GBR, with minimal human pressure",
+          "sourceIds": [
+            "aims-ltmp",
+            "gcrmn"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "kind": "oceanographic-buffer",
+          "label": "Cooler upwelling is cited",
+          "value": "Steep oceanic walls and cooler upwelling are listed as thermal-stress buffers",
+          "sourceIds": [
+            "aims-ltmp",
+            "gcrmn"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "uncertainty": "The inshore comparison is qualitative in the current data; a future mining pass should compare Osprey numerically against nearby GBR records.",
+      "miningRecipe": {
+        "inputs": [
+          "reef-health.json",
+          "reef-pressure.json"
+        ],
+        "logic": [
+          "Find high-cover or low-bleaching reefs whose notes include explicit peer-region contrast.",
+          "Extract geographic or oceanographic explanation signals from notes."
+        ]
+      },
+      "sourceRecordIds": [
+        "reef-health-osprey-reef-australia-2024",
+        "reef-pressure-osprey-reef-australia-2026"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "ningaloo-whale-shark-repeat-evidence",
+      "type": "rare-encounter-stronghold",
+      "locationId": "ningaloo-australia",
+      "title": "Ningaloo has the strongest whale shark repeat-sighting signal in the current sightings file",
+      "originality": {
+        "level": "atlas-ranking",
+        "publicKnownness": "high",
+        "scubaSeasonContribution": "The whale shark aggregation is famous; our only original contribution is ranking it first by recentRecordCount in the sightings file.",
+        "promoteAsOriginalDiscovery": false
+      },
+      "dek": "The Ningaloo whale shark encounter record has 412 recent records, the highest recentRecordCount in sightings.json.",
+      "claim": "This is a comparison mined directly from sightings: Ningaloo is not merely a famous whale shark destination; it currently has the top repeat-evidence count in the dataset.",
+      "whyItMatters": "This gives the app a clean, data-native discovery hook: 'the strongest whale shark signal we found,' backed by record counts instead of reputation.",
+      "comparison": {
+        "metric": "sightings.recentRecordCount",
+        "subjectValue": 412,
+        "subjectLabel": "Ningaloo Whale Shark Encounter",
+        "baselineValue": "all other sightings in sightings.json",
+        "baselineLabel": "442 sighting records as of this data snapshot",
+        "comparisonText": "highest recentRecordCount in the sightings dataset",
+        "method": "Sort sightings.json by recentRecordCount descending and join siteId to sites.json to resolve locationId."
+      },
+      "reasonSignals": [
+        {
+          "kind": "repeat-sighting-evidence",
+          "label": "High record count",
+          "value": "412 recent whale shark records",
+          "sourceIds": [
+            "gbif",
+            "obis"
+          ],
+          "confidence": "high"
+        },
+        {
+          "kind": "conservation-status",
+          "label": "The species is globally endangered",
+          "value": "Rhincodon typus is listed as Endangered with decreasing population trend in iucn-status.json",
+          "sourceIds": [
+            "iucn-red-list"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "uncertainty": "recentRecordCount is not a per-trip probability because the dataset does not include a complete effort denominator.",
+      "miningRecipe": {
+        "inputs": [
+          "sightings.json",
+          "sites.json",
+          "iucn-status.json"
+        ],
+        "logic": [
+          "Rank sightings by recentRecordCount.",
+          "Promote records where confidence is high and the species has IUCN category VU, EN, or CR.",
+          "Always label as repeat evidence, not a guaranteed encounter rate."
+        ]
+      },
+      "sourceRecordIds": [
+        "ningaloo-whale-shark-ws"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "malapascua-thresher-repeat-evidence",
+      "type": "rare-encounter-stronghold",
+      "locationId": "malapascua-philippines",
+      "title": "Malapascua's thresher shark signal is unusually strong for an endangered shark",
+      "originality": {
+        "level": "atlas-ranking",
+        "publicKnownness": "high",
+        "scubaSeasonContribution": "Monad Shoal's thresher reliability is famous; our contribution is ranking it among threatened-shark repeat-sighting signals.",
+        "promoteAsOriginalDiscovery": false
+      },
+      "dek": "Monad Shoal has 287 recent pelagic thresher shark records, one of the highest single-species encounter counts in the current sightings file.",
+      "claim": "This is a rare-encounter comparison: a globally endangered shark has a high-confidence, high-repeat sighting cluster at one dive site.",
+      "whyItMatters": "For divers, it turns 'you might see threshers' into a more informative claim: this is one of the strongest endangered-shark repeat signals in the atlas.",
+      "comparison": {
+        "metric": "sightings.recentRecordCount filtered by threatened shark species",
+        "subjectValue": 287,
+        "subjectLabel": "Monad Shoal pelagic thresher shark",
+        "baselineValue": "other threatened shark sightings in sightings.json",
+        "baselineLabel": "sightings joined to IUCN categories VU/EN/CR",
+        "comparisonText": "one of the highest repeat counts for an endangered shark in the atlas",
+        "method": "Join sightings speciesScientific to iucn-status.json, filter sharks with category EN/CR/VU, then rank by recentRecordCount."
+      },
+      "reasonSignals": [
+        {
+          "kind": "repeat-sighting-evidence",
+          "label": "High repeat evidence at one named site",
+          "value": "287 recent records at Monad Shoal",
+          "sourceIds": [
+            "gbif",
+            "obis"
+          ],
+          "confidence": "high"
+        },
+        {
+          "kind": "conservation-status",
+          "label": "The species is globally endangered",
+          "value": "Alopias pelagicus is listed as Endangered with decreasing population trend in iucn-status.json",
+          "sourceIds": [
+            "iucn-red-list"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "uncertainty": "The surrounding reef-health record says the marquee thresher dive does not depend on coral, so this discovery should be rendered as an encounter stronghold, not a reef-health win.",
+      "miningRecipe": {
+        "inputs": [
+          "sightings.json",
+          "sites.json",
+          "iucn-status.json",
+          "reef-health.json"
+        ],
+        "logic": [
+          "Join sightings to IUCN status and site/location records.",
+          "Rank threatened shark sightings by recentRecordCount.",
+          "If reef-health notes say the encounter is decoupled from coral condition, keep the discovery in encounter framing."
+        ]
+      },
+      "sourceRecordIds": [
+        "malapascua-monad-shoal-th",
+        "reef-health-malapascua-philippines-2024"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

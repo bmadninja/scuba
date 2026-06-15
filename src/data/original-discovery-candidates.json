@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "lastReviewedAt": "2026-06-15",
+  "purpose": "Candidate original scubaSeason discoveries. A candidate only belongs here when the claim is derived from internal cross-dataset analysis and an initial public-prior-art search did not find the same joined claim.",
+  "standard": {
+    "required": [
+      "The claim must be reproducible from scubaSeason data joins, rankings, or comparisons.",
+      "The claim must not merely restate a known destination reputation, operator claim, or source dataset fact.",
+      "The claim must include an originality review with exact prior-art search queries.",
+      "The claim must use guarded language until reviewed by a human editor."
+    ],
+    "claimLanguage": {
+      "allowed": [
+        "In our atlas data...",
+        "Among locations in this dataset...",
+        "We did not find this exact joined claim in public search...",
+        "Candidate scubaSeason finding..."
+      ],
+      "avoid": [
+        "first ever",
+        "nobody has noticed",
+        "scientists do not know",
+        "proves",
+        "caused by"
+      ]
+    }
+  },
+  "records": [
+    {
+      "id": "jardines-threatened-species-density-plus-reef-cover",
+      "status": "candidate-original-discovery",
+      "locationId": "cuba-jardines-de-la-reina",
+      "title": "Jardines de la Reina has the densest threatened-species stack among above-baseline reefs in our atlas",
+      "claim": "In the current scubaSeason data, Jardines de la Reina is the top location with coral cover above 35 percent and at least six threatened species signals in sightings/IUCN joins.",
+      "whyThisIsOurs": "Public pages commonly describe Jardines as shark-rich, crocodile-rich, protected, and healthy. The candidate claim is narrower: it ranks the location across our joined reef-health, sightings, IUCN, fishing-pressure, and MPA fields.",
+      "internalDerivation": {
+        "datasets": [
+          "reef-health.json",
+          "reef-pressure.json",
+          "sightings.json",
+          "sites.json",
+          "locations.json",
+          "iucn-status.json"
+        ],
+        "logic": [
+          "Join sightings.siteId to sites.locationId.",
+          "Join sightings.speciesScientific to iucn-status records.",
+          "Filter IUCN category to VU, EN, or CR.",
+          "Aggregate threatened species count and recentRecordCount by location.",
+          "Join reef-health observed.coralCoverPercent and keep locations with cover >= 35.",
+          "Rank by threatened species richness, then total recentRecordCount."
+        ],
+        "computedSignals": {
+          "coralCoverPercent": 38,
+          "threatenedSpeciesCount": 6,
+          "threatenedRecentRecordCount": 420,
+          "fishingPressure": "moderate",
+          "mpaStatus": "strict-mpa",
+          "topThreatenedSignals": [
+            {
+              "species": "Caribbean reef shark",
+              "iucn": "EN",
+              "recentRecordCount": 180
+            },
+            {
+              "species": "American crocodile",
+              "iucn": "VU",
+              "recentRecordCount": 130
+            },
+            {
+              "species": "Silky shark",
+              "iucn": "VU",
+              "recentRecordCount": 50
+            },
+            {
+              "species": "Goliath grouper",
+              "iucn": "VU",
+              "recentRecordCount": 50
+            }
+          ]
+        }
+      },
+      "priorArtSearch": {
+        "reviewedAt": "2026-06-15",
+        "result": "no-exact-joined-claim-found",
+        "queries": [
+          "\"Jardines de la Reina\" \"six\" threatened species coral cover sharks crocodile goliath grouper",
+          "\"Jardines de la Reina\" \"coral cover\" \"Caribbean reef shark\" \"American crocodile\"",
+          "\"Jardines de la Reina\" \"Goliath grouper\" \"Caribbean reef shark\" \"coral cover\"",
+          "\"Jardines de la Reina\" \"38%\" \"coral cover\""
+        ],
+        "publicKnownContext": [
+          "Jardines is publicly known as a protected Cuban dive destination with sharks and crocodiles.",
+          "The exact joined ranking against threatened species richness plus coral-cover threshold was not found in the initial search."
+        ]
+      },
+      "editorialCaveat": "This is an atlas-relative claim, not a global ecological claim. The record counts are occurrence evidence, not per-dive probability."
+    },
+    {
+      "id": "sogod-bay-reef-health-plus-whale-shark-photo-id",
+      "status": "candidate-original-discovery",
+      "locationId": "sogod-bay-philippines",
+      "title": "Sogod Bay is a rare overlap of above-baseline reef cover and decade-scale whale shark identity evidence",
+      "claim": "In our data, Sogod Bay is one of the clearest overlaps between an above-baseline reef-health signal and a long-running threatened megafauna identity record.",
+      "whyThisIsOurs": "The reef-health and whale shark facts are public separately. The discovery candidate is the overlap: this location satisfies both a coral-cover comparison and a longitudinal endangered-species evidence threshold.",
+      "internalDerivation": {
+        "datasets": [
+          "reef-health.json",
+          "reef-pressure.json",
+          "sightings.json",
+          "iucn-status.json"
+        ],
+        "logic": [
+          "Identify reef-health notes with explicit national or regional coral-cover baseline comparisons.",
+          "Join same location to threatened megafauna evidence from sightings, encounters, or notes.",
+          "Promote only when both the reef comparison and megafauna evidence have source-backed numeric signals."
+        ],
+        "computedSignals": {
+          "storedCoralCoverPercent": 45,
+          "outerReefCoverFromNotes": "60-70%",
+          "baselineFromNotes": "about 20% Philippine national average",
+          "megafaunaSignal": "350+ individual whale sharks documented over 10+ years",
+          "iucnStatus": "EN"
+        }
+      },
+      "priorArtSearch": {
+        "reviewedAt": "2026-06-15",
+        "result": "no-exact-joined-claim-found",
+        "queries": [
+          "\"Sogod Bay\" \"60-70%\" \"whale sharks\"",
+          "\"Panaon Island\" \"coral cover\" \"350\" \"whale sharks\"",
+          "\"Sogod Bay\" \"Philippine national average\" \"whale shark\"",
+          "\"Panaon Island\" \"60-70% live coral cover\" \"LAMAVE\""
+        ],
+        "publicKnownContext": [
+          "Whale shark sightings in Sogod Bay are public.",
+          "Panaon outer reef coral-cover claims are public.",
+          "The exact reef-health plus whale-shark identity overlap was not found in the initial search."
+        ]
+      },
+      "editorialCaveat": "The strongest reef-cover number applies to outer Panaon Island, not the whole bay; render that sub-location caveat visibly."
+    },
+    {
+      "id": "brothers-islands-cr-shark-stack-plus-coral-cover",
+      "status": "candidate-original-discovery",
+      "locationId": "brothers-egypt",
+      "title": "Brothers Islands stack two critically endangered shark signals on moderate-high coral cover",
+      "claim": "In our atlas data, Brothers Islands stands out as a Red Sea location where coral cover is above 40 percent and the top two threatened-species signals are both critically endangered sharks.",
+      "whyThisIsOurs": "Oceanic whitetips and hammerheads at Brothers/Daedalus are known to divers. The candidate claim is the internal join between reef-health threshold, IUCN severity, and repeat sighting counts.",
+      "internalDerivation": {
+        "datasets": [
+          "reef-health.json",
+          "sightings.json",
+          "sites.json",
+          "iucn-status.json"
+        ],
+        "logic": [
+          "Join sightings to IUCN and locations.",
+          "Filter locations with observed coral cover >= 40.",
+          "Rank by count of CR species signals and recentRecordCount."
+        ],
+        "computedSignals": {
+          "coralCoverPercent": 42,
+          "criticallyEndangeredSignals": [
+            {
+              "species": "Oceanic whitetip shark",
+              "iucn": "CR",
+              "recentRecordCount": 180
+            },
+            {
+              "species": "Scalloped hammerhead",
+              "iucn": "CR",
+              "recentRecordCount": 90
+            }
+          ]
+        }
+      },
+      "priorArtSearch": {
+        "reviewedAt": "2026-06-15",
+        "result": "no-exact-joined-claim-found",
+        "queries": [
+          "\"Brothers Islands\" \"Oceanic whitetip\" \"scalloped hammerhead\" \"coral cover\"",
+          "\"Brothers Islands\" \"42%\" \"coral cover\" \"oceanic whitetip\"",
+          "\"Red Sea\" \"Brothers Islands\" \"three threatened species\" diving coral cover"
+        ],
+        "publicKnownContext": [
+          "The shark encounters are known in dive tourism.",
+          "The exact coral-cover plus two-CR-species atlas ranking was not found in the initial search."
+        ]
+      },
+      "editorialCaveat": "This is an internal atlas comparison. Do not imply Brothers is globally unique without a broader verified database."
+    },
+    {
+      "id": "fakarava-grey-reef-shark-records-plus-low-pressure",
+      "status": "candidate-original-discovery",
+      "locationId": "fakarava-french-polynesia",
+      "title": "Fakarava has the strongest threatened-shark repeat signal paired with low fishing pressure",
+      "claim": "In the current sightings file, South Pass / Fakarava has the highest threatened-shark recentRecordCount, and the joined pressure record marks fishing pressure as low.",
+      "whyThisIsOurs": "Fakarava's shark wall is famous. The original part is narrower: ranking threatened-shark repeat evidence across all atlas sightings and joining it to fishing-pressure context.",
+      "internalDerivation": {
+        "datasets": [
+          "sightings.json",
+          "sites.json",
+          "locations.json",
+          "iucn-status.json",
+          "reef-pressure.json",
+          "reef-health.json"
+        ],
+        "logic": [
+          "Join sightings to IUCN.",
+          "Filter to shark species with IUCN category VU, EN, or CR.",
+          "Rank by recentRecordCount.",
+          "Join pressure and reef-health context for the same location."
+        ],
+        "computedSignals": {
+          "species": "Grey reef shark",
+          "iucn": "EN",
+          "recentRecordCount": 538,
+          "coralCoverPercent": 44,
+          "fishingPressure": "low",
+          "mpaStatus": "strict-mpa"
+        }
+      },
+      "priorArtSearch": {
+        "reviewedAt": "2026-06-15",
+        "result": "no-exact-joined-claim-found",
+        "queries": [
+          "\"South Pass\" Fakarava \"grey reef shark\" \"coral cover\" \"fishing pressure\"",
+          "\"Fakarava\" \"538\" \"grey reef shark\"",
+          "\"Fakarava\" \"44%\" \"coral cover\" \"grey reef shark\""
+        ],
+        "publicKnownContext": [
+          "Fakarava is publicly known for grey reef shark aggregations.",
+          "The exact atlas-ranked repeat-sighting plus low-fishing-pressure claim was not found in the initial search."
+        ]
+      },
+      "editorialCaveat": "This should be rendered as 'strongest signal in our current sightings file,' not as the world's largest shark aggregation."
+    }
+  ]
+}

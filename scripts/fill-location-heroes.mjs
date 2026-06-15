@@ -16,6 +16,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { loadRegistry, isUsed, markUsed, saveRegistry } from "./lib/photo-registry.mjs";
+import { pexelsSearch, unsplashSearch } from "./lib/photo-sources.mjs";
 
 const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
 const LOCATIONS_PATH = path.join(ROOT, "src/data/locations.json");
@@ -108,7 +109,7 @@ async function main() {
     arr.sort((a, b) => (b.editorialRank ?? 0) - (a.editorialRank ?? 0));
   }
 
-  let borrowed = 0, wiki = 0, missed = 0, skipped = 0;
+  let borrowed = 0, wiki = 0, pexels = 0, unsplash = 0, missed = 0, skipped = 0;
 
   for (const loc of locations) {
     if (loc.heroImageUrl) { skipped++; continue; }
@@ -141,6 +142,47 @@ async function main() {
       wiki++;
       console.log(`[wiki]   ${loc.slug}`);
     } else {
+      // Pexels fallback.
+      const pexQueries = [
+        `${loc.name} scuba diving underwater`,
+        `${loc.country || ""} coral reef scuba diving`.trim(),
+        `${loc.region || loc.country || ""} underwater reef`.trim(),
+      ].filter(q => q.length > 5);
+      let pexUrl = null;
+      for (const q of pexQueries) {
+        const results = await pexelsSearch(q);
+        const pick = results.find(p => p.srcWidth >= MIN_WIDTH && !isUsed(p.url));
+        if (pick) { pexUrl = pick.url; break; }
+        await sleep(400);
+      }
+      if (pexUrl) {
+        loc.heroImageUrl = pexUrl;
+        markUsed(pexUrl, loc.slug);
+        pexels++;
+        console.log(`[pexels] ${loc.slug}`);
+        continue;
+      }
+
+      // Unsplash fallback (hotlinked — do not download/re-host).
+      const uQueries = [
+        `${loc.name} scuba diving underwater`,
+        `${loc.country || ""} coral reef diving`.trim(),
+      ].filter(q => q.length > 5);
+      let uUrl = null;
+      for (const q of uQueries) {
+        const results = await unsplashSearch(q);
+        const pick = results.find(p => p.srcWidth >= MIN_WIDTH && !isUsed(p.url));
+        if (pick) { uUrl = pick.url; break; }
+        await sleep(400);
+      }
+      if (uUrl) {
+        loc.heroImageUrl = uUrl;
+        markUsed(uUrl, loc.slug);
+        unsplash++;
+        console.log(`[unsplash] ${loc.slug}`);
+        continue;
+      }
+
       missed++;
       console.log(`[none]   ${loc.slug}`);
     }
@@ -151,7 +193,7 @@ async function main() {
 
   const filled = locations.filter(l => l.heroImageUrl).length;
   console.log(`\nDone. ${filled}/${locations.length} locations have a hero.`);
-  console.log(`  Borrowed from site: ${borrowed} | Wikimedia: ${wiki} | Missed: ${missed} | Already had: ${skipped}`);
+  console.log(`  Borrowed from site: ${borrowed} | Wikimedia: ${wiki} | Pexels: ${pexels} | Unsplash: ${unsplash} | Missed: ${missed} | Already had: ${skipped}`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

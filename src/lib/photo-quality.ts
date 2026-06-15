@@ -125,5 +125,35 @@ export function resizePhotoUrl(
     return url.replace(/\/(square|small|medium|large|original)\./, `/${inatSize}.`);
   }
 
+  // Pexels — swap w= query param
+  if (url.includes("images.pexels.com")) {
+    try {
+      const u = new URL(url);
+      u.searchParams.set("auto", "compress");
+      u.searchParams.set("cs", "tinysrgb");
+      u.searchParams.set("w", String(targetWidth));
+      u.searchParams.delete("h");
+      u.searchParams.delete("dpr");
+      u.searchParams.delete("fit");
+      return u.toString();
+    } catch {
+      return url;
+    }
+  }
+
+  // Unsplash — swap w= query param (images must be hotlinked, not self-hosted)
+  if (url.includes("images.unsplash.com")) {
+    try {
+      const u = new URL(url);
+      u.searchParams.set("w", String(targetWidth));
+      u.searchParams.set("q", "80");
+      u.searchParams.set("fm", "jpg");
+      u.searchParams.set("fit", "max");
+      return u.toString();
+    } catch {
+      return url;
+    }
+  }
+
   return url;
 }

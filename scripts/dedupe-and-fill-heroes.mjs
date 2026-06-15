@@ -23,6 +23,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { loadRegistry, isUsed, markUsed, saveRegistry } from "./lib/photo-registry.mjs";
+import { pexelsSearch, unsplashSearch } from "./lib/photo-sources.mjs";
 
 // Mirror of src/lib/photo-quality.ts REJECTED_SURFACE_PHOTO_PATTERNS — keep in sync.
 const REJECTED_SURFACE_PHOTO_PATTERNS = [
@@ -195,6 +196,31 @@ async function fillSite(site, locName) {
     );
     if (hit) return { url: hit.url, source: `${hit.source} [species: ${sp}]` };
   }
+
+  // Pexels fallback.
+  const pexQueries = [
+    `${site.name} scuba diving underwater`,
+    ...signatureSpecies(site.species).slice(0, 2).map(sp => `${sp} underwater reef`),
+  ];
+  for (const q of pexQueries) {
+    const results = await pexelsSearch(q);
+    const pick = results.find(p => p.srcWidth >= MIN_SITE_WIDTH && !isUsed(p.url));
+    if (pick) return { url: pick.url, source: pick.source };
+    await sleep(350);
+  }
+
+  // Unsplash fallback (hotlinked — do not re-host).
+  const uQueries = [
+    `${site.name} scuba diving underwater`,
+    `${locName} coral reef diving underwater`.trim(),
+  ].filter(q => q.length > 5);
+  for (const q of uQueries) {
+    const results = await unsplashSearch(q);
+    const pick = results.find(p => p.srcWidth >= MIN_SITE_WIDTH && !isUsed(p.url));
+    if (pick) return { url: pick.url, source: pick.source };
+    await sleep(350);
+  }
+
   return null;
 }
 
@@ -218,10 +244,38 @@ async function fillLocation(loc, locSites) {
   );
   if (hit) return hit;
   // Last resort: region/country reef imagery.
-  return searchQueries(
+  hit = await searchQueries(
     [`${loc.region || loc.country} coral reef underwater`, `${loc.country} reef diving scuba`],
     MIN_LOCATION_WIDTH,
   );
+  if (hit) return hit;
+
+  // Pexels fallback.
+  const pexLocQueries = [
+    `${loc.name} scuba diving underwater`,
+    `${loc.country || ""} coral reef diving`.trim(),
+    `${loc.region || loc.country || ""} underwater reef`.trim(),
+  ].filter(q => q.length > 5);
+  for (const q of pexLocQueries) {
+    const results = await pexelsSearch(q);
+    const pick = results.find(p => p.srcWidth >= MIN_LOCATION_WIDTH && !isUsed(p.url));
+    if (pick) return { url: pick.url, source: pick.source };
+    await sleep(350);
+  }
+
+  // Unsplash fallback (hotlinked — do not re-host).
+  const uLocQueries = [
+    `${loc.name} scuba diving underwater`,
+    `${loc.country || ""} coral reef scuba`.trim(),
+  ].filter(q => q.length > 5);
+  for (const q of uLocQueries) {
+    const results = await unsplashSearch(q);
+    const pick = results.find(p => p.srcWidth >= MIN_LOCATION_WIDTH && !isUsed(p.url));
+    if (pick) return { url: pick.url, source: pick.source };
+    await sleep(350);
+  }
+
+  return null;
 }
 
 async function main() {

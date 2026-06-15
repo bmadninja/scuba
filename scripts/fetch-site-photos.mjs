@@ -25,6 +25,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { loadRegistry, isUsed, markUsed, saveRegistry } from "./lib/photo-registry.mjs";
+import { pexelsSearch } from "./lib/photo-sources.mjs";
 
 const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
 const SITES_PATH = path.join(ROOT, "src/data/sites.json");
@@ -327,8 +328,27 @@ async function main() {
         speciesHits++;
         console.log(`[species] ${site.slug} ← ${hit.source}`);
       } else {
-        siteUnmatched++;
-        console.log(`[none]    ${site.slug}`);
+        // Pexels fallback.
+        const pexQueries = [
+          `${site.name} scuba diving underwater`,
+          ...((site.species || []).slice(0, 2).map(s => `${s.commonName || s.name} underwater reef`).filter(Boolean)),
+        ];
+        for (const q of pexQueries) {
+          const pexResults = await pexelsSearch(q);
+          const pick = pexResults.find(p => p.srcWidth >= MIN_SITE_WIDTH && !isUsed(p.url));
+          if (pick) {
+            hit = { url: pick.url, source: pick.source };
+            break;
+          }
+          await sleep(300);
+        }
+        if (hit) {
+          siteHits++;
+          console.log(`[pexels]  ${site.slug} ← ${hit.source}`);
+        } else {
+          siteUnmatched++;
+          console.log(`[none]    ${site.slug}`);
+        }
       }
     }
     if (hit) {
@@ -357,8 +377,29 @@ async function main() {
       markUsed(hit.url, loc.slug);
       console.log(`[loc]     ${loc.slug} ← ${hit.source}`);
     } else {
-      locUnmatched++;
-      console.log(`[none]    ${loc.slug}`);
+      // Pexels fallback for locations.
+      const locName = loc.name;
+      const locCountry = loc.country || "";
+      const pexQueries = [
+        `${locName} scuba diving underwater`,
+        `${locCountry} coral reef scuba diving`,
+      ].filter(q => q.trim().length > 5);
+      let pexHit = null;
+      for (const q of pexQueries) {
+        const pexResults = await pexelsSearch(q);
+        const pick = pexResults.find(p => p.srcWidth >= MIN_LOCATION_WIDTH && !isUsed(p.url));
+        if (pick) { pexHit = pick; break; }
+        await sleep(300);
+      }
+      if (pexHit) {
+        locHits++;
+        loc.heroImageUrl = pexHit.url;
+        markUsed(pexHit.url, loc.slug);
+        console.log(`[pexels]  ${loc.slug} ← ${pexHit.source}`);
+      } else {
+        locUnmatched++;
+        console.log(`[none]    ${loc.slug}`);
+      }
     }
   }
 
