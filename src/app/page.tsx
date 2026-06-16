@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { AtlasNav } from "@/components/atlas-nav";
 import { HideLayoutNav } from "@/components/hide-layout-nav";
@@ -784,6 +785,15 @@ export default function Home() {
               See Tela, Honduras →
             </Link>
           </div>
+          <div style={{ flexShrink: 0, borderRadius: 6, overflow: "hidden", width: 160, height: 110, position: "relative" }}>
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Acropora_palmata_-_elkhorn_coral_-_Bay_of_Pigs_-_Cuba.jpg"
+              alt="Elkhorn coral reef at Tela, Honduras"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="160px"
+            />
+          </div>
           <div style={{ display: "flex", gap: "2.5rem", flexShrink: 0 }}>
             {[
               { n: "1",   sub: "Thriving", color: C.thr },
@@ -919,6 +929,7 @@ export default function Home() {
             {[
               {
                 name: "Goliath grouper",
+                imageUrl: "https://inaturalist-open-data.s3.amazonaws.com/photos/98481122/square.jpg",
                 status: "Vulnerable",
                 statusStyle: {
                   background: "rgba(251,146,60,0.15)",
@@ -929,6 +940,7 @@ export default function Home() {
               },
               {
                 name: "Hawksbill turtle",
+                imageUrl: "https://static.inaturalist.org/photos/30844744/square.jpg",
                 status: "Critically endangered",
                 statusStyle: {
                   background: "rgba(251,113,133,0.15)",
@@ -939,6 +951,7 @@ export default function Home() {
               },
               {
                 name: "Elkhorn coral",
+                imageUrl: "https://inaturalist-open-data.s3.amazonaws.com/photos/652846455/square.jpg",
                 status: "Critically endangered",
                 statusStyle: {
                   background: "rgba(251,113,133,0.15)",
@@ -949,6 +962,7 @@ export default function Home() {
               },
               {
                 name: "Caribbean reef shark",
+                imageUrl: "https://inaturalist-open-data.s3.amazonaws.com/photos/290208487/square.jpg",
                 status: "Near threatened",
                 statusStyle: {
                   background: "rgba(139,157,184,0.14)",
@@ -957,59 +971,76 @@ export default function Home() {
                 evColor: "#34d399",
                 ev: "Last confirmed 2 days ago · 175 records",
               },
-            ].map((sp, i, arr) => (
-              <div
-                key={sp.name}
-                style={{
-                  padding: "0.875rem 1.25rem",
-                  borderBottom: i < arr.length - 1 ? `1px solid ${C.border}` : "none",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                  <span
-                    style={{ fontSize: "0.9375rem", fontWeight: 600, color: C.text }}
-                  >
-                    {sp.name}
-                  </span>
-                  <span
-                    style={{
-                      borderRadius: 4,
-                      padding: "0.125rem 0.4rem",
-                      fontSize: "0.5625rem",
-                      fontWeight: 800,
-                      letterSpacing: "0.03em",
-                      whiteSpace: "nowrap",
-                      ...sp.statusStyle,
-                    }}
-                  >
-                    {sp.status}
-                  </span>
-                </div>
+            ].map((sp, i, arr) => {
+              const isLast = i === arr.length - 1;
+              return (
                 <div
+                  key={sp.name}
                   style={{
+                    padding: "0.875rem 1.25rem",
+                    borderBottom: isLast ? "none" : `1px solid ${C.border}`,
                     display: "flex",
                     alignItems: "center",
-                    gap: "0.4rem",
-                    marginTop: "0.4rem",
-                    fontSize: "0.6875rem",
-                    color: C.textMuted,
-                    lineHeight: 1.4,
+                    gap: "0.75rem",
                   }}
                 >
-                  <span
-                    aria-hidden
+                  <img // eslint-disable-line @next/next/no-img-element
+                    src={sp.imageUrl}
+                    alt={sp.name}
                     style={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: "50%",
-                      background: sp.evColor,
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      borderRadius: "0.5rem",
+                      objectFit: "cover" as const,
                       flexShrink: 0,
                     }}
                   />
-                  {sp.ev}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                      <span style={{ fontSize: "0.9375rem", fontWeight: 600, color: C.text }}>
+                        {sp.name}
+                      </span>
+                      <span
+                        style={{
+                          borderRadius: 4,
+                          padding: "0.125rem 0.4rem",
+                          fontSize: "0.5625rem",
+                          fontWeight: 800,
+                          letterSpacing: "0.03em",
+                          whiteSpace: "nowrap",
+                          ...sp.statusStyle,
+                        }}
+                      >
+                        {sp.status}
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.4rem",
+                        marginTop: "0.4rem",
+                        fontSize: "0.6875rem",
+                        color: C.textMuted,
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      <span
+                        aria-hidden
+                        style={{
+                          width: 6,
+                          height: 6,
+                          borderRadius: "50%",
+                          background: sp.evColor,
+                          flexShrink: 0,
+                        }}
+                      />
+                      {sp.ev}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </FadeInSection>
