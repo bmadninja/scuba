@@ -16,6 +16,7 @@ import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import { STATE_TEXT, STATE_COLOR, bestMonthsText } from "@/lib/data/reef-state";
 import { LocationPageBody } from "./location-page-body";
+import { HeroGallery } from "@/components/hero-gallery";
 import type {
   ConditionPill,
   DeclineChart,
@@ -615,17 +616,10 @@ export default async function LocationPage({
               "linear-gradient(155deg,#041c33 0%,#063a52 20%,#065a70 40%,#087a8a 58%,#0a9a88 75%,#0a8070 100%)",
           }}
         />
-        {heroPhotoUrl && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={heroPhotoUrl}
-            alt={`Underwater reef at ${location.name}`}
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-            loading="eager"
-            decoding="sync"
-            fetchPriority="high"
-          />
-        )}
+        <HeroGallery
+          images={atlasLoc.heroImages?.length ? atlasLoc.heroImages : (atlasLoc.heroImageUrl ? [atlasLoc.heroImageUrl] : [])}
+          alt={`Underwater reef at ${location.name}`}
+        />
         <div
           aria-hidden="true"
           style={{

@@ -37,6 +37,7 @@ export type AtlasLocation = {
   x: number;
   y: number;
   heroImageUrl?: string;
+  heroImages?: string[];
   animalTags: string[];
   diveTypeTags: string[];
   maxCurrentStrength: "none" | "mild" | "moderate" | "strong";
@@ -169,6 +170,7 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
   // A location without its own photo shows a gradient placeholder (handled in
   // the card/hero components), never a borrowed one.
   const heroImageUrl = location.heroImageUrl ?? undefined;
+  const heroImages = location.heroImages?.length ? location.heroImages : undefined;
 
   // Derive animal tags from species common names across all sites.
   const allSpeciesText = sites
@@ -222,6 +224,7 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     x: Math.round(x * 10) / 10,
     y: Math.round(y * 10) / 10,
     heroImageUrl,
+    heroImages,
     animalTags,
     diveTypeTags,
     maxCurrentStrength,

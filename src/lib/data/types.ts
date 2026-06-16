@@ -66,6 +66,7 @@ export type Location = {
   bestMonths: number[];
   siteIds: string[];
   heroImageUrl?: string;
+  heroImages?: string[];
   sourceIds?: string[];
   methodologyClaimIds?: string[];
 };
@@ -153,6 +154,7 @@ export type Site = {
   bestMonths: number[];
   editorialRank: number;
   heroImageUrl?: string;
+  heroImages?: string[];
   getThere: string;
   /** Structured breakdown of travel logistics. When present, renders as 3 labeled sections. */
   getThereStructured?: GetThereStructured;

@@ -12,6 +12,7 @@ import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import { skillText } from "@/lib/data/reef-state";
 import { SitePageBody } from "./site-page-body";
+import { HeroGallery } from "@/components/hero-gallery";
 import type {
   ConditionCard,
   EncounterRow,
@@ -460,17 +461,10 @@ export default async function SiteDetailPage({
               "linear-gradient(155deg,#04243a 0%,#0a4a63 30%,#0a6b7a 55%,#0a8a7a 80%,#0a7060 100%)",
           }}
         />
-        {heroPhotoUrl && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={heroPhotoUrl}
-            alt={`Underwater at ${site.name}`}
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-            loading="eager"
-            decoding="sync"
-            fetchPriority="high"
-          />
-        )}
+        <HeroGallery
+          images={site.heroImages?.length ? site.heroImages : (site.heroImageUrl ? [site.heroImageUrl] : [])}
+          alt={`Underwater at ${site.name}`}
+        />
         <div
           aria-hidden="true"
           style={{
