@@ -720,6 +720,15 @@ export default function DataPage() {
                   Run a standard reef survey: count fish, invertebrates and coral
                   health along a set line. This feeds long term monitoring.
                 </PlatformCard>
+                <PlatformCard
+                  href="https://wildflow.ai/"
+                  name="Wildflow AI"
+                  effort="AI-assisted"
+                >
+                  Upload underwater footage and let AI identify species
+                  automatically. Records feed directly into conservation datasets
+                  without manual tagging.
+                </PlatformCard>
               </div>
             </div>
 
