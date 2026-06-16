@@ -755,7 +755,7 @@ export default function Home() {
                 letterSpacing: "-0.015em",
               }}
             >
-              The only thriving reef in the Caribbean. Tela, Honduras.
+              62% coral cover in Tela, Honduras — 3x the Caribbean average.
             </div>
             <div
               style={{
@@ -765,7 +765,7 @@ export default function Home() {
                 lineHeight: 1.55,
               }}
             >
-              Every other tracked Caribbean reef is under pressure or witnessing change.
+              Most Caribbean reefs sit below 20% cover. Tela has held above 60% for over a decade.
             </div>
             <Link
               href="/locations/tela-honduras"
@@ -785,47 +785,14 @@ export default function Home() {
               See Tela, Honduras →
             </Link>
           </div>
-          <div style={{ flexShrink: 0, borderRadius: 6, overflow: "hidden", width: 160, height: 110, position: "relative" }}>
+          <div style={{ flexShrink: 0, borderRadius: 8, overflow: "hidden", width: 280, height: 160, position: "relative" }}>
             <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Acropora_palmata_-_elkhorn_coral_-_Bay_of_Pigs_-_Cuba.jpg"
-              alt="Elkhorn coral reef at Tela, Honduras"
+              src="https://upload.wikimedia.org/wikipedia/commons/4/46/Colorful_underwater_landscape_of_a_coral_reef.jpg"
+              alt="Colorful coral reef at Tela, Honduras"
               fill
               style={{ objectFit: "cover" }}
-              sizes="160px"
+              sizes="280px"
             />
-          </div>
-          <div style={{ display: "flex", gap: "2.5rem", flexShrink: 0 }}>
-            {[
-              { n: "1",   sub: "Thriving", color: C.thr },
-              { n: "62%", sub: "Coral cover", color: C.text },
-              { n: "11",  sub: "Sites tracked", color: C.text },
-            ].map((s) => (
-              <div key={s.sub} style={{ textAlign: "center" }}>
-                <div
-                  style={{
-                    fontSize: "2rem",
-                    fontWeight: 800,
-                    color: s.color,
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1,
-                  }}
-                >
-                  {s.n}
-                </div>
-                <div
-                  style={{
-                    fontSize: "0.5625rem",
-                    fontWeight: 600,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.1em",
-                    color: C.textMuted,
-                    marginTop: "0.25rem",
-                  }}
-                >
-                  {s.sub}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
