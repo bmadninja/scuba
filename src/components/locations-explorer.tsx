@@ -239,6 +239,12 @@ const REEF_STATE_BADGE: Record<ReefState, { bg: string; color: string; border: s
   change: { bg: "rgba(244,63,94,0.14)", color: "#fca5a5", border: "1px solid rgba(244,63,94,0.2)" },
 };
 
+const REEF_STATE_STRIPE: Record<ReefState, string> = {
+  thriving: "#10b981",
+  pressure: "#f59e0b",
+  change: "#f43f5e",
+};
+
 // ─── URL param helpers ────────────────────────────────────────────────────────
 
 function getMultiParam(params: ReturnType<typeof useSearchParams>, key: string): string[] {
@@ -638,7 +644,6 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
               <LocationCard
                 key={loc.slug}
                 location={loc}
-                inSeason={loc.bestMonths.includes(monthFilters.length > 0 ? monthFilters[0] : currentMonth)}
                 gradientIndex={idx % OCEAN_GRADIENTS.length}
               />
             ))}
@@ -653,14 +658,13 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
 
 function LocationCard({
   location,
-  inSeason,
   gradientIndex,
 }: {
   location: LocationItem;
-  inSeason: boolean;
   gradientIndex: number;
 }) {
   const badgeStyle = REEF_STATE_BADGE[location.state];
+  const stripeColor = REEF_STATE_STRIPE[location.state];
   const gradient = OCEAN_GRADIENTS[gradientIndex];
 
   return (
@@ -678,23 +682,15 @@ function LocationCard({
         )}
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(95deg,transparent 0,transparent 50px,rgba(0,160,220,.03) 50px,rgba(0,160,220,.03) 52px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,rgba(4,20,40,.5) 0%,transparent 55%)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", top: "0.875rem", left: "0.875rem", display: "flex", gap: "0.375rem", zIndex: 2, flexWrap: "wrap" }}>
-          <span style={{ fontSize: "0.625rem", fontWeight: 700, padding: "0.275rem 0.625rem", borderRadius: 999, backdropFilter: "blur(8px)", background: badgeStyle.bg, color: badgeStyle.color, border: badgeStyle.border }}>
-            {STATE_TEXT[location.state]}
-          </span>
-          {inSeason && (
-            <span style={{ fontSize: "0.625rem", fontWeight: 700, padding: "0.275rem 0.625rem", borderRadius: 999, backdropFilter: "blur(8px)", background: "rgba(255,255,255,0.10)", color: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.15)" }}>
-              In season
-            </span>
-          )}
-        </div>
-        <span style={{ position: "absolute", bottom: "0.875rem", right: "0.875rem", fontSize: "0.5875rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", padding: "0.275rem 0.65rem", borderRadius: 999, background: "rgba(0,0,0,0.42)", color: "rgba(255,255,255,0.65)", backdropFilter: "blur(6px)", border: "1px solid rgba(255,255,255,0.10)", zIndex: 2 }}>
-          {location.skill}
-        </span>
       </div>
 
       {/* Card body */}
-      <div style={{ padding: "1.25rem 1.375rem 1.375rem", flex: 1, display: "flex", flexDirection: "column" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "row" }}>
+        <div style={{ width: "4px", background: stripeColor, flexShrink: 0 }} />
+        <div style={{ padding: "1.25rem 1.375rem 1.375rem", flex: 1, display: "flex", flexDirection: "column" }}>
+        <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: badgeStyle.color, marginBottom: "0.5rem" }}>
+          {STATE_TEXT[location.state]}
+        </p>
         <p style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.3rem" }}>
           {location.country} · {location.region}
         </p>
@@ -715,6 +711,7 @@ function LocationCard({
               {t.replace(/-/g, " ")}
             </span>
           ))}
+        </div>
         </div>
       </div>
     </Link>
