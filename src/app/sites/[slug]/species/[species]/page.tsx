@@ -7,6 +7,8 @@ import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { IucnBadge } from "@/components/iucn-badge";
 import { MethodologyDisclosure } from "@/components/methodology-disclosure";
+import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
+import { resizePhotoUrl } from "@/lib/photo-quality";
 
 const MONTH_ABBR = [
   "Jan","Feb","Mar","Apr","May","Jun",
@@ -87,6 +89,16 @@ export default async function SpeciesDetailPage({
   // IUCN status
   const iucn = IUCN_ENABLED ? getIucnStatus(scientificName) : null;
 
+  // Species photo — prefer site-specific credit, fall back to global scientific name key
+  const speciesKey = scientificName?.toLowerCase() ?? commonName.toLowerCase();
+  const photoCredit =
+    getSpeciesPhotoCredit(`${site.slug}:${speciesKey}`) ??
+    getSpeciesPhotoCredit(speciesKey);
+  const photoUrl =
+    ("imageUrl" in speciesEntry ? speciesEntry.imageUrl : undefined) ??
+    photoCredit?.imageUrl ??
+    null;
+
   // Best months seasonality from sighting data or curated data
   const seasonalityMonths =
     evidence.flatMap((e) => e.seasonalityMonths).length > 0
@@ -157,6 +169,30 @@ export default async function SpeciesDetailPage({
           {location ? `, ${location.name}` : ""}
         </p>
       </div>
+
+      {/* Species photo */}
+      {photoUrl ? (
+        <div className="mb-8">
+          <div className="overflow-hidden rounded-2xl">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={resizePhotoUrl(photoUrl, 800) ?? photoUrl}
+              alt={commonName}
+              className="w-full object-cover"
+              style={{ maxHeight: "22rem" }}
+            />
+          </div>
+          {photoCredit ? (
+            <p className="mt-1.5 text-right text-xs text-[#8b9db8]">
+              {photoCredit.photographer
+                ? `Photo: ${photoCredit.photographer}`
+                : "iNaturalist"}
+              {" · "}
+              {photoCredit.licenseLabel}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
 
       {/* Ecological description */}
       {speciesEntry.ecologicalDescription ? (
