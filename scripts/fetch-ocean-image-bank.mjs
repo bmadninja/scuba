@@ -100,6 +100,23 @@ async function fetchAllImages() {
   return allImages;
 }
 
+// ── Underwater eligibility filter ────────────────────────────────────────────
+// Reject OIB photos whose alt text signals above-water content. This prevents
+// surface/aerial/boat shots from being assigned as hero images for dive sites.
+
+const SURFACE_REJECT = [
+  /\bboat\b/, /\bvessel\b/, /\bship\b(?!wreck)/, /\bfisherman\b/, /\bfishing\b/,
+  /\bbeach\b/, /\bcoastline\b/, /\bshoreline\b/, /\baerial\b/,
+  /\bharbou?r\b/, /\bport\b/, /\bpier\b/, /\bdock\b/,
+  /\bfrom above\b/, /\bdrone\b/, /\bird.?s.?eye\b/, /\boverhead\b/,
+  /\bvillage\b/, /\bmarket\b/, /\bstreet\b/,
+];
+
+export function isUnderwaterOIB(img) {
+  const text = ((img.alternative_text || "") + " " + (img.name || "")).toLowerCase();
+  return !SURFACE_REJECT.some((p) => p.test(text));
+}
+
 // ── Scoring ───────────────────────────────────────────────────────────────────
 
 function tokenize(text) {
@@ -218,6 +235,7 @@ async function main() {
       const url = `${CDN}/${img.name}`;
       if (assignedUrls.has(url)) continue;
       if (isUsed(url)) continue;
+      if (!isUnderwaterOIB(img)) continue;
       let score = scoreImage(img, keywords);
       if (score < MIN_SCORE) continue;
       // Penalise cross-region mismatches.
