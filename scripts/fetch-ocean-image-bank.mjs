@@ -105,11 +105,21 @@ async function fetchAllImages() {
 // surface/aerial/boat shots from being assigned as hero images for dive sites.
 
 const SURFACE_REJECT = [
+  // Above-water vessels & infrastructure
   /\bboat\b/, /\bvessel\b/, /\bship\b(?!wreck)/, /\bfisherman\b/, /\bfishing\b/,
-  /\bbeach\b/, /\bcoastline\b/, /\bshoreline\b/, /\baerial\b/,
   /\bharbou?r\b/, /\bport\b/, /\bpier\b/, /\bdock\b/,
-  /\bfrom above\b/, /\bdrone\b/, /\bird.?s.?eye\b/, /\boverhead\b/,
-  /\bvillage\b/, /\bmarket\b/, /\bstreet\b/,
+  // Surface & coastal
+  /\bbeach\b/, /\bcoastline\b/, /\bshoreline\b/, /\bsurface\b/,
+  /\bsunrise\b/, /\bsunset\b/, /\bsunlight\b(?! underwater)/, /\bhorizon\b/,
+  /\bmangrove\b/, /\bseagrass\b(?! underwater)/,
+  // Aerial
+  /\baerial\b/, /\bfrom above\b/, /\bdrone\b/, /\bird.?s.?eye\b/, /\boverhead\b/,
+  // People & divers
+  /\bdiver\b/, /\bfree.?div/, /\bsnorkel/, /\bswimmer\b/, /\bperson\b/, /\bpeople\b/,
+  // Land/urban
+  /\bvillage\b/, /\bmarket\b/, /\bstreet\b/, /\bforest\b/, /\bjungle\b/,
+  // Non-diving animals at surface
+  /\bpenguin\b/, /\bpolar bear\b/, /\bwalrus\b/,
 ];
 
 export function isUnderwaterOIB(img) {

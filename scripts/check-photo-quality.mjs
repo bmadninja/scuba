@@ -132,7 +132,7 @@ function extractUrls(data) {
 
 function getStagedUrls() {
   // Get photo URLs from the staged versions of data files
-  const changedFiles = execSync("git diff --cached --name-only", { encoding: "utf8" }).trim().split("\n");
+  const changedFiles = execSync("git diff --cached --name-only", { encoding: "utf8", maxBuffer: 1024 * 1024 }).trim().split("\n");
   const dataFiles = changedFiles.filter((f) => f.match(/src\/data\/(sites|locations)\.json/));
   if (dataFiles.length === 0) return new Map();
 
@@ -142,14 +142,14 @@ function getStagedUrls() {
   for (const file of dataFiles) {
     // URLs in HEAD (already committed)
     try {
-      const headData = JSON.parse(execSync(`git show HEAD:${file}`, { encoding: "utf8" }));
+      const headData = JSON.parse(execSync(`git show HEAD:${file}`, { encoding: "utf8", maxBuffer: 50 * 1024 * 1024 }));
       for (const e of headData) {
         [e.heroImageUrl, ...(e.heroImages ?? [])].filter(Boolean).forEach((u) => headUrls.add(u));
       }
     } catch { /* new file */ }
 
     // URLs in staged version
-    const stagedData = JSON.parse(execSync(`git show :${file}`, { encoding: "utf8" }));
+    const stagedData = JSON.parse(execSync(`git show :${file}`, { encoding: "utf8", maxBuffer: 50 * 1024 * 1024 }));
     const sp = (e) => (e.species ?? []).slice(0, 3).map((s) => s.commonName || s.name).filter(Boolean);
     for (const e of stagedData) {
       for (const url of [e.heroImageUrl, ...(e.heroImages ?? [])].filter(Boolean)) {
