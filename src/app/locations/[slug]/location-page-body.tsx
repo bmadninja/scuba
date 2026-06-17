@@ -141,6 +141,7 @@ export type LocationBodyProps = {
   stayTiers: StayTier[];
   operators: OperatorItem[];
   isWitnessing: boolean;
+  elNinoAlert: string | null;
 };
 
 const LABEL_STYLE: React.CSSProperties = {
@@ -304,6 +305,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     stayTiers,
     operators,
     isWitnessing,
+    elNinoAlert,
   } = props;
 
   const hasStay = stayTiers.some((t) => t.items.length > 0) || operators.length > 0;
@@ -325,6 +327,29 @@ export function LocationPageBody(props: LocationBodyProps) {
           {intro ? (
             <div style={{ marginBottom: "3rem" }}>
               <EditorialHook text={intro} />
+            </div>
+          ) : null}
+
+          {/* EL NIÑO SEASONAL RISK ALERT */}
+          {elNinoAlert ? (
+            <div
+              role="alert"
+              style={{
+                display: "flex",
+                gap: "0.75rem",
+                alignItems: "flex-start",
+                padding: "1rem 1.25rem",
+                borderRadius: "0.875rem",
+                background: "rgba(245,158,11,0.10)",
+                border: "1px solid rgba(245,158,11,0.30)",
+                marginBottom: "2rem",
+              }}
+            >
+              <span aria-hidden="true" style={{ fontSize: "1rem", lineHeight: 1.6, flexShrink: 0 }}>⚠</span>
+              <p style={{ margin: 0, fontSize: "0.875rem", lineHeight: 1.6, color: "#fcd34d" }}>
+                <strong style={{ fontWeight: 700 }}>El Niño seasonal risk · </strong>
+                {elNinoAlert}
+              </p>
             </div>
           ) : null}
 

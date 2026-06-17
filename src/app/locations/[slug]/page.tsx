@@ -15,6 +15,7 @@ import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import { STATE_TEXT, STATE_COLOR, bestMonthsText } from "@/lib/data/reef-state";
+import seasonalRisk from "@/data/seasonal-risk.json";
 import { LocationPageBody } from "./location-page-body";
 import type {
   ConditionPill,
@@ -224,6 +225,14 @@ export default async function LocationPage({
   const isWitnessing = atlasLoc.state === "change";
   const heroPhotoUrl = underwaterPhotoUrl(atlasLoc.heroImageUrl);
   const stateColor = STATE_COLOR[atlasLoc.state];
+
+  // El Niño seasonal risk — shown when the global flag is active and this
+  // location's region is on the affected list.
+  const elNinoAlert =
+    seasonalRisk.elNino.active &&
+    (seasonalRisk.elNino.affectedRegions as string[]).includes(location.region)
+      ? seasonalRisk.elNino.summary
+      : null;
 
   // --- Sightings aggregated across sites, newest first ----------------------
   const allSightings = sites
@@ -703,6 +712,7 @@ export default async function LocationPage({
         stayTiers={stayTiers}
         operators={operators}
         isWitnessing={isWitnessing}
+        elNinoAlert={elNinoAlert}
       />
     </>
   );
