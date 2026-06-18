@@ -13,6 +13,7 @@ type Source = {
   id: string;
   name: string;
   url?: string;
+  refresh?: string;
 };
 
 // Curated grouping over the real source ids. Names and links are pulled live
@@ -866,7 +867,16 @@ export default function DataPage() {
               <b style={{ color: INK }}>Sightings</b> come from iNaturalist and
               GBIF. Beyond those, dozens more cover water conditions, currents,
               charts, wreck histories and diver safety. All {totalSources} are
-              named and linked below.
+              named and linked below, each with how often it puts out fresh
+              data.
+            </p>
+            <p style={{ ...groupIntroStyle, marginTop: "0.75rem", fontSize: "0.875rem", color: MUTED }}>
+              The pace beside each source is how often that source itself
+              updates, from real time to a single landmark report. It is the
+              source&rsquo;s own clock, not ours. The feeds we pull on a live
+              schedule are the reef state signals (NOAA heat nightly, fishing
+              weekly) and the sightings ingest above; the rest are reference
+              data we cite at the freshness each one publishes.
             </p>
             <details style={{ marginTop: "1.25rem" }}>
               <summary
@@ -914,7 +924,15 @@ export default function DataPage() {
                         const src = sourceMap.get(id);
                         if (!src) return null;
                         return (
-                          <li key={id}>
+                          <li
+                            key={id}
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "baseline",
+                              gap: "0.75rem",
+                            }}
+                          >
                             <a
                               href={src.url ?? "#"}
                               target="_blank"
@@ -928,6 +946,20 @@ export default function DataPage() {
                             >
                               {src.name}
                             </a>
+                            {src.refresh && (
+                              <span
+                                style={{
+                                  fontSize: "0.625rem",
+                                  fontFamily: mono,
+                                  color: MUTED,
+                                  whiteSpace: "nowrap",
+                                  flexShrink: 0,
+                                }}
+                                title="How often this source publishes fresh data"
+                              >
+                                {src.refresh}
+                              </span>
+                            )}
                           </li>
                         );
                       })}

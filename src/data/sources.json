@@ -5,6 +5,7 @@
     "url": "https://coralreefwatch.noaa.gov/",
     "publisher": "U.S. National Oceanic and Atmospheric Administration",
     "sourceType": "government-monitoring",
+    "refresh": "Nightly",
     "accessedAt": "2026-05-24",
     "license": "U.S. Government Work (public domain)",
     "notes": "Satellite-derived SST, SST anomaly, Degree Heating Weeks, and bleaching alert levels at ~5 km resolution. Use for current thermal stress, not for observed coral cover."
@@ -15,6 +16,7 @@
     "url": "https://allencoralatlas.org/",
     "publisher": "Arizona State University Center for Global Discovery and Conservation Science",
     "sourceType": "government-monitoring",
+    "refresh": "Weekly (bleaching alerts)",
     "accessedAt": "2026-05-24",
     "license": "CC BY 4.0",
     "notes": "Global high-resolution reef habitat maps and near-real-time bleaching detection. Habitat extents are observed; bleaching alerts are model-derived."
@@ -25,6 +27,7 @@
     "url": "https://gcrmn.net/",
     "publisher": "GCRMN / ICRI",
     "sourceType": "scientific-survey",
+    "refresh": "Per global report",
     "accessedAt": "2026-05-24",
     "notes": "In-situ benthic survey aggregations. Use for observed coral cover and historical bleaching mortality, with survey method and year."
   },
@@ -34,6 +37,7 @@
     "url": "https://www.aims.gov.au/research/monitoring/reef",
     "publisher": "Australian Institute of Marine Science",
     "sourceType": "scientific-survey",
+    "refresh": "Annual survey",
     "accessedAt": "2026-05-24",
     "license": "CC BY 4.0",
     "notes": "Great Barrier Reef coral cover, bleaching, and crown-of-thorns surveys. Authoritative for GBR site-level observed condition."
@@ -44,6 +48,7 @@
     "url": "https://reeflifesurvey.com/",
     "publisher": "Reef Life Survey Foundation",
     "sourceType": "citizen-science",
+    "refresh": "Per survey",
     "accessedAt": "2026-05-24",
     "license": "CC BY 4.0",
     "notes": "Diver-conducted fish and invertebrate transects with effort metadata. Provides effort denominators for sighting probabilities at survey sites."
@@ -54,6 +59,7 @@
     "url": "https://www.gbif.org/",
     "publisher": "GBIF Secretariat",
     "sourceType": "occurrence-record",
+    "refresh": "Continuous",
     "accessedAt": "2026-06-09",
     "license": "Per-dataset; mostly CC0 or CC BY",
     "notes": "Aggregated species occurrence records. Confirms presence and seasonality clustering, never per-dive probability without effort data. Live fallback source for the weekly sightings ingest (scripts/fetch-sightings-live.mjs) when iNaturalist has no research-grade record for a site/species."
@@ -64,6 +70,7 @@
     "url": "https://obis.org/",
     "publisher": "IOC-UNESCO",
     "sourceType": "occurrence-record",
+    "refresh": "Continuous",
     "accessedAt": "2026-05-24",
     "license": "CC BY 4.0",
     "notes": "Marine-focused occurrence records. Use alongside GBIF for marine species presence and seasonality."
@@ -74,6 +81,7 @@
     "url": "https://dan.org/",
     "publisher": "DAN",
     "sourceType": "editorial-curation",
+    "refresh": "Reference",
     "accessedAt": "2026-05-24",
     "notes": "Diver safety guidance, incident data, and medical references. Use for safety and limitations language in beginner/returning flows."
   },
@@ -83,6 +91,7 @@
     "url": "https://www.padi.com/",
     "publisher": "Professional Association of Diving Instructors",
     "sourceType": "editorial-curation",
+    "refresh": "Reference",
     "accessedAt": "2026-05-24",
     "notes": "Certification level definitions and training-standard references. Use for skill-level recommendations, not for ecological claims."
   },
@@ -92,6 +101,7 @@
     "url": "https://www.iucnredlist.org/",
     "publisher": "International Union for Conservation of Nature",
     "sourceType": "peer-reviewed-paper",
+    "refresh": "Twice a year",
     "accessedAt": "2026-05-24",
     "license": "Free for non-commercial use under IUCN terms",
     "notes": "Authoritative conservation status (LC/NT/VU/EN/CR/EX) and population trend assessments. Use for species rarity and conservation framing."
@@ -102,6 +112,7 @@
     "url": "https://www.inaturalist.org/",
     "publisher": "California Academy of Sciences & National Geographic Society",
     "sourceType": "citizen-science",
+    "refresh": "Continuous",
     "accessedAt": "2026-06-09",
     "license": "CC0 / CC BY / CC BY-NC (per record)",
     "notes": "Photo- and date-verified research-grade observations from citizen scientists. Primary live source for the weekly sightings ingest (scripts/fetch-sightings-live.mjs): supplies lastConfirmedAt, recentRecordCount, and observed-month seasonality per site/species. Strong recency signal; combine with GBIF/OBIS for presence."
@@ -112,6 +123,7 @@
     "url": "https://www.reefcheck.org/",
     "publisher": "Reef Check Foundation",
     "sourceType": "citizen-science",
+    "refresh": "Per survey",
     "accessedAt": "2026-05-24",
     "notes": "Global volunteer reef-monitoring program with standardised benthic and fish protocols. Use for observed reef condition where local surveys exist."
   },
@@ -121,6 +133,7 @@
     "url": "https://www.mantatrust.org/idthemanta",
     "publisher": "Manta Trust",
     "sourceType": "scientific-survey",
+    "refresh": "Per submission",
     "accessedAt": "2026-05-24",
     "notes": "Photo-ID database of individual reef and oceanic mantas worldwide. Confirms aggregation site fidelity and seasonality."
   },
@@ -130,6 +143,7 @@
     "url": "https://www.wildbook.org/",
     "publisher": "Wild Me",
     "sourceType": "scientific-survey",
+    "refresh": "Per submission",
     "accessedAt": "2026-05-24",
     "license": "CC BY 4.0",
     "notes": "Open photo-ID platforms for individual sharks, whale sharks, and mantas. Documents return visits to specific dive sites."
@@ -140,6 +154,7 @@
     "url": "https://www.coris.noaa.gov/monitoring/",
     "publisher": "NOAA Coral Reef Conservation Program",
     "sourceType": "government-monitoring",
+    "refresh": "Per survey cycle",
     "accessedAt": "2026-05-24",
     "license": "U.S. Government Work (public domain)",
     "notes": "Standardised biological, climate, and socioeconomic monitoring across US Caribbean and Pacific reefs. Use for observed reef condition."
@@ -150,6 +165,7 @@
     "url": "https://www2.gbrmpa.gov.au/",
     "publisher": "Australian Government",
     "sourceType": "government-monitoring",
+    "refresh": "Periodic reports",
     "accessedAt": "2026-05-24",
     "notes": "Authoritative manager for the Great Barrier Reef — zoning, reef-health outlook reports, and management plans. Use for GBR site-level travel and conservation guidance."
   },
@@ -159,6 +175,7 @@
     "url": "https://www.agrra.org/",
     "publisher": "AGRRA Program / Perry Institute for Marine Science",
     "sourceType": "scientific-survey",
+    "refresh": "Per survey",
     "accessedAt": "2026-05-24",
     "notes": "Standardised reef survey protocols and dataset for the wider Caribbean. Use for Caribbean coral cover and bleaching observations."
   },
@@ -168,6 +185,7 @@
     "url": "https://icriforum.org/",
     "publisher": "ICRI Secretariat",
     "sourceType": "government-monitoring",
+    "refresh": "Periodic",
     "accessedAt": "2026-05-24",
     "notes": "Intergovernmental partnership coordinating reef monitoring and protection. Use as a discovery layer for regional reef-status reports."
   },
@@ -177,6 +195,7 @@
     "url": "https://www.divessi.com/",
     "publisher": "Scuba Schools International",
     "sourceType": "editorial-curation",
+    "refresh": "Reference",
     "accessedAt": "2026-05-24",
     "notes": "Alternative training-agency certification framework. Use alongside PADI for skill-level mapping, not for ecological claims."
   },
@@ -186,6 +205,7 @@
     "url": "https://scubaseason.fun/about",
     "publisher": "scubaSeason.fun",
     "sourceType": "editorial-curation",
+    "refresh": "As we learn",
     "accessedAt": "2026-05-24",
     "notes": "scubaSeason editorial estimates compiled from operator websites, dive-travel agency listings, airfare aggregators, and direct destination research. Not live prices."
   },
@@ -195,6 +215,7 @@
     "url": "https://www.dema.org/",
     "publisher": "Diving Equipment and Marketing Association",
     "sourceType": "editorial-curation",
+    "refresh": "Reference",
     "accessedAt": "2026-05-24",
     "notes": "Industry trade body — used only for travel-industry context, never for ecological or safety claims."
   },
@@ -204,6 +225,7 @@
     "url": "https://podaac.jpl.nasa.gov/",
     "publisher": "NASA Jet Propulsion Laboratory / Caltech",
     "sourceType": "government-monitoring",
+    "refresh": "Daily",
     "accessedAt": "2026-05-25",
     "license": "U.S. Government Work (public domain)",
     "notes": "Physical Oceanography DAAC — canonical archive for SST, sea-surface salinity, sea level, ocean circulation, ocean winds. Hosts MODIS, GHRSST, SMAP, JASON/Sentinel-6, SWOT datasets."
@@ -214,6 +236,7 @@
     "url": "https://data.marine.copernicus.eu/products",
     "publisher": "Mercator Ocean International for the European Union",
     "sourceType": "government-monitoring",
+    "refresh": "Daily",
     "accessedAt": "2026-05-25",
     "license": "Copernicus data policy — free and open with attribution (CC BY equivalent)",
     "notes": "Near-real-time and forecast SST, currents, chlorophyll, oxygen, pH for global and regional seas. Best single source for live anomaly cards on location pages."
@@ -224,6 +247,7 @@
     "url": "https://coastwatch.noaa.gov/cwn/index.html",
     "publisher": "NOAA NESDIS / STAR",
     "sourceType": "government-monitoring",
+    "refresh": "Daily",
     "accessedAt": "2026-05-25",
     "license": "U.S. Government Work (public domain)",
     "notes": "ERDDAP-served satellite oceanography — SST, sea-level anomaly, chlorophyll-a, ocean heat content, sea-surface salinity, ocean winds. Programmatic per-coordinate access."
@@ -234,6 +258,7 @@
     "url": "https://oceancolor.gsfc.nasa.gov/",
     "publisher": "NASA Goddard Space Flight Center / Ocean Biology Processing Group",
     "sourceType": "government-monitoring",
+    "refresh": "Daily",
     "accessedAt": "2026-05-25",
     "license": "U.S. Government Work (public domain)",
     "notes": "Chlorophyll-a, water clarity, primary productivity from MODIS, VIIRS, OLCI, PACE. Use for site-level water-clarity context and productivity claims."
@@ -244,6 +269,7 @@
     "url": "https://argo.ucsd.edu/",
     "publisher": "International Argo Program / UCSD",
     "sourceType": "scientific-survey",
+    "refresh": "Continuous",
     "accessedAt": "2026-05-25",
     "license": "Free and open with attribution",
     "notes": "Global array of 4,000+ profiling floats measuring temperature, salinity, and biogeochemistry to 2 km depth. Use for ocean-interior temperature trend claims."
@@ -254,6 +280,7 @@
     "url": "https://www.ndbc.noaa.gov/",
     "publisher": "NOAA National Data Buoy Center",
     "sourceType": "government-monitoring",
+    "refresh": "Real time",
     "accessedAt": "2026-05-25",
     "license": "U.S. Government Work (public domain)",
     "notes": "Real-time and historical in-situ wave, wind, water-temp, salinity, and atmospheric data from anchored buoys. Use for site-adjacent conditions where a buoy exists."
@@ -264,6 +291,7 @@
     "url": "https://seamap.env.duke.edu/",
     "publisher": "Duke University Marine Geospatial Ecology Lab / OBIS",
     "sourceType": "occurrence-record",
+    "refresh": "Ongoing",
     "accessedAt": "2026-05-25",
     "license": "CC BY (per-dataset; honor individual licenses)",
     "notes": "Marine megafauna occurrence database — cetaceans, sea turtles, seabirds, sharks. Use alongside GBIF/OBIS for high-quality megafauna sighting records."
@@ -274,6 +302,7 @@
     "url": "https://happywhale.com/",
     "publisher": "Happywhale (Allied Whale / College of the Atlantic partnership)",
     "sourceType": "citizen-science",
+    "refresh": "Per submission",
     "accessedAt": "2026-05-25",
     "license": "Free for research/non-commercial; commercial use requires permission",
     "notes": "Photo-ID database for humpback, orca, sperm, blue, fin, and gray whales. Tracks individual animals across years — supports return-rate and seasonality claims."
@@ -284,6 +313,7 @@
     "url": "https://www.reef.org/",
     "publisher": "Reef Environmental Education Foundation",
     "sourceType": "citizen-science",
+    "refresh": "Per survey",
     "accessedAt": "2026-05-25",
     "license": "Public data with attribution; commercial use requires permission",
     "notes": "275,000+ diver-conducted fish surveys with standardized methodology across the Americas, Caribbean, and Pacific. Use for diver-confirmed species presence claims with effort data."
@@ -294,6 +324,7 @@
     "url": "https://www.coralwatch.org/",
     "publisher": "University of Queensland",
     "sourceType": "citizen-science",
+    "refresh": "Per submission",
     "accessedAt": "2026-05-25",
     "license": "CC BY 4.0",
     "notes": "Volunteer coral colour-chart survey program with 15+ years of bleaching observations from 100+ countries. Supports observed-bleaching claims at lower-monitoring sites."
@@ -304,6 +335,7 @@
     "url": "https://oceantrackingnetwork.org/",
     "publisher": "Dalhousie University / OTN",
     "sourceType": "scientific-survey",
+    "refresh": "Ongoing",
     "accessedAt": "2026-05-25",
     "license": "Open data with attribution; per-dataset restrictions may apply",
     "notes": "Global acoustic telemetry network tracking fish, sharks, turtles, and marine mammals. Use for migratory-corridor and residence-time claims for tagged species."
@@ -314,6 +346,7 @@
     "url": "https://portal.aodn.org.au/",
     "publisher": "Integrated Marine Observing System / Australian Ocean Data Network",
     "sourceType": "government-monitoring",
+    "refresh": "Ongoing",
     "accessedAt": "2026-05-25",
     "license": "CC BY 4.0",
     "notes": "Australian oceanographic and biological observation data — moorings, gliders, animal tagging, satellite. Authoritative for Australian and Indo-Pacific waters."
@@ -324,6 +357,7 @@
     "url": "https://www.marinespecies.org/",
     "publisher": "Flanders Marine Institute (VLIZ)",
     "sourceType": "peer-reviewed-paper",
+    "refresh": "Ongoing",
     "accessedAt": "2026-05-25",
     "license": "CC BY 4.0",
     "notes": "Authoritative taxonomic backbone for marine species names. Use when normalizing common-name → scientific-name and for conservation-status lookups."
@@ -334,6 +368,7 @@
     "url": "https://www.fishbase.org/",
     "publisher": "FishBase Consortium",
     "sourceType": "peer-reviewed-paper",
+    "refresh": "Periodic releases",
     "accessedAt": "2026-05-25",
     "license": "CC BY-NC (research and education use)",
     "notes": "Comprehensive fish species reference — biology, distribution, ecology, conservation. Use for species-specific depth ranges, diet, behaviour claims."
@@ -344,6 +379,7 @@
     "url": "https://www.ala.org.au/",
     "publisher": "CSIRO / GBIF Australia",
     "sourceType": "occurrence-record",
+    "refresh": "Continuous",
     "accessedAt": "2026-05-25",
     "license": "CC BY 4.0 (per-dataset; honor individual licenses)",
     "notes": "Australian biodiversity aggregator with 130M+ occurrence records. Use for Great Barrier Reef and Coral Sea species claims."
@@ -354,6 +390,7 @@
     "url": "https://www.protectedplanet.net/",
     "publisher": "UNEP-WCMC + IUCN",
     "sourceType": "government-monitoring",
+    "refresh": "Monthly",
     "accessedAt": "2026-05-25",
     "license": "Custom — citation required; shapefile redistribution restricted; derived statistics with attribution fine",
     "notes": "Canonical global database of marine and terrestrial protected areas. Use to state whether a dive site sits inside an MPA / no-take zone."
@@ -364,6 +401,7 @@
     "url": "https://mpatlas.org/",
     "publisher": "Marine Conservation Institute",
     "sourceType": "government-monitoring",
+    "refresh": "Periodic",
     "accessedAt": "2026-05-25",
     "license": "CC BY 4.0",
     "notes": "Protection-quality layer over WDPA — distinguishes paper-park MPAs from genuinely enforced no-take zones. Use to qualify MPA claims."
@@ -374,6 +412,7 @@
     "url": "https://globalfishingwatch.org/",
     "publisher": "Global Fishing Watch (Oceana + SkyTruth + Google)",
     "sourceType": "government-monitoring",
+    "refresh": "Daily",
     "accessedAt": "2026-05-25",
     "license": "CC BY-SA 4.0; API requires registration",
     "notes": "AIS-derived fishing-effort data globally at 0.1° resolution. Use to indicate fishing pressure near dive sites and to support 'sits inside / outside fishing zone' claims."
@@ -384,6 +423,7 @@
     "url": "https://www.globalmangrovewatch.org/",
     "publisher": "JAXA + Aberystwyth University + UNEP-WCMC + Wetlands International",
     "sourceType": "scientific-survey",
+    "refresh": "Annual",
     "accessedAt": "2026-05-25",
     "license": "CC BY 4.0",
     "notes": "Annual global mangrove extent and change layers since 1996 from satellite + ground truth. Use for mangrove-adjacent reef claims and habitat-decline context."
@@ -394,6 +434,7 @@
     "url": "https://greenfins.net/",
     "publisher": "UNEP + Reef-World Foundation",
     "sourceType": "editorial-curation",
+    "refresh": "Periodic listings",
     "accessedAt": "2026-05-25",
     "notes": "UN-endorsed directory and standards for sustainable dive operators. Use to flag verified-responsible operators in trip recommendations."
   },
@@ -403,6 +444,7 @@
     "url": "https://www.wri.org/research/reefs-risk-revisited",
     "publisher": "World Resources Institute",
     "sourceType": "peer-reviewed-paper",
+    "refresh": "Single landmark report",
     "accessedAt": "2026-05-25",
     "license": "Public report with attribution",
     "notes": "Comprehensive global reef-threat assessment combining local and global pressures. Use for regional risk framing alongside in-situ surveys."
@@ -413,6 +455,7 @@
     "url": "https://oceanhealthindex.org/",
     "publisher": "OHI partnership (Conservation International + UCSB + NCEAS)",
     "sourceType": "peer-reviewed-paper",
+    "refresh": "Annual",
     "accessedAt": "2026-05-25",
     "license": "CC BY 4.0",
     "notes": "Annual composite index of ocean health by EEZ covering 10 goals (food provision, carbon storage, biodiversity, etc.). Use for country-level ocean-health context."
@@ -423,6 +466,7 @@
     "url": "https://tidesandcurrents.noaa.gov/",
     "publisher": "NOAA National Ocean Service",
     "sourceType": "government-monitoring",
+    "refresh": "Real time",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Authoritative US tide predictions, water levels, currents, and meteorological observations. REST API, no auth. Use for tide-window claims and current-strength context at US-territorial sites."
@@ -433,6 +477,7 @@
     "url": "https://www.ncei.noaa.gov/products/international-best-track-archive",
     "publisher": "NOAA NCEI + WMO + global tropical-cyclone agencies",
     "sourceType": "government-monitoring",
+    "refresh": "During storm season",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "International Best Track Archive — every named tropical cyclone since 1842. Use for historical hurricane / typhoon / cyclone impact context at affected dive locations."
@@ -443,6 +488,7 @@
     "url": "https://www.ecmwf.int/en/forecasts/datasets/open-data",
     "publisher": "European Centre for Medium-Range Weather Forecasts",
     "sourceType": "government-monitoring",
+    "refresh": "Twice daily",
     "accessedAt": "2026-05-26",
     "license": "CC BY 4.0",
     "notes": "Global numerical-weather-prediction outputs at 0.25° resolution. Use for forward-looking wind, wave, and water-temp conditions cards."
@@ -453,6 +499,7 @@
     "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels",
     "publisher": "ECMWF / Copernicus Climate Change Service",
     "sourceType": "scientific-survey",
+    "refresh": "Monthly",
     "accessedAt": "2026-05-26",
     "license": "Copernicus data policy — free and open with attribution",
     "notes": "Hourly atmospheric and oceanographic reanalysis from 1940 to present. Use for climatological 'typical conditions in October at this location' claims."
@@ -463,6 +510,7 @@
     "url": "https://www.hycom.org/dataserver",
     "publisher": "HYCOM Consortium (US Navy + NOAA + academic)",
     "sourceType": "government-monitoring",
+    "refresh": "Daily",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public release, Distribution A)",
     "notes": "Global hybrid-coordinate ocean circulation model. Use for currents, temperature/salinity profiles, and ocean-state forecasts at sub-coastal resolution."
@@ -473,6 +521,7 @@
     "url": "https://www.ncei.noaa.gov/products/microplastics",
     "publisher": "NOAA National Centers for Environmental Information",
     "sourceType": "scientific-survey",
+    "refresh": "Periodic",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Global database of microplastic concentrations in seawater, sediment, and biota. Use for 'how plasticky is this water' framing at coastal locations."
@@ -483,6 +532,7 @@
     "url": "https://erma.noaa.gov/",
     "publisher": "NOAA Office of Response and Restoration",
     "sourceType": "government-monitoring",
+    "refresh": "Per incident",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Environmental Response Management Application and incident timeline of US oil spills + chemical releases. Use for active-incident context near US dive sites."
@@ -493,6 +543,7 @@
     "url": "https://emodnet.ec.europa.eu/en/chemistry",
     "publisher": "European Marine Observation and Data Network",
     "sourceType": "government-monitoring",
+    "refresh": "Periodic",
     "accessedAt": "2026-05-26",
     "license": "CC BY 4.0",
     "notes": "European seawater chemistry — nutrients, contaminants, microplastics, oxygen. Use for water-quality framing at Mediterranean / North Atlantic / Baltic sites."
@@ -503,6 +554,7 @@
     "url": "https://oceanservice.noaa.gov/hazards/hab/",
     "publisher": "NOAA National Ocean Service",
     "sourceType": "government-monitoring",
+    "refresh": "Several times a week",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Harmful algal bloom forecasts and bulletins for US waters. Use for active-bloom warnings near US dive locations."
@@ -513,6 +565,7 @@
     "url": "http://haedat.iode.org/",
     "publisher": "IOC-UNESCO Intergovernmental Panel on Harmful Algal Blooms",
     "sourceType": "scientific-survey",
+    "refresh": "Per event",
     "accessedAt": "2026-05-26",
     "license": "Free use with attribution",
     "notes": "Global registry of HAB events with toxin, species, and impact records since 1985. Use for historical-HAB context at any coastal site."
@@ -523,6 +576,7 @@
     "url": "https://www.goa-on.org/",
     "publisher": "GOA-ON Secretariat + IOC-UNESCO",
     "sourceType": "scientific-survey",
+    "refresh": "Ongoing",
     "accessedAt": "2026-05-26",
     "license": "Open with attribution; per-dataset",
     "notes": "Global pH and carbonate-chemistry observations from moorings + cruises. Use for ocean-acidification claims at the reef-health layer."
@@ -533,6 +587,7 @@
     "url": "https://products.coastalscience.noaa.gov/nsandt_data/data.aspx",
     "publisher": "NOAA National Centers for Coastal Ocean Science",
     "sourceType": "government-monitoring",
+    "refresh": "Periodic sampling",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Longest-running US coastal contaminant monitoring — heavy metals, PCBs, PAHs in shellfish tissue back to 1986. Use for historical-contamination context."
@@ -543,6 +598,7 @@
     "url": "https://www.gebco.net/",
     "publisher": "General Bathymetric Chart of the Oceans (IHO + IOC-UNESCO)",
     "sourceType": "government-monitoring",
+    "refresh": "Annual release",
     "accessedAt": "2026-05-26",
     "license": "CC0 (public domain)",
     "notes": "Global ocean-floor depth grid at 15-arcsecond resolution. Use for depth-context claims at any dive site, especially walls, dropoffs, and pinnacles."
@@ -553,6 +609,7 @@
     "url": "https://volcano.si.edu/",
     "publisher": "Smithsonian Institution",
     "sourceType": "peer-reviewed-paper",
+    "refresh": "Per event",
     "accessedAt": "2026-05-26",
     "license": "CC BY 4.0",
     "notes": "Authoritative database of Holocene volcanoes worldwide with eruption history. Use for volcanic-origin context at island and seamount sites (Galápagos, Hawaii, Indonesia, Solomons)."
@@ -563,6 +620,7 @@
     "url": "https://www.history.navy.mil/research/histories/ship-histories/danfs.html",
     "publisher": "US Naval History and Heritage Command",
     "sourceType": "government-monitoring",
+    "refresh": "Reference",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Dictionary of American Naval Fighting Ships — authoritative service histories for US Navy wrecks. Use for wreck dive pages (USS Liberty, SS President Coolidge, Chuuk fleet, Bikini Atoll)."
@@ -573,6 +631,7 @@
     "url": "https://earthquake.usgs.gov/earthquakes/search/",
     "publisher": "US Geological Survey",
     "sourceType": "government-monitoring",
+    "refresh": "Real time",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Global earthquake catalog with magnitude, depth, location. REST API. Use for seismic-impact context at sites near active fault zones (Indonesia, Japan, Philippines, Aegean)."
@@ -583,6 +642,7 @@
     "url": "https://encdirect.noaa.gov/",
     "publisher": "NOAA Office of Coast Survey",
     "sourceType": "government-monitoring",
+    "refresh": "Weekly charts",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Electronic Navigational Charts including wreck and obstruction overlays. Replaces the retired AWOIS database. Use for wreck-position and obstruction lookups in US waters."
@@ -593,6 +653,7 @@
     "url": "https://sanctuaries.noaa.gov/maritime/",
     "publisher": "NOAA Office of National Marine Sanctuaries",
     "sourceType": "government-monitoring",
+    "refresh": "Reference",
     "accessedAt": "2026-05-26",
     "license": "U.S. Government Work (public domain)",
     "notes": "Underwater cultural heritage protection within US National Marine Sanctuaries — wreck preservation status, archaeology, regulations. Use for wreck-protection framing."
@@ -603,6 +664,7 @@
     "url": "https://www.openseamap.org/",
     "publisher": "OpenSeaMap community / OpenStreetMap Foundation",
     "sourceType": "citizen-science",
+    "refresh": "Continuous",
     "accessedAt": "2026-05-26",
     "license": "Open Database License (ODbL)",
     "notes": "Open nautical chart tiles with crowd-sourced harbours, lights, wrecks, and buoys. Use only as a cross-reference layer, not as authoritative wreck-identity data."
@@ -613,6 +675,7 @@
     "url": "https://www.ipcc.ch/srocc/",
     "publisher": "Intergovernmental Panel on Climate Change",
     "sourceType": "peer-reviewed-paper",
+    "refresh": "Single landmark report",
     "accessedAt": "2026-05-25",
     "license": "Free with attribution",
     "notes": "The peer-reviewed reference for climate impacts on the ocean. Use to frame long-horizon outlook claims with appropriate confidence levels."
