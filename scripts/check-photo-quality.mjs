@@ -134,16 +134,19 @@ function getStagedUrls() {
   // Get photo URLs from the staged versions of data files
   const changedFiles = execSync("git diff --cached --name-only", { encoding: "utf8", maxBuffer: 1024 * 1024 }).trim().split("\n");
   const dataFiles = changedFiles.filter((f) => f.match(/src\/data\/(sites|locations)\.json/));
-  if (dataFiles.length === 0) return new Map();
+  if (dataFiles.length === 0) return { urlMap: new Map(), nullEntities: [] };
 
   const headUrls = new Set();
+  const headIds = new Set();
   const stagedUrls = new Map();
+  const nullEntities = []; // new entries with no heroImageUrl
 
   for (const file of dataFiles) {
-    // URLs in HEAD (already committed)
+    // URLs and IDs in HEAD (already committed)
     try {
       const headData = JSON.parse(execSync(`git show HEAD:${file}`, { encoding: "utf8", maxBuffer: 50 * 1024 * 1024 }));
       for (const e of headData) {
+        headIds.add(e.id);
         [e.heroImageUrl, ...(e.heroImages ?? [])].filter(Boolean).forEach((u) => headUrls.add(u));
       }
     } catch { /* new file */ }
@@ -152,6 +155,10 @@ function getStagedUrls() {
     const stagedData = JSON.parse(execSync(`git show :${file}`, { encoding: "utf8", maxBuffer: 50 * 1024 * 1024 }));
     const sp = (e) => (e.species ?? []).slice(0, 3).map((s) => s.commonName || s.name).filter(Boolean);
     for (const e of stagedData) {
+      const isNew = !headIds.has(e.id);
+      if (isNew && !e.heroImageUrl) {
+        nullEntities.push({ slug: e.slug ?? e.id, name: e.name });
+      }
       for (const url of [e.heroImageUrl, ...(e.heroImages ?? [])].filter(Boolean)) {
         if (!headUrls.has(url)) {
           stagedUrls.set(url, { slug: e.slug, diveTypes: e.diveTypes ?? [], species: sp(e) });
@@ -159,7 +166,7 @@ function getStagedUrls() {
       }
     }
   }
-  return stagedUrls;
+  return { urlMap: stagedUrls, nullEntities };
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
@@ -170,7 +177,19 @@ async function main() {
   if (SINGLE_URL) {
     urlMap = new Map([[SINGLE_URL, { slug: "manual", diveTypes: [], species: [] }]]);
   } else if (STAGED_MODE) {
-    urlMap = getStagedUrls();
+    const { urlMap: staged, nullEntities } = getStagedUrls();
+    urlMap = staged;
+
+    if (nullEntities.length > 0) {
+      console.log(`\n── New entries missing hero photos ───────────────────────`);
+      for (const e of nullEntities) {
+        console.log(`  ✗ ${e.slug} (${e.name}) — heroImageUrl is null`);
+      }
+      console.log(`\nEvery new location and site must have a hero photo before committing.`);
+      console.log(`Run: PEXELS_API_KEY=xxx node scripts/upgrade-heroes-pexels.mjs --fill-nulls`);
+      process.exit(1);
+    }
+
     if (urlMap.size === 0) {
       console.log("No new photo URLs in staged changes — skipping quality check.");
       process.exit(0);
