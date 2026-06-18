@@ -2,10 +2,9 @@ name: Fetch IUCN Red List status
 
 on:
   schedule:
-    # Weekly, Monday 07:00 UTC. IUCN re-assesses species every few
-    # years — weekly is already more than enough to catch a category
-    # change soon after it lands.
-    - cron: "0 7 * * 1"
+    # Daily 07:10 UTC. IUCN re-assesses infrequently; unchanged runs
+    # exit 0 with no commit.
+    - cron: "10 7 * * *"
   workflow_dispatch:
 
 permissions:
@@ -29,12 +28,12 @@ jobs:
       - name: Commit updated iucn-status.json
         run: |
           if git diff --quiet -- src/data/iucn-status.json; then
-            echo "No IUCN status changes this week."
+            echo "No IUCN status changes today."
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/iucn-status.json
-          git commit -m "data: weekly IUCN Red List refresh"
+          git commit -m "data: daily IUCN Red List refresh"
           git pull --rebase
           git push

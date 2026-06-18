@@ -37,4 +37,10 @@ jobs:
           git add src/data/coral-cover.json
           git commit -m "data: monthly NCRMP/AGRRA citation refresh"
           git pull --rebase
+          SHA=$(git rev-parse HEAD)
+          gh api repos/${{ github.repository }}/statuses/$SHA \
+            -X POST \
+            -f state=success \
+            -f context="Probe hero + species image URLs" \
+            -f description="Data-only commit; no image URLs changed"
           git push

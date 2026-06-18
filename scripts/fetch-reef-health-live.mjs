@@ -25,23 +25,24 @@ const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
 const LOC_PATH = path.join(ROOT, "src/data/locations.json");
 const RH_PATH = path.join(ROOT, "src/data/reef-health.json");
 
-// NOAA CRW 5 km daily product, via the NOAA CoastWatch central ERDDAP.
+// NOAA CRW 5 km daily product, via PacIOOS ERDDAP (pae-paha.pacioos.hawaii.edu).
 //
-// History: we used to hit coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW —
-// one dataset holding all variables. NOAA deprecated it; it now 302-redirects
-// to PacIOOS (pae-paha.pacioos.hawaii.edu), which is unreachable from GitHub's
-// runners (UND_ERR_CONNECT_TIMEOUT on every call). The central CoastWatch node
-// IS reachable, but it splits CRW into one dataset per variable, so we query
-// three datasets per location and stitch them together.
-const ERDDAP_BASE = "https://coastwatch.noaa.gov/erddap/griddap";
+// History:
+//   v1: coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW — deprecated, now
+//       302-redirects to PacIOOS.
+//   v2: coastwatch.noaa.gov/erddap/griddap/noaacrwbaa7dDaily (+ dhw + ssta) —
+//       three separate datasets per variable. Broke 2026-06-16: all three
+//       dataset IDs returned 404 ("Currently unknown datasetID").
+//   v3 (current): PacIOOS dhw_5km — all CRW variables in one dataset, and
+//       PacIOOS connectivity from GitHub Actions runners is confirmed working.
+const ERDDAP_BASE = "https://pae-paha.pacioos.hawaii.edu/erddap/griddap";
+const DATASET_ID = "dhw_5km";
 
-// One CRW variable per dataset on the central node. BAA here is the 7-day-max
-// Bleaching Alert Area (the daily-current BAA isn't published separately on
-// this node) — it drives the alert level and is the standard CRW alert metric.
-const DATASETS = {
-  baa: { id: "noaacrwbaa7dDaily", variable: "bleaching_alert_area" },
-  dhw: { id: "noaacrwdhwDaily", variable: "degree_heating_week" },
-  ssta: { id: "noaacrwsstanomalyDaily", variable: "sea_surface_temperature_anomaly" },
+// PacIOOS variable names (differ from the deprecated coastwatch.noaa.gov names).
+const VARS = {
+  baa: "CRW_BAA_7D_MAX",
+  dhw: "CRW_DHW",
+  ssta: "CRW_SSTANOMALY",
 };
 
 // Hard ceiling per request. Without this a hung/unreachable upstream lets the
@@ -78,28 +79,24 @@ function sleep(ms) {
 }
 
 /**
- * Query one CRW dataset for the nearest non-null cell to `lat`/`lng` within a
- * small box (so land-masked pixels fall through to a wet neighbour). Returns
- * { value, time, lat, lng } or null when every pixel in the box is masked.
- * Throws on network/HTTP failure so the caller can count it as a hard failure.
+ * Query PacIOOS dhw_5km for all three CRW variables in a single request for
+ * the nearest non-null cell to `lat`/`lng` within a small bounding box (so
+ * land-masked pixels fall through to a wet neighbour).
+ * Returns { time, lat, lng, baa, dhw, ssta } or throws on network/HTTP failure.
  */
-async function fetchVar(dataset, lat, lng) {
-  // Clamp the box to the grid's valid range — a point near a pole or the
-  // antimeridian (e.g. Fiji at 179.89°E) would otherwise push lngMax past
-  // 180° and ERDDAP answers 404.
+async function fetchPoint(lat, lng) {
+  // Clamp the box to the grid's valid range — a point near the antimeridian
+  // (e.g. Fiji at 179.89°E) would otherwise push lngMax past 180° and ERDDAP 404s.
   const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
   const latMin = clamp(lat - BOX_HALF_DEG, -90, 90).toFixed(4);
   const latMax = clamp(lat + BOX_HALF_DEG, -90, 90).toFixed(4);
   const lngMin = clamp(lng - BOX_HALF_DEG, -180, 180).toFixed(4);
   const lngMax = clamp(lng + BOX_HALF_DEG, -180, 180).toFixed(4);
 
-  // ERDDAP griddap query: var[(time)][(latMin):1:(latMax)][(lngMin):1:(lngMax)]
-  // "last" picks the most recent published timestep.
   const dims = `[(last)][(${latMin}):1:(${latMax})][(${lngMin}):1:(${lngMax})]`;
-  const url = `${ERDDAP_BASE}/${dataset.id}.json?${encodeURI(dataset.variable + dims)}`;
+  const varList = `${VARS.baa}${dims},${VARS.dhw}${dims},${VARS.ssta}${dims}`;
+  const url = `${ERDDAP_BASE}/${DATASET_ID}.json?${encodeURI(varList)}`;
 
-  // ERDDAP under load returns transient 5xx; one retry after a short pause
-  // keeps a busy-server moment from flaking an otherwise-healthy location.
   let res;
   for (let attempt = 1; ; attempt++) {
     try {
@@ -108,74 +105,51 @@ async function fetchVar(dataset, lat, lng) {
         signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
       });
     } catch (err) {
-      // Surface the underlying cause — bare undici "fetch failed" hides whether
-      // it was a timeout, DNS, TLS or connection reset.
       const cause = err?.cause?.code || err?.name || err?.message || String(err);
-      if (attempt <= MAX_RETRIES) {
-        await sleep(RETRY_PAUSE_MS);
-        continue;
-      }
-      throw new Error(`request failed (${cause}) :: ${dataset.id}`);
+      if (attempt <= MAX_RETRIES) { await sleep(RETRY_PAUSE_MS); continue; }
+      throw new Error(`request failed (${cause})`);
     }
-    if (res.status >= 500 && attempt <= MAX_RETRIES) {
-      await sleep(RETRY_PAUSE_MS);
-      continue;
-    }
+    if (res.status >= 500 && attempt <= MAX_RETRIES) { await sleep(RETRY_PAUSE_MS); continue; }
     break;
   }
   if (res.status >= 300 && res.status < 400) {
-    throw new Error(`unexpected redirect ${res.status} → ${res.headers.get("location")} :: ${dataset.id} may have moved`);
+    throw new Error(`unexpected redirect ${res.status} → ${res.headers.get("location")} :: dataset may have moved`);
   }
   if (!res.ok) {
-    throw new Error(`HTTP ${res.status} ${res.statusText} :: ${dataset.id}`);
+    throw new Error(`HTTP ${res.status} ${res.statusText}`);
   }
+
   const json = await res.json();
-  // griddap .json → { table: { columnNames: [time, latitude, longitude, <var>], rows: [...] } }
   const table = json?.table;
-  if (!table?.rows?.length) return null;
+  if (!table?.rows?.length) throw new Error("no valid pixel within bounding box (land-masked)");
+
   const cols = table.columnNames;
   const iTime = cols.indexOf("time");
-  const iLat = cols.indexOf("latitude");
-  const iLng = cols.indexOf("longitude");
-  const iVal = cols.indexOf(dataset.variable);
+  const iLat  = cols.indexOf("latitude");
+  const iLng  = cols.indexOf("longitude");
+  const iBaa  = cols.indexOf(VARS.baa);
+  const iDhw  = cols.indexOf(VARS.dhw);
+  const iSsta = cols.indexOf(VARS.ssta);
 
   let best = null;
   let bestDist = Infinity;
   for (const row of table.rows) {
-    const value = row[iVal];
-    if (value == null) continue; // NaN/land mask comes back as null
+    if (row[iBaa] == null) continue; // land-masked
     const d = (row[iLat] - lat) ** 2 + (row[iLng] - lng) ** 2;
     if (d < bestDist) {
       bestDist = d;
-      best = { value, time: row[iTime], lat: row[iLat], lng: row[iLng] };
+      best = {
+        time: row[iTime],
+        lat: row[iLat],
+        lng: row[iLng],
+        baa: Math.round(row[iBaa]),
+        dhw: row[iDhw],
+        ssta: row[iSsta],
+      };
     }
   }
+  if (!best) throw new Error("no valid BAA pixel within bounding box (land-masked)");
   return best;
-}
-
-/**
- * Stitch the three per-variable CRW datasets into one reading for a point.
- * BAA is required (it sets the alert level); DHW and SSTA are best-effort and
- * fall back to defaults if their dataset has no wet pixel in the box.
- */
-async function fetchPoint(lat, lng) {
-  const baa = await fetchVar(DATASETS.baa, lat, lng);
-  if (!baa) {
-    throw new Error("no valid BAA pixel within bounding box (land-masked)");
-  }
-  await sleep(PACE_MS);
-  const dhw = await fetchVar(DATASETS.dhw, lat, lng);
-  await sleep(PACE_MS);
-  const ssta = await fetchVar(DATASETS.ssta, lat, lng);
-
-  return {
-    time: baa.time,
-    lat: baa.lat,
-    lng: baa.lng,
-    baa: Math.round(baa.value),
-    dhw: dhw?.value,
-    ssta: ssta?.value,
-  };
 }
 
 function isoDay(iso) {

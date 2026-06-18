@@ -2,9 +2,9 @@ name: Fetch fishing pressure (Global Fishing Watch)
 
 on:
   schedule:
-    # Weekly, Sunday 07:00 UTC. GFW publishes daily but our metric is
-    # yearly fishing hours — daily refresh would burn API quota.
-    - cron: "0 7 * * 0"
+    # Daily 07:00 UTC. GFW publishes daily; yearly fishing hours metric
+    # is stable enough that unchanged runs just exit 0 with no commit.
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
@@ -28,12 +28,12 @@ jobs:
       - name: Commit updated fishing-pressure.json
         run: |
           if git diff --quiet -- src/data/fishing-pressure.json; then
-            echo "No fishing-pressure changes this week."
+            echo "No fishing-pressure changes today."
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/fishing-pressure.json
-          git commit -m "data: weekly GFW fishing-pressure refresh"
+          git commit -m "data: daily GFW fishing-pressure refresh"
           git pull --rebase
           git push
