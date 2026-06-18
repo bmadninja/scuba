@@ -25,6 +25,7 @@ const LOCATIONS_PATH = path.join(ROOT, "src/data/locations.json");
 const DRY = process.argv.includes("--dry");
 const SITES_ONLY = process.argv.includes("--sites-only");
 const LOCS_ONLY = process.argv.includes("--locations-only");
+const FILL_NULLS = process.argv.includes("--fill-nulls");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function isWikimedia(url) {
@@ -42,11 +43,12 @@ function buildSiteQueries(site, locName) {
   return queries.filter(Boolean);
 }
 
-function buildLocationQueries(loc) {
+function buildLocationQueries(loc, topSpecies = []) {
   return [
-    `${loc.name} scuba diving underwater`,
-    `${loc.country} reef diving underwater`,
-    loc.region ? `${loc.region} coral reef underwater` : null,
+    topSpecies[0] ? `${topSpecies[0]} underwater reef` : null,
+    topSpecies[1] ? `${topSpecies[1]} underwater ocean` : null,
+    `${loc.country} coral reef underwater`,
+    `tropical reef fish underwater ocean`,
   ].filter(Boolean);
 }
 
@@ -79,7 +81,8 @@ async function main() {
   if (!LOCS_ONLY) {
     console.log(`\n── Sites (${sites.length}) ──`);
     for (const site of sites) {
-      if (!isWikimedia(site.heroImageUrl)) { siteSkip++; continue; }
+      const needsPhoto = FILL_NULLS ? site.heroImageUrl === null : isWikimedia(site.heroImageUrl);
+      if (!needsPhoto) { siteSkip++; continue; }
       const locName = locById.get(site.locationId)?.name ?? "";
       const queries = buildSiteQueries(site, locName);
       const pick = await tryPexels(queries);
@@ -87,7 +90,7 @@ async function main() {
         siteHits++;
         console.log(`[pexels ✓] ${site.slug}  q="${pick.query}"  src=${pick.source}`);
         if (!DRY) {
-          markUsed(site.heroImageUrl, null); // free old URL
+          if (site.heroImageUrl) markUsed(site.heroImageUrl, null); // free old URL
           site.heroImageUrl = pick.url;
           markUsed(pick.url, site.slug);
         }
@@ -98,17 +101,28 @@ async function main() {
     }
   }
 
+  // Build per-location species index from sites (for fill-nulls mode)
+  const locSpecies = new Map();
+  for (const site of sites) {
+    const sp = (site.species || []).slice(0, 2).map((s) => s.commonName || s.name).filter(Boolean);
+    if (sp.length && site.locationId) {
+      if (!locSpecies.has(site.locationId)) locSpecies.set(site.locationId, sp);
+    }
+  }
+
   if (!SITES_ONLY) {
     console.log(`\n── Locations (${locations.length}) ──`);
     for (const loc of locations) {
-      if (!isWikimedia(loc.heroImageUrl)) { locSkip++; continue; }
-      const queries = buildLocationQueries(loc);
+      const locNeedsPhoto = FILL_NULLS ? loc.heroImageUrl === null : isWikimedia(loc.heroImageUrl);
+      if (!locNeedsPhoto) { locSkip++; continue; }
+      const topSpecies = locSpecies.get(loc.id) || [];
+      const queries = buildLocationQueries(loc, topSpecies);
       const pick = await tryPexels(queries);
       if (pick) {
         locHits++;
         console.log(`[pexels ✓] ${loc.slug}  q="${pick.query}"  src=${pick.source}`);
         if (!DRY) {
-          markUsed(loc.heroImageUrl, null);
+          if (loc.heroImageUrl) markUsed(loc.heroImageUrl, null);
           loc.heroImageUrl = pick.url;
           markUsed(pick.url, loc.slug);
         }
