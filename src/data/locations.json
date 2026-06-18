@@ -2516,5 +2516,589 @@
     ],
     "siteIds": [],
     "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_GrantThomas_19.jpg"
+  },
+  {
+    "id": "dahab-egypt",
+    "slug": "dahab-egypt",
+    "name": "Dahab",
+    "country": "Egypt",
+    "region": "Red Sea",
+    "countryCode": "EG",
+    "lat": 28.5,
+    "lng": 34.52,
+    "description": "Dahab sits on the Sinai Peninsula where desert cliffs meet the electric blue Red Sea, and the diving here is legendary! The Blue Hole draws freedivers and scuba divers from every corner of the world, a cathedral sinkhole that plunges beyond 100 m alongside a coral wall of extraordinary beauty. The Bells and The Canyon offer adrenaline drift descents and sculpted swim-throughs that will stay with you long after you surface. Water temperatures are comfortable year round, and the town itself is one of the most relaxed and welcoming dive bases anywhere.",
+    "heroImageUrl": null,
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "dahab-egypt-blue-hole",
+      "dahab-egypt-the-bells",
+      "dahab-egypt-the-canyon"
+    ]
+  },
+  {
+    "id": "sharm-el-sheikh-egypt",
+    "slug": "sharm-el-sheikh-egypt",
+    "name": "Sharm el Sheikh",
+    "country": "Egypt",
+    "region": "Red Sea",
+    "countryCode": "EG",
+    "lat": 27.91,
+    "lng": 34.33,
+    "description": "Sharm el Sheikh anchors the southern tip of the Sinai Peninsula and has earned its place as one of the world's great dive destinations. Ras Mohammed National Park protects some of the most spectacular coral architecture in the Red Sea, and the WWII wreck of the SS Thistlegorm is widely regarded as the finest dive wreck on the planet. Expect schooling barracuda, resident sharks, and coral walls draped in soft corals of every color imaginable. The infrastructure here is world class, making it an ideal hub for liveaboard departures into the wider Red Sea.",
+    "heroImageUrl": null,
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "sharm-el-sheikh-egypt-shark-reef",
+      "sharm-el-sheikh-egypt-thistlegorm",
+      "sharm-el-sheikh-egypt-ras-um-sid"
+    ]
+  },
+  {
+    "id": "hurghada-egypt",
+    "slug": "hurghada-egypt",
+    "name": "Hurghada",
+    "country": "Egypt",
+    "region": "Red Sea",
+    "countryCode": "EG",
+    "lat": 27.26,
+    "lng": 33.81,
+    "description": "Hurghada stretches along the Egyptian Red Sea coast and serves as the gateway to a remarkable collection of offshore reefs and historic wrecks. Giftun Island offers shallow coral gardens teeming with reef fish, while the notorious Abu Nuhas reef has claimed 4 ships whose rusting hulls now bristle with marine life. The reef at Shaab Abu Ramada is so rich with color and fish density that locals call it the Aquarium. Whether you are a first-time diver or an experienced wreck hunter, Hurghada delivers something extraordinary.",
+    "heroImageUrl": null,
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "hurghada-egypt-giftun-island",
+      "hurghada-egypt-abu-nuhas",
+      "hurghada-egypt-shaab-abu-ramada"
+    ]
+  },
+  {
+    "id": "pemba-island-tanzania",
+    "slug": "pemba-island-tanzania",
+    "name": "Pemba Island",
+    "country": "Tanzania",
+    "region": "East Africa",
+    "countryCode": "TZ",
+    "lat": -5.2,
+    "lng": 39.77,
+    "description": "An almost entirely undived island north of Zanzibar, ringed by walls that drop to beyond sport diving limits with zero crowds. Pemba sits in the Zanzibar Archipelago yet receives a fraction of its famous neighbour's dive traffic, which means healthy hard coral gardens, dense schools of fish, and encounters with large pelagics that feel genuinely wild. The steep walls are draped in gorgonians and black coral, and the currents that sweep the channels bring in barracuda, eagle rays, and occasional hammerhead sharks. This is frontier diving at its finest!",
+    "heroImageUrl": null,
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "pemba-island-tanzania-fundu-gap",
+      "pemba-island-tanzania-mesali-island-reef",
+      "pemba-island-tanzania-ras-kigomasha"
+    ]
+  },
+  {
+    "id": "puerto-galera-philippines",
+    "name": "Puerto Galera",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Southeast Asia",
+    "lat": 13.52,
+    "lng": 120.96,
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "description": "An easy day trip from Manila that punches above its weight with wrecks, walls, and world class macro in one sheltered bay on Mindoro's north coast.",
+    "heroImageUrl": null,
+    "siteIds": [
+      "puerto-galera-philippines-sabang-wrecks",
+      "puerto-galera-philippines-coral-garden-puerto-galera",
+      "puerto-galera-philippines-hole-in-the-wall-pg"
+    ],
+    "slug": "puerto-galera-philippines"
+  },
+  {
+    "id": "anilao-philippines",
+    "name": "Anilao",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Southeast Asia",
+    "lat": 13.69,
+    "lng": 121.0,
+    "bestMonths": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "description": "Batangas province's answer to Lembeh and considered the cradle of Philippine diving, Anilao's rocky reefs hold extraordinary nudibranch and macro density just 3 hours south of Manila.",
+    "heroImageUrl": null,
+    "siteIds": [
+      "anilao-philippines-kirbys-rock",
+      "anilao-philippines-mainit",
+      "anilao-philippines-beatrice-rock"
+    ],
+    "slug": "anilao-philippines"
+  },
+  {
+    "id": "el-nido-philippines",
+    "name": "El Nido, Palawan",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Southeast Asia",
+    "lat": 11.18,
+    "lng": 119.39,
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "description": "Hidden inside Palawan's limestone karst wilderness, El Nido rewards explorers with pristine reefs, sea turtles, and manta encounters in the heart of the Coral Triangle.",
+    "heroImageUrl": null,
+    "siteIds": [
+      "el-nido-philippines-dilumacad-island",
+      "el-nido-philippines-shimizu-island-el-nido",
+      "el-nido-philippines-twin-rocks-el-nido"
+    ],
+    "slug": "el-nido-philippines"
+  },
+  {
+    "id": "mauritius-island",
+    "slug": "mauritius-island",
+    "name": "Mauritius",
+    "country": "Mauritius",
+    "countryCode": "MU",
+    "region": "Indian Ocean",
+    "lat": -20.2,
+    "lng": 57.55,
+    "description": "Mauritius offers a surprising depth of diving beyond its beach reputation: an atmospheric WWII wreck, granite cathedral caves, and year-round warm water on the leeward west coast.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "siteIds": [
+      "mauritius-island-stella-maru-wreck",
+      "mauritius-island-cathedral-caves-mauritius",
+      "mauritius-island-flic-en-flac-wall"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "reunion-island",
+    "slug": "reunion-island",
+    "name": "Réunion Island",
+    "country": "France",
+    "countryCode": "RE",
+    "region": "Indian Ocean",
+    "lat": -21.1,
+    "lng": 55.5,
+    "description": "A volcanic island with biodiverse reef systems regularly visited by humpback whales on their southern migration route, with unique coral diversity shaped by cold upwellings.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "siteIds": [
+      "reunion-island-la-passe-de-lhermitage",
+      "reunion-island-pointe-des-aigrettes",
+      "reunion-island-cap-la-houssaye-reunion"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "kas-turkey",
+    "slug": "kas-turkey",
+    "name": "Kaş",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "region": "Mediterranean",
+    "lat": 36.2,
+    "lng": 29.64,
+    "description": "A relaxed Lycian coast town where ancient history meets clear water: Bronze Age amphoras still visible on the seabed, dramatic canyon dive sites, and caves that cut through limestone cliffs into open sea.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "kas-turkey-uluburun-wreck-area",
+      "kas-turkey-dome-cave",
+      "kas-turkey-kekova-reef"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "santorini-greece",
+    "slug": "santorini-greece",
+    "name": "Santorini",
+    "country": "Greece",
+    "countryCode": "GR",
+    "region": "Mediterranean",
+    "lat": 36.39,
+    "lng": 25.46,
+    "description": "Below the famous caldera cliffs lies a unique volcanic underwater landscape with hot springs, pumice formations, and endemic species shaped by millennia of eruption cycles.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "santorini-greece-mesa-pigadia",
+      "santorini-greece-nea-kameni-crater",
+      "santorini-greece-cape-kolumbo"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "lanzarote-canary-islands",
+    "slug": "lanzarote-canary-islands",
+    "name": "Lanzarote",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Atlantic",
+    "lat": 28.96,
+    "lng": -13.55,
+    "description": "Lanzarote hosts the world's first underwater sculpture museum and benefits from Atlantic upwellings that bring unexpected diversity to volcanic reef walls including angel sharks and rays year-round.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "lanzarote-canary-islands-museo-atlantico",
+      "lanzarote-canary-islands-los-jameos-del-agua-reef",
+      "lanzarote-canary-islands-el-bajon"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "okinawa-japan",
+    "slug": "okinawa-japan",
+    "name": "Okinawa",
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Pacific",
+    "lat": 26.3,
+    "lng": 127.8,
+    "description": "Japan's subtropical diving frontier with clear warm water on dramatic coral drop-offs and seasonal hammerhead schools that draw advanced divers to the outer reefs from spring through autumn.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "okinawa-japan-cape-maeda",
+      "okinawa-japan-sunayama-reef-okinawa",
+      "okinawa-japan-yabiji-reef"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "vavau-tonga",
+    "slug": "vavau-tonga",
+    "name": "Vava'u, Tonga",
+    "country": "Tonga",
+    "countryCode": "TO",
+    "region": "Pacific",
+    "lat": -18.65,
+    "lng": -173.98,
+    "description": "Tonga's Vava'u group is one of the only places on earth where humpback whales actively seek out encounters with in-water observers, turning July through October into something genuinely unlike anywhere else.",
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "vavau-tonga-mariners-cave-tonga",
+      "vavau-tonga-swallows-cave-vavau",
+      "vavau-tonga-coral-garden-vavau"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "rarotonga-cook-islands",
+    "slug": "rarotonga-cook-islands",
+    "name": "Rarotonga, Cook Islands",
+    "country": "Cook Islands",
+    "countryCode": "CK",
+    "region": "Pacific",
+    "lat": -21.23,
+    "lng": -159.78,
+    "description": "Remote Cook Islands diving where pristine outer reef walls drop steeply into deep blue water and passes fill seasonally with manta rays and grey reef sharks hunting in the current.",
+    "bestMonths": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      1
+    ],
+    "siteIds": [
+      "rarotonga-cook-islands-avana-passage-rarotonga",
+      "rarotonga-cook-islands-muri-lagoon-reef",
+      "rarotonga-cook-islands-black-rock-cook-islands"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "turks-and-caicos",
+    "slug": "turks-and-caicos",
+    "name": "Turks and Caicos Islands",
+    "country": "Turks and Caicos Islands",
+    "countryCode": "TC",
+    "region": "Caribbean",
+    "lat": 21.69,
+    "lng": -71.79,
+    "description": "The wall dives here rank among the Caribbean's finest: the Providenciales reef edge drops vertically from 15 m to beyond 2000 m with crystalline 30 m visibility and regular pelagic flyovers.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "siteIds": [
+      "turks-and-caicos-the-wall-providenciales",
+      "turks-and-caicos-grace-bay-reef",
+      "turks-and-caicos-northwest-point-tci"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "dominica-island",
+    "slug": "dominica-island",
+    "name": "Dominica",
+    "country": "Dominica",
+    "countryCode": "DM",
+    "region": "Caribbean",
+    "lat": 15.41,
+    "lng": -61.35,
+    "description": "The Nature Isle of the Caribbean with the most dramatic underwater landscape in the Lesser Antilles: volcanic bubbles, black sand slopes, and the world's only resident sperm whale population accessible to divers.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "siteIds": [
+      "dominica-island-champagne-reef",
+      "dominica-island-scotts-head-pinnacle",
+      "dominica-island-soufriere-bay"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "barbados-west-coast",
+    "slug": "barbados-west-coast",
+    "name": "Barbados",
+    "country": "Barbados",
+    "countryCode": "BB",
+    "region": "Caribbean",
+    "lat": 13.19,
+    "lng": -59.57,
+    "description": "Barbados punches above its size with 6 accessible wrecks in a single bay and year-round sea turtle encounters on calm leeward reefs welcoming divers of every level.",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "siteIds": [
+      "barbados-west-coast-carlisle-bay-wrecks",
+      "barbados-west-coast-folkestone-reef",
+      "barbados-west-coast-ss-stavronikita"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "sea-of-cortez-mexico",
+    "slug": "sea-of-cortez-mexico",
+    "name": "Sea of Cortez",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "region": "Caribbean",
+    "lat": 24.15,
+    "lng": -110.3,
+    "description": "Jacques Cousteau called it the world's aquarium: the Sea of Cortez holds more marine species than anywhere else on earth and the only living coral reef in the entire Gulf of California.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "sea-of-cortez-mexico-los-islotes-sea-lions",
+      "sea-of-cortez-mexico-el-bajo-seamount",
+      "sea-of-cortez-mexico-cabo-pulmo-reef"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "phuket-thailand",
+    "slug": "phuket-thailand",
+    "name": "Phuket",
+    "country": "Thailand",
+    "countryCode": "TH",
+    "region": "Southeast Asia",
+    "lat": 7.9,
+    "lng": 98.3,
+    "description": "Thailand's dive capital with a fully protected marine park 20 minutes offshore and a year-round liveaboard departure point for the Andaman Sea.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "siteIds": [
+      "phuket-thailand-shark-point",
+      "phuket-thailand-anemone-reef",
+      "phuket-thailand-king-cruiser-wreck"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "bali-indonesia",
+    "slug": "bali-indonesia",
+    "name": "Bali",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Southeast Asia",
+    "lat": -8.4,
+    "lng": 115.2,
+    "description": "Bali offers startling variety within one island: drift walls in the west, a WWII wreck in the north, and seasonal ocean sunfish encounters in the strait to the east.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "bali-indonesia-menjangan-island-wall",
+      "bali-indonesia-crystal-bay-nusa-penida",
+      "bali-indonesia-amed-shipwreck"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "gili-islands-indonesia",
+    "slug": "gili-islands-indonesia",
+    "name": "Gili Islands",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Southeast Asia",
+    "lat": -8.35,
+    "lng": 116.05,
+    "description": "3 tiny car-free islands off Lombok ringed by turtle-dense reefs and some of the friendliest shark dives in the region.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "gili-islands-indonesia-shark-point-gili-trawangan",
+      "gili-islands-indonesia-halik-reef",
+      "gili-islands-indonesia-meno-wall"
+    ],
+    "heroImageUrl": null
+  },
+  {
+    "id": "lembeh-strait-indonesia",
+    "slug": "lembeh-strait-indonesia",
+    "name": "Lembeh Strait",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Southeast Asia",
+    "lat": 1.47,
+    "lng": 125.24,
+    "description": "The world capital of muck diving: a narrow strait in North Sulawesi where volcanic black sand conceals a rotating cast of rare and bizarre macro life found nowhere else in such density.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "siteIds": [
+      "lembeh-strait-indonesia-tk",
+      "lembeh-strait-indonesia-hairball",
+      "lembeh-strait-indonesia-aer-bajo"
+    ],
+    "heroImageUrl": null
   }
 ]
