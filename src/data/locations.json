@@ -6641,5 +6641,625 @@
       "galicia-carnota-wreck",
       "galicia-cabo-vilano"
     ]
+  },
+  {
+    "id": "zakynthos",
+    "slug": "zakynthos",
+    "name": "Zakynthos",
+    "country": "Greece",
+    "countryCode": "GR",
+    "region": "Mediterranean",
+    "lat": 37.79,
+    "lng": 20.9,
+    "description": "Zakynthos is a Greek Ionian island renowned for its UNESCO-protected loggerhead sea turtle (Caretta caretta) nesting beaches and spectacular sea caves. The island blends dramatic limestone coastline with warm, clear Ionian waters that shelter seahorses, moray eels, and a rich cast of Mediterranean reef life.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/14225899/pexels-photo-14225899.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "zakynthos-marathonisi-turtle-island",
+      "zakynthos-keri-caves",
+      "zakynthos-laganas-bay",
+      "zakynthos-xygia-reef"
+    ]
+  },
+  {
+    "id": "dumaguete",
+    "slug": "dumaguete",
+    "name": "Dumaguete",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Visayas",
+    "lat": 9.3068,
+    "lng": 123.308,
+    "description": "Dumaguete, on the south coast of Negros Oriental, is one of the Philippines' premier muck diving destinations, with the volcanic black-sand slopes of Dauin Marine Sanctuary sheltering an astounding density of macro critters. The surrounding waters also hold dramatic reef walls and schooling pelagics at nearby Sumilon Island, making this an outstanding multi-style dive region.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/18340327/pexels-photo-18340327.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "dumaguete-dauin-muck",
+      "dumaguete-masaplod-norte",
+      "dumaguete-sumilon-island",
+      "dumaguete-basak-muck"
+    ]
+  },
+  {
+    "id": "donsol",
+    "slug": "donsol",
+    "name": "Donsol",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Southeast Asia",
+    "lat": 12.9053,
+    "lng": 124.0072,
+    "description": "Donsol in Sorsogon province hosts the largest known aggregation of whale sharks on earth, drawing hundreds of the gentle giants from November through June. Beyond whale shark encounters, the surrounding waters of Ticao Island and Bulan offer manta rays, thresher sharks, and vibrant reef ecosystems.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6406224/pexels-photo-6406224.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "donsol-bulusan-bay-whale-shark-zone",
+      "donsol-ticao-island-manta-bowl",
+      "donsol-bulan-reef",
+      "donsol-san-miguel-bay"
+    ]
+  },
+  {
+    "id": "flores",
+    "slug": "flores",
+    "name": "Flores",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Lesser Sunda Islands",
+    "lat": -8.6574,
+    "lng": 121.0794,
+    "description": "Flores stretches between Bali and Komodo in eastern Indonesia, offering startlingly diverse diving from WWII wreck graveyards in Maumere Bay to pristine dugong meadows in Riung's 17 Islands Marine Park. The region sits within the Coral Triangle and remains far less visited than its famous neighbors, rewarding explorers with extraordinary biodiversity.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11686888/pexels-photo-11686888.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "flores-riung-17-islands",
+      "flores-maumere-bay-wrecks",
+      "flores-labuanbajo-night-reef",
+      "flores-batu-bolong"
+    ]
+  },
+  {
+    "id": "sao-miguel-azores",
+    "slug": "sao-miguel-azores",
+    "name": "São Miguel",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "region": "Azores",
+    "lat": 37.7412,
+    "lng": -25.6756,
+    "description": "The largest island in the Azores archipelago sits atop one of the Atlantic's richest upwelling zones, drawing blue whales, sperm whales, manta rays, and blue sharks year-round to waters that shift between tropical warmth and cold Atlantic surge.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/28993670/pexels-photo-28993670.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "sao-miguel-azores-princess-alice-bank",
+      "sao-miguel-azores-dollabarat",
+      "sao-miguel-azores-formigas-islet",
+      "sao-miguel-azores-vila-franca-islet"
+    ]
+  },
+  {
+    "id": "boa-vista-cape-verde",
+    "slug": "boa-vista-cape-verde",
+    "name": "Boa Vista",
+    "country": "Cape Verde",
+    "countryCode": "CV",
+    "region": "Atlantic Ocean",
+    "lat": 16.1333,
+    "lng": -22.8167,
+    "description": "The easternmost island of Cape Verde anchors one of the Atlantic's most underrated dive destinations, where whale sharks cruise Santa Monica Bay from February through May and loggerhead turtles nest on beaches surrounded by reef walls alive with rays and barracuda.",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31740990/pexels-photo-31740990.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "boa-vista-cape-verde-santa-monica-bay",
+      "boa-vista-cape-verde-ervatao-reef",
+      "boa-vista-cape-verde-sal-rei-wrecks",
+      "boa-vista-cape-verde-joao-valentin"
+    ]
+  },
+  {
+    "id": "pozzuoli-baiae",
+    "slug": "pozzuoli-baiae",
+    "name": "Pozzuoli / Baiae",
+    "country": "Italy",
+    "countryCode": "IT",
+    "region": "Mediterranean",
+    "lat": 40.822,
+    "lng": 14.083,
+    "description": "Naples Bay cradles one of the ancient world's most extraordinary dive sites — the submerged Roman city of Baiae, whose thermal-volcanic subsidience carried imperial villas, mosaic floors, and marble statues beneath 3 to 15 metres of clear Tyrrhenian water. Divers and even snorkellers glide above intact column capitals and Emperor Claudius's nymphaeum, while the surrounding volcanic seabed harbours surprisingly rich Mediterranean marine life.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8887755/pexels-photo-8887755.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "pozzuoli-baiae-baiae-underwater-archaeological-park",
+      "pozzuoli-baiae-miseno-bay-reef",
+      "pozzuoli-baiae-procida-island",
+      "pozzuoli-baiae-secca-delle-fumose"
+    ]
+  },
+  {
+    "id": "almeria",
+    "slug": "almeria",
+    "name": "Almería",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Mediterranean",
+    "lat": 36.734,
+    "lng": -2.183,
+    "description": "Cabo de Gata-Níjar Natural Park shelters the best-preserved marine reserve in the western Mediterranean, where the arid volcanic coastline of southeast Spain plunges into crystalline water that hosts seagrass prairies, pelagic aggregations, and a seahorse population dense enough to earn El Ancón the informal title of seahorse capital of the Mediterranean. The park's near-total absence of river runoff delivers visibility regularly exceeding 20 metres.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7227932/pexels-photo-7227932.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "almeria-arrecife-de-las-sirenas",
+      "almeria-el-ancon",
+      "almeria-la-polacra",
+      "almeria-isleta-del-moro"
+    ]
+  },
+  {
+    "id": "fethiye-gocek",
+    "slug": "fethiye-gocek",
+    "name": "Fethiye / Göcek",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "region": "Mediterranean",
+    "lat": 36.622,
+    "lng": 29.109,
+    "description": "A sheltered turquoise coastline of pine-clad islands and ancient Lycian ruins, where Ottoman shipwrecks lie draped in soft corals and calm bays harbour seahorses, moray eels, and nesting sea turtles year-round.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803956/pexels-photo-32803956.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "fethiye-gocek-gocek-island-reef",
+      "fethiye-gocek-ottoman-wreck-tersane",
+      "fethiye-gocek-sarsala-bay",
+      "fethiye-gocek-blue-cave-light-cave"
+    ]
+  },
+  {
+    "id": "antalya",
+    "slug": "antalya",
+    "name": "Antalya",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "region": "Mediterranean",
+    "lat": 36.897,
+    "lng": 30.713,
+    "description": "The Turkish Riviera's ancient harbour city spills into crystal clear water, offering submerged Roman and Hellenistic ruins, Bronze Age shipwreck territory, and reef walls patrolled by loggerhead turtles and dense schools of barracuda.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803953/pexels-photo-32803953.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "antalya-kemer-reef",
+      "antalya-phaselis-underwater-ruins",
+      "antalya-cape-gelidonya",
+      "antalya-ucagiz-kekova-wall"
+    ]
+  },
+  {
+    "id": "senegal",
+    "slug": "senegal",
+    "name": "Senegal",
+    "country": "Senegal",
+    "countryCode": "SN",
+    "region": "Atlantic Ocean",
+    "lat": 14.6937,
+    "lng": -17.4441,
+    "description": "West Africa's diving gem, where the Cap-Vert Peninsula meets the Atlantic with dramatic reef walls, colonial-era wrecks, and year-round warm water teeming with Atlantic grouper, barracuda, and nurse sharks.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/37659313/pexels-photo-37659313.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "senegal-les-mamelles-reef",
+      "senegal-saint-louis-wreck",
+      "senegal-dakar-artificial-reef",
+      "senegal-casamance-estuary"
+    ]
+  },
+  {
+    "id": "bijagos-islands",
+    "slug": "bijagos-islands",
+    "name": "Bijagós Islands",
+    "country": "Guinea-Bissau",
+    "countryCode": "GW",
+    "region": "Atlantic Ocean",
+    "lat": 11.2833,
+    "lng": -16.0167,
+    "description": "A UNESCO Biosphere Reserve of 88 islands off Guinea-Bissau, where saltwater hippopotamuses wade among mangroves, critically endangered sawfish patrol shallow bays, and nesting sea turtles crowd pristine beaches above untouched coral gardens.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11423843/pexels-photo-11423843.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "bijagos-orango-island",
+      "bijagos-poilao-turtle-beach",
+      "bijagos-canhabaque-reef",
+      "bijagos-joao-vieira-wall"
+    ]
+  },
+  {
+    "id": "inhambane",
+    "slug": "inhambane",
+    "name": "Inhambane",
+    "country": "Mozambique",
+    "countryCode": "MZ",
+    "region": "Mozambique Channel",
+    "lat": -23.865,
+    "lng": 35.383,
+    "description": "Southern Mozambique's Inhambane Bay is one of the Indian Ocean's most reliable year-round whale shark and manta ray destinations, drawing gentle giants to warm, plankton-rich waters that flow between the bay and the open Mozambique Channel.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6229930/pexels-photo-6229930.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "inhambane-manta-reef",
+      "inhambane-specific-point",
+      "inhambane-jesser-point",
+      "inhambane-bar-reef"
+    ]
+  },
+  {
+    "id": "eilat",
+    "slug": "eilat",
+    "name": "Eilat",
+    "country": "Israel",
+    "countryCode": "IL",
+    "region": "Red Sea",
+    "lat": 29.558,
+    "lng": 34.952,
+    "description": "Israel's only Red Sea port hosts the world's northernmost coral reef system, a remarkably well-conserved ecosystem protected by strict Israeli marine park regulations and cooler, nutrient-upwelling waters that keep corals thriving at the very edge of their range.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5008816/pexels-photo-5008816.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "eilat-dolphin-reef",
+      "eilat-japanese-garden",
+      "eilat-moses-rock",
+      "eilat-coral-beach"
+    ]
+  },
+  {
+    "id": "eyjafjordur",
+    "slug": "eyjafjordur",
+    "name": "Eyjafjörður",
+    "country": "Iceland",
+    "countryCode": "IS",
+    "region": "North Atlantic",
+    "lat": 65.8,
+    "lng": -18.1,
+    "description": "Iceland's longest fjord stretches 60 km inland from the Arctic coast, offering otherworldly cold-water diving through kelp forests, dramatic lava columns, and the hauntingly intact wreck of the Danish steamer Dettifoss. Arctic marine life thrives in the crystal-clear glacial meltwater, with wolf fish, Atlantic cod, and dense sea urchin beds carpeting the fjord floor.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/37769090/pexels-photo-37769090.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "eyjafjordur-arskogssandur-kelp-forest",
+      "eyjafjordur-dalvik-wall",
+      "eyjafjordur-dettifoss-wreck",
+      "eyjafjordur-hjalteyri-pier"
+    ]
+  },
+  {
+    "id": "oban",
+    "slug": "oban",
+    "name": "Oban",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "region": "North Atlantic",
+    "lat": 56.41,
+    "lng": -5.47,
+    "description": "Oban is Scotland's diving capital, a sheltered harbour town on the west coast that serves as gateway to some of the richest cold-water diving in Europe. Grey seal colonies, dense kelp forests, pollack shoals, and multiple historic wrecks make this a year-round destination for those willing to brave the chilly temperatures.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7438433/pexels-photo-7438433.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "oban-garvellachs-islands",
+      "oban-sound-of-mull",
+      "oban-ss-breda-wreck",
+      "oban-dunstaffnage-wall"
+    ]
+  },
+  {
+    "id": "gorgona-island",
+    "slug": "gorgona-island",
+    "name": "Gorgona Island",
+    "country": "Colombia",
+    "countryCode": "CO",
+    "region": "Eastern Pacific",
+    "lat": 2.9667,
+    "lng": -78.1833,
+    "description": "A former prison island turned national park off Colombia's Pacific coast, Gorgona delivers some of the most dramatic large-pelagic encounters in the Eastern Pacific — hammerhead schools, humpback whales, and whale sharks patrol its nutrient-rich waters from June through November.",
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/33927432/pexels-photo-33927432.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "gorgona-island-la-cazuela",
+      "gorgona-island-el-planchon",
+      "gorgona-island-la-moneda",
+      "gorgona-island-el-remanso"
+    ]
+  },
+  {
+    "id": "paracas",
+    "slug": "paracas",
+    "name": "Paracas",
+    "country": "Peru",
+    "countryCode": "PE",
+    "region": "Eastern Pacific",
+    "lat": -13.8333,
+    "lng": -76.25,
+    "description": "Driven by the cold, nutrient-dense Humboldt Current, Paracas offers a uniquely Peruvian diving experience where sea lions, Humboldt penguins, and hammerhead sharks share frigid Pacific waters alongside cold-water corals — earning the region its nickname as the Galapagos of Peru.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/18472866/pexels-photo-18472866.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "paracas-islas-ballestas",
+      "paracas-lagunillas-reef",
+      "paracas-roja-piedra",
+      "paracas-la-catedral"
+    ]
+  },
+  {
+    "id": "naxos-greece",
+    "slug": "naxos-greece",
+    "name": "Naxos",
+    "country": "Greece",
+    "countryCode": "GR",
+    "region": "Mediterranean",
+    "lat": 37.1036,
+    "lng": 25.3764,
+    "description": "The largest of the Cyclades islands, Naxos offers productive Aegean diving across Posidonia seagrass meadows, dramatic reefs, and the haunting silhouette of ancient submerged ruins. Strong seasonal currents attract barracuda, dentex, and amberjack, while the island's sheltered bays provide calm macro hunting year-round.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32693335/pexels-photo-32693335.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "naxos-greece-apollonas-reef",
+      "naxos-greece-paros-channel",
+      "naxos-greece-temple-of-apollo-underwater",
+      "naxos-greece-naxos-town-wall"
+    ]
+  },
+  {
+    "id": "lefkada-greece",
+    "slug": "lefkada-greece",
+    "name": "Lefkada",
+    "country": "Greece",
+    "countryCode": "GR",
+    "region": "Mediterranean",
+    "lat": 38.7167,
+    "lng": 20.65,
+    "description": "An Ionian island fringed by vivid blue caves, dramatic limestone cliffs, and sheltered bays teeming with Mediterranean marine life. Away from the busier Aegean crowds, Lefkada delivers intimate encounters with moray eels, grouper, octopus, nudibranchs, and seahorses across its diverse underwater terrain.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11201567/pexels-photo-11201567.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "lefkada-greece-meganisi-island",
+      "lefkada-greece-porto-katsiki-underwater",
+      "lefkada-greece-sivota-bay",
+      "lefkada-greece-lefkada-blue-cave"
+    ]
+  },
+  {
+    "id": "romblon",
+    "slug": "romblon",
+    "name": "Romblon",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Visayas",
+    "lat": 12.5778,
+    "lng": 122.2694,
+    "description": "Romblon sits in the Sibuyan Sea, one of the Philippines' best-kept macro diving secrets where thresher sharks, frogfish, and pygmy seahorses share the same pristine waters. Minimal tourist infrastructure means reefs remain in exceptional condition, drawing specialist underwater photographers from around the world.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7959474/pexels-photo-7959474.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "romblon-cobrador-island",
+      "romblon-blue-hole",
+      "romblon-looc-bay",
+      "romblon-tablas-strait"
+    ]
+  },
+  {
+    "id": "batangas",
+    "slug": "batangas",
+    "name": "Batangas",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Luzon",
+    "lat": 13.7565,
+    "lng": 120.9221,
+    "description": "The Mabini Peninsula and surrounding Batangas waters extend well beyond the famous Anilao reefs, offering sites rich with seasnake feeding stations, resident turtles, Napoleon wrasse, and spectacular barracuda schools. Batangas is one of the most accessible year-round dive destinations from Manila, with a diversity of habitats ranging from sheltered bays to open-water pinnacles.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/30692881/pexels-photo-30692881.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "batangas-san-juan",
+      "batangas-caban-island",
+      "batangas-layag-layag-reef",
+      "batangas-cathedral-rock"
+    ]
+  },
+  {
+    "id": "trinidad",
+    "slug": "trinidad",
+    "name": "Trinidad",
+    "country": "Trinidad and Tobago",
+    "countryCode": "TT",
+    "region": "Caribbean",
+    "lat": 10.5,
+    "lng": -61.25,
+    "description": "Trinidad's west and north coasts offer a different flavor of Caribbean diving — nutrient-rich upwelling from the Orinoco Delta draws tarpon, snook, and eagle rays into mangrove-fringed shores, while protected coral lagoons at Buccoo shelter hawksbill turtles year-round.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/19232035/pexels-photo-19232035.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "trinidad-buccoo-reef",
+      "trinidad-caroni-mangrove-dive",
+      "trinidad-chagville-point",
+      "trinidad-gasparee-caves"
+    ]
+  },
+  {
+    "id": "los-testigos",
+    "slug": "los-testigos",
+    "name": "Los Testigos",
+    "country": "Venezuela",
+    "countryCode": "VE",
+    "region": "Caribbean",
+    "lat": 11.38,
+    "lng": -63.1,
+    "description": "Los Testigos is a remote Venezuelan archipelago rarely visited by divers, offering some of the most pristine and untouched reef ecosystems in the southeastern Caribbean, with whale sharks seasonally passing through and dense schools of barracuda circling deepwater seamounts.",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/9004401/pexels-photo-9004401.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "los-testigos-isla-reef",
+      "los-testigos-punta-sur-wall",
+      "los-testigos-el-banco-seamount",
+      "los-testigos-north-channel"
+    ]
   }
 ]
