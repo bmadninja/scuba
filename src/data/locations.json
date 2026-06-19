@@ -3100,5 +3100,479 @@
       "lembeh-strait-indonesia-aer-bajo"
     ],
     "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_GregoryPiper_05.jpg"
+  },
+  {
+    "id": "vanuatu-espiritu-santo",
+    "slug": "vanuatu-espiritu-santo",
+    "name": "Espiritu Santo",
+    "country": "Vanuatu",
+    "countryCode": "VU",
+    "region": "Pacific Islands & PNG",
+    "lat": -15.5,
+    "lng": 167.15,
+    "description": "Espiritu Santo offers world-class wreck diving alongside pristine coral reefs, with the best conditions from May through October when visibility regularly exceeds 30 meters.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/29879125/pexels-photo-29879125.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "vanuatu-espiritu-santo-million-dollar-point",
+      "vanuatu-espiritu-santo-tutuba-island"
+    ]
+  },
+  {
+    "id": "marshall-islands-bikini-atoll",
+    "slug": "marshall-islands-bikini-atoll",
+    "name": "Bikini Atoll",
+    "country": "Marshall Islands",
+    "countryCode": "MH",
+    "region": "Pacific Islands & PNG",
+    "lat": 11.5,
+    "lng": 165.38,
+    "description": "A UNESCO World Heritage Site, Bikini Atoll hosts an extraordinary fleet of WW2 warships transformed into artificial reefs, best dived from March through May when seas are calmest.",
+    "bestMonths": [
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32824666/pexels-photo-32824666.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "marshall-islands-bikini-atoll-uss-saratoga",
+      "marshall-islands-bikini-atoll-nagato",
+      "marshall-islands-bikini-atoll-prinz-eugen"
+    ]
+  },
+  {
+    "id": "tuvalu",
+    "slug": "tuvalu",
+    "name": "Tuvalu",
+    "country": "Tuvalu",
+    "countryCode": "TV",
+    "region": "Pacific Islands & PNG",
+    "lat": -8.52,
+    "lng": 179.2,
+    "description": "Tuvalu's remote atolls shelter pristine coral gardens and abundant fish life rarely touched by tourism, with April through November offering the clearest conditions.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17976451/pexels-photo-17976451.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tuvalu-funafuti-conservation-area",
+      "tuvalu-te-namo-lagoon"
+    ]
+  },
+  {
+    "id": "new-caledonia",
+    "slug": "new-caledonia",
+    "name": "New Caledonia",
+    "country": "France",
+    "countryCode": "NC",
+    "region": "Pacific Islands & PNG",
+    "lat": -22.27,
+    "lng": 166.46,
+    "description": "New Caledonia's double barrier reef — the world's second largest — encloses spectacular lagoons and dramatic wall dives, with peak conditions from August through November.",
+    "bestMonths": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/13010781/pexels-photo-13010781.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "new-caledonia-ile-des-pins",
+      "new-caledonia-noumea-aquarium-pass",
+      "new-caledonia-ilot-maitre"
+    ]
+  },
+  {
+    "id": "madang-png",
+    "slug": "madang-png",
+    "name": "Madang",
+    "country": "Papua New Guinea",
+    "countryCode": "PG",
+    "region": "Pacific Islands & PNG",
+    "lat": -5.22,
+    "lng": 145.79,
+    "description": "Madang is PNG's macro diving capital, offering extraordinary critter-rich muck sites alongside healthy coral gardens, with year-round warm water and best visibility from May through October.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17795203/pexels-photo-17795203.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "madang-png-eel-garden",
+      "madang-png-planet-rock",
+      "madang-png-pig-island"
+    ]
+  },
+  {
+    "id": "tufi-png",
+    "slug": "tufi-png",
+    "name": "Tufi",
+    "country": "Papua New Guinea",
+    "countryCode": "PG",
+    "region": "Pacific Islands & PNG",
+    "lat": -9.08,
+    "lng": 149.33,
+    "description": "Tufi's dramatic fjord coastline conceals WW2 aircraft wrecks and some of PNG's most pristine coral walls, best explored from May through November when the southeast trade winds bring clear water.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/13010779/pexels-photo-13010779.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tufi-png-zero-fighter-wreck",
+      "tufi-png-cape-nelson-wall",
+      "tufi-png-solomon-sea-gardens"
+    ]
+  },
+  {
+    "id": "baa-atoll",
+    "slug": "baa-atoll",
+    "name": "Baa Atoll",
+    "country": "Maldives",
+    "countryCode": "MV",
+    "region": "Indian Ocean",
+    "lat": 5,
+    "lng": 73,
+    "description": "Baa Atoll is a UNESCO Biosphere Reserve famed for Hanifaru Bay, where hundreds of manta rays and whale sharks gather to feed during the southwest monsoon from June to November.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6229930/pexels-photo-6229930.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "baa-atoll-hanifaru-bay",
+      "baa-atoll-dhonfanu-thila",
+      "baa-atoll-nelivaru-haa"
+    ]
+  },
+  {
+    "id": "south-male-atoll",
+    "slug": "south-male-atoll",
+    "name": "South Male Atoll",
+    "country": "Maldives",
+    "countryCode": "MV",
+    "region": "Indian Ocean",
+    "lat": 3.9,
+    "lng": 73.5,
+    "description": "South Male Atoll offers dramatic channel dives at Guraidhoo Corner and Embudhoo Canyon, with strong currents delivering pelagic encounters including grey reef sharks, eagle rays, and hammerheads year-round.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11348763/pexels-photo-11348763.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "south-male-atoll-guraidhoo-corner",
+      "south-male-atoll-embudhoo-canyon",
+      "south-male-atoll-kandooma-thila"
+    ]
+  },
+  {
+    "id": "lhaviyani-atoll",
+    "slug": "lhaviyani-atoll",
+    "name": "Lhaviyani Atoll",
+    "country": "Maldives",
+    "countryCode": "MV",
+    "region": "Indian Ocean",
+    "lat": 5.4,
+    "lng": 73.5,
+    "description": "Lhaviyani Atoll is celebrated for the Shipyard dive site and Fushivaru Thila, offering exceptional coral gardens, large nurse sharks, and strong current thilas teeming with reef fish from November through April.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7202730/pexels-photo-7202730.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "lhaviyani-atoll-the-shipyard",
+      "lhaviyani-atoll-fushivaru-thila",
+      "lhaviyani-atoll-kuredu-express"
+    ]
+  },
+  {
+    "id": "aldabra-atoll",
+    "slug": "aldabra-atoll",
+    "name": "Aldabra Atoll",
+    "country": "Seychelles",
+    "countryCode": "SC",
+    "region": "Indian Ocean",
+    "lat": -9.4,
+    "lng": 46.3,
+    "description": "Aldabra Atoll is one of the world's most remote UNESCO World Heritage Sites, offering pristine untouched reefs, schools of hammerhead sharks, giant manta rays, and enormous populations of green turtles best visited April through October.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4785205/pexels-photo-4785205.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "aldabra-atoll-passe-houareau",
+      "aldabra-atoll-west-channels",
+      "aldabra-atoll-lagoon-reef"
+    ]
+  },
+  {
+    "id": "rodrigues-island",
+    "slug": "rodrigues-island",
+    "name": "Rodrigues Island",
+    "country": "Mauritius",
+    "countryCode": "MU",
+    "region": "Indian Ocean",
+    "lat": -19.7,
+    "lng": 63.4,
+    "description": "Rodrigues Island, a small volcanic island 650 km east of Mauritius, boasts a vast pristine lagoon and unspoiled coral ecosystems with exceptional visibility and encounters with spinner dolphins and reef sharks, best from October through April.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/9004400/pexels-photo-9004400.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "rodrigues-island-caverne-profondes",
+      "rodrigues-island-cathedral",
+      "rodrigues-island-sharks-paradise"
+    ]
+  },
+  {
+    "id": "neil-island",
+    "slug": "neil-island",
+    "name": "Neil Island (Andaman Islands)",
+    "country": "India",
+    "countryCode": "IN",
+    "region": "Indian Ocean",
+    "lat": 11.8,
+    "lng": 93,
+    "description": "Neil Island in the Andaman archipelago offers relaxed coral gardens and drift dives with excellent macro life, reef sharks, and turtles in warm, clear waters best explored from October through May.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/19232035/pexels-photo-19232035.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "neil-island-bharatpur-reef",
+      "neil-island-sitapur-wall",
+      "neil-island-bus-stop-bommie"
+    ]
+  },
+  {
+    "id": "coron",
+    "slug": "coron",
+    "name": "Coron",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Southeast Asia",
+    "lat": 11.9983,
+    "lng": 120.2043,
+    "description": "Coron Bay harbors one of the world's greatest wreck diving collections — a fleet of Japanese ships sunk in a 1944 US air raid — best dived from October through May when visibility peaks and seas are calm.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6143803/pexels-photo-6143803.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "coron-akitsushima-wreck",
+      "coron-okikawa-maru",
+      "coron-kogyo-maru"
+    ]
+  },
+  {
+    "id": "apo-island",
+    "slug": "apo-island",
+    "name": "Apo Island",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Southeast Asia",
+    "lat": 9.0667,
+    "lng": 123.2667,
+    "description": "Apo Island's community-managed marine sanctuary off Negros Oriental is a textbook conservation success story, with thriving reef fish populations and reliable green sea turtle encounters best enjoyed from March through June.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/29725615/pexels-photo-29725615.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "apo-island-marine-sanctuary",
+      "apo-island-rock-point-east"
+    ]
+  },
+  {
+    "id": "banda-sea",
+    "slug": "banda-sea",
+    "name": "Banda Sea",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Southeast Asia",
+    "lat": -5.5,
+    "lng": 128,
+    "description": "Indonesia's remote Banda Sea rewards liveaboard expeditions with pristine walls, schooling hammerheads, and volcanic topography that few divers ever witness — the October to April dry season brings the best visibility and pelagic action.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17875664/pexels-photo-17875664.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "banda-sea-banda-besar-wall",
+      "banda-sea-gunung-api-lava-flows"
+    ]
+  },
+  {
+    "id": "alor",
+    "slug": "alor",
+    "name": "Alor",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Southeast Asia",
+    "lat": -8.2333,
+    "lng": 124.5167,
+    "description": "Alor's fierce upwelling currents carry cold nutrient-rich water that supports an extraordinary diversity of rare macro critters, pygmy seahorses, and large pelagics — dive from April through November for optimal conditions.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/37659319/pexels-photo-37659319.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "alor-pura-wall",
+      "alor-kal-dive-site"
+    ]
+  },
+  {
+    "id": "ambon-bay",
+    "slug": "ambon-bay",
+    "name": "Ambon Bay",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Southeast Asia",
+    "lat": -3.6583,
+    "lng": 128.1833,
+    "description": "Ambon Bay is the world capital of rare critter diving, where the muck and rubble slopes conceal walking sharks, Rhinopias scorpionfish, and mimic octopus — year-round diving is possible with the best macro encounters from September through March.",
+    "bestMonths": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32765288/pexels-photo-32765288.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "ambon-bay-laha",
+      "ambon-bay-pinnacle"
+    ]
+  },
+  {
+    "id": "con-dao",
+    "slug": "con-dao",
+    "name": "Con Dao",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "region": "Southeast Asia",
+    "lat": 8.6833,
+    "lng": 106.6,
+    "description": "Con Dao National Park's protected waters off southern Vietnam shelter dugong, hawksbill turtles, and intact coral gardens rarely visited by divers — February through June delivers the calmest seas and clearest water.",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8026837/pexels-photo-8026837.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "con-dao-hon-tai",
+      "con-dao-bay-canh-wall"
+    ]
+  },
+  {
+    "id": "phu-quoc",
+    "slug": "phu-quoc",
+    "name": "Phu Quoc",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "region": "Southeast Asia",
+    "lat": 10.2898,
+    "lng": 103.9842,
+    "description": "Phu Quoc's southern islands and the An Thoi archipelago offer gentle coral garden diving with soft corals, nudibranchs, and schooling fish — the November through April dry season brings the best conditions in the Gulf of Thailand.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/18573919/pexels-photo-18573919.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "phu-quoc-an-thoi-islands",
+      "phu-quoc-turtle-island"
+    ]
   }
 ]
