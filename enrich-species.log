@@ -1,330 +1,502 @@
-Enriching 163 sites (< 5 species each, target 8)
+Enriching 249 sites (< 5 species each, target 8)
 
-[1/163] Blue Magic (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbrtRB1MgSrPkWwFChz"}
+[1/249] Blue Magic (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd2vbb3TdP2SLjeeHZG"}
 
-[2/163] Manta Sandy (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbs1UpZYmWnH5BfQt3s"}
+[2/249] Manta Sandy (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd33kwbayodPDrHqhTj"}
 
-[3/163] German Channel (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbs8YydfnDFJAVWAidi"}
+[3/249] German Channel (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd3Acwrx9GwVryaxU8P"}
 
-[4/163] Blue Holes (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbsFSiLreH6Xf7yz9hp"}
+[4/249] Blue Holes (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd3HZQYbeZXQstR2NMZ"}
 
-[5/163] Bajo Alcyone (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbsNHDvKx8eTpbv8Wa6"}
+[5/249] Bajo Alcyone (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd3RDHNNYpDVFrbcdto"}
 
-[6/163] Shark Bay (Wolf Island) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbsV8yay7WWfQokQJW8"}
+[6/249] Shark Bay (Wolf Island) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd3YULuXCQTA7tTvLsA"}
 
-[7/163] Shark Airport (North Atoll) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbsc4hFsxeZbze5NjQs"}
+[7/249] Shark Airport (North Atoll) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd3fMarsxgspBM5yV3B"}
 
-[8/163] Big Brother (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbsiuhSyiUqwuhKF6zc"}
+[8/249] Big Brother (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd3nDqHG2h9Er61a7nu"}
 
-[9/163] Fish Head (Mushimasmingili Thila) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbsqmhoPJquYi6SPmjY"}
+[9/249] Fish Head (Mushimasmingili Thila) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd3uF1QpRyLk96dr35R"}
 
-[10/163] Maaya Thila (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbsy31f2h4on6cqERhz"}
+[10/249] Maaya Thila (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd42ud65NxPfKuNboeX"}
 
-[11/163] Manta Alley (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbt6YD27fZMtcBgHT5D"}
+[11/249] Manta Alley (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd49xnGfH6niLv8MXN9"}
 
-[12/163] Castle Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbtDd71CJmGcgiDMbUN"}
+[12/249] Castle Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd4GpHTbBjoZaegAE39"}
 
-[13/163] Manta Point (Madivaru) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbtLUrKWSbXdbwNqmSr"}
+[13/249] Manta Point (Madivaru) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd4PmVjXJ4ozcvVdQC1"}
 
-[14/163] The Drop-Off (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbtTM6oK2WV7Ut7WYPT"}
+[14/249] The Drop-Off (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd4X2JvWxHum5h6gQ9q"}
 
-[15/163] Coral Garden (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbtaELoRUBJJPmKkMDP"}
+[15/249] Coral Garden (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd4dsp62KNmagMrosdG"}
 
-[16/163] Lekuan Walls (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbth6698k371BRsUPiV"}
+[16/249] Lekuan Walls (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd4koXp35fHJvsMjQTT"}
 
-[17/163] Bunaken Timur (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbtoyL4S2FkhNvbMhHm"}
+[17/249] Bunaken Timur (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd4t84cnQ2y1Fc3Yzts"}
 
-[18/163] Apo Reef Shark Ridge (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbtvpqTeKs43CNEd8JB"}
+[18/249] Apo Reef Shark Ridge (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd512J8hVbZCvv6xu9R"}
 
-[19/163] Binangaan Drop-Off (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbu3hLEdiqUFGW8Uv1Y"}
+[19/249] Binangaan Drop-Off (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd57tJDkuKGeuXbsyVp"}
 
-[20/163] Pescador Island (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbuAcJmuA1aML4iQcqV"}
+[20/249] Pescador Island (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd5EmHUMffypeacySNf"}
 
-[21/163] Panagsama Sardine Run (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbuHV3eBfNAqddB2kiW"}
+[21/249] Panagsama Sardine Run (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd5MfX2NmkXpvP1SJvd"}
 
-[22/163] Elephant Head Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbuQMYUfywjs19SUsx9"}
+[22/249] Elephant Head Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd5V1nmagP2beRc7DBg"}
 
-[23/163] East of Eden (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbuXbNJYMi12L9dn8bL"}
+[23/249] East of Eden (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd5cNYo1GdaNhBLXJHm"}
 
-[24/163] Chumphon Pinnacle (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbuesfYxwrjCjuioFsf"}
+[24/249] Chumphon Pinnacle (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd5jFHyYY8k6T1vDfEg"}
 
-[25/163] Sail Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbumzYbDSwif3DoKdE6"}
+[25/249] Sail Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd5r8nD2ACW4e7GEURY"}
 
-[26/163] Paradise Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbutwW6R5MpryphwUrU"}
+[26/249] Paradise Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd5y5zbxAKffpex8Z1F"}
 
-[27/163] Mabul House Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbv1mmm6Ep3TD1s9VUT"}
+[27/249] Mabul House Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd65xjbYdMh5BxPYikt"}
 
-[28/163] Shark's Cave (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbv8e2ArrhpQVYdFT61"}
+[28/249] Shark's Cave (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd6CxAuyMAqaKHTxM7D"}
 
-[29/163] The Wreck Point (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbvFfgqddWJCx2njQLu"}
+[29/249] The Wreck Point (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd6LR8zWY7qJ8CTYVf2"}
 
-[30/163] Bradford Shoals (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbvNfNj2XsRn4YKLLmG"}
+[30/249] Bradford Shoals (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd6TH8kq4nhavLyAnz2"}
 
-[31/163] Inglis Shoals (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbvVbqQEoMfMUqsiiwN"}
+[31/249] Inglis Shoals (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd6aAdNpgfr2m85Edbb"}
 
-[32/163] Dinah's Beach (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbvcV5GLuLvKkgp9kP8"}
+[32/249] Dinah's Beach (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd6h3cqzzvuUNJZCWtk"}
 
-[33/163] Black Magic (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbvkEuZCxb5dy5uEF5y"}
+[33/249] Black Magic (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd6ov7XifxuPvt93YEN"}
 
-[34/163] Cathedral (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbvs7ebTeyHBTs8crvC"}
+[34/249] Cathedral (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd6vpqmxsWneoZjkSHH"}
 
-[35/163] Great White Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbvz1ddt7Rcmbh5RCbA"}
+[35/249] Great White Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd73iKks2JQ5XuVH5jH"}
 
-[36/163] Purple Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbw6rtJxmni88tqNbgA"}
+[36/249] Purple Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd7AbpKAdgsS11HLHyu"}
 
-[37/163] Tumakohua (South Pass) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbwDheYyX6nQ9HurTyb"}
+[37/249] Tumakohua (South Pass) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd7HU4VWKzQ1ucsBDjD"}
 
-[38/163] Garuae (North Pass) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbwLf76T6fuu3otnbqz"}
+[38/249] Garuae (North Pass) (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd7QKp9LzCwYiq7srC8"}
 
-[39/163] Santa Rosa Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbwThGYxUDXWQdYnUeo"}
+[39/249] Santa Rosa Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd7XG2jNnQBzL7JZZWV"}
 
-[40/163] Devil's Throat (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbwat7bSzS8MMiteom7"}
+[40/249] Devil's Throat (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd7eJgveEeAzHh5aJtR"}
 
-[41/163] Dos Ojos (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbwhmrX1Ss2YfCwa69Y"}
+[41/249] Dos Ojos (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd7mEfB3KxqKyJHLmTJ"}
 
-[42/163] The Pit (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbwphpFhgMtaH5iT8Cm"}
+[42/249] The Pit (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd7t7Q6pLjoCoXP3MjD"}
 
-[43/163] Gran Cenote (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbwwg1xTuxc9gkUUcLb"}
+[43/249] Gran Cenote (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd7zyejTJYEg9yjWVke"}
 
-[44/163] Great Blue Hole (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbx4Ym2bmV5QupQkgMZ"}
+[44/249] Great Blue Hole (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd87qetE4SFvs8FDxS4"}
 
-[45/163] Half Moon Caye Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbxBUj9yRwGwESxUa3J"}
+[45/249] Half Moon Caye Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd8EieNCBPbaNstszPD"}
 
-[46/163] Long Caye Ridge (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbxJLya3p1X6zdBXTtn"}
+[46/249] Long Caye Ridge (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd8Mae1gFEpUtJDq6A9"}
 
-[47/163] The Elbow (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbxRCyZp4U6JQPWipwk"}
+[47/249] The Elbow (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd8UVcnZUFjE4EAnULy"}
 
-[48/163] Black Beauty (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbxYKrJEx7tfWhkshSN"}
+[48/249] Black Beauty (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd8bZGtiLodJL5S4Bgi"}
 
-[49/163] CJ's Drop-off (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbxfLnL2eXiNFD7GNNg"}
+[49/249] CJ's Drop-off (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd8iVVNAJzZUXzLDdkx"}
 
-[50/163] Halliburton Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbxnE25jLvGHRgS8WZo"}
+[50/249] Halliburton Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd8qPE1u5sStnq9aPPM"}
 
-[51/163] Mary's Place (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbxuAjLX5GEAtLNJGxU"}
+[51/249] Mary's Place (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd8xFiaNoUVTbQW1j1s"}
 
-[52/163] El Aguila Wreck (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxby2J6sBVezNC5UWU9n"}
+[52/249] El Aguila Wreck (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd95VnRWNSDiGvhEEcR"}
 
-[53/163] Wahoo Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbyFDjMasM7GgMwfUP8"}
+[53/249] Wahoo Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd9CQ24Kk6jddYFbkFp"}
 
-[54/163] Twin Peaks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbyNG9cwD9Qb6JtZ7b2"}
+[54/249] Twin Peaks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd9KHkheotMk64hVv14"}
 
-[55/163] Salt Pier (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbyV7u9DPMUmtCizKpJ"}
+[55/249] Salt Pier (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd9SGhbBYFrcV38vaEx"}
 
-[56/163] Hilma Hooker Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbycPDLLsQVfG2aW1Dg"}
+[56/249] Hilma Hooker Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd9Z9gjNvEhWj61KgvB"}
 
-[57/163] 1000 Steps (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbyjNQ4u87aUJKG2kvW"}
+[57/249] 1000 Steps (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd9g2SEhAgGc14JFVhL"}
 
-[58/163] Mushroom Forest (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbyrFPrFm7pXxZzNn9r"}
+[58/249] Mushroom Forest (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd9o2ckY199BG7ux5Ww"}
 
-[59/163] Watamula (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbyy79NuD3FwbnJQjTh"}
+[59/249] Watamula (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCd9uyaCx7RdnbKDxrnm"}
 
-[60/163] Tent Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxbz5x9qDEqxbR4dWwwY"}
+[60/249] Tent Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdA2qpfuwp64ezJ3gKH"}
 
-[61/163] Diamond Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbzCpePHK1SCmL3a3ne"}
+[61/249] Diamond Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdA9k44bs9PuMsHaA6V"}
 
-[62/163] Tiger Beach (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbzKgeHuthPvrFEi7qJ"}
+[62/249] Tiger Beach (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdAGgGc57fzPE5MtPPh"}
 
-[63/163] Thunderball Grotto (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbzSZe8HTnL2FRRn7de"}
+[63/249] Thunderball Grotto (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdAQusTinPL6LZFGQ6k"}
 
-[64/163] Danger Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbzZQ9iW9DLcFZNJEvE"}
+[64/249] Danger Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdAXqbDdciQjKhyvG1i"}
 
-[65/163] Bloody Bay Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbzgJ8XPHoYsF4Awqzj"}
+[65/249] Bloody Bay Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdAeiaStJDeq47aYWzz"}
 
-[66/163] Jackson's Bight (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbzoXxYU2gccnfMUWzb"}
+[66/249] Jackson's Bight (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdAmcpCuPBkgA7QQVzM"}
 
-[67/163] USS Vandenberg (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxbzvRwLaahYYKixANiX"}
+[67/249] USS Vandenberg (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdAtyKwvNeJ8N4gJgjK"}
 
-[68/163] Christ of the Abyss (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc13ueKhssPJDqZM9ng"}
+[68/249] Christ of the Abyss (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdB1soph1Jz24aagr3e"}
 
-[69/163] Manta Heaven Night Dive (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc1Ax4c91FMQ5SRpbmP"}
+[69/249] Manta Heaven Night Dive (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdB8xCqXfVTS9SwgB74"}
 
-[70/163] Pinnacle Au Au Crater (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc1HopL4aT6ec8t8UEL"}
+[70/249] Pinnacle Au Au Crater (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdBFzNnF9jFtHWVpDSM"}
 
-[71/163] Pipin (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc1Qg4gds4YV5iAUupv"}
+[71/249] Pipin (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdBNz4S9ZixKmtdd5r4"}
 
-[72/163] Black Coral 2 (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc1XXZoX5VugFH9biTg"}
+[72/249] Black Coral 2 (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdBVtnhiTMAr3TUHM1d"}
 
-[73/163] Sapata (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc1eNpUv4U6sqpYNCoP"}
+[73/249] Sapata (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdBcqFKKx8m5CXM3U3u"}
 
-[74/163] Pedras Secas (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc1mJYMTjhHtvmxeKbh"}
+[74/249] Pedras Secas (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdBjhkBfKKoghLrCe2m"}
 
-[75/163] Cayo de Agua (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc1tSf6xojGH8jNLHEe"}
+[75/249] Cayo de Agua (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdBraVSRkWYGccoJpf2"}
 
-[76/163] Madrisquí (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc21NdUDpj2Sxqsn2AK"}
+[76/249] Madrisquí (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdByro5HuGMkxGSZnV9"}
 
-[77/163] Silver Bank Humpback Swim (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc28GMreXkXB2YmxA7m"}
+[77/249] Silver Bank Humpback Swim (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdC6jXs1QoiF8Ch8WQx"}
 
-[78/163] Banana Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc2F8MpeoeowKWC5PcQ"}
+[78/249] Banana Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdCDbHdG9LGafJGZ7sA"}
 
-[79/163] HP Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc2N1MS6CSh7Wgb4Lux"}
+[79/249] HP Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdCLUH7BEzxSD1R2MWS"}
 
-[80/163] Shark and Yolanda Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc2VTpeCLWD66BNghnx"}
+[80/249] Shark and Yolanda Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdCTL2cqKb9WPUcFRAr"}
 
-[81/163] Anemone City (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc2cWjSeRXSSwQm2eRz"}
+[81/249] Anemone City (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdCagYe9F1fxbihUUFZ"}
 
-[82/163] Jackfish Alley (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc2jMzQZk6gpGf2vr25"}
+[82/249] Jackfish Alley (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdCi4oYAjjeT42v7WCV"}
 
-[83/163] Shaab Rumi South Plateau (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc2rHxXL2rpcKZkwUS7"}
+[83/249] Shaab Rumi South Plateau (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdCqjRRGEDqYeQrhBe4"}
 
-[84/163] Umbria Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc2y8U9EEhtEAhQLM3k"}
+[84/249] Umbria Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdCxdQNmicVARncq1yt"}
 
-[85/163] Cedar Pride Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc35yy4mZd6pQqRju4G"}
+[85/249] Cedar Pride Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdD5VejnwGTZac7d2Sm"}
 
-[86/163] Japanese Garden (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc3CrxqCyZ5CVLGw8cg"}
+[86/249] Japanese Garden (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdDCMerPbW4MGvmRzPN"}
 
-[87/163] Daymaniyat Aquarium (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc3Kixpdt4kMHhb3cBF"}
+[87/249] Daymaniyat Aquarium (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdDTbSFxMgT2heKkJKv"}
 
-[88/163] Brissare Rocks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc3SaDUrw74H2v2ENLE"}
+[88/249] Brissare Rocks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdDagaDGHLp1k2y2ik2"}
 
-[89/163] Shark Bank (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc3ZThpqqNGyNhh4AEA"}
+[89/249] Shark Bank (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdDhdHUvPiNQ1RmH1Jz"}
 
-[90/163] Manta Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc3gMCHppLVqhuuYQw7"}
+[90/249] Manta Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdDpZzx5uDJqu7Mx46o"}
 
-[91/163] Giants Castle (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc3oEgVUkBmGgbdKg7r"}
+[91/249] Giants Castle (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdDwVUG3NtHtDiqiLto"}
 
-[92/163] Cathedral (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc3v9AJm7B4qdvbWYU8"}
+[92/249] Cathedral (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdE4WtcnYgFq75YgLDq"}
 
-[93/163] Raggie Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc434tBTQ1EDxXrFUCQ"}
+[93/249] Raggie Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdEBY4vdQeciNBn9HcJ"}
 
-[94/163] Two-Mile Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc49wcw8A4UNT8HxAfe"}
+[94/249] Two-Mile Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdEJQokJkArCK6FBZw1"}
 
-[95/163] Five-Mile Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc4GtLSqMKyXeUDgsV2"}
+[95/249] Five-Mile Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdERNWVrxxXLeY8QUpC"}
 
-[96/163] Nosy Tanikely (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc4PtGenj7NeL8BYLGo"}
+[96/249] Nosy Tanikely (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdEYFFszpTjurDY7H5c"}
 
-[97/163] Silfra Fissure (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc4WnzfBcreZAYod66d"}
+[97/249] Silfra Fissure (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdEf8zYC5sWLtQz6cWq"}
 
-[98/163] Blue Hole and Inland Sea (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc4dqQyDnvSrmtTomzx"}
+[98/249] Blue Hole and Inland Sea (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdEnNZbY1Z3n4JyEd21"}
 
-[99/163] Azure Window Collapse (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc4kmdUdacJ8DJSg1uG"}
+[99/249] Azure Window Collapse (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdEuEp8iAVzeuP5PfQ1"}
 
-[100/163] Um El Faroud Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc4st1eFgoPtBMgBfrC"}
+[100/249] Um El Faroud Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdF26ZxusQm3VppEkvs"}
 
-[101/163] B-17 Bomber Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc4zjGLhKZ9eqPqHFuM"}
+[101/249] B-17 Bomber Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdF8xpDyTLv3mhGGErc"}
 
-[102/163] Stenjak Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc57hTusVWj2oMyVzx5"}
+[102/249] Stenjak Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdFFqodfXMXiXHUGxr4"}
 
-[103/163] Medes Islands Reserve (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc5EYURfvvpTdvgggUi"}
+[103/249] Medes Islands Reserve (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdFPoHbvNoGFMfyjQKj"}
 
-[104/163] Princess Alice Bank (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc5MRiLtf3bPCnU8Vct"}
+[104/249] Princess Alice Bank (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdFWeHz2hcCLYmTRkbM"}
 
-[105/163] Formigas Islets (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc5UHDN3ZnKtW1N2zWH"}
+[105/249] Formigas Islets (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdFdXHjQ3F9XzbRUnWq"}
 
-[106/163] Cod Hole (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc5b9iNTDfmhPEUiTCZ"}
+[106/249] Cod Hole (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdFoMNxVwzswbKJSA7f"}
 
-[107/163] Ningaloo Whale Shark Encounter (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc5hzUFCGVuq4W2Y5SB"}
+[107/249] Ningaloo Whale Shark Encounter (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdFvP3n76a7Eqb2ywdc"}
 
-[108/163] Navy Pier Exmouth (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc5pqE8USZv6dUsCQe9"}
+[108/249] Navy Pier Exmouth (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdG3FYV6dCoN3oERuUB"}
 
-[109/163] Julian Rocks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc5wiDgmRsLdWCoJ1m8"}
+[109/249] Julian Rocks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdGA7o3tfir2zS97p5q"}
 
-[110/163] Rikoriko Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc64ZE9bkb4RXx2JC7b"}
+[110/249] Rikoriko Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdGH2mXqCb4ZVLtWmBj"}
 
-[111/163] Northern Arch (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc6BRUmgyzujehxaQPE"}
+[111/249] Northern Arch (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdGPtmi1GoofLnpix8Q"}
 
-[112/163] Milford Sound Fjord (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc6KUAV7Nan3mwrshcU"}
+[112/249] Milford Sound Fjord (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdGWnWNkWBFtRK5tatp"}
 
-[113/163] Fujikawa Maru (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc6SoSm19GnS5RyjNar"}
+[113/249] Fujikawa Maru (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdGdoveWMu5bSdwMT8o"}
 
-[114/163] Shinkoku Maru (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc6ZgBdCXk1xvvLxJsf"}
+[114/249] Shinkoku Maru (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdGkgAzoT982muTfDEB"}
 
-[115/163] San Francisco Maru (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc6gfd5d3JUFcoGVBri"}
+[115/249] San Francisco Maru (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdGsYvP64Kfc3HuvjLG"}
 
-[116/163] Mil Channel (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc6oZ7XQb4mVqRWjsRx"}
+[116/249] Mil Channel (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdGzSewVbcq4jEe1J8D"}
 
-[117/163] Valley of the Rays (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc6vdWoV4mW9mS8tyQN"}
+[117/249] Valley of the Rays (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdH7MNx7mU3RqeCkmwL"}
 
-[118/163] SS President Coolidge (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc73VGDESDMm3DJcxfJ"}
+[118/249] SS President Coolidge (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdHEQHknTeGPeyu9eND"}
 
-[119/163] Stingray City (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc7AREa2tFkerWbdjK1"}
+[119/249] Stingray City (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdHMFoEqH4wmQfJCh8W"}
 
-[120/163] Cenote Angelita (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc7HHjAmysvU7A2v6Kv"}
+[120/249] Cenote Angelita (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdHU7YfFsMcppNYrC8E"}
 
-[121/163] Puerto Galera (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc7Q9UgRErwbXja5r3z"}
+[121/249] Puerto Galera (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdHb3GVJcXiKhnVwE4Q"}
 
-[122/163] Anilao (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc7X1EXDbS9q1cuGdGh"}
+[122/249] Anilao (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdHjXFNvXJ5JoxFtFoF"}
 
-[123/163] Wakatobi (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc7dtDwB9YJQMzzABYs"}
+[123/249] Wakatobi (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdHrvF6rMaLFmyVdc3s"}
 
-[124/163] Japanese battleship Nagato (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc7kkidpnTNfzVtE4hs"}
+[124/249] Japanese battleship Nagato (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdHyoEa1BPtrPE6kzpc"}
 
-[125/163] Ambon Bay (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc7sgC6zgUJvUpbyyu1"}
+[125/249] Ambon Bay (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdJ6jhpdSLWvk12cnnP"}
 
-[126/163] Batanta (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc7zc9w26uYrE5rUJ8j"}
+[126/249] Batanta (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdJDai1F33YLf4Ewdet"}
 
-[127/163] Cocklebiddy cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc87V9N7SKTHcjtdq5i"}
+[127/249] Cocklebiddy cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdJLSxbJEshCu326aAS"}
 
-[128/163] Engelbrecht Cave (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc8EMeCJ6KXFQK5rLNL"}
+[128/249] Engelbrecht Cave (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdJTJxS2EsbyzhzMKUc"}
 
-[129/163] Ewens Ponds (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc8MDe8FRRnktSycWSN"}
+[129/249] Ewens Ponds (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdJaATrrGzzQ9c9kiTj"}
 
-[130/163] Fossil Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc8UYRniNofq7cVmBhf"}
+[130/249] Fossil Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdJh3ChXuPHc8gAs8ba"}
 
-[131/163] HMAS Adelaide (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc8bdZfLsq7RCzjXv2A"}
+[131/249] HMAS Adelaide (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdJpKkStnRDF96ZX2Pg"}
 
-[132/163] HMAS Brisbane (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc8ir9Yic13iDJ3Rzh4"}
+[132/249] HMAS Brisbane (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdJwBkZwCTDNewGT5qV"}
 
-[133/163] HMAS Canberra (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc8qmNZyW2DZnrWSUkz"}
+[133/249] HMAS Canberra (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdK43knHVQez2pzC2Xr"}
 
-[134/163] Jake's Seaplane (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc8xercHah4W2Z1jFoF"}
+[134/249] Jake's Seaplane (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdKAvkD4zmxf2oUNKC7"}
 
-[135/163] Magic Point (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc95YbgQAVTFtopBLct"}
+[135/249] Magic Point (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdKHsCzKCxmbvZ2DZwJ"}
 
-[136/163] Neptune Islands (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc9CS5rSRMjiHSGu5PB"}
+[136/249] Neptune Islands (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdKQiDYMNWgLzYgjJ5j"}
 
-[137/163] Shilang & the Big Mushroom Coral (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc9KJaYRc83Ywfn8isu"}
+[137/249] Shilang & the Big Mushroom Coral (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdKXgAVAHCAW25SydQA"}
 
-[138/163] Heian Maru (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc9SMjtiN2KHxrwJiuD"}
+[138/249] Heian Maru (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdKeYAc6wHvfsZEVmpC"}
 
-[139/163] Crocodile Mangroves (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc9ZFDuns5N6GhtzszH"}
+[139/249] Crocodile Mangroves (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdKmPB9aaT2bRfp1r22"}
 
-[140/163] Nippo Maru (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc9gQqDooHhctjEgmLp"}
+[140/249] Nippo Maru (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdKtEgRRZekc3PxeZS7"}
 
-[141/163] Chac Mool (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc9oGLAaiJv2CdN2z3s"}
+[141/249] Chac Mool (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdL16vRwzpY8YZ9n8qx"}
 
-[142/163] HMS Southwold (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cbxc9v9pSWrJUv8g1U14v"}
+[142/249] HMS Southwold (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdLJkZZbHQzDkW5viv3"}
 
-[143/163] HMCS Chaudiere (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcA324sRwp3h3GnFSiM"}
+[143/249] HMCS Chaudiere (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdLfra1R1t12qMTJQGR"}
 
-[144/163] Bangaram Atoll (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcA9tZdZroecK7ANSaS"}
+[144/249] Bangaram Atoll (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdLnpmhUbXvNj2NfeRw"}
 
-[145/163] Bay of Pigs (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcAH7teHP3zgV2raouS"}
+[145/249] Bay of Pigs (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdLv8Jz78JfPB849QHb"}
 
-[146/163] Capurgana (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcAPyPz7PbkWXrSQJPK"}
+[146/249] Capurgana (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdM2zoufUNAPzccDTrw"}
 
-[147/163] Cuba Jardines de la Reina (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcAWqPrYwU7c47QsBHs"}
+[147/249] Cuba Jardines de la Reina (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdM9wm8LCiBReYTgzj7"}
 
-[148/163] Kadmat Island (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcAdmri5wiLTDvFuAMq"}
+[148/249] Kadmat Island (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdMH49TXV4FEQcy2ni9"}
 
-[149/163] Memba Bay (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcAnMJ5qqG1rnffBexj"}
+[149/249] Memba Bay (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdMPv9WHxttQbMrfBjW"}
 
-[150/163] Museo Atlantico (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcAuLyz497itxqvLXV7"}
+[150/249] Museo Atlantico (2 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdMWpdL3YSKzsUwJ79j"}
 
-[151/163] Punta Cana (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcB2DjGsxt8agGapyZA"}
+[151/249] Punta Cana (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdMdpK69TxgKVm2sYyH"}
 
-[152/163] Taganga (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcB94VFiqnusUY2sVSh"}
+[152/249] Taganga (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdMkjHoqVn7d7uGSSrx"}
 
-[153/163] Blue Hole Gozo (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcBFwEB8FuSMVjSPzad"}
+[153/249] Blue Hole Gozo (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdMsqBGoLwhAZn6MsLs"}
 
-[154/163] Ghar Qawqla (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcBNoUpeB7zcM8oTk3f"}
+[154/249] Ghar Qawqla (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdMzhv3LHBqQ3SvctJC"}
 
-[155/163] Inland Sea Gozo (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcBVejP99tuXc6fJ4FN"}
+[155/249] Inland Sea Gozo (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdN7g7tvD4z1ahUYc1p"}
 
-[156/163] Jellyfish Lake (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcBcXikzoHFqmAZpe6R"}
+[156/249] Jellyfish Lake (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdNF2dqTvq9Pogen6gY"}
 
-[157/163] Bimini Great Hammerheads (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcBjRi1AnxPuEvyrUHu"}
+[157/249] Bimini Great Hammerheads (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdNMtdd2rw5ZSGeEuDx"}
 
-[158/163] Manta Ray Night Dive (Garden Eel Cove) (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcBrJwmrrneBWh9hubs"}
+[158/249] Manta Ray Night Dive (Garden Eel Cove) (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdNUpbzSyEkPiNHMij2"}
 
-[159/163] Chandelier Cave (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcBy9hngudSwdNbGhjv"}
+[159/249] Chandelier Cave (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdNbgMeadD2ViWsbaq3"}
 
-[160/163] Cara a Cara (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcC6SWPyEQs484qmgzp"}
+[160/249] Cara a Cara (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdNigXshHSXdZafnZu4"}
 
-[161/163] Cenote Carwash (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcCDccCJGTFjBfN5e4J"}
+[161/249] Cenote Carwash (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdNqoRBNYTZ9RqFTF7c"}
 
-[162/163] Yamagiri Maru (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcCNfpZMywKS6ccgLyb"}
+[162/249] Yamagiri Maru (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdNxhtv288jVnTRRSk4"}
 
-[163/163] B-17F Black Jack (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CbxcCVd2DqubhrqVV2eL2"}
+[163/249] B-17F Black Jack (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdP65ehvtA6bJF8FdKL"}
 
-Done. Enriched: 0  Failed: 163
+[164/249] The Blue Hole (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdPCx9fuHU4HQFqCqGi"}
+
+[165/249] The Bells (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdPYaMA1szFFBrCAa61"}
+
+[166/249] The Canyon (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdPfstomLYU4HuGdP5f"}
+
+[167/249] Shark Reef, Ras Mohammed (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdPnk8yhNFxBdjGbR8M"}
+
+[168/249] SS Thistlegorm Wreck (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdPubeZ45Mju2sCugGU"}
+
+[169/249] Ras Um Sid (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdQ2TQ5npYKPgRCtTff"}
+
+[170/249] Giftun Island Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdQARsaShJv9SpxzCJf"}
+
+[171/249] Abu Nuhas Wrecks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdQHupkRaHbZNNa3UFi"}
+
+[172/249] Shaab Abu Ramada (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdQRv2tdcNvKGvkqvgZ"}
+
+[173/249] Fahl Island Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdQYmnmtRBwR7apKXFT"}
+
+[174/249] Al Wajh Bank (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdQffmYbtQ1d6U6ah8u"}
+
+[175/249] Moucha Island Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdQpLux2Py6cxrzM1gz"}
+
+[176/249] Seven Brothers Islands Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdQwCuhCacLAsx3UG3v"}
+
+[177/249] Island 9 (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdR44AeNLz1e9gD98Ly"}
+
+[178/249] Dhalak Bank (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdRAvfRC3ax64VvTwPW"}
+
+[179/249] Hawakil Bay Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdRHwazrzmZWdWE9ewz"}
+
+[180/249] Dissei Island Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdRQoqMRcQcNaK7nEYt"}
+
+[181/249] Martini Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdRXh5WFfRacvpYJhHQ"}
+
+[182/249] Hole in the Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdReaZm2YpTsoDJAXNt"}
+
+[183/249] Dibba Rock (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdRmXXJhTwFgMgGgsM6"}
+
+[184/249] Watamu Marine Park Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdRtTz9pgBRzKA4R7yV"}
+
+[185/249] Whale Island Cave (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdS1Qx1QRFTn3gDSUtn"}
+
+[186/249] Mnemba South Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdS8aoCnnjwq1dHBjuF"}
+
+[187/249] Memba Bay Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdSFSJjMphozJwcPgaS"}
+
+[188/249] Memba Pinnacle (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdSNKYa3xUSqNugf6WM"}
+
+[189/249] Manta Reef Tofo (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdSVBYZSjB3TUnwfKtY"}
+
+[190/249] Fundu Gap (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdSc4nXgNbK4uLrw5u3"}
+
+[191/249] Mesali Island Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdSiw2VykNXm5N8JapM"}
+
+[192/249] Ras Kigomasha (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdSqnXncWZpuzhL1ZkZ"}
+
+[193/249] Sabang Wrecks (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdSxeY1iNiGeN46DzQY"}
+
+[194/249] Coral Garden Puerto Galera (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdT5VnaCRjFehXUTkcn"}
+
+[195/249] Hole in the Wall PG (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdTCTzFdvtS8MK1MtMg"}
+
+[196/249] Kirby's Rock (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdTKJzh4Jjrf8NiDfKB"}
+
+[197/249] Mainit (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdTSCEnb9ay35AvpQoE"}
+
+[198/249] Beatrice Rock (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdTZeTWcXfevX7xr84M"}
+
+[199/249] Dilumacad Island (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdTgWhu7wCMu1WCS6QX"}
+
+[200/249] Shimizu Island El Nido (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdTommCBug76qWyVCRy"}
+
+[201/249] Twin Rocks El Nido (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdTvfzpzYfSNeE5Ambt"}
+
+[202/249] Stella Maru Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdU3aUNWu9nhxS4Xdnr"}
+
+[203/249] Cathedral Caves Mauritius (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdUBAPMm8NTMzmHmmEX"}
+
+[204/249] Flic en Flac Wall (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdUJTgJd9bSb3gT5CBL"}
+
+[205/249] La Passe de l'Hermitage (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdUS1rLxuW8feEv8EH1"}
+
+[206/249] Pointe des Aigrettes (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdUYsbqJE5EUp1zQkyT"}
+
+[207/249] Cap la Houssaye Reunion (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdUft2qrdw2NxSfYE4a"}
+
+[208/249] Uluburun Wreck Area (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdUnmmWRP5Lnib5voLH"}
+
+[209/249] Dome Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdUufFmmcTX44S8K5XS"}
+
+[210/249] Kekova Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdV2WWYJ8vgksEpxSUk"}
+
+[211/249] Mesa Pigadia (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdV9NWcHRvvsdeF9FR9"}
+
+[212/249] Nea Kameni Crater (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdVGJERQzw9xqFKM5bt"}
+
+[213/249] Cape Kolumbo (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdVPLeBeK7K5BUkViVU"}
+
+[214/249] Museo Atlantico (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdVWR3ZRUP3nFmYd2DL"}
+
+[215/249] Los Jameos del Agua Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdVdTDBeDDW9D33CURW"}
+
+[216/249] El Bajón (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdVkX7DYafeG8auSCRX"}
+
+[217/249] Cape Maeda (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdVspQKGPMeLZD2i3Z2"}
+
+[218/249] Sunayama Reef Okinawa (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdVzz1htXpjaHuN2wc3"}
+
+[219/249] Yabiji Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdW7sW3T6ovkog3bMsG"}
+
+[220/249] Mariners Cave Tonga (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdWEj11yvkPTcBYrdT2"}
+
+[221/249] Swallows Cave Vavau (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdWMakrSLpaomHuHCZS"}
+
+[222/249] Coral Garden Vavau (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdWUWUPRBmQDBLw4QBQ"}
+
+[223/249] Avana Passage Rarotonga (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdWbNiqZ8pzMzD44ndM"}
+
+[224/249] Muri Lagoon Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdWiEibrB6n2Z5rjS1U"}
+
+[225/249] Black Rock Cook Islands (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdWq8hnm2NX5d35io5M"}
+
+[226/249] The Wall Providenciales (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdWx1wZAxbVdZXWgWFq"}
+
+[227/249] Grace Bay Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdX53cYztwAxoL3DsU8"}
+
+[228/249] Northwest Point TCI (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdXBvMe6t1Rmuc6vJRe"}
+
+[229/249] Champagne Reef Dominica (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdXJnrXHAmsVNVeU6UU"}
+
+[230/249] Scotts Head Pinnacle (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdXRhacLAgGEppHTA7q"}
+
+[231/249] Soufriere Bay Dominica (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdXYhmUwBnNn6oVQYxu"}
+
+[232/249] Carlisle Bay Wrecks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdXfs7zcpLcAKjsUtnp"}
+
+[233/249] Folkestone Reef Barbados (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdXnj7v4gGEzRa6C3RQ"}
+
+[234/249] SS Stavronikita (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdXubcjEzZqVwANY7ad"}
+
+[235/249] Los Islotes Sea Lions (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdY2TsGstuiNmgHkw4s"}
+
+[236/249] El Bajo Seamount (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdY9JdPjh2pKtSvgUq1"}
+
+[237/249] Cabo Pulmo Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdYGE6ekjZrTnTPrTs9"}
+
+[238/249] Shark Point (Hin Musang) (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdYPE2d4pGUsdseErAk"}
+
+[239/249] Anemone Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdYWCEJHgxNDAyZxeTz"}
+
+[240/249] King Cruiser Wreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdYd3jgEzEHSHhv788K"}
+
+[241/249] Menjangan Island Wall (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdYjuEvErKWHSRoUdVv"}
+
+[242/249] Crystal Bay Nusa Penida (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdYryt5HBeNxCaWrxKr"}
+
+[243/249] Amed Shipwreck (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdYzNsxPFd1yKCPZkH6"}
+
+[244/249] Shark Point Gili Trawangan (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdZ86UiREsd54qCwLGR"}
+
+[245/249] Halik Reef (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdZExE8KcGJGTeLwLHx"}
+
+[246/249] Meno Wall (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdZMtSSzG5cSvCC1EXx"}
+
+[247/249] TK (Tanjung Kubur) (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdZUpfDumvNjBGuc8Qu"}
+
+[248/249] Hairball (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdZbgAQQaaMRBn61Zdp"}
+
+[249/249] Aer Bajo (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CcCdZixxfAwbpbg3Ek1Fm"}
+
+Done. Enriched: 0  Failed: 249
 Run fetch-species-photos.mjs next to get iNaturalist thumbnails for new species.
