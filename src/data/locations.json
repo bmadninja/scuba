@@ -5297,5 +5297,674 @@
       "yasawa-islands-drawaqa-passage",
       "yasawa-islands-naviti-reef-wall"
     ]
+  },
+  {
+    "id": "puerto-rico",
+    "slug": "puerto-rico",
+    "name": "Puerto Rico",
+    "country": "United States",
+    "countryCode": "US",
+    "region": "Caribbean",
+    "lat": 18.2208,
+    "lng": -66.5901,
+    "description": "Puerto Rico offers world-class diving across remote offshore reserves and dramatic deepwater walls, with exceptional water clarity and thriving populations of Caribbean megafauna including sharks, rays, and sea turtles.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11157931/pexels-photo-11157931.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "puerto-rico-mona-island",
+      "puerto-rico-la-parguera-wall",
+      "puerto-rico-desecheo-island",
+      "puerto-rico-caja-de-muertos"
+    ]
+  },
+  {
+    "id": "sint-maarten",
+    "slug": "sint-maarten",
+    "name": "Sint Maarten / Saint-Martin",
+    "country": "Sint Maarten",
+    "countryCode": "SX",
+    "region": "Caribbean",
+    "lat": 18.0425,
+    "lng": -63.0548,
+    "description": "This dual-nation island in the northeastern Caribbean combines a historic shipwreck, shallow stingray flats, and labyrinthine reef formations, offering accessible diving in warm, clear waters year-round.",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803940/pexels-photo-32803940.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "sint-maarten-proselyte-reef",
+      "sint-maarten-molly-beday",
+      "sint-maarten-the-maze",
+      "sint-maarten-flat-island-reef"
+    ]
+  },
+  {
+    "id": "north-carolina-usa",
+    "slug": "north-carolina-usa",
+    "name": "North Carolina",
+    "country": "United States",
+    "countryCode": "US",
+    "region": "East Coast",
+    "lat": 34.9,
+    "lng": -76.3,
+    "description": "North Carolina's Outer Banks coast earned its nickname the Graveyard of the Atlantic for good reason — more than 5,000 ships have sunk in these waters over four centuries. WWII wrecks lie in remarkable condition just offshore, drawing divers who want history and big wildlife in equal measure.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/24906364/pexels-photo-24906364.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "north-carolina-usa-u352",
+      "north-carolina-usa-uss-tarpon",
+      "north-carolina-usa-caribsea",
+      "north-carolina-usa-city-of-new-york"
+    ]
+  },
+  {
+    "id": "british-columbia-canada",
+    "slug": "british-columbia-canada",
+    "name": "British Columbia",
+    "country": "Canada",
+    "countryCode": "CA",
+    "region": "Pacific",
+    "lat": 50.4,
+    "lng": -125.9,
+    "description": "British Columbia's cold, nutrient-rich Pacific waters host some of the world's densest concentrations of giant Pacific octopus alongside wolf eels, Steller sea lions, and orcas. From the sheltered passages of the Inside Passage to the exposed rocky reefs of Race Rocks, BC delivers a cold-water spectacle unmatched on the continent.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5377978/pexels-photo-5377978.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "british-columbia-canada-browning-pass",
+      "british-columbia-canada-race-rocks",
+      "british-columbia-canada-porteau-cove",
+      "british-columbia-canada-dodd-narrows"
+    ]
+  },
+  {
+    "id": "ireland",
+    "slug": "ireland",
+    "name": "Ireland",
+    "country": "Ireland",
+    "countryCode": "IE",
+    "region": "North Atlantic",
+    "lat": 53.1424,
+    "lng": -7.6921,
+    "description": "Ireland's Atlantic coastline delivers surprisingly rich cold-water diving, from Europe's first marine nature reserve at Lough Hyne to basking shark corridors off Rathlin Island and dramatic sea cave systems carved into the Carboniferous limestone of County Clare.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5116360/pexels-photo-5116360.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "ireland-lough-hyne",
+      "ireland-rathlin-island",
+      "ireland-kilkee",
+      "ireland-fair-head"
+    ]
+  },
+  {
+    "id": "wales",
+    "slug": "wales",
+    "name": "Wales (Pembrokeshire)",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "region": "North Atlantic",
+    "lat": 51.6748,
+    "lng": -5.0705,
+    "description": "Pembrokeshire's Pembrokeshire Coast National Park hides some of Britain's most accessible cold-water diving — grey seal nurseries on Skomer Island, blue shark summer aggregations at The Smalls, and bottlenose dolphin encounters in Cardigan Bay's sheltered waters.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/13589783/pexels-photo-13589783.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "wales-skomer-island",
+      "wales-the-smalls-reef",
+      "wales-cardigan-bay",
+      "wales-st-davids-head"
+    ]
+  },
+  {
+    "id": "lofoten-islands",
+    "slug": "lofoten-islands",
+    "name": "Lofoten Islands",
+    "country": "Norway",
+    "countryCode": "NO",
+    "region": "Atlantic Ocean",
+    "lat": 68.15,
+    "lng": 13.98,
+    "description": "The Lofoten Islands rise dramatically from the Arctic Sea above the Arctic Circle, offering world class cold water diving in crystalline visibility among wolf fish, king crab, and towering kelp forests. Sperm whales and orcas visit seasonally, making this one of the most extraordinary diving destinations in the northern hemisphere.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/3806139/pexels-photo-3806139.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "lofoten-islands-nusfjord",
+      "lofoten-islands-vestfjorden",
+      "lofoten-islands-henningsvær",
+      "lofoten-islands-svolvaer-wall"
+    ]
+  },
+  {
+    "id": "faroe-islands",
+    "slug": "faroe-islands",
+    "name": "Faroe Islands",
+    "country": "Faroe Islands",
+    "countryCode": "FO",
+    "region": "North Atlantic",
+    "lat": 62,
+    "lng": -6.79,
+    "description": "The Faroe Islands sit in the North Atlantic between Iceland and Norway, a volcanic archipelago of dramatic underwater cliffs, sea caves, and rich cold water marine life including grey seals, wolffish, and dense populations of nudibranchs. Powerful Atlantic currents fuel exceptional biodiversity in these remote, rarely dived waters.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7976692/pexels-photo-7976692.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "faroe-islands-enniberg-wall",
+      "faroe-islands-gjogv-sea-cave",
+      "faroe-islands-saksun-inlet",
+      "faroe-islands-vestmanna-cliffs"
+    ]
+  },
+  {
+    "id": "false-bay",
+    "slug": "false-bay",
+    "name": "False Bay",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "region": "Western Cape",
+    "lat": -34.18,
+    "lng": 18.72,
+    "description": "False Bay is one of South Africa's most dramatic dive destinations, where cold nutrient-rich Atlantic upwellings meet a rugged coastline to support an extraordinary ecosystem anchored by great white sharks, Cape fur seals, and rare subtropical corals.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/33715200/pexels-photo-33715200.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "false-bay-shark-alley",
+      "false-bay-millers-point",
+      "false-bay-coral-gardens",
+      "false-bay-roman-rock"
+    ]
+  },
+  {
+    "id": "quirimbas-archipelago",
+    "slug": "quirimbas-archipelago",
+    "name": "Quirimbas Archipelago",
+    "country": "Mozambique",
+    "countryCode": "MZ",
+    "region": "Mozambique Channel",
+    "lat": -12.05,
+    "lng": 40.55,
+    "description": "The Quirimbas Archipelago stretches across 250 kilometres of remote northern Mozambique coastline, offering some of the most pristine and rarely dived reefs in the Indian Ocean, with whale sharks, manta rays, and untouched coral systems that see only a handful of divers each year.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/9004401/pexels-photo-9004401.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "quirimbas-ibo-island-reef",
+      "quirimbas-quilalea-reef",
+      "quirimbas-matemo-wall",
+      "quirimbas-ilha-do-ibo-pinnacles"
+    ]
+  },
+  {
+    "id": "corsica",
+    "slug": "corsica",
+    "name": "Corsica",
+    "country": "France",
+    "countryCode": "FR",
+    "region": "Mediterranean",
+    "lat": 42.0396,
+    "lng": 9.0129,
+    "description": "France's most spectacular Mediterranean diving destination, Corsica blends UNESCO-listed Scandola Marine Reserve with wild rocky coastlines where dusky grouper, barracuda, and red coral thrive in crystalline waters.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6621690/pexels-photo-6621690.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "corsica-scandola-reserve",
+      "corsica-merou-valley",
+      "corsica-cap-corse",
+      "corsica-lavezzi-islands"
+    ]
+  },
+  {
+    "id": "ibiza-formentera",
+    "slug": "ibiza-formentera",
+    "name": "Ibiza and Formentera",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Mediterranean",
+    "lat": 38.9067,
+    "lng": 1.4206,
+    "description": "The western Mediterranean's hidden dive jewel, Ibiza and Formentera sit above UNESCO-protected Posidonia oceanica meadows — ancient seagrass forests sheltering barracuda, dentex, and sea bass in waters of extraordinary clarity.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32693335/pexels-photo-32693335.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "ibiza-formentera-es-vedra",
+      "ibiza-formentera-freus-channel",
+      "ibiza-formentera-cap-blanc",
+      "ibiza-formentera-punta-xarraca"
+    ]
+  },
+  {
+    "id": "mirissa",
+    "slug": "mirissa",
+    "name": "Mirissa",
+    "country": "Sri Lanka",
+    "countryCode": "LK",
+    "region": "Indian Ocean",
+    "lat": 5.947,
+    "lng": 80.459,
+    "description": "Mirissa sits on Sri Lanka's southwestern tip and hosts the highest density blue whale encounters on earth from January to April, alongside whale sharks, hammerhead sharks, and vibrant coral reefs accessible to all levels.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/26600869/pexels-photo-26600869.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "mirissa-blue-whale-alley",
+      "mirissa-weligama-coral-reef",
+      "mirissa-secret-garden",
+      "mirissa-hammerhead-channel"
+    ]
+  },
+  {
+    "id": "mayotte",
+    "slug": "mayotte",
+    "name": "Mayotte",
+    "country": "France",
+    "countryCode": "FR",
+    "region": "Indian Ocean",
+    "lat": -12.827,
+    "lng": 45.166,
+    "description": "Mayotte is a French overseas territory nestled between Madagascar and Mozambique, encircled by one of the world's largest and most intact coral lagoons, with whale sharks, humpback whales, and resident manta rays year-round.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7959474/pexels-photo-7959474.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "mayotte-passe-en-s",
+      "mayotte-plateau-de-mamoudzou",
+      "mayotte-prony",
+      "mayotte-banc-du-geyser"
+    ]
+  },
+  {
+    "id": "rabaul-png",
+    "slug": "rabaul-png",
+    "name": "Rabaul",
+    "country": "Papua New Guinea",
+    "countryCode": "PG",
+    "region": "Pacific Islands & PNG",
+    "lat": -4.2,
+    "lng": 152.18,
+    "description": "Rabaul sits inside a volcanic caldera on the northeastern tip of New Britain, where a sheltered harbor holds one of the Pacific's most dramatic collections of WWII Japanese shipwrecks. The combination of vivid coral growth on intact wartime cargo and the backdrop of smoking volcanoes makes this a singular destination for wreck divers.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6143803/pexels-photo-6143803.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "rabaul-png-sanko-maru",
+      "rabaul-png-manko-maru",
+      "rabaul-png-keiten-maru",
+      "rabaul-png-hakkai-maru"
+    ]
+  },
+  {
+    "id": "pohnpei-fsm",
+    "slug": "pohnpei-fsm",
+    "name": "Pohnpei",
+    "country": "Federated States of Micronesia",
+    "countryCode": "FM",
+    "region": "Micronesia",
+    "lat": 6.87,
+    "lng": 158.22,
+    "description": "Pohnpei is a high volcanic island ringed by one of the largest lagoons in Micronesia, offering a rare mix of pristine outer reef passages, offshore seamount pinnacles, and the famous manta aggregation sites at Ant Atoll. Far less visited than Chuuk, it rewards divers who seek untouched reef ecosystems and reliable pelagic encounters.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6229930/pexels-photo-6229930.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "pohnpei-fsm-kehpara",
+      "pohnpei-fsm-ant-atoll",
+      "pohnpei-fsm-palikir-pass",
+      "pohnpei-fsm-mwahnd-passage"
+    ]
+  },
+  {
+    "id": "isabela-island-galapagos",
+    "slug": "isabela-island-galapagos",
+    "name": "Isabela Island",
+    "country": "Ecuador",
+    "countryCode": "EC",
+    "region": "Eastern Pacific",
+    "lat": -0.9538,
+    "lng": -91.1306,
+    "description": "The largest island in the Galapagos archipelago, Isabela offers some of the most dramatic underwater encounters in the world — from whale sharks at Tortuga Negra Bay to Mola mola at Vicente Roca Point and marine iguanas feeding on algae at Cape Marshall.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/30920841/pexels-photo-30920841.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "isabela-island-galapagos-cape-marshall",
+      "isabela-island-galapagos-vicente-roca-point",
+      "isabela-island-galapagos-tortuga-negra-bay",
+      "isabela-island-galapagos-punta-vicente-roca-north"
+    ]
+  },
+  {
+    "id": "fernandina-island-galapagos",
+    "slug": "fernandina-island-galapagos",
+    "name": "Fernandina Island",
+    "country": "Ecuador",
+    "countryCode": "EC",
+    "region": "Eastern Pacific",
+    "lat": -0.4166,
+    "lng": -91.5499,
+    "description": "The most volcanically active and ecologically pristine island in the Galapagos, Fernandina's underwater world teems with marine iguanas, Galapagos penguins, sea lions, and open-ocean giants like Mola mola drifting in the cold nutrient-rich currents.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/13010781/pexels-photo-13010781.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "fernandina-island-galapagos-punta-espinoza",
+      "fernandina-island-galapagos-cape-douglas",
+      "fernandina-island-galapagos-punta-mangle",
+      "fernandina-island-galapagos-banks-bay"
+    ]
+  },
+  {
+    "id": "bodrum-turkey",
+    "slug": "bodrum-turkey",
+    "name": "Bodrum",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "region": "Mediterranean",
+    "lat": 37.034,
+    "lng": 27.43,
+    "description": "Bodrum sits on the turquoise Turkish Aegean where ancient trade routes have left a seafloor scattered with amphora-laden wrecks and reef systems rich with Mediterranean marine life. Karaada's geothermal vents and the region's rocky reefs draw dentex, grouper, and octopus year-round.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11201567/pexels-photo-11201567.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "bodrum-turkey-karaada",
+      "bodrum-turkey-ildiz-reef",
+      "bodrum-turkey-aquarium-bay-bodrum",
+      "bodrum-turkey-pabuc-burnu-wreck"
+    ]
+  },
+  {
+    "id": "marmaris-turkey",
+    "slug": "marmaris-turkey",
+    "name": "Marmaris",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "region": "Mediterranean",
+    "lat": 36.855,
+    "lng": 28.277,
+    "description": "Marmaris anchors the Turkish Riviera where pine-forested peninsulas drop into clear blue water, sheltering superb dive sites around Cleopatra Island, Çiftlik Bay, and the mirror-calm Aquarium Bay. The region's posidonia meadows, sponge gardens, and resident sea turtles make it one of the Aegean's most accessible and ecologically rich dive destinations.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803939/pexels-photo-32803939.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "marmaris-turkey-aquarium-bay",
+      "marmaris-turkey-ciftlik-bay",
+      "marmaris-turkey-cleopatra-island-reef",
+      "marmaris-turkey-english-harbour-wreck"
+    ]
+  },
+  {
+    "id": "maria-la-gorda",
+    "slug": "maria-la-gorda",
+    "name": "María la Gorda",
+    "country": "Cuba",
+    "countryCode": "CU",
+    "region": "Caribbean",
+    "lat": 21.8333,
+    "lng": -84.5667,
+    "description": "Perched at Cuba's remote western tip, María la Gorda sits where the Gulf of Mexico meets the Caribbean — delivering some of the island's richest wall diving, black coral gardens, and a legendary cathedral cavern draped in sponges.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17875664/pexels-photo-17875664.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "maria-la-gorda-black-coral-garden",
+      "maria-la-gorda-the-cathedral",
+      "maria-la-gorda-monkey-reef",
+      "maria-la-gorda-el-farallon"
+    ]
+  },
+  {
+    "id": "bay-of-pigs",
+    "slug": "bay-of-pigs",
+    "name": "Bay of Pigs",
+    "country": "Cuba",
+    "countryCode": "CU",
+    "region": "Caribbean",
+    "lat": 22.0667,
+    "lng": -81.1667,
+    "description": "Playa Girón and the Bay of Pigs combine Cold War history with crystalline cenotes and a pristine marine reserve — wall dives tumble from shallow coral terraces to open-water abyss while hawksbill turtles and vast barracuda schools patrol the blue.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8970786/pexels-photo-8970786.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "bay-of-pigs-el-tanque",
+      "bay-of-pigs-caleta-buena",
+      "bay-of-pigs-punta-perdiz",
+      "bay-of-pigs-cueva-de-los-peces"
+    ]
+  },
+  {
+    "id": "abrolhos-banks",
+    "slug": "abrolhos-banks",
+    "name": "Abrolhos Banks",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "region": "Southeast Brazil",
+    "lat": -17.97,
+    "lng": -38.7,
+    "description": "A remote reef archipelago off the coast of Bahia, the Abrolhos Banks host the highest density of humpback whales in the South Atlantic from June to November, alongside unique mushroom-shaped chapeirão coral formations found nowhere else on Earth.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4347287/pexels-photo-4347287.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "abrolhos-banks-parcel-das-paredes",
+      "abrolhos-banks-ilha-guarita",
+      "abrolhos-banks-sebastiao-gomes-reef",
+      "abrolhos-banks-timbebas-reef"
+    ]
+  },
+  {
+    "id": "paraty",
+    "slug": "paraty",
+    "name": "Paraty",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "region": "Southeast Brazil",
+    "lat": -23.22,
+    "lng": -44.72,
+    "description": "Nestled along the Rio de Janeiro coast, Paraty offers pristine reef diving around protected islands and a naval research reserve, where untouched ecosystems harbor sea turtles, moray eels, and abundant macro life in gin-clear waters.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4591716/pexels-photo-4591716.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "paraty-ceads-naval-reserve",
+      "paraty-ilha-das-cobras",
+      "paraty-ilha-do-pelado",
+      "paraty-saco-do-mamangua"
+    ]
+  },
+  {
+    "id": "montenegro",
+    "slug": "montenegro",
+    "name": "Montenegro",
+    "country": "Montenegro",
+    "countryCode": "ME",
+    "region": "Adriatic Sea",
+    "lat": 42.4304,
+    "lng": 18.6916,
+    "description": "Montenegro's Adriatic coastline packs dramatic limestone karst, sea caves, and a surprisingly rich temperate reef ecosystem into a compact stretch of coast — cave diving at Sveti Nikola, seahorse colonies at Žanjice Bay, and blue-light refraction caves near Budva make it one of Europe's most underrated dive destinations.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32765288/pexels-photo-32765288.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "montenegro-sveti-nikola-island",
+      "montenegro-blue-cave-budva",
+      "montenegro-zanjice-bay",
+      "montenegro-mamula-island"
+    ]
+  },
+  {
+    "id": "albania",
+    "slug": "albania",
+    "name": "Albania",
+    "country": "Albania",
+    "countryCode": "AL",
+    "region": "Adriatic Sea",
+    "lat": 40.1533,
+    "lng": 19.6017,
+    "description": "Albania's protected Riviera coastline is one of the Mediterranean's last undiscovered dive frontiers — the Karaburun Peninsula marine reserve shelters large grouper and loggerhead turtles, while Cold War military wrecks at Sazan Island and Porto Palermo's submarine tunnel offer historically unique artifact diving found nowhere else in Europe.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/60087/pexels-photo-60087.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "albania-karaburun-peninsula",
+      "albania-sazan-island-wrecks",
+      "albania-porto-palermo-submarine-tunnel",
+      "albania-gjipe-canyon"
+    ]
   }
 ]
