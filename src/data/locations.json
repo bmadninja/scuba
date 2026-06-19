@@ -5966,5 +5966,680 @@
       "albania-porto-palermo-submarine-tunnel",
       "albania-gjipe-canyon"
     ]
+  },
+  {
+    "id": "netrani-island",
+    "slug": "netrani-island",
+    "name": "Netrani Island",
+    "country": "India",
+    "countryCode": "IN",
+    "region": "Arabian Sea",
+    "lat": 14.0167,
+    "lng": 74.3333,
+    "description": "Netrani Island — known as the Pigeon Island of India — rises from the Arabian Sea off Karnataka with dramatically steep underwater walls and one of the most reliable whale shark aggregations in Asia, drawing divers from October through May for encounters with the ocean's largest fish alongside schooling dogtooth tuna and resident sea turtles.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829694/pexels-photo-12829694.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "netrani-island-netrani-pinnacle",
+      "netrani-island-north-reef",
+      "netrani-island-east-wall",
+      "netrani-island-south-drop-off"
+    ]
+  },
+  {
+    "id": "addu-atoll",
+    "slug": "addu-atoll",
+    "name": "Addu Atoll",
+    "country": "Maldives",
+    "countryCode": "MV",
+    "region": "Indian Ocean",
+    "lat": -0.6167,
+    "lng": 73.1333,
+    "description": "Addu Atoll, the southernmost and most geographically isolated of the Maldivian atolls, combines the best Maldivian wreck diving — the British Loyalty tanker sunk in 1946 — with pristine manta ray channels and resident shark populations that benefit from light visitor numbers compared to the heavily dived northern atolls.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8837986/pexels-photo-8837986.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "addu-atoll-british-loyalty-wreck",
+      "addu-atoll-manta-channel",
+      "addu-atoll-shark-point-addu",
+      "addu-atoll-cocoa-thila"
+    ]
+  },
+  {
+    "id": "dubai-uae",
+    "slug": "dubai-uae",
+    "name": "Dubai",
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "region": "Gulf of Oman",
+    "lat": 25.2048,
+    "lng": 55.2708,
+    "description": "Dubai's artificial reef programme has transformed decommissioned vessels and purpose-sunk structures into thriving hard coral communities in the warm Gulf shallows, offering accessible wreck diving minutes from the world's busiest airport.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829698/pexels-photo-12829698.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "dubai-uae-artificial-reef",
+      "dubai-uae-cement-factory-wreck",
+      "dubai-uae-lubna-street-reef",
+      "dubai-uae-dibba-rock"
+    ]
+  },
+  {
+    "id": "abu-dhabi-uae",
+    "slug": "abu-dhabi-uae",
+    "name": "Abu Dhabi",
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "region": "Gulf of Oman",
+    "lat": 24.4539,
+    "lng": 54.3773,
+    "description": "Abu Dhabi's sheltered Gulf waters conceal the SS Mercury wreck and a string of quiet reef structures that draw hawksbill turtles, rays, and reef sharks, making it a rewarding urban escape for divers based in the UAE capital.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7131328/pexels-photo-7131328.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "abu-dhabi-uae-ss-mercury",
+      "abu-dhabi-uae-delma-island-reef",
+      "abu-dhabi-uae-zirku-island",
+      "abu-dhabi-uae-mubarraz-reef"
+    ]
+  },
+  {
+    "id": "bahrain",
+    "slug": "bahrain",
+    "name": "Bahrain",
+    "country": "Bahrain",
+    "countryCode": "BH",
+    "region": "Arabian Sea",
+    "lat": 26.0667,
+    "lng": 50.5577,
+    "description": "Bahrain sits at the heart of the Arabian Gulf's ancient pearl-diving culture and now offers divers coral gardens, dugong encounters at Hawar Islands, and the purpose-sunk Lost Paradise of Dilmun artificial reef, all in gin-clear winter waters.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11686888/pexels-photo-11686888.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "bahrain-hawar-islands",
+      "bahrain-lost-paradise-of-dilmun",
+      "bahrain-um-al-naasan",
+      "bahrain-pearl-trail-reefs"
+    ]
+  },
+  {
+    "id": "musandam-peninsula",
+    "slug": "musandam-peninsula",
+    "name": "Musandam Peninsula",
+    "country": "Oman",
+    "countryCode": "OM",
+    "region": "Gulf of Oman",
+    "lat": 26.2,
+    "lng": 56.25,
+    "description": "Oman's dramatic exclave jutting into the Strait of Hormuz, where towering limestone fjords (khors) plunge into nutrient-rich waters teeming with endemic Arabian Gulf fish, giant grouper, and seasonal whale sharks and hammerheads.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/33715206/pexels-photo-33715206.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "musandam-peninsula-lima-rock",
+      "musandam-peninsula-octopus-rock",
+      "musandam-peninsula-ras-lima",
+      "musandam-peninsula-khor-ash-sham"
+    ]
+  },
+  {
+    "id": "kalpitiya",
+    "slug": "kalpitiya",
+    "name": "Kalpitiya",
+    "country": "Sri Lanka",
+    "countryCode": "LK",
+    "region": "Indian Ocean",
+    "lat": 8.23,
+    "lng": 79.76,
+    "description": "Northwestern Sri Lanka's wild coast hosts the country's largest coral reef system and some of the Indian Ocean's most reliable whale shark aggregations and spinner dolphin superpods, best experienced from January through April.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/33715203/pexels-photo-33715203.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "kalpitiya-bar-reef",
+      "kalpitiya-whale-shark-corridor",
+      "kalpitiya-spinner-dolphin-pass",
+      "kalpitiya-dutch-bay-wall"
+    ]
+  },
+  {
+    "id": "bayahibe",
+    "slug": "bayahibe",
+    "name": "Bayahibe",
+    "country": "Dominican Republic",
+    "countryCode": "DO",
+    "region": "Caribbean",
+    "lat": 18.3667,
+    "lng": -68.85,
+    "description": "Bayahibe sits on the southeast coast of the Dominican Republic, framed by protected cays and a marine reserve that shelters some of the most biodiverse coral gardens in the Greater Antilles. Wrecks, caves, and pristine fringing reefs draw divers from La Caleta to the outer walls of Catalinita.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7186211/pexels-photo-7186211.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "bayahibe-la-caleta",
+      "bayahibe-catalinita-island",
+      "bayahibe-padre-nuestro-cave",
+      "bayahibe-saona-island-reef"
+    ]
+  },
+  {
+    "id": "haiti-diving",
+    "slug": "haiti-diving",
+    "name": "Haiti",
+    "country": "Haiti",
+    "countryCode": "HT",
+    "region": "Caribbean",
+    "lat": 18.5944,
+    "lng": -72.3074,
+    "description": "Haiti's coastline holds some of the least dived reefs in the Caribbean, where decades of low boat traffic have allowed coral gardens, hawksbill turtles, and nurse sharks to recover in near-pristine conditions. From the offshore cays of Ile à Vache to the brain coral shoals of Les Arcadins marine reserve, the country rewards adventurous divers willing to go off the beaten path.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8837892/pexels-photo-8837892.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "haiti-diving-ile-a-vache",
+      "haiti-diving-labadie-bay",
+      "haiti-diving-les-arcadins"
+    ]
+  },
+  {
+    "id": "kosrae-fsm",
+    "slug": "kosrae-fsm",
+    "name": "Kosrae",
+    "country": "Federated States of Micronesia",
+    "countryCode": "FM",
+    "region": "Micronesia",
+    "lat": 5.3296,
+    "lng": 162.9814,
+    "description": "Kosrae is FSM's smallest and most remote main island, encircled by pristine mangrove-fringed fringing reefs that scientists consistently rank among the healthiest coral ecosystems in all of Micronesia. Its isolation has kept fishing pressure low and corals largely untouched, rewarding divers with walls, blue holes, and shark-dense outer passes that feel entirely undiscovered.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/35395504/pexels-photo-35395504.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "kosrae-fsm-blue-hole",
+      "kosrae-fsm-walung-outer-wall",
+      "kosrae-fsm-shark-island",
+      "kosrae-fsm-hiroshi-point"
+    ]
+  },
+  {
+    "id": "efate-vanuatu",
+    "slug": "efate-vanuatu",
+    "name": "Efate",
+    "country": "Vanuatu",
+    "countryCode": "VU",
+    "region": "Pacific Islands & PNG",
+    "lat": -17.7372,
+    "lng": 168.3219,
+    "description": "Efate is Vanuatu's capital island and home to Port Vila, offering accessible wreck diving, vibrant macro reefs, and exceptional night dives all reachable within minutes of the harbour. The island's volcanic geology creates dramatic underwater formations that shelter an extraordinary diversity of nudibranchs, frogfish, and crustaceans alongside the island's celebrated WWII wrecks.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7227926/pexels-photo-7227926.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "efate-vanuatu-mv-konanda",
+      "efate-vanuatu-hidden-garden",
+      "efate-vanuatu-port-vila-bay",
+      "efate-vanuatu-nambatu-reef"
+    ]
+  },
+  {
+    "id": "kauai-hawaii-usa",
+    "slug": "kauai-hawaii-usa",
+    "name": "Kauai",
+    "country": "United States",
+    "countryCode": "US",
+    "region": "Hawaii",
+    "lat": 22.0964,
+    "lng": -159.5261,
+    "description": "Hawaii's oldest and most geologically dramatic island, Kauai offers pristine reef diving along the Na Pali Coast, rare access to the protected waters off Niihau, and lava tube systems teeming with endemic Hawaiian species and spinner dolphins.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5410871/pexels-photo-5410871.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "kauai-hawaii-usa-sheraton-caverns",
+      "kauai-hawaii-usa-niihau",
+      "kauai-hawaii-usa-general-stores"
+    ]
+  },
+  {
+    "id": "lanai-hawaii-usa",
+    "slug": "lanai-hawaii-usa",
+    "name": "Lanai",
+    "country": "United States",
+    "countryCode": "US",
+    "region": "Hawaii",
+    "lat": 20.8298,
+    "lng": -156.9199,
+    "description": "Lanai's sheltered leeward coast offers some of Hawaii's clearest water and most spectacular lava tube cathedral formations, with resident spinner dolphins, giant moray eels, and exceptional visibility year-round.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6149461/pexels-photo-6149461.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "lanai-hawaii-usa-first-cathedral",
+      "lanai-hawaii-usa-second-cathedral",
+      "lanai-hawaii-usa-shark-fin-rock"
+    ]
+  },
+  {
+    "id": "amami-islands",
+    "slug": "amami-islands",
+    "name": "Amami Islands",
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Ryukyu Islands",
+    "lat": 28.3,
+    "lng": 129.4,
+    "description": "The Amami Islands sit in subtropical Kagoshima prefecture, draped in dense coral gardens and visited seasonally by whale sharks and manta rays. Their endemic species richness and near-pristine reef systems make them one of Japan's most ecologically significant diving destinations.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/10392192/pexels-photo-10392192.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "amami-islands-kakeromajima-hammerhead-point",
+      "amami-islands-setouchi-whale-shark-channel",
+      "amami-islands-blue-cave-amami-oshima",
+      "amami-islands-yoro-reef"
+    ]
+  },
+  {
+    "id": "miyako-islands",
+    "slug": "miyako-islands",
+    "name": "Miyako Islands",
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Ryukyu Islands",
+    "lat": 24.8,
+    "lng": 125.3,
+    "description": "The Miyako Islands lie in Okinawa prefecture between the main Okinawa island and the Yaeyama group, sheltering Yabiji — Japan's largest coral reef — alongside crystalline blue caves and reliable manta ray cleaning stations. Exceptional water clarity and consistent currents draw pelagic species throughout the warmer months.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/3062947/pexels-photo-3062947.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "miyako-islands-yabiji-reef",
+      "miyako-islands-irabu-blue-cave",
+      "miyako-islands-manta-scramble-miyako",
+      "miyako-islands-tori-ike-lake"
+    ]
+  },
+  {
+    "id": "kenting-national-park",
+    "slug": "kenting-national-park",
+    "name": "Kenting National Park",
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "region": "South China Sea",
+    "lat": 21.95,
+    "lng": 120.84,
+    "description": "Taiwan's southernmost diving destination, warmed by the Kuroshio Current and sheltered by Kenting National Park. Reef systems here support surprising biodiversity from triggerfish and fusiliers to moray eels and lionfish.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8970785/pexels-photo-8970785.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "kenting-nuclear-power-plant-reef",
+      "kenting-big-bay",
+      "kenting-wanlitung-marine-reserve",
+      "kenting-south-bay"
+    ]
+  },
+  {
+    "id": "little-liuqiu",
+    "slug": "little-liuqiu",
+    "name": "Little Liuqiu Island",
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "region": "South China Sea",
+    "lat": 22.344,
+    "lng": 120.378,
+    "description": "A small coral island off Pingtung County famous for the highest density of wild green sea turtles in Taiwan. Fringing reefs and sea caves ring the island, delivering turtle encounters on virtually every dive.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32693335/pexels-photo-32693335.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "little-liuqiu-vase-rock",
+      "little-liuqiu-houshi-fringing-reef",
+      "little-liuqiu-beauty-cave",
+      "little-liuqiu-lobster-cave"
+    ]
+  },
+  {
+    "id": "sainte-marie-island-madagascar",
+    "slug": "sainte-marie-island-madagascar",
+    "name": "Sainte-Marie Island",
+    "country": "Madagascar",
+    "countryCode": "MG",
+    "region": "Indian Ocean",
+    "lat": -17,
+    "lng": 49.85,
+    "description": "Île Sainte-Marie sits off Madagascar's northeast coast and doubles as a humpback whale nursery every July to September. Its reefs remain largely unexplored, and the bay shelters intact 17th-century pirate ship wrecks beneath clear tropical water.",
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8956431/pexels-photo-8956431.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "sainte-marie-island-whale-nursery",
+      "sainte-marie-island-cap-est-reef",
+      "sainte-marie-island-pirate-wreck",
+      "sainte-marie-island-la-buse-reef"
+    ]
+  },
+  {
+    "id": "chumbe-island-tanzania",
+    "slug": "chumbe-island-tanzania",
+    "name": "Chumbe Island Coral Park",
+    "country": "Tanzania",
+    "countryCode": "TZ",
+    "region": "East Africa",
+    "lat": -6.28,
+    "lng": 39.17,
+    "description": "Chumbe Island Coral Park is the first privately managed marine sanctuary in Africa, protecting over 350 coral species in the Zanzibar Channel. Strict no-take zoning since 1994 means the reef ecosystem — crowned by giant humphead parrotfish and patrolling eagle rays — has rebounded to exceptional density.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8970782/pexels-photo-8970782.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "chumbe-island-chumbe-reef",
+      "chumbe-island-patch-reef-east",
+      "chumbe-island-staghorn-gardens"
+    ]
+  },
+  {
+    "id": "milos-greece",
+    "slug": "milos-greece",
+    "name": "Milos",
+    "country": "Greece",
+    "countryCode": "GR",
+    "region": "Mediterranean",
+    "lat": 36.72,
+    "lng": 24.44,
+    "description": "Milos is a volcanic Cyclades island renowned for its dramatic underwater geology — sea caves carved by wave and heat, basalt columns, and thermal vents that hint at the island's fiery origins. The marine environment is rich with posidonia meadows, colourful sponges, and a surprising abundance of cephalopods and reef fish.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/9015517/pexels-photo-9015517.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "milos-greece-kleftiko",
+      "milos-greece-glaronissia",
+      "milos-greece-tsigrado-sea-cave",
+      "milos-greece-bombarda-reef"
+    ]
+  },
+  {
+    "id": "corfu-greece",
+    "slug": "corfu-greece",
+    "name": "Corfu",
+    "country": "Greece",
+    "countryCode": "GR",
+    "region": "Mediterranean",
+    "lat": 39.62,
+    "lng": 19.92,
+    "description": "Corfu sits in the Ionian Sea where Atlantic-influenced currents bring cooler, nutrient-rich water that supports a distinct marine community quite unlike the Aegean. Rocky drop-offs draped in gorgonians, posidonia meadows sheltering seahorses, and seasonal visits from loggerhead turtles make it one of Greece's most rewarding Ionian dive destinations.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/24906366/pexels-photo-24906366.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "corfu-greece-agios-gordios-reef",
+      "corfu-greece-kavos-bay",
+      "corfu-greece-ereikoussa-island",
+      "corfu-greece-paleokastritsa-wall"
+    ]
+  },
+  {
+    "id": "istria-croatia",
+    "slug": "istria-croatia",
+    "name": "Istria",
+    "country": "Croatia",
+    "countryCode": "HR",
+    "region": "Adriatic Sea",
+    "lat": 45.1,
+    "lng": 13.9,
+    "description": "Croatia's northwestern peninsula hosts the northern Adriatic's most celebrated wrecks alongside dolphin-patrolled marine parks — the Baron Gautsch passenger ship and a WWII B-17 bomber draw history-minded divers, while the Brijuni Islands national park offers crystalline water and Mediterranean biodiversity.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/28080175/pexels-photo-28080175.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "istria-croatia-baron-gautsch",
+      "istria-croatia-brijuni-islands",
+      "istria-croatia-b17-flying-fortress",
+      "istria-croatia-savudrija-wall"
+    ]
+  },
+  {
+    "id": "huatulco",
+    "slug": "huatulco",
+    "name": "Huatulco",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "region": "Eastern Pacific",
+    "lat": 15.7686,
+    "lng": -96.1328,
+    "description": "Huatulco sits on Oaxaca's Pacific coast, sheltering nine bays within a biosphere reserve where hawksbill turtles nest, whale sharks cruise seasonally, and Pacific spotted dolphins ride the bow waves of dive boats.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8280252/pexels-photo-8280252.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "huatulco-chachacual-bay",
+      "huatulco-la-india-reef",
+      "huatulco-santa-cruz-bay",
+      "huatulco-el-tejoncito"
+    ]
+  },
+  {
+    "id": "loreto",
+    "slug": "loreto",
+    "name": "Loreto",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "region": "Eastern Pacific",
+    "lat": 26.0118,
+    "lng": -111.3431,
+    "description": "Loreto anchors the central Sea of Cortez — Jacques Cousteau's \"aquarium of the world\" — where Coronado Island sea lions, schooling hammerheads around Carmen Island, and manta rays gliding over Danzante's walls reward divers year-round.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/35083540/pexels-photo-35083540.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "loreto-coronado-island",
+      "loreto-danzante-island",
+      "loreto-carmen-island-wall",
+      "loreto-los-candeleros"
+    ]
+  },
+  {
+    "id": "la-gomera",
+    "slug": "la-gomera",
+    "name": "La Gomera",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Atlantic Ocean",
+    "lat": 28.1,
+    "lng": -17.21,
+    "description": "La Gomera is the least developed of the Canary Islands, ringed by dramatic underwater volcanic cliffs and basalt formations that plunge into deep Atlantic water. Angel sharks patrol sandy channels, barracuda school around headlands, and pristine walls host colourful gorgonians and black coral.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17875664/pexels-photo-17875664.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "la-gomera-los-organos",
+      "la-gomera-punta-gaviota",
+      "la-gomera-el-cabrito",
+      "la-gomera-punta-llana"
+    ]
+  },
+  {
+    "id": "galicia",
+    "slug": "galicia",
+    "name": "Galicia",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Atlantic Ocean",
+    "lat": 42.35,
+    "lng": -8.75,
+    "description": "Galicia's rugged Atlantic coastline hides one of Europe's richest cold-water ecosystems, sheltered within the Illas Atlánticas National Park. Grey seals, giant octopus, dense nudibranch populations, and centuries-old shipwrecks make this northwest corner of Spain a genuine bucket-list destination for temperate-water divers.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7438433/pexels-photo-7438433.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "galicia-cies-islands",
+      "galicia-illas-atlanticas-park",
+      "galicia-carnota-wreck",
+      "galicia-cabo-vilano"
+    ]
   }
 ]
