@@ -167,7 +167,10 @@
       5,
       6
     ],
-    "siteIds": [],
+    "siteIds": [
+      "tubbataha-philippines-south-atoll",
+      "tubbataha-philippines-north-atoll-wall"
+    ],
     "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_GregoryPiper_71.jpg"
   },
   {
@@ -2866,8 +2869,9 @@
       10
     ],
     "siteIds": [
-      "vavau-tonga-mariners-cave-tonga",
       "vavau-tonga-swallows-cave-vavau",
+      "vavau-tonga-late-island-wall",
+      "vavau-tonga-mariners-cave-tonga",
       "vavau-tonga-coral-garden-vavau"
     ],
     "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_HannesKlostermann_75.jpg"
@@ -4143,6 +4147,509 @@
       "muscat-oman-bandar-khayran",
       "muscat-oman-fahal-island",
       "muscat-oman-muscat-offshore-seamount"
+    ]
+  },
+  {
+    "id": "izu-peninsula",
+    "slug": "izu-peninsula",
+    "name": "Izu Peninsula",
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Pacific",
+    "lat": 34.9,
+    "lng": 138.9,
+    "description": "A cold-water macro paradise south of Tokyo, the Izu Peninsula hosts volcanic seabeds teeming with nudibranchs, frogfish, and blennies against dramatic drop-offs. Seasonal thermoclines bring nutrients that sustain one of Japan's richest invertebrate communities.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/18340327/pexels-photo-18340327.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "izu-peninsula-osezaki",
+      "izu-peninsula-yoda",
+      "izu-peninsula-izu-oceanic-park",
+      "izu-peninsula-kumomi"
+    ]
+  },
+  {
+    "id": "maui",
+    "slug": "maui",
+    "name": "Maui",
+    "country": "United States",
+    "countryCode": "US",
+    "region": "Hawaii",
+    "lat": 20.8,
+    "lng": -156.3,
+    "description": "Maui's waters encompass an ancient volcanic caldera, spinner dolphin corridors, lava tube labyrinths, and legendary manta ray night encounters. Endemic Hawaiian species and gin-clear visibility make it one of the Pacific's most diverse island diving destinations.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7186211/pexels-photo-7186211.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "maui-molokini-crater",
+      "maui-coral-gardens",
+      "maui-five-caves",
+      "maui-makena-manta-night"
+    ]
+  },
+  {
+    "id": "oahu",
+    "slug": "oahu",
+    "name": "Oahu",
+    "country": "United States",
+    "countryCode": "US",
+    "region": "Hawaii",
+    "lat": 21.3069,
+    "lng": -157.8583,
+    "description": "Oahu blends accessible wreck diving with vibrant reef ecosystems nurtured by warm Pacific currents. Artificial reefs like the YO-257 have transformed into thriving coral habitats, while volcanic lava formations shelter green sea turtles and reef sharks year-round.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17976451/pexels-photo-17976451.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "oahu-yo-257-wreck",
+      "oahu-sea-tiger-wreck",
+      "oahu-electric-beach",
+      "oahu-sharks-cove"
+    ]
+  },
+  {
+    "id": "lord-howe-island",
+    "slug": "lord-howe-island",
+    "name": "Lord Howe Island",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "Tasman Sea",
+    "lat": -31.5557,
+    "lng": 159.0819,
+    "description": "Lord Howe Island is a UNESCO World Heritage site in the Tasman Sea where subtropical and tropical marine zones converge, producing extraordinary biodiversity found nowhere else on Earth. The island's remote pinnacles, dramatic walls, and endemic species including the Lord Howe double-header wrasse make it one of the Southern Hemisphere's most extraordinary dive destinations.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/33134366/pexels-photo-33134366.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "lord-howe-island-balls-pyramid",
+      "lord-howe-island-malabar-pinnacle",
+      "lord-howe-island-erscotts-hole",
+      "lord-howe-island-coral-gardens"
+    ]
+  },
+  {
+    "id": "manado-north-sulawesi",
+    "slug": "manado-north-sulawesi",
+    "name": "Manado",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "North Sulawesi",
+    "lat": 1.49,
+    "lng": 124.84,
+    "description": "Manado Bay and its satellite islands deliver some of Indonesia's most diverse reef diving, from sheer volcanic walls draped in soft coral to rubble-strewn macro hotspots. Pygmy seahorses, nudibranchs, and schooling pelagics share the same reefs, making every dive multilayered.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7868382/pexels-photo-7868382.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "manado-north-sulawesi-manado-tua",
+      "manado-north-sulawesi-siladen-island",
+      "manado-north-sulawesi-bangka-island"
+    ]
+  },
+  {
+    "id": "halmahera-indonesia",
+    "slug": "halmahera-indonesia",
+    "name": "Halmahera",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Maluku",
+    "lat": 0.55,
+    "lng": 127.88,
+    "description": "Remote and rarely dived, Halmahera sits at the heart of the Coral Triangle and harbours extraordinary biodiversity including walking epaulette sharks, pygmy seahorses, and manta rays funnelling through the island's narrow passages. Its isolation has kept reefs in near-pristine condition.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/10392192/pexels-photo-10392192.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "halmahera-indonesia-manta-passage",
+      "halmahera-indonesia-walking-shark-bay",
+      "halmahera-indonesia-weda-bay-reefs",
+      "halmahera-indonesia-dodola-island"
+    ]
+  },
+  {
+    "id": "mactan-island",
+    "slug": "mactan-island",
+    "name": "Mactan Island",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Visayas",
+    "lat": 10.3157,
+    "lng": 123.9832,
+    "description": "A flat coral island just minutes from Cebu City by bridge, Mactan punches above its weight with turtle-rich channels, colourful macro reefs, and one of the Philippines' most dramatic submerged caves — all reachable on a short boat ride.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/16174390/pexels-photo-16174390.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "mactan-island-hilutungan-channel",
+      "mactan-island-kontiki-reef",
+      "mactan-island-marigondon-cave"
+    ]
+  },
+  {
+    "id": "pigeon-island",
+    "slug": "pigeon-island",
+    "name": "Pigeon Island",
+    "country": "Sri Lanka",
+    "countryCode": "LK",
+    "region": "East Coast",
+    "lat": 8.572,
+    "lng": 81.237,
+    "description": "A national park marine sanctuary off Trincomalee's northeast coast, Pigeon Island is Sri Lanka's premier reef diving destination, famous for its resident blacktip reef shark population and some of the island nation's healthiest coral gardens.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/13010772/pexels-photo-13010772.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "pigeon-island-north-reef",
+      "pigeon-island-south-reef",
+      "pigeon-island-rock-garden",
+      "pigeon-island-coral-garden"
+    ]
+  },
+  {
+    "id": "batticaloa",
+    "slug": "batticaloa",
+    "name": "Batticaloa",
+    "country": "Sri Lanka",
+    "countryCode": "LK",
+    "region": "East Coast",
+    "lat": 7.717,
+    "lng": 81.7,
+    "description": "A rarely dived stretch of Sri Lanka's southeast coast, Batticaloa combines pristine fringing reefs with one of the world's most remarkable wreck dives — the HMS Hermes, the largest diveable aircraft carrier wreck on the planet — and seasonal sperm whale encounters offshore.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803953/pexels-photo-32803953.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "batticaloa-hms-hermes",
+      "batticaloa-passikudah-reef",
+      "batticaloa-sperm-whale-alley",
+      "batticaloa-dutch-bay-wrecks"
+    ]
+  },
+  {
+    "id": "apia-samoa",
+    "slug": "apia-samoa",
+    "name": "Apia, Samoa",
+    "country": "Samoa",
+    "countryCode": "WS",
+    "region": "Pacific",
+    "lat": -13.85,
+    "lng": -171.77,
+    "description": "Samoa's reefs around Apia and the south-eastern Aleipata Islands hold some of the least-dived coral in the central Pacific, with giant clam gardens, dense surgeonfish aggregations, and a protected marine reserve right off the capital.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11423843/pexels-photo-11423843.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "apia-samoa-palolo-deep-marine-reserve",
+      "apia-samoa-aleipata-islands-outer-reef",
+      "apia-samoa-giant-clam-gardens-nu-usefata",
+      "apia-samoa-nu-u-safata-lagoon-wall"
+    ]
+  },
+  {
+    "id": "mariana-islands-guam",
+    "slug": "mariana-islands-guam",
+    "name": "Mariana Islands (Guam & Saipan)",
+    "country": "United States",
+    "countryCode": "GU",
+    "region": "Micronesia",
+    "lat": 13.46,
+    "lng": 144.79,
+    "description": "Guam and Saipan anchor the Mariana chain with a rare mix of WWII wrecks, dramatic cavern dives, and open-ocean pelagic action where the Philippine Sea meets some of the deepest water on earth.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31740977/pexels-photo-31740977.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "mariana-islands-guam-blue-hole-guam",
+      "mariana-islands-guam-the-crevice-guam",
+      "mariana-islands-guam-american-tanker-wreck",
+      "mariana-islands-guam-obyan-beach-saipan"
+    ]
+  },
+  {
+    "id": "gran-canaria",
+    "slug": "gran-canaria",
+    "name": "Gran Canaria",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Atlantic Ocean",
+    "lat": 27.9202,
+    "lng": -15.5474,
+    "description": "Gran Canaria's volcanic seabed delivers year-round diving through lava tunnels, deep canyons, and an extraordinary artificial reef — with endemic species, angel sharks, and resident barracuda schools making this Canarian island a genuine Atlantic diving destination.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/13010770/pexels-photo-13010770.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "gran-canaria-la-catedral",
+      "gran-canaria-el-canon",
+      "gran-canaria-amadores-artificial-reef",
+      "gran-canaria-arguineguin-seamount"
+    ]
+  },
+  {
+    "id": "fuerteventura",
+    "slug": "fuerteventura",
+    "name": "Fuerteventura",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Atlantic Ocean",
+    "lat": 28.3587,
+    "lng": -14.0537,
+    "description": "Fuerteventura sits just 100 kilometres off the African coast where Atlantic upwellings fuel a productive marine ecosystem — manta ray aggregations, pelagic encounters, wreck diving, and exceptional macro life reward divers who look beyond the island's famous beaches.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8837897/pexels-photo-8837897.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "fuerteventura-bajo-del-caballo",
+      "fuerteventura-pozo-negro",
+      "fuerteventura-caleta-de-fustes"
+    ]
+  },
+  {
+    "id": "andros-bahamas",
+    "slug": "andros-bahamas",
+    "name": "Andros",
+    "country": "Bahamas",
+    "countryCode": "BS",
+    "region": "Atlantic Ocean",
+    "lat": 24.7,
+    "lng": -77.8,
+    "description": "Andros is the largest island in the Bahamas and home to the third longest barrier reef in the world, stretching over 190 km along its eastern shore. It is legendary for its blue holes — both inland freshwater caves and ocean-connected shafts — and for reliable shark encounters along its deep-water channels.",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803956/pexels-photo-32803956.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "andros-bahamas-andros-barrier-reef",
+      "andros-bahamas-blue-holes",
+      "andros-bahamas-fresh-creek-channel",
+      "andros-bahamas-trumpet-reef"
+    ]
+  },
+  {
+    "id": "easter-island-chile",
+    "slug": "easter-island-chile",
+    "name": "Easter Island",
+    "country": "Chile",
+    "countryCode": "CL",
+    "region": "Eastern Pacific",
+    "lat": -27.1127,
+    "lng": -109.3497,
+    "description": "Easter Island (Rapa Nui) sits in the southeastern Pacific more than 3,500 km from the nearest continent, making it one of the most isolated dive destinations on Earth. Its volcanic geology, crystal-clear waters, and high endemism — including species found nowhere else — attract divers seeking truly untouched reefs, while submerged moai statues and a historic wreck add a layer of cultural mystique.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5858978/pexels-photo-5858978.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "easter-island-chile-motu-nui-pinnacle",
+      "easter-island-chile-ana-kai-tangata",
+      "easter-island-chile-el-ancla-wreck",
+      "easter-island-chile-la-catedral"
+    ]
+  },
+  {
+    "id": "diani-shimoni-kenya",
+    "slug": "diani-shimoni-kenya",
+    "name": "Diani / Shimoni",
+    "country": "Kenya",
+    "countryCode": "KE",
+    "region": "East Africa",
+    "lat": -4.62,
+    "lng": 39.42,
+    "description": "Kenya's southern coast hides one of East Africa's most biodiverse marine parks in Kisite-Mpunguti, where whale sharks patrol October to February and humpback whales sing through the channel from June to September, all above pristine hard coral gardens that see a fraction of the tourist pressure of the north.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/19232035/pexels-photo-19232035.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "diani-shimoni-kenya-kisite-reef",
+      "diani-shimoni-kenya-mpunguti-ya-juu",
+      "diani-shimoni-kenya-wasini-channel",
+      "diani-shimoni-kenya-kinondo-reef"
+    ]
+  },
+  {
+    "id": "zanzibar-island",
+    "slug": "zanzibar-island",
+    "name": "Zanzibar Island",
+    "country": "Tanzania",
+    "countryCode": "TZ",
+    "region": "East Africa",
+    "lat": -6.17,
+    "lng": 39.19,
+    "description": "Zanzibar's main island is ringed by dramatically varied diving — from the oceanic seamount of Leven Bank where great hammerheads and silky sharks circle in blue water, to the reef sharks of Pange Sandbank and the colourful hard coral gardens just minutes from historic Stone Town.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11348763/pexels-photo-11348763.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "zanzibar-island-leven-bank",
+      "zanzibar-island-pange-sandbank",
+      "zanzibar-island-stone-town-reefs",
+      "zanzibar-island-kendwa-reef"
+    ]
+  },
+  {
+    "id": "djerba",
+    "slug": "djerba",
+    "name": "Djerba",
+    "country": "Tunisia",
+    "countryCode": "TN",
+    "region": "Mediterranean",
+    "lat": 33.8075,
+    "lng": 10.8451,
+    "description": "Tunisia's largest island sits at the edge of the Gulf of Gabès, offering a rarely-visited Mediterranean dive scene of ancient wrecks, sponge-draped reefs, and prolific cephalopods. Warm, calm conditions and excellent visibility make it one of North Africa's most accessible dive destinations.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/16253293/pexels-photo-16253293.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "djerba-wreck-of-the-ulysses",
+      "djerba-ras-el-aouah",
+      "djerba-borj-el-kastil",
+      "djerba-sponge-gardens"
+    ]
+  },
+  {
+    "id": "algarve",
+    "slug": "algarve",
+    "name": "Algarve",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "region": "Atlantic Ocean",
+    "lat": 37.0179,
+    "lng": -8.6704,
+    "description": "Portugal's southern coast combines dramatic limestone cliffs, cold Atlantic upwelling, and a rich diversity of Atlantic species that rarely appear in warmer European waters. From the protected granite outcrops of the Berlengas reserve to the deep seamounts off Aljezur and the cargo wrecks near Sagres, the Algarve rewards divers who embrace temperate conditions.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/28080175/pexels-photo-28080175.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "algarve-berlengas-islands",
+      "algarve-sagres-wrecks",
+      "algarve-aljezur-seamount",
+      "algarve-ponta-da-piedade"
     ]
   }
 ]
