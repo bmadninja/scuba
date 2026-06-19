@@ -4651,5 +4651,651 @@
       "algarve-aljezur-seamount",
       "algarve-ponta-da-piedade"
     ]
+  },
+  {
+    "id": "bermuda",
+    "slug": "bermuda",
+    "name": "Bermuda",
+    "country": "Bermuda",
+    "countryCode": "BM",
+    "region": "Atlantic Ocean",
+    "lat": 32.3078,
+    "lng": -64.7505,
+    "description": "The wreck capital of the Atlantic, Bermuda's shallow subtropical platform holds over 300 documented shipwrecks spanning five centuries, from Spanish galleons to World War II vessels, all draped in hard corals and patrolled by schooling fish. Mid-Atlantic isolation has produced a distinctive reef community of green moray eels, spiny lobster, and vast sergeant major aggregations surrounded by some of the clearest waters in the western Atlantic.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/9004400/pexels-photo-9004400.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "bermuda-hms-vixen",
+      "bermuda-constellation-montana",
+      "bermuda-north-rock",
+      "bermuda-cathedral"
+    ]
+  },
+  {
+    "id": "saint-helena",
+    "slug": "saint-helena",
+    "name": "Saint Helena Island",
+    "country": "Saint Helena",
+    "countryCode": "SH",
+    "region": "Atlantic Ocean",
+    "lat": -15.9654,
+    "lng": -5.7089,
+    "description": "One of the most remote islands on Earth, Saint Helena rises from the South Atlantic in pristine isolation, its underwater cliffs and seamounts drawing whale sharks, devil rays, and vast schools of yellowfin tuna through waters virtually untouched by dive tourism. The island's remoteness has preserved reef ecosystems that larger, more accessible destinations lost decades ago.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6406224/pexels-photo-6406224.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "saint-helena-whale-shark-alley",
+      "saint-helena-the-cathedral",
+      "saint-helena-speery-island",
+      "saint-helena-flagstaff-wall"
+    ]
+  },
+  {
+    "id": "marsa-alam-egypt",
+    "slug": "marsa-alam-egypt",
+    "name": "Marsa Alam",
+    "country": "Egypt",
+    "countryCode": "EG",
+    "region": "Red Sea",
+    "lat": 25.0667,
+    "lng": 34.8833,
+    "description": "Marsa Alam anchors Egypt's southern Red Sea coast where remote reefs, resident dugongs, and oceanic predators converge in one of the least-crowded stretches of the Egyptian coastline. Abu Dabbab Bay shelters dugongs year-round, Elphinstone Reef ranks among the world's premier shark dives, and Marsa Mubarak rewards patient divers with turtle encounters on every visit.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/11686888/pexels-photo-11686888.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "marsa-alam-abu-dabbab",
+      "marsa-alam-elphinstone-reef",
+      "marsa-alam-marsa-mubarak",
+      "marsa-alam-shaab-claude"
+    ]
+  },
+  {
+    "id": "fury-shoals-egypt",
+    "slug": "fury-shoals-egypt",
+    "name": "Fury Shoals",
+    "country": "Egypt",
+    "countryCode": "EG",
+    "region": "Red Sea",
+    "lat": 23.9333,
+    "lng": 36.0167,
+    "description": "Fury Shoals is a remote reef labyrinth 200 km south of Marsa Alam accessible only by liveaboard, rewarding those who make the journey with world-class dolphin encounters, pristine coral gardens, and reliable oceanic whitetip sightings. Shaab Sataya is globally renowned as one of the finest spinner dolphin dive sites on the planet.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31740981/pexels-photo-31740981.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "fury-shoals-shaab-sataya",
+      "fury-shoals-habili-ali",
+      "fury-shoals-dolphin-reef-north",
+      "fury-shoals-shaab-sharm-fury"
+    ]
+  },
+  {
+    "id": "us-virgin-islands",
+    "slug": "us-virgin-islands",
+    "name": "US Virgin Islands",
+    "country": "United States Virgin Islands",
+    "countryCode": "VI",
+    "region": "Caribbean",
+    "lat": 17.7289,
+    "lng": -64.742,
+    "description": "Three distinct islands — St. John, St. Croix, and St. Thomas — offer a spectrum of Caribbean diving from protected national park reefs to dramatic deep canyon walls draped in black coral.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7186211/pexels-photo-7186211.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "us-virgin-islands-trunk-bay",
+      "us-virgin-islands-salt-river-canyon",
+      "us-virgin-islands-coki-beach",
+      "us-virgin-islands-buck-island"
+    ]
+  },
+  {
+    "id": "anguilla",
+    "slug": "anguilla",
+    "name": "Anguilla",
+    "country": "Anguilla",
+    "countryCode": "AI",
+    "region": "Caribbean",
+    "lat": 18.2206,
+    "lng": -63.0686,
+    "description": "Anguilla's flat coral limestone terrain drops into spectacularly clear water — frequently exceeding 30 metres of visibility — making it one of the Caribbean's best-kept diving secrets. Sandy Island's pristine patch reef, the dramatic Prickly Pear walls, the MV Ida Maria wreck and the remote Dog Island seamount give divers pristine encounters with nurse sharks, tarpon, and barracuda far from the crowds.",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/28000309/pexels-photo-28000309.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "anguilla-sandy-island-reef",
+      "anguilla-prickly-pear-reef",
+      "anguilla-mv-ida-maria-wreck",
+      "anguilla-dog-island"
+    ]
+  },
+  {
+    "id": "saint-kitts-and-nevis",
+    "slug": "saint-kitts-and-nevis",
+    "name": "Saint Kitts and Nevis",
+    "country": "Saint Kitts and Nevis",
+    "countryCode": "KN",
+    "region": "Caribbean",
+    "lat": 17.3578,
+    "lng": -62.783,
+    "description": "Rising from the sea on a young volcanic arc, Saint Kitts and Nevis pair lush rainforest slopes with outstanding diving on black-coral walls, productive turtle-frequented shallow reefs and the dramatic River Taw wreck — a 225-foot tug that sits upright and intact in 30 metres of crystal-clear Caribbean water.",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/33495990/pexels-photo-33495990.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "saint-kitts-and-nevis-frigate-bay-reef",
+      "saint-kitts-and-nevis-river-taw-wreck",
+      "saint-kitts-and-nevis-nags-head",
+      "saint-kitts-and-nevis-sandy-point-reef"
+    ]
+  },
+  {
+    "id": "antigua-and-barbuda",
+    "slug": "antigua-and-barbuda",
+    "name": "Antigua and Barbuda",
+    "country": "Antigua and Barbuda",
+    "countryCode": "AG",
+    "region": "Caribbean",
+    "lat": 17.0608,
+    "lng": -61.7964,
+    "description": "Antigua and Barbuda pairs 365 white-sand beaches with a rich underwater heritage of coral-encrusted colonial wrecks, dramatic sea caves, and a vibrant barrier reef sheltering nurse sharks and hawksbill turtles. Warm Caribbean waters averaging 27–29°C and excellent year-round visibility make these twin islands one of the Eastern Caribbean's most rewarding dive destinations.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/13561444/pexels-photo-13561444.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "antigua-pillars-of-hercules",
+      "antigua-cades-reef",
+      "antigua-mv-andes",
+      "antigua-sandy-island"
+    ]
+  },
+  {
+    "id": "saint-vincent-and-the-grenadines",
+    "slug": "saint-vincent-and-the-grenadines",
+    "name": "Saint Vincent and the Grenadines",
+    "country": "Saint Vincent and the Grenadines",
+    "countryCode": "VC",
+    "region": "Caribbean",
+    "lat": 13.1587,
+    "lng": -61.2248,
+    "description": "Saint Vincent and the Grenadines stretches across 32 islands and cays, offering everything from the pristine Tobago Cays Marine Park — one of the Caribbean's last true wilderness reefs — to deep-water pelagic encounters with manta rays and migrating humpback whales off Bequia. The diversity of habitats, from volcanic black-sand slopes to shallow seagrass meadows, supports exceptional biodiversity year-round.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8650297/pexels-photo-8650297.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "svgrenadines-tobago-cays",
+      "svgrenadines-bequia-pelagics",
+      "svgrenadines-new-guinea-reef",
+      "svgrenadines-the-wall-mustique"
+    ]
+  },
+  {
+    "id": "tioman-island",
+    "slug": "tioman-island",
+    "name": "Tioman Island",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "region": "Southeast Asia",
+    "lat": 2.8167,
+    "lng": 104.1667,
+    "description": "One of the world's most beautiful islands, Tioman sits off Pahang state in the South China Sea, its marine park reefs sheltering blacktip reef sharks, green turtles, and vast schools of pelagics amid pristine hard and soft coral gardens.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4591716/pexels-photo-4591716.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tioman-island-renggis-island",
+      "tioman-island-tiger-reef",
+      "tioman-island-labas-island",
+      "tioman-island-chebeh-island"
+    ]
+  },
+  {
+    "id": "redang-island",
+    "slug": "redang-island",
+    "name": "Redang Island",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "region": "Southeast Asia",
+    "lat": 5.7833,
+    "lng": 103.0167,
+    "description": "A jewel of Terengganu's marine park, Redang Island is famed for its crystal-clear waters, enormous bumphead parrotfish schools, and seasonal whale shark encounters from June through August.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/35395504/pexels-photo-35395504.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "redang-island-marine-park-hq-reef",
+      "redang-island-south-reef",
+      "redang-island-teluk-dalam",
+      "redang-island-pulau-lima"
+    ]
+  },
+  {
+    "id": "lankayan-island",
+    "slug": "lankayan-island",
+    "name": "Lankayan Island",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "region": "Sabah",
+    "lat": 6.5667,
+    "lng": 117.7833,
+    "description": "A remote coral island in the Sulu Sea off Sabah's northeast coast, Lankayan is one of Malaysia's finest whale shark destinations with year-round sightings over pristine sandy-bottom reefs and a handful of atmospheric wrecks.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/3062947/pexels-photo-3062947.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "lankayan-island-whale-shark-cleaning-station",
+      "lankayan-island-boatyard-wreck",
+      "lankayan-island-coral-garden"
+    ]
+  },
+  {
+    "id": "kapalai-island",
+    "slug": "kapalai-island",
+    "name": "Kapalai Island",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "region": "Sabah",
+    "lat": 4.2,
+    "lng": 118.65,
+    "description": "Perched on a submerged sandbar between Sipadan and Mabul, Kapalai is a stilted-resort muck-diving paradise where shallow rubble slopes and sea-grass beds conceal an astonishing density of bizarre and cryptic critters.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/13626959/pexels-photo-13626959.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "kapalai-island-mandarin-alley",
+      "kapalai-island-lobster-wall",
+      "kapalai-island-coral-slope"
+    ]
+  },
+  {
+    "id": "kerama-islands",
+    "slug": "kerama-islands",
+    "name": "Kerama Islands",
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Ryukyu Islands",
+    "lat": 26.1833,
+    "lng": 127.3,
+    "description": "The Kerama Islands sit 30 kilometres west of Naha, Okinawa, sheltered within a national park renowned for coral density rivalling the Great Barrier Reef. Humpback whales calve in these waters January through March, while manta rays and sea turtles are resident year-round.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4347287/pexels-photo-4347287.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "kerama-islands-zamami-whale-watching-dive",
+      "kerama-islands-aka-island-coral-garden",
+      "kerama-islands-geruma-turtle-cleaning-station",
+      "kerama-islands-tokashiki-outer-reef"
+    ]
+  },
+  {
+    "id": "ishigaki-island",
+    "slug": "ishigaki-island",
+    "name": "Ishigaki Island",
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Ryukyu Islands",
+    "lat": 24.3448,
+    "lng": 124.1572,
+    "description": "Ishigaki Island anchors the Yaeyama archipelago at the southwestern tip of Japan, earning its reputation as the manta ray capital of the world thanks to a large resident population that aggregates daily at predictable cleaning stations. Beyond mantas, the island offers blue holes, schooling pelagics, and pristine hard coral gardens in some of the clearest water in East Asia.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/29008996/pexels-photo-29008996.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "ishigaki-island-manta-scramble",
+      "ishigaki-island-kabira-bay",
+      "ishigaki-island-yaeyama-blue-hole",
+      "ishigaki-island-jokombo"
+    ]
+  },
+  {
+    "id": "portofino",
+    "slug": "portofino",
+    "name": "Portofino",
+    "country": "Italy",
+    "countryCode": "IT",
+    "region": "Mediterranean",
+    "lat": 44.303,
+    "lng": 9.21,
+    "description": "Portofino Marine Protected Area on the Ligurian Riviera shelters crystal-clear cold Mediterranean waters rich with posidonia meadows, conger eels, and the iconic Cristo degli Abissi bronze statue resting at 17 metres.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803957/pexels-photo-32803957.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "portofino-secca-del-cristo",
+      "portofino-cristo-degli-abissi",
+      "portofino-scoglio-del-raviolo",
+      "portofino-punta-del-faro"
+    ]
+  },
+  {
+    "id": "aeolian-islands",
+    "slug": "aeolian-islands",
+    "name": "Aeolian Islands",
+    "country": "Italy",
+    "countryCode": "IT",
+    "region": "Mediterranean",
+    "lat": 38.47,
+    "lng": 14.96,
+    "description": "This volcanic archipelago north of Sicily offers dramatic underwater geology — black sand seabeds, volcanic walls, and posidonia meadows — alongside rich reef fish populations and rare Roman amphorae scattered along Basiluzzo's rocky ledges.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803953/pexels-photo-32803953.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "aeolian-islands-stromboli-wall",
+      "aeolian-islands-lisca-bianca",
+      "aeolian-islands-basiluzzo",
+      "aeolian-islands-filicudi-wall"
+    ]
+  },
+  {
+    "id": "isla-mujeres",
+    "slug": "isla-mujeres",
+    "name": "Isla Mujeres",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "region": "Yucatán Peninsula",
+    "lat": 21.2319,
+    "lng": -86.731,
+    "description": "Isla Mujeres sits at the tip of the Yucatán Peninsula where Caribbean currents funnel nutrient-rich upwellings past pristine reefs, making it the world capital of whale shark aggregations from June through September. The island pairs accessible reef diving with the surreal MUSA underwater sculpture museum and strong year-round populations of sea turtles and eagle rays.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/18903467/pexels-photo-18903467.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "isla-mujeres-afuera",
+      "isla-mujeres-el-farito",
+      "isla-mujeres-musa",
+      "isla-mujeres-barracuda-reef"
+    ]
+  },
+  {
+    "id": "banco-chinchorro",
+    "slug": "banco-chinchorro",
+    "name": "Banco Chinchorro",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "region": "Yucatán Peninsula",
+    "lat": 18.5833,
+    "lng": -87.3333,
+    "description": "Banco Chinchorro is Mexico's largest coral atoll and one of the most remote dive destinations in the Caribbean, lying 50 km off the southern Yucatán coast. Its shallow lagoon harbours one of the only places on Earth where divers can encounter American saltwater crocodiles face to face, while the outer walls and historic wrecks remain virtually untouched.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17610883/pexels-photo-17610883.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "banco-chinchorro-crocodile-lagoon",
+      "banco-chinchorro-el-pionero",
+      "banco-chinchorro-jardines-del-norte"
+    ]
+  },
+  {
+    "id": "tayrona-national-park",
+    "slug": "tayrona-national-park",
+    "name": "Tayrona National Park",
+    "country": "Colombia",
+    "countryCode": "CO",
+    "region": "Caribbean",
+    "lat": 11.3227,
+    "lng": -74.0266,
+    "description": "Colombia's crown jewel of Caribbean conservation, Tayrona sits where the Sierra Nevada mountains plunge directly into the sea, creating a dramatic backdrop for reef systems sheltered within a protected national park. Nurse sharks patrol sandy channels, spotted eagle rays cruise coral gardens, and sea turtles nest on beaches framed by ancient indigenous culture.",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      6,
+      7
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8837986/pexels-photo-8837986.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tayrona-el-aquario",
+      "tayrona-playa-brava-reef",
+      "tayrona-bahia-concha",
+      "tayrona-la-piscinita"
+    ]
+  },
+  {
+    "id": "rosario-islands",
+    "slug": "rosario-islands",
+    "name": "Rosario Islands",
+    "country": "Colombia",
+    "countryCode": "CO",
+    "region": "Caribbean",
+    "lat": 10.1833,
+    "lng": -75.7667,
+    "description": "An archipelago of 27 coral islands 35 km southwest of Cartagena, the Islas del Rosario sits within a national park where coral walls descend past giant barrel sponges, black coral forests, and encrusted wrecks. Seahorses cling to sea fans in shallow gardens while spotted morays and lobsters inhabit deeper ledges, making this the most accessible Caribbean wall diving in Colombia.",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      6,
+      7
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17875664/pexels-photo-17875664.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "rosario-islands-arrecife-del-medio",
+      "rosario-islands-tesoro-island-reef",
+      "rosario-islands-el-planchon-wreck",
+      "rosario-islands-bajo-minalta"
+    ]
+  },
+  {
+    "id": "ss-yongala-wreck",
+    "slug": "ss-yongala-wreck",
+    "name": "SS Yongala Wreck",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "Queensland",
+    "lat": -19.31,
+    "lng": 147.62,
+    "description": "One of the world's greatest wreck dives, the SS Yongala sank in 1911 during a cyclone and now rests intact at 15 to 28 metres, blanketed in coral and teeming with an extraordinary density of marine life. Bull sharks, giant gropers, marble rays, and sea snakes patrol the vessel year-round in the warm waters off Townsville.",
+    "bestMonths": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7959474/pexels-photo-7959474.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "ss-yongala-wreck-bow",
+      "ss-yongala-wreck-stern",
+      "ss-yongala-wreck-amidships"
+    ]
+  },
+  {
+    "id": "osprey-reef",
+    "slug": "osprey-reef",
+    "name": "Osprey Reef",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "Coral Sea",
+    "lat": -13.88,
+    "lng": 146.56,
+    "description": "A remote coral atoll rising from the deep Coral Sea some 350 kilometres from Cairns, Osprey Reef delivers world-class shark encounters, dramatic wall diving, and oceanic pelagic action that liveaboard divers travel the globe to experience. The reef's isolation keeps it pristine, with visibility often exceeding 50 metres in the crystalline open-ocean water.",
+    "bestMonths": [
+      9,
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829694/pexels-photo-12829694.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "osprey-reef-entrance-bommie",
+      "osprey-reef-the-cathedral"
+    ]
+  },
+  {
+    "id": "kadavu-island",
+    "slug": "kadavu-island",
+    "name": "Kadavu Island",
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "region": "Pacific Islands & PNG",
+    "lat": -18.98,
+    "lng": 178.17,
+    "description": "Kadavu is Fiji's fourth largest island and home to the Great Astrolabe Reef, the world's fourth largest barrier reef system. Year-round manta ray encounters, pelagic action on the passes, and wall diving with napoleon wrasse and hammerheads make this one of the Pacific's most rewarding remote destinations.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/33715203/pexels-photo-33715203.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "kadavu-island-manta-reef",
+      "kadavu-island-naingoro-pass",
+      "kadavu-island-great-astrolabe-outer-wall",
+      "kadavu-island-daviqele-wall"
+    ]
+  },
+  {
+    "id": "yasawa-islands",
+    "slug": "yasawa-islands",
+    "name": "Yasawa Islands",
+    "country": "Fiji",
+    "countryCode": "FJ",
+    "region": "Pacific Islands & PNG",
+    "lat": -17,
+    "lng": 177.4,
+    "description": "The Yasawa Islands stretch 90 kilometres through northern Fiji as a remote chain of volcanic islands ringed by pristine, largely uncrowded reefs. Seasonal manta ray aggregations in Drawaqa Passage, playful spinner dolphins, and crystalline visibility above 30 metres draw divers seeking classic Fijian colour without the crowds.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6149461/pexels-photo-6149461.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "yasawa-islands-sawa-i-lau-blue-lagoon",
+      "yasawa-islands-drawaqa-passage",
+      "yasawa-islands-naviti-reef-wall"
+    ]
   }
 ]
