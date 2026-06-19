@@ -670,6 +670,17 @@
     "notes": "Open nautical chart tiles with crowd-sourced harbours, lights, wrecks, and buoys. Use only as a cross-reference layer, not as authoritative wreck-identity data."
   },
   {
+    "id": "noaa-wod",
+    "name": "NOAA World Ocean Database",
+    "url": "https://www.ncei.noaa.gov/products/world-ocean-database",
+    "publisher": "U.S. National Oceanic and Atmospheric Administration / NCEI",
+    "sourceType": "government-monitoring",
+    "refresh": "Annual release; ERDDAP endpoint updated continuously",
+    "accessedAt": "2026-06-19",
+    "license": "U.S. Government Work (public domain)",
+    "notes": "90 million ocean depth profiles (CTD, XBT, OSD) from 1772–present. Used to derive subsurface temperature at dive depths (5–40 m) and estimate thermocline depth per location. Complements NOAA CRW SST, which is surface only."
+  },
+  {
     "id": "ipcc-srocc",
     "name": "IPCC Special Report on the Ocean and Cryosphere (SROCC)",
     "url": "https://www.ipcc.ch/srocc/",

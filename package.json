@@ -17,6 +17,7 @@
     "audit:independence": "node scripts/audit-editorial-independence.mjs",
     "discover:dry": "DRY_RUN=1 node scripts/discover-sites.mjs",
     "discover": "node scripts/discover-sites.mjs",
+    "fetch:wod": "node scripts/fetch-wod-profiles.mjs",
     "deploy": "npx playwright test --config=playwright.image-check.config.ts && vercel deploy --prod"
   },
   "dependencies": {
