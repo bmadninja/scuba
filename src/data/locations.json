@@ -3574,5 +3574,575 @@
       "phu-quoc-an-thoi-islands",
       "phu-quoc-turtle-island"
     ]
+  },
+  {
+    "id": "corn-islands-nicaragua",
+    "slug": "corn-islands-nicaragua",
+    "name": "Corn Islands",
+    "country": "Nicaragua",
+    "countryCode": "NI",
+    "region": "Caribbean",
+    "lat": 12.1667,
+    "lng": -83.0667,
+    "description": "Little Corn Island delivers pristine, crowd-free Caribbean reef diving year-round, with the dry season (March through June) bringing peak visibility and the calmest seas. Nurse sharks, eagle rays, and healthy hard coral gardens thrive in near-complete isolation from mass tourism.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31740989/pexels-photo-31740989.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": []
+  },
+  {
+    "id": "azores-faial-pico",
+    "slug": "azores-faial-pico",
+    "name": "Azores — Faial and Pico",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "region": "Atlantic Ocean",
+    "lat": 38.5333,
+    "lng": -28.6333,
+    "description": "The mid-Atlantic seamounts off Faial and Pico are a world-class big-animal destination, with Princess Alice Bank drawing mobula rays, blue sharks, mako sharks and oceanic whitetips from June through October. Volcanic geology, sperm whale encounters and rich cold-water reefs round out one of Europe's most adventurous dive circuits.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/10392192/pexels-photo-10392192.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": []
+  },
+  {
+    "id": "bazaruto-archipelago",
+    "slug": "bazaruto-archipelago",
+    "name": "Bazaruto Archipelago",
+    "country": "Mozambique",
+    "countryCode": "MZ",
+    "region": "Indian Ocean",
+    "lat": -21.7,
+    "lng": 35.45,
+    "description": "Bazaruto Archipelago National Park shelters one of the last viable dugong populations in the western Indian Ocean alongside whale sharks, manta rays, and pristine coral reefs that see only a handful of divers each year — October through February brings whale sharks and the calmest channel crossings.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/10154784/pexels-photo-10154784.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "bazaruto-two-mile-reef",
+      "bazaruto-santa-carolina",
+      "bazaruto-inner-arch",
+      "bazaruto-north-point"
+    ]
+  },
+  {
+    "id": "mafia-island",
+    "slug": "mafia-island",
+    "name": "Mafia Island",
+    "country": "Tanzania",
+    "countryCode": "TZ",
+    "region": "Indian Ocean",
+    "lat": -7.9,
+    "lng": 39.8,
+    "description": "Mafia Island Marine Park in Tanzania's Chole Bay protects a mosaic of coral gardens, seagrass beds, and offshore reefs where whale sharks aggregate October through February and nesting green and hawksbill turtles return year after year — the dry season from June to October brings exceptional visibility.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31740990/pexels-photo-31740990.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "mafia-kinasi-wall",
+      "mafia-forbes-bay",
+      "mafia-ras-kisimani",
+      "mafia-chole-bay-gardens"
+    ]
+  },
+  {
+    "id": "grand-cayman",
+    "slug": "grand-cayman",
+    "name": "Grand Cayman",
+    "country": "Cayman Islands",
+    "countryCode": "KY",
+    "region": "Caribbean",
+    "lat": 19.3133,
+    "lng": -81.2546,
+    "description": "Grand Cayman pairs dramatic wall diving along the North Wall with intimate cave systems and one of the Caribbean's most celebrated wreck dives. Warm, clear water and reliable visibility make it a year-round destination, with the calmest seas from November through April.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7186211/pexels-photo-7186211.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "grand-cayman-kittiwake-wreck",
+      "grand-cayman-north-wall",
+      "grand-cayman-babylon",
+      "grand-cayman-eden-rock-devils-grotto"
+    ]
+  },
+  {
+    "id": "cayman-brac",
+    "slug": "cayman-brac",
+    "name": "Cayman Brac",
+    "country": "Cayman Islands",
+    "countryCode": "KY",
+    "region": "Caribbean",
+    "lat": 19.7239,
+    "lng": -79.8306,
+    "description": "Cayman Brac is a quieter sister island with a stellar Soviet-era warship wreck, vibrant wall diving, and accessible reef systems that reward macro photographers. Best conditions run from November through April when northeast trade winds ease and seas flatten.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6771596/pexels-photo-6771596.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "cayman-brac-mv-captain-keith-tibbetts",
+      "cayman-brac-pollard-bay",
+      "cayman-brac-radar-reef"
+    ]
+  },
+  {
+    "id": "tobago-main-trinidad-and-tobago",
+    "slug": "tobago-main-trinidad-and-tobago",
+    "name": "Tobago",
+    "country": "Trinidad and Tobago",
+    "countryCode": "TT",
+    "region": "Caribbean",
+    "lat": 11.2518,
+    "lng": -60.6731,
+    "description": "Tobago's southwest and central coasts deliver some of the Caribbean's most underrated reef diving — massive brain corals, sponge forests, and twin rock pinnacles all within a short boat ride of Crown Point. January through May brings settled seas and visibility regularly exceeding 25 metres.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8026837/pexels-photo-8026837.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tobago-main-japanese-gardens",
+      "tobago-main-kelleston-drain",
+      "tobago-main-bookends"
+    ]
+  },
+  {
+    "id": "grenada-main",
+    "slug": "grenada-main",
+    "name": "Grenada",
+    "country": "Grenada",
+    "countryCode": "GD",
+    "region": "Caribbean",
+    "lat": 12.1165,
+    "lng": -61.6789,
+    "description": "Grenada combines the world-famous Bianca C wreck with a surprisingly varied topside of shallow sculpture reefs, volcanic drop-offs, and healthy soft coral gardens — best visited January through May when trade winds keep conditions calm and visibility crisp.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17795211/pexels-photo-17795211.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "grenada-main-molinere-sculpture-park",
+      "grenada-main-dragon-bay",
+      "grenada-main-la-source"
+    ]
+  },
+  {
+    "id": "guadeloupe-caribbean",
+    "slug": "guadeloupe-caribbean",
+    "name": "Guadeloupe",
+    "country": "France",
+    "countryCode": "GP",
+    "region": "Caribbean",
+    "lat": 16.265,
+    "lng": -61.551,
+    "description": "Guadeloupe's Cousteau Reserve around Pigeon Island protects one of the Caribbean's best-preserved reef systems, while Basse-Terre's volcanic walls drop into clear Atlantic blue — best dived from December through April when trade winds bring settled seas and 30-metre-plus visibility.",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8970781/pexels-photo-8970781.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "guadeloupe-pompidou",
+      "guadeloupe-aquarium",
+      "guadeloupe-jardin-de-corail",
+      "guadeloupe-basse-terre-wall"
+    ]
+  },
+  {
+    "id": "martinique-caribbean",
+    "slug": "martinique-caribbean",
+    "name": "Martinique",
+    "country": "France",
+    "countryCode": "MQ",
+    "region": "Caribbean",
+    "lat": 14.641,
+    "lng": -61.024,
+    "description": "Martinique pairs an iconic open-water pinnacle at Diamond Rock with sheltered lagoon dives at Anses d'Arlet, where hawksbill turtles graze year-round — the dry season window of December to May brings the clearest water and calmest surface conditions.",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829694/pexels-photo-12829694.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "martinique-diamond-rock",
+      "martinique-anses-darlet",
+      "martinique-robert-lagoon",
+      "martinique-le-cap"
+    ]
+  },
+  {
+    "id": "marseille-calanques-france",
+    "slug": "marseille-calanques-france",
+    "name": "Marseille Calanques",
+    "country": "France",
+    "countryCode": "FR",
+    "region": "Mediterranean",
+    "lat": 43.2,
+    "lng": 5.45,
+    "description": "The Calanques National Park offers some of the Mediterranean's most dramatic diving — limestone cliffs plunging into gin-clear water, the Cassidaigne seamount drawing huge barracuda and dentex, and cathedral-like caves explored since Jacques Cousteau's era. May through October delivers the best visibility and warm surface temperatures.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5547012/pexels-photo-5547012.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "marseille-calanques-cassidaigne-seamount",
+      "marseille-calanques-grotte-de-la-triperie",
+      "marseille-calanques-cap-morgiou-wall",
+      "marseille-calanques-ile-de-riou"
+    ]
+  },
+  {
+    "id": "ustica-island-italy",
+    "slug": "ustica-island-italy",
+    "name": "Ustica Island",
+    "country": "Italy",
+    "countryCode": "IT",
+    "region": "Mediterranean",
+    "lat": 38.7077,
+    "lng": 13.1847,
+    "description": "Italy's first marine reserve, Ustica sits 60 km north of Palermo and protects waters so rich that giant grouper cruise openly between divers and posidonia meadows stretch to 40 m depth. June through September is prime season with warm water and visibility regularly exceeding 30 m.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32803956/pexels-photo-32803956.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "ustica-island-il-medico",
+      "ustica-island-secca-di-colombara",
+      "ustica-island-grotta-azzurra",
+      "ustica-island-wreck-of-the-secchia"
+    ]
+  },
+  {
+    "id": "rhodes-greece",
+    "slug": "rhodes-greece",
+    "name": "Rhodes",
+    "country": "Greece",
+    "countryCode": "GR",
+    "region": "Mediterranean",
+    "lat": 36.1408,
+    "lng": 28.0009,
+    "description": "Rhodes offers year-round diving with peak visibility from June through October, when warm 26 C waters reveal ancient amphora fields, dense sponge gardens, and moray-laced reef walls stretching to 40 m. The island's protected eastern bays shelter wrecks while the west coast delivers dramatic drop-offs swept by mild Aegean currents.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32693336/pexels-photo-32693336.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "rhodes-greece-yades-bay-wrecks",
+      "rhodes-greece-kallithea-springs-reef",
+      "rhodes-greece-prasonisi-sponge-gardens",
+      "rhodes-greece-lindos-bay-wall"
+    ]
+  },
+  {
+    "id": "crete-greece",
+    "slug": "crete-greece",
+    "name": "Crete",
+    "country": "Greece",
+    "countryCode": "GR",
+    "region": "Mediterranean",
+    "lat": 35.2401,
+    "lng": 24.8093,
+    "description": "Greece's largest island rewards divers with cave systems, sea fan gardens, and imposing wall dives, best explored between May and November when visibility regularly exceeds 30 m and water temperatures climb to 25 C. Chania's northwest coast hides the spectacular Elephant Cave, while the northern shelf near Heraklion hosts rare gorgonian forests at manageable depths.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829684/pexels-photo-12829684.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "crete-greece-elephant-cave-chania",
+      "crete-greece-cape-stavros-wall",
+      "crete-greece-steno-dive-site",
+      "crete-greece-heraklion-sea-fan-gardens"
+    ]
+  },
+  {
+    "id": "menorca-spain",
+    "slug": "menorca-spain",
+    "name": "Menorca",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Mediterranean",
+    "lat": 39.9496,
+    "lng": 4.1185,
+    "description": "The least developed of the Balearic Islands rewards divers with pristine posidonia meadows, dramatic limestone caves, and vibrant red gorgonian fans; June through October delivers warm, clear water and calm seas across the island's protected marine reserves.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/17875664/pexels-photo-17875664.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "menorca-cala-morell-cave",
+      "menorca-ses-monges-wall",
+      "menorca-cap-de-cavalleria",
+      "menorca-binidali-gorgonian-garden"
+    ]
+  },
+  {
+    "id": "tremiti-islands-italy",
+    "slug": "tremiti-islands-italy",
+    "name": "Tremiti Islands",
+    "country": "Italy",
+    "countryCode": "IT",
+    "region": "Mediterranean",
+    "lat": 42.1167,
+    "lng": 15.5,
+    "description": "Italy's only offshore Adriatic archipelago and a protected marine reserve, the Tremiti group draws divers with cathedral sea caves, sheer walls draped in gorgonians and sponges, and dense aggregations of large sea breams and brown grouper; the clearest water and most stable conditions run from May through September.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8837884/pexels-photo-8837884.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tremiti-grotta-delle-rondinelle",
+      "tremiti-cretaccio-wall",
+      "tremiti-punta-secca",
+      "tremiti-la-vedova-reef"
+    ]
+  },
+  {
+    "id": "gladden-spit-belize",
+    "slug": "gladden-spit-belize",
+    "name": "Gladden Spit",
+    "country": "Belize",
+    "countryCode": "BZ",
+    "region": "Caribbean",
+    "lat": 16.533,
+    "lng": -87.967,
+    "description": "Gladden Spit is one of the world's most dramatic large-pelagic encounters — whale sharks converge on the spawning aggregations of cubera and mutton snapper during full moons from March through June, creating a feeding spectacle unlike anywhere else in the Caribbean. Outside spawning season the offshore wall drops into spectacular blue water with healthy soft coral gardens and consistent shark action.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/33715206/pexels-photo-33715206.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "gladden-spit-belize-the-shelf",
+      "gladden-spit-belize-gladden-wall"
+    ]
+  },
+  {
+    "id": "long-island-bahamas",
+    "slug": "long-island-bahamas",
+    "name": "Long Island",
+    "country": "Bahamas",
+    "countryCode": "BS",
+    "region": "Atlantic Ocean",
+    "lat": 23.2,
+    "lng": -75.1,
+    "description": "Long Island anchors its diving reputation on Dean's Blue Hole, the world's deepest known saltwater blue hole at 202 metres, a pilgrimage site for freedivers and a hauntingly beautiful dive for scuba divers down to recreational limits. The surrounding barrier reef walls and shallow coral gardens offer pristine conditions far from the crowds of Nassau.",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/16547594/pexels-photo-16547594.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "long-island-bahamas-deans-blue-hole",
+      "long-island-bahamas-stella-maris-reef",
+      "long-island-bahamas-conception-island-wall",
+      "long-island-bahamas-shark-reef"
+    ]
+  },
+  {
+    "id": "madeira-portugal",
+    "slug": "madeira-portugal",
+    "name": "Madeira",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "region": "Atlantic Ocean",
+    "lat": 32.7607,
+    "lng": -16.9595,
+    "description": "Madeira's volcanic underwater terrain delivers year-round diving with best visibility and warmest water from June through October; the Garajau Natural Reserve protects dense fish populations and endemic species within easy reach of Funchal.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31047092/pexels-photo-31047092.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "madeira-portugal-garajau-natural-reserve",
+      "madeira-portugal-caverna-dos-peixes",
+      "madeira-portugal-ilheu-de-ferro-pinnacle",
+      "madeira-portugal-king-of-the-sea-wreck"
+    ]
+  },
+  {
+    "id": "tenerife-canary-islands",
+    "slug": "tenerife-canary-islands",
+    "name": "Tenerife",
+    "country": "Spain",
+    "countryCode": "ES",
+    "region": "Atlantic Ocean",
+    "lat": 28.2916,
+    "lng": -16.6291,
+    "description": "Tenerife offers year-round diving in the Canary Islands with endemic species, angel shark encounters at El Puertito, and dramatic volcanic walls; water temperatures stay comfortable in all months and visibility peaks from July through November.",
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5135212/pexels-photo-5135212.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tenerife-canary-islands-el-puertito",
+      "tenerife-canary-islands-puerto-colon-wall",
+      "tenerife-canary-islands-palm-mar",
+      "tenerife-canary-islands-los-gigantes-wall"
+    ]
+  },
+  {
+    "id": "trondheim-fjord",
+    "slug": "trondheim-fjord",
+    "name": "Trondheim Fjord",
+    "country": "Norway",
+    "countryCode": "NO",
+    "region": "North Atlantic",
+    "lat": 63.4305,
+    "lng": 10.3951,
+    "description": "Norway's Trondheim Fjord and the Agdenes outer coast offer some of the world's most dramatic cold-water diving — crystal-clear water down to 30 m visibility in winter, walls blanketed in plumose anemones, resident wolf fish, and giant king crab. Best diving runs May through September when surface water warms slightly and visibility peaks, though adventurous drysuiters dive year-round.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/35288360/pexels-photo-35288360.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "trondheim-fjord-agdenes-wreck",
+      "trondheim-fjord-munkholmen-island",
+      "trondheim-fjord-jorpeland-wall",
+      "trondheim-fjord-agdenes-lighthouse-reef"
+    ]
+  },
+  {
+    "id": "st-abbs-head",
+    "slug": "st-abbs-head",
+    "name": "St. Abbs Head",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "region": "North Atlantic",
+    "lat": 55.9147,
+    "lng": -2.1383,
+    "description": "The St. Abbs and Eyemouth Voluntary Marine Reserve on the Scottish Borders coast is the UK's most celebrated cold-water dive destination — towering kelp forests, labyrinthine gullies, resident wolf fish and conger eels, and cuckoo wrasse in vivid breeding colours. Visibility frequently exceeds 15 m, and the reserve's no-take status has produced unusually abundant marine life. Best months are April through September.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/16547591/pexels-photo-16547591.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "st-abbs-head-wuddy-rocks",
+      "st-abbs-head-cathedral-rock",
+      "st-abbs-head-the-gully",
+      "st-abbs-head-mire-loch-wall"
+    ]
+  },
+  {
+    "id": "muscat-oman",
+    "slug": "muscat-oman",
+    "name": "Muscat",
+    "country": "Oman",
+    "countryCode": "OM",
+    "region": "Indian Ocean",
+    "lat": 23.6139,
+    "lng": 58.5922,
+    "description": "Oman's capital coastline delivers year-round subtropical diving anchored by whale sharks, schooling barracuda, and healthy coral gardens — October through May brings the clearest water and calmest seas.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31740989/pexels-photo-31740989.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "muscat-oman-bandar-khayran",
+      "muscat-oman-fahal-island",
+      "muscat-oman-muscat-offshore-seamount"
+    ]
   }
 ]
