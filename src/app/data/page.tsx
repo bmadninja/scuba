@@ -13,7 +13,6 @@ type Source = {
   id: string;
   name: string;
   url?: string;
-  refresh?: string;
 };
 
 // Curated grouping over the real source ids. Names and links are pulled live
@@ -277,7 +276,6 @@ export default function DataPage() {
           {tocLink("#si-labels", "Conservation labels", "sub")}
           {tocLink("#divers", "For divers", "group")}
           {tocLink("#researchers", "For researchers", "group")}
-          {tocLink("#limits", "Honest limits", "group")}
           {tocLink("#sources", "All sources", "group")}
         </nav>
 
@@ -808,52 +806,6 @@ export default function DataPage() {
             </div>
           </section>
 
-          {/* ============ HONEST LIMITS ============ */}
-          <section
-            id="limits"
-            style={{ marginBottom: "4rem", scrollMarginTop: "5rem" }}
-          >
-            <h2 style={groupTitleStyle}>What this data cannot tell you</h2>
-            <p style={groupIntroStyle}>
-              Honest data means naming its limits too. Here is what these sources
-              do not capture, so you can read every label on this site with the
-              right amount of doubt.
-            </p>
-            <div className="method-limit-grid">
-              <LimitCard title="Reef state is a read, not a measurement">
-                The one word on each reef is our reading of three public signals.
-                It is not a survey we ran ourselves and it cannot replace a diver
-                who is actually in the water. Treat it as a starting point.
-              </LimitCard>
-              <LimitCard title="Coral cover is thin for many reefs">
-                For a lot of sites we hold only 2 survey years, sometimes fewer.
-                Two points draw a line, not a trend, so we show the figure as a
-                guide and flag plainly where the record is sparse.
-              </LimitCard>
-              <LimitCard title="Heat is read from the surface">
-                NOAA measures sea temperature from satellites at the surface. A
-                deep or shaded reef can sit cooler than the satellite suggests, so
-                a heat alert is a regional warning, not a reading at your exact
-                depth.
-              </LimitCard>
-              <LimitCard title="Fishing pressure misses the boats that hide">
-                Global Fishing Watch tracks vessels that broadcast their position.
-                Boats that switch off their signal, or are too small to carry one,
-                do not appear, so real pressure can be higher than the map shows.
-              </LimitCard>
-              <LimitCard title="No record does not mean no animal">
-                A site with few sightings is almost always a site few divers have
-                logged, not an empty reef. Absence of data is a gap waiting to be
-                filled, never proof that the animal is gone.
-              </LimitCard>
-              <LimitCard title="Every source runs on its own clock">
-                Each feed refreshes at its own pace, from nightly heat readings to
-                surveys that arrive once a season. We always show the freshest
-                figure we hold, and we never label it live when it is not.
-              </LimitCard>
-            </div>
-          </section>
-
           {/* ============ ALL SOURCES ============ */}
           <section
             id="sources"
@@ -867,16 +819,7 @@ export default function DataPage() {
               <b style={{ color: INK }}>Sightings</b> come from iNaturalist and
               GBIF. Beyond those, dozens more cover water conditions, currents,
               charts, wreck histories and diver safety. All {totalSources} are
-              named and linked below, each with how often it puts out fresh
-              data.
-            </p>
-            <p style={{ ...groupIntroStyle, marginTop: "0.75rem", fontSize: "0.875rem", color: MUTED }}>
-              The pace beside each source is how often that source itself
-              updates, from real time to a single landmark report. It is the
-              source&rsquo;s own clock, not ours. The feeds we pull on a live
-              schedule are the reef state signals (NOAA heat nightly, fishing
-              weekly) and the sightings ingest above; the rest are reference
-              data we cite at the freshness each one publishes.
+              named and linked below.
             </p>
             <details style={{ marginTop: "1.25rem" }}>
               <summary
@@ -924,15 +867,7 @@ export default function DataPage() {
                         const src = sourceMap.get(id);
                         if (!src) return null;
                         return (
-                          <li
-                            key={id}
-                            style={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                              alignItems: "baseline",
-                              gap: "0.75rem",
-                            }}
-                          >
+                          <li key={id}>
                             <a
                               href={src.url ?? "#"}
                               target="_blank"
@@ -946,20 +881,6 @@ export default function DataPage() {
                             >
                               {src.name}
                             </a>
-                            {src.refresh && (
-                              <span
-                                style={{
-                                  fontSize: "0.625rem",
-                                  fontFamily: mono,
-                                  color: MUTED,
-                                  whiteSpace: "nowrap",
-                                  flexShrink: 0,
-                                }}
-                                title="How often this source publishes fresh data"
-                              >
-                                {src.refresh}
-                              </span>
-                            )}
                           </li>
                         );
                       })}
@@ -983,7 +904,6 @@ export default function DataPage() {
         .method-sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
         .method-pipe{display:flex;flex-wrap:wrap;gap:0;margin-top:0.5rem;}
         .method-plat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
-        .method-limit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem;}
         .method-src-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 2.5rem;margin-top:1.25rem;}
         .method-src-summary::-webkit-details-marker{display:none;}
         .method-src-summary::after{content:"⌄";}
@@ -991,7 +911,7 @@ export default function DataPage() {
         @media(max-width:920px){
           .method-wrap{grid-template-columns:1fr;}
           .method-toc{display:none;}
-          .method-state-cards,.method-sig-grid,.method-plat-grid,.method-limit-grid,.method-src-groups{grid-template-columns:1fr;}
+          .method-state-cards,.method-sig-grid,.method-plat-grid,.method-src-groups{grid-template-columns:1fr;}
         }
       `}</style>
     </>
@@ -1182,33 +1102,6 @@ function IucnRow({
       <span style={{ fontSize: "0.8125rem", color: BODY, lineHeight: 1.5, paddingTop: "0.1rem" }}>
         {children}
       </span>
-    </div>
-  );
-}
-
-function LimitCard({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div
-      style={{
-        border: `1px solid ${HAIRLINE}`,
-        borderRadius: "1rem",
-        padding: "1.25rem",
-        borderLeft: `3px solid ${MUTED}`,
-        background: "#0a1628",
-      }}
-    >
-      <p style={{ fontSize: "0.9375rem", fontWeight: 700, color: INK, marginBottom: "0.5rem" }}>
-        {title}
-      </p>
-      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
-        {children}
-      </p>
     </div>
   );
 }
