@@ -21,13 +21,14 @@ const UA = "scubaseason.fun photo enrichment (contact: josie.ty.leung@gmail.com)
  * Returns [{url, srcWidth, attribution, license, source}].
  * Returns [] silently when PEXELS_API_KEY is not set.
  */
-export async function pexelsSearch(query, { perPage = 15 } = {}) {
+export async function pexelsSearch(query, { perPage = 15, page = 1 } = {}) {
   const key = process.env.PEXELS_API_KEY;
   if (!key) return [];
 
   const params = new URLSearchParams({
     query,
     per_page: String(perPage),
+    page: String(page),
     orientation: "landscape",
     size: "large",
   });

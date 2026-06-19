@@ -7261,5 +7261,576 @@
       "los-testigos-el-banco-seamount",
       "los-testigos-north-channel"
     ]
+  },
+  {
+    "id": "koh-phi-phi-thailand",
+    "slug": "koh-phi-phi-thailand",
+    "name": "Koh Phi Phi",
+    "country": "Thailand",
+    "countryCode": "TH",
+    "region": "Andaman Sea",
+    "lat": 7.7407,
+    "lng": 98.7784,
+    "description": "Iconic limestone karst islands rising from turquoise water between Phuket and Krabi. Reef walls drop 30 m alongside granite boulders, leopard sharks rest on sandy plateaus year-round, and seasonal whale sharks pass through the channel during March and April. The shallows of Bida Nok and Bida Nai hold some of the healthiest hard coral cover in the Thai Andaman.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "siteIds": [
+      "koh-phi-phi-bida-nok",
+      "koh-phi-phi-bida-nai",
+      "koh-phi-phi-shark-point-hin-bida",
+      "koh-phi-phi-maya-bay-pinnacle"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31047031/pexels-photo-31047031.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "koh-lipe-thailand",
+    "slug": "koh-lipe-thailand",
+    "name": "Koh Lipe",
+    "country": "Thailand",
+    "countryCode": "TH",
+    "region": "Andaman Sea",
+    "lat": 6.4888,
+    "lng": 99.3027,
+    "description": "Thailand's southernmost inhabited island sits inside Tarutao National Marine Park, just 10 km from the Malaysian border. Undisturbed by liveaboard traffic, the reefs here have some of the healthiest coral gardens in the country. Staghorn and tabletop acropora dominate the shallows, while deeper slopes yield bumphead parrotfish, turtles, and occasional whale sharks between December and March.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "siteIds": [
+      "koh-lipe-stonehenge",
+      "koh-lipe-koh-usen",
+      "koh-lipe-eight-mile-rock",
+      "koh-lipe-hin-ngam"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5116307/pexels-photo-5116307.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "lombok",
+    "slug": "lombok",
+    "name": "Lombok",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Lesser Sunda Islands",
+    "lat": -8.5653,
+    "lng": 116.3517,
+    "description": "Sandwiched between Bali and Sumbawa, Lombok offers some of Indonesia's most dramatic underwater topography — sheer walls plunging beyond 40 metres, strong currents that funnel nutrients through the Lombok Strait, and a reliable cast of blacktip and whitetip reef sharks. The Gili Islands off the northwest coast are the main hub, with sandy-bottomed turtle cleaning stations and colourful reef crests sitting above the drops. Visibility regularly exceeds 25 metres and water temperatures stay warm year-round, making Lombok an accessible yet rewarding destination for intermediate and advanced divers alike.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "lombok-shark-point",
+      "lombok-halik-reef",
+      "lombok-gili-trawangan-wall",
+      "lombok-belongas-bay"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5007436/pexels-photo-5007436.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "perhentian-islands",
+    "slug": "perhentian-islands",
+    "name": "Perhentian Islands",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "region": "South China Sea",
+    "lat": 5.9072,
+    "lng": 102.7418,
+    "description": "The Perhentian Islands sit in Malaysia's South China Sea roughly 20 kilometres off the Terengganu coast, ringed by crystal-clear water that turns an almost improbable shade of turquoise during the dry season. Visibility regularly reaches 20 metres or more over healthy hard-coral gardens patrolled by green and hawksbill turtles, blacktip reef sharks, and a dense cast of macro subjects including frogfish, nudibranchs, and ghost pipefish. The islands close entirely from November through February when northeast monsoon swells roll in, but from March through October conditions are ideal for snorkelling, reef dives, and night dives — making this one of the most approachable and affordable dive destinations in Southeast Asia.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "perhentian-shark-point",
+      "perhentian-tiga-ruang",
+      "perhentian-tokong-laut",
+      "perhentian-batu-nisan"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31895960/pexels-photo-31895960.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "coral-bay-wa",
+    "slug": "coral-bay-wa",
+    "name": "Coral Bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "Western Australia",
+    "lat": -23.1427,
+    "lng": 113.7725,
+    "description": "Coral Bay sits at the southern end of Ningaloo Reef, one of the longest fringing reefs on Earth. The reef here begins just metres from the beach, making it extraordinary for snorkellers and divers alike. Manta rays cruise the shallows year-round, and whale sharks arrive each autumn. The water is warm, clear, and alive with colour — parrotfish, turtles, and reef sharks share the same sandy-bottomed lagoon. This is a place where the ocean is genuinely wild and genuinely close.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "coral-bay-wa-manta-bommie",
+      "coral-bay-wa-five-fingers-reef",
+      "coral-bay-wa-skeleton-bay",
+      "coral-bay-wa-labyrinth"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4591954/pexels-photo-4591954.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "exmouth-wa",
+    "slug": "exmouth-wa",
+    "name": "Exmouth",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "Western Australia",
+    "lat": -21.9322,
+    "lng": 114.1214,
+    "description": "Exmouth sits at the tip of the North West Cape, flanked by the open Indian Ocean to the west and the sheltered Exmouth Gulf to the east. The Navy Pier at Harold E. Holt Communication Station is considered one of the best shore dives in the world — a barnacle-encrusted structure alive with wobbegong sharks, giant groper, and nudibranchs at every depth. Ningaloo Reef wraps around the cape, delivering wall dives, drift dives, and the annual whale shark aggregation that draws divers from everywhere.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "exmouth-wa-navy-pier",
+      "exmouth-wa-lighthouse-bay",
+      "exmouth-wa-tantabiddi-wall",
+      "exmouth-wa-muiron-islands"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5116337/pexels-photo-5116337.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "bay-of-islands-nz",
+    "slug": "bay-of-islands-nz",
+    "name": "Bay of Islands",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "region": "Northland",
+    "lat": -35.1833,
+    "lng": 174.1,
+    "description": "A subtropical archipelago of 144 islands off Northland's coast, the Bay of Islands blends temperate kelp forests with warm northern waters. Colorful nudibranchs coat every surface, common dolphins ride bow waves between dives, and the wreck of the HMNZS Canterbury sits upright on the seafloor — one of the Pacific's great wreck dives. Visibility is best in autumn when the summer plankton bloom settles.",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "siteIds": [
+      "bay-of-islands-nz-hmnzs-canterbury",
+      "bay-of-islands-nz-poor-knights-passage",
+      "bay-of-islands-nz-te-rawhiti-wall",
+      "bay-of-islands-nz-hole-in-the-rock"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4784504/pexels-photo-4784504.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "bora-bora-fp",
+    "slug": "bora-bora-fp",
+    "name": "Bora Bora",
+    "country": "French Polynesia",
+    "countryCode": "PF",
+    "region": "Society Islands",
+    "lat": -16.5004,
+    "lng": -151.7415,
+    "description": "Bora Bora's turquoise lagoon is ringed by a coral barrier reef sheltering lemon sharks, blacktip reef sharks, and eagle rays that glide over coral bommies in shallow water. The passes cutting through the barrier — particularly Teavanui — funnel nutrient-rich currents that draw large pelagics. Visibility routinely exceeds 30 meters, and the calm lagoon makes it accessible to every level of diver.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "bora-bora-fp-teavanui-pass",
+      "bora-bora-fp-anau-coral-garden",
+      "bora-bora-fp-muri-muri",
+      "bora-bora-fp-tupitipiti-point"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5116340/pexels-photo-5116340.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "fakarava",
+    "slug": "fakarava",
+    "name": "Fakarava",
+    "country": "French Polynesia",
+    "countryCode": "PF",
+    "region": "Tuamotu Archipelago",
+    "lat": -16.0574,
+    "lng": -145.6328,
+    "description": "Fakarava is a UNESCO biosphere reserve and one of the world's premier drift diving destinations. The South Pass (Tumakohua) is legendary for its wall of sharks — hundreds of grey reef sharks hunting in formation during the June grouper spawning aggregation. Two coral-fringed passes funnel nutrient-rich Pacific water through the atoll, creating powerful drift dives past healthy coral gardens teeming with reef fish, Napoleon wrasse, and eagle rays.",
+    "bestMonths": [
+      6,
+      7,
+      8
+    ],
+    "siteIds": [
+      "fakarava-tetamanu-wall",
+      "fakarava-garuae-drift"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/36178855/pexels-photo-36178855.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "moorea",
+    "slug": "moorea",
+    "name": "Moorea",
+    "country": "French Polynesia",
+    "countryCode": "PF",
+    "region": "Society Islands",
+    "lat": -17.5333,
+    "lng": -149.8333,
+    "description": "Moorea is the heart-shaped island visible from Tahiti and a world-class shark and ray diving destination. Its lagoon shelters resident populations of blacktip and lemon sharks year-round, while spinner dolphins patrol the outer reef. Coral gardens in Cook's Bay and Opunohu Bay support dense populations of butterflyfish, surgeonfish, and moray eels, with healthy hard coral coverage making this one of French Polynesia's most photogenic dive locations.",
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "moorea-tiahura-shark-ray",
+      "moorea-taotoi-pass",
+      "moorea-opunohu-canyons",
+      "moorea-tiki-point"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/6149464/pexels-photo-6149464.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "cartagena-rosario-islands",
+    "slug": "cartagena-rosario-islands",
+    "name": "Cartagena / Rosario Islands",
+    "country": "Colombia",
+    "countryCode": "CO",
+    "region": "Caribbean",
+    "lat": 10.185,
+    "lng": -75.737,
+    "description": "Colombia's Caribbean gem where a 28-island coral archipelago meets colonial history, with vibrant reef fish, resident nurse sharks, and accessible wreck diving minutes from one of South America's most beautiful cities.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      12
+    ],
+    "siteIds": [
+      "cartagena-rosario-islands-coral-gardens",
+      "cartagena-rosario-islands-tesoro-wreck",
+      "cartagena-rosario-islands-la-cherna-wall",
+      "cartagena-rosario-islands-playa-blanca-reef"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/31047033/pexels-photo-31047033.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "manta-ecuador",
+    "slug": "manta-ecuador",
+    "name": "Manta / La Plata Island",
+    "country": "Ecuador",
+    "countryCode": "EC",
+    "region": "Eastern Pacific",
+    "lat": -1,
+    "lng": -81.05,
+    "description": "Ecuador's Pacific gateway for giant oceanic manta rays, seasonal hammerhead aggregations, and whale watching, centred on La Plata Island — the 'poor man's Galapagos' — with year-round warm upwelling waters.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "manta-ecuador-la-plata-north-wall",
+      "manta-ecuador-la-plata-south-pinnacle",
+      "manta-ecuador-bajo-cope",
+      "manta-ecuador-los-ahorcados"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4621388/pexels-photo-4621388.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "cabo-san-lucas",
+    "slug": "cabo-san-lucas",
+    "name": "Cabo San Lucas",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "region": "North America",
+    "lat": 22.8905,
+    "lng": -109.9167,
+    "description": "Where the Pacific meets the Sea of Cortez, Cabo San Lucas delivers world-class diving anchored by Land's End and the iconic El Arco arch. California sea lions haul out on the rocks year-round and pour into the water with divers at the colony. The famous underwater sand falls cascade off a submerged plateau at 30 m, and the open blue brings hammerheads, whale sharks, and manta rays. Jacques Cousteau called the Sea of Cortez 'the world's aquarium' — the southern tip is where you feel it first.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "cabo-san-lucas-land-end-sea-lion-colony",
+      "cabo-san-lucas-sand-falls",
+      "cabo-san-lucas-pelican-rock",
+      "cabo-san-lucas-gordo-banks"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/34260848/pexels-photo-34260848.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "puerto-vallarta",
+    "slug": "puerto-vallarta",
+    "name": "Puerto Vallarta",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "region": "North America",
+    "lat": 20.6534,
+    "lng": -105.2253,
+    "description": "Puerto Vallarta anchors diving across Banderas Bay — one of the largest bays in the Americas — and the protected waters of Las Islas Marietas National Park just offshore. Giant manta rays cruise the seamounts, humpback whales fill the bay from November through March, and the Marietas hide a collapsed volcanic cave that shelters resting white sea birds and macro life. The bay's warm current pocket and diverse topography make it a year-round destination with genuinely different experiences by season.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
+    "siteIds": [
+      "puerto-vallarta-islas-marietas",
+      "puerto-vallarta-el-morro",
+      "puerto-vallarta-los-arcos",
+      "puerto-vallarta-la-corbeteña"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/4621622/pexels-photo-4621622.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "vancouver-island",
+    "slug": "vancouver-island",
+    "name": "Vancouver Island / Victoria",
+    "country": "Canada",
+    "countryCode": "CA",
+    "region": "British Columbia",
+    "lat": 48.4284,
+    "lng": -123.3656,
+    "description": "Cold, nutrient-rich Pacific waters off southern Vancouver Island host some of the world's largest invertebrates — giant Pacific octopus reaching 14 kg, wolf eels guarding rocky crevices, and massive sunflower sea stars. Kelp forests thick with lingcod and rockfish line the walls of Ogden Point and Race Rocks. Water temperatures hover between 7 and 12 C year-round, rewarding drysuit divers with extraordinary biomass and visibility that often reaches 20 m in winter.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829686/pexels-photo-12829686.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "vancouver-island-ogden-point-breakwater",
+      "vancouver-island-race-rocks",
+      "vancouver-island-ten-mile-point",
+      "vancouver-island-wreck-of-the-hmcs-mackenzie"
+    ]
+  },
+  {
+    "id": "san-juan-islands",
+    "slug": "san-juan-islands",
+    "name": "San Juan Islands",
+    "country": "United States",
+    "countryCode": "US",
+    "region": "Washington",
+    "lat": 48.5343,
+    "lng": -123.0573,
+    "description": "The San Juan archipelago sits at the confluence of the Strait of Juan de Fuca and the Strait of Georgia, where tidal exchanges push nutrient-dense water through narrow passes at up to 8 knots. Resident and transient orca pods hunt these channels. Below the surface, giant Pacific octopus, wolf eels, and tube-dwelling anemones carpet rocky walls. Kelp canopies shelter copper rockfish and lingcod. This is cold-water Pacific Northwest diving at its most dramatic — drysuits mandatory, rewards extraordinary.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829677/pexels-photo-12829677.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "san-juan-islands-turn-island",
+      "san-juan-islands-lime-kiln-point",
+      "san-juan-islands-deadmans-bay",
+      "san-juan-islands-eagle-point"
+    ]
+  },
+  {
+    "id": "nice-cote-dazur-france",
+    "slug": "nice-cote-dazur-france",
+    "name": "Nice / Cote d'Azur",
+    "country": "France",
+    "countryCode": "FR",
+    "region": "Mediterranean",
+    "lat": 43.7102,
+    "lng": 7.262,
+    "description": "The French Riviera hides a surprisingly rich underwater world beneath its glamorous surface. The Larvotto Marine Reserve just east of Monaco protects some of the densest grouper and sea fan populations on the northern Mediterranean coast, while canyon walls and rocky reefs around Cap Ferrat and the Lerin Islands shelter scorpionfish, moray eels, and clouds of chromis. Water clarity peaks in summer when thermoclines stack warm surface water above cold blue depths, extending visibility to 25 metres or more.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/30835508/pexels-photo-30835508.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "nice-larvotto-marine-reserve",
+      "nice-cap-ferrat-wall",
+      "nice-riou-canyon",
+      "nice-lerin-islands-plateau"
+    ]
+  },
+  {
+    "id": "puerto-princesa-honda-bay",
+    "slug": "puerto-princesa-honda-bay",
+    "name": "Puerto Princesa / Honda Bay",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Asia Pacific",
+    "lat": 10.1333,
+    "lng": 118.7333,
+    "description": "Honda Bay sits just north of Puerto Princesa city on Palawan island, sheltering a scatter of coral-ringed islands inside a sheltered lagoon. The reefs here are among the least disturbed in the Philippines, with nurse sharks resting under coral tables at Starfish Island, bumphead parrotfish grazing the outer slopes, and extensive seagrass meadows hosting dugongs and sea turtles. Visibility regularly exceeds 20 metres and currents are gentle, making this an ideal destination for all skill levels. The wider Palawan seascape sits within the Coral Triangle and holds some of the highest marine biodiversity on the planet.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5008467/pexels-photo-5008467.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "honda-bay-starfish-island",
+      "honda-bay-cowrie-island-reef",
+      "honda-bay-pandan-island-wall",
+      "honda-bay-luli-island-nurse-shark-flats"
+    ]
+  },
+  {
+    "id": "siargao",
+    "slug": "siargao",
+    "name": "Siargao",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Asia Pacific",
+    "lat": 9.8833,
+    "lng": 126.05,
+    "description": "Siargao is best known as the Philippines' surf capital, but beneath the waves lies a world-class diving destination shaped by its position in the Coral Triangle. The Bucas Grande island group to the south contains Sohoton Cove, a network of tidal marine lakes and limestone caverns where endemic stingless jellyfish drift in brackish water. Outside the lake system, current-swept channels deliver schooling jacks, whale sharks in season, and pristine reef slopes draped with soft corals and sea fans. Macro photographers find outstanding subjects in the muck zones around Daco Island.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/29332335/pexels-photo-29332335.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "siargao-sohoton-jellyfish-lake",
+      "siargao-tayangban-cave-pool",
+      "siargao-daco-island-reef",
+      "siargao-naked-island-channel"
+    ]
+  },
+  {
+    "id": "ternate-north-maluku",
+    "slug": "ternate-north-maluku",
+    "name": "Ternate",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Maluku",
+    "lat": 0.7827,
+    "lng": 127.3797,
+    "description": "A volcanic island in North Maluku where Gamalama's flanks plunge beneath the sea as sheer black-sand slopes and pristine reef walls. Ternate sits at the heart of the Coral Triangle with exceptional macro life on its muck sites and healthy walls draped in soft corals and sea fans. The island's remoteness keeps dive pressure low and biodiversity extraordinarily high.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5582644/pexels-photo-5582644.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "ternate-batu-angus",
+      "ternate-tomagoba",
+      "ternate-kastela-wall",
+      "ternate-sulamadaha-point"
+    ]
+  },
+  {
+    "id": "tufi-papua-new-guinea",
+    "slug": "tufi-papua-new-guinea",
+    "name": "Tufi",
+    "country": "Papua New Guinea",
+    "countryCode": "PG",
+    "region": "Oro Province",
+    "lat": -9.0757,
+    "lng": 149.3253,
+    "description": "Tufi occupies a drowned river valley system in Oro Province where steep fjord walls drop into some of PNG's most pristine coral reef. WWII wrecks litter the seabed from the Cape Nelson campaign, and the sheltered fjords protect extraordinary biodiversity year-round. Tufi is regarded as one of the last genuinely untouched dive destinations in the Pacific.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5116282/pexels-photo-5116282.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tufi-cape-nelson-wreck",
+      "tufi-fjord-wall",
+      "tufi-rainbow-passage",
+      "tufi-shark-point"
+    ]
+  },
+  {
+    "id": "terceira-azores",
+    "slug": "terceira-azores",
+    "name": "Terceira",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "region": "Atlantic",
+    "lat": 38.72,
+    "lng": -27.22,
+    "description": "Rising from the mid-Atlantic Ridge, Terceira is one of the Azores archipelago's most volcanically active islands, and its underwater terrain reflects that restless geology — lava arches, hydrothermal vents, and seamounts thick with gorgonian sea fans. Blue sharks appear in numbers that surprise even seasoned pelagic divers, mobula rays sweep overhead in loose squadrons, and the cold clear Atlantic delivers visibility that can stretch beyond 30 metres. This is open-ocean diving at its most elemental.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/37659283/pexels-photo-37659283.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "terceira-azores-baixa-do-sul",
+      "terceira-azores-pico-do-ambrosio",
+      "terceira-azores-caverna-das-focas",
+      "terceira-azores-ilheu-das-cabras"
+    ]
   }
 ]
