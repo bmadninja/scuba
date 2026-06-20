@@ -25,6 +25,7 @@ function CountUp({ target, suffix = "", reducedMotion }: { target: number; suffi
   const rafRef = useRef<number | null>(null);
   const DURATION = 1200;
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (reducedMotion) {
       setCurrent(target);
@@ -47,6 +48,7 @@ function CountUp({ target, suffix = "", reducedMotion }: { target: number; suffi
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
     };
   }, [target, reducedMotion]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return <>{current.toLocaleString()}{suffix}</>;
 }
@@ -56,6 +58,7 @@ export function HomepageStatStrip() {
   const [visible, setVisible] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReducedMotion(mq.matches);
@@ -75,6 +78,7 @@ export function HomepageStatStrip() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return (
     <div

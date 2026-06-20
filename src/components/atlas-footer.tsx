@@ -34,7 +34,7 @@ export function AtlasFooter() {
               className="mt-3 text-sm leading-relaxed"
               style={{ color: "rgba(255,255,255,0.65)" }}
             >
-              We put real reef science in every diver's hands so the ocean gets more defenders and fewer disappointed visitors.
+              We put real reef science in every diver&apos;s hands so the ocean gets more defenders and fewer disappointed visitors.
             </p>
           </div>
 

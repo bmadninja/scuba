@@ -74,10 +74,13 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close drawer on route change
+  // Close drawer on route change (setState in effect is intentional here — syncing
+  // drawer closed state to navigation events, an external system trigger)
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setDrawerOpen(false);
   }, [pathname]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Trap body scroll when drawer open
   useEffect(() => {

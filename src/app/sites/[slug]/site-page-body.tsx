@@ -259,8 +259,9 @@ export function SitePageBody(props: SiteBodyProps) {
   const hasTrip = operators.length > 0 || hotels.length > 0 || liveaboards.length > 0 || getThere !== null;
 
   // ─── Sidebar content (shared between desktop sticky and mobile sheet) ─────
-  function TripSidebarContent() {
-    return (
+  // Note: defined as a JSX constant (not a component function) to avoid the
+  // "cannot create components during render" lint rule.
+  const tripSidebarContent = (
       <div style={{ border: "1px solid #E7E6E2", borderRadius: "8px", boxShadow: "0 8px 40px rgba(14,28,40,0.10)", overflow: "hidden", background: "#FFFFFF" }}>
         <div style={{ padding: "1.5rem 1.6rem 1.1rem", borderBottom: "1px solid #E7E6E2" }}>
           <p style={{ fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif', fontSize: "1.3rem", fontWeight: 400, color: "#0E1C28", lineHeight: 1.2 }}>
@@ -429,8 +430,7 @@ export function SitePageBody(props: SiteBodyProps) {
           </Expand>
         ) : null}
       </div>
-    );
-  }
+  );
 
   return (
     <div style={{ maxWidth: 1320, margin: "0 auto", padding: "3rem clamp(1rem, 4vw, 3rem) 4rem", overflowX: "hidden", background: "#FFFFFF", color: "#0E1C28" }}>
@@ -757,7 +757,7 @@ export function SitePageBody(props: SiteBodyProps) {
 
         {/* ============================ RIGHT — Plan your dive (desktop sticky sidebar) ============================ */}
         <aside className="site-sidebar" style={{ position: "sticky", top: "5rem", alignSelf: "flex-start" }}>
-          <TripSidebarContent />
+          {tripSidebarContent}
         </aside>
       </div>
 
@@ -838,7 +838,7 @@ export function SitePageBody(props: SiteBodyProps) {
                     ✕
                   </button>
                 </div>
-                <TripSidebarContent />
+                {tripSidebarContent}
               </div>
             </>
           ) : null}

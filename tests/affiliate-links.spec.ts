@@ -13,7 +13,7 @@
  *    Playwright's `request` context so it needs no browser.
  */
 
-import { test, expect } from '@playwright/test';
+import { test, expect, type APIRequestContext } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -357,7 +357,7 @@ test.describe('Affiliate link HTTP liveness', () => {
   ];
 
   async function checkUrl(
-    requestCtx: Parameters<Parameters<typeof test>[1]>[0]['request'],
+    requestCtx: APIRequestContext,
     url: string,
   ): Promise<{ ok: boolean; status: number }> {
     // Skip URLs with non-ASCII characters — browsers handle them fine but
@@ -381,7 +381,7 @@ test.describe('Affiliate link HTTP liveness', () => {
 
   // Run checks in batches to avoid overwhelming the test runner.
   async function checkAll(
-    requestCtx: Parameters<Parameters<typeof test>[1]>[0]['request'],
+    requestCtx: APIRequestContext,
     entries: Array<{ id: string; label: string; url: string }>,
     concurrency = 20,
   ): Promise<string[]> {

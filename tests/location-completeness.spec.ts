@@ -13,7 +13,8 @@
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
-// @ts-expect-error — plain-JS zod schema shared with the discovery routine
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore — plain-JS zod schema shared with the discovery routine
 import { SiteSchema } from '../scripts/lib/site-schema.mjs';
 
 const GOTO = { waitUntil: 'domcontentloaded' } as const;

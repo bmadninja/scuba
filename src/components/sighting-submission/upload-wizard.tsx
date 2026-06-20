@@ -214,12 +214,14 @@ function PhotoThumb({ file, onRemove }: { file: File; onRemove: () => void }) {
   const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
   const isHeic = HEIC_EXTS.has(ext);
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (isHeic) return;
     const u = URL.createObjectURL(file);
     setUrl(u);
     return () => URL.revokeObjectURL(u);
   }, [file, isHeic]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return (
     <div className="relative">
@@ -349,6 +351,7 @@ function Step1SiteSearch({
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (query.length >= 2) {
       const r = searchSites(query);
@@ -359,6 +362,7 @@ function Step1SiteSearch({
       setDropdownOpen(false);
     }
   }, [query]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const handleSelect = (site: SiteOption) => {
     setQuery(site.name);
@@ -1324,11 +1328,13 @@ function Step3Submit({
 
 function ConfirmThumb({ file }: { file: File }) {
   const [url, setUrl] = useState<string | null>(null);
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const u = URL.createObjectURL(file);
     setUrl(u);
     return () => URL.revokeObjectURL(u);
   }, [file]);
+  /* eslint-enable react-hooks/set-state-in-effect */
   if (!url) return null;
   // eslint-disable-next-line @next/next/no-img-element
   return <img src={url} alt="" className="w-16 h-16 object-cover rounded" />;

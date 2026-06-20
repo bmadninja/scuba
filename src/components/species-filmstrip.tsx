@@ -31,10 +31,12 @@ export function SpeciesFilmstrip() {
   const pausedRef = useRef(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReducedMotion(mq.matches);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
     if (reducedMotion) return;
