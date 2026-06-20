@@ -7832,5 +7832,565 @@
       "terceira-azores-caverna-das-focas",
       "terceira-azores-ilheu-das-cabras"
     ]
+  },
+  {
+    "id": "nusa-penida",
+    "slug": "nusa-penida",
+    "name": "Nusa Penida",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Southeast Asia",
+    "lat": -8.7275,
+    "lng": 115.5444,
+    "description": "Nusa Penida is Bali's offshore island and one of Indonesia's most thrilling dive destinations, famous worldwide as the best place on Earth to encounter the ocean sunfish (mola mola) from July through October. The island sits at the confluence of upwelling cold water from the deep Lombok Strait, fueling extraordinary marine productivity. Dramatic underwater topography — sheer walls dropping hundreds of metres, submerged pinnacles, and sweeping drift channels — combines with the nutrient-rich current to attract manta rays year-round, schooling fish in vast numbers, and the bizarre mola mola coming up from the deep to be cleaned. Currents here can be powerful and unpredictable, making many sites intermediate to advanced territory.",
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/16547597/pexels-photo-16547597.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "nusa-penida-crystal-bay",
+      "nusa-penida-manta-point",
+      "nusa-penida-toyapakeh",
+      "nusa-penida-gamat-bay"
+    ]
+  },
+  {
+    "id": "verde-island-passage",
+    "slug": "verde-island-passage",
+    "name": "Verde Island Passage",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Southeast Asia",
+    "lat": 13.5667,
+    "lng": 121.0667,
+    "description": "The Verde Island Passage, a narrow strait between Luzon and Mindoro in Batangas province, holds the highest recorded concentration of marine shore fish species on Earth — a distinction scientists call the centre of the centre of marine biodiversity. Described by Dr. Kent Carpenter and colleagues in a landmark 2010 paper, the corridor hosts over 1,700 species of fish and extraordinary reef density compressed into accessible dive sites. Sheer walls plunge from the surface into blue water, while nutrient-rich currents sweep past schooling jacks, dogtooth tuna, and clouds of anthias. Macro life rivals anything in the Coral Triangle, and encounters with thresher sharks, hammerheads, and whale sharks are seasonal highlights.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/8970783/pexels-photo-8970783.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "verde-island-passage-verde-island-drop-off",
+      "verde-island-passage-sombrero-island",
+      "verde-island-passage-maricaban-island",
+      "verde-island-passage-caban-point"
+    ]
+  },
+  {
+    "id": "candidasa-bali-indonesia",
+    "slug": "candidasa-bali-indonesia",
+    "name": "Candidasa",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Asia Pacific",
+    "lat": -8.506,
+    "lng": 115.558,
+    "description": "Candidasa is a laid-back fishing village on Bali's east coast, sitting between the mola mola hotspot of Nusa Penida and the famous USAT Liberty wreck at Tulamben. The reefs here are less visited than Bali's tourist centers, rewarding divers with intact coral gardens, resident barracuda schools, and strong drift dives along offshore pinnacles. The nearby Gili Tepekong and Gili Mimpang islets concentrate big fish action — white-tip reef sharks, barracuda, and occasional mola mola pass through the channels. Water visibility is often excellent, and the cooler upwellings from the Lombok Strait keep the water rich in nutrients.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "candidasa-gili-tepekong",
+      "candidasa-gili-mimpang",
+      "candidasa-gili-biaha",
+      "candidasa-candidasa-reef"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829701/pexels-photo-12829701.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "nusa-lembongan-indonesia",
+    "slug": "nusa-lembongan-indonesia",
+    "name": "Nusa Lembongan",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Asia Pacific",
+    "lat": -8.686,
+    "lng": 115.454,
+    "description": "Nusa Lembongan and its sister islands Nusa Ceningan and Nusa Penida form a triangle of world-class diving just 30 minutes from Sanur. The area is famous globally for manta ray cleaning stations and seasonal oceanic mola mola (sunfish) sightings from July through October. Strong currents funneling through the channels create nutrient-rich upwellings that support extraordinary biodiversity — reef sharks, eagle rays, and dense schools of fish are routine. Drift dives here range from exhilarating to extreme, and the varied topography includes walls, pinnacles, and sloping reefs covered in hard coral.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "nusa-lembongan-manta-point",
+      "nusa-lembongan-crystal-bay",
+      "nusa-lembongan-sd-point",
+      "nusa-lembongan-toyapakeh"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5116320/pexels-photo-5116320.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "jervis-bay-australia",
+    "slug": "jervis-bay-australia",
+    "name": "Jervis Bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "New South Wales",
+    "lat": -35.0833,
+    "lng": 150.7333,
+    "description": "Jervis Bay's gin-clear waters are among the cleanest in New South Wales, fed by a protected marine park that harbours one of Australia's highest densities of wobbegong sharks, resident grey nurse sharks in the sea caves, and seasonal manta ray aggregations. White sand seafloor bounces light back up through the water column, producing visibility that regularly tops 20 metres even in winter.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "siteIds": [
+      "jervis-bay-bowen-island",
+      "jervis-bay-the-docks",
+      "jervis-bay-bush-bay",
+      "jervis-bay-manta-lodge-wall"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/3904916/pexels-photo-3904916.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "byron-bay-australia",
+    "slug": "byron-bay-australia",
+    "name": "Byron Bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "New South Wales",
+    "lat": -28.6474,
+    "lng": 153.602,
+    "description": "Australia's most easterly point sits on the meeting line of warm tropical water pushing south down the East Australian Current and cooler temperate water coming north, making Byron Bay a year-round mixing zone for an extraordinary breadth of marine life. Julian Rocks marine reserve is the centrepiece, with grey nurse sharks aggregating in the gutters through winter and leopard sharks resting on the sand in summer. Common dolphins, loggerhead turtles and manta rays are regular visitors.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      6,
+      7,
+      8
+    ],
+    "siteIds": [
+      "byron-bay-julian-rocks-north",
+      "byron-bay-julian-rocks-south",
+      "byron-bay-the-nursery",
+      "byron-bay-cook-island"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/37659314/pexels-photo-37659314.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "shark-bay-wa",
+    "slug": "shark-bay-wa",
+    "name": "Shark Bay",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "Western Australia",
+    "lat": -25.9975,
+    "lng": 113.7975,
+    "description": "A UNESCO World Heritage Site protecting one of the world's largest seagrass meadows, Shark Bay harbours enormous dugong populations, loggerhead sea turtles, and the living stromatolites at Hamelin Pool — some of the oldest life forms on Earth. Tiger sharks patrol the shallows year-round, drawn by the abundant marine mammals. The bay's hypersaline conditions and extraordinary biodiversity make every dive a window into ancient and living ocean systems.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "shark-bay-wa-shell-beach-reef",
+      "shark-bay-wa-dirk-hartog-island-wall",
+      "shark-bay-wa-monkey-mia-seagrass-flats",
+      "shark-bay-wa-francois-peron-bommies"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/5008217/pexels-photo-5008217.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "cocos-keeling-islands",
+    "slug": "cocos-keeling-islands",
+    "name": "Cocos (Keeling) Islands",
+    "country": "Australia",
+    "countryCode": "AU",
+    "region": "Indian Ocean Territory",
+    "lat": -12.1642,
+    "lng": 96.871,
+    "description": "One of the most remote dive destinations in the world, the Cocos (Keeling) Islands sit 2750 km northwest of Perth in the eastern Indian Ocean. This pristine coral atoll delivers encounters with scalloped hammerheads, silvertip and grey reef sharks, manta rays, and schools of pelagic fish around near-untouched reef structures. With few visitors and no land-based dive industry, the underwater wilderness here is as raw and undisturbed as it gets in Australian waters.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "cocos-keeling-islands-direction-island-drift",
+      "cocos-keeling-islands-sharks-gut",
+      "cocos-keeling-islands-prison-island-wall",
+      "cocos-keeling-islands-horseshoe"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12087736/pexels-photo-12087736.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "koh-samui-ang-thong",
+    "slug": "koh-samui-ang-thong",
+    "name": "Koh Samui & Ang Thong",
+    "country": "Thailand",
+    "countryCode": "TH",
+    "region": "Asia",
+    "lat": 9.512,
+    "lng": 100.0136,
+    "description": "Koh Samui sits in the Gulf of Thailand alongside the Ang Thong National Marine Park, an archipelago of 42 islands with emerald lagoons, limestone karsts, and fringing reefs. Diving here rewards with whale shark encounters from March through May, dense schools of snapper and fusiliers around pinnacles, and macro life tucked into rubble and soft coral gardens. The marine park's protected status keeps reef fish populations robust, and seasonal visibility peaks in the dry months of January through April.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "siteIds": [],
+    "heroImageUrl": "https://images.pexels.com/photos/32824677/pexels-photo-32824677.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "sail-rock-southwest-pinnacle",
+    "slug": "sail-rock-southwest-pinnacle",
+    "name": "Sail Rock & Southwest Pinnacle",
+    "country": "Thailand",
+    "countryCode": "TH",
+    "region": "Asia",
+    "lat": 9.9333,
+    "lng": 100,
+    "description": "Sail Rock, known locally as Hin Bai, rises from the Gulf of Thailand between Koh Tao and Koh Phangan and is widely regarded as the Gulf's premier dive site. A dramatic chimney runs through the rock allowing divers to ascend through a column of glassfish, while the surrounding walls are draped with seafans and patrolled by whale sharks from February through May. Southwest Pinnacle, a cluster of submerged peaks southwest of Koh Tao, draws schooling barracuda, trevally, and frequent whale shark sightings in the same season.",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5,
+      12
+    ],
+    "siteIds": [],
+    "heroImageUrl": "https://images.pexels.com/photos/31959086/pexels-photo-31959086.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "osezaki-japan",
+    "slug": "osezaki-japan",
+    "name": "Osezaki",
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Pacific",
+    "lat": 34.6217,
+    "lng": 138.5733,
+    "description": "Osezaki sits at the western tip of Suruga Bay in Shizuoka Prefecture where the bay's deep cold-water upwelling collides with a rugged volcanic wall, producing one of Japan's most spectacular pelagic and reef experiences. Massive schools of fusiliers wheel in the blue water above the wall while whitetip reef sharks rest motionless on sand ledges below 20 metres. Soft corals drape the vertical rock face in orange and purple, and the nutrient-rich current draws regular visits from hammerhead sharks and open-water tuna. Shore entry and resident dive services make this one of Japan's most accessible big-animal sites.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/3905054/pexels-photo-3905054.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "osezaki-japan-the-wall",
+      "osezaki-japan-shark-ledge",
+      "osezaki-japan-fusilier-reef",
+      "osezaki-japan-deep-pinnacle"
+    ]
+  },
+  {
+    "id": "tateyama-sagami-bay",
+    "slug": "tateyama-sagami-bay",
+    "name": "Tateyama / Sagami Bay",
+    "country": "Japan",
+    "countryCode": "JP",
+    "region": "Pacific",
+    "lat": 34.9967,
+    "lng": 139.8317,
+    "description": "Tateyama in southern Chiba Prefecture is the gateway to Sagami Bay, long regarded as Japan's nudibranch capital with over 150 species recorded from its rocky kelp reefs. Cold Oyashio-influenced water keeps the bay productive year-round, sustaining extraordinary densities of aeolid and dorid nudibranchs, ornate ghost pipefish, and the resident wobbegong sharks that drape themselves across rocky ledges. Winter water temperatures below 15 degrees Celsius reward cold-tolerant macro photographers with species rarely found anywhere else in the world, and spring brings migratory cuttlefish aggregations.",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/3204591/pexels-photo-3204591.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "tateyama-sagami-bay-tsurigasaki",
+      "tateyama-sagami-bay-hamasakishita",
+      "tateyama-sagami-bay-jogashima",
+      "tateyama-sagami-bay-moroiso"
+    ]
+  },
+  {
+    "id": "german-channel-palau",
+    "slug": "german-channel-palau",
+    "name": "German Channel",
+    "country": "Palau",
+    "countryCode": "PW",
+    "region": "Micronesia",
+    "lat": 7.215,
+    "lng": 134.195,
+    "description": "German Channel is Palau's most celebrated manta ray destination, a dredged passage between the Rock Islands where oceanic manta rays gather at a permanent cleaning station year-round. Resident mantas return daily to be serviced by wrasse and butterflyfish, making predictable sightings almost guaranteed. The surrounding reef walls, drift corridors, and sandy flats add sharks, turtles, and macro life to one of diving's most concentrated wildlife experiences.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/26839185/pexels-photo-26839185.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "german-channel-palau-manta-cleaning-station",
+      "german-channel-palau-shark-city",
+      "german-channel-palau-turtle-cove",
+      "german-channel-palau-west-passage-wall"
+    ]
+  },
+  {
+    "id": "salvador-da-bahia",
+    "slug": "salvador-da-bahia",
+    "name": "Salvador da Bahia",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "region": "South America",
+    "lat": -12.9714,
+    "lng": -38.5014,
+    "description": "Salvador da Bahia sits on the northeastern Brazilian coast where warm tropical waters meet the South Atlantic. Reef fish diversity is exceptional year-round, and between July and November whale sharks patrol the outer reefs near the Todos os Santos Bay mouth. Seahorses, frogfish, and nudibranchs reward patient macro divers among the rubble and sea grass beds.",
+    "bestMonths": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/37659289/pexels-photo-37659289.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "salvador-da-bahia-parcel-das-paredes",
+      "salvador-da-bahia-pedra-de-lixa",
+      "salvador-da-bahia-ilha-dos-frades-norte",
+      "salvador-da-bahia-recife-de-fora-itapua"
+    ]
+  },
+  {
+    "id": "ilha-grande",
+    "slug": "ilha-grande",
+    "name": "Ilha Grande",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "region": "South America",
+    "lat": -23.1647,
+    "lng": -44.2019,
+    "description": "Ilha Grande lies off the Rio de Janeiro coastline inside a state park and APA marine reserve, keeping its Atlantic reef largely pristine. Green and hawksbill turtles are resident, endemic Brazilian reef fish such as the Brazilian grunt and rock beauty are abundant, and the wreck of the Iate Clube freighter adds a wreck-diving dimension within recreational limits.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/10582510/pexels-photo-10582510.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "ilha-grande-caverna-da-freira",
+      "ilha-grande-pedra-dagua",
+      "ilha-grande-wreck-do-navio-grecia",
+      "ilha-grande-ponta-do-leste"
+    ]
+  },
+  {
+    "id": "principe-island",
+    "slug": "principe-island",
+    "name": "Príncipe Island",
+    "country": "São Tomé and Príncipe",
+    "countryCode": "ST",
+    "region": "Africa",
+    "lat": 1.6139,
+    "lng": 7.4081,
+    "description": "One of the most remote and pristine dive destinations in the Atlantic, Príncipe is a UNESCO Biosphere Reserve rising from the Gulf of Guinea. Its volcanic seamounts and undisturbed reefs host endemic species found nowhere else on Earth, alongside seasonal whale sharks and large pelagics. With very few divers visiting each year, the underwater landscapes here feel genuinely untouched — dense sea fans, healthy hard coral, and extraordinary fish biomass on every dive.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "principe-island-pedra-de-gale",
+      "principe-island-ilheu-bom-bom",
+      "principe-island-sete-pedras",
+      "principe-island-banana-beach-wall"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/34392859/pexels-photo-34392859.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "kosterfjord-sweden",
+    "slug": "kosterfjord-sweden",
+    "name": "Kosterfjord",
+    "country": "Sweden",
+    "countryCode": "SE",
+    "region": "Europe",
+    "lat": 58.89,
+    "lng": 11.02,
+    "description": "Kosterfjord is home to Sweden's first and only marine national park, Kosterhavet, established in 2009. The fjord plunges to over 240 metres and channels nutrient-rich Atlantic water from the Norwegian Trench — making it the most species-rich marine environment in Scandinavia. Cold, clear water feeds extraordinary macro life: hundreds of nudibranch species, sea spiders, horse mussels the size of dinner plates, and dense fields of sea urchins carpeting rock walls. Dead man's fingers soft coral and sea fans colonise near-vertical walls. The protected status means visibility and biodiversity are exceptional for a temperate site.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "siteIds": [
+      "kosterfjord-sweden-saltö-wall",
+      "kosterfjord-sweden-koster-trench",
+      "kosterfjord-sweden-stängselrevet",
+      "kosterfjord-sweden-nordkoster-urchin-fields"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/27816105/pexels-photo-27816105.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "lysefjord-stavanger-norway",
+    "slug": "lysefjord-stavanger-norway",
+    "name": "Lysefjord / Stavanger",
+    "country": "Norway",
+    "countryCode": "NO",
+    "region": "Europe",
+    "lat": 58.97,
+    "lng": 6.17,
+    "description": "The Stavanger region offers some of Northern Europe's most dramatic cold-water diving. Lysefjord cuts 42 kilometres inland beneath vertical cliffs rising 600 metres, and its subsurface walls are equally steep — dropping into darkness colonised by dead man's fingers, sea anemones, and kelp forests. Wolf fish patrol rocky overhangs, Atlantic cod school in the shallows, and nudibranchs of every colour cling to encrusted walls. Several accessible wrecks near Stavanger harbour add a wreck-diving dimension. Summer brings extended daylight, lifting water temperatures enough for productive dry-suit dives with long surface intervals in jaw-dropping scenery.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "siteIds": [
+      "lysefjord-stavanger-norway-lysefjord-wall",
+      "lysefjord-stavanger-norway-preikestolen-drop",
+      "lysefjord-stavanger-norway-stavanger-harbour-wrecks",
+      "lysefjord-stavanger-norway-sandnes-macro-reef"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/159496/fish-aquarium-school-of-fish-under-water-159496.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "camiguin-philippines",
+    "slug": "camiguin-philippines",
+    "name": "Camiguin",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Asia Pacific",
+    "lat": 9.18,
+    "lng": 124.72,
+    "description": "Camiguin is a small volcanic island off the northern coast of Mindanao, and its diving is shaped entirely by that geology. The Sunken Cemetery — a cross-marked reef where an 1871 eruption swallowed a coastal graveyard — is one of the Philippines' most atmospheric dives. Whale sharks visit the waters near Balingoan channel with regularity between November and May, and the island's lack of mass tourism means reefs still carry dense hard coral and schooling fish that have largely vanished elsewhere in the Visayas. Black sand slopes host exceptional muck fauna, and the nearby Mantigue Island marine sanctuary gives every dive a ribbon of colour that is hard to match in Mindanao.",
+    "bestMonths": [
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/32765301/pexels-photo-32765301.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "camiguin-sunken-cemetery",
+      "camiguin-mantigue-island",
+      "camiguin-jigdup-reef",
+      "camiguin-white-island-channel"
+    ]
+  },
+  {
+    "id": "pescador-island-philippines",
+    "slug": "pescador-island-philippines",
+    "name": "Pescador Island",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "region": "Asia Pacific",
+    "lat": 9.98,
+    "lng": 123.41,
+    "description": "A limestone pinnacle rising off the southwest coast of Cebu, Pescador Island packs an extraordinary range of marine life into a compact area. The sardine run — locally called the Sardine Ball or Bait Ball — draws thresher sharks, jacks, and barracuda into a choreographed feeding frenzy that can materialise at any depth from 5 to 30 metres. The island's walls drop to beyond 40 metres and are draped in sea fans and black coral, sheltering pygmy seahorses, frogfish, and ghost pipefish in their branches. Moray eels of several species occupy nearly every crack in the reef. Pescador is reachable in 20 minutes by banca from Moalboal, and the consistent current keeps the water clear and the plankton thick enough to support this concentration of life year-round.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      12
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/12829696/pexels-photo-12829696.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "siteIds": [
+      "pescador-sardine-wall",
+      "pescador-cathedral-cave",
+      "pescador-north-pinnacle",
+      "pescador-south-drop"
+    ]
+  },
+  {
+    "id": "tomini-bay-indonesia",
+    "slug": "tomini-bay-indonesia",
+    "name": "Tomini Bay, Togian Islands",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "Central Sulawesi",
+    "lat": -0.3833,
+    "lng": 121.9833,
+    "description": "One of Indonesia's least visited dive destinations, Togian Islands sits inside the Gulf of Tomini where three ocean currents converge. Pristine reefs with almost no diver pressure, extraordinary macro life, and sunken WWII wrecks rarely seen by outsiders.",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "tomini-bay-kadidiri-wall",
+      "tomini-bay-une-une-wreck",
+      "tomini-bay-katupat-macro",
+      "tomini-bay-batu-daka-pinnacles"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/16977585/pexels-photo-16977585.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  },
+  {
+    "id": "rinca-island-indonesia",
+    "slug": "rinca-island-indonesia",
+    "name": "Rinca Island",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "region": "East Nusa Tenggara",
+    "lat": -8.6833,
+    "lng": 119.7167,
+    "description": "Sister island to Komodo in the Lesser Sunda chain, Rinca is home to Komodo dragons on land and some of the Komodo National Park's best manta ray cleaning stations, schooling fish aggregations, and fast drift dives beneath the surface.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "rinca-island-cannibal-rock",
+      "rinca-island-yellow-wall",
+      "rinca-island-toro-reef",
+      "rinca-island-batu-bolong-rinca"
+    ],
+    "heroImageUrl": "https://images.pexels.com/photos/7959473/pexels-photo-7959473.jpeg?auto=compress&cs=tinysrgb&w=1920"
   }
 ]
