@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { Source_Serif_4, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { JsonLd } from "@/components/json-ld";
@@ -10,27 +10,28 @@ import { getAllAtlasLocations } from "@/lib/atlas-location";
 import { organizationSchema, websiteSchema } from "@/lib/schema-org";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site-config";
 
-// Body sans — Inter, matching the Kimi rebrand.
-const inter = Inter({
-  variable: "--font-sans",
+// Heading / display serif — Source Serif 4.
+const sourceSerif4 = Source_Serif_4({
+  variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
+// Body / UI sans — IBM Plex Sans.
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  display: "swap",
+});
+
+// Data labels, eyebrows, stat values — IBM Plex Mono.
 const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
-  display: "swap",
-});
-
-// Display / heading — Space Grotesk, the Kimi rebrand display face.
-// Mapped onto --font-serif so the existing --atlas-serif heading token picks it up.
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -61,8 +62,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Build the nav search dataset once for every route. Shape mirrors the
-  // `searchEntries` prop the home page passed to <AtlasNav>.
+  // Build the nav search dataset once for every route.
   const entries = getAllAtlasLocations().map((l) => ({
     slug: l.slug,
     name: l.name,
@@ -72,8 +72,11 @@ export default function RootLayout({
   }));
 
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${spaceGrotesk.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#030712] text-[#F0F4F8] font-sans">
+    <html
+      lang="en"
+      className={`${sourceSerif4.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col" style={{ background: "var(--color-paper)", color: "var(--color-ink)" }}>
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
         <NavProvider>

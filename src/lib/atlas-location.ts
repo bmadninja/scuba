@@ -174,7 +174,7 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
 
   // Derive animal tags from species common names across all sites.
   const allSpeciesText = sites
-    .flatMap((s) => s.species.map((sp) => sp.commonName.toLowerCase()))
+    .flatMap((s) => (s.species ?? []).map((sp) => sp.commonName.toLowerCase()))
     .concat(sites.map((s) => s.description.toLowerCase()))
     .join(" ");
   const animalTags: string[] = WILDLIFE_TAXONOMY.flatMap((g) => g.tags)

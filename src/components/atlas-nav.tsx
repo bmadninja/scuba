@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { Logo } from "@/components/logo";
 import { useNavContext } from "@/components/nav-context";
 
 type SearchEntry = {
@@ -15,8 +14,9 @@ type SearchEntry = {
 };
 
 const NAV = [
-  { href: "/data",  label: "Method", key: "method" },
-  { href: "/about", label: "About",  key: "about"  },
+  { href: "/locations", label: "Explore",  key: "explore" },
+  { href: "/data",      label: "Method",   key: "method"  },
+  { href: "/about",     label: "About",    key: "about"   },
 ];
 
 const STATE_TEXT: Record<string, string> = {
@@ -33,267 +33,30 @@ const STATE_PILL: Record<string, string> = {
 
 type AtlasNavProps = {
   entries?: SearchEntry[];
-  /**
-   * "default" — sticky white nav (used by layout for every page)
-   * "hero"    — absolutely-positioned transparent nav for homepage hero
-   */
   variant?: "default" | "hero";
 };
 
-/**
- * Hero-variant nav: rendered inside the homepage hero section.
- * Transparent background, white text, position absolute.
- * Transitions to the sticky layout nav once the hero scrolls out of view
- * (the layout nav is always present; hero nav is hidden after the hero section
- * leaves the viewport using an IntersectionObserver).
- */
-function HeroNav({ entries = [] }: { entries: SearchEntry[] }) {
-  const router = useRouter();
-  const [q, setQ] = useState("");
-  const [open, setOpen] = useState(false);
-  const [sel, setSel] = useState(0);
-  const [visible, setVisible] = useState(true);
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const sentinelRef = useRef<HTMLDivElement | null>(null);
-
-  // Hide hero nav once the hero section scrolls out of view so the
-  // layout's sticky white nav takes over cleanly.
-  useEffect(() => {
-    // The sentinel is the bottom of the hero section.  We look for it by
-    // finding the nearest <section aria-label="Hero"> ancestor of this nav.
-    const heroSection = document.querySelector<HTMLElement>(
-      "section[aria-label='Hero']",
-    );
-    if (!heroSection) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
-      { threshold: 0, rootMargin: "-80px 0px 0px 0px" },
-    );
-    observer.observe(heroSection);
-    return () => observer.disconnect();
-  }, []);
-
-  const query = q.trim().toLowerCase();
-  const results = query
-    ? entries
-        .filter((r) =>
-          (r.name + " " + r.country + " " + r.region)
-            .toLowerCase()
-            .includes(query),
-        )
-        .slice(0, 8)
-    : [];
-
-  useEffect(() => {
-    const onClick = (e: MouseEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", onClick);
-    return () => document.removeEventListener("mousedown", onClick);
-  }, []);
-
-  const go = (r: SearchEntry) => {
-    setOpen(false);
-    setQ("");
-    router.push(`/locations/${r.slug}`);
-  };
-
-  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      setSel((s) => Math.min(s + 1, results.length - 1));
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setSel((s) => Math.max(s - 1, 0));
-    } else if (e.key === "Enter") {
-      e.preventDefault();
-      const r = results[sel];
-      if (r) {
-        go(r);
-      } else if (q.trim()) {
-        setOpen(false);
-        router.push(`/search?q=${encodeURIComponent(q.trim())}`);
-        setQ("");
-      }
-    } else if (e.key === "Escape") {
-      setOpen(false);
-    }
-  };
-
-  if (!visible) return <div ref={sentinelRef} />;
-
+/** Wordmark — text only, no SVG icons per design system rules. */
+function Wordmark({ scrolled }: { scrolled: boolean }) {
+  const ink = scrolled ? "#0E1C28" : "#FFFFFF";
   return (
-    <div
-      ref={sentinelRef}
-      className="flex items-center gap-3 px-4 py-5 sm:gap-8 sm:px-12"
-      style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 50 }}
+    <span
+      style={{
+        fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
+        fontWeight: 400,
+        fontSize: "1.125rem",
+        letterSpacing: "-0.01em",
+        lineHeight: 1,
+        color: ink,
+        transition: "color 200ms ease",
+      }}
     >
-      <Link href="/" aria-label="scubaSeason.fun — home" style={{ flexShrink: 0 }}>
-        <Logo size={28} dark />
-      </Link>
-
-      {/* Desktop: search input */}
-      <div
-        ref={wrapRef}
-        className="relative ml-auto hidden sm:block"
-        style={{ width: "100%", maxWidth: 300 }}
-      >
-        <div
-          className="pointer-events-none absolute inset-y-0 flex items-center"
-          style={{ left: "0.875rem", color: "rgba(255,255,255,0.4)" }}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-            <circle cx="11" cy="11" r="8" />
-            <path d="m21 21-4.3-4.3" />
-          </svg>
-        </div>
-        <input
-          type="text"
-          value={q}
-          onChange={(e) => {
-            setQ(e.target.value);
-            setSel(0);
-            setOpen(true);
-          }}
-          onFocus={() => setOpen(true)}
-          onKeyDown={onKeyDown}
-          placeholder=""
-          aria-label="Search reefs"
-          style={{
-            width: "100%",
-            background: "rgba(255,255,255,0.1)",
-            border: "1px solid rgba(255,255,255,0.16)",
-            borderRadius: 999,
-            padding: "0.5rem 1rem 0.5rem 2.5rem",
-            fontSize: "0.8125rem",
-            fontFamily: "inherit",
-            color: "rgba(255,255,255,0.55)",
-            outline: "none",
-          }}
-        />
-
-        {open && query && (
-          <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
-            {results.length ? (
-              <ul className="max-h-80 overflow-y-auto py-1">
-                {results.map((r, i) => (
-                  <li key={r.slug}>
-                    <button
-                      type="button"
-                      onMouseEnter={() => setSel(i)}
-                      onClick={() => go(r)}
-                      className={`flex w-full items-center gap-3 px-4 py-2.5 text-left ${
-                        i === sel ? "bg-[#f1f7fb]" : ""
-                      }`}
-                    >
-                      <span
-                        className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${
-                          STATE_PILL[r.state] ?? "bg-slate-100 text-slate-600"
-                        }`}
-                      >
-                        {STATE_TEXT[r.state] ?? r.state}
-                      </span>
-                      <span className="text-sm font-medium text-slate-900">
-                        {r.name}
-                      </span>
-                      <span className="ml-auto text-xs text-slate-500">
-                        {r.country}
-                      </span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <div className="px-4 py-3 text-center text-sm text-slate-500">
-                No locations match &ldquo;{q}&rdquo;.
-              </div>
-            )}
-            <div className="border-t border-slate-100">
-              <button
-                type="button"
-                onClick={() => {
-                  setOpen(false);
-                  router.push(`/search?q=${encodeURIComponent(q.trim())}`);
-                  setQ("");
-                }}
-                className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0089de] hover:bg-[#f1f7fb] overflow-hidden"
-              >
-                <svg className="shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
-                </svg>
-                <span className="truncate">Search sites &amp; species for &ldquo;{q}&rdquo;</span>
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Nav links — always visible */}
-      <nav
-        className="flex shrink-0 items-center"
-        style={{ gap: "0.125rem", marginLeft: "auto" }}
-        aria-label="Main navigation"
-      >
-        {NAV.map((n) => (
-          <Link
-            key={n.key}
-            href={n.href}
-            className="hidden sm:block"
-            style={{
-              fontSize: "0.875rem",
-              fontWeight: 500,
-              color: "rgba(255,255,255,0.65)",
-              textDecoration: "none",
-              padding: "0.45rem 0.75rem",
-              borderRadius: 999,
-            }}
-          >
-            {n.label}
-          </Link>
-        ))}
-
-        <Link
-          href="/locations"
-          className="inline-flex"
-          style={{
-            alignItems: "center",
-            gap: "0.3rem",
-            background: "#00d4ff",
-            color: "#030712",
-            padding: "0.4rem 0.75rem",
-            borderRadius: 999,
-            fontSize: "0.75rem",
-            fontWeight: 700,
-            marginLeft: "0.375rem",
-            textDecoration: "none",
-          }}
-        >
-          Explore
-        </Link>
-
-        {/* Mobile: search icon */}
-        <Link
-          href="/search"
-          className="sm:hidden flex items-center justify-center"
-          style={{ color: "rgba(255,255,255,0.65)", padding: "0.45rem 0.5rem" }}
-          aria-label="Search"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-            <circle cx="11" cy="11" r="8" />
-            <path d="m21 21-4.3-4.3" />
-          </svg>
-        </Link>
-      </nav>
-    </div>
+      Scuba Season
+    </span>
   );
 }
 
-export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
+export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasNavProps) {
   const pathname = usePathname();
   const router = useRouter();
   const { breadcrumbs, hideLayoutNav } = useNavContext();
@@ -301,14 +64,30 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
   const [open, setOpen] = useState(false);
   const [sel, setSel] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close drawer on route change
+  useEffect(() => {
+    setDrawerOpen(false);
+  }, [pathname]);
+
+  // Trap body scroll when drawer open
+  useEffect(() => {
+    if (drawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [drawerOpen]);
 
   const active =
     NAV.find((n) =>
@@ -364,224 +143,341 @@ export function AtlasNav({ entries = [], variant = "default" }: AtlasNavProps) {
     }
   };
 
-  // Hero variant is rendered from within the page's hero section directly
-  if (variant === "hero") {
-    return <HeroNav entries={entries} />;
-  }
-
-  // Hide the layout nav when the page is rendering its own hero nav
   if (hideLayoutNav) return null;
 
+  const linkColor = scrolled ? "#0E1C28" : "rgba(255,255,255,0.90)";
+  const linkHoverColor = scrolled ? "#0E1C28" : "#FFFFFF";
+
   return (
-    <header
-      className={`sticky top-0 z-50 transition-colors duration-200 ${
-        scrolled
-          ? "bg-[#030712]/95 backdrop-blur-sm border-b border-white/10"
-          : "bg-transparent border-b border-transparent"
-      }`}
-    >
-      <div className="mx-auto flex max-w-[1320px] items-center gap-3 px-4 py-4 sm:gap-8 sm:px-12">
-        <Link href="/" className="shrink-0" aria-label="scubaSeason.fun — home">
-          <Logo size={28} dark />
-        </Link>
-
-        {/* Breadcrumbs (location / site pages) */}
-        {breadcrumbs.length > 0 && (
-          <nav
-            aria-label="Breadcrumb"
-            className="hidden items-center sm:flex"
-            style={{
-              gap: "0.5rem",
-              fontSize: "0.8125rem",
-              color: "rgba(255,255,255,0.6)",
-              marginLeft: "0.5rem",
-            }}
+    <>
+      <header
+        className={`sticky top-0 z-50 transition-all duration-200 ${
+          scrolled
+            ? "bg-white border-b border-[#E7E6E2]"
+            : "bg-transparent border-b border-transparent"
+        }`}
+      >
+        <div className="mx-auto flex max-w-[1320px] items-center gap-3 px-4 py-3 sm:gap-6 sm:px-8">
+          {/* Wordmark */}
+          <Link
+            href="/"
+            className="shrink-0 focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+            aria-label="Scuba Season — home"
           >
-            {breadcrumbs.map((crumb, i) => (
-              <span key={i} className="flex items-center gap-0.5">
-                {i > 0 && (
-                  <span
-                    aria-hidden="true"
-                    style={{ color: "rgba(255,255,255,0.3)", marginRight: "0.25rem" }}
-                  >
-                    /
-                  </span>
-                )}
-                {crumb.href ? (
-                  <Link
-                    href={crumb.href}
-                    style={{
-                      color: "rgba(255,255,255,0.6)",
-                      textDecoration: "none",
-                    }}
-                    className="hover:text-[#0089de] transition-colors"
-                  >
-                    {crumb.label}
-                  </Link>
-                ) : (
-                  <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 500 }}>
-                    {crumb.label}
-                  </span>
-                )}
-              </span>
-            ))}
-          </nav>
-        )}
+            <Wordmark scrolled={scrolled} />
+          </Link>
 
-        {/* Desktop: full search input */}
-        <div
-          ref={wrapRef}
-          className="relative ml-auto hidden sm:block"
-          style={{ width: "100%", maxWidth: "300px" }}
-        >
-          <div
-            className="pointer-events-none absolute inset-y-0 flex items-center"
-            style={{ left: "0.875rem", color: "rgba(255,255,255,0.4)" }}
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden
+          {/* Breadcrumbs (location / site pages) */}
+          {breadcrumbs.length > 0 && (
+            <nav
+              aria-label="Breadcrumb"
+              className="hidden items-center sm:flex"
+              style={{
+                gap: "0.5rem",
+                fontSize: "0.8125rem",
+                color: scrolled ? "rgba(14,28,40,0.5)" : "rgba(255,255,255,0.6)",
+                marginLeft: "0.5rem",
+                transition: "color 200ms ease",
+              }}
             >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" />
-            </svg>
-          </div>
-          <input
-            type="text"
-            value={q}
-            onChange={(e) => {
-              setQ(e.target.value);
-              setSel(0);
-              setOpen(true);
-            }}
-            onFocus={() => setOpen(true)}
-            onKeyDown={onKeyDown}
-            placeholder=""
-            aria-label="Search reefs"
-            className="w-full rounded-full pr-4 focus:outline-none focus:ring-2 focus:ring-[#0089de]/30 border border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-white/40 focus:bg-white/15"
-            style={{
-              padding: "0.5rem 1rem 0.5rem 2.5rem",
-              fontSize: "0.8125rem",
-            }}
-          />
+              {breadcrumbs.map((crumb, i) => (
+                <span key={i} className="flex items-center gap-0.5">
+                  {i > 0 && (
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        color: scrolled ? "rgba(14,28,40,0.25)" : "rgba(255,255,255,0.3)",
+                        marginRight: "0.25rem",
+                      }}
+                    >
+                      /
+                    </span>
+                  )}
+                  {crumb.href ? (
+                    <Link
+                      href={crumb.href}
+                      style={{
+                        color: scrolled ? "rgba(14,28,40,0.5)" : "rgba(255,255,255,0.6)",
+                        textDecoration: "none",
+                        transition: "color 200ms ease",
+                      }}
+                      className="hover:text-[#0E4F6E] transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                    >
+                      {crumb.label}
+                    </Link>
+                  ) : (
+                    <span style={{ color: scrolled ? "#0E1C28" : "rgba(255,255,255,0.9)", fontWeight: 500 }}>
+                      {crumb.label}
+                    </span>
+                  )}
+                </span>
+              ))}
+            </nav>
+          )}
 
-          {open && query && (
-            <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
-              {results.length ? (
-                <ul className="max-h-80 overflow-y-auto py-1">
-                  {results.map((r, i) => (
-                    <li key={r.slug}>
-                      <button
-                        type="button"
-                        onMouseEnter={() => setSel(i)}
-                        onClick={() => go(r)}
-                        className={`flex w-full items-center gap-3 px-4 py-2.5 text-left ${
-                          i === sel ? "bg-[#f1f7fb]" : ""
-                        }`}
-                      >
-                        <span
-                          className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${
-                            STATE_PILL[r.state] ?? "bg-slate-100 text-slate-600"
+          {/* Desktop search input */}
+          <div
+            ref={wrapRef}
+            className="relative ml-auto hidden sm:block"
+            style={{ width: "100%", maxWidth: "260px" }}
+          >
+            <input
+              type="text"
+              value={q}
+              onChange={(e) => {
+                setQ(e.target.value);
+                setSel(0);
+                setOpen(true);
+              }}
+              onFocus={() => setOpen(true)}
+              onKeyDown={onKeyDown}
+              placeholder="Search reefs..."
+              aria-label="Search reefs"
+              className="w-full rounded-sm pr-4 focus:outline-none border"
+              style={{
+                padding: "0.45rem 1rem",
+                fontSize: "0.8125rem",
+                background: scrolled ? "rgba(14,28,40,0.04)" : "rgba(255,255,255,0.12)",
+                border: scrolled ? "1px solid #E7E6E2" : "1px solid rgba(255,255,255,0.2)",
+                color: scrolled ? "#0E1C28" : "#FFFFFF",
+                transition: "background 200ms ease, border-color 200ms ease, color 200ms ease",
+                fontFamily: "inherit",
+              }}
+            />
+
+            {open && query && (
+              <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-sm border border-[#E7E6E2] bg-white shadow-[0_8px_40px_rgba(14,28,40,0.12)]">
+                {results.length ? (
+                  <ul className="max-h-80 overflow-y-auto py-1">
+                    {results.map((r, i) => (
+                      <li key={r.slug}>
+                        <button
+                          type="button"
+                          onMouseEnter={() => setSel(i)}
+                          onClick={() => go(r)}
+                          className={`flex w-full items-center gap-3 px-4 py-2.5 text-left focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2 ${
+                            i === sel ? "bg-[#F5F4F0]" : ""
                           }`}
                         >
-                          {STATE_TEXT[r.state] ?? r.state}
-                        </span>
-                        <span className="text-sm font-medium text-slate-900">
-                          {r.name}
-                        </span>
-                        <span className="ml-auto text-xs text-slate-500">
-                          {r.country}
-                        </span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <div className="px-4 py-3 text-center text-sm text-slate-500">
-                  No locations match &ldquo;{q}&rdquo;.
+                          <span
+                            className={`shrink-0 rounded-sm px-2 py-0.5 text-xs font-medium ${
+                              STATE_PILL[r.state] ?? "bg-slate-100 text-slate-600"
+                            }`}
+                          >
+                            {STATE_TEXT[r.state] ?? r.state}
+                          </span>
+                          <span className="text-sm font-medium text-[#0E1C28]">
+                            {r.name}
+                          </span>
+                          <span className="ml-auto text-xs text-[#4A5568]">
+                            {r.country}
+                          </span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="px-4 py-3 text-center text-sm text-[#4A5568]">
+                    No locations match &ldquo;{q}&rdquo;.
+                  </div>
+                )}
+                <div className="border-t border-[#E7E6E2]">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpen(false);
+                      router.push(`/search?q=${encodeURIComponent(q.trim())}`);
+                      setQ("");
+                    }}
+                    className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0E4F6E] hover:bg-[#F5F4F0] overflow-hidden focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                  >
+                    <span className="truncate">Search for &ldquo;{q}&rdquo;</span>
+                  </button>
                 </div>
-              )}
-              <div className="border-t border-slate-100">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setOpen(false);
-                    router.push(`/search?q=${encodeURIComponent(q.trim())}`);
-                    setQ("");
-                  }}
-                  className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-[#0089de] hover:bg-[#f1f7fb] overflow-hidden"
-                >
-                  <svg className="shrink-0" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
-                  </svg>
-                  <span className="truncate">Search sites &amp; species for &ldquo;{q}&rdquo;</span>
-                </button>
               </div>
-            </div>
-          )}
+            )}
+          </div>
+
+          {/* Desktop nav links */}
+          <nav
+            className="hidden sm:flex shrink-0 items-center"
+            style={{ gap: "0.125rem" }}
+            aria-label="Main navigation"
+          >
+            {NAV.map((n) => (
+              <Link
+                key={n.key}
+                href={n.href}
+                className="text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                style={{
+                  padding: "0.45rem 0.75rem",
+                  color: active === n.key
+                    ? (scrolled ? "#0E4F6E" : "#F6C700")
+                    : linkColor,
+                  textDecoration: "none",
+                  transition: "color 200ms ease",
+                }}
+              >
+                {n.label}
+              </Link>
+            ))}
+
+            {/* Upload CTA — yellow, always */}
+            <Link
+              href="/upload"
+              className="inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+              style={{
+                background: "#F6C700",
+                color: "#0E1C28",
+                padding: "0.4rem 0.875rem",
+                borderRadius: "2px",
+                fontSize: "0.8125rem",
+                fontWeight: 500,
+                marginLeft: "0.5rem",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Upload a sighting
+            </Link>
+          </nav>
+
+          {/* Mobile: hamburger button */}
+          <button
+            type="button"
+            className="sm:hidden ml-auto flex items-center justify-center w-11 h-11 focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Open navigation menu"
+            aria-expanded={drawerOpen}
+          >
+            {/* Hamburger lines — text-based, no icon lib */}
+            <span
+              className="flex flex-col gap-1.5"
+              aria-hidden="true"
+            >
+              <span
+                style={{
+                  display: "block",
+                  width: "20px",
+                  height: "1.5px",
+                  background: linkColor,
+                  transition: "background 200ms ease",
+                }}
+              />
+              <span
+                style={{
+                  display: "block",
+                  width: "20px",
+                  height: "1.5px",
+                  background: linkColor,
+                  transition: "background 200ms ease",
+                }}
+              />
+              <span
+                style={{
+                  display: "block",
+                  width: "14px",
+                  height: "1.5px",
+                  background: linkColor,
+                  transition: "background 200ms ease",
+                }}
+              />
+            </span>
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile drawer overlay */}
+      {drawerOpen && (
+        <div
+          className="fixed inset-0 z-[60]"
+          onClick={() => setDrawerOpen(false)}
+          style={{ background: "rgba(14,28,40,0.4)" }}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Mobile drawer */}
+      <div
+        className="fixed top-0 right-0 bottom-0 z-[70] flex flex-col sm:hidden"
+        style={{
+          width: "min(320px, 90vw)",
+          background: "#FFFFFF",
+          transform: drawerOpen ? "translateX(0)" : "translateX(100%)",
+          transition: "transform 200ms ease",
+          boxShadow: drawerOpen ? "0 0 40px rgba(14,28,40,0.18)" : "none",
+        }}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+      >
+        {/* Drawer header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#E7E6E2]">
+          <Link
+            href="/"
+            onClick={() => setDrawerOpen(false)}
+            className="focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+            aria-label="Scuba Season — home"
+          >
+            <span
+              style={{
+                fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
+                fontWeight: 400,
+                fontSize: "1.125rem",
+                letterSpacing: "-0.01em",
+                color: "#0E1C28",
+              }}
+            >
+              Scuba Season
+            </span>
+          </Link>
+          <button
+            type="button"
+            onClick={() => setDrawerOpen(false)}
+            className="flex items-center justify-center w-11 h-11 text-[#4A5568] focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+            aria-label="Close navigation menu"
+          >
+            <span aria-hidden="true" style={{ fontSize: "1.25rem", lineHeight: 1 }}>&#x2715;</span>
+          </button>
         </div>
 
-        {/* Nav links — always visible */}
-        <nav
-          className="ml-auto flex shrink-0 items-center sm:ml-0"
-          style={{ gap: "0.125rem" }}
-          aria-label="Main navigation"
-        >
+        {/* Drawer nav links */}
+        <nav className="flex-1 flex flex-col px-6 py-8 gap-1" aria-label="Mobile navigation">
           {NAV.map((n) => (
             <Link
               key={n.key}
               href={n.href}
-              className={`hidden sm:block text-sm font-medium transition-colors ${
-                active === n.key
-                  ? "text-[#0089de]"
-                  : "text-white/70 hover:text-white"
-              }`}
-              style={{ padding: "0.45rem 0.75rem" }}
+              onClick={() => setDrawerOpen(false)}
+              className="py-3 text-lg font-medium focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+              style={{
+                color: active === n.key ? "#0E4F6E" : "#0E1C28",
+                textDecoration: "none",
+                borderBottom: "1px solid #E7E6E2",
+              }}
             >
               {n.label}
             </Link>
           ))}
+        </nav>
 
+        {/* Upload CTA — full width yellow at bottom */}
+        <div className="px-6 pb-8">
           <Link
-            href="/locations"
-            className="inline-flex"
+            href="/upload"
+            onClick={() => setDrawerOpen(false)}
+            className="flex items-center justify-center w-full py-3.5 text-sm font-medium focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
             style={{
-              alignItems: "center",
-              gap: "0.3rem",
-              background: "#00d4ff",
-              color: "#030712",
-              padding: "0.4rem 0.75rem",
-              borderRadius: 999,
-              fontSize: "0.75rem",
-              fontWeight: 700,
-              marginLeft: "0.375rem",
+              background: "#F6C700",
+              color: "#0E1C28",
+              borderRadius: "2px",
               textDecoration: "none",
+              minHeight: "48px",
             }}
           >
-            Explore
+            Upload a sighting
           </Link>
-
-          {/* Mobile: search icon */}
-          <Link
-            href="/search"
-            className={`sm:hidden flex items-center justify-center rounded-full transition-colors ${"text-white/70 hover:text-white"}`}
-            style={{ padding: "0.45rem 0.5rem" }}
-            aria-label="Search"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" />
-            </svg>
-          </Link>
-        </nav>
+        </div>
       </div>
-    </header>
+    </>
   );
 }

@@ -1,4 +1,6 @@
 import type { ReefState } from "@/lib/data/reef-state";
+// Re-export new design system badge for convenience
+export { ReefHealthBadge } from "@/components/reef-health-badge";
 import { STATE_TEXT, STATE_DEF } from "@/lib/data/reef-state";
 
 const STATE_COLOR: Record<ReefState, string> = {
