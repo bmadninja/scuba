@@ -46,7 +46,22 @@ type LocEntry = {
   lng: number;
 };
 
-export function LocationsGlobe({ locations }: { locations: LocEntry[] }) {
+type LocationsGlobeProps = {
+  locations: LocEntry[];
+  /**
+   * Optional: when provided, clicking a marker calls this instead of
+   * navigating to the location page. Used by the explore page to
+   * select the matching card and scroll it into view.
+   */
+  onMarkerClick?: (slug: string) => void;
+  height?: number;
+};
+
+export function LocationsGlobe({
+  locations,
+  onMarkerClick,
+  height = 640,
+}: LocationsGlobeProps) {
   const router = useRouter();
 
   const points = useMemo<GlobePoint[]>(
@@ -62,10 +77,10 @@ export function LocationsGlobe({ locations }: { locations: LocEntry[] }) {
   );
 
   return (
-    <div style={{ width: "100%", display: "flex", justifyContent: "center", padding: "2rem 0 4rem" }}>
+    <div style={{ width: "100%", display: "flex", justifyContent: "center", padding: "0" }}>
       <GlobeViz
-        width={960}
-        height={640}
+        width={640}
+        height={height}
         backgroundColor="rgba(0,0,0,0)"
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
         atmosphereColor="#a8e6ff"
@@ -79,11 +94,15 @@ export function LocationsGlobe({ locations }: { locations: LocEntry[] }) {
         pointsMerge={false}
         onPointClick={(point: object) => {
           const p = point as GlobePoint;
-          router.push(`/locations/${p.slug}`);
+          if (onMarkerClick) {
+            onMarkerClick(p.slug);
+          } else {
+            router.push(`/locations/${p.slug}`);
+          }
         }}
         pointLabel={(point: object) => {
           const p = point as GlobePoint;
-          return `<div style="background:#0a1628;padding:5px 12px;border-radius:8px;font-size:12px;color:#f0f4f8;border:1px solid rgba(255,255,255,0.15);pointer-events:none">${p.name}</div>`;
+          return `<div style="background:#0E1C28;padding:5px 12px;border-radius:4px;font-size:12px;color:#FFFFFF;border:1px solid rgba(255,255,255,0.15);pointer-events:none">${p.name}</div>`;
         }}
       />
     </div>
