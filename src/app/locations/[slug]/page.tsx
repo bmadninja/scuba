@@ -21,6 +21,8 @@ import type {
   ConditionPill,
   DeclineChart,
   CoverTrend,
+  FishingPressureData,
+  WaterQualityEvent,
   GearGroup,
   GearItem,
   OperatorItem,
@@ -31,6 +33,7 @@ import type {
   TripFact,
   ThreatenedStats,
 } from "./location-page-body";
+import type { CoralDataPoint } from "@/components/coral-projection-chart";
 import type { BleachingAlertLevel, MpaStatus, PartnerLink } from "@/lib/data/types";
 
 // ---------------------------------------------------------------------------
@@ -310,7 +313,7 @@ export default async function LocationPage({
 
   // --- Gear (two layers) ----------------------------------------------------
   const allTemps = sites.flatMap((s) =>
-    s.conditionsByMonth.flatMap((c) => [c.waterTempC.min, c.waterTempC.max]),
+    (s.conditionsByMonth ?? []).flatMap((c) => [c.waterTempC.min, c.waterTempC.max]),
   );
   const minWaterTemp = allTemps.length > 0 ? Math.min(...allTemps) : null;
   const maxWaterTemp = allTemps.length > 0 ? Math.max(...allTemps) : null;
@@ -327,7 +330,7 @@ export default async function LocationPage({
   const seenGear = new Set<string>();
   const siteGearItems: GearItem[] = [];
   for (const s of sites) {
-    for (const g of s.siteSpecificGear) {
+    for (const g of (s.siteSpecificGear ?? [])) {
       if (seenGear.has(g.name)) continue;
       seenGear.add(g.name);
       siteGearItems.push({
@@ -408,7 +411,7 @@ export default async function LocationPage({
   // current SST, so we read the current month's typical water temp from the site
   // conditions and treat usual = current − anomaly.
   const currentMonthTemps = sites.flatMap((s) =>
-    s.conditionsByMonth
+    (s.conditionsByMonth ?? [])
       .filter((c) => c.month === currentMonth)
       .map((c) => (c.waterTempC.min + c.waterTempC.max) / 2),
   );
@@ -474,6 +477,28 @@ export default async function LocationPage({
   }
 
   // One plain condition sentence, honest, never "still worth diving".
+  // --- Story 4.1/4.2/4.3: extra fields for location body props ---------------
+  const bleachedPct = observed?.bleachedPercent ?? null;
+  const dhwValue = reefHealth?.thermalStress?.degreeHeatingWeeks ?? null;
+  const surveyDateLabel = surveyYear ? String(surveyYear) : null;
+  const divingOutlook = reefHealth?.divingOutlook ?? null;
+
+  // Projection data points: build from observed historical + current pair
+  const projectionDataPoints: CoralDataPoint[] = [];
+  if (coverBefore !== null && historicalYear !== null) {
+    projectionDataPoints.push({ year: historicalYear, pct: Math.round(coverBefore) });
+  }
+  if (coverNow !== null && surveyYear !== null) {
+    projectionDataPoints.push({ year: surveyYear, pct: Math.round(coverNow) });
+  }
+
+  // GFW fishing pressure: not available at ReefPressureRecord level (no hour counts)
+  // fishingPressure pill already computed above from mpaStatus + pressure level
+  const fishingPressureData: FishingPressureData | null = null;
+
+  // Water quality events: empty for now (no data source wired yet)
+  const waterQualityEvents: WaterQualityEvent[] = [];
+
   const conditionSentence = (() => {
     const parts: string[] = [];
     if (decline) {
@@ -503,8 +528,12 @@ export default async function LocationPage({
     sites.map((s) => s.getThere).find((t) => t && t.trim().length > 0) ??
     details?.goodToKnow.find((g) => g.title?.toLowerCase().includes("getting there"))?.body ??
     null;
-  const lodging = dedupePartnerLinks(sites.flatMap((s) => s.lodging));
-  const operatorsRaw = dedupePartnerLinks(sites.flatMap((s) => s.operators));
+  const lodging = dedupePartnerLinks(
+    sites.flatMap((s) => (s.lodging ?? []).filter((l) => l && l.partner)),
+  );
+  const operatorsRaw = dedupePartnerLinks(
+    sites.flatMap((s) => (s.operators ?? []).filter((o) => o && o.partner)),
+  );
 
   const isGenericSearchUrl = (url: string) =>
     !url || url.includes("dive-shop-search") || url.includes("/dive-shop");
@@ -674,6 +703,8 @@ export default async function LocationPage({
       {/* BODY (client) */}
       <LocationPageBody
         locationId={location.id}
+        locationName={location.name}
+        sightingSites={sites.map((s) => ({ id: s.id, name: s.name, lat: s.lat, lng: s.lng }))}
         intro={intro}
         conditionSentence={conditionSentence}
         decline={decline}
@@ -681,6 +712,13 @@ export default async function LocationPage({
         coverNow={coverNow}
         coverYear={surveyYear}
         coverTrendNote={coverTrendNote}
+        projectionDataPoints={projectionDataPoints}
+        fishingPressure={fishingPressureData}
+        waterQualityEvents={waterQualityEvents}
+        bleachedPct={bleachedPct}
+        dhwValue={dhwValue ?? null}
+        surveyDateLabel={surveyDateLabel}
+        divingOutlook={divingOutlook ?? null}
         heat={heat}
         fishing={fishing}
         reefStateLabel={STATE_TEXT[atlasLoc.state]}

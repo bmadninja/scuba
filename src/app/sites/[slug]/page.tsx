@@ -20,9 +20,11 @@ import type {
   GearItem,
   GetThereView,
   LodgingItem,
+  MonthlyConditionRow,
   OperatorItem,
   TripFact,
 } from "./site-page-body";
+import type { SightingEntry } from "@/components/sighting-log";
 import type { Site } from "@/lib/data/types";
 
 const MONTH_LETTERS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
@@ -348,25 +350,31 @@ export default async function SiteDetailPage({
     })
     .sort((a, b) => b.score - a.score)
     .slice(0, 8)
-    .map(({ c, tier, iucn }, i): EncounterRow => ({
-      key: `${creatureKey(c.scientificName, c.commonName)}-${i}`,
-      href: `/sites/${site.slug}/species/${slugifySpecies(c.commonName)}`,
-      icon: getSpeciesIcon(c.commonName),
-      imageUrl: resolveSpeciesPhoto(
-        site.slug,
-        creatureKey(c.scientificName, c.commonName),
-        c.imageUrl,
-      ),
-      name: c.commonName,
-      where: null,
-      chanceLabel: tier.label,
-      chanceColor: tier.color,
-      fillPct: tier.fill,
-      fillColor: tier.fillColor,
-      frequency: tier.frequency,
-      iucnLabel: iucn ? (IUCN_LABEL[iucn.category] ?? null) : null,
-      iucnBadge: iucn ? (IUCN_BADGE[iucn.category] ?? null) : null,
-    }));
+    .map(({ c, tier, iucn }, i): EncounterRow => {
+      const photoKey = creatureKey(c.scientificName, c.commonName);
+      const photoCredit =
+        getSpeciesPhotoCredit(`${site.slug}:${photoKey}`) ??
+        getSpeciesPhotoCredit(photoKey) ??
+        null;
+      return {
+        key: `${photoKey}-${i}`,
+        href: `/sites/${site.slug}/species/${slugifySpecies(c.commonName)}`,
+        icon: getSpeciesIcon(c.commonName),
+        imageUrl: resolveSpeciesPhoto(site.slug, photoKey, c.imageUrl),
+        imageAttribution: photoCredit?.photographer ? `Photo: ${photoCredit.photographer} · ${photoCredit.licenseLabel}` : null,
+        name: c.commonName,
+        where: null,
+        chanceLabel: tier.label,
+        chanceColor: tier.color,
+        fillPct: tier.fill,
+        fillColor: tier.fillColor,
+        frequency: tier.frequency,
+        lastConfirmedDate: c.lastConfirmedAt ?? null,
+        recentCount: c.recentRecordCount ?? null,
+        iucnLabel: iucn ? (IUCN_LABEL[iucn.category] ?? null) : null,
+        iucnBadge: iucn ? (IUCN_BADGE[iucn.category] ?? null) : null,
+      };
+    });
 
   // --- Gear (two layers) -----------------------------------------------------
   const wetsuit = wetsuitForTemp(minWaterTemp);
@@ -417,8 +425,8 @@ export default async function SiteDetailPage({
 
   const isGenericSearchUrl = (url: string) =>
     !url || url.includes("dive-shop-search") || url.includes("/dive-shop");
-  const operators: OperatorItem[] = site.operators
-    .filter((op) => op.isAffiliate || !isGenericSearchUrl(op.url))
+  const operators: OperatorItem[] = (site.operators ?? [])
+    .filter((op) => op && op.partner && (op.isAffiliate || !isGenericSearchUrl(op.url)))
     .slice(0, 6)
     .map((op) => ({
       partner: op.partner,
@@ -439,6 +447,39 @@ export default async function SiteDetailPage({
       priceLevel: (l.priceLevel ?? null) as LodgingItem["priceLevel"],
       kind: (l.kind ?? "hotel") as LodgingItem["kind"],
     }));
+
+  // --- Story 4.4: monthly conditions grid ------------------------------------
+  const monthlyConditions: MonthlyConditionRow[] = (site.conditionsByMonth ?? []).map((c) => ({
+    month: c.month,
+    waterTempC: c.waterTempC,
+    visibilityM: c.visibilityM,
+    currentStrength: c.currentStrength,
+  }));
+
+  // --- Story 4.6: sighting log entries (from sightings.json aggregated view) -
+  // sightings.json is a species-occurrence aggregate, not individual diver logs.
+  // Render the top sightings as "community field notes" entries.
+  const sightingEntries: SightingEntry[] = sightings
+    .filter((s) => s.lastConfirmedAt)
+    .sort((a, b) => (b.lastConfirmedAt ?? "").localeCompare(a.lastConfirmedAt ?? ""))
+    .slice(0, 20)
+    .map((s) => {
+      const photoKey = creatureKey(s.speciesScientific, s.speciesCommon);
+      const photoCredit =
+        getSpeciesPhotoCredit(`${site.slug}:${s.speciesScientific?.toLowerCase().trim() ?? s.speciesCommon.toLowerCase()}`) ??
+        getSpeciesPhotoCredit(s.speciesScientific?.toLowerCase().trim() ?? s.speciesCommon.toLowerCase()) ??
+        null;
+      return {
+        id: s.id,
+        diverName: null, // aggregate record — no individual diver
+        date: s.lastConfirmedAt,
+        species: [s.speciesCommon],
+        depthM: null,
+        tempC: null,
+        photoUrl: photoCredit?.imageUrl ?? null,
+        photoAlt: s.speciesCommon,
+      };
+    });
 
   return (
     <>
@@ -550,6 +591,7 @@ export default async function SiteDetailPage({
         siteLng={site.lng}
         intro={site.description || null}
         conditions={conditions}
+        monthlyConditions={monthlyConditions}
         encounters={encounters}
         speciesIndexHref={`/sites/${site.slug}/species`}
         gearGroups={gearGroups}
@@ -559,6 +601,7 @@ export default async function SiteDetailPage({
         getThere={getThere}
         operators={operators}
         lodging={lodging}
+        sightingEntries={sightingEntries}
       />
     </>
   );
