@@ -4,9 +4,9 @@ import sourcesData from "@/data/sources.json";
 import { FaqSection } from "@/components/faq-section";
 
 export const metadata: Metadata = {
-  title: "Method — how we read the reefs",
+  title: "How Scuba Season works — 63 data sources, explained",
   description:
-    "How scubaSeason.fun turns public science into plain reef labels. Reef state from NOAA heat, reef surveys and Global Fishing Watch; sightings from iNaturalist and GBIF. Every source named and linked.",
+    "Every reef label, species probability, and data point on Scuba Season is sourced from peer-reviewed science and open government datasets.",
 };
 
 type Source = {
@@ -104,18 +104,18 @@ const SOURCE_GROUPS: { heading: string; ids: string[] }[] = [
   },
 ];
 
-// Reef-state palette (DESIGN.md reef_states, carried unchanged).
-const THRIVING = "#15a05c";
-const PRESSURE = "#f59e0b";
-const CHANGE = "#e23a3a";
-const INK = "#f0f4f8";
-const BODY = "#aebcd0";
-const MUTED = "#8b9db8";
-const HAIRLINE = "rgba(255,255,255,0.1)";
-const BRAND = "#00d4ff";
+// Light design system tokens
+const INK = "var(--color-ink)";
+const INK2 = "var(--color-ink-2)";
+const HAIRLINE = "var(--color-hairline)";
+const OCEAN = "var(--color-ocean)";
+const PAPER = "var(--color-paper)";
+const IMPROVING = "var(--color-improving)";
+const STABLE = "var(--color-stable)";
+const DECLINING = "var(--color-declining)";
 
 const mono = "var(--font-mono), 'IBM Plex Mono', monospace";
-const serif = "var(--font-sans)";
+const serif = "var(--font-serif), 'Source Serif 4', Georgia, serif";
 
 function code(text: string) {
   return (
@@ -123,7 +123,7 @@ function code(text: string) {
       style={{
         fontFamily: mono,
         fontSize: "0.9em",
-        background: "rgba(255,255,255,0.08)",
+        background: "rgba(14,28,40,0.07)",
         padding: "0.05rem 0.3rem",
         borderRadius: 4,
         color: INK,
@@ -141,7 +141,7 @@ function Conj({ children }: { children: React.ReactNode }) {
         fontSize: "0.6875rem",
         fontWeight: 700,
         letterSpacing: "0.06em",
-        color: "#8b9db8",
+        color: INK2,
       }}
     >
       {children}
@@ -154,30 +154,33 @@ export default function DataPage() {
   const totalSources = (sourcesData as Source[]).length;
 
   const groupTitleStyle: React.CSSProperties = {
-    fontSize: "1.9rem",
-    fontWeight: 800,
-    letterSpacing: "-0.03em",
+    fontFamily: serif,
+    fontSize: "clamp(1.5rem, 3vw, 2rem)",
+    fontWeight: 400,
+    letterSpacing: "-0.02em",
     color: INK,
     paddingBottom: "0.7rem",
-    borderBottom: `2px solid rgba(255,255,255,0.2)`,
+    borderBottom: `2px solid ${HAIRLINE}`,
   };
   const groupIntroStyle: React.CSSProperties = {
-    fontSize: "0.9375rem",
+    fontFamily: "var(--font-sans)",
+    fontSize: "1rem",
     lineHeight: 1.7,
-    color: BODY,
+    color: INK2,
     margin: "1.1rem 0 0",
     maxWidth: 660,
   };
   const subHStyle: React.CSSProperties = {
-    fontSize: "1.2rem",
-    fontWeight: 800,
+    fontFamily: serif,
+    fontSize: "1.25rem",
+    fontWeight: 400,
     color: INK,
     marginBottom: "0.7rem",
   };
   const subPStyle: React.CSSProperties = {
     fontSize: "0.9375rem",
     lineHeight: 1.7,
-    color: BODY,
+    color: INK2,
     marginBottom: "1rem",
     maxWidth: 660,
   };
@@ -191,12 +194,12 @@ export default function DataPage() {
       href={href}
       style={{
         fontSize: kind === "group" ? "0.8125rem" : "0.78rem",
-        fontWeight: kind === "group" ? 700 : 500,
-        color: kind === "group" ? INK : MUTED,
+        fontWeight: kind === "group" ? 600 : 400,
+        color: kind === "group" ? INK : INK2,
         textDecoration: "none",
         padding:
           kind === "group" ? "0.4rem 0.7rem" : "0.4rem 0.7rem 0.4rem 1.3rem",
-        borderLeft: `2px solid ${kind === "group" ? "rgba(255,255,255,0.15)" : HAIRLINE}`,
+        borderLeft: `2px solid ${kind === "group" ? HAIRLINE : "transparent"}`,
       }}
     >
       {label}
@@ -208,19 +211,20 @@ export default function DataPage() {
       {/* ===== HERO ===== */}
       <header
         style={{
-          background: "linear-gradient(180deg,#0b1e32,#0d2942)",
-          color: "#fff",
+          background: PAPER,
+          borderBottom: `1px solid ${HAIRLINE}`,
           padding: "4rem 3rem 3.5rem",
         }}
       >
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
           <p
             style={{
+              fontFamily: mono,
               fontSize: "0.6875rem",
               fontWeight: 700,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#7dd3fc",
+              color: OCEAN,
               marginBottom: "1rem",
             }}
           >
@@ -228,21 +232,24 @@ export default function DataPage() {
           </p>
           <h1
             style={{
+              fontFamily: serif,
               fontSize: "clamp(2.25rem,4vw,3.25rem)",
-              fontWeight: 800,
+              fontWeight: 300,
+              fontStyle: "italic",
               letterSpacing: "-0.03em",
               lineHeight: 1.05,
               maxWidth: 760,
+              color: INK,
             }}
           >
             How we read the reefs
           </h1>
           <p
             style={{
-              fontFamily: serif,
-              fontSize: "1.2rem",
+              fontFamily: "var(--font-sans)",
+              fontSize: "1.15rem",
               lineHeight: 1.65,
-              color: "rgba(255,255,255,0.7)",
+              color: INK2,
               marginTop: "1.1rem",
               maxWidth: 640,
             }}
@@ -289,7 +296,7 @@ export default function DataPage() {
             <span id="reef-state" style={{ position: "absolute", marginTop: "-5rem" }} aria-hidden="true" />
             <h2 style={groupTitleStyle}>Reef state</h2>
             <p style={groupIntroStyle}>
-              We read three signals for every reef and turn them into one plain
+              We read 3 signals for every reef and turn them into one plain
               word that describes <b style={{ color: INK }}>what is happening</b>{" "}
               there. It is not a ranking and not a score. Every reef is worth
               diving.
@@ -299,9 +306,9 @@ export default function DataPage() {
               id="rs-label"
               style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
             >
-              <h3 style={subHStyle}>One honest label per reef</h3>
+              <h3 style={subHStyle}>1 honest label per reef</h3>
               <p style={subPStyle}>
-                We read three numbers —{" "}
+                We read 3 numbers —{" "}
                 <b style={{ color: INK }}>coral cover</b> (live coral percent,
                 from reef surveys), <b style={{ color: INK }}>heat stress</b>{" "}
                 (the NOAA bleaching alert), and{" "}
@@ -316,21 +323,21 @@ export default function DataPage() {
                     border: `1px solid ${HAIRLINE}`,
                     borderRadius: "1rem",
                     padding: "1.25rem",
-                    borderTop: `3px solid ${THRIVING}`,
-                    background: "#0a1628",
+                    borderTop: `3px solid ${IMPROVING}`,
+                    background: PAPER,
                   }}
                 >
                   <p
                     style={{
                       fontSize: "1rem",
-                      fontWeight: 800,
+                      fontWeight: 700,
                       marginBottom: "0.5rem",
-                      color: "#15824c",
+                      color: IMPROVING,
                     }}
                   >
                     Thriving
                   </p>
-                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
+                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
                     Near its natural baseline and steady. Recovering or healthy,
                     not perfect or untouched.
                   </p>
@@ -343,11 +350,12 @@ export default function DataPage() {
                   >
                     <p
                       style={{
+                        fontFamily: mono,
                         fontSize: "0.5875rem",
                         fontWeight: 700,
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
-                        color: MUTED,
+                        color: INK2,
                         marginBottom: "0.35rem",
                       }}
                     >
@@ -386,21 +394,21 @@ export default function DataPage() {
                     border: `1px solid ${HAIRLINE}`,
                     borderRadius: "1rem",
                     padding: "1.25rem",
-                    borderTop: `3px solid ${PRESSURE}`,
-                    background: "#0a1628",
+                    borderTop: `3px solid ${STABLE}`,
+                    background: PAPER,
                   }}
                 >
                   <p
                     style={{
                       fontSize: "1rem",
-                      fontWeight: 800,
+                      fontWeight: 700,
                       marginBottom: "0.5rem",
-                      color: "#1f57c8",
+                      color: STABLE,
                     }}
                   >
                     Under pressure
                   </p>
-                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
+                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
                     Below its baseline or slipping, from heat or fishing, but the
                     reef structure and fish life still hold.
                   </p>
@@ -413,18 +421,19 @@ export default function DataPage() {
                   >
                     <p
                       style={{
+                        fontFamily: mono,
                         fontSize: "0.5875rem",
                         fontWeight: 700,
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
-                        color: MUTED,
+                        color: INK2,
                         marginBottom: "0.35rem",
                       }}
                     >
                       The rule
                     </p>
-                    <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
-                      Everything between the other two.
+                    <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
+                      Everything between the other 2.
                     </p>
                   </div>
                 </div>
@@ -435,21 +444,21 @@ export default function DataPage() {
                     border: `1px solid ${HAIRLINE}`,
                     borderRadius: "1rem",
                     padding: "1.25rem",
-                    borderTop: `3px solid ${CHANGE}`,
-                    background: "#0a1628",
+                    borderTop: `3px solid ${DECLINING}`,
+                    background: PAPER,
                   }}
                 >
                   <p
                     style={{
                       fontSize: "1rem",
-                      fontWeight: 800,
+                      fontWeight: 700,
                       marginBottom: "0.5rem",
-                      color: "#c0392f",
+                      color: DECLINING,
                     }}
                   >
                     Witnessing change
                   </p>
-                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY }}>
+                  <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
                     Heavy recent loss or bleaching. Diving here is a chance to
                     document what remains, not a write off.
                   </p>
@@ -462,11 +471,12 @@ export default function DataPage() {
                   >
                     <p
                       style={{
+                        fontFamily: mono,
                         fontSize: "0.5875rem",
                         fontWeight: 700,
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
-                        color: MUTED,
+                        color: INK2,
                         marginBottom: "0.35rem",
                       }}
                     >
@@ -502,8 +512,8 @@ export default function DataPage() {
             >
               <h3 style={subHStyle}>The signals behind it</h3>
               <p style={subPStyle}>
-                Three public sources feed that rule. We don&rsquo;t run our own
-                boats or labs, we stand on the organisations who do.
+                3 public sources feed that rule. We do not run our own
+                boats or labs — we stand on the organisations who do.
               </p>
               <div className="method-sig-grid">
                 <SignalCard
@@ -511,7 +521,7 @@ export default function DataPage() {
                   body="How warm the water is against what is normal for the season. Brief warmth is fine; it is sustained heat over weeks that bleaches coral."
                   href="https://coralreefwatch.noaa.gov/"
                   linkText="NOAA Coral Reef Watch"
-                  metaRight={<span style={{ color: "#15824c", fontWeight: 600 }}>Live, nightly</span>}
+                  metaRight={<span style={{ color: IMPROVING, fontWeight: 600 }}>Live, nightly</span>}
                 />
                 <SignalCard
                   name="Coral cover"
@@ -556,12 +566,12 @@ export default function DataPage() {
                   past year
                 </b>{" "}
                 — their photo records on{" "}
-                <a href="https://www.inaturalist.org/" target="_blank" rel="noopener" style={{ color: BRAND }}>
+                <a href="https://www.inaturalist.org/" target="_blank" rel="noopener" style={{ color: OCEAN }}>
                   iNaturalist
                 </a>
                 , each confirmed to research grade and pulled in through GBIF.
                 These sightings are ingested live, so a fresh log shows up
-                without us waiting on a snapshot. We turn that frequency into one
+                without us waiting on a snapshot. We turn that frequency into 1
                 plain label:
               </p>
               <div
@@ -573,14 +583,14 @@ export default function DataPage() {
                   overflow: "hidden",
                   margin: "0.5rem 0 1.25rem",
                   maxWidth: 520,
-                  background: "#0a1628",
+                  background: PAPER,
                 }}
               >
-                <Band color="#15824c" label="Almost always" range="80% or more of recent dives" first />
-                <Band color="#15824c" label="Very likely" range="60 to 80%" />
-                <Band color="#15824c" label="Likely" range="40 to 60%" />
-                <Band color="#b9751a" label="Sometimes" range="20 to 40%" />
-                <Band color={MUTED} label="Rare" range="under 20%" />
+                <Band color={IMPROVING} label="Almost always" range="80% or more of recent dives" first />
+                <Band color={IMPROVING} label="Very likely" range="60 to 80%" />
+                <Band color={IMPROVING} label="Likely" range="40 to 60%" />
+                <Band color={STABLE} label="Sometimes" range="20 to 40%" />
+                <Band color={INK2} label="Rare" range="under 20%" />
               </div>
               <p style={subPStyle}>
                 Wildlife moves and seasons shift, so we treat every figure as a
@@ -604,7 +614,7 @@ export default function DataPage() {
                   border: `1px solid ${HAIRLINE}`,
                   borderRadius: "1rem",
                   overflow: "hidden",
-                  background: "#0a1628",
+                  background: PAPER,
                 }}
               >
                 <PipeStep n="Step 1" title="Diver photo">
@@ -624,9 +634,9 @@ export default function DataPage() {
                   </a>
                   , the global biodiversity database.
                 </PipeStep>
-                <PipeStep n="Step 4" title="IUCN Red List" last>
+                <PipeStep n="Step 4" title="Conservation status" last>
                   GBIF records feed the assessments behind each animal&rsquo;s
-                  status.
+                  status on the IUCN Red List.
                 </PipeStep>
               </div>
             </div>
@@ -638,7 +648,7 @@ export default function DataPage() {
               <h3 style={subHStyle}>What the conservation labels mean</h3>
               <p style={subPStyle}>
                 Each animal carries its status from the{" "}
-                <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener" style={{ color: BRAND }}>
+                <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener" style={{ color: OCEAN }}>
                   IUCN Red List
                 </a>
                 , the global standard for how threatened a species is in the
@@ -652,23 +662,23 @@ export default function DataPage() {
                   borderRadius: "1rem",
                   overflow: "hidden",
                   maxWidth: 680,
-                  background: "#0a1628",
+                  background: PAPER,
                 }}
               >
-                <IucnRow tag="Least concern" bg="rgba(21,160,92,0.15)" fg="#4ade80" first>
+                <IucnRow tag="Least concern" bg="rgba(46,125,91,0.10)" fg={IMPROVING} first>
                   Widespread and not currently at risk.
                 </IucnRow>
-                <IucnRow tag="Near threatened" bg="rgba(63,98,18,0.2)" fg="#86efac">
+                <IucnRow tag="Near threatened" bg="rgba(46,125,91,0.07)" fg={IMPROVING}>
                   Could become at risk in the near future.
                 </IucnRow>
-                <IucnRow tag="Vulnerable" bg="rgba(185,117,26,0.15)" fg="#fbbf24">
+                <IucnRow tag="Vulnerable" bg="rgba(185,138,46,0.12)" fg={STABLE}>
                   High risk of extinction in the wild.
                 </IucnRow>
-                <IucnRow tag="Endangered" bg="rgba(192,57,47,0.15)" fg="#f87171">
+                <IucnRow tag="Endangered" bg="rgba(192,65,43,0.10)" fg={DECLINING}>
                   Very high risk of extinction in the wild.
                 </IucnRow>
-                <IucnRow tag="Critically endangered" bg="rgba(185,28,28,0.15)" fg="#fca5a5">
-                  Extremely high risk, one step from extinct in the wild.
+                <IucnRow tag="Critically endangered" bg="rgba(192,65,43,0.14)" fg={DECLINING}>
+                  Extremely high risk, 1 step from extinct in the wild.
                 </IucnRow>
               </div>
             </div>
@@ -725,17 +735,17 @@ export default function DataPage() {
 
             <div
               style={{
-                border: "1px solid rgba(251,191,36,0.2)",
-                background: "rgba(251,191,36,0.06)",
+                border: `1px solid rgba(246,199,0,0.3)`,
+                background: "rgba(246,199,0,0.05)",
                 borderRadius: "1rem",
                 padding: "1.5rem 1.6rem",
                 marginTop: "1.5rem",
               }}
             >
-              <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: INK, marginBottom: "0.5rem" }}>
+              <h3 style={{ fontFamily: serif, fontSize: "1.05rem", fontWeight: 400, color: INK, marginBottom: "0.5rem" }}>
                 Diving somewhere quiet?
               </h3>
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: BODY, maxWidth: 600 }}>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: INK2, maxWidth: 600 }}>
                 If you are heading to a reef with few records, you are exactly who
                 that reef needs. Log what you see and it becomes part of the
                 public picture.
@@ -747,14 +757,14 @@ export default function DataPage() {
                   marginTop: "0.9rem",
                   padding: "0.7rem 1.2rem",
                   borderRadius: "0.7rem",
-                  background: BRAND,
-                  color: "#0a1628",
+                  background: "var(--color-brand-yellow)",
+                  color: INK,
                   fontSize: "0.875rem",
                   fontWeight: 700,
                   textDecoration: "none",
                 }}
               >
-                Find reefs that need eyes →
+                Find reefs that need eyes
               </Link>
             </div>
           </section>
@@ -768,22 +778,22 @@ export default function DataPage() {
             <p style={groupIntroStyle}>
               If you run a monitoring programme and need eyes on specific sites,
               tell us where. We can point divers toward the reefs and the
-              platforms where their records help you most. scubaSeason is a
+              platforms where their records help you most. Scuba Season is a
               nonprofit, free to read, with every source credited.
             </p>
             <div
               style={{
-                border: "1px solid rgba(21,160,92,0.2)",
-                background: "rgba(21,160,92,0.06)",
+                border: `1px solid rgba(46,125,91,0.2)`,
+                background: "rgba(46,125,91,0.05)",
                 borderRadius: "1rem",
                 padding: "1.5rem 1.6rem",
                 marginTop: "1.5rem",
               }}
             >
-              <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: INK, marginBottom: "0.5rem" }}>
+              <h3 style={{ fontFamily: serif, fontSize: "1.05rem", fontWeight: 400, color: INK, marginBottom: "0.5rem" }}>
                 Work with us
               </h3>
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: BODY, maxWidth: 600 }}>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: INK2, maxWidth: 600 }}>
                 Spotted wrong data, or want to direct divers to your sites? All of
                 it is welcome.
               </p>
@@ -794,8 +804,8 @@ export default function DataPage() {
                   marginTop: "0.9rem",
                   padding: "0.7rem 1.2rem",
                   borderRadius: "0.7rem",
-                  background: BRAND,
-                  color: "#0a1628",
+                  background: "var(--color-brand-yellow)",
+                  color: INK,
                   fontSize: "0.875rem",
                   fontWeight: 700,
                   textDecoration: "none",
@@ -832,7 +842,7 @@ export default function DataPage() {
                   gap: "0.4rem",
                   fontSize: "0.875rem",
                   fontWeight: 700,
-                  color: BRAND,
+                  color: OCEAN,
                   padding: "0.5rem 0",
                 }}
               >
@@ -843,11 +853,12 @@ export default function DataPage() {
                   <div key={group.heading}>
                     <h4
                       style={{
+                        fontFamily: mono,
                         fontSize: "0.6875rem",
                         fontWeight: 700,
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
-                        color: MUTED,
+                        color: INK2,
                         marginBottom: "0.55rem",
                       }}
                     >
@@ -868,19 +879,25 @@ export default function DataPage() {
                         if (!src) return null;
                         return (
                           <li key={id}>
-                            <a
-                              href={src.url ?? "#"}
-                              target="_blank"
-                              rel="noopener"
-                              style={{
-                                fontSize: "0.8125rem",
-                                color: BODY,
-                                textDecoration: "none",
-                                borderBottom: "1px solid transparent",
-                              }}
-                            >
-                              {src.name}
-                            </a>
+                            {src.url ? (
+                              <a
+                                href={src.url}
+                                target="_blank"
+                                rel="noopener"
+                                style={{
+                                  fontSize: "0.8125rem",
+                                  color: OCEAN,
+                                  textDecoration: "none",
+                                  borderBottom: `1px solid transparent`,
+                                }}
+                              >
+                                {src.name}
+                              </a>
+                            ) : (
+                              <span style={{ fontSize: "0.8125rem", color: INK2 }}>
+                                {src.name}
+                              </span>
+                            )}
                           </li>
                         );
                       })}
@@ -898,7 +915,7 @@ export default function DataPage() {
 
       {/* Layout + responsive rules scoped to this page only. */}
       <style>{`
-        .method-wrap{max-width:1180px;margin:0 auto;padding:3rem;display:grid;grid-template-columns:210px 1fr;gap:3.5rem;align-items:start;}
+        .method-wrap{max-width:1180px;margin:0 auto;padding:3rem;display:grid;grid-template-columns:210px 1fr;gap:3.5rem;align-items:start;background:var(--color-paper);}
         .method-toc{display:flex;}
         .method-state-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
         .method-sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:0.5rem;}
@@ -909,9 +926,12 @@ export default function DataPage() {
         .method-src-summary::after{content:"⌄";}
         details[open] > .method-src-summary::after{content:"⌃";}
         @media(max-width:920px){
-          .method-wrap{grid-template-columns:1fr;}
+          .method-wrap{grid-template-columns:1fr;padding:2rem 1.25rem;}
           .method-toc{display:none;}
           .method-state-cards,.method-sig-grid,.method-plat-grid,.method-src-groups{grid-template-columns:1fr;}
+        }
+        @media(max-width:480px){
+          .method-wrap{padding:1.5rem 1rem;}
         }
       `}</style>
     </>
@@ -921,7 +941,7 @@ export default function DataPage() {
 const condLi: React.CSSProperties = {
   fontSize: "0.8125rem",
   lineHeight: 1.45,
-  color: BODY,
+  color: "var(--color-ink-2)",
   paddingLeft: "0.95rem",
   position: "relative",
 };
@@ -932,9 +952,9 @@ const condDot: React.CSSProperties = {
   width: 5,
   height: 5,
   borderRadius: "50%",
-  background: "rgba(255,255,255,0.2)",
+  background: "var(--color-hairline)",
 };
-const pipeLink: React.CSSProperties = { color: BRAND, textDecoration: "none" };
+const pipeLink: React.CSSProperties = { color: "var(--color-ocean)", textDecoration: "none" };
 
 function SignalCard({
   name,
@@ -952,22 +972,22 @@ function SignalCard({
   metaRight: React.ReactNode;
 }) {
   return (
-    <div style={{ border: `1px solid ${HAIRLINE}`, borderRadius: "1rem", padding: "1.25rem", background: "#0a1628" }}>
-      <p style={{ fontSize: "0.9375rem", fontWeight: 700, color: INK, marginBottom: "0.6rem" }}>
+    <div style={{ border: `1px solid var(--color-hairline)`, borderRadius: "1rem", padding: "1.25rem", background: "var(--color-paper)" }}>
+      <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--color-ink)", marginBottom: "0.6rem" }}>
         {name}
       </p>
-      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY, marginBottom: "0.7rem" }}>
+      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "var(--color-ink-2)", marginBottom: "0.7rem" }}>
         {body}
       </p>
       <div
         style={{
+          fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
           fontSize: "0.6875rem",
-          fontFamily: mono,
-          color: MUTED,
+          color: "var(--color-ink-2)",
           display: "flex",
           justifyContent: "space-between",
           gap: "0.5rem",
-          borderTop: `1px solid ${HAIRLINE}`,
+          borderTop: `1px solid var(--color-hairline)`,
           paddingTop: "0.6rem",
           flexWrap: "wrap",
         }}
@@ -977,7 +997,7 @@ function SignalCard({
             href={href}
             target="_blank"
             rel="noopener"
-            style={{ color: MUTED, textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.15)" }}
+            style={{ color: "var(--color-ocean)", textDecoration: "none" }}
           >
             {linkText}
           </a>
@@ -1007,14 +1027,14 @@ function Band({
         justifyContent: "space-between",
         alignItems: "center",
         padding: "0.7rem 1.1rem",
-        borderTop: first ? "none" : `1px solid ${HAIRLINE}`,
+        borderTop: first ? "none" : `1px solid var(--color-hairline)`,
         fontSize: "0.875rem",
-        fontWeight: 700,
+        fontWeight: 600,
         color,
       }}
     >
       {label}
-      <span style={{ color: MUTED, fontFamily: mono, fontSize: "0.75rem", fontWeight: 400 }}>
+      <span style={{ color: "var(--color-ink-2)", fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace", fontSize: "0.75rem", fontWeight: 400 }}>
         {range}
       </span>
     </div>
@@ -1038,25 +1058,26 @@ function PipeStep({
         flex: 1,
         minWidth: 150,
         padding: "1.1rem 1.2rem",
-        borderRight: last ? "none" : `1px solid ${HAIRLINE}`,
+        borderRight: last ? "none" : `1px solid var(--color-hairline)`,
       }}
     >
       <p
         style={{
+          fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
           fontSize: "0.625rem",
           fontWeight: 700,
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          color: BRAND,
+          color: "var(--color-ocean)",
           marginBottom: "0.35rem",
         }}
       >
         {n}
       </p>
-      <p style={{ fontSize: "0.875rem", fontWeight: 700, color: INK, marginBottom: "0.2rem" }}>
+      <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--color-ink)", marginBottom: "0.2rem" }}>
         {title}
       </p>
-      <p style={{ fontSize: "0.75rem", lineHeight: 1.5, color: MUTED }}>{children}</p>
+      <p style={{ fontSize: "0.75rem", lineHeight: 1.5, color: "var(--color-ink-2)" }}>{children}</p>
     </div>
   );
 }
@@ -1081,7 +1102,7 @@ function IucnRow({
         gap: "0.85rem",
         alignItems: "flex-start",
         padding: "0.85rem 1.1rem",
-        borderTop: first ? "none" : `1px solid ${HAIRLINE}`,
+        borderTop: first ? "none" : `1px solid var(--color-hairline)`,
       }}
     >
       <span
@@ -1099,7 +1120,7 @@ function IucnRow({
       >
         {tag}
       </span>
-      <span style={{ fontSize: "0.8125rem", color: BODY, lineHeight: 1.5, paddingTop: "0.1rem" }}>
+      <span style={{ fontSize: "0.8125rem", color: "var(--color-ink-2)", lineHeight: 1.5, paddingTop: "0.1rem" }}>
         {children}
       </span>
     </div>
@@ -1120,15 +1141,15 @@ function PlatformCard({
   children: React.ReactNode;
 }) {
   return (
-    <div style={{ border: `1px solid ${HAIRLINE}`, borderRadius: "1rem", padding: "1.25rem", background: "#0a1628" }}>
+    <div style={{ border: `1px solid var(--color-hairline)`, borderRadius: "1rem", padding: "1.25rem", background: "var(--color-paper)" }}>
       <a
         href={href}
         target="_blank"
         rel="noopener"
         style={{
           fontSize: "1.05rem",
-          fontWeight: 800,
-          color: INK,
+          fontWeight: 700,
+          color: "var(--color-ink)",
           textDecoration: "none",
           display: "inline-flex",
           alignItems: "center",
@@ -1136,9 +1157,9 @@ function PlatformCard({
           marginBottom: "0.4rem",
         }}
       >
-        {name} <span style={{ fontSize: "0.85em", color: BRAND }}>↗</span>
+        {name} <span style={{ fontSize: "0.85em", color: "var(--color-ocean)" }}>↗</span>
       </a>
-      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: BODY, marginBottom: "0.85rem" }}>
+      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "var(--color-ink-2)", marginBottom: "0.85rem" }}>
         {children}
       </p>
       <span
@@ -1149,8 +1170,8 @@ function PlatformCard({
           textTransform: "uppercase",
           padding: "0.25rem 0.6rem",
           borderRadius: 999,
-          background: effortMid ? "rgba(185,117,26,0.15)" : "rgba(21,160,92,0.15)",
-          color: effortMid ? "#fbbf24" : "#4ade80",
+          background: effortMid ? "rgba(185,138,46,0.12)" : "rgba(46,125,91,0.10)",
+          color: effortMid ? "var(--color-stable)" : "var(--color-improving)",
         }}
       >
         {effort}

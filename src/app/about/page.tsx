@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | scubaSeason.fun",
+  title: "About — Scuba Season",
   description:
     "What this site is, and why it exists. Editorial principles, roadmap, and how to get in touch.",
 };
@@ -9,23 +9,27 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* PAGE HEADER — dark bg */}
+      {/* PAGE HEADER */}
       <header
-        style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
+        style={{ borderBottom: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}
         className="px-6 pb-16 pt-20"
       >
         <div className="mx-auto max-w-[800px]">
           <p
             className="text-xs font-bold uppercase tracking-[0.18em]"
-            style={{ color: "#00d4ff", marginBottom: "1rem" }}
+            style={{ color: "var(--color-ocean)", marginBottom: "1rem", fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
           >
             About
           </p>
           <h1
-            className="text-5xl leading-[1.04] tracking-[-0.035em]"
             style={{
-              fontWeight: 800,
-              color: "#f0f4f8",
+              fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 300,
+              fontStyle: "italic",
+              letterSpacing: "-0.03em",
+              lineHeight: 1.1,
+              color: "var(--color-ink)",
               marginBottom: "1.5rem",
             }}
           >
@@ -36,7 +40,7 @@ export default function AboutPage() {
               fontFamily: "var(--font-sans)",
               fontSize: "1.2rem",
               lineHeight: 1.75,
-              color: "#8b9db8",
+              color: "var(--color-ink-2)",
               maxWidth: "640px",
             }}
           >
@@ -47,10 +51,10 @@ export default function AboutPage() {
       </header>
 
       {/* PAGE BODY */}
-      <div className="mx-auto max-w-[800px] px-6 py-16">
+      <div className="mx-auto max-w-[800px] px-6 py-16" style={{ background: "var(--color-paper)" }}>
 
         {/* PROSE */}
-        <div className="space-y-5 text-base leading-[1.8]" style={{ color: "#aebcd0" }}>
+        <div className="space-y-5 text-base leading-[1.8]" style={{ color: "var(--color-ink-2)" }}>
           <p>
             scubaseason.fun is born out of love for the ocean, frustration from
             planning my own dive trips, and a real concern for what climate
@@ -96,12 +100,18 @@ export default function AboutPage() {
         {/* EDITORIAL PRINCIPLES */}
         <div style={{ margin: "3.5rem 0 2.5rem" }}>
           <h2
-            className="text-2xl tracking-[-0.025em]"
-            style={{ fontWeight: 800, color: "#f0f4f8", marginBottom: "0.5rem" }}
+            style={{
+              fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+              fontSize: "clamp(1.4rem, 3vw, 1.75rem)",
+              fontWeight: 400,
+              letterSpacing: "-0.025em",
+              color: "var(--color-ink)",
+              marginBottom: "0.5rem",
+            }}
           >
             Editorial principles
           </h2>
-          <p className="text-sm leading-[1.7]" style={{ color: "#aebcd0" }}>
+          <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
             A few things I try to hold to, regardless of what would be easier.
           </p>
         </div>
@@ -110,7 +120,7 @@ export default function AboutPage() {
           {/* 01 */}
           <div
             className="rounded-2xl p-6"
-            style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+            style={{ border: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}
           >
             <p
               className="leading-none"
@@ -118,7 +128,7 @@ export default function AboutPage() {
                 fontSize: "2rem",
                 fontWeight: 900,
                 letterSpacing: "-0.04em",
-                color: "rgba(255,255,255,0.1)",
+                color: "var(--color-hairline)",
                 marginBottom: "0.75rem",
               }}
             >
@@ -126,11 +136,11 @@ export default function AboutPage() {
             </p>
             <p
               className="text-sm"
-              style={{ fontWeight: 700, color: "#f0f4f8", marginBottom: "0.4rem" }}
+              style={{ fontWeight: 700, color: "var(--color-ink)", marginBottom: "0.4rem" }}
             >
               Honest about data age
             </p>
-            <p className="text-sm leading-[1.65]" style={{ color: "#aebcd0" }}>
+            <p className="text-sm leading-[1.65]" style={{ color: "var(--color-ink-2)" }}>
               Every number has a date. If a coral cover figure is from 2014, it
               says 2014. If we don&rsquo;t know, it says we don&rsquo;t know.
             </p>
@@ -139,7 +149,7 @@ export default function AboutPage() {
           {/* 02 */}
           <div
             className="rounded-2xl p-6"
-            style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+            style={{ border: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}
           >
             <p
               className="leading-none"
@@ -147,7 +157,7 @@ export default function AboutPage() {
                 fontSize: "2rem",
                 fontWeight: 900,
                 letterSpacing: "-0.04em",
-                color: "rgba(255,255,255,0.1)",
+                color: "var(--color-hairline)",
                 marginBottom: "0.75rem",
               }}
             >
@@ -155,11 +165,11 @@ export default function AboutPage() {
             </p>
             <p
               className="text-sm"
-              style={{ fontWeight: 700, color: "#f0f4f8", marginBottom: "0.4rem" }}
+              style={{ fontWeight: 700, color: "var(--color-ink)", marginBottom: "0.4rem" }}
             >
               No gates on information
             </p>
-            <p className="text-sm leading-[1.65]" style={{ color: "#aebcd0" }}>
+            <p className="text-sm leading-[1.65]" style={{ color: "var(--color-ink-2)" }}>
               No modals, no account prompts, no paywalls interrupting the data.
               If it&rsquo;s on this site, you can read it.
             </p>
@@ -168,7 +178,7 @@ export default function AboutPage() {
           {/* 03 */}
           <div
             className="rounded-2xl p-6"
-            style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+            style={{ border: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}
           >
             <p
               className="leading-none"
@@ -176,7 +186,7 @@ export default function AboutPage() {
                 fontSize: "2rem",
                 fontWeight: 900,
                 letterSpacing: "-0.04em",
-                color: "rgba(255,255,255,0.1)",
+                color: "var(--color-hairline)",
                 marginBottom: "0.75rem",
               }}
             >
@@ -184,11 +194,11 @@ export default function AboutPage() {
             </p>
             <p
               className="text-sm"
-              style={{ fontWeight: 700, color: "#f0f4f8", marginBottom: "0.4rem" }}
+              style={{ fontWeight: 700, color: "var(--color-ink)", marginBottom: "0.4rem" }}
             >
               Affiliate links don&rsquo;t steer editorial
             </p>
-            <p className="text-sm leading-[1.65]" style={{ color: "#aebcd0" }}>
+            <p className="text-sm leading-[1.65]" style={{ color: "var(--color-ink-2)" }}>
               Commission rates don&rsquo;t affect site rankings. Operator
               listings include independent options wherever we know of them.
             </p>
@@ -197,7 +207,7 @@ export default function AboutPage() {
           {/* 04 */}
           <div
             className="rounded-2xl p-6"
-            style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+            style={{ border: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}
           >
             <p
               className="leading-none"
@@ -205,7 +215,7 @@ export default function AboutPage() {
                 fontSize: "2rem",
                 fontWeight: 900,
                 letterSpacing: "-0.04em",
-                color: "rgba(255,255,255,0.1)",
+                color: "var(--color-hairline)",
                 marginBottom: "0.75rem",
               }}
             >
@@ -213,11 +223,11 @@ export default function AboutPage() {
             </p>
             <p
               className="text-sm"
-              style={{ fontWeight: 700, color: "#f0f4f8", marginBottom: "0.4rem" }}
+              style={{ fontWeight: 700, color: "var(--color-ink)", marginBottom: "0.4rem" }}
             >
               Degraded reefs get honest labels
             </p>
-            <p className="text-sm leading-[1.65]" style={{ color: "#aebcd0" }}>
+            <p className="text-sm leading-[1.65]" style={{ color: "var(--color-ink-2)" }}>
               &ldquo;Witnessing change&rdquo; is not a polite way of saying
               avoid it. It means go and see what&rsquo;s actually there, not
               what the brochure says.
@@ -225,15 +235,40 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* FTC AFFILIATE DISCLOSURE */}
+        <div
+          style={{
+            margin: "2.5rem 0",
+            padding: "1rem 1.25rem",
+            borderLeft: "3px solid var(--color-hairline)",
+            background: "rgba(14,28,40,0.03)",
+            borderRadius: "0 0.5rem 0.5rem 0",
+          }}
+        >
+          <p className="text-xs leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
+            <strong style={{ color: "var(--color-ink)" }}>Affiliate disclosure:</strong>{" "}
+            Some links on this site are affiliate links. This means Scuba Season may earn a small
+            commission if you book or purchase through them, at no extra cost to you. Affiliate
+            relationships do not influence editorial decisions, reef rankings, or data presentation.
+            Scuba Season is a nonprofit and all revenue goes toward running costs and data access.
+          </p>
+        </div>
+
         {/* ROADMAP */}
         <div style={{ margin: "3.5rem 0 2.5rem" }}>
           <h2
-            className="text-2xl tracking-[-0.025em]"
-            style={{ fontWeight: 800, color: "#f0f4f8", marginBottom: "0.5rem" }}
+            style={{
+              fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+              fontSize: "clamp(1.4rem, 3vw, 1.75rem)",
+              fontWeight: 400,
+              letterSpacing: "-0.025em",
+              color: "var(--color-ink)",
+              marginBottom: "0.5rem",
+            }}
           >
             Roadmap
           </h2>
-          <p className="text-sm leading-[1.7]" style={{ color: "#aebcd0" }}>
+          <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
             Here is where things actually stand. What is live today, and what
             is on my wishlist.
           </p>
@@ -245,13 +280,13 @@ export default function AboutPage() {
             display: "flex",
             flexDirection: "column",
             gap: "1px",
-            background: "rgba(255,255,255,0.1)",
+            background: "var(--color-hairline)",
           }}
         >
           {/* NOW */}
           <div
             className="flex gap-4 px-6 py-5"
-            style={{ background: "rgba(16,185,129,0.08)", alignItems: "flex-start" }}
+            style={{ background: "rgba(46,125,91,0.06)", alignItems: "flex-start" }}
           >
             <div style={{ width: "68px", flexShrink: 0, marginTop: "0.15rem" }}>
               <span
@@ -261,7 +296,7 @@ export default function AboutPage() {
                   fontWeight: 800,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  background: "#10b981",
+                  background: "var(--color-improving)",
                 }}
               >
                 Live
@@ -272,7 +307,7 @@ export default function AboutPage() {
                 className="text-sm"
                 style={{
                   fontWeight: 700,
-                  color: "#f0f4f8",
+                  color: "var(--color-ink)",
                   marginBottom: "0.375rem",
                 }}
               >
@@ -282,25 +317,25 @@ export default function AboutPage() {
                 className="list-disc pl-5"
                 style={{ display: "flex", flexDirection: "column", gap: "0.375rem" }}
               >
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   Thermal stress data, continuously updated
                 </li>
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   Species conservation status from the{" "}
-                  <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener noreferrer" style={{ color: "#00d4ff" }}>IUCN Red List</a>,
+                  <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-ocean)" }}>IUCN Red List</a>,
                   on every dive site
                 </li>
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   Seasonal sighting windows and last recorded sighting data
                 </li>
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   Freshness labels on every data point so you know exactly how
                   current each figure is
                 </li>
               </ul>
-              <p className="text-sm leading-[1.6]" style={{ color: "#8b9db8", marginTop: "0.625rem" }}>
+              <p className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)", marginTop: "0.625rem" }}>
                 Full source details and methodology on the{" "}
-                <a href="/data" style={{ color: "#00d4ff" }}>method page</a>.
+                <a href="/data" style={{ color: "var(--color-ocean)" }}>method page</a>.
               </p>
             </div>
           </div>
@@ -308,17 +343,18 @@ export default function AboutPage() {
           {/* FOR DIVERS */}
           <div
             className="flex gap-5 px-7 py-6"
-            style={{ background: "rgba(0,212,255,0.06)", alignItems: "flex-start" }}
+            style={{ background: "rgba(14,79,110,0.04)", alignItems: "flex-start" }}
           >
             <div style={{ width: "68px", flexShrink: 0, marginTop: "0.15rem" }}>
               <span
-                className="inline-block rounded-full px-2.5 py-1 text-[#0a1628]"
+                className="inline-block rounded-full px-2.5 py-1"
                 style={{
                   fontSize: "0.5875rem",
                   fontWeight: 800,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  background: "#00d4ff",
+                  background: "var(--color-ocean)",
+                  color: "#ffffff",
                 }}
               >
                 Wishlist
@@ -329,7 +365,7 @@ export default function AboutPage() {
                 className="text-sm"
                 style={{
                   fontWeight: 700,
-                  color: "#f0f4f8",
+                  color: "var(--color-ink)",
                   marginBottom: "0.375rem",
                 }}
               >
@@ -339,20 +375,20 @@ export default function AboutPage() {
                 className="list-disc pl-5"
                 style={{ display: "flex", flexDirection: "column", gap: "0.375rem" }}
               >
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   More data feeds as access opens up:{" "}
-                  <a href="https://globalfishingwatch.org" target="_blank" rel="noopener noreferrer" style={{ color: "#00d4ff" }}>Global Fishing Watch</a>{" "}
+                  <a href="https://globalfishingwatch.org" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-ocean)" }}>Global Fishing Watch</a>{" "}
                   (fishing pressure),{" "}
-                  <a href="https://www.coris.noaa.gov/monitoring/status_report/" target="_blank" rel="noopener noreferrer" style={{ color: "#00d4ff" }}>NOAA NCRMP</a>{" "}
+                  <a href="https://www.coris.noaa.gov/monitoring/status_report/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-ocean)" }}>NOAA NCRMP</a>{" "}
                   (coral cover for US sites),{" "}
-                  <a href="https://www.agrra.org" target="_blank" rel="noopener noreferrer" style={{ color: "#00d4ff" }}>AGRRA</a>{" "}
+                  <a href="https://www.agrra.org" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-ocean)" }}>AGRRA</a>{" "}
                   (Caribbean surveys)
                 </li>
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   Diver log submission: add your own sighting evidence to the
                   record
                 </li>
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   Targeted citizen science missions in regions where monitoring
                   data is thin
                 </li>
@@ -363,7 +399,7 @@ export default function AboutPage() {
           {/* FOR SCIENCE */}
           <div
             className="flex gap-5 px-7 py-6"
-            style={{ background: "rgba(139,92,246,0.08)", alignItems: "flex-start" }}
+            style={{ background: "rgba(74,85,104,0.05)", alignItems: "flex-start" }}
           >
             <div style={{ width: "68px", flexShrink: 0, marginTop: "0.15rem" }}>
               <span
@@ -373,7 +409,7 @@ export default function AboutPage() {
                   fontWeight: 800,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  background: "#8b5cf6",
+                  background: "var(--color-ink-2)",
                 }}
               >
                 Wishlist
@@ -384,7 +420,7 @@ export default function AboutPage() {
                 className="text-sm"
                 style={{
                   fontWeight: 700,
-                  color: "#f0f4f8",
+                  color: "var(--color-ink)",
                   marginBottom: "0.375rem",
                 }}
               >
@@ -394,11 +430,11 @@ export default function AboutPage() {
                 className="list-disc pl-5"
                 style={{ display: "flex", flexDirection: "column", gap: "0.375rem" }}
               >
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   Evidence infrastructure to route diver observations directly
                   to scientific databases and conservation funders
                 </li>
-                <li className="text-sm leading-[1.6]" style={{ color: "#aebcd0" }}>
+                <li className="text-sm leading-[1.6]" style={{ color: "var(--color-ink-2)" }}>
                   Helping researchers get data faster from the people already in
                   the water, at scale
                 </li>
@@ -410,7 +446,7 @@ export default function AboutPage() {
         {/* CONTACT STRIP */}
         <div
           className="mt-14 flex flex-col gap-6 rounded-[1.25rem] p-8 sm:flex-row sm:items-center sm:justify-between"
-          style={{ background: "#0a1628" }}
+          style={{ background: "var(--color-ink)", color: "#ffffff" }}
         >
           <div>
             <h3
@@ -419,21 +455,22 @@ export default function AboutPage() {
             >
               Spotted something wrong? Want to collaborate?
             </h3>
-            <p className="text-sm leading-[1.6]" style={{ color: "rgba(255,255,255,0.45)" }}>
+            <p className="text-sm leading-[1.6]" style={{ color: "rgba(255,255,255,0.55)" }}>
               Good, bad, weird, unfinished. All of it welcome.
             </p>
           </div>
           <a
             href="mailto:hello@scubaseason.fun"
-            className="inline-flex shrink-0 items-center gap-2 rounded-xl px-6 py-3 text-sm text-[#0a1628]"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl px-6 py-3 text-sm"
             style={{
               fontWeight: 700,
-              background: "#00d4ff",
+              background: "var(--color-brand-yellow)",
+              color: "var(--color-ink)",
               textDecoration: "none",
               whiteSpace: "nowrap",
             }}
           >
-            hello@scubaseason.fun →
+            hello@scubaseason.fun
           </a>
         </div>
       </div>

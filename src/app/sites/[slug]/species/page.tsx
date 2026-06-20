@@ -29,19 +29,17 @@ function speciesKey(scientific: string | undefined, common: string): string {
   return (scientific || common).trim().toLowerCase();
 }
 
-// ── IUCN label tones (spelled-out pill, matching the approved mockup) ──────────
-// Background + text per Red List category. Keys mirror the mockup's iucn-*
-// classes; values follow the site's existing IucnBadge palette.
+// IUCN label tones — light design system (plain English labels, no codes in UI)
 const IUCN_TONE: Record<IucnStatus["category"], { bg: string; text: string }> = {
-  EX: { bg: "rgba(255,255,255,0.10)", text: "#aebcd0" },
-  EW: { bg: "rgba(255,255,255,0.10)", text: "#aebcd0" },
-  CR: { bg: "rgba(239,68,68,0.15)", text: "#fca5a5" },
-  EN: { bg: "rgba(239,68,68,0.15)", text: "#fca5a5" },
-  VU: { bg: "rgba(245,158,11,0.15)", text: "#fcd34d" },
-  NT: { bg: "rgba(132,204,22,0.15)", text: "#bef264" },
-  LC: { bg: "rgba(16,185,129,0.15)", text: "#6ee7b7" },
-  DD: { bg: "rgba(255,255,255,0.10)", text: "#8b9db8" },
-  NE: { bg: "rgba(255,255,255,0.10)", text: "#8b9db8" },
+  EX: { bg: "rgba(74,85,104,0.10)", text: "var(--color-ink-2)" },
+  EW: { bg: "rgba(74,85,104,0.10)", text: "var(--color-ink-2)" },
+  CR: { bg: "rgba(192,65,43,0.12)", text: "var(--color-declining)" },
+  EN: { bg: "rgba(192,65,43,0.10)", text: "var(--color-declining)" },
+  VU: { bg: "rgba(185,138,46,0.12)", text: "var(--color-stable)" },
+  NT: { bg: "rgba(46,125,91,0.10)", text: "var(--color-improving)" },
+  LC: { bg: "rgba(46,125,91,0.12)", text: "var(--color-improving)" },
+  DD: { bg: "rgba(74,85,104,0.08)", text: "var(--color-ink-2)" },
+  NE: { bg: "rgba(74,85,104,0.08)", text: "var(--color-ink-2)" },
 };
 
 /**
@@ -92,7 +90,7 @@ function deriveLikelihood(
       score: 0,
       barPct: null,
       chanceLabel: null,
-      chanceColor: "#8b9db8",
+      chanceColor: "var(--color-ink-2)",
       frequency: null,
     };
   }
@@ -102,23 +100,23 @@ function deriveLikelihood(
   let frequency: string;
   if (pct >= 80) {
     chanceLabel = "Almost always";
-    chanceColor = "#15824c";
+    chanceColor = "var(--color-improving)";
     frequency = "Nearly every dive";
   } else if (pct >= 65) {
     chanceLabel = "Very likely";
-    chanceColor = "#15824c";
+    chanceColor = "var(--color-improving)";
     frequency = "Most dives";
   } else if (pct >= 45) {
     chanceLabel = "Likely";
-    chanceColor = "#10b981";
+    chanceColor = "var(--color-improving)";
     frequency = "About half of dives";
   } else if (pct >= 25) {
     chanceLabel = "Sometimes";
-    chanceColor = "#b9751a";
+    chanceColor = "var(--color-stable)";
     frequency = "About 1 in 3 dives";
   } else {
     chanceLabel = "Now and then";
-    chanceColor = "#8b9db8";
+    chanceColor = "var(--color-ink-2)";
     frequency = "Only now and then";
   }
 
@@ -198,7 +196,7 @@ export async function generateMetadata({
   const site = getSiteBySlug(slug);
   if (!site) return { title: "Species not found" };
   const location = getLocationById(site.locationId);
-  const title = `Every animal recorded at ${site.name} | scubaSeason.fun`;
+  const title = `Marine life at ${site.name} — every recorded species`;
   return {
     title,
     description: `The full list of marine life divers have recorded at ${site.name}${
@@ -270,7 +268,14 @@ export default async function SiteAllSpeciesPage({
   ];
 
   return (
-    <div style={{ maxWidth: 920, margin: "0 auto", padding: "3rem 1.5rem 5rem" }}>
+    <div
+      style={{
+        maxWidth: 920,
+        margin: "0 auto",
+        padding: "3rem 1.5rem 5rem",
+        background: "var(--color-paper)",
+      }}
+    >
       {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
@@ -279,7 +284,7 @@ export default async function SiteAllSpeciesPage({
           alignItems: "center",
           gap: "0.5rem",
           fontSize: "0.8125rem",
-          color: "#8b9db8",
+          color: "var(--color-ink-2)",
           flexWrap: "wrap",
           marginBottom: "2rem",
         }}
@@ -288,31 +293,32 @@ export default async function SiteAllSpeciesPage({
           <>
             <Link
               href={`/locations/${location.slug}`}
-              style={{ color: "#8b9db8", textDecoration: "none" }}
+              style={{ color: "var(--color-ink-2)", textDecoration: "none" }}
             >
               {location.name}
             </Link>
-            <span style={{ color: "#8b9db8" }}>/</span>
+            <span style={{ color: "var(--color-hairline)" }}>/</span>
           </>
         ) : null}
         <Link
           href={`/sites/${site.slug}`}
-          style={{ color: "#8b9db8", textDecoration: "none" }}
+          style={{ color: "var(--color-ink-2)", textDecoration: "none" }}
         >
           {site.name}
         </Link>
-        <span style={{ color: "#8b9db8" }}>/</span>
-        <span style={{ color: "#f0f4f8", fontWeight: 600 }}>All species</span>
+        <span style={{ color: "var(--color-hairline)" }}>/</span>
+        <span style={{ color: "var(--color-ink)", fontWeight: 600 }}>All species</span>
       </nav>
 
       {/* Eyebrow */}
       <p
         style={{
+          fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
           fontSize: "0.6875rem",
           fontWeight: 700,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
-          color: "#8b9db8",
+          color: "var(--color-ink-2)",
           marginBottom: "0.6rem",
         }}
       >
@@ -323,12 +329,12 @@ export default async function SiteAllSpeciesPage({
       <SpeciesListClient rows={rows} pills={pills} siteName={site.name} />
 
       {/* What the labels mean → Method */}
-      <p style={{ marginTop: "1.5rem", fontSize: "0.8125rem", color: "#8b9db8" }}>
+      <p style={{ marginTop: "1.5rem", fontSize: "0.8125rem", color: "var(--color-ink-2)" }}>
         <Link
           href="/data#sources"
-          style={{ color: "#00d4ff", fontWeight: 600, textDecoration: "none" }}
+          style={{ color: "var(--color-ocean)", fontWeight: 600, textDecoration: "none" }}
         >
-          What the labels mean →
+          What the labels mean
         </Link>
       </p>
     </div>

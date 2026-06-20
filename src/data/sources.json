@@ -616,5 +616,15 @@
     "accessedAt": "2026-05-25",
     "license": "Free with attribution",
     "notes": "The peer-reviewed reference for climate impacts on the ocean. Use to frame long-horizon outlook claims with appropriate confidence levels."
+  },
+  {
+    "id": "mermaid",
+    "name": "MERMAID (Marine Ecological Research Management Aid)",
+    "url": "https://datamermaid.org/",
+    "publisher": "Wildlife Conservation Society (WCS)",
+    "sourceType": "research-database",
+    "accessedAt": "2026-06-20",
+    "license": "CC BY 4.0 (open summary data)",
+    "notes": "Coral reef benthic survey platform used by researchers globally. Open summary data available at /v1/summarysampleevents/ without authentication. Raw transect data may be restricted by project."
   }
 ]

@@ -68,7 +68,12 @@
   {
     "claimId": "trip-cost-editorial-2026",
     "claimType": "travel-recommendation",
-    "sourceIds": ["editorial-curation", "dema", "padi", "ssi"],
+    "sourceIds": [
+      "editorial-curation",
+      "dema",
+      "padi",
+      "ssi"
+    ],
     "confidence": "medium",
     "limitations": "Trip-cost estimates are editorial ranges, not live prices. Flight ranges reflect typical round-trip economy fares from each regional hub during the location's dive season; off-season or last-minute fares often fall outside. Lodging tiers are per-night ranges for double-occupancy mid-week stays — peak holiday weeks (Easter, Christmas/New Year, Chinese New Year) commonly run 20–50% higher. Dive-day prices assume a 2-boat-dive package with tanks/weights/guide included and exclude private guide, nitrox, and equipment rental. We do not claim accuracy beyond ±15%; book operators directly to confirm.",
     "lastReviewedAt": "2026-05-24"
@@ -126,7 +131,10 @@
   {
     "claimId": "encounter-sardine-run-seasonality",
     "claimType": "seasonality",
-    "sourceIds": ["gbif", "obis"],
+    "sourceIds": [
+      "gbif",
+      "obis"
+    ],
     "confidence": "medium",
     "limitations": "Best months are derived from clustering of occurrence records and operator-reported seasons. No per-trip probability is published — the Sardine Run varies year to year with current and water temperature.",
     "lastReviewedAt": "2026-05-24"
@@ -134,7 +142,12 @@
   {
     "claimId": "encounter-great-white-cage-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "dan", "iucn-red-list", "wildbook"],
+    "sourceIds": [
+      "gbif",
+      "dan",
+      "iucn-red-list",
+      "wildbook"
+    ],
     "confidence": "medium",
     "limitations": "Regional populations have shifted; operator availability changes annually. We do not publish per-trip probability.",
     "lastReviewedAt": "2026-05-24"
@@ -142,7 +155,11 @@
   {
     "claimId": "encounter-hammerhead-schools-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis", "iucn-red-list"],
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "iucn-red-list"
+    ],
     "confidence": "medium",
     "limitations": "Schooling behavior is operator-reported. Aggregation density varies with current, lunar phase, and temperature.",
     "lastReviewedAt": "2026-05-24"
@@ -150,7 +167,14 @@
   {
     "claimId": "encounter-whale-shark-seasonality",
     "claimType": "seasonality",
-    "sourceIds": ["gbif", "obis", "obis-seamap", "wildbook", "ocean-tracking-network", "iucn-red-list"],
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "obis-seamap",
+      "wildbook",
+      "ocean-tracking-network",
+      "iucn-red-list"
+    ],
     "confidence": "high",
     "limitations": "Best months are derived from occurrence-record clustering and well-documented regional aggregations. Per-trip probability is not published.",
     "lastReviewedAt": "2026-05-24"
@@ -158,7 +182,13 @@
   {
     "claimId": "encounter-manta-cleaning-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis", "obis-seamap", "manta-trust", "iucn-red-list"],
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "obis-seamap",
+      "manta-trust",
+      "iucn-red-list"
+    ],
     "confidence": "high",
     "limitations": "Cleaning stations are site-specific; visit frequency varies with current and time of day.",
     "lastReviewedAt": "2026-05-24"
@@ -166,7 +196,11 @@
   {
     "claimId": "encounter-thresher-cleaning-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis", "iucn-red-list"],
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "iucn-red-list"
+    ],
     "confidence": "high",
     "limitations": "Monad Shoal threshers are reliably present year-round but encounters are pre-dawn and weather-dependent. No per-dive probability.",
     "lastReviewedAt": "2026-05-24"
@@ -174,7 +208,12 @@
   {
     "claimId": "encounter-mobula-aggregation-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis", "manta-trust", "iucn-red-list"],
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "manta-trust",
+      "iucn-red-list"
+    ],
     "confidence": "medium",
     "limitations": "Aggregation timing shifts with water temperature and prey. Encounter is occurrence-clustered, not survey-measured.",
     "lastReviewedAt": "2026-05-24"
@@ -182,7 +221,10 @@
   {
     "claimId": "encounter-blackwater-conduct",
     "claimType": "travel-recommendation",
-    "sourceIds": ["obis", "padi"],
+    "sourceIds": [
+      "obis",
+      "padi"
+    ],
     "confidence": "high",
     "limitations": "Subject diversity is highly variable. We do not list per-species probabilities for blackwater dives.",
     "lastReviewedAt": "2026-05-24"
@@ -190,7 +232,12 @@
   {
     "claimId": "encounter-coral-spawning-seasonality",
     "claimType": "seasonality",
-    "sourceIds": ["aims-ltmp", "gcrmn", "gbrmpa", "icri"],
+    "sourceIds": [
+      "aims-ltmp",
+      "gcrmn",
+      "gbrmpa",
+      "icri"
+    ],
     "confidence": "medium",
     "limitations": "Exact spawning night varies by reef and year. Predictions are operator-tracked and affected by ocean temperature anomalies.",
     "lastReviewedAt": "2026-05-24"
@@ -198,7 +245,11 @@
   {
     "claimId": "encounter-mandarin-spawning-presence",
     "claimType": "species-presence",
-    "sourceIds": ["gbif", "obis", "inaturalist"],
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
     "confidence": "high",
     "limitations": "Daily ascent is consistent at established rubble sites but very brief; not a guarantee on any single dive.",
     "lastReviewedAt": "2026-05-24"
@@ -206,9 +257,24 @@
   {
     "claimId": "encounter-giant-cuttlefish-seasonality",
     "claimType": "seasonality",
-    "sourceIds": ["gbif", "obis", "inaturalist"],
+    "sourceIds": [
+      "gbif",
+      "obis",
+      "inaturalist"
+    ],
     "confidence": "high",
     "limitations": "Aggregation numbers fluctuate; the Spencer Gulf population crashed in the 2010s and has only partially recovered.",
     "lastReviewedAt": "2026-05-24"
+  },
+  {
+    "claimId": "reef-health-mermaid",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "mermaid"
+    ],
+    "confidence": "high",
+    "calculation": "Hard coral cover % taken from percent_cover_benthic_category_avg[\"Hard coral\"] in the MERMAID summarysampleevents endpoint. Benthic PIT preferred over LIT over photo-quadrat when multiple protocols exist for the same event. Most recent survey event within 0.5° of location centre used.",
+    "limitations": "Survey events are matched by geographic proximity (0.5° radius), not by explicit dive site name — a survey at a nearby site may not perfectly represent the named location. Cover is the mean across all sample units in that survey event. Older surveys may not reflect post-bleaching changes.",
+    "lastReviewedAt": "2026-06-20"
   }
 ]

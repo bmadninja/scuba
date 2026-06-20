@@ -46,10 +46,14 @@ export async function generateMetadata({
   const match = [
     ...(site.species ?? []).map((s) => s.commonName),
   ].find((n) => slugifySpecies(n) === speciesSlug);
+  const location = getLocationById(site.locationId);
   return {
     title: match
-      ? `${match} at ${site.name} | scubaSeason.fun`
-      : `Species at ${site.name} | scubaSeason.fun`,
+      ? `${match} at ${site.name}${location ? `, ${location.name}` : ""} — sighting record`
+      : `Species at ${site.name} — sighting record`,
+    description: match
+      ? `When to see ${match} at ${site.name}, how often divers spot it, and what the evidence record shows.`
+      : undefined,
   };
 }
 
@@ -86,7 +90,7 @@ export default async function SpeciesDetailPage({
         s.speciesScientific?.toLowerCase() === scientificName.toLowerCase()),
   );
 
-  // IUCN status
+  // Conservation status
   const iucn = IUCN_ENABLED ? getIucnStatus(scientificName) : null;
 
   // Species photo — prefer site-specific credit, fall back to global scientific name key
@@ -122,31 +126,42 @@ export default async function SpeciesDetailPage({
     .slice(0, 5);
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 py-12">
+    <div
+      className="mx-auto w-full max-w-3xl px-6 py-12"
+      style={{ background: "var(--color-paper)" }}
+    >
       {/* Breadcrumb */}
       <nav
-        className="mb-6 flex flex-wrap items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#8b9db8]"
+        className="mb-6 flex flex-wrap items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.1em]"
+        style={{ color: "var(--color-ink-2)" }}
         aria-label="Breadcrumb"
       >
         {location ? (
           <>
             <Link
               href={`/locations/${location.slug}`}
-              className="hover:text-[#00d4ff]"
+              style={{ color: "var(--color-ink-2)", textDecoration: "none" }}
             >
               {location.name}
             </Link>
-            <span className="text-[#8b9db8]">/</span>
+            <span style={{ color: "var(--color-hairline)" }}>/</span>
           </>
         ) : null}
         <Link
           href={`/sites/${site.slug}`}
-          className="hover:text-[#00d4ff]"
+          style={{ color: "var(--color-ink-2)", textDecoration: "none" }}
         >
           {site.name}
         </Link>
-        <span className="text-[#8b9db8]">/</span>
-        <span className="text-[#f0f4f8]">{commonName}</span>
+        <span style={{ color: "var(--color-hairline)" }}>/</span>
+        <Link
+          href={`/sites/${site.slug}/species`}
+          style={{ color: "var(--color-ink-2)", textDecoration: "none" }}
+        >
+          All species
+        </Link>
+        <span style={{ color: "var(--color-hairline)" }}>/</span>
+        <span style={{ color: "var(--color-ink)" }}>{commonName}</span>
       </nav>
 
       {/* Header */}
@@ -156,16 +171,28 @@ export default async function SpeciesDetailPage({
             <IucnBadge status={iucn} />
           </div>
         ) : null}
-        <h1 className="text-3xl font-bold tracking-tight text-[#f0f4f8]">
+        <h1
+          style={{
+            fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+            fontSize: "clamp(1.75rem, 4vw, 2.25rem)",
+            fontWeight: 300,
+            letterSpacing: "-0.025em",
+            color: "var(--color-ink)",
+            lineHeight: 1.1,
+          }}
+        >
           {commonName}
         </h1>
         {scientificName ? (
-          <p className="mt-1 text-base italic text-[#8b9db8]">
+          <p
+            className="mt-1 text-base italic"
+            style={{ color: "var(--color-ink-2)" }}
+          >
             {scientificName}
           </p>
         ) : null}
-        <p className="mt-2 text-sm text-[#aebcd0]">
-          Sighting evidence at <strong>{site.name}</strong>
+        <p className="mt-2 text-sm" style={{ color: "var(--color-ink-2)" }}>
+          Sighting evidence at <strong style={{ color: "var(--color-ink)" }}>{site.name}</strong>
           {location ? `, ${location.name}` : ""}
         </p>
       </div>
@@ -183,7 +210,7 @@ export default async function SpeciesDetailPage({
             />
           </div>
           {photoCredit ? (
-            <p className="mt-1.5 text-right text-xs text-[#8b9db8]">
+            <p className="mt-1.5 text-right text-xs" style={{ color: "var(--color-ink-2)" }}>
               {photoCredit.photographer
                 ? `Photo: ${photoCredit.photographer}`
                 : "iNaturalist"}
@@ -196,39 +223,51 @@ export default async function SpeciesDetailPage({
 
       {/* Ecological description */}
       {speciesEntry.ecologicalDescription ? (
-        <p className="mb-8 text-sm leading-relaxed text-[#aebcd0]">
+        <p
+          className="mb-8 text-sm leading-relaxed"
+          style={{ color: "var(--color-ink-2)" }}
+        >
           {speciesEntry.ecologicalDescription}
         </p>
       ) : null}
 
       {/* Sighting evidence */}
       <section className="mb-8">
-        <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-[#8b9db8]">
+        <h2
+          className="mb-3 text-sm font-bold uppercase tracking-[0.1em]"
+          style={{ color: "var(--color-ink-2)", fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+        >
           Evidence at this site
         </h2>
         {evidence.length > 0 ? (
-          <div className="rounded-xl border border-white/10 bg-[#0a1628]">
+          <div
+            className="rounded-xl"
+            style={{ border: "1px solid var(--color-hairline)" }}
+          >
             {evidence.map((ev, i) => (
               <div
                 key={i}
-                className="flex flex-col gap-1 border-b border-white/10 px-4 py-3 last:border-b-0 sm:flex-row sm:items-start sm:gap-4"
+                className="flex flex-col gap-1 px-4 py-3 last:border-b-0 sm:flex-row sm:items-start sm:gap-4"
+                style={{ borderBottom: i < evidence.length - 1 ? "1px solid var(--color-hairline)" : "none" }}
               >
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-[#f0f4f8]">
+                  <p className="text-sm font-semibold" style={{ color: "var(--color-ink)" }}>
                     {ev.recentRecordCount} record
                     {ev.recentRecordCount === 1 ? "" : "s"} within{" "}
                     {ev.proximityRadiusKm} km
                   </p>
-                  <p className="text-xs text-[#8b9db8]">
+                  <p className="text-xs" style={{ color: "var(--color-ink-2)" }}>
                     Confidence:{" "}
                     <span
-                      className={`font-semibold ${
-                        ev.confidence === "high"
-                          ? "text-emerald-300"
-                          : ev.confidence === "medium"
-                            ? "text-amber-300"
-                            : "text-[#8b9db8]"
-                      }`}
+                      style={{
+                        fontWeight: 600,
+                        color:
+                          ev.confidence === "high"
+                            ? "var(--color-improving)"
+                            : ev.confidence === "medium"
+                              ? "var(--color-stable)"
+                              : "var(--color-ink-2)",
+                      }}
                     >
                       {ev.confidence}
                     </span>
@@ -238,7 +277,8 @@ export default async function SpeciesDetailPage({
                 {ev.lastConfirmedAt ? (
                   <time
                     dateTime={ev.lastConfirmedAt}
-                    className="text-xs text-[#8b9db8]"
+                    className="text-xs"
+                    style={{ color: "var(--color-ink-2)" }}
                   >
                     Last confirmed{" "}
                     {new Date(
@@ -250,7 +290,7 @@ export default async function SpeciesDetailPage({
                     })}
                   </time>
                 ) : (
-                  <span className="text-xs text-[#8b9db8]">
+                  <span className="text-xs" style={{ color: "var(--color-ink-2)" }}>
                     No date on file
                   </span>
                 )}
@@ -258,11 +298,14 @@ export default async function SpeciesDetailPage({
             ))}
           </div>
         ) : (
-          <div className="rounded-xl border border-dashed border-white/10 px-5 py-8 text-center">
-            <p className="text-sm font-semibold text-[#aebcd0]">
+          <div
+            className="rounded-xl px-5 py-8 text-center"
+            style={{ border: "1px dashed var(--color-hairline)" }}
+          >
+            <p className="text-sm font-semibold" style={{ color: "var(--color-ink-2)" }}>
               No confirmed records on file at this site
             </p>
-            <p className="mt-1.5 text-xs text-[#8b9db8]">
+            <p className="mt-1.5 text-xs" style={{ color: "var(--color-ink-2)" }}>
               {commonName} is listed as a curated species here based on
               historical reports.
             </p>
@@ -273,7 +316,10 @@ export default async function SpeciesDetailPage({
       {/* 12-month seasonality calendar */}
       {seasonalityMonths.length > 0 ? (
         <section className="mb-8">
-          <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-[#8b9db8]">
+          <h2
+            className="mb-3 text-sm font-bold uppercase tracking-[0.1em]"
+            style={{ color: "var(--color-ink-2)", fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+          >
             Seasonality
           </h2>
           <div className="grid grid-cols-6 gap-1.5 sm:grid-cols-12">
@@ -283,11 +329,13 @@ export default async function SpeciesDetailPage({
               return (
                 <div
                   key={m}
-                  className={`rounded-lg px-1 py-2 text-center text-xs font-semibold ${
-                    isPeak
-                      ? "bg-[#00d4ff] text-[#0a1628]"
-                      : "bg-white/5 text-[#8b9db8]"
-                  } ${isNow ? "ring-2 ring-inset ring-[#00d4ff]" : ""}`}
+                  className="rounded-lg px-1 py-2 text-center text-xs font-semibold"
+                  style={{
+                    background: isPeak ? "var(--color-ocean)" : "rgba(14,28,40,0.05)",
+                    color: isPeak ? "#ffffff" : "var(--color-ink-2)",
+                    outline: isNow ? "2px solid var(--color-ocean)" : "none",
+                    outlineOffset: "2px",
+                  }}
                 >
                   {m}
                 </div>
@@ -312,7 +360,10 @@ export default async function SpeciesDetailPage({
       {/* Also seen at other sites */}
       {nearbySites.length > 0 ? (
         <section className="mb-8">
-          <h2 className="mb-3 text-sm font-bold uppercase tracking-[0.1em] text-[#8b9db8]">
+          <h2
+            className="mb-3 text-sm font-bold uppercase tracking-[0.1em]"
+            style={{ color: "var(--color-ink-2)", fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace" }}
+          >
             Also seen at other sites
           </h2>
           <ul className="space-y-2">
@@ -320,10 +371,15 @@ export default async function SpeciesDetailPage({
               <li key={s.id}>
                 <Link
                   href={`/sites/${s.slug}/species/${speciesSlug}`}
-                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-[#0a1628] px-4 py-3 text-sm font-semibold text-[#f0f4f8] transition hover:border-[#00d4ff]/40 hover:text-[#00d4ff]"
+                  className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition"
+                  style={{
+                    border: "1px solid var(--color-hairline)",
+                    color: "var(--color-ink)",
+                    textDecoration: "none",
+                  }}
                 >
                   {s.name}
-                  <span className="ml-auto text-[#8b9db8]">→</span>
+                  <span className="ml-auto" style={{ color: "var(--color-ink-2)" }}>→</span>
                 </Link>
               </li>
             ))}
