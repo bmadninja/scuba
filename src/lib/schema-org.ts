@@ -11,7 +11,7 @@ const MONTHS = [
 ];
 
 export function siteSchema(site: Site, location: Location | null) {
-  const seasonReadable = site.bestMonths.map((m) => MONTHS[m - 1]).join(", ");
+  const seasonReadable = (site.bestMonths ?? []).map((m) => MONTHS[m - 1]).join(", ");
   return {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
@@ -48,12 +48,12 @@ export function siteSchema(site: Site, location: Location | null) {
       {
         "@type": "PropertyValue",
         name: "Dive types",
-        value: site.diveTypes.map(humanDiveType).join(", "),
+        value: (site.diveTypes ?? []).map(humanDiveType).join(", "),
       },
       {
         "@type": "PropertyValue",
         name: "Species",
-        value: site.species.map((s) => s.commonName).join(", "),
+        value: (site.species ?? []).map((s) => s.commonName).join(", "),
       },
     ],
   };

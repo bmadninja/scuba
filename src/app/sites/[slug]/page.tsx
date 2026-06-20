@@ -142,7 +142,7 @@ function mergeCreatures(site: Site, sightings: SightingRecord[]): Creature[] {
   const byCommonName = new Map<string, string>(); // common.lower → key
   const order: string[] = [];
 
-  for (const s of site.species) {
+  for (const s of (site.species ?? [])) {
     const key = creatureKey(s.scientificName, s.commonName);
     if (!byKey.has(key)) order.push(key);
     byKey.set(key, {
@@ -269,10 +269,10 @@ export default async function SiteDetailPage({
 
   const location = getLocationById(site.locationId);
   const currentMonth = new Date().getUTCMonth() + 1;
-  const inSeason = site.bestMonths.includes(currentMonth);
+  const inSeason = (site.bestMonths ?? []).includes(currentMonth);
   const sightings = getSightingsBySiteId(site.id);
   const heroPhotoUrl = underwaterPhotoUrl(site.heroImageUrl);
-  const bestMonthsSet = new Set(site.bestMonths);
+  const bestMonthsSet = new Set(site.bestMonths ?? []);
 
   // --- Hero chips: most-recent confirmed sighting + peak season --------------
   const latestSighting = sightings
@@ -377,7 +377,7 @@ export default async function SiteDetailPage({
     { icon: "", name: "Dive computer", extra: null, shopUrl: gearShopUrl("computer-shearwater-peregrine") },
   ];
 
-  const siteGearItems: GearItem[] = site.siteSpecificGear
+  const siteGearItems: GearItem[] = (site.siteSpecificGear ?? [])
     .filter((g) => g && g.name)
     .map((g) => ({
       icon: siteGearIcon(g.name),
@@ -545,6 +545,9 @@ export default async function SiteDetailPage({
       <SitePageBody
         siteId={site.id}
         siteSlug={site.slug}
+        siteName={site.name}
+        siteLat={site.lat}
+        siteLng={site.lng}
         intro={site.description || null}
         conditions={conditions}
         encounters={encounters}

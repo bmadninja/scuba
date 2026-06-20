@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   for (const site of getAllSites()) {
     const sightings = getSightingsBySiteId(site.id);
     const allSpecies = [
-      ...site.species.map((s) => s.commonName),
+      ...(site.species ?? []).map((s) => s.commonName),
       ...sightings.map((s) => s.speciesCommon),
     ];
     const unique = Array.from(new Set(allSpecies));
@@ -44,7 +44,7 @@ export async function generateMetadata({
   const site = getSiteBySlug(slug);
   if (!site) return { title: "Not found" };
   const match = [
-    ...site.species.map((s) => s.commonName),
+    ...(site.species ?? []).map((s) => s.commonName),
   ].find((n) => slugifySpecies(n) === speciesSlug);
   return {
     title: match
@@ -68,7 +68,7 @@ export default async function SpeciesDetailPage({
 
   // Find species by slug match
   const allSpeciesEntries = [
-    ...site.species.map((s) => ({ ...s, fromSite: true })),
+    ...(site.species ?? []).map((s) => ({ ...s, fromSite: true })),
   ];
   const speciesEntry = allSpeciesEntries.find(
     (s) => slugifySpecies(s.commonName) === speciesSlug,
@@ -112,7 +112,7 @@ export default async function SpeciesDetailPage({
   const nearbySites = getAllSites()
     .filter((s) => s.id !== site.id)
     .filter((s) =>
-      s.species.some((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase()),
+      (s.species ?? []).some((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase()),
     )
     .sort((a, b) => {
       const ra = a.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());

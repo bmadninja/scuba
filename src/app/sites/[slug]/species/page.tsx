@@ -139,7 +139,7 @@ function mergeSpecies(site: Site, sightings: SightingRecord[]): Merged[] {
   const byKey = new Map<string, Merged>();
   const order: string[] = [];
 
-  for (const s of site.species) {
+  for (const s of (site.species ?? [])) {
     const key = speciesKey(s.scientificName, s.commonName);
     if (!byKey.has(key)) order.push(key);
     byKey.set(key, {
