@@ -1,0 +1,36 @@
+name: Fetch WOD subsurface temperatures
+
+on:
+  schedule:
+    # Weekly on Sundays at 05:00 UTC — WOD is historical, so weekly is plenty.
+    - cron: "0 5 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch NOAA WOD depth profiles and estimate thermoclines
+        run: node scripts/fetch-wod-profiles.mjs
+
+      - name: Commit updated wod-thermocline.json
+        run: |
+          if git diff --quiet -- src/data/wod-thermocline.json; then
+            echo "No WOD changes this week."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/wod-thermocline.json
+          git commit -m "data: weekly WOD subsurface temperature refresh"
+          git pull --rebase
+          git push
