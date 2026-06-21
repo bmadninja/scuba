@@ -142,7 +142,7 @@ function mergeCreatures(site: Site, sightings: SightingRecord[]): Creature[] {
   const byCommonName = new Map<string, string>(); // common.lower → key
   const order: string[] = [];
 
-  for (const s of site.species) {
+  for (const s of (site.species ?? [])) {
     const key = creatureKey(s.scientificName, s.commonName);
     if (!byKey.has(key)) order.push(key);
     byKey.set(key, {
