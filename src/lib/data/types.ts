@@ -711,3 +711,12 @@ export type Gear = {
   sourceIds?: string[];
   methodologyClaimIds?: string[];
 };
+
+export type SpeciesDiversity = {
+  locationId: string;
+  speciesRichness: number;
+  radiusKm: number;
+  qualityGrade: string;
+  source: string;
+  fetchedAt: string;
+};
