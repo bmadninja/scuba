@@ -186,7 +186,9 @@ function resolvePhoto(
 }
 
 export function generateStaticParams() {
-  return getAllSites().map((s) => ({ slug: s.slug }));
+  return getAllSites()
+    .filter((s) => s.species && Array.isArray(s.species) && s.species.length > 0)
+    .map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
