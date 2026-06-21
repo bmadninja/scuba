@@ -1,0 +1,36 @@
+name: Fetch MERMAID coral cover
+
+on:
+  schedule:
+    # Weekly, Mondays at 07:00 UTC. MERMAID survey data updates infrequently.
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch MERMAID benthic + bleaching surveys
+        run: node scripts/fetch-mermaid-coral-cover.mjs
+
+      - name: Commit updated reef-health.json
+        run: |
+          if git diff --quiet -- src/data/reef-health.json; then
+            echo "No reef-health changes from MERMAID this run."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/reef-health.json
+          git commit -m "data: MERMAID benthic + bleaching survey refresh"
+          git pull --rebase
+          git push
