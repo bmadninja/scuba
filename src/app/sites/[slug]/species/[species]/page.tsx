@@ -112,11 +112,11 @@ export default async function SpeciesDetailPage({
   const nearbySites = getAllSites()
     .filter((s) => s.id !== site.id)
     .filter((s) =>
-      s.species.some((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase()),
+      (s.species ?? []).some((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase()),
     )
     .sort((a, b) => {
-      const ra = a.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
-      const rb = b.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
+      const ra = (a.species ?? []).find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
+      const rb = (b.species ?? []).find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
       return (RELIABILITY_RANK[rb?.reliability ?? ""] ?? 0) - (RELIABILITY_RANK[ra?.reliability ?? ""] ?? 0);
     })
     .slice(0, 5);
