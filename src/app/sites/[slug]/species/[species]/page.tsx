@@ -24,8 +24,8 @@ export async function generateStaticParams() {
   for (const site of getAllSites()) {
     const sightings = getSightingsBySiteId(site.id);
     const allSpecies = [
-      ...site.species.map((s) => s.commonName),
-      ...sightings.map((s) => s.speciesCommon),
+      ...(site.species ?? []).map((s) => s.commonName),
+      ...(sightings ?? []).map((s) => s.speciesCommon),
     ];
     const unique = Array.from(new Set(allSpecies));
     for (const sp of unique) {
