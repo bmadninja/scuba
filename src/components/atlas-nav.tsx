@@ -37,8 +37,7 @@ type AtlasNavProps = {
 };
 
 /** Wordmark — text only, no SVG icons per design system rules. */
-function Wordmark({ scrolled }: { scrolled: boolean }) {
-  const ink = scrolled ? "#0E1C28" : "#FFFFFF";
+function Wordmark() {
   return (
     <span
       style={{
@@ -47,8 +46,7 @@ function Wordmark({ scrolled }: { scrolled: boolean }) {
         fontSize: "1.125rem",
         letterSpacing: "-0.01em",
         lineHeight: 1,
-        color: ink,
-        transition: "color 200ms ease",
+        color: "#0E1C28",
       }}
     >
       Scuba Season
@@ -148,17 +146,13 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
 
   if (hideLayoutNav) return null;
 
-  const linkColor = scrolled ? "#0E1C28" : "rgba(255,255,255,0.90)";
-  const linkHoverColor = scrolled ? "#0E1C28" : "#FFFFFF";
+  const linkColor = "#0E1C28";
+  const linkHoverColor = "#0E1C28";
 
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-200 ${
-          scrolled
-            ? "bg-white border-b border-[#E7E6E2]"
-            : "bg-transparent border-b border-transparent"
-        }`}
+        className="sticky top-0 z-50 bg-white border-b border-[#E7E6E2]"
       >
         <div className="mx-auto flex max-w-[1320px] items-center gap-3 px-4 py-3 sm:gap-6 sm:px-8">
           {/* Wordmark */}
@@ -167,7 +161,7 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
             className="shrink-0 focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
             aria-label="Scuba Season — home"
           >
-            <Wordmark scrolled={scrolled} />
+            <Wordmark />
           </Link>
 
           {/* Breadcrumbs (location / site pages) */}
@@ -178,9 +172,8 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
               style={{
                 gap: "0.5rem",
                 fontSize: "0.8125rem",
-                color: scrolled ? "rgba(14,28,40,0.5)" : "rgba(255,255,255,0.6)",
+                color: "rgba(14,28,40,0.5)",
                 marginLeft: "0.5rem",
-                transition: "color 200ms ease",
               }}
             >
               {breadcrumbs.map((crumb, i) => (
@@ -189,7 +182,7 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
                     <span
                       aria-hidden="true"
                       style={{
-                        color: scrolled ? "rgba(14,28,40,0.25)" : "rgba(255,255,255,0.3)",
+                        color: "rgba(14,28,40,0.25)",
                         marginRight: "0.25rem",
                       }}
                     >
@@ -200,16 +193,15 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
                     <Link
                       href={crumb.href}
                       style={{
-                        color: scrolled ? "rgba(14,28,40,0.5)" : "rgba(255,255,255,0.6)",
+                        color: "rgba(14,28,40,0.5)",
                         textDecoration: "none",
-                        transition: "color 200ms ease",
                       }}
                       className="hover:text-[#0E4F6E] transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
                     >
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span style={{ color: scrolled ? "#0E1C28" : "rgba(255,255,255,0.9)", fontWeight: 500 }}>
+                    <span style={{ color: "#0E1C28", fontWeight: 500 }}>
                       {crumb.label}
                     </span>
                   )}
@@ -240,10 +232,9 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
               style={{
                 padding: "0.45rem 1rem",
                 fontSize: "0.8125rem",
-                background: scrolled ? "rgba(14,28,40,0.04)" : "rgba(255,255,255,0.12)",
-                border: scrolled ? "1px solid #E7E6E2" : "1px solid rgba(255,255,255,0.2)",
-                color: scrolled ? "#0E1C28" : "#FFFFFF",
-                transition: "background 200ms ease, border-color 200ms ease, color 200ms ease",
+                background: "rgba(14,28,40,0.04)",
+                border: "1px solid #E7E6E2",
+                color: "#0E1C28",
                 fontFamily: "inherit",
               }}
             />
@@ -314,11 +305,8 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
                 className="text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
                 style={{
                   padding: "0.45rem 0.75rem",
-                  color: active === n.key
-                    ? (scrolled ? "#0E4F6E" : "#F6C700")
-                    : linkColor,
+                  color: active === n.key ? "#0E4F6E" : linkColor,
                   textDecoration: "none",
-                  transition: "color 200ms ease",
                 }}
               >
                 {n.label}
