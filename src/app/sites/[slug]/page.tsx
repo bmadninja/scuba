@@ -269,7 +269,7 @@ export default async function SiteDetailPage({
 
   const location = getLocationById(site.locationId);
   const currentMonth = new Date().getUTCMonth() + 1;
-  const inSeason = site.bestMonths.includes(currentMonth);
+  const inSeason = (site.bestMonths ?? []).includes(currentMonth);
   const sightings = getSightingsBySiteId(site.id);
   const heroPhotoUrl = underwaterPhotoUrl(site.heroImageUrl);
   const bestMonthsSet = new Set(site.bestMonths);
