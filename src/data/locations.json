@@ -25,7 +25,44 @@
       "fuvahmulah-tiger-harbour",
       "maldives-kudarah-thila"
     ],
-    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_WarrenBaverstock_15.jpg"
+    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_WarrenBaverstock_15.jpg",
+    "lodging": [
+      {
+        "name": "Conrad Maldives Rangali Island",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Two island resort famous for its underwater restaurant and house reef.",
+        "bookingUrl": "https://www.hilton.com/en/hotels/mlecici-conrad-maldives-rangali-island/"
+      },
+      {
+        "name": "LUX South Ari Atoll",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Large island resort near whale shark grounds with full dive center.",
+        "bookingUrl": "https://www.luxresorts.com/en/maldives/hotel/luxsouthariatoll"
+      },
+      {
+        "name": "Vilamendhoo Island Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Reef fringed island popular with divers for easy house reef access.",
+        "bookingUrl": "https://www.vilamendhoo.com/"
+      },
+      {
+        "name": "Carpe Diem Maldives",
+        "type": "liveaboard",
+        "priceRange": "mid-range",
+        "description": "Liveaboard cruising Ari Atoll thilas, manta cleaning stations and shark sites.",
+        "bookingUrl": "https://www.carpediem-maldives.com/"
+      },
+      {
+        "name": "Dhangethi Inn",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Local island guesthouse offering affordable diving and whale shark trips.",
+        "bookingUrl": "https://www.dhangethiinn.com/"
+      }
+    ]
   },
   {
     "id": "north-male-atoll-maldives",
