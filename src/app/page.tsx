@@ -549,7 +549,7 @@ export default function Home() {
                   marginTop: "0.625rem",
                 }}
               >
-                Every site page shows which animals have actually been confirmed there and how often. Rare to Almost always, from verified diver logs. No editorial picks.
+                Every site page shows which animals have actually been confirmed there and how often. Rare to Almost always, from verified diver logs.
               </p>
             </div>
 

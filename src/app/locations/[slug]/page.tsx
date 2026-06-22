@@ -737,7 +737,9 @@ export default async function LocationPage({
         isWitnessing={isWitnessing}
         seasonNotes={details?.seasonNotes ?? null}
         quotes={details?.quotes ?? []}
-        goodToKnow={details?.goodToKnow ?? []}
+        goodToKnow={(details?.goodToKnow ?? []).filter(
+          (g) => !g.title?.toLowerCase().includes("getting there"),
+        )}
       />
     </>
   );

@@ -189,6 +189,16 @@ const LABEL_STYLE: React.CSSProperties = {
   gap: "0.4rem",
 };
 
+const SECTION_HEADER: React.CSSProperties = {
+  fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
+  fontSize: "2rem",
+  fontWeight: 400,
+  fontStyle: "italic",
+  lineHeight: 1.2,
+  color: "#0E1C28",
+  marginBottom: "1.5rem",
+};
+
 const SECTION_CARD: React.CSSProperties = {
   border: "1px solid #E7E6E2",
   borderRadius: "8px",
@@ -357,7 +367,7 @@ export function LocationPageBody(props: LocationBodyProps) {
           {/* STORY 4.1 + 4.2 + 4.3: REEF HEALTH PANEL */}
           {hasReefData ? (
             <section id="reef-condition" style={{ marginBottom: "3rem" }}>
-              <p style={LABEL_STYLE}>Reef health</p>
+              <h2 style={SECTION_HEADER}>Reef health</h2>
 
               {/* Diving outlook sentence */}
               <p style={{
@@ -497,7 +507,7 @@ export function LocationPageBody(props: LocationBodyProps) {
           {/* STORY 4.3: WATER QUALITY PANEL (only when data exists) */}
           {waterQualityEvents.length > 0 ? (
             <section style={{ marginBottom: "3rem" }}>
-              <p style={LABEL_STYLE}>Water quality</p>
+              <h2 style={SECTION_HEADER}>Water quality</h2>
               <div style={SECTION_CARD}>
                 <div style={{ padding: "1.25rem" }}>
                   {waterQualityEvents.map((ev, i) => (
@@ -524,10 +534,12 @@ export function LocationPageBody(props: LocationBodyProps) {
           {/* WHAT YOU WILL SEE — species section */}
           {species.length > 0 ? (
             <section style={{ marginBottom: "3rem" }}>
-              <p style={LABEL_STYLE}>
+              <h2 style={{ ...SECTION_HEADER, display: "flex", alignItems: "center", gap: "0.75rem" }}>
                 What you will see
-                <InfoButton onClick={() => setInfo("iucn")} label="What the conservation labels mean" />
-              </p>
+                <span style={{ fontSize: "1rem", fontStyle: "normal" }}>
+                  <InfoButton onClick={() => setInfo("iucn")} label="What the conservation labels mean" />
+                </span>
+              </h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.75rem" }}>
                 {(showAllSpecies ? species : species.slice(0, 3)).map((sp) => {
                   const Card = sp.href ? Link : "div";
@@ -549,7 +561,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     >
                       {sp.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={resizePhotoUrl(sp.imageUrl, 500) ?? sp.imageUrl} alt={sp.commonName} style={{ width: "100%", height: 96, objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                        <img src={resizePhotoUrl(sp.imageUrl, 500) ?? sp.imageUrl} alt={sp.commonName} style={{ width: "100%", height: 96, objectFit: "cover", objectPosition: "center top", display: "block" }} loading="lazy" decoding="async" />
                       ) : (
                         <div style={{ height: 96, background: "#0E4F6E" }} />
                       )}
@@ -597,7 +609,7 @@ export function LocationPageBody(props: LocationBodyProps) {
           {/* DIVE SITES — card grid (Story 4.1) */}
           {sites.length > 0 ? (
             <section id="sites" style={{ marginBottom: "3rem" }}>
-              <p style={LABEL_STYLE}>Dive sites</p>
+              <h2 style={SECTION_HEADER}>Dive sites</h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem" }}>
                 {(showAllSites ? sites : sites.slice(0, 6)).map((s) => (
                   <Link
@@ -619,7 +631,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     <div style={{ width: "100%", height: 140, background: s.gradient, overflow: "hidden" }}>
                       {s.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={resizePhotoUrl(s.imageUrl, 500) ?? s.imageUrl} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
+                        <img src={resizePhotoUrl(s.imageUrl, 500) ?? s.imageUrl} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }} loading="lazy" decoding="async" />
                       ) : null}
                     </div>
                     <div style={{ padding: "0.75rem" }}>
@@ -645,16 +657,15 @@ export function LocationPageBody(props: LocationBodyProps) {
           {/* WHAT DIVERS SAY — quotes */}
           {quotes.length > 0 ? (
             <section style={{ marginBottom: "3rem" }}>
-              <p style={LABEL_STYLE}>What divers say</p>
+              <h2 style={SECTION_HEADER}>What divers say</h2>
               <div className="quotes-grid" style={{ display: "grid", gridTemplateColumns: quotes.length === 1 ? "1fr" : "1fr 1fr", gap: "0.75rem" }}>
                 {quotes.map((q, i) => (
                   <figure
                     key={i}
                     style={{
-                      border: "1px solid #E7E6E2",
                       borderRadius: "8px",
                       overflow: "hidden",
-                      background: "rgba(14,79,110,0.04)",
+                      background: "#0E1C28",
                       padding: "1.5rem",
                       margin: 0,
                       position: "relative",
@@ -662,12 +673,13 @@ export function LocationPageBody(props: LocationBodyProps) {
                   >
                     <span aria-hidden="true" style={{
                       position: "absolute",
-                      top: "0.5rem",
-                      right: "1rem",
+                      top: "0.75rem",
+                      right: "1.25rem",
                       fontFamily: 'Georgia, serif',
-                      fontSize: "4rem",
+                      fontSize: "5rem",
                       lineHeight: 1,
-                      color: "rgba(14,79,110,0.12)",
+                      color: "#F6C700",
+                      opacity: 0.25,
                       userSelect: "none",
                       pointerEvents: "none",
                     }}>&ldquo;</span>
@@ -676,8 +688,8 @@ export function LocationPageBody(props: LocationBodyProps) {
                         fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
                         fontSize: "0.9375rem",
                         fontStyle: "italic",
-                        lineHeight: 1.7,
-                        color: "#0E1C28",
+                        lineHeight: 1.75,
+                        color: "rgba(255,255,255,0.9)",
                         margin: 0,
                         position: "relative",
                       }}
@@ -693,7 +705,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                           fontWeight: 700,
                           letterSpacing: "0.12em",
                           textTransform: "uppercase",
-                          color: "#0E4F6E",
+                          color: "#F6C700",
                         }}
                       >
                         — {q.attribution}
@@ -708,7 +720,7 @@ export function LocationPageBody(props: LocationBodyProps) {
           {/* GOOD TO KNOW */}
           {goodToKnow.length > 0 ? (
             <section style={{ marginBottom: "3rem" }}>
-              <p style={LABEL_STYLE}>Good to know</p>
+              <h2 style={SECTION_HEADER}>Good to know</h2>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {goodToKnow.map((item, i) => (
                   <div
@@ -716,7 +728,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     style={{
                       border: "1px solid #E7E6E2",
                       borderRadius: "8px",
-                      borderLeft: "3px solid #0E4F6E",
+                      borderLeft: "3px solid #F6C700",
                       background: "#FFFFFF",
                       padding: "0.85rem 1.25rem",
                     }}
@@ -922,14 +934,12 @@ export function LocationPageBody(props: LocationBodyProps) {
 
           {/* UPLOAD NUDGE CARD */}
           <div style={{ border: "2px dashed #F6C700", borderRadius: "8px", padding: "1.25rem", marginTop: "1rem" }}>
-            <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontWeight: 600, color: "#0E1C28", marginBottom: "0.25rem" }}>
+            <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontWeight: 600, color: "#0E1C28", marginBottom: "0.5rem", display: "flex", alignItems: "center", gap: "0.4rem" }}>
               Diving here?
+              <InfoButton onClick={() => setInfo("sighting")} label="Learn how broadcasts work" />
             </p>
             <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontSize: "0.875rem", color: "#4A5568", marginBottom: "0.75rem" }}>
-              Log what you see and sharpen the picture for the next diver while feeding the global database!
-            </p>
-            <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontSize: "0.75rem", color: "#4A5568", marginBottom: "0.75rem", lineHeight: 1.5 }}>
-              Your sighting broadcasts to iNaturalist, GBIF, and reef research organizations worldwide — every record helps scientists track what is really happening to this reef.
+              Log what you see and help track this reef's health worldwide.
             </p>
             <Link
               href="/upload"
@@ -955,7 +965,7 @@ export function LocationPageBody(props: LocationBodyProps) {
         {/* ============================ GEAR — below aside so mobile order is: content → Plan Your Trip → Gear ============================ */}
         {gearGroups.length > 0 ? (
           <section id="gear" style={{ gridColumn: "1", marginBottom: "3rem" }}>
-            <p style={LABEL_STYLE}>Gear</p>
+            <h2 style={SECTION_HEADER}>Gear & getting wet</h2>
             <div style={{ ...SECTION_CARD, padding: "1.1rem 1.4rem" }}>
               <ul style={{ display: "flex", flexDirection: "column", gap: 0, listStyle: "none", margin: 0, padding: 0 }}>
                 {gearGroups.map((group, gi) => (

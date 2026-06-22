@@ -33,7 +33,8 @@ export type InfoKey =
   | "chances"
   | "inaturalist"
   | "coralwatch"
-  | "reefcheck";
+  | "reefcheck"
+  | "sighting";
 
 export const INFO: Record<InfoKey, InfoEntry> = {
   state: {
@@ -175,6 +176,16 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     link: true,
     anchor: "#sightings",
     linkText: "See how submitting and verifying works on the Method page →",
+  },
+  sighting: {
+    title: "How sighting broadcasts work",
+    body: [
+      "Your sighting reaches iNaturalist, GBIF, OBIS, and reef research organizations the same day you upload it. No separate accounts needed — we handle the forwarding.",
+      "Every photo you log helps scientists track what is actually happening to this reef. One upload. Five platforms. Real data, building the global picture.",
+    ],
+    link: true,
+    anchor: "#sightings",
+    linkText: "Learn how data flows on the Method page →",
   },
 };
 
