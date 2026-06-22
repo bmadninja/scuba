@@ -8,7 +8,7 @@ import {
   useEffect,
 } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { STATE_TEXT, STATE_COLOR } from "@/lib/data/reef-state";
+import { STATE_TEXT, STATE_COLOR, freshness } from "@/lib/data/reef-state";
 import { LocationsGlobe } from "@/components/locations-globe";
 import { ReefCard } from "@/components/reef-card";
 import { FilterPill } from "@/components/filter-pill";
@@ -53,6 +53,24 @@ const REGION_BUCKETS = [
   { value: "Americas", label: "Americas" },
   { value: "Atlantic & Mediterranean", label: "Atlantic & Med" },
 ];
+
+const DIVE_TYPE_OPTIONS = [
+  { value: "coral", label: "Coral reef" },
+  { value: "large-pelagics", label: "Pelagics" },
+  { value: "wrecks", label: "Wrecks" },
+  { value: "wall", label: "Wall" },
+  { value: "drift", label: "Drift" },
+  { value: "cave", label: "Cave" },
+  { value: "macro", label: "Macro" },
+  { value: "muck", label: "Muck" },
+  { value: "night", label: "Night" },
+];
+
+const SKILL_OPTIONS = ["Beginner", "Open water", "Advanced", "Technical"];
+
+const SKILL_RANK: Record<string, number> = {
+  "Beginner": 0, "Open water": 1, "Advanced": 2, "Technical": 3,
+};
 
 const REGION_BUCKET: Record<string, string> = {
   "Andaman Islands": "Asia", "Andaman Sea": "Asia", "Bali": "Asia",
@@ -99,12 +117,14 @@ export function ExplorePage({ locations, currentMonth }: Props) {
   const router = useRouter();
   const params = useSearchParams();
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   // Draft filters used only inside the mobile sheet (applied on "Apply filters")
   const [draftReefStates, setDraftReefStates] = useState<ReefState[]>([]);
   const [draftRegions, setDraftRegions] = useState<string[]>([]);
   const [draftMonths, setDraftMonths] = useState<number[]>([]);
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const cardRefs = useRef<Map<string, HTMLAnchorElement | null>>(new Map());
+  const filterBarRef = useRef<HTMLDivElement>(null);
 
   // Active filters from URL
   const reefStates = getMultiParam(params, "reef") as ReefState[];
@@ -112,9 +132,13 @@ export function ExplorePage({ locations, currentMonth }: Props) {
   const monthFilters = getMultiParam(params, "month")
     .map(Number)
     .filter((n) => n >= 1 && n <= 12);
+  const diveTypeFilters = getMultiParam(params, "divetype");
+  const skillFilters = getMultiParam(params, "skill");
+  const freshOnly = params.get("fresh") === "1";
 
   const activeFilterCount =
-    reefStates.length + regionFilters.length + monthFilters.length;
+    reefStates.length + regionFilters.length + monthFilters.length +
+    diveTypeFilters.length + skillFilters.length + (freshOnly ? 1 : 0);
   const hasActiveFilter = activeFilterCount > 0;
 
   // Sync draft with URL params when sheet opens
@@ -135,15 +159,29 @@ export function ExplorePage({ locations, currentMonth }: Props) {
     };
   }, [sheetOpen]);
 
-  // Escape key closes sheet
+  // Escape key closes sheet or dropdown
   useEffect(() => {
-    if (!sheetOpen) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSheetOpen(false);
+      if (e.key === "Escape") {
+        if (openDropdown) setOpenDropdown(null);
+        else if (sheetOpen) setSheetOpen(false);
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [sheetOpen]);
+  }, [sheetOpen, openDropdown]);
+
+  // Close dropdown when clicking outside filter bar
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onMouseDown = (e: MouseEvent) => {
+      if (filterBarRef.current && !filterBarRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", onMouseDown);
+    return () => document.removeEventListener("mousedown", onMouseDown);
+  }, [openDropdown]);
 
   const setParam = useCallback(
     (key: string, value: string | null) => {
@@ -176,6 +214,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
   );
 
   const clearAll = useCallback(() => {
+    setOpenDropdown(null);
     router.replace("/locations", { scroll: false });
   }, [router]);
 
@@ -207,6 +246,19 @@ export function ExplorePage({ locations, currentMonth }: Props) {
         !monthFilters.some((m) => loc.bestMonths.includes(m))
       )
         return false;
+      if (
+        diveTypeFilters.length > 0 &&
+        !diveTypeFilters.some((dt) => loc.diveTypeTags.includes(dt))
+      )
+        return false;
+      if (skillFilters.length > 0) {
+        const maxRank = Math.max(...skillFilters.map((s) => SKILL_RANK[s] ?? 0));
+        if ((SKILL_RANK[loc.skill] ?? 0) > maxRank) return false;
+      }
+      if (freshOnly) {
+        const k = loc.lastSurveyDays === null ? "none" : freshness(loc.lastSurveyDays).k;
+        if (k === "fresh") return false;
+      }
       return true;
     });
 
@@ -219,7 +271,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
     });
 
     return result;
-  }, [locations, reefStates, regionFilters, monthFilters, currentMonth]);
+  }, [locations, reefStates, regionFilters, monthFilters, diveTypeFilters, skillFilters, freshOnly, currentMonth]);
 
   // When a globe marker is clicked, select the card and scroll it into view
   const handleMarkerClick = useCallback((slug: string) => {
@@ -265,7 +317,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
               fontWeight: 500,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.5)",
+              color: "#4A5568",
               marginBottom: "1rem",
             }}
           >
@@ -290,7 +342,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
               fontFamily: "var(--font-sans), \"IBM Plex Sans\", system-ui, sans-serif",
               fontSize: "1rem",
               lineHeight: 1.65,
-              color: "rgba(255,255,255,0.55)",
+              color: "#4A5568",
               maxWidth: 480,
             }}
           >
@@ -302,69 +354,223 @@ export function ExplorePage({ locations, currentMonth }: Props) {
 
       {/* ── Sticky filter bar (desktop) ─────────────────────────────────────── */}
       <div
-        className="sticky z-40 hidden border-b border-[#E7E6E2] bg-white sm:block"
-        style={{ top: 56 }}
+        ref={filterBarRef}
+        className="sticky z-40 hidden sm:block"
+        style={{ top: 56, background: "#FFFFFF", borderBottom: "1px solid #E7E6E2" }}
       >
         <div
-          className="flex items-center gap-2 overflow-x-auto px-4 py-3"
+          className="flex items-center gap-2 overflow-x-auto px-4 py-3 scrollbar-hide"
           style={{ WebkitOverflowScrolling: "touch", maxWidth: 1320, margin: "0 auto" }}
         >
-          {/* Reef state pills */}
-          {REEF_STATES.map(({ value, label }) => (
-            <FilterPill
-              key={value}
-              label={label}
-              active={reefStates.includes(value)}
-              onClick={() => toggleMultiParam("reef", value)}
-            />
-          ))}
-
-          <span
-            aria-hidden="true"
-            className="shrink-0"
-            style={{ width: 1, height: 20, background: "#E7E6E2" }}
-          />
-
-          {/* Region pills */}
-          {REGION_BUCKETS.map(({ value, label }) => (
-            <FilterPill
-              key={value}
-              label={label}
-              active={regionFilters.includes(value)}
-              onClick={() => toggleMultiParam("region", value)}
-            />
-          ))}
-
-          <span
-            aria-hidden="true"
-            className="shrink-0"
-            style={{ width: 1, height: 20, background: "#E7E6E2" }}
-          />
-
-          {/* Month pills */}
-          {MONTH_LABELS.map((lbl, i) => {
-            const m = i + 1;
+          {/* Reef state pills with colored dots */}
+          {REEF_STATES.map(({ value, label }) => {
+            const active = reefStates.includes(value);
             return (
-              <FilterPill
-                key={lbl}
-                label={lbl}
-                active={monthFilters.includes(m)}
-                onClick={() => toggleMultiParam("month", String(m))}
-              />
+              <button
+                key={value}
+                type="button"
+                aria-pressed={active}
+                onClick={() => toggleMultiParam("reef", value)}
+                className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1.5 text-sm whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                style={{
+                  border: active ? "1px solid rgba(14,28,40,0.45)" : "1px solid #E7E6E2",
+                  background: active ? "rgba(14,28,40,0.06)" : "transparent",
+                  color: active ? "#0E1C28" : "#4A5568",
+                  cursor: "pointer",
+                }}
+              >
+                <span
+                  aria-hidden="true"
+                  className="h-2 w-2 shrink-0 rounded-full"
+                  style={{ background: STATE_COLOR[value as ReefState] }}
+                />
+                {label}
+              </button>
             );
           })}
+
+          <span aria-hidden="true" className="shrink-0 h-5" style={{ width: 1, background: "rgba(14,28,40,0.06)" }} />
+
+          {/* What to see dropdown */}
+          {(["whatToSee", "region", "when", "certification"] as const).map((key) => {
+            const labels: Record<string, string> = {
+              whatToSee: "What to see",
+              region: "Region",
+              when: "When",
+              certification: "Certification",
+            };
+            const counts: Record<string, number> = {
+              whatToSee: diveTypeFilters.length,
+              region: regionFilters.length,
+              when: monthFilters.length,
+              certification: skillFilters.length,
+            };
+            const count = counts[key];
+            const isOpen = openDropdown === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                aria-expanded={isOpen}
+                onClick={() => setOpenDropdown(isOpen ? null : key)}
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-sm whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                style={{
+                  border: (isOpen || count > 0) ? "1px solid rgba(14,28,40,0.45)" : "1px solid #E7E6E2",
+                  background: (isOpen || count > 0) ? "rgba(14,28,40,0.06)" : "transparent",
+                  color: (isOpen || count > 0) ? "#0E1C28" : "#4A5568",
+                  cursor: "pointer",
+                }}
+              >
+                {labels[key]}
+                {count > 0 && (
+                  <span
+                    className="flex h-4 min-w-[16px] items-center justify-center rounded-full px-1 text-xs font-semibold leading-none"
+                    style={{ background: "#0E4F6E", color: "#FFFFFF" }}
+                  >
+                    {count}
+                  </span>
+                )}
+                <span aria-hidden="true" style={{ fontSize: "10px", lineHeight: 1 }}>{isOpen ? "▲" : "▾"}</span>
+              </button>
+            );
+          })}
+
+          <span aria-hidden="true" className="shrink-0 h-5" style={{ width: 1, background: "rgba(14,28,40,0.06)" }} />
+
+          {/* Needs fresh eyes toggle */}
+          <button
+            type="button"
+            aria-pressed={freshOnly}
+            onClick={() => setParam("fresh", freshOnly ? null : "1")}
+            className="inline-flex shrink-0 items-center rounded-full px-3 py-1.5 text-sm whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+            style={{
+              border: freshOnly ? "1px solid rgba(14,28,40,0.45)" : "1px solid #E7E6E2",
+              background: freshOnly ? "rgba(14,28,40,0.06)" : "transparent",
+              color: freshOnly ? "#0E1C28" : "#4A5568",
+              cursor: "pointer",
+            }}
+          >
+            Needs fresh eyes
+          </button>
 
           {/* Clear all */}
           {hasActiveFilter && (
             <button
               type="button"
               onClick={clearAll}
-              className="ml-auto shrink-0 whitespace-nowrap text-sm text-[#0E4F6E] underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+              className="ml-auto shrink-0 whitespace-nowrap text-sm underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+              style={{ color: "#0E4F6E" }}
             >
               Clear all
             </button>
           )}
         </div>
+
+        {/* Dropdown panels */}
+        {openDropdown && (
+          <div
+            className="border-t border-white/10 px-4 py-4"
+            style={{ maxWidth: 1320, margin: "0 auto" }}
+          >
+            {openDropdown === "whatToSee" && (
+              <div className="flex flex-wrap gap-2">
+                {DIVE_TYPE_OPTIONS.map(({ value, label }) => {
+                  const active = diveTypeFilters.includes(value);
+                  return (
+                    <button
+                      key={value}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => toggleMultiParam("divetype", value)}
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                      style={{
+                        border: active ? "1px solid #0E4F6E" : "1px solid #E7E6E2",
+                        background: active ? "rgba(0,212,255,0.12)" : "#F8F7F4",
+                        color: active ? "#0E4F6E" : "#4A5568",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+            {openDropdown === "region" && (
+              <div className="flex flex-wrap gap-2">
+                {REGION_BUCKETS.map(({ value, label }) => {
+                  const active = regionFilters.includes(value);
+                  return (
+                    <button
+                      key={value}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => toggleMultiParam("region", value)}
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                      style={{
+                        border: active ? "1px solid #0E4F6E" : "1px solid #E7E6E2",
+                        background: active ? "rgba(0,212,255,0.12)" : "#F8F7F4",
+                        color: active ? "#0E4F6E" : "#4A5568",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+            {openDropdown === "when" && (
+              <div className="flex flex-wrap gap-2">
+                {MONTH_LABELS.map((lbl, i) => {
+                  const m = i + 1;
+                  const active = monthFilters.includes(m);
+                  return (
+                    <button
+                      key={lbl}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => toggleMultiParam("month", String(m))}
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                      style={{
+                        border: active ? "1px solid #0E4F6E" : "1px solid #E7E6E2",
+                        background: active ? "rgba(0,212,255,0.12)" : "#F8F7F4",
+                        color: active ? "#0E4F6E" : "#4A5568",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {lbl}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+            {openDropdown === "certification" && (
+              <div className="flex flex-wrap gap-2">
+                {SKILL_OPTIONS.map((s) => {
+                  const active = skillFilters.includes(s);
+                  return (
+                    <button
+                      key={s}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => toggleMultiParam("skill", s)}
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                      style={{
+                        border: active ? "1px solid #0E4F6E" : "1px solid #E7E6E2",
+                        background: active ? "rgba(0,212,255,0.12)" : "#F8F7F4",
+                        color: active ? "#0E4F6E" : "#4A5568",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {s}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* ── Active filter strip (mobile, shown in filter bar when active) ─────── */}

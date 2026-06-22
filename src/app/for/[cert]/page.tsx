@@ -132,14 +132,14 @@ export default async function CertLandingPage({
       <div className="mx-auto w-full max-w-5xl">
         <Link
           href="/locations"
-          className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b9db8] hover:text-[#00d4ff]"
+          className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4A5568] hover:text-[#0E4F6E]"
         >
           ← All locations
         </Link>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#f0f4f8]">
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-[#0E1C28]">
           Best dive trips for {label}
         </h1>
-        <p className="mt-3 max-w-2xl text-base leading-7 text-[#aebcd0]">
+        <p className="mt-3 max-w-2xl text-base leading-7 text-[#4A5568]">
           {CERT_INTROS[cert]}
         </p>
 
@@ -162,12 +162,12 @@ export default async function CertLandingPage({
           </div>
         ) : null}
 
-        <section className="mt-8 border-t border-white/10 pt-6">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
+        <section className="mt-8 border-t border-[#E7E6E2] pt-6">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0E4F6E]">
             Locations that fit your level
           </h2>
           {locations.length === 0 ? (
-            <p className="mt-3 text-sm text-[#8b9db8]">
+            <p className="mt-3 text-sm text-[#4A5568]">
               No locations in the atlas match this level yet.
             </p>
           ) : (
@@ -175,18 +175,18 @@ export default async function CertLandingPage({
               {locations.map(({ location: l, sites }) => (
                 <li
                   key={l.id}
-                  className="rounded-xl border border-white/10 bg-[#0a1628] p-4"
+                  className="rounded-xl border border-[#E7E6E2] bg-white p-4"
                 >
                   <Link
                     href={`/locations/${l.slug}`}
-                    className="font-semibold text-[#f0f4f8] hover:text-[#00d4ff]"
+                    className="font-semibold text-[#0E1C28] hover:text-[#0E4F6E]"
                   >
                     {l.name}
                   </Link>
-                  <p className="text-xs uppercase tracking-wider text-[#8b9db8]">
+                  <p className="text-xs uppercase tracking-wider text-[#4A5568]">
                     {l.country} · {sites.length} sites
                   </p>
-                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-[#aebcd0]">
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-[#4A5568]">
                     {l.description}
                   </p>
                 </li>
@@ -196,21 +196,21 @@ export default async function CertLandingPage({
         </section>
 
         {gear.length > 0 ? (
-          <section className="mt-8 border-t border-white/10 pt-6">
-            <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
+          <section className="mt-8 border-t border-[#E7E6E2] pt-6">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0E4F6E]">
               Recommended gear
             </h2>
             <ul className="mt-3 grid gap-3 sm:grid-cols-2">
               {gear.map((g) => (
                 <li
                   key={g.id}
-                  className="rounded-xl border border-white/10 bg-[#0a1628] p-4"
+                  className="rounded-xl border border-[#E7E6E2] bg-white p-4"
                 >
-                  <p className="font-semibold text-[#f0f4f8]">{g.name}</p>
-                  <p className="text-xs uppercase tracking-wider text-[#8b9db8]">
+                  <p className="font-semibold text-[#0E1C28]">{g.name}</p>
+                  <p className="text-xs uppercase tracking-wider text-[#4A5568]">
                     {g.category} · {g.tier}
                   </p>
-                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-[#aebcd0]">
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-[#4A5568]">
                     {g.description}
                   </p>
                 </li>
@@ -219,12 +219,12 @@ export default async function CertLandingPage({
           </section>
         ) : null}
 
-        <section className="mt-10 border-t border-white/10 pt-6">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00d4ff]">
+        <section className="mt-10 border-t border-[#E7E6E2] pt-6">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0E4F6E]">
             Methodology
           </h2>
-          <details className="mt-3 rounded-xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-[#aebcd0]">
-            <summary className="cursor-pointer font-semibold text-[#f0f4f8]">
+          <details className="mt-3 rounded-xl border border-[#E7E6E2] bg-[#F8F7F4] p-4 text-sm leading-6 text-[#4A5568]">
+            <summary className="cursor-pointer font-semibold text-[#0E1C28]">
               How we matched locations to your level
             </summary>
             <p className="mt-3">

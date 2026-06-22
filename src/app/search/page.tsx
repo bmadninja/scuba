@@ -34,7 +34,7 @@ const STATE_TEXT: Record<string, string> = {
 
 const STATE_COLOR: Record<string, string> = {
   thriving: "#10b981",
-  pressure: "#00d4ff",
+  pressure: "#0E4F6E",
   change: "#f43f5e",
 };
 
@@ -185,7 +185,7 @@ function SearchInner() {
     return (
       <>
         {text.slice(0, idx)}
-        <strong style={{ color: "#00d4ff", fontWeight: 700 }}>
+        <strong style={{ color: "#0E4F6E", fontWeight: 700 }}>
           {text.slice(idx, idx + query.length)}
         </strong>
         {text.slice(idx + query.length)}
@@ -196,20 +196,20 @@ function SearchInner() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-12">
       {/* Header */}
-      <nav className="mb-6 flex items-center gap-2 text-sm text-[#8b9db8]">
-        <Link href="/" className="transition hover:text-[#00d4ff]">
+      <nav className="mb-6 flex items-center gap-2 text-sm text-[#4A5568]">
+        <Link href="/" className="transition hover:text-[#0E4F6E]">
           ← Atlas
         </Link>
       </nav>
 
-      <h1 className="mb-6 text-3xl font-bold tracking-tight text-[#f0f4f8]">
+      <h1 className="mb-6 text-3xl font-bold tracking-tight text-[#0E1C28]">
         Search
       </h1>
 
       {/* Search input */}
       <form onSubmit={handleSubmit} className="mb-8">
         <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-[#8b9db8]">
+          <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-[#4A5568]">
             <svg
               width="18"
               height="18"
@@ -231,7 +231,7 @@ function SearchInner() {
             onChange={(e) => setQ(e.target.value)}
             placeholder="Search locations, sites, or species…"
             aria-label="Search reefs"
-            className="w-full rounded-2xl border border-white/10 bg-white/5 py-3.5 pl-11 pr-4 text-base text-[#f0f4f8] placeholder:text-[#8b9db8] focus:border-[#00d4ff] focus:bg-[#0a1628] focus:outline-none focus:ring-2 focus:ring-[#00d4ff]/30"
+            className="w-full rounded-2xl border border-[#E7E6E2] bg-[#F8F7F4] py-3.5 pl-11 pr-4 text-base text-[#0E1C28] placeholder:text-[#94A3B8] focus:border-[#0E4F6E] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4F6E]/20"
             autoFocus
           />
         </div>
@@ -240,10 +240,10 @@ function SearchInner() {
       {/* No-results state */}
       {noResults && (
         <div className="py-12 text-center">
-          <p className="text-lg font-semibold text-[#f0f4f8]">
+          <p className="text-lg font-semibold text-[#0E1C28]">
             No results for &ldquo;{q}&rdquo;
           </p>
-          <p className="mt-2 text-sm text-[#8b9db8]">
+          <p className="mt-2 text-sm text-[#4A5568]">
             Try searching for a location name, species common name, or a country.
           </p>
         </div>
@@ -255,11 +255,11 @@ function SearchInner() {
           {/* Locations */}
           {results.locations.length > 0 && (
             <section>
-              <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
-                <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8b9db8]">
+              <div className="mb-3 flex items-center gap-2 border-b border-[#E7E6E2] pb-2">
+                <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#4A5568]">
                   Locations
                 </span>
-                <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs font-semibold text-[#8b9db8]">
+                <span className="rounded-full bg-[#F8F7F4] px-2 py-0.5 text-xs font-semibold text-[#4A5568]">
                   {results.locations.length}
                 </span>
               </div>
@@ -268,13 +268,13 @@ function SearchInner() {
                   <li key={r.href}>
                     <Link
                       href={r.href}
-                      className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-white/5"
+                      className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-[#F1F0EC]"
                     >
                       <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-semibold text-[#f0f4f8] group-hover:text-[#00d4ff]">
+                        <span className="block text-sm font-semibold text-[#0E1C28] group-hover:text-[#0E4F6E]">
                           {highlightMatch(r.name, q)}
                         </span>
-                        <span className="block text-xs text-[#8b9db8]">
+                        <span className="block text-xs text-[#4A5568]">
                           {r.subtext}
                         </span>
                       </span>
@@ -299,11 +299,11 @@ function SearchInner() {
           {/* Sites */}
           {results.sites.length > 0 && (
             <section>
-              <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
-                <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8b9db8]">
+              <div className="mb-3 flex items-center gap-2 border-b border-[#E7E6E2] pb-2">
+                <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#4A5568]">
                   Dive sites
                 </span>
-                <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs font-semibold text-[#8b9db8]">
+                <span className="rounded-full bg-[#F8F7F4] px-2 py-0.5 text-xs font-semibold text-[#4A5568]">
                   {results.sites.length}
                 </span>
               </div>
@@ -312,13 +312,13 @@ function SearchInner() {
                   <li key={r.href}>
                     <Link
                       href={r.href}
-                      className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-white/5"
+                      className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-[#F1F0EC]"
                     >
                       <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-semibold text-[#f0f4f8] group-hover:text-[#00d4ff]">
+                        <span className="block text-sm font-semibold text-[#0E1C28] group-hover:text-[#0E4F6E]">
                           {highlightMatch(r.name, q)}
                         </span>
-                        <span className="block text-xs text-[#8b9db8]">
+                        <span className="block text-xs text-[#4A5568]">
                           {r.subtext}
                         </span>
                       </span>
@@ -332,11 +332,11 @@ function SearchInner() {
           {/* Species */}
           {results.species.length > 0 && (
             <section>
-              <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
-                <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8b9db8]">
+              <div className="mb-3 flex items-center gap-2 border-b border-[#E7E6E2] pb-2">
+                <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#4A5568]">
                   Species
                 </span>
-                <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs font-semibold text-[#8b9db8]">
+                <span className="rounded-full bg-[#F8F7F4] px-2 py-0.5 text-xs font-semibold text-[#4A5568]">
                   {results.species.length}
                 </span>
               </div>
@@ -345,13 +345,13 @@ function SearchInner() {
                   <li key={r.commonName}>
                     <Link
                       href={r.href}
-                      className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-white/5"
+                      className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-[#F1F0EC]"
                     >
                       <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-semibold text-[#f0f4f8] group-hover:text-[#00d4ff]">
+                        <span className="block text-sm font-semibold text-[#0E1C28] group-hover:text-[#0E4F6E]">
                           {highlightMatch(r.commonName, q)}
                         </span>
-                        <span className="block text-xs text-[#8b9db8]">
+                        <span className="block text-xs text-[#4A5568]">
                           {r.scientificName && (
                             <span className="italic">{r.scientificName} · </span>
                           )}
@@ -372,11 +372,11 @@ function SearchInner() {
 
       {/* Default state — no query */}
       {!hasQuery && (
-        <p className="text-sm text-[#8b9db8]">
+        <p className="text-sm text-[#4A5568]">
           Search across{" "}
-          <span className="font-semibold text-[#aebcd0]">locations</span>,{" "}
-          <span className="font-semibold text-[#aebcd0]">dive sites</span>, and{" "}
-          <span className="font-semibold text-[#aebcd0]">species</span>.
+          <span className="font-semibold text-[#4A5568]">locations</span>,{" "}
+          <span className="font-semibold text-[#4A5568]">dive sites</span>, and{" "}
+          <span className="font-semibold text-[#4A5568]">species</span>.
         </p>
       )}
     </div>
