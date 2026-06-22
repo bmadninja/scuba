@@ -118,7 +118,7 @@ export function LocationsGlobe({
         objectLat="lat"
         objectLng="lng"
         objectAltitude={0}
-        objectFacesSurface={true}
+        objectFacesSurfaces={true}
         objectThreeObject={(d: object) => buildPin((d as GlobePoint).color)}
         onObjectClick={(obj: object) => {
           const p = obj as GlobePoint;
