@@ -65,29 +65,29 @@ export function LocationsGlobe({
 }: LocationsGlobeProps) {
   const router = useRouter();
 
-  // Build a teardrop map pin: a cone whose point sits on the surface, with a
-  // round head standing outward. Geometry is shared across all pins; only the
-  // material (state color) varies, so 347 markers stay cheap on the GPU.
+  // Classic teardrop map pin as a 3D object: a bulb tapering to a point that
+  // sits on the surface. Cone is tangent to the bulb so the silhouette reads
+  // as one smooth pin. Geometry is shared; only the material color varies, so
+  // 347 pins stay cheap on the GPU.
   const buildPin = useMemo(() => {
-    const coneGeo = new THREE.ConeGeometry(1.9, 8, 18);
+    const R = 1.7;
+    const coneH = 1.81; // tangent cone height (~1.066 R)
+    const coneR = 1.36; // tangent cone base radius (~0.8 R)
+    const coneGeo = new THREE.ConeGeometry(coneR, coneH, 18);
     coneGeo.rotateX(Math.PI); // point the tip toward the globe
-    coneGeo.translate(0, 4, 0); // tip at origin (surface), base at y=8
-    const headGeo = new THREE.SphereGeometry(2.5, 18, 18);
-    headGeo.translate(0, 8.5, 0);
-    const dotGeo = new THREE.SphereGeometry(1.05, 14, 14);
-    dotGeo.translate(0, 8.5, 0);
-    const whiteMat = new THREE.MeshBasicMaterial({ color: "#ffffff" });
-    const matCache = new Map<string, THREE.MeshBasicMaterial>();
+    coneGeo.translate(0, coneH / 2, 0); // tip at surface (y=0)
+    const bulbGeo = new THREE.SphereGeometry(R, 20, 18);
+    bulbGeo.translate(0, 2.84, 0); // bulb centered above the tip (~1.67 R)
+    const matCache = new Map<string, THREE.MeshLambertMaterial>();
     return (color: string) => {
       let mat = matCache.get(color);
       if (!mat) {
-        mat = new THREE.MeshBasicMaterial({ color });
+        mat = new THREE.MeshLambertMaterial({ color });
         matCache.set(color, mat);
       }
       const g = new THREE.Group();
       g.add(new THREE.Mesh(coneGeo, mat));
-      g.add(new THREE.Mesh(headGeo, mat));
-      g.add(new THREE.Mesh(dotGeo, whiteMat));
+      g.add(new THREE.Mesh(bulbGeo, mat));
       return g;
     };
   }, []);

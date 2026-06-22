@@ -10,7 +10,7 @@ interface Stat {
 
 const STATS: Stat[] = [
   { value: 384, suffix: "+", label: "Locations" },
-  { value: 1417, suffix: "+", label: "Dive sites" },
+  { value: 2366, suffix: "+", label: "Dive sites" },
   { value: 63, label: "Data sources" },
   { value: 3, label: "Reef states" },
 ];

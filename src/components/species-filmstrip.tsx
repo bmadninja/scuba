@@ -174,6 +174,8 @@ export function SpeciesFilmstrip() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
+                    objectPosition: "center -33%",
+                    clipPath: "inset(0 0 25% 0)",
                     display: "block",
                   }}
                 />

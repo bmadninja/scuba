@@ -700,37 +700,47 @@ export default function DataPage() {
             <div style={{ marginTop: "2.5rem" }}>
               <h3 style={subHStyle}>Add what you see</h3>
               <p style={subPStyle}>
-                Every dive can add to the record. Pick how involved you want to
-                be, from a single photo to a full survey.
+                Photograph what you see on a dive and upload it once, right
+                here. We send that sighting on to iNaturalist, GBIF, OBIS and
+                more than 5 research platforms for you, so a single upload
+                reaches every database scientists actually use.
               </p>
               <div className="method-plat-grid">
-                <PlatformCard
-                  href="https://www.inaturalist.org/"
-                  name="iNaturalist"
-                  effort="Zero training"
-                >
-                  Photograph any animal and upload it with the location. The
-                  community confirms the species, and once it reaches research
-                  grade it joins the record scientists use.
-                </PlatformCard>
-                <PlatformCard
-                  href="https://www.coralwatch.org/"
-                  name="CoralWatch"
-                  effort="A few minutes"
-                >
-                  Match coral colour against a simple chart to record bleaching.
-                  It takes a few minutes and helps track heat stress over time.
-                </PlatformCard>
-                <PlatformCard
-                  href="https://www.reefcheck.org/"
-                  name="Reef Check"
-                  effort="Free training"
-                  effortMid
-                >
-                  Run a standard reef survey: count fish, invertebrates and coral
-                  health along a set line. This feeds long term monitoring.
-                </PlatformCard>
+                <FlowCard step="1" title="5 platforms or more">
+                  iNaturalist, GBIF and OBIS all receive your sighting
+                  automatically. No separate accounts, no repeat uploads, no
+                  time spent.
+                </FlowCard>
+                <FlowCard step="2" title="We keep adding platforms">
+                  We continuously connect new organisations. Every past upload
+                  reaches them too, so your earlier dives keep growing in reach.
+                </FlowCard>
+                <FlowCard step="3" title="3 seconds, not 38 minutes">
+                  Submitting to 5 or more platforms yourself takes up to 38
+                  minutes. Here it takes 3 seconds. Upload as a guest or log in
+                  to see your full record.
+                </FlowCard>
               </div>
+              <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "var(--color-ink-2)", marginTop: "1rem" }}>
+                You can upload as a guest or create an account to view all your
+                previous submissions in one place.
+              </p>
+              <Link
+                href="/upload"
+                style={{
+                  display: "inline-block",
+                  marginTop: "0.9rem",
+                  padding: "0.7rem 1.2rem",
+                  borderRadius: "0.7rem",
+                  background: "var(--color-brand-yellow)",
+                  color: INK,
+                  fontSize: "0.875rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                Upload a sighting
+              </Link>
             </div>
 
             <div
@@ -1123,6 +1133,22 @@ function IucnRow({
       <span style={{ fontSize: "0.8125rem", color: "var(--color-ink-2)", lineHeight: 1.5, paddingTop: "0.1rem" }}>
         {children}
       </span>
+    </div>
+  );
+}
+
+function FlowCard({ step, title, children }: { step: string; title: string; children: React.ReactNode }) {
+  return (
+    <div style={{ border: `1px solid var(--color-hairline)`, borderRadius: "1rem", padding: "1.25rem", background: "var(--color-paper)" }}>
+      <span aria-hidden style={{
+        display: "inline-flex", alignItems: "center", justifyContent: "center",
+        width: "1.6rem", height: "1.6rem", borderRadius: 999,
+        background: "var(--color-brand-yellow)", color: "var(--color-ink)",
+        fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+        fontSize: "0.8125rem", fontWeight: 700, marginBottom: "0.7rem",
+      }}>{step}</span>
+      <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--color-ink)", marginBottom: "0.4rem" }}>{title}</p>
+      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "var(--color-ink-2)", margin: 0 }}>{children}</p>
     </div>
   );
 }

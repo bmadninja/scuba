@@ -596,7 +596,7 @@ export default function Home() {
                   height: "100%",
                   objectFit: "cover",
                   objectPosition: "center top",
-                  clipPath: "inset(0 0 25% 0)",
+                  clipPath: "inset(0 0 35% 0)",
                 }}
               />
             </div>
@@ -694,18 +694,6 @@ export default function Home() {
           }}
           className="method-strip-inner"
         >
-          <p
-            style={{
-              fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
-              fontWeight: 300,
-              fontSize: "0.9375rem",
-              color: "rgba(255,255,255,0.80)",
-              lineHeight: 1.55,
-              margin: 0,
-            }}
-          >
-            63 data sources. Updated as science publishes.
-          </p>
           <Link
             href="/data"
             style={{
