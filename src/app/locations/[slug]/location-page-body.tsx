@@ -221,10 +221,10 @@ function ExternalIcon() {
 
 // ─── Plan-a-trip expandable section ───────────────────────────────────────────
 
-function Expand({ summary, children }: { summary: string; children: React.ReactNode }) {
+function Expand({ summary, children, defaultOpen = true }: { summary: string; children: React.ReactNode; defaultOpen?: boolean }) {
   return (
     <details
-      open
+      open={defaultOpen}
       style={{ borderTop: "1px solid #E7E6E2" }}
       className="trip-expand"
     >
@@ -289,6 +289,9 @@ function MetricLabel({ children }: { children: React.ReactNode }) {
 
 export function LocationPageBody(props: LocationBodyProps) {
   const [info, setInfo] = useState<InfoKey | null>(null);
+  const [showAllSites, setShowAllSites] = useState(false);
+  const [showAllSpecies, setShowAllSpecies] = useState(false);
+  const [showAllOperators, setShowAllOperators] = useState(false);
 
   const {
     locationId,
@@ -417,7 +420,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                   </div>
                 ) : null}
 
-                {/* Story 4.1: Reef health metrics row */}
+                {/* Reef health metrics row */}
                 <div style={{
                   display: "flex",
                   flexWrap: "wrap",
@@ -425,31 +428,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                   borderTop: "1px solid #E7E6E2",
                   background: "#F8F7F4",
                 }}>
-                  {/* Bleached % */}
-                  {bleachedPct !== null && (
-                    <Metric>
-                      <MetricLabel>Bleached</MetricLabel>
-                      <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "#C0412B", margin: 0 }}>
-                        {bleachedPct}%
-                      </p>
-                      <DataFreshnessLabel source="MERMAID" date={surveyDateLabel} />
-                    </Metric>
-                  )}
-
-                  {/* DHW */}
-                  {dhwValue !== null && (
-                    <Metric>
-                      <MetricLabel>
-                        Heat stress (DHW)
-                        <InfoButton onClick={() => setInfo("heat")} label="What this means" />
-                      </MetricLabel>
-                      <p style={{ fontSize: "1.1rem", fontWeight: 700, color: dhwValue >= 8 ? "#C0412B" : dhwValue >= 4 ? "#B98A2E" : "#2E7D5B", margin: 0 }}>
-                        {dhwValue} °C-weeks
-                      </p>
-                      <DataFreshnessLabel source="NOAA CRW" />
-                    </Metric>
-                  )}
-
                   {/* Heat right now */}
                   {heat ? (
                     <Metric>
@@ -470,11 +448,32 @@ export function LocationPageBody(props: LocationBodyProps) {
                           {heat.label}
                         </span>
                       </p>
-                      <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.2rem" }}>{heat.sub}</p>
                       {heat.detail ? (
                         <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.2rem", lineHeight: 1.45 }}>{heat.detail}</p>
                       ) : null}
-                      <DataFreshnessLabel source="NOAA CRW" />
+                    </Metric>
+                  ) : null}
+
+                  {/* Fishing */}
+                  {fishing ? (
+                    <Metric>
+                      <MetricLabel>
+                        Fishing
+                        <InfoButton onClick={() => setInfo("fishing")} label="What this means" />
+                      </MetricLabel>
+                      <p style={{ margin: 0 }}>
+                        <span style={{
+                          display: "inline-block",
+                          padding: "2px 8px",
+                          borderRadius: 999,
+                          fontSize: "0.75rem",
+                          fontWeight: 600,
+                          background: fishing.tone === "good" ? "rgba(46,125,91,0.1)" : fishing.tone === "warm" ? "rgba(185,138,46,0.1)" : "rgba(14,28,40,0.06)",
+                          color: fishing.tone === "good" ? "#2E7D5B" : fishing.tone === "warm" ? "#B98A2E" : "#4A5568",
+                        }}>
+                          {fishing.label}
+                        </span>
+                      </p>
                     </Metric>
                   ) : null}
 
@@ -487,50 +486,13 @@ export function LocationPageBody(props: LocationBodyProps) {
                     <p style={{ fontSize: "0.95rem", fontWeight: 700, color: reefStateColor, margin: 0 }}>
                       {reefStateLabel}
                     </p>
-                    <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.15rem" }}>{reefStateSub}</p>
                   </Metric>
                 </div>
               </div>
             </section>
           ) : null}
 
-          {/* STORY 4.3: FISHING PRESSURE PANEL */}
-          {(fishingPressure !== null || fishing !== null) ? (
-            <section style={{ marginBottom: "3rem" }}>
-              <p style={LABEL_STYLE}>
-                Fishing pressure
-                <InfoButton onClick={() => setInfo("fishing")} label="What this means" />
-              </p>
-              <div style={SECTION_CARD}>
-                <div style={{ padding: "1.25rem" }}>
-                  {fishingPressure ? (
-                    <>
-                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.5, marginBottom: "0.5rem" }}>
-                        {fishingPressure.fishingHours === 0
-                          ? `No industrial fishing detected within ${fishingPressure.radiusKm} km in ${fishingPressure.year}.`
-                          : `${fishingPressure.fishingHours.toLocaleString()} hours of industrial fishing detected within ${fishingPressure.radiusKm} km in ${fishingPressure.year}.`
-                        }
-                      </p>
-                      <p style={{ fontSize: "0.8125rem", color: "#4A5568", lineHeight: 1.6, marginBottom: "0.5rem" }}>
-                        Small-scale and artisanal fishing is not tracked by satellite AIS and is not included in this figure.
-                      </p>
-                      <DataFreshnessLabel source="Global Fishing Watch" date={String(fishingPressure.year)} />
-                    </>
-                  ) : fishing ? (
-                    <>
-                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", marginBottom: "0.35rem" }}>
-                        {fishing.label}
-                      </p>
-                      <p style={{ fontSize: "0.8125rem", color: "#4A5568", lineHeight: 1.6 }}>{fishing.sub}</p>
-                      <p style={{ fontSize: "0.8125rem", color: "#4A5568", lineHeight: 1.6, marginTop: "0.5rem" }}>
-                        Small-scale and artisanal fishing is not tracked by satellite AIS.
-                      </p>
-                    </>
-                  ) : null}
-                </div>
-              </div>
-            </section>
-          ) : null}
+
 
           {/* STORY 4.3: WATER QUALITY PANEL (only when data exists) */}
           {waterQualityEvents.length > 0 ? (
@@ -566,20 +528,8 @@ export function LocationPageBody(props: LocationBodyProps) {
                 What you will see
                 <InfoButton onClick={() => setInfo("iucn")} label="What the conservation labels mean" />
               </p>
-              {threatenedStats && threatenedStats.total > 0 ? (
-                <p style={{ fontSize: "0.75rem", color: "#4A5568", marginBottom: "0.9rem", lineHeight: 1.5 }}>
-                  {(() => {
-                    const parts: string[] = [];
-                    if (threatenedStats.cr > 0) parts.push(`${threatenedStats.cr} Critically Endangered`);
-                    if (threatenedStats.en > 0) parts.push(`${threatenedStats.en} Endangered`);
-                    if (threatenedStats.vu > 0) parts.push(`${threatenedStats.vu} Vulnerable`);
-                    const joined = parts.join(", ");
-                    return `${threatenedStats.total} threatened species recorded here — ${joined}.`;
-                  })()}
-                </p>
-              ) : null}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.75rem" }}>
-                {species.map((sp) => {
+                {(showAllSpecies ? species : species.slice(0, 3)).map((sp) => {
                   const Card = sp.href ? Link : "div";
                   return (
                     <Card
@@ -607,15 +557,40 @@ export function LocationPageBody(props: LocationBodyProps) {
                         <p style={{ fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif', fontSize: "1rem", fontWeight: 400, color: "#0E1C28", marginBottom: "0.3rem" }}>
                           {sp.commonName}
                         </p>
-                        <p style={{ display: "flex", alignItems: "center", gap: "0.375rem", fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", color: "#4A5568" }}>
+                        <p style={{ display: "flex", alignItems: "center", gap: "0.375rem", fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", color: "#4A5568", marginBottom: "0.3rem" }}>
                           <span aria-hidden="true" style={{ width: 5, height: 5, borderRadius: "50%", background: sp.dotColor, flexShrink: 0 }} />
                           {sp.seenText}
                         </p>
+                        {sp.iucnBadge && sp.iucnLabel ? (
+                          <p style={{ margin: 0 }}>
+                            <span style={{
+                              display: "inline-block",
+                              padding: "2px 8px",
+                              borderRadius: 999,
+                              fontSize: "0.625rem",
+                              fontWeight: 600,
+                              background: sp.iucnBadge.bg,
+                              color: sp.iucnBadge.color,
+                              textTransform: "uppercase",
+                              fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                            }}>
+                              {sp.iucnLabel}
+                            </span>
+                          </p>
+                        ) : null}
                       </div>
                     </Card>
                   );
                 })}
               </div>
+              {species.length > 3 && !showAllSpecies ? (
+                <button
+                  onClick={() => setShowAllSpecies(true)}
+                  style={{ marginTop: "0.75rem", background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", fontWeight: 500, letterSpacing: "0.08em", color: "#4A5568", textDecoration: "underline" }}
+                >
+                  Show all {species.length} species
+                </button>
+              ) : null}
             </section>
           ) : null}
 
@@ -624,7 +599,7 @@ export function LocationPageBody(props: LocationBodyProps) {
             <section id="sites" style={{ marginBottom: "3rem" }}>
               <p style={LABEL_STYLE}>Dive sites</p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                {sites.map((s) => (
+                {(showAllSites ? sites : sites.slice(0, 5)).map((s) => (
                   <Link
                     key={s.id}
                     href={`/sites/${s.slug}`}
@@ -642,7 +617,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     }}
                     className="site-row-link"
                   >
-                    <div style={{ width: 48, height: 48, borderRadius: "6px", flexShrink: 0, background: s.gradient, overflow: "hidden" }}>
+                    <div style={{ width: 96, height: 72, borderRadius: "8px", flexShrink: 0, background: s.gradient, overflow: "hidden" }}>
                       {s.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={resizePhotoUrl(s.imageUrl, 240) ?? s.imageUrl} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
@@ -658,6 +633,14 @@ export function LocationPageBody(props: LocationBodyProps) {
                   </Link>
                 ))}
               </div>
+              {sites.length > 5 && !showAllSites ? (
+                <button
+                  onClick={() => setShowAllSites(true)}
+                  style={{ marginTop: "0.75rem", background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", fontWeight: 500, letterSpacing: "0.08em", color: "#4A5568", textDecoration: "underline" }}
+                >
+                  Show all {sites.length} dive sites
+                </button>
+              ) : null}
             </section>
           ) : null}
 
@@ -665,12 +648,31 @@ export function LocationPageBody(props: LocationBodyProps) {
           {quotes.length > 0 ? (
             <section style={{ marginBottom: "3rem" }}>
               <p style={LABEL_STYLE}>What divers say</p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+              <div className="quotes-grid" style={{ display: "grid", gridTemplateColumns: quotes.length === 1 ? "1fr" : "1fr 1fr", gap: "0.75rem" }}>
                 {quotes.map((q, i) => (
                   <figure
                     key={i}
-                    style={{ ...SECTION_CARD, padding: "1.25rem", margin: 0 }}
+                    style={{
+                      border: "1px solid #E7E6E2",
+                      borderRadius: "8px",
+                      overflow: "hidden",
+                      background: "rgba(14,79,110,0.04)",
+                      padding: "1.5rem",
+                      margin: 0,
+                      position: "relative",
+                    }}
                   >
+                    <span aria-hidden="true" style={{
+                      position: "absolute",
+                      top: "0.5rem",
+                      right: "1rem",
+                      fontFamily: 'Georgia, serif',
+                      fontSize: "4rem",
+                      lineHeight: 1,
+                      color: "rgba(14,79,110,0.12)",
+                      userSelect: "none",
+                      pointerEvents: "none",
+                    }}>&ldquo;</span>
                     <blockquote
                       style={{
                         fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
@@ -679,20 +681,21 @@ export function LocationPageBody(props: LocationBodyProps) {
                         lineHeight: 1.7,
                         color: "#0E1C28",
                         margin: 0,
+                        position: "relative",
                       }}
                     >
-                      &ldquo;{q.text}&rdquo;
+                      {q.text}
                     </blockquote>
                     {q.attribution ? (
                       <figcaption
                         style={{
-                          marginTop: "0.75rem",
+                          marginTop: "1rem",
                           fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
                           fontSize: "10px",
                           fontWeight: 700,
                           letterSpacing: "0.12em",
                           textTransform: "uppercase",
-                          color: "#4A5568",
+                          color: "#0E4F6E",
                         }}
                       >
                         — {q.attribution}
@@ -708,13 +711,16 @@ export function LocationPageBody(props: LocationBodyProps) {
           {goodToKnow.length > 0 ? (
             <section style={{ marginBottom: "3rem" }}>
               <p style={LABEL_STYLE}>Good to know</p>
-              <div style={{ ...SECTION_CARD }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {goodToKnow.map((item, i) => (
                   <div
                     key={item.title}
                     style={{
+                      border: "1px solid #E7E6E2",
+                      borderRadius: "8px",
+                      borderLeft: "3px solid #0E4F6E",
+                      background: "#FFFFFF",
                       padding: "0.85rem 1.25rem",
-                      borderTop: i > 0 ? "1px solid #E7E6E2" : "none",
                     }}
                   >
                     <p style={{ fontWeight: 600, fontSize: "0.875rem", color: "#0E1C28", marginBottom: "0.2rem" }}>{item.title}</p>
@@ -834,7 +840,7 @@ export function LocationPageBody(props: LocationBodyProps) {
 
             {/* Where to stay */}
             {hasStay ? (
-              <Expand summary="Where to stay">
+              <Expand summary="Where to stay" defaultOpen={false}>
                 <p style={{ fontSize: "0.8125rem", color: "#4A5568", lineHeight: 1.55, marginBottom: "0.75rem" }}>
                   Most divers book a place to stay and a dive operator together. Each link goes to the provider own site.
                 </p>
@@ -882,7 +888,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                         Dive operators
                       </p>
                       <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                        {operators.map((op) => (
+                        {(showAllOperators ? operators : operators.slice(0, 2)).map((op) => (
                           <AffiliateLink
                             key={`op-${op.partner}-${op.label}`}
                             url={op.url || "#"}
@@ -901,6 +907,14 @@ export function LocationPageBody(props: LocationBodyProps) {
                           </AffiliateLink>
                         ))}
                       </div>
+                      {operators.length > 2 && !showAllOperators ? (
+                        <button
+                          onClick={() => setShowAllOperators(true)}
+                          style={{ marginTop: "0.5rem", background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", fontWeight: 500, letterSpacing: "0.08em", color: "#4A5568", textDecoration: "underline" }}
+                        >
+                          Show all {operators.length} operators
+                        </button>
+                      ) : null}
                     </div>
                   ) : null}
                 </div>
@@ -988,6 +1002,7 @@ export function LocationPageBody(props: LocationBodyProps) {
         .trip-expand summary::-webkit-details-marker { display: none; }
         .site-row-link:hover { border-color: #0E1C28 !important; }
         .site-row-link:focus-visible { outline: 2px solid #F6C700; outline-offset: 2px; }
+        .quotes-grid figure:last-child:nth-child(odd) { grid-column: 1 / -1; }
         @media (max-width: 1024px) {
           .location-body-grid { grid-template-columns: 1fr !important; }
           .location-body-grid aside { position: static !important; }

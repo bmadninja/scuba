@@ -99,12 +99,6 @@ export function CoralProjectionChart({ locationName, dataPoints }: Props) {
   const endY = yFor(endPct, top);
   const todayX = xFor(CURRENT_YEAR, minYear);
 
-  // Confidence band (±10pp around projection)
-  const bandTopY = yForLinear(CURRENT_YEAR, last, slope + 10 / (PROJECT_TO - last.year), top);
-  const bandBotY = yForLinear(CURRENT_YEAR, last, slope - 10 / (PROJECT_TO - last.year), top);
-  const bandTopEnd = yFor(Math.max(0, endPct + 10), top);
-  const bandBotEnd = yFor(Math.max(0, endPct - 10), top);
-
   // Accessible hidden table
   const tableRows = sorted.map(
     (d) => `<tr><td>${d.year}</td><td>${d.pct}%</td></tr>`,
@@ -133,13 +127,6 @@ export function CoralProjectionChart({ locationName, dataPoints }: Props) {
         {/* Today vertical marker */}
         <line x1={todayX} y1={TOP_PAD} x2={todayX} y2={VIEWBOX_H - BOT_PAD} stroke="#0E1C28" strokeWidth="1" strokeDasharray="3 3" opacity="0.35" />
         <text x={todayX + 4} y={TOP_PAD + 12} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono">Today</text>
-
-        {/* Confidence band around projection */}
-        <polygon
-          points={`${lastX},${lastY} ${endX},${bandTopEnd} ${endX},${bandBotEnd} ${lastX},${lastY}`}
-          fill="#0E4F6E"
-          opacity="0.10"
-        />
 
         {/* Dashed projection line */}
         <line
