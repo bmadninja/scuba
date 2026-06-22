@@ -24,9 +24,9 @@ const SKILL_OPTIONS = [
 ];
 
 const REEF_OPTIONS = [
-  { value: "thriving", label: "Thriving" },
-  { value: "pressure", label: "Under pressure" },
-  { value: "change", label: "Witnessing change" },
+  { value: "thriving", label: "Improving" },
+  { value: "pressure", label: "Stable" },
+  { value: "change", label: "Declining" },
 ];
 
 const ENCOUNTER_OPTIONS = [

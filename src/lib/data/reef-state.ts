@@ -20,20 +20,22 @@ export const ALERT_TO_HEAT: Record<BleachingAlertLevel, number> = {
   "alert-2": 4,
 };
 
+// User-facing labels use the design vocab: Improving / Stable / Declining.
+// (Internal state keys stay thriving/pressure/change as data identifiers.)
 export const STATE_TEXT: Record<ReefState, string> = {
-  thriving: "Thriving",
-  pressure: "Under pressure",
-  change: "Witnessing change",
+  thriving: "Improving",
+  pressure: "Stable",
+  change: "Declining",
 };
 
 /**
  * Canonical reef-state colors. Single source of truth so globe markers,
- * card dots and the legend always agree.
+ * card dots and the legend always agree. Branded editorial palette.
  */
 export const STATE_COLOR: Record<ReefState, string> = {
-  thriving: "#10b981",
-  pressure: "#f59e0b",
-  change: "#f43f5e",
+  thriving: "#2E7D5B",
+  pressure: "#B98A2E",
+  change: "#C0412B",
 };
 
 export const STATE_DEF: Record<ReefState, { short: string; signal: string }> = {

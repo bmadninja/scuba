@@ -41,9 +41,9 @@ const MONTH_LABELS = [
 ];
 
 const REEF_STATES: { value: ReefState; label: string }[] = [
-  { value: "thriving", label: "Thriving" },
-  { value: "pressure", label: "Under pressure" },
-  { value: "change", label: "Witnessing change" },
+  { value: "thriving", label: "Improving" },
+  { value: "pressure", label: "Stable" },
+  { value: "change", label: "Declining" },
 ];
 
 const REGION_BUCKETS = [

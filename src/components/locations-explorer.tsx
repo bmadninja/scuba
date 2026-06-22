@@ -219,9 +219,9 @@ function getSeeLabel(value: string): string {
 }
 
 const REEF_STATES: { value: ReefState; label: string }[] = [
-  { value: "thriving", label: "Thriving" },
-  { value: "pressure", label: "Under pressure" },
-  { value: "change", label: "Witnessing change" },
+  { value: "thriving", label: "Improving" },
+  { value: "pressure", label: "Stable" },
+  { value: "change", label: "Declining" },
 ];
 
 const OCEAN_GRADIENTS = [

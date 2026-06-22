@@ -27,9 +27,9 @@ function slugifySpecies(name: string): string {
 }
 
 const STATE_TEXT: Record<string, string> = {
-  thriving: "Thriving",
-  pressure: "Under pressure",
-  change: "Witnessing change",
+  thriving: "Improving",
+  pressure: "Stable",
+  change: "Declining",
 };
 
 const STATE_COLOR: Record<string, string> = {

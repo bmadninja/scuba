@@ -230,9 +230,9 @@ function getSeeLabel(value: string): string {
 
 /** Reef state config — ordered as in the mockup strip */
 const REEF_STATES: { value: ReefState; label: string }[] = [
-  { value: "thriving", label: "Thriving" },
-  { value: "pressure", label: "Under pressure" },
-  { value: "change", label: "Witnessing change" },
+  { value: "thriving", label: "Improving" },
+  { value: "pressure", label: "Stable" },
+  { value: "change", label: "Declining" },
 ];
 
 /** Ocean-gradient backgrounds per index, cycling through 6 variants */

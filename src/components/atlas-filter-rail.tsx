@@ -89,9 +89,9 @@ export const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 const MONTH_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 const STATE_LABEL: Record<string, string> = {
-  thriving: "Thriving",
-  pressure: "Under pressure",
-  change: "Witnessing change",
+  thriving: "Improving",
+  pressure: "Stable",
+  change: "Declining",
 };
 
 const STATE_SWATCH: Record<string, string> = {

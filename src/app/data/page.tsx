@@ -335,7 +335,7 @@ export default function DataPage() {
                       color: IMPROVING,
                     }}
                   >
-                    Thriving
+                    Improving
                   </p>
                   <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
                     Near its natural baseline and steady. Recovering or healthy,
@@ -406,7 +406,7 @@ export default function DataPage() {
                       color: STABLE,
                     }}
                   >
-                    Under pressure
+                    Stable
                   </p>
                   <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
                     Below its baseline or slipping, from heat or fishing, but the
@@ -456,7 +456,7 @@ export default function DataPage() {
                       color: DECLINING,
                     }}
                   >
-                    Witnessing change
+                    Declining
                   </p>
                   <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
                     Heavy recent loss or bleaching. Diving here is a chance to

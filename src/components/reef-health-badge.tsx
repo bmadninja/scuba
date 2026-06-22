@@ -1,13 +1,4 @@
-// Accepts both the design-layer vocab (improving/stable/declining, used by the
-// explore reef-card via toHealthState) and the data-layer vocab
-// (thriving/pressure/change, used directly by the homepage state trio + mosaic).
-type ReefState =
-  | "improving"
-  | "stable"
-  | "declining"
-  | "thriving"
-  | "pressure"
-  | "change";
+type ReefState = "improving" | "stable" | "declining";
 
 interface Props {
   state: ReefState | null | undefined;
@@ -19,18 +10,12 @@ const STATE_COLOR: Record<ReefState, string> = {
   improving: "#2E7D5B",
   stable:    "#B98A2E",
   declining: "#C0412B",
-  thriving:  "#10b981",
-  pressure:  "#f59e0b",
-  change:    "#f43f5e",
 };
 
 const STATE_LABEL: Record<ReefState, string> = {
   improving: "Improving",
   stable:    "Stable",
   declining: "Declining",
-  thriving:  "Thriving",
-  pressure:  "Under pressure",
-  change:    "Witnessing change",
 };
 
 export function ReefHealthBadge({ state, onPhoto = false }: Props) {

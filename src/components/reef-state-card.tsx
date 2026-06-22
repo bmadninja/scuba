@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ReefHealthBadge } from "@/components/reef-health-badge";
 
-type ReefState = "thriving" | "pressure" | "change";
+type ReefState = "improving" | "stable" | "declining";
 
 export interface ReefStateCardData {
   slug: string;

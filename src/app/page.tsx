@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "384 dive locations and 1417 sites with live reef health, confirmed species sightings, and real conditions — so you can plan a dive that matters.",
 };
 
-// ─── Data for ReefStateCard trio (one per state: thriving / pressure / change)
+// ─── Data for ReefStateCard trio (one per state: improving / stable / declining)
 const REEF_STATE_CARDS: ReefStateCardData[] = [
   {
     slug: "raja-ampat-indonesia",
@@ -20,7 +20,7 @@ const REEF_STATE_CARDS: ReefStateCardData[] = [
     country: "Indonesia",
     region: "Coral Triangle",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_NoemiMerz_12.jpg",
-    state: "thriving",
+    state: "improving",
     hook: "56% coral cover, strictly protected, with the highest marine biodiversity on the planet.",
   },
   {
@@ -29,7 +29,7 @@ const REEF_STATE_CARDS: ReefStateCardData[] = [
     country: "Palau",
     region: "Pacific",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_CinziaOseleBismarck_06.jpg",
-    state: "pressure",
+    state: "stable",
     hook: "38% coral cover inside one of the oldest marine sanctuaries in the Pacific. Sharks on every dive.",
   },
   {
@@ -38,7 +38,7 @@ const REEF_STATE_CARDS: ReefStateCardData[] = [
     country: "Australia",
     region: "Pacific",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_JordanRobins_02.jpg",
-    state: "change",
+    state: "declining",
     hook: "Back to back bleaching events from 2016 to 2024. Every dive here is a record of what survives.",
   },
 ];
@@ -50,56 +50,56 @@ const MOSAIC_CARDS: MosaicCard[] = [
     name: "Komodo National Park",
     country: "Indonesia",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TheOceanAgency_360_84.jpg",
-    state: "thriving",
+    state: "improving",
   },
   {
     slug: "tubbataha-philippines",
     name: "Tubbataha Reefs",
     country: "Philippines",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_GregoryPiper_71.jpg",
-    state: "thriving",
+    state: "improving",
   },
   {
     slug: "rangiroa-french-polynesia",
     name: "Tiputa Pass",
     country: "French Polynesia",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_HannesKlostermann_51.jpg",
-    state: "thriving",
+    state: "improving",
   },
   {
     slug: "bunaken-indonesia",
     name: "Bunaken",
     country: "Indonesia",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_IshanHassan_05.jpg",
-    state: "pressure",
+    state: "stable",
   },
   {
     slug: "florida-keys-usa",
     name: "Florida Keys",
     country: "United States",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_DaniEscayola_24.jpg",
-    state: "change",
+    state: "declining",
   },
   {
     slug: "malapascua-philippines",
     name: "Malapascua",
     country: "Philippines",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_LiangFu_08.jpg",
-    state: "pressure",
+    state: "stable",
   },
   {
     slug: "bonegi-solomon-islands",
     name: "Bonegi Wrecks",
     country: "Solomon Islands",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TraceyJennings_15.jpg",
-    state: "thriving",
+    state: "improving",
   },
   {
     slug: "blue-corner-palau",
     name: "Blue Corner",
     country: "Palau",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_CinziaOseleBismarck_06.jpg",
-    state: "pressure",
+    state: "stable",
   },
 ];
 
