@@ -645,12 +645,19 @@
   text-transform: uppercase; letter-spacing: 0.1em;
   padding: 3px 8px; border-radius: 2px; white-space: nowrap;
 }
-.iucn-badge .code { font-weight: 600; }
+.iucn-badge .code { font-weight: 600; padding: 3px 6px; border-radius: 2px; color: #ffffff; }
 .iucn-badge.cr { background: color-mix(in oklch, var(--color-declining) 14%, transparent); color: var(--color-declining); }
+.iucn-badge.cr .code { background: var(--color-declining); }
 .iucn-badge.en { background: color-mix(in oklch, var(--a3) 14%, transparent); color: color-mix(in oklch, var(--a3) 80%, var(--color-ink)); }
+.iucn-badge.en .code { background: var(--a3); }
 .iucn-badge.vu { background: color-mix(in oklch, var(--color-stable) 14%, transparent); color: color-mix(in oklch, var(--color-stable) 80%, var(--color-ink)); }
+.iucn-badge.vu .code { background: var(--color-stable); }
 .iucn-badge.nt { background: var(--atlas-surface); color: var(--color-ink-2); }
+.iucn-badge.nt .code { background: var(--color-ink-2); }
 .iucn-badge.lc { background: color-mix(in oklch, var(--color-improving) 12%, transparent); color: var(--color-improving); }
+.iucn-badge.lc .code { background: var(--color-improving); }
+.iucn-badge.ex, .iucn-badge.ew, .iucn-badge.dd, .iucn-badge.ne { background: rgba(255,255,255,0.06); color: #8b9db8; }
+.iucn-badge.ex .code, .iucn-badge.ew .code, .iucn-badge.dd .code, .iucn-badge.ne .code { background: #8b9db8; }
 
 /* ── Species row ──────────────────────────────────────────────── */
 .sp-row {
