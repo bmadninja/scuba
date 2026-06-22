@@ -36,20 +36,33 @@ type AtlasNavProps = {
   variant?: "default" | "hero";
 };
 
-/** Wordmark — text only, no SVG icons per design system rules. */
+/** Wordmark — yellow reef mark + "Scuba Season" wordmark (matches favicon icon.svg). */
 function Wordmark() {
   return (
-    <span
-      style={{
-        fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
-        fontWeight: 400,
-        fontSize: "1.125rem",
-        letterSpacing: "-0.01em",
-        lineHeight: 1,
-        color: "#0E1C28",
-      }}
-    >
-      Scuba Season
+    <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+        style={{ flexShrink: 0, display: "block" }}
+      >
+        <circle cx="16" cy="16" r="15" fill="#F6C700" />
+        <path d="M4 18 Q8 12,12 15 Q16 18,20 13 Q24 8,28 14" stroke="#0E1C28" strokeWidth="2" strokeLinecap="round" fill="none" />
+        <path d="M4 23 Q8 18,12 20 Q16 23,20 18 Q24 14,28 19" stroke="rgba(14,28,40,0.4)" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      </svg>
+      <span
+        style={{
+          fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
+          fontWeight: 400,
+          fontSize: "1.125rem",
+          letterSpacing: "-0.01em",
+          lineHeight: 1,
+          color: "#0E1C28",
+        }}
+      >
+        Scuba Season
+      </span>
     </span>
   );
 }

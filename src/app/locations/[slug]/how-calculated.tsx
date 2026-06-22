@@ -11,7 +11,7 @@ import { useState } from "react";
 export function HowCalculated({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+    <div className="mt-5 overflow-hidden rounded-2xl border border-[#E7E6E2] bg-[#F8F7F4]">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
@@ -19,16 +19,16 @@ export function HowCalculated({ children }: { children: React.ReactNode }) {
         className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left"
       >
         <span className="flex items-center gap-2">
-          <span className="text-sm font-semibold text-[#f0f4f8]">
+          <span className="text-sm font-semibold text-[#0E1C28]">
             How this is calculated
           </span>
-          <span className="rounded-full bg-[#00d4ff]/15 px-2 py-0.5 text-xs font-semibold text-[#00d4ff]">
+          <span className="rounded-full bg-[#0E4F6E]/10 px-2 py-0.5 text-xs font-semibold text-[#0E4F6E]">
             Sources, dates, and method
           </span>
         </span>
         <svg
           viewBox="0 0 20 20"
-          className={`h-4 w-4 shrink-0 text-[#8b9db8] transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-4 w-4 shrink-0 text-[#4A5568] transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -38,7 +38,7 @@ export function HowCalculated({ children }: { children: React.ReactNode }) {
         </svg>
       </button>
       {open ? (
-        <div className="border-t border-white/10 px-5 py-4 text-sm leading-6 text-[#aebcd0]">
+        <div className="border-t border-[#E7E6E2] px-5 py-4 text-sm leading-6 text-[#4A5568]">
           {children}
         </div>
       ) : null}
