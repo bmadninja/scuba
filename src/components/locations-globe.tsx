@@ -82,7 +82,7 @@ export function LocationsGlobe({
         width={640}
         height={height}
         backgroundColor="rgba(0,0,0,0)"
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+        globeImageUrl="/globe/earth-topology.png"
         atmosphereColor="#a8e6ff"
         atmosphereAltitude={0.15}
         pointsData={points}
