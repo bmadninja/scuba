@@ -323,7 +323,7 @@ export function AtlasInfoPopup({
             >
               {row[0]}
             </span>
-            <span style={{ fontSize: "0.8125rem", color: "#334155", lineHeight: 1.5 }}>
+            <span style={{ fontSize: "0.8125rem", color: "#aebcd0", lineHeight: 1.5 }}>
               {row[3]}
             </span>
           </div>
