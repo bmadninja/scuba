@@ -262,8 +262,8 @@ If you cannot corroborate the site (≥3 sources), respond with: \`\`\`json
 \`\`\``;
 
   const tools = [
-    { type: "web_search_20250305", name: "web_search", max_uses: 8 },
-    { type: "web_fetch_20250910", name: "web_fetch", max_uses: 10 },
+    { type: "web_search_20250305", name: "web_search", max_uses: 12 },
+    { type: "web_fetch_20250910", name: "web_fetch", max_uses: 15 },
   ];
 
   // Server-side tools loop. web_search / web_fetch execute on Anthropic's side.
@@ -272,7 +272,7 @@ If you cannot corroborate the site (≥3 sources), respond with: \`\`\`json
   const messages = [{ role: "user", content: user }];
   let lastResp = null;
   for (let i = 0; i < 20; i++) {
-    const resp = await callClaude({ system: sys, messages, tools, max_tokens: 16000, model: MODEL_RESEARCH });
+    const resp = await callClaude({ system: sys, messages, tools, max_tokens: 20000, model: MODEL_RESEARCH });
     lastResp = resp;
     messages.push({ role: "assistant", content: resp.content });
     console.log(`  [turn ${i}] stop=${resp.stop_reason} blocks=${resp.content.map((c) => c.type).join(",")}`);

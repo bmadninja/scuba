@@ -172,10 +172,9 @@ export function SpeciesFilmstrip() {
                   loading="lazy"
                   style={{
                     width: "100%",
-                    height: "100%",
+                    height: "133%",
                     objectFit: "cover",
-                    objectPosition: "center -33%",
-                    clipPath: "inset(0 0 25% 0)",
+                    objectPosition: "center top",
                     display: "block",
                   }}
                 />
@@ -193,9 +192,9 @@ export function SpeciesFilmstrip() {
             <div style={{ padding: "0.625rem 0.75rem 0.75rem" }}>
               <div
                 style={{
-                  fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
-                  fontWeight: 500,
-                  fontSize: "0.8125rem",
+                  fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
+                  fontWeight: 400,
+                  fontSize: "0.9375rem",
                   color: "var(--color-ink)",
                   lineHeight: 1.3,
                   marginBottom: "0.125rem",
@@ -206,6 +205,7 @@ export function SpeciesFilmstrip() {
               <div
                 style={{
                   fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
+                  fontWeight: 300,
                   fontSize: "0.6875rem",
                   color: "var(--color-muted, #6b7280)",
                   lineHeight: 1.3,
@@ -218,7 +218,7 @@ export function SpeciesFilmstrip() {
                 style={{
                   fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
                   fontWeight: 600,
-                  fontSize: "0.875rem",
+                  fontSize: "0.75rem",
                   color: tile.labelColor,
                   lineHeight: 1,
                 }}

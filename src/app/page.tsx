@@ -591,12 +591,13 @@ export default function Home() {
                 loading="lazy"
                 style={{
                   position: "absolute",
-                  inset: 0,
+                  top: 0,
+                  left: 0,
+                  right: 0,
                   width: "100%",
-                  height: "100%",
+                  height: "135%",
                   objectFit: "cover",
                   objectPosition: "center top",
-                  clipPath: "inset(0 0 35% 0)",
                 }}
               />
             </div>
@@ -649,7 +650,7 @@ export default function Home() {
               >
                 iNaturalist, GBIF, OBIS and more — no accounts required. Your sighting is geo-tagged, species-matched, and forwarded automatically. Scientists see it the same day.
               </p>
-              <div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "flex-start" }}>
                 <Link
                   href="/upload"
                   style={{
@@ -669,49 +670,27 @@ export default function Home() {
                 >
                   Upload a sighting
                 </Link>
+                <Link
+                  href="/data"
+                  style={{
+                    fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
+                    fontWeight: 400,
+                    fontSize: "0.875rem",
+                    color: "var(--color-ink-2)",
+                    textDecoration: "underline",
+                    textUnderlineOffset: "3px",
+                  }}
+                >
+                  Learn more about our method
+                </Link>
               </div>
             </div>
           </div>
         </section>
       </RevealOnScroll>
 
-      {/* ══ METHOD STRIP ══════════════════════════════════════════════ */}
-      <div
-        style={{
-          background: "#14191E",
-          padding: "1.75rem 1.5rem",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1280,
-            margin: "0 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "1rem",
-          }}
-          className="method-strip-inner"
-        >
-          <Link
-            href="/data"
-            style={{
-              fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
-              fontWeight: 400,
-              fontSize: "0.875rem",
-              color: "rgba(255,255,255,0.55)",
-              textDecoration: "underline",
-              textUnderlineOffset: "3px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Learn more
-          </Link>
-        </div>
-      </div>
 
-      {/* ══ RESPONSIVE + HOVER STYLES ════════════════════════════════ */}
+{/* ══ RESPONSIVE + HOVER STYLES ════════════════════════════════ */}
       <style>{`
         .hero-cta-ghost:hover {
           background: rgba(255,255,255,0.10) !important;
@@ -741,10 +720,7 @@ export default function Home() {
           .citizen-science-text {
             padding: 2rem 1.5rem !important;
           }
-          .method-strip-inner {
-            flex-direction: column !important;
-            align-items: flex-start !important;
-          }
+
         }
       `}</style>
     </>

@@ -560,8 +560,10 @@ export function LocationPageBody(props: LocationBodyProps) {
                       }}
                     >
                       {sp.imageUrl ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={resizePhotoUrl(sp.imageUrl, 500) ?? sp.imageUrl} alt={sp.commonName} style={{ width: "100%", height: 96, objectFit: "cover", objectPosition: "center top", clipPath: "inset(0 0 30% 0)", display: "block" }} loading="lazy" decoding="async" />
+                        <div style={{ height: 96, overflow: "hidden" }}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={resizePhotoUrl(sp.imageUrl, 500) ?? sp.imageUrl} alt={sp.commonName} style={{ width: "100%", height: "130px", objectFit: "cover", objectPosition: "center top", display: "block" }} loading="lazy" decoding="async" />
+                        </div>
                       ) : (
                         <div style={{ height: 96, background: "#0E4F6E" }} />
                       )}
@@ -631,7 +633,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     <div style={{ width: "100%", height: 140, background: s.gradient, overflow: "hidden" }}>
                       {s.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={resizePhotoUrl(s.imageUrl, 500) ?? s.imageUrl} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", clipPath: "inset(0 0 30% 0)", display: "block" }} loading="lazy" decoding="async" />
+                        <img src={resizePhotoUrl(s.imageUrl, 500) ?? s.imageUrl} alt={s.name} style={{ width: "100%", height: "200px", objectFit: "cover", objectPosition: "center top", display: "block" }} loading="lazy" decoding="async" />
                       ) : null}
                     </div>
                     <div style={{ padding: "0.75rem" }}>
