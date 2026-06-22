@@ -735,6 +735,9 @@ export default async function LocationPage({
         stayTiers={stayTiers}
         operators={operators}
         isWitnessing={isWitnessing}
+        seasonNotes={details?.seasonNotes ?? null}
+        quotes={details?.quotes ?? []}
+        goodToKnow={details?.goodToKnow ?? []}
       />
     </>
   );

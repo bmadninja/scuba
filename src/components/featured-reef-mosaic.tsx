@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef, useCallback } from "react";
 import { ReefHealthBadge } from "@/components/reef-health-badge";
 
-type ReefState = "improving" | "stable" | "declining";
+type ReefState = "thriving" | "pressure" | "change";
 
 export interface MosaicCard {
   slug: string;

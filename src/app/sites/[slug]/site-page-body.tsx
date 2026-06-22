@@ -2,12 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { AffiliateLink } from "@/components/affiliate-link";
 import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
-import { SubmissionForm } from "@/components/sighting-submission";
-import { SightingLog } from "@/components/sighting-log";
-import type { SightingEntry } from "@/components/sighting-log";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
 
@@ -104,7 +100,6 @@ export type SiteBodyProps = {
   getThere: GetThereView;
   operators: OperatorItem[];
   lodging: LodgingItem[];
-  sightingEntries: SightingEntry[];
 };
 
 // ─── Style constants (light token system) ────────────────────────────────────
@@ -211,14 +206,6 @@ function Expand({ summary, children }: { summary: string; children: React.ReactN
   );
 }
 
-function ExternalIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M7 17 17 7M7 7h10v10" />
-    </svg>
-  );
-}
-
 function formatDate(iso: string | null): string {
   if (!iso) return "";
   const d = new Date(iso + "T00:00:00Z");
@@ -248,15 +235,9 @@ export function SitePageBody(props: SiteBodyProps) {
     tripFacts,
     monthCells,
     getThere,
-    operators,
-    lodging,
-    sightingEntries,
   } = props;
 
-  const hotels = lodging.filter((l) => l.kind === "hotel");
-  const liveaboards = lodging.filter((l) => l.kind === "liveaboard");
-  const PRICE_DOTS = ["·", "··", "···", "····"];
-  const hasTrip = operators.length > 0 || hotels.length > 0 || liveaboards.length > 0 || getThere !== null;
+  const hasTrip = getThere !== null;
 
   // ─── Sidebar content (shared between desktop sticky and mobile sheet) ─────
   // Note: defined as a JSX constant (not a component function) to avoid the
@@ -350,85 +331,34 @@ export function SitePageBody(props: SiteBodyProps) {
           </Expand>
         ) : null}
 
-        {/* Dive operators */}
-        {operators.length > 0 ? (
-          <Expand summary="Dive operators">
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {operators.map((op) => (
-                <AffiliateLink
-                  key={op.url}
-                  url={op.url}
-                  event="operator_click"
-                  partner={op.partner}
-                  query={op.label}
-                  productId={op.productId}
-                  siteId={siteId}
-                  isAffiliate={op.isAffiliate}
-                  className="flex items-center justify-between gap-2 rounded border border-[#E7E6E2] bg-white px-3 py-2 text-sm font-medium text-[#0E1C28] no-underline transition hover:border-[#0E1C28]"
-                >
-                  <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
-                    {op.label}
-                  </span>
-                  <span aria-hidden="true" style={{ color: "#4A5568", flexShrink: 0 }}>→</span>
-                </AffiliateLink>
-              ))}
-            </div>
-          </Expand>
-        ) : null}
+        {/* Upload nudge */}
+        <div style={{ borderTop: "1px solid #E7E6E2", padding: "1.1rem 1.6rem" }}>
+          <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontWeight: 600, fontSize: "0.875rem", color: "#0E1C28", marginBottom: "0.2rem" }}>
+            Diving here?
+          </p>
+          <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontSize: "0.8125rem", color: "#4A5568", marginBottom: "0.65rem", lineHeight: 1.5 }}>
+            Your sighting broadcasts to iNaturalist, GBIF, and reef research organizations worldwide — every record helps scientists track what is really happening to this reef.
+          </p>
+          <Link
+            href={`/upload?site=${encodeURIComponent(siteSlug)}`}
+            style={{
+              display: "inline-block",
+              background: "#F6C700",
+              color: "#0E1C28",
+              fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+              fontWeight: 500,
+              fontSize: "0.8125rem",
+              padding: "0.45rem 0.9rem",
+              borderRadius: "2px",
+              textDecoration: "none",
+              minHeight: 40,
+              lineHeight: "1.5",
+            }}
+          >
+            Upload a sighting →
+          </Link>
+        </div>
 
-        {/* Where to stay */}
-        {hotels.length > 0 ? (
-          <Expand summary="Where to stay">
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {hotels.map((h) => (
-                <AffiliateLink
-                  key={h.url}
-                  url={h.url}
-                  event="lodging_click"
-                  partner={h.partner}
-                  siteId={siteId}
-                  isAffiliate={h.isAffiliate}
-                  className="flex items-center justify-between gap-2 rounded border border-[#E7E6E2] bg-white px-3 py-2 text-sm font-medium text-[#0E1C28] no-underline transition hover:border-[#0E1C28]"
-                >
-                  <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
-                    {h.label}
-                  </span>
-                  {h.priceLevel ? (
-                    <span style={{ ...MONO, fontSize: "0.6875rem", color: "#4A5568", flexShrink: 0 }}>{PRICE_DOTS[h.priceLevel - 1]}</span>
-                  ) : null}
-                  <ExternalIcon />
-                </AffiliateLink>
-              ))}
-            </div>
-          </Expand>
-        ) : null}
-
-        {/* Liveaboards */}
-        {liveaboards.length > 0 ? (
-          <Expand summary="Liveaboards">
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {liveaboards.map((l) => (
-                <AffiliateLink
-                  key={l.url}
-                  url={l.url}
-                  event="lodging_click"
-                  partner={l.partner}
-                  siteId={siteId}
-                  isAffiliate={l.isAffiliate}
-                  className="flex items-center justify-between gap-2 rounded border border-[#E7E6E2] bg-white px-3 py-2 text-sm font-medium text-[#0E1C28] no-underline transition hover:border-[#0E1C28]"
-                >
-                  <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
-                    {l.label}
-                  </span>
-                  {l.priceLevel ? (
-                    <span style={{ ...MONO, fontSize: "0.6875rem", color: "#4A5568", flexShrink: 0 }}>{PRICE_DOTS[l.priceLevel - 1]}</span>
-                  ) : null}
-                  <ExternalIcon />
-                </AffiliateLink>
-              ))}
-            </div>
-          </Expand>
-        ) : null}
       </div>
   );
 
@@ -632,10 +562,6 @@ export function SitePageBody(props: SiteBodyProps) {
                           {e.recentCount !== null ? ` · ${e.recentCount} records` : ""}
                         </p>
                       ) : null}
-                      {/* Photo attribution */}
-                      {e.imageAttribution ? (
-                        <p style={{ ...MONO, fontSize: "11px", color: "#4A5568", marginTop: "0.1rem" }}>{e.imageAttribution}</p>
-                      ) : null}
                     </div>
                     <div style={{ width: 140, flexShrink: 0 }}>
                       {/* Story 4.5: sighting odds in font-mono font-medium */}
@@ -653,64 +579,6 @@ export function SitePageBody(props: SiteBodyProps) {
               </Link>
             </section>
           ) : null}
-
-          {/* STORY 4.6: SIGHTING LOG — field journal */}
-          <section style={{ marginBottom: "3rem" }}>
-            <p style={LABEL_STYLE}>Field journal</p>
-            <SightingLog entries={sightingEntries} siteSlug={siteSlug} />
-          </section>
-
-          {/* STORY 4.4: UPLOAD NUDGE CARD */}
-          <div style={{ border: "1.5px solid #F6C700", borderRadius: "8px", padding: "1.25rem", marginBottom: "1.5rem" }}>
-            <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontWeight: 500, color: "#0E1C28", marginBottom: "0.25rem" }}>
-              Dived here recently?
-            </p>
-            <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontSize: "0.875rem", color: "#4A5568", marginBottom: "0.75rem" }}>
-              Your sighting helps us track reef health at this site in real time.
-            </p>
-            <Link
-              href={`/upload?site=${encodeURIComponent(siteSlug)}`}
-              style={{
-                display: "inline-block",
-                background: "#F6C700",
-                color: "#0E1C28",
-                fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
-                fontWeight: 500,
-                fontSize: "0.875rem",
-                padding: "0.5rem 1rem",
-                borderRadius: "2px",
-                textDecoration: "none",
-                minHeight: 44,
-                lineHeight: "1.5",
-              }}
-            >
-              Submit a sighting
-            </Link>
-          </div>
-
-          {/* STORY 4.4: PRE-DIVE BRIEF CARD */}
-          <details style={{ border: "1px solid #E7E6E2", borderRadius: "8px", padding: "1.25rem", marginBottom: "3rem" }}>
-            <summary style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontWeight: 500, cursor: "pointer", color: "#0E1C28", listStyle: "none" }}>
-              Planning to dive {siteName}?
-            </summary>
-            <div style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "#4A5568", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              <p>Your underwater photos help scientists track reef health here in real time.</p>
-              <p><strong style={{ color: "#0E1C28" }}>What to photograph:</strong> fish and marine life, coral (especially anything pale or unusual), anything unexpected.</p>
-              <p><strong style={{ color: "#0E1C28" }}>How to capture it:</strong> shoot JPEG, keep location on, note your depth and the date.</p>
-              <p><Link href="/data" style={{ color: "#0E4F6E", textDecoration: "underline" }}>How does this work?</Link></p>
-            </div>
-          </details>
-
-          {/* CONTRIBUTE — sighting submission */}
-          <section style={{ marginBottom: "3rem" }}>
-            <SubmissionForm
-              mode="site"
-              siteId={siteId}
-              siteName={siteName}
-              siteLat={siteLat}
-              siteLng={siteLng}
-            />
-          </section>
 
           {/* GEAR */}
           {gearGroups.length > 0 ? (
@@ -740,8 +608,8 @@ export function SitePageBody(props: SiteBodyProps) {
                               {item.extra ? <span style={{ fontWeight: 400, color: "#4A5568", fontSize: "0.8125rem" }}> · {item.extra}</span> : null}
                             </span>
                             {item.shopUrl ? (
-                              <a href={item.shopUrl} target="_blank" rel="noopener noreferrer" aria-label={`Where to buy ${item.name} (opens in new tab)`} style={{ color: "#4A5568", flexShrink: 0, display: "flex" }}>
-                                <ExternalIcon />
+                              <a href={item.shopUrl} target="_blank" rel="noopener noreferrer" aria-label={`Where to buy ${item.name} (opens in new tab)`} style={{ color: "#4A5568", flexShrink: 0, display: "flex", fontSize: "0.8125rem" }}>
+                                ↗
                               </a>
                             ) : null}
                           </li>

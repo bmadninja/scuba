@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "384 dive locations and 1417 sites with live reef health, confirmed species sightings, and real conditions — so you can plan a dive that matters.",
 };
 
-// ─── Data for ReefStateCard trio (one per state: improving / stable / declining)
+// ─── Data for ReefStateCard trio (one per state: thriving / pressure / change)
 const REEF_STATE_CARDS: ReefStateCardData[] = [
   {
     slug: "raja-ampat-indonesia",
@@ -20,7 +20,7 @@ const REEF_STATE_CARDS: ReefStateCardData[] = [
     country: "Indonesia",
     region: "Coral Triangle",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_NoemiMerz_12.jpg",
-    state: "improving",
+    state: "thriving",
     hook: "56% coral cover, strictly protected, with the highest marine biodiversity on the planet.",
   },
   {
@@ -28,8 +28,8 @@ const REEF_STATE_CARDS: ReefStateCardData[] = [
     name: "Blue Corner",
     country: "Palau",
     region: "Pacific",
-    heroImageUrl: "https://images.pexels.com/photos/31745245/pexels-photo-31745245.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    state: "stable",
+    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_CinziaOseleBismarck_06.jpg",
+    state: "pressure",
     hook: "38% coral cover inside one of the oldest marine sanctuaries in the Pacific. Sharks on every dive.",
   },
   {
@@ -38,7 +38,7 @@ const REEF_STATE_CARDS: ReefStateCardData[] = [
     country: "Australia",
     region: "Pacific",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_JordanRobins_02.jpg",
-    state: "declining",
+    state: "change",
     hook: "Back to back bleaching events from 2016 to 2024. Every dive here is a record of what survives.",
   },
 ];
@@ -50,56 +50,56 @@ const MOSAIC_CARDS: MosaicCard[] = [
     name: "Komodo National Park",
     country: "Indonesia",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TheOceanAgency_360_84.jpg",
-    state: "improving",
+    state: "thriving",
   },
   {
     slug: "tubbataha-philippines",
     name: "Tubbataha Reefs",
     country: "Philippines",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_GregoryPiper_71.jpg",
-    state: "improving",
+    state: "thriving",
   },
   {
     slug: "rangiroa-french-polynesia",
     name: "Tiputa Pass",
     country: "French Polynesia",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_HannesKlostermann_51.jpg",
-    state: "improving",
+    state: "thriving",
   },
   {
     slug: "bunaken-indonesia",
     name: "Bunaken",
     country: "Indonesia",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_IshanHassan_05.jpg",
-    state: "stable",
+    state: "pressure",
   },
   {
     slug: "florida-keys-usa",
     name: "Florida Keys",
     country: "United States",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_DaniEscayola_24.jpg",
-    state: "declining",
+    state: "change",
   },
   {
     slug: "malapascua-philippines",
     name: "Malapascua",
     country: "Philippines",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_LiangFu_08.jpg",
-    state: "stable",
+    state: "pressure",
   },
   {
     slug: "bonegi-solomon-islands",
     name: "Bonegi Wrecks",
     country: "Solomon Islands",
     heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TraceyJennings_15.jpg",
-    state: "improving",
+    state: "thriving",
   },
   {
     slug: "blue-corner-palau",
     name: "Blue Corner",
     country: "Palau",
-    heroImageUrl: "https://images.pexels.com/photos/31745245/pexels-photo-31745245.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    state: "stable",
+    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_CinziaOseleBismarck_06.jpg",
+    state: "pressure",
   },
 ];
 
@@ -127,11 +127,11 @@ export default function Home() {
           }}
         />
 
-        {/* Hero photo — manta ray over coral reef */}
+        {/* Hero photo — mobula ray tornado, OIB / Lars von Ritter-Zahony */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_FilippoBorghi_04.jpg"
-          alt="Manta ray gliding above a pristine coral reef"
+          src="https://images.prismic.io/ocean-agency-cms/aRXUmrpReVYa4bjH_OceanImageBank_LarsvonRitterZahony_12_OceanImageBankcover.jpg?auto=format,compress&w=2560"
+          alt="A swirling school of mobula rays beneath the ocean surface"
           loading="eager"
           style={{
             position: "absolute",
@@ -206,7 +206,7 @@ export default function Home() {
               marginBottom: "2rem",
             }}
           >
-            Where are the reefs worth diving right now?
+            Every reef has a season. Find yours.
           </h1>
 
           {/* Dual CTA */}
@@ -263,6 +263,142 @@ export default function Home() {
 
       {/* ══ STAT STRIP ════════════════════════════════════════════════ */}
       <HomepageStatStrip />
+
+      {/* ══ THREE USPs ════════════════════════════════════════════════ */}
+      <RevealOnScroll>
+        <section
+          aria-label="What makes Scuba Season different"
+          style={{
+            background: "var(--color-ink)",
+            padding: "5rem 1.5rem",
+          }}
+        >
+          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+            <p
+              style={{
+                fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
+                fontSize: "11px",
+                fontWeight: 500,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: "var(--color-brand-yellow)",
+                marginBottom: "0.75rem",
+              }}
+            >
+              Why Scuba Season is different
+            </p>
+            <h2
+              style={{
+                fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
+                fontWeight: 400,
+                fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
+                lineHeight: 1.1,
+                color: "#ffffff",
+                maxWidth: 680,
+                marginBottom: "3.5rem",
+              }}
+            >
+              No other dive platform does these 3 things.
+            </h2>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: "0",
+              }}
+              className="usp-grid"
+            >
+              {[
+                {
+                  num: "01",
+                  eyebrow: "Live reef health",
+                  heading: "We show you what the reef looks like today. Not what last year's dive guide said.",
+                  body: "Most platforms pull from the same static sources, updated once a year if you are lucky. We combine live satellite data from NOAA with the most recent in-water coral surveys — so the health label you see reflects what is actually happening underwater right now.",
+                },
+                {
+                  num: "02",
+                  eyebrow: "Encounter odds",
+                  heading: "We tell you how likely you are to actually see each species.",
+                  body: "Every species on Scuba Season has an encounter rating — Almost always, Likely, Sometimes — calculated from real diver observation records. If it says Most dives, that is what divers actually reported.",
+                },
+                {
+                  num: "03",
+                  eyebrow: "One upload, 5 platforms",
+                  heading: "Upload your dive photos here to help track reef health.",
+                  body: "Upload once to Scuba Season and we automatically send your sighting to iNaturalist, GBIF, OBIS and more. What used to take up to 38 minutes of separate data entry now takes 3 seconds.",
+                },
+              ].map(({ num, eyebrow, heading, body }, i) => (
+                <div
+                  key={num}
+                  className="usp-card"
+                  style={{
+                    padding: "2rem 2rem 2rem 0",
+                    paddingLeft: i === 0 ? 0 : "2rem",
+                    borderLeft: i === 0 ? "none" : "1px solid rgba(255,255,255,0.1)",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
+                      fontSize: "2rem",
+                      fontWeight: 500,
+                      color: "rgba(255,255,255,0.12)",
+                      marginBottom: "0.75rem",
+                      lineHeight: 1,
+                    }}
+                  >
+                    {num}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      color: "var(--color-brand-yellow)",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
+                    {eyebrow}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
+                      fontWeight: 400,
+                      fontSize: "1.25rem",
+                      lineHeight: 1.3,
+                      color: "#ffffff",
+                      marginBottom: "0.875rem",
+                    }}
+                  >
+                    {heading}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
+                      fontWeight: 300,
+                      fontSize: "0.9375rem",
+                      lineHeight: 1.65,
+                      color: "rgba(255,255,255,0.65)",
+                    }}
+                  >
+                    {body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <style>{`
+            @media (max-width: 768px) {
+              .usp-grid { grid-template-columns: 1fr !important; }
+              .usp-card { padding: 2rem 0 !important; border-left: none !important; border-top: 1px solid rgba(255,255,255,0.1); }
+              .usp-card:first-child { border-top: none; }
+            }
+          `}</style>
+        </section>
+      </RevealOnScroll>
 
       {/* ══ REEF STATE TRIO ═══════════════════════════════════════════ */}
       <RevealOnScroll>
@@ -388,7 +524,7 @@ export default function Home() {
                   marginBottom: "0.5rem",
                 }}
               >
-                Species you may encounter
+                On every dive site
               </p>
               <h2
                 style={{
@@ -400,7 +536,7 @@ export default function Home() {
                   maxWidth: 520,
                 }}
               >
-                See the probability, not the hope.
+                See the likelihood, not the hope.
               </h2>
               <p
                 style={{
@@ -413,7 +549,7 @@ export default function Home() {
                   marginTop: "0.625rem",
                 }}
               >
-                Sighting odds are calculated from verified diver logs across the past 24 months — not editorial picks.
+                Every site page shows which animals have actually been confirmed there and how often. Rare to Almost always, from verified diver logs. No editorial picks.
               </p>
             </div>
 

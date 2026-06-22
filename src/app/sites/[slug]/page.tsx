@@ -24,7 +24,6 @@ import type {
   OperatorItem,
   TripFact,
 } from "./site-page-body";
-import type { SightingEntry } from "@/components/sighting-log";
 import type { Site } from "@/lib/data/types";
 
 const MONTH_LETTERS = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
@@ -459,30 +458,6 @@ export default async function SiteDetailPage({
   }));
 
   // --- Story 4.6: sighting log entries (from sightings.json aggregated view) -
-  // sightings.json is a species-occurrence aggregate, not individual diver logs.
-  // Render the top sightings as "community field notes" entries.
-  const sightingEntries: SightingEntry[] = sightings
-    .filter((s) => s.lastConfirmedAt)
-    .sort((a, b) => (b.lastConfirmedAt ?? "").localeCompare(a.lastConfirmedAt ?? ""))
-    .slice(0, 20)
-    .map((s) => {
-      const photoKey = creatureKey(s.speciesScientific, s.speciesCommon);
-      const photoCredit =
-        getSpeciesPhotoCredit(`${site.slug}:${s.speciesScientific?.toLowerCase().trim() ?? s.speciesCommon.toLowerCase()}`) ??
-        getSpeciesPhotoCredit(s.speciesScientific?.toLowerCase().trim() ?? s.speciesCommon.toLowerCase()) ??
-        null;
-      return {
-        id: s.id,
-        diverName: null, // aggregate record — no individual diver
-        date: s.lastConfirmedAt,
-        species: [s.speciesCommon],
-        depthM: null,
-        tempC: null,
-        photoUrl: photoCredit?.imageUrl ?? null,
-        photoAlt: s.speciesCommon,
-      };
-    });
-
   return (
     <>
       <JsonLd data={siteSchema(site, location)} />
@@ -603,7 +578,6 @@ export default async function SiteDetailPage({
         getThere={getThere}
         operators={operators}
         lodging={lodging}
-        sightingEntries={sightingEntries}
       />
     </>
   );

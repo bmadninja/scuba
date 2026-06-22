@@ -17,7 +17,7 @@ export function EditorialHook({ text, className = "" }: EditorialHookProps) {
         fontFamily: "var(--font-sans)",
         fontSize: "1.0625rem",
         lineHeight: 1.8,
-        color: "#aebcd0",
+        color: "#1e3a4a",
         maxWidth: 640,
         fontStyle: "italic",
       }}

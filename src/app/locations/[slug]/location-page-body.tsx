@@ -7,7 +7,6 @@ import { resizePhotoUrl } from "@/lib/photo-quality";
 import { EditorialHook } from "@/components/editorial-hook";
 import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
-import { SubmissionForm } from "@/components/sighting-submission";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
 import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
@@ -165,10 +164,14 @@ export type LocationBodyProps = {
   // Plan a trip
   tripFacts: TripFact[];
   monthCells: { letter: string; on: boolean; now: boolean }[];
+  seasonNotes: string | null;
   getThere: GetThereView;
   stayTiers: StayTier[];
   operators: OperatorItem[];
   isWitnessing: boolean;
+  // Editorial content
+  quotes: { text: string; attribution?: string }[];
+  goodToKnow: { title: string; body: string }[];
 };
 
 // ─── Light-token style constants ──────────────────────────────────────────────
@@ -321,6 +324,9 @@ export function LocationPageBody(props: LocationBodyProps) {
     stayTiers,
     operators,
     isWitnessing,
+    quotes,
+    goodToKnow,
+    seasonNotes,
   } = props;
 
   const hasStay = stayTiers.some((t) => t.items.length > 0) || operators.length > 0;
@@ -655,57 +661,71 @@ export function LocationPageBody(props: LocationBodyProps) {
             </section>
           ) : null}
 
-          {/* SIGHTING SUBMISSION */}
-          <section style={{ marginBottom: "3rem" }}>
-            <SubmissionForm
-              mode="location"
-              locationId={locationId}
-              locationName={locationName}
-              locationSites={sightingSites}
-            />
-          </section>
-
-          {/* GEAR */}
-          {gearGroups.length > 0 ? (
-            <section id="gear" style={{ marginBottom: "3rem" }}>
-              <p style={LABEL_STYLE}>Gear</p>
-              <div style={{ ...SECTION_CARD, padding: "1.1rem 1.4rem" }}>
-                <ul style={{ display: "flex", flexDirection: "column", gap: 0, listStyle: "none", margin: 0, padding: 0 }}>
-                  {gearGroups.map((group, gi) => (
-                    <li key={group.label} style={{ listStyle: "none" }}>
-                      <p style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#4A5568", margin: gi === 0 ? "0 0 0.2rem" : "1.1rem 0 0.2rem" }}>
-                        {group.label}
-                      </p>
-                      <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-                        {group.items.map((item, ii) => (
-                          <li
-                            key={item.name}
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              gap: "0.75rem",
-                              padding: "0.65rem 0",
-                              borderTop: ii === 0 ? "none" : "1px solid #E7E6E2",
-                            }}
-                          >
-                            <span style={{ fontSize: "0.875rem", fontWeight: 500, color: "#0E1C28", flex: 1 }}>
-                              {item.name}
-                              {item.extra ? <span style={{ fontWeight: 400, color: "#4A5568", fontSize: "0.8125rem" }}> · {item.extra}</span> : null}
-                            </span>
-                            {item.shopUrl ? (
-                              <a href={item.shopUrl} target="_blank" rel="noopener noreferrer" aria-label={`Where to buy ${item.name} (opens in new tab)`} style={{ color: "#4A5568", flexShrink: 0, display: "flex" }}>
-                                <ExternalIcon />
-                              </a>
-                            ) : null}
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
-                </ul>
+          {/* WHAT DIVERS SAY — quotes */}
+          {quotes.length > 0 ? (
+            <section style={{ marginBottom: "3rem" }}>
+              <p style={LABEL_STYLE}>What divers say</p>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+                {quotes.map((q, i) => (
+                  <figure
+                    key={i}
+                    style={{ ...SECTION_CARD, padding: "1.25rem", margin: 0 }}
+                  >
+                    <blockquote
+                      style={{
+                        fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
+                        fontSize: "0.9375rem",
+                        fontStyle: "italic",
+                        lineHeight: 1.7,
+                        color: "#0E1C28",
+                        margin: 0,
+                      }}
+                    >
+                      &ldquo;{q.text}&rdquo;
+                    </blockquote>
+                    {q.attribution ? (
+                      <figcaption
+                        style={{
+                          marginTop: "0.75rem",
+                          fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                          fontSize: "10px",
+                          fontWeight: 700,
+                          letterSpacing: "0.12em",
+                          textTransform: "uppercase",
+                          color: "#4A5568",
+                        }}
+                      >
+                        — {q.attribution}
+                      </figcaption>
+                    ) : null}
+                  </figure>
+                ))}
               </div>
             </section>
           ) : null}
+
+          {/* GOOD TO KNOW */}
+          {goodToKnow.length > 0 ? (
+            <section style={{ marginBottom: "3rem" }}>
+              <p style={LABEL_STYLE}>Good to know</p>
+              <div style={{ ...SECTION_CARD }}>
+                {goodToKnow.map((item, i) => (
+                  <div
+                    key={item.title}
+                    style={{
+                      padding: "0.85rem 1.25rem",
+                      borderTop: i > 0 ? "1px solid #E7E6E2" : "none",
+                    }}
+                  >
+                    <p style={{ fontWeight: 600, fontSize: "0.875rem", color: "#0E1C28", marginBottom: "0.2rem" }}>{item.title}</p>
+                    <p style={{ fontSize: "0.8125rem", color: "#4A5568", lineHeight: 1.6 }}>{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+
         </div>
 
         {/* ============================ RIGHT — Plan a trip ============================ */}
@@ -766,6 +786,13 @@ export function LocationPageBody(props: LocationBodyProps) {
                     </div>
                   </div>
                 ))}
+
+                {seasonNotes ? (
+                  <div style={{ padding: "0.85rem 0", borderTop: "1px solid #E7E6E2" }}>
+                    <p style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#4A5568", marginBottom: "0.4rem" }}>Season notes</p>
+                    <p style={{ fontSize: "0.8125rem", color: "#4A5568", lineHeight: 1.6 }}>{seasonNotes}</p>
+                  </div>
+                ) : null}
               </div>
             ) : null}
 
@@ -880,7 +907,77 @@ export function LocationPageBody(props: LocationBodyProps) {
               </Expand>
             ) : null}
           </div>
+
+          {/* UPLOAD NUDGE CARD */}
+          <div style={{ border: "2px dashed #F6C700", borderRadius: "8px", padding: "1.25rem", marginTop: "1rem" }}>
+            <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontWeight: 600, color: "#0E1C28", marginBottom: "0.25rem" }}>
+              Diving here?
+            </p>
+            <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontSize: "0.875rem", color: "#4A5568", marginBottom: "0.75rem" }}>
+              Log what you see — it sharpens the picture for the next diver and feeds the global database.
+            </p>
+            <Link
+              href="/upload"
+              style={{
+                display: "inline-block",
+                background: "#F6C700",
+                color: "#0E1C28",
+                fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                fontWeight: 500,
+                fontSize: "0.875rem",
+                padding: "0.5rem 1rem",
+                borderRadius: "2px",
+                textDecoration: "none",
+                minHeight: 44,
+                lineHeight: "1.5",
+              }}
+            >
+              Upload a sighting →
+            </Link>
+          </div>
         </aside>
+
+        {/* ============================ GEAR — below aside so mobile order is: content → Plan Your Trip → Gear ============================ */}
+        {gearGroups.length > 0 ? (
+          <section id="gear" style={{ gridColumn: "1", marginBottom: "3rem" }}>
+            <p style={LABEL_STYLE}>Gear</p>
+            <div style={{ ...SECTION_CARD, padding: "1.1rem 1.4rem" }}>
+              <ul style={{ display: "flex", flexDirection: "column", gap: 0, listStyle: "none", margin: 0, padding: 0 }}>
+                {gearGroups.map((group, gi) => (
+                  <li key={group.label} style={{ listStyle: "none" }}>
+                    <p style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#4A5568", margin: gi === 0 ? "0 0 0.2rem" : "1.1rem 0 0.2rem" }}>
+                      {group.label}
+                    </p>
+                    <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                      {group.items.map((item, ii) => (
+                        <li
+                          key={item.name}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.75rem",
+                            padding: "0.65rem 0",
+                            borderTop: ii === 0 ? "none" : "1px solid #E7E6E2",
+                          }}
+                        >
+                          <span style={{ fontSize: "0.875rem", fontWeight: 500, color: "#0E1C28", flex: 1 }}>
+                            {item.name}
+                            {item.extra ? <span style={{ fontWeight: 400, color: "#4A5568", fontSize: "0.8125rem" }}> · {item.extra}</span> : null}
+                          </span>
+                          {item.shopUrl ? (
+                            <a href={item.shopUrl} target="_blank" rel="noopener noreferrer" aria-label={`Where to buy ${item.name} (opens in new tab)`} style={{ color: "#4A5568", flexShrink: 0, display: "flex" }}>
+                              <ExternalIcon />
+                            </a>
+                          ) : null}
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ) : null}
       </div>
 
       {/* Info popups */}
