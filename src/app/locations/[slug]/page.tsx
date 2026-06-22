@@ -313,7 +313,7 @@ export default async function LocationPage({
 
   // --- Gear (two layers) ----------------------------------------------------
   const allTemps = sites.flatMap((s) =>
-    (s.conditionsByMonth ?? []).flatMap((c) => [c.waterTempC.min, c.waterTempC.max]),
+    (s.conditionsByMonth ?? []).flatMap((c) => c.waterTempC ? [c.waterTempC.min, c.waterTempC.max] : []),
   );
   const minWaterTemp = allTemps.length > 0 ? Math.min(...allTemps) : null;
   const maxWaterTemp = allTemps.length > 0 ? Math.max(...allTemps) : null;
@@ -412,8 +412,9 @@ export default async function LocationPage({
   // conditions and treat usual = current − anomaly.
   const currentMonthTemps = sites.flatMap((s) =>
     (s.conditionsByMonth ?? [])
-      .filter((c) => c.month === currentMonth)
-      .map((c) => (c.waterTempC.min + c.waterTempC.max) / 2),
+      .filter((c) => c.month === currentMonth && c.waterTempC !== null)
+      .map((c) => c.waterTempC ? (c.waterTempC.min + c.waterTempC.max) / 2 : null)
+      .filter((t): t is number => t !== null),
   );
   const currentTempC =
     currentMonthTemps.length > 0

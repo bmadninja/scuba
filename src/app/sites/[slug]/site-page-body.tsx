@@ -17,8 +17,8 @@ export type ConditionCard = {
 // Story 4.4: monthly conditions row for the 12-month grid
 export type MonthlyConditionRow = {
   month: number; // 1-12
-  waterTempC: { min: number; max: number };
-  visibilityM: { min: number; max: number };
+  waterTempC: { min: number; max: number } | null;
+  visibilityM: { min: number; max: number } | null;
   currentStrength: string;
 };
 
@@ -466,10 +466,10 @@ export function SitePageBody(props: SiteBodyProps) {
                         Water (°C)
                       </td>
                       {monthlyConditions.map((mc) => {
-                        const tone = tempTone(mc.waterTempC.min);
+                        const tone = mc.waterTempC ? tempTone(mc.waterTempC.min) : { bg: "#E7E6E2", color: "#4A5568" };
                         return (
                           <td key={mc.month} style={{ padding: "0.4rem 0.35rem", background: "#FFFFFF", borderBottom: "1px solid #E7E6E2", borderLeft: "1px solid #E7E6E2" }}>
-                            <CellChip label={`${mc.waterTempC.min}`} tone={tone} />
+                            <CellChip label={mc.waterTempC ? `${mc.waterTempC.min}` : "—"} tone={tone} />
                           </td>
                         );
                       })}
@@ -480,10 +480,10 @@ export function SitePageBody(props: SiteBodyProps) {
                         Vis (m)
                       </td>
                       {monthlyConditions.map((mc) => {
-                        const tone = visTone(mc.visibilityM.min);
+                        const tone = mc.visibilityM ? visTone(mc.visibilityM.min) : { bg: "#E7E6E2", color: "#4A5568" };
                         return (
                           <td key={mc.month} style={{ padding: "0.4rem 0.35rem", background: "#FFFFFF", borderBottom: "1px solid #E7E6E2", borderLeft: "1px solid #E7E6E2" }}>
-                            <CellChip label={`${mc.visibilityM.min}`} tone={tone} />
+                            <CellChip label={mc.visibilityM ? `${mc.visibilityM.min}` : "—"} tone={tone} />
                           </td>
                         );
                       })}

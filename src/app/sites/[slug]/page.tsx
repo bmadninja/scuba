@@ -301,14 +301,9 @@ export default async function SiteDetailPage({
   // --- Conditions (this month, plain words) ----------------------------------
   const condMonth =
     site.conditionsByMonth.find((c) => c.month === currentMonth) ?? site.conditionsByMonth[0] ?? null;
-  const minWaterTemp =
-    site.conditionsByMonth.length > 0
-      ? Math.min(...site.conditionsByMonth.flatMap((c) => [c.waterTempC.min, c.waterTempC.max]))
-      : null;
-  const maxWaterTemp =
-    site.conditionsByMonth.length > 0
-      ? Math.max(...site.conditionsByMonth.flatMap((c) => [c.waterTempC.min, c.waterTempC.max]))
-      : null;
+  const waterTemps = site.conditionsByMonth.filter((c) => c.waterTempC).flatMap((c) => [c.waterTempC!.min, c.waterTempC!.max]);
+  const minWaterTemp = waterTemps.length > 0 ? Math.min(...waterTemps) : null;
+  const maxWaterTemp = waterTemps.length > 0 ? Math.max(...waterTemps) : null;
 
   const conditions: ConditionCard[] = [
     {
@@ -326,7 +321,7 @@ export default async function SiteDetailPage({
     {
       icon: "",
       label: "Visibility",
-      value: condMonth ? `${condMonth.visibilityM.min} to ${condMonth.visibilityM.max} m` : "Varies",
+      value: condMonth && condMonth.visibilityM ? `${condMonth.visibilityM.min} to ${condMonth.visibilityM.max} m` : "Varies",
       sub: "Clearest in the calm season",
     },
     {
@@ -450,12 +445,14 @@ export default async function SiteDetailPage({
     }));
 
   // --- Story 4.4: monthly conditions grid ------------------------------------
-  const monthlyConditions: MonthlyConditionRow[] = (site.conditionsByMonth ?? []).map((c) => ({
-    month: c.month,
-    waterTempC: c.waterTempC,
-    visibilityM: c.visibilityM,
-    currentStrength: c.currentStrength,
-  }));
+  const monthlyConditions: MonthlyConditionRow[] = (site.conditionsByMonth ?? [])
+    .map((c, idx) => (typeof c === 'object' && c !== null && 'month' in c) ? ({
+      month: c.month ?? idx + 1,
+      waterTempC: c.waterTempC ?? null,
+      visibilityM: c.visibilityM ?? null,
+      currentStrength: c.currentStrength ?? 'none',
+    }) : null)
+    .filter(Boolean) as MonthlyConditionRow[];
 
   // --- Story 4.6: sighting log entries (from sightings.json aggregated view) -
   return (

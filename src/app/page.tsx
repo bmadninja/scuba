@@ -237,7 +237,7 @@ export default function Home() {
 
             {/* Yellow CTA — Upload a sighting */}
             <Link
-              href="/submit"
+              href="/upload"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -595,7 +595,8 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "center",
+                  objectPosition: "center top",
+                  clipPath: "inset(0 0 25% 0)",
                 }}
               />
             </div>
@@ -650,7 +651,7 @@ export default function Home() {
               </p>
               <div>
                 <Link
-                  href="/submit"
+                  href="/upload"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",

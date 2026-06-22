@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { useRouter } from "next/navigation";
+import * as THREE from "three";
 import type { ReefState } from "@/lib/data/reef-state";
 
 const GlobeViz = dynamic(() => import("react-globe.gl"), {
@@ -64,6 +65,33 @@ export function LocationsGlobe({
 }: LocationsGlobeProps) {
   const router = useRouter();
 
+  // Build a teardrop map pin: a cone whose point sits on the surface, with a
+  // round head standing outward. Geometry is shared across all pins; only the
+  // material (state color) varies, so 347 markers stay cheap on the GPU.
+  const buildPin = useMemo(() => {
+    const coneGeo = new THREE.ConeGeometry(1.9, 8, 18);
+    coneGeo.rotateX(Math.PI); // point the tip toward the globe
+    coneGeo.translate(0, 4, 0); // tip at origin (surface), base at y=8
+    const headGeo = new THREE.SphereGeometry(2.5, 18, 18);
+    headGeo.translate(0, 8.5, 0);
+    const dotGeo = new THREE.SphereGeometry(1.05, 14, 14);
+    dotGeo.translate(0, 8.5, 0);
+    const whiteMat = new THREE.MeshBasicMaterial({ color: "#ffffff" });
+    const matCache = new Map<string, THREE.MeshBasicMaterial>();
+    return (color: string) => {
+      let mat = matCache.get(color);
+      if (!mat) {
+        mat = new THREE.MeshBasicMaterial({ color });
+        matCache.set(color, mat);
+      }
+      const g = new THREE.Group();
+      g.add(new THREE.Mesh(coneGeo, mat));
+      g.add(new THREE.Mesh(headGeo, mat));
+      g.add(new THREE.Mesh(dotGeo, whiteMat));
+      return g;
+    };
+  }, []);
+
   const points = useMemo<GlobePoint[]>(
     () =>
       locations.map((l) => ({
@@ -82,26 +110,26 @@ export function LocationsGlobe({
         width={640}
         height={height}
         backgroundColor="rgba(0,0,0,0)"
-        globeImageUrl="/globe/earth-topology.png"
+        globeImageUrl="/globe/earth-blue-marble.jpg"
+        bumpImageUrl="/globe/earth-topology.png"
         atmosphereColor="#a8e6ff"
         atmosphereAltitude={0.15}
-        pointsData={points}
-        pointLat="lat"
-        pointLng="lng"
-        pointColor="color"
-        pointRadius={0.45}
-        pointAltitude={0.01}
-        pointsMerge={false}
-        onPointClick={(point: object) => {
-          const p = point as GlobePoint;
+        objectsData={points}
+        objectLat="lat"
+        objectLng="lng"
+        objectAltitude={0}
+        objectFacesSurface={true}
+        objectThreeObject={(d: object) => buildPin((d as GlobePoint).color)}
+        onObjectClick={(obj: object) => {
+          const p = obj as GlobePoint;
           if (onMarkerClick) {
             onMarkerClick(p.slug);
           } else {
             router.push(`/locations/${p.slug}`);
           }
         }}
-        pointLabel={(point: object) => {
-          const p = point as GlobePoint;
+        objectLabel={(obj: object) => {
+          const p = obj as GlobePoint;
           return `<div style="background:#0E1C28;padding:5px 12px;border-radius:4px;font-size:12px;color:#FFFFFF;border:1px solid rgba(255,255,255,0.15);pointer-events:none">${p.name}</div>`;
         }}
       />

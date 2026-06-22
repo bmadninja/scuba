@@ -106,8 +106,8 @@ export type SpeciesEntry = {
 
 export type ConditionsMonth = {
   month: number;
-  waterTempC: { min: number; max: number };
-  visibilityM: { min: number; max: number };
+  waterTempC: { min: number; max: number } | null;
+  visibilityM: { min: number; max: number } | null;
   currentStrength: "none" | "mild" | "moderate" | "strong";
   suitRecommendation: string;
 };
