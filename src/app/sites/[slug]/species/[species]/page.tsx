@@ -25,7 +25,7 @@ export async function generateStaticParams() {
     const sightings = getSightingsBySiteId(site.id);
     const allSpecies = [
       ...(site.species ?? []).map((s) => s.commonName),
-      ...sightings.map((s) => s.speciesCommon),
+      ...(sightings ?? []).map((s) => s.speciesCommon),
     ];
     const unique = Array.from(new Set(allSpecies));
     for (const sp of unique) {
@@ -119,8 +119,8 @@ export default async function SpeciesDetailPage({
       (s.species ?? []).some((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase()),
     )
     .sort((a, b) => {
-      const ra = a.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
-      const rb = b.species.find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
+      const ra = (a.species ?? []).find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
+      const rb = (b.species ?? []).find((sp) => sp.commonName.toLowerCase() === commonName.toLowerCase());
       return (RELIABILITY_RANK[rb?.reliability ?? ""] ?? 0) - (RELIABILITY_RANK[ra?.reliability ?? ""] ?? 0);
     })
     .slice(0, 5);

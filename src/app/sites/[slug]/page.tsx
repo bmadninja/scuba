@@ -221,7 +221,9 @@ function chanceTier(score: number): ChanceTier {
 // ─── Static generation + metadata ─────────────────────────────────────────────
 
 export function generateStaticParams() {
-  return getAllSites().map((s) => ({ slug: s.slug }));
+  return getAllSites()
+    .filter((s) => s.species && Array.isArray(s.species) && s.conditionsByMonth && Array.isArray(s.conditionsByMonth))
+    .map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
