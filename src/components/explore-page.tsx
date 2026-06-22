@@ -12,6 +12,7 @@ import { STATE_TEXT, STATE_COLOR, freshness } from "@/lib/data/reef-state";
 import { LocationsGlobe } from "@/components/locations-globe";
 import { ReefCard } from "@/components/reef-card";
 import { FilterPill } from "@/components/filter-pill";
+import { WILDLIFE_TAXONOMY } from "@/lib/atlas-location";
 import type { ReefState } from "@/lib/data/reef-state";
 import type { ReefCardLocation } from "@/components/reef-card";
 
@@ -65,6 +66,7 @@ const DIVE_TYPE_OPTIONS = [
   { value: "muck", label: "Muck" },
   { value: "night", label: "Night" },
 ];
+
 
 const SKILL_OPTIONS = ["Beginner", "Open water", "Advanced", "Technical"];
 
@@ -133,12 +135,13 @@ export function ExplorePage({ locations, currentMonth }: Props) {
     .map(Number)
     .filter((n) => n >= 1 && n <= 12);
   const diveTypeFilters = getMultiParam(params, "divetype");
+  const animalFilters = getMultiParam(params, "animal");
   const skillFilters = getMultiParam(params, "skill");
   const freshOnly = params.get("fresh") === "1";
 
   const activeFilterCount =
     reefStates.length + regionFilters.length + monthFilters.length +
-    diveTypeFilters.length + skillFilters.length + (freshOnly ? 1 : 0);
+    diveTypeFilters.length + animalFilters.length + skillFilters.length + (freshOnly ? 1 : 0);
   const hasActiveFilter = activeFilterCount > 0;
 
   // Sync draft with URL params when sheet opens
@@ -251,6 +254,11 @@ export function ExplorePage({ locations, currentMonth }: Props) {
         !diveTypeFilters.some((dt) => loc.diveTypeTags.includes(dt))
       )
         return false;
+      if (
+        animalFilters.length > 0 &&
+        !animalFilters.some((a) => loc.animalTags.includes(a))
+      )
+        return false;
       if (skillFilters.length > 0) {
         const maxRank = Math.max(...skillFilters.map((s) => SKILL_RANK[s] ?? 0));
         if ((SKILL_RANK[loc.skill] ?? 0) > maxRank) return false;
@@ -271,7 +279,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
     });
 
     return result;
-  }, [locations, reefStates, regionFilters, monthFilters, diveTypeFilters, skillFilters, freshOnly, currentMonth]);
+  }, [locations, reefStates, regionFilters, monthFilters, diveTypeFilters, animalFilters, skillFilters, freshOnly, currentMonth]);
 
   // When a globe marker is clicked, select the card and scroll it into view
   const handleMarkerClick = useCallback((slug: string) => {
@@ -391,16 +399,18 @@ export function ExplorePage({ locations, currentMonth }: Props) {
 
           <span aria-hidden="true" className="shrink-0 h-5" style={{ width: 1, background: "rgba(14,28,40,0.06)" }} />
 
-          {/* What to see dropdown */}
-          {(["whatToSee", "region", "when", "certification"] as const).map((key) => {
+          {/* Dropdown filter pills */}
+          {(["whatToSee", "diveType", "region", "when", "certification"] as const).map((key) => {
             const labels: Record<string, string> = {
               whatToSee: "What to see",
+              diveType: "Dive type",
               region: "Region",
               when: "When",
               certification: "Certification",
             };
             const counts: Record<string, number> = {
-              whatToSee: diveTypeFilters.length,
+              whatToSee: animalFilters.length,
+              diveType: diveTypeFilters.length,
               region: regionFilters.length,
               when: monthFilters.length,
               certification: skillFilters.length,
@@ -473,6 +483,9 @@ export function ExplorePage({ locations, currentMonth }: Props) {
             style={{ maxWidth: 1320, margin: "0 auto" }}
           >
             {openDropdown === "whatToSee" && (
+              <SpeciesGroups animalFilters={animalFilters} onToggle={(v) => toggleMultiParam("animal", v)} />
+            )}
+            {openDropdown === "diveType" && (
               <div className="flex flex-wrap gap-2">
                 {DIVE_TYPE_OPTIONS.map(({ value, label }) => {
                   const active = diveTypeFilters.includes(value);
@@ -925,6 +938,83 @@ export function ExplorePage({ locations, currentMonth }: Props) {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+// ─── SpeciesGroups ─────────────────────────────────────────────────────────────
+
+function SpeciesGroups({
+  animalFilters,
+  onToggle,
+}: {
+  animalFilters: string[];
+  onToggle: (value: string) => void;
+}) {
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggle = (group: string) =>
+    setExpanded((prev) => ({ ...prev, [group]: !prev[group] }));
+
+  return (
+    <div className="space-y-1">
+      {WILDLIFE_TAXONOMY.map((g) => {
+        const activeInGroup = g.tags.filter((t) => animalFilters.includes(t.tag)).length;
+        const isOpen = expanded[g.group] ?? activeInGroup > 0;
+        return (
+          <div key={g.group}>
+            <button
+              type="button"
+              onClick={() => toggle(g.group)}
+              className="flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+              style={{
+                background: activeInGroup > 0 ? "rgba(14,79,110,0.08)" : "transparent",
+                color: activeInGroup > 0 ? "#0E4F6E" : "#4A5568",
+                border: "none",
+                cursor: "pointer",
+                fontFamily: "inherit",
+                textAlign: "left",
+              }}
+            >
+              <span style={{ fontSize: "9px", opacity: 0.5, display: "inline-block", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.15s" }}>▶</span>
+              {g.group}
+              {activeInGroup > 0 && (
+                <span
+                  className="ml-auto flex h-4 min-w-[16px] items-center justify-center rounded-full px-1 text-xs font-semibold leading-none"
+                  style={{ background: "#0E4F6E", color: "#fff" }}
+                >
+                  {activeInGroup}
+                </span>
+              )}
+            </button>
+            {isOpen && (
+              <div className="ml-4 mt-0.5 flex flex-wrap gap-1.5 pb-1">
+                {g.tags.map((t) => {
+                  const active = animalFilters.includes(t.tag);
+                  return (
+                    <button
+                      key={t.tag}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => onToggle(t.tag)}
+                      className="inline-flex items-center rounded-full px-3 py-1 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                      style={{
+                        border: active ? "1px solid #0E4F6E" : "1px solid #E7E6E2",
+                        background: active ? "rgba(0,212,255,0.12)" : "#F8F7F4",
+                        color: active ? "#0E4F6E" : "#4A5568",
+                        cursor: "pointer",
+                        fontFamily: "inherit",
+                      }}
+                    >
+                      {t.tag}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
