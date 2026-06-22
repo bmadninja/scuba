@@ -598,42 +598,40 @@ export function LocationPageBody(props: LocationBodyProps) {
           {sites.length > 0 ? (
             <section id="sites" style={{ marginBottom: "3rem" }}>
               <p style={LABEL_STYLE}>Dive sites</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                {(showAllSites ? sites : sites.slice(0, 5)).map((s) => (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem" }}>
+                {(showAllSites ? sites : sites.slice(0, 6)).map((s) => (
                   <Link
                     key={s.id}
                     href={`/sites/${s.slug}`}
                     style={{
-                      display: "flex",
-                      gap: "1rem",
-                      alignItems: "center",
-                      padding: "1rem 1.25rem",
-                      borderRadius: "8px",
                       border: "1px solid #E7E6E2",
-                      background: "#FFFFFF",
+                      borderRadius: "8px",
+                      overflow: "hidden",
                       textDecoration: "none",
                       color: "inherit",
+                      display: "flex",
+                      flexDirection: "column",
+                      background: "#FFFFFF",
                       transition: "border-color 150ms",
                     }}
                     className="site-row-link"
                   >
-                    <div style={{ width: 96, height: 72, borderRadius: "8px", flexShrink: 0, background: s.gradient, overflow: "hidden" }}>
+                    <div style={{ width: "100%", height: 140, background: s.gradient, overflow: "hidden" }}>
                       {s.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={resizePhotoUrl(s.imageUrl, 240) ?? s.imageUrl} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" decoding="async" />
+                        <img src={resizePhotoUrl(s.imageUrl, 500) ?? s.imageUrl} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" decoding="async" />
                       ) : null}
                     </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <p style={{ fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif', fontSize: "1rem", fontWeight: 400, color: "#0E1C28" }}>{s.name}</p>
+                    <div style={{ padding: "0.75rem" }}>
+                      <p style={{ fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif', fontSize: "1rem", fontWeight: 400, color: "#0E1C28", marginBottom: "0.3rem" }}>{s.name}</p>
                       {s.speciesLine ? (
-                        <p style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", color: "#4A5568", marginTop: "0.1rem" }}>{s.speciesLine}</p>
+                        <p style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", color: "#4A5568" }}>{s.speciesLine}</p>
                       ) : null}
                     </div>
-                    <span aria-hidden="true" style={{ color: "#4A5568", fontSize: "1.1rem", flexShrink: 0 }}>→</span>
                   </Link>
                 ))}
               </div>
-              {sites.length > 5 && !showAllSites ? (
+              {sites.length > 6 && !showAllSites ? (
                 <button
                   onClick={() => setShowAllSites(true)}
                   style={{ marginTop: "0.75rem", background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", fontWeight: 500, letterSpacing: "0.08em", color: "#4A5568", textDecoration: "underline" }}
@@ -928,7 +926,10 @@ export function LocationPageBody(props: LocationBodyProps) {
               Diving here?
             </p>
             <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontSize: "0.875rem", color: "#4A5568", marginBottom: "0.75rem" }}>
-              Log what you see — it sharpens the picture for the next diver and feeds the global database.
+              Log what you see and sharpen the picture for the next diver while feeding the global database!
+            </p>
+            <p style={{ fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif', fontSize: "0.75rem", color: "#4A5568", marginBottom: "0.75rem", lineHeight: 1.5 }}>
+              Your sighting broadcasts to iNaturalist, GBIF, and reef research organizations worldwide — every record helps scientists track what is really happening to this reef.
             </p>
             <Link
               href="/upload"
