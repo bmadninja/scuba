@@ -18,6 +18,13 @@ type InfoEntry = {
   /** Optional external link (e.g. a citizen-science platform's own site). */
   externalHref?: string;
   externalText?: string;
+  /**
+   * Optional link into the diver-facing learning experience (/learn). Used at
+   * reef-literacy moments — where a reader is asking what a signal or label
+   * means — to offer the skill of reading it underwater, not just the method
+   * behind the calculation.
+   */
+  learnText?: string;
 };
 
 export type InfoKey =
@@ -48,6 +55,7 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     link: true,
     anchor: "#reefstate",
     linkText: "See exactly how we calculate this on the Method page →",
+    learnText: "Learn to read these signals on your next dive →",
   },
   when: {
     title: "What “in season” means",
@@ -79,6 +87,7 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     ],
     link: true,
     linkText: "How logging works on the Method page →",
+    learnText: "Learn what to look for and log →",
   },
   heat: {
     title: "How warm the water is right now",
@@ -370,12 +379,27 @@ export function AtlasInfoPopup({
             {entry.externalText ?? "Open →"}
           </a>
         )}
+        {entry.learnText && (
+          <a
+            href="/learn"
+            style={{
+              display: "block",
+              marginTop: entry.externalHref ? "0.5rem" : "1rem",
+              fontSize: "0.875rem",
+              fontWeight: 700,
+              color: "#F6C700",
+              textDecoration: "none",
+            }}
+          >
+            {entry.learnText}
+          </a>
+        )}
         {entry.link && (
           <a
             href={`/data${entry.anchor ?? ""}`}
             style={{
               display: "inline-block",
-              marginTop: entry.externalHref ? "0.5rem" : "1rem",
+              marginTop: entry.learnText || entry.externalHref ? "0.5rem" : "1rem",
               fontSize: "0.875rem",
               fontWeight: 600,
               color: "#00d4ff",
