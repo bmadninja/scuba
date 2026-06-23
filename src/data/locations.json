@@ -88,7 +88,44 @@
       "north-male-atoll-maldives-hmcs-chaudiere",
       "north-male-atoll-maldives-maldive-victory"
     ],
-    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_WarrenBaverstock_10.jpg"
+    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_WarrenBaverstock_10.jpg",
+    "lodging": [
+      {
+        "name": "Four Seasons Resort Maldives at Kuda Huraa",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Island resort with marine research centre and easy access to manta points.",
+        "bookingUrl": "https://www.fourseasons.com/maldiveskh/"
+      },
+      {
+        "name": "Bandos Maldives",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Long running island resort near Banana Reef with a busy house reef.",
+        "bookingUrl": "https://bandosmaldives.com/"
+      },
+      {
+        "name": "Adaaran Select Hudhuranfushi",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Reef fringed island close to channel dives and surf breaks.",
+        "bookingUrl": "https://www.adaaran.com/hudhuranfushi/"
+      },
+      {
+        "name": "Emperor Maldives Liveaboards",
+        "type": "liveaboard",
+        "priceRange": "mid-range",
+        "description": "Liveaboard fleet cruising North Male channels, manta points and wreck sites.",
+        "bookingUrl": "https://www.emperormaldives.com/"
+      },
+      {
+        "name": "Arena Beach Hotel Maafushi",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Local island guesthouse offering affordable day diving across the atoll.",
+        "bookingUrl": "https://www.arenabeachmaldives.com/"
+      }
+    ]
   },
   {
     "id": "raja-ampat-indonesia",
