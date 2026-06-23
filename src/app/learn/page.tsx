@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { STATE_TEXT, STATE_COLOR, type ReefState } from "@/lib/data/reef-state";
 
 export const metadata: Metadata = {
   title: "Read your reef — Scuba Season",
@@ -55,23 +56,48 @@ const SIGNALS: {
   },
 ];
 
-// Canonical reef-state copy and colors, kept in sync with src/lib/data/reef-state.ts
-// so the legend a diver learns here matches the dots they see on the globe and cards.
-const STATES: { label: string; color: string; body: string }[] = [
+// Reef-state labels and colors are pulled straight from src/lib/data/reef-state.ts
+// (STATE_TEXT, STATE_COLOR) — the same source the globe markers and location cards
+// render from — so the legend a diver learns here can never drift from the dots they
+// actually see. Keyed by state id; only the explanatory body lives here.
+const STATES: { state: ReefState; body: string }[] = [
   {
-    label: "Thriving",
-    color: "#2E7D5B",
+    state: "thriving",
     body: "Coral cover is at or above the reef's long term baseline and steady, heat stress rarely passes a watch, and fishing pressure is light or the reef is protected. This is a reef close to its natural self.",
   },
   {
-    label: "Under pressure",
-    color: "#B98A2E",
+    state: "pressure",
     body: "Still rewarding to dive, but coral cover is moderate or slipping under warming, fishing, or both. The structure and the fish life largely hold. Intact, not pristine.",
   },
   {
-    label: "Witnessing change",
-    color: "#C0412B",
+    state: "change",
     body: "Coral cover is well below baseline after one or more bleaching events, and the reef is actively reorganising. Diving here documents what remains, and your records here are the most valuable in the atlas.",
+  },
+];
+
+// The repeatable read-and-record routine. This is the "clear, repeatable method" the
+// Read Your Reef framework trains: the same four signals above, run in the same order
+// on every dive, ending in a logged record.
+const METHOD: { num: string; when: string; body: string }[] = [
+  {
+    num: "01",
+    when: "Before you dive",
+    body: "Open the reef on Scuba Season and read its state. The heat stress and freshness signals tell you what to expect below, and whether this is a reef whose record is cold enough that your eyes genuinely matter.",
+  },
+  {
+    num: "02",
+    when: "As you descend",
+    body: "Run the four signals in the same order every time: how much living coral, any bleaching, the big fish, and anything that does not match what the record led you to expect. The order is the habit. After a few dives it becomes automatic.",
+  },
+  {
+    num: "03",
+    when: "Photograph with intent",
+    body: "One sharp photo of any animal you can name, and one wide photo of the coral. A photograph is what carries an observation across the line from a memory, which science cannot use, into a record, which it can.",
+  },
+  {
+    num: "04",
+    when: "Back on the boat",
+    body: "Log it while the dive is fresh, before the next one blurs the details. Submit through Scuba Season and we route it onward, or go straight to iNaturalist. That is the whole loop, and it closes on every single dive.",
   },
 ];
 
@@ -262,21 +288,21 @@ export default function LearnPage() {
           style={{ display: "flex", flexDirection: "column", gap: "1px", background: "var(--color-hairline)" }}
         >
           {STATES.map((st) => (
-            <div key={st.label} className="flex gap-4 px-6 py-5" style={{ background: "var(--color-paper)", alignItems: "flex-start" }}>
+            <div key={st.state} className="flex gap-4 px-6 py-5" style={{ background: "var(--color-paper)", alignItems: "flex-start" }}>
               <span
                 aria-hidden="true"
                 style={{
                   width: "12px",
                   height: "12px",
                   borderRadius: "999px",
-                  background: st.color,
+                  background: STATE_COLOR[st.state],
                   flexShrink: 0,
                   marginTop: "0.4rem",
                 }}
               />
               <div>
                 <h3 className="text-sm" style={{ fontWeight: 700, color: "var(--color-ink)", marginBottom: "0.3rem" }}>
-                  {st.label}
+                  {STATE_TEXT[st.state]}
                 </h3>
                 <p className="text-sm leading-[1.65]" style={{ color: "var(--color-ink-2)" }}>
                   {st.body}
@@ -305,6 +331,69 @@ export default function LearnPage() {
             for every source and its limits.
           </p>
         </div>
+
+        {/* THE METHOD, EVERY DIVE */}
+        <div style={{ margin: "3.5rem 0 2.5rem" }}>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+              fontSize: "clamp(1.4rem, 3vw, 1.75rem)",
+              fontWeight: 400,
+              letterSpacing: "-0.025em",
+              color: "var(--color-ink)",
+              marginBottom: "0.5rem",
+            }}
+          >
+            The method, every dive
+          </h2>
+          <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
+            Read these signals once and you can understand a reef. Read them the
+            same way on every dive and you become a monitor of it. This is the
+            repeatable method at the heart of Read your reef, the same routine a
+            divemaster can teach a whole dive team, and it takes a single dive to
+            learn.
+          </p>
+        </div>
+
+        <ol
+          className="overflow-hidden rounded-[1.25rem]"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1px",
+            background: "var(--color-hairline)",
+            listStyle: "none",
+            padding: 0,
+            margin: 0,
+          }}
+        >
+          {METHOD.map((m) => (
+            <li key={m.num} className="flex gap-4 px-6 py-5" style={{ background: "var(--color-paper)", alignItems: "flex-start" }}>
+              <span
+                aria-hidden="true"
+                style={{
+                  fontSize: "1.1rem",
+                  fontWeight: 900,
+                  letterSpacing: "-0.03em",
+                  color: "var(--color-ocean)",
+                  flexShrink: 0,
+                  marginTop: "0.1rem",
+                  fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+                }}
+              >
+                {m.num}
+              </span>
+              <div>
+                <h3 className="text-sm" style={{ fontWeight: 700, color: "var(--color-ink)", marginBottom: "0.3rem" }}>
+                  {m.when}
+                </h3>
+                <p className="text-sm leading-[1.65]" style={{ color: "var(--color-ink-2)" }}>
+                  {m.body}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
 
         {/* TURN IT INTO A RECORD */}
         <div style={{ margin: "3.5rem 0 2.5rem" }}>
