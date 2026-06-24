@@ -241,7 +241,44 @@
       "aerborek-jetty-dive-site-osm-0st82y",
       "friwen-wall-osm-jwalwm"
     ],
-    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_NoemiMerz_12.jpg"
+    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_NoemiMerz_12.jpg",
+    "lodging": [
+      {
+        "name": "Papua Paradise Eco Resort",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Overwater bungalows on Birie Island with direct reef access",
+        "bookingUrl": "https://www.papuaparadise.com"
+      },
+      {
+        "name": "Meridian Adventure Dive Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "PADI 5 Star resort on Mansuar Island near top dive sites",
+        "bookingUrl": "https://www.meridianadventuredive.com"
+      },
+      {
+        "name": "Koranu Fyak Bungalows",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Simple local bungalows on Yenkoranu with brilliant house reef",
+        "bookingUrl": "https://www.booking.com/hotel/id/koranu-fyak-bungalows.html"
+      },
+      {
+        "name": "Misool Eco Resort",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Award winning eco resort in southern Raja Ampat with marine sanctuary",
+        "bookingUrl": "https://www.misool.info"
+      },
+      {
+        "name": "Damai Liveaboard",
+        "type": "liveaboard",
+        "priceRange": "luxury",
+        "description": "Premium liveaboard covering all of Raja Ampat from Sorong",
+        "bookingUrl": "https://www.damailiveaboard.com"
+      }
+    ]
   },
   {
     "id": "komodo-national-park-indonesia",
