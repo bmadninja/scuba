@@ -48,8 +48,8 @@ const VARS = {
 // Hard ceiling per request. Without this a hung/unreachable upstream lets the
 // whole job stall for ~20 min before the failure threshold trips.
 const REQUEST_TIMEOUT_MS = 20_000;
-const MAX_RETRIES = 1;
-const RETRY_PAUSE_MS = 1_500;
+const MAX_RETRIES = 3;
+const RETRY_PAUSE_MS = 2_000; // doubles each attempt: 2s, 4s, 8s
 
 const BAA_TO_ALERT = {
   0: "no-stress",
@@ -106,10 +106,10 @@ async function fetchPoint(lat, lng) {
       });
     } catch (err) {
       const cause = err?.cause?.code || err?.name || err?.message || String(err);
-      if (attempt <= MAX_RETRIES) { await sleep(RETRY_PAUSE_MS); continue; }
+      if (attempt <= MAX_RETRIES) { await sleep(RETRY_PAUSE_MS * (2 ** (attempt - 1))); continue; }
       throw new Error(`request failed (${cause})`);
     }
-    if (res.status >= 500 && attempt <= MAX_RETRIES) { await sleep(RETRY_PAUSE_MS); continue; }
+    if (res.status >= 500 && attempt <= MAX_RETRIES) { await sleep(RETRY_PAUSE_MS * (2 ** (attempt - 1))); continue; }
     break;
   }
   if (res.status >= 300 && res.status < 400) {

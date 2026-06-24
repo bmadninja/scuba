@@ -65,9 +65,9 @@ const GBIF_BASE = "https://api.gbif.org/v1/occurrence/search";
 const USER_AGENT = "scubaseason.fun sightings ingest (hello@scubaseason.fun)";
 
 // iNaturalist allows ~60 req/min unauthenticated. Each species does up to
-// 2 iNat calls (observations + histogram), so ~700ms keeps us under the
-// ceiling with headroom. GBIF fallback adds an occasional third call.
-const PACE_MS = 700;
+// 2 iNat calls (observations + histogram). 1500ms gives ~40 req/min with
+// headroom for the histogram call, staying clear of normal_throttling.
+const PACE_MS = 1500;
 const FAILURE_THRESHOLD = 0.2;
 const DEFAULT_MONTHS = 24;
 const DEFAULT_RADIUS_KM = 25;
@@ -99,12 +99,18 @@ function windowStart(months) {
   return d.toISOString().slice(0, 10);
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: { Accept: "application/json", "User-Agent": USER_AGENT },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-  return res.json();
+async function fetchJson(url, retries = 3) {
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(url, {
+      headers: { Accept: "application/json", "User-Agent": USER_AGENT },
+    });
+    if (res.status === 429 && attempt <= retries) {
+      await sleep(PACE_MS * (2 ** attempt)); // 3s, 6s, 12s
+      continue;
+    }
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+    return res.json();
+  }
 }
 
 /**
