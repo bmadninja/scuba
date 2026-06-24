@@ -5,7 +5,7 @@ import { STATE_TEXT, STATE_COLOR, type ReefState } from "@/lib/data/reef-state";
 export const metadata: Metadata = {
   title: "Read your reef — Scuba Season",
   description:
-    "Learn to read the real state of a reef underwater: coral cover, heat stress, fishing pressure, and how recently anyone surveyed it. Then turn what you saw into a scientific record.",
+    "Learn to read the real state of a reef underwater: coral cover, heat stress, fishing pressure, and how recently anyone surveyed it. Then learn to photograph it so your dive becomes a record science can use.",
 };
 
 // The four signals are the exact ones Scuba Season uses to assign a reef state
@@ -22,7 +22,7 @@ const SIGNALS: {
     num: "01",
     name: "Coral cover",
     underwater:
-      "Look at how much of the hard bottom is still living coral versus bare rock, rubble, or algae. A healthy reef is mostly structure built by living coral. When you see broad fields of dead skeleton turning fuzzy green, cover has collapsed.",
+      "Look at how much of the hard bottom is still living coral, against bare rock, rubble, and algae. A healthy reef is mostly structure built by living coral, so broad fields of dead skeleton turning fuzzy green mean cover has collapsed.",
     onsite:
       "Scuba Season shows the most recent measured hard coral cover for a location against its historical baseline, so you can see whether the reef is holding near what it once was or slipping below it.",
     source: "Survey networks including AIMS Long Term Monitoring and the Global Coral Reef Monitoring Network.",
@@ -31,27 +31,27 @@ const SIGNALS: {
     num: "02",
     name: "Heat stress",
     underwater:
-      "Bleaching is the reef telling you it is too hot. Coral that has gone bone white or pale and ghostly is alive but starving, having expelled the algae it lives on. Patchy white tips after a warm season are an early sign. Whole white reefs are an emergency.",
+      "Bleaching is the reef telling you it is too hot. Coral that has gone bone white or pale and ghostly is alive but starving, having expelled the algae it lives on. Patchy white tips after a warm season are an early sign, and whole white reefs are an emergency.",
     onsite:
       "We carry the bleaching alert level from NOAA Coral Reef Watch, updated continuously from satellite. It tells you whether the water has been hot enough, for long enough, to expect bleaching before you even get in.",
-    source: "NOAA Coral Reef Watch, degree heating weeks accumulated over the last twelve weeks.",
+    source: "NOAA Coral Reef Watch, degree heating weeks accumulated over the last 12 weeks.",
   },
   {
     num: "03",
     name: "Fishing pressure",
     underwater:
-      "Count the big fish. A reef under light pressure has large groupers, snappers, sharks, and dense schools. A reef that is heavily fished feels empty of anything bigger than your hand, even when the coral looks fine. Missing predators is the quietest warning sign there is.",
+      "Count the big fish. A reef under light pressure has large groupers, snappers, sharks, and dense schools. A heavily fished reef feels empty of anything bigger than your hand, even when the coral looks fine, and missing predators is the quietest warning there is.",
     onsite:
-      "We show fishing pressure drawn from vessel activity tracked within fifty kilometers over the last year, so you know whether the fish you are not seeing were fished out rather than simply hiding.",
+      "We show fishing pressure drawn from vessel activity tracked within 50 kilometres over the last year, so you know whether the fish you are not seeing were fished out rather than simply hiding.",
     source: "Global Fishing Watch, automatic identification system vessel tracks.",
   },
   {
     num: "04",
     name: "Survey freshness",
     underwater:
-      "This is the one you cannot see, and it is the one where you matter most. Ask yourself: when did a scientist last look at this reef? On many sites the honest answer is years ago, or never. If the record is cold, the most recent useful observation of this reef might be the one you are about to make.",
+      "This is the one you cannot see, and it is the one where you matter most. When did a scientist last look at this reef? On many sites the honest answer is years ago, or never. If the record is cold, the most useful observation of this reef might be the one you are about to make.",
     onsite:
-      "Every location carries a freshness label. Fresh means a structured survey happened within the last two years. Cold means no recent eyes underwater. Cold reefs are flagged as places that need fresh eyes, because they do.",
+      "Every location carries a freshness label. Fresh means a structured survey happened within the last 2 years. Cold means no recent eyes underwater. Cold reefs are flagged as places that need fresh eyes, because they do.",
     source: "Survey dates from the monitoring networks above, measured against today.",
   },
 ];
@@ -63,15 +63,15 @@ const SIGNALS: {
 const STATES: { state: ReefState; body: string }[] = [
   {
     state: "thriving",
-    body: "Coral cover is at or above the reef's long term baseline and steady, heat stress rarely passes a watch, and fishing pressure is light or the reef is protected. This is a reef close to its natural self.",
+    body: "Coral cover is at or above the reef's long term baseline and steady, heat stress rarely passes a watch, and fishing pressure is light or the reef is protected. A reef close to its natural self.",
   },
   {
     state: "pressure",
-    body: "Still rewarding to dive, but coral cover is moderate or slipping under warming, fishing, or both. The structure and the fish life largely hold. Intact, not pristine.",
+    body: "Still a good dive, and the structure and the fish life mostly hold, while coral cover is moderate or slipping under warming, fishing, or both. Intact, and holding on.",
   },
   {
     state: "change",
-    body: "Coral cover is well below baseline after one or more bleaching events, and the reef is actively reorganising. Diving here documents what remains, and your records here are the most valuable in the atlas.",
+    body: "Coral cover is well below baseline after one or more bleaching events, and the reef is reorganising. A dive here documents what remains, and your records here are the most valuable in the atlas.",
   },
 ];
 
@@ -82,42 +82,96 @@ const METHOD: { num: string; when: string; body: string }[] = [
   {
     num: "01",
     when: "Before you dive",
-    body: "Open the reef on Scuba Season and read its state. The heat stress and freshness signals tell you what to expect below, and whether this is a reef whose record is cold enough that your eyes genuinely matter.",
+    body: "Open the reef on Scuba Season and read its state. Heat stress and freshness tell you what to expect below, and whether this is a reef whose record is cold enough that your eyes genuinely count.",
   },
   {
     num: "02",
     when: "As you descend",
-    body: "Run the four signals in the same order every time: how much living coral, any bleaching, the big fish, and anything that does not match what the record led you to expect. The order is the habit. After a few dives it becomes automatic.",
+    body: "Run the 4 signals in the same order every time: how much living coral, any bleaching, the big fish, and anything that does not match what the record led you to expect. The order is the habit, and after a few dives it runs on its own.",
   },
   {
     num: "03",
-    when: "Photograph with intent",
-    body: "One sharp photo of any animal you can name, and one wide photo of the coral. A photograph is what carries an observation across the line from a memory, which science cannot use, into a record, which it can.",
+    when: "Photograph the reef",
+    body: "Two photos do the work: a clear shot of any animal you can name, and a steady mapping pass over the coral. The mapping pass follows a real method, set out just below.",
   },
   {
     num: "04",
     when: "Back on the boat",
-    body: "Log it while the dive is fresh, before the next one blurs the details. Submit through Scuba Season and we route it onward, or go straight to iNaturalist. That is the whole loop, and it closes on every single dive.",
+    body: "Log it while the dive is fresh, before the next one blurs the details. Submit through Scuba Season and we route it onward, or go straight to iNaturalist. That is the whole loop, and it closes on every dive.",
   },
 ];
 
-// The three networks the site already routes diver records into (consistent with
-// /about and the sighting submission flow).
+// Each destination needs a different capture format. This array maps the five
+// main platforms to the specific method and spec the diver needs to know.
+// Method credit for 3D photogrammetry: Bayley & Mogg (2020, Methods Ecol Evol)
+// + AIMS EcoRRAP SOP (Gordon, Figueira et al. 2023). Wildflow applies it.
+const CAPTURE_FORMATS: {
+  platform: string;
+  label: string;
+  method: string;
+  spec: string;
+}[] = [
+  {
+    platform: "iNaturalist",
+    label: "Species record",
+    method:
+      "One clear, close shot of any animal you can identify. Fill the frame, get sharp focus on the subject, and include the whole animal. iNaturalist experts identify from photos on land — the photo is the record.",
+    spec: "Any camera or phone. One shot per animal. Sharp focus on the subject.",
+  },
+  {
+    platform: "CoralWatch",
+    label: "Bleaching check",
+    method:
+      "No camera. Hold the Coral Health Chart next to each coral you examine and note the lightest and darkest colour code that matches, plus the growth form. Repeat for at least 20 corals. The codes go into the CoralWatch app and become a bleaching record anyone can verify.",
+    spec: "No camera. CoralWatch app. At least 20 corals for a valid survey.",
+  },
+  {
+    platform: "MERMAID",
+    label: "Reef health survey",
+    method:
+      "Photograph each quadrat straight down from directly above, at a consistent distance, with the frame parallel to the reef. One photo per quadrat. The photos go into MERMAID, where AI assigns benthic categories to points in the image. The diver sets up the survey on the surface; classification happens on land.",
+    spec:
+      "At least 12 megapixels. At least 1500 by 1500 pixels. Straight down. Consistent distance. Well lit. No motion blur. Quadrat frame required.",
+  },
+  {
+    platform: "Wildflow / 3D model",
+    label: "3D reef photogrammetry",
+    method:
+      "Swim parallel passes about 1.5 metres above the reef, camera pointing straight down, one photo every 0.5 seconds. Overlap between passes lets photogrammetry software stitch a 3D surface model of the reef. Any camera with a wide lens, interval mode, and a fast memory card will work.",
+    spec:
+      "Wide lens. Interval at 0.5 seconds. 1.5 m above the reef. Overlapping parallel passes. Not GoPro-specific.",
+  },
+  {
+    platform: "Reef Check",
+    label: "Structured transect",
+    method:
+      "Visual census of indicator fish, invertebrates, and substrate along a belt transect. No photo required. The in-water count is the record. Requires a 3-day paid EcoDiver certification to participate in official surveys.",
+    spec: "No camera. Slate and pencil. EcoDiver certification required.",
+  },
+];
+
+// The networks the site routes diver records into. MERMAID is included because
+// the reef survey capture mode (in /upload) queues data for MERMAID import.
 const NETWORKS: { name: string; url: string; note: string }[] = [
   {
     name: "iNaturalist",
     url: "https://www.inaturalist.org",
-    note: "Photograph what you see. Research grade observations flow on to GBIF, the database researchers in over one hundred countries draw from.",
+    note: "Photograph what you see. Research-grade observations flow on to GBIF, the database researchers in over 100 countries draw from.",
   },
   {
-    name: "Reef Check",
-    url: "https://www.reefcheck.org",
-    note: "Learn the structured survey method and your counts become part of a global reef monitoring dataset.",
+    name: "MERMAID",
+    url: "https://datamermaid.org",
+    note: "Run a photo quadrat survey and your benthic data enters the platform the Global Fund for Coral Reefs uses to track reef change.",
   },
   {
     name: "CoralWatch",
     url: "https://coralwatch.org",
     note: "Match coral colour to a simple chart and you have logged a bleaching observation anyone can verify.",
+  },
+  {
+    name: "Reef Check",
+    url: "https://www.reefcheck.org",
+    note: "Complete the EcoDiver course and your structured transect counts join a global reef monitoring dataset.",
   },
 ];
 
@@ -160,8 +214,8 @@ export default function LearnPage() {
             }}
           >
             Most divers read a brochure before a trip. Here is how to read the
-            thing that actually matters once you are in the water: the reef
-            itself, honestly, with the same four signals this atlas uses.
+            thing that actually matters once you are in the water, the reef
+            itself, using the same 4 signals this atlas runs on.
           </p>
         </div>
       </header>
@@ -172,16 +226,17 @@ export default function LearnPage() {
         {/* INTRO PROSE */}
         <div className="space-y-5 text-base leading-[1.8]" style={{ color: "var(--color-ink-2)" }}>
           <p>
-            A reef does not hide its condition. It is written in the coral, the
-            water temperature, the fish, and in how long it has been since
-            anyone wrote any of it down. Once you know what to look for, a single
-            dive tells you whether a reef is holding, slipping, or already
-            changed. That same dive can become a record that scientists use.
+            A reef shows you its condition, if you know where to look. It is
+            there in the coral, the water temperature, the fish, and in how long
+            it has been since anyone last wrote it down. Learn to read those, and
+            a single dive tells you whether a reef is holding, slipping, or
+            already changed.
           </p>
           <p>
-            This is the whole idea behind Scuba Season. You are already in the
-            water. You are already looking. The only missing piece is knowing
-            what you are looking at, and a way to pass it on.
+            That same dive can become a record a scientist can use. You are in
+            the water anyway, and you are already looking. The piece that is
+            missing is knowing what you are looking at, and an easy way to pass
+            it on. That is what this page is for.
           </p>
         </div>
 
@@ -200,9 +255,9 @@ export default function LearnPage() {
             The four signals
           </h2>
           <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
-            Read these four together and you can read almost any reef on the
-            planet. They are exactly the signals this atlas weighs when it labels
-            a reef.
+            Learn these 4 and you can read almost any reef in the world. They are
+            the same 4 this atlas weighs when it labels a reef, so reading them
+            yourself is reading the reef the way the science does.
           </p>
         </div>
 
@@ -278,8 +333,8 @@ export default function LearnPage() {
             Three states a reef can be in
           </h2>
           <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
-            Put the four signals together and a reef falls into one of three
-            honest labels. These are the dots you see on the globe and the cards.
+            Put the 4 signals together and a reef lands in one of 3 honest
+            labels. These are the dots you see on the globe and the cards.
           </p>
         </div>
 
@@ -324,11 +379,11 @@ export default function LearnPage() {
         >
           <p className="text-xs leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
             <strong style={{ color: "var(--color-ink)" }}>One honest caveat:</strong>{" "}
-            these labels are grounded in the signals we have, not a complete
-            diagnosis. A reef can be recovering or declining faster than our data
-            shows. That gap is exactly why your eyes underwater matter. See the{" "}
+            these labels rest on the signals we have, and a reef can be recovering
+            or declining faster than our data shows. That gap is exactly why your
+            eyes underwater matter. The{" "}
             <Link href="/data" style={{ color: "var(--color-ocean)" }}>method page</Link>{" "}
-            for every source and its limits.
+            lists every source and its limits.
           </p>
         </div>
 
@@ -347,11 +402,10 @@ export default function LearnPage() {
             The method, every dive
           </h2>
           <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
-            Read these signals once and you can understand a reef. Read them the
-            same way on every dive and you become a monitor of it. This is the
-            repeatable method at the heart of Read your reef, the same routine a
-            divemaster can teach a whole dive team, and it takes a single dive to
-            learn.
+            Read these signals once and you understand a reef. Read them the same
+            way on every dive and you become someone who watches it. This is the
+            routine at the heart of Read your reef, simple enough for a divemaster
+            to teach a whole dive team in a single dive.
           </p>
         </div>
 
@@ -395,6 +449,80 @@ export default function LearnPage() {
           ))}
         </ol>
 
+        {/* WHAT TO CAPTURE — PER DESTINATION */}
+        <div style={{ margin: "3.5rem 0 2.5rem" }}>
+          <h2
+            style={{
+              fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+              fontSize: "clamp(1.4rem, 3vw, 1.75rem)",
+              fontWeight: 400,
+              letterSpacing: "-0.025em",
+              color: "var(--color-ink)",
+              marginBottom: "0.5rem",
+            }}
+          >
+            What to capture, and for whom
+          </h2>
+          <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
+            What you photograph depends on where you want the record to go. Each
+            destination needs a different approach, and some do not need a camera
+            at all. Here is the method for each one.
+          </p>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          {CAPTURE_FORMATS.map((f) => (
+            <div
+              key={f.platform}
+              className="rounded-2xl p-6 sm:p-7"
+              style={{ border: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}
+            >
+              <div style={{ display: "flex", alignItems: "baseline", gap: "0.75rem", marginBottom: "0.75rem", flexWrap: "wrap" }}>
+                <span
+                  className="text-xs font-bold uppercase tracking-[0.14em]"
+                  style={{
+                    color: "var(--color-ocean)",
+                    fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+                  }}
+                >
+                  {f.platform}
+                </span>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-serif), 'Source Serif 4', Georgia, serif",
+                    fontSize: "1.15rem",
+                    fontWeight: 400,
+                    letterSpacing: "-0.02em",
+                    color: "var(--color-ink)",
+                  }}
+                >
+                  {f.label}
+                </h3>
+              </div>
+              <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)", marginBottom: "0.75rem" }}>
+                {f.method}
+              </p>
+              <p
+                className="text-xs leading-[1.6]"
+                style={{
+                  color: "var(--color-ink-2)",
+                  opacity: 0.7,
+                  fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
+                }}
+              >
+                {f.spec}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-xs leading-[1.6]" style={{ color: "var(--color-ink-2)", opacity: 0.6, marginTop: "0.85rem" }}>
+          The 3D photogrammetry method was developed by Bayley and Mogg (2020,
+          Methods in Ecology and Evolution) and refined by the AIMS EcoRRAP
+          program (Gordon, Figueira et al. 2023). Wildflow applies and documents
+          this method for reef scientists.
+        </p>
+
         {/* TURN IT INTO A RECORD */}
         <div style={{ margin: "3.5rem 0 2.5rem" }}>
           <h2
@@ -411,9 +539,9 @@ export default function LearnPage() {
           </h2>
           <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
             Reading a reef changes your dive. Logging it changes the science. A
-            reef with a cold record needs a single careful observer far more than
-            a famous reef needs its thousandth photo. Here is where your
-            observation goes.
+            reef with a cold record needs one careful observer far more than a
+            famous reef needs its thousandth photo. Here is where your observation
+            goes.
           </p>
         </div>
 

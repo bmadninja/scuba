@@ -6,9 +6,38 @@ import sitesRaw from "@/data/sites.json";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
+type Mode = "sighting" | "survey";
 type Category = "fish" | "coral" | "other";
 type BleachingScore = "healthy" | "pale" | "bleached" | "dead";
 type WizardStep = 1 | 2 | 3 | 4;
+type SurveyStep = 1 | 2 | 3 | 4;
+
+type CoralWatchEntry = {
+  growthForm: string;
+  lightestShade: number;
+  darkestShade: number;
+};
+
+type ReefSurveyData = {
+  site: SiteOption | null;
+  date: string;
+  depthM: string;
+  transectLengthM: string;
+  numQuadrats: string;
+  quadratSizeM2: string;
+  pointsPerQuadrat: string;
+  reefSlope: string;
+  observerEmail: string;
+  notes: string;
+  coralEntries: CoralWatchEntry[];
+};
+
+type SurveySubmitResponse = {
+  success?: boolean;
+  queued?: boolean;
+  message?: string;
+  error?: string;
+};
 
 type SiteOption = {
   id: string;
@@ -1072,17 +1101,12 @@ function Step3Submit({
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const hasSeahorse = formData.species.some((s) => s.isSeahorse);
-  const coralWatchEligible =
-    formData.category === "coral" &&
-    formData.depthM !== "" &&
-    formData.bleachingScore !== null;
 
   const platforms = [
     "iNaturalist",
     "GBIF (via iNaturalist)",
     "OBIS (via iNaturalist)",
     ...(hasSeahorse ? ["iSeahorse"] : []),
-    ...(coralWatchEligible ? ["CoralWatch (weekly batch)"] : []),
   ];
 
   const canSubmit = formData.photos.length > 0;
@@ -1352,10 +1376,6 @@ function BroadcastConfirmation({
   onAnother: () => void;
 }) {
   const hasSeahorse = formData.species.some((s) => s.isSeahorse);
-  const coralWatchEligible =
-    formData.category === "coral" &&
-    formData.depthM !== "" &&
-    formData.bleachingScore !== null;
 
   type PlatformRow = { name: string; delay: number };
   const allPlatformRows: PlatformRow[] = [
@@ -1363,7 +1383,6 @@ function BroadcastConfirmation({
     { name: "GBIF", delay: 400 },
     { name: "OBIS", delay: 800 },
     ...(hasSeahorse ? [{ name: "iSeahorse", delay: 1200 }] : []),
-    ...(coralWatchEligible ? [{ name: "CoralWatch", delay: 1600 }] : []),
   ];
 
   const [visibleCount, setVisibleCount] = useState(0);
@@ -1459,13 +1478,582 @@ function BroadcastConfirmation({
   );
 }
 
+// ─── Mode selector ────────────────────────────────────────────────────────────
+
+function ModeSelector({ onSelect }: { onSelect: (mode: Mode) => void }) {
+  return (
+    <div>
+      <h2
+        className="mb-2"
+        style={{
+          fontFamily: "var(--font-serif)",
+          fontWeight: 300,
+          fontStyle: "italic",
+          fontSize: "1.75rem",
+          color: "var(--color-ink)",
+        }}
+        id="step-heading"
+        tabIndex={-1}
+      >
+        What are you submitting?
+      </h2>
+      <p className="mb-6 text-sm" style={{ color: "var(--color-ink-2)" }}>
+        Choose the type of record that matches what you did on the dive.
+      </p>
+      <div className="flex flex-col gap-3">
+        <button
+          type="button"
+          onClick={() => onSelect("sighting")}
+          className="rounded-sm text-left p-5 transition-colors"
+          style={{
+            border: "1px solid var(--color-hairline)",
+            background: "var(--color-paper)",
+            cursor: "pointer",
+          }}
+        >
+          <p className="text-sm font-bold mb-1" style={{ color: "var(--color-ink)" }}>
+            Species sighting
+          </p>
+          <p className="text-sm" style={{ color: "var(--color-ink-2)" }}>
+            A photo of a fish, coral, or other marine animal. Routes to iNaturalist,
+            GBIF, and OBIS.
+          </p>
+        </button>
+        <button
+          type="button"
+          onClick={() => onSelect("survey")}
+          className="rounded-sm text-left p-5 transition-colors"
+          style={{
+            border: "1px solid var(--color-hairline)",
+            background: "var(--color-paper)",
+            cursor: "pointer",
+          }}
+        >
+          <p className="text-sm font-bold mb-1" style={{ color: "var(--color-ink)" }}>
+            Reef survey
+          </p>
+          <p className="text-sm" style={{ color: "var(--color-ink-2)" }}>
+            A structured benthic photo quadrat survey for MERMAID. Optionally includes
+            CoralWatch bleaching readings.
+          </p>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─── Survey step 2: metadata ──────────────────────────────────────────────────
+
+const REEF_SLOPE_OPTIONS = ["", "Flat", "Slope", "Wall", "Crest"] as const;
+
+function SurveyStep2Metadata({
+  data,
+  setData,
+  onBack,
+  onNext,
+}: {
+  data: ReefSurveyData;
+  setData: React.Dispatch<React.SetStateAction<ReefSurveyData>>;
+  onBack: () => void;
+  onNext: () => void;
+}) {
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const field = (key: keyof ReefSurveyData) => ({
+    value: data[key] as string,
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+      setData((prev) => ({ ...prev, [key]: e.target.value })),
+  });
+
+  const validate = () => {
+    const errs: Record<string, string> = {};
+    if (!data.date) errs.date = "Date is required.";
+    if (!data.depthM || isNaN(Number(data.depthM))) errs.depthM = "Enter a valid depth.";
+    if (!data.transectLengthM || isNaN(Number(data.transectLengthM))) errs.transectLengthM = "Enter transect length.";
+    if (!data.numQuadrats || Number(data.numQuadrats) < 1) errs.numQuadrats = "At least 1 quadrat required.";
+    if (!data.quadratSizeM2 || isNaN(Number(data.quadratSizeM2))) errs.quadratSizeM2 = "Enter quadrat size.";
+    if (!data.pointsPerQuadrat || Number(data.pointsPerQuadrat) < 1) errs.pointsPerQuadrat = "At least 1 point per quadrat.";
+    if (!data.observerEmail.trim()) errs.observerEmail = "Observer email is required.";
+    return errs;
+  };
+
+  const handleNext = () => {
+    const errs = validate();
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    onNext();
+  };
+
+  const labelStyle = {
+    fontFamily: "var(--font-mono)",
+    fontSize: 11,
+    textTransform: "uppercase" as const,
+    letterSpacing: "0.08em",
+    color: "var(--color-ink-2)",
+    display: "block",
+    marginBottom: 4,
+  };
+  const inputStyle = {
+    border: "1px solid var(--color-hairline)",
+    outline: "none",
+    color: "var(--color-ink)",
+    background: "var(--color-paper)",
+    width: "100%",
+    borderRadius: 2,
+    padding: "0.75rem 1rem",
+    fontFamily: "var(--font-sans)",
+    fontSize: "1rem",
+  };
+
+  return (
+    <div>
+      <h2
+        className="mb-2"
+        style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontStyle: "italic", fontSize: "1.75rem", color: "var(--color-ink)" }}
+        tabIndex={-1}
+        id="step-heading"
+      >
+        Survey details
+      </h2>
+      <p className="mb-6 text-sm" style={{ color: "var(--color-ink-2)" }}>
+        These fields set up the sample event in MERMAID. Fill them in before you
+        forget the numbers from the dive.
+      </p>
+
+      <div className="space-y-4">
+        <div>
+          <label style={labelStyle}>Date</label>
+          <input type="date" style={inputStyle} {...field("date")} />
+          {errors.date && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.date}</p>}
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label style={labelStyle}>Depth (m)</label>
+            <input type="number" min="0" max="200" step="0.5" placeholder="e.g. 8" style={inputStyle} {...field("depthM")} />
+            {errors.depthM && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.depthM}</p>}
+          </div>
+          <div>
+            <label style={labelStyle}>Transect length (m)</label>
+            <input type="number" min="1" max="200" step="1" placeholder="e.g. 25" style={inputStyle} {...field("transectLengthM")} />
+            {errors.transectLengthM && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.transectLengthM}</p>}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-3">
+          <div>
+            <label style={labelStyle}>Number of quadrats</label>
+            <input type="number" min="1" max="100" step="1" placeholder="e.g. 5" style={inputStyle} {...field("numQuadrats")} />
+            {errors.numQuadrats && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.numQuadrats}</p>}
+          </div>
+          <div>
+            <label style={labelStyle}>Quadrat size (m²)</label>
+            <input type="number" min="0.1" max="10" step="0.1" placeholder="e.g. 1" style={inputStyle} {...field("quadratSizeM2")} />
+            {errors.quadratSizeM2 && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.quadratSizeM2}</p>}
+          </div>
+          <div>
+            <label style={labelStyle}>Points per quadrat</label>
+            <input type="number" min="1" max="200" step="1" placeholder="e.g. 25" style={inputStyle} {...field("pointsPerQuadrat")} />
+            {errors.pointsPerQuadrat && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.pointsPerQuadrat}</p>}
+          </div>
+        </div>
+
+        <div>
+          <label style={labelStyle}>Reef slope (optional)</label>
+          <select
+            value={data.reefSlope}
+            onChange={(e) => setData((prev) => ({ ...prev, reefSlope: e.target.value }))}
+            style={{ ...inputStyle, appearance: "none" }}
+          >
+            {REEF_SLOPE_OPTIONS.map((o) => (
+              <option key={o} value={o}>{o || "— not specified —"}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label style={labelStyle}>Observer email</label>
+          <input type="email" placeholder="e.g. you@example.com" style={inputStyle} {...field("observerEmail")} />
+          <p className="text-xs mt-1" style={{ color: "var(--color-ink-2)" }}>
+            Required by MERMAID to link the survey to your account.
+          </p>
+          {errors.observerEmail && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.observerEmail}</p>}
+        </div>
+
+        <div>
+          <label style={labelStyle}>Notes (optional)</label>
+          <textarea
+            rows={3}
+            placeholder="Visibility, current, unusual conditions..."
+            value={data.notes}
+            onChange={(e) => setData((prev) => ({ ...prev, notes: e.target.value }))}
+            style={{ ...inputStyle, resize: "vertical" }}
+          />
+        </div>
+      </div>
+
+      <div className="flex gap-3 flex-wrap mt-6">
+        <GhostBtn onClick={onBack}>Back</GhostBtn>
+        <PrimaryBtn onClick={handleNext}>Continue</PrimaryBtn>
+      </div>
+    </div>
+  );
+}
+
+// ─── Survey step 3: CoralWatch readings ───────────────────────────────────────
+
+const GROWTH_FORMS = ["branching", "encrusting", "massive", "plate", "soft", "millepora"] as const;
+const SHADE_LABELS: Record<number, string> = { 1: "1 — bleached", 2: "2 — pale", 3: "3 — moderate", 4: "4 — healthy" };
+
+function SurveyStep3CoralWatch({
+  data,
+  setData,
+  onBack,
+  onNext,
+}: {
+  data: ReefSurveyData;
+  setData: React.Dispatch<React.SetStateAction<ReefSurveyData>>;
+  onBack: () => void;
+  onNext: () => void;
+}) {
+  const [growthForm, setGrowthForm] = useState<string>(GROWTH_FORMS[0]);
+  const [lightestShade, setLightestShade] = useState(1);
+  const [darkestShade, setDarkestShade] = useState(4);
+  const [addError, setAddError] = useState<string | null>(null);
+
+  const addEntry = () => {
+    if (darkestShade < lightestShade) {
+      setAddError("Darkest shade must be equal to or darker than the lightest shade.");
+      return;
+    }
+    setAddError(null);
+    setData((prev) => ({
+      ...prev,
+      coralEntries: [...prev.coralEntries, { growthForm, lightestShade, darkestShade }],
+    }));
+  };
+
+  const removeEntry = (i: number) => {
+    setData((prev) => ({ ...prev, coralEntries: prev.coralEntries.filter((_, idx) => idx !== i) }));
+  };
+
+  const selectStyle = {
+    border: "1px solid var(--color-hairline)",
+    outline: "none",
+    color: "var(--color-ink)",
+    background: "var(--color-paper)",
+    borderRadius: 2,
+    padding: "0.5rem 0.75rem",
+    fontFamily: "var(--font-sans)",
+    fontSize: "0.875rem",
+    appearance: "none" as const,
+  };
+
+  return (
+    <div>
+      <h2
+        className="mb-2"
+        style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontStyle: "italic", fontSize: "1.75rem", color: "var(--color-ink)" }}
+        tabIndex={-1}
+        id="step-heading"
+      >
+        CoralWatch readings
+      </h2>
+      <p className="mb-1 text-sm" style={{ color: "var(--color-ink-2)" }}>
+        Optional. For each coral you examined during the survey, record the growth
+        form and the lightest and darkest shade from the Coral Health Chart (1 =
+        fully bleached, 4 = darkest healthy). CoralWatch recommends at least 20
+        corals for a valid survey.
+      </p>
+      <p className="mb-6 text-sm" style={{ color: "var(--color-ink-2)", opacity: 0.7 }}>
+        Skip this step if you did not bring a CoralWatch chart on the dive.
+      </p>
+
+      {/* Add entry row */}
+      <div className="flex flex-wrap gap-2 mb-3 items-end">
+        <div>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)", marginBottom: 4 }}>
+            Growth form
+          </p>
+          <select value={growthForm} onChange={(e) => setGrowthForm(e.target.value)} style={selectStyle}>
+            {GROWTH_FORMS.map((g) => <option key={g} value={g}>{g}</option>)}
+          </select>
+        </div>
+        <div>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)", marginBottom: 4 }}>
+            Lightest shade
+          </p>
+          <select value={lightestShade} onChange={(e) => setLightestShade(Number(e.target.value))} style={selectStyle}>
+            {[1, 2, 3, 4].map((n) => <option key={n} value={n}>{SHADE_LABELS[n]}</option>)}
+          </select>
+        </div>
+        <div>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)", marginBottom: 4 }}>
+            Darkest shade
+          </p>
+          <select value={darkestShade} onChange={(e) => setDarkestShade(Number(e.target.value))} style={selectStyle}>
+            {[1, 2, 3, 4].map((n) => <option key={n} value={n}>{SHADE_LABELS[n]}</option>)}
+          </select>
+        </div>
+        <button
+          type="button"
+          onClick={addEntry}
+          className="rounded-sm px-4 py-2 text-sm font-sans"
+          style={{
+            background: "var(--color-ink)",
+            color: "var(--color-paper)",
+            border: "none",
+            cursor: "pointer",
+            minHeight: 38,
+          }}
+        >
+          Add coral
+        </button>
+      </div>
+
+      {addError && <p className="text-xs mb-3" style={{ color: "var(--color-declining)" }}>{addError}</p>}
+
+      {/* Logged entries */}
+      {data.coralEntries.length > 0 && (
+        <div
+          className="overflow-hidden rounded-[1rem] mb-4"
+          style={{ border: "1px solid var(--color-hairline)" }}
+        >
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr style={{ background: "rgba(14,28,40,0.03)" }}>
+                <th style={{ padding: "0.5rem 0.75rem", textAlign: "left", fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)", fontWeight: 600 }}>Growth form</th>
+                <th style={{ padding: "0.5rem 0.75rem", textAlign: "left", fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)", fontWeight: 600 }}>Lightest</th>
+                <th style={{ padding: "0.5rem 0.75rem", textAlign: "left", fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)", fontWeight: 600 }}>Darkest</th>
+                <th style={{ width: 32 }}></th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.coralEntries.map((e, i) => (
+                <tr key={i} style={{ borderTop: "1px solid var(--color-hairline)" }}>
+                  <td style={{ padding: "0.5rem 0.75rem", color: "var(--color-ink)", textTransform: "capitalize" }}>{e.growthForm}</td>
+                  <td style={{ padding: "0.5rem 0.75rem", color: "var(--color-ink-2)" }}>{e.lightestShade}</td>
+                  <td style={{ padding: "0.5rem 0.75rem", color: "var(--color-ink-2)" }}>{e.darkestShade}</td>
+                  <td style={{ padding: "0.5rem 0.5rem" }}>
+                    <button
+                      type="button"
+                      onClick={() => removeEntry(i)}
+                      style={{ background: "none", border: "none", cursor: "pointer", color: "var(--color-ink-2)", fontSize: 16, lineHeight: 1 }}
+                      aria-label="Remove"
+                    >
+                      ×
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {data.coralEntries.length > 0 && data.coralEntries.length < 20 && (
+        <p className="text-xs mb-4" style={{ color: "var(--color-ink-2)", opacity: 0.7 }}>
+          {data.coralEntries.length} coral{data.coralEntries.length > 1 ? "s" : ""} recorded.
+          CoralWatch needs 20 for a valid survey — add more or continue and we will note the partial count.
+        </p>
+      )}
+      {data.coralEntries.length >= 20 && (
+        <p className="text-xs mb-4" style={{ color: "var(--color-improving)" }}>
+          {data.coralEntries.length} corals recorded. That is enough for a valid CoralWatch survey.
+        </p>
+      )}
+
+      <div className="flex gap-3 flex-wrap">
+        <GhostBtn onClick={onBack}>Back</GhostBtn>
+        <PrimaryBtn onClick={onNext}>
+          {data.coralEntries.length === 0 ? "Skip CoralWatch" : "Continue"}
+        </PrimaryBtn>
+      </div>
+    </div>
+  );
+}
+
+// ─── Survey step 4: review + submit ──────────────────────────────────────────
+
+function SurveyStep4Submit({
+  data,
+  onBack,
+  onSuccess,
+}: {
+  data: ReefSurveyData;
+  onBack: () => void;
+  onSuccess: (res: SurveySubmitResponse) => void;
+}) {
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const coralWatchCount = data.coralEntries.length;
+  const platforms = [
+    "MERMAID (queued for import)",
+    ...(coralWatchCount > 0 ? [`CoralWatch (${coralWatchCount} coral${coralWatchCount > 1 ? "s" : ""} recorded)`] : []),
+  ];
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    setErrorMsg(null);
+    try {
+      const body = {
+        siteId: data.site?.id ?? "unknown",
+        siteName: data.site?.name ?? "Not specified",
+        siteLat: String(data.site?.lat ?? 0),
+        siteLng: String(data.site?.lng ?? 0),
+        date: data.date,
+        depthM: data.depthM,
+        transectLengthM: data.transectLengthM,
+        numQuadrats: data.numQuadrats,
+        quadratSizeM2: data.quadratSizeM2,
+        pointsPerQuadrat: data.pointsPerQuadrat,
+        reefSlope: data.reefSlope,
+        observerEmail: data.observerEmail,
+        notes: data.notes,
+        coralEntries: data.coralEntries,
+      };
+      const res = await fetch("/api/submit-reef-survey", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const json = (await res.json()) as SurveySubmitResponse;
+      if (!res.ok) {
+        setErrorMsg(json.error ?? json.message ?? "Submission failed. Please try again.");
+      } else {
+        onSuccess(json);
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const dt = (label: string, value: string) => (
+    <div className="flex gap-2">
+      <dt style={{ color: "var(--color-ink-2)", minWidth: 110, fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</dt>
+      <dd style={{ color: "var(--color-ink)" }}>{value}</dd>
+    </div>
+  );
+
+  return (
+    <div>
+      <h2
+        className="mb-6"
+        style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontStyle: "italic", fontSize: "1.75rem", color: "var(--color-ink)" }}
+        tabIndex={-1}
+        id="step-heading"
+      >
+        Review and submit
+      </h2>
+
+      <div className="rounded-sm p-4 mb-6" style={{ border: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}>
+        <dl className="space-y-2 text-sm">
+          {dt("Site", data.site?.name ?? "Not specified")}
+          {dt("Date", data.date)}
+          {dt("Depth", `${data.depthM} m`)}
+          {dt("Transect", `${data.transectLengthM} m`)}
+          {dt("Quadrats", `${data.numQuadrats} × ${data.quadratSizeM2} m²`)}
+          {dt("Points/quadrat", data.pointsPerQuadrat)}
+          {data.reefSlope && dt("Reef slope", data.reefSlope)}
+          {dt("Observer", data.observerEmail)}
+          {coralWatchCount > 0 && dt("CoralWatch", `${coralWatchCount} corals recorded`)}
+        </dl>
+      </div>
+
+      <div className="mb-6">
+        <p className="mb-3" style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)" }}>
+          Submitting to
+        </p>
+        <ul className="space-y-1 text-sm" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          {platforms.map((p) => <li key={p} style={{ color: "var(--color-ink)" }}>{p}</li>)}
+        </ul>
+      </div>
+
+      <div
+        className="rounded-sm p-4 mb-6 text-sm"
+        style={{ background: "rgba(14,28,40,0.03)", border: "1px solid var(--color-hairline)", color: "var(--color-ink-2)" }}
+      >
+        Upload your quadrat photos directly to your MERMAID project at{" "}
+        <a href="https://app.datamermaid.org" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-ocean)" }}>
+          app.datamermaid.org
+        </a>{" "}
+        after submitting. MERMAID AI will classify the points — your survey metadata
+        will be in the queue for you to match up.
+      </div>
+
+      {errorMsg && <p className="mb-4 text-sm" style={{ color: "var(--color-declining)" }}>{errorMsg}</p>}
+
+      <div className="flex gap-3 flex-wrap">
+        <GhostBtn onClick={onBack} disabled={loading}>Back</GhostBtn>
+        <PrimaryBtn onClick={handleSubmit} loading={loading}>Submit survey</PrimaryBtn>
+      </div>
+    </div>
+  );
+}
+
+// ─── Survey confirmation ──────────────────────────────────────────────────────
+
+function SurveyConfirmation({
+  data,
+  onAnother,
+}: {
+  data: ReefSurveyData;
+  onAnother: () => void;
+}) {
+  return (
+    <div>
+      <h2
+        className="mb-4"
+        style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontStyle: "italic", fontSize: "1.875rem", color: "var(--color-ink)" }}
+      >
+        Survey logged.
+      </h2>
+      <p className="text-sm mb-6" style={{ color: "var(--color-ink-2)" }}>
+        Your survey metadata has been recorded and Josie has been alerted. The next
+        step is to upload your quadrat photos to MERMAID so the AI can classify them.
+      </p>
+      <a
+        href="https://app.datamermaid.org"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center rounded-sm px-5 py-3 text-sm font-sans font-medium mb-4"
+        style={{
+          background: "var(--color-brand-yellow)",
+          color: "var(--color-ink)",
+          textDecoration: "none",
+          display: "inline-block",
+        }}
+      >
+        Upload photos to MERMAID
+      </a>
+      <div className="mt-4">
+        <GhostBtn onClick={onAnother}>Submit another survey</GhostBtn>
+      </div>
+      {data.coralEntries.length > 0 && (
+        <p className="mt-4 text-xs" style={{ color: "var(--color-ink-2)", opacity: 0.7 }}>
+          {data.coralEntries.length} CoralWatch reading{data.coralEntries.length > 1 ? "s" : ""} queued.
+        </p>
+      )}
+    </div>
+  );
+}
+
 // ─── Main wizard (inner — reads search params) ────────────────────────────────
+
+const SURVEY_STEP_LABELS = ["Dive site", "Survey details", "CoralWatch", "Submit"];
 
 function UploadWizardInner() {
   const searchParams = useSearchParams();
   const prefilledSlug = searchParams.get("site");
 
   const headingRef = useRef<HTMLElement | null>(null);
+
+  // Mode selection
+  const [mode, setMode] = useState<Mode | null>(null);
+
+  // Sighting mode state
   const [step, setStep] = useState<WizardStep>(1);
   const [submitResponse, setSubmitResponse] = useState<SubmitResponse | null>(null);
 
@@ -1486,7 +2074,29 @@ function UploadWizardInner() {
     };
   });
 
-  // Auto-advance to step 2 if site was pre-filled from URL
+  // Survey mode state
+  const [surveyStep, setSurveyStep] = useState<SurveyStep>(1);
+  const [surveyData, setSurveyData] = useState<ReefSurveyData>(() => {
+    const prefilled = prefilledSlug
+      ? ALL_SITES.find((s) => s.slug === prefilledSlug || s.id === prefilledSlug) ?? null
+      : null;
+    return {
+      site: prefilled,
+      date: todayIso(),
+      depthM: "",
+      transectLengthM: "25",
+      numQuadrats: "5",
+      quadratSizeM2: "1",
+      pointsPerQuadrat: "25",
+      reefSlope: "",
+      observerEmail: "",
+      notes: "",
+      coralEntries: [],
+    };
+  });
+  const [surveyResponse, setSurveyResponse] = useState<SurveySubmitResponse | null>(null);
+
+  // Auto-advance to step 2 if site was pre-filled from URL (sighting mode)
   useEffect(() => {
     if (prefilledSlug && formData.site) {
       setStep(2);
@@ -1495,17 +2105,17 @@ function UploadWizardInner() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const goToStep = (s: WizardStep) => {
-    setStep(s);
-    // Focus heading for a11y — find next render
+  const focusHeading = () => {
     setTimeout(() => {
       const el = document.getElementById("step-heading");
       if (el) el.focus();
     }, 50);
   };
 
+  const goToStep = (s: WizardStep) => { setStep(s); focusHeading(); };
+  const goToSurveyStep = (s: SurveyStep) => { setSurveyStep(s); focusHeading(); };
+
   const handleAnother = () => {
-    // Keep site context from previous submission
     setFormData((prev) => ({
       site: prev.site,
       photos: [],
@@ -1519,8 +2129,118 @@ function UploadWizardInner() {
     }));
     setSubmitResponse(null);
     setStep(1);
+    setMode(null);
   };
 
+  const handleSurveyAnother = () => {
+    setSurveyData((prev) => ({
+      site: prev.site,
+      date: todayIso(),
+      depthM: "",
+      transectLengthM: "25",
+      numQuadrats: "5",
+      quadratSizeM2: "1",
+      pointsPerQuadrat: "25",
+      reefSlope: "",
+      observerEmail: prev.observerEmail,
+      notes: "",
+      coralEntries: [],
+    }));
+    setSurveyResponse(null);
+    setSurveyStep(1);
+    setMode(null);
+  };
+
+  // Mode not yet chosen
+  if (mode === null) {
+    return (
+      <div ref={headingRef as React.RefObject<HTMLDivElement>}>
+        <ModeSelector onSelect={(m) => { setMode(m); focusHeading(); }} />
+      </div>
+    );
+  }
+
+  // ── Survey mode ─────────────────────────────────────────────────────────────
+  if (mode === "survey") {
+    if (surveyResponse) {
+      return (
+        <div ref={headingRef as React.RefObject<HTMLDivElement>}>
+          <SurveyConfirmation data={surveyData} onAnother={handleSurveyAnother} />
+        </div>
+      );
+    }
+    return (
+      <div ref={headingRef as React.RefObject<HTMLDivElement>}>
+        <div className="mb-8">
+          <div className="flex items-center">
+            {SURVEY_STEP_LABELS.map((label, i) => {
+              const stepNum = (i + 1) as SurveyStep;
+              const completed = surveyStep > stepNum;
+              const active = surveyStep === stepNum;
+              return (
+                <div key={label} className="flex items-center flex-1 last:flex-none">
+                  <div className="flex flex-col items-center">
+                    <div
+                      className="w-7 h-7 rounded-full flex items-center justify-center text-sm font-mono transition-colors"
+                      style={{
+                        background: completed ? "var(--color-ink)" : active ? "var(--color-brand-yellow)" : "var(--color-paper)",
+                        color: completed ? "var(--color-paper)" : active ? "var(--color-ink)" : "var(--color-ink-2)",
+                        border: completed || active ? "none" : "1px solid var(--color-hairline)",
+                        minWidth: 28,
+                        minHeight: 28,
+                      }}
+                    >
+                      {completed ? "✓" : stepNum}
+                    </div>
+                    <span className="mt-1 text-center" style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)", whiteSpace: "nowrap" }}>
+                      {label}
+                    </span>
+                  </div>
+                  {i < SURVEY_STEP_LABELS.length - 1 && (
+                    <div className="flex-1 mx-2 transition-colors" style={{ height: 1, background: completed ? "var(--color-ink)" : "var(--color-hairline)", marginBottom: 18 }} />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {surveyStep === 1 && (
+          <Step1SiteSearch
+            formData={{ ...formData, site: surveyData.site }}
+            onSelectSite={(site) => setSurveyData((prev) => ({ ...prev, site }))}
+            onSkip={() => goToSurveyStep(2)}
+            onNext={() => goToSurveyStep(2)}
+          />
+        )}
+        {surveyStep === 2 && (
+          <SurveyStep2Metadata
+            data={surveyData}
+            setData={setSurveyData}
+            onBack={() => goToSurveyStep(1)}
+            onNext={() => goToSurveyStep(3)}
+          />
+        )}
+        {surveyStep === 3 && (
+          <SurveyStep3CoralWatch
+            data={surveyData}
+            setData={setSurveyData}
+            onBack={() => goToSurveyStep(2)}
+            onNext={() => goToSurveyStep(4)}
+          />
+        )}
+        {surveyStep === 4 && (
+          <SurveyStep4Submit
+            data={surveyData}
+            onBack={() => goToSurveyStep(3)}
+            onSuccess={(res) => { setSurveyResponse(res); focusHeading(); }}
+          />
+        )}
+      </div>
+    );
+  }
+
+  // ── Sighting mode ────────────────────────────────────────────────────────────
   return (
     <div ref={headingRef as React.RefObject<HTMLDivElement>}>
       {step < 4 && <StepIndicator currentStep={step} />}
