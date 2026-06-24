@@ -262,8 +262,8 @@ If you cannot corroborate the site (≥3 sources), respond with: \`\`\`json
 \`\`\``;
 
   const tools = [
-    { type: "web_search_20250305", name: "web_search", max_uses: 8 },
-    { type: "web_fetch_20250910", name: "web_fetch", max_uses: 10 },
+    { type: "web_search_20260209", name: "web_search", max_uses: 8 },
+    { type: "web_fetch_20260209", name: "web_fetch", max_uses: 10 },
   ];
 
   // Server-side tools loop. web_search / web_fetch execute on Anthropic's side.

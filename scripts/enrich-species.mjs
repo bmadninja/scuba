@@ -127,8 +127,9 @@ function validateSpecies(arr) {
 /* ---------- research ---------- */
 
 async function fetchSpeciesForSite(site) {
-  const need = TARGET_SPECIES - site.species.length;
-  const existing = site.species.map((s) => s.commonName).join(", ");
+  const species = site.species || [];
+  const need = TARGET_SPECIES - species.length;
+  const existing = species.map((s) => s.commonName).join(", ");
 
   const system = `You are a marine biologist researching species found at a specific dive site.
 Use web_search and web_fetch to find real, documented species.
@@ -159,8 +160,8 @@ Find ${need} additional marine species documented at this exact site.
 Search for "[site name] marine species", "[site name] dive site species", and operator/magazine pages about the site.`;
 
   const tools = [
-    { type: "web_search_20250305", name: "web_search", max_uses: 5 },
-    { type: "web_fetch_20250910", name: "web_fetch", max_uses: 6 },
+    { type: "web_search_20260209", name: "web_search", max_uses: 5 },
+    { type: "web_fetch_20260209", name: "web_fetch", max_uses: 6 },
   ];
 
   const messages = [{ role: "user", content: user }];
@@ -207,7 +208,7 @@ async function main() {
 
   console.log(`Enriching ${targets.length} sites (< ${MIN_SPECIES} species each, target ${TARGET_SPECIES})`);
   if (DRY_RUN) {
-    targets.forEach((s) => console.log(`  ${s.name} (${s.species.length} species)`));
+    targets.forEach((s) => console.log(`  ${s.name} (${(s.species || []).length} species)`));
     console.log("\nDry-run — set DRY_RUN=0 or omit to run.");
     return;
   }
@@ -216,12 +217,12 @@ async function main() {
   let failed = 0;
 
   for (const site of targets) {
-    process.stdout.write(`\n[${enriched + failed + 1}/${targets.length}] ${site.name} (${site.species.length} species) → `);
+    process.stdout.write(`\n[${enriched + failed + 1}/${targets.length}] ${site.name} (${(site.species || []).length} species) → `);
 
     try {
       const raw = await fetchSpeciesForSite(site);
       const validated = validateSpecies(raw);
-      const fresh = dedupeSpecies(site.species, validated);
+      const fresh = dedupeSpecies(site.species || [], validated);
 
       if (fresh.length === 0) {
         console.log("no new species found");
@@ -231,11 +232,15 @@ async function main() {
 
         // Update in-memory and write immediately (crash-safe)
         const idx = sites.findIndex((s) => s.id === site.id);
-        sites[idx] = { ...sites[idx], species: [...sites[idx].species, ...fresh] };
+        sites[idx] = { ...sites[idx], species: [...(sites[idx].species || []), ...fresh] };
         writeFileSync(SITES_PATH, JSON.stringify(sites, null, 2) + "\n");
         enriched++;
       }
     } catch (err) {
+      if (err.status === 400 && err.message?.toLowerCase().includes("credit balance")) {
+        console.error(`\nFatal: API credits depleted — ${err.message}`);
+        process.exit(1);
+      }
       console.log(`ERROR: ${err.message}`);
       failed++;
     }

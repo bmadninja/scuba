@@ -83,8 +83,8 @@ function collectText(content) {
 // Tool-use loop for web_search / web_fetch (same pattern as discover-sites)
 async function toolLoop({ system, user, max_tokens = 10000, maxTurns = 15 }) {
   const tools = [
-    { type: "web_search_20250305", name: "web_search", max_uses: 6 },
-    { type: "web_fetch_20250910", name: "web_fetch", max_uses: 8 },
+    { type: "web_search_20260209", name: "web_search", max_uses: 6 },
+    { type: "web_fetch_20260209", name: "web_fetch", max_uses: 8 },
   ];
   const messages = [{ role: "user", content: user }];
   let last = null;
