@@ -157,7 +157,26 @@ function isoDay(iso) {
   return typeof iso === "string" ? iso.slice(0, 10) : iso;
 }
 
+async function preflight() {
+  // Quick reachability check before committing to 113 locations.
+  // If PacIOOS is completely unreachable, exit 0 (no-op) rather than
+  // grinding through MAX_RETRIES × timeout per location for 2+ hours.
+  const testUrl = `${ERDDAP_BASE}/${DATASET_ID}.das`;
+  try {
+    const res = await fetch(testUrl, {
+      signal: AbortSignal.timeout(15_000),
+      headers: { "User-Agent": "scubaseason.fun reef-health ingest" },
+    });
+    if (!res.ok && res.status !== 404) throw new Error(`HTTP ${res.status}`);
+  } catch (err) {
+    const cause = err?.cause?.code || err?.name || err?.message || String(err);
+    console.warn(`NOAA CRW preflight failed (${cause}) — skipping run, data unchanged.`);
+    process.exit(0);
+  }
+}
+
 async function main() {
+  await preflight();
   const locations = JSON.parse(await fs.readFile(LOC_PATH, "utf8"));
   const reefHealth = JSON.parse(await fs.readFile(RH_PATH, "utf8"));
   const byLocationId = new Map();
