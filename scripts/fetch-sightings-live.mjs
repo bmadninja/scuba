@@ -49,6 +49,8 @@
  *   --months N       observation window in months (default 24).
  *   --radius N       fallback geo radius (km) when a record has none
  *                    (default 25).
+ *   --max-age-days N skip records fetched within N days (default 7).
+ *                    Set to 0 to force a full refresh.
  */
 
 import fs from "node:fs/promises";
@@ -71,6 +73,7 @@ const PACE_MS = 700;
 const FAILURE_THRESHOLD = 0.2;
 const DEFAULT_MONTHS = 24;
 const DEFAULT_RADIUS_KM = 25;
+const DEFAULT_MAX_AGE_DAYS = 7;
 // A month is counted as "in season" when it holds at least this share of
 // the busiest month's observations.
 const SEASONALITY_FRACTION = 0.25;
@@ -80,16 +83,23 @@ function sleep(ms) {
 }
 
 function parseArgs(argv) {
-  const args = { dryRun: false, limit: null, months: DEFAULT_MONTHS, radius: DEFAULT_RADIUS_KM };
+  const args = { dryRun: false, limit: null, months: DEFAULT_MONTHS, radius: DEFAULT_RADIUS_KM, maxAgeDays: DEFAULT_MAX_AGE_DAYS };
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
     if (a === "--dry-run") args.dryRun = true;
     else if (a === "--limit") args.limit = Number(argv[++i]);
     else if (a === "--months") args.months = Number(argv[++i]);
     else if (a === "--radius") args.radius = Number(argv[++i]);
+    else if (a === "--max-age-days") args.maxAgeDays = Number(argv[++i]);
   }
   if (args.dryRun && args.limit == null) args.limit = 2;
   return args;
+}
+
+function isFresh(fetchedAt, maxAgeDays) {
+  if (!fetchedAt || maxAgeDays === 0) return false;
+  const ageMs = Date.now() - new Date(fetchedAt).getTime();
+  return ageMs < maxAgeDays * 24 * 60 * 60 * 1000;
 }
 
 /** ISO date N months ago, as YYYY-MM-DD, for the iNat `d1` lower bound. */
@@ -217,6 +227,7 @@ async function main() {
 
   const fetchedAt = new Date().toISOString();
   let attempted = 0;
+  let skippedFresh = 0;
   let verifiedCount = 0;
   let viaGbif = 0;
   let preservedCurated = 0;
@@ -248,6 +259,14 @@ async function main() {
       }
 
       const radiusKm = prev?.proximityRadiusKm ?? args.radius;
+
+      // Incremental refresh: skip records fetched within maxAgeDays.
+      if (prev && isFresh(prev.fetchedAt, args.maxAgeDays)) {
+        out.push(prev);
+        skippedFresh += 1;
+        continue;
+      }
+
       attempted += 1;
       try {
         let { count, lastDate, obsId } = await fetchInat(
@@ -354,6 +373,7 @@ async function main() {
   console.log("");
   console.log(`Sightings live ingest @ ${fetchedAt}`);
   console.log(`  attempted (live queries): ${attempted}`);
+  console.log(`  skipped (fresh <${args.maxAgeDays}d):   ${skippedFresh}`);
   console.log(`  verified:                 ${verifiedCount}`);
   console.log(`  confirmed via GBIF:       ${viaGbif}`);
   console.log(`  curated preserved:        ${preservedCurated}`);
