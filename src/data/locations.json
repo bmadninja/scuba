@@ -420,6 +420,32 @@
         "description": "Premium liveaboard sleeping on the water between dive sites",
         "bookingUrl": "https://www.mawatu.com"
       }
+    ],
+    "diveOperators": [
+      {
+        "name": "Flores Adventure Diving",
+        "specialty": "manta ray and drift diving",
+        "description": "Expert manta encounters and strong current drift training",
+        "website": "https://www.floresadventurediving.com"
+      },
+      {
+        "name": "Komodo Dive Center",
+        "specialty": "multi site liveaboard coordination",
+        "description": "Comprehensive guided diving across Komodo National Park sites",
+        "website": "https://www.komododivecenter.com"
+      },
+      {
+        "name": "Labuan Bajo Dive Guides",
+        "specialty": "drift dive expertise and tidal planning",
+        "description": "Local guides specializing in strong current management and safety",
+        "website": "https://www.labuanbajodivers.com"
+      },
+      {
+        "name": "Manta Point Tours",
+        "specialty": "manta ray photography and observation",
+        "description": "Dedicated manta ray encounters with natural history education",
+        "website": "https://www.mantapointtours.com"
+      }
     ]
   },
   {
