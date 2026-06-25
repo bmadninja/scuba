@@ -415,7 +415,44 @@
       "emerald-osm-j7mv8a",
       "amed-zen-divers-osm-ui22hx"
     ],
-    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_DaniEscayola_11.jpg"
+    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_DaniEscayola_11.jpg",
+    "lodging": [
+      {
+        "name": "Liberty Dive Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Beachfront resort with full dive shop and USAT Liberty wreck access.",
+        "bookingUrl": "https://www.libertydiveresort.com/"
+      },
+      {
+        "name": "Tulamben Dive Centre",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Dedicated dive accommodation with onsite diving instruction available.",
+        "bookingUrl": "https://www.tulambendivingtourism.com/"
+      },
+      {
+        "name": "Good Karma Cafe Tulamben",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Casual beachside guesthouse popular with backpackers and divers.",
+        "bookingUrl": "https://www.goodkarmacafetulamben.com/"
+      },
+      {
+        "name": "Paradise Seaside Bungalows",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Family run oceanfront resort with relaxed atmosphere and dive packages.",
+        "bookingUrl": "https://www.paradiseseasidebungalows.com/"
+      },
+      {
+        "name": "The Samaya Bali",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Contemporary resort with private beach and access to premier diving sites.",
+        "bookingUrl": "https://www.thesamaya.com/"
+      }
+    ]
   },
   {
     "id": "bunaken-indonesia",
