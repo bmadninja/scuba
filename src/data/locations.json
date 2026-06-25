@@ -591,7 +591,44 @@
       "malapascua-monad-shoal",
       "malapascua-gato-island"
     ],
-    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_LiangFu_08.jpg"
+    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_LiangFu_08.jpg",
+    "lodging": [
+      {
+        "name": "Thresher Shark Divers",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Dive resort focused on thresher shark expeditions to Monad Shoal.",
+        "bookingUrl": "https://www.threshersharkers.com/"
+      },
+      {
+        "name": "Malapascua Evolution Dive Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Beachfront dive resort with house reef and daily thresher shark trips.",
+        "bookingUrl": "https://www.malapascuaevolutiondiveresort.com/"
+      },
+      {
+        "name": "Sunken Garden Dive Resort",
+        "type": "resort",
+        "priceRange": "budget",
+        "description": "Budget friendly beachfront resort offering diving and water activities.",
+        "bookingUrl": "https://sunkengarden-divers.com/"
+      },
+      {
+        "name": "Cocono Beach Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Oceanfront resort with dive center and thresher shark expedition packages.",
+        "bookingUrl": "https://www.cocono.ph/"
+      },
+      {
+        "name": "Malapascua Island Dive Center",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Budget guesthouse with affiliated dive center for shark and reef dives.",
+        "bookingUrl": "https://www.malapascuaislanddivecenter.com/"
+      }
+    ]
   },
   {
     "id": "tubbataha-philippines",
@@ -713,7 +750,44 @@
       "unnamed-osm-vdxgc9",
       "diving-spot-2-osm-l7brqn"
     ],
-    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TraceyJennings_19.jpg"
+    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TraceyJennings_19.jpg",
+    "lodging": [
+      {
+        "name": "Hermosa de Moalboal Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Beachfront resort with dive shop and mountain views of surrounding area.",
+        "bookingUrl": "https://www.hermosa-moalboal.com/"
+      },
+      {
+        "name": "Padi Cebu Moalboal",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Simple rooms above dive center ideal for divers doing multiple daily dives.",
+        "bookingUrl": "https://www.padicebumoalboal.com/"
+      },
+      {
+        "name": "Save Moalboal Beach Resort",
+        "type": "resort",
+        "priceRange": "budget",
+        "description": "Beachfront guesthouse with coral reef directly in front of property.",
+        "bookingUrl": "https://savemoalboal.com/"
+      },
+      {
+        "name": "Moalboal Beach Dive Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Family run resort with excellent house reef and personalized dive trips.",
+        "bookingUrl": "https://www.moalboalbeachdiveresort.com/"
+      },
+      {
+        "name": "Fonz Beach Resort",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Budget friendly accommodation with beachfront location in Moalboal proper.",
+        "bookingUrl": "https://www.fonzbeachresort.com/"
+      }
+    ]
   },
   {
     "id": "similan-islands-thailand",
@@ -1662,7 +1736,7 @@
   {
     "id": "mahe-seychelles",
     "slug": "mahe-seychelles",
-    "name": "Mahé",
+    "name": "Mah\u00e9",
     "country": "Seychelles",
     "region": "Indian Ocean",
     "countryCode": "SC",
@@ -1745,8 +1819,8 @@
   {
     "id": "sao-tome-sao-tome-and-principe",
     "slug": "sao-tome-sao-tome-and-principe",
-    "name": "São Tomé North Coast",
-    "country": "São Tomé and Príncipe",
+    "name": "S\u00e3o Tom\u00e9 North Coast",
+    "country": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
     "region": "Gulf of Guinea",
     "countryCode": "ST",
     "lat": 0.3365,
@@ -1796,7 +1870,7 @@
     "slug": "cenotes-mexico",
     "name": "Riviera Maya Cenotes",
     "country": "Mexico",
-    "region": "Yucatán Peninsula",
+    "region": "Yucat\u00e1n Peninsula",
     "countryCode": "MX",
     "lat": 20.211,
     "lng": -87.4653,
@@ -1937,7 +2011,7 @@
   {
     "id": "roatan-honduras",
     "slug": "roatan-honduras",
-    "name": "Roatán",
+    "name": "Roat\u00e1n",
     "country": "Honduras",
     "region": "Bay Islands",
     "countryCode": "HN",
@@ -2108,7 +2182,7 @@
     "slug": "wolf-galapagos-ecuador",
     "name": "Wolf Island",
     "country": "Ecuador",
-    "region": "Galápagos",
+    "region": "Gal\u00e1pagos",
     "countryCode": "EC",
     "lat": 1.386,
     "lng": -91.815,
@@ -2134,7 +2208,7 @@
     "slug": "darwin-galapagos-ecuador",
     "name": "Darwin Island",
     "country": "Ecuador",
-    "region": "Galápagos",
+    "region": "Gal\u00e1pagos",
     "countryCode": "EC",
     "lat": 1.678,
     "lng": -91.99,
@@ -2328,7 +2402,7 @@
     "id": "westpunt-curacao",
     "slug": "westpunt-curacao",
     "name": "Westpunt",
-    "country": "Curaçao",
+    "country": "Cura\u00e7ao",
     "region": "Caribbean",
     "countryCode": "CW",
     "lat": 12.379,
@@ -3644,7 +3718,7 @@
     "region": "Orkney",
     "lat": 58.9,
     "lng": -3.05,
-    "description": "A wide, sheltered anchorage in Orkney, Scotland, holding the scuttled remains of the German High Seas Fleet from 1919 — the world's largest collection of divable WWI warships.",
+    "description": "A wide, sheltered anchorage in Orkney, Scotland, holding the scuttled remains of the German High Seas Fleet from 1919 \u2014 the world's largest collection of divable WWI warships.",
     "bestMonths": [
       5,
       6,
@@ -3670,7 +3744,7 @@
     "countryCode": "HN",
     "lat": 15.783,
     "lng": -87.459,
-    "description": "Coral cover above 60 percent when the Caribbean average has fallen below 20. Sea urchin populations here survived a 1983 pathogen that wiped out 95 percent of them everywhere else in the region. Scientists from the University of Miami, Operation Wallacea, and the Coral Reef Alliance are actively studying why — and early DNA work in 2024 found an unusually heat tolerant symbiotic algae inside Tela's elkhorn corals that is extremely rare elsewhere. Researchers are now crossbreeding Tela's elkhorn corals with Florida's nearly extinct populations to carry that resilience to reefs far beyond Honduras.",
+    "description": "Coral cover above 60 percent when the Caribbean average has fallen below 20. Sea urchin populations here survived a 1983 pathogen that wiped out 95 percent of them everywhere else in the region. Scientists from the University of Miami, Operation Wallacea, and the Coral Reef Alliance are actively studying why \u2014 and early DNA work in 2024 found an unusually heat tolerant symbiotic algae inside Tela's elkhorn corals that is extremely rare elsewhere. Researchers are now crossbreeding Tela's elkhorn corals with Florida's nearly extinct populations to carry that resilience to reefs far beyond Honduras.",
     "bestMonths": [
       3,
       4,
@@ -3694,7 +3768,7 @@
     "countryCode": "ID",
     "lat": -5.7,
     "lng": 124,
-    "description": "A UNESCO Biosphere Reserve at the heart of the Coral Triangle, Wakatobi is one of Indonesia's most intact reef systems. Operation Wallacea has run continuous scientific monitoring here since 1998 and documented steady coral recovery following a 2010 bleaching event. Hard coral cover held at nearly 30 percent park-wide in 2019 surveys while destructive fishing declined. In 2024 when 84 percent of the world's reefs experienced bleaching-level heat stress, Wakatobi showed no significant bleaching — an anomaly researchers attribute to locally evolved heat tolerance in the coral colonies.",
+    "description": "A UNESCO Biosphere Reserve at the heart of the Coral Triangle, Wakatobi is one of Indonesia's most intact reef systems. Operation Wallacea has run continuous scientific monitoring here since 1998 and documented steady coral recovery following a 2010 bleaching event. Hard coral cover held at nearly 30 percent park-wide in 2019 surveys while destructive fishing declined. In 2024 when 84 percent of the world's reefs experienced bleaching-level heat stress, Wakatobi showed no significant bleaching \u2014 an anomaly researchers attribute to locally evolved heat tolerance in the coral colonies.",
     "bestMonths": [
       4,
       5,
@@ -3716,7 +3790,7 @@
     "countryCode": "PH",
     "lat": 10.167,
     "lng": 125.05,
-    "description": "Sogod Bay hosts the second largest whale shark aggregation in Asia, with LAMAVE researchers having identified more than 350 individual sharks over a decade of monitoring. The outer reefs around Panaon Island reached 60 to 70 percent live coral cover in 2020 Oceana surveys — roughly three times the Philippine national average. Panaon Island was formally designated a Protected Seascape under national law in August 2025. Few dive operators work here and crowds are minimal even during peak whale shark season from November through April.",
+    "description": "Sogod Bay hosts the second largest whale shark aggregation in Asia, with LAMAVE researchers having identified more than 350 individual sharks over a decade of monitoring. The outer reefs around Panaon Island reached 60 to 70 percent live coral cover in 2020 Oceana surveys \u2014 roughly three times the Philippine national average. Panaon Island was formally designated a Protected Seascape under national law in August 2025. Few dive operators work here and crowds are minimal even during peak whale shark season from November through April.",
     "bestMonths": [
       11,
       12,
@@ -3743,7 +3817,7 @@
     "countryCode": "ID",
     "lat": 2.25,
     "lng": 118.417,
-    "description": "Derawan is one of the only places on Earth where reef manta rays are resident year-round. The Marine Megafauna Foundation has identified 155 individual mantas here — and 24 percent of the females have been observed pregnant, the only site in East Borneo where this is documented. With 500 plus coral species and 800 plus reef fish species the archipelago sits in the highest-diversity marine zone on the planet. The 285,549 hectare Berau MPA was declared in 2016 and active enforcement patrols with radar monitoring began in 2023.",
+    "description": "Derawan is one of the only places on Earth where reef manta rays are resident year-round. The Marine Megafauna Foundation has identified 155 individual mantas here \u2014 and 24 percent of the females have been observed pregnant, the only site in East Borneo where this is documented. With 500 plus coral species and 800 plus reef fish species the archipelago sits in the highest-diversity marine zone on the planet. The 285,549 hectare Berau MPA was declared in 2016 and active enforcement patrols with radar monitoring began in 2023.",
     "bestMonths": [
       3,
       4,
@@ -4078,7 +4152,7 @@
   {
     "id": "reunion-island",
     "slug": "reunion-island",
-    "name": "Réunion Island",
+    "name": "R\u00e9union Island",
     "country": "France",
     "countryCode": "RE",
     "region": "Indian Ocean",
@@ -4109,7 +4183,7 @@
   {
     "id": "kas-turkey",
     "slug": "kas-turkey",
-    "name": "Kaş",
+    "name": "Ka\u015f",
     "country": "Turkey",
     "countryCode": "TR",
     "region": "Mediterranean",
@@ -4619,7 +4693,7 @@
     "region": "Pacific Islands & PNG",
     "lat": -22.27,
     "lng": 166.46,
-    "description": "New Caledonia's double barrier reef — the world's second largest — encloses spectacular lagoons and dramatic wall dives, with peak conditions from August through November.",
+    "description": "New Caledonia's double barrier reef \u2014 the world's second largest \u2014 encloses spectacular lagoons and dramatic wall dives, with peak conditions from August through November.",
     "bestMonths": [
       8,
       9,
@@ -4853,7 +4927,7 @@
     "region": "Southeast Asia",
     "lat": 11.9983,
     "lng": 120.2043,
-    "description": "Coron Bay harbors one of the world's greatest wreck diving collections — a fleet of Japanese ships sunk in a 1944 US air raid — best dived from October through May when visibility peaks and seas are calm.",
+    "description": "Coron Bay harbors one of the world's greatest wreck diving collections \u2014 a fleet of Japanese ships sunk in a 1944 US air raid \u2014 best dived from October through May when visibility peaks and seas are calm.",
     "bestMonths": [
       10,
       11,
@@ -4915,7 +4989,7 @@
     "region": "Southeast Asia",
     "lat": -5.5,
     "lng": 128,
-    "description": "Indonesia's remote Banda Sea rewards liveaboard expeditions with pristine walls, schooling hammerheads, and volcanic topography that few divers ever witness — the October to April dry season brings the best visibility and pelagic action.",
+    "description": "Indonesia's remote Banda Sea rewards liveaboard expeditions with pristine walls, schooling hammerheads, and volcanic topography that few divers ever witness \u2014 the October to April dry season brings the best visibility and pelagic action.",
     "bestMonths": [
       10,
       11,
@@ -4940,7 +5014,7 @@
     "region": "Southeast Asia",
     "lat": -8.2333,
     "lng": 124.5167,
-    "description": "Alor's fierce upwelling currents carry cold nutrient-rich water that supports an extraordinary diversity of rare macro critters, pygmy seahorses, and large pelagics — dive from April through November for optimal conditions.",
+    "description": "Alor's fierce upwelling currents carry cold nutrient-rich water that supports an extraordinary diversity of rare macro critters, pygmy seahorses, and large pelagics \u2014 dive from April through November for optimal conditions.",
     "bestMonths": [
       4,
       5,
@@ -4966,7 +5040,7 @@
     "region": "Southeast Asia",
     "lat": -3.6583,
     "lng": 128.1833,
-    "description": "Ambon Bay is the world capital of rare critter diving, where the muck and rubble slopes conceal walking sharks, Rhinopias scorpionfish, and mimic octopus — year-round diving is possible with the best macro encounters from September through March.",
+    "description": "Ambon Bay is the world capital of rare critter diving, where the muck and rubble slopes conceal walking sharks, Rhinopias scorpionfish, and mimic octopus \u2014 year-round diving is possible with the best macro encounters from September through March.",
     "bestMonths": [
       9,
       10,
@@ -4991,7 +5065,7 @@
     "region": "Southeast Asia",
     "lat": 8.6833,
     "lng": 106.6,
-    "description": "Con Dao National Park's protected waters off southern Vietnam shelter dugong, hawksbill turtles, and intact coral gardens rarely visited by divers — February through June delivers the calmest seas and clearest water.",
+    "description": "Con Dao National Park's protected waters off southern Vietnam shelter dugong, hawksbill turtles, and intact coral gardens rarely visited by divers \u2014 February through June delivers the calmest seas and clearest water.",
     "bestMonths": [
       2,
       3,
@@ -5016,7 +5090,7 @@
     "region": "Southeast Asia",
     "lat": 10.2898,
     "lng": 103.9842,
-    "description": "Phu Quoc's southern islands and the An Thoi archipelago offer gentle coral garden diving with soft corals, nudibranchs, and schooling fish — the November through April dry season brings the best conditions in the Gulf of Thailand.",
+    "description": "Phu Quoc's southern islands and the An Thoi archipelago offer gentle coral garden diving with soft corals, nudibranchs, and schooling fish \u2014 the November through April dry season brings the best conditions in the Gulf of Thailand.",
     "bestMonths": [
       11,
       12,
@@ -5060,7 +5134,7 @@
   {
     "id": "azores-faial-pico",
     "slug": "azores-faial-pico",
-    "name": "Azores — Faial and Pico",
+    "name": "Azores \u2014 Faial and Pico",
     "country": "Portugal",
     "countryCode": "PT",
     "region": "Atlantic Ocean",
@@ -5094,7 +5168,7 @@
     "region": "Indian Ocean",
     "lat": -21.7,
     "lng": 35.45,
-    "description": "Bazaruto Archipelago National Park shelters one of the last viable dugong populations in the western Indian Ocean alongside whale sharks, manta rays, and pristine coral reefs that see only a handful of divers each year — October through February brings whale sharks and the calmest channel crossings.",
+    "description": "Bazaruto Archipelago National Park shelters one of the last viable dugong populations in the western Indian Ocean alongside whale sharks, manta rays, and pristine coral reefs that see only a handful of divers each year \u2014 October through February brings whale sharks and the calmest channel crossings.",
     "bestMonths": [
       10,
       11,
@@ -5119,7 +5193,7 @@
     "region": "Indian Ocean",
     "lat": -7.9,
     "lng": 39.8,
-    "description": "Mafia Island Marine Park in Tanzania's Chole Bay protects a mosaic of coral gardens, seagrass beds, and offshore reefs where whale sharks aggregate October through February and nesting green and hawksbill turtles return year after year — the dry season from June to October brings exceptional visibility.",
+    "description": "Mafia Island Marine Park in Tanzania's Chole Bay protects a mosaic of coral gardens, seagrass beds, and offshore reefs where whale sharks aggregate October through February and nesting green and hawksbill turtles return year after year \u2014 the dry season from June to October brings exceptional visibility.",
     "bestMonths": [
       6,
       7,
@@ -5199,7 +5273,7 @@
     "region": "Caribbean",
     "lat": 11.2518,
     "lng": -60.6731,
-    "description": "Tobago's southwest and central coasts deliver some of the Caribbean's most underrated reef diving — massive brain corals, sponge forests, and twin rock pinnacles all within a short boat ride of Crown Point. January through May brings settled seas and visibility regularly exceeding 25 metres.",
+    "description": "Tobago's southwest and central coasts deliver some of the Caribbean's most underrated reef diving \u2014 massive brain corals, sponge forests, and twin rock pinnacles all within a short boat ride of Crown Point. January through May brings settled seas and visibility regularly exceeding 25 metres.",
     "bestMonths": [
       1,
       2,
@@ -5225,7 +5299,7 @@
     "region": "Caribbean",
     "lat": 12.1165,
     "lng": -61.6789,
-    "description": "Grenada combines the world-famous Bianca C wreck with a surprisingly varied topside of shallow sculpture reefs, volcanic drop-offs, and healthy soft coral gardens — best visited January through May when trade winds keep conditions calm and visibility crisp.",
+    "description": "Grenada combines the world-famous Bianca C wreck with a surprisingly varied topside of shallow sculpture reefs, volcanic drop-offs, and healthy soft coral gardens \u2014 best visited January through May when trade winds keep conditions calm and visibility crisp.",
     "bestMonths": [
       1,
       2,
@@ -5249,7 +5323,7 @@
     "region": "Caribbean",
     "lat": 16.265,
     "lng": -61.551,
-    "description": "Guadeloupe's Cousteau Reserve around Pigeon Island protects one of the Caribbean's best-preserved reef systems, while Basse-Terre's volcanic walls drop into clear Atlantic blue — best dived from December through April when trade winds bring settled seas and 30-metre-plus visibility.",
+    "description": "Guadeloupe's Cousteau Reserve around Pigeon Island protects one of the Caribbean's best-preserved reef systems, while Basse-Terre's volcanic walls drop into clear Atlantic blue \u2014 best dived from December through April when trade winds bring settled seas and 30-metre-plus visibility.",
     "bestMonths": [
       12,
       1,
@@ -5299,7 +5373,7 @@
     "region": "Caribbean",
     "lat": 14.641,
     "lng": -61.024,
-    "description": "Martinique pairs an iconic open-water pinnacle at Diamond Rock with sheltered lagoon dives at Anses d'Arlet, where hawksbill turtles graze year-round — the dry season window of December to May brings the clearest water and calmest surface conditions.",
+    "description": "Martinique pairs an iconic open-water pinnacle at Diamond Rock with sheltered lagoon dives at Anses d'Arlet, where hawksbill turtles graze year-round \u2014 the dry season window of December to May brings the clearest water and calmest surface conditions.",
     "bestMonths": [
       12,
       1,
@@ -5336,7 +5410,7 @@
     "region": "Mediterranean",
     "lat": 43.2,
     "lng": 5.45,
-    "description": "The Calanques National Park offers some of the Mediterranean's most dramatic diving — limestone cliffs plunging into gin-clear water, the Cassidaigne seamount drawing huge barracuda and dentex, and cathedral-like caves explored since Jacques Cousteau's era. May through October delivers the best visibility and warm surface temperatures.",
+    "description": "The Calanques National Park offers some of the Mediterranean's most dramatic diving \u2014 limestone cliffs plunging into gin-clear water, the Cassidaigne seamount drawing huge barracuda and dentex, and cathedral-like caves explored since Jacques Cousteau's era. May through October delivers the best visibility and warm surface temperatures.",
     "bestMonths": [
       5,
       6,
@@ -5561,7 +5635,7 @@
     "region": "Caribbean",
     "lat": 16.533,
     "lng": -87.967,
-    "description": "Gladden Spit is one of the world's most dramatic large-pelagic encounters — whale sharks converge on the spawning aggregations of cubera and mutton snapper during full moons from March through June, creating a feeding spectacle unlike anywhere else in the Caribbean. Outside spawning season the offshore wall drops into spectacular blue water with healthy soft coral gardens and consistent shark action.",
+    "description": "Gladden Spit is one of the world's most dramatic large-pelagic encounters \u2014 whale sharks converge on the spawning aggregations of cubera and mutton snapper during full moons from March through June, creating a feeding spectacle unlike anywhere else in the Caribbean. Outside spawning season the offshore wall drops into spectacular blue water with healthy soft coral gardens and consistent shark action.",
     "bestMonths": [
       3,
       4,
@@ -5659,7 +5733,7 @@
     "region": "North Atlantic",
     "lat": 63.4305,
     "lng": 10.3951,
-    "description": "Norway's Trondheim Fjord and the Agdenes outer coast offer some of the world's most dramatic cold-water diving — crystal-clear water down to 30 m visibility in winter, walls blanketed in plumose anemones, resident wolf fish, and giant king crab. Best diving runs May through September when surface water warms slightly and visibility peaks, though adventurous drysuiters dive year-round.",
+    "description": "Norway's Trondheim Fjord and the Agdenes outer coast offer some of the world's most dramatic cold-water diving \u2014 crystal-clear water down to 30 m visibility in winter, walls blanketed in plumose anemones, resident wolf fish, and giant king crab. Best diving runs May through September when surface water warms slightly and visibility peaks, though adventurous drysuiters dive year-round.",
     "bestMonths": [
       5,
       6,
@@ -5684,7 +5758,7 @@
     "region": "North Atlantic",
     "lat": 55.9147,
     "lng": -2.1383,
-    "description": "The St. Abbs and Eyemouth Voluntary Marine Reserve on the Scottish Borders coast is the UK's most celebrated cold-water dive destination — towering kelp forests, labyrinthine gullies, resident wolf fish and conger eels, and cuckoo wrasse in vivid breeding colours. Visibility frequently exceeds 15 m, and the reserve's no-take status has produced unusually abundant marine life. Best months are April through September.",
+    "description": "The St. Abbs and Eyemouth Voluntary Marine Reserve on the Scottish Borders coast is the UK's most celebrated cold-water dive destination \u2014 towering kelp forests, labyrinthine gullies, resident wolf fish and conger eels, and cuckoo wrasse in vivid breeding colours. Visibility frequently exceeds 15 m, and the reserve's no-take status has produced unusually abundant marine life. Best months are April through September.",
     "bestMonths": [
       4,
       5,
@@ -5710,7 +5784,7 @@
     "region": "Indian Ocean",
     "lat": 23.6139,
     "lng": 58.5922,
-    "description": "Oman's capital coastline delivers year-round subtropical diving anchored by whale sharks, schooling barracuda, and healthy coral gardens — October through May brings the clearest water and calmest seas.",
+    "description": "Oman's capital coastline delivers year-round subtropical diving anchored by whale sharks, schooling barracuda, and healthy coral gardens \u2014 October through May brings the clearest water and calmest seas.",
     "bestMonths": [
       10,
       11,
@@ -5904,7 +5978,7 @@
     "region": "Visayas",
     "lat": 10.3157,
     "lng": 123.9832,
-    "description": "A flat coral island just minutes from Cebu City by bridge, Mactan punches above its weight with turtle-rich channels, colourful macro reefs, and one of the Philippines' most dramatic submerged caves — all reachable on a short boat ride.",
+    "description": "A flat coral island just minutes from Cebu City by bridge, Mactan punches above its weight with turtle-rich channels, colourful macro reefs, and one of the Philippines' most dramatic submerged caves \u2014 all reachable on a short boat ride.",
     "bestMonths": [
       3,
       4,
@@ -5958,7 +6032,7 @@
     "region": "East Coast",
     "lat": 7.717,
     "lng": 81.7,
-    "description": "A rarely dived stretch of Sri Lanka's southeast coast, Batticaloa combines pristine fringing reefs with one of the world's most remarkable wreck dives — the HMS Hermes, the largest diveable aircraft carrier wreck on the planet — and seasonal sperm whale encounters offshore.",
+    "description": "A rarely dived stretch of Sri Lanka's southeast coast, Batticaloa combines pristine fringing reefs with one of the world's most remarkable wreck dives \u2014 the HMS Hermes, the largest diveable aircraft carrier wreck on the planet \u2014 and seasonal sperm whale encounters offshore.",
     "bestMonths": [
       1,
       2,
@@ -6038,7 +6112,7 @@
     "region": "Atlantic Ocean",
     "lat": 27.9202,
     "lng": -15.5474,
-    "description": "Gran Canaria's volcanic seabed delivers year-round diving through lava tunnels, deep canyons, and an extraordinary artificial reef — with endemic species, angel sharks, and resident barracuda schools making this Canarian island a genuine Atlantic diving destination.",
+    "description": "Gran Canaria's volcanic seabed delivers year-round diving through lava tunnels, deep canyons, and an extraordinary artificial reef \u2014 with endemic species, angel sharks, and resident barracuda schools making this Canarian island a genuine Atlantic diving destination.",
     "bestMonths": [
       6,
       7,
@@ -6064,7 +6138,7 @@
     "region": "Atlantic Ocean",
     "lat": 28.3587,
     "lng": -14.0537,
-    "description": "Fuerteventura sits just 100 kilometres off the African coast where Atlantic upwellings fuel a productive marine ecosystem — manta ray aggregations, pelagic encounters, wreck diving, and exceptional macro life reward divers who look beyond the island's famous beaches.",
+    "description": "Fuerteventura sits just 100 kilometres off the African coast where Atlantic upwellings fuel a productive marine ecosystem \u2014 manta ray aggregations, pelagic encounters, wreck diving, and exceptional macro life reward divers who look beyond the island's famous beaches.",
     "bestMonths": [
       6,
       7,
@@ -6089,7 +6163,7 @@
     "region": "Atlantic Ocean",
     "lat": 24.7,
     "lng": -77.8,
-    "description": "Andros is the largest island in the Bahamas and home to the third longest barrier reef in the world, stretching over 190 km along its eastern shore. It is legendary for its blue holes — both inland freshwater caves and ocean-connected shafts — and for reliable shark encounters along its deep-water channels.",
+    "description": "Andros is the largest island in the Bahamas and home to the third longest barrier reef in the world, stretching over 190 km along its eastern shore. It is legendary for its blue holes \u2014 both inland freshwater caves and ocean-connected shafts \u2014 and for reliable shark encounters along its deep-water channels.",
     "bestMonths": [
       12,
       1,
@@ -6115,7 +6189,7 @@
     "region": "Eastern Pacific",
     "lat": -27.1127,
     "lng": -109.3497,
-    "description": "Easter Island (Rapa Nui) sits in the southeastern Pacific more than 3,500 km from the nearest continent, making it one of the most isolated dive destinations on Earth. Its volcanic geology, crystal-clear waters, and high endemism — including species found nowhere else — attract divers seeking truly untouched reefs, while submerged moai statues and a historic wreck add a layer of cultural mystique.",
+    "description": "Easter Island (Rapa Nui) sits in the southeastern Pacific more than 3,500 km from the nearest continent, making it one of the most isolated dive destinations on Earth. Its volcanic geology, crystal-clear waters, and high endemism \u2014 including species found nowhere else \u2014 attract divers seeking truly untouched reefs, while submerged moai statues and a historic wreck add a layer of cultural mystique.",
     "bestMonths": [
       1,
       2,
@@ -6171,7 +6245,7 @@
     "region": "East Africa",
     "lat": -6.17,
     "lng": 39.19,
-    "description": "Zanzibar's main island is ringed by dramatically varied diving — from the oceanic seamount of Leven Bank where great hammerheads and silky sharks circle in blue water, to the reef sharks of Pange Sandbank and the colourful hard coral gardens just minutes from historic Stone Town.",
+    "description": "Zanzibar's main island is ringed by dramatically varied diving \u2014 from the oceanic seamount of Leven Bank where great hammerheads and silky sharks circle in blue water, to the reef sharks of Pange Sandbank and the colourful hard coral gardens just minutes from historic Stone Town.",
     "bestMonths": [
       6,
       7,
@@ -6201,7 +6275,7 @@
     "region": "Mediterranean",
     "lat": 33.8075,
     "lng": 10.8451,
-    "description": "Tunisia's largest island sits at the edge of the Gulf of Gabès, offering a rarely-visited Mediterranean dive scene of ancient wrecks, sponge-draped reefs, and prolific cephalopods. Warm, calm conditions and excellent visibility make it one of North Africa's most accessible dive destinations.",
+    "description": "Tunisia's largest island sits at the edge of the Gulf of Gab\u00e8s, offering a rarely-visited Mediterranean dive scene of ancient wrecks, sponge-draped reefs, and prolific cephalopods. Warm, calm conditions and excellent visibility make it one of North Africa's most accessible dive destinations.",
     "bestMonths": [
       5,
       6,
@@ -6397,7 +6471,7 @@
     "region": "Caribbean",
     "lat": 17.7289,
     "lng": -64.742,
-    "description": "Three distinct islands — St. John, St. Croix, and St. Thomas — offer a spectrum of Caribbean diving from protected national park reefs to dramatic deep canyon walls draped in black coral.",
+    "description": "Three distinct islands \u2014 St. John, St. Croix, and St. Thomas \u2014 offer a spectrum of Caribbean diving from protected national park reefs to dramatic deep canyon walls draped in black coral.",
     "bestMonths": [
       3,
       4,
@@ -6423,7 +6497,7 @@
     "region": "Caribbean",
     "lat": 18.2206,
     "lng": -63.0686,
-    "description": "Anguilla's flat coral limestone terrain drops into spectacularly clear water — frequently exceeding 30 metres of visibility — making it one of the Caribbean's best-kept diving secrets. Sandy Island's pristine patch reef, the dramatic Prickly Pear walls, the MV Ida Maria wreck and the remote Dog Island seamount give divers pristine encounters with nurse sharks, tarpon, and barracuda far from the crowds.",
+    "description": "Anguilla's flat coral limestone terrain drops into spectacularly clear water \u2014 frequently exceeding 30 metres of visibility \u2014 making it one of the Caribbean's best-kept diving secrets. Sandy Island's pristine patch reef, the dramatic Prickly Pear walls, the MV Ida Maria wreck and the remote Dog Island seamount give divers pristine encounters with nurse sharks, tarpon, and barracuda far from the crowds.",
     "bestMonths": [
       2,
       3,
@@ -6450,7 +6524,7 @@
     "region": "Caribbean",
     "lat": 17.3578,
     "lng": -62.783,
-    "description": "Rising from the sea on a young volcanic arc, Saint Kitts and Nevis pair lush rainforest slopes with outstanding diving on black-coral walls, productive turtle-frequented shallow reefs and the dramatic River Taw wreck — a 225-foot tug that sits upright and intact in 30 metres of crystal-clear Caribbean water.",
+    "description": "Rising from the sea on a young volcanic arc, Saint Kitts and Nevis pair lush rainforest slopes with outstanding diving on black-coral walls, productive turtle-frequented shallow reefs and the dramatic River Taw wreck \u2014 a 225-foot tug that sits upright and intact in 30 metres of crystal-clear Caribbean water.",
     "bestMonths": [
       2,
       3,
@@ -6477,7 +6551,7 @@
     "region": "Caribbean",
     "lat": 17.0608,
     "lng": -61.7964,
-    "description": "Antigua and Barbuda pairs 365 white-sand beaches with a rich underwater heritage of coral-encrusted colonial wrecks, dramatic sea caves, and a vibrant barrier reef sheltering nurse sharks and hawksbill turtles. Warm Caribbean waters averaging 27–29°C and excellent year-round visibility make these twin islands one of the Eastern Caribbean's most rewarding dive destinations.",
+    "description": "Antigua and Barbuda pairs 365 white-sand beaches with a rich underwater heritage of coral-encrusted colonial wrecks, dramatic sea caves, and a vibrant barrier reef sheltering nurse sharks and hawksbill turtles. Warm Caribbean waters averaging 27\u201329\u00b0C and excellent year-round visibility make these twin islands one of the Eastern Caribbean's most rewarding dive destinations.",
     "bestMonths": [
       1,
       2,
@@ -6503,7 +6577,7 @@
     "region": "Caribbean",
     "lat": 13.1587,
     "lng": -61.2248,
-    "description": "Saint Vincent and the Grenadines stretches across 32 islands and cays, offering everything from the pristine Tobago Cays Marine Park — one of the Caribbean's last true wilderness reefs — to deep-water pelagic encounters with manta rays and migrating humpback whales off Bequia. The diversity of habitats, from volcanic black-sand slopes to shallow seagrass meadows, supports exceptional biodiversity year-round.",
+    "description": "Saint Vincent and the Grenadines stretches across 32 islands and cays, offering everything from the pristine Tobago Cays Marine Park \u2014 one of the Caribbean's last true wilderness reefs \u2014 to deep-water pelagic encounters with manta rays and migrating humpback whales off Bequia. The diversity of habitats, from volcanic black-sand slopes to shallow seagrass meadows, supports exceptional biodiversity year-round.",
     "bestMonths": [
       1,
       2,
@@ -6755,7 +6829,7 @@
     "region": "Mediterranean",
     "lat": 38.47,
     "lng": 14.96,
-    "description": "This volcanic archipelago north of Sicily offers dramatic underwater geology — black sand seabeds, volcanic walls, and posidonia meadows — alongside rich reef fish populations and rare Roman amphorae scattered along Basiluzzo's rocky ledges.",
+    "description": "This volcanic archipelago north of Sicily offers dramatic underwater geology \u2014 black sand seabeds, volcanic walls, and posidonia meadows \u2014 alongside rich reef fish populations and rare Roman amphorae scattered along Basiluzzo's rocky ledges.",
     "bestMonths": [
       5,
       6,
@@ -6783,10 +6857,10 @@
     "name": "Isla Mujeres",
     "country": "Mexico",
     "countryCode": "MX",
-    "region": "Yucatán Peninsula",
+    "region": "Yucat\u00e1n Peninsula",
     "lat": 21.2319,
     "lng": -86.731,
-    "description": "Isla Mujeres sits at the tip of the Yucatán Peninsula where Caribbean currents funnel nutrient-rich upwellings past pristine reefs, making it the world capital of whale shark aggregations from June through September. The island pairs accessible reef diving with the surreal MUSA underwater sculpture museum and strong year-round populations of sea turtles and eagle rays.",
+    "description": "Isla Mujeres sits at the tip of the Yucat\u00e1n Peninsula where Caribbean currents funnel nutrient-rich upwellings past pristine reefs, making it the world capital of whale shark aggregations from June through September. The island pairs accessible reef diving with the surreal MUSA underwater sculpture museum and strong year-round populations of sea turtles and eagle rays.",
     "bestMonths": [
       5,
       6,
@@ -6809,10 +6883,10 @@
     "name": "Banco Chinchorro",
     "country": "Mexico",
     "countryCode": "MX",
-    "region": "Yucatán Peninsula",
+    "region": "Yucat\u00e1n Peninsula",
     "lat": 18.5833,
     "lng": -87.3333,
-    "description": "Banco Chinchorro is Mexico's largest coral atoll and one of the most remote dive destinations in the Caribbean, lying 50 km off the southern Yucatán coast. Its shallow lagoon harbours one of the only places on Earth where divers can encounter American saltwater crocodiles face to face, while the outer walls and historic wrecks remain virtually untouched.",
+    "description": "Banco Chinchorro is Mexico's largest coral atoll and one of the most remote dive destinations in the Caribbean, lying 50 km off the southern Yucat\u00e1n coast. Its shallow lagoon harbours one of the only places on Earth where divers can encounter American saltwater crocodiles face to face, while the outer walls and historic wrecks remain virtually untouched.",
     "bestMonths": [
       3,
       4,
@@ -7054,7 +7128,7 @@
     "region": "East Coast",
     "lat": 34.9,
     "lng": -76.3,
-    "description": "North Carolina's Outer Banks coast earned its nickname the Graveyard of the Atlantic for good reason — more than 5,000 ships have sunk in these waters over four centuries. WWII wrecks lie in remarkable condition just offshore, drawing divers who want history and big wildlife in equal measure.",
+    "description": "North Carolina's Outer Banks coast earned its nickname the Graveyard of the Atlantic for good reason \u2014 more than 5,000 ships have sunk in these waters over four centuries. WWII wrecks lie in remarkable condition just offshore, drawing divers who want history and big wildlife in equal measure.",
     "bestMonths": [
       5,
       6,
@@ -7130,7 +7204,7 @@
     "region": "North Atlantic",
     "lat": 51.6748,
     "lng": -5.0705,
-    "description": "Pembrokeshire's Pembrokeshire Coast National Park hides some of Britain's most accessible cold-water diving — grey seal nurseries on Skomer Island, blue shark summer aggregations at The Smalls, and bottlenose dolphin encounters in Cardigan Bay's sheltered waters.",
+    "description": "Pembrokeshire's Pembrokeshire Coast National Park hides some of Britain's most accessible cold-water diving \u2014 grey seal nurseries on Skomer Island, blue shark summer aggregations at The Smalls, and bottlenose dolphin encounters in Cardigan Bay's sheltered waters.",
     "bestMonths": [
       5,
       6,
@@ -7168,7 +7242,7 @@
     "siteIds": [
       "lofoten-islands-nusfjord",
       "lofoten-islands-vestfjorden",
-      "lofoten-islands-henningsvær",
+      "lofoten-islands-henningsv\u00e6r",
       "lofoten-islands-svolvaer-wall"
     ]
   },
@@ -7286,7 +7360,7 @@
     "region": "Mediterranean",
     "lat": 38.9067,
     "lng": 1.4206,
-    "description": "The western Mediterranean's hidden dive jewel, Ibiza and Formentera sit above UNESCO-protected Posidonia oceanica meadows — ancient seagrass forests sheltering barracuda, dentex, and sea bass in waters of extraordinary clarity.",
+    "description": "The western Mediterranean's hidden dive jewel, Ibiza and Formentera sit above UNESCO-protected Posidonia oceanica meadows \u2014 ancient seagrass forests sheltering barracuda, dentex, and sea bass in waters of extraordinary clarity.",
     "bestMonths": [
       5,
       6,
@@ -7419,7 +7493,7 @@
     "region": "Eastern Pacific",
     "lat": -0.9538,
     "lng": -91.1306,
-    "description": "The largest island in the Galapagos archipelago, Isabela offers some of the most dramatic underwater encounters in the world — from whale sharks at Tortuga Negra Bay to Mola mola at Vicente Roca Point and marine iguanas feeding on algae at Cape Marshall.",
+    "description": "The largest island in the Galapagos archipelago, Isabela offers some of the most dramatic underwater encounters in the world \u2014 from whale sharks at Tortuga Negra Bay to Mola mola at Vicente Roca Point and marine iguanas feeding on algae at Cape Marshall.",
     "bestMonths": [
       6,
       7,
@@ -7500,7 +7574,7 @@
     "region": "Mediterranean",
     "lat": 36.855,
     "lng": 28.277,
-    "description": "Marmaris anchors the Turkish Riviera where pine-forested peninsulas drop into clear blue water, sheltering superb dive sites around Cleopatra Island, Çiftlik Bay, and the mirror-calm Aquarium Bay. The region's posidonia meadows, sponge gardens, and resident sea turtles make it one of the Aegean's most accessible and ecologically rich dive destinations.",
+    "description": "Marmaris anchors the Turkish Riviera where pine-forested peninsulas drop into clear blue water, sheltering superb dive sites around Cleopatra Island, \u00c7iftlik Bay, and the mirror-calm Aquarium Bay. The region's posidonia meadows, sponge gardens, and resident sea turtles make it one of the Aegean's most accessible and ecologically rich dive destinations.",
     "bestMonths": [
       5,
       6,
@@ -7520,13 +7594,13 @@
   {
     "id": "maria-la-gorda",
     "slug": "maria-la-gorda",
-    "name": "María la Gorda",
+    "name": "Mar\u00eda la Gorda",
     "country": "Cuba",
     "countryCode": "CU",
     "region": "Caribbean",
     "lat": 21.8333,
     "lng": -84.5667,
-    "description": "Perched at Cuba's remote western tip, María la Gorda sits where the Gulf of Mexico meets the Caribbean — delivering some of the island's richest wall diving, black coral gardens, and a legendary cathedral cavern draped in sponges.",
+    "description": "Perched at Cuba's remote western tip, Mar\u00eda la Gorda sits where the Gulf of Mexico meets the Caribbean \u2014 delivering some of the island's richest wall diving, black coral gardens, and a legendary cathedral cavern draped in sponges.",
     "bestMonths": [
       1,
       2,
@@ -7553,7 +7627,7 @@
     "region": "Caribbean",
     "lat": 22.0667,
     "lng": -81.1667,
-    "description": "Playa Girón and the Bay of Pigs combine Cold War history with crystalline cenotes and a pristine marine reserve — wall dives tumble from shallow coral terraces to open-water abyss while hawksbill turtles and vast barracuda schools patrol the blue.",
+    "description": "Playa Gir\u00f3n and the Bay of Pigs combine Cold War history with crystalline cenotes and a pristine marine reserve \u2014 wall dives tumble from shallow coral terraces to open-water abyss while hawksbill turtles and vast barracuda schools patrol the blue.",
     "bestMonths": [
       3,
       4,
@@ -7582,7 +7656,7 @@
     "region": "Southeast Brazil",
     "lat": -17.97,
     "lng": -38.7,
-    "description": "A remote reef archipelago off the coast of Bahia, the Abrolhos Banks host the highest density of humpback whales in the South Atlantic from June to November, alongside unique mushroom-shaped chapeirão coral formations found nowhere else on Earth.",
+    "description": "A remote reef archipelago off the coast of Bahia, the Abrolhos Banks host the highest density of humpback whales in the South Atlantic from June to November, alongside unique mushroom-shaped chapeir\u00e3o coral formations found nowhere else on Earth.",
     "bestMonths": [
       6,
       7,
@@ -7634,7 +7708,7 @@
     "region": "Adriatic Sea",
     "lat": 42.4304,
     "lng": 18.6916,
-    "description": "Montenegro's Adriatic coastline packs dramatic limestone karst, sea caves, and a surprisingly rich temperate reef ecosystem into a compact stretch of coast — cave diving at Sveti Nikola, seahorse colonies at Žanjice Bay, and blue-light refraction caves near Budva make it one of Europe's most underrated dive destinations.",
+    "description": "Montenegro's Adriatic coastline packs dramatic limestone karst, sea caves, and a surprisingly rich temperate reef ecosystem into a compact stretch of coast \u2014 cave diving at Sveti Nikola, seahorse colonies at \u017danjice Bay, and blue-light refraction caves near Budva make it one of Europe's most underrated dive destinations.",
     "bestMonths": [
       5,
       6,
@@ -7664,7 +7738,7 @@
     "region": "Adriatic Sea",
     "lat": 40.1533,
     "lng": 19.6017,
-    "description": "Albania's protected Riviera coastline is one of the Mediterranean's last undiscovered dive frontiers — the Karaburun Peninsula marine reserve shelters large grouper and loggerhead turtles, while Cold War military wrecks at Sazan Island and Porto Palermo's submarine tunnel offer historically unique artifact diving found nowhere else in Europe.",
+    "description": "Albania's protected Riviera coastline is one of the Mediterranean's last undiscovered dive frontiers \u2014 the Karaburun Peninsula marine reserve shelters large grouper and loggerhead turtles, while Cold War military wrecks at Sazan Island and Porto Palermo's submarine tunnel offer historically unique artifact diving found nowhere else in Europe.",
     "bestMonths": [
       5,
       6,
@@ -7690,7 +7764,7 @@
     "region": "Arabian Sea",
     "lat": 14.0167,
     "lng": 74.3333,
-    "description": "Netrani Island — known as the Pigeon Island of India — rises from the Arabian Sea off Karnataka with dramatically steep underwater walls and one of the most reliable whale shark aggregations in Asia, drawing divers from October through May for encounters with the ocean's largest fish alongside schooling dogtooth tuna and resident sea turtles.",
+    "description": "Netrani Island \u2014 known as the Pigeon Island of India \u2014 rises from the Arabian Sea off Karnataka with dramatically steep underwater walls and one of the most reliable whale shark aggregations in Asia, drawing divers from October through May for encounters with the ocean's largest fish alongside schooling dogtooth tuna and resident sea turtles.",
     "bestMonths": [
       10,
       11,
@@ -7718,7 +7792,7 @@
     "region": "Indian Ocean",
     "lat": -0.6167,
     "lng": 73.1333,
-    "description": "Addu Atoll, the southernmost and most geographically isolated of the Maldivian atolls, combines the best Maldivian wreck diving — the British Loyalty tanker sunk in 1946 — with pristine manta ray channels and resident shark populations that benefit from light visitor numbers compared to the heavily dived northern atolls.",
+    "description": "Addu Atoll, the southernmost and most geographically isolated of the Maldivian atolls, combines the best Maldivian wreck diving \u2014 the British Loyalty tanker sunk in 1946 \u2014 with pristine manta ray channels and resident shark populations that benefit from light visitor numbers compared to the heavily dived northern atolls.",
     "bestMonths": [
       11,
       12,
@@ -7905,7 +7979,7 @@
     "region": "Caribbean",
     "lat": 18.5944,
     "lng": -72.3074,
-    "description": "Haiti's coastline holds some of the least dived reefs in the Caribbean, where decades of low boat traffic have allowed coral gardens, hawksbill turtles, and nurse sharks to recover in near-pristine conditions. From the offshore cays of Ile à Vache to the brain coral shoals of Les Arcadins marine reserve, the country rewards adventurous divers willing to go off the beaten path.",
+    "description": "Haiti's coastline holds some of the least dived reefs in the Caribbean, where decades of low boat traffic have allowed coral gardens, hawksbill turtles, and nurse sharks to recover in near-pristine conditions. From the offshore cays of Ile \u00e0 Vache to the brain coral shoals of Les Arcadins marine reserve, the country rewards adventurous divers willing to go off the beaten path.",
     "bestMonths": [
       1,
       2,
@@ -8060,7 +8134,7 @@
     "region": "Ryukyu Islands",
     "lat": 24.8,
     "lng": 125.3,
-    "description": "The Miyako Islands lie in Okinawa prefecture between the main Okinawa island and the Yaeyama group, sheltering Yabiji — Japan's largest coral reef — alongside crystalline blue caves and reliable manta ray cleaning stations. Exceptional water clarity and consistent currents draw pelagic species throughout the warmer months.",
+    "description": "The Miyako Islands lie in Okinawa prefecture between the main Okinawa island and the Yaeyama group, sheltering Yabiji \u2014 Japan's largest coral reef \u2014 alongside crystalline blue caves and reliable manta ray cleaning stations. Exceptional water clarity and consistent currents draw pelagic species throughout the warmer months.",
     "bestMonths": [
       4,
       5,
@@ -8138,7 +8212,7 @@
     "region": "Indian Ocean",
     "lat": -17,
     "lng": 49.85,
-    "description": "Île Sainte-Marie sits off Madagascar's northeast coast and doubles as a humpback whale nursery every July to September. Its reefs remain largely unexplored, and the bay shelters intact 17th-century pirate ship wrecks beneath clear tropical water.",
+    "description": "\u00cele Sainte-Marie sits off Madagascar's northeast coast and doubles as a humpback whale nursery every July to September. Its reefs remain largely unexplored, and the bay shelters intact 17th-century pirate ship wrecks beneath clear tropical water.",
     "bestMonths": [
       7,
       8,
@@ -8163,7 +8237,7 @@
     "region": "East Africa",
     "lat": -6.28,
     "lng": 39.17,
-    "description": "Chumbe Island Coral Park is the first privately managed marine sanctuary in Africa, protecting over 350 coral species in the Zanzibar Channel. Strict no-take zoning since 1994 means the reef ecosystem — crowned by giant humphead parrotfish and patrolling eagle rays — has rebounded to exceptional density.",
+    "description": "Chumbe Island Coral Park is the first privately managed marine sanctuary in Africa, protecting over 350 coral species in the Zanzibar Channel. Strict no-take zoning since 1994 means the reef ecosystem \u2014 crowned by giant humphead parrotfish and patrolling eagle rays \u2014 has rebounded to exceptional density.",
     "bestMonths": [
       6,
       7,
@@ -8187,7 +8261,7 @@
     "region": "Mediterranean",
     "lat": 36.72,
     "lng": 24.44,
-    "description": "Milos is a volcanic Cyclades island renowned for its dramatic underwater geology — sea caves carved by wave and heat, basalt columns, and thermal vents that hint at the island's fiery origins. The marine environment is rich with posidonia meadows, colourful sponges, and a surprising abundance of cephalopods and reef fish.",
+    "description": "Milos is a volcanic Cyclades island renowned for its dramatic underwater geology \u2014 sea caves carved by wave and heat, basalt columns, and thermal vents that hint at the island's fiery origins. The marine environment is rich with posidonia meadows, colourful sponges, and a surprising abundance of cephalopods and reef fish.",
     "bestMonths": [
       5,
       6,
@@ -8246,7 +8320,7 @@
     "region": "Adriatic Sea",
     "lat": 45.1,
     "lng": 13.9,
-    "description": "Croatia's northwestern peninsula hosts the northern Adriatic's most celebrated wrecks alongside dolphin-patrolled marine parks — the Baron Gautsch passenger ship and a WWII B-17 bomber draw history-minded divers, while the Brijuni Islands national park offers crystalline water and Mediterranean biodiversity.",
+    "description": "Croatia's northwestern peninsula hosts the northern Adriatic's most celebrated wrecks alongside dolphin-patrolled marine parks \u2014 the Baron Gautsch passenger ship and a WWII B-17 bomber draw history-minded divers, while the Brijuni Islands national park offers crystalline water and Mediterranean biodiversity.",
     "bestMonths": [
       5,
       6,
@@ -8310,7 +8384,7 @@
     "region": "Eastern Pacific",
     "lat": 26.0118,
     "lng": -111.3431,
-    "description": "Loreto anchors the central Sea of Cortez — Jacques Cousteau's \"aquarium of the world\" — where Coronado Island sea lions, schooling hammerheads around Carmen Island, and manta rays gliding over Danzante's walls reward divers year-round.",
+    "description": "Loreto anchors the central Sea of Cortez \u2014 Jacques Cousteau's \"aquarium of the world\" \u2014 where Coronado Island sea lions, schooling hammerheads around Carmen Island, and manta rays gliding over Danzante's walls reward divers year-round.",
     "bestMonths": [
       6,
       7,
@@ -8361,7 +8435,7 @@
     "region": "Atlantic Ocean",
     "lat": 42.35,
     "lng": -8.75,
-    "description": "Galicia's rugged Atlantic coastline hides one of Europe's richest cold-water ecosystems, sheltered within the Illas Atlánticas National Park. Grey seals, giant octopus, dense nudibranch populations, and centuries-old shipwrecks make this northwest corner of Spain a genuine bucket-list destination for temperate-water divers.",
+    "description": "Galicia's rugged Atlantic coastline hides one of Europe's richest cold-water ecosystems, sheltered within the Illas Atl\u00e1nticas National Park. Grey seals, giant octopus, dense nudibranch populations, and centuries-old shipwrecks make this northwest corner of Spain a genuine bucket-list destination for temperate-water divers.",
     "bestMonths": [
       6,
       7,
@@ -8501,7 +8575,7 @@
   {
     "id": "sao-miguel-azores",
     "slug": "sao-miguel-azores",
-    "name": "São Miguel",
+    "name": "S\u00e3o Miguel",
     "country": "Portugal",
     "countryCode": "PT",
     "region": "Azores",
@@ -8561,7 +8635,7 @@
     "region": "Mediterranean",
     "lat": 40.822,
     "lng": 14.083,
-    "description": "Naples Bay cradles one of the ancient world's most extraordinary dive sites — the submerged Roman city of Baiae, whose thermal-volcanic subsidience carried imperial villas, mosaic floors, and marble statues beneath 3 to 15 metres of clear Tyrrhenian water. Divers and even snorkellers glide above intact column capitals and Emperor Claudius's nymphaeum, while the surrounding volcanic seabed harbours surprisingly rich Mediterranean marine life.",
+    "description": "Naples Bay cradles one of the ancient world's most extraordinary dive sites \u2014 the submerged Roman city of Baiae, whose thermal-volcanic subsidience carried imperial villas, mosaic floors, and marble statues beneath 3 to 15 metres of clear Tyrrhenian water. Divers and even snorkellers glide above intact column capitals and Emperor Claudius's nymphaeum, while the surrounding volcanic seabed harbours surprisingly rich Mediterranean marine life.",
     "bestMonths": [
       5,
       6,
@@ -8582,13 +8656,13 @@
   {
     "id": "almeria",
     "slug": "almeria",
-    "name": "Almería",
+    "name": "Almer\u00eda",
     "country": "Spain",
     "countryCode": "ES",
     "region": "Mediterranean",
     "lat": 36.734,
     "lng": -2.183,
-    "description": "Cabo de Gata-Níjar Natural Park shelters the best-preserved marine reserve in the western Mediterranean, where the arid volcanic coastline of southeast Spain plunges into crystalline water that hosts seagrass prairies, pelagic aggregations, and a seahorse population dense enough to earn El Ancón the informal title of seahorse capital of the Mediterranean. The park's near-total absence of river runoff delivers visibility regularly exceeding 20 metres.",
+    "description": "Cabo de Gata-N\u00edjar Natural Park shelters the best-preserved marine reserve in the western Mediterranean, where the arid volcanic coastline of southeast Spain plunges into crystalline water that hosts seagrass prairies, pelagic aggregations, and a seahorse population dense enough to earn El Anc\u00f3n the informal title of seahorse capital of the Mediterranean. The park's near-total absence of river runoff delivers visibility regularly exceeding 20 metres.",
     "bestMonths": [
       6,
       7,
@@ -8610,7 +8684,7 @@
   {
     "id": "fethiye-gocek",
     "slug": "fethiye-gocek",
-    "name": "Fethiye / Göcek",
+    "name": "Fethiye / G\u00f6cek",
     "country": "Turkey",
     "countryCode": "TR",
     "region": "Mediterranean",
@@ -8689,7 +8763,7 @@
   {
     "id": "bijagos-islands",
     "slug": "bijagos-islands",
-    "name": "Bijagós Islands",
+    "name": "Bijag\u00f3s Islands",
     "country": "Guinea-Bissau",
     "countryCode": "GW",
     "region": "Atlantic Ocean",
@@ -8771,7 +8845,7 @@
   {
     "id": "eyjafjordur",
     "slug": "eyjafjordur",
-    "name": "Eyjafjörður",
+    "name": "Eyjafj\u00f6r\u00f0ur",
     "country": "Iceland",
     "countryCode": "IS",
     "region": "North Atlantic",
@@ -8826,7 +8900,7 @@
     "region": "Eastern Pacific",
     "lat": 2.9667,
     "lng": -78.1833,
-    "description": "A former prison island turned national park off Colombia's Pacific coast, Gorgona delivers some of the most dramatic large-pelagic encounters in the Eastern Pacific — hammerhead schools, humpback whales, and whale sharks patrol its nutrient-rich waters from June through November.",
+    "description": "A former prison island turned national park off Colombia's Pacific coast, Gorgona delivers some of the most dramatic large-pelagic encounters in the Eastern Pacific \u2014 hammerhead schools, humpback whales, and whale sharks patrol its nutrient-rich waters from June through November.",
     "bestMonths": [
       7,
       8,
@@ -8851,7 +8925,7 @@
     "region": "Eastern Pacific",
     "lat": -13.8333,
     "lng": -76.25,
-    "description": "Driven by the cold, nutrient-dense Humboldt Current, Paracas offers a uniquely Peruvian diving experience where sea lions, Humboldt penguins, and hammerhead sharks share frigid Pacific waters alongside cold-water corals — earning the region its nickname as the Galapagos of Peru.",
+    "description": "Driven by the cold, nutrient-dense Humboldt Current, Paracas offers a uniquely Peruvian diving experience where sea lions, Humboldt penguins, and hammerhead sharks share frigid Pacific waters alongside cold-water corals \u2014 earning the region its nickname as the Galapagos of Peru.",
     "bestMonths": [
       11,
       12,
@@ -8979,7 +9053,7 @@
     "region": "Caribbean",
     "lat": 10.5,
     "lng": -61.25,
-    "description": "Trinidad's west and north coasts offer a different flavor of Caribbean diving — nutrient-rich upwelling from the Orinoco Delta draws tarpon, snook, and eagle rays into mangrove-fringed shores, while protected coral lagoons at Buccoo shelter hawksbill turtles year-round.",
+    "description": "Trinidad's west and north coasts offer a different flavor of Caribbean diving \u2014 nutrient-rich upwelling from the Orinoco Delta draws tarpon, snook, and eagle rays into mangrove-fringed shores, while protected coral lagoons at Buccoo shelter hawksbill turtles year-round.",
     "bestMonths": [
       1,
       2,
@@ -9105,7 +9179,7 @@
     "region": "Lesser Sunda Islands",
     "lat": -8.5653,
     "lng": 116.3517,
-    "description": "Sandwiched between Bali and Sumbawa, Lombok offers some of Indonesia's most dramatic underwater topography — sheer walls plunging beyond 40 metres, strong currents that funnel nutrients through the Lombok Strait, and a reliable cast of blacktip and whitetip reef sharks. The Gili Islands off the northwest coast are the main hub, with sandy-bottomed turtle cleaning stations and colourful reef crests sitting above the drops. Visibility regularly exceeds 25 metres and water temperatures stay warm year-round, making Lombok an accessible yet rewarding destination for intermediate and advanced divers alike.",
+    "description": "Sandwiched between Bali and Sumbawa, Lombok offers some of Indonesia's most dramatic underwater topography \u2014 sheer walls plunging beyond 40 metres, strong currents that funnel nutrients through the Lombok Strait, and a reliable cast of blacktip and whitetip reef sharks. The Gili Islands off the northwest coast are the main hub, with sandy-bottomed turtle cleaning stations and colourful reef crests sitting above the drops. Visibility regularly exceeds 25 metres and water temperatures stay warm year-round, making Lombok an accessible yet rewarding destination for intermediate and advanced divers alike.",
     "bestMonths": [
       4,
       5,
@@ -9133,7 +9207,7 @@
     "region": "South China Sea",
     "lat": 5.9072,
     "lng": 102.7418,
-    "description": "The Perhentian Islands sit in Malaysia's South China Sea roughly 20 kilometres off the Terengganu coast, ringed by crystal-clear water that turns an almost improbable shade of turquoise during the dry season. Visibility regularly reaches 20 metres or more over healthy hard-coral gardens patrolled by green and hawksbill turtles, blacktip reef sharks, and a dense cast of macro subjects including frogfish, nudibranchs, and ghost pipefish. The islands close entirely from November through February when northeast monsoon swells roll in, but from March through October conditions are ideal for snorkelling, reef dives, and night dives — making this one of the most approachable and affordable dive destinations in Southeast Asia.",
+    "description": "The Perhentian Islands sit in Malaysia's South China Sea roughly 20 kilometres off the Terengganu coast, ringed by crystal-clear water that turns an almost improbable shade of turquoise during the dry season. Visibility regularly reaches 20 metres or more over healthy hard-coral gardens patrolled by green and hawksbill turtles, blacktip reef sharks, and a dense cast of macro subjects including frogfish, nudibranchs, and ghost pipefish. The islands close entirely from November through February when northeast monsoon swells roll in, but from March through October conditions are ideal for snorkelling, reef dives, and night dives \u2014 making this one of the most approachable and affordable dive destinations in Southeast Asia.",
     "bestMonths": [
       3,
       4,
@@ -9187,7 +9261,7 @@
     "region": "Western Australia",
     "lat": -23.1427,
     "lng": 113.7725,
-    "description": "Coral Bay sits at the southern end of Ningaloo Reef, one of the longest fringing reefs on Earth. The reef here begins just metres from the beach, making it extraordinary for snorkellers and divers alike. Manta rays cruise the shallows year-round, and whale sharks arrive each autumn. The water is warm, clear, and alive with colour — parrotfish, turtles, and reef sharks share the same sandy-bottomed lagoon. This is a place where the ocean is genuinely wild and genuinely close.",
+    "description": "Coral Bay sits at the southern end of Ningaloo Reef, one of the longest fringing reefs on Earth. The reef here begins just metres from the beach, making it extraordinary for snorkellers and divers alike. Manta rays cruise the shallows year-round, and whale sharks arrive each autumn. The water is warm, clear, and alive with colour \u2014 parrotfish, turtles, and reef sharks share the same sandy-bottomed lagoon. This is a place where the ocean is genuinely wild and genuinely close.",
     "bestMonths": [
       3,
       4,
@@ -9215,7 +9289,7 @@
     "region": "Western Australia",
     "lat": -21.9322,
     "lng": 114.1214,
-    "description": "Exmouth sits at the tip of the North West Cape, flanked by the open Indian Ocean to the west and the sheltered Exmouth Gulf to the east. The Navy Pier at Harold E. Holt Communication Station is considered one of the best shore dives in the world — a barnacle-encrusted structure alive with wobbegong sharks, giant groper, and nudibranchs at every depth. Ningaloo Reef wraps around the cape, delivering wall dives, drift dives, and the annual whale shark aggregation that draws divers from everywhere.",
+    "description": "Exmouth sits at the tip of the North West Cape, flanked by the open Indian Ocean to the west and the sheltered Exmouth Gulf to the east. The Navy Pier at Harold E. Holt Communication Station is considered one of the best shore dives in the world \u2014 a barnacle-encrusted structure alive with wobbegong sharks, giant groper, and nudibranchs at every depth. Ningaloo Reef wraps around the cape, delivering wall dives, drift dives, and the annual whale shark aggregation that draws divers from everywhere.",
     "bestMonths": [
       3,
       4,
@@ -9243,7 +9317,7 @@
     "region": "Northland",
     "lat": -35.1833,
     "lng": 174.1,
-    "description": "A subtropical archipelago of 144 islands off Northland's coast, the Bay of Islands blends temperate kelp forests with warm northern waters. Colorful nudibranchs coat every surface, common dolphins ride bow waves between dives, and the wreck of the HMNZS Canterbury sits upright on the seafloor — one of the Pacific's great wreck dives. Visibility is best in autumn when the summer plankton bloom settles.",
+    "description": "A subtropical archipelago of 144 islands off Northland's coast, the Bay of Islands blends temperate kelp forests with warm northern waters. Colorful nudibranchs coat every surface, common dolphins ride bow waves between dives, and the wreck of the HMNZS Canterbury sits upright on the seafloor \u2014 one of the Pacific's great wreck dives. Visibility is best in autumn when the summer plankton bloom settles.",
     "bestMonths": [
       2,
       3,
@@ -9267,7 +9341,7 @@
     "region": "Society Islands",
     "lat": -16.5004,
     "lng": -151.7415,
-    "description": "Bora Bora's turquoise lagoon is ringed by a coral barrier reef sheltering lemon sharks, blacktip reef sharks, and eagle rays that glide over coral bommies in shallow water. The passes cutting through the barrier — particularly Teavanui — funnel nutrient-rich currents that draw large pelagics. Visibility routinely exceeds 30 meters, and the calm lagoon makes it accessible to every level of diver.",
+    "description": "Bora Bora's turquoise lagoon is ringed by a coral barrier reef sheltering lemon sharks, blacktip reef sharks, and eagle rays that glide over coral bommies in shallow water. The passes cutting through the barrier \u2014 particularly Teavanui \u2014 funnel nutrient-rich currents that draw large pelagics. Visibility routinely exceeds 30 meters, and the calm lagoon makes it accessible to every level of diver.",
     "bestMonths": [
       6,
       7,
@@ -9292,7 +9366,7 @@
     "region": "Tuamotu Archipelago",
     "lat": -16.0574,
     "lng": -145.6328,
-    "description": "Fakarava is a UNESCO biosphere reserve and one of the world's premier drift diving destinations. The South Pass (Tumakohua) is legendary for its wall of sharks — hundreds of grey reef sharks hunting in formation during the June grouper spawning aggregation. Two coral-fringed passes funnel nutrient-rich Pacific water through the atoll, creating powerful drift dives past healthy coral gardens teeming with reef fish, Napoleon wrasse, and eagle rays.",
+    "description": "Fakarava is a UNESCO biosphere reserve and one of the world's premier drift diving destinations. The South Pass (Tumakohua) is legendary for its wall of sharks \u2014 hundreds of grey reef sharks hunting in formation during the June grouper spawning aggregation. Two coral-fringed passes funnel nutrient-rich Pacific water through the atoll, creating powerful drift dives past healthy coral gardens teeming with reef fish, Napoleon wrasse, and eagle rays.",
     "bestMonths": [
       6,
       7,
@@ -9365,7 +9439,7 @@
     "region": "Eastern Pacific",
     "lat": -1,
     "lng": -81.05,
-    "description": "Ecuador's Pacific gateway for giant oceanic manta rays, seasonal hammerhead aggregations, and whale watching, centred on La Plata Island — the 'poor man's Galapagos' — with year-round warm upwelling waters.",
+    "description": "Ecuador's Pacific gateway for giant oceanic manta rays, seasonal hammerhead aggregations, and whale watching, centred on La Plata Island \u2014 the 'poor man's Galapagos' \u2014 with year-round warm upwelling waters.",
     "bestMonths": [
       6,
       7,
@@ -9391,7 +9465,7 @@
     "region": "North America",
     "lat": 22.8905,
     "lng": -109.9167,
-    "description": "Where the Pacific meets the Sea of Cortez, Cabo San Lucas delivers world-class diving anchored by Land's End and the iconic El Arco arch. California sea lions haul out on the rocks year-round and pour into the water with divers at the colony. The famous underwater sand falls cascade off a submerged plateau at 30 m, and the open blue brings hammerheads, whale sharks, and manta rays. Jacques Cousteau called the Sea of Cortez 'the world's aquarium' — the southern tip is where you feel it first.",
+    "description": "Where the Pacific meets the Sea of Cortez, Cabo San Lucas delivers world-class diving anchored by Land's End and the iconic El Arco arch. California sea lions haul out on the rocks year-round and pour into the water with divers at the colony. The famous underwater sand falls cascade off a submerged plateau at 30 m, and the open blue brings hammerheads, whale sharks, and manta rays. Jacques Cousteau called the Sea of Cortez 'the world's aquarium' \u2014 the southern tip is where you feel it first.",
     "bestMonths": [
       6,
       7,
@@ -9417,7 +9491,7 @@
     "region": "North America",
     "lat": 20.6534,
     "lng": -105.2253,
-    "description": "Puerto Vallarta anchors diving across Banderas Bay — one of the largest bays in the Americas — and the protected waters of Las Islas Marietas National Park just offshore. Giant manta rays cruise the seamounts, humpback whales fill the bay from November through March, and the Marietas hide a collapsed volcanic cave that shelters resting white sea birds and macro life. The bay's warm current pocket and diverse topography make it a year-round destination with genuinely different experiences by season.",
+    "description": "Puerto Vallarta anchors diving across Banderas Bay \u2014 one of the largest bays in the Americas \u2014 and the protected waters of Las Islas Marietas National Park just offshore. Giant manta rays cruise the seamounts, humpback whales fill the bay from November through March, and the Marietas hide a collapsed volcanic cave that shelters resting white sea birds and macro life. The bay's warm current pocket and diverse topography make it a year-round destination with genuinely different experiences by season.",
     "bestMonths": [
       11,
       12,
@@ -9431,7 +9505,7 @@
       "puerto-vallarta-islas-marietas",
       "puerto-vallarta-el-morro",
       "puerto-vallarta-los-arcos",
-      "puerto-vallarta-la-corbeteña"
+      "puerto-vallarta-la-corbete\u00f1a"
     ],
     "heroImageUrl": "https://images.pexels.com/photos/4621622/pexels-photo-4621622.jpeg?auto=compress&cs=tinysrgb&w=1920"
   },
@@ -9444,7 +9518,7 @@
     "region": "British Columbia",
     "lat": 48.4284,
     "lng": -123.3656,
-    "description": "Cold, nutrient-rich Pacific waters off southern Vancouver Island host some of the world's largest invertebrates — giant Pacific octopus reaching 14 kg, wolf eels guarding rocky crevices, and massive sunflower sea stars. Kelp forests thick with lingcod and rockfish line the walls of Ogden Point and Race Rocks. Water temperatures hover between 7 and 12 C year-round, rewarding drysuit divers with extraordinary biomass and visibility that often reaches 20 m in winter.",
+    "description": "Cold, nutrient-rich Pacific waters off southern Vancouver Island host some of the world's largest invertebrates \u2014 giant Pacific octopus reaching 14 kg, wolf eels guarding rocky crevices, and massive sunflower sea stars. Kelp forests thick with lingcod and rockfish line the walls of Ogden Point and Race Rocks. Water temperatures hover between 7 and 12 C year-round, rewarding drysuit divers with extraordinary biomass and visibility that often reaches 20 m in winter.",
     "bestMonths": [
       1,
       2,
@@ -9470,7 +9544,7 @@
     "region": "Washington",
     "lat": 48.5343,
     "lng": -123.0573,
-    "description": "The San Juan archipelago sits at the confluence of the Strait of Juan de Fuca and the Strait of Georgia, where tidal exchanges push nutrient-dense water through narrow passes at up to 8 knots. Resident and transient orca pods hunt these channels. Below the surface, giant Pacific octopus, wolf eels, and tube-dwelling anemones carpet rocky walls. Kelp canopies shelter copper rockfish and lingcod. This is cold-water Pacific Northwest diving at its most dramatic — drysuits mandatory, rewards extraordinary.",
+    "description": "The San Juan archipelago sits at the confluence of the Strait of Juan de Fuca and the Strait of Georgia, where tidal exchanges push nutrient-dense water through narrow passes at up to 8 knots. Resident and transient orca pods hunt these channels. Below the surface, giant Pacific octopus, wolf eels, and tube-dwelling anemones carpet rocky walls. Kelp canopies shelter copper rockfish and lingcod. This is cold-water Pacific Northwest diving at its most dramatic \u2014 drysuits mandatory, rewards extraordinary.",
     "bestMonths": [
       1,
       2,
@@ -9634,7 +9708,7 @@
     "region": "Atlantic",
     "lat": 38.72,
     "lng": -27.22,
-    "description": "Rising from the mid-Atlantic Ridge, Terceira is one of the Azores archipelago's most volcanically active islands, and its underwater terrain reflects that restless geology — lava arches, hydrothermal vents, and seamounts thick with gorgonian sea fans. Blue sharks appear in numbers that surprise even seasoned pelagic divers, mobula rays sweep overhead in loose squadrons, and the cold clear Atlantic delivers visibility that can stretch beyond 30 metres. This is open-ocean diving at its most elemental.",
+    "description": "Rising from the mid-Atlantic Ridge, Terceira is one of the Azores archipelago's most volcanically active islands, and its underwater terrain reflects that restless geology \u2014 lava arches, hydrothermal vents, and seamounts thick with gorgonian sea fans. Blue sharks appear in numbers that surprise even seasoned pelagic divers, mobula rays sweep overhead in loose squadrons, and the cold clear Atlantic delivers visibility that can stretch beyond 30 metres. This is open-ocean diving at its most elemental.",
     "bestMonths": [
       6,
       7,
@@ -9659,7 +9733,7 @@
     "region": "Southeast Asia",
     "lat": -8.7275,
     "lng": 115.5444,
-    "description": "Nusa Penida is Bali's offshore island and one of Indonesia's most thrilling dive destinations, famous worldwide as the best place on Earth to encounter the ocean sunfish (mola mola) from July through October. The island sits at the confluence of upwelling cold water from the deep Lombok Strait, fueling extraordinary marine productivity. Dramatic underwater topography — sheer walls dropping hundreds of metres, submerged pinnacles, and sweeping drift channels — combines with the nutrient-rich current to attract manta rays year-round, schooling fish in vast numbers, and the bizarre mola mola coming up from the deep to be cleaned. Currents here can be powerful and unpredictable, making many sites intermediate to advanced territory.",
+    "description": "Nusa Penida is Bali's offshore island and one of Indonesia's most thrilling dive destinations, famous worldwide as the best place on Earth to encounter the ocean sunfish (mola mola) from July through October. The island sits at the confluence of upwelling cold water from the deep Lombok Strait, fueling extraordinary marine productivity. Dramatic underwater topography \u2014 sheer walls dropping hundreds of metres, submerged pinnacles, and sweeping drift channels \u2014 combines with the nutrient-rich current to attract manta rays year-round, schooling fish in vast numbers, and the bizarre mola mola coming up from the deep to be cleaned. Currents here can be powerful and unpredictable, making many sites intermediate to advanced territory.",
     "bestMonths": [
       7,
       8,
@@ -9685,7 +9759,7 @@
     "region": "Southeast Asia",
     "lat": 13.5667,
     "lng": 121.0667,
-    "description": "The Verde Island Passage, a narrow strait between Luzon and Mindoro in Batangas province, holds the highest recorded concentration of marine shore fish species on Earth — a distinction scientists call the centre of the centre of marine biodiversity. Described by Dr. Kent Carpenter and colleagues in a landmark 2010 paper, the corridor hosts over 1,700 species of fish and extraordinary reef density compressed into accessible dive sites. Sheer walls plunge from the surface into blue water, while nutrient-rich currents sweep past schooling jacks, dogtooth tuna, and clouds of anthias. Macro life rivals anything in the Coral Triangle, and encounters with thresher sharks, hammerheads, and whale sharks are seasonal highlights.",
+    "description": "The Verde Island Passage, a narrow strait between Luzon and Mindoro in Batangas province, holds the highest recorded concentration of marine shore fish species on Earth \u2014 a distinction scientists call the centre of the centre of marine biodiversity. Described by Dr. Kent Carpenter and colleagues in a landmark 2010 paper, the corridor hosts over 1,700 species of fish and extraordinary reef density compressed into accessible dive sites. Sheer walls plunge from the surface into blue water, while nutrient-rich currents sweep past schooling jacks, dogtooth tuna, and clouds of anthias. Macro life rivals anything in the Coral Triangle, and encounters with thresher sharks, hammerheads, and whale sharks are seasonal highlights.",
     "bestMonths": [
       3,
       4,
@@ -9710,7 +9784,7 @@
     "region": "Asia Pacific",
     "lat": -8.506,
     "lng": 115.558,
-    "description": "Candidasa is a laid-back fishing village on Bali's east coast, sitting between the mola mola hotspot of Nusa Penida and the famous USAT Liberty wreck at Tulamben. The reefs here are less visited than Bali's tourist centers, rewarding divers with intact coral gardens, resident barracuda schools, and strong drift dives along offshore pinnacles. The nearby Gili Tepekong and Gili Mimpang islets concentrate big fish action — white-tip reef sharks, barracuda, and occasional mola mola pass through the channels. Water visibility is often excellent, and the cooler upwellings from the Lombok Strait keep the water rich in nutrients.",
+    "description": "Candidasa is a laid-back fishing village on Bali's east coast, sitting between the mola mola hotspot of Nusa Penida and the famous USAT Liberty wreck at Tulamben. The reefs here are less visited than Bali's tourist centers, rewarding divers with intact coral gardens, resident barracuda schools, and strong drift dives along offshore pinnacles. The nearby Gili Tepekong and Gili Mimpang islets concentrate big fish action \u2014 white-tip reef sharks, barracuda, and occasional mola mola pass through the channels. Water visibility is often excellent, and the cooler upwellings from the Lombok Strait keep the water rich in nutrients.",
     "bestMonths": [
       4,
       5,
@@ -9741,7 +9815,7 @@
     "region": "Asia Pacific",
     "lat": -8.686,
     "lng": 115.454,
-    "description": "Nusa Lembongan and its sister islands Nusa Ceningan and Nusa Penida form a triangle of world-class diving just 30 minutes from Sanur. The area is famous globally for manta ray cleaning stations and seasonal oceanic mola mola (sunfish) sightings from July through October. Strong currents funneling through the channels create nutrient-rich upwellings that support extraordinary biodiversity — reef sharks, eagle rays, and dense schools of fish are routine. Drift dives here range from exhilarating to extreme, and the varied topography includes walls, pinnacles, and sloping reefs covered in hard coral.",
+    "description": "Nusa Lembongan and its sister islands Nusa Ceningan and Nusa Penida form a triangle of world-class diving just 30 minutes from Sanur. The area is famous globally for manta ray cleaning stations and seasonal oceanic mola mola (sunfish) sightings from July through October. Strong currents funneling through the channels create nutrient-rich upwellings that support extraordinary biodiversity \u2014 reef sharks, eagle rays, and dense schools of fish are routine. Drift dives here range from exhilarating to extreme, and the varied topography includes walls, pinnacles, and sloping reefs covered in hard coral.",
     "bestMonths": [
       4,
       5,
@@ -9836,7 +9910,7 @@
     "region": "Western Australia",
     "lat": -25.9975,
     "lng": 113.7975,
-    "description": "A UNESCO World Heritage Site protecting one of the world's largest seagrass meadows, Shark Bay harbours enormous dugong populations, loggerhead sea turtles, and the living stromatolites at Hamelin Pool — some of the oldest life forms on Earth. Tiger sharks patrol the shallows year-round, drawn by the abundant marine mammals. The bay's hypersaline conditions and extraordinary biodiversity make every dive a window into ancient and living ocean systems.",
+    "description": "A UNESCO World Heritage Site protecting one of the world's largest seagrass meadows, Shark Bay harbours enormous dugong populations, loggerhead sea turtles, and the living stromatolites at Hamelin Pool \u2014 some of the oldest life forms on Earth. Tiger sharks patrol the shallows year-round, drawn by the abundant marine mammals. The bay's hypersaline conditions and extraordinary biodiversity make every dive a window into ancient and living ocean systems.",
     "bestMonths": [
       4,
       5,
@@ -10075,13 +10149,13 @@
   {
     "id": "principe-island",
     "slug": "principe-island",
-    "name": "Príncipe Island",
-    "country": "São Tomé and Príncipe",
+    "name": "Pr\u00edncipe Island",
+    "country": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
     "countryCode": "ST",
     "region": "Africa",
     "lat": 1.6139,
     "lng": 7.4081,
-    "description": "One of the most remote and pristine dive destinations in the Atlantic, Príncipe is a UNESCO Biosphere Reserve rising from the Gulf of Guinea. Its volcanic seamounts and undisturbed reefs host endemic species found nowhere else on Earth, alongside seasonal whale sharks and large pelagics. With very few divers visiting each year, the underwater landscapes here feel genuinely untouched — dense sea fans, healthy hard coral, and extraordinary fish biomass on every dive.",
+    "description": "One of the most remote and pristine dive destinations in the Atlantic, Pr\u00edncipe is a UNESCO Biosphere Reserve rising from the Gulf of Guinea. Its volcanic seamounts and undisturbed reefs host endemic species found nowhere else on Earth, alongside seasonal whale sharks and large pelagics. With very few divers visiting each year, the underwater landscapes here feel genuinely untouched \u2014 dense sea fans, healthy hard coral, and extraordinary fish biomass on every dive.",
     "bestMonths": [
       6,
       7,
@@ -10106,7 +10180,7 @@
     "region": "Europe",
     "lat": 58.89,
     "lng": 11.02,
-    "description": "Kosterfjord is home to Sweden's first and only marine national park, Kosterhavet, established in 2009. The fjord plunges to over 240 metres and channels nutrient-rich Atlantic water from the Norwegian Trench — making it the most species-rich marine environment in Scandinavia. Cold, clear water feeds extraordinary macro life: hundreds of nudibranch species, sea spiders, horse mussels the size of dinner plates, and dense fields of sea urchins carpeting rock walls. Dead man's fingers soft coral and sea fans colonise near-vertical walls. The protected status means visibility and biodiversity are exceptional for a temperate site.",
+    "description": "Kosterfjord is home to Sweden's first and only marine national park, Kosterhavet, established in 2009. The fjord plunges to over 240 metres and channels nutrient-rich Atlantic water from the Norwegian Trench \u2014 making it the most species-rich marine environment in Scandinavia. Cold, clear water feeds extraordinary macro life: hundreds of nudibranch species, sea spiders, horse mussels the size of dinner plates, and dense fields of sea urchins carpeting rock walls. Dead man's fingers soft coral and sea fans colonise near-vertical walls. The protected status means visibility and biodiversity are exceptional for a temperate site.",
     "bestMonths": [
       6,
       7,
@@ -10114,9 +10188,9 @@
       9
     ],
     "siteIds": [
-      "kosterfjord-sweden-saltö-wall",
+      "kosterfjord-sweden-salt\u00f6-wall",
       "kosterfjord-sweden-koster-trench",
-      "kosterfjord-sweden-stängselrevet",
+      "kosterfjord-sweden-st\u00e4ngselrevet",
       "kosterfjord-sweden-nordkoster-urchin-fields"
     ],
     "heroImageUrl": "https://images.pexels.com/photos/27816105/pexels-photo-27816105.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -10130,7 +10204,7 @@
     "region": "Europe",
     "lat": 58.97,
     "lng": 6.17,
-    "description": "The Stavanger region offers some of Northern Europe's most dramatic cold-water diving. Lysefjord cuts 42 kilometres inland beneath vertical cliffs rising 600 metres, and its subsurface walls are equally steep — dropping into darkness colonised by dead man's fingers, sea anemones, and kelp forests. Wolf fish patrol rocky overhangs, Atlantic cod school in the shallows, and nudibranchs of every colour cling to encrusted walls. Several accessible wrecks near Stavanger harbour add a wreck-diving dimension. Summer brings extended daylight, lifting water temperatures enough for productive dry-suit dives with long surface intervals in jaw-dropping scenery.",
+    "description": "The Stavanger region offers some of Northern Europe's most dramatic cold-water diving. Lysefjord cuts 42 kilometres inland beneath vertical cliffs rising 600 metres, and its subsurface walls are equally steep \u2014 dropping into darkness colonised by dead man's fingers, sea anemones, and kelp forests. Wolf fish patrol rocky overhangs, Atlantic cod school in the shallows, and nudibranchs of every colour cling to encrusted walls. Several accessible wrecks near Stavanger harbour add a wreck-diving dimension. Summer brings extended daylight, lifting water temperatures enough for productive dry-suit dives with long surface intervals in jaw-dropping scenery.",
     "bestMonths": [
       5,
       6,
@@ -10155,7 +10229,7 @@
     "region": "Asia Pacific",
     "lat": 9.18,
     "lng": 124.72,
-    "description": "Camiguin is a small volcanic island off the northern coast of Mindanao, and its diving is shaped entirely by that geology. The Sunken Cemetery — a cross-marked reef where an 1871 eruption swallowed a coastal graveyard — is one of the Philippines' most atmospheric dives. Whale sharks visit the waters near Balingoan channel with regularity between November and May, and the island's lack of mass tourism means reefs still carry dense hard coral and schooling fish that have largely vanished elsewhere in the Visayas. Black sand slopes host exceptional muck fauna, and the nearby Mantigue Island marine sanctuary gives every dive a ribbon of colour that is hard to match in Mindanao.",
+    "description": "Camiguin is a small volcanic island off the northern coast of Mindanao, and its diving is shaped entirely by that geology. The Sunken Cemetery \u2014 a cross-marked reef where an 1871 eruption swallowed a coastal graveyard \u2014 is one of the Philippines' most atmospheric dives. Whale sharks visit the waters near Balingoan channel with regularity between November and May, and the island's lack of mass tourism means reefs still carry dense hard coral and schooling fish that have largely vanished elsewhere in the Visayas. Black sand slopes host exceptional muck fauna, and the nearby Mantigue Island marine sanctuary gives every dive a ribbon of colour that is hard to match in Mindanao.",
     "bestMonths": [
       3,
       4,
@@ -10184,7 +10258,7 @@
     "region": "Asia Pacific",
     "lat": 9.98,
     "lng": 123.41,
-    "description": "A limestone pinnacle rising off the southwest coast of Cebu, Pescador Island packs an extraordinary range of marine life into a compact area. The sardine run — locally called the Sardine Ball or Bait Ball — draws thresher sharks, jacks, and barracuda into a choreographed feeding frenzy that can materialise at any depth from 5 to 30 metres. The island's walls drop to beyond 40 metres and are draped in sea fans and black coral, sheltering pygmy seahorses, frogfish, and ghost pipefish in their branches. Moray eels of several species occupy nearly every crack in the reef. Pescador is reachable in 20 minutes by banca from Moalboal, and the consistent current keeps the water clear and the plankton thick enough to support this concentration of life year-round.",
+    "description": "A limestone pinnacle rising off the southwest coast of Cebu, Pescador Island packs an extraordinary range of marine life into a compact area. The sardine run \u2014 locally called the Sardine Ball or Bait Ball \u2014 draws thresher sharks, jacks, and barracuda into a choreographed feeding frenzy that can materialise at any depth from 5 to 30 metres. The island's walls drop to beyond 40 metres and are draped in sea fans and black coral, sheltering pygmy seahorses, frogfish, and ghost pipefish in their branches. Moray eels of several species occupy nearly every crack in the reef. Pescador is reachable in 20 minutes by banca from Moalboal, and the consistent current keeps the water clear and the plankton thick enough to support this concentration of life year-round.",
     "bestMonths": [
       1,
       2,
