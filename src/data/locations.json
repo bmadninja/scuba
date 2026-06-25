@@ -331,7 +331,44 @@
       "makassar-reef-manta-point-osm-qo7mjo",
       "unnamed-osm-mirv5v"
     ],
-    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TheOceanAgency_360_84.jpg"
+    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TheOceanAgency_360_84.jpg",
+    "lodging": [
+      {
+        "name": "Ayana Komodo Waecicu Beach",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Beachfront resort in Labuan Bajo with stunning Flores Sea views",
+        "bookingUrl": "https://www.ayana.com/komodo"
+      },
+      {
+        "name": "Plataran Komodo Resort",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Hillside eco resort with infinity pool and direct national park access",
+        "bookingUrl": "https://www.plataran.com/komodo"
+      },
+      {
+        "name": "La Cecile Boutique Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Intimate boutique property in Labuan Bajo popular with divers",
+        "bookingUrl": "https://www.lacecile.com"
+      },
+      {
+        "name": "Golo Hilltop Hotel",
+        "type": "hotel",
+        "priceRange": "mid-range",
+        "description": "Panoramic hilltop views over Labuan Bajo harbor and surrounding islands",
+        "bookingUrl": "https://www.golohilltop.com"
+      },
+      {
+        "name": "Mawatu Komodo Liveaboard",
+        "type": "liveaboard",
+        "priceRange": "luxury",
+        "description": "Premium liveaboard sleeping on the water between dive sites",
+        "bookingUrl": "https://www.mawatu.com"
+      }
+    ]
   },
   {
     "id": "tulamben-bali-indonesia",
