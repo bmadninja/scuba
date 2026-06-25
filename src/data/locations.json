@@ -62,6 +62,32 @@
         "description": "Local island guesthouse offering affordable diving and whale shark trips.",
         "bookingUrl": "https://www.dhangethiinn.com/"
       }
+    ],
+    "diveOperators": [
+      {
+        "name": "Whale Shark Season",
+        "specialty": "whale sharks and manta rays",
+        "description": "Specialized whale shark and manta tracking across Ari Atoll thilas.",
+        "website": "https://www.whalesharkseason.com"
+      },
+      {
+        "name": "Manta Trust",
+        "specialty": "manta conservation and reef dives",
+        "description": "Research focused manta encounters with conservation education dives.",
+        "website": "https://www.mantatrust.org"
+      },
+      {
+        "name": "Ari Atoll Dive Centre",
+        "specialty": "reef and thila diving",
+        "description": "Full service diving from Fish Head to Manta Point with local guides.",
+        "website": "https://www.ariatolldivers.com"
+      },
+      {
+        "name": "Pelagian Adventures",
+        "specialty": "big animal encounters",
+        "description": "Pelagic species expeditions including sharks, rays and open ocean diving.",
+        "website": "https://www.pelagianadventures.mv"
+      }
     ]
   },
   {
