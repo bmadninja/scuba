@@ -567,6 +567,43 @@
       "gorango-osm-gmj6hr",
       "sachikos-osm-8j7zjm"
     ],
+    "lodging": [
+      {
+        "name": "Siladen Resort and Spa",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "House reef access with dive center and beachfront accommodation.",
+        "bookingUrl": "https://www.siladenresort.com/"
+      },
+      {
+        "name": "Bunaken Oasis",
+        "type": "guesthouse",
+        "priceRange": "budget",
+        "description": "Local guesthouse near the marine park with dive shop access.",
+        "bookingUrl": "https://www.bunakenoasis.com/"
+      },
+      {
+        "name": "Lembeh Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Waterfront resort on Lembeh Island with macro and reef diving.",
+        "bookingUrl": "https://lembehresort.com/"
+      },
+      {
+        "name": "Two Fish Divers Liveaboard",
+        "type": "liveaboard",
+        "priceRange": "mid-range",
+        "description": "Liveaboard exploring Bunaken and Lembeh wall and macro dive sites.",
+        "bookingUrl": "https://www.twofishdivers.com/"
+      },
+      {
+        "name": "Claya Dive Resort",
+        "type": "resort",
+        "priceRange": "luxury",
+        "description": "Premium beachfront resort with full dive operation and spa services.",
+        "bookingUrl": "https://www.clayaresort.com/"
+      }
+    ],
     "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_IshanHassan_05.jpg"
   },
   {
