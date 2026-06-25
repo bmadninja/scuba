@@ -595,7 +595,44 @@
       "apo-reef-philippines-irako-maru",
       "apo-reef-philippines-apo-reef-natural-park"
     ],
-    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_JettBritnell_18.jpg"
+    "heroImageUrl": "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_JettBritnell_18.jpg",
+    "lodging": [
+      {
+        "name": "Apo Island Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Beach resort in Sablayan with dive shop and boat access to Apo Reef.",
+        "bookingUrl": "https://www.apoislande.com/"
+      },
+      {
+        "name": "Philippine Siren Liveaboard",
+        "type": "liveaboard",
+        "priceRange": "mid-range",
+        "description": "Liveaboard based in Sablayan, operates seasonal trips to Apo Reef.",
+        "bookingUrl": "https://www.philippinesiren.com/"
+      },
+      {
+        "name": "Sablayan Beach Club",
+        "type": "resort",
+        "priceRange": "budget",
+        "description": "Casual guesthouse in Sablayan town with boat operator connections.",
+        "bookingUrl": "https://www.sablayan-beachclub.com/"
+      },
+      {
+        "name": "Sea Explorers Club",
+        "type": "liveaboard",
+        "priceRange": "mid-range",
+        "description": "Liveaboard cruise ship offering multi day Apo Reef diving packages.",
+        "bookingUrl": "https://www.seaexplorersclub.com/"
+      },
+      {
+        "name": "Mabulay Island Resort",
+        "type": "resort",
+        "priceRange": "mid-range",
+        "description": "Island resort accessible from Sablayan, convenient base for Apo trips.",
+        "bookingUrl": "https://www.mabulay-island.com/"
+      }
+    ]
   },
   {
     "id": "moalboal-philippines",
