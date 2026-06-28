@@ -1,6 +1,6 @@
 {
   "_comment": "Apparent fishing-effort hours within 50km of each location, from Global Fishing Watch. Built by scripts/fetch-fishing-pressure.mjs. Only locations with successful API responses are written here. Locations missing from this file render no fishing-pressure block.",
-  "lastBuiltAt": "2026-06-27",
+  "lastBuiltAt": "2026-06-28",
   "radiusKm": 50,
   "records": [
     {
@@ -14,7 +14,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -28,7 +28,7 @@
         "year": 2021,
         "fishingHours": 50
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -42,7 +42,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -56,7 +56,7 @@
         "year": 2021,
         "fishingHours": 111
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -70,7 +70,7 @@
         "year": 2021,
         "fishingHours": 32
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -84,7 +84,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -98,7 +98,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -112,7 +112,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -126,7 +126,7 @@
         "year": 2021,
         "fishingHours": 2
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -140,7 +140,7 @@
         "year": 2021,
         "fishingHours": 1
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -152,9 +152,9 @@
       },
       "historical": {
         "year": 2021,
-        "fishingHours": 0
+        "fishingHours": 689
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -168,7 +168,7 @@
         "year": 2021,
         "fishingHours": 1583
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -182,7 +182,7 @@
         "year": 2021,
         "fishingHours": 184
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -196,7 +196,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -210,7 +210,7 @@
         "year": 2021,
         "fishingHours": 77
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -224,7 +224,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -238,7 +238,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -252,7 +252,7 @@
         "year": 2021,
         "fishingHours": 28
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -266,7 +266,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -280,7 +280,7 @@
         "year": 2021,
         "fishingHours": 26220
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -294,7 +294,7 @@
         "year": 2021,
         "fishingHours": 15797
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -308,7 +308,7 @@
         "year": 2021,
         "fishingHours": 7563
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -322,7 +322,7 @@
         "year": 2021,
         "fishingHours": 178393
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -336,7 +336,7 @@
         "year": 2021,
         "fishingHours": 17734
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -350,7 +350,7 @@
         "year": 2021,
         "fishingHours": 26
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -364,7 +364,7 @@
         "year": 2021,
         "fishingHours": 59
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -378,7 +378,7 @@
         "year": 2021,
         "fishingHours": 804
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -392,7 +392,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -406,7 +406,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -420,7 +420,7 @@
         "year": 2021,
         "fishingHours": 1
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -434,7 +434,7 @@
         "year": 2021,
         "fishingHours": 1557
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -448,7 +448,7 @@
         "year": 2021,
         "fishingHours": 3335
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -462,7 +462,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -476,7 +476,7 @@
         "year": 2021,
         "fishingHours": 15
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -490,7 +490,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -504,7 +504,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -518,7 +518,7 @@
         "year": 2021,
         "fishingHours": 163
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -532,7 +532,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -546,7 +546,7 @@
         "year": 2021,
         "fishingHours": 1134
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -560,7 +560,7 @@
         "year": 2021,
         "fishingHours": 4896
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -574,7 +574,7 @@
         "year": 2021,
         "fishingHours": 4
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -588,7 +588,7 @@
         "year": 2021,
         "fishingHours": 11546
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -602,7 +602,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -616,7 +616,7 @@
         "year": 2021,
         "fishingHours": 2697
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -630,7 +630,7 @@
         "year": 2021,
         "fishingHours": 3167
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -644,7 +644,7 @@
         "year": 2021,
         "fishingHours": 2965
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -658,7 +658,7 @@
         "year": 2021,
         "fishingHours": 14
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -672,7 +672,7 @@
         "year": 2021,
         "fishingHours": 41
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -686,7 +686,7 @@
         "year": 2021,
         "fishingHours": 171
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -700,7 +700,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -714,7 +714,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -728,7 +728,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -742,7 +742,7 @@
         "year": 2021,
         "fishingHours": 8793
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -756,7 +756,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -770,7 +770,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -784,7 +784,7 @@
         "year": 2021,
         "fishingHours": 51
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -798,7 +798,7 @@
         "year": 2021,
         "fishingHours": 46
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -812,7 +812,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -826,7 +826,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -840,7 +840,7 @@
         "year": 2021,
         "fishingHours": 4
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -854,7 +854,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -868,7 +868,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -882,7 +882,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -896,7 +896,7 @@
         "year": 2021,
         "fishingHours": 23
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -910,7 +910,7 @@
         "year": 2021,
         "fishingHours": 23
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -924,7 +924,7 @@
         "year": 2021,
         "fishingHours": 34
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -938,7 +938,7 @@
         "year": 2021,
         "fishingHours": 12136
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -952,7 +952,7 @@
         "year": 2021,
         "fishingHours": 1318
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -966,7 +966,7 @@
         "year": 2021,
         "fishingHours": 61
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -980,7 +980,7 @@
         "year": 2021,
         "fishingHours": 365
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -994,7 +994,7 @@
         "year": 2021,
         "fishingHours": 12
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1002,13 +1002,13 @@
       "radiusKm": 50,
       "current": {
         "year": 2025,
-        "fishingHours": 343
+        "fishingHours": 0
       },
       "historical": {
         "year": 2021,
         "fishingHours": 11
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1022,7 +1022,7 @@
         "year": 2021,
         "fishingHours": 7
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1036,7 +1036,7 @@
         "year": 2021,
         "fishingHours": 9
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1050,7 +1050,7 @@
         "year": 2021,
         "fishingHours": 45
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1064,7 +1064,7 @@
         "year": 2021,
         "fishingHours": 192
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1078,7 +1078,7 @@
         "year": 2021,
         "fishingHours": 1958
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1092,7 +1092,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1106,7 +1106,7 @@
         "year": 2021,
         "fishingHours": 820
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1120,7 +1120,7 @@
         "year": 2021,
         "fishingHours": 620
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1134,7 +1134,7 @@
         "year": 2021,
         "fishingHours": 111
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1148,7 +1148,7 @@
         "year": 2021,
         "fishingHours": 315
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1162,7 +1162,7 @@
         "year": 2021,
         "fishingHours": 628
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1176,7 +1176,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1190,7 +1190,7 @@
         "year": 2021,
         "fishingHours": 10025
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1204,7 +1204,7 @@
         "year": 2021,
         "fishingHours": 38
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1218,7 +1218,7 @@
         "year": 2021,
         "fishingHours": 10
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1232,7 +1232,7 @@
         "year": 2021,
         "fishingHours": 16
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1246,7 +1246,7 @@
         "year": 2021,
         "fishingHours": 1
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1260,7 +1260,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1274,7 +1274,7 @@
         "year": 2021,
         "fishingHours": 50
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1288,7 +1288,7 @@
         "year": 2021,
         "fishingHours": 175
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1302,7 +1302,7 @@
         "year": 2021,
         "fishingHours": 16
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1316,7 +1316,7 @@
         "year": 2021,
         "fishingHours": 9890
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1330,7 +1330,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1344,7 +1344,7 @@
         "year": 2021,
         "fishingHours": 69765
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1358,7 +1358,7 @@
         "year": 2021,
         "fishingHours": 412
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1372,7 +1372,7 @@
         "year": 2021,
         "fishingHours": 98308
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1386,7 +1386,7 @@
         "year": 2021,
         "fishingHours": 35558
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1400,7 +1400,7 @@
         "year": 2021,
         "fishingHours": 1460
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1414,7 +1414,7 @@
         "year": 2021,
         "fishingHours": 16878
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1428,7 +1428,7 @@
         "year": 2021,
         "fishingHours": 75651
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1442,7 +1442,7 @@
         "year": 2021,
         "fishingHours": 7714
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1456,7 +1456,7 @@
         "year": 2021,
         "fishingHours": 149
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1470,7 +1470,7 @@
         "year": 2021,
         "fishingHours": 1892
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1484,7 +1484,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1498,7 +1498,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1512,7 +1512,7 @@
         "year": 2021,
         "fishingHours": 35
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1526,7 +1526,7 @@
         "year": 2021,
         "fishingHours": 467
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1540,7 +1540,7 @@
         "year": 2021,
         "fishingHours": 11981
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1554,7 +1554,7 @@
         "year": 2021,
         "fishingHours": 137
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1568,7 +1568,7 @@
         "year": 2021,
         "fishingHours": 161
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1582,7 +1582,7 @@
         "year": 2021,
         "fishingHours": 1113
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1596,7 +1596,7 @@
         "year": 2021,
         "fishingHours": 16822
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1610,7 +1610,7 @@
         "year": 2021,
         "fishingHours": 18
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1624,7 +1624,7 @@
         "year": 2021,
         "fishingHours": 32
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1638,7 +1638,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1652,7 +1652,7 @@
         "year": 2021,
         "fishingHours": 50
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1666,7 +1666,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1680,7 +1680,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1694,7 +1694,7 @@
         "year": 2021,
         "fishingHours": 36
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1708,7 +1708,7 @@
         "year": 2021,
         "fishingHours": 11
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1722,7 +1722,7 @@
         "year": 2021,
         "fishingHours": 25
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1736,7 +1736,7 @@
         "year": 2021,
         "fishingHours": 53
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1750,7 +1750,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1764,7 +1764,7 @@
         "year": 2021,
         "fishingHours": 7142
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1778,7 +1778,7 @@
         "year": 2021,
         "fishingHours": 3581
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1792,7 +1792,7 @@
         "year": 2021,
         "fishingHours": 946
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1806,7 +1806,7 @@
         "year": 2021,
         "fishingHours": 2355
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1820,7 +1820,7 @@
         "year": 2021,
         "fishingHours": 3448
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1834,7 +1834,7 @@
         "year": 2021,
         "fishingHours": 28544
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1848,7 +1848,7 @@
         "year": 2021,
         "fishingHours": 173
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1862,7 +1862,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1876,7 +1876,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1890,7 +1890,7 @@
         "year": 2021,
         "fishingHours": 33
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1904,7 +1904,7 @@
         "year": 2021,
         "fishingHours": 549
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1918,7 +1918,7 @@
         "year": 2021,
         "fishingHours": 120
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1932,7 +1932,7 @@
         "year": 2021,
         "fishingHours": 27657
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1946,7 +1946,7 @@
         "year": 2021,
         "fishingHours": 491
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1960,7 +1960,7 @@
         "year": 2021,
         "fishingHours": 17
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1974,7 +1974,7 @@
         "year": 2021,
         "fishingHours": 3
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1988,7 +1988,7 @@
         "year": 2021,
         "fishingHours": 87
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2002,7 +2002,7 @@
         "year": 2021,
         "fishingHours": 48
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2016,7 +2016,7 @@
         "year": 2021,
         "fishingHours": 928
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2030,7 +2030,7 @@
         "year": 2021,
         "fishingHours": 522
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2044,7 +2044,7 @@
         "year": 2021,
         "fishingHours": 243
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2058,7 +2058,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2072,7 +2072,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2086,7 +2086,7 @@
         "year": 2021,
         "fishingHours": 50
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2100,7 +2100,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2114,7 +2114,7 @@
         "year": 2021,
         "fishingHours": 129
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2128,7 +2128,7 @@
         "year": 2021,
         "fishingHours": 1
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2142,7 +2142,7 @@
         "year": 2021,
         "fishingHours": 26
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2156,7 +2156,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2170,7 +2170,7 @@
         "year": 2021,
         "fishingHours": 7
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2184,7 +2184,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2198,7 +2198,7 @@
         "year": 2021,
         "fishingHours": 178
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2212,7 +2212,7 @@
         "year": 2021,
         "fishingHours": 172
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2226,7 +2226,7 @@
         "year": 2021,
         "fishingHours": 147
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2240,7 +2240,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2254,7 +2254,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2268,7 +2268,7 @@
         "year": 2021,
         "fishingHours": 2398
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2282,7 +2282,7 @@
         "year": 2021,
         "fishingHours": 5025
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2296,7 +2296,7 @@
         "year": 2021,
         "fishingHours": 540
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2308,9 +2308,9 @@
       },
       "historical": {
         "year": 2021,
-        "fishingHours": 0
+        "fishingHours": 10
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2324,7 +2324,7 @@
         "year": 2021,
         "fishingHours": 7
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2338,7 +2338,7 @@
         "year": 2021,
         "fishingHours": 472
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2352,7 +2352,7 @@
         "year": 2021,
         "fishingHours": 1751
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2366,7 +2366,7 @@
         "year": 2021,
         "fishingHours": 973
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2380,7 +2380,7 @@
         "year": 2021,
         "fishingHours": 427
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2394,7 +2394,7 @@
         "year": 2021,
         "fishingHours": 9819
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2408,7 +2408,7 @@
         "year": 2021,
         "fishingHours": 10333
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2422,7 +2422,7 @@
         "year": 2021,
         "fishingHours": 26240
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2436,7 +2436,7 @@
         "year": 2021,
         "fishingHours": 18314
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2450,7 +2450,7 @@
         "year": 2021,
         "fishingHours": 10302
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2464,7 +2464,7 @@
         "year": 2021,
         "fishingHours": 132224
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2478,7 +2478,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2492,7 +2492,7 @@
         "year": 2021,
         "fishingHours": 5
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2506,7 +2506,7 @@
         "year": 2021,
         "fishingHours": 13007
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2520,7 +2520,7 @@
         "year": 2021,
         "fishingHours": 16237
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2534,7 +2534,7 @@
         "year": 2021,
         "fishingHours": 5076
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2548,7 +2548,7 @@
         "year": 2021,
         "fishingHours": 75591
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2562,7 +2562,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2576,7 +2576,7 @@
         "year": 2021,
         "fishingHours": 4435
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2590,7 +2590,7 @@
         "year": 2021,
         "fishingHours": 28
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2604,7 +2604,7 @@
         "year": 2021,
         "fishingHours": 1544
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2618,7 +2618,7 @@
         "year": 2021,
         "fishingHours": 21
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2632,7 +2632,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2646,7 +2646,7 @@
         "year": 2021,
         "fishingHours": 110
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2660,7 +2660,7 @@
         "year": 2021,
         "fishingHours": 2
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2674,7 +2674,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2688,7 +2688,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2702,7 +2702,7 @@
         "year": 2021,
         "fishingHours": 4304
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2716,7 +2716,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2730,7 +2730,7 @@
         "year": 2021,
         "fishingHours": 13264
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2744,7 +2744,7 @@
         "year": 2021,
         "fishingHours": 3168
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2758,7 +2758,7 @@
         "year": 2021,
         "fishingHours": 387
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2772,7 +2772,7 @@
         "year": 2021,
         "fishingHours": 3
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2786,7 +2786,7 @@
         "year": 2021,
         "fishingHours": 507
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2800,7 +2800,7 @@
         "year": 2021,
         "fishingHours": 1125
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2814,7 +2814,7 @@
         "year": 2021,
         "fishingHours": 83
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2828,7 +2828,7 @@
         "year": 2021,
         "fishingHours": 65051
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2842,7 +2842,7 @@
         "year": 2021,
         "fishingHours": 25
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2856,7 +2856,7 @@
         "year": 2021,
         "fishingHours": 327
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2870,7 +2870,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2884,7 +2884,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2898,7 +2898,7 @@
         "year": 2021,
         "fishingHours": 14
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2912,7 +2912,7 @@
         "year": 2021,
         "fishingHours": 51
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2926,7 +2926,7 @@
         "year": 2021,
         "fishingHours": 278
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2940,7 +2940,7 @@
         "year": 2021,
         "fishingHours": 710
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2954,7 +2954,7 @@
         "year": 2021,
         "fishingHours": 379
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2968,7 +2968,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2982,7 +2982,7 @@
         "year": 2021,
         "fishingHours": 7925
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2996,7 +2996,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3010,7 +3010,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3024,7 +3024,7 @@
         "year": 2021,
         "fishingHours": 12572
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3038,7 +3038,7 @@
         "year": 2021,
         "fishingHours": 2818
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3052,7 +3052,7 @@
         "year": 2021,
         "fishingHours": 31232
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3066,7 +3066,7 @@
         "year": 2021,
         "fishingHours": 10329
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3080,7 +3080,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3094,7 +3094,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3108,7 +3108,7 @@
         "year": 2021,
         "fishingHours": 721
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3122,7 +3122,7 @@
         "year": 2021,
         "fishingHours": 462
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3136,7 +3136,7 @@
         "year": 2021,
         "fishingHours": 6722
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3150,7 +3150,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3164,7 +3164,7 @@
         "year": 2021,
         "fishingHours": 149
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3178,7 +3178,7 @@
         "year": 2021,
         "fishingHours": 42
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3192,7 +3192,7 @@
         "year": 2021,
         "fishingHours": 6
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3206,7 +3206,7 @@
         "year": 2021,
         "fishingHours": 48
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3220,7 +3220,7 @@
         "year": 2021,
         "fishingHours": 11096
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3234,7 +3234,7 @@
         "year": 2021,
         "fishingHours": 1427
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3248,7 +3248,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3262,7 +3262,7 @@
         "year": 2021,
         "fishingHours": 11930
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3276,7 +3276,7 @@
         "year": 2021,
         "fishingHours": 132684
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3290,7 +3290,7 @@
         "year": 2021,
         "fishingHours": 44164
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3304,7 +3304,7 @@
         "year": 2021,
         "fishingHours": 14427
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3318,7 +3318,7 @@
         "year": 2021,
         "fishingHours": 35
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3332,7 +3332,7 @@
         "year": 2021,
         "fishingHours": 959
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3346,7 +3346,7 @@
         "year": 2021,
         "fishingHours": 22918
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3360,7 +3360,7 @@
         "year": 2021,
         "fishingHours": 817
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3374,7 +3374,7 @@
         "year": 2021,
         "fishingHours": 420
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3388,7 +3388,7 @@
         "year": 2021,
         "fishingHours": 1637
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3402,7 +3402,7 @@
         "year": 2021,
         "fishingHours": 5261
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3416,7 +3416,7 @@
         "year": 2021,
         "fishingHours": 2625
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3430,7 +3430,7 @@
         "year": 2021,
         "fishingHours": 125
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3444,7 +3444,7 @@
         "year": 2021,
         "fishingHours": 31417
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3458,7 +3458,7 @@
         "year": 2021,
         "fishingHours": 12580
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3472,7 +3472,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3486,7 +3486,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3500,7 +3500,7 @@
         "year": 2021,
         "fishingHours": 45
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3514,7 +3514,7 @@
         "year": 2021,
         "fishingHours": 7000
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3528,7 +3528,7 @@
         "year": 2021,
         "fishingHours": 15708
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3542,7 +3542,7 @@
         "year": 2021,
         "fishingHours": 10580
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3556,7 +3556,7 @@
         "year": 2021,
         "fishingHours": 10972
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3570,7 +3570,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3584,7 +3584,7 @@
         "year": 2021,
         "fishingHours": 6650
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3598,7 +3598,7 @@
         "year": 2021,
         "fishingHours": 530
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3612,7 +3612,7 @@
         "year": 2021,
         "fishingHours": 56397
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3626,7 +3626,7 @@
         "year": 2021,
         "fishingHours": 970
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3640,7 +3640,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3654,7 +3654,7 @@
         "year": 2021,
         "fishingHours": 21
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3668,7 +3668,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3682,7 +3682,7 @@
         "year": 2021,
         "fishingHours": 3443
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3696,7 +3696,7 @@
         "year": 2021,
         "fishingHours": 385
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3710,7 +3710,7 @@
         "year": 2021,
         "fishingHours": 399
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3724,7 +3724,7 @@
         "year": 2021,
         "fishingHours": 66
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3738,7 +3738,7 @@
         "year": 2021,
         "fishingHours": 1656
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3752,7 +3752,7 @@
         "year": 2021,
         "fishingHours": 1198
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3766,7 +3766,7 @@
         "year": 2021,
         "fishingHours": 26417
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3780,7 +3780,7 @@
         "year": 2021,
         "fishingHours": 146397
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3794,7 +3794,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3808,7 +3808,7 @@
         "year": 2021,
         "fishingHours": 1125
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3822,7 +3822,7 @@
         "year": 2021,
         "fishingHours": 1934
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3836,7 +3836,7 @@
         "year": 2021,
         "fishingHours": 15730
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3850,7 +3850,7 @@
         "year": 2021,
         "fishingHours": 51888
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3864,7 +3864,7 @@
         "year": 2021,
         "fishingHours": 5
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3878,7 +3878,7 @@
         "year": 2021,
         "fishingHours": 38
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3892,7 +3892,7 @@
         "year": 2021,
         "fishingHours": 12582
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3906,7 +3906,7 @@
         "year": 2021,
         "fishingHours": 53668
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3920,7 +3920,7 @@
         "year": 2021,
         "fishingHours": 22126
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3934,7 +3934,7 @@
         "year": 2021,
         "fishingHours": 3
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3948,7 +3948,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3962,7 +3962,7 @@
         "year": 2021,
         "fishingHours": 36
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3976,7 +3976,7 @@
         "year": 2021,
         "fishingHours": 5178
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3990,7 +3990,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4004,7 +4004,7 @@
         "year": 2021,
         "fishingHours": 58242
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4018,7 +4018,7 @@
         "year": 2021,
         "fishingHours": 31641
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4032,7 +4032,7 @@
         "year": 2021,
         "fishingHours": 1341
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4046,7 +4046,7 @@
         "year": 2021,
         "fishingHours": 9544
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4060,7 +4060,7 @@
         "year": 2021,
         "fishingHours": 76181
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4072,9 +4072,9 @@
       },
       "historical": {
         "year": 2021,
-        "fishingHours": 0
+        "fishingHours": 353
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4088,7 +4088,7 @@
         "year": 2021,
         "fishingHours": 3944
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4102,7 +4102,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4116,7 +4116,7 @@
         "year": 2021,
         "fishingHours": 18435
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4130,7 +4130,7 @@
         "year": 2021,
         "fishingHours": 7762
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4144,7 +4144,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4158,7 +4158,7 @@
         "year": 2021,
         "fishingHours": 4320
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4172,7 +4172,7 @@
         "year": 2021,
         "fishingHours": 10831
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4186,7 +4186,7 @@
         "year": 2021,
         "fishingHours": 16785
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4200,7 +4200,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4214,7 +4214,7 @@
         "year": 2021,
         "fishingHours": 54
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4228,7 +4228,7 @@
         "year": 2021,
         "fishingHours": 461
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4242,7 +4242,7 @@
         "year": 2021,
         "fishingHours": 2626
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4256,7 +4256,7 @@
         "year": 2021,
         "fishingHours": 23561
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4270,7 +4270,7 @@
         "year": 2021,
         "fishingHours": 21283
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4284,7 +4284,7 @@
         "year": 2021,
         "fishingHours": 30
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4298,7 +4298,7 @@
         "year": 2021,
         "fishingHours": 3443
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4312,7 +4312,7 @@
         "year": 2021,
         "fishingHours": 40
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4326,7 +4326,7 @@
         "year": 2021,
         "fishingHours": 21952
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4340,7 +4340,7 @@
         "year": 2021,
         "fishingHours": 1010
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4354,7 +4354,7 @@
         "year": 2021,
         "fishingHours": 109
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4368,7 +4368,7 @@
         "year": 2021,
         "fishingHours": 2
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4382,7 +4382,7 @@
         "year": 2021,
         "fishingHours": 189
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4396,7 +4396,7 @@
         "year": 2021,
         "fishingHours": 432
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4410,7 +4410,7 @@
         "year": 2021,
         "fishingHours": 4638
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4424,7 +4424,7 @@
         "year": 2021,
         "fishingHours": 1089
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4438,7 +4438,7 @@
         "year": 2021,
         "fishingHours": 13
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4452,7 +4452,7 @@
         "year": 2021,
         "fishingHours": 4991
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4466,7 +4466,7 @@
         "year": 2021,
         "fishingHours": 5447
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4480,7 +4480,7 @@
         "year": 2021,
         "fishingHours": 8692
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4494,7 +4494,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4508,7 +4508,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4522,7 +4522,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4536,7 +4536,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4550,7 +4550,7 @@
         "year": 2021,
         "fishingHours": 837
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4564,7 +4564,7 @@
         "year": 2021,
         "fishingHours": 1257
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4578,7 +4578,7 @@
         "year": 2021,
         "fishingHours": 23
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4592,7 +4592,7 @@
         "year": 2021,
         "fishingHours": 773
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4606,7 +4606,7 @@
         "year": 2021,
         "fishingHours": 1153
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4620,7 +4620,7 @@
         "year": 2021,
         "fishingHours": 547
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4634,7 +4634,7 @@
         "year": 2021,
         "fishingHours": 319
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4648,7 +4648,7 @@
         "year": 2021,
         "fishingHours": 165
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4662,7 +4662,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4676,7 +4676,7 @@
         "year": 2021,
         "fishingHours": 1384
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4690,7 +4690,7 @@
         "year": 2021,
         "fishingHours": 1550
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4704,7 +4704,7 @@
         "year": 2021,
         "fishingHours": 4549
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4718,7 +4718,7 @@
         "year": 2021,
         "fishingHours": 7889
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4732,7 +4732,7 @@
         "year": 2021,
         "fishingHours": 25
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4746,7 +4746,7 @@
         "year": 2021,
         "fishingHours": 133
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4760,7 +4760,7 @@
         "year": 2021,
         "fishingHours": 11357
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4774,7 +4774,7 @@
         "year": 2021,
         "fishingHours": 162
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4788,7 +4788,7 @@
         "year": 2021,
         "fishingHours": 92552
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4802,7 +4802,7 @@
         "year": 2021,
         "fishingHours": 24741
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4816,7 +4816,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4830,7 +4830,7 @@
         "year": 2021,
         "fishingHours": 2
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4844,7 +4844,7 @@
         "year": 2021,
         "fishingHours": 0
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4858,7 +4858,7 @@
         "year": 2021,
         "fishingHours": 234
       },
-      "fetchedAt": "2026-06-27T09:20:15.863Z",
+      "fetchedAt": "2026-06-28T09:50:09.085Z",
       "source": "global-fishing-watch"
     }
   ]
