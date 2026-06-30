@@ -3,13 +3,15 @@
 import { useState, useRef, useCallback, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import sitesRaw from "@/data/sites.json";
+import exifr from "exifr";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type Mode = "sighting" | "survey";
-type Category = "fish" | "coral" | "other";
+type Category = "fish" | "shark" | "turtle" | "invert" | "other";
 type BleachingScore = "healthy" | "pale" | "bleached" | "dead";
-type WizardStep = 1 | 2 | 3 | 4;
+type WizardStep = 1 | 2 | 3;
+type RoutingCategory = "seahorse" | "whale_dolphin" | "whale_shark" | "coral";
 type SurveyStep = 1 | 2 | 3 | 4;
 
 type CoralWatchEntry = {
@@ -72,6 +74,8 @@ type FormData = {
   tempC: string;
   bleachingScore: BleachingScore | null;
   notes: string;
+  routingCategory: RoutingCategory | null;
+  speciesHint: string | null;
 };
 
 type SubmitResponse = {
@@ -127,51 +131,46 @@ const HEIC_EXTS = new Set(["heic", "heif"]);
 const MAX_PHOTOS = 10;
 const MAX_BYTES = 20 * 1024 * 1024;
 
-// Lightweight EXIF date reader (no exifr in package.json)
 async function readExifDate(file: File): Promise<string | null> {
-  return new Promise((resolve) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try {
-        const buf = e.target?.result as ArrayBuffer;
-        const view = new DataView(buf);
-        let offset = 2;
-        while (offset < view.byteLength - 4) {
-          const marker = view.getUint16(offset);
-          const length = view.getUint16(offset + 2);
-          if (marker === 0xffe1) {
-            const header = new TextDecoder().decode(new Uint8Array(buf, offset + 4, 6));
-            if (header.startsWith("Exif")) {
-              const tiffStart = offset + 10;
-              const tv = new DataView(buf, tiffStart);
-              const le = tv.getUint16(0) === 0x4949;
-              const ifd0 = tv.getUint32(4, le);
-              const nEntries = tv.getUint16(ifd0, le);
-              for (let i = 0; i < nEntries; i++) {
-                const e0 = ifd0 + 2 + i * 12;
-                const tag = tv.getUint16(e0, le);
-                if (tag === 0x9003 || tag === 0x0132) {
-                  const vOff = tv.getUint32(e0 + 8, le);
-                  const ds = new TextDecoder().decode(new Uint8Array(buf, tiffStart + vOff, 10));
-                  const iso = ds.replace(/^(\d{4}):(\d{2}):(\d{2})$/, "$1-$2-$3");
-                  if (/^\d{4}-\d{2}-\d{2}$/.test(iso)) { resolve(iso); return; }
-                }
-              }
-            }
-          }
-          if (length < 2) break;
-          offset += 2 + length;
-        }
-      } catch { /* ignore */ }
-      resolve(null);
-    };
-    reader.readAsArrayBuffer(file.slice(0, 131072));
-  });
+  try {
+    const tags = await exifr.parse(file, { pick: ["DateTimeOriginal", "DateTime"] });
+    if (!tags) return null;
+    const raw: Date | string | undefined = tags.DateTimeOriginal ?? tags.DateTime;
+    if (!raw) return null;
+    const d = raw instanceof Date ? raw : new Date(raw);
+    if (isNaN(d.getTime())) return null;
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  } catch {
+    return null;
+  }
+}
+
+function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLng = ((lng2 - lng1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) * Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function nearestSiteWithinKm(lat: number, lng: number, radiusKm: number): SiteOption | null {
+  let best: SiteOption | null = null;
+  let bestDist = Infinity;
+  for (const site of ALL_SITES) {
+    const d = haversineKm(lat, lng, site.lat, site.lng);
+    if (d < bestDist && d <= radiusKm) {
+      bestDist = d;
+      best = site;
+    }
+  }
+  return best;
 }
 
 // ─── Step indicator ──────────────────────────────────────────────────────────
 
-const STEP_LABELS = ["Dive site", "Your sighting", "Submit"];
+const STEP_LABELS = ["Dive site", "Your sighting"];
 
 function StepIndicator({ currentStep }: { currentStep: WizardStep }) {
   return (
@@ -533,20 +532,26 @@ function Step2Sighting({
   formData,
   setFormData,
   onBack,
-  onNext,
+  onGoBackToSiteSearch,
+  onSuccess,
 }: {
   formData: FormData;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
   onBack: () => void;
-  onNext: () => void;
+  onGoBackToSiteSearch: () => void;
+  onSuccess: (res: SubmitResponse) => void;
 }) {
   const [dragging, setDragging] = useState(false);
   const [photoError, setPhotoError] = useState<string | null>(null);
+  const [gpsDetectedSite, setGpsDetectedSite] = useState<SiteOption | null>(null);
+  const [gpsBannerDismissed, setGpsBannerDismissed] = useState(false);
   const [speciesQuery, setSpeciesQuery] = useState("");
   const [taxonSuggestions, setTaxonSuggestions] = useState<TaxonSuggestion[]>([]);
   const [speciesDropdownOpen, setSpeciesDropdownOpen] = useState(false);
   const [speciesError, setSpeciesError] = useState<string | null>(null);
   const [charCount, setCharCount] = useState(formData.notes.length);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const searchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -581,12 +586,34 @@ function Step2Sighting({
         return { ...prev, photos: [...prev.photos, ...toAdd] };
       });
 
-      // Read EXIF date from first photo
-      if (incoming.length > 0 && !formData.date) {
-        const exifDate = await readExifDate(incoming[0]);
-        if (exifDate) {
-          setFormData((prev) => ({ ...prev, date: exifDate }));
-        }
+      if (incoming.length > 0) {
+        // Both EXIF reads fire in background — thumbnails already shown above
+        const firstFile = incoming[0];
+        (async () => {
+          try {
+            const tags = await exifr.parse(firstFile, { pick: ["DateTimeOriginal", "DateTime", "latitude", "longitude"] });
+            if (tags) {
+              if (!formData.date) {
+                const raw: Date | string | undefined = tags.DateTimeOriginal ?? tags.DateTime;
+                if (raw) {
+                  const d = raw instanceof Date ? raw : new Date(raw);
+                  if (!isNaN(d.getTime())) {
+                    const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+                    setFormData((prev) => ({ ...prev, date: iso }));
+                  }
+                }
+              }
+              if (typeof tags.latitude === "number" && typeof tags.longitude === "number") {
+                const site = nearestSiteWithinKm(tags.latitude, tags.longitude, 50);
+                if (site) {
+                  setGpsDetectedSite(site);
+                  setGpsBannerDismissed(false);
+                  setFormData((prev) => ({ ...prev, site }));
+                }
+              }
+            }
+          } catch { /* ignore */ }
+        })();
       }
     },
     [formData.date, setFormData]
@@ -657,15 +684,51 @@ function Step2Sighting({
     setFormData((prev) => ({
       ...prev,
       category: c,
-      bleachingScore: c !== "coral" ? null : prev.bleachingScore,
+      routingCategory: null,
+      bleachingScore: null,
+      speciesHint: null,
     }));
   };
 
-  const CAT_OPTIONS: { value: Category; label: string }[] = [
-    { value: "fish", label: "Fish or marine life" },
-    { value: "coral", label: "Coral" },
-    { value: "other", label: "Not sure / something else" },
+  const setSubOption = (routing: RoutingCategory | null, hint: string | null) => {
+    setFormData((prev) => ({
+      ...prev,
+      routingCategory: routing,
+      speciesHint: hint,
+      bleachingScore: routing === "coral" ? prev.bleachingScore : null,
+    }));
+  };
+
+  const CAT_OPTIONS: { value: Category; label: string; description: string }[] = [
+    { value: "fish",   label: "Fish",                description: "Reef fish, pelagic fish, anything finned." },
+    { value: "shark",  label: "Sharks & rays",       description: "All sharks, rays, skates, and related species." },
+    { value: "turtle", label: "Turtles",             description: "Sea turtles of any species." },
+    { value: "invert", label: "Invertebrates",       description: "Corals, nudibranchs, octopus, crab, urchins — anything without a backbone." },
+    { value: "other",  label: "Other / I'm not sure", description: "Marine mammals, sea snakes, anything that does not fit above." },
   ];
+
+  type SubOption = { label: string; routing?: RoutingCategory; hint?: string };
+  const CAT_SUB_OPTIONS: Partial<Record<Category, SubOption[]>> = {
+    shark: [
+      { label: "Whale shark",   routing: "whale_shark" },
+      { label: "Hammerhead",    hint: "hammerhead" },
+      { label: "Manta ray",     hint: "manta_ray" },
+      { label: "Nurse shark",   hint: "nurse_shark" },
+      { label: "Reef shark",    hint: "reef_shark" },
+      { label: "Stingray",      hint: "stingray" },
+    ],
+    invert: [
+      { label: "Coral",        routing: "coral" },
+      { label: "Seahorse",     routing: "seahorse" },
+      { label: "Octopus / cuttlefish", hint: "octopus_cuttlefish" },
+      { label: "Nudibranch",   hint: "nudibranch" },
+    ],
+    other: [
+      { label: "Whale or dolphin", routing: "whale_dolphin" },
+      { label: "Dugong",           hint: "dugong" },
+      { label: "Sea snake",        hint: "sea_snake" },
+    ],
+  };
 
   const BLEACH_OPTIONS: { value: BleachingScore; label: string }[] = [
     { value: "healthy", label: "Healthy" },
@@ -674,12 +737,50 @@ function Step2Sighting({
     { value: "dead", label: "Dead" },
   ];
 
-  const validateAndNext = () => {
+  const handleSubmit = async () => {
     if (formData.photos.length === 0) {
       setPhotoError("Please add at least 1 photo.");
       return;
     }
-    onNext();
+    setLoading(true);
+    setErrorMsg(null);
+    try {
+      const fd = new FormData();
+      if (formData.site) {
+        fd.append("siteId", formData.site.id);
+        fd.append("siteName", formData.site.name);
+        fd.append("siteLat", String(formData.site.lat));
+        fd.append("siteLng", String(formData.site.lng));
+      } else {
+        fd.append("siteId", "unknown");
+        fd.append("siteName", "Not specified");
+        fd.append("siteLat", "0");
+        fd.append("siteLng", "0");
+      }
+      const inatCategory = (formData.category === "fish" || formData.category === "shark") ? "fish" : "other";
+      fd.append("category", inatCategory);
+      fd.append("observedOn", formData.date);
+      fd.append("isSeahorse", String(formData.routingCategory === "seahorse"));
+      fd.append("routingCategory", formData.routingCategory ?? "");
+      fd.append("needsReview", "false");
+      if (formData.depthM) fd.append("depthM", formData.depthM);
+      if (formData.tempC) fd.append("tempC", formData.tempC);
+      if (formData.bleachingScore) fd.append("bleachingScore", formData.bleachingScore);
+      if (formData.speciesHint) fd.append("speciesHint", formData.speciesHint);
+      const CAT_LABELS: Record<Category, string> = { fish: "Fish", shark: "Sharks & rays", turtle: "Turtle", invert: "Invertebrate", other: "Other" };
+      const subLabel = formData.speciesHint ?? (formData.routingCategory === "whale_shark" ? "Whale shark" : formData.routingCategory === "seahorse" ? "Seahorse" : formData.routingCategory === "whale_dolphin" ? "Whale or dolphin" : formData.routingCategory === "coral" ? "Coral" : null);
+      const speciesDisplay = subLabel ?? (formData.category ? CAT_LABELS[formData.category] : "Unknown");
+      fd.append("speciesDisplay", speciesDisplay);
+      for (const p of formData.photos) fd.append("photos", p);
+      const res = await fetch("/api/submit-sighting", { method: "POST", body: fd });
+      const data = (await res.json()) as SubmitResponse;
+      if (!res.ok) setErrorMsg(data.error ?? data.message ?? "Submission failed. Please try again.");
+      else onSuccess(data);
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -760,6 +861,59 @@ function Step2Sighting({
           </div>
         )}
 
+        {gpsDetectedSite && !gpsBannerDismissed && (
+          <div
+            className="flex items-center justify-between rounded-sm px-3 py-2 mb-3 text-sm"
+            style={{
+              background: "rgba(0,120,180,0.07)",
+              border: "1px solid var(--color-ocean)",
+              color: "var(--color-ink)",
+            }}
+          >
+            <span>
+              We detected{" "}
+              <span style={{ fontWeight: 600 }}>{gpsDetectedSite.name}</span>{" "}
+              from your photo.{" "}
+              <button
+                type="button"
+                onClick={() => {
+                  setGpsBannerDismissed(true);
+                  setGpsDetectedSite(null);
+                  setFormData((prev) => ({ ...prev, site: null }));
+                  onGoBackToSiteSearch();
+                }}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: "var(--color-ocean)",
+                  padding: 0,
+                  textDecoration: "underline",
+                  fontSize: "inherit",
+                }}
+              >
+                Change
+              </button>
+            </span>
+            <button
+              type="button"
+              aria-label="Dismiss"
+              onClick={() => setGpsBannerDismissed(true)}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                color: "var(--color-ink-2)",
+                fontSize: 16,
+                lineHeight: 1,
+                padding: "0 0 0 8px",
+              }}
+            >
+              ×
+            </button>
+          </div>
+        )}
+
         {photoError && (
           <p className="text-sm mt-1" style={{ color: "var(--color-declining)" }}>{photoError}</p>
         )}
@@ -780,557 +934,78 @@ function Step2Sighting({
           What did you photograph?
         </p>
         <div className="flex flex-col gap-2">
-          {CAT_OPTIONS.map((opt) => (
-            <button
-              key={opt.value}
-              type="button"
-              onClick={() => setCategory(opt.value)}
-              className="rounded-sm px-4 text-left font-sans text-sm transition-colors"
-              style={{
-                minHeight: 60,
-                border:
-                  formData.category === opt.value
-                    ? "2px solid var(--color-brand-yellow)"
-                    : "1px solid var(--color-hairline)",
-                background:
-                  formData.category === opt.value
-                    ? "rgba(246,199,0,0.05)"
-                    : "var(--color-paper)",
-                color: "var(--color-ink)",
-                cursor: "pointer",
-                fontWeight: formData.category === opt.value ? 500 : 400,
-              }}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Coral fields */}
-        {formData.category === "coral" && (
-          <div className="mt-4 space-y-4">
-            <div>
-              <label
-                htmlFor="depth-m"
-                className="block mb-1 text-sm"
-                style={{ color: "var(--color-ink-2)", fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em" }}
-              >
-                Depth (m)
-              </label>
-              <input
-                id="depth-m"
-                type="number"
-                min="0"
-                max="200"
-                step="0.5"
-                value={formData.depthM}
-                onChange={(e) => setFormData((prev) => ({ ...prev, depthM: e.target.value }))}
-                placeholder="Depth (m)"
-                className="w-full rounded-sm px-4 py-3 font-sans text-sm"
-                style={{
-                  border: "1px solid var(--color-hairline)",
-                  outline: "none",
-                  color: "var(--color-ink)",
-                  background: "var(--color-paper)",
-                }}
-              />
-            </div>
-            <div>
-              <p
-                className="mb-2 text-sm"
-                style={{ color: "var(--color-ink-2)", fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em" }}
-              >
-                Bleaching score
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {BLEACH_OPTIONS.map((b) => (
-                  <button
-                    key={b.value}
-                    type="button"
-                    onClick={() => setFormData((prev) => ({ ...prev, bleachingScore: b.value }))}
-                    className="rounded-sm px-4 py-2 font-sans text-sm transition-colors"
-                    style={{
-                      minHeight: 44,
-                      border: "1px solid var(--color-hairline)",
-                      background:
-                        formData.bleachingScore === b.value ? "var(--color-ink)" : "var(--color-paper)",
-                      color:
-                        formData.bleachingScore === b.value ? "var(--color-paper)" : "var(--color-ink)",
-                      cursor: "pointer",
-                    }}
-                  >
-                    {b.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </section>
-
-      {/* Species autocomplete */}
-      <section className="mb-6">
-        <label
-          htmlFor="species-input"
-          className="block mb-2 text-sm"
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            color: "var(--color-ink-2)",
-          }}
-        >
-          Species name (optional)
-        </label>
-
-        {formData.species.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-3">
-            {formData.species.map((chip, i) => (
-              <span
-                key={i}
-                className="inline-flex items-center gap-1 rounded-sm px-3 py-1 text-sm font-sans"
-                style={{
-                  background: "var(--color-hairline)",
-                  color: "var(--color-ink)",
-                }}
-              >
-                {chip.displayName}
-                {chip.isSeahorse && (
-                  <span
-                    className="ml-1"
-                    style={{
-                      fontSize: 11,
-                      color: "var(--color-improving)",
-                      fontFamily: "var(--font-mono)",
-                    }}
-                  >
-                    + iSeahorse
-                  </span>
-                )}
+          {CAT_OPTIONS.map((opt) => {
+            const isSelected = formData.category === opt.value;
+            return (
+              <div key={opt.value}>
                 <button
                   type="button"
-                  aria-label={`Remove ${chip.displayName}`}
-                  onClick={() => removeChip(i)}
+                  onClick={() => setCategory(opt.value)}
+                  className="w-full rounded-sm px-4 text-left font-sans text-sm transition-colors"
                   style={{
-                    background: "none",
-                    border: "none",
+                    minHeight: 60,
+                    border: isSelected ? "2px solid var(--color-brand-yellow)" : "1px solid var(--color-hairline)",
+                    background: isSelected ? "rgba(246,199,0,0.05)" : "var(--color-paper)",
+                    color: "var(--color-ink)",
                     cursor: "pointer",
-                    padding: "0 2px",
-                    color: "var(--color-ink-2)",
-                    fontSize: 14,
-                    lineHeight: 1,
+                    borderRadius: isSelected ? "2px 2px 0 0" : undefined,
                   }}
                 >
-                  ×
+                  <span style={{ fontWeight: 600 }}>{opt.label}</span>
+                  <span className="block mt-0.5" style={{ color: "var(--color-ink-2)", fontSize: 12, fontWeight: 400 }}>{opt.description}</span>
                 </button>
-              </span>
-            ))}
-          </div>
-        )}
 
-        <div className="relative">
-          <input
-            id="species-input"
-            type="text"
-            value={speciesQuery}
-            onChange={(e) => handleSpeciesInput(e.target.value)}
-            onBlur={() => setTimeout(() => setSpeciesDropdownOpen(false), 150)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") { e.preventDefault(); commitFreeTextChip(); }
-            }}
-            placeholder="Species name (optional)"
-            className="w-full rounded-sm px-4 py-3 font-sans text-sm"
-            style={{
-              border: "1px solid var(--color-hairline)",
-              outline: "none",
-              color: "var(--color-ink)",
-              background: "var(--color-paper)",
-            }}
-            autoComplete="off"
-          />
-          {speciesDropdownOpen && taxonSuggestions.length > 0 && (
-            <ul
-              className="absolute left-0 right-0 z-50 bg-white rounded-sm shadow-sm"
-              style={{
-                top: "100%",
-                border: "1px solid var(--color-hairline)",
-                listStyle: "none",
-                margin: 0,
-                padding: 0,
-              }}
-            >
-              {taxonSuggestions.slice(0, 6).map((t) => (
-                <li key={t.taxonId}>
-                  <button
-                    type="button"
-                    onMouseDown={() => selectTaxon(t)}
-                    className="w-full text-left px-4 py-3 font-sans text-sm"
-                    style={{
-                      background: "none",
-                      border: "none",
-                      borderBottom: "1px solid var(--color-hairline)",
-                      cursor: "pointer",
-                      color: "var(--color-ink)",
-                      minHeight: 44,
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <span className="font-medium">{t.commonName ?? t.scientificName}</span>
-                    {t.commonName && (
-                      <span style={{ fontStyle: "italic", color: "var(--color-ink-2)", fontSize: 12 }}>
-                        {t.scientificName}
-                      </span>
+                {/* Sub-options expand inline under the selected card */}
+                {isSelected && CAT_SUB_OPTIONS[opt.value] && (
+                  <div className="px-4 pt-3 pb-3" style={{ border: "2px solid var(--color-brand-yellow)", borderTop: "none", background: "rgba(246,199,0,0.03)", borderRadius: "0 0 2px 2px" }}>
+                    <div className="flex flex-wrap gap-2">
+                      {CAT_SUB_OPTIONS[opt.value]!.map((sub) => {
+                        const isSubSelected = sub.routing ? formData.routingCategory === sub.routing : formData.speciesHint === sub.hint;
+                        return (
+                          <button
+                            key={sub.label}
+                            type="button"
+                            onClick={() => {
+                              if (isSubSelected) { setSubOption(null, null); }
+                              else { setSubOption(sub.routing ?? null, sub.hint ?? null); }
+                            }}
+                            className="rounded-sm px-4 py-2 font-sans text-sm transition-colors"
+                            style={{ minHeight: 40, border: isSubSelected ? "2px solid var(--color-brand-yellow)" : "1px solid var(--color-hairline)", background: isSubSelected ? "rgba(246,199,0,0.1)" : "var(--color-paper)", color: "var(--color-ink)", cursor: "pointer", fontWeight: isSubSelected ? 600 : 400 }}
+                          >
+                            {sub.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {/* Bleaching score — shown when coral selected */}
+                    {formData.routingCategory === "coral" && (
+                      <div className="mt-3">
+                        <p className="mb-2" style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)" }}>
+                          Bleaching score
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {BLEACH_OPTIONS.map((b) => (
+                            <button
+                              key={b.value}
+                              type="button"
+                              onClick={() => setFormData((prev) => ({ ...prev, bleachingScore: b.value }))}
+                              className="rounded-sm px-4 py-2 font-sans text-sm transition-colors"
+                              style={{ minHeight: 40, border: "1px solid var(--color-hairline)", background: formData.bleachingScore === b.value ? "var(--color-ink)" : "var(--color-paper)", color: formData.bleachingScore === b.value ? "var(--color-paper)" : "var(--color-ink)", cursor: "pointer" }}
+                            >
+                              {b.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
                     )}
-                    {t.isSeahorse && (
-                      <span style={{ fontSize: 11, color: "var(--color-improving)", fontFamily: "var(--font-mono)" }}>
-                        + iSeahorse
-                      </span>
-                    )}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-        {speciesError && (
-          <p className="text-sm mt-1" style={{ color: "var(--color-declining)" }}>{speciesError}</p>
-        )}
-        <p className="text-sm mt-1" style={{ color: "var(--color-ink-2)", fontSize: 12 }}>
-          Leave blank if unsure. iNaturalist experts will help identify from your photo.
-        </p>
-      </section>
-
-      {/* Optional fields */}
-      <section className="mb-6 space-y-4">
-        <div>
-          <label
-            htmlFor="sea-temp"
-            className="block mb-1 text-sm"
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 11,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              color: "var(--color-ink-2)",
-            }}
-          >
-            Sea temperature (°C, optional)
-          </label>
-          <input
-            id="sea-temp"
-            type="number"
-            min="0"
-            max="40"
-            step="0.5"
-            value={formData.tempC}
-            onChange={(e) => setFormData((prev) => ({ ...prev, tempC: e.target.value }))}
-            placeholder="Sea temperature (°C)"
-            className="w-full rounded-sm px-4 py-3 font-sans text-sm"
-            style={{
-              border: "1px solid var(--color-hairline)",
-              outline: "none",
-              color: "var(--color-ink)",
-              background: "var(--color-paper)",
-            }}
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="notes"
-            className="block mb-1 text-sm"
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 11,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              color: "var(--color-ink-2)",
-            }}
-          >
-            Notes (optional)
-          </label>
-          <textarea
-            id="notes"
-            maxLength={280}
-            value={formData.notes}
-            onChange={(e) => {
-              setFormData((prev) => ({ ...prev, notes: e.target.value }));
-              setCharCount(e.target.value.length);
-            }}
-            placeholder="Notes (optional)"
-            rows={3}
-            className="w-full rounded-sm px-4 py-3 font-sans text-sm"
-            style={{
-              border: "1px solid var(--color-hairline)",
-              outline: "none",
-              color: "var(--color-ink)",
-              background: "var(--color-paper)",
-              resize: "vertical",
-            }}
-          />
-          <p className="text-right mt-1" style={{ fontSize: 12, color: "var(--color-ink-2)", fontFamily: "var(--font-mono)" }}>
-            {charCount} / 280
-          </p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      <div className="flex gap-3 flex-wrap">
-        <GhostBtn onClick={onBack}>Back</GhostBtn>
-        <PrimaryBtn onClick={validateAndNext}>Continue</PrimaryBtn>
-      </div>
-    </div>
-  );
-}
-
-// ─── Step 3: Review + identity gate + submit ──────────────────────────────────
-
-function Step3Submit({
-  formData,
-  onBack,
-  onSuccess,
-}: {
-  formData: FormData;
-  onBack: () => void;
-  onSuccess: (res: SubmitResponse) => void;
-}) {
-  const [identityMode, setIdentityMode] = useState<"guest" | "inat">("guest");
-  const [inatNote, setInatNote] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  const hasSeahorse = formData.species.some((s) => s.isSeahorse);
-
-  const platforms = [
-    "iNaturalist",
-    "GBIF (via iNaturalist)",
-    "OBIS (via iNaturalist)",
-    ...(hasSeahorse ? ["iSeahorse"] : []),
-  ];
-
-  const canSubmit = formData.photos.length > 0;
-
-  const handleSubmit = async () => {
-    if (!canSubmit) {
-      setErrorMsg("Please add at least 1 photo before submitting.");
-      return;
-    }
-    setLoading(true);
-    setErrorMsg(null);
-    try {
-      const fd = new FormData();
-
-      if (formData.site) {
-        fd.append("siteId", formData.site.id);
-        fd.append("siteName", formData.site.name);
-        fd.append("siteLat", String(formData.site.lat));
-        fd.append("siteLng", String(formData.site.lng));
-      } else {
-        fd.append("siteId", "unknown");
-        fd.append("siteName", "Not specified");
-        fd.append("siteLat", "0");
-        fd.append("siteLng", "0");
-      }
-
-      fd.append("category", formData.category ?? "other");
-      fd.append("observedOn", formData.date);
-
-      // Species handling — multi-species
-      const matchedTaxonIds: number[] = [];
-      const freeTextNames: string[] = [];
-      let hasSeahorseTaxon = false;
-
-      for (const chip of formData.species) {
-        if (chip.taxonId) {
-          matchedTaxonIds.push(chip.taxonId);
-          if (chip.isSeahorse) hasSeahorseTaxon = true;
-        } else {
-          freeTextNames.push(chip.displayName);
-        }
-      }
-
-      if (matchedTaxonIds.length > 0) {
-        fd.append("taxonIds", matchedTaxonIds.join(","));
-      }
-      if (freeTextNames.length > 0) {
-        fd.append("freeTextSpecies", freeTextNames.join(", "));
-      }
-      fd.append("isSeahorse", String(hasSeahorseTaxon || hasSeahorse));
-      fd.append("needsReview", String(freeTextNames.length > 0));
-
-      if (formData.depthM) fd.append("depthM", formData.depthM);
-      if (formData.tempC) fd.append("tempC", formData.tempC);
-      if (formData.bleachingScore) fd.append("bleachingScore", formData.bleachingScore);
-      if (formData.notes.trim()) fd.append("notes", formData.notes.trim());
-
-      // Add display name for Telegram alert
-      const speciesDisplay = formData.species.map((s) => s.displayName).join(", ") || "Unknown";
-      fd.append("speciesDisplay", speciesDisplay);
-
-      for (const p of formData.photos) fd.append("photos", p);
-
-      const res = await fetch("/api/submit-sighting", { method: "POST", body: fd });
-      const data = (await res.json()) as SubmitResponse;
-
-      if (!res.ok) {
-        setErrorMsg(data.error ?? data.message ?? "Submission failed. Please try again.");
-      } else {
-        onSuccess(data);
-      }
-    } catch {
-      setErrorMsg("Network error. Please check your connection and try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div>
-      <h2
-        className="mb-6"
-        style={{
-          fontFamily: "var(--font-serif)",
-          fontWeight: 300,
-          fontStyle: "italic",
-          fontSize: "1.75rem",
-          color: "var(--color-ink)",
-        }}
-        tabIndex={-1}
-        id="step-heading"
-      >
-        Review and submit
-      </h2>
-
-      {/* Summary */}
-      <div
-        className="rounded-sm p-4 mb-6"
-        style={{ border: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}
-      >
-        <dl className="space-y-2 text-sm">
-          <div className="flex gap-2">
-            <dt style={{ color: "var(--color-ink-2)", minWidth: 80, fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em" }}>Site</dt>
-            <dd style={{ color: "var(--color-ink)" }}>{formData.site?.name ?? "Not specified"}</dd>
-          </div>
-          <div className="flex gap-2">
-            <dt style={{ color: "var(--color-ink-2)", minWidth: 80, fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em" }}>Category</dt>
-            <dd style={{ color: "var(--color-ink)", textTransform: "capitalize" }}>{formData.category ?? "Not specified"}</dd>
-          </div>
-          {formData.species.length > 0 && (
-            <div className="flex gap-2">
-              <dt style={{ color: "var(--color-ink-2)", minWidth: 80, fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em" }}>Species</dt>
-              <dd style={{ color: "var(--color-ink)" }}>{formData.species.map((s) => s.displayName).join(", ")}</dd>
-            </div>
-          )}
-          {formData.depthM && (
-            <div className="flex gap-2">
-              <dt style={{ color: "var(--color-ink-2)", minWidth: 80, fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em" }}>Depth</dt>
-              <dd style={{ color: "var(--color-ink)" }}>{formData.depthM} m</dd>
-            </div>
-          )}
-          <div className="flex gap-2">
-            <dt style={{ color: "var(--color-ink-2)", minWidth: 80, fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em" }}>Date</dt>
-            <dd style={{ color: "var(--color-ink)" }}>{formData.date}</dd>
-          </div>
-        </dl>
-        {formData.photos.length > 0 && (
-          <div className="flex gap-2 mt-3">
-            {formData.photos.slice(0, 3).map((f, i) => {
-              const ext = f.name.split(".").pop()?.toLowerCase() ?? "";
-              const isHeic = HEIC_EXTS.has(ext);
-              if (isHeic) return (
-                <div key={i} className="w-16 h-16 rounded flex items-center justify-center text-center" style={{ background: "var(--color-hairline)", fontSize: 9, color: "var(--color-ink-2)" }}>
-                  HEIC
-                </div>
-              );
-              return <ConfirmThumb key={i} file={f} />;
-            })}
-          </div>
-        )}
-      </div>
-
-      {/* Platforms */}
-      <div className="mb-6">
-        <p
-          className="mb-3"
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            color: "var(--color-ink-2)",
-          }}
-        >
-          Submitting to
-        </p>
-        <ul className="space-y-1 text-sm" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-          {platforms.map((p) => (
-            <li key={p} style={{ color: "var(--color-ink)" }}>{p}</li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Identity gate */}
-      <div className="mb-6">
-        <p
-          className="mb-3"
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            color: "var(--color-ink-2)",
-          }}
-        >
-          Submit as
-        </p>
-        <div className="space-y-3">
-          <label className="flex items-center gap-3 cursor-pointer" style={{ minHeight: 44 }}>
-            <input
-              type="radio"
-              name="identity"
-              value="guest"
-              checked={identityMode === "guest"}
-              onChange={() => { setIdentityMode("guest"); setInatNote(false); }}
-              className="w-4 h-4"
-            />
-            <span className="text-sm" style={{ color: "var(--color-ink)" }}>
-              Submit as guest (via Scuba Season)
-            </span>
-          </label>
-          <label className="flex items-center gap-3 cursor-pointer" style={{ minHeight: 44 }}>
-            <input
-              type="radio"
-              name="identity"
-              value="inat"
-              checked={identityMode === "inat"}
-              onChange={() => { setIdentityMode("inat"); setInatNote(true); }}
-              className="w-4 h-4"
-            />
-            <span className="text-sm" style={{ color: "var(--color-ink)" }}>
-              Sign in with iNaturalist
-            </span>
-          </label>
-        </div>
-        {inatNote && (
-          <p
-            className="mt-3 text-sm rounded-sm p-3"
-            style={{
-              background: "rgba(14,79,110,0.05)",
-              border: "1px solid var(--color-hairline)",
-              color: "var(--color-ink-2)",
-            }}
-          >
-            iNaturalist sign-in will be available from August 2026 when our API registration is complete. Your sighting will be submitted via the Scuba Season account in the meantime.
-          </p>
-        )}
-      </div>
-
-      {!canSubmit && (
-        <p className="mb-4 text-sm" style={{ color: "var(--color-declining)" }}>
-          Please add at least 1 photo before submitting.
-        </p>
-      )}
 
       {errorMsg && (
         <p className="mb-4 text-sm" style={{ color: "var(--color-declining)" }}>{errorMsg}</p>
@@ -1338,33 +1013,17 @@ function Step3Submit({
 
       <div className="flex gap-3 flex-wrap">
         <GhostBtn onClick={onBack} disabled={loading}>Back</GhostBtn>
-        <PrimaryBtn onClick={handleSubmit} disabled={!canSubmit} loading={loading}>
+        <PrimaryBtn onClick={handleSubmit} disabled={formData.photos.length === 0} loading={loading}>
           Submit sighting
         </PrimaryBtn>
       </div>
-
-      <p className="mt-4 text-sm" style={{ color: "var(--color-ink-2)", fontSize: 12 }}>
-        Sightings appear under the ScubaSeason observer account on conservation platforms.
-      </p>
     </div>
   );
 }
 
-function ConfirmThumb({ file }: { file: File }) {
-  const [url, setUrl] = useState<string | null>(null);
-  /* eslint-disable react-hooks/set-state-in-effect */
-  useEffect(() => {
-    const u = URL.createObjectURL(file);
-    setUrl(u);
-    return () => URL.revokeObjectURL(u);
-  }, [file]);
-  /* eslint-enable react-hooks/set-state-in-effect */
-  if (!url) return null;
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={url} alt="" className="w-16 h-16 object-cover rounded" />;
-}
 
-// ─── Step 4: Broadcast confirmation ──────────────────────────────────────────
+
+// ─── Step 3: Broadcast confirmation ──────────────────────────────────────────
 
 function BroadcastConfirmation({
   submitResponse,
@@ -1375,14 +1034,17 @@ function BroadcastConfirmation({
   formData: FormData;
   onAnother: () => void;
 }) {
-  const hasSeahorse = formData.species.some((s) => s.isSeahorse);
+  const hasSeahorse = formData.species.some((s) => s.isSeahorse) || formData.routingCategory === "seahorse";
+  const rc = formData.routingCategory;
 
-  type PlatformRow = { name: string; delay: number };
+  type PlatformRow = { name: string; description: string; delay: number };
   const allPlatformRows: PlatformRow[] = [
-    { name: "iNaturalist", delay: 0 },
-    { name: "GBIF", delay: 400 },
-    { name: "OBIS", delay: 800 },
-    ...(hasSeahorse ? [{ name: "iSeahorse", delay: 1200 }] : []),
+    { name: "iNaturalist", description: "World's largest nature observation network",            delay: 0 },
+    { name: "GBIF",        description: "Global biodiversity database",                          delay: 400 },
+    { name: "OBIS",        description: "Ocean biodiversity database",                           delay: 800 },
+    ...(hasSeahorse          ? [{ name: "iSeahorse",  description: "Global seahorse network",              delay: 1200 }] : []),
+    ...(rc === "whale_dolphin" ? [{ name: "Happywhale", description: "Cetacean photo ID database",          delay: 1400 }] : []),
+    ...(rc === "whale_shark"   ? [{ name: "Sharkbook",  description: "Whale shark photo ID database",       delay: 1400 }] : []),
   ];
 
   const [visibleCount, setVisibleCount] = useState(0);
@@ -1415,7 +1077,7 @@ function BroadcastConfirmation({
           fontFamily: "var(--font-serif)",
           fontWeight: 300,
           fontStyle: "italic",
-          fontSize: "1.875rem",
+          fontSize: "2.75rem",
           color: "var(--color-ink)",
         }}
       >
@@ -1430,14 +1092,17 @@ function BroadcastConfirmation({
         {allPlatformRows.map((row, i) => (
           <div
             key={row.name}
-            className="flex items-center gap-2 text-sm transition-opacity"
+            className="flex items-start gap-2 text-sm transition-opacity"
             style={{
               opacity: i < visibleCount ? 1 : 0,
               fontFamily: "var(--font-sans)",
             }}
           >
-            <span style={{ color: "var(--color-improving)", fontWeight: 600 }}>✓</span>
-            <span style={{ color: "var(--color-ink)" }}>{row.name}</span>
+            <span style={{ color: "var(--color-improving)", fontWeight: 700, marginTop: 1 }}>✓</span>
+            <span>
+              <span style={{ color: "var(--color-ink)", fontWeight: 600 }}>{row.name}</span>
+              <span style={{ color: "var(--color-ink-2)", fontSize: 12 }}> — {row.description}</span>
+            </span>
           </div>
         ))}
       </div>
@@ -1478,9 +1143,20 @@ function BroadcastConfirmation({
   );
 }
 
-// ─── Mode selector ────────────────────────────────────────────────────────────
+// ─── Step 3: Routing picker ───────────────────────────────────────────────────
 
-function ModeSelector({ onSelect }: { onSelect: (mode: Mode) => void }) {
+// ─── Equipment gate (survey mode pre-check) ───────────────────────────────────
+
+const EQUIPMENT_ITEMS = [
+  "Quadrat frame (1 m²)",
+  "Transect tape (25 m)",
+  "Underwater slate or dive slate app",
+  "CoralWatch colour chart",
+];
+
+function EquipmentGate({ onProceed, onBack }: { onProceed: () => void; onBack: () => void }) {
+  const [showShoppingList, setShowShoppingList] = useState(false);
+
   return (
     <div>
       <h2
@@ -1492,14 +1168,115 @@ function ModeSelector({ onSelect }: { onSelect: (mode: Mode) => void }) {
           fontSize: "1.75rem",
           color: "var(--color-ink)",
         }}
+        tabIndex={-1}
+        id="step-heading"
+      >
+        Before you start
+      </h2>
+      <p className="mb-6 text-sm" style={{ color: "var(--color-ink-2)" }}>
+        A structured reef survey needs a few things. Make sure you have them before diving.
+      </p>
+
+      <ul
+        className="mb-8 space-y-3"
+        style={{ listStyle: "none", padding: 0, margin: "0 0 2rem 0" }}
+      >
+        {EQUIPMENT_ITEMS.map((item) => (
+          <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--color-ink)" }}>
+            <span
+              style={{
+                display: "inline-block",
+                width: 20,
+                height: 20,
+                minWidth: 20,
+                borderRadius: "50%",
+                border: "1.5px solid var(--color-hairline)",
+                marginTop: 1,
+              }}
+            />
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      <div className="flex flex-col gap-3">
+        <PrimaryBtn onClick={onProceed}>I have everything — start survey</PrimaryBtn>
+        <GhostBtn onClick={() => setShowShoppingList((v) => !v)}>
+          {showShoppingList ? "Hide list" : "I do not have these yet"}
+        </GhostBtn>
+      </div>
+
+      {showShoppingList && (
+        <div
+          className="mt-4 rounded-sm p-4 text-sm"
+          style={{
+            border: "1px solid var(--color-hairline)",
+            background: "var(--color-paper)",
+            color: "var(--color-ink)",
+          }}
+        >
+          <p className="mb-3 font-medium">Gear to pick up before your next dive:</p>
+          <ul style={{ listStyle: "disc", paddingLeft: "1.25rem", margin: 0 }}>
+            {EQUIPMENT_ITEMS.map((item) => (
+              <li key={item} className="mb-1">{item}</li>
+            ))}
+          </ul>
+          <p className="mt-3" style={{ color: "var(--color-ink-2)" }}>
+            Pick these up from your dive shop before your next dive.
+          </p>
+        </div>
+      )}
+
+      <button
+        type="button"
+        onClick={onBack}
+        className="mt-6 text-sm"
+        style={{ background: "none", border: "none", cursor: "pointer", color: "var(--color-ink-2)", padding: 0, textDecoration: "underline" }}
+      >
+        Back
+      </button>
+    </div>
+  );
+}
+
+// ─── Mode selector ────────────────────────────────────────────────────────────
+
+function ModeSelector({ onSelect }: { onSelect: (mode: Mode) => void }) {
+  return (
+    <div>
+      {/* Hero photo */}
+      <div className="mb-6 rounded-sm overflow-hidden" style={{ height: 220 }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TheOceanAgency_360_84.jpg"
+          alt="Diver underwater photographing a reef"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Value prop */}
+      <p className="mb-6 text-sm leading-relaxed" style={{ color: "var(--color-ink)" }}>
+        There are dozens of marine conservation organizations that rely on diver observations for their work — tracking species populations, monitoring reef health, protecting critical habitats. Finding them yourself, registering accounts, learning each upload form... that adds up to 38 minutes per dive trip. Upload here and we handle all of it. 1 photo, a few seconds, and your sighting reaches the science.{" "}
+        <a href="/learn" style={{ color: "var(--color-ocean)", textDecoration: "underline" }}>
+          See which organizations receive your data.
+        </a>
+      </p>
+
+      <h2
+        className="mb-5"
+        style={{
+          fontFamily: "var(--font-serif)",
+          fontWeight: 300,
+          fontStyle: "italic",
+          fontSize: "1.75rem",
+          color: "var(--color-ink)",
+        }}
         id="step-heading"
         tabIndex={-1}
       >
-        What are you submitting?
+        What did you do on the dive?
       </h2>
-      <p className="mb-6 text-sm" style={{ color: "var(--color-ink-2)" }}>
-        Choose the type of record that matches what you did on the dive.
-      </p>
+
       <div className="flex flex-col gap-3">
         <button
           type="button"
@@ -1512,11 +1289,10 @@ function ModeSelector({ onSelect }: { onSelect: (mode: Mode) => void }) {
           }}
         >
           <p className="text-sm font-bold mb-1" style={{ color: "var(--color-ink)" }}>
-            Species sighting
+            I took a photo
           </p>
           <p className="text-sm" style={{ color: "var(--color-ink-2)" }}>
-            A photo of a fish, coral, or other marine animal. Routes to iNaturalist,
-            GBIF, and OBIS.
+            A photo of a marine species, corals, or anything underwater.
           </p>
         </button>
         <button
@@ -1530,11 +1306,10 @@ function ModeSelector({ onSelect }: { onSelect: (mode: Mode) => void }) {
           }}
         >
           <p className="text-sm font-bold mb-1" style={{ color: "var(--color-ink)" }}>
-            Reef survey
+            I ran a structured survey
           </p>
           <p className="text-sm" style={{ color: "var(--color-ink-2)" }}>
-            A structured benthic photo quadrat survey for MERMAID. Optionally includes
-            CoralWatch bleaching readings.
+            You used a quadrat frame, transect tape, or CoralWatch chart on the reef.
           </p>
         </button>
       </div>
@@ -2052,6 +1827,7 @@ function UploadWizardInner() {
 
   // Mode selection
   const [mode, setMode] = useState<Mode | null>(null);
+  const [showEquipmentGate, setShowEquipmentGate] = useState(false);
 
   // Sighting mode state
   const [step, setStep] = useState<WizardStep>(1);
@@ -2071,6 +1847,8 @@ function UploadWizardInner() {
       tempC: "",
       bleachingScore: null,
       notes: "",
+      routingCategory: null,
+      speciesHint: null,
     };
   });
 
@@ -2126,6 +1904,8 @@ function UploadWizardInner() {
       tempC: "",
       bleachingScore: null,
       notes: "",
+      routingCategory: null,
+      speciesHint: null,
     }));
     setSubmitResponse(null);
     setStep(1);
@@ -2149,13 +1929,34 @@ function UploadWizardInner() {
     setSurveyResponse(null);
     setSurveyStep(1);
     setMode(null);
+    setShowEquipmentGate(false);
   };
 
   // Mode not yet chosen
   if (mode === null) {
     return (
       <div ref={headingRef as React.RefObject<HTMLDivElement>}>
-        <ModeSelector onSelect={(m) => { setMode(m); focusHeading(); }} />
+        <ModeSelector
+          onSelect={(m) => {
+            setMode(m);
+            if (m === "survey") {
+              setShowEquipmentGate(true);
+            }
+            focusHeading();
+          }}
+        />
+      </div>
+    );
+  }
+
+  // Equipment gate for survey mode
+  if (mode === "survey" && showEquipmentGate) {
+    return (
+      <div ref={headingRef as React.RefObject<HTMLDivElement>}>
+        <EquipmentGate
+          onProceed={() => { setShowEquipmentGate(false); focusHeading(); }}
+          onBack={() => { setMode(null); setShowEquipmentGate(false); focusHeading(); }}
+        />
       </div>
     );
   }
@@ -2243,7 +2044,7 @@ function UploadWizardInner() {
   // ── Sighting mode ────────────────────────────────────────────────────────────
   return (
     <div ref={headingRef as React.RefObject<HTMLDivElement>}>
-      {step < 4 && <StepIndicator currentStep={step} />}
+      {step < 3 && <StepIndicator currentStep={step as 1 | 2} />}
 
       {step === 1 && (
         <Step1SiteSearch
@@ -2259,22 +2060,15 @@ function UploadWizardInner() {
           formData={formData}
           setFormData={setFormData}
           onBack={() => goToStep(1)}
-          onNext={() => goToStep(3)}
-        />
-      )}
-
-      {step === 3 && (
-        <Step3Submit
-          formData={formData}
-          onBack={() => goToStep(2)}
+          onGoBackToSiteSearch={() => goToStep(1)}
           onSuccess={(res) => {
             setSubmitResponse(res);
-            goToStep(4);
+            goToStep(3);
           }}
         />
       )}
 
-      {step === 4 && submitResponse && (
+      {step === 3 && submitResponse && (
         <BroadcastConfirmation
           submitResponse={submitResponse}
           formData={formData}
