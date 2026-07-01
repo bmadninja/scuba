@@ -17,7 +17,7 @@
       "notes": "GBR-wide sector average. Northern sector has shown partial recovery (up to 30-33% in some transects) but central and southern sectors remain below the 2014 baseline after five mass bleaching events. The 2024 bleaching event was the most geographically extensive on record."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.5,
@@ -25,7 +25,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "The GBR is still the world's largest reef system and a world-class diving destination. Northern sections around the Ribbon Reefs and Coral Sea outliers like Osprey Reef hold the best cover. Expect full reef colour in those areas. Central and southern GBR sectors show more bleaching legacy — seek operator recommendations on which specific sites are performing well.",
     "methodologyClaimIds": [
@@ -84,15 +84,15 @@
       "notes": "Ningaloo experienced sustained thermal stress in early 2024 — extent of mortality varied by reef tract."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.3,
+      "sstAnomalyC": -0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Whale-shark season (Mar–Jul) is the main draw and still excellent. Reef colour is patchy after the 2024 bleaching — focus on the outer reef bommies rather than shallow lagoon.",
     "methodologyClaimIds": [
@@ -117,15 +117,15 @@
       "notes": "Raja Ampat retains some of the highest live coral cover in the Coral Triangle. Strong currents and refugia help limit thermal stress."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 4.3,
-      "sstAnomalyC": 1.2,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "One of the few places where what you see today is what divers saw a decade ago. Plan the trip with confidence — peak fish biomass, intact soft-coral fields, manta and wobbegong encounters all reliable.",
     "methodologyClaimIds": [
@@ -151,15 +151,15 @@
       "notes": "April 2024 surveys recorded localised bleaching on shallow reef flats; submerged reef slopes remained largely unaffected."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 2.1,
       "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Reef slopes from 10 m down are still vivid. Shallow tops show some bleaching scars. Liveaboard season is short (Mar–Jun) — book early.",
     "methodologyClaimIds": [
@@ -184,15 +184,15 @@
       "notes": "Caribbean-wide 2023–2024 heat dome impacted Cozumel; SCTLD (stony coral tissue loss disease) continues to compound losses."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Less hard coral than the photos. Fish life, sponges, and the wall topography are still excellent. Best at depth (>20 m) and on the cooler shoulder months (Dec–Mar).",
     "methodologyClaimIds": [
@@ -218,15 +218,15 @@
       "notes": "Bonaire saw widespread bleaching during the 2023 marine heatwave; recovery is patchy but ongoing."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.5,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Shore diving access is still world-class. The reef is rebuilding — expect smaller coral colonies than older photos. STINAPA conservation fee directly funds recovery, so go and support it.",
     "methodologyClaimIds": [
@@ -252,15 +252,15 @@
       "notes": "Fakarava's UNESCO Biosphere status and limited human pressure correlate with stable cover. 2024 SST anomalies were modest."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.1,
+      "sstAnomalyC": 0,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "South Pass shark wall is still the densest grey-reef-shark aggregation in the Pacific. Reef structure largely unchanged in a decade — what you book is what you get.",
     "methodologyClaimIds": [
@@ -285,15 +285,15 @@
       "notes": "Northern Red Sea corals continue to show unusual thermal tolerance — one of the few global refugia."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.7,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "One of the rare reefs that has not lost cover in the last decade. Northern Red Sea corals tolerate heat better than most. Expect full colour, sharks at Yolanda, schooling jacks year-round.",
     "methodologyClaimIds": [
@@ -318,7 +318,7 @@
       "notes": "West Hawaii reefs were hit by elevated SSTs in late 2024; partial recovery underway through 2025."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 1,
@@ -326,7 +326,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Manta night dive and blackwater are both unchanged — those don't depend on coral. Day diving over reef shows recovery in patches. Worth going for the pelagic experiences alone.",
     "methodologyClaimIds": [
@@ -352,15 +352,15 @@
       "notes": "Palau's deep oceanic upwelling provides some thermal buffering for outer reefs."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 3.3,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Blue Corner shark current still produces. Outer reefs buffered by oceanic upwelling. Inner lagoon reefs show more bleaching — skip the inside in favour of the channels.",
     "methodologyClaimIds": [
@@ -385,15 +385,15 @@
       "notes": "Sipadan benefits from MPA status; bleaching in 2024 was concentrated on shallower terraces."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 4.6,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 1.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Barracuda Point and turtle traffic are unchanged. Deep walls (>15 m) hold the best coral cover. Permit quota limits diver impact — a key reason it's still in this shape.",
     "methodologyClaimIds": [
@@ -419,15 +419,15 @@
       "notes": "Maldives saw widespread bleaching in 2024 with stronger impact on shallow lagoon reefs than ocean-side thila and kandu."
     },
     "thermalStress": {
-      "asOf": "2026-06-23",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 1.2,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-25T09:51:42.838Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Manta and whale-shark encounters at Ari are still the main draw and are not coral-dependent. Hard coral has thinned noticeably since 2014. If you've been waiting on Maldives, this is the year — not later.",
     "methodologyClaimIds": [
@@ -453,15 +453,15 @@
       "notes": "Maldives 2024 bleaching — observed condition reflects the steep loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-23",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 1.7,
-      "sstAnomalyC": 0.1,
+      "sstAnomalyC": 0.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-25T09:51:42.838Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Maldives saw widespread bleaching in 2024. Manta and whale-shark encounters don't depend on coral but the reef itself has thinned noticeably.",
     "methodologyClaimIds": [
@@ -486,15 +486,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 1.4,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Komodo's strong currents drive nutrient upwelling that supports unusually intact reefs. Expect manta cleaning stations, big schools, and full coral cover.",
     "methodologyClaimIds": [
@@ -519,15 +519,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 2.9,
-      "sstAnomalyC": 0.6,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "USS Liberty wreck is the main draw. Surrounding reef has thinned modestly since 2010 but macro and muck diving here don't depend on cover.",
     "methodologyClaimIds": [
@@ -552,15 +552,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Bunaken's wall diving remains the highlight. Some shallow flats show bleaching scars but the drop-offs hold their cover.",
     "methodologyClaimIds": [
@@ -585,15 +585,15 @@
       "notes": "Philippines coast — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "warning",
       "degreeHeatingWeeks": 2.8,
-      "sstAnomalyC": 1.1,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Monad Shoal thresher dives don't depend on coral. Surrounding reefs have thinned but the marquee dive is unaffected.",
     "methodologyClaimIds": [
@@ -618,15 +618,15 @@
       "notes": "Philippines MPA — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 2,
-      "sstAnomalyC": 1.3,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Apo Reef Natural Park (Mindoro) has the second-largest contiguous reef in the country. Cover remains strong; bleaching impact has been patchy.",
     "methodologyClaimIds": [
@@ -651,15 +651,15 @@
       "notes": "Philippines coast — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 3.3,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Resident sardine bait ball and the Pescador wall are unchanged. House-reef cover has thinned but the macro and pelagic encounters drive trips here.",
     "methodologyClaimIds": [
@@ -684,15 +684,15 @@
       "notes": "Andaman Sea — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
-      "degreeHeatingWeeks": 7.1,
-      "sstAnomalyC": 1.2,
+      "degreeHeatingWeeks": 6.5,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Granitic boulders and reef. Cover thinned by recurrent bleaching; trips still go for the topography and pelagics.",
     "methodologyClaimIds": [
@@ -718,15 +718,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.3,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Training mecca — shallow reefs near Sairee have thinned considerably. Whale sharks April–May the seasonal draw.",
     "methodologyClaimIds": [
@@ -751,15 +751,15 @@
       "notes": "Andaman Sea — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 5.2,
-      "sstAnomalyC": 1.5,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Pinnacle dive — fish life and macro, not extensive coral. Whale-shark season Feb–Apr is the highlight.",
     "methodologyClaimIds": [
@@ -784,15 +784,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 4.7,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 1.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Macro and muck destination — coral cover matters less here than substrate diversity. Critters are unchanged.",
     "methodologyClaimIds": [
@@ -817,15 +817,15 @@
       "notes": "South China Sea atoll — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 1.4,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Remote atoll, oceanic walls. Cover has held up better than coastal reefs in the region.",
     "methodologyClaimIds": [
@@ -850,15 +850,15 @@
       "notes": "Andaman Sea — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
-      "degreeHeatingWeeks": 8.8,
-      "sstAnomalyC": 1.7,
+      "degreeHeatingWeeks": 8.2,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Remote, lightly dived. Cover holds up better than at the more-trafficked sites further south.",
     "methodologyClaimIds": [
@@ -884,15 +884,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "watch",
+      "asOf": "2026-06-29",
+      "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0.6,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Sheltered reefs in shallow water. Cover thinning; conservation efforts ramping up.",
     "methodologyClaimIds": [
@@ -918,15 +918,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 2.8,
-      "sstAnomalyC": 0,
+      "sstAnomalyC": 0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Heavily impacted by 2024 thermal stress. Operator-led restoration projects ongoing.",
     "methodologyClaimIds": [
@@ -951,15 +951,15 @@
       "notes": "Western Pacific — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Subtropical reef hit by 2020s thermal events. Recovery underway. Hammerheads occasional.",
     "methodologyClaimIds": [
@@ -984,15 +984,15 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Submerged stone monument is the headline dive — not a coral-cover destination. Hammerhead schools Dec–Feb.",
     "methodologyClaimIds": [
@@ -1017,15 +1017,15 @@
       "notes": "Western Pacific refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 2,
+      "sstAnomalyC": 1.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Remote Japanese archipelago, oceanic, low diver pressure. Cetacean encounters seasonally.",
     "methodologyClaimIds": [
@@ -1050,15 +1050,15 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.4,
+      "sstAnomalyC": 1.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Subtropical Korean island reef. Coldwater-influenced ecosystem; soft coral on the rocks.",
     "methodologyClaimIds": [
@@ -1084,15 +1084,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 6.1,
-      "sstAnomalyC": 1.8,
+      "degreeHeatingWeeks": 7.2,
+      "sstAnomalyC": 2.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Limited recent independent monitoring. Reef cover is modest; trips are popular for proximity to mainland China.",
     "methodologyClaimIds": [
@@ -1117,15 +1117,15 @@
       "notes": "South Asian reef — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 4,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Remote archipelago. Cover has held up better than most South Asian reefs due to limited tourism.",
     "methodologyClaimIds": [
@@ -1150,15 +1150,15 @@
       "notes": "South Asian reef — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 1.2,
-      "sstAnomalyC": 1.1,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Atoll reefs with limited monitoring data but considerable diver-pressure protection. Cover has thinned modestly.",
     "methodologyClaimIds": [
@@ -1183,15 +1183,15 @@
       "notes": "South Asian reef — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 4.5,
-      "sstAnomalyC": 1.7,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Southwest-coast reef MPA, heavily impacted by 1998 and 2016 bleaching. Slow recovery.",
     "methodologyClaimIds": [
@@ -1216,15 +1216,15 @@
       "notes": "South Asian reef — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.5,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Wrecks and blue whale season drive trips. Reef cover modest and slowly declining.",
     "methodologyClaimIds": [
@@ -1249,15 +1249,15 @@
       "notes": "Red Sea refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.1,
+      "sstAnomalyC": 0.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Northern Red Sea corals tolerate heat better than most. Expect full reef colour, soft corals on the walls, and reliable shore diving year-round.",
     "methodologyClaimIds": [
@@ -1282,15 +1282,15 @@
       "notes": "Southern Red Sea — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 2.1,
-      "sstAnomalyC": 0.2,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Daymaniyat archipelago — whale sharks Aug–Oct. Cover modest but the upwelling-driven ecosystem keeps reefs healthier than Gulf coast.",
     "methodologyClaimIds": [
@@ -1316,15 +1316,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 0.5,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Gulf of Oman reefs face recurring thermal stress from warm-water plumes. Cover has thinned.",
     "methodologyClaimIds": [
@@ -1349,15 +1349,15 @@
       "notes": "Red Sea refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.2,
+      "sstAnomalyC": 0,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Saudi Red Sea reefs are some of the world's least-visited. Expect intact reef cover and minimal diver impact.",
     "methodologyClaimIds": [
@@ -1382,15 +1382,15 @@
       "notes": "Red Sea refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Strong currents and offshore pelagics. Coral cover on the walls is among the best in the Red Sea.",
     "methodologyClaimIds": [
@@ -1415,7 +1415,7 @@
       "notes": "Red Sea refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.4,
@@ -1423,7 +1423,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Shark plateau and intact southern Red Sea reef. Liveaboard-only access keeps diver pressure low.",
     "methodologyClaimIds": [
@@ -1448,15 +1448,15 @@
       "notes": "Southern Red Sea — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Remote southern Red Sea archipelago. Limited monitoring data but anecdotal reports describe healthy hard-coral cover.",
     "methodologyClaimIds": [
@@ -1481,15 +1481,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 6.6,
-      "sstAnomalyC": 1.7,
+      "degreeHeatingWeeks": 7.5,
+      "sstAnomalyC": 1.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Whale-shark season (Oct–Feb) is the draw. Reef cover modest but conditions stable year to year.",
     "methodologyClaimIds": [
@@ -1514,15 +1514,15 @@
       "notes": "East Africa post-2024 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0.1,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Zanzibar's marquee reef has lost substantial cover. Dolphins and turtles still consistent.",
     "methodologyClaimIds": [
@@ -1547,15 +1547,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
-      "degreeHeatingWeeks": 0.5,
-      "sstAnomalyC": 0.8,
+      "degreeHeatingWeeks": 0.3,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Kenyan coast MPA reefs. Cover has thinned but the marine park's enforcement limits compounding damage.",
     "methodologyClaimIds": [
@@ -1580,7 +1580,7 @@
       "notes": "East Africa post-2024 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 1.1,
@@ -1588,7 +1588,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Whale sharks and mantas drive trips. Coral cover has declined steadily since the late 2010s.",
     "methodologyClaimIds": [
@@ -1613,15 +1613,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Sardine run support reef. Coral cover modest in this subtropical zone; sharks and pelagics dominate.",
     "methodologyClaimIds": [
@@ -1646,15 +1646,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.8,
+      "sstAnomalyC": 1.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Subtropical reef, world's southernmost coral. Cover relatively stable; whale-shark season Dec–Mar.",
     "methodologyClaimIds": [
@@ -1679,15 +1679,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
-      "degreeHeatingWeeks": 3.3,
+      "degreeHeatingWeeks": 2.6,
       "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Patchy reef condition across the area. Whale sharks Oct–Dec drive the season.",
     "methodologyClaimIds": [
@@ -1712,15 +1712,15 @@
       "notes": "East Africa post-2024 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0.3,
-      "sstAnomalyC": 0.6,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Seychelles took two major bleaching events in the last decade. Recovery is patchy.",
     "methodologyClaimIds": [
@@ -1745,15 +1745,15 @@
       "notes": "East Africa post-2024 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Same regional pattern as Mahe. Pelagics still strong; coral cover declining.",
     "methodologyClaimIds": [
@@ -1778,7 +1778,7 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.9,
@@ -1786,7 +1786,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Volcanic island reef with limited monitoring data. Anecdotal reports describe declining cover.",
     "methodologyClaimIds": [
@@ -1811,15 +1811,15 @@
       "notes": "Cape Verde — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.2,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Atlantic rays, lemon sharks, and macro on volcanic substrate. Limited hard-coral cover historically.",
     "methodologyClaimIds": [
@@ -1844,15 +1844,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": -0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Equatorial Atlantic — unique fauna, limited monitoring. Macro and topography more than coral cover.",
     "methodologyClaimIds": [
@@ -1877,15 +1877,15 @@
       "notes": "Cenote freshwater — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Cenote freshwater cave system — not a coral reef. The metric here is water clarity and cave geology, both unchanged.",
     "methodologyClaimIds": [
@@ -1910,15 +1910,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 2.2,
+      "sstAnomalyC": 2.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Pelagic encounters — mantas, dolphins, sharks. Reef cover modest in this Eastern Pacific niche; trips don't go for hard coral.",
     "methodologyClaimIds": [
@@ -1943,15 +1943,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.6,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "The Great Blue Hole itself is a geological dive — coral cover isn't the point. Surrounding atoll reefs are thinning.",
     "methodologyClaimIds": [
@@ -1976,7 +1976,7 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.7,
@@ -1984,7 +1984,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Atoll reefs at Turneffe show post-bleaching recovery in patches. Wall diving still strong.",
     "methodologyClaimIds": [
@@ -2009,15 +2009,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Bay Islands reefs along the Mesoamerican Reef have thinned. Whale shark sightings are the marquee draw.",
     "methodologyClaimIds": [
@@ -2042,15 +2042,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "watch",
+      "asOf": "2026-06-29",
+      "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Wall diving from Roatan remains excellent topographically. Live coral cover has thinned over the last decade.",
     "methodologyClaimIds": [
@@ -2075,15 +2075,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
-      "degreeHeatingWeeks": 6.1,
-      "sstAnomalyC": 1.7,
+      "degreeHeatingWeeks": 6,
+      "sstAnomalyC": 2.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Hammerhead schools, tigers, silvertips. Reef itself is sparse — the pelagic action is the entire reason to go.",
     "methodologyClaimIds": [
@@ -2108,15 +2108,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 4.4,
-      "sstAnomalyC": 0.8,
+      "degreeHeatingWeeks": 4.5,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Bull sharks, mobulas, rays. Eastern Pacific reef ecology is naturally low-coral compared to Indo-Pacific reefs.",
     "methodologyClaimIds": [
@@ -2141,15 +2141,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "watch",
-      "degreeHeatingWeeks": 2.9,
-      "sstAnomalyC": 1.1,
+      "asOf": "2026-06-29",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 3,
+      "sstAnomalyC": 1.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "MPA archipelago. Pelagics and seamounts more than coral cover.",
     "methodologyClaimIds": [
@@ -2174,15 +2174,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 2,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Cover has declined steadily for two decades. Shallow training-friendly reefs but expect bleaching scars.",
     "methodologyClaimIds": [
@@ -2207,15 +2207,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "alert-2",
-      "degreeHeatingWeeks": 13.5,
-      "sstAnomalyC": 2,
+      "degreeHeatingWeeks": 13.6,
+      "sstAnomalyC": 1.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Hammerhead aggregation site. Naturally sparse coral — Eastern Pacific reef community.",
     "methodologyClaimIds": [
@@ -2240,15 +2240,15 @@
       "notes": "Caribbean MPA — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "watch",
+      "asOf": "2026-06-29",
+      "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Remote island MPA. Reefs have fared better than the wider Caribbean average.",
     "methodologyClaimIds": [
@@ -2273,15 +2273,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "alert-2",
-      "degreeHeatingWeeks": 11.4,
-      "sstAnomalyC": 3.6,
+      "degreeHeatingWeeks": 12,
+      "sstAnomalyC": 3.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Galápagos reefs are naturally sparse — pelagic mass aggregation is the entire experience. Hammerheads, whale sharks, mobulas.",
     "methodologyClaimIds": [
@@ -2306,15 +2306,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "alert-2",
-      "degreeHeatingWeeks": 11.4,
-      "sstAnomalyC": 3.7,
+      "degreeHeatingWeeks": 11.9,
+      "sstAnomalyC": 3.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Same ecosystem as Wolf. The cleaning station at the arch (now-collapsed) is iconic for whale sharks.",
     "methodologyClaimIds": [
@@ -2339,15 +2339,15 @@
       "notes": "Mid-Atlantic islands — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0.2,
-      "sstAnomalyC": 1.2,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Volcanic archipelago, the most biodiverse stretch of Brazilian coastline. Reefs have been buffered by deep oceanic water.",
     "methodologyClaimIds": [
@@ -2372,7 +2372,7 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.7,
@@ -2380,7 +2380,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Cold-water upwelling drives extraordinary visibility seasonally. Subtropical fauna; not a tropical reef ecosystem.",
     "methodologyClaimIds": [
@@ -2405,7 +2405,7 @@
       "notes": "Caribbean MPA — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.8,
@@ -2413,7 +2413,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "National-park archipelago, low diver pressure. Reefs are thinning but slower than the Caribbean mean.",
     "methodologyClaimIds": [
@@ -2438,15 +2438,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Caribbean wall diving with consistent shore access. Cover has thinned but mid-depth walls hold reasonably.",
     "methodologyClaimIds": [
@@ -2471,15 +2471,15 @@
       "notes": "Bahamas — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "warning",
       "degreeHeatingWeeks": 0.4,
-      "sstAnomalyC": 2,
+      "sstAnomalyC": 1.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Shark dive — coral isn't the point. Sand-and-rubble bottom in shallow water.",
     "methodologyClaimIds": [
@@ -2504,15 +2504,15 @@
       "notes": "Bahamas — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.4,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Land-and-sea park, varied reef and wreck diving. Cover has thinned but the park's MPA status slows the decline.",
     "methodologyClaimIds": [
@@ -2537,15 +2537,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.2,
+      "sstAnomalyC": 1.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Iconic 1000-m wall. Wall structure is intact; cover has thinned on the shallow reef crest.",
     "methodologyClaimIds": [
@@ -2570,15 +2570,15 @@
       "notes": "Caribbean MPA — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.1,
+      "sstAnomalyC": 1.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Sandbar interaction site — not a reef dive. Surrounding patch reefs are thinning.",
     "methodologyClaimIds": [
@@ -2603,15 +2603,15 @@
       "notes": "Caribbean MPA — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Saba Marine Park manages diver impact tightly. Reefs are in better shape than most of the Caribbean.",
     "methodologyClaimIds": [
@@ -2637,15 +2637,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "no-stress",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.4,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Volcanic reef and wreck diving. Cover has thinned; macro and structure remain the draw.",
     "methodologyClaimIds": [
@@ -2670,7 +2670,7 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.7,
@@ -2678,7 +2678,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Bianca C wreck is the headline. Surrounding reef shows post-bleaching thinning.",
     "methodologyClaimIds": [
@@ -2703,15 +2703,15 @@
       "notes": "Cenote freshwater — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.6,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Cave / sinkhole dive — not a coral reef. Visibility and geology are the draw.",
     "methodologyClaimIds": [
@@ -2736,15 +2736,15 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.4,
+      "sstAnomalyC": 1.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Sub-tropical-warm-current rocky reef. Stingrays, mating schools. Not coral but biodiverse.",
     "methodologyClaimIds": [
@@ -2769,15 +2769,15 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.3,
+      "sstAnomalyC": 0,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Subtropical reef at Byron Bay. Turtles and seasonal grey nurse sharks dominate; coral cover modest by tropical standards but stable.",
     "methodologyClaimIds": [
@@ -2802,15 +2802,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0,
+      "sstAnomalyC": 0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Walindi-area reefs remain among the world's most biodiverse. Coral cover is high and stable.",
     "methodologyClaimIds": [
@@ -2835,15 +2835,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.1,
+      "sstAnomalyC": 0,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "One of the most species-rich reef regions on Earth. Remote, low diver pressure, intact reef structure.",
     "methodologyClaimIds": [
@@ -2868,15 +2868,15 @@
       "notes": "Western Pacific — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Bull shark feed dive is the headline. Lagoon reefs have thinned modestly.",
     "methodologyClaimIds": [
@@ -2901,15 +2901,15 @@
       "notes": "Western Pacific — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0,
+      "sstAnomalyC": -0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Iconic soft-coral wall in Somosomo Strait. Currents drive vivid soft-coral cover; bleaching impact moderate.",
     "methodologyClaimIds": [
@@ -2934,15 +2934,15 @@
       "notes": "Pacific refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 2.6,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Rock Islands marine lakes and outer reefs both remain in strong condition under Palau's national MPA regime.",
     "methodologyClaimIds": [
@@ -2967,15 +2967,15 @@
       "notes": "Western Pacific refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "warning",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 0.5,
-      "sstAnomalyC": 0.5,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Yap's reefs have been remarkably stable. Manta cleaning stations operate year-round in clear oceanic water.",
     "methodologyClaimIds": [
@@ -3000,7 +3000,7 @@
       "notes": "Chuuk lagoon — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.8,
@@ -3008,7 +3008,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "WWII Japanese fleet with extensive coral growth on the wrecks. Lagoon conditions remain stable.",
     "methodologyClaimIds": [
@@ -3034,15 +3034,15 @@
       "notes": "French Polynesia — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Tiputa Pass dolphins and shark schooling are the draw. Reef cover at the pass is stable.",
     "methodologyClaimIds": [
@@ -3067,7 +3067,7 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.7,
@@ -3075,7 +3075,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "WWII wrecks with mature coral growth. The natural reef nearby has held up reasonably well.",
     "methodologyClaimIds": [
@@ -3100,15 +3100,15 @@
       "notes": "Pacific refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.3,
+      "sstAnomalyC": 0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Tiny island, oceanic visibility. Sea snakes and whales are seasonal highlights; reef cover modest but intact.",
     "methodologyClaimIds": [
@@ -3133,15 +3133,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "warning",
       "degreeHeatingWeeks": 0.2,
-      "sstAnomalyC": 4.2,
+      "sstAnomalyC": 3.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "MPA gorgonian gardens. Recurring marine heatwaves have damaged red gorgonians in shallow water; deep walls hold up better.",
     "methodologyClaimIds": [
@@ -3166,15 +3166,15 @@
       "notes": "Canary Islands — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Subtropical volcanic seamount. Pelagic encounters drive dives; reef cover modest but stable.",
     "methodologyClaimIds": [
@@ -3199,15 +3199,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 0.7,
-      "sstAnomalyC": 4.3,
+      "degreeHeatingWeeks": 2.1,
+      "sstAnomalyC": 5.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Adriatic wrecks and caves. The reef is algae, sponge, and gorgonian — coral cover is not the right metric.",
     "methodologyClaimIds": [
@@ -3232,15 +3232,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "watch",
-      "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 4.2,
+      "asOf": "2026-06-29",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 0.4,
+      "sstAnomalyC": 5.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Limestone caves, archways, and wrecks. Reef ecology is sponge and gorgonian — coral cover not the right framing.",
     "methodologyClaimIds": [
@@ -3265,15 +3265,15 @@
       "notes": "Azores temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "North Atlantic island reef — mobulas, blue sharks, and rocky-reef topography. Cold-water resilient ecosystem, stable through the warming era.",
     "methodologyClaimIds": [
@@ -3298,15 +3298,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 0.6,
-      "sstAnomalyC": 5.6,
+      "degreeHeatingWeeks": 1.9,
+      "sstAnomalyC": 5.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Posidonia meadows and rocky reef. Seagrass loss is the leading conservation concern, not coral bleaching.",
     "methodologyClaimIds": [
@@ -3331,15 +3331,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "watch",
-      "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 3.2,
+      "asOf": "2026-06-29",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 0.7,
+      "sstAnomalyC": 4.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Adriatic reefs structured by gorgonians and sponges. Cool-water ecosystem buffered from tropical bleaching.",
     "methodologyClaimIds": [
@@ -3364,15 +3364,15 @@
       "notes": "Florida Keys — observed condition reflects the severe decline regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 1.5,
-      "sstAnomalyC": 2.7,
+      "degreeHeatingWeeks": 2.3,
+      "sstAnomalyC": 2.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Florida Keys reefs have lost the majority of their hard coral over two decades and were hit hard by 2023's marine heatwave. Wrecks and fish life still excellent.",
     "methodologyClaimIds": [
@@ -3398,15 +3398,15 @@
       "notes": "Kelp ecosystem — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Giant kelp forest, sea lions, garibaldi. Not a coral reef — the metric here is kelp-canopy cover.",
     "methodologyClaimIds": [
@@ -3431,15 +3431,15 @@
       "notes": "Jardines de la Reina MPA — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "watch",
-      "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.4,
+      "asOf": "2026-06-29",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 0.2,
+      "sstAnomalyC": 1.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "One of the Caribbean's best-preserved reefs thanks to decades of MPA protection and restricted diver access. Apex predators still present.",
     "methodologyClaimIds": [
@@ -3464,15 +3464,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.5,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Volcanic black-sand reef with intact structure. Cover has thinned but topography remains a draw.",
     "methodologyClaimIds": [
@@ -3497,15 +3497,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Brain coral and channel diving. Heat impact has been moderate compared to northern Caribbean.",
     "methodologyClaimIds": [
@@ -3530,15 +3530,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 1.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Zenobia wreck dominates. Surrounding reef is algae-and-fish; not coral.",
     "methodologyClaimIds": [
@@ -3563,15 +3563,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.5,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "RMS Rhone wreck is the iconic dive. Reef cover around the island has declined.",
     "methodologyClaimIds": [
@@ -3703,15 +3703,15 @@
       "notes": "General assessment for the region based on available data."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
-      "alertLevel": "no-stress",
+      "asOf": "2026-06-29",
+      "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Reefs show some signs of recovery, but occasional thermal stress events are noted. Divers can expect to see a variety of reef fish and some healthy coral patches in protected areas.",
     "methodologyClaimIds": [
@@ -3801,15 +3801,15 @@
       "notes": "Southern Caribbean site off Aruba's northwest coast. Aruba sits outside the main hurricane belt and benefits from cooler upwelling from the Venezuelan coast, moderating SSTs relative to the northern Caribbean. The site's primary draw is the Antilla wreck; surrounding reef shows the moderate decline typical of the southern Caribbean over the past decade, compounded by the 2023 regional heat event."
     },
     "thermalStress": {
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.2,
+      "sstAnomalyC": 0.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "The Antilla wreck is the headline dive and is not coral-dependent — encrusted hull sections and resident fish life remain excellent. Living reef around Malmok has thinned since 2014 but Aruba's cooler, calmer conditions mean it fares better than many northern Caribbean sites.",
     "methodologyClaimIds": [
@@ -3840,12 +3840,12 @@
       "degreeHeatingWeeks": 1.9,
       "source": "noaa-crw-live",
       "notes": "While Honduras North Coast reached severe alert levels in 2024, Tela's heat-tolerant clade D zooxanthellae symbionts (confirmed University of Miami, 2024) mean the effective bleaching response was significantly below the regional SST anomaly. 60% post-event coral cover confirms this. DHW estimated at watch-level impact despite regional alert-1 conditions.",
-      "asOf": "2026-06-25",
-      "sstAnomalyC": 0.9,
+      "asOf": "2026-06-29",
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Tela Bay holds some of the most intact reefs in the Caribbean. Coral cover above 60 percent — over 3x the regional average. Banco Capiro and Cocalito are the strongest sites. Elkhorn coral colonies here are being studied for heat-tolerant genetics; what you are diving on is living scientific research material.",
     "methodologyClaimIds": [
@@ -3876,12 +3876,12 @@
       "degreeHeatingWeeks": 0,
       "source": "noaa-crw-live",
       "notes": "No bleaching-level alert documented at Wakatobi during the 2024 global bleaching event. Reef scan photo surveys and eDNA sampling confirmed healthy reef condition. Nearest NOAA CRW gauge: Maluku, Indonesia regional product. Wakatobi corals show anomalous heat tolerance — SST anomalies do not predict benthic composition changes here as they do elsewhere.",
-      "asOf": "2026-06-25",
-      "sstAnomalyC": 0.4,
+      "asOf": "2026-06-29",
+      "sstAnomalyC": 0.3,
       "sourceIds": [
         "noaa-crw"
       ],
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Wakatobi sits at the heart of the Coral Triangle with one of the longest continuous reef monitoring records in Indonesia. Coral cover near 30 percent park-wide with individual sites reaching 46 percent. The reef did not bleach in 2024 when most of the world's reefs did. Operation Wallacea runs research expeditions from Hoga Island annually — divers here are diving alongside active science.",
     "methodologyClaimIds": [
@@ -3912,12 +3912,12 @@
       "degreeHeatingWeeks": 0,
       "source": "noaa-crw-live",
       "notes": "Philippines broadly experienced Alert Level 1-2 conditions during the 2023-2024 global bleaching event. Panaon Island outer reefs are recognized by the 50 Reefs Initiative as among the most thermally resilient reefs globally. No site-specific Sogod Bay bleaching report published for 2024 as of June 2026. Estimate based on Eastern Philippines regional NOAA CRW gauge.",
-      "asOf": "2026-06-25",
+      "asOf": "2026-06-29",
       "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "The outer reefs around Panaon Island are among the healthiest in the Philippines — coral cover well above the national average and whale shark encounters virtually guaranteed from November through April. This is one of the quietest major aggregation sites in Asia. LAMAVE researchers are regularly in the water and welcome diver observations.",
     "methodologyClaimIds": [
@@ -3948,12 +3948,12 @@
       "degreeHeatingWeeks": 5.6,
       "source": "noaa-crw-live",
       "notes": "Coral Triangle region experienced active HotSpots >1 degree C during the 4th global bleaching event (2023-2025). Bleaching warning events documented at Derawan in 2002-2003, 2010-2011, 2020, and 2021. No site-specific 2024 bleaching survey published for Derawan as of June 2026. Alert level estimated from NOAA CRW 5km product at 2.25N 118.42E.",
-      "asOf": "2026-06-25",
-      "sstAnomalyC": 0.4,
+      "asOf": "2026-06-29",
+      "sstAnomalyC": 1.2,
       "sourceIds": [
         "noaa-crw"
       ],
-      "fetchedAt": "2026-06-27T09:11:42.834Z"
+      "fetchedAt": "2026-07-01T10:29:50.497Z"
     },
     "divingOutlook": "Sangalaki Island is one of a handful of places worldwide with year-round resident reef manta rays — and the only site in East Borneo where pregnant females regularly appear. Hard coral cover has recovered close to 2003 levels after the 2010-2011 bleaching impact. Enforcement patrols with 24/7 radar monitoring began in 2023; seizures and prosecutions for blast fishing increased sharply in 2024.",
     "methodologyClaimIds": [
