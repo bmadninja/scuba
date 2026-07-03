@@ -1,28 +1,42 @@
-# I Am Not a Developer. I Used AI Agents to Build, Staff, and Run an Entire Ocean Conservation Platform. Alone.
+# I Am Not a Developer. AI Agents Run My Entire Ocean Data Platform.
 
 *By Josie Leung, founder of ScubaSeason*
 
 ---
 
-I have been diving for 20+ years and the thing that frustrated me every single time I tried to plan a trip was that there was no live data anywhere. Forum threads from 2019. TripAdvisor reviews that told me the dive shop was friendly. Nothing about whether the reef was still alive. Nothing about whether there was any realistic chance of seeing the species I was hoping to encounter. So I would fly 14 hours, drop into the water, and find out.
+I have been diving for 20+ years, and 3 things kept frustrating me every time I tried to plan a trip.
+
+I kept hearing that climate change was affecting reefs, and I wanted to actually prioritize where I traveled based on that, not guess.
+
+The data that did exist told me a species had been recorded at a site once, but species are not static, they move, so a single record is not the same as a real chance of seeing them. I have shown up at a site expecting to see a hammerhead shark and been told the last one seen there was 30 years ago.
+
+And there was no easy way to contribute back. Every diver takes photos, everyone posts them on social media, and none of it gets aggregated into anything useful.
+
+So I would fly 14 hours, drop into the water, and find out.
 
 I am not a developer. I have never written production code.
 
-I have run a team before. My previous startup had 13 people across marketing, business development, software engineering, backend, and infrastructure. We sold services, handled real money, and operated in an environment where security and quality were genuinely non-negotiable. I know what it feels like to have a proper team, to do code reviews with senior engineers looking over each other's shoulders, to have a BD person whose whole job is managing partner relationships.
+I have run a team before. My previous startup was an open source software company with 13 people, including 6 developers, across marketing, business development, and engineering. I was not the technical cofounder, but I worked alongside that team for a few years and know what it feels like to have a proper team, to do code reviews with senior engineers looking over each other's shoulders, to have a BD person whose whole job is managing partner relationships.
 
-ScubaSeason is deliberately different. It is a public good, not a commercial product. And building it alone with AI has forced me to think carefully about where I actually need human verification and where I can trust the agents to do the work.
+That company, unfortunately, did not work out. While I was thinking about what to do next, with the rise of AI, I decided to try building something completely solo, and here is how I did it.
 
-I built a reef health atlas anyway, and I want to tell you exactly how, because I think most people are dramatically underestimating what is now possible for a single person with no technical background.
+ScubaSeason is deliberately different. It is a public good, not a commercial product.
 
 ---
 
 ## What I built
 
-ScubaSeason pulls from 63 data sources (NOAA thermal stress feeds, Global Fishing Watch fishing pressure data, IUCN species status, iNaturalist sightings, coral cover surveys) and classifies every dive site with one of 3 labels I designed: Thriving, Under Pressure, or Witnessing Change.
+ScubaSeason pulls from 63 live data sources (NOAA thermal stress feeds, Global Fishing Watch fishing pressure data, IUCN species status, iNaturalist sightings, coral cover surveys) and updates constantly instead of sitting still like every other dive directory out there. It covers 354 locations, 1,311 dive sites, and 1,244 tracked species so far.
 
-114 locations. 356 dive sites. 258 tracked species. A species sighting probability layer that updates live as observations come in, so you can see the realistic chance of encountering specific marine life at each site before you book. For sites labelled Witnessing Change, a trajectory that shows where coral cover is going based on the rate of decline, so divers can understand what is actually at risk and when.
+The first piece is the reef state itself. Every site gets one of 3 labels I designed: Improving, Stable, or Declining, based on a formula that weighs live coral cover against a decade old baseline, the worst recorded bleaching alert level, and current fishing pressure. A site earns Improving when coral cover is holding at 40 percent or higher, heat stress has stayed mild, and fishing pressure is low. A site drops to Declining once coral cover falls below 25 percent or a serious bleaching alert has hit. Every label, not just Declining, comes with a trajectory showing where that reef's coral cover is heading, so divers get the same picture whether a reef is thriving or falling apart.
 
-I shared it with a friend and she was genuinely surprised to find out that Komodo and Raja Ampat, both in Indonesia, are Thriving. She said it made her want to delay her original trip and prioritize those instead. That is the whole point, really. The data existed. It just was not in a form anyone could use.
+The second piece is the species sighting probability layer. A species being recorded at a site once does not mean you will see it, so this layer aggregates live sighting data into an actual probability by month for that specific site, updating as new observations come in.
+
+The third piece is the upload. Divers can submit a photo and a dive log directly through ScubaSeason, and it gets routed automatically to iNaturalist, GBIF, and other research platforms. Every diver was already taking these photos and posting them somewhere. Now that gets aggregated into something useful instead of disappearing into a social feed.
+
+None of this exists anywhere else in diving. Every other platform is a static directory. This one is live, and it saves divers the work of piecing this together themselves from a dozen different places.
+
+I shared it with a friend and she was genuinely surprised to find out that Raja Ampat in Indonesia is labelled Improving. She had been planning a trip there, and decided to delay it and prioritize sites labelled Declining first instead, so she could see them before they change further. I am not saying every diver should make that choice, but it is exactly the kind of data point I built this for.
 
 There is no team. There are agents. And they are still running.
 
@@ -30,21 +44,17 @@ There is no team. There are agents. And they are still running.
 
 ## How I replaced every role
 
-Here is the honest version of what building this actually looked like.
-
 ### The research phase (the part no one talks about)
 
-Before I wrote a single line of code I needed to understand the market, the users, the competitors, and which data sources were actually worth integrating. Normally this is months of work for a research team.
+I needed to understand the market, the existing players, where the real gaps were, and which data sources were actually worth integrating. Normally this is months of work for a research team.
 
-I ran a BMAD domain research session (a structured agentic workflow that goes wide across sources, synthesizes findings, and gives you a decision ready output). It audited 5 competitors: PADI, Diveboard, Scuba Earth, Deepblu, ScubaEarth. It confirmed the core pain point: every existing directory is static. It validated complaints online. It identified the 3 user segments worth building for and which features they actually cared about.
-
-That took a day, not a quarter.
+I ran a BMAD domain research session (a structured agentic workflow that goes wide across sources, synthesizes findings, and gives you a decision ready output). It looked past PADI, Diveboard, Scuba Earth, Deepblu, and the other existing market players to find where the real opportunity was: every existing directory is static, and it checked whether a live version had been attempted before and why it had not worked. It validated complaints online, identified the 3 user segments worth building for and which features they actually cared about, then went source by source through the 63 data feeds I was considering to work out which were actually worth integrating.
 
 ### PRD, user stories, UX specs
 
-I used BMAD agents to write the PRD, break it into epics and user stories, and produce UX specifications for every major flow. I reviewed them, gave feedback, they revised. The output was specific enough that the engineering agents could implement directly from them without me translating anything.
+I used BMAD agents to write the PRD, break it into epics and user stories, and produce UX specifications for every major flow. I reviewed it closely, gave feedback, and kept tweaking it before any building started, because this stage is so much cheaper to edit than the stage after it. That pushed me to be as specific as possible so nothing got lost in translation. When I worked with actual engineers before, they would ask questions the moment something was ambiguous. Agents do not do that the same way, they make a lot of assumptions instead, so if the brief is not clear, what comes back will not match what you actually wanted. I do a massive brainstorm with them at this stage for exactly that reason.
 
-I have run this cycle 4 times as the product evolved. Each time it takes hours, not weeks.
+For any big feature, I still start back at the PRD instead of making quick modifications directly. Small tweaks do not need the full cycle, but anything that changes the product gets the same treatment from scratch, every time.
 
 ### Coding
 
@@ -54,7 +64,7 @@ The parts I found genuinely surprising: it could hold the full context of the co
 
 ### Data sourcing and ingestion
 
-This is the part I am most proud of, because it required the most judgment and I genuinely could not have done it without agents.
+This part did a lot of the heavy lifting, because it required the most judgment and I genuinely could not have done it without agents.
 
 I needed to figure out which of the hundreds of ocean monitoring organizations had data worth integrating, which had accessible APIs, which required account setup and approval, and which were dead ends. An agent ran that research, ranked the sources by data quality and access complexity, and produced a prioritized list with contact emails and API documentation links.
 
@@ -62,27 +72,29 @@ Then agents set up the ingestion pipelines: iNaturalist, GFW, IUCN, NOAA. Script
 
 ### QA and testing
 
-Test cases generated from the user stories. TypeScript type checking. End to end testing. When something broke (and things broke), I described the bug and the agent diagnosed it, proposed a fix, and implemented it. I learned more about debugging from watching that process than I had in years of using software professionally.
+Agents generated test cases from the user stories, ran TypeScript type checking, and ran end to end tests. When something broke, and things did break, I described the bug and the agent diagnosed it, proposed a fix, and implemented it.
+
+Two habits made the biggest difference here. I opened as many parallel sessions as possible and kept committing and merging constantly, instead of running everything through one giant session. And whenever I noticed my own prompt was messy, I learned to tell the agent to rewrite it into a clean, specific brief first and confirm it with me before touching any code, orchestrating multiple sub agents in parallel for anything that could run independently.
 
 ### Operations setup (the stuff nobody thinks about)
 
-Starting a company is genuinely operations heavy, and none of it is glamorous. Setting up a transactional email provider. Configuring an affiliate program. Getting API access approved with data providers, going through their forms, waiting for keys, wiring the credentials in. I used a combination of Claude Code and OpenClaw (my local agent harness) to set most of this up. I would describe what needed to happen, the agent would research the options, recommend one, walk me through the setup, and in some cases complete it directly.
+Having worked as a cofounder and COO at my previous startup, I know operations is one of those very time consuming, not glamorous, but essential parts of running a company. Having Claude, and AI in general, made this dramatically easier. I used a combination of Claude Code and OpenClaw (my local agent harness), and between them AI did everything from setting up a transactional email provider to configuring multiple affiliate programs to getting API access approved with data providers, going through their forms, waiting for keys, and wiring the credentials in. I would describe what needed to happen, the agent would research the options, recommend one, walk me through the setup, and in some cases complete it directly.
 
-It is the kind of work that eats days when you do it manually. I barely noticed it.
+It is the kind of work that eats days when you do it manually. The agents sped it up dramatically.
 
 ### Design
 
-Claude handles design work and layout. I would describe what I wanted visually, it would produce the component, I would react to it, and we would iterate. Every page on ScubaSeason was designed this way. I have a strong point of view on what looks good and I know immediately when something is wrong, but I could not have built any of it myself.
+I originally used BMAD for design work, and then switched to Claude's own design tooling once that shipped, which is what I used from there on. I would describe what I wanted visually, it would produce the component, I would react to it, and we would iterate. Every page on ScubaSeason was designed this way.
 
-### What still runs today
+I am not a designer myself. What I learned is that if you want something that does not look obviously AI produced, you cannot just describe a vibe. I would go through multiple sites looking for things I actually liked, then tell the agent exactly which sites and which elements were the inspiration, and have it design from that.
 
-Shipping the site was the beginning of the ongoing part. 11 GitHub Actions workflows run on schedule every day: NOAA reef health data refreshes daily, Global Fishing Watch fishing pressure updates weekly, iNaturalist and GBIF sightings refresh weekly, IUCN species status updates monthly, new dive sites are discovered and enriched daily, and data gaps get filled automatically, with a daily Telegram report landing in my phone telling me what ran, what succeeded, and what needs attention.
+### Where the site is now
+
+I shipped the MVP with everything described above already built and tested, and it has kept running and growing since. 11 GitHub Actions workflows run on schedule every day: NOAA reef health data refreshes daily, Global Fishing Watch fishing pressure updates weekly, iNaturalist and GBIF sightings refresh weekly, IUCN species status updates monthly, new dive sites are discovered and enriched daily, data gaps get filled automatically, and diver photo and dive log uploads get processed and routed out to iNaturalist and GBIF, with a daily Telegram report landing on my phone telling me what ran, what succeeded, and what needs attention.
 
 I also learned something the hard way on the cost side: I initially had everything running on the most capable models and burned through credits fast, so I audited each workflow and moved the high volume repetitive tasks (site discovery, data enrichment, gap filling) to lighter models. The discover sites workflow now costs about 2 to 3 cents per site. That calibration is not obvious when you start, but it matters.
 
-Beyond the data layer, a product operator runs 5 times every weekday, rotating through strategy review, user research synthesis, prioritization, execution, and reflection, keeping a running decision journal and flagging when something I shipped does not match the positioning I agreed to. A GTM operator runs Monday, Wednesday, Friday, sequencing outreach, drafting emails, and tracking which threads have gone stale. Every morning a Telegram message synthesizes what they all decided overnight, tells me what needs my attention, and waits for my approval before anything goes out.
-
-I am the only human in the loop.
+Beyond the data layer, a product operator runs 5 times every weekday, rotating through strategy review, user research synthesis, prioritization, execution, and reflection, keeping a running decision journal and flagging when something I shipped does not match the positioning I agreed to. A GTM operator runs Monday, Wednesday, Friday, sequencing outreach, drafting emails, and tracking which threads have gone stale. A grants operator looks for funding gaps and flags opportunities worth applying to. Every morning a Telegram message synthesizes what they all decided overnight, tells me what needs my attention, and waits for my approval before anything goes out.
 
 ---
 
@@ -95,7 +107,7 @@ I am the only human in the loop.
 - **Vercel**: deployment
 - **Next.js + TypeScript + Tailwind**: frontend
 
-I did not evaluate 20 tools and pick the best ones. I started with Claude Code because it was the most capable thing I could get my hands on and I never had a reason to switch.
+I started with Claude Code because it was the most capable thing I could get my hands on and I never had a reason to switch.
 
 ---
 
@@ -103,11 +115,9 @@ I did not evaluate 20 tools and pick the best ones. I started with Claude Code b
 
 I want to be honest about this because I think a lot of people gloss over it.
 
-When I ask an agent to review code, it is not the same as a senior engineer at my previous company sitting across from a junior engineer and catching things from experience and instinct. I know that. I am not pretending otherwise.
+Right now, I am completely trusting AI to do the coding. There has been no code audit, not from me and not from anyone else.
 
-What I do instead is the same thing I did at my previous company: bring in external reviewers for the things that matter most. At a commercial startup you get auditors to read the code before a release. Here, as I bring on conservation organization partners, having domain experts review whether the reef health classifications make scientific sense is part of how I plan to validate the data layer. Same principle, different context.
-
-For everything else, the honest answer is that I have calibrated my trust based on the stakes. GitHub Actions running a data refresh and failing visibly is a recoverable problem. A security vulnerability in a commercial product handling payments is not. ScubaSeason is a free public tool. That changes the risk profile and it changes how much trust I extend.
+That would not have worked at my previous company, because it was a fintech company and we handled real funds. But ScubaSeason is public code pulling from public science sources, and that changes what kind of verification actually matters here. Instead of bringing in a code auditor, I am currently reaching out to science and conservation organizations to collaborate on validating the platform, not just the code itself, but the formula behind the reef state labels and the species sighting probabilities too.
 
 I am not saying this approach works for everything. I am saying it works for this, and I think being clear about where you are trusting AI and where you are not is more useful than pretending you have solved the verification problem.
 
@@ -117,14 +127,18 @@ The biggest shift for me was treating agents as staff, not as autocomplete.
 
 When I wrote a vague prompt I got a vague result. When I wrote a clear brief (here is the role, here is what you know, here is what good looks like, here is what you must not do) I got something I could actually ship.
 
-The second thing: the ongoing operations piece is where the real leverage is. Most "I built this with AI" stories end at launch. The interesting part is that the agents are still working. The data is still refreshing. GTM is still going out. I am not maintaining any of it manually.
+The second thing: the ongoing operations piece is where the real leverage is. The agents are still working. The data is still refreshing. GTM is still going out. I am not maintaining any of it manually.
 
 One person can now run what used to require a company. I do not think most people have fully absorbed what that means yet.
 
 ---
 
-ScubaSeason is live and free at scubaseason.fun. If you dive, or you know someone who does, I would love your feedback. And if you are building something similar, I am genuinely happy to share more about the setup: hello@scubaseason.fun.
+ScubaSeason is live and free at [scubaseason.fun](https://scubaseason.fun), built entirely by AI. If you spot any bugs, I would love to hear about them. I cannot offer a bug bounty, but you will have my heartfelt gratitude. If you dive, or you know someone who does, I would really appreciate your feedback too. And if you are a science or conservation organization, or you are building something similar yourself, I am always happy to partner or share more about how I built this. Feel free to reach out: [josie@scubaseason.fun](mailto:josie@scubaseason.fun).
 
 ---
 
-*Josie Leung is the founder of ScubaSeason (scubaseason.fun), a nonprofit reef health atlas. She has been diving for 20+ years and had no technical background when she started this.*
+*Josie Leung is the founder of [ScubaSeason](https://scubaseason.fun), a nonprofit reef health atlas. She has been diving for 20+ years and had no technical background when she started this.*
+
+---
+
+**Tags:** Artificial Intelligence, Startup, Entrepreneurship, Automation, Data Science, Software Development, Productivity, Technology

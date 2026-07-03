@@ -109,25 +109,25 @@ export function FaqSection() {
 
   return (
     <section id="faq" style={{ marginBottom: "4rem" }}>
-      <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.5rem" }}>
+      <p style={{ fontSize: "0.6875rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--atlas-accent)", marginBottom: "0.5rem" }}>
         FAQ
       </p>
-      <h2 style={{ fontSize: "1.625rem", fontWeight: 800, letterSpacing: "-0.025em", color: "#f0f4f8", marginBottom: "0.75rem" }}>
+      <h2 style={{ fontSize: "1.625rem", fontWeight: 800, letterSpacing: "-0.025em", color: "var(--atlas-ink)", marginBottom: "0.75rem" }}>
         How we calculate it
       </h2>
-      <p style={{ fontSize: "0.9375rem", color: "#aebcd0", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
+      <p style={{ fontSize: "0.9375rem", color: "var(--atlas-ink-2)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
         {FAQS.length} questions on the calculations behind reef state, coral cover, DHW, conditions, species reliability, and more. Each answer names its source and confidence level.
       </p>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
         {FAQS.map((faq, i) => (
-          <details key={i} style={{ border: "1px solid rgba(255,255,255,0.1)", borderRadius: "1rem", overflow: "hidden" }}>
+          <details key={i} style={{ border: "1px solid var(--atlas-hairline-str)", borderRadius: "1rem", overflow: "hidden" }}>
             <summary
               style={{
                 padding: "1.25rem 1.5rem",
                 fontSize: "0.9375rem",
                 fontWeight: 600,
-                color: "#f0f4f8",
+                color: "var(--atlas-ink)",
                 cursor: "pointer",
                 listStyle: "none",
                 display: "flex",
@@ -137,11 +137,11 @@ export function FaqSection() {
               }}
             >
               <span>{faq.q}</span>
-              <span style={{ fontSize: "1.25rem", color: "#8b9db8", flexShrink: 0 }}>+</span>
+              <span style={{ fontSize: "1.25rem", color: "var(--atlas-mute)", flexShrink: 0 }}>+</span>
             </summary>
 
-            <div style={{ padding: "0 1.5rem 1.5rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-              <p style={{ fontSize: "0.9rem", lineHeight: 1.75, color: "#aebcd0", marginTop: "1rem", marginBottom: faq.caveat || (faq.sourceIds && faq.sourceIds.length > 0) ? "1rem" : 0 }}>
+            <div style={{ padding: "0 1.5rem 1.5rem", borderTop: "1px solid var(--atlas-hairline)" }}>
+              <p style={{ fontSize: "0.9rem", lineHeight: 1.75, color: "var(--atlas-ink-2)", marginTop: "1rem", marginBottom: faq.caveat || (faq.sourceIds && faq.sourceIds.length > 0) ? "1rem" : 0 }}>
                 {faq.a}
               </p>
 
@@ -154,7 +154,7 @@ export function FaqSection() {
 
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem" }}>
                 {faq.confidence && (
-                  <span style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: CONFIDENCE_COLOR[faq.confidence] ?? "#8b9db8", border: `1px solid ${CONFIDENCE_COLOR[faq.confidence] ?? "rgba(255,255,255,0.1)"}`, borderRadius: 999, padding: "0.2rem 0.6rem" }}>
+                  <span style={{ fontSize: "0.625rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: CONFIDENCE_COLOR[faq.confidence] ?? "var(--atlas-mute)", border: `1px solid ${CONFIDENCE_COLOR[faq.confidence] ?? "var(--atlas-hairline-str)"}`, borderRadius: 999, padding: "0.2rem 0.6rem" }}>
                     {faq.confidence} confidence
                   </span>
                 )}
@@ -166,7 +166,7 @@ export function FaqSection() {
                       href={src.url ?? "#"}
                       target="_blank"
                       rel="nofollow noopener"
-                      style={{ fontSize: "0.6875rem", color: "#00d4ff", textDecoration: "none", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 999, padding: "0.2rem 0.6rem" }}
+                      style={{ fontSize: "0.6875rem", color: "var(--atlas-accent)", textDecoration: "none", border: "1px solid var(--atlas-hairline-str)", borderRadius: 999, padding: "0.2rem 0.6rem" }}
                     >
                       {src.name}
                     </a>

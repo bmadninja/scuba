@@ -743,6 +743,34 @@ export default function DataPage() {
               </Link>
             </div>
 
+            <div style={{ marginTop: "2.5rem" }}>
+              <h3 style={subHStyle}>Ran a structured survey?</h3>
+              <p style={subPStyle}>
+                If you used a quadrat frame, transect tape, or a CoralWatch
+                chart on the reef, the upload flow recognises that too. Tell
+                us that is what you did on the dive and we route quadrat
+                photos and coral health readings to MERMAID and CoralWatch
+                instead of the sighting databases, so structured data lands
+                with the right partners automatically.
+              </p>
+              <Link
+                href="/upload"
+                style={{
+                  display: "inline-block",
+                  marginTop: "0.9rem",
+                  padding: "0.7rem 1.2rem",
+                  borderRadius: "0.7rem",
+                  border: `1px solid ${INK}`,
+                  color: INK,
+                  fontSize: "0.875rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                Log a survey
+              </Link>
+            </div>
+
             <div
               style={{
                 border: `1px solid rgba(246,199,0,0.3)`,
