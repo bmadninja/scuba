@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { STATE_TEXT, STATE_COLOR } from "@/lib/data/reef-state";
 import { LocationsGlobe } from "@/components/locations-globe";
+import { resizePhotoUrl } from "@/lib/photo-quality";
 import type { ReefState } from "@/lib/data/reef-state";
 
 // ─── types ────────────────────────────────────────────────────────────────────
@@ -678,7 +679,7 @@ function LocationCard({
         <div style={{ width: "100%", height: "100%", background: gradient, transition: "transform 0.5s" }} className="site-card-img" />
         {location.heroImageUrl && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={location.heroImageUrl} alt={location.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s" }} className="site-card-img" />
+          <img src={resizePhotoUrl(location.heroImageUrl, 800) ?? location.heroImageUrl} alt={location.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s" }} className="site-card-img" />
         )}
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(95deg,transparent 0,transparent 50px,rgba(0,160,220,.03) 50px,rgba(0,160,220,.03) 52px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to top,rgba(4,20,40,.5) 0%,transparent 55%)", pointerEvents: "none" }} />

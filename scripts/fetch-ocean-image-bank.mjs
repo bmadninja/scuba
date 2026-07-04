@@ -17,6 +17,10 @@
  *   node scripts/fetch-ocean-image-bank.mjs
  *   node scripts/fetch-ocean-image-bank.mjs --force   # overwrite existing heroes
  *   node scripts/fetch-ocean-image-bank.mjs --dry     # preview only
+ *
+ * IMPORTANT: this writes URLs on OIB's 750px *preview* CDN. After any run,
+ * follow up with `node scripts/localize-oib-heroes.mjs` to download the
+ * full-res originals and rewrite the URLs to sharp self-hosted variants.
  */
 
 import fs from "node:fs/promises";

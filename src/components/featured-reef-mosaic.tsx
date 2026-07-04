@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRef, useCallback } from "react";
 import { ReefHealthBadge } from "@/components/reef-health-badge";
+import { resizePhotoUrl } from "@/lib/photo-quality";
 
 type ReefState = "improving" | "stable" | "declining";
 
@@ -94,7 +95,7 @@ export function FeaturedReefMosaic({ cards }: { cards: MosaicCard[] }) {
             {/* Photo */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={card.heroImageUrl}
+              src={resizePhotoUrl(card.heroImageUrl, 800) ?? card.heroImageUrl}
               alt={`Underwater photograph at ${card.name}`}
               loading="lazy"
               draggable={false}

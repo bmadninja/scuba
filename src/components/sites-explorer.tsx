@@ -7,6 +7,7 @@ import { getReefState, STATE_TEXT, STATE_COLOR } from "@/lib/data/reef-state";
 import { getHeadlineSightingForSite, formatLastConfirmed } from "@/lib/data/sightings";
 import { EvidenceDot } from "@/components/evidence-dot";
 import { SitesGlobe } from "@/components/sites-globe";
+import { resizePhotoUrl } from "@/lib/photo-quality";
 import type { Location, Site, SkillLevel } from "@/lib/data/types";
 import type { ReefState } from "@/lib/data/reef-state";
 
@@ -919,7 +920,7 @@ function SiteCard({
         {site.heroImageUrl && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={site.heroImageUrl}
+            src={resizePhotoUrl(site.heroImageUrl, 800) ?? site.heroImageUrl}
             alt={site.name}
             style={{
               position: "absolute",

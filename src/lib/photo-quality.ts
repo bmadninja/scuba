@@ -93,6 +93,13 @@ export function resizePhotoUrl(
 ): string | null {
   if (!url) return null;
 
+  // Self-hosted hero (see scripts/localize-oib-heroes.mjs) — two variants
+  // exist: <base>-1920.webp and <base>-800.webp.
+  const localHero = url.match(/^(\/heroes\/.+)-1920\.webp$/);
+  if (localHero) {
+    return targetWidth >= 1200 ? url : `${localHero[1]}-800.webp`;
+  }
+
   // Wikimedia thumb URL — just replace the pixel dimension
   const wikiThumb = url.match(
     /^(https:\/\/upload\.wikimedia\.org\/wikipedia\/[^/]+\/thumb\/[a-f0-9]\/[a-f0-9]{2}\/[^/]+\/)\d+px-(.+)$/i,

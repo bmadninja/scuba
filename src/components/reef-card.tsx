@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ReefHealthBadge } from "@/components/reef-health-badge";
+import { resizePhotoUrl } from "@/lib/photo-quality";
 import type { ReefState } from "@/lib/data/reef-state";
 
 /**
@@ -86,7 +87,7 @@ export function ReefCard({ location, selected = false, cardRef }: ReefCardProps)
         {location.heroImageUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={location.heroImageUrl}
+            src={resizePhotoUrl(location.heroImageUrl, 800) ?? location.heroImageUrl}
             alt={location.name}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />

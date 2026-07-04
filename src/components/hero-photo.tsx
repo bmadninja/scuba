@@ -1,4 +1,4 @@
-import { underwaterPhotoUrl } from "@/lib/photo-quality";
+import { resizePhotoUrl, underwaterPhotoUrl } from "@/lib/photo-quality";
 
 // Ocean-toned gradients used as a placeholder when a reef genuinely has no
 // hero photo. We deliberately do NOT borrow another reef's photo — a missing
@@ -46,7 +46,8 @@ export function HeroPhoto({
       />
     );
   }
-  const src = raw;
+  // HeroPhoto only renders card-sized tiles, so the 800px variant is plenty.
+  const src = resizePhotoUrl(raw, 800) ?? raw;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
