@@ -572746,5 +572746,280 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Open ocean site 4 nm offshore; strong currents possible. Advanced Open Water certification minimum; deep specialty recommended. Best morning dives (early pelagic activity). Seasonal whale shark encounters March–May, August–September. Multiple dive operators on Koh Tao offer daily trips year-round. No specific permits required. Site occasionally inaccessible during monsoon swells (November–January) but remains diveable."
+  },
+  {
+    "id": "wakatobi-indonesia-roma",
+    "slug": "wakatobi-indonesia-roma",
+    "locationId": "wakatobi-indonesia",
+    "name": "Roma",
+    "heroImageUrl": null,
+    "lat": -5.75,
+    "lng": 124.15,
+    "description": "Submerged seamount rising from 200m to 8m off northern Tomia Island, crowned with distinctive potato coral formations resembling Rome's Coliseum. Healthy coral garden with abundant schooling fish and macro life.",
+    "depthRange": {
+      "min": 5,
+      "max": 25
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "geology",
+      "macro",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Pyramid Butterfly Fish",
+        "scientificName": "Hemitaurichthys polylepis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Fusilier",
+        "scientificName": "Pterocaesio chrysozona",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Redtooth Triggerfish",
+        "scientificName": "Odonus niger",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Banded Sea Snake",
+        "scientificName": "Hydrophis coggeri",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill Sea Turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Ribbon Eel",
+        "scientificName": "Rhinomuraena quaesita",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scorpionfish",
+        "scientificName": "Scorpaenidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant Trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Barracuda",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Winged Pipefish",
+        "scientificName": "Doryrhamphus dactyliophorus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Pygmy Seahorse",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 28,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2-3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 28,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm wetsuit or rash guard"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 35,
+          "max": 50
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 45
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 50
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 28,
+          "max": 45
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2-3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "editorialRank": 92,
+    "getThere": "Fly to Makassar (Sultan Hasanuddin International), connect via Wings Air/Lion Air to Matahora Airport in Wakatobi (~1h50m), then speedboat to Tomia Island. Wakatobi Resort also runs direct charter flights from Bali (~2.5h).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Flagship coral garden dive of Wakatobi. Seamount topography lets divers work coral coverage from ~25m up to 8m with little current. Diveable year-round. Small coral formations resemble Rome's Coliseum, hence the name."
   }
 ]
