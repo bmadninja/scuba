@@ -35,11 +35,17 @@ jobs:
 
           for n in $prs; do
             echo "::group::PR #$n"
-            info=$(gh pr view "$n" --repo "$REPO" --json mergeable,statusCheckRollup)
-            mergeable=$(echo "$info" | jq -r '.mergeable')
-            # Count checks that are NOT green (failing OR still pending → both block).
-            bad=$(echo "$info" | jq '[.statusCheckRollup[] | ((.conclusion // .state) // "PENDING") | ascii_downcase]
-                    | map(select(["success","neutral","skipped"] | index(.) | not)) | length')
+            # GitHub computes mergeability lazily: the first read often returns
+            # UNKNOWN while it calculates. Poll until it resolves before deciding.
+            mergeable=UNKNOWN
+            for _ in 1 2 3 4 5 6; do
+              mergeable=$(gh pr view "$n" --repo "$REPO" --json mergeable --jq .mergeable)
+              [ "$mergeable" != "UNKNOWN" ] && break
+              sleep 5
+            done
+            bad=$(gh pr view "$n" --repo "$REPO" --json statusCheckRollup --jq \
+                    '[.statusCheckRollup[] | ((.conclusion // .state) // "PENDING") | ascii_downcase]
+                     | map(select(["success","neutral","skipped"] | index(.) | not)) | length')
             echo "mergeable=$mergeable  non_green_checks=$bad"
 
             if [ "$mergeable" = "MERGEABLE" ] && [ "$bad" = "0" ]; then
