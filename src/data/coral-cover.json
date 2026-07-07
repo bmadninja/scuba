@@ -115,7 +115,7 @@
         "year": 2015,
         "coverPercent": 22
       },
-      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2022/06/2022-Healthy-Reefs-Initiative-Mesoamerican-Reef-Report-Card.pdf",
+      "sourceUrl": "https://www.healthyreefs.org/en/post/2022-mesoamerican-reef-health-report-card",
       "sourceLabel": "Healthy Reefs Initiative 2022 Mesoamerican Reef Report Card (AGRRA data)",
       "notes": "AGRRA composite for Quintana Roo and adjacent Mexican Caribbean transects.",
       "appliesTo": [
@@ -137,7 +137,7 @@
         "year": 2015,
         "coverPercent": 19
       },
-      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2022/06/2022-Healthy-Reefs-Initiative-Mesoamerican-Reef-Report-Card.pdf",
+      "sourceUrl": "https://www.healthyreefs.org/en/post/2022-mesoamerican-reef-health-report-card",
       "sourceLabel": "Healthy Reefs Initiative 2022 Mesoamerican Reef Report Card (AGRRA data)",
       "notes": "Belize barrier reef + offshore atolls (Turneffe, Lighthouse, Glover's).",
       "appliesTo": [
@@ -160,7 +160,7 @@
         "year": 2015,
         "coverPercent": 20
       },
-      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2022/06/2022-Healthy-Reefs-Initiative-Mesoamerican-Reef-Report-Card.pdf",
+      "sourceUrl": "https://www.healthyreefs.org/en/post/2022-mesoamerican-reef-health-report-card",
       "sourceLabel": "Healthy Reefs Initiative 2022 Mesoamerican Reef Report Card (AGRRA data)",
       "notes": "Bay Islands AGRRA composite (Roatán dominates the sample).",
       "appliesTo": [
@@ -182,8 +182,8 @@
         "year": 2013,
         "coverPercent": 35
       },
-      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2020/02/Bonaire-AGRRA-Report-2019.pdf",
-      "sourceLabel": "AGRRA Bonaire 2019 country report",
+      "sourceUrl": "https://agrra-data-explorer-oref.hub.arcgis.com/",
+      "sourceLabel": "AGRRA Data Explorer (Bonaire and Curaçao benthic transects)",
       "notes": "Among the highest mean cover in the Caribbean. Modest decline through the 2010s, but starting baseline is high.",
       "appliesTo": [
         "bonaire-national-marine-park-bonaire",
@@ -204,8 +204,8 @@
         "year": 2012,
         "coverPercent": 26
       },
-      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2019/04/AGRRA-Cayman-Islands-Country-Report.pdf",
-      "sourceLabel": "AGRRA Cayman Islands country report",
+      "sourceUrl": "https://agrra-data-explorer-oref.hub.arcgis.com/",
+      "sourceLabel": "AGRRA Data Explorer (Cayman Islands benthic transects)",
       "notes": "Little Cayman (Bloody Bay) historically among the highest cover in the region.",
       "appliesTo": [
         "bloody-bay-wall-cayman-islands",
@@ -226,8 +226,8 @@
         "year": 2013,
         "coverPercent": 17
       },
-      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2019/12/AGRRA-Bahamas-Report.pdf",
-      "sourceLabel": "AGRRA Bahamas country report",
+      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2020/08/Bahamas-Coral-Reef-Report-Card-2020.pdf",
+      "sourceLabel": "AGRRA Bahamas Coral Reef Report Card (2020)",
       "notes": "Wide variance across the Bahamian banks; the AGRRA composite trends down through the 2010s.",
       "appliesTo": [
         "tiger-beach-bahamas",
@@ -248,8 +248,8 @@
         "year": 2012,
         "coverPercent": 32
       },
-      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2019/02/Cuba-Country-Summary.pdf",
-      "sourceLabel": "AGRRA Cuba country summary",
+      "sourceUrl": "https://agrra-data-explorer-oref.hub.arcgis.com/",
+      "sourceLabel": "AGRRA Data Explorer (Cuba, Jardines de la Reina benthic transects)",
       "notes": "Jardines de la Reina is one of the best-protected reef systems in the Caribbean; cover is consistently high in the AGRRA record.",
       "appliesTo": [
         "cuba-jardines-de-la-reina"
@@ -269,8 +269,8 @@
         "year": 2011,
         "coverPercent": 16
       },
-      "sourceUrl": "https://www.agrra.org/wp-content/uploads/2019/12/AGRRA-Dominican-Republic-Country-Report.pdf",
-      "sourceLabel": "AGRRA Dominican Republic country report",
+      "sourceUrl": "https://agrra-data-explorer-oref.hub.arcgis.com/",
+      "sourceLabel": "AGRRA Data Explorer (Dominican Republic benthic transects)",
       "notes": "AGRRA composite for DR; Silver Bank itself is offshore and not on the AGRRA transect network — treated as the nearest jurisdiction-level snapshot.",
       "appliesTo": [
         "silver-bank-dominican-republic"
