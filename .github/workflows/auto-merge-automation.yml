@@ -1,0 +1,53 @@
+name: Auto-merge automation PRs
+
+# Data PRs from the discovery/enrichment bots (labeled "automation") used to pile
+# up unmerged forever. This sweeps them and merges the clean ones automatically.
+# Safety gate: a PR only merges if it has NO merge conflicts AND every check is
+# green — in practice the Vercel build/deploy. Schema-broken data fails the Vercel
+# build → red check → this refuses to merge it. Human/code PRs are never touched
+# (they lack the "automation" label).
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # sweep every 30 min
+  workflow_dispatch:          # or run on demand
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auto-merge-automation
+  cancel-in-progress: false
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge clean automation PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          prs=$(gh pr list --repo "$REPO" --state open --label automation --json number --jq '.[].number')
+          if [ -z "$prs" ]; then echo "No open automation PRs."; exit 0; fi
+
+          for n in $prs; do
+            echo "::group::PR #$n"
+            info=$(gh pr view "$n" --repo "$REPO" --json mergeable,statusCheckRollup)
+            mergeable=$(echo "$info" | jq -r '.mergeable')
+            # Count checks that are NOT green (failing OR still pending → both block).
+            bad=$(echo "$info" | jq '[.statusCheckRollup[] | ((.conclusion // .state) // "PENDING") | ascii_downcase]
+                    | map(select(["success","neutral","skipped"] | index(.) | not)) | length')
+            echo "mergeable=$mergeable  non_green_checks=$bad"
+
+            if [ "$mergeable" = "MERGEABLE" ] && [ "$bad" = "0" ]; then
+              echo "→ merging #$n"
+              gh pr merge "$n" --repo "$REPO" --squash --delete-branch \
+                || echo "  merge failed for #$n (skipping)"
+            else
+              echo "→ skipping #$n (conflicts or checks not green yet)"
+            fi
+            echo "::endgroup::"
+          done
