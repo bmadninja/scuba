@@ -23,10 +23,11 @@ You are a scheduled, autonomous dive-site discovery pass for scubaseason.fun. Yo
      - If the site cannot be corroborated by 3+ independent sources, return exactly `{"refuse": true, "reason": "..."}`.
    - instruction: final message must be ONLY the raw JSON object (or refuse object).
 
-4. **Guard each returned entry** (skip refusals):
-   a. Write the JSON to a temp file under the scratchpad dir.
-   b. `node scripts/validate-site-entry.mjs <tempfile>` — if it exits non-zero, **SKIP this entry** (log the printed reasons). This catches schema errors, duplicates, feet/meters depth bugs, bad coordinates, and HTML entities.
-   c. **Fact-check:** spawn a second `model: "haiku"` subagent as a skeptical fact-checker. Give it the entry JSON and ask for `{"score": 0..1, "issues": [...]}` — score <0.8 if coordinates look off, species look generic, depth implausible, or description vague. If `score < 0.8`, **SKIP this entry.**
+4. **Normalize + guard each returned entry** (skip refusals):
+   a. Write the raw JSON to a temp file under the scratchpad dir.
+   b. `node scripts/normalize-site-entry.mjs <tempfile>` — auto-repairs the quirks Haiku reliably emits (float temps → int, null `bestMonths` → dropped, HTML entities decoded, `slug` = `id`). This keeps good sites from being discarded over trivial formatting.
+   c. `node scripts/validate-site-entry.mjs <tempfile>` — if it exits non-zero, **SKIP this entry** (log the printed reasons). This catches schema errors, duplicates, feet/meters depth bugs, and out-of-range coordinates.
+   d. **Fact-check:** spawn a second `model: "haiku"` subagent as a skeptical fact-checker. Give it the entry JSON and ask for `{"score": 0..1, "issues": [...]}` — score <0.8 if coordinates look off, species look generic, depth implausible, or description vague. If `score < 0.8`, **SKIP this entry.**
 
 5. **Commit the survivors:** append every entry that PASSED the guard AND scored ≥0.8 to `src/data/sites.json` (keep 2-space indent + trailing newline), then:
    `git add src/data/sites.json && git -c user.email="bot@scubaseason.fun" -c user.name="scubaseason-bot" commit -m "data: add <names> (Max+Haiku discovery)" && git fetch origin main -q && git rebase origin/main -q && git push origin main -q`
