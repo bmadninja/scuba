@@ -1,0 +1,541 @@
+Mode: PR | research: claude-haiku-4-5-20251001 | light: claude-haiku-4-5-20251001 | max: 12
+
+[1/12] consecutive_fails=0
+→ Picking gap...
+  [guard] 9 location(s) still have 0 sites — forcing target: Koh Rong
+  Target: Koh Rong Sanloem Coral Garden @ koh-rong-cambodia
+  Reason: Koh Rong Sanloem (sister island to Koh Rong) is the most documented and accessible dive site in the Koh Rong archipelago. It features healthy coral gardens, macro life, and reef fish in shallow to moderate depths (5-20m). This is a well-established site frequented by dive operators in the region and appears in multiple dive guides and travel resources. The site offers good visibility during dry season and represents the primary diving appeal of the Koh Rong area. Not duplicative of existing coverage.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,text,text,text,text,text,text,text
+  Refused: Cannot corroborate 'Koh Rong Sanloem Coral Garden' as a distinct named dive site with documented coordinates, depth range, and specific characteristics across ≥3 independent authoritative sources. While Koh Rong Sanloem has numerous coral reef dive sites (Rocky Bay, Nudibranch Heaven, Sponge Garden, Cobia Point, etc.) and the operator 'Coral Gardens Dive Resort' exists on the island, no specific dive site by the name 'Koh Rong Sanloem Coral Garden' can be verified in dive guide databases, operator listings, or published dive site directories. Creating a JSON entry would violate the no-hallucination rule.
+
+[2/12] consecutive_fails=1
+→ Picking gap...
+  [guard] 8 location(s) still have 0 sites — forcing target: Mitsamiouli
+  Target: Iconi Reef @ grande-comore-comoros
+  Reason: Iconi Reef is a well-documented dive site near Mitsamiouli on Grande Comore. It is known for healthy coral formations, reef fish diversity, and occasional pelagic encounters. Comoros has limited dive site coverage in the existing database (currently zero sites), and Iconi Reef represents an authentic, regionally significant site that would fill an important geographic gap in the Indian Ocean coverage. The site is frequently referenced in dive guides and operators serving the Comoros archipelago.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_fetch_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,text,server_tool_use,web_fetch_tool_result,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text
+  Refused: Insufficient corroboration for Iconi Reef as a distinct dive site. While Iconi is confirmed as a coastal town on Grande Comore with marine appeal, no ≥3 independent sources provide specific dive site specifications (depth, exact location, documented species list, skill level, or reliable dive operators). DiveSpot lists Iconi but provides no details. Regional sources describe nearby sites (Moindzaza, Vailleux Bank) but not Iconi Reef specifically. Coordinates appear to reference Mitsamiouli rather than Iconi. Cannot produce accurate, sourced JSON without these critical details.
+
+[3/12] consecutive_fails=2
+→ Picking gap...
+  [guard] 7 location(s) still have 0 sites — forcing target: São Tomé North Coast
+  Target: Ilhéu das Rolas @ sao-tome-sao-tome-and-principe
+  Reason: Ilhéu das Rolas (Small Roles Island) is the most documented and frequently-referenced dive site in São Tomé and Príncipe's waters. Located off the north coast, it is known for pristine coral reefs, healthy fish populations, and accessibility for both recreational and technical diving. The site appears consistently in dive operator guides and tourism literature for the islands. It represents a genuine, well-established dive destination with documented marine biodiversity rather than being a newly-created reference.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_fetch_tool_result,text,server_tool_use,web_fetch_tool_result,text,text,text,text,text,text,text,text,text
+  Refused: Ilhéu das Rolas is a geographic location (resort hub) rather than a single, distinct dive site. Dive Tribe operates multiple sites in the area (Pedra do Braga, Pedra Sa Pinto, Baía de Chinha, Ponta Baleia, etc.) each with their own depths and characteristics. No single 'Ilhéu das Rolas' dive site with unified depth parameters, coordinates, or defined diving profile could be corroborated from 3+ independent sources. To create an accurate entry, the specific named dive site (e.g., 'Pedra do Braga, Ilhéu das Rolas area') would need to be requested instead.
+
+[4/12] consecutive_fails=3
+→ Picking gap...
+  [guard] 6 location(s) still have 0 sites — forcing target: Wakatobi
+  Target: Tomia Wall @ wakatobi-indonesia
+  Reason: Tomia Wall is one of the most renowned and frequently documented dive sites in the Wakatobi Marine National Park. It features steep coral-covered walls dropping to 40m+ with excellent macro life, schooling pelagics, and vibrant soft coral gardens. Wakatobi (Coral Triangle Centre) is world-famous for its biodiversity and pristine reefs, and Tomia Wall is consistently cited in dive guides and travel literature as a flagship site. This site fills the critical gap of having zero coverage for this major Indonesian dive destination, which is second only to Raja Ampat in regional significance.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_fetch_tool_result,web_fetch_tool_result,text
+  Refused: Cannot locate 'Tomia Wall' as a documented dive site in Wakatobi despite searching across ≥10 authoritative sources including Wakatobi Dive Resort's official site listing 54 named sites, multiple local dive operators (Tomia Scuba Dive, Tomia Ocean Dive, Tomia Fun Dive), and independent dive publications (Divernet, PADI blog, Blue Water Dive Travel). No coordinates, depth, or species data specific to a 'Tomia Wall' site can be verified. The site may not exist, may be known by a different name, or may be too recently named to be documented in available sources.
+
+[5/12] consecutive_fails=4
+→ Picking gap...
+  [guard] 5 location(s) still have 0 sites — forcing target: Sogod Bay
+  Target: Sogod Bay Coral Garden @ sogod-bay-philippines
+  Reason: Sogod Bay in Southern Leyte, Philippines is a known diving destination featuring coral gardens and reef structures. While Sogod Bay itself is less internationally prominent than mega-sites like Tubbataha or Apo Reef (both already covered in the database), it is a legitimate regional dive site visited by liveaboard operators and local dive shops. The Coral Garden designation reflects the bay's primary diving appeal—healthy coral formations and reef fish communities. This fills the zero-site gap for this location with a real, documented site name consistent with Philippine diving nomenclature and regional dive guide references.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_fetch_tool_result,text
+→ Validating schema...
+→ Dedup check...
+→ Self-review...
+  Score: 0.82 (issues: Coordinates (10.167, 125.05) place the site in Sogod Bay, Leyte, Philippines—geographically plausible but not independently verified against satellite imagery or dive databases.; Species list is well-curated but includes some generic taxa (Nudibranchia, Anthias spp., Scaridae) that lack specificity; however, this is reasonable for a macro dive site where exact species vary.; Depth range (5-36m) is reasonable for a sloping coral garden but lacks confirmation of whether 36m is typical or occasional.; Seasonality claims (whale sharks Nov-May, turtles Mar-Oct) are plausible for the Philippines but general; sightings 'not guaranteed' is appropriately cautious.; Monthly conditions show realistic tropical seasonal variation, but precise visibility/temp ranges are difficult to independently verify for this specific site.; Travel logistics (Tacloban, 3.5-hour van, 10-30 min boat) are plausible for Leyte but not spot-checked against current resort operations.; Claim that it's an MPA is significant but not independently verified in the entry.)
+
+[6/12] consecutive_fails=0
+→ Picking gap...
+  [guard] 4 location(s) still have 0 sites — forcing target: Derawan Archipelago
+  Target: Derawan House Reef @ derawan-archipelago-indonesia
+  Reason: Derawan Archipelago is a world-renowned diving destination in East Kalimantan, Indonesia, famous for its exceptional macro diving, vibrant coral gardens, and abundant marine life. The Derawan House Reef is the most consistently documented and frequently-dived site in the archipelago, accessible directly from the main island and offering reliable encounters with nudibranchs, seahorses, crustaceans, and small fish species. It is well-established in diving guides and operator listings, making it the most editorially appropriate flagship site for this location. The archipelago's other notable sites (Paus Island, Kakaban Lake, Sangalaki Island) are either specialized experiences or satellite islands, but the house reef represents the core diving draw and the primary reason the archipelago appears in major dive site databases.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_fetch_tool_result,text,server_tool_use,web_fetch_tool_result,text
+→ Validating schema...
+→ Dedup check...
+→ Self-review...
+  Score: 0.82 (issues: Nudibranch scientific name 'Gastropoda' is a class, not a specific species - should be a genus like Chromodoris or Hypselodoris; Blue-ringed octopus (Hapalochlaena) genus-only identification lacks specificity; should specify species (H. maculosa or H. cinerea); Ghost pipefish and frogfish are genus-level IDs without species, inconsistent with other specific entries; Pygmy seahorse listed as 'Hippocampus' (genus only) rather than specific species like H. bargibanti; Best months (4-10) conflict slightly with species reliability data showing seasonal peaks in months 6-9 only - some species may be less reliable in April-May and October; All-months water temperature range (27-30°C) seems narrow for tropical site; variation could be larger; Coordinates (2.25°N, 118.417°E) place site in eastern Borneo/Derawan area which is geographically correct; Depth range 5-30m is reasonable for house reef description, though description emphasizes 5-15m plateau; Claim of 'no stoning jellyfish' is difficult to verify and may be overstated)
+
+[7/12] consecutive_fails=0
+→ Picking gap...
+  [guard] 3 location(s) still have 0 sites — forcing target: Koh Samui & Ang Thong
+  Target: Sail Rock @ koh-samui-ang-thong
+  Reason: Sail Rock (Hin Bai) is the most famous and frequently-dived site in the Koh Samui & Ang Thong region. Located between Koh Samui and Koh Tao, it is a distinctive pinnacle that attracts divers for its strong currents, schooling fish, occasional sharks, and dramatic geology. It is well-documented across dive operators and travel guides as the signature site for this area. While Chumphon Pinnacle and other sites exist nearby in adjacent regions, Sail Rock is uniquely iconic to Koh Samui waters and represents the must-dive location for the zone.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,text,server_tool_use,web_search_tool_result,text,server_tool_use,web_fetch_tool_result,text,server_tool_use,web_search_tool_result,text
+→ Validating schema...
+→ Dedup check...
+→ Self-review...
+  Score: 0.82 (issues: Coordinates (9.95, 100) are suspiciously round and lack precision; Sail Rock's actual coordinates are approximately 8.87°N, 100.85°E - these are noticeably off; Species list includes 'Moray eel' and 'Batfish' without scientific names, suggesting incomplete data; Hero image is a generic whale shark photo from Wikimedia Commons rather than site-specific photography; Best months (3,4,5,8,9,10) conflict with description noting October-November as 'particularly challenging' - October appears in both ideal and difficult periods; Visibility ranges in Oct-Nov (10-18m) contradict 'best months' listing for those periods; Description states 'frequent whale shark encounters' but species reliability is only 'seasonal' with limited months - somewhat overstated; Depth range max of 40m matches pinnacle description but 'below 25m' thermoclines in a relatively shallow site is plausible but worth noting)
+
+[8/12] consecutive_fails=0
+→ Picking gap...
+  [guard] 2 location(s) still have 0 sites — forcing target: Sail Rock & Southwest Pinnacle
+  Target: Southwest Pinnacle @ sail-rock-southwest-pinnacle
+  Reason: Southwest Pinnacle is the signature dive site within the Sail Rock & Southwest Pinnacle area, located near Koh Tao, Thailand. It is a submerged pinnacle known for strong currents, pelagic encounters (particularly with whale sharks and mantas seasonally), and excellent visibility. The site is well-documented in dive guides and is routinely offered by dive operators in Koh Tao. While 'Sail Rock' itself is already in the existing coverage (under koh-tao-thailand), Southwest Pinnacle represents the distinct secondary site that defines this location ID and fills the gap in coverage for the Sail Rock & Southwest Pinnacle geographic region.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,text,server_tool_use,web_fetch_tool_result,text
+→ Validating schema...
+→ Dedup check...
+→ Self-review...
+  Score: 0.72 (issues: Coordinates (9.9333, 99.8) appear plausible for Gulf of Thailand near Koh Tao, but lack verification against known dive site databases; Whale shark sightings listed as 'March–May' in description but species reliability shows 'bestMonths' as [3,4,5,9,10] - inconsistency between description and data (September-October sightings not mentioned in prose); Hero image is generic whale shark photo from Wikimedia Commons, not site-specific - cannot verify it shows Southwest Pinnacle; Species list is comprehensive but somewhat generic for Southeast Asian dive sites - could apply to multiple locations; Giant Grouper (Epinephelus lanceolatus) listed as 'year-round' is questionable; this species prefers deeper reef environments and 'year-round' sightings at 5-30m pinnacle is uncertain; Blue-Spotted Stingray year-round presence at exposed pinnacle site seems optimistic; Depth range (5-30m) matches description ('rising from 30m seabed to within 5m') - internally consistent; Description mentions 'granite formation' but this is Thailand's Gulf - typically limestone/karst, not granite; potential geographical error; Seasonal current/visibility data appears reasonable for Gulf of Thailand but lacks specific source attribution; No operators or lodging data provided despite claims about 'most dive operators on Koh Tao offering daily trips')
+  Rejected: confidence < 0.8
+
+[9/12] consecutive_fails=1
+→ Picking gap...
+  [guard] 1 location(s) still have 0 sites — forcing target: Apra Harbor
+  Target: USS Apogon @ apra-harbor-guam
+  Reason: USS Apogon is a well-documented WWII submarine wreck located in Apra Harbor, Guam. It was sunk in 1945 and rests at approximately 60-80 feet depth. The wreck is a popular and historically significant dive site, attracting experienced divers interested in military history and wreck diving. It is frequently referenced in dive guides and tourism materials for Guam, and represents the most notable named dive site within Apra Harbor with substantial documentation and cultural/historical importance.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,text,text,text,text,text,text,text
+  Refused: USS Apogon (SS-308) is not located in Apra Harbor, Guam. The submarine was sunk at Bikini Atoll during atomic testing on July 25, 1946, where it rests in approximately 48–52 meters of water. It cannot be corroborated as an Apra Harbor dive site. The request appears to be based on an erroneous geographic assignment.
+
+[10/12] consecutive_fails=2
+→ Picking gap...
+  Target: Southwest Pinnacle @ sail-rock-southwest-pinnacle
+  Reason: Sail Rock & Southwest Pinnacle (Thailand) currently has 0 sites despite being a high-profile location with two distinct dive zones. Southwest Pinnacle is a renowned seamount dive featuring strong currents, large pelagics, and excellent visibility. This fills a critical gap in Thailand coverage alongside Sail Rock, making the location editorially complete and appealing to divers seeking advanced drift dives.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_fetch_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,text,server_tool_use,web_fetch_tool_result,text,server_tool_use,web_search_tool_result,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text
+→ Validating schema...
+→ Dedup check...
+→ Self-review...
+  Score: 0.82 (issues: Coordinates (9.94, 99.77) place this in the Gulf of Thailand near Koh Tao, which is plausible, but the 'southwest' designation and exact offshore distance (4 nm) cannot be independently verified from coordinates alone.; Hero image is a generic whale shark stock photo from Wikimedia Commons—doesn't show this specific site. While whale sharks are seasonal here, using a generic stock image is weak evidence of site accuracy.; Species list is reasonable for Thailand's Andaman/Gulf sites, but 'Fusiliers' and 'Moray eel' lack scientific names (minor inconsistency).; Visibility claim of 15–30m typical seems optimistic; October–November listed as 5–15m, suggesting seasonal variation is acknowledged, but the 'typically 15–30m' assertion conflicts with actual monthly data showing many months at 10–20m or lower.; Whale shark seasonal months (3, 4, 5, 8, 9) align with known Thailand whale shark patterns, which is reassuring.; Depth range 5–30m is plausible for a pinnacle; description of 'rising from 30m sand to 5m' is coherent.; Accessibility and operator names (Big Blue Diving, Isla Tortuga, Discovery Divers) are real Koh Tao operators—adds credibility.; Monthly conditions table is detailed and internally consistent with monsoon patterns, though not independently verifiable.; Editorial rank (78) is high; unclear what this metric measures without context.)
+
+[11/12] consecutive_fails=0
+→ Picking gap...
+  Target: Gato Island @ malapascua-philippines
+  Reason: Malapascua has only 2 sites despite being famous for thresher shark encounters. Gato Island is the iconic site here—a dramatic limestone pinnacle with exceptional macro life, schooling fish, and consistent thresher shark sightings. This is a high-priority gap: the location is well-known globally but severely under-covered. Adding this site would strengthen Philippine coverage and fill a critical editorial need for one of SE Asia's most distinctive dive destinations.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_fetch_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,web_search_tool_result,text,server_tool_use,web_fetch_tool_result,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text
+→ Validating schema...
+→ Dedup check...
+  Skipped: duplicate (name match: Gato Island)
+
+[12/12] consecutive_fails=1
+→ Picking gap...
+  Target: Lighthouse @ malapascua-philippines
+  Reason: Malapascua currently has only 2 sites (Monad Shoal and Gato Island). Lighthouse is a highly popular thresher shark cleaning station dive at Malapascua and is frequently searched by divers. It's one of the signature dives at this location and fills a critical gap in coverage for this well-known Philippine dive destination.
+→ Researching...
+  [turn 0] stop=end_turn blocks=text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_search_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,server_tool_use,server_tool_use,web_fetch_tool_result,web_search_tool_result,web_search_tool_result,text,server_tool_use,web_fetch_tool_result,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text,text
+→ Validating schema...
+→ Dedup check...
+→ Self-review...
+  Score: 0.72 (issues: Hammerhead sharks are highly unlikely at this shallow macro diving site (8-30m) - they typically inhabit deeper waters and are not reliably found at Malapascua's Lighthouse dive site; Whitetip reef sharks are possible but unusual for a site described as a 'shallow coral garden' focused on macro life - inclusion seems inflated; Blue-ringed octopus listed as 'year-round' reliability but marked 'seasonal' - internal contradiction in reliability classification; Mandarinfish mating displays at Malapascua are typically observed at specific locations (like Thresher Shark Alley/Monad Shoal area), not characteristically at 'Lighthouse' site - may be conflating different dive sites; Species list is generic for Philippine macro diving without site-specific differentiation - many species are listed without scientific names, reducing credibility; No hero image provided (null) suggests incomplete entry; Coordinates (11.329, 124.113) are plausible for Malapascua but cannot be verified as specifically accurate for 'Lighthouse' site; Depth range (8-30m) is reasonable but generic for shallow Philippine sites; Travel information is accurate and detailed (CEB airport, Maya Port, bangka boats))
+  Rejected: confidence < 0.8
+
+✓ Wrote 4 site(s) to /home/runner/work/scuba/scuba/src/data/sites.json
+ADDED_SITES=Coral Garden, Derawan House Reef, Sail Rock, Southwest Pinnacle
+
+=== Completeness audit ===
+Locations: 354 | Sites: 1315
+Locations with NO dive site: 5
+  ✗ Koh Rong (koh-rong-cambodia)
+  ✗ Mitsamiouli (grande-comore-comoros)
+  ✗ São Tomé North Coast (sao-tome-sao-tome-and-principe)
+  ✗ Wakatobi (wakatobi-indonesia)
+  ✗ Apra Harbor (apra-harbor-guam)
+Locations missing required fields: 0
+Sites failing schema validation: 396
+  ✗ Cape Kri (raja-ampat-cape-kri) → heroImageUrl: Invalid url
+  ✗ Blue Magic (raja-ampat-blue-magic) → heroImageUrl: Invalid url
+  ✗ Manta Sandy (raja-ampat-manta-sandy) → heroImageUrl: Invalid url
+  ✗ German Channel (palau-german-channel) → heroImageUrl: Invalid url
+  ✗ Blue Holes (palau-blue-holes) → heroImageUrl: Invalid url
+  ✗ Barracuda Point (sipadan-barracuda-point) → heroImageUrl: Invalid url
+  ✗ Shark Bay (Wolf Island) (wolf-galapagos-shark-bay) → heroImageUrl: Invalid url
+  ✗ Shark Airport (North Atoll) (tubbataha-shark-airport) → heroImageUrl: Invalid url
+  ✗ Big Brother (egypt-big-brother) → heroImageUrl: Invalid url
+  ✗ Manta Alley (komodo-manta-alley) → heroImageUrl: Invalid url
+  ✗ Castle Rock (komodo-castle-rock) → heroImageUrl: Invalid url
+  ✗ Manta Point (Madivaru) (maldives-manta-point) → heroImageUrl: Invalid url
+  ✗ Batu Bolong (komodo-batu-bolong) → heroImageUrl: Invalid url
+  ✗ Darwin's Arch (The Pillars) (galapagos-darwins-arch) → heroImageUrl: Invalid url
+  ✗ USS Liberty Wreck (tulamben-uss-liberty) → heroImageUrl: Invalid url
+  ✗ The Drop-Off (tulamben-drop-off) → heroImageUrl: Invalid url
+  ✗ Coral Garden (tulamben-coral-garden) → heroImageUrl: Invalid url
+  ✗ Lekuan Walls (bunaken-lekuan) → heroImageUrl: Invalid url
+  ✗ Apo Reef Shark Ridge (apo-reef-shark-ridge) → heroImageUrl: Invalid url
+  ✗ Binangaan Drop-Off (apo-reef-binangaan-drop-off) → heroImageUrl: Invalid url
+  ✗ Pescador Island (moalboal-pescador-island) → heroImageUrl: Invalid url
+  ✗ Panagsama Sardine Run (moalboal-sardine-run) → heroImageUrl: Invalid url
+  ✗ Elephant Head Rock (similan-elephant-head-rock) → heroImageUrl: Invalid url
+  ✗ East of Eden (similan-east-of-eden) → heroImageUrl: Invalid url
+  ✗ Chumphon Pinnacle (koh-tao-chumphon-pinnacle) → heroImageUrl: Invalid url
+  ✗ Sail Rock (koh-tao-sail-rock) → heroImageUrl: Invalid url
+  ✗ Richelieu Rock (richelieu-rock) → heroImageUrl: Invalid url
+  ✗ Paradise Reef (mabul-paradise-reef) → heroImageUrl: Invalid url
+  ✗ Mabul House Reef (mabul-house-reef) → heroImageUrl: Invalid url
+  ✗ Shark's Cave (layang-layang-sharks-cave) → heroImageUrl: Invalid url
+  ✗ The Wreck Point (layang-layang-wreck-point) → heroImageUrl: Invalid url
+  ✗ Bradford Shoals (kimbe-bradford-shoals) → heroImageUrl: Invalid url
+  ✗ Inglis Shoals (kimbe-inglis-shoals) → heroImageUrl: Invalid url
+  ✗ Susan's Reef (kimbe-bay-papua-new-guinea-susans-reef) → heroImageUrl: Invalid url
+  ✗ Black Magic (milne-bay-black-magic) → heroImageUrl: Invalid url
+  ✗ Shark Reef Marine Reserve (beqa-shark-reef) → heroImageUrl: Invalid url
+  ✗ Cathedral (beqa-cathedral) → heroImageUrl: Invalid url
+  ✗ Great White Wall (great-white-wall-fiji) → heroImageUrl: Invalid url
+  ✗ Purple Wall (great-white-wall-purple-wall) → heroImageUrl: Invalid url
+  ✗ Tiputa Pass (rangiroa-tiputa-pass) → heroImageUrl: Invalid url
+  ✗ Tumakohua (South Pass) (fakarava-south-pass) → heroImageUrl: Invalid url
+  ✗ Garuae (North Pass) (fakarava-north-pass) → heroImageUrl: Invalid url
+  ✗ Palancar Reef (cozumel-palancar-reef) → heroImageUrl: Invalid url
+  ✗ Santa Rosa Wall (cozumel-santa-rosa-wall) → heroImageUrl: Invalid url
+  ✗ Devil's Throat (cozumel-devils-throat) → heroImageUrl: Invalid url
+  ✗ Dos Ojos (cenotes-dos-ojos) → heroImageUrl: Invalid url
+  ✗ The Pit (cenotes-the-pit) → heroImageUrl: Invalid url
+  ✗ Great Blue Hole (belize-great-blue-hole) → heroImageUrl: Invalid url
+  ✗ Half Moon Caye Wall (belize-half-moon-caye-wall) → heroImageUrl: Invalid url
+  ✗ Long Caye Ridge (belize-long-caye) → heroImageUrl: Invalid url
+  ✗ The Elbow (turneffe-the-elbow) → heroImageUrl: Invalid url
+  ✗ Black Beauty (turneffe-black-beauty) → heroImageUrl: Invalid url
+  ✗ CJ's Drop-off (utila-cjs-drop-off) → heroImageUrl: Invalid url
+  ✗ Halliburton Wreck (utila-halliburton-wreck) → heroImageUrl: Invalid url
+  ✗ Mary's Place (roatan-marys-place) → heroImageUrl: Invalid url
+  ✗ El Aguila Wreck (roatan-el-aguila-wreck) → heroImageUrl: Invalid url
+  ✗ Wahoo Rock (coiba-wahoo-rock) → heroImageUrl: Invalid url
+  ✗ Twin Peaks (coiba-twin-peaks) → heroImageUrl: Invalid url
+  ✗ Salt Pier (bonaire-salt-pier) → heroImageUrl: Invalid url
+  ✗ Hilma Hooker Wreck (bonaire-hilma-hooker) → heroImageUrl: Invalid url
+  ✗ 1000 Steps (bonaire-1000-steps) → heroImageUrl: Invalid url
+  ✗ Mushroom Forest (curacao-mushroom-forest) → heroImageUrl: Invalid url
+  ✗ Watamula (curacao-watamula) → heroImageUrl: Invalid url
+  ✗ Tent Reef (saba-tent-reef) → heroImageUrl: Invalid url
+  ✗ Thunderball Grotto (exuma-thunderball-grotto) → heroImageUrl: Invalid url
+  ✗ Danger Reef (exuma-danger-reef) → heroImageUrl: Invalid url
+  ✗ Bloody Bay Wall (little-cayman-bloody-bay-wall) → heroImageUrl: Invalid url
+  ✗ Jackson's Bight (little-cayman-jacksons-bight) → heroImageUrl: Invalid url
+  ✗ USS Vandenberg (florida-keys-uss-vandenberg) → heroImageUrl: Invalid url
+  ✗ Christ of the Abyss (florida-keys-christ-of-the-abyss) → heroImageUrl: Invalid url
+  ✗ Manta Heaven Night Dive (kona-manta-heaven) → heroImageUrl: Invalid url
+  ✗ Pinnacle Au Au Crater (kona-pinnacle) → heroImageUrl: Invalid url
+  ✗ Pipin (cuba-pipin) → heroImageUrl: Invalid url
+  ✗ Black Coral 2 (cuba-black-coral-2) → heroImageUrl: Invalid url
+  ✗ Sapata (noronha-sapata) → heroImageUrl: Invalid url
+  ✗ Pedras Secas (noronha-pedras-secas) → heroImageUrl: Invalid url
+  ✗ Corveta V-17 Ipiranga (noronha-corveta-v17) → heroImageUrl: Invalid url
+  ✗ Cayo de Agua (los-roques-cayo-de-agua) → heroImageUrl: Invalid url
+  ✗ Madrisquí (los-roques-madrisqui) → heroImageUrl: Invalid url
+  ✗ Silver Bank Humpback Swim (silver-bank-humpback-swim) → heroImageUrl: Invalid url
+  ✗ Banana Reef (north-male-banana-reef) → heroImageUrl: Invalid url
+  ✗ HP Reef (north-male-hp-reef) → heroImageUrl: Invalid url
+  ✗ Shark and Yolanda Reef (ras-mohammed-shark-yolanda) → heroImageUrl: Invalid url
+  ✗ Anemone City (ras-mohammed-anemone-city) → heroImageUrl: Invalid url
+  ✗ Shaab Rumi South Plateau (sudan-shaab-rumi-south) → heroImageUrl: Invalid url
+  ✗ Umbria Wreck (sudan-umbria-wreck) → heroImageUrl: Invalid url
+  ✗ Cedar Pride Wreck (aqaba-cedar-pride) → heroImageUrl: Invalid url
+  ✗ Daymaniyat Aquarium (daymaniyat-islands-aquarium) → heroImageUrl: Invalid url
+  ✗ Brissare Rocks (mahe-brissare-rocks) → heroImageUrl: Invalid url
+  ✗ Shark Bank (mahe-shark-bank) → heroImageUrl: Invalid url
+  ✗ Manta Reef (tofo-manta-reef) → heroImageUrl: Invalid url
+  ✗ Giants Castle (tofo-giants-castle) → heroImageUrl: Invalid url
+  ✗ Cathedral (aliwal-cathedral) → heroImageUrl: Invalid url
+  ✗ Raggie Cave (aliwal-raggie-cave) → heroImageUrl: Invalid url
+  ✗ Two-Mile Reef (sodwana-two-mile-reef) → heroImageUrl: Invalid url
+  ✗ Five-Mile Reef (sodwana-five-mile-reef) → heroImageUrl: Invalid url
+  ✗ Nosy Tanikely (nosy-be-tanikely) → heroImageUrl: Invalid url
+  ✗ Silfra Fissure (silfra-fissure) → heroImageUrl: Invalid url
+  ✗ Blue Hole and Inland Sea (gozo-blue-hole) → heroImageUrl: Invalid url
+  ✗ Azure Window Collapse (gozo-azure-window-ruins) → heroImageUrl: Invalid url
+  ✗ Um El Faroud Wreck (gozo-um-el-faroud) → heroImageUrl: Invalid url
+  ✗ B-17 Bomber Wreck (vis-b17-bomber) → heroImageUrl: Invalid url
+  ✗ Stenjak Cave (vis-stenjak-cave) → heroImageUrl: Invalid url
+  ✗ Medes Islands Reserve (medes-cova-dofi) → heroImageUrl: Invalid url
+  ✗ Princess Alice Bank (azores-princess-alice) → heroImageUrl: Invalid url
+  ✗ Formigas Islets (azores-formigas) → heroImageUrl: Invalid url
+  ✗ Cod Hole (cod-hole-proper) → heroImageUrl: Invalid url
+  ✗ Navy Pier Exmouth (ningaloo-navy-pier) → heroImageUrl: Invalid url
+  ✗ Julian Rocks (julian-rocks-byron) → heroImageUrl: Invalid url
+  ✗ Rikoriko Cave (poor-knights-rikoriko) → heroImageUrl: Invalid url
+  ✗ Northern Arch (poor-knights-northern-arch) → heroImageUrl: Invalid url
+  ✗ Milford Sound Fjord (milford-sound-fjord) → heroImageUrl: Invalid url
+  ✗ Shinkoku Maru (chuuk-shinkoku-maru) → heroImageUrl: Invalid url
+  ✗ San Francisco Maru (chuuk-san-francisco-maru) → heroImageUrl: Invalid url
+  ✗ Mil Channel (yap-mil-channel) → heroImageUrl: Invalid url
+  ✗ Valley of the Rays (yap-valley-of-the-rays) → heroImageUrl: Invalid url
+  ✗ SS President Coolidge (vanuatu-president-coolidge) → heroImageUrl: Invalid url
+  ✗ The Boiler (socorro-mexico-the-boiler) → heroImageUrl: Invalid url
+  ✗ El Monstruo (Bajo del Monstruo) (malpelo-colombia-el-monstruo) → heroImageUrl: Invalid url
+  ✗ Monad Shoal (malapascua-monad-shoal) → heroImageUrl: Invalid url
+  ✗ Yonaguni Monument (yonaguni-monument) → heroImageUrl: Invalid url
+  ✗ SS Thistlegorm (egypt-ss-thistlegorm) → heroImageUrl: Invalid url
+  ✗ Stingray City (stingray-city-proper) → heroImageUrl: Invalid url
+  ✗ Hirokawa Maru (Bonegi I) (solomons-bonegi-hirokawa-maru) → heroImageUrl: Invalid url
+  ✗ Cathedral Cove (channel-islands-cathedral-cove) → heroImageUrl: Invalid url
+  ✗ Roca Partida (socorro-mexico-roca-partida) → heroImageUrl: Invalid url
+  ✗ Superman's Flight (anse-chastanet-supermans-flight) → heroImageUrl: Invalid url
+  ✗ Turtle Tomb (sipadan-malaysia-turtle-tomb) → heroImageUrl: Invalid url
+  ✗ Kichwani (mnemba-tanzania-kichwani) → heroImageUrl: Invalid url
+  ✗ Kelleston Drain (tobago-speyside-kelleston-drain) → heroImageUrl: Invalid url
+  ✗ Gato Island (malapascua-gato-island) → heroImageUrl: Invalid url
+  ✗ Little Brother (egypt-little-brother) → heroImageUrl: Invalid url
+  ✗ Ulong Channel (palau-ulong-channel) → heroImageUrl: Invalid url
+  ✗ Blue Corner (palau-blue-corner) → heroImageUrl: Invalid url
+  ✗ La Pared (The Wall) (catalina-islands-la-pared) → heroImageUrl: Invalid url
+  ✗ Pigeon Island (trincomalee-sri-lanka-pigeon-island) → heroImageUrl: Invalid url
+  ✗ USS Spiegel Grove (florida-keys-uss-spiegel-grove) → heroImageUrl: Invalid url
+  ✗ Johnny's Gorge (andaman-islands-india-johnnys-gorge) → heroImageUrl: Invalid url
+  ✗ Daedalus Reef (egypt-daedalus-reef) → heroImageUrl: Invalid url
+  ✗ Molinere Underwater Sculpture Park (grenada-molinere-sculpture-park) → heroImageUrl: Invalid url
+  ✗ MV Rozi Wreck (gozo-mv-rozi) → heroImageUrl: Invalid url
+  ✗ Molasses Reef (florida-keys-molasses-reef) → heroImageUrl: Invalid url
+  ✗ Hairball (Lembeh Strait) (bunaken-hairball-lembeh) → heroImageUrl: Invalid url
+  ✗ Elphinstone Reef (egypt-elphinstone-reef) → heroImageUrl: Invalid url
+  ✗ Karpata (bonaire-karpata) → heroImageUrl: Invalid url
+  ✗ Manta Point Bangaram (lakshadweep-manta-point-bangaram) → heroImageUrl: Invalid url
+  ✗ SS Yongala (cod-hole-ss-yongala-australia) → heroImageUrl: Invalid url
+  ✗ SS Dunraven (ras-mohammed-egypt-ss-dunraven) → heroImageUrl: Invalid url
+  ✗ Million Dollar Point (president-coolidge-vanuatu-million-dollar-point) → heroImageUrl: Invalid url
+  ✗ Manuelita Island (cocos-manuelita) → heroImageUrl: Invalid url
+  ✗ Lankan Manta Point (north-male-lankan-manta-point) → heroImageUrl: Invalid url
+  ✗ Big Drop-Off (blue-corner-palau-big-drop-off) → heroImageUrl: Invalid url
+  ✗ Pedra Vermelha (arraial-do-cabo-brazil-pedra-vermelha) → heroImageUrl: Invalid url
+  ✗ Straits of Tiran (ras-mohammed-egypt-straits-of-tiran) → heroImageUrl: Invalid url
+  ✗ Conshelf II (Précontinent II) (sudan-shaab-rumi-conshelf-ii) → heroImageUrl: Invalid url
+  ✗ Looe Key Reef (florida-keys-looe-key) → heroImageUrl: Invalid url
+  ✗ Maamigili Beyru (Whale Shark Point) (maldives-maamigili-beyru) → heroImageUrl: Invalid url
+  ✗ Cenote Angelita (cenotes-angelita) → heroImageUrl: Invalid url
+  ✗ USCGC Duane (florida-keys-uscgc-duane) → heroImageUrl: Invalid url
+  ✗ Manta Point (Nusa Penida) (tulamben-nusa-penida-manta-point) → heroImageUrl: Invalid url
+  ✗ Chichijima Dolphin Swim (ogasawara-chichijima-dolphin-swim) → heroImageUrl: Invalid url
+  ✗ Giannis D (egypt-giannis-d) → heroImageUrl: Invalid url
+  ✗ RMS Rhone (salt-island-bvi-rms-rhone) → heroImageUrl: Invalid url
+  ✗ SS Carnatic (egypt-ss-carnatic) → heroImageUrl: Invalid url
+  ✗ MV Captain Keith Tibbetts (cayman-brac-captain-keith-tibbetts) → heroImageUrl: Invalid url
+  ✗ Turtle Pinnacle (kona-hawaii-usa-turtle-pinnacle) → heroImageUrl: Invalid url
+  ✗ Pyramid Pinnacle (kona-hawaii-usa-pyramid-pinnacle) → heroImageUrl: Invalid url
+  ✗ Magic Mountain (Shadow Reef) (raja-ampat-indonesia-magic-mountain) → heroImageUrl: Invalid url
+  ✗ The Cauldron / Shotgun (komodo-national-park-indonesia-the-cauldron-shotgun) → heroImageUrl: Invalid url
+  ✗ Mawan (komodo-national-park-indonesia-mawan) → heroImageUrl: Invalid url
+  ✗ Coron Bay (tubbataha-philippines-coron-bay) → heroImageUrl: Invalid url
+  ✗ Alor (komodo-national-park-indonesia-alor) → heroImageUrl: Invalid url
+  ✗ Anilao (apo-reef-philippines-anilao) → heroImageUrl: Invalid url
+  ✗ Wakatobi (bunaken-indonesia-wakatobi) → heroImageUrl: Invalid url
+  ✗ Ogasawara Islands (ogasawara-japan-ogasawara-islands) → heroImageUrl: Invalid url
+  ✗ Dragon Hole (sanya-china-dragon-hole) → heroImageUrl: Invalid url
+  ✗ Japanese battleship Nagato (raja-ampat-indonesia-japanese-battleship-nagato) → heroImageUrl: Invalid url
+  ✗ Gili Islands (komodo-national-park-indonesia-gili-islands) → heroImageUrl: Invalid url
+  ✗ Ambon Bay (raja-ampat-indonesia-ambon-bay) → heroImageUrl: Invalid url
+  ✗ Batanta (raja-ampat-indonesia-batanta) → heroImageUrl: Invalid url
+  ✗ Derawan Islands (bunaken-indonesia-derawan-islands) → heroImageUrl: Invalid url
+  ✗ Misool (raja-ampat-indonesia-misool) → heroImageUrl: Invalid url
+  ✗ Cocklebiddy cave (ningaloo-australia-cocklebiddy-cave) → heroImageUrl: Invalid url
+  ✗ Engelbrecht Cave (ningaloo-australia-engelbrecht-cave) → heroImageUrl: Invalid url
+  ✗ Ewens Ponds (ningaloo-australia-ewens-ponds) → heroImageUrl: Invalid url
+  ✗ Fossil Cave (ningaloo-australia-fossil-cave) → heroImageUrl: Invalid url
+  ✗ Heron Island (raja-ampat-indonesia-heron-island) → heroImageUrl: Invalid url
+  ✗ HMAS Adelaide (raja-ampat-indonesia-hmas-adelaide) → heroImageUrl: Invalid url
+  ✗ HMAS Brisbane (raja-ampat-indonesia-hmas-brisbane) → heroImageUrl: Invalid url
+  ✗ HMAS Canberra (raja-ampat-indonesia-hmas-canberra) → heroImageUrl: Invalid url
+  ✗ HMAS Hobart (ningaloo-australia-hmas-hobart) → heroImageUrl: Invalid url
+  ✗ HMAS Perth (komodo-national-park-indonesia-hmas-perth-ii) → heroImageUrl: Invalid url
+  ✗ Iro Maru (raja-ampat-indonesia-iro-maru) → heroImageUrl: Invalid url
+  ✗ Jake's Seaplane (raja-ampat-indonesia-jakes-seaplane) → heroImageUrl: Invalid url
+  ✗ Lizard Island (cod-hole-australia-lizard-island) → heroImageUrl: Invalid url
+  ✗ Magic Point (raja-ampat-indonesia-magic-point) → heroImageUrl: Invalid url
+  ✗ Neptune Islands (ningaloo-australia-neptune-islands) → heroImageUrl: Invalid url
+  ✗ Charles L. Brown Wreck (statia-st-eustatius-charles-l-brown) → heroImageUrl: Invalid url
+  ✗ Tiger Harbour (Fuvahmulah) (fuvahmulah-tiger-harbour) → heroImageUrl: Invalid url
+  ✗ Shilang & the Big Mushroom Coral (green-island-taiwan-shilang-big-mushroom) → heroImageUrl: Invalid url
+  ✗ Felipe's Place (providencia-felipes-place) → heroImageUrl: Invalid url
+  ✗ Molokini Crater (kona-hawaii-usa-molokini-crater) → heroImageUrl: Invalid url
+  ✗ Blue Hole (Dahab) (ras-mohammed-egypt-blue-hole-dahab) → heroImageUrl: Invalid url
+  ✗ Kwarcit Wreck (sal-cape-verde-kwarcit-wreck) → heroImageUrl: Invalid url
+  ✗ Hon Mun (nha-trang-vietnam-hon-mun) → heroImageUrl: Invalid url
+  ✗ Tiger Rock (bocas-del-toro-tiger-rock) → heroImageUrl: Invalid url
+  ✗ The Canyon (watamu-the-canyon) → heroImageUrl: Invalid url
+  ✗ Munseom (jeju-south-korea-munseom) → heroImageUrl: Invalid url
+  ✗ South Marianne (praslin-south-marianne) → heroImageUrl: Invalid url
+  ✗ Heian Maru (chuuk-heian-maru) → heroImageUrl: Invalid url
+  ✗ HMS Hermes (trincomalee-sri-lanka-hms-hermes) → heroImageUrl: Invalid url
+  ✗ Avatoru Pass (rangiroa-french-polynesia-avatoru-pass) → heroImageUrl: Invalid url
+  ✗ Arta Beach (Whale Shark Bay) (djibouti-arta-beach) → heroImageUrl: Invalid url
+  ✗ Apo Island (moalboal-philippines-apo-island) → heroImageUrl: Invalid url
+  ✗ Columbia Reef (cozumel-columbia-reef) → heroImageUrl: Invalid url
+  ✗ Snake Gully (niue-avaiki-cave-snake-gully) → heroImageUrl: Invalid url
+  ✗ Cabo Pearce (socorro-mexico-cabo-pearce) → heroImageUrl: Invalid url
+  ✗ Abu Dabbab (egypt-abu-dabbab) → heroImageUrl: Invalid url
+  ✗ Crystal Bay (Nusa Penida) (tulamben-nusa-penida-crystal-bay) → heroImageUrl: Invalid url
+  ✗ Sha'ab Samadai (Dolphin House) (egypt-shaab-samadai-dolphin-house) → heroImageUrl: Invalid url
+  ✗ The Landslide (El Derrumbe) (wolf-galapagos-landslide) → heroImageUrl: Invalid url
+  ✗ Hin Daeng / Hin Muang (hin-daeng-hin-muang) → heroImageUrl: Invalid url
+  ✗ Protea Banks (aliwal-south-africa-protea-banks) → heroImageUrl: Invalid url
+  ✗ Karpata (bonaire-national-marine-park-bonaire-karpata) → heroImageUrl: Invalid url
+  ✗ North Horn (Osprey Reef) (osprey-reef-north-horn) → heroImageUrl: Invalid url
+  ✗ La Nevera (The Refrigerator) (malpelo-colombia-la-nevera) → heroImageUrl: Invalid url
+  ✗ Dixon's Pinnacle (andaman-islands-india-dixons-pinnacle) → heroImageUrl: Invalid url
+  ✗ Hammerhead Point (Irizaki) (yonaguni-hammerheads) → heroImageUrl: Invalid url
+  ✗ Tugboat (Tugboat Beach) (curacao-tugboat) → heroImageUrl: Invalid url
+  ✗ Salem Express (egypt-salem-express) → heroImageUrl: Invalid url
+  ✗ St John's Reef (egypt-st-johns-reef) → heroImageUrl: Invalid url
+  ✗ Nippo Maru (chuuk-nippo-maru) → heroImageUrl: Invalid url
+  ✗ Hol Chan Marine Reserve (blue-hole-belize-hol-chan-marine-reserve) → heroImageUrl: Invalid url
+  ✗ Sardine Run (aliwal-sardine-run) → heroImageUrl: Invalid url
+  ✗ Akitsushima Wreck (apo-reef-philippines-akitsushima-wreck) → heroImageUrl: Invalid url
+  ✗ Sanganeb Atoll (sudan-shaab-rumi-sanganeb) → heroImageUrl: Invalid url
+  ✗ USS Kittiwake (stingray-city-cayman-uss-kittiwake) → heroImageUrl: Invalid url
+  ✗ Statue of Christ & Imperial Eagle (gozo-statue-of-christ) → heroImageUrl: Invalid url
+  ✗ South Point (sipadan-malaysia-south-point) → heroImageUrl: Invalid url
+  ✗ Superior Producer (curacao-superior-producer) → heroImageUrl: Invalid url
+  ✗ Chrisoula K (Tile Wreck) (egypt-chrisoula-k) → heroImageUrl: Invalid url
+  ✗ Kimon M (Lentil Wreck) (egypt-kimon-m) → heroImageUrl: Invalid url
+  ✗ Cannibal Rock (komodo-cannibal-rock) → heroImageUrl: Invalid url
+  ✗ Baixa do Ambrósio (azores-portugal-baixa-do-ambrosio) → heroImageUrl: Invalid url
+  ✗ Verde Island Drop-Off (San Agapito) (apo-reef-philippines-verde-island-drop-off) → heroImageUrl: Invalid url
+  ✗ Dos Amigos Grande (cocos-dos-amigos-grande) → heroImageUrl: Invalid url
+  ✗ Drop-Off (Sipadan) (sipadan-malaysia-drop-off) → heroImageUrl: Invalid url
+  ✗ HMCS Chaudiere (north-male-atoll-maldives-hmcs-chaudiere) → heroImageUrl: Invalid url
+  ✗ Bangaram Atoll (lakshadweep-india-bangaram-atoll) → heroImageUrl: Invalid url
+  ✗ Bay of Pigs (cuba-jardines-de-la-reina-bay-of-pigs) → heroImageUrl: Invalid url
+  ✗ Capurgana (providencia-colombia-capurgana) → heroImageUrl: Invalid url
+  ✗ Cuba Jardines de la Reina (cuba-jardines-de-la-reina) → heroImageUrl: Invalid url
+  ✗ Kadmat Island (lakshadweep-india-kadmat-island) → heroImageUrl: Invalid url
+  ✗ Memba Bay (memba-bay-mozambique-memba-bay) → heroImageUrl: Invalid url
+  ✗ Museo Atlantico (el-hierro-spain-museo-atlantico) → heroImageUrl: Invalid url
+  ✗ Punta Cana (silver-bank-dominican-republic-punta-cana) → heroImageUrl: Invalid url
+  ✗ Taganga (providencia-colombia-taganga) → heroImageUrl: Invalid url
+  ✗ Blue Hole Gozo (gozo-malta-blue-hole-gozo) → heroImageUrl: Invalid url
+  ✗ Ghar Qawqla (gozo-malta-ghar-qawqla) → heroImageUrl: Invalid url
+  ✗ Inland Sea Gozo (gozo-malta-inland-sea-gozo) → heroImageUrl: Invalid url
+  ✗ Jellyfish Lake (palau-jellyfish-lake) → heroImageUrl: Invalid url
+  ✗ Numidia Wreck (egypt-numidia-wreck) → heroImageUrl: Invalid url
+  ✗ Bimini Great Hammerheads (bimini-great-hammerheads) → heroImageUrl: Invalid url
+  ✗ Manta Ray Night Dive (Garden Eel Cove) (kona-hawaii-manta-ray-night-dive) → heroImageUrl: Invalid url
+  ✗ Garden of Eden (daymaniyat-oman-garden-of-eden) → heroImageUrl: Invalid url
+  ✗ San Miguel Island (channel-islands-san-miguel-island) → heroImageUrl: Invalid url
+  ✗ Peleliu Corner (palau-peleliu-corner) → heroImageUrl: Invalid url
+  ✗ Rainbow Warrior (poor-knights-new-zealand-rainbow-warrior) → heroImageUrl: Invalid url
+  ✗ Saco do Cardeiro (arraial-do-cabo-brazil-saco-do-cardeiro) → heroImageUrl: Invalid url
+  ✗ Crystal Rock (komodo-crystal-rock) → heroImageUrl: Invalid url
+  ✗ Balun (kornati-croatia-balun) → heroImageUrl: Invalid url
+  ✗ Japanese Gardens (tobago-speyside-japanese-gardens) → heroImageUrl: Invalid url
+  ✗ Barren Island (andaman-islands-india-barren-island) → heroImageUrl: Invalid url
+  ✗ Paradise Reef (cozumel-paradise-reef) → heroImageUrl: Invalid url
+  ✗ Shark Ray Alley (blue-hole-belize-shark-ray-alley) → heroImageUrl: Invalid url
+  ✗ Aida II Wreck (egypt-aida-wreck) → heroImageUrl: Invalid url
+  ✗ Nudi Falls (Lembeh Strait) (bunaken-nudi-falls-lembeh) → heroImageUrl: Invalid url
+  ✗ Cara a Cara (roatan-cara-a-cara) → heroImageUrl: Invalid url
+  ✗ Steve's Bommie (cod-hole-australia-steves-bommie) → heroImageUrl: Invalid url
+  ✗ Cenote Carwash (cenotes-carwash) → heroImageUrl: Invalid url
+  ✗ SS Rosalie Moller (egypt-ss-rosalie-moller) → heroImageUrl: Invalid url
+  ✗ Yamagiri Maru (chuuk-yamagiri-maru) → heroImageUrl: Invalid url
+  ✗ The Canyon (Dahab) (ras-mohammed-egypt-canyon-dahab) → heroImageUrl: Invalid url
+  ✗ Lesleen M Wreck (anse-chastanet-saint-lucia-lesleen-m-wreck) → heroImageUrl: Invalid url
+  ✗ HTMS Sattakut (koh-tao-htms-sattakut) → heroImageUrl: Invalid url
+  ✗ Third Encounter (saba-third-encounter) → heroImageUrl: Invalid url
+  ✗ Iro Maru (palau-iro-maru) → heroImageUrl: Invalid url
+  ✗ Eden Rock & Devil's Grotto (stingray-city-cayman-eden-rock-devils-grotto) → heroImageUrl: Invalid url
+  ✗ Antilla Wreck (malmok-aruba-antilla-wreck) → heroImageUrl: Invalid url
+  ✗ Wattabomi (mnemba-tanzania-wattabomi) → heroImageUrl: Invalid url
+  ✗ Admiralty Anchor (Osprey Reef) (osprey-reef-admiralty-anchor) → heroImageUrl: Invalid url
+  ✗ Sha'ab Sataya (Dolphin House Fury Shoals) (egypt-shaab-sataya-fury-shoals) → heroImageUrl: Invalid url
+  ✗ Boo Windows (raja-ampat-indonesia-boo-windows) → heroImageUrl: Invalid url
+  ✗ Painted Walls (salt-island-bvi-painted-walls) → heroImageUrl: Invalid url
+  ✗ Bari Reef (bonaire-bari-reef) → heroImageUrl: Invalid url
+  ✗ HMS Russell (gozo-malta-hms-russell) → heroImageUrl: Invalid url
+  ✗ MV Karwela (gozo-malta-mv-karwela) → heroImageUrl: Invalid url
+  ✗ The Passage (raja-ampat-indonesia-the-passage) → heroImageUrl: Invalid url
+  ✗ Kudarah Thila (maldives-kudarah-thila) → heroImageUrl: Invalid url
+  ✗ The Bells (Dahab) (ras-mohammed-egypt-the-bells-dahab) → heroImageUrl: Invalid url
+  ✗ Fish Rock Cave (fish-rock-cave-swr) → heroImageUrl: Invalid url
+  ✗ Pedernales Wreck (malmok-aruba-pedernales-wreck) → heroImageUrl: Invalid url
+  ✗ Invisible Bank (andaman-islands-india-invisible-bank) → heroImageUrl: Invalid url
+  ✗ Pixie Pinnacle (cod-hole-pixie-pinnacle) → heroImageUrl: Invalid url
+  ✗ French Reef (florida-keys-usa-french-reef) → heroImageUrl: Invalid url
+  ✗ Million Hope Wreck (egypt-million-hope) → heroImageUrl: Invalid url
+  ✗ Hannibal Bank (coiba-hannibal-bank) → heroImageUrl: Invalid url
+  ✗ Jessie Beazley Reef (tubbataha-philippines-jessie-beazley-reef) → heroImageUrl: Invalid url
+  ✗ Quarter Mile Reef (sodwana-south-africa-quarter-mile-reef) → heroImageUrl: Invalid url
+  ✗ Sardine Reef (raja-ampat-sardine-reef) → heroImageUrl: Invalid url
+  ✗ Irako Maru Wreck (apo-reef-philippines-irako-maru) → heroImageUrl: Invalid url
+  ✗ Eagle Wreck (florida-keys-eagle-wreck) → heroImageUrl: Invalid url
+  ✗ Apo Reef (apo-reef-philippines-apo-reef-natural-park) → heroImageUrl: Invalid url
+  ✗ Helmet Wreck (blue-corner-palau-helmet-wreck) → heroImageUrl: Invalid url
+  ✗ Lockheed L-1011 TriStar Wreck (aqaba-tristar-l1011) → heroImageUrl: Invalid url
+  ✗ Lady Elliot Island (cod-hole-australia-lady-elliot-island) → heroImageUrl: Invalid url
+  ✗ P29 Patrol Boat (gozo-malta-p29-patrol-boat) → heroImageUrl: Invalid url
+  ✗ B-17F Black Jack (milne-bay-papua-new-guinea-b17-black-jack) → heroImageUrl: Invalid url
+  ✗ Cirkewwa Arch (gozo-malta-cirkewwa-arch) → heroImageUrl: Invalid url
+  ✗ SMS Markgraf (scapa-flow-uk-sms-markgraf) → heroImageUrl: Invalid url
+  ✗ SMS Kronprinz Wilhelm (scapa-flow-uk-sms-kronprinz-wilhelm) → heroImageUrl: Invalid url
+  ✗ Asinara Marine Park (sardinia-italy-asinara-marine-park) → heroImageUrl: Invalid url
+  ✗ SMS Brummer (scapa-flow-uk-sms-brummer) → heroImageUrl: Invalid url
+  ✗ SMS Dresden (scapa-flow-uk-sms-dresden) → heroImageUrl: Invalid url
+  ✗ Black Rock (mergui-archipelago-myanmar-black-rock) → heroImageUrl: Invalid url
+  ✗ Blue Wall (Pared Azul) (providencia-colombia-blue-wall) → heroImageUrl: Invalid url
+  ✗ Punta Sal Coral Garden (tela-punta-sal-coral-garden) → heroImageUrl: Invalid url
+  ✗ Punta Izopo Wall (tela-punta-izopo-wall) → heroImageUrl: Invalid url
+  ✗ The Blue Hole (dahab-egypt-blue-hole) → heroImageUrl: Invalid url
+  ✗ The Bells (dahab-egypt-the-bells) → heroImageUrl: Invalid url
+  ✗ The Canyon (dahab-egypt-the-canyon) → heroImageUrl: Invalid url
+  ✗ Shark Reef, Ras Mohammed (sharm-el-sheikh-egypt-shark-reef) → heroImageUrl: Invalid url
+  ✗ SS Thistlegorm Wreck (sharm-el-sheikh-egypt-thistlegorm) → heroImageUrl: Invalid url
+  ✗ Ras Um Sid (sharm-el-sheikh-egypt-ras-um-sid) → heroImageUrl: Invalid url
+  ✗ Abu Nuhas Wrecks (hurghada-egypt-abu-nuhas) → heroImageUrl: Invalid url
+  ✗ Shaab Abu Ramada (hurghada-egypt-shaab-abu-ramada) → heroImageUrl: Invalid url
+  ✗ Fahl Island Reef (jeddah-saudi-arabia-fahl-island) → heroImageUrl: Invalid url
+  ✗ Al Wajh Bank (jeddah-saudi-arabia-al-wajh-bank) → heroImageUrl: Invalid url
+  ✗ Moucha Island Reef (djibouti-gulf-of-tadjoura-moucha-island) → heroImageUrl: Invalid url
+  ✗ Seven Brothers Islands Wall (djibouti-gulf-of-tadjoura-seven-brothers) → heroImageUrl: Invalid url
+  ✗ Hawakil Bay Wall (dahlak-eritrea-hawakil-bay-wall) → heroImageUrl: Invalid url
+  ✗ Hole in the Wall (fujairah-uae-hole-in-the-wall) → heroImageUrl: Invalid url
+  ✗ Dibba Rock (fujairah-uae-dibba-rock) → heroImageUrl: Invalid url
+  ✗ Watamu Marine Park Wall (watamu-kenya-marine-park-wall) → heroImageUrl: Invalid url
+  ✗ Mnemba South Wall (mnemba-tanzania-south-wall) → heroImageUrl: Invalid url
+  ✗ Manta Reef Tofo (tofo-mozambique-manta-reef-tofo) → heroImageUrl: Invalid url
+  ✗ Mesali Island Reef (pemba-island-tanzania-mesali-island-reef) → heroImageUrl: Invalid url
+  ✗ Ras Kigomasha (pemba-island-tanzania-ras-kigomasha) → heroImageUrl: Invalid url
+  ✗ Sabang Wrecks (puerto-galera-philippines-sabang-wrecks) → heroImageUrl: Invalid url
+  ✗ Coral Garden Puerto Galera (puerto-galera-philippines-coral-garden-puerto-galera) → heroImageUrl: Invalid url
+  ✗ Hole in the Wall PG (puerto-galera-philippines-hole-in-the-wall-pg) → heroImageUrl: Invalid url
+  ✗ Kirby's Rock (anilao-philippines-kirbys-rock) → heroImageUrl: Invalid url
+  ✗ Mainit (anilao-philippines-mainit) → heroImageUrl: Invalid url
+  ✗ Beatrice Rock (anilao-philippines-beatrice-rock) → heroImageUrl: Invalid url
+  ✗ Dilumacad Island (el-nido-philippines-dilumacad-island) → heroImageUrl: Invalid url
+  ✗ Shimizu Island El Nido (el-nido-philippines-shimizu-island-el-nido) → heroImageUrl: Invalid url
+  ✗ Stella Maru Wreck (mauritius-island-stella-maru-wreck) → heroImageUrl: Invalid url
+  ✗ Cathedral Caves Mauritius (mauritius-island-cathedral-caves-mauritius) → heroImageUrl: Invalid url
+  ✗ Flic en Flac Wall (mauritius-island-flic-en-flac-wall) → heroImageUrl: Invalid url
+  ✗ La Passe de l'Hermitage (reunion-island-la-passe-de-lhermitage) → heroImageUrl: Invalid url
+  ✗ Pointe des Aigrettes (reunion-island-pointe-des-aigrettes) → heroImageUrl: Invalid url
+  ✗ Cap la Houssaye Reunion (reunion-island-cap-la-houssaye-reunion) → heroImageUrl: Invalid url
+  ✗ Kekova Reef (kas-turkey-kekova-reef) → heroImageUrl: Invalid url
+  ✗ Sunayama Reef Okinawa (okinawa-japan-sunayama-reef-okinawa) → heroImageUrl: Invalid url
+  ✗ Yabiji Reef (okinawa-japan-yabiji-reef) → heroImageUrl: Invalid url
+  ✗ Mariners Cave Tonga (vavau-tonga-mariners-cave-tonga) → heroImageUrl: Invalid url
+  ✗ Swallows Cave Vavau (vavau-tonga-swallows-cave-vavau) → heroImageUrl: Invalid url
+  ✗ Coral Garden Vavau (vavau-tonga-coral-garden-vavau) → heroImageUrl: Invalid url
+  ✗ Avana Passage Rarotonga (rarotonga-cook-islands-avana-passage-rarotonga) → heroImageUrl: Invalid url
+  ✗ Black Rock Cook Islands (rarotonga-cook-islands-black-rock-cook-islands) → heroImageUrl: Invalid url
+  ✗ The Wall Providenciales (turks-and-caicos-the-wall-providenciales) → heroImageUrl: Invalid url
+  ✗ Grace Bay Reef (turks-and-caicos-grace-bay-reef) → heroImageUrl: Invalid url
+  ✗ Champagne Reef Dominica (dominica-island-champagne-reef) → heroImageUrl: Invalid url
+  ✗ Soufriere Bay Dominica (dominica-island-soufriere-bay) → heroImageUrl: Invalid url
+  ✗ Los Islotes Sea Lions (sea-of-cortez-mexico-los-islotes-sea-lions) → heroImageUrl: Invalid url
+  ✗ El Bajo Seamount (sea-of-cortez-mexico-el-bajo-seamount) → heroImageUrl: Invalid url
+  ✗ Shark Point (Hin Musang) (phuket-thailand-shark-point) → heroImageUrl: Invalid url
+  ✗ Anemone Reef (phuket-thailand-anemone-reef) → heroImageUrl: Invalid url
+  ✗ Crystal Bay Nusa Penida (bali-indonesia-crystal-bay-nusa-penida) → heroImageUrl: Invalid url
+  ✗ Amed Shipwreck (bali-indonesia-amed-shipwreck) → heroImageUrl: Invalid url
+  ✗ Shark Point Gili Trawangan (gili-islands-indonesia-shark-point-gili-trawangan) → heroImageUrl: Invalid url
+  ✗ Halik Reef (gili-islands-indonesia-halik-reef) → heroImageUrl: Invalid url
+  ✗ Meno Wall (gili-islands-indonesia-meno-wall) → heroImageUrl: Invalid url
+  ✗ TK (Tanjung Kubur) (lembeh-strait-indonesia-tk) → heroImageUrl: Invalid url
+  ✗ Hairball (lembeh-strait-indonesia-hairball) → heroImageUrl: Invalid url
+  ✗ Aer Bajo (lembeh-strait-indonesia-aer-bajo) → heroImageUrl: Invalid url
+  ✗ Marsa Alam (brothers-egypt-marsa-alam) → heroImageUrl: Invalid url
+  ✗ San Andres (providencia-colombia-san-andres) → heroImageUrl: Invalid url
+  ✗ Nusa Penida (tulamben-bali-indonesia-nusa-penida) → heroImageUrl: Invalid url
+  ✗ Boesmansgat (aliwal-south-africa-boesmansgat) → heroImageUrl: Invalid url
+  ✗ HMAS Tobruk (great-barrier-reef-australia-hmas-tobruk) → heroImageUrl: Invalid url
+  ✗ MS Logna (tiger-beach-bahamas-ms-logna) → heroImageUrl: Invalid url
+  ✗ Chinhoyi Caves (chinhoyi-caves-zimbabwe-chinhoyi-caves) → heroImageUrl: Invalid url
+  ✗ Hoi Ha Wan (hoi-ha-wan-hong-kong-hoi-ha-wan) → heroImageUrl: Invalid url
+  ✗ Hranice Abyss (hranice-abyss-czech-republic-hranice-abyss) → heroImageUrl: Invalid url
+  ✗ Socotra (socotra-yemen-socotra) → heroImageUrl: Invalid url
+⚠ ATTESTATION INCOMPLETE: gaps remain (listed above). The next scheduled run will keep filling them.
+=== end audit ===
+
