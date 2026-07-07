@@ -5,11 +5,18 @@ import { ReefStateCardTrio, type ReefStateCardData } from "@/components/reef-sta
 import { FeaturedReefMosaic, type MosaicCard } from "@/components/featured-reef-mosaic";
 import { SpeciesFilmstrip } from "@/components/species-filmstrip";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
+import { getAllSites } from "@/lib/data/sites";
+import { getAllLocations } from "@/lib/data/locations";
+
+// Derive catalog counts from the live data so the copy never drifts from reality.
+const siteCount = getAllSites().length;
+const locationCount = getAllLocations().length;
 
 export const metadata: Metadata = {
   title: "Scuba Season — The reef atlas built on science, made for divers.",
-  description:
-    "384 dive locations and 1417 sites with live reef health, confirmed species sightings, and real conditions — so you can plan a dive that matters.",
+  description: `${locationCount} dive locations and ${siteCount.toLocaleString(
+    "en-US",
+  )} sites with live reef health, confirmed species sightings, and real conditions — so you can plan a dive that matters.`,
 };
 
 // ─── Data for ReefStateCard trio (one per state: improving / stable / declining)
