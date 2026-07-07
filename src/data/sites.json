@@ -46821,6 +46821,49 @@
           5,
           6
         ]
+      },
+      {
+        "commonName": "Bottlenose dolphin",
+        "reliability": "seasonal",
+        "scientificName": "Tursiops truncatus",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "imageUrl": "https://static.inaturalist.org/photos/313139382/large.jpg"
+      },
+      {
+        "commonName": "Spinner dolphin",
+        "reliability": "seasonal",
+        "scientificName": "Stenella longirostris",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/83099258/large.jpg"
+      },
+      {
+        "commonName": "Bryde's whale",
+        "reliability": "seasonal",
+        "scientificName": "Balaenoptera brydei",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/361046934/large.jpg"
+      },
+      {
+        "commonName": "Southern stingray",
+        "reliability": "year-round",
+        "scientificName": "Hypanus americanus",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/32740603/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -99039,6 +99082,52 @@
           5,
           6
         ]
+      },
+      {
+        "commonName": "Mandarinfish",
+        "reliability": "seasonal",
+        "scientificName": "Synchiropus splendidus",
+        "bestMonths": [
+          9,
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/235301873/large.jpg"
+      },
+      {
+        "commonName": "Ribbon Eel",
+        "reliability": "year-round",
+        "scientificName": "Rhinomuraena quaesita",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230839617/large.jpg"
+      },
+      {
+        "commonName": "Ghost Pipefish",
+        "reliability": "year-round",
+        "scientificName": "Solenostomus cyanopterus",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/256285460/large.jpg"
+      },
+      {
+        "commonName": "Harlequin Shrimp",
+        "reliability": "seasonal",
+        "scientificName": "Hymenocera picta",
+        "bestMonths": [
+          9,
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/58507441/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -257567,6 +257656,36 @@
         "reliability": "year-round",
         "ecologicalDescription": "The largest member of the trevally family, giant trevally are formidable ambush and pursuit predators that target reef fish, crustaceans, and even seabirds skimming the surface. They hunt cooperatively in pairs or small groups at dawn and dusk, driving prey against the reef or the surface where it cannot escape. At Dodola, large individuals of 50 to 80 cm are resident on the outer reef wall, holding position in the current alongside dog-tooth tuna. Their tolerance of divers at this remote site, where they experience almost no fishing pressure, allows extended close-range observation.",
         "imageUrl": "https://static.inaturalist.org/photos/446141712/large.jpeg"
+      },
+      {
+        "commonName": "Fusilier",
+        "reliability": "year-round",
+        "scientificName": "Caesio species",
+        "imageUrl": "https://static.inaturalist.org/photos/301479957/large.jpeg"
+      },
+      {
+        "commonName": "Mobula ray",
+        "reliability": "seasonal",
+        "scientificName": "Mobula alfredi",
+        "bestMonths": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/379811182/large.jpg"
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "reliability": "year-round",
+        "scientificName": "Carcharhinus melanopterus",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/147397654/large.jpg"
+      },
+      {
+        "commonName": "Sweetlips",
+        "reliability": "year-round",
+        "scientificName": "Plectorhinchus species",
+        "imageUrl": "https://static.inaturalist.org/photos/109147632/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -567016,6 +567135,36 @@
         "scientificName": "Glossodoris rufomarginata",
         "reliability": "rare",
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411809537/large.jpg"
+      },
+      {
+        "commonName": "Grey Reef Shark",
+        "reliability": "year-round",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/389608928/large.jpg"
+      },
+      {
+        "commonName": "Marbled Grouper",
+        "reliability": "year-round",
+        "scientificName": "Epinephelus polyphekadion",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/389256674/large.jpg"
+      },
+      {
+        "commonName": "Coral Trout",
+        "reliability": "year-round",
+        "scientificName": "Plectropomus leopardus",
+        "imageUrl": "https://static.inaturalist.org/photos/216412385/large.jpeg"
+      },
+      {
+        "commonName": "Dogtooth Tuna",
+        "reliability": "year-round",
+        "scientificName": "Gymnosarda unicolor",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/511341324/large.jpg"
+      },
+      {
+        "commonName": "Giant Trevally",
+        "reliability": "year-round",
+        "scientificName": "Caranx ignobilis",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102003308/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -568669,6 +568818,34 @@
         "scientificName": "Zanclus cornutus",
         "reliability": "seasonal",
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/323118060/large.jpg"
+      },
+      {
+        "commonName": "Lionfish",
+        "reliability": "year-round",
+        "scientificName": "Pterois volitans",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/4675175/large.jpg"
+      },
+      {
+        "commonName": "Grouper",
+        "reliability": "year-round",
+        "scientificName": "Epinephelus",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/528622895/large.jpg"
+      },
+      {
+        "commonName": "Harlequin Sweetlips",
+        "reliability": "year-round",
+        "scientificName": "Plectorhinchus chaetodonoides",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8176246/large.jpg"
+      },
+      {
+        "commonName": "Green Sea Turtle",
+        "reliability": "year-round",
+        "scientificName": "Chelonia mydas",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/114832372/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -571353,6 +571530,51 @@
         "scientificName": "Ditypophis vivax",
         "reliability": "seasonal",
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/1801777/large.JPG"
+      },
+      {
+        "commonName": "Parrotfish",
+        "reliability": "year-round",
+        "scientificName": "Scarus species",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/360724634/large.jpeg"
+      },
+      {
+        "commonName": "Manta Ray",
+        "reliability": "seasonal",
+        "scientificName": "Manta alfredi",
+        "bestMonths": [
+          3,
+          11
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/241208700/large.jpg"
+      },
+      {
+        "commonName": "Blacktip Shark",
+        "reliability": "seasonal",
+        "scientificName": "Carcharhinus limbatus",
+        "bestMonths": [
+          3,
+          4
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247619680/large.jpg"
+      },
+      {
+        "commonName": "Spinner Dolphin",
+        "reliability": "year-round",
+        "scientificName": "Stenella longirostris",
+        "imageUrl": "https://static.inaturalist.org/photos/196698565/large.jpeg"
+      },
+      {
+        "commonName": "Loggerhead Turtle",
+        "reliability": "seasonal",
+        "scientificName": "Caretta caretta",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          10,
+          11
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/360724681/large.jpeg"
       }
     ],
     "conditionsByMonth": [
