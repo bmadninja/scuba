@@ -269,7 +269,7 @@ export default function Home() {
       </section>
 
       {/* ══ STAT STRIP ════════════════════════════════════════════════ */}
-      <HomepageStatStrip />
+      <HomepageStatStrip locationCount={locationCount} siteCount={siteCount} />
 
       {/* ══ THREE USPs ════════════════════════════════════════════════ */}
       <RevealOnScroll>
@@ -460,7 +460,7 @@ export default function Home() {
                 textUnderlineOffset: "3px",
               }}
             >
-              Browse all 384 locations
+              Browse all {locationCount} locations
             </Link>
           </div>
         </section>

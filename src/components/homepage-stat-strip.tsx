@@ -8,12 +8,14 @@ interface Stat {
   label: string;
 }
 
-const STATS: Stat[] = [
-  { value: 384, suffix: "+", label: "Locations" },
-  { value: 2366, suffix: "+", label: "Dive sites" },
-  { value: 63, label: "Data sources" },
-  { value: 3, label: "Reef states" },
-];
+function buildStats(locationCount: number, siteCount: number): Stat[] {
+  return [
+    { value: locationCount, suffix: "+", label: "Locations" },
+    { value: siteCount, suffix: "+", label: "Dive sites" },
+    { value: 63, label: "Data sources" },
+    { value: 3, label: "Reef states" },
+  ];
+}
 
 function easeOutExpo(t: number): number {
   return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
@@ -53,7 +55,8 @@ function CountUp({ target, suffix = "", reducedMotion }: { target: number; suffi
   return <>{current.toLocaleString()}{suffix}</>;
 }
 
-export function HomepageStatStrip() {
+export function HomepageStatStrip({ locationCount, siteCount }: { locationCount: number; siteCount: number }) {
+  const STATS = buildStats(locationCount, siteCount);
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -123,7 +126,7 @@ export function HomepageStatStrip() {
               {visible || reducedMotion ? (
                 <CountUp target={stat.value} suffix={stat.suffix} reducedMotion={reducedMotion} />
               ) : (
-                <>0{stat.suffix}</>
+                <>{stat.value.toLocaleString()}{stat.suffix}</>
               )}
             </span>
             <span
