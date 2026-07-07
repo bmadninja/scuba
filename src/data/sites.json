@@ -573021,5 +573021,464 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Flagship coral garden dive of Wakatobi. Seamount topography lets divers work coral coverage from ~25m up to 8m with little current. Diveable year-round. Small coral formations resemble Rome's Coliseum, hence the name."
+  },
+  {
+    "id": "koh-rong-cambodia-koh-rong-corner",
+    "slug": "koh-rong-cambodia-koh-rong-corner",
+    "locationId": "koh-rong-cambodia",
+    "name": "Koh Rong Corner",
+    "heroImageUrl": null,
+    "lat": 10.7,
+    "lng": 103.25,
+    "description": "Shallow coral reef site featuring a rocky corner formation with steep cliff face. Young reef with coral-covered rocks, sandy areas, and abundant small shark species including bamboo and coral catsharks, nudibranchs, barrel sponges, and colorful reef fish. Light to moderate currents support drift diving.",
+    "depthRange": {
+      "min": 6,
+      "max": 12
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "drift",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Coral Catshark",
+        "scientificName": "Atelomycterus marmoratus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bamboo Shark",
+        "scientificName": "Chiloscyllium",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Flabellina Nudibranch",
+        "scientificName": "Flabellina",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Clownfish",
+        "scientificName": "Amphiprion",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Parrotfish",
+        "scientificName": "Scaridae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barrel Sponge",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Light wetsuit optional"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 29,
+          "max": 33
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Light wetsuit optional"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 33
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Light wetsuit optional"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "editorialRank": 72,
+    "getThere": "Fly to Phnom Penh or Sihanoukville International Airport, then ferry from Sihanoukville mainland to Koh Rong Island (45 min to 2 hours). Dive centers based in Koh Touch Village.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Koh Rong Corner is the PADI-indexed most notable dive site on Koh Rong. Light to moderate currents make this a suitable drift dive. Best visibility March through April; southwest monsoon (May-October) reduces visibility and increases current."
+  },
+  {
+    "id": "apra-harbor-guam-tokai-maru-sms-cormoran",
+    "slug": "apra-harbor-guam-tokai-maru-sms-cormoran",
+    "locationId": "apra-harbor-guam",
+    "name": "Tokai Maru & SMS Cormoran Twin Wrecks",
+    "heroImageUrl": null,
+    "lat": 13.4592,
+    "lng": 144.6542,
+    "description": "The world's only site where a WWI and WWII wreck touch: SMS Cormoran (German merchant raider, scuttled 1917) and Tokai Maru (Japanese freighter, sunk 1943). Both rest on the harbor floor at around 37m. Advanced wreck dive with penetration access to engine rooms and cargo holds, the upper structure reachable near 12m.",
+    "depthRange": {
+      "min": 12,
+      "max": 37
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "wrecks",
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant trevally",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Forsten's parrotfish",
+        "scientificName": "Chlorurus sordidus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Porites coral",
+        "scientificName": "Porites rus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 11
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 11
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 9
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 9
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 11
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 92,
+    "getThere": "Apra Harbor is on Guam's west coast near Piti village. Fly into Guam International Airport (GUM), about 10 km south, then rental car or taxi (~30 min). Sites reached by dive boat; wreck penetration requires a Wreck Diver certification.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Unique historical significance: the only place on Earth where a WWI and a WWII wreck make contact. Inner-harbor turbidity keeps visibility around 10m; dive lines essential due to depth, penetration, and shipping traffic."
   }
 ]
