@@ -573480,5 +573480,250 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Unique historical significance: the only place on Earth where a WWI and a WWII wreck make contact. Inner-harbor turbidity keeps visibility around 10m; dive lines essential due to depth, penetration, and shipping traffic."
+  },
+  {
+    "id": "grande-comore-comoros-itsandra-reef",
+    "slug": "grande-comore-comoros-itsandra-reef",
+    "locationId": "grande-comore-comoros",
+    "name": "Itsandra Reef",
+    "heroImageUrl": null,
+    "lat": -11.36,
+    "lng": 43.3,
+    "description": "Coral plateau and volcanic cave system off Itsandra Beach featuring depths from shallow reefs to deep lava formations. Active volcano topography creates a dramatic underwater landscape with grey reef sharks, sea turtles, and seasonal humpback whale encounters.",
+    "depthRange": {
+      "min": 4,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "geology",
+      "large-pelagics",
+      "cave"
+    ],
+    "species": [
+      {
+        "commonName": "Grey reef shark",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Manta birostris",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Blacktip reef shark",
+        "scientificName": "Carcharhinus melanopterus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spinner dolphin",
+        "scientificName": "Stenella longirostris",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 30,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 28,
+          "max": 38
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 72,
+    "getThere": "Fly to Moroni International Airport (HAH) on Grande Comore, then taxi or arranged transfer about 30km south to Itsandra Beach (20 to 30 minutes). Local dive operator at Itsandra Beach Hotel provides boat access.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Site sits off Itsandra Beach on Grande Comore, roughly 15km south of Mitsamiouli town. Volcanic topography with lava tubes and caves. Coelacanths inhabit deep caves well beyond recreational limits. Some monthly condition figures are interpolated from regional data. Best conditions June through September; November through April is cyclone season."
   }
 ]
