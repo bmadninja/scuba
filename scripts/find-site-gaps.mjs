@@ -19,8 +19,16 @@ const locations = JSON.parse(readFileSync(resolve(ROOT, "src/data/locations.json
 const LIMIT = Number(process.argv[2] ?? "3");
 const MIN_SITES = Number(process.env.MIN_SITES ?? "3");
 
-const countFor = (id) => sites.filter((s) => s.locationId === id).length;
-const shape = (l) => ({ id: l.id, name: l.name, country: l.country, lat: l.lat, lng: l.lng, siteCount: countFor(l.id) });
+const sitesFor = (id) => sites.filter((s) => s.locationId === id);
+const countFor = (id) => sitesFor(id).length;
+// existingSites lets the researcher avoid picking a site that is already in the
+// catalog (matters for thin locations, where a naive "most notable site" pick
+// would just duplicate the one already there and get rejected by the guard).
+const shape = (l) => ({
+  id: l.id, name: l.name, country: l.country, lat: l.lat, lng: l.lng,
+  siteCount: countFor(l.id),
+  existingSites: sitesFor(l.id).map((s) => s.name),
+});
 
 const empty = locations.filter((l) => countFor(l.id) === 0).map(shape);
 const thin = locations

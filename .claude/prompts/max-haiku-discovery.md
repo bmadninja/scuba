@@ -12,6 +12,7 @@ You are a scheduled, autonomous dive-site discovery pass for scubaseason.fun. Yo
 
 3. **Research each target with a Haiku subagent** (one per target, run them in parallel). For each, use the Agent tool with `model: "haiku"`, `subagent_type: "general-purpose"`. Give the agent:
    - the location `id`, `name`, `country`, and anchor `lat`/`lng`
+   - the location's `existingSites` list with the instruction: **pick a DIFFERENT, notable dive site not in that list** (for thin locations you are adding variety, not duplicating what exists)
    - the schema contract: run `node -e 'import("./scripts/lib/site-schema.mjs").then(m=>console.log(m.SCHEMA_DESCRIPTION_FOR_LLM))'` and paste it in
    - these rules, stated explicitly:
      - **Depth is in METERS, never feet.** A dive site's max depth is almost never >60m.
