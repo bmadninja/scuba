@@ -573725,5 +573725,469 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Site sits off Itsandra Beach on Grande Comore, roughly 15km south of Mitsamiouli town. Volcanic topography with lava tubes and caves. Coelacanths inhabit deep caves well beyond recreational limits. Some monthly condition figures are interpolated from regional data. Best conditions June through September; November through April is cyclone season."
+  },
+  {
+    "id": "bone-de-jockey-sao-tome",
+    "slug": "bone-de-jockey-sao-tome",
+    "locationId": "sao-tome-sao-tome-and-principe",
+    "name": "Bone de Jockey",
+    "heroImageUrl": null,
+    "lat": 0.33,
+    "lng": 6.73,
+    "description": "Enormous isolated rock pinnacle with prolific marine life and multiple dive sites around its boulder formation. Endemic species, massive groupers, moray eels, octopuses, and rays inhabit rock crevices and sandy seabed.",
+    "depthRange": {
+      "min": 5,
+      "max": 27
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Grouper",
+        "scientificName": "Epinephelus spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill Turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2
+        ]
+      },
+      {
+        "commonName": "Moray Eel",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Octopus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Ray",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barracuda",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 23,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 23,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 27
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 24,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 75,
+    "getThere": "By boat from Atlantic Diving Center in Santana, Sao Tome. Approximately 15 to 30 minutes boat ride from the dive center.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Enormous rock formation with several distinct dive areas. Thermocline present at 15 to 20m depth. Diving limited to 30m maximum on the island due to no decompression facility."
+  },
+  {
+    "id": "koh-rong-cambodia-back-door",
+    "slug": "koh-rong-cambodia-back-door",
+    "locationId": "koh-rong-cambodia",
+    "name": "Back Door",
+    "heroImageUrl": null,
+    "lat": 10.68,
+    "lng": 103.26,
+    "description": "Boulder-strewn macro dive featuring massive underwater rock formations that create ideal ecosystems for small reef fish. Excellent for macro photography with nudibranchs, batfish, and barracuda sheltering among the boulders. Exclusive to Koh Rong-based divers.",
+    "depthRange": {
+      "min": 4,
+      "max": 15
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "macro",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Nudibranch",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Batfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Pufferfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Scorpionfish",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Reef shark",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          5
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or dive skin"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or dive skin"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "dive skin"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 30,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "dive skin"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 30,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 14
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or dive skin"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty or dive skin"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      11,
+      12,
+      1,
+      2
+    ],
+    "editorialRank": 72,
+    "getThere": "20 minute boat ride from Koh Rong Dive Center at Koh Touch Village; 2 hour ferry from Sihanoukville then local operator transfer",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Macro dive exclusive to Koh Rong-based divers. Best during dry season November to April. Boulder formations shelter small critters. Restricted visibility May to October during southwest monsoon."
   }
 ]
