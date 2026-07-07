@@ -2,7 +2,7 @@ name: Discover dive sites
 
 on:
   schedule:
-    - cron: "12 7 * * *"   # daily 07:12 UTC (~3am EDT) — Haiku model keeps cost ~$0.02-0.03/site
+    - cron: "0 6 * * *"   # daily 06:00 UTC = 2am EDT — runs overnight, well before the 8am ET count routine
   workflow_dispatch:
     inputs:
       max_sites:
@@ -34,7 +34,8 @@ jobs:
         id: discover
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          MAX_SITES: ${{ inputs.max_sites || '20' }}
+          MAX_SITES: ${{ inputs.max_sites || '12' }}
+          FILL_EMPTY_ONLY: "1"   # fill zero-site locations, then stop — keeps the nightly bill tied to real gaps
           MODEL_RESEARCH: claude-haiku-4-5-20251001
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
         run: |
@@ -42,9 +43,15 @@ jobs:
           node scripts/discover-sites.mjs | tee discover.log
           code=${PIPESTATUS[0]}
           echo "exit_code=$code" >> $GITHUB_OUTPUT
+          # Exit codes: 0 = sites added (open PR) · 2 = genuine no-op (green, no PR)
+          #             3 = auth/error failure (RED — surfaces the dead key instead of hiding it)
           if [ $code -eq 2 ]; then
-            echo "No sites added — skipping PR"
+            echo "No sites added — genuine no-op, nothing new to fill."
             exit 0
+          fi
+          if [ $code -eq 3 ]; then
+            echo "::error::Discovery failed (auth or API error). Rotate ANTHROPIC_API_KEY — see run log above."
+            exit 1
           fi
           exit $code
 

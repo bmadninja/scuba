@@ -42,8 +42,9 @@ const MODEL_LIGHT = process.env.MODEL_LIGHT ?? MODEL ?? "claude-haiku-4-5-202510
 const DRY_RUN = process.env.DRY_RUN === "1";
 const BLITZ = process.env.BLITZ === "1";
 const MAX_SITES = Number(process.env.MAX_SITES ?? "1");
-const EXHAUSTION_THRESHOLD = Number(process.env.EXHAUSTION_THRESHOLD ?? "5"); // consecutive rejects → exit code 3
+const EXHAUSTION_THRESHOLD = Number(process.env.EXHAUSTION_THRESHOLD ?? "5"); // consecutive rejects → stop
 const REGION_FOCUS = process.env.REGION_FOCUS; // optional comma-separated region hints for parallel workers
+const FILL_EMPTY_ONLY = process.env.FILL_EMPTY_ONLY === "1"; // stop as soon as every location has ≥1 site (daily routine default)
 
 const client = new Anthropic();
 
@@ -114,6 +115,16 @@ const distanceKm = (a, b) => {
 };
 
 const normalizeName = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+// Auth failures (dead/absent API key) are terminal, not a "gap we couldn't
+// fill". We fast-fail on the first one so the run goes RED instead of masquerading
+// as a green "no sites added" no-op — which is exactly how a dead key hid for days.
+function isAuthError(err) {
+  return err?.status === 401 || /authentication|invalid x-api-key/i.test(err?.message ?? "");
+}
+
+const countEmptyLocations = () =>
+  locations.filter((l) => !sites.some((s) => s.locationId === l.id)).length;
 
 function isDuplicate(candidate) {
   for (const s of sites) {
@@ -441,8 +452,17 @@ async function main() {
 
   const accepted = [];
   let consecutiveFails = 0;
+  let errorCount = 0; // caught exceptions (network/API/schema) — distinct from legit rejects
+  let authFailed = false; // terminal: dead/absent key
 
   for (let i = 0; i < MAX_SITES; i++) {
+    // FILL_EMPTY_ONLY (daily routine): once every location has a site, stop rather
+    // than spending on editorial extras. Keeps the nightly bill tied to real gaps.
+    if (FILL_EMPTY_ONLY && countEmptyLocations() === 0) {
+      console.log(`\n✓ Every location now has ≥1 dive site. Stopping (FILL_EMPTY_ONLY).`);
+      break;
+    }
+
     console.log(`\n[${i + 1}/${MAX_SITES}] consecutive_fails=${consecutiveFails}`);
 
     // In blitz, reload sites.json each iteration so we see parallel workers' additions
@@ -472,7 +492,14 @@ async function main() {
         }
       }
     } catch (err) {
+      if (isAuthError(err)) {
+        console.error(`\n✗ AUTH FAILURE: ${err.message}`);
+        console.error(`  The ANTHROPIC_API_KEY secret is missing, expired, or revoked. Nothing can be added until it is rotated.`);
+        authFailed = true;
+        break; // no point burning the remaining iterations on the same dead key
+      }
       console.error(`  Iteration error: ${err.message}`);
+      errorCount++;
       consecutiveFails++;
       if (consecutiveFails >= EXHAUSTION_THRESHOLD) {
         console.log(`\n✓ Exhaustion threshold reached after errors. Done.`);
@@ -481,12 +508,24 @@ async function main() {
     }
   }
 
+  // Terminal auth failure → exit 3 so CI goes RED and the daily count routine
+  // reports "failed" instead of a misleading green "no site added".
+  if (authFailed) {
+    auditCompleteness();
+    process.exit(3);
+  }
+
   if (!BLITZ) {
     // Batch write for non-blitz modes
     if (accepted.length === 0) {
-      console.log("No sites accepted this run.");
       auditCompleteness();
-      process.exit(2); // signal to CI: nothing to PR
+      if (errorCount > 0) {
+        // Empty because calls ERRORED, not because we ran out of real gaps.
+        console.error(`No sites added — run hit ${errorCount} error(s). Failing loudly.`);
+        process.exit(3);
+      }
+      console.log("No sites accepted this run (genuine no-op — nothing new to add).");
+      process.exit(2); // signal to CI: nothing to PR, this is fine
     }
     const out = DRY_RUN ? PROPOSED_PATH : SITES_PATH;
     const base = DRY_RUN && existsSync(out) ? JSON.parse(readFileSync(out, "utf8")) : sites;
