@@ -35,6 +35,8 @@ export type InfoKey =
   | "evidence"
   | "heat"
   | "fishing"
+  | "fishingpressure"
+  | "specieslogged"
   | "bluepark"
   | "iucn"
   | "conditions"
@@ -126,6 +128,28 @@ export const INFO: Record<InfoKey, InfoEntry> = {
       "Source: Blue Parks, Marine Conservation Institute. See marine-conservation.org/blueparks.",
     link: true,
     anchor: "#sources",
+  },
+  fishingpressure: {
+    title: "What fishing pressure means",
+    body: [
+      "This is how much boat fishing is actually happening near the reef, measured from satellite by Global Fishing Watch. It counts the hours fishing vessels spend within a set distance of the dive site.",
+      "It is the real world reading, separate from whether fishing is allowed. A protected reef with heavy vessel hours nearby is a warning sign; a quiet reef with light hours is a good one.",
+    ],
+    source: "Source: Global Fishing Watch apparent fishing effort. It refreshes regularly.",
+    link: true,
+    anchor: "#reef-state",
+  },
+  specieslogged: {
+    title: "What species logged means",
+    body: [
+      "This is the number of different species that divers and snorkelers have photographed and had confirmed to research grade on iNaturalist within a set distance of the reef.",
+      "It is a rough measure of how much life has been recorded here, not a health score. A reef that is dived often will show more simply because more people log there, so treat it as a floor, not a full count.",
+    ],
+    source: "Source: research grade observations on iNaturalist.",
+    externalHref: "https://www.inaturalist.org",
+    externalText: "Open iNaturalist →",
+    link: true,
+    anchor: "#sightings",
   },
   iucn: {
     title: "What the conservation labels mean",
@@ -219,9 +243,13 @@ export const INFO: Record<InfoKey, InfoEntry> = {
  */
 export function AtlasInfoPopup({
   infoKey,
+  detail,
   onClose,
 }: {
   infoKey: InfoKey;
+  /** Optional live per-location readout (e.g. current temperature, vessel
+   *  hours, survey radius) shown as a highlighted line above the explanation. */
+  detail?: string | null;
   onClose: () => void;
 }) {
   const entry = INFO[infoKey];
@@ -318,6 +346,21 @@ export function AtlasInfoPopup({
         {entry.sub && (
           <p style={{ fontSize: "0.875rem", color: "#8b9db8", marginBottom: "1.25rem", lineHeight: 1.55 }}>
             {entry.sub}
+          </p>
+        )}
+        {detail && (
+          <p style={{
+            fontSize: "0.95rem",
+            fontWeight: 600,
+            color: "#f0f4f8",
+            background: "rgba(255,255,255,0.06)",
+            border: "1px solid rgba(255,255,255,0.12)",
+            borderRadius: 8,
+            padding: "0.65rem 0.85rem",
+            margin: "0 0 1.1rem",
+            lineHeight: 1.5,
+          }}>
+            {detail}
           </p>
         )}
         {entry.body?.map((p, i) => (

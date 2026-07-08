@@ -356,6 +356,33 @@ export function LocationPageBody(props: LocationBodyProps) {
     seasonNotes,
   } = props;
 
+  // Live per-factor readouts, shown inside their info modal rather than on the
+  // card face (keeps the "what is driving it" row to one value each).
+  const fishingPressureDetail =
+    fishingPressure && fishingPressure.level !== "unknown"
+      ? `${fishingPressure.fishingHours.toLocaleString()} vessel hours within ${fishingPressure.radiusKm} km${
+          fishingPressure.level !== "low" && fishingPressure.trend === "rising"
+            ? " · rising"
+            : fishingPressure.level !== "low" && fishingPressure.trend === "falling"
+              ? " · easing"
+              : fishingPressure.level !== "low" && fishingPressure.trend === "stable"
+                ? " · steady"
+                : ""
+        }`
+      : null;
+  const speciesLoggedDetail =
+    speciesRichness !== null
+      ? `iNaturalist${speciesRadiusKm ? ` · within ${speciesRadiusKm} km` : ""}`
+      : null;
+  const infoDetail =
+    info === "heat"
+      ? heat?.detail ?? null
+      : info === "fishingpressure"
+        ? fishingPressureDetail
+        : info === "specieslogged"
+          ? speciesLoggedDetail
+          : null;
+
   const hasStay = stayTiers.some((t) => t.items.length > 0) || operators.length > 0;
 
   return (
@@ -524,9 +551,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                           }}>
                             {heat.label}
                           </span>
-                          {heat.detail ? (
-                            <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>{heat.detail}</p>
-                          ) : null}
                         </div>
                       ) : null}
 
@@ -534,7 +558,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                         <div>
                           <p style={FACTOR_LABEL}>
                             Fishing pressure
-                            <InfoButton onClick={() => setInfo("fishing")} label="What this means" />
+                            <InfoButton onClick={() => setInfo("fishingpressure")} label="What this means" />
                           </p>
                           <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#0E1C28", margin: 0, lineHeight: 1.4 }}>
                             {fishingPressure.level === "low"
@@ -546,29 +570,18 @@ export function LocationPageBody(props: LocationBodyProps) {
                                   : "Very heavy"}{" "}
                             boat fishing nearby
                           </p>
-                          <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>
-                            {fishingPressure.fishingHours.toLocaleString()} vessel hours within {fishingPressure.radiusKm} km
-                            {/* Trend is noise at low absolute effort — only show it for moderate and up. */}
-                            {fishingPressure.level !== "low" && fishingPressure.trend === "rising"
-                              ? " · rising"
-                              : fishingPressure.level !== "low" && fishingPressure.trend === "falling"
-                                ? " · easing"
-                                : fishingPressure.level !== "low" && fishingPressure.trend === "stable"
-                                  ? " · steady"
-                                  : ""}
-                          </p>
                         </div>
                       ) : null}
 
                       {speciesRichness !== null ? (
                         <div>
-                          <p style={FACTOR_LABEL}>Species logged</p>
+                          <p style={FACTOR_LABEL}>
+                            Species logged
+                            <InfoButton onClick={() => setInfo("specieslogged")} label="What this means" />
+                          </p>
                           <p style={{ margin: 0 }}>
                             <span style={{ fontSize: "1.125rem", fontWeight: 700, color: "#0E1C28" }}>{speciesRichness.toLocaleString()}</span>
                             <span style={{ fontSize: "0.8125rem", color: "#4A5568" }}> species</span>
-                          </p>
-                          <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>
-                            iNaturalist{speciesRadiusKm ? ` · within ${speciesRadiusKm} km` : ""}
                           </p>
                         </div>
                       ) : null}
@@ -1078,7 +1091,7 @@ export function LocationPageBody(props: LocationBodyProps) {
       </div>
 
       {/* Info popups */}
-      {info && <AtlasInfoPopup infoKey={info} onClose={() => setInfo(null)} />}
+      {info && <AtlasInfoPopup infoKey={info} detail={infoDetail} onClose={() => setInfo(null)} />}
 
       <style>{`
         .trip-expand[open] .trip-chev { transform: rotate(180deg); }
