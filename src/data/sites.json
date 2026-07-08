@@ -575159,5 +575159,686 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Also known as Rer Rond. Established as a dive site by Rainbow Divers in 1997. Pinnacle rises from about 50 meters. Macro hotspot with over 50 nudibranch species. Requires Advanced Open Water due to depth and current. Best on slack tides."
+  },
+  {
+    "id": "praslin-seychelles-aride-bank",
+    "slug": "praslin-seychelles-aride-bank",
+    "locationId": "praslin-seychelles",
+    "name": "Aride Bank",
+    "heroImageUrl": null,
+    "lat": -4.188,
+    "lng": 55.865,
+    "description": "Dramatic granite seamount rising from deep water off the northernmost granitic island in Seychelles. Strong southeast trade wind currents concentrate large pelagic fish, reef sharks, groupers, and rays around the boulder structure, with soft coral gardens and swaying sea fans in the shallows.",
+    "depthRange": {
+      "min": 12,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Nurse Shark",
+        "scientificName": "Nebrius ferrugineus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip Reef Shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grouper",
+        "scientificName": "Epinephelus fuscoguttatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Eagle Ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Hawksbill Turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      10,
+      11
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly to Mahe (SEZ), connect to Praslin by air or ferry, then a 30 to 45 minute dive boat ride north past Curieuse and Aride Island. Site is reliably accessible only in the calmer northwest monsoon months.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Exposed site with strong currents when running; a reef hook is useful. Boat access is often difficult during the southeast monsoon (June to September)."
+  },
+  {
+    "id": "milford-sound-new-zealand-dale-point",
+    "slug": "milford-sound-new-zealand-dale-point",
+    "locationId": "milford-sound-new-zealand",
+    "name": "Dale Point",
+    "heroImageUrl": null,
+    "lat": -44.6718,
+    "lng": 167.9255,
+    "description": "Rocky point near the mouth of Milford Sound known for friendly octopus encounters and forests of black coral. A permanent tannin stained freshwater layer sits over the salt water, cutting the light so that deep water black coral, Antipathella fiordensis, grows in only 15 to 20 metres. The result is a dark twilight dive with life normally found far deeper.",
+    "depthRange": {
+      "min": 8,
+      "max": 21
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Black Coral",
+        "scientificName": "Antipathella fiordensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Octopus",
+        "scientificName": "Pinnoctopus cordiformis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spiny Dogfish",
+        "scientificName": "Squalus acanthias",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "New Zealand Rock Lobster",
+        "scientificName": "Jasus edwardsii",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Sea Perch",
+        "scientificName": "Helicolenus percoides",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Snake Star",
+        "scientificName": "Astrobrachion constrictum",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 11
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 12,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 9
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit with heavy undergarment"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 9
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit with heavy undergarment"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 11,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 9
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit with heavy undergarment"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 12,
+          "max": 13
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 7,
+          "max": 11
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit"
+      }
+    ],
+    "bestMonths": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
+    "editorialRank": 74,
+    "getThere": "Fly to Queenstown (ZQN), then drive about four hours over the Crown Range to Milford Sound, or take a scenic flight. Dive boats reach Dale Point from Milford Marina in 30 to 45 minutes.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Advanced and drysuit experience expected. The freshwater layer gives a sharp halocline and low surface visibility that opens up below the tannin layer. Rainfall makes the dark layer thicker."
+  },
+  {
+    "id": "bocas-del-toro-panama-hospital-point",
+    "slug": "bocas-del-toro-panama-hospital-point",
+    "locationId": "bocas-del-toro-panama",
+    "name": "Hospital Point",
+    "heroImageUrl": null,
+    "lat": 9.341,
+    "lng": -82.241,
+    "description": "Fringing reef off the northwest tip of Isla Solarte, named for an old United Fruit Company hospital ashore. Shallow lettuce and brain coral gardens roll over into a wall that drops to about 15 metres, with parrotfish, wrasse, and seahorses by day and nurse sharks and lobster active at night. Calm and close to Bocas Town.",
+    "depthRange": {
+      "min": 2,
+      "max": 16
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Stoplight Parrotfish",
+        "scientificName": "Sparisoma viride",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluehead Wrasse",
+        "scientificName": "Thalassoma bifasciatum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Foureye Butterflyfish",
+        "scientificName": "Chaetodon capistratus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Longsnout Seahorse",
+        "scientificName": "Hippocampus reidi",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse Shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Southern Stingray",
+        "scientificName": "Hypanus americanus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 14
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      2,
+      3,
+      9,
+      10
+    ],
+    "editorialRank": 68,
+    "getThere": "Fly to Bocas Town (BOC) on Isla Colon, then a 5 to 10 minute water taxi to the northwest tip of Isla Solarte. Reef entry is from an anchored boat into the shallows.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Accessible reef popular for training, snorkelling, and night dives. Visibility drops in the rainy season; best in the September to October window and February to March."
   }
 ]
