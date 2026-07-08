@@ -605,11 +605,11 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
       {/* ── Grid header: count + sort + view toggle ─────────────────────────── */}
       <div style={{ maxWidth: 1320, margin: "0 auto" }} className="px-5 pt-7 sm:px-8 lg:px-12">
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
-          <span style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#f0f4f8" }}>
+          <span style={{ fontSize: "1.0625rem", fontWeight: 700, color: "var(--color-ink)" }}>
             {filtered.length} locations
           </span>
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem", color: "#8b9db8" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem", color: "var(--color-ink-2)" }}>
               Sort
               <select value={sortKey} onChange={(e) => setParam("sort", e.target.value === "season" ? null : e.target.value)} style={{ border: "1px solid rgba(255,255,255,0.1)", borderRadius: "0.5rem", padding: "0.35rem 0.65rem", fontSize: "0.8125rem", fontFamily: "inherit", background: "#0a1628", color: "#f0f4f8", cursor: "pointer" }}>
                 <option value="season">Best season</option>
@@ -617,9 +617,9 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
                 <option value="name">Name</option>
               </select>
             </div>
-            <div style={{ display: "inline-flex", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "0.5rem", overflow: "hidden" }}>
+            <div style={{ display: "inline-flex", border: "1px solid var(--color-hairline)", borderRadius: "0.5rem", overflow: "hidden" }}>
               {(["cards", "map"] as ViewMode[]).map((v) => (
-                <button key={v} type="button" onClick={() => setParam("view", v === "cards" ? null : v)} style={{ padding: "0.35rem 0.875rem", fontSize: "0.8125rem", fontWeight: 600, fontFamily: "inherit", cursor: "pointer", border: "none", background: viewMode === v ? "#00d4ff" : "rgba(255,255,255,0.05)", color: viewMode === v ? "#030712" : "#8b9db8", textTransform: "capitalize", transition: "background 0.15s, color 0.15s" }}>
+                <button key={v} type="button" onClick={() => setParam("view", v === "cards" ? null : v)} style={{ padding: "0.35rem 0.875rem", fontSize: "0.8125rem", fontWeight: 600, fontFamily: "inherit", cursor: "pointer", border: "none", background: viewMode === v ? "var(--color-ocean)" : "rgba(14,28,40,0.04)", color: viewMode === v ? "#fff" : "var(--color-ink-2)", textTransform: "capitalize", transition: "background 0.15s, color 0.15s" }}>
                   {v.charAt(0).toUpperCase() + v.slice(1)}
                 </button>
               ))}
@@ -638,9 +638,9 @@ export function LocationsExplorer({ locations, currentMonth }: Props) {
       {/* ── Card grid ────────────────────────────────────────────────────────── */}
       <div style={{ maxWidth: 1320, margin: "0 auto", display: viewMode === "cards" ? undefined : "none" }} className="px-5 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-8">
         {filtered.length === 0 ? (
-          <div style={{ borderRadius: "0.75rem", border: "1px dashed rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.04)", padding: "3rem 1.5rem", textAlign: "center" }}>
-            <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#aebcd0" }}>No matches.</p>
-            <p style={{ marginTop: "0.25rem", fontSize: "0.9375rem", color: "#8b9db8" }}>Try clearing a filter or broadening the search.</p>
+          <div style={{ borderRadius: "0.75rem", border: "1px dashed var(--color-hairline)", background: "rgba(14,28,40,0.04)", padding: "3rem 1.5rem", textAlign: "center" }}>
+            <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--color-ink-2)" }}>No matches.</p>
+            <p style={{ marginTop: "0.25rem", fontSize: "0.9375rem", color: "var(--color-ink-2)" }}>Try clearing a filter or broadening the search.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5 lg:gap-6">

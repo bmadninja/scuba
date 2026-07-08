@@ -29,15 +29,15 @@ const PRESET: Record<
   high:     { label: "High confidence",   color: "#93c5fd", bg: "rgba(59,130,246,0.13)", dot: "#3b82f6" },
   thin:     { label: "Thin data",         color: "#fcd34d", bg: "rgba(245,158,11,0.13)", dot: "#f59e0b" },
   limited:  { label: "Limited records",   color: "#fcd34d", bg: "rgba(245,158,11,0.13)", dot: "#f59e0b" },
-  snapshot: { label: "Snapshot",          color: "#8b9db8", bg: "rgba(139,157,184,0.12)", dot: "#8b9db8" },
+  snapshot: { label: "Snapshot",          color: "var(--color-ink-2)", bg: "rgba(139,157,184,0.12)", dot: "var(--color-ink-2)" },
 };
 
 function surveyBadge(year: string) {
   return {
     label: `Survey from ${year}`,
-    color: "#8b9db8",
+    color: "var(--color-ink-2)",
     bg: "rgba(139,157,184,0.12)",
-    dot: "#8b9db8",
+    dot: "var(--color-ink-2)",
   };
 }
 
@@ -54,7 +54,7 @@ export function DataConfidenceBadge({
     if (variant.startsWith("survey-")) {
       cfg = surveyBadge(variant.replace("survey-", ""));
     } else {
-      cfg = PRESET[variant] ?? { label: variant, color: "#8b9db8", bg: "rgba(255,255,255,0.08)", dot: "#8b9db8" };
+      cfg = PRESET[variant] ?? { label: variant, color: "var(--color-ink-2)", bg: "rgba(14,28,40,0.06)", dot: "var(--color-ink-2)" };
     }
   } else {
     const base = variant.survey ? surveyBadge(variant.survey) : PRESET.snapshot;

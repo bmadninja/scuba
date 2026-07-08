@@ -9,8 +9,8 @@ export function ScienceContextModule() {
     >
       <div
         style={{
-          borderLeft: "3px solid #00d4ff",
-          background: "rgba(255,255,255,0.04)",
+          borderLeft: "3px solid var(--color-ocean)",
+          background: "rgba(14,28,40,0.04)",
           borderRadius: "0 8px 8px 0",
           padding: "1.25rem 1.5rem",
           marginBottom: "2rem",
@@ -22,7 +22,7 @@ export function ScienceContextModule() {
             fontWeight: 700,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
-            color: "#00d4ff",
+            color: "var(--color-ocean)",
             margin: "0 0 0.375rem",
           }}
         >
@@ -32,7 +32,7 @@ export function ScienceContextModule() {
           style={{
             fontSize: "0.875rem",
             fontWeight: 700,
-            color: "#f0f4f8",
+            color: "var(--color-ink)",
             margin: "0 0 0.5rem",
           }}
         >
@@ -41,7 +41,7 @@ export function ScienceContextModule() {
         <p
           style={{
             fontSize: "0.875rem",
-            color: "#aebcd0",
+            color: "var(--color-ink-2)",
             lineHeight: 1.65,
             margin: 0,
             maxWidth: 680,

@@ -72,7 +72,7 @@ const S = {
     fontWeight: 700 as const,
     letterSpacing: "0.14em",
     textTransform: "uppercase" as const,
-    color: "#8b9db8",
+    color: "var(--color-ink-2)",
     display: "block",
     marginBottom: "0.5rem",
   } satisfies React.CSSProperties,
@@ -80,7 +80,7 @@ const S = {
     background: "rgba(255,255,255,0.04)",
     border: "1px solid rgba(0,212,255,0.18)",
     borderRadius: "0.5rem",
-    color: "#f0f4f8",
+    color: "var(--color-ink)",
     fontSize: "0.9rem",
     padding: "0.55rem 0.75rem",
     width: "100%",
@@ -88,8 +88,8 @@ const S = {
     outline: "none",
   } satisfies React.CSSProperties,
   primaryBtn: {
-    background: "#00d4ff",
-    color: "#0a1628",
+    background: "var(--color-ocean)",
+    color: "#fff",
     border: "none",
     borderRadius: "0.625rem",
     padding: "0.65rem 1.25rem",
@@ -101,7 +101,7 @@ const S = {
     background: "none",
     border: "1px solid rgba(0,212,255,0.25)",
     borderRadius: "0.625rem",
-    color: "#00d4ff",
+    color: "var(--color-ocean)",
     fontSize: "0.875rem",
     fontWeight: 600 as const,
     padding: "0.6rem 1rem",
@@ -495,15 +495,15 @@ export function SubmissionForm(props: Props) {
         {/* Compact header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.1rem" }}>
           <div>
-            <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#f0f4f8", marginBottom: "0.2rem", letterSpacing: "-0.02em" }}>
+            <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--color-ink)", marginBottom: "0.2rem", letterSpacing: "-0.02em" }}>
               Dived {props.mode === "site" ? `${contextName}` : "here"} recently?
             </h3>
-            <p style={{ fontSize: "0.8125rem", color: "#8b9db8", lineHeight: 1.5 }}>
+            <p style={{ fontSize: "0.8125rem", color: "var(--color-ink-2)", lineHeight: 1.5 }}>
               Your photos help track reef health.{" "}
               <button
                 type="button"
                 onClick={() => setInfoOpen(true)}
-                style={{ background: "none", border: "none", color: "#00d4ff", cursor: "pointer", fontSize: "0.8125rem", fontWeight: 600, padding: 0 }}
+                style={{ background: "none", border: "none", color: "var(--color-ocean)", cursor: "pointer", fontSize: "0.8125rem", fontWeight: 600, padding: 0 }}
               >
                 How? →
               </button>
@@ -517,8 +517,8 @@ export function SubmissionForm(props: Props) {
               const n = i + 1;
               return (
                 <div key={label} style={{ flex: 1, textAlign: "center" }}>
-                  <div style={{ height: 3, borderRadius: 2, background: n <= activeStep ? "#00d4ff" : "rgba(0,212,255,0.15)", marginBottom: "0.3rem" }} />
-                  <span style={{ fontSize: "0.65rem", fontWeight: 600, color: n === activeStep ? "#00d4ff" : n < activeStep ? "#aebcd0" : "#8b9db8", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                  <div style={{ height: 3, borderRadius: 2, background: n <= activeStep ? "var(--color-ocean)" : "rgba(0,212,255,0.15)", marginBottom: "0.3rem" }} />
+                  <span style={{ fontSize: "0.65rem", fontWeight: 600, color: n === activeStep ? "var(--color-ocean)" : n < activeStep ? "var(--color-ink-2)" : "var(--color-ink-2)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
                     {label}
                   </span>
                 </div>
@@ -649,7 +649,7 @@ function StepPhotos({
 
   return (
     <div>
-      <p style={{ fontSize: "0.8rem", color: "#8b9db8", marginBottom: "0.85rem" }}>
+      <p style={{ fontSize: "0.8rem", color: "var(--color-ink-2)", marginBottom: "0.85rem" }}>
         Up to {MAX_PHOTOS} photos · JPEG or PNG · max 20 MB each
       </p>
 
@@ -663,7 +663,7 @@ function StepPhotos({
         onDragLeave={() => setDragging(false)}
         onDrop={(e) => { e.preventDefault(); setDragging(false); onAddFiles(e.dataTransfer.files); }}
         style={{
-          border: `2px dashed ${dragging ? "#00d4ff" : "rgba(0,212,255,0.3)"}`,
+          border: `2px dashed ${dragging ? "var(--color-ocean)" : "rgba(0,212,255,0.3)"}`,
           borderRadius: "0.875rem",
           padding: "1.75rem",
           textAlign: "center",
@@ -674,11 +674,11 @@ function StepPhotos({
         }}
       >
         <p style={{ fontSize: "1.4rem", marginBottom: "0.4rem" }}>📷</p>
-        <p style={{ fontSize: "0.875rem", color: "#aebcd0" }}>
+        <p style={{ fontSize: "0.875rem", color: "var(--color-ink-2)" }}>
           Drag photos here, or{" "}
-          <span style={{ color: "#00d4ff", fontWeight: 600 }}>tap to select</span>
+          <span style={{ color: "var(--color-ocean)", fontWeight: 600 }}>tap to select</span>
         </p>
-        <p style={{ fontSize: "0.75rem", color: "#8b9db8", marginTop: "0.25rem" }}>
+        <p style={{ fontSize: "0.75rem", color: "var(--color-ink-2)", marginTop: "0.25rem" }}>
           GPS in your photo will auto-detect the dive site
         </p>
         <input
@@ -700,17 +700,17 @@ function StepPhotos({
       {/* Site context — location mode only */}
       {mode === "location" && (
         <div style={{ marginBottom: "0.85rem", padding: "0.75rem 1rem", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(0,212,255,0.12)", borderRadius: "0.75rem" }}>
-          <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8b9db8", marginBottom: "0.4rem" }}>
+          <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-ink-2)", marginBottom: "0.4rem" }}>
             Dive site
           </p>
 
           {selectedSite && !showSiteSelector ? (
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", justifyContent: "space-between" }}>
-              <span style={{ fontSize: "0.9rem", fontWeight: 700, color: "#f0f4f8" }}>
-                {gpsDetected && <span style={{ fontSize: "0.7rem", color: "#00d4ff", marginRight: "0.4rem" }}>📍 GPS matched</span>}
+              <span style={{ fontSize: "0.9rem", fontWeight: 700, color: "var(--color-ink)" }}>
+                {gpsDetected && <span style={{ fontSize: "0.7rem", color: "var(--color-ocean)", marginRight: "0.4rem" }}>📍 GPS matched</span>}
                 {selectedSite.name}
               </span>
-              <button type="button" onClick={onShowSiteSelector} style={{ background: "none", border: "none", color: "#00d4ff", fontSize: "0.8rem", fontWeight: 600, cursor: "pointer", padding: 0, flexShrink: 0 }}>
+              <button type="button" onClick={onShowSiteSelector} style={{ background: "none", border: "none", color: "var(--color-ocean)", fontSize: "0.8rem", fontWeight: 600, cursor: "pointer", padding: 0, flexShrink: 0 }}>
                 Change
               </button>
             </div>
@@ -721,7 +721,7 @@ function StepPhotos({
                 const site = locationSites?.find((s) => s.id === e.target.value);
                 if (site) onSelectSite(site);
               }}
-              style={{ ...S.input, background: "rgba(10,22,40,0.8)", colorScheme: "dark" }}
+              style={{ ...S.input, background: "rgba(10,22,40,0.8)", color: "#f0f4f8", colorScheme: "dark" }}
             >
               <option value="">Select a dive site…</option>
               {locationSites?.map((s) => (
@@ -796,25 +796,25 @@ function StepSighting({
 
   return (
     <div>
-      <p style={{ fontSize: "0.875rem", color: "#8b9db8", marginBottom: "1rem" }}>What did you photograph?</p>
+      <p style={{ fontSize: "0.875rem", color: "var(--color-ink-2)", marginBottom: "1rem" }}>What did you photograph?</p>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.25rem" }}>
         {cats.map((c) => (
           <button key={c.value} type="button" onClick={() => onCategoryChange(c.value)}
-            style={{ display: "flex", alignItems: "center", gap: "0.85rem", padding: "0.9rem 1rem", border: `1px solid ${category === c.value ? "#00d4ff" : "rgba(0,212,255,0.2)"}`, borderRadius: "0.75rem", background: category === c.value ? "rgba(0,212,255,0.1)" : "rgba(255,255,255,0.02)", cursor: "pointer", textAlign: "left", width: "100%" }}>
+            style={{ display: "flex", alignItems: "center", gap: "0.85rem", padding: "0.9rem 1rem", border: `1px solid ${category === c.value ? "var(--color-ocean)" : "rgba(0,212,255,0.2)"}`, borderRadius: "0.75rem", background: category === c.value ? "rgba(0,212,255,0.1)" : "rgba(255,255,255,0.02)", cursor: "pointer", textAlign: "left", width: "100%" }}>
             <span style={{ fontSize: "1.4rem", flexShrink: 0 }}>{c.icon}</span>
             <span>
-              <span style={{ display: "block", fontSize: "0.875rem", fontWeight: 700, color: "#f0f4f8" }}>{c.label}</span>
-              <span style={{ display: "block", fontSize: "0.8rem", color: "#8b9db8" }}>{c.desc}</span>
+              <span style={{ display: "block", fontSize: "0.875rem", fontWeight: 700, color: "var(--color-ink)" }}>{c.label}</span>
+              <span style={{ display: "block", fontSize: "0.8rem", color: "var(--color-ink-2)" }}>{c.desc}</span>
             </span>
-            {category === c.value && <span style={{ marginLeft: "auto", color: "#00d4ff" }}>✓</span>}
+            {category === c.value && <span style={{ marginLeft: "auto", color: "var(--color-ocean)" }}>✓</span>}
           </button>
         ))}
       </div>
 
       <div style={{ marginBottom: "1.25rem", position: "relative" }}>
         <label style={S.label} htmlFor="species-input">
-          Species <span style={{ fontWeight: 400, color: "#8b9db8" }}>(optional)</span>
+          Species <span style={{ fontWeight: 400, color: "var(--color-ink-2)" }}>(optional)</span>
         </label>
         <div style={{ position: "relative" }}>
           <input
@@ -828,7 +828,7 @@ function StepSighting({
             autoComplete="off"
           />
           {isSeahorse && (
-            <span style={{ position: "absolute", right: "0.6rem", top: "50%", transform: "translateY(-50%)", fontSize: "0.7rem", background: "rgba(0,212,255,0.15)", color: "#00d4ff", borderRadius: "0.3rem", padding: "0.15rem 0.4rem", fontWeight: 700 }}>
+            <span style={{ position: "absolute", right: "0.6rem", top: "50%", transform: "translateY(-50%)", fontSize: "0.7rem", background: "rgba(0,212,255,0.15)", color: "var(--color-ocean)", borderRadius: "0.3rem", padding: "0.15rem 0.4rem", fontWeight: 700 }}>
               + iSeahorse
             </span>
           )}
@@ -850,7 +850,7 @@ function StepSighting({
         )}
 
         {taxonId && <p style={{ fontSize: "0.75rem", color: "#15824c", marginTop: "0.3rem" }}>✓ Matched — submits directly to iNaturalist</p>}
-        <p style={{ fontSize: "0.75rem", color: "#8b9db8", marginTop: "0.3rem" }}>Leave blank if unsure — iNaturalist&apos;s community will identify from your photo.</p>
+        <p style={{ fontSize: "0.75rem", color: "var(--color-ink-2)", marginTop: "0.3rem" }}>Leave blank if unsure — iNaturalist&apos;s community will identify from your photo.</p>
       </div>
 
       <div style={{ display: "flex", gap: "0.75rem" }}>
@@ -910,14 +910,14 @@ function StepDetails({
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
               {BLEACHING_OPTIONS.map((opt) => (
                 <button key={opt.value} type="button" onClick={() => onBleachingChange(opt.value)}
-                  style={{ padding: "0.45rem 0.9rem", borderRadius: "0.5rem", border: `1px solid ${bleachingScore === opt.value ? opt.color : "rgba(255,255,255,0.15)"}`, background: bleachingScore === opt.value ? `${opt.color}22` : "transparent", color: bleachingScore === opt.value ? opt.color : "#aebcd0", fontWeight: 600, fontSize: "0.8rem", cursor: "pointer" }}>
+                  style={{ padding: "0.45rem 0.9rem", borderRadius: "0.5rem", border: `1px solid ${bleachingScore === opt.value ? opt.color : "rgba(255,255,255,0.15)"}`, background: bleachingScore === opt.value ? `${opt.color}22` : "transparent", color: bleachingScore === opt.value ? opt.color : "var(--color-ink-2)", fontWeight: 600, fontSize: "0.8rem", cursor: "pointer" }}>
                   {opt.label}
                 </button>
               ))}
             </div>
             {coralWatchEligible
               ? <p style={{ fontSize: "0.75rem", color: "#15824c", marginTop: "0.4rem" }}>✓ Will also queue for CoralWatch (weekly batch)</p>
-              : <p style={{ fontSize: "0.75rem", color: "#8b9db8", marginTop: "0.4rem" }}>Fill depth + bleaching score to also submit to CoralWatch.</p>}
+              : <p style={{ fontSize: "0.75rem", color: "var(--color-ink-2)", marginTop: "0.4rem" }}>Fill depth + bleaching score to also submit to CoralWatch.</p>}
           </div>
         )}
         <div>
@@ -925,7 +925,7 @@ function StepDetails({
           <textarea id="notes" value={notes} onChange={(e) => onNotesChange(e.target.value)} maxLength={280}
             placeholder="Behaviour, location within site, anything unusual…"
             rows={3} style={{ ...S.input, resize: "vertical", fontFamily: "inherit" }} />
-          <p style={{ fontSize: "0.7rem", color: "#8b9db8", textAlign: "right", marginTop: "0.2rem" }}>{notes.length} / 280</p>
+          <p style={{ fontSize: "0.7rem", color: "var(--color-ink-2)", textAlign: "right", marginTop: "0.2rem" }}>{notes.length} / 280</p>
         </div>
       </div>
       <div style={{ display: "flex", gap: "0.75rem" }}>
@@ -965,29 +965,29 @@ function StepConfirm({
 
   return (
     <div>
-      <h4 style={{ fontSize: "0.875rem", fontWeight: 700, color: "#f0f4f8", marginBottom: "0.85rem" }}>
+      <h4 style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--color-ink)", marginBottom: "0.85rem" }}>
         Your sighting at {siteName}
       </h4>
 
       <div style={{ display: "flex", gap: "0.4rem", marginBottom: "1rem", flexWrap: "wrap" }}>
         {photos.slice(0, 5).map((f, i) => <ConfirmThumb key={i} file={f} />)}
         {photos.length > 5 && (
-          <div style={{ width: 56, height: 56, borderRadius: "0.4rem", background: "rgba(0,212,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", color: "#00d4ff", fontWeight: 700 }}>
+          <div style={{ width: 56, height: 56, borderRadius: "0.4rem", background: "rgba(0,212,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", color: "var(--color-ocean)", fontWeight: 700 }}>
             +{photos.length - 5}
           </div>
         )}
       </div>
 
-      <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "0.75rem", padding: "0.85rem 1rem", marginBottom: "1rem", fontSize: "0.875rem", color: "#aebcd0", lineHeight: 1.8 }}>
-        <span style={{ color: "#f0f4f8", fontWeight: 600, textTransform: "capitalize" }}>{category}</span>
+      <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "0.75rem", padding: "0.85rem 1rem", marginBottom: "1rem", fontSize: "0.875rem", color: "var(--color-ink-2)", lineHeight: 1.8 }}>
+        <span style={{ color: "var(--color-ink)", fontWeight: 600, textTransform: "capitalize" }}>{category}</span>
         {speciesDisplay && <span> · {speciesDisplay}</span>}
         {depthM && <span> · {depthM}m depth</span>}
         <span> · {observedOn}</span>
       </div>
 
       <div style={{ marginBottom: "1.25rem" }}>
-        <p style={{ fontSize: "0.75rem", fontWeight: 700, color: "#8b9db8", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.5rem" }}>Submitting to</p>
-        <ul style={{ margin: 0, padding: 0, listStyle: "none", fontSize: "0.875rem", color: "#aebcd0" }}>
+        <p style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--color-ink-2)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.5rem" }}>Submitting to</p>
+        <ul style={{ margin: 0, padding: 0, listStyle: "none", fontSize: "0.875rem", color: "var(--color-ink-2)" }}>
           {platforms.map((p) => <li key={p} style={{ paddingBottom: "0.2rem" }}>— {p}</li>)}
         </ul>
       </div>
@@ -1001,7 +1001,7 @@ function StepConfirm({
         </button>
       </div>
 
-      <p style={{ fontSize: "0.7rem", color: "#8b9db8", marginTop: "1rem", lineHeight: 1.5 }}>
+      <p style={{ fontSize: "0.7rem", color: "var(--color-ink-2)", marginTop: "1rem", lineHeight: 1.5 }}>
         Sightings appear under the ScubaSeason observer account on conservation platforms.
       </p>
     </div>
@@ -1029,26 +1029,26 @@ function StepSuccess({ siteName, observationUrl, submittedTo, onAnother }: {
   return (
     <div style={{ textAlign: "center", padding: "1rem 0" }}>
       <p style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>🪸</p>
-      <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#f0f4f8", marginBottom: "0.5rem" }}>Submitted. Thank you.</h4>
-      <p style={{ fontSize: "0.875rem", color: "#aebcd0", lineHeight: 1.65, maxWidth: 420, margin: "0 auto 1.25rem" }}>
+      <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--color-ink)", marginBottom: "0.5rem" }}>Submitted. Thank you.</h4>
+      <p style={{ fontSize: "0.875rem", color: "var(--color-ink-2)", lineHeight: 1.65, maxWidth: 420, margin: "0 auto 1.25rem" }}>
         Your photo is now part of {siteName}&apos;s reef record. iNaturalist&apos;s community of
         experts will help identify any unknown species within a few days.
       </p>
       {submittedTo && submittedTo.length > 0 && (
-        <p style={{ fontSize: "0.8rem", color: "#8b9db8", marginBottom: "1.25rem" }}>
+        <p style={{ fontSize: "0.8rem", color: "var(--color-ink-2)", marginBottom: "1.25rem" }}>
           Sent to: {submittedTo.join(", ")}
         </p>
       )}
       {observationUrl && (
         <a href={observationUrl} target="_blank" rel="noopener noreferrer"
-          style={{ display: "inline-block", fontSize: "0.8125rem", color: "#00d4ff", fontWeight: 600, textDecoration: "none", marginBottom: "1.25rem" }}>
+          style={{ display: "inline-block", fontSize: "0.8125rem", color: "var(--color-ocean)", fontWeight: 600, textDecoration: "none", marginBottom: "1.25rem" }}>
           View on iNaturalist →
         </a>
       )}
       <div>
         <button type="button" style={S.primaryBtn} onClick={onAnother}>Submit another sighting →</button>
       </div>
-      <p style={{ fontSize: "0.7rem", color: "#8b9db8", marginTop: "1rem" }}>
+      <p style={{ fontSize: "0.7rem", color: "var(--color-ink-2)", marginTop: "1rem" }}>
         Sightings appear under the ScubaSeason observer account on conservation platforms.
       </p>
     </div>

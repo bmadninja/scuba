@@ -23,7 +23,7 @@ export function PreDiveBrief({ siteName, onScrollToForm }: Props) {
           style={{
             fontSize: "1rem",
             fontWeight: 800,
-            color: "#f0f4f8",
+            color: "var(--color-ink)",
             marginBottom: "0.5rem",
             letterSpacing: "-0.02em",
           }}
@@ -33,7 +33,7 @@ export function PreDiveBrief({ siteName, onScrollToForm }: Props) {
         <p
           style={{
             fontSize: "0.875rem",
-            color: "#aebcd0",
+            color: "var(--color-ink-2)",
             lineHeight: 1.65,
             marginBottom: "1rem",
             maxWidth: 560,
@@ -49,7 +49,7 @@ export function PreDiveBrief({ siteName, onScrollToForm }: Props) {
           style={{
             fontSize: "0.75rem",
             fontWeight: 700,
-            color: "#8b9db8",
+            color: "var(--color-ink-2)",
             letterSpacing: "0.1em",
             textTransform: "uppercase",
             marginBottom: "0.4rem",
@@ -62,7 +62,7 @@ export function PreDiveBrief({ siteName, onScrollToForm }: Props) {
             margin: "0 0 1rem",
             padding: "0 0 0 1.1rem",
             fontSize: "0.875rem",
-            color: "#aebcd0",
+            color: "var(--color-ink-2)",
             lineHeight: 1.7,
           }}
         >
@@ -75,7 +75,7 @@ export function PreDiveBrief({ siteName, onScrollToForm }: Props) {
           style={{
             fontSize: "0.75rem",
             fontWeight: 700,
-            color: "#8b9db8",
+            color: "var(--color-ink-2)",
             letterSpacing: "0.1em",
             textTransform: "uppercase",
             marginBottom: "0.4rem",
@@ -88,7 +88,7 @@ export function PreDiveBrief({ siteName, onScrollToForm }: Props) {
             margin: "0 0 1.25rem",
             padding: "0 0 0 1.1rem",
             fontSize: "0.875rem",
-            color: "#aebcd0",
+            color: "var(--color-ink-2)",
             lineHeight: 1.7,
           }}
         >
@@ -102,8 +102,8 @@ export function PreDiveBrief({ siteName, onScrollToForm }: Props) {
             type="button"
             onClick={onScrollToForm}
             style={{
-              background: "#00d4ff",
-              color: "#0a1628",
+              background: "var(--color-ocean)",
+              color: "#fff",
               border: "none",
               borderRadius: "0.625rem",
               padding: "0.6rem 1.1rem",
@@ -120,7 +120,7 @@ export function PreDiveBrief({ siteName, onScrollToForm }: Props) {
             style={{
               background: "none",
               border: "none",
-              color: "#00d4ff",
+              color: "var(--color-ocean)",
               fontSize: "0.8125rem",
               fontWeight: 600,
               cursor: "pointer",

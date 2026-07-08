@@ -734,11 +734,11 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
       {/* ── Grid header: count + sort + view toggle ─────────────────────────── */}
       <div style={{ maxWidth: 1320, margin: "0 auto" }} className="px-5 pt-7 sm:px-8 lg:px-12">
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
-          <span style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#f0f4f8" }}>
+          <span style={{ fontSize: "1.0625rem", fontWeight: 700, color: "var(--color-ink)" }}>
             {filtered.length} reefs
           </span>
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem", color: "#8b9db8" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem", color: "var(--color-ink-2)" }}>
               Sort
               <select
                 value={sortKey}
@@ -762,7 +762,7 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
             <div
               style={{
                 display: "inline-flex",
-                border: "1px solid rgba(255,255,255,0.12)",
+                border: "1px solid var(--color-hairline)",
                 borderRadius: "0.5rem",
                 overflow: "hidden",
               }}
@@ -779,8 +779,8 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
                     fontFamily: "inherit",
                     cursor: "pointer",
                     border: "none",
-                    background: viewMode === v ? "#00d4ff" : "rgba(255,255,255,0.05)",
-                    color: viewMode === v ? "#030712" : "#8b9db8",
+                    background: viewMode === v ? "var(--color-ocean)" : "rgba(14,28,40,0.04)",
+                    color: viewMode === v ? "#fff" : "var(--color-ink-2)",
                     textTransform: "capitalize",
                     transition: "background 0.15s, color 0.15s",
                   }}
@@ -813,16 +813,16 @@ export function SitesExplorer({ sites, locationsById, currentMonth }: Props) {
           <div
             style={{
               borderRadius: "0.75rem",
-              border: "1px dashed rgba(255,255,255,0.1)",
-              background: "rgba(255,255,255,0.04)",
+              border: "1px dashed var(--color-hairline)",
+              background: "rgba(14,28,40,0.03)",
               padding: "3rem 1.5rem",
               textAlign: "center",
             }}
           >
-            <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "#aebcd0" }}>
+            <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--color-ink-2)" }}>
               No matches.
             </p>
-            <p style={{ marginTop: "0.25rem", fontSize: "0.9375rem", color: "#8b9db8" }}>
+            <p style={{ marginTop: "0.25rem", fontSize: "0.9375rem", color: "var(--color-ink-2)" }}>
               Try clearing a filter or broadening the search.
             </p>
           </div>

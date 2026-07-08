@@ -64,13 +64,13 @@ export function IucnBadge({
 
 export function IucnAttribution() {
   return (
-    <p className="mt-2 text-xs leading-5 text-[#8b9db8]">
+    <p className="mt-2 text-xs leading-5 text-[color:var(--color-ink-2)]">
       Threat category from the{" "}
       <a
         href="https://www.iucnredlist.org/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#00d4ff] hover:underline"
+        className="text-[color:var(--color-ocean)] hover:underline"
       >
         IUCN Red List of Threatened Species
       </a>

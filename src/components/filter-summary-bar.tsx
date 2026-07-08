@@ -98,13 +98,13 @@ export function FilterSummaryBar({
 
   if (!hasSomething) return null;
 
-  const brandPill = { bg: "rgba(0,212,255,0.1)", color: "#00d4ff" };
+  const brandPill = { bg: "rgba(14,79,110,0.10)", color: "var(--color-ocean)" };
 
   return (
     <div
       className={`flex flex-wrap items-center gap-2 py-2 ${className}`}
     >
-      <span className="text-xs font-semibold text-[#8b9db8]">
+      <span className="text-xs font-semibold text-[color:var(--color-ink-2)]">
         Showing {totalCount}
       </span>
 
@@ -174,7 +174,7 @@ export function FilterSummaryBar({
       <button
         type="button"
         onClick={onReset}
-        className="ml-auto text-xs font-semibold text-[#8b9db8] underline hover:text-[#f0f4f8]"
+        className="ml-auto text-xs font-semibold text-[color:var(--color-ink-2)] underline hover:text-[color:var(--color-ink)]"
       >
         Reset all filters
       </button>

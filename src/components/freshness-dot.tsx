@@ -49,7 +49,7 @@ export function FreshnessDot({
         }}
       />
       {showLabel ? (
-        <span className="text-xs font-medium" style={{ color: "#8b9db8" }}>
+        <span className="text-xs font-medium" style={{ color: "var(--color-ink-2)" }}>
           {tier.label}
         </span>
       ) : null}

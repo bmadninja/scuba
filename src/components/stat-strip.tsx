@@ -20,7 +20,7 @@ export function StatStrip({ stats, className = "" }: StatStripProps) {
     <div
       className={`flex overflow-x-auto ${className}`}
       style={{
-        background: "rgba(255,255,255,0.04)",
+        background: "rgba(14,28,40,0.04)",
         borderRadius: 6,
         scrollbarWidth: "none",
       }}
@@ -30,7 +30,7 @@ export function StatStrip({ stats, className = "" }: StatStripProps) {
           key={stat.label}
           className="flex shrink-0 flex-col justify-center px-5 py-3"
           style={{
-            borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.1)" : "none",
+            borderRight: i < stats.length - 1 ? "1px solid var(--color-hairline)" : "none",
           }}
         >
           <span
@@ -39,7 +39,7 @@ export function StatStrip({ stats, className = "" }: StatStripProps) {
               fontWeight: 700,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              color: "#8b9db8",
+              color: "var(--color-ink-2)",
               whiteSpace: "nowrap",
             }}
           >
@@ -49,7 +49,7 @@ export function StatStrip({ stats, className = "" }: StatStripProps) {
             style={{
               fontSize: "1rem",
               fontWeight: 700,
-              color: "#f0f4f8",
+              color: "var(--color-ink)",
               lineHeight: 1.2,
               marginTop: 2,
               whiteSpace: "nowrap",
@@ -61,7 +61,7 @@ export function StatStrip({ stats, className = "" }: StatStripProps) {
             <span
               style={{
                 fontSize: "0.6875rem",
-                color: "#8b9db8",
+                color: "var(--color-ink-2)",
                 marginTop: 1,
                 whiteSpace: "nowrap",
               }}

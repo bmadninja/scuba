@@ -20,10 +20,10 @@ const ABBR = ["J","F","M","A","M","J","J","A","S","O","N","D"];
 
 const LEVEL_STYLE: Record<SeasonalityLevel, { bg: string; color: string; border?: string }> = {
   peak:     { bg: "rgba(0,212,255,0.85)",  color: "#030712" },
-  good:     { bg: "rgba(0,212,255,0.38)",  color: "#f0f4f8" },
-  possible: { bg: "rgba(0,212,255,0.14)",  color: "#aebcd0" },
-  unlikely: { bg: "rgba(255,255,255,0.05)", color: "#8b9db8" },
-  unknown:  { bg: "rgba(255,255,255,0.04)", color: "#8b9db8", border: "1px dashed rgba(255,255,255,0.12)" },
+  good:     { bg: "rgba(0,212,255,0.38)",  color: "var(--color-ink)" },
+  possible: { bg: "rgba(0,212,255,0.14)",  color: "var(--color-ink-2)" },
+  unlikely: { bg: "rgba(14,28,40,0.04)", color: "var(--color-ink-2)" },
+  unknown:  { bg: "rgba(14,28,40,0.04)", color: "var(--color-ink-2)", border: "1px dashed var(--color-hairline)" },
 };
 
 const LEVEL_LABEL: Record<SeasonalityLevel, string> = {
@@ -94,7 +94,7 @@ export function SeasonalityStrip({
                 justifyContent: "center",
                 background: style.bg,
                 border: isCurrent
-                  ? "2px solid #00d4ff"
+                  ? "2px solid var(--color-ocean)"
                   : style.border ?? "none",
                 fontSize,
                 fontWeight: 700,
@@ -124,7 +124,7 @@ export function SeasonalityStrip({
                   alignItems: "center",
                   gap: 4,
                   fontSize: "0.5625rem",
-                  color: "#8b9db8",
+                  color: "var(--color-ink-2)",
                   fontFamily: "var(--atlas-mono, ui-monospace, monospace)",
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",

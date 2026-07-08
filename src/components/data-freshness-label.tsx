@@ -56,7 +56,7 @@ const PILL_BASE =
 const TONE: Record<Variant, string> = {
   live: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30",
   snapshot: "bg-amber-500/15 text-amber-300 ring-amber-500/30",
-  presence: "bg-white/10 text-[#8b9db8] ring-white/10",
+  presence: "bg-black/5 text-[color:var(--color-ink-2)] ring-black/10",
 };
 
 export function DataFreshnessLabel(props: DataFreshnessLabelProps) {
@@ -83,7 +83,7 @@ export function DataFreshnessLabel(props: DataFreshnessLabelProps) {
   }
   return (
     <Link href="/data" className={className} title="What's live vs snapshot">
-      <span className="h-1.5 w-1.5 rounded-full bg-[#8b9db8]" aria-hidden />
+      <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-ink-2)]" aria-hidden />
       Presence data · {props.source ?? "GBIF/OBIS"} · no population trend
     </Link>
   );

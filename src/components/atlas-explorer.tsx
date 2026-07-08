@@ -86,8 +86,8 @@ function NoResults({
   }
 
   return (
-    <div className="rounded-2xl border border-dashed border-white/10 p-10 text-center">
-      <p className="text-sm font-medium text-[#aebcd0]">No locations match these filters.</p>
+    <div className="rounded-2xl border border-dashed border-black/10 p-10 text-center">
+      <p className="text-sm font-medium text-[color:var(--color-ink-2)]">No locations match these filters.</p>
       {chips.length > 0 && (
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           {chips.map((c) => (
@@ -95,10 +95,10 @@ function NoResults({
               key={c.label}
               type="button"
               onClick={c.onRemove}
-              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-[#8b9db8] transition hover:border-rose-500/30 hover:bg-rose-500/15 hover:text-rose-300"
+              className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-black/5 px-3 py-1.5 text-xs font-medium text-[color:var(--color-ink-2)] transition hover:border-rose-500/30 hover:bg-rose-500/15 hover:text-rose-300"
             >
               {c.label}
-              <span aria-hidden className="text-[#8b9db8]">×</span>
+              <span aria-hidden className="text-[color:var(--color-ink-2)]">×</span>
             </button>
           ))}
         </div>
@@ -106,7 +106,7 @@ function NoResults({
       <button
         type="button"
         onClick={onReset}
-        className="mt-4 text-xs font-medium text-[#00d4ff] hover:underline"
+        className="mt-4 text-xs font-medium text-[color:var(--color-ocean)] hover:underline"
       >
         Reset all filters
       </button>
@@ -231,9 +231,9 @@ export function AtlasExplorer({
               onClick={() => toggleState(state)}
               className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-all"
               style={{
-                borderColor: active ? "#00d4ff" : "rgba(255,255,255,0.1)",
-                background: active ? "rgba(0,212,255,0.12)" : "rgba(255,255,255,0.05)",
-                color: active ? "#00d4ff" : "#8b9db8",
+                borderColor: active ? "var(--color-ocean)" : "var(--color-hairline)",
+                background: active ? "rgba(14,79,110,0.10)" : "rgba(14,28,40,0.04)",
+                color: active ? "var(--color-ocean)" : "var(--color-ink-2)",
                 fontWeight: active ? 600 : 500,
               }}
             >
@@ -247,7 +247,7 @@ export function AtlasExplorer({
         })}
 
         {/* Sort select pushed to the right */}
-        <label className="ml-auto flex items-center gap-2 text-sm text-[#8b9db8]">
+        <label className="ml-auto flex items-center gap-2 text-sm text-[color:var(--color-ink-2)]">
           Sort
           <select
             value={filters.sort}
@@ -270,14 +270,14 @@ export function AtlasExplorer({
         <button
           type="button"
           onClick={() => setDrawerOpen(true)}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-[#aebcd0] shadow-sm transition hover:border-[#00d4ff] hover:text-[#00d4ff]"
+          className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-4 py-2 text-sm font-medium text-[color:var(--color-ink-2)] shadow-sm transition hover:border-[color:var(--color-ocean)] hover:text-[color:var(--color-ocean)]"
         >
           <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
             <path fillRule="evenodd" d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.032c0 .384-.22.735-.57.899l-2.5 1.25a.75.75 0 01-1.056-.575v-4.606a2.25 2.25 0 00-.659-1.59L2.659 6.219A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z" clipRule="evenodd" />
           </svg>
           Filters
           {activeFilterCount > 0 && (
-            <span className="inline-flex items-center rounded-full bg-[#00d4ff] px-1.5 py-0.5 text-xs font-semibold leading-none text-[#0a1628]">
+            <span className="inline-flex items-center rounded-full bg-[color:var(--color-ocean)] px-1.5 py-0.5 text-xs font-semibold leading-none text-white">
               {activeFilterCount}
             </span>
           )}
@@ -356,7 +356,7 @@ export function AtlasExplorer({
           />
 
           {/* Thin inline reef-state legend */}
-          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 px-1 text-xs text-[#8b9db8]">
+          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 px-1 text-xs text-[color:var(--color-ink-2)]">
             {LEGEND_STATES.map((s) => (
               <span
                 key={s}
@@ -370,15 +370,15 @@ export function AtlasExplorer({
                 {STATE_TEXT[s]}
               </span>
             ))}
-            <Link href="/data" className="font-medium text-[#00d4ff] hover:underline">
+            <Link href="/data" className="font-medium text-[color:var(--color-ocean)] hover:underline">
               What these mean
             </Link>
           </div>
 
           {/* Count */}
           <div className="mb-5 mt-6 flex flex-wrap items-center gap-3">
-            <span className="text-sm text-[#8b9db8]" role="status" aria-live="polite">
-              <strong className="text-[#f0f4f8]">{results.length}</strong> of{" "}
+            <span className="text-sm text-[color:var(--color-ink-2)]" role="status" aria-live="polite">
+              <strong className="text-[color:var(--color-ink)]">{results.length}</strong> of{" "}
               {locations.length} locations
             </span>
           </div>
@@ -390,7 +390,7 @@ export function AtlasExplorer({
                   key={r.slug}
                   className={
                     activeSlug === r.slug
-                      ? "rounded-2xl ring-2 ring-[#00d4ff] ring-offset-2"
+                      ? "rounded-2xl ring-2 ring-[color:var(--color-ocean)] ring-offset-2"
                       : undefined
                   }
                 >
