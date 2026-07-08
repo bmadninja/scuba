@@ -295,13 +295,6 @@ export function SitePageBody(props: SiteBodyProps) {
           </div>
         )}
 
-        {/* FTC disclosure */}
-        <div style={{ padding: "0.6rem 1.6rem", borderTop: "1px solid #E7E6E2" }}>
-          <p style={{ ...MONO, fontSize: "10px", color: "#4A5568", lineHeight: 1.5 }}>
-            Some links are affiliate links. We may earn a commission at no additional cost to you.
-          </p>
-        </div>
-
         {/* Getting there */}
         {getThere && getThere.kind === "prose" ? (
           <Expand summary="Getting there">
