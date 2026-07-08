@@ -1633,5 +1633,20 @@
       "endDay": 31
     },
     "notes": "Favored season for Tobago drift diving before wetter summer conditions."
+  },
+  {
+    "id": "torre-guaceto-italy",
+    "site": "Torre Guaceto",
+    "country": "Italy",
+    "region": "Mediterranean",
+    "lat": 40.717,
+    "lng": 17.8,
+    "season": {
+      "startMonth": 6,
+      "startDay": 1,
+      "endMonth": 9,
+      "endDay": 30
+    },
+    "notes": "Warm season Mediterranean diving in a marine reserve known for its fish recovery."
   }
 ]

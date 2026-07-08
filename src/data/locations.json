@@ -10604,5 +10604,26 @@
     "siteIds": [],
     "heroImageUrl": "/heroes/OceanImageBank_CinziaOseleBismarck_33-1920.webp",
     "lodging": []
+  },
+  {
+    "id": "torre-guaceto-italy",
+    "slug": "torre-guaceto-italy",
+    "name": "Torre Guaceto",
+    "country": "Italy",
+    "region": "Mediterranean",
+    "countryCode": "IT",
+    "lat": 40.717,
+    "lng": 17.8,
+    "description": "A small fully protected reserve on the Puglia coast where fish returned after local fishers helped guard it. Summer is the season for its seagrass meadows and rocky reef.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "siteIds": [
+      "torre-guaceto-italy-reef"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_DimitrisPoursanidis_20-1920.webp"
   }
 ]

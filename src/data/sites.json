@@ -575954,5 +575954,289 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Accessible reef popular for training, snorkelling, and night dives. Visibility drops in the rainy season; best in the September to October window and February to March."
+  },
+  {
+    "id": "torre-guaceto-italy-reef",
+    "slug": "torre-guaceto-italy-reef",
+    "locationId": "torre-guaceto-italy",
+    "name": "Torre Guaceto Reef",
+    "lat": 40.72,
+    "lng": 17.8,
+    "description": "A representative dive across the heart of the Torre Guaceto reserve, from shallow Posidonia seagrass meadows and rocky ledges near the old watchtower down to a coralligenous platform around 20 to 40 metres. This is one of the Mediterranean's clearest recovery stories, where fully protecting a small core brought back seabream, octopus, moray and lobster in numbers you rarely see on the open coast. Access is managed by the reserve, so diving here runs through authorised guides rather than open recreational entry.",
+    "depthRange": {
+      "min": 3,
+      "max": 40
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wall",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "White seabream",
+        "scientificName": "Diplodus sargus",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/508423974/large.jpg"
+      },
+      {
+        "commonName": "Common octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "imageUrl": "https://static.inaturalist.org/photos/344291654/large.jpg"
+      },
+      {
+        "commonName": "Mediterranean moray",
+        "scientificName": "Muraena helena",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/166461816/large.jpeg"
+      },
+      {
+        "commonName": "European conger",
+        "scientificName": "Conger conger",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/400873304/large.jpg"
+      },
+      {
+        "commonName": "European spiny lobster",
+        "scientificName": "Palinurus elephas",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "imageUrl": "https://static.inaturalist.org/photos/38243891/large.jpg"
+      },
+      {
+        "commonName": "Yellow gorgonian",
+        "scientificName": "Eunicella cavolini",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/204129180/large.jpg"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 14,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semidry"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semidry"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semidry"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm semidry wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 16,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm semidry wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 22,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 32
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 19,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm semidry wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 15,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Drysuit or 7mm semidry"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Brindisi (BDS), around 25 km south. The reserve sits on the Adriatic coast between Carovigno and Brindisi, with summer access to Punta Penna Grossa by shuttle or bike. Diving inside the protected area is arranged through the reserve and authorised operators, so book ahead rather than turning up to dive.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Diving inside the Torre Guaceto reserve is restricted and managed. General recreational diving is limited, and access runs through the reserve and authorised guides rather than open entry. Zone A is a fully protected no entry core reserved for science and enforcement.",
+    "heroImageUrl": "/heroes/OceanImageBank_DimitrisPoursanidis_20-1920.webp",
+    "photography": {
+      "lensType": "wide-angle",
+      "visibility": "good",
+      "highlights": [
+        "seagrass meadows",
+        "reef fish shoals"
+      ]
+    }
   }
 ]

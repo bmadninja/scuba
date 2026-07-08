@@ -441,6 +441,32 @@ export type MpaGuideAssessment = {
   assessedAt?: string;
 };
 
+/**
+ * Blue Park Award tier (Marine Conservation Institute). Platinum > Gold >
+ * Silver. Several award years (2021, 2022, 2024, 2025) were not itemised by
+ * tier in MCI's announcements — those use "awarded" rather than guessing a
+ * tier. See scripts/data notes and src/data/blue-parks.json.
+ */
+export type BlueParkLevel = "platinum" | "gold" | "silver" | "awarded";
+
+/**
+ * A Blue Park Award recognising an MPA that meets the highest science-based
+ * standard for marine biodiversity protection. Keyed to one of our locations
+ * (which may sit inside a larger or a named sub-area park — parkName carries
+ * the official MPA name so the badge stays honest).
+ */
+export type BlueParkAward = {
+  locationId: string;
+  level: BlueParkLevel;
+  /** Year the award was made (MCI's formal award year where sources differ). */
+  year: number;
+  /** Official MPA name that holds the award. */
+  parkName: string;
+  /** Optional context, e.g. "Upgraded from Gold to Platinum in 2025". */
+  note?: string;
+  sourceIds?: string[];
+};
+
 export type FishingPressureLevel =
   | "low"
   | "moderate"

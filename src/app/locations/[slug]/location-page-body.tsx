@@ -10,6 +10,7 @@ import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
 import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
+import type { BlueParkAward } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
 
@@ -144,6 +145,7 @@ export type LocationBodyProps = {
   projectionDataPoints: CoralDataPoint[];
   heat: ConditionPill | null;
   fishing: ConditionPill | null;
+  blueParkAward: BlueParkAward | null;
   // Story 4.3: GFW fishing pressure
   fishingPressure: FishingPressureData | null;
   // Story 4.3: water quality events
@@ -321,6 +323,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     projectionDataPoints,
     heat,
     fishing,
+    blueParkAward,
     fishingPressure,
     waterQualityEvents,
     bleachedPct,
@@ -512,6 +515,48 @@ export function LocationPageBody(props: LocationBodyProps) {
                           ({fishingPressure.fishingHours.toLocaleString()} vessel hours within {fishingPressure.radiusKm} km)
                         </p>
                       ) : null}
+                    </Metric>
+                  ) : null}
+
+                  {/* Blue Park Award */}
+                  {blueParkAward ? (
+                    <Metric>
+                      <MetricLabel>
+                        Blue Park
+                        <InfoButton onClick={() => setInfo("bluepark")} label="What this means" />
+                      </MetricLabel>
+                      <p style={{ margin: 0 }}>
+                        <span style={{
+                          display: "inline-block",
+                          padding: "2px 8px",
+                          borderRadius: 999,
+                          fontSize: "0.75rem",
+                          fontWeight: 600,
+                          background:
+                            blueParkAward.level === "gold"
+                              ? "rgba(185,138,46,0.12)"
+                              : blueParkAward.level === "silver"
+                                ? "rgba(74,85,104,0.1)"
+                                : blueParkAward.level === "platinum"
+                                  ? "rgba(14,28,40,0.08)"
+                                  : "rgba(46,125,91,0.1)",
+                          color:
+                            blueParkAward.level === "gold"
+                              ? "#B98A2E"
+                              : blueParkAward.level === "silver"
+                                ? "#4A5568"
+                                : blueParkAward.level === "platinum"
+                                  ? "#0E1C28"
+                                  : "#2E7D5B",
+                        }}>
+                          {blueParkAward.level === "awarded"
+                            ? "Awarded"
+                            : blueParkAward.level.charAt(0).toUpperCase() + blueParkAward.level.slice(1)}
+                        </span>
+                      </p>
+                      <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.2rem", lineHeight: 1.45 }}>
+                        {blueParkAward.parkName} · {blueParkAward.year}
+                      </p>
                     </Metric>
                   ) : null}
 

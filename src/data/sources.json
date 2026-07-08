@@ -373,6 +373,16 @@
     "notes": "Protection-quality layer over WDPA — distinguishes paper-park MPAs from genuinely enforced no-take zones. Use to qualify MPA claims."
   },
   {
+    "id": "blue-parks",
+    "name": "Blue Parks Award",
+    "url": "https://marine-conservation.org/blueparks/",
+    "publisher": "Marine Conservation Institute",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-07-08",
+    "license": "Citation required; award list published openly",
+    "notes": "Science-based award for MPAs meeting the highest standard for marine biodiversity protection. Levels Platinum/Gold/Silver; used to flag genuinely enforced, high-outcome protection."
+  },
+  {
     "id": "global-fishing-watch",
     "ingestion": "live",
     "name": "Global Fishing Watch",

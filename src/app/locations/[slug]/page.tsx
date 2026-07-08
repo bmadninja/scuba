@@ -11,6 +11,7 @@ import { getGearById } from "@/lib/data/gear";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getLocationFishing } from "@/lib/data/fishing-pressure";
 import { fishingAllowsImproving } from "@/lib/data/effective-fishing";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
@@ -471,7 +472,9 @@ export default async function LocationPage({
   // Protection pill from MPAtlas; measured GFW effort drives the fallback when
   // there is no formal protection.
   const fishing = fishingPill(reefPressure?.mpaStatus ?? null, locationFishing.effort);
-  const hasReefData = coverNow !== null || decline !== null || heat !== null || fishing !== null;
+  const blueParkAward = getBlueParkByLocationId(location.id);
+  const hasReefData =
+    coverNow !== null || decline !== null || heat !== null || fishing !== null || blueParkAward !== null;
 
   // For a flat coral-cover trend, append a forward-looking sentence based on current
   // heat stress and the combined fishing read so the note reads as an honest
@@ -753,6 +756,7 @@ export default async function LocationPage({
         divingOutlook={divingOutlook ?? null}
         heat={heat}
         fishing={fishing}
+        blueParkAward={blueParkAward}
         reefStateLabel={STATE_TEXT[atlasLoc.state]}
         reefStateColor={stateColor}
         reefStateSub={STATE_SUB[atlasLoc.state]}

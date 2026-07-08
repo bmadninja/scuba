@@ -35,6 +35,7 @@ export type InfoKey =
   | "evidence"
   | "heat"
   | "fishing"
+  | "bluepark"
   | "iucn"
   | "conditions"
   | "chances"
@@ -113,6 +114,18 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     ],
     link: true,
     anchor: "#reef-state",
+  },
+  bluepark: {
+    title: "What a Blue Park Award means",
+    body: [
+      "A Blue Park Award is given by the Marine Conservation Institute to marine protected areas that meet the highest science-based standard for actually protecting ocean life, not just drawing lines on a map.",
+      "Winning one means independent scientists checked that the protection is real: strong rules, enforcement on the water, and measurable recovery of fish and habitat. Awards come at Platinum, Gold and Silver levels; some years the level was not published, so we simply mark it as Awarded.",
+      "Some parks cover only part of a wider dive area, so we name the exact protected area that holds the award.",
+    ],
+    source:
+      "Source: Blue Parks, Marine Conservation Institute. See marine-conservation.org/blueparks.",
+    link: true,
+    anchor: "#sources",
   },
   iucn: {
     title: "What the conservation labels mean",

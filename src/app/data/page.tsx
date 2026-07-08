@@ -73,7 +73,7 @@ const SOURCE_GROUPS: { heading: string; ids: string[] }[] = [
   },
   {
     heading: "Fishing and protection",
-    ids: ["global-fishing-watch", "wdpa", "mpatlas"],
+    ids: ["global-fishing-watch", "wdpa", "mpatlas", "blue-parks"],
   },
   {
     heading: "Water quality and hazards",
