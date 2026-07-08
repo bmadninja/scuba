@@ -3,7 +3,15 @@
  * Wave v2.1 — MERMAID benthic + bleaching survey ingest.
  *
  * Fetches open benthic and bleaching survey data from the MERMAID API and
- * writes matched reef-health records into src/data/reef-health.json.
+ * writes per-location multi-year coral-cover series into
+ * src/data/coral-cover-series.json.
+ *
+ * This is a display-only dataset for the reef card's coral-cover-over-time
+ * chart. It deliberately does NOT write reef-health.json: MERMAID events are
+ * matched by proximity (0.5°), so a nearby survey can differ from a location's
+ * curated reef-state verdict, and we do not want a proximity match to override
+ * a hand-reviewed classification (e.g. Cozumel). The series enriches the chart;
+ * the verdict and headline coral number stay on the curated reef-health record.
  *
  * MERMAID (datamermaid.org) is a WCS/GCRMN platform for coral reef
  * monitoring. The /v1/summarysampleevents/ endpoint is fully public —
@@ -32,10 +40,18 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
-const REEF_HEALTH_PATH = path.join(ROOT, "src/data/reef-health.json");
+const SERIES_PATH = path.join(ROOT, "src/data/coral-cover-series.json");
 const LOCATIONS_PATH = path.join(ROOT, "src/data/locations.json");
 const SOURCES_PATH = path.join(ROOT, "src/data/sources.json");
 const METHODOLOGIES_PATH = path.join(ROOT, "src/data/methodologies.json");
+
+// Locations that sit within the match radius of reef surveys but are NOT coral
+// reefs themselves (e.g. inland cenotes). A proximity match there is a false
+// positive, so they never get a coral-cover series.
+const NON_REEF_LOCATION_IDS = new Set(["cenotes-mexico"]);
+function isNonReef(loc) {
+  return NON_REEF_LOCATION_IDS.has(loc.id) || /cenote|freshwater|lake\b/i.test(loc.id);
+}
 
 const MERMAID_BASE = "https://api.datamermaid.org/v1";
 const PAGE_SIZE = 500;
@@ -167,40 +183,61 @@ function buildRecord(locationId, events) {
   const oldestYear = parseInt(oldest.event.sample_date.slice(0, 4), 10);
   const hasBaseline = oldest !== newest && newestYear - oldestYear >= MIN_TREND_YEARS;
 
+  // Full multi-year series: one point per survey year, averaging all nearby
+  // events in that year so a decade of surveys becomes a real trend line rather
+  // than being collapsed to its two endpoints. Every point is an observed value.
+  const byYear = new Map();
+  for (const c of candidates) {
+    const year = parseInt(c.event.sample_date.slice(0, 4), 10);
+    const bucket = byYear.get(year) ?? { sum: 0, n: 0 };
+    bucket.sum += c.coral.cover;
+    bucket.n += 1;
+    byYear.set(year, bucket);
+  }
+  const coralCoverSeries = [...byYear.entries()]
+    .map(([year, { sum, n }]) => ({
+      year,
+      coralCoverPercent: Math.round((sum / n) * 10) / 10,
+    }))
+    .sort((a, b) => a.year - b.year);
+  const surveyYears = coralCoverSeries.length;
+
   // Find most recent bleaching survey among all nearby events (may differ from benthic event).
   const bleachingEvent = events
     .filter((e) => getBleachingData(e) !== null)
     .sort((a, b) => b.sample_date.localeCompare(a.sample_date))[0];
   const bleaching = bleachingEvent ? getBleachingData(bleachingEvent) : null;
 
-  const noteParts = [
-    `${candidates.length} MERMAID survey event${candidates.length > 1 ? "s" : ""} within ${MATCH_RADIUS_DEG}° of this location.`,
-    `Most recent benthic: ${newest.event.site_name} (${newest.event.sample_date}).`,
-  ];
-  if (bleaching && bleachingEvent.sample_date !== newest.event.sample_date) {
-    noteParts.push(`Bleaching from separate survey: ${bleachingEvent.site_name} (${bleachingEvent.sample_date}).`);
-  }
-  noteParts.push(newest.event.suggested_citation ?? "");
+  // A single survey year is not a trend — skip it. The chart needs at least a
+  // before/after, and this dataset is purpose-built for the multi-year line.
+  if (surveyYears < 2) return null;
+  void hasBaseline;
+  void oldest;
+
+  const notes =
+    `${candidates.length} MERMAID survey events across ${surveyYears} survey years within ${MATCH_RADIUS_DEG}° of this location. ` +
+    `Most recent: ${newest.event.site_name} (${newest.event.sample_date}). ` +
+    (newest.event.suggested_citation ?? "");
 
   return {
-    id: `reef-health-${locationId}-mermaid`,
     locationId,
-    observed: {
-      surveyDate: newest.event.sample_date,
-      surveyMethod: `MERMAID ${methodLabel(newest.coral.protocol)} — ${newest.event.project_name}`,
+    sourceId: "mermaid",
+    methodologyClaimId: "reef-health-mermaid",
+    radiusDeg: MATCH_RADIUS_DEG,
+    surveyEventCount: candidates.length,
+    surveyYears,
+    latest: {
+      year: newestYear,
       coralCoverPercent: newest.coral.cover,
-      ...(bleaching && {
-        bleachedPercent: bleaching.bleachedPercent,
-        ...(bleaching.mortalityPercent !== undefined && { mortalityPercent: bleaching.mortalityPercent }),
-      }),
-      ...(hasBaseline && {
-        historicalCoralCoverPercent: oldest.coral.cover,
-        historicalSurveyDate: oldest.event.sample_date,
-      }),
-      sourceIds: ["mermaid"],
-      notes: noteParts.filter(Boolean).join(" "),
+      surveyDate: newest.event.sample_date,
     },
-    methodologyClaimIds: ["reef-health-mermaid"],
+    ...(bleaching && {
+      bleachedPercent: bleaching.bleachedPercent,
+      ...(bleaching.mortalityPercent !== undefined && { mortalityPercent: bleaching.mortalityPercent }),
+    }),
+    series: coralCoverSeries,
+    citation: newest.event.suggested_citation ?? null,
+    notes,
     lastReviewedAt: new Date().toISOString().slice(0, 10),
   };
 }
@@ -227,7 +264,7 @@ const MERMAID_METHODOLOGY = {
   sourceIds: ["mermaid"],
   confidence: "high",
   calculation:
-    "Hard coral cover % from percent_cover_benthic_category_avg[\"Hard coral\"] in the MERMAID summarysampleevents endpoint. Benthic PIT preferred over LIT over photo-quadrat when multiple protocols exist. Most recent valid survey event (cover 1–90%) within 0.5° of location centre used as current reading; oldest valid event used as historical baseline when surveys span ≥2 years. Bleaching % and mortality % from colonies_bleached.percent_bleached_avg and percent_dead_avg of the most recent nearby bleaching survey event.",
+    "Hard coral cover % from percent_cover_benthic_category_avg[\"Hard coral\"] in the MERMAID summarysampleevents endpoint. Benthic PIT preferred over LIT over photo-quadrat when multiple protocols exist. Most recent valid survey event (cover 1–90%) within 0.5° of location centre used as current reading; oldest valid event used as historical baseline when surveys span ≥2 years. When surveys span two or more years, a full coralCoverSeries is built with one point per year, averaging all valid nearby events in that year, so the reef card can draw the real multi-year trend instead of only the two endpoints. Bleaching % and mortality % from colonies_bleached.percent_bleached_avg and percent_dead_avg of the most recent nearby bleaching survey event.",
   limitations:
     "Survey events are matched by proximity (0.5° radius), not by site name — a nearby survey may not perfectly represent the named location. Cover is the mean across all sample units in that event. Bleaching survey may be from a different event or date than the benthic survey. Projects with test or training data may slip through the 1–90% filter.",
   lastReviewedAt: new Date().toISOString().slice(0, 10),
@@ -237,34 +274,36 @@ const MERMAID_METHODOLOGY = {
 // Main
 // ---------------------------------------------------------------------------
 
+const DRY_RUN = process.argv.includes("--dry-run");
+
 async function main() {
-  console.log("MERMAID benthic survey ingest");
+  console.log("MERMAID benthic survey ingest" + (DRY_RUN ? " (dry run — no writes)" : ""));
   console.log("==============================");
 
-  const [reefHealthRaw, locationsRaw, sourcesRaw, methodologiesRaw] =
+  const [locationsRaw, sourcesRaw, methodologiesRaw] =
     await Promise.all([
-      fs.readFile(REEF_HEALTH_PATH, "utf8"),
       fs.readFile(LOCATIONS_PATH, "utf8"),
       fs.readFile(SOURCES_PATH, "utf8"),
       fs.readFile(METHODOLOGIES_PATH, "utf8"),
     ]);
 
-  const reefHealth = JSON.parse(reefHealthRaw);
   const locations = JSON.parse(locationsRaw);
   const sources = JSON.parse(sourcesRaw);
   const methodologies = JSON.parse(methodologiesRaw);
 
   const srcIdx = sources.findIndex((s) => s.id === "mermaid");
+  let sourcesDirty = false;
   if (srcIdx === -1) {
     sources.push(MERMAID_SOURCE);
+    sourcesDirty = true;
     console.log("+ registered mermaid in sources.json");
-  } else {
-    sources[srcIdx].accessedAt = MERMAID_SOURCE.accessedAt;
   }
 
   const methIdx = methodologies.findIndex((m) => m.claimId === "reef-health-mermaid");
+  let methodologiesDirty = false;
   if (methIdx === -1) {
     methodologies.push(MERMAID_METHODOLOGY);
+    methodologiesDirty = true;
     console.log("+ registered reef-health-mermaid in methodologies.json");
   }
 
@@ -287,7 +326,7 @@ async function main() {
 
   let attempted = 0;
   let updated = 0;
-  let withBaseline = 0;
+  let skippedNonReef = 0;
   let withBleaching = 0;
   const failures = [];
   const newRecords = [];
@@ -295,6 +334,7 @@ async function main() {
   for (const loc of locations) {
     attempted++;
     try {
+      if (isNonReef(loc)) { skippedNonReef++; continue; }
       const matched = relevantEvents.filter((e) => isWithinRadius(loc, e));
       if (matched.length === 0) continue;
 
@@ -303,17 +343,11 @@ async function main() {
 
       newRecords.push(record);
       updated++;
-      if (record.observed.historicalCoralCoverPercent !== undefined) withBaseline++;
-      if (record.observed.bleachedPercent !== undefined) withBleaching++;
+      if (record.bleachedPercent !== undefined) withBleaching++;
 
-      const trend = record.observed.historicalCoralCoverPercent !== undefined
-        ? ` (baseline ${record.observed.historicalCoralCoverPercent}% @ ${record.observed.historicalSurveyDate?.slice(0, 4)})`
-        : "";
-      const bleach = record.observed.bleachedPercent !== undefined
-        ? `  bleached ${record.observed.bleachedPercent}%`
-        : "";
+      const bleach = record.bleachedPercent !== undefined ? `  bleached ${record.bleachedPercent}%` : "";
       console.log(
-        `  ${loc.id.padEnd(44)} ${String(record.observed.coralCoverPercent).padStart(4)}% coral${bleach}  ${matched.length} surveys${trend}`,
+        `  ${loc.id.padEnd(44)} ${record.surveyYears} yrs ${record.series[0].year}–${record.latest.year}  latest ${record.latest.coralCoverPercent}%${bleach}`,
       );
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err);
@@ -322,28 +356,25 @@ async function main() {
     }
   }
 
-  const mermaidIds = new Set(newRecords.map((r) => r.id));
-  const kept = reefHealth.filter((r) => !mermaidIds.has(r.id));
-  const merged = [...kept, ...newRecords].sort((a, b) => {
-    const aM = a.id.endsWith("-mermaid") ? 1 : 0;
-    const bM = b.id.endsWith("-mermaid") ? 1 : 0;
-    return aM !== bM ? aM - bM : a.id.localeCompare(b.id);
-  });
+  const merged = [...newRecords].sort((a, b) => a.locationId.localeCompare(b.locationId));
 
-  await Promise.all([
-    fs.writeFile(REEF_HEALTH_PATH, JSON.stringify(merged, null, 2) + "\n"),
-    fs.writeFile(SOURCES_PATH, JSON.stringify(sources, null, 2) + "\n"),
-    fs.writeFile(METHODOLOGIES_PATH, JSON.stringify(methodologies, null, 2) + "\n"),
-  ]);
+  if (DRY_RUN) {
+    console.log(`\n[dry run] would write ${merged.length} location series to coral-cover-series.json. No files changed.`);
+    return;
+  }
+
+  const writes = [fs.writeFile(SERIES_PATH, JSON.stringify(merged, null, 2) + "\n")];
+  if (sourcesDirty) writes.push(fs.writeFile(SOURCES_PATH, JSON.stringify(sources, null, 2) + "\n"));
+  if (methodologiesDirty) writes.push(fs.writeFile(METHODOLOGIES_PATH, JSON.stringify(methodologies, null, 2) + "\n"));
+  await Promise.all(writes);
 
   console.log("");
-  console.log(`MERMAID ingest complete @ ${new Date().toISOString()}`);
-  console.log(`  attempted:        ${attempted}`);
-  console.log(`  matched:          ${updated}`);
-  console.log(`  with bleaching:   ${withBleaching}`);
-  console.log(`  with baseline:    ${withBaseline}`);
-  console.log(`  failed:           ${failures.length}`);
-  console.log(`  total rh records: ${merged.length}`);
+  console.log(`MERMAID coral-cover series ingest complete @ ${new Date().toISOString()}`);
+  console.log(`  attempted:          ${attempted}`);
+  console.log(`  locations with series: ${updated}`);
+  console.log(`  with bleaching:     ${withBleaching}`);
+  console.log(`  skipped (non-reef): ${skippedNonReef}`);
+  console.log(`  failed:             ${failures.length}`);
 
   if (failures.length > 0) {
     console.warn("\nFailures:");

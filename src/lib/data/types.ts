@@ -615,8 +615,91 @@ export type ObservedReefCondition = {
   historicalCoralCoverPercent?: number;
   /** ISO date for the historical baseline. Required when historical % is set. */
   historicalSurveyDate?: string;
+  /**
+   * Real multi-year coral-cover history: one point per survey year, oldest
+   * first. When three or more points are present the reef card draws a genuine
+   * time series instead of a two-point before/after. Every point is an observed
+   * survey value, never a modelled or projected one. Points inherit this
+   * record's `sourceIds`.
+   */
+  coralCoverSeries?: CoralCoverSeriesPoint[];
   sourceIds: string[];
   notes?: string;
+};
+
+/**
+ * One observed coral-cover reading in a multi-year series. Always a real survey
+ * value for a given year — the display never extrapolates beyond these points.
+ */
+export type CoralCoverSeriesPoint = {
+  year: number;
+  /** Observed hard-coral cover for that year, percent. */
+  coralCoverPercent: number;
+  /** Survey method for this point, when it differs from the record method. */
+  method?: string;
+};
+
+/**
+ * A location's multi-year coral-cover survey history, matched by proximity from
+ * an external survey platform (MERMAID). This is a DISPLAY-ONLY dataset for the
+ * reef card's coral-cover-over-time chart: because points are matched within a
+ * radius rather than by exact site, it never drives the reef-state verdict or
+ * the headline coral number, only the labelled trend chart. Lives in
+ * `src/data/coral-cover-series.json`, one entry per location.
+ */
+export type CoralCoverSeriesRecord = {
+  locationId: string;
+  sourceId: string;
+  methodologyClaimId: string;
+  /** Match radius in degrees used to gather nearby surveys. */
+  radiusDeg: number;
+  surveyEventCount: number;
+  surveyYears: number;
+  latest: {
+    year: number;
+    coralCoverPercent: number;
+    surveyDate: string;
+  };
+  bleachedPercent?: number;
+  mortalityPercent?: number;
+  series: CoralCoverSeriesPoint[];
+  citation?: string | null;
+  notes?: string;
+  lastReviewedAt?: string;
+};
+
+/**
+ * A location's yearly count of research-grade iNaturalist observations within
+ * its radius. Renders as a cumulative accumulation line — the scientific record
+ * of a reef growing over time — turning the static species count into a real,
+ * dated, living record. Every year is a real observed count, never modelled.
+ * Lives in `src/data/species-observation-timeline.json`.
+ */
+export type SpeciesObservationTimeline = {
+  locationId: string;
+  radiusKm: number;
+  source: string;
+  qualityGrade: string;
+  yearlyObservations: { year: number; count: number }[];
+  totalObservations: number;
+  firstYear: number;
+  lastYear: number;
+  fetchedAt: string;
+};
+
+/**
+ * A GCRMN world-region coral-cover trend, drawn as a faint backdrop behind a
+ * site's own coral points so sparse site data reads against the multi-decade
+ * regional picture. Regional average, not a site value — always labelled as
+ * such. Lives in `src/data/coral-cover-regional.json`.
+ */
+export type CoralRegionalTrend = {
+  region: string;
+  label: string;
+  sourceId: string;
+  series: CoralCoverSeriesPoint[];
+  yearRange: [number, number];
+  citation?: string | null;
 };
 
 /**

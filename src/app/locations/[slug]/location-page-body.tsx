@@ -9,6 +9,7 @@ import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
 import { CoralProjectionChart } from "@/components/coral-projection-chart";
+import { SpeciesAccumulationChart, type CumulativePoint } from "@/components/species-accumulation-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
 import type { BlueParkAward } from "@/lib/data/types";
 
@@ -49,7 +50,6 @@ export type DeclineChart = {
   fromYear: number;
   toPct: number;
   toYear: number;
-  zeroYear: number | null;
 };
 
 export type CoverTrend = {
@@ -141,14 +141,23 @@ export type LocationBodyProps = {
   coverNow: number | null;
   coverYear: number | null;
   coverTrendNote: string | null;
-  // Story 4.2: projection chart data points (MERMAID survey points)
+  // Coral-cover-over-time chart points (real observed surveys)
   projectionDataPoints: CoralDataPoint[];
+  // Attribution shown under the chart, e.g. "MERMAID reef surveys within 55 km"
+  coralChartSourceLabel: string | null;
+  // GCRMN regional average, drawn as a faint horizontal reference line
+  coralContextValue: number | null;
+  coralContextLabel: string | null;
   heat: ConditionPill | null;
   fishing: ConditionPill | null;
   blueParkAward: BlueParkAward | null;
   verdictBasis: string | null;
   speciesRichness: number | null;
   speciesRadiusKm: number | null;
+  // Dated observation accumulation (cumulative research-grade obs by year)
+  speciesObsCumulative: CumulativePoint[] | null;
+  speciesObsTotal: number | null;
+  speciesObsRadiusKm: number | null;
   // Story 4.3: GFW fishing pressure
   fishingPressure: FishingPressureData | null;
   // Story 4.3: water quality events
@@ -324,12 +333,18 @@ export function LocationPageBody(props: LocationBodyProps) {
     coverYear,
     coverTrendNote,
     projectionDataPoints,
+    coralChartSourceLabel,
+    coralContextValue,
+    coralContextLabel,
     heat,
     fishing,
     blueParkAward,
     verdictBasis,
     speciesRichness,
     speciesRadiusKm,
+    speciesObsCumulative,
+    speciesObsTotal,
+    speciesObsRadiusKm,
     fishingPressure,
     waterQualityEvents,
     bleachedPct,
@@ -526,12 +541,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                       decline ? (
                         <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
                           Live coral has fallen from <strong>{decline.fromPct}%</strong>{" "}
-                          to <span style={{ color: "#C0412B" }}>{decline.toPct}%</span> since {decline.fromYear}.{" "}
-                          {decline.zeroYear ? (
-                            <span style={{ color: "#4A5568", fontWeight: 400 }}>
-                              If the decline holds, little would remain by around {decline.zeroYear}.
-                            </span>
-                          ) : null}
+                          to <span style={{ color: "#C0412B" }}>{decline.toPct}%</span> between {decline.fromYear} and {decline.toYear}.
                         </p>
                       ) : coverNow !== null ? (
                         <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
@@ -550,6 +560,9 @@ export function LocationPageBody(props: LocationBodyProps) {
                     <CoralProjectionChart
                       locationName={locationName}
                       dataPoints={projectionDataPoints}
+                      sourceLabel={coralChartSourceLabel ?? coralSourceLabel ?? undefined}
+                      contextValue={coralContextValue ?? undefined}
+                      contextLabel={coralContextLabel ?? undefined}
                     />
                   </div>
                 ) : null}
@@ -618,6 +631,18 @@ export function LocationPageBody(props: LocationBodyProps) {
                           <span style={{ fontSize: "1.125rem", fontWeight: 700, color: "#0E1C28" }}>{speciesRichness.toLocaleString()}</span>
                           <span style={{ fontSize: "0.8125rem", color: "#4A5568" }}> species logged</span>
                         </p>
+                        {speciesObsCumulative && speciesObsCumulative.length >= 2 && speciesObsTotal ? (
+                          <div style={{ marginTop: "0.6rem" }}>
+                            <SpeciesAccumulationChart
+                              points={speciesObsCumulative}
+                              radiusKm={speciesObsRadiusKm ?? speciesRadiusKm ?? 30}
+                            />
+                            <p style={{ fontSize: "0.75rem", color: "#0E1C28", marginTop: "0.15rem", lineHeight: 1.45 }}>
+                              <span style={{ fontWeight: 700 }}>{speciesObsTotal.toLocaleString()}</span> research grade
+                              observations logged near here and growing every year.
+                            </p>
+                          </div>
+                        ) : null}
                         <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>
                           Context, not part of the reef state.
                         </p>

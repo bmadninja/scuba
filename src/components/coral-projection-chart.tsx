@@ -2,10 +2,19 @@
 
 import { useState, useRef } from "react";
 
-// ─── Story 4.2: CoralProjectionChart ─────────────────────────────────────────
-// Inline SVG chart with solid historical line + dashed projection to 2031,
-// a "Today" marker, hover tooltips, and confidence band.
-// Falls back to a DataNote when < 2 data points.
+// ─── CoralCoverHistoryChart ──────────────────────────────────────────────────
+// Honest observed-survey history on the site's own time axis. Draws a line
+// through the real survey points only — no forward projection, no extrapolation.
+// Two points read as a before/after; three or more as a genuine multi-year
+// trend. Every point on the site line is a value that was actually measured.
+//
+// Regional context (GCRMN) is drawn as a single faint HORIZONTAL reference line
+// at the region's average cover — "this reef vs its region" — rather than a
+// second time series, so there is never an axis-era mismatch.
+//
+// (Exported as CoralProjectionChart for backwards compatibility with the one
+// call site; the old dashed projection-to-2031 was removed because a trend
+// extrapolated from two survey points is not something we can stand behind.)
 
 export type CoralDataPoint = {
   year: number;
@@ -14,42 +23,38 @@ export type CoralDataPoint = {
 
 type Props = {
   locationName: string;
-  /** At least 2 data points required for the chart to render. */
+  /** At least 2 observed survey points required for the chart to render. */
   dataPoints: CoralDataPoint[];
+  /** Short attribution shown under the chart, e.g. "AIMS LTMP" or "MERMAID". */
+  sourceLabel?: string;
+  /** Regional average cover, drawn as a faint horizontal reference line. */
+  contextValue?: number;
+  /** Legend label for the reference line, e.g. "Caribbean average (GCRMN)". */
+  contextLabel?: string;
 };
 
-const CURRENT_YEAR = 2026;
-const PROJECT_TO = 2031;
 const VIEWBOX_W = 520;
-const VIEWBOX_H = 200;
-const LEFT_PAD = 30;
-const RIGHT_PAD = 20;
-const TOP_PAD = 28;
-const BOT_PAD = 30;
+const VIEWBOX_H = 180;
+const LEFT_PAD = 34;
+const RIGHT_PAD = 16;
+const TOP_PAD = 20;
+const BOT_PAD = 26;
+const MIN_LABEL_GAP = 46; // px between year labels, avoids collisions
 
-function xFor(year: number, minYear: number): number {
-  const totalSpan = PROJECT_TO - minYear;
-  const frac = (year - minYear) / totalSpan;
-  return LEFT_PAD + frac * (VIEWBOX_W - LEFT_PAD - RIGHT_PAD);
-}
+const CONTEXT_COLOR = "#9CB3AB";
 
 function yFor(pct: number, top: number): number {
   const chartH = VIEWBOX_H - TOP_PAD - BOT_PAD;
   return TOP_PAD + chartH - (pct / top) * chartH;
 }
 
-function yForLinear(
-  year: number,
-  last: CoralDataPoint,
-  slope: number,
-  top: number,
-): number {
-  const projected = last.pct + slope * (year - last.year);
-  const clamped = Math.max(0, projected);
-  return yFor(clamped, top);
-}
-
-export function CoralProjectionChart({ locationName, dataPoints }: Props) {
+export function CoralProjectionChart({
+  locationName,
+  dataPoints,
+  sourceLabel,
+  contextValue,
+  contextLabel,
+}: Props) {
   const [tooltip, setTooltip] = useState<{
     x: number;
     y: number;
@@ -71,40 +76,55 @@ export function CoralProjectionChart({ locationName, dataPoints }: Props) {
           fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
         }}
       >
-        Not enough survey data for a projection. We show the chart once at least
-        2 data points are on file.
+        Only one survey on file for this reef, so there is nothing to chart yet.
+        The trend appears once a second survey year is recorded.
       </div>
     );
   }
 
   const sorted = [...dataPoints].sort((a, b) => a.year - b.year);
-  const last = sorted[sorted.length - 1];
   const minYear = sorted[0].year;
-  const maxPct = Math.max(...sorted.map((d) => d.pct));
+  const maxYear = sorted[sorted.length - 1].year;
+  const yearSpan = Math.max(1, maxYear - minYear);
+  const hasContext = typeof contextValue === "number" && contextValue > 0;
+  const maxPct = Math.max(...sorted.map((d) => d.pct), hasContext ? contextValue! : 0);
   const top = Math.max(40, Math.ceil(maxPct / 10) * 10);
+  const twoPoint = sorted.length === 2;
 
-  // Linear projection slope from last two points
-  const prev = sorted[sorted.length - 2];
-  const slope = (last.pct - prev.pct) / (last.year - prev.year);
+  function xFor(year: number): number {
+    const frac = (year - minYear) / yearSpan;
+    return LEFT_PAD + frac * (VIEWBOX_W - LEFT_PAD - RIGHT_PAD);
+  }
 
-  // Build path strings
-  const histPoints = sorted
-    .map((d) => `${xFor(d.year, minYear)},${yFor(d.pct, top)}`)
+  const linePoints = sorted
+    .map((d) => `${xFor(d.year)},${yFor(d.pct, top)}`)
     .join(" ");
 
-  const lastX = xFor(last.year, minYear);
-  const lastY = yFor(last.pct, top);
-  const endX = xFor(PROJECT_TO, minYear);
-  const endPct = Math.max(0, last.pct + slope * (PROJECT_TO - last.year));
-  const endY = yFor(endPct, top);
-  const todayX = xFor(CURRENT_YEAR, minYear);
+  // Year labels, left to right, dropping any that would collide with the last
+  // one kept. First and last years are always shown.
+  const labelYears: number[] = [];
+  let lastX = -Infinity;
+  sorted.forEach((d, i) => {
+    const x = xFor(d.year);
+    const isEnd = i === 0 || i === sorted.length - 1;
+    if (isEnd || x - lastX >= MIN_LABEL_GAP) {
+      // Avoid the last label crowding the final point.
+      if (i === sorted.length - 1 && labelYears.length > 0 && x - lastX < MIN_LABEL_GAP) {
+        labelYears.pop();
+      }
+      labelYears.push(d.year);
+      lastX = x;
+    }
+  });
+
+  const contextY = hasContext ? yFor(contextValue!, top) : 0;
 
   // Accessible hidden table
-  const tableRows = sorted.map(
-    (d) => `<tr><td>${d.year}</td><td>${d.pct}%</td></tr>`,
-  ).join("");
+  const tableRows = sorted
+    .map((d) => `<tr><td>${d.year}</td><td>${d.pct}%</td></tr>`)
+    .join("");
 
-  const ariaLabel = `Coral cover trend for ${locationName}`;
+  const ariaLabel = `Coral cover history for ${locationName}`;
 
   return (
     <div style={{ position: "relative" }}>
@@ -118,53 +138,63 @@ export function CoralProjectionChart({ locationName, dataPoints }: Props) {
         style={{ display: "block", overflow: "visible" }}
         onMouseLeave={() => setTooltip(null)}
       >
-        {/* Y-axis hairlines */}
-        <line x1={LEFT_PAD} y1={TOP_PAD} x2={VIEWBOX_W - RIGHT_PAD} y2={TOP_PAD} stroke="#E7E6E2" strokeWidth="1" />
+        {/* Y-axis frame */}
+        <line x1={LEFT_PAD} y1={TOP_PAD} x2={VIEWBOX_W - RIGHT_PAD} y2={TOP_PAD} stroke="#EEEDEA" strokeWidth="1" />
         <line x1={LEFT_PAD} y1={VIEWBOX_H - BOT_PAD} x2={VIEWBOX_W - RIGHT_PAD} y2={VIEWBOX_H - BOT_PAD} stroke="#E7E6E2" strokeWidth="1" />
-        <text x={LEFT_PAD - 4} y={TOP_PAD + 4} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono" textAnchor="end">{top}%</text>
-        <text x={LEFT_PAD - 4} y={VIEWBOX_H - BOT_PAD + 4} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono" textAnchor="end">0%</text>
+        <text x={LEFT_PAD - 6} y={TOP_PAD + 3} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono" textAnchor="end">{top}%</text>
+        <text x={LEFT_PAD - 6} y={VIEWBOX_H - BOT_PAD + 3} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono" textAnchor="end">0%</text>
 
-        {/* Today vertical marker */}
-        <line x1={todayX} y1={TOP_PAD} x2={todayX} y2={VIEWBOX_H - BOT_PAD} stroke="#0E1C28" strokeWidth="1" strokeDasharray="3 3" opacity="0.35" />
-        <text x={todayX + 4} y={TOP_PAD + 12} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono">Today</text>
+        {/* Regional reference line (faint, horizontal) */}
+        {hasContext ? (
+          <>
+            <line
+              x1={LEFT_PAD}
+              y1={contextY}
+              x2={VIEWBOX_W - RIGHT_PAD}
+              y2={contextY}
+              stroke={CONTEXT_COLOR}
+              strokeWidth="1.5"
+              strokeDasharray="4 3"
+            />
+            <text
+              x={VIEWBOX_W - RIGHT_PAD}
+              y={contextY - 4}
+              fontSize="9"
+              fill={CONTEXT_COLOR}
+              fontFamily="IBM Plex Mono"
+              textAnchor="end"
+            >
+              region avg {Math.round(contextValue!)}%
+            </text>
+          </>
+        ) : null}
 
-        {/* Dashed projection line */}
-        <line
-          x1={lastX}
-          y1={lastY}
-          x2={endX}
-          y2={endY}
-          stroke="#0E4F6E"
-          strokeWidth="2"
-          strokeDasharray="4 4"
-          opacity="0.7"
-        />
-
-        {/* Solid historical polyline */}
+        {/* Observed survey line. Two points = a dashed before/after; more = a
+            solid multi-year trend. */}
         <polyline
-          points={histPoints}
+          points={linePoints}
           fill="none"
           stroke="#0E1C28"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeDasharray={twoPoint ? "6 4" : undefined}
         />
 
         {/* Data points with hover targets */}
         {sorted.map((d) => {
-          const cx = xFor(d.year, minYear);
+          const cx = xFor(d.year);
           const cy = yFor(d.pct, top);
           return (
             <g key={d.year}>
               <circle cx={cx} cy={cy} r="4" fill="#0E1C28" stroke="#FFFFFF" strokeWidth="2" />
-              {/* Invisible larger hit target */}
               <circle
                 cx={cx}
                 cy={cy}
                 r="12"
                 fill="transparent"
                 style={{ cursor: "crosshair" }}
-                onMouseEnter={(e) => {
+                onMouseEnter={() => {
                   const rect = svgRef.current?.getBoundingClientRect();
                   if (!rect) return;
                   setTooltip({ x: cx, y: cy, year: d.year, pct: d.pct });
@@ -174,26 +204,17 @@ export function CoralProjectionChart({ locationName, dataPoints }: Props) {
           );
         })}
 
-        {/* Year axis labels */}
-        {sorted.map((d) => (
-          <text key={`lbl-${d.year}`} x={xFor(d.year, minYear)} y={VIEWBOX_H - 4} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono" textAnchor="middle">
-            {d.year}
+        {/* Year axis labels (collision-free) */}
+        {labelYears.map((year) => (
+          <text key={`lbl-${year}`} x={xFor(year)} y={VIEWBOX_H - 6} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono" textAnchor="middle">
+            {year}
           </text>
         ))}
-        <text x={endX} y={VIEWBOX_H - 4} fontSize="9" fill="#4A5568" fontFamily="IBM Plex Mono" textAnchor="middle">{PROJECT_TO}</text>
 
         {/* Tooltip */}
         {tooltip && (
           <g>
-            <rect
-              x={tooltip.x - 32}
-              y={tooltip.y - 36}
-              width={64}
-              height={28}
-              rx={4}
-              fill="#0E1C28"
-              opacity="0.9"
-            />
+            <rect x={tooltip.x - 32} y={tooltip.y - 36} width={64} height={28} rx={4} fill="#0E1C28" opacity="0.9" />
             <text x={tooltip.x} y={tooltip.y - 22} fontSize="10" fill="#FFFFFF" fontFamily="IBM Plex Mono" fontWeight="700" textAnchor="middle">
               {tooltip.pct}%
             </text>
@@ -214,15 +235,26 @@ export function CoralProjectionChart({ locationName, dataPoints }: Props) {
       />
 
       {/* Legend */}
-      <div style={{ display: "flex", gap: "1.25rem", marginTop: "0.5rem", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: "1.1rem", marginTop: "0.4rem", flexWrap: "wrap", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
           <div style={{ width: 20, height: 2.5, background: "#0E1C28", borderRadius: 2 }} />
-          <span style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: 10, color: "#4A5568" }}>Survey data</span>
+          <span style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: 10, color: "#4A5568" }}>
+            {twoPoint ? "Two surveys" : `${sorted.length} surveys, ${minYear} to ${maxYear}`}
+          </span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-          <svg width="20" height="4"><line x1="0" y1="2" x2="20" y2="2" stroke="#0E4F6E" strokeWidth="2" strokeDasharray="4 4" /></svg>
-          <span style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: 10, color: "#4A5568" }}>Projection to {PROJECT_TO}</span>
-        </div>
+        {hasContext && contextLabel ? (
+          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+            <svg width="20" height="4"><line x1="0" y1="2" x2="20" y2="2" stroke={CONTEXT_COLOR} strokeWidth="1.5" strokeDasharray="4 3" /></svg>
+            <span style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: 10, color: "#4A5568" }}>
+              {contextLabel}
+            </span>
+          </div>
+        ) : null}
+        {sourceLabel ? (
+          <span style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: 10, color: "#4A5568" }}>
+            {sourceLabel}
+          </span>
+        ) : null}
       </div>
     </div>
   );

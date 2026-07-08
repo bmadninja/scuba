@@ -3,18 +3,36 @@
     "id": "reef-health-great-barrier-reef-australia-2024",
     "locationId": "great-barrier-reef-australia",
     "observed": {
-      "surveyDate": "2024-09-01",
-      "surveyMethod": "AIMS LTMP manta-tow + photo-transect, GBR-wide sector means",
-      "coralCoverPercent": 25,
+      "surveyDate": "2025-08-01",
+      "surveyMethod": "AIMS LTMP manta-tow, GBR-wide mean of the Northern, Central and Southern region-wide averages",
+      "coralCoverPercent": 28.5,
       "bleachedPercent": 22,
       "mortalityPercent": 8,
-      "historicalCoralCoverPercent": 28,
-      "historicalSurveyDate": "2014-08-01",
+      "historicalCoralCoverPercent": 34.3,
+      "historicalSurveyDate": "2022-08-01",
       "sourceIds": [
         "aims-ltmp",
         "gbrmpa"
       ],
-      "notes": "GBR-wide sector average. Northern sector has shown partial recovery (up to 30-33% in some transects) but central and southern sectors remain below the 2014 baseline after five mass bleaching events. The 2024 bleaching event was the most geographically extensive on record."
+      "notes": "GBR-wide coral cover each year is the mean of the AIMS Long-Term Monitoring Program's three region-wide manta-tow averages (Northern, Central, Southern), for years where all three are published. The 2024 mass bleaching event, the most geographically extensive on record, drove the sharp fall from the 2024 peak.",
+      "coralCoverSeries": [
+        {
+          "year": 2022,
+          "coralCoverPercent": 34.3
+        },
+        {
+          "year": 2023,
+          "coralCoverPercent": 33.4
+        },
+        {
+          "year": 2024,
+          "coralCoverPercent": 37.5
+        },
+        {
+          "year": 2025,
+          "coralCoverPercent": 28.5
+        }
+      ]
     },
     "thermalStress": {
       "asOf": "2026-07-05",

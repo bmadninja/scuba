@@ -1,0 +1,322 @@
+[
+  {
+    "region": "caribbean",
+    "label": "Caribbean",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1983,
+        "coralCoverPercent": 18
+      },
+      {
+        "year": 1999,
+        "coralCoverPercent": 16.5
+      },
+      {
+        "year": 2005,
+        "coralCoverPercent": 15.2
+      },
+      {
+        "year": 2007,
+        "coralCoverPercent": 14.1
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 14.6
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 15.9
+      }
+    ],
+    "yearRange": [
+      1983,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "east-asian-seas",
+    "label": "East Asian Seas",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1983,
+        "coralCoverPercent": 32.8
+      },
+      {
+        "year": 1987,
+        "coralCoverPercent": 31.5
+      },
+      {
+        "year": 1998,
+        "coralCoverPercent": 33.7
+      },
+      {
+        "year": 1999,
+        "coralCoverPercent": 32.9
+      },
+      {
+        "year": 2009,
+        "coralCoverPercent": 40.8
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 35
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 35.8
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 33.9
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 36.8
+      }
+    ],
+    "yearRange": [
+      1983,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "etp-eastern-tropical-pacific",
+    "label": "Eastern Tropical Pacific",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1998,
+        "coralCoverPercent": 34.6
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 22.4
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 22.8
+      }
+    ],
+    "yearRange": [
+      1998,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "persga-red-sea-gulf-of-aden",
+    "label": "Red Sea & Gulf of Aden",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1997,
+        "coralCoverPercent": 36.1
+      },
+      {
+        "year": 2002,
+        "coralCoverPercent": 32.3
+      },
+      {
+        "year": 2008,
+        "coralCoverPercent": 35.3
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 30.9
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 34.3
+      }
+    ],
+    "yearRange": [
+      1997,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "pacific",
+    "label": "Pacific",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1998,
+        "coralCoverPercent": 37
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 31.3
+      }
+    ],
+    "yearRange": [
+      1998,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "ropme-persian-arabian-gulf",
+    "label": "Persian / Arabian Gulf",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1997,
+        "coralCoverPercent": 30.1
+      },
+      {
+        "year": 2002,
+        "coralCoverPercent": 18
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 30.2
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 17.9
+      }
+    ],
+    "yearRange": [
+      1997,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "south-asia",
+    "label": "South Asia",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1999,
+        "coralCoverPercent": 11.8
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 39.4
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 26.3
+      }
+    ],
+    "yearRange": [
+      1999,
+      2016
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "australia",
+    "label": "Australia",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1994,
+        "coralCoverPercent": 35.2
+      },
+      {
+        "year": 1999,
+        "coralCoverPercent": 34.5
+      },
+      {
+        "year": 2003,
+        "coralCoverPercent": 30.6
+      },
+      {
+        "year": 2007,
+        "coralCoverPercent": 35.4
+      },
+      {
+        "year": 2014,
+        "coralCoverPercent": 27.4
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 29.2
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 30.9
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 25.7
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 26
+      }
+    ],
+    "yearRange": [
+      1994,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "brazil",
+    "label": "Brazil",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 2002,
+        "coralCoverPercent": 19.1
+      },
+      {
+        "year": 2005,
+        "coralCoverPercent": 16.3
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 28.9
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 20.6
+      }
+    ],
+    "yearRange": [
+      2002,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  },
+  {
+    "region": "wio-western-indian-ocean",
+    "label": "Western Indian Ocean",
+    "sourceId": "gcrmn",
+    "series": [
+      {
+        "year": 1985,
+        "coralCoverPercent": 26.2
+      },
+      {
+        "year": 1997,
+        "coralCoverPercent": 28.8
+      },
+      {
+        "year": 1999,
+        "coralCoverPercent": 26.5
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 32.3
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 29.4
+      }
+    ],
+    "yearRange": [
+      1985,
+      2019
+    ],
+    "citation": "Souter, D., Planes, S., Wicquart, J., Logan, M., Obura, D., Staub, F. (eds) (2021). Status of coral reefs of the world: 2020. GCRMN and ICRI. DOI 10.59387/WOTJ9184"
+  }
+]

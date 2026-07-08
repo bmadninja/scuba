@@ -10,6 +10,12 @@ import { getSitesByLocationId } from "@/lib/data/sites";
 import { getGearById } from "@/lib/data/gear";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
+import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
+import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
+import {
+  getSpeciesObservationTimelineByLocationId,
+  getCumulativeObservations,
+} from "@/lib/data/species-observation-timeline";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getSpeciesDiversityByLocationId } from "@/lib/data/species-diversity";
@@ -38,7 +44,7 @@ import type {
   ThreatenedStats,
 } from "./location-page-body";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
-import type { BleachingAlertLevel, MpaStatus, PartnerLink } from "@/lib/data/types";
+import type { BleachingAlertLevel, MpaStatus, PartnerLink, ReefHealthRecord } from "@/lib/data/types";
 
 // ---------------------------------------------------------------------------
 // Plain-language mappings
@@ -88,6 +94,22 @@ const CORAL_SOURCE_LABELS: Record<string, string> = {
   "reef-health-aims-noaa": "AIMS / NOAA",
   "reef-health-gcrmn-agrra": "GCRMN / AGRRA",
 };
+
+// Choose the best reef-health record for a location. A record with a real
+// multi-year coral series wins; failing that, the most recent survey; failing
+// that, the first on file. Keeps the page pointed at the richest data when a
+// survey feed (e.g. MERMAID) sits alongside an editorial baseline.
+function pickReefHealth(records: ReefHealthRecord[]): ReefHealthRecord | null {
+  if (records.length === 0) return null;
+  return [...records].sort((a, b) => {
+    const aSeries = a.observed?.coralCoverSeries?.length ?? 0;
+    const bSeries = b.observed?.coralCoverSeries?.length ?? 0;
+    if (aSeries !== bSeries) return bSeries - aSeries;
+    const aDate = a.observed?.surveyDate ?? "";
+    const bDate = b.observed?.surveyDate ?? "";
+    return bDate.localeCompare(aDate);
+  })[0];
+}
 
 const OCEAN_GRADIENTS = [
   "linear-gradient(145deg,#0a3060,#0a6b8a,#087a6e)",
@@ -232,7 +254,11 @@ export default async function LocationPage({
   if (!location) notFound();
 
   const sites = getSitesByLocationId(location.id);
-  const reefHealth = getReefHealthByLocationId(location.id)[0] ?? null;
+  // A location may have more than one reef-health record (an editorial baseline
+  // plus a survey feed such as MERMAID). Prefer the one carrying a real
+  // multi-year coral series, then the most recent survey, so the richest data
+  // is what the page shows.
+  const reefHealth = pickReefHealth(getReefHealthByLocationId(location.id));
   const reefPressure = getReefPressureByLocationId(location.id);
   const locationFishing = getLocationFishing(location.id);
   const details = getLocationDetailsById(location.id);
@@ -388,19 +414,11 @@ export default async function LocationPage({
     surveyYear > historicalYear
   ) {
     if (coverBefore > coverNow) {
-      const span = surveyYear - historicalYear;
-      const perYear = (coverBefore - coverNow) / span;
-      // Only project a zero year for a genuinely fast decline. A tiny slip
-      // (e.g. 42% → 40% over a decade) mechanically extrapolates centuries out,
-      // which is meaningless noise — suppress it beyond a ~40-year horizon.
-      const yearsToZero = perYear > 0 ? Math.max(1, Math.round(coverNow / perYear)) : null;
-      const zeroYear = yearsToZero !== null && yearsToZero <= 40 ? surveyYear + yearsToZero : null;
       decline = {
         fromPct: Math.round(coverBefore),
         fromYear: historicalYear,
         toPct: Math.round(coverNow),
         toYear: surveyYear,
-        zeroYear,
       };
     } else if (coverNow > coverBefore) {
       coverTrendNote = `Up from ${Math.round(coverBefore)}% in ${historicalYear}.`;
@@ -519,14 +537,61 @@ export default async function LocationPage({
   // observations within a radius) — shown as one honest stat, never a trend.
   const speciesDiversity = getSpeciesDiversityByLocationId(location.id);
 
-  // Projection data points: build from observed historical + current pair
+  // Dated observation record: yearly research-grade iNaturalist observation
+  // counts, shown as a cumulative accumulation line — the scientific record of
+  // this reef growing over time. Real dated counts, never modelled.
+  const obsTimeline = getSpeciesObservationTimelineByLocationId(location.id);
+  const speciesObsCumulative = obsTimeline ? getCumulativeObservations(obsTimeline) : null;
+
+  // Coral-cover chart points. Prefer a real multi-year survey series when one
+  // is on file: every year becomes a point and the chart draws a genuine trend.
+  // A nearby-survey series (MERMAID) is display-only and clearly labelled, so it
+  // powers the chart without touching the reef-state verdict or headline number.
+  // Otherwise fall back to the historical + current pair as a two-point
+  // before/after. One point per year, earliest wins on ties.
+  const nearbyCoralSeries = getCoralCoverSeriesByLocationId(location.id);
+  const series =
+    nearbyCoralSeries?.series ??
+    observed?.coralCoverSeries ??
+    null;
   const projectionDataPoints: CoralDataPoint[] = [];
-  if (coverBefore !== null && historicalYear !== null) {
-    projectionDataPoints.push({ year: historicalYear, pct: Math.round(coverBefore) });
+  let coralChartSourceLabel: string | null = coralSourceLabel;
+  if (series && series.length >= 2) {
+    const byYear = new Map<number, number>();
+    for (const pt of series) {
+      if (!byYear.has(pt.year)) byYear.set(pt.year, Math.round(pt.coralCoverPercent));
+    }
+    for (const [year, pct] of [...byYear.entries()].sort((a, b) => a[0] - b[0])) {
+      projectionDataPoints.push({ year, pct });
+    }
+    if (nearbyCoralSeries) {
+      const km = Math.round(nearbyCoralSeries.radiusDeg * 111);
+      coralChartSourceLabel = `MERMAID reef surveys within ${km} km`;
+    }
+  } else {
+    if (coverBefore !== null && historicalYear !== null) {
+      projectionDataPoints.push({ year: historicalYear, pct: Math.round(coverBefore) });
+    }
+    if (coverNow !== null && surveyYear !== null) {
+      projectionDataPoints.push({ year: surveyYear, pct: Math.round(coverNow) });
+    }
   }
-  if (coverNow !== null && surveyYear !== null) {
-    projectionDataPoints.push({ year: surveyYear, pct: Math.round(coverNow) });
-  }
+
+  // GCRMN regional context, drawn as one faint horizontal reference line at the
+  // region's most recent average cover — "this reef vs its region" — instead of
+  // a second time series on a mismatched axis. Shown whenever the region has a
+  // published trend and the site has a chart.
+  const regionalTrend = getRegionalCoralTrendForLocation({
+    country: location.country,
+    region: location.region,
+  });
+  const showRegionalContext = regionalTrend !== null && projectionDataPoints.length >= 2;
+  const coralContextValue: number | null = showRegionalContext
+    ? regionalTrend!.series[regionalTrend!.series.length - 1].coralCoverPercent
+    : null;
+  const coralContextLabel: string | null = showRegionalContext
+    ? `${regionalTrend!.label} average (GCRMN)`
+    : null;
 
   // GFW measured fishing effort (apparent-fishing-hours within the query
   // radius), with the derived band and trend for the location panel.
@@ -758,6 +823,9 @@ export default async function LocationPage({
         coverYear={surveyYear}
         coverTrendNote={coverTrendNote}
         projectionDataPoints={projectionDataPoints}
+        coralChartSourceLabel={coralChartSourceLabel}
+        coralContextValue={coralContextValue}
+        coralContextLabel={coralContextLabel}
         fishingPressure={fishingPressureData}
         waterQualityEvents={waterQualityEvents}
         bleachedPct={bleachedPct}
@@ -771,6 +839,9 @@ export default async function LocationPage({
         verdictBasis={verdictBasis}
         speciesRichness={speciesDiversity?.speciesRichness ?? null}
         speciesRadiusKm={speciesDiversity?.radiusKm ?? null}
+        speciesObsCumulative={speciesObsCumulative}
+        speciesObsTotal={obsTimeline?.totalObservations ?? null}
+        speciesObsRadiusKm={obsTimeline?.radiusKm ?? null}
         reefStateLabel={STATE_TEXT[atlasLoc.state]}
         reefStateColor={stateColor}
         reefStateSub={STATE_SUB[atlasLoc.state]}

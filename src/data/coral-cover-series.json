@@ -1,0 +1,2138 @@
+[
+  {
+    "locationId": "ambon-bay",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 35,
+    "surveyYears": 4,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 15.5,
+      "surveyDate": "2024-12-08"
+    },
+    "series": [
+      {
+        "year": 2018,
+        "coralCoverPercent": 38.4
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 44.5
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 42.7
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 39.8
+      }
+    ],
+    "citation": "Blue Ventures D, Data S, Ezzha M, Kasman K, Liem M. 2024. Survey ekologi Terumbu Karang di Desa Kaibobu 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey ekologi Terumbu Karang di Desa Kaibobu 2024.",
+    "notes": "35 MERMAID survey events across 4 survey years within 0.5° of this location. Most recent: Hatupokur (2024-12-08). Blue Ventures D, Data S, Ezzha M, Kasman K, Liem M. 2024. Survey ekologi Terumbu Karang di Desa Kaibobu 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey ekologi Terumbu Karang di Desa Kaibobu 2024.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "anilao-philippines",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 52,
+    "surveyYears": 3,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 22.3,
+      "surveyDate": "2025-02-01"
+    },
+    "series": [
+      {
+        "year": 2022,
+        "coralCoverPercent": 24.5
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 22.9
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 22.3
+      }
+    ],
+    "citation": "Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "notes": "52 MERMAID survey events across 3 survey years within 0.5° of this location. Most recent: Baco MPA (2025-02-01). Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "apo-island",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 161,
+    "surveyYears": 4,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 36.3,
+      "surveyDate": "2024-11-09"
+    },
+    "bleachedPercent": 1.7,
+    "mortalityPercent": 0.9,
+    "series": [
+      {
+        "year": 2017,
+        "coralCoverPercent": 39.4
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 33.8
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 23.4
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 27.2
+      }
+    ],
+    "citation": "Apistar D, Cerna K, Deocadez M, Ferrer V, Mahilum C. 2024. Biophysical assessment of selected Marine Protected Areas in Siquijor Province 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Biophysical assessment of selected Marine Protected Areas in Siquijor Province 2024.",
+    "notes": "161 MERMAID survey events across 4 survey years within 0.5° of this location. Most recent: S1: Cangmunag Marine Sanctuary (2024-11-09). Apistar D, Cerna K, Deocadez M, Ferrer V, Mahilum C. 2024. Biophysical assessment of selected Marine Protected Areas in Siquijor Province 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Biophysical assessment of selected Marine Protected Areas in Siquijor Province 2024.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "aqaba-jordan",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 29,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 44.6,
+      "surveyDate": "2025-10-29"
+    },
+    "series": [
+      {
+        "year": 2024,
+        "coralCoverPercent": 20.8
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 22.2
+      }
+    ],
+    "citation": "Al-Tawaha M, Auer B, Kler Lago A, Mohamed A. 2025. Gulf of Aqaba Resilient Reefs Programme. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Gulf of Aqaba Resilient Reefs Programme.",
+    "notes": "29 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Aqaba Marine Reserve (2025-10-29). Al-Tawaha M, Auer B, Kler Lago A, Mohamed A. 2025. Gulf of Aqaba Resilient Reefs Programme. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Gulf of Aqaba Resilient Reefs Programme.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "bali-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 163,
+    "surveyYears": 15,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 43.6,
+      "surveyDate": "2025-11-07"
+    },
+    "series": [
+      {
+        "year": 2009,
+        "coralCoverPercent": 61
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 39.5
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 38.4
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 40.4
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 34.6
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 45.8
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 37
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 37.3
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 30.8
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 33.4
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 32.7
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 34.3
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 19.5
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 23.1
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 51.1
+      }
+    ],
+    "citation": "Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "notes": "163 MERMAID survey events across 15 survey years within 0.5° of this location. Most recent: LivingSeas Restoration Site (2025-11-07). Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "batangas",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 52,
+    "surveyYears": 3,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 22.3,
+      "surveyDate": "2025-02-01"
+    },
+    "series": [
+      {
+        "year": 2022,
+        "coralCoverPercent": 24.5
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 22.9
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 22.3
+      }
+    ],
+    "citation": "Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "notes": "52 MERMAID survey events across 3 survey years within 0.5° of this location. Most recent: Baco MPA (2025-02-01). Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "beqa-lagoon-fiji",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 46,
+    "surveyYears": 11,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 30,
+      "surveyDate": "2026-06-09"
+    },
+    "bleachedPercent": 78.2,
+    "mortalityPercent": 74.2,
+    "series": [
+      {
+        "year": 2002,
+        "coralCoverPercent": 28.8
+      },
+      {
+        "year": 2004,
+        "coralCoverPercent": 47.5
+      },
+      {
+        "year": 2007,
+        "coralCoverPercent": 54.4
+      },
+      {
+        "year": 2008,
+        "coralCoverPercent": 25.3
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 29.4
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 39.7
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 49.1
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 60.6
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 43.9
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 61.3
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 41.5
+      }
+    ],
+    "citation": "Ford A, Mangubhai S, Sykes H. 2026. 2023-on Fiji GCRMN sites. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=2023-on Fiji GCRMN sites.",
+    "notes": "46 MERMAID survey events across 11 survey years within 0.5° of this location. Most recent: Beqa Lawaki (2026-06-09). Ford A, Mangubhai S, Sykes H. 2026. 2023-on Fiji GCRMN sites. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=2023-on Fiji GCRMN sites.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "blue-corner-palau",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 6,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 35.9,
+      "surveyDate": "2026-04-19"
+    },
+    "series": [
+      {
+        "year": 2024,
+        "coralCoverPercent": 44.5
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 18.8
+      }
+    ],
+    "citation": "Jakub R, Olsudong U, Sasao M, Stoyle G. 2026. RARE East Coast Ecological Monitoring. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=RARE East Coast Ecological Monitoring.",
+    "notes": "6 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Melekeok 4 (2026-04-19). Jakub R, Olsudong U, Sasao M, Stoyle G. 2026. RARE East Coast Ecological Monitoring. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=RARE East Coast Ecological Monitoring.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "blue-hole-belize",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 22,
+    "surveyYears": 6,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 8.3,
+      "surveyDate": "2024-08-11"
+    },
+    "bleachedPercent": 54.7,
+    "mortalityPercent": 9.4,
+    "series": [
+      {
+        "year": 2015,
+        "coralCoverPercent": 6.5
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 12.1
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 16.3
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 17.9
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 29.6
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 24
+      }
+    ],
+    "citation": "Brown H, Darling E, Fisher K, Phillips M, Rivera K. 2024. Belize Glover's Atoll 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Belize Glover's Atoll 2024.",
+    "notes": "22 MERMAID survey events across 6 survey years within 0.5° of this location. Most recent: WFR5 (2024-08-11). Brown H, Darling E, Fisher K, Phillips M, Rivera K. 2024. Belize Glover's Atoll 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Belize Glover's Atoll 2024.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "bunaken-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 88,
+    "surveyYears": 5,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 60.8,
+      "surveyDate": "2025-10-24"
+    },
+    "bleachedPercent": 4.5,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2016,
+        "coralCoverPercent": 32.3
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 71.4
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 40.1
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 52.8
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 56.9
+      }
+    ],
+    "citation": "Lasut H, Rondonuwu A. 2025. Coral Evaluation Training Bunaken, North Sulawesi 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Coral Evaluation Training Bunaken, North Sulawesi 2025.",
+    "notes": "88 MERMAID survey events across 5 survey years within 0.5° of this location. Most recent: Bunaken Timur 2 (2025-10-24). Lasut H, Rondonuwu A. 2025. Coral Evaluation Training Bunaken, North Sulawesi 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Coral Evaluation Training Bunaken, North Sulawesi 2025.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "candidasa-bali-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 224,
+    "surveyYears": 16,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 43.6,
+      "surveyDate": "2025-11-07"
+    },
+    "bleachedPercent": 18.8,
+    "mortalityPercent": 0.4,
+    "series": [
+      {
+        "year": 2009,
+        "coralCoverPercent": 61
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 39.5
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 38.4
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 40.4
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 34.6
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 45.8
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 37
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 37.3
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 26.8
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 27.6
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 32.7
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 26.8
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 23.9
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 21.1
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 24.4
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 54.4
+      }
+    ],
+    "citation": "Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "notes": "224 MERMAID survey events across 16 survey years within 0.5° of this location. Most recent: LivingSeas Restoration Site (2025-11-07). Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "chumbe-island-tanzania",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 69,
+    "surveyYears": 6,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 47.3,
+      "surveyDate": "2026-05-05"
+    },
+    "bleachedPercent": 0.9,
+    "mortalityPercent": 0.9,
+    "series": [
+      {
+        "year": 2019,
+        "coralCoverPercent": 45.8
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 62.8
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 47.9
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 26.1
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 46.7
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 35.7
+      }
+    ],
+    "citation": "Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "notes": "69 MERMAID survey events across 6 survey years within 0.5° of this location. Most recent: Funguyasini 2_ south (2026-05-05). Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "daymaniyat-oman",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 12,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 22.2,
+      "surveyDate": "2026-02-07"
+    },
+    "series": [
+      {
+        "year": 2025,
+        "coralCoverPercent": 15.4
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 24.2
+      }
+    ],
+    "citation": "Al Asfoor S. Assessing the distribution, diversity, and ecological impact of Drupella snails on coral reefs in Oman. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Assessing the distribution, diversity, and ecological impact of Drupella snails on coral reefs in Oman.",
+    "notes": "12 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Dimaniyat - Police Bay (Deep) (2026-02-07). Al Asfoor S. Assessing the distribution, diversity, and ecological impact of Drupella snails on coral reefs in Oman. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Assessing the distribution, diversity, and ecological impact of Drupella snails on coral reefs in Oman.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "diani-shimoni-kenya",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 222,
+    "surveyYears": 10,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 21.8,
+      "surveyDate": "2026-04-19"
+    },
+    "bleachedPercent": 0,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2017,
+        "coralCoverPercent": 23.3
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 37
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 38.2
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 32.3
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 65.9
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 33.1
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 30.9
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 31.8
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 15.6
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 18.4
+      }
+    ],
+    "citation": "Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "notes": "222 MERMAID survey events across 10 survey years within 0.5° of this location. Most recent: Bunju North (2026-04-19). Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "dumaguete",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 166,
+    "surveyYears": 4,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 36.3,
+      "surveyDate": "2024-11-09"
+    },
+    "bleachedPercent": 1.7,
+    "mortalityPercent": 0.9,
+    "series": [
+      {
+        "year": 2017,
+        "coralCoverPercent": 39.4
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 33.8
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 23.4
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 26.6
+      }
+    ],
+    "citation": "Apistar D, Cerna K, Deocadez M, Ferrer V, Mahilum C. 2024. Biophysical assessment of selected Marine Protected Areas in Siquijor Province 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Biophysical assessment of selected Marine Protected Areas in Siquijor Province 2024.",
+    "notes": "166 MERMAID survey events across 4 survey years within 0.5° of this location. Most recent: S1: Cangmunag Marine Sanctuary (2024-11-09). Apistar D, Cerna K, Deocadez M, Ferrer V, Mahilum C. 2024. Biophysical assessment of selected Marine Protected Areas in Siquijor Province 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Biophysical assessment of selected Marine Protected Areas in Siquijor Province 2024.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "eilat",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 29,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 44.6,
+      "surveyDate": "2025-10-29"
+    },
+    "series": [
+      {
+        "year": 2024,
+        "coralCoverPercent": 20.8
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 22.2
+      }
+    ],
+    "citation": "Al-Tawaha M, Auer B, Kler Lago A, Mohamed A. 2025. Gulf of Aqaba Resilient Reefs Programme. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Gulf of Aqaba Resilient Reefs Programme.",
+    "notes": "29 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Aqaba Marine Reserve (2025-10-29). Al-Tawaha M, Auer B, Kler Lago A, Mohamed A. 2025. Gulf of Aqaba Resilient Reefs Programme. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Gulf of Aqaba Resilient Reefs Programme.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "el-nido-philippines",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 38,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 12.9,
+      "surveyDate": "2024-08-11"
+    },
+    "bleachedPercent": 51.2,
+    "mortalityPercent": 37.4,
+    "series": [
+      {
+        "year": 2023,
+        "coralCoverPercent": 37.7
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 18
+      }
+    ],
+    "citation": "Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "notes": "38 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Heart Reef MPA (2024-08-11). Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "german-channel-palau",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 6,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 35.9,
+      "surveyDate": "2026-04-19"
+    },
+    "series": [
+      {
+        "year": 2024,
+        "coralCoverPercent": 44.5
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 18.8
+      }
+    ],
+    "citation": "Jakub R, Olsudong U, Sasao M, Stoyle G. 2026. RARE East Coast Ecological Monitoring. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=RARE East Coast Ecological Monitoring.",
+    "notes": "6 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Melekeok 4 (2026-04-19). Jakub R, Olsudong U, Sasao M, Stoyle G. 2026. RARE East Coast Ecological Monitoring. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=RARE East Coast Ecological Monitoring.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "gili-islands-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 127,
+    "surveyYears": 15,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 70.7,
+      "surveyDate": "2025-04-13"
+    },
+    "bleachedPercent": 18.8,
+    "mortalityPercent": 0.4,
+    "series": [
+      {
+        "year": 2010,
+        "coralCoverPercent": 38.8
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 46.1
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 44.5
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 33.6
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 35.8
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 43.6
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 39.5
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 22.4
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 19.8
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 39.4
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 29.2
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 25.7
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 23
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 31.5
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 70.7
+      }
+    ],
+    "citation": "Ramadhan R. 2025. IKAN APALAH. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=IKAN APALAH.",
+    "notes": "127 MERMAID survey events across 15 survey years within 0.5° of this location. Most recent: RAYYA (2025-04-13). Ramadhan R. 2025. IKAN APALAH. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=IKAN APALAH.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "gladden-spit-belize",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 178,
+    "surveyYears": 9,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 6.8,
+      "surveyDate": "2025-08-28"
+    },
+    "bleachedPercent": 20.4,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2015,
+        "coralCoverPercent": 7.7
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 9.8
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 13.3
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 20.9
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 25.9
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 23.4
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 16.4
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 17.5
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 6.5
+      }
+    ],
+    "citation": "Brown H, Castillo W, Darling E, Fisher K, Polonio Z, Rivera K. 2025. Belize SWCMR 2025-WCS. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Belize SWCMR 2025-WCS.",
+    "notes": "178 MERMAID survey events across 9 survey years within 0.5° of this location. Most recent: SWCCZFR2 (2025-08-28). Brown H, Castillo W, Darling E, Fisher K, Polonio Z, Rivera K. 2025. Belize SWCMR 2025-WCS. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Belize SWCMR 2025-WCS.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "great-white-wall-fiji",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 19,
+    "surveyYears": 15,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 73.1,
+      "surveyDate": "2026-06-27"
+    },
+    "bleachedPercent": 1.3,
+    "mortalityPercent": 0.5,
+    "series": [
+      {
+        "year": 2002,
+        "coralCoverPercent": 5
+      },
+      {
+        "year": 2003,
+        "coralCoverPercent": 23.1
+      },
+      {
+        "year": 2004,
+        "coralCoverPercent": 12.5
+      },
+      {
+        "year": 2006,
+        "coralCoverPercent": 37.5
+      },
+      {
+        "year": 2007,
+        "coralCoverPercent": 40
+      },
+      {
+        "year": 2008,
+        "coralCoverPercent": 41.3
+      },
+      {
+        "year": 2009,
+        "coralCoverPercent": 47.5
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 56.9
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 47.5
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 60
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 58.8
+      },
+      {
+        "year": 2014,
+        "coralCoverPercent": 40.6
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 7.7
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 55.4
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 59.9
+      }
+    ],
+    "citation": "Ford A, Mangubhai S, Sykes H. 2026. 2023-on Fiji GCRMN sites. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=2023-on Fiji GCRMN sites.",
+    "notes": "19 MERMAID survey events across 15 survey years within 0.5° of this location. Most recent: Jeffs Secret Garden Koro Sun (2026-06-27). Ford A, Mangubhai S, Sykes H. 2026. 2023-on Fiji GCRMN sites. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=2023-on Fiji GCRMN sites.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "kalpitiya",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 9,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 2.5,
+      "surveyDate": "2025-03-20"
+    },
+    "series": [
+      {
+        "year": 2024,
+        "coralCoverPercent": 10
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 12.1
+      }
+    ],
+    "citation": "Perera W.P.N., Karunarathna C., Nanayakkara D., Ranasingha R. and Rajasuriya A. 2025. SLCRI Bar Reef Seascape. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=SLCRI Bar Reef Seascape.",
+    "notes": "9 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Hipolis Reef Deep (2025-03-20). Perera W.P.N., Karunarathna C., Nanayakkara D., Ranasingha R. and Rajasuriya A. 2025. SLCRI Bar Reef Seascape. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=SLCRI Bar Reef Seascape.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "kimbe-bay-papua-new-guinea",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 55,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 28.4,
+      "surveyDate": "2026-03-05"
+    },
+    "series": [
+      {
+        "year": 2025,
+        "coralCoverPercent": 27.6
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 22.9
+      }
+    ],
+    "citation": "Auer B, Goiye R, Kler Lago A, Madariaga Fernández R, Simeon E. 2026. Gutpela Solwara, Gutpela Bisnis (Good Oceans, Good Business) - Papua New Guinea. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Gutpela Solwara, Gutpela Bisnis (Good Oceans, Good Business) - Papua New Guinea.",
+    "notes": "55 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Kimbe Is 1 (2026-03-05). Auer B, Goiye R, Kler Lago A, Madariaga Fernández R, Simeon E. 2026. Gutpela Solwara, Gutpela Bisnis (Good Oceans, Good Business) - Papua New Guinea. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Gutpela Solwara, Gutpela Bisnis (Good Oceans, Good Business) - Papua New Guinea.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "komodo-national-park-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 37,
+    "surveyYears": 3,
+    "latest": {
+      "year": 2023,
+      "coralCoverPercent": 72,
+      "surveyDate": "2023-09-04"
+    },
+    "series": [
+      {
+        "year": 2016,
+        "coralCoverPercent": 28
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 31.9
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 72
+      }
+    ],
+    "citation": "Jacob F. 2023. Hatamin island. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Hatamin island.",
+    "notes": "37 MERMAID survey events across 3 survey years within 0.5° of this location. Most recent: Pulau Hatamin (2023-09-04). Jacob F. 2023. Hatamin island. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Hatamin island.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "lembeh-strait-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 74,
+    "surveyYears": 5,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 60.8,
+      "surveyDate": "2025-10-24"
+    },
+    "bleachedPercent": 4.5,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2016,
+        "coralCoverPercent": 32.3
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 71.4
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 40.1
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 52
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 52.3
+      }
+    ],
+    "citation": "Lasut H, Rondonuwu A. 2025. Coral Evaluation Training Bunaken, North Sulawesi 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Coral Evaluation Training Bunaken, North Sulawesi 2025.",
+    "notes": "74 MERMAID survey events across 5 survey years within 0.5° of this location. Most recent: Bunaken Timur 2 (2025-10-24). Lasut H, Rondonuwu A. 2025. Coral Evaluation Training Bunaken, North Sulawesi 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Coral Evaluation Training Bunaken, North Sulawesi 2025.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "lombok",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 166,
+    "surveyYears": 10,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 70.7,
+      "surveyDate": "2025-04-13"
+    },
+    "bleachedPercent": 13,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2014,
+        "coralCoverPercent": 55.1
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 43.6
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 24.6
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 17.9
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 34.4
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 26.3
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 26.1
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 27.9
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 31.5
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 70.7
+      }
+    ],
+    "citation": "Ramadhan R. 2025. IKAN APALAH. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=IKAN APALAH.",
+    "notes": "166 MERMAID survey events across 10 survey years within 0.5° of this location. Most recent: RAYYA (2025-04-13). Ramadhan R. 2025. IKAN APALAH. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=IKAN APALAH.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "mafia-island",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 34,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 59,
+      "surveyDate": "2025-01-30"
+    },
+    "bleachedPercent": 56.9,
+    "mortalityPercent": 56.9,
+    "series": [
+      {
+        "year": 2024,
+        "coralCoverPercent": 51.8
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 19.7
+      }
+    ],
+    "citation": "Joram M, Mahudi H. 2025. MIMP - Bie-Annual Survey 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=MIMP - Bie-Annual Survey 2024.",
+    "notes": "34 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: chawe (2025-01-30). Joram M, Mahudi H. 2025. MIMP - Bie-Annual Survey 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=MIMP - Bie-Annual Survey 2024.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "malapascua-philippines",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 143,
+    "surveyYears": 8,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 13.8,
+      "surveyDate": "2025-12-03"
+    },
+    "series": [
+      {
+        "year": 2015,
+        "coralCoverPercent": 29.3
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 22.4
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 25.6
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 23.8
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 31.3
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 41.3
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 35
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 13.8
+      }
+    ],
+    "citation": "Arias M, Balbon F, Marine Conservation Foundation P. 2025. Malapascua 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Malapascua 2025.",
+    "notes": "143 MERMAID survey events across 8 survey years within 0.5° of this location. Most recent: Two Rocks (2025-12-03). Arias M, Balbon F, Marine Conservation Foundation P. 2025. Malapascua 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Malapascua 2025.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "manado-north-sulawesi",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 91,
+    "surveyYears": 5,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 60.8,
+      "surveyDate": "2025-10-24"
+    },
+    "bleachedPercent": 4.5,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2016,
+        "coralCoverPercent": 32.3
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 71.4
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 40.1
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 52.8
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 54.1
+      }
+    ],
+    "citation": "Lasut H, Rondonuwu A. 2025. Coral Evaluation Training Bunaken, North Sulawesi 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Coral Evaluation Training Bunaken, North Sulawesi 2025.",
+    "notes": "91 MERMAID survey events across 5 survey years within 0.5° of this location. Most recent: Bunaken Timur 2 (2025-10-24). Lasut H, Rondonuwu A. 2025. Coral Evaluation Training Bunaken, North Sulawesi 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Coral Evaluation Training Bunaken, North Sulawesi 2025.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "memba-bay-mozambique",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 61,
+    "surveyYears": 4,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 16.8,
+      "surveyDate": "2025-09-21"
+    },
+    "bleachedPercent": 0,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2022,
+        "coralCoverPercent": 29.6
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 26.3
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 23.8
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 22.2
+      }
+    ],
+    "citation": "Sola E., Silva I. 2025. Blue Future Project Coral Monitoring. WCS-Mozambique. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Memba-Mossuril Baseline.",
+    "notes": "61 MERMAID survey events across 4 survey years within 0.5° of this location. Most recent: MB32 (2025-09-21). Sola E., Silva I. 2025. Blue Future Project Coral Monitoring. WCS-Mozambique. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Memba-Mossuril Baseline.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "mnemba-tanzania",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 76,
+    "surveyYears": 6,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 44.2,
+      "surveyDate": "2026-04-17"
+    },
+    "bleachedPercent": 0,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2019,
+        "coralCoverPercent": 50.1
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 62.8
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 51.3
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 26.5
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 43
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 25.7
+      }
+    ],
+    "citation": "Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "notes": "76 MERMAID survey events across 6 survey years within 0.5° of this location. Most recent: Chanjale (2026-04-17). Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "moalboal-philippines",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 13,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 36,
+      "surveyDate": "2024-05-07"
+    },
+    "series": [
+      {
+        "year": 2023,
+        "coralCoverPercent": 2.6
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 21.8
+      }
+    ],
+    "citation": "Jakub R, Mahilum C, Stoyle G, Viz M. 2024. Baseline establishment and monitoring of selected Rare assisted MPAs 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Baseline establishment and monitoring of selected Rare assisted MPAs 2024.",
+    "notes": "13 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: B: Tandayag Marine Protected Areas (2024-05-07). Jakub R, Mahilum C, Stoyle G, Viz M. 2024. Baseline establishment and monitoring of selected Rare assisted MPAs 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Baseline establishment and monitoring of selected Rare assisted MPAs 2024.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "muscat-oman",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 3,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 22.2,
+      "surveyDate": "2026-02-07"
+    },
+    "series": [
+      {
+        "year": 2024,
+        "coralCoverPercent": 59.7
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 30.1
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 19.2
+      }
+    ],
+    "citation": "Al Asfoor S. Assessing the distribution, diversity, and ecological impact of Drupella snails on coral reefs in Oman. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Assessing the distribution, diversity, and ecological impact of Drupella snails on coral reefs in Oman.",
+    "notes": "24 MERMAID survey events across 3 survey years within 0.5° of this location. Most recent: Dimaniyat - Police Bay (Deep) (2026-02-07). Al Asfoor S. Assessing the distribution, diversity, and ecological impact of Drupella snails on coral reefs in Oman. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Assessing the distribution, diversity, and ecological impact of Drupella snails on coral reefs in Oman.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "nosy-be-madagascar",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 170,
+    "surveyYears": 8,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 33.8,
+      "surveyDate": "2026-06-12"
+    },
+    "bleachedPercent": 5.5,
+    "mortalityPercent": 1.8,
+    "series": [
+      {
+        "year": 2016,
+        "coralCoverPercent": 45.4
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 36
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 38
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 44.1
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 47.7
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 51.5
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 28.8
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 47
+      }
+    ],
+    "citation": "Del Campo Jimenez J, Soaelina A, Well-Cylas Syndard A. 2026. Ankify-Antsahampano-Ambiky ecological monitoring. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Ankify-Antsahampano-Ambiky ecological monitoring.",
+    "notes": "170 MERMAID survey events across 8 survey years within 0.5° of this location. Most recent: Andripiripy (2026-06-12). Del Campo Jimenez J, Soaelina A, Well-Cylas Syndard A. 2026. Ankify-Antsahampano-Ambiky ecological monitoring. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Ankify-Antsahampano-Ambiky ecological monitoring.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "nusa-lembongan-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 164,
+    "surveyYears": 14,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 43.6,
+      "surveyDate": "2025-11-07"
+    },
+    "bleachedPercent": 18.8,
+    "mortalityPercent": 0.4,
+    "series": [
+      {
+        "year": 2010,
+        "coralCoverPercent": 38.9
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 38
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 41.4
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 34.6
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 45.3
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 38.7
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 38.7
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 28.1
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 33.4
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 32.7
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 26.8
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 21
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 23.1
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 48
+      }
+    ],
+    "citation": "Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "notes": "164 MERMAID survey events across 14 survey years within 0.5° of this location. Most recent: LivingSeas Restoration Site (2025-11-07). Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "nusa-penida",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 187,
+    "surveyYears": 15,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 43.6,
+      "surveyDate": "2025-11-07"
+    },
+    "bleachedPercent": 18.8,
+    "mortalityPercent": 0.4,
+    "series": [
+      {
+        "year": 2010,
+        "coralCoverPercent": 38.9
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 38
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 41.4
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 34.6
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 45.3
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 38.7
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 38.7
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 27.6
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 26.7
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 32.7
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 27.5
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 19.1
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 21.7
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 23.1
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 48
+      }
+    ],
+    "citation": "Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "notes": "187 MERMAID survey events across 15 survey years within 0.5° of this location. Most recent: LivingSeas Restoration Site (2025-11-07). Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "pemba-island-tanzania",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 103,
+    "surveyYears": 9,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 9.9,
+      "surveyDate": "2026-04-19"
+    },
+    "bleachedPercent": 0,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2017,
+        "coralCoverPercent": 24.4
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 46.1
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 40.7
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 25.8
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 24.4
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 50.6
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 20.7
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 7.6
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 18
+      }
+    ],
+    "citation": "Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "notes": "103 MERMAID survey events across 9 survey years within 0.5° of this location. Most recent: Chundo (2026-04-19). Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "pescador-island-philippines",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 13,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 26.3,
+      "surveyDate": "2024-05-02"
+    },
+    "series": [
+      {
+        "year": 2023,
+        "coralCoverPercent": 2.6
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 20
+      }
+    ],
+    "citation": "Jakub R, Mahilum C, Stoyle G, Viz M. 2024. Baseline establishment and monitoring of selected Rare assisted MPAs 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Baseline establishment and monitoring of selected Rare assisted MPAs 2024.",
+    "notes": "13 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: B: Capiñahan Marine Protected Areas (2024-05-02). Jakub R, Mahilum C, Stoyle G, Viz M. 2024. Baseline establishment and monitoring of selected Rare assisted MPAs 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Baseline establishment and monitoring of selected Rare assisted MPAs 2024.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "puerto-galera-philippines",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 52,
+    "surveyYears": 3,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 22.3,
+      "surveyDate": "2025-02-01"
+    },
+    "series": [
+      {
+        "year": 2022,
+        "coralCoverPercent": 24.5
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 22.9
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 22.3
+      }
+    ],
+    "citation": "Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "notes": "52 MERMAID survey events across 3 survey years within 0.5° of this location. Most recent: Baco MPA (2025-02-01). Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "raja-ampat-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 26,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 40.2,
+      "surveyDate": "2025-12-14"
+    },
+    "series": [
+      {
+        "year": 2018,
+        "coralCoverPercent": 31.8
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 50
+      }
+    ],
+    "citation": "Aryani S, Faturakhmat S, Kler Lago A, Mohamed A. 2026. Terumbu Karang Sehat Indonesia Program - Indonesia. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Terumbu Karang Sehat Indonesia Program - Indonesia.",
+    "notes": "26 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Friwen Control (2025-12-14). Aryani S, Faturakhmat S, Kler Lago A, Mohamed A. 2026. Terumbu Karang Sehat Indonesia Program - Indonesia. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Terumbu Karang Sehat Indonesia Program - Indonesia.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "rinca-island-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 23,
+    "surveyYears": 3,
+    "latest": {
+      "year": 2023,
+      "coralCoverPercent": 72,
+      "surveyDate": "2023-09-04"
+    },
+    "series": [
+      {
+        "year": 2016,
+        "coralCoverPercent": 28
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 34.9
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 72
+      }
+    ],
+    "citation": "Jacob F. 2023. Hatamin island. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Hatamin island.",
+    "notes": "23 MERMAID survey events across 3 survey years within 0.5° of this location. Most recent: Pulau Hatamin (2023-09-04). Jacob F. 2023. Hatamin island. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Hatamin island.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "sainte-marie-island-madagascar",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 16,
+    "surveyYears": 3,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 38,
+      "surveyDate": "2025-12-07"
+    },
+    "bleachedPercent": 0,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2015,
+        "coralCoverPercent": 42.8
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 43.1
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 38
+      }
+    ],
+    "citation": "Hoamby A. 2026. Antongil Baie 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Antongil Baie 2025.",
+    "notes": "16 MERMAID survey events across 3 survey years within 0.5° of this location. Most recent: Ambato_04 (2025-12-07). Hoamby A. 2026. Antongil Baie 2025. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Antongil Baie 2025.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "the-pit-belize",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 22,
+    "surveyYears": 6,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 8.3,
+      "surveyDate": "2024-08-11"
+    },
+    "bleachedPercent": 54.7,
+    "mortalityPercent": 9.4,
+    "series": [
+      {
+        "year": 2015,
+        "coralCoverPercent": 6.5
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 12.1
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 16.3
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 17.9
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 29.6
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 24
+      }
+    ],
+    "citation": "Brown H, Darling E, Fisher K, Phillips M, Rivera K. 2024. Belize Glover's Atoll 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Belize Glover's Atoll 2024.",
+    "notes": "22 MERMAID survey events across 6 survey years within 0.5° of this location. Most recent: WFR5 (2024-08-11). Brown H, Darling E, Fisher K, Phillips M, Rivera K. 2024. Belize Glover's Atoll 2024. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Belize Glover's Atoll 2024.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "tulamben-bali-indonesia",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 225,
+    "surveyYears": 16,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 43.6,
+      "surveyDate": "2025-11-07"
+    },
+    "bleachedPercent": 18.8,
+    "mortalityPercent": 0.4,
+    "series": [
+      {
+        "year": 2009,
+        "coralCoverPercent": 61
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 41
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 41.2
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 43.6
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 38.8
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 48.3
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 38.3
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 39.3
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 26.2
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 22.5
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 36
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 29.6
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 21.6
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 21.9
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 28.7
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 54.4
+      }
+    ],
+    "citation": "Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "notes": "225 MERMAID survey events across 16 survey years within 0.5° of this location. Most recent: LivingSeas Restoration Site (2025-11-07). Bush R, Mcpherson K. 2025. Long Term Monitoring - Livingseas Restoration Site. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Long Term Monitoring - Livingseas Restoration Site.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "turneffe-belize",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 164,
+    "surveyYears": 9,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 6.8,
+      "surveyDate": "2025-08-28"
+    },
+    "bleachedPercent": 20.4,
+    "mortalityPercent": 0,
+    "series": [
+      {
+        "year": 2015,
+        "coralCoverPercent": 7.3
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 8.8
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 11
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 20.9
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 25.9
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 25.5
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 16.4
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 18.6
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 6.5
+      }
+    ],
+    "citation": "Brown H, Castillo W, Darling E, Fisher K, Polonio Z, Rivera K. 2025. Belize SWCMR 2025-WCS. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Belize SWCMR 2025-WCS.",
+    "notes": "164 MERMAID survey events across 9 survey years within 0.5° of this location. Most recent: SWCCZFR2 (2025-08-28). Brown H, Castillo W, Darling E, Fisher K, Polonio Z, Rivera K. 2025. Belize SWCMR 2025-WCS. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Belize SWCMR 2025-WCS.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "verde-island-passage",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 52,
+    "surveyYears": 3,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 22.3,
+      "surveyDate": "2025-02-01"
+    },
+    "series": [
+      {
+        "year": 2022,
+        "coralCoverPercent": 24.5
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 22.9
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 22.3
+      }
+    ],
+    "citation": "Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "notes": "52 MERMAID survey events across 3 survey years within 0.5° of this location. Most recent: Baco MPA (2025-02-01). Brathwaite - Pascal A, Hani Samudra S, Kler Lago A, Mohamed A, Pasc N, Recamara D, Sadd D, Zagorac T. 2025. Blue Alliance - Philippines. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Blue Alliance - Philippines.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "watamu-kenya",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 5,
+    "surveyYears": 2,
+    "latest": {
+      "year": 2024,
+      "coralCoverPercent": 15.4,
+      "surveyDate": "2024-10-31"
+    },
+    "bleachedPercent": 74.7,
+    "mortalityPercent": 4.3,
+    "series": [
+      {
+        "year": 2023,
+        "coralCoverPercent": 24.8
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 13.2
+      }
+    ],
+    "citation": "Hassan J, Julius  P, Kler Lago A, Mensa J, Mkwavila S, Mohamed A, Musembi P. 2024. Miamba Yetu Program - Kenya & Tanzania. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Miamba Yetu Program - Kenya & Tanzania.",
+    "notes": "5 MERMAID survey events across 2 survey years within 0.5° of this location. Most recent: Watamu (2024-10-31). Hassan J, Julius  P, Kler Lago A, Mensa J, Mkwavila S, Mohamed A, Musembi P. 2024. Miamba Yetu Program - Kenya & Tanzania. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Miamba Yetu Program - Kenya & Tanzania.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "yasawa-islands",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 32,
+    "surveyYears": 8,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 86.7,
+      "surveyDate": "2026-03-19"
+    },
+    "bleachedPercent": 8.4,
+    "mortalityPercent": 1.3,
+    "series": [
+      {
+        "year": 2006,
+        "coralCoverPercent": 35
+      },
+      {
+        "year": 2007,
+        "coralCoverPercent": 48.8
+      },
+      {
+        "year": 2009,
+        "coralCoverPercent": 39.4
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 34.4
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 46.3
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 28.2
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 54.9
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 86.7
+      }
+    ],
+    "citation": "Fong M. 2026. Barefoot Manta. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Barefoot Manta.",
+    "notes": "32 MERMAID survey events across 8 survey years within 0.5° of this location. Most recent: Sunset beach (2026-03-19). Fong M. 2026. Barefoot Manta. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Barefoot Manta.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "locationId": "zanzibar-island",
+    "sourceId": "mermaid",
+    "methodologyClaimId": "reef-health-mermaid",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 67,
+    "surveyYears": 6,
+    "latest": {
+      "year": 2026,
+      "coralCoverPercent": 47.3,
+      "surveyDate": "2026-05-05"
+    },
+    "bleachedPercent": 0.9,
+    "mortalityPercent": 0.9,
+    "series": [
+      {
+        "year": 2019,
+        "coralCoverPercent": 47.9
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 62.8
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 50
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 24.9
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 46.7
+      },
+      {
+        "year": 2026,
+        "coralCoverPercent": 36.1
+      }
+    ],
+    "citation": "Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "notes": "67 MERMAID survey events across 6 survey years within 0.5° of this location. Most recent: Funguyasini 2_ south (2026-05-05). Iswalala P, Julius  P, Mensa J. 2026. Survey with TAFIRI 2026. MERMAID. Retrieved July 8, 2026 from https://explore.datamermaid.org?project=Survey with TAFIRI 2026.",
+    "lastReviewedAt": "2026-07-08"
+  }
+]
