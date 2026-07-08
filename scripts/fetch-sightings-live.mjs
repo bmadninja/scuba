@@ -26,6 +26,10 @@
  *                 No API key. Used only when iNaturalist returns zero
  *                 records for a species/site, to confirm presence and a
  *                 last-seen date from a second source.
+ *   OBIS fallback: https://api.obis.org/v3/occurrence
+ *                 No API key. Marine occurrence database, tried only when
+ *                 both iNaturalist and GBIF are empty — catches marine
+ *                 records GBIF may not hold.
  *
  * Preserved as-is (idempotent, like backfill-sightings):
  *   - Any existing record carrying notes (hand-curated annotation) keeps
@@ -33,7 +37,7 @@
  *     live `verified` + `fetchedAt` provenance is refreshed.
  *   - confidence, proximityRadiusKm, methodologyClaimIds, and the
  *     gbif/obis/iucn etc. sourceIds set carry forward; we additively
- *     credit `inaturalist`/`gbif` on records we touched live.
+ *     credit `inaturalist`/`gbif`/`obis` on records we touched live.
  *   - Records for species without a scientificName (can't be queried)
  *     are passed through verbatim.
  *
@@ -79,6 +83,7 @@ const SIGHT_PATH = path.join(ROOT, "src/data/sightings.json");
 const INAT_BASE = "https://api.inaturalist.org/v1/observations";
 const INAT_HIST = "https://api.inaturalist.org/v1/observations/histogram";
 const GBIF_BASE = "https://api.gbif.org/v1/occurrence/search";
+const OBIS_BASE = "https://api.obis.org/v3/occurrence";
 
 const USER_AGENT = "scubaseason.fun sightings ingest (hello@scubaseason.fun)";
 
@@ -244,6 +249,44 @@ async function fetchGbif(scientificName, lat, lng, radiusKm, months) {
   }
 }
 
+/**
+ * OBIS fallback: a marine-focused occurrence database (IOC-UNESCO). Used as a
+ * second presence source after GBIF, since OBIS holds marine records GBIF may
+ * not — valuable for the offshore/pelagic species dive sites care about.
+ * Spatial filtering is a WKT bounding box approximating the radius; time
+ * filtering uses the same window start (d1) as iNaturalist. Returns
+ * { count, lastDate } or null. Best-effort.
+ */
+async function fetchObis(scientificName, lat, lng, radiusKm, d1) {
+  try {
+    const dLat = radiusKm / 111;
+    const dLng = radiusKm / (111 * Math.cos((lat * Math.PI) / 180) || 1);
+    const minLat = (lat - dLat).toFixed(4);
+    const maxLat = (lat + dLat).toFixed(4);
+    const minLng = (lng - dLng).toFixed(4);
+    const maxLng = (lng + dLng).toFixed(4);
+    // WKT ring, closed (first point repeated), lng-lat order.
+    const wkt =
+      `POLYGON((${minLng} ${minLat}, ${maxLng} ${minLat}, ` +
+      `${maxLng} ${maxLat}, ${minLng} ${maxLat}, ${minLng} ${minLat}))`;
+    const params = new URLSearchParams({
+      scientificname: scientificName,
+      geometry: wkt,
+      startdate: d1,
+      size: "1",
+    });
+    const json = await fetchJson(`${OBIS_BASE}?${params.toString()}`);
+    const count = Number(json?.total ?? 0);
+    const rec = json?.results?.[0];
+    let lastDate = null;
+    if (rec?.eventDate) lastDate = String(rec.eventDate).slice(0, 10);
+    else if (rec?.date_year) lastDate = `${rec.date_year}-01-01`;
+    return { count, lastDate };
+  } catch {
+    return null;
+  }
+}
+
 function idSlug(name) {
   return name
     .toLowerCase()
@@ -267,6 +310,7 @@ async function main() {
   let skippedFresh = 0;
   let verifiedCount = 0;
   let viaGbif = 0;
+  let viaObis = 0;
   let preservedCurated = 0;
   const failures = [];
   const out = [];
@@ -346,6 +390,19 @@ async function main() {
             lastDate = gbif.lastDate;
             source = "gbif";
             viaGbif += 1;
+          }
+        }
+
+        // Still empty → try OBIS, the marine occurrence database, as a third
+        // presence source (marine records GBIF may not hold).
+        if (count === 0) {
+          const obis = await fetchObis(sci, site.lat, site.lng, radiusKm, d1);
+          await sleep(PACE_MS);
+          if (obis && obis.count > 0) {
+            count = obis.count;
+            lastDate = obis.lastDate;
+            source = "obis";
+            viaObis += 1;
           }
         }
 
@@ -438,6 +495,7 @@ async function main() {
   console.log(`  skipped (fresh <${args.maxAgeDays}d):   ${skippedFresh}`);
   console.log(`  verified:                 ${verifiedCount}`);
   console.log(`  confirmed via GBIF:       ${viaGbif}`);
+  console.log(`  confirmed via OBIS:       ${viaObis}`);
   console.log(`  curated preserved:        ${preservedCurated}`);
   console.log(`  failed:                   ${failures.length}`);
   console.log(`  records out:              ${out.length}`);
