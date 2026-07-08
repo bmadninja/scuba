@@ -96,6 +96,15 @@ function normStage(code) {
   return STAGE[String(code ?? "").trim().toLowerCase()] ?? "designated";
 }
 
+// MPA Guide 2-char stage+level code (e.g. "if" = implemented + fully). Built
+// from the normalized level/stage so it is consistent whether the source spelt
+// them as codes or words.
+const LEVEL_CHAR = { fully: "f", highly: "h", lightly: "l", minimally: "m", incompatible: "n", unknown: "u" };
+const STAGE_CHAR = { "actively-managed": "a", implemented: "i", designated: "d", proposed: "p" };
+function mpaGuideCode(levelCode, stageCode) {
+  return `${STAGE_CHAR[normStage(stageCode)] ?? "u"}${LEVEL_CHAR[normLevel(levelCode)] ?? "u"}`;
+}
+
 function mapMpaStatus(levelCode, stageCode) {
   const level = normLevel(levelCode);
   const stage = normStage(stageCode);
@@ -365,6 +374,47 @@ async function runFull(locByLoc, records, siteById) {
   const nameKey = pick(props0, ["name", "zone_name", "site_name", "wdpa_name"]);
   const siteKey = pick(props0, ["site_name", "name"]);
   const wdpaKey = pick(props0, ["wdpa_id", "wdpaid", "wdpa"]);
+  const wdpaPidKey = pick(props0, ["wdpa_pid", "wdpapid"]);
+
+  // The polygon layer carries only level/stage/wdpa. The richer per-zone
+  // attributes (designated/implemented dates, regulations, peer-reviewed
+  // reports, MPAtlas zone id) live in the no_geo CSV export. wdpa_pid is the
+  // precise zone key but is frequently "None", so join in descending
+  // specificity: wdpa_pid → wdpa_id+name → wdpa_id (any zone of the park).
+  const csvByPid = new Map();
+  const csvByIdName = new Map();
+  const csvByWdpaId = new Map();
+  const norm = (s) => stripAccents(String(s ?? "")).trim().toLowerCase();
+  try {
+    const csvRows = parseCsv(await fs.readFile(path.join(CSV_DIR, "designated_implemented.csv"), "utf8"));
+    for (const r of csvRows) {
+      if (r.wdpa_pid && r.wdpa_pid !== "None") csvByPid.set(String(r.wdpa_pid), r);
+      if (r.wdpa_id && r.wdpa_id !== "None") {
+        csvByIdName.set(`${r.wdpa_id}::${norm(r.name)}`, r);
+        if (!csvByWdpaId.has(String(r.wdpa_id))) csvByWdpaId.set(String(r.wdpa_id), r);
+      }
+    }
+  } catch {
+    // CSV absent — matches still work, just without the enrichment fields.
+  }
+  const enrich = (p) => {
+    const pid = p[wdpaPidKey] != null ? String(p[wdpaPidKey]) : null;
+    const wid = p[wdpaKey] != null ? String(p[wdpaKey]) : null;
+    const c =
+      (pid && pid !== "None" && csvByPid.get(pid)) ||
+      (wid && csvByIdName.get(`${wid}::${norm(p[nameKey])}`)) ||
+      (wid && csvByWdpaId.get(wid)) ||
+      null;
+    if (!c) return {};
+    return {
+      mpatlasId: c.mpa_zone_id || undefined,
+      designatedDate: c.designated_date || undefined,
+      implementedDate: c.implemented_date || undefined,
+      regulationsInForce: c.regulations_in_force || undefined,
+      affiliatedReports: c.affiliated_reports && c.affiliated_reports !== "None" ? c.affiliated_reports : undefined,
+      assessedAt: c.modified_date || undefined,
+    };
+  };
 
   // Precompute a bbox + bbox-area per feature to prefilter and to rank
   // overlapping matches by specificity.
@@ -392,8 +442,10 @@ async function runFull(locByLoc, records, siteById) {
       level: p[levelKey],
       stage: p[stageKey],
       wdpaId: p[wdpaKey],
+      mpaGuideStatus: mpaGuideCode(p[levelKey], p[stageKey]),
       coverage: "assessed",
       via,
+      ...enrich(p),
     };
   };
   // Prefer the smallest zone that carries a real (non-unknown) level.
@@ -555,8 +607,16 @@ function buildRow(rec, loc, hit, { mode }) {
       stage: normStage(hit.stage),
       mpaGuideStatus: hit.mpaGuideStatus,
       wdpaId: hit.wdpaId ? Number(hit.wdpaId) : undefined,
-      mpatlasId: hit.id,
+      mpatlasId: hit.mpatlasId ?? hit.id,
+      mpaName: hit.matchedSite ?? hit.name,
+      designatedDate: hit.designatedDate,
+      implementedDate: hit.implementedDate,
+      regulationsInForce: hit.regulationsInForce,
+      affiliatedReports: hit.affiliatedReports,
+      assessedAt: hit.assessedAt,
     };
+    // Drop undefined keys so the stored block stays clean.
+    for (const k of Object.keys(assessment)) if (assessment[k] === undefined) delete assessment[k];
     if (mode === "full") confidence = hit.confidence ?? "high";
     else if (mode === "csv") confidence = hit.confidence ?? "medium";
     else confidence = hit.dist == null ? "medium" : hit.dist <= NEAR_KM ? "medium" : "low";
@@ -689,30 +749,61 @@ async function applyChanges(rows, records) {
   const byLoc = new Map(records.map((r) => [r.locationId, r]));
   const today = new Date().toISOString().slice(0, 10);
   const applied = [];
+  const confirmed = [];
+  const refreshed = [];
   const held = [];
   for (const row of rows) {
-    if (row.agree !== false || row.mpatlasStatus == null) continue; // no change
+    if (row.mpatlasStatus == null) continue; // no assessment to apply
     const rec = byLoc.get(row.locationId);
     if (!rec) continue;
-    if (rec.mpaStatusSource === "manual") { held.push([row.locationId, "manual lock"]); continue; }
-    if (row.confidence !== "high" && row.confidence !== "medium") {
-      held.push([row.locationId, `${row.confidence} confidence`]);
+    if (rec.mpaStatusSource === "manual") {
+      if (row.agree === false) held.push([row.locationId, "manual lock"]);
       continue;
     }
-    if (APPLY_HOLD.has(row.locationId)) { held.push([row.locationId, "reviewer hold"]); continue; }
-    rec.mpaStatus = row.mpatlasStatus;
-    rec.mpaStatusSource = "mpatlas";
-    if (row.assessment) rec.mpaAssessment = row.assessment;
-    rec.sourceIds = Array.from(new Set([...(rec.sourceIds ?? []), "mpatlas"]));
-    rec.lastReviewedAt = today;
-    applied.push([row.locationId, `${row.templateStatus} → ${row.mpatlasStatus}`]);
+    if (row.confidence !== "high" && row.confidence !== "medium") {
+      if (row.agree === false) held.push([row.locationId, `${row.confidence} confidence`]);
+      continue;
+    }
+    if (APPLY_HOLD.has(row.locationId)) {
+      if (row.agree === false) held.push([row.locationId, "reviewer hold"]);
+      continue;
+    }
+    if (row.agree === false) {
+      // New / changed status — apply it with full provenance.
+      rec.mpaStatus = row.mpatlasStatus;
+      rec.mpaStatusSource = "mpatlas";
+      if (row.assessment) rec.mpaAssessment = row.assessment;
+      rec.sourceIds = Array.from(new Set([...(rec.sourceIds ?? []), "mpatlas"]));
+      rec.lastReviewedAt = today;
+      applied.push([row.locationId, `${row.templateStatus} → ${row.mpatlasStatus}`]);
+    } else if (rec.mpaStatusSource === "mpatlas" && row.assessment) {
+      // Already MPAtlas-sourced and still agrees: refresh the provenance block
+      // so newly-added enrichment fields (dates, regulations, reports) land
+      // without flipping any status.
+      const before = JSON.stringify(rec.mpaAssessment ?? null);
+      if (before !== JSON.stringify(row.assessment)) {
+        rec.mpaAssessment = row.assessment;
+        rec.lastReviewedAt = today;
+        refreshed.push([row.locationId, "provenance refreshed"]);
+      }
+    } else if (row.assessment) {
+      // Template guess that MPAtlas independently confirms. The status is
+      // unchanged (it already equalled the assessed value), so this only
+      // upgrades the provenance from an editorial guess to a real MPA Guide
+      // assessment and attaches the traceability block.
+      rec.mpaStatusSource = "mpatlas";
+      rec.mpaAssessment = row.assessment;
+      rec.sourceIds = Array.from(new Set([...(rec.sourceIds ?? []), "mpatlas"]));
+      rec.lastReviewedAt = today;
+      confirmed.push([row.locationId, `confirmed ${rec.mpaStatus} (was template)`]);
+    }
   }
   let typoFixed = 0;
   for (const r of records) {
     if (r.fishingPressure === "medium") { r.fishingPressure = "moderate"; typoFixed++; }
   }
   await fs.writeFile(RP_PATH, JSON.stringify(records, null, 2) + "\n");
-  return { applied, held, typoFixed };
+  return { applied, confirmed, refreshed, held, typoFixed };
 }
 
 async function main() {
@@ -758,10 +849,18 @@ async function main() {
   );
 
   if (process.argv.includes("--apply")) {
-    const { applied, held, typoFixed } = await applyChanges(rows, records);
+    const { applied, confirmed, refreshed, held, typoFixed } = await applyChanges(rows, records);
     console.log("");
     console.log(`Applied ${applied.length} change(s) to ${path.relative(ROOT, RP_PATH)}:`);
     for (const [id, change] of applied) console.log(`  ✓ ${id.padEnd(34)} ${change}`);
+    if (confirmed.length) {
+      console.log(`Upgraded ${confirmed.length} template → mpatlas (status unchanged):`);
+      for (const [id, why] of confirmed) console.log(`  ✓ ${id.padEnd(34)} ${why}`);
+    }
+    if (refreshed.length) {
+      console.log(`Refreshed provenance on ${refreshed.length} (no status change):`);
+      for (const [id, why] of refreshed) console.log(`  ↻ ${id.padEnd(34)} ${why}`);
+    }
     if (held.length) {
       console.log(`Held ${held.length} (not applied):`);
       for (const [id, why] of held) console.log(`  · ${id.padEnd(34)} ${why}`);

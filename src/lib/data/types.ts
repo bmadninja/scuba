@@ -432,12 +432,36 @@ export type MpaStatusSource = "template" | "wdpa-only" | "mpatlas" | "manual";
  * = implemented + fully protected).
  */
 export type MpaGuideAssessment = {
-  levelOfProtection: "fully" | "highly" | "lightly" | "minimally" | "unknown";
+  levelOfProtection:
+    | "fully"
+    | "highly"
+    | "lightly"
+    | "minimally"
+    | "incompatible"
+    | "unknown";
   stage: "proposed" | "designated" | "implemented" | "actively-managed";
   mpaGuideStatus?: string;
   wdpaId?: number;
   /** MPAtlas internal zone/site id the value was resolved from. */
   mpatlasId?: string;
+  /** Official MPA / zone name the assessment was resolved from (site_name). */
+  mpaName?: string;
+  /** Year the MPA was formally designated (from MPAtlas designated_date). */
+  designatedDate?: string;
+  /**
+   * Date the MPA reached the implemented stage. The gap between this and
+   * designatedDate is the real "how long has protection actually been in
+   * force" signal — the paper-park timeline.
+   */
+  implementedDate?: string;
+  /** MPAtlas regulations_in_force flag: "yes" | "no" | "unknown". */
+  regulationsInForce?: string;
+  /**
+   * Peer-reviewed / third-party report backing this assessment, verbatim from
+   * MPAtlas's affiliated_reports column (e.g. "Pike et al. (2024)"). Lets a
+   * site cite the science behind its protection claim.
+   */
+  affiliatedReports?: string;
   assessedAt?: string;
 };
 

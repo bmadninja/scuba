@@ -63,7 +63,17 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "highly",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "ah",
+      "mpaName": "Misool"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-komodo-national-park-indonesia-2026",
@@ -146,7 +156,22 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 555549230,
+      "mpatlasId": "68813303",
+      "mpaName": "Tubbataha Reefs",
+      "designatedDate": "1988-08-11",
+      "regulationsInForce": "yes",
+      "assessedAt": "2024-06-12"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-apo-reef-philippines-2026",
@@ -168,7 +193,14 @@
     "mpaAssessment": {
       "levelOfProtection": "fully",
       "stage": "actively-managed",
-      "wdpaId": 5218
+      "mpaGuideStatus": "af",
+      "wdpaId": 5218,
+      "mpatlasId": "68819762",
+      "mpaName": "Apo Reef Natural Park",
+      "designatedDate": "1996-09-06",
+      "implementedDate": "1996-09-06",
+      "regulationsInForce": "yes",
+      "assessedAt": "2025-12-17"
     },
     "sourceIds": [
       "mpatlas"
@@ -658,7 +690,17 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "minimally",
+      "stage": "implemented",
+      "mpaGuideStatus": "im",
+      "mpaName": "Mnemba-Chwaka Bay [Multiple-Use Zone]"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-watamu-kenya-2026",
@@ -676,7 +718,22 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "lightly",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "al",
+      "wdpaId": 555621996,
+      "mpaName": "Malindi",
+      "designatedDate": "1968-03-26",
+      "implementedDate": "2016-01-01",
+      "regulationsInForce": "yes",
+      "assessedAt": "2025-12-11"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-tofo-mozambique-2026",
@@ -711,7 +768,24 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "highly",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "ah",
+      "wdpaId": 306179,
+      "mpatlasId": "68821461",
+      "mpaName": "Aliwal Shoal",
+      "designatedDate": "2004-01-01",
+      "implementedDate": "2019-01-01",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Field et al. (2025)",
+      "assessedAt": "2025-03-31"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-sodwana-south-africa-2026",
@@ -728,7 +802,24 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "highly",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "ah",
+      "wdpaId": 555571016,
+      "mpatlasId": "68821486",
+      "mpaName": "iSimangaliso",
+      "designatedDate": "2019-05-23",
+      "implementedDate": "2019-03-01",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Field et al. (2025)",
+      "assessedAt": "2025-02-10"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-nosy-be-madagascar-2026",
@@ -880,7 +971,24 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 555629385,
+      "mpatlasId": "68817262",
+      "mpaName": "Revillagigedo",
+      "designatedDate": "2017-11-27",
+      "implementedDate": "2019-10-01",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Pike et al. (2024)",
+      "assessedAt": "2024-04-04"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-blue-hole-belize-2026",
@@ -966,7 +1074,23 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 170,
+      "mpatlasId": "68808203",
+      "mpaName": "Isla del Coco",
+      "designatedDate": "2021-12-17",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Pike et al. (2024)",
+      "assessedAt": "2025-05-20"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-catalina-islands-costa-rica-2026",
@@ -1033,7 +1157,22 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 303552,
+      "mpatlasId": "3803",
+      "mpaName": "Malpelo",
+      "designatedDate": "1995-01-01",
+      "regulationsInForce": "yes",
+      "assessedAt": "2026-05-06"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-providencia-colombia-2026",
@@ -1055,7 +1194,15 @@
     "mpaAssessment": {
       "levelOfProtection": "fully",
       "stage": "implemented",
-      "wdpaId": 555636411
+      "mpaGuideStatus": "if",
+      "wdpaId": 555636411,
+      "mpatlasId": "68808398",
+      "mpaName": "Área Marina Protegida de la Reserva de Biosfera Seaflower",
+      "designatedDate": "2005-01-27",
+      "implementedDate": "2005-07-01",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Pike et al. (2024)",
+      "assessedAt": "2024-04-04"
     },
     "sourceIds": [
       "mpatlas"
@@ -1075,7 +1222,23 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 11753,
+      "mpatlasId": "901",
+      "mpaName": "Galápagos",
+      "designatedDate": "1998-01-01",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Pike et al. (2024)",
+      "assessedAt": "2024-04-04"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-darwin-galapagos-ecuador-2026",
@@ -1091,7 +1254,23 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 11753,
+      "mpatlasId": "901",
+      "mpaName": "Galápagos",
+      "designatedDate": "1998-01-01",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Pike et al. (2024)",
+      "assessedAt": "2024-04-04"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-fernando-de-noronha-brazil-2026",
@@ -1124,7 +1303,22 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "lightly",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "al",
+      "wdpaId": 351725,
+      "mpaName": "Reserva Extrativista Marinha de Arraial do Cabo",
+      "designatedDate": "1997-01-03",
+      "implementedDate": "2020-09-25",
+      "regulationsInForce": "yes",
+      "assessedAt": "2025-12-29"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-los-roques-venezuela-2026",
@@ -1367,7 +1561,13 @@
     "mpaAssessment": {
       "levelOfProtection": "lightly",
       "stage": "actively-managed",
-      "wdpaId": 555556894
+      "mpaGuideStatus": "al",
+      "wdpaId": 555556894,
+      "mpatlasId": "68818535",
+      "mpaName": "Ningaloo",
+      "implementedDate": "2017-10-01",
+      "regulationsInForce": "yes",
+      "assessedAt": "2025-11-21"
     },
     "sourceIds": [
       "mpatlas"
@@ -1674,7 +1874,14 @@
     "mpaAssessment": {
       "levelOfProtection": "fully",
       "stage": "implemented",
-      "wdpaId": 18943
+      "mpaGuideStatus": "if",
+      "wdpaId": 18943,
+      "mpatlasId": "1421",
+      "mpaName": "Formigas Islets",
+      "designatedDate": "2024-10-17",
+      "implementedDate": "2026-01-01",
+      "regulationsInForce": "yes",
+      "assessedAt": "2026-01-22"
     },
     "sourceIds": [
       "mpatlas"
@@ -1696,7 +1903,24 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "incompatible",
+      "stage": "implemented",
+      "mpaGuideStatus": "in",
+      "wdpaId": 365015,
+      "mpatlasId": "5196",
+      "mpaName": "Pelagos Sanctuary For The Conservation Of Marine Mammals",
+      "designatedDate": "1999-10-25",
+      "implementedDate": "2002-02-21",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Pike et al. (2024)",
+      "assessedAt": "2024-06-12"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-kornati-croatia-2026",
@@ -1771,7 +1995,13 @@
     "mpaAssessment": {
       "levelOfProtection": "lightly",
       "stage": "actively-managed",
-      "wdpaId": 1033
+      "mpaGuideStatus": "al",
+      "wdpaId": 1033,
+      "mpatlasId": "8704",
+      "mpaName": "Channel Islands National Park",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Sullivan-Stack et al. (2022)",
+      "assessedAt": "2026-01-28"
     },
     "sourceIds": [
       "mpatlas"
@@ -1792,7 +2022,22 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-08",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "highly",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "ah",
+      "wdpaId": 302609,
+      "mpatlasId": "68821351",
+      "mpaName": "Jardines de la Reina",
+      "designatedDate": "2010-01-01",
+      "regulationsInForce": "yes",
+      "assessedAt": "2024-04-04"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-anse-chastanet-saint-lucia-2026",
