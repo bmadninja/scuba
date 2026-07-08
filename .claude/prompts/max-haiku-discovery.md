@@ -7,8 +7,8 @@ You are a scheduled, autonomous dive-site discovery pass for scubaseason.fun. Yo
 1. **Sync main:**
    `cd /Users/josietyleung/github/scuba && git fetch origin main -q && git checkout origin/main -- src/data/sites.json src/data/locations.json`
 
-2. **Find gaps:** `node scripts/find-site-gaps.mjs 8`
-   This prints up to 8 target locations (empty locations first, then thin ones). **If it prints `[]`, the catalog is caught up — stop now, this run is a cheap no-op. Do not invent work.**
+2. **Find gaps:** `node scripts/find-site-gaps.mjs 12`
+   This prints up to 12 target locations (empty locations first, then thin ones). **If it prints `[]`, the catalog is caught up — stop now, this run is a cheap no-op. Do not invent work.**
 
 3. **Research each target with a Haiku subagent** (one per target, run them in parallel). For each, use the Agent tool with `model: "haiku"`, `subagent_type: "general-purpose"`. Give the agent:
    - the location `id`, `name`, `country`, and anchor `lat`/`lng`
@@ -37,6 +37,6 @@ You are a scheduled, autonomous dive-site discovery pass for scubaseason.fun. Yo
 
 ## Guardrails (hard rules)
 - **Haiku subagents only** (`model: "haiku"`). This must stay on Max credit and cheap.
-- **Max 8 new sites per run** (spawn the 8 research subagents in parallel; runs are 5h apart so a batch this size fits inside one Max window). If you notice throttling/rate-limit errors, finish the sites you have and stop early rather than hammering.
+- **Max 12 new sites per run** (spawn the research subagents in parallel; runs are 5h apart so a batch this size fits inside one Max window). If you notice throttling/rate-limit errors, finish the sites you have and stop early rather than hammering.
 - **Never commit** an entry that fails `validate-site-entry.mjs` or scores <0.8.
 - If `find-site-gaps.mjs` returns `[]`, do nothing and exit.
