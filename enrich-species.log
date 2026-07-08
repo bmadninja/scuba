@@ -1,52 +1,14 @@
-Enriching 11 sites (< 5 species each, target 8)
+Enriching 5 sites (< 5 species each, target 8)
 
-[1/11] Silver Bank Humpback Swim (4 species) → +4 species
-    + Bottlenose dolphin (Tursiops truncatus) [seasonal]
-    + Spinner dolphin (Stenella longirostris) [seasonal]
-    + Bryde's whale (Balaenoptera brydei) [seasonal]
-    + Southern stingray (Hypanus americanus) [year-round]
+[1/5] Fossil Cave (3 species) → no new species found
 
-[2/11] Ambon Bay (4 species) → +4 species
-    + Mandarinfish (Synchiropus splendidus) [seasonal]
-    + Ribbon Eel (Rhinomuraena quaesita) [year-round]
-    + Ghost Pipefish (Solenostomus cyanopterus) [year-round]
-    + Harlequin Shrimp (Hymenocera picta) [seasonal]
+[1/5] Dhalak Bank (4 species) → ERROR: No JSON array found in response
 
-[3/11] Fossil Cave (3 species) → no new species found
+[2/5] Hawakil Bay Wall (4 species) → ERROR: No JSON array found in response
 
-[3/11] Dhalak Bank (4 species) → no new species found
+[3/5] Zirku Island (3 species) → no new species found
 
-[3/11] Hawakil Bay Wall (4 species) → ERROR: No JSON array found in response
+[3/5] Chinhoyi Caves (3 species) → ERROR: No JSON array found in response
 
-[4/11] Dodola Island (4 species) → +4 species
-    + Fusilier (Caesio species) [year-round]
-    + Mobula ray (Mobula alfredi) [seasonal]
-    + Blacktip reef shark (Carcharhinus melanopterus) [year-round]
-    + Sweetlips (Plectorhinchus species) [year-round]
-
-[5/11] Zirku Island (3 species) → no new species found
-
-[5/11] Japanese cruiser Sakawa (3 species) → +5 species
-    + Grey Reef Shark (Carcharhinus amblyrhynchos) [year-round]
-    + Marbled Grouper (Epinephelus polyphekadion) [year-round]
-    + Coral Trout (Plectropomus leopardus) [year-round]
-    + Dogtooth Tuna (Gymnosarda unicolor) [year-round]
-    + Giant Trevally (Caranx ignobilis) [year-round]
-
-[6/11] The Cathedral Mauritius (4 species) → +4 species
-    + Lionfish (Pterois volitans) [year-round]
-    + Grouper (Epinephelus) [year-round]
-    + Harlequin Sweetlips (Plectorhinchus chaetodonoides) [year-round]
-    + Green Sea Turtle (Chelonia mydas) [year-round]
-
-[7/11] Chinhoyi Caves (3 species) → no new species found
-
-[7/11] Socotra (3 species) → +5 species
-    + Parrotfish (Scarus species) [year-round]
-    + Manta Ray (Manta alfredi) [seasonal]
-    + Blacktip Shark (Carcharhinus limbatus) [seasonal]
-    + Spinner Dolphin (Stenella longirostris) [year-round]
-    + Loggerhead Turtle (Caretta caretta) [seasonal]
-
-Done. Enriched: 6  Failed: 1
+Done. Enriched: 0  Failed: 3
 Run fetch-species-photos.mjs next to get iNaturalist thumbnails for new species.
