@@ -374,6 +374,26 @@ export function LocationPageBody(props: LocationBodyProps) {
     speciesRichness !== null
       ? `iNaturalist${speciesRadiusKm ? ` · within ${speciesRadiusKm} km` : ""}`
       : null;
+  // Measured boat activity, framed as a reality-check on the protection rule so
+  // it complements (not contradicts) the "Banned fishing" chip: quiet water
+  // confirms the ban is holding; busy water despite protection is the warning.
+  const reefIsProtected =
+    !!fishing && (fishing.label === "Banned" || fishing.label === "Patrolled" || fishing.label === "Limited");
+  const boatTraffic =
+    fishingPressure && fishingPressure.level !== "unknown"
+      ? fishingPressure.level === "low"
+        ? { word: "Quiet", tone: "good" as const }
+        : fishingPressure.level === "moderate"
+          ? { word: "Moderate", tone: "warm" as const }
+          : {
+              word: reefIsProtected
+                ? "Busy despite protection"
+                : fishingPressure.level === "high"
+                  ? "Busy"
+                  : "Very busy",
+              tone: "warm" as const,
+            }
+      : null;
   const infoDetail =
     info === "heat"
       ? heat?.detail ?? null
@@ -530,7 +550,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                 ) : null}
 
                 {/* ZONE 3 — what is driving it (the factors behind the verdict) */}
-                {(heat || (fishingPressure && fishingPressure.level !== "unknown") || speciesRichness !== null) ? (
+                {(heat || boatTraffic || speciesRichness !== null) ? (
                   <div style={{ borderTop: "1px solid #E7E6E2", background: "#F8F7F4", padding: "1rem 1.25rem" }}>
                     <MetricLabel>What is driving it</MetricLabel>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2.25rem", marginTop: "0.5rem" }}>
@@ -554,22 +574,23 @@ export function LocationPageBody(props: LocationBodyProps) {
                         </div>
                       ) : null}
 
-                      {fishingPressure && fishingPressure.level !== "unknown" ? (
+                      {boatTraffic ? (
                         <div>
                           <p style={FACTOR_LABEL}>
-                            Fishing pressure
+                            Boat traffic
                             <InfoButton onClick={() => setInfo("fishingpressure")} label="What this means" />
                           </p>
-                          <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#0E1C28", margin: 0, lineHeight: 1.4 }}>
-                            {fishingPressure.level === "low"
-                              ? "Light"
-                              : fishingPressure.level === "moderate"
-                                ? "Moderate"
-                                : fishingPressure.level === "high"
-                                  ? "Heavy"
-                                  : "Very heavy"}{" "}
-                            boat fishing nearby
-                          </p>
+                          <span style={{
+                            display: "inline-block",
+                            padding: "2px 8px",
+                            borderRadius: 999,
+                            fontSize: "0.75rem",
+                            fontWeight: 600,
+                            background: boatTraffic.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
+                            color: boatTraffic.tone === "good" ? "#2E7D5B" : "#B98A2E",
+                          }}>
+                            {boatTraffic.word}
+                          </span>
                         </div>
                       ) : null}
 

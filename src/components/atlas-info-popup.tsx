@@ -130,10 +130,10 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     anchor: "#sources",
   },
   fishingpressure: {
-    title: "What fishing pressure means",
+    title: "What boat traffic means",
     body: [
-      "This is how much boat fishing is actually happening near the reef, measured from satellite by Global Fishing Watch. It counts the hours fishing vessels spend within a set distance of the dive site.",
-      "It is the real world reading, separate from whether fishing is allowed. A protected reef with heavy vessel hours nearby is a warning sign; a quiet reef with light hours is a good one.",
+      "This is how much fishing boat activity is actually happening in the water around the reef, measured from satellite by Global Fishing Watch within a set distance of the dive site.",
+      "It is the reality check on the protection rule. Where fishing is banned, quiet water means the ban is holding. Busy water despite protection is the warning sign, and it is why we show the two side by side.",
     ],
     source: "Source: Global Fishing Watch apparent fishing effort. It refreshes regularly.",
     link: true,
