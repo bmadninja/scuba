@@ -451,11 +451,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                         </span>
                       ) : null}
                     </div>
-                    {blueParkAward ? (
-                      <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.4rem", lineHeight: 1.45 }}>
-                        {blueParkAward.parkName} · {blueParkAward.year}
-                      </p>
-                    ) : null}
                   </div>
                 ) : null}
 
@@ -493,9 +488,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                           {coverTrendNote ? <span style={{ color: "#4A5568", fontWeight: 400 }}> {coverTrendNote}</span> : null}
                         </p>
                       ) : null
-                    ) : null}
-                    {coralSourceLabel ? (
-                      <DataFreshnessLabel source={coralSourceLabel} date={surveyDateLabel} />
                     ) : null}
                   </div>
                 ) : null}
