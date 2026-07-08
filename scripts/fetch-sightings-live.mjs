@@ -42,15 +42,31 @@
  * warning. If more than FAILURE_THRESHOLD of attempted live queries
  * fail, exit non-zero so a broken run never silently degrades the data.
  *
+ * Sharding (to stay under the 6-hour CI ceiling):
+ *   A full run makes one paced query per queryable (site, species) pair.
+ *   That set has grown past 10,000 pairs, which no longer fits in a single
+ *   6-hour job. With --shards K --shard I the run processes only the pairs
+ *   whose stable global index modulo K equals I, and writes just those
+ *   records to src/data/.sightings-shard-<I>.json. Running all K shards in
+ *   parallel (each on its own runner, so each gets its own iNaturalist rate
+ *   budget) and merging the outputs with scripts/merge-sightings-shards.mjs
+ *   refreshes the whole file in one wall-clock slice. The index is assigned
+ *   over the same ordered, de-duplicated pair walk in every shard, so the
+ *   shards partition the work with no overlap and no gaps.
+ *
  * Flags:
  *   --dry-run        fetch a SMALL sample, print results, DO NOT write.
  *   --limit N        cap the number of sites processed (default: all;
- *                    default 2 under --dry-run).
+ *                    default 2 under --dry-run). Ignored in shard mode.
  *   --months N       observation window in months (default 24).
  *   --radius N       fallback geo radius (km) when a record has none
  *                    (default 25).
  *   --max-age-days N skip records fetched within N days (default 7).
  *                    Set to 0 to force a full refresh.
+ *   --shards K       total number of shards (default 1 = single full run).
+ *   --shard I        this run's shard index, 0 <= I < K. Requires --shards.
+ *   --max-attempts N stop after N live queries this run, carrying the rest
+ *                    through untouched. A safety cap for tests and runaways.
  */
 
 import fs from "node:fs/promises";
@@ -83,7 +99,7 @@ function sleep(ms) {
 }
 
 function parseArgs(argv) {
-  const args = { dryRun: false, limit: null, months: DEFAULT_MONTHS, radius: DEFAULT_RADIUS_KM, maxAgeDays: DEFAULT_MAX_AGE_DAYS };
+  const args = { dryRun: false, limit: null, months: DEFAULT_MONTHS, radius: DEFAULT_RADIUS_KM, maxAgeDays: DEFAULT_MAX_AGE_DAYS, shards: 1, shard: null, maxAttempts: null };
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
     if (a === "--dry-run") args.dryRun = true;
@@ -91,8 +107,23 @@ function parseArgs(argv) {
     else if (a === "--months") args.months = Number(argv[++i]);
     else if (a === "--radius") args.radius = Number(argv[++i]);
     else if (a === "--max-age-days") args.maxAgeDays = Number(argv[++i]);
+    else if (a === "--shards") args.shards = Number(argv[++i]);
+    else if (a === "--shard") args.shard = Number(argv[++i]);
+    else if (a === "--max-attempts") args.maxAttempts = Number(argv[++i]);
   }
   if (args.dryRun && args.limit == null) args.limit = 2;
+
+  // Validate shard config. shards defaults to 1 (single full run, no shard
+  // index needed). Any K > 1 requires a valid 0-based shard index.
+  if (!Number.isInteger(args.shards) || args.shards < 1) {
+    throw new Error(`--shards must be a positive integer, got ${args.shards}`);
+  }
+  if (args.shards > 1) {
+    if (!Number.isInteger(args.shard) || args.shard < 0 || args.shard >= args.shards) {
+      throw new Error(`--shard must be an integer in [0, ${args.shards - 1}] when --shards ${args.shards}, got ${args.shard}`);
+    }
+  }
+  args.sharded = args.shards > 1;
   return args;
 }
 
@@ -241,10 +272,17 @@ async function main() {
   const out = [];
   const seenIds = new Set();
 
-  const targetSites = args.limit != null ? sites.slice(0, args.limit) : sites;
+  const targetSites =
+    !args.sharded && args.limit != null ? sites.slice(0, args.limit) : sites;
+  // Stable global index over queryable pairs. Every shard walks the sites in
+  // the same order and increments this for the same pairs, so `% shards`
+  // partitions the work identically across shards — no overlap, no gaps.
+  let pairIndex = -1;
 
   console.log(
     `LIVE sightings ingest — window since ${d1}, ${targetSites.length} site(s)` +
+      (args.sharded ? ` [shard ${args.shard + 1}/${args.shards}]` : "") +
+      (args.maxAttempts != null ? ` [max-attempts ${args.maxAttempts}]` : "") +
       (args.dryRun ? " [DRY RUN — no write]" : ""),
   );
 
@@ -258,11 +296,18 @@ async function main() {
       seenIds.add(id);
       const prev = existingById.get(id);
 
-      // Can't query without a binomial — pass any existing record through.
+      // Can't query without a binomial. In a full run we pass any existing
+      // record through; in shard mode the merge step carries it, so skip.
       if (!sci) {
-        if (prev) out.push(prev);
+        if (!args.sharded && prev) out.push(prev);
         continue;
       }
+
+      // Number this queryable pair, then claim it only if it belongs to this
+      // shard. The increment happens before the ownership test so every shard
+      // agrees on the numbering.
+      pairIndex += 1;
+      if (args.sharded && pairIndex % args.shards !== args.shard) continue;
 
       const radiusKm = prev?.proximityRadiusKm ?? args.radius;
 
@@ -270,6 +315,13 @@ async function main() {
       if (prev && isFresh(prev.fetchedAt, args.maxAgeDays)) {
         out.push(prev);
         skippedFresh += 1;
+        continue;
+      }
+
+      // Circuit breaker: once this run hits --max-attempts live queries, stop
+      // querying and carry the remaining owned records through untouched.
+      if (args.maxAttempts != null && attempted >= args.maxAttempts) {
+        if (prev) out.push(prev);
         continue;
       }
 
@@ -362,17 +414,21 @@ async function main() {
     }
   }
 
-  // Carry through any existing records we never visited (sites outside the
-  // --limit slice), so a partial run is still idempotent and lossless.
-  if (args.limit != null) {
-    for (const r of existing) {
-      if (!seenIds.has(r.id)) out.push(r);
-    }
-  } else {
-    // Full run: preserve records whose species no longer appear in
-    // sites.json but were on file (e.g. removed scientificName).
-    for (const r of existing) {
-      if (!seenIds.has(r.id) && !out.some((o) => o.id === r.id)) out.push(r);
+  // Carry through existing records we never visited so a run stays lossless.
+  // In shard mode each shard writes only the records it owns; carry-through
+  // is the merge step's job, so skip it here.
+  if (!args.sharded) {
+    if (args.limit != null) {
+      // Partial run: keep records for sites outside the --limit slice.
+      for (const r of existing) {
+        if (!seenIds.has(r.id)) out.push(r);
+      }
+    } else {
+      // Full run: preserve records whose species no longer appear in
+      // sites.json but were on file (e.g. removed scientificName).
+      for (const r of existing) {
+        if (!seenIds.has(r.id) && !out.some((o) => o.id === r.id)) out.push(r);
+      }
     }
   }
 
@@ -398,6 +454,19 @@ async function main() {
   if (args.dryRun) {
     console.log("\n[DRY RUN] Sample records (not written):");
     console.log(JSON.stringify(out.slice(0, 5), null, 2));
+    return;
+  }
+
+  // Shard mode: write only this shard's owned records to a partial file for
+  // merge-sightings-shards.mjs to assemble. Never touch sightings.json here.
+  if (args.sharded) {
+    const shardPath = path.join(ROOT, `src/data/.sightings-shard-${args.shard}.json`);
+    await fs.writeFile(shardPath, JSON.stringify(out, null, 2) + "\n");
+    console.log(
+      `\nWrote ${out.length} shard records to ${path.relative(ROOT, shardPath)} ` +
+        `(shard ${args.shard + 1}/${args.shards}). ` +
+        `Run scripts/merge-sightings-shards.mjs to assemble sightings.json.`,
+    );
     return;
   }
 

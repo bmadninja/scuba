@@ -4,11 +4,13 @@ on:
   schedule:
     # Weekly, Wednesday 08:00 UTC. Citizen-science observations trickle in
     # daily, but a single site/species "last seen" rarely changes inside a
-    # week, and a full run makes ~1,300 paced iNaturalist calls (~25 min).
-    # Weekly keeps the "recently logged / last seen / needs fresh eyes"
-    # signal honest without hammering a free, unauthenticated public API.
-    # Offset from reef-health (daily 06:30) and IUCN (Mon 07:00) so the
-    # three ingests never contend.
+    # week. A full refresh is ~10,000 paced iNaturalist calls, which no longer
+    # fits in one 6-hour job, so the work is split into SHARDS that run in
+    # parallel (each on its own runner, hence its own rate budget) and are
+    # reassembled by a merge job. Weekly keeps the "recently logged / last
+    # seen / needs fresh eyes" signal honest without hammering a free,
+    # unauthenticated public API. Offset from reef-health (daily 06:30) and
+    # IUCN (Mon 07:00) so the ingests never contend.
     - cron: "0 8 * * 3"
   workflow_dispatch:
 
@@ -16,8 +18,43 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  # Number of parallel shards. Keep in sync with the matrix list below.
+  SHARDS: "6"
+
 jobs:
-  fetch:
+  shard:
+    runs-on: ubuntu-latest
+    # Each shard is ~1/6 of the pairs (~1,700). At the script's pacing that is
+    # roughly 80–130 min; 300 gives clear-failure headroom under the 6h cap.
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch live species sightings (shard ${{ matrix.shard }})
+        run: node scripts/fetch-sightings-live.mjs --shards ${{ env.SHARDS }} --shard ${{ matrix.shard }}
+
+      - name: Upload shard output
+        uses: actions/upload-artifact@v4
+        with:
+          name: sightings-shard-${{ matrix.shard }}
+          path: src/data/.sightings-shard-${{ matrix.shard }}.json
+          # Shard files are dotfiles; upload-artifact excludes hidden files
+          # unless told otherwise.
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 3
+
+  merge:
+    needs: shard
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,8 +63,15 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Fetch live species sightings
-        run: node scripts/fetch-sightings-live.mjs
+      - name: Download all shard outputs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sightings-shard-*
+          merge-multiple: true
+          path: src/data
+
+      - name: Merge shards into sightings.json
+        run: node scripts/merge-sightings-shards.mjs --shards ${{ env.SHARDS }}
 
       - name: Open PR with refreshed sightings
         uses: peter-evans/create-pull-request@v6
@@ -38,7 +82,8 @@ jobs:
           title: "data: weekly live sightings refresh"
           body: |
             Automated weekly refresh of `src/data/sightings.json` from
-            iNaturalist research-grade observations (GBIF fallback).
+            iNaturalist research-grade observations (GBIF fallback), assembled
+            from ${{ env.SHARDS }} parallel shards.
 
             Updates `lastConfirmedAt`, `recentRecordCount`,
             `seasonalityMonths`, and the `verified` provenance flag per
