@@ -442,6 +442,11 @@ export function LocationPageBody(props: LocationBodyProps) {
                     {reefStateLabel}
                   </span>
                 </div>
+                {(coverNow !== null || decline) ? (
+                  <p style={{ fontSize: "0.75rem", color: "#4A5568", margin: "0 0 0.45rem" }}>
+                    A read on the coral, from cover and heat
+                  </p>
+                ) : null}
                 <p style={{
                   fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
                   fontSize: "1.0625rem",
@@ -549,64 +554,75 @@ export function LocationPageBody(props: LocationBodyProps) {
                   </div>
                 ) : null}
 
-                {/* ZONE 3 — what is driving it (the factors behind the verdict) */}
+                {/* ZONE 3 — the signals that feed the verdict, then separate context */}
                 {(heat || boatTraffic || speciesRichness !== null) ? (
                   <div style={{ borderTop: "1px solid #E7E6E2", background: "#F8F7F4", padding: "1rem 1.25rem" }}>
-                    <MetricLabel>What is driving it</MetricLabel>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2.25rem", marginTop: "0.5rem" }}>
-                      {heat ? (
-                        <div>
-                          <p style={FACTOR_LABEL}>
-                            Heat right now
-                            <InfoButton onClick={() => setInfo("heat")} label="What this means" />
-                          </p>
-                          <span style={{
-                            display: "inline-block",
-                            padding: "2px 8px",
-                            borderRadius: 999,
-                            fontSize: "0.75rem",
-                            fontWeight: 600,
-                            background: heat.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
-                            color: heat.tone === "good" ? "#2E7D5B" : "#B98A2E",
-                          }}>
-                            {heat.label}
-                          </span>
-                        </div>
-                      ) : null}
+                    {(heat || boatTraffic) ? (
+                      <>
+                        <MetricLabel>What is driving it</MetricLabel>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2.25rem", marginTop: "0.5rem" }}>
+                          {heat ? (
+                            <div>
+                              <p style={FACTOR_LABEL}>
+                                Heat right now
+                                <InfoButton onClick={() => setInfo("heat")} label="What this means" />
+                              </p>
+                              <span style={{
+                                display: "inline-block",
+                                padding: "2px 8px",
+                                borderRadius: 999,
+                                fontSize: "0.75rem",
+                                fontWeight: 600,
+                                background: heat.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
+                                color: heat.tone === "good" ? "#2E7D5B" : "#B98A2E",
+                              }}>
+                                {heat.label}
+                              </span>
+                            </div>
+                          ) : null}
 
-                      {boatTraffic ? (
-                        <div>
-                          <p style={FACTOR_LABEL}>
-                            Boat traffic
-                            <InfoButton onClick={() => setInfo("fishingpressure")} label="What this means" />
-                          </p>
-                          <span style={{
-                            display: "inline-block",
-                            padding: "2px 8px",
-                            borderRadius: 999,
-                            fontSize: "0.75rem",
-                            fontWeight: 600,
-                            background: boatTraffic.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
-                            color: boatTraffic.tone === "good" ? "#2E7D5B" : "#B98A2E",
-                          }}>
-                            {boatTraffic.word}
-                          </span>
+                          {boatTraffic ? (
+                            <div>
+                              <p style={FACTOR_LABEL}>
+                                Boat traffic
+                                <InfoButton onClick={() => setInfo("fishingpressure")} label="What this means" />
+                              </p>
+                              <span style={{
+                                display: "inline-block",
+                                padding: "2px 8px",
+                                borderRadius: 999,
+                                fontSize: "0.75rem",
+                                fontWeight: 600,
+                                background: boatTraffic.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
+                                color: boatTraffic.tone === "good" ? "#2E7D5B" : "#B98A2E",
+                              }}>
+                                {boatTraffic.word}
+                              </span>
+                            </div>
+                          ) : null}
                         </div>
-                      ) : null}
+                      </>
+                    ) : null}
 
-                      {speciesRichness !== null ? (
-                        <div>
-                          <p style={FACTOR_LABEL}>
-                            Species logged
-                            <InfoButton onClick={() => setInfo("specieslogged")} label="What this means" />
-                          </p>
-                          <p style={{ margin: 0 }}>
-                            <span style={{ fontSize: "1.125rem", fontWeight: 700, color: "#0E1C28" }}>{speciesRichness.toLocaleString()}</span>
-                            <span style={{ fontSize: "0.8125rem", color: "#4A5568" }}> species</span>
-                          </p>
-                        </div>
-                      ) : null}
-                    </div>
+                    {speciesRichness !== null ? (
+                      <div style={{
+                        marginTop: (heat || boatTraffic) ? "1rem" : 0,
+                        paddingTop: (heat || boatTraffic) ? "1rem" : 0,
+                        borderTop: (heat || boatTraffic) ? "1px solid #E7E6E2" : "none",
+                      }}>
+                        <MetricLabel>
+                          Also logged here
+                          <InfoButton onClick={() => setInfo("specieslogged")} label="What this means" />
+                        </MetricLabel>
+                        <p style={{ margin: "0.4rem 0 0" }}>
+                          <span style={{ fontSize: "1.125rem", fontWeight: 700, color: "#0E1C28" }}>{speciesRichness.toLocaleString()}</span>
+                          <span style={{ fontSize: "0.8125rem", color: "#4A5568" }}> species logged</span>
+                        </p>
+                        <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>
+                          Context, not part of the reef state.
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 ) : null}
               </div>
