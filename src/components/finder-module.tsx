@@ -27,6 +27,7 @@ const REEF_OPTIONS = [
   { value: "thriving", label: "Improving" },
   { value: "pressure", label: "Stable" },
   { value: "change", label: "Declining" },
+  { value: "unknown", label: "Not surveyed" },
 ];
 
 const ENCOUNTER_OPTIONS = [
@@ -113,6 +114,7 @@ export function FinderModule({ currentMonth }: { currentMonth: number }) {
       p.append("c[]", "thriving");
       p.append("c[]", "pressure");
       p.append("c[]", "change");
+      p.append("c[]", "unknown");
     }
     router.push(`/?${p.toString()}#atlas`);
   }

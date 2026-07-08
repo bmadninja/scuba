@@ -5,7 +5,7 @@ import { useRef, useCallback } from "react";
 import { ReefHealthBadge } from "@/components/reef-health-badge";
 import { resizePhotoUrl } from "@/lib/photo-quality";
 
-type ReefState = "improving" | "stable" | "declining";
+type ReefState = "improving" | "stable" | "declining" | "unsurveyed";
 
 export interface MosaicCard {
   slug: string;

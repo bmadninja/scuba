@@ -74,7 +74,7 @@ export function SpeciesListClient({
           fontSize: "2.25rem",
           fontWeight: 800,
           letterSpacing: "-0.03em",
-          color: "#f0f4f8",
+          color: "var(--color-ink)",
           display: "flex",
           alignItems: "center",
           gap: "0.5rem",
@@ -90,7 +90,7 @@ export function SpeciesListClient({
       <p
         style={{
           fontSize: "0.9375rem",
-          color: "#8b9db8",
+          color: "var(--color-ink-2)",
           marginTop: "0.6rem",
           display: "flex",
           alignItems: "center",
@@ -102,14 +102,14 @@ export function SpeciesListClient({
           {visible.length} {visible.length === 1 ? "species" : "species"}, most
           likely first
         </span>
-        <span style={{ color: "#8b9db8" }}>·</span>
+        <span style={{ color: "var(--color-ink-2)" }}>·</span>
         <button
           type="button"
           onClick={() => setInfo("chances")}
           style={{
             background: "none",
             border: "none",
-            color: "#00d4ff",
+            color: "var(--color-ocean)",
             fontWeight: 600,
             fontSize: "0.9375rem",
             cursor: "pointer",
@@ -139,9 +139,9 @@ export function SpeciesListClient({
               style={{
                 padding: "0.5rem 1rem",
                 borderRadius: 999,
-                border: `1px solid ${active ? "#00d4ff" : "rgba(255,255,255,0.10)"}`,
-                background: active ? "#00d4ff" : "rgba(255,255,255,0.05)",
-                color: active ? "#0a1628" : "#8b9db8",
+                border: `1px solid ${active ? "var(--color-ocean)" : "var(--color-hairline)"}`,
+                background: active ? "var(--color-ocean)" : "rgba(14,28,40,0.04)",
+                color: active ? "#fff" : "var(--color-ink-2)",
                 fontSize: "0.8125rem",
                 fontWeight: 600,
                 cursor: "pointer",
@@ -162,7 +162,7 @@ export function SpeciesListClient({
           style={{
             display: "flex",
             flexDirection: "column",
-            border: "1px solid rgba(255,255,255,0.10)",
+            border: "1px solid var(--color-hairline)",
             borderRadius: "1.25rem",
             overflow: "hidden",
           }}
@@ -176,7 +176,7 @@ export function SpeciesListClient({
                 alignItems: "center",
                 gap: "1rem",
                 padding: "1.1rem 1.4rem",
-                borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.10)",
+                borderTop: i === 0 ? "none" : "1px solid var(--color-hairline)",
                 textDecoration: "none",
                 color: "inherit",
               }}
@@ -203,7 +203,7 @@ export function SpeciesListClient({
                     width: "2.5rem",
                     height: "2.5rem",
                     borderRadius: "0.6rem",
-                    background: "rgba(255,255,255,0.05)",
+                    background: "rgba(14,28,40,0.04)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -219,7 +219,7 @@ export function SpeciesListClient({
                   style={{
                     fontSize: "0.9375rem",
                     fontWeight: 700,
-                    color: "#f0f4f8",
+                    color: "var(--color-ink)",
                     display: "flex",
                     alignItems: "center",
                     gap: "0.45rem",
@@ -236,8 +236,8 @@ export function SpeciesListClient({
                         padding: "0.15rem 0.5rem",
                         borderRadius: 999,
                         whiteSpace: "nowrap",
-                        background: r.iucnBg ?? "rgba(255,255,255,0.10)",
-                        color: r.iucnText ?? "#8b9db8",
+                        background: r.iucnBg ?? "var(--color-hairline)",
+                        color: r.iucnText ?? "var(--color-ink-2)",
                       }}
                     >
                       {r.iucnLabel}
@@ -247,7 +247,7 @@ export function SpeciesListClient({
                 {r.where ? (
                   <p
                     className="enc-where-line"
-                    style={{ fontSize: "0.75rem", color: "#8b9db8", marginTop: "0.2rem" }}
+                    style={{ fontSize: "0.75rem", color: "var(--color-ink-2)", marginTop: "0.2rem" }}
                   >
                     {r.where}
                   </p>
@@ -272,7 +272,7 @@ export function SpeciesListClient({
                       fontSize: "0.8125rem",
                       fontWeight: 700,
                       marginBottom: "0.35rem",
-                      color: "#8b9db8",
+                      color: "var(--color-ink-2)",
                     }}
                   >
                     Recorded here
@@ -283,7 +283,7 @@ export function SpeciesListClient({
                     style={{
                       height: 6,
                       borderRadius: 3,
-                      background: "rgba(255,255,255,0.08)",
+                      background: "rgba(14,28,40,0.08)",
                       overflow: "hidden",
                     }}
                   >
@@ -298,7 +298,7 @@ export function SpeciesListClient({
                   </div>
                 ) : null}
                 {r.frequency ? (
-                  <p style={{ fontSize: "0.6875rem", color: "#8b9db8", marginTop: "0.35rem" }}>
+                  <p style={{ fontSize: "0.6875rem", color: "var(--color-ink-2)", marginTop: "0.35rem" }}>
                     {r.frequency}
                   </p>
                 ) : null}
@@ -311,9 +311,9 @@ export function SpeciesListClient({
           style={{
             padding: "2.5rem",
             textAlign: "center",
-            color: "#8b9db8",
+            color: "var(--color-ink-2)",
             fontSize: "0.875rem",
-            border: "1px solid rgba(255,255,255,0.10)",
+            border: "1px solid var(--color-hairline)",
             borderRadius: "1.25rem",
           }}
         >

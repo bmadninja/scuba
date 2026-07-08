@@ -415,12 +415,68 @@ export type MpaStatus =
   | "strict-mpa"
   | "no-take";
 
+/**
+ * Where an mpaStatus value came from, in ascending order of authority:
+ *  - "template": regional-template guess from backfill-reef-pressure.mjs
+ *  - "wdpa-only": an MPA exists here (WDPA) but its enforcement quality is
+ *    unverified — treat as designated, not confirmed no-take
+ *  - "mpatlas": derived from an MPAtlas MPA Guide assessment (level + stage)
+ *  - "manual": hand-curated; never overwritten by the ingest
+ */
+export type MpaStatusSource = "template" | "wdpa-only" | "mpatlas" | "manual";
+
+/**
+ * Raw MPA Guide assessment carried through from MPAtlas so the derived
+ * mpaStatus stays traceable. levelOfProtection / stage use MPAtlas's own
+ * vocabulary; mpaGuideStatus is their 2-char stage+level code (e.g. "if"
+ * = implemented + fully protected).
+ */
+export type MpaGuideAssessment = {
+  levelOfProtection: "fully" | "highly" | "lightly" | "minimally" | "unknown";
+  stage: "proposed" | "designated" | "implemented" | "actively-managed";
+  mpaGuideStatus?: string;
+  wdpaId?: number;
+  /** MPAtlas internal zone/site id the value was resolved from. */
+  mpatlasId?: string;
+  assessedAt?: string;
+};
+
 export type FishingPressureLevel =
   | "low"
   | "moderate"
   | "high"
   | "very-high"
   | "unknown";
+
+/**
+ * Measured fishing-effort band derived from Global Fishing Watch
+ * apparent-fishing-hours within the query radius. Calibrated to the
+ * observed distribution (see scripts + .claude/mpa-gfw-fishing-spec.md).
+ */
+export type FishingEffortLevel =
+  | "low"
+  | "moderate"
+  | "high"
+  | "very-high"
+  | "unknown";
+
+/**
+ * GFW measured effort reconciled against MPAtlas protection. Measured
+ * effort is primary; protection only upgrades a low reading to
+ * "protected", and flags "paper-park" when a protected area shows heavy
+ * measured fishing (internal signal — see spec).
+ */
+export type EffectiveFishing =
+  | "protected"
+  | "low"
+  | "moderate"
+  | "high"
+  | "very-high"
+  | "paper-park"
+  | "unknown";
+
+/** Direction of measured fishing effort vs the multi-year baseline. */
+export type FishingTrend = "rising" | "stable" | "falling" | "unknown";
 
 /**
  * Per-location human-pressure record. Pairs with reef-health to power
@@ -451,6 +507,16 @@ export type ReefPressureRecord = {
   greenFinsOperatorCount?: number;
   /** Editorial paragraph framing what visitors can do here. */
   visitorImpactNote: string;
+  /**
+   * Provenance for mpaStatus. Absent is treated as "template" (the
+   * original backfill guess). Set to "manual" to lock a hand-curated
+   * value so scripts/fetch-mpa-status.mjs never overwrites it.
+   */
+  mpaStatusSource?: MpaStatusSource;
+  /** Present only when mpaStatusSource === "mpatlas". */
+  mpaAssessment?: MpaGuideAssessment;
+  /** Source ids backing this record (e.g. "mpatlas", "wdpa"). */
+  sourceIds?: string[];
   /** Always cites human-pressure-mpa-context (and possibly extras). */
   methodologyClaimIds: string[];
   lastReviewedAt: string;
@@ -682,6 +748,12 @@ export type DataSource = {
   accessedAt: string;
   license?: string;
   notes?: string;
+  /**
+   * Present only on sources we ingest programmatically on a schedule (a live
+   * data feed), as opposed to sources we credit and build methodology on but
+   * do not pull automatically.
+   */
+  ingestion?: "live";
 };
 
 export type MethodologyNote = {

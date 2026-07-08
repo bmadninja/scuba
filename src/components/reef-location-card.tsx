@@ -22,6 +22,7 @@ const STATE_BADGE: Record<ReefState, string> = {
   thriving: "bg-emerald-500/15 text-emerald-300 ring-1 ring-inset ring-emerald-500/20",
   pressure: "bg-amber-500/15 text-amber-300 ring-1 ring-inset ring-amber-500/25",
   change: "bg-rose-500/15 text-rose-300 ring-1 ring-inset ring-rose-500/20",
+  unknown: "bg-slate-500/15 text-slate-300 ring-1 ring-inset ring-slate-500/25",
 };
 
 const SKILL_BADGE: Record<string, string> = {

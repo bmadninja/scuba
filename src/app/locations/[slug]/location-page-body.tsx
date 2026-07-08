@@ -115,6 +115,9 @@ export type FishingPressureData = {
   fishingHours: number;
   year: number;
   radiusKm: number;
+  // Measured GFW effort band + direction vs the multi-year baseline.
+  level: "low" | "moderate" | "high" | "very-high" | "unknown";
+  trend: "rising" | "stable" | "falling" | "unknown";
 };
 
 // Story 4.3: water quality events panel
@@ -149,6 +152,7 @@ export type LocationBodyProps = {
   bleachedPct: number | null;
   dhwValue: number | null;
   surveyDateLabel: string | null;
+  coralSourceLabel: string | null;
   divingOutlook: string | null;
   reefStateLabel: string;
   reefStateColor: string;
@@ -322,6 +326,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     bleachedPct,
     dhwValue,
     surveyDateLabel,
+    coralSourceLabel,
     divingOutlook,
     reefStateLabel,
     reefStateColor,
@@ -417,7 +422,9 @@ export function LocationPageBody(props: LocationBodyProps) {
                       No coral cover survey is on file for this reef yet.
                     </p>
                   )}
-                  <DataFreshnessLabel source="MERMAID" date={surveyDateLabel} />
+                  {coralSourceLabel ? (
+                    <DataFreshnessLabel source={coralSourceLabel} date={surveyDateLabel} />
+                  ) : null}
                 </div>
 
                 {/* Story 4.2: CoralProjectionChart */}
@@ -484,6 +491,27 @@ export function LocationPageBody(props: LocationBodyProps) {
                           {fishing.label}
                         </span>
                       </p>
+                      {fishingPressure && fishingPressure.level !== "unknown" ? (
+                        <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.2rem", lineHeight: 1.45 }}>
+                          {fishingPressure.level === "low"
+                            ? "Light"
+                            : fishingPressure.level === "moderate"
+                              ? "Moderate"
+                              : fishingPressure.level === "high"
+                                ? "Heavy"
+                                : "Very heavy"}{" "}
+                          boat fishing nearby
+                          {/* Trend is noise at low absolute effort — only show it for moderate and up. */}
+                          {fishingPressure.level !== "low" && fishingPressure.trend === "rising"
+                            ? ", rising"
+                            : fishingPressure.level !== "low" && fishingPressure.trend === "falling"
+                              ? ", easing"
+                              : fishingPressure.level !== "low" && fishingPressure.trend === "stable"
+                                ? ", steady"
+                                : ""}{" "}
+                          ({fishingPressure.fishingHours.toLocaleString()} vessel hours within {fishingPressure.radiusKm} km)
+                        </p>
+                      ) : null}
                     </Metric>
                   ) : null}
 

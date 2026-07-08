@@ -11,9 +11,10 @@ import type { ReefState } from "@/lib/data/reef-state";
  */
 function toHealthState(
   state: ReefState,
-): "improving" | "stable" | "declining" {
+): "improving" | "stable" | "declining" | "unsurveyed" {
   if (state === "thriving") return "improving";
   if (state === "pressure") return "stable";
+  if (state === "unknown") return "unsurveyed";
   return "declining";
 }
 

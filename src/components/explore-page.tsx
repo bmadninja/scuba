@@ -45,6 +45,7 @@ const REEF_STATES: { value: ReefState; label: string }[] = [
   { value: "thriving", label: "Improving" },
   { value: "pressure", label: "Stable" },
   { value: "change", label: "Declining" },
+  { value: "unknown", label: "Not surveyed" },
 ];
 
 const REGION_BUCKETS = [

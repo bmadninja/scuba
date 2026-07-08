@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { getExternalSourceCount } from "@/lib/data/sources";
 
 export function AtlasFooter() {
+  const sourceCount = getExternalSourceCount();
   return (
     <footer style={{ background: "#14191E" }}>
       <style>{`
@@ -96,7 +98,7 @@ export function AtlasFooter() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
         >
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-            Data licensed CC BY-NC &middot; Sources: 63 datasets &middot; &copy; 2026 Scuba Season
+            Data licensed CC BY-NC &middot; Sources: {sourceCount} datasets &middot; &copy; 2026 Scuba Season
           </p>
         </div>
       </div>

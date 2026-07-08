@@ -11,6 +11,8 @@ import { getGearById } from "@/lib/data/gear";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { getLocationFishing } from "@/lib/data/fishing-pressure";
+import { fishingAllowsImproving } from "@/lib/data/effective-fishing";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
@@ -73,6 +75,16 @@ const STATE_SUB: Record<string, string> = {
   thriving: "Near its natural baseline",
   pressure: "A reef in transition",
   change: "Documenting what remains",
+  unknown: "No survey on file yet",
+};
+
+// Map a reef-health record's methodology claim to the survey body that supplied
+// the observed coral cover, so the freshness pill credits the real source
+// instead of a hardcoded one.
+const CORAL_SOURCE_LABELS: Record<string, string> = {
+  "reef-health-mermaid": "MERMAID",
+  "reef-health-aims-noaa": "AIMS / NOAA",
+  "reef-health-gcrmn-agrra": "GCRMN / AGRRA",
 };
 
 const OCEAN_GRADIENTS = [
@@ -220,6 +232,7 @@ export default async function LocationPage({
   const sites = getSitesByLocationId(location.id);
   const reefHealth = getReefHealthByLocationId(location.id)[0] ?? null;
   const reefPressure = getReefPressureByLocationId(location.id);
+  const locationFishing = getLocationFishing(location.id);
   const details = getLocationDetailsById(location.id);
   const bestMonthsSet = new Set(location.bestMonths);
   const currentMonth = new Date().getMonth() + 1;
@@ -455,22 +468,24 @@ export default async function LocationPage({
       detail: heatDetail,
     };
   }
-  const fishing = fishingPill(reefPressure?.mpaStatus ?? null, reefPressure?.fishingPressure ?? null);
+  // Protection pill from MPAtlas; measured GFW effort drives the fallback when
+  // there is no formal protection.
+  const fishing = fishingPill(reefPressure?.mpaStatus ?? null, locationFishing.effort);
   const hasReefData = coverNow !== null || decline !== null || heat !== null || fishing !== null;
 
   // For a flat coral-cover trend, append a forward-looking sentence based on current
-  // heat stress and fishing pressure so the note reads as an honest outlook, not just
-  // a historical observation.
+  // heat stress and the combined fishing read so the note reads as an honest
+  // outlook, not just a historical observation.
   if (coverTrendNote && coverTrendNote.startsWith("Holding steady")) {
     const heatOk = thermalAlert === "no-stress" || thermalAlert === "watch";
-    const fp = reefPressure?.fishingPressure ?? "unknown";
-    const mpa = reefPressure?.mpaStatus ?? "no-protection";
-    const fishingOk = fp === "low" || mpa === "strict-mpa" || mpa === "no-take";
-    if (!heatOk && (fp === "high" || fp === "very-high")) {
+    const heavyFishing =
+      locationFishing.effort === "high" || locationFishing.effort === "very-high";
+    const fishingOk = fishingAllowsImproving(locationFishing.effective);
+    if (!heatOk && heavyFishing) {
       coverTrendNote += " Both elevated heat and high fishing pressure put this stability at risk.";
     } else if (!heatOk) {
       coverTrendNote += " Current heat stress could disturb this balance.";
-    } else if (fp === "high" || fp === "very-high") {
+    } else if (heavyFishing) {
       coverTrendNote += " High fishing pressure could undermine this stability over time.";
     } else if (heatOk && fishingOk) {
       coverTrendNote += " If conditions stay this way, this reef should hold its ground.";
@@ -482,6 +497,12 @@ export default async function LocationPage({
   const bleachedPct = observed?.bleachedPercent ?? null;
   const dhwValue = reefHealth?.thermalStress?.degreeHeatingWeeks ?? null;
   const surveyDateLabel = surveyYear ? String(surveyYear) : null;
+  const coralSourceLabel =
+    coverNow !== null
+      ? ((reefHealth?.methodologyClaimIds
+          ?.map((id) => CORAL_SOURCE_LABELS[id])
+          .find(Boolean)) ?? "Reef survey")
+      : null;
   const divingOutlook = reefHealth?.divingOutlook ?? null;
 
   // Projection data points: build from observed historical + current pair
@@ -493,9 +514,18 @@ export default async function LocationPage({
     projectionDataPoints.push({ year: surveyYear, pct: Math.round(coverNow) });
   }
 
-  // GFW fishing pressure: not available at ReefPressureRecord level (no hour counts)
-  // fishingPressure pill already computed above from mpaStatus + pressure level
-  const fishingPressureData: FishingPressureData | null = null;
+  // GFW measured fishing effort (apparent-fishing-hours within the query
+  // radius), with the derived band and trend for the location panel.
+  const fishingPressureData: FishingPressureData | null =
+    locationFishing.hours != null && locationFishing.year != null
+      ? {
+          fishingHours: locationFishing.hours,
+          year: locationFishing.year,
+          radiusKm: locationFishing.radiusKm,
+          level: locationFishing.effort,
+          trend: locationFishing.trend,
+        }
+      : null;
 
   // Water quality events: empty for now (no data source wired yet)
   const waterQualityEvents: WaterQualityEvent[] = [];
@@ -719,6 +749,7 @@ export default async function LocationPage({
         bleachedPct={bleachedPct}
         dhwValue={dhwValue ?? null}
         surveyDateLabel={surveyDateLabel}
+        coralSourceLabel={coralSourceLabel}
         divingOutlook={divingOutlook ?? null}
         heat={heat}
         fishing={fishing}

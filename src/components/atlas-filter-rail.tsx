@@ -39,7 +39,7 @@ export type Filters = {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-export const STATE_VALUES = ["thriving", "pressure", "change"];
+export const STATE_VALUES = ["thriving", "pressure", "change", "unknown"];
 
 // The shipped wildlife tags (flat) come from the build-time taxonomy in
 // atlas-location.ts — the single source of truth (Story 7.2/7.3). Only tags that
@@ -92,12 +92,14 @@ const STATE_LABEL: Record<string, string> = {
   thriving: "Improving",
   pressure: "Stable",
   change: "Declining",
+  unknown: "Not surveyed",
 };
 
 const STATE_SWATCH: Record<string, string> = {
   thriving: "#10b981",
   pressure: "#f59e0b",
   change: "#f43f5e",
+  unknown: "#8b9db8",
 };
 
 const HEAT_BUCKETS: { value: string; label: string; hint: string; test: (h: number) => boolean }[] = [
@@ -154,7 +156,7 @@ export function parseFilters(params: URLSearchParams): Filters {
 
 export function filtersToParams(f: Filters): URLSearchParams {
   const params = new URLSearchParams();
-  if (f.condition.length !== 3 || !STATE_VALUES.every((s) => f.condition.includes(s))) {
+  if (f.condition.length !== STATE_VALUES.length || !STATE_VALUES.every((s) => f.condition.includes(s))) {
     params.set("c", f.condition.join(","));
   }
   if (f.months.length)    params.set("m", f.months.join(","));

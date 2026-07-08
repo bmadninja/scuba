@@ -57,6 +57,7 @@ export function FilterBar({
     { value: "thriving", label: "Thriving" },
     { value: "pressure", label: "Under pressure" },
     { value: "change", label: "Witnessing change" },
+    { value: "unknown", label: "Not surveyed" },
   ];
 
   const REGION_BUCKETS = [

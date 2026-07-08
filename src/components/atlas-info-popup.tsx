@@ -51,6 +51,7 @@ export const INFO: Record<InfoKey, InfoEntry> = {
       ["Improving", "rgba(16,185,129,0.15)", "#6ee7b7", "Near its natural baseline and steady. Recovering or healthy, not perfect."],
       ["Stable", "rgba(245,158,11,0.14)", "#fbbf24", "Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],
       ["Declining", "rgba(244,63,94,0.14)", "#fca5a5", "Heavy recent loss or bleaching. The 4th global bleaching event (2023 to 2025) affected 84% of reefs worldwide, the worst on record, with a new El Niño now developing. Diving here documents what remains and adds to the scientific record."],
+      ["Not surveyed", "rgba(148,163,184,0.15)", "#cbd5e1", "No coral survey and no heat reading on file yet, so we do not assign a state. The absence of bad news is not evidence of a healthy reef, and a single logged dive can change that."],
     ],
     link: true,
     anchor: "#reefstate",
@@ -68,7 +69,7 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     title: "What do you want to see",
     body: [
       "Pick the animals you are hoping to see. We show only reefs where divers have actually recorded them.",
-      "Open a reef and its dive sites to see how likely each animal is to show up, worked out from how often divers have logged it over the past year.",
+      "Open a reef and its dive sites to see how likely each animal is to show up, worked out from recent verified records, or marked Expected where a reef has none yet.",
     ],
     link: true,
   },
@@ -139,11 +140,11 @@ export const INFO: Record<InfoKey, InfoEntry> = {
   chances: {
     title: "How we work out your chances",
     body: [
-      "The chance comes from how often divers have actually logged each animal here over the past two years. A higher chance means it showed up in many recent records; a lower one means only a few.",
+      "When divers have logged an animal here recently, its label reflects how consistently it shows up in those verified records over the past two years. A higher label means it appeared in many recent records; a lower one means only a few. These are occurrence records, not a count of every dive, so we never claim a literal percentage.",
       "Every record is a real diver photo, confirmed by the community to research grade, then passed into the global databases that feed IUCN Red List assessments. Nothing is invented.",
-      "Wildlife moves, so treat these as a guide, not a promise.",
+      "When an animal is known from this reef but has no recent records, we mark it Expected rather than giving it a measured chance. Wildlife moves, so treat every label as a guide, not a promise.",
     ],
-    source: "Source: research grade observations, via GBIF and OBIS.",
+    source: "Source: research grade observations, via iNaturalist, GBIF and OBIS.",
     link: true,
     anchor: "#sightings",
   },

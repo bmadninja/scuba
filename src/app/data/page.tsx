@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import sourcesData from "@/data/sources.json";
 import { FaqSection } from "@/components/faq-section";
+import { getExternalSourceCount, getLiveSourceCount } from "@/lib/data/sources";
 
 export const metadata: Metadata = {
-  title: "How Scuba Season works — 63 data sources, explained",
+  title: "How Scuba Season works — our data sources, explained",
   description:
-    "Every reef label, species probability, and data point on Scuba Season is sourced from peer-reviewed science and open government datasets.",
+    "Every reef label and species read on Scuba Season is built from open science and government datasets. Here is exactly which are live feeds and which we credit.",
 };
 
 type Source = {
@@ -151,7 +152,8 @@ function Conj({ children }: { children: React.ReactNode }) {
 
 export default function DataPage() {
   const sourceMap = new Map((sourcesData as Source[]).map((s) => [s.id, s]));
-  const totalSources = (sourcesData as Source[]).length;
+  const totalSources = getExternalSourceCount();
+  const liveSources = getLiveSourceCount();
 
   const groupTitleStyle: React.CSSProperties = {
     fontFamily: serif,
@@ -254,7 +256,8 @@ export default function DataPage() {
               maxWidth: 640,
             }}
           >
-            Every label on this site comes from public science, not opinion.
+            Every label on this site is built from public science. Where a reef
+            or an animal has thin data, we say so plainly instead of guessing.
             Here is exactly where the data comes from, how we turn it into plain
             language, and how you can help fill the gaps.
           </p>
@@ -299,7 +302,11 @@ export default function DataPage() {
               We read 3 signals for every reef and turn them into one plain
               word that describes <b style={{ color: INK }}>what is happening</b>{" "}
               there. It is not a ranking and not a score. Every reef is worth
-              diving.
+              diving. When a reef has no coral survey and no heat reading yet, we
+              do not guess a state from the quiet. We label it{" "}
+              <b style={{ color: INK }}>Not surveyed</b> and show exactly what is
+              missing, because the absence of bad news is not evidence of a
+              healthy reef.
             </p>
 
             <div
@@ -373,7 +380,8 @@ export default function DataPage() {
                     >
                       <li style={condLi}>
                         <span style={condDot} aria-hidden="true" />
-                        Coral cover {code("40% or more")} (or not yet surveyed){" "}
+                        Coral cover {code("40% or more")} (or coral not yet
+                        surveyed, when heat and fishing are clear){" "}
                         <Conj>AND</Conj>
                       </li>
                       <li style={condLi}>
@@ -560,19 +568,21 @@ export default function DataPage() {
             >
               <h3 style={subHStyle}>Your chances of seeing each animal</h3>
               <p style={subPStyle}>
-                The chance comes from{" "}
+                Where divers have logged an animal recently at this site, its
+                label reflects{" "}
                 <b style={{ color: INK }}>
-                  how often divers have logged that animal at this site over the
-                  past year
-                </b>{" "}
-                — their photo records on{" "}
+                  how consistently it shows up in those verified records, and
+                  when in the year
+                </b>
+                . The records come from{" "}
                 <a href="https://www.inaturalist.org/" target="_blank" rel="noopener" style={{ color: OCEAN }}>
                   iNaturalist
                 </a>
-                , each confirmed to research grade and pulled in through GBIF.
-                These sightings are ingested live, so a fresh log shows up
-                without us waiting on a snapshot. We turn that frequency into 1
-                plain label:
+                , each confirmed to research grade and pulled in through GBIF,
+                and they are ingested live so a fresh log counts right away.
+                These are occurrence records, not a tally of every dive, so we
+                never publish a literal percentage chance. We turn the pattern
+                into 1 plain label:
               </p>
               <div
                 style={{
@@ -586,16 +596,21 @@ export default function DataPage() {
                   background: PAPER,
                 }}
               >
-                <Band color={IMPROVING} label="Almost always" range="80% or more of recent dives" first />
-                <Band color={IMPROVING} label="Very likely" range="60 to 80%" />
-                <Band color={IMPROVING} label="Likely" range="40 to 60%" />
-                <Band color={STABLE} label="Sometimes" range="20 to 40%" />
-                <Band color={INK2} label="Rare" range="under 20%" />
+                <Band color={IMPROVING} label="Almost always" range="in nearly every recent record" first />
+                <Band color={IMPROVING} label="Very likely" range="in most recent records" />
+                <Band color={IMPROVING} label="Likely" range="in about half of recent records" />
+                <Band color={STABLE} label="Sometimes" range="in roughly one in three" />
+                <Band color={INK2} label="Now and then" range="only occasionally in the records" />
+                <Band color={INK2} label="Expected" range="known from this reef, not yet in recent logs" />
               </div>
               <p style={subPStyle}>
-                Wildlife moves and seasons shift, so we treat every figure as a
-                guide, never a promise. When a site has few recent records we say
-                its data is thin rather than guess.
+                Wildlife moves and seasons shift, so we treat every label as a
+                guide, never a promise. When a site has no recent records for an
+                animal, we mark it{" "}
+                <b style={{ color: INK }}>Expected</b> — it is known from this
+                reef but not yet confirmed by fresh logs — rather than dressing
+                it up as a measured chance. When we have nothing at all, we say
+                the data is thin rather than guess.
               </p>
             </div>
 
@@ -861,13 +876,15 @@ export default function DataPage() {
           >
             <h2 style={groupTitleStyle}>Every source we credit</h2>
             <p style={groupIntroStyle}>
-              Everything on this site is built from public data, none of our own.{" "}
-              <b style={{ color: INK }}>Reef state</b> comes from NOAA heat, reef
-              surveys and Global Fishing Watch.{" "}
-              <b style={{ color: INK }}>Sightings</b> come from iNaturalist and
-              GBIF. Beyond those, dozens more cover water conditions, currents,
-              charts, wreck histories and diver safety. All {totalSources} are
-              named and linked below.
+              Everything on this site is built from public science.{" "}
+              <b style={{ color: INK }}>{liveSources} of these are live data feeds</b>{" "}
+              we pull automatically on a schedule: NOAA Coral Reef Watch,
+              Global Fishing Watch, iNaturalist, GBIF, the IUCN Red List and
+              MERMAID. They power reef heat, fishing pressure, sightings and
+              conservation status. The rest are the peer reviewed and government
+              datasets we credit and build our methodology on, plus our own
+              editorial notes where we say so. All {totalSources} independent
+              sources are named and linked below.
             </p>
             <details style={{ marginTop: "1.25rem" }}>
               <summary
@@ -884,7 +901,7 @@ export default function DataPage() {
                   padding: "0.5rem 0",
                 }}
               >
-                Show all {totalSources} sources
+                Show every source
               </summary>
               <div className="method-src-groups">
                 {SOURCE_GROUPS.map((group) => (

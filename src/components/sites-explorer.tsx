@@ -234,6 +234,7 @@ const REEF_STATES: { value: ReefState; label: string }[] = [
   { value: "thriving", label: "Improving" },
   { value: "pressure", label: "Stable" },
   { value: "change", label: "Declining" },
+  { value: "unknown", label: "Not surveyed" },
 ];
 
 /** Ocean-gradient backgrounds per index, cycling through 6 variants */
@@ -263,6 +264,11 @@ const REEF_STATE_BADGE: Record<ReefState, { bg: string; color: string; border: s
     bg: "rgba(244,63,94,0.14)",
     color: "#fca5a5",
     border: "1px solid rgba(244,63,94,0.2)",
+  },
+  unknown: {
+    bg: "rgba(148,163,184,0.16)",
+    color: "#cbd5e1",
+    border: "1px solid rgba(148,163,184,0.28)",
   },
 };
 

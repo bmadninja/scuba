@@ -223,6 +223,7 @@ const REEF_STATES: { value: ReefState; label: string }[] = [
   { value: "thriving", label: "Improving" },
   { value: "pressure", label: "Stable" },
   { value: "change", label: "Declining" },
+  { value: "unknown", label: "Not surveyed" },
 ];
 
 const OCEAN_GRADIENTS = [
@@ -238,12 +239,14 @@ const REEF_STATE_BADGE: Record<ReefState, { bg: string; color: string; border: s
   thriving: { bg: "rgba(16,185,129,0.14)", color: "#6ee7b7", border: "1px solid rgba(16,185,129,0.22)" },
   pressure: { bg: "rgba(245,158,11,0.16)", color: "#fbbf24", border: "1px solid rgba(245,158,11,0.28)" },
   change: { bg: "rgba(244,63,94,0.14)", color: "#fca5a5", border: "1px solid rgba(244,63,94,0.2)" },
+  unknown: { bg: "rgba(148,163,184,0.16)", color: "#cbd5e1", border: "1px solid rgba(148,163,184,0.28)" },
 };
 
 const REEF_STATE_STRIPE: Record<ReefState, string> = {
   thriving: "#10b981",
   pressure: "#f59e0b",
   change: "#f43f5e",
+  unknown: "#8b9db8",
 };
 
 // ─── URL param helpers ────────────────────────────────────────────────────────

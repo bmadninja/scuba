@@ -29,6 +29,7 @@ const STATE_DOT: Record<ReefState, string> = {
   thriving: "#10b981",
   pressure: "#f59e0b",
   change: "#f43f5e",
+  unknown: "#8b9db8",
 };
 
 type GlobePoint = {

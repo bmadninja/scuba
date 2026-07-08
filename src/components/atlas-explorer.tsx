@@ -19,12 +19,13 @@ import type { PlanetMarker } from "./planet-globe";
 import { STATE_COLOR, STATE_TEXT, STATE_DEF } from "@/lib/data/reef-state";
 import type { ReefState } from "@/lib/data/reef-state";
 
-const LEGEND_STATES: ReefState[] = ["thriving", "pressure", "change"];
+const LEGEND_STATES: ReefState[] = ["thriving", "pressure", "change", "unknown"];
 
 const STATE_LABEL: Record<string, string> = {
   thriving: "Thriving",
   pressure: "Under pressure",
   change: "Witnessing change",
+  unknown: "Not surveyed",
 };
 
 const MONTH_ABBR = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];

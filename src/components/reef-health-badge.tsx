@@ -1,4 +1,4 @@
-type ReefState = "improving" | "stable" | "declining";
+type ReefState = "improving" | "stable" | "declining" | "unsurveyed";
 
 interface Props {
   state: ReefState | null | undefined;
@@ -7,15 +7,17 @@ interface Props {
 }
 
 const STATE_COLOR: Record<ReefState, string> = {
-  improving: "#2E7D5B",
-  stable:    "#B98A2E",
-  declining: "#C0412B",
+  improving:  "#2E7D5B",
+  stable:     "#B98A2E",
+  declining:  "#C0412B",
+  unsurveyed: "#7A8698",
 };
 
 const STATE_LABEL: Record<ReefState, string> = {
-  improving: "Improving",
-  stable:    "Stable",
-  declining: "Declining",
+  improving:  "Improving",
+  stable:     "Stable",
+  declining:  "Declining",
+  unsurveyed: "Not surveyed",
 };
 
 export function ReefHealthBadge({ state, onPhoto = false }: Props) {

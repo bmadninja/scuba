@@ -15,6 +15,7 @@ const STATE_PILL_STYLE: Record<string, { bg: string; color: string }> = {
   thriving: { bg: "rgba(16,185,129,0.15)", color: "#6ee7b7" },
   pressure: { bg: "rgba(245,158,11,0.15)", color: "#fcd34d" },
   change: { bg: "rgba(244,63,94,0.15)", color: "#fca5a5" },
+  unknown: { bg: "rgba(148,163,184,0.15)", color: "#cbd5e1" },
 };
 
 type FilterSummaryBarProps = {
@@ -87,7 +88,7 @@ export function FilterSummaryBar({
   className = "",
 }: FilterSummaryBarProps) {
   const hasSomething =
-    conditions.length < 3 ||
+    conditions.length < 4 ||
     skills.length > 0 ||
     regions.length > 0 ||
     months.length > 0 ||
@@ -108,11 +109,11 @@ export function FilterSummaryBar({
       </span>
 
       {/* Reef state */}
-      {["thriving", "pressure", "change"].filter(
+      {["thriving", "pressure", "change", "unknown"].filter(
         (v) => !conditions.includes(v)
       ).map((v) => {
         const style = STATE_PILL_STYLE[v] ?? brandPill;
-        const label = v === "thriving" ? "Thriving" : v === "pressure" ? "Under pressure" : "Witnessing change";
+        const label = v === "thriving" ? "Thriving" : v === "pressure" ? "Under pressure" : v === "change" ? "Witnessing change" : "Not surveyed";
         return (
           <Pill
             key={`excl-${v}`}
@@ -122,9 +123,9 @@ export function FilterSummaryBar({
           />
         );
       })}
-      {["thriving", "pressure", "change"].filter((v) => conditions.includes(v) && conditions.length < 3).map((v) => {
+      {["thriving", "pressure", "change", "unknown"].filter((v) => conditions.includes(v) && conditions.length < 4).map((v) => {
         const style = STATE_PILL_STYLE[v] ?? brandPill;
-        const label = v === "thriving" ? "Thriving" : v === "pressure" ? "Under pressure" : "Witnessing change";
+        const label = v === "thriving" ? "Thriving" : v === "pressure" ? "Under pressure" : v === "change" ? "Witnessing change" : "Not surveyed";
         return (
           <Pill
             key={v}

@@ -24,12 +24,14 @@ const STATE_TEXT: Record<string, string> = {
   thriving: "Improving",
   pressure: "Stable",
   change: "Declining",
+  unknown: "Not surveyed",
 };
 
 const STATE_PILL: Record<string, string> = {
   thriving: "bg-emerald-50 text-emerald-700",
   pressure: "bg-amber-50 text-amber-700",
   change: "bg-rose-50 text-rose-700",
+  unknown: "bg-slate-100 text-slate-600",
 };
 
 type AtlasNavProps = {

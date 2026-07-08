@@ -1,6 +1,7 @@
 [
   {
     "id": "noaa-crw",
+    "ingestion": "live",
     "name": "NOAA Coral Reef Watch",
     "url": "https://coralreefwatch.noaa.gov/",
     "publisher": "U.S. National Oceanic and Atmospheric Administration",
@@ -50,6 +51,7 @@
   },
   {
     "id": "gbif",
+    "ingestion": "live",
     "name": "Global Biodiversity Information Facility",
     "url": "https://www.gbif.org/",
     "publisher": "GBIF Secretariat",
@@ -88,6 +90,7 @@
   },
   {
     "id": "iucn-red-list",
+    "ingestion": "live",
     "name": "IUCN Red List of Threatened Species",
     "url": "https://www.iucnredlist.org/",
     "publisher": "International Union for Conservation of Nature",
@@ -98,6 +101,7 @@
   },
   {
     "id": "inaturalist",
+    "ingestion": "live",
     "name": "iNaturalist",
     "url": "https://www.inaturalist.org/",
     "publisher": "California Academy of Sciences & National Geographic Society",
@@ -370,6 +374,7 @@
   },
   {
     "id": "global-fishing-watch",
+    "ingestion": "live",
     "name": "Global Fishing Watch",
     "url": "https://globalfishingwatch.org/",
     "publisher": "Global Fishing Watch (Oceana + SkyTruth + Google)",
@@ -619,6 +624,7 @@
   },
   {
     "id": "mermaid",
+    "ingestion": "live",
     "name": "MERMAID (Marine Ecological Research Management Aid)",
     "url": "https://datamermaid.org/",
     "publisher": "Wildlife Conservation Society (WCS)",

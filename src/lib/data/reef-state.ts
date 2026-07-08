@@ -1,8 +1,9 @@
 import { getReefHealthByLocationId } from "./reef-health";
-import { getReefPressureByLocationId } from "./reef-pressure";
+import { getLocationFishing } from "./fishing-pressure";
+import { fishingAllowsImproving } from "./effective-fishing";
 import type { BleachingAlertLevel } from "./types";
 
-export type ReefState = "thriving" | "pressure" | "change";
+export type ReefState = "thriving" | "pressure" | "change" | "unknown";
 
 const ALERT_RANK: Record<BleachingAlertLevel, number> = {
   "no-stress": 0,
@@ -26,6 +27,7 @@ export const STATE_TEXT: Record<ReefState, string> = {
   thriving: "Improving",
   pressure: "Stable",
   change: "Declining",
+  unknown: "Not surveyed",
 };
 
 /**
@@ -36,6 +38,7 @@ export const STATE_COLOR: Record<ReefState, string> = {
   thriving: "#2E7D5B",
   pressure: "#B98A2E",
   change: "#C0412B",
+  unknown: "#7A8698",
 };
 
 export const STATE_DEF: Record<ReefState, { short: string; signal: string }> = {
@@ -51,11 +54,14 @@ export const STATE_DEF: Record<ReefState, { short: string; signal: string }> = {
     short: "Visibly transforming after repeated bleaching or heavy loss. Diving here documents what remains.",
     signal: "Coral cover well below baseline after one or more bleaching events; the reef is actively reorganising. Diver records here are the most valuable in the atlas.",
   },
+  unknown: {
+    short: "No coral survey or heat reading is on file for this reef yet, so we do not assign a state. A single logged dive can change that.",
+    signal: "No reef condition data yet: no coral cover survey and no thermal stress reading for this location. We do not guess a state from the absence of data.",
+  },
 };
 
 export function getReefState(locationId: string): ReefState {
   const healthRecords = getReefHealthByLocationId(locationId);
-  const pressureRecord = getReefPressureByLocationId(locationId);
 
   let worstAlert: BleachingAlertLevel | null = null;
   let bestCover: number | null = null;
@@ -71,18 +77,30 @@ export function getReefState(locationId: string): ReefState {
     }
   }
 
+  // Reef state describes reef *condition*, so it needs a condition signal:
+  // an observed coral cover survey or a thermal-stress reading. With neither,
+  // we return "unknown" rather than defaulting to a positive label — the
+  // absence of bad news is not evidence of a healthy reef. Fishing pressure
+  // alone (a human-pressure input) does not qualify a reef as surveyed.
+  if (worstAlert === null && bestCover === null) {
+    return "unknown";
+  }
+
   const alertRank = worstAlert ? ALERT_RANK[worstAlert] : 0;
-  const fishing = pressureRecord?.fishingPressure ?? "unknown";
+  // Combined human-pressure read: measured GFW effort reconciled with MPAtlas
+  // protection. Only genuinely low or confirmed-protected water can reach
+  // "thriving"; a paper park with heavy measured fishing cannot.
+  const { effective } = getLocationFishing(locationId);
 
   // Witnessing change: severely degraded coral OR serious bleaching alert
   if ((bestCover !== null && bestCover < 25) || alertRank >= 3) {
     return "change";
   }
-  // Thriving: good cover, low stress, low fishing
+  // Thriving: good cover, low stress, and low/confirmed-protected fishing
   if (
     (bestCover === null || bestCover >= 40) &&
     alertRank <= 1 &&
-    (fishing === "low" || fishing === "unknown")
+    fishingAllowsImproving(effective)
   ) {
     return "thriving";
   }

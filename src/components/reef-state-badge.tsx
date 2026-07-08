@@ -7,12 +7,14 @@ const STATE_COLOR: Record<ReefState, string> = {
   thriving: "#10b981",
   pressure: "#f59e0b",
   change:   "#f43f5e",
+  unknown:  "#64748b",
 };
 
 const STATE_BG: Record<ReefState, string> = {
   thriving: "rgba(16,185,129,0.14)",
   pressure: "rgba(245,158,11,0.14)",
   change:   "rgba(244,63,94,0.14)",
+  unknown:  "rgba(100,116,139,0.14)",
 };
 
 export function ReefStateBadge({

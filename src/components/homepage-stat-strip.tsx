@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { getExternalSourceCount } from "@/lib/data/sources";
 
 interface Stat {
   value: number;
@@ -12,7 +13,7 @@ function buildStats(locationCount: number, siteCount: number): Stat[] {
   return [
     { value: locationCount, suffix: "+", label: "Locations" },
     { value: siteCount, suffix: "+", label: "Dive sites" },
-    { value: 63, label: "Data sources" },
+    { value: getExternalSourceCount(), label: "Data sources" },
     { value: 3, label: "Reef states" },
   ];
 }

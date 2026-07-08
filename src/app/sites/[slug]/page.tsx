@@ -217,6 +217,17 @@ function chanceTier(score: number): ChanceTier {
   return { label: "Rare", color: "#64748b", fillColor: "#94a3b8", fill: 15, frequency: "Now and then" };
 }
 
+// Shown when a species has NO recent verified records at the site: the curated
+// reliability is an editorial expectation, not a measurement, so we do not
+// render a measured chance/frequency for it. No bar fill.
+const EXPECTED_TIER: ChanceTier = {
+  label: "Expected",
+  color: "#64748b",
+  fillColor: "#94a3b8",
+  fill: 0,
+  frequency: "Known here, not yet in recent logs",
+};
+
 // ─── Static generation + metadata ─────────────────────────────────────────────
 
 export function generateStaticParams() {
@@ -339,10 +350,15 @@ export default async function SiteDetailPage({
   const creatures = mergeCreatures(site, sightings);
   const encounters: EncounterRow[] = creatures
     .map((c) => {
+      // A measured chance is only honest when recent records exist. Without
+      // them the row rests on the curated reliability alone, so show "Expected"
+      // and sort it below every records-backed row.
+      const hasRecords = (c.recentRecordCount ?? 0) > 0;
       const score = likelihoodScore(c);
-      const tier = chanceTier(score);
+      const tier = hasRecords ? chanceTier(score) : EXPECTED_TIER;
+      const sortScore = hasRecords ? score : score / 100;
       const iucn = IUCN_ENABLED ? getIucnStatus(c.scientificName) : null;
-      return { c, score, tier, iucn };
+      return { c, score: sortScore, tier, iucn };
     })
     .sort((a, b) => b.score - a.score)
     .slice(0, 8)

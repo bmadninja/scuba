@@ -62,7 +62,7 @@
       "ocean-health-index"
     ],
     "confidence": "medium",
-    "limitations": "MPA boundaries are taken from Protected Planet (WDPA); not every MPA is genuinely enforced — Marine Protection Atlas adds a protection-quality layer to distinguish paper-park designations from no-take protection. Fishing-pressure proxies come from Global Fishing Watch AIS data, which captures industrial vessels but misses small-scale and illegal fishing. We use these layers for context — not to certify that a specific site is well-managed or fish-stocked. Always confirm permits and rules with the local operator before booking.",
+    "limitations": "The MPA status shown on each reef (no-take, strict, multi-use, none) is currently an editorial classification by region, informed by published Protected Planet (WDPA) and Marine Protection Atlas designations rather than pulled live from them; a direct MPAtlas/WDPA ingest is in progress. Not every MPA is genuinely enforced, which is why we distinguish paper-park designations from no-take protection. Fishing pressure, by contrast, is measured: it comes from Global Fishing Watch AIS data within 50 kilometres of each location over the most recent year, so it reflects vessels near a reef rather than inside a single dive zone, and it captures industrial vessels but misses small-scale and illegal fishing. We use these layers for context — not to certify that a specific site is well-managed or fish-stocked. Always confirm permits and rules with the local operator before booking.",
     "lastReviewedAt": "2026-05-25"
   },
   {
@@ -172,6 +172,7 @@
       "obis",
       "obis-seamap",
       "wildbook",
+      "happywhale",
       "ocean-tracking-network",
       "iucn-red-list"
     ],

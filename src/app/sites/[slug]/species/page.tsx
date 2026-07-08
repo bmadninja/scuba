@@ -43,15 +43,18 @@ const IUCN_TONE: Record<IucnStatus["category"], { bg: string; text: string }> = 
 };
 
 /**
- * Likelihood model derived from real data only.
+ * Likelihood model.
  *
- * We deliberately carry no stored probability (see SightingEvidence docs), so
- * the chance label, bar and frequency are computed from the curated
- * `reliability` band, refined by how many recent records a site has logged for
- * the animal. When neither signal exists, the bar and frequency are omitted and
- * the row degrades to "Recorded here".
+ * A MEASURED label (with a bar and a per-dive frequency) is only shown when the
+ * site has recent verified sighting records for the animal — those records set
+ * the band and the curated `reliability` only nudges within it. When there are
+ * NO recent records, the curated `reliability` is an editorial expectation, not
+ * a measurement, so we show "Expected" with no bar or frequency rather than
+ * presenting a guess as a measured chance. With neither signal, the row
+ * degrades to "Recorded here".
  *
- * Returned `score` drives the most-likely-first sort.
+ * Returned `score` drives the most-likely-first sort: measured rows (records
+ * present) always sort above expected rows, which sort above no-signal rows.
  */
 type Likelihood = {
   score: number;
@@ -67,32 +70,43 @@ function deriveLikelihood(
 ): Likelihood {
   const records = recentRecordCount ?? 0;
 
-  // Base band from curated reliability.
+  // Base band from curated reliability (editorial / LLM-seeded for many sites).
   let base: number | null;
   if (reliability === "year-round") base = 85;
   else if (reliability === "seasonal") base = 50;
   else if (reliability === "rare") base = 20;
   else base = null;
 
-  // Refine within band by record volume (gentle, capped nudges).
-  let pct: number | null = base;
-  if (pct !== null && records > 0) {
-    pct = Math.min(96, pct + Math.min(12, records));
-  } else if (pct === null && records > 0) {
-    // No curated band but we do have records — derive a modest signal so the
-    // row still sorts and shows a bar rather than going fully unknown.
-    pct = Math.min(80, 30 + Math.min(40, records * 4));
+  // No recent records: the likelihood rests ONLY on the curated reliability
+  // band, which is an expectation and not a measurement. Never present that as
+  // a measured chance — mark it "Expected" with no bar and no per-dive
+  // frequency, and sort it below every records-backed row.
+  if (records === 0) {
+    if (base === null) {
+      return {
+        score: 0,
+        barPct: null,
+        chanceLabel: null,
+        chanceColor: "var(--color-ink-2)",
+        frequency: null,
+      };
+    }
+    return {
+      score: base / 100, // keep band order, but below any measured row
+      barPct: null,
+      chanceLabel: "Expected",
+      chanceColor: "var(--color-ink-2)",
+      frequency: "Known here, not yet in recent logs",
+    };
   }
 
-  if (pct === null) {
-    // No signal at all. Keep the row, but show no bar/frequency.
-    return {
-      score: 0,
-      barPct: null,
-      chanceLabel: null,
-      chanceColor: "var(--color-ink-2)",
-      frequency: null,
-    };
+  // We have recent verified records — compute a measured label. The curated
+  // band, when present, refines within the measured signal (gentle, capped).
+  let pct: number;
+  if (base !== null) {
+    pct = Math.min(96, base + Math.min(12, records));
+  } else {
+    pct = Math.min(80, 30 + Math.min(40, records * 4));
   }
 
   let chanceLabel: string;
