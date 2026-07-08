@@ -390,7 +390,11 @@ export default async function LocationPage({
     if (coverBefore > coverNow) {
       const span = surveyYear - historicalYear;
       const perYear = (coverBefore - coverNow) / span;
-      const zeroYear = perYear > 0 ? surveyYear + Math.max(1, Math.round(coverNow / perYear)) : null;
+      // Only project a zero year for a genuinely fast decline. A tiny slip
+      // (e.g. 42% → 40% over a decade) mechanically extrapolates centuries out,
+      // which is meaningless noise — suppress it beyond a ~40-year horizon.
+      const yearsToZero = perYear > 0 ? Math.max(1, Math.round(coverNow / perYear)) : null;
+      const zeroYear = yearsToZero !== null && yearsToZero <= 40 ? surveyYear + yearsToZero : null;
       decline = {
         fromPct: Math.round(coverBefore),
         fromYear: historicalYear,

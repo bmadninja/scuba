@@ -473,22 +473,26 @@ export function LocationPageBody(props: LocationBodyProps) {
                     }}>
                       Coral cover over time
                     </p>
-                    {decline ? (
-                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
-                        Live coral has fallen from <strong>{decline.fromPct}%</strong>{" "}
-                        to <span style={{ color: "#C0412B" }}>{decline.toPct}%</span> since {decline.fromYear}.{" "}
-                        {decline.zeroYear ? (
-                          <span style={{ color: "#4A5568", fontWeight: 400 }}>
-                            If the decline holds, little would remain by around {decline.zeroYear}.
-                          </span>
-                        ) : null}
-                      </p>
-                    ) : coverNow !== null ? (
-                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
-                        Live coral covers <strong>{coverNow}%</strong> of the reef
-                        {coverYear ? ` as of ${coverYear}` : ""}.
-                        {coverTrendNote ? <span style={{ color: "#4A5568", fontWeight: 400 }}> {coverTrendNote}</span> : null}
-                      </p>
+                    {/* The chart below IS the coral-cover-over-time story — only
+                        restate it in prose when there is no chart (single-survey reef). */}
+                    {projectionDataPoints.length < 2 ? (
+                      decline ? (
+                        <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
+                          Live coral has fallen from <strong>{decline.fromPct}%</strong>{" "}
+                          to <span style={{ color: "#C0412B" }}>{decline.toPct}%</span> since {decline.fromYear}.{" "}
+                          {decline.zeroYear ? (
+                            <span style={{ color: "#4A5568", fontWeight: 400 }}>
+                              If the decline holds, little would remain by around {decline.zeroYear}.
+                            </span>
+                          ) : null}
+                        </p>
+                      ) : coverNow !== null ? (
+                        <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
+                          Live coral covers <strong>{coverNow}%</strong> of the reef
+                          {coverYear ? ` as of ${coverYear}` : ""}.
+                          {coverTrendNote ? <span style={{ color: "#4A5568", fontWeight: 400 }}> {coverTrendNote}</span> : null}
+                        </p>
+                      ) : null
                     ) : null}
                     {coralSourceLabel ? (
                       <DataFreshnessLabel source={coralSourceLabel} date={surveyDateLabel} />
@@ -894,13 +898,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                 ) : null}
               </div>
             ) : null}
-
-            {/* FTC affiliate disclosure */}
-            <div style={{ padding: "0.6rem 1.6rem", borderTop: "1px solid #E7E6E2" }}>
-              <p style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "10px", color: "#4A5568", lineHeight: 1.5 }}>
-                Some links are affiliate links. We may earn a commission at no cost to you.
-              </p>
-            </div>
 
             {/* Getting there */}
             {getThere && getThere.kind === "prose" ? (
