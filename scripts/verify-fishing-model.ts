@@ -101,26 +101,43 @@ function reefState(locationId: string): "Improving" | "Stable" | "Declining" | "
   const hours = g?.current?.fishingHours ?? null;
   const effort = g ? gfwEffortLevel(hours) : editorialEffortLevel(rpBy.get(locationId)?.fishingPressure);
   const effective = reconcile(effort, rpBy.get(locationId)?.mpaStatus ?? null);
+  // Coral trend gate, mirrored from reef-state.ts: a reef whose cover has
+  // fallen cannot be "Improving" — the label would contradict its cover chart.
   const coralFalling = best !== null && before !== null && best < before;
   if ((best !== null && best < 25) || rank >= 3) return "Declining";
-  if ((best === null || best >= 40) && rank <= 1 && fishingAllowsImproving(effective) && !coralFalling) return "Improving";
+  if ((best === null || best >= 40) && rank <= 1 && fishingAllowsImproving(effective) && !coralFalling)
+    return "Improving";
   return "Stable";
 }
 
-const dist = { Improving: 0, Stable: 0, Declining: 0, unknown: 0 };
-for (const r of rp) dist[reefState(r.locationId)]++;
-// Trend gate: reefs with good cover but falling coral read Stable, not Improving,
-// so the reef state never contradicts the cover chart.
-// unknown: 1 = torre-guaceto-italy, added with the Blue Park Award and awaiting
-// its first reef-health record.
-eq(dist, { Improving: 9, Stable: 63, Declining: 41, unknown: 1 }, "reef-state distribution (with coral-trend gate)");
-eq(reefState("torre-guaceto-italy"), "unknown", "Torre Guaceto unknown until first survey lands");
-eq(reefState("raja-ampat-indonesia"), "Improving", "Raja Ampat Improving (rising coral 54→56)");
-eq(reefState("komodo-national-park-indonesia"), "Stable", "Komodo → Stable");
-eq(reefState("great-barrier-reef-australia"), "Stable", "GBR → Stable");
+// Invariant (data-growth-proof): the trend gate guarantees no reef labelled
+// "Improving" has coral that has fallen vs its historical survey. Asserting the
+// property rather than a hardcoded count keeps this green as the discovery bot
+// adds new sites.
+const contradictions = rp.filter((r) => {
+  if (reefState(r.locationId) !== "Improving") return false;
+  const recs = health.get(r.locationId) ?? [];
+  let best: number | null = null, before: number | null = null;
+  for (const rec of recs) {
+    const c = rec.observed?.coralCoverPercent;
+    if (c !== undefined && (best === null || c > best)) {
+      best = c;
+      before = rec.observed?.historicalCoralCoverPercent ?? null;
+    }
+  }
+  return best !== null && before !== null && best < before;
+});
+eq(contradictions.map((r) => r.locationId), [], "no Improving reef has falling coral (state never contradicts its chart)");
+
+// Targeted cases spanning the trend and fishing gates.
+eq(reefState("raja-ampat-indonesia"), "Improving", "Raja Ampat Improving (coral rising 54→56, low fishing)");
+eq(reefState("niue-avaiki-cave"), "Improving", "Niue Improving (coral holding steady 40→40)");
+eq(reefState("apo-reef-philippines"), "Stable", "Apo Reef Stable (coral fell 42→40, no longer contradicts chart)");
+eq(reefState("tubbataha-philippines"), "Stable", "Tubbataha Stable (coral fell 50→47)");
+eq(reefState("komodo-national-park-indonesia"), "Stable", "Komodo Stable (moderate measured fishing)");
+eq(reefState("great-barrier-reef-australia"), "Stable", "GBR Stable");
 eq(rpBy.get("great-barrier-reef-australia")?.mpaStatus, "designated-multi-use", "GBR stays multi-use");
-eq(reefState("apo-reef-philippines"), "Stable", "Apo Reef → Stable (falling coral 42→40, no longer contradicts chart)");
-eq(reefState("niue-avaiki-cave"), "Improving", "Niue Improving (coral flat 40→40, holding steady)");
+eq(reefState("torre-guaceto-italy"), "unknown", "Torre Guaceto unknown until first survey lands");
 
 if (failures) {
   console.error(`\n${failures} assertion(s) failed.`);
