@@ -574189,5 +574189,975 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Macro dive exclusive to Koh Rong-based divers. Best during dry season November to April. Boulder formations shelter small critters. Restricted visibility May to October during southwest monsoon."
+  },
+  {
+    "id": "hikkaduwa-sri-lanka-earl-of-shaftesbury",
+    "slug": "hikkaduwa-sri-lanka-earl-of-shaftesbury",
+    "locationId": "hikkaduwa-sri-lanka",
+    "name": "Earl of Shaftesbury",
+    "heroImageUrl": null,
+    "lat": 6.17942,
+    "lng": 80.06561,
+    "description": "Iron four-mast sailing ship wrecked in 1893 off Akurala, now a thriving artificial reef at 14 meters. Covered in corals and marine life including sweetlips, stingrays, barracuda, and batfish. The wreck rests on sandy bottom with bow and stern sections relatively intact, bow masts still recognizable.",
+    "depthRange": {
+      "min": 12,
+      "max": 15
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Sweetlips",
+        "scientificName": "Plectorhinchus spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Foster's Barracuda",
+        "scientificName": "Sphyraena forsteri",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Stingray",
+        "scientificName": "Dasyatidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Silver Batfish",
+        "scientificName": "Trachinotus baillonii",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Peak season, calm seas"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Peak season, calm seas"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Very good conditions"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Good, monsoon approaching"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Southwest monsoon begins"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Monsoon, not recommended"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Peak monsoon, difficult"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Strong monsoon"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Late monsoon, avoid"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Monsoon subsiding"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Peak season begins"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Calmest seas, best visibility"
+      }
+    ],
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 72,
+    "getThere": "About 15 minutes by boat from Hikkaduwa town center; local dive operators run regular trips with hotel pickup.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Iron sailing ship wrecked May 1893 after striking a reef. Protected archaeological site. Bow and stern recognizable with iron masts still standing. Best November to April; June to September monsoon."
+  },
+  {
+    "id": "jeju-south-korea-beomseom",
+    "slug": "jeju-south-korea-beomseom",
+    "locationId": "jeju-south-korea",
+    "name": "Beomseom (Tiger Island)",
+    "heroImageUrl": null,
+    "lat": 33.407,
+    "lng": 126.509,
+    "description": "Uninhabited volcanic island named for its resemblance to a crouching tiger, featuring dramatic basalt formations, sea caves with cathedral arches, and vibrant soft coral gardens. Rich with diverse temperate and subtropical marine life across depths ranging 7-27m. UNESCO Biosphere Reserve.",
+    "depthRange": {
+      "min": 7,
+      "max": 27
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "geology",
+      "cave"
+    ],
+    "species": [
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Giant Pacific Octopus",
+        "scientificName": "Enteroctopus dofleini",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Japanese Scorpionfish",
+        "scientificName": "Scorpaena japonica",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Squid",
+        "scientificName": "Loligo vulgaris",
+        "reliability": "seasonal",
+        "bestMonths": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Nudibranchs",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tuskfish",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 13,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 13,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 14,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit, kelp season"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 16,
+          "max": 21
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit, kelp forests"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 17,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit, rainy season"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit, low visibility"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit, warmest"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 22,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3 to 5mm, peak season"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 18,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit, peak season"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 15,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 13,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm wetsuit or drysuit"
+      }
+    ],
+    "bestMonths": [
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 45,
+    "getThere": "Boat from Seogwipo Port, about 5km southwest, roughly 15 minutes. PADI operators in Seogwipo run trips.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Named for its resemblance to a crouching tiger. Sea caves with cathedral-arch formations. Natural monument and UNESCO Biosphere Reserve with restricted access; arrange permits with operators. Peak diving September to November."
+  },
+  {
+    "id": "sanya-china-west-island",
+    "slug": "sanya-china-west-island",
+    "locationId": "sanya-china",
+    "name": "West Island",
+    "heroImageUrl": null,
+    "lat": 18.16,
+    "lng": 109.62,
+    "description": "Turtle-shaped West Island lies in Sanya Bay's National Coral Reef Reserve, featuring 41 documented reef fish species and vibrant staghorn and crown coral. Clear waters host colorful tropical fish including clownfish, groupers, and trevally across sandy and rocky substrates with abundant sea urchins and anemones.",
+    "depthRange": {
+      "min": 6,
+      "max": 15
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro",
+      "drift"
+    ],
+    "species": [
+      {
+        "commonName": "Clownfish",
+        "scientificName": "Amphiprion spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grouper",
+        "scientificName": "Epinephelus spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Trevally",
+        "scientificName": "Carangidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Parrotfish",
+        "scientificName": "Scaridae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois spp.",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Angelfish",
+        "scientificName": "Pomacanthidae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena spp.",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Sea Urchin",
+        "scientificName": "Echinoidea",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Calm seas, peak visibility"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 11,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Peak season"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 14
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Dry season ends"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Typhoon season approaching"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 11
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Typhoon season"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 11
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Peak typhoon season"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 11
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "High rainfall"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Typhoon season ending"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 11,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Peak season begins"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Prime diving season"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Ideal conditions"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 75,
+    "getThere": "From Sanya city center about 25 to 30 minutes by car to Xidao Wharf, then a 10 to 15 minute boat ride to West Island in the National Coral Reef Reserve.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Second largest island in Hainan, part of China's largest National Coral Reef Reserve. 41 reef fish species documented via environmental DNA. Calm bay waters suit Open Water divers. Typical max dive depth around 12m."
+  },
+  {
+    "id": "nha-trang-vietnam-electric-nose",
+    "slug": "nha-trang-vietnam-electric-nose",
+    "locationId": "nha-trang-vietnam",
+    "name": "Electric Nose",
+    "heroImageUrl": null,
+    "lat": 12.18945,
+    "lng": 109.34525,
+    "description": "A dramatic pinnacle dive rising from 50 meters toward the surface, featuring steep walls draped in soft corals and macro life. The site is known for hosting over 50 nudibranch species and encounters with schooling snappers, trevally, and barracuda. Steep drop-offs and rock formations make it one of Nha Trang's most photogenic dives.",
+    "depthRange": {
+      "min": 5,
+      "max": 45
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "macro",
+      "geology",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Ocellaris clownfish",
+        "scientificName": "Amphiprion ocellaris",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "commonName": "Nudibranch",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Schooling snapper",
+        "scientificName": "Lutjanidae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "commonName": "Trevally",
+        "scientificName": "Carangidae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Calm, end of NE monsoon"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Improving; abundant nudibranchs"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Shoulder season"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Peak season begins"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Best season, fish schools"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Excellent; occasional plankton"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Low season, poor visibility"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Low season, rich macro"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rainy, typhoon risk"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Monsoon, strong currents"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Monsoon, dive slack tide"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Currents easing"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 72,
+    "getThere": "Boat access only from Nha Trang town, about 1 to 2 hours depending on conditions. Booked through established operators. Located on the easterly end of Hon Noc island.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Also known as Rer Rond. Established as a dive site by Rainbow Divers in 1997. Pinnacle rises from about 50 meters. Macro hotspot with over 50 nudibranch species. Requires Advanced Open Water due to depth and current. Best on slack tides."
   }
 ]
