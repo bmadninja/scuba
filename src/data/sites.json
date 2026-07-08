@@ -575954,5 +575954,230 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Accessible reef popular for training, snorkelling, and night dives. Visibility drops in the rainy season; best in the September to October window and February to March."
+  },
+  {
+    "id": "sal-cape-verde-santo-antao-wreck",
+    "slug": "sal-cape-verde-santo-antao-wreck",
+    "locationId": "sal-cape-verde",
+    "name": "Santo Antao Wreck",
+    "heroImageUrl": null,
+    "lat": 16.5895,
+    "lng": -22.8921,
+    "description": "A 55-meter merchant vessel that sank in 1966, now a shallow artificial reef broken into three sections. It serves as a nursery for hundreds of pufferfish and draws nurse sharks and moray eels into its hull. Limited penetration is possible for certified wreck divers.",
+    "depthRange": {
+      "min": 12,
+      "max": 15
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "macro",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Pufferfish",
+        "scientificName": "Tetraodontidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Trumpetfish",
+        "scientificName": "Aulostomus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Moray eel",
+        "scientificName": "Muraenidae",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit, peak humpback whale season"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 13,
+          "max": 19
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit, humpback whale season"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 14,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit, end of whale season"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 2mm wetsuit, excellent visibility"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 2mm wetsuit, excellent visibility"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 26,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm wetsuit, warmest water, peak visibility"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 14,
+          "max": 19
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 2mm wetsuit, good visibility"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 14,
+          "max": 19
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit, good visibility"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 13,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "editorialRank": 66,
+    "getThere": "Located about 10 minutes by boat from Santa Maria harbor on Sal Island. Dive operators in Santa Maria offer hotel transfers to the dive center.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Sharp edges on the wreck; watch equipment. Penetration limited to two small entry points and requires wreck certification. Nursery for pufferfish; humpback whales pass during the March-May migration."
   }
 ]
