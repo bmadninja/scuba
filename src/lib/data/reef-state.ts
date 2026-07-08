@@ -65,6 +65,8 @@ export function getReefState(locationId: string): ReefState {
 
   let worstAlert: BleachingAlertLevel | null = null;
   let bestCover: number | null = null;
+  // Prior cover paired with the reading that sets bestCover, for the trend.
+  let bestCoverBefore: number | null = null;
 
   for (const r of healthRecords) {
     const alert = r.thermalStress?.alertLevel;
@@ -74,6 +76,7 @@ export function getReefState(locationId: string): ReefState {
     const cover = r.observed?.coralCoverPercent;
     if (cover !== undefined && (bestCover === null || cover > bestCover)) {
       bestCover = cover;
+      bestCoverBefore = r.observed?.historicalCoralCoverPercent ?? null;
     }
   }
 
@@ -96,11 +99,19 @@ export function getReefState(locationId: string): ReefState {
   if ((bestCover !== null && bestCover < 25) || alertRank >= 3) {
     return "change";
   }
-  // Thriving: good cover, low stress, and low/confirmed-protected fishing
+  // Coral trend, mirrored exactly from the cover chart: any measured drop
+  // (before > now) reads as "fallen" there, so such a reef cannot be labelled
+  // "Improving" here — the label would contradict its own chart. A reef with
+  // good cover that is slipping is "Stable" (holding, not pristine).
+  const coralFalling =
+    bestCover !== null && bestCoverBefore !== null && bestCover < bestCoverBefore;
+  // Thriving: good cover, low stress, low/confirmed-protected fishing, and
+  // coral that is holding or rising (not falling).
   if (
     (bestCover === null || bestCover >= 40) &&
     alertRank <= 1 &&
-    fishingAllowsImproving(effective)
+    fishingAllowsImproving(effective) &&
+    !coralFalling
   ) {
     return "thriving";
   }
