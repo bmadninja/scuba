@@ -8,7 +8,7 @@ import {
   useEffect,
 } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { STATE_TEXT, STATE_COLOR, freshness } from "@/lib/data/reef-state";
+import { STATE_TEXT, STATE_COLOR } from "@/lib/data/reef-state";
 import { LocationsGlobe } from "@/components/locations-globe";
 import { ReefCard } from "@/components/reef-card";
 import { FilterPill } from "@/components/filter-pill";
@@ -138,11 +138,10 @@ export function ExplorePage({ locations, currentMonth }: Props) {
   const diveTypeFilters = getMultiParam(params, "divetype");
   const animalFilters = getMultiParam(params, "animal");
   const skillFilters = getMultiParam(params, "skill");
-  const freshOnly = params.get("fresh") === "1";
 
   const activeFilterCount =
     reefStates.length + regionFilters.length + monthFilters.length +
-    diveTypeFilters.length + animalFilters.length + skillFilters.length + (freshOnly ? 1 : 0);
+    diveTypeFilters.length + animalFilters.length + skillFilters.length;
   const hasActiveFilter = activeFilterCount > 0;
 
   // Sync draft with URL params when sheet opens
@@ -264,10 +263,6 @@ export function ExplorePage({ locations, currentMonth }: Props) {
         const maxRank = Math.max(...skillFilters.map((s) => SKILL_RANK[s] ?? 0));
         if ((SKILL_RANK[loc.skill] ?? 0) > maxRank) return false;
       }
-      if (freshOnly) {
-        const k = loc.lastSurveyDays === null ? "none" : freshness(loc.lastSurveyDays).k;
-        if (k === "fresh") return false;
-      }
       return true;
     });
 
@@ -280,7 +275,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
     });
 
     return result;
-  }, [locations, reefStates, regionFilters, monthFilters, diveTypeFilters, animalFilters, skillFilters, freshOnly, currentMonth]);
+  }, [locations, reefStates, regionFilters, monthFilters, diveTypeFilters, animalFilters, skillFilters, currentMonth]);
 
   // When a globe marker is clicked, select the card and scroll it into view
   const handleMarkerClick = useCallback((slug: string) => {
@@ -445,24 +440,6 @@ export function ExplorePage({ locations, currentMonth }: Props) {
               </button>
             );
           })}
-
-          <span aria-hidden="true" className="shrink-0 h-5" style={{ width: 1, background: "rgba(14,28,40,0.06)" }} />
-
-          {/* Needs fresh eyes toggle */}
-          <button
-            type="button"
-            aria-pressed={freshOnly}
-            onClick={() => setParam("fresh", freshOnly ? null : "1")}
-            className="inline-flex shrink-0 items-center rounded-full px-3 py-1.5 text-sm whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
-            style={{
-              border: freshOnly ? "1px solid rgba(14,28,40,0.45)" : "1px solid #E7E6E2",
-              background: freshOnly ? "rgba(14,28,40,0.06)" : "transparent",
-              color: freshOnly ? "#0E1C28" : "#4A5568",
-              cursor: "pointer",
-            }}
-          >
-            Needs fresh eyes
-          </button>
 
           {/* Clear all */}
           {hasActiveFilter && (
