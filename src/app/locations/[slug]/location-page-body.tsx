@@ -146,6 +146,9 @@ export type LocationBodyProps = {
   heat: ConditionPill | null;
   fishing: ConditionPill | null;
   blueParkAward: BlueParkAward | null;
+  verdictBasis: string | null;
+  speciesRichness: number | null;
+  speciesRadiusKm: number | null;
   // Story 4.3: GFW fishing pressure
   fishingPressure: FishingPressureData | null;
   // Story 4.3: water quality events
@@ -269,19 +272,6 @@ function Expand({ summary, children, defaultOpen = true }: { summary: string; ch
 
 // ─── Reef health metric cell ──────────────────────────────────────────────────
 
-function Metric({ children, last }: { children: React.ReactNode; last?: boolean }) {
-  return (
-    <div style={{
-      flex: 1,
-      minWidth: 140,
-      padding: "1rem 1.25rem",
-      borderRight: last ? "none" : "1px solid #E7E6E2",
-    }}>
-      {children}
-    </div>
-  );
-}
-
 function MetricLabel({ children }: { children: React.ReactNode }) {
   return (
     <p style={{
@@ -300,6 +290,19 @@ function MetricLabel({ children }: { children: React.ReactNode }) {
     </p>
   );
 }
+
+// Lighter label for an individual factor inside the "what is driving it" zone —
+// deliberately quieter than MetricLabel so factors read as inputs, not verdicts.
+const FACTOR_LABEL: React.CSSProperties = {
+  fontSize: "11px",
+  fontWeight: 500,
+  color: "#4A5568",
+  marginBottom: "0.3rem",
+  marginTop: 0,
+  display: "flex",
+  alignItems: "center",
+  gap: "0.3rem",
+};
 
 // ─── Main client body ─────────────────────────────────────────────────────────
 
@@ -324,6 +327,9 @@ export function LocationPageBody(props: LocationBodyProps) {
     heat,
     fishing,
     blueParkAward,
+    verdictBasis,
+    speciesRichness,
+    speciesRadiusKm,
     fishingPressure,
     waterQualityEvents,
     bleachedPct,
@@ -377,58 +383,118 @@ export function LocationPageBody(props: LocationBodyProps) {
             <section id="reef-condition" style={{ marginBottom: "3rem" }}>
               <h2 style={SECTION_HEADER}>Reef health</h2>
 
-              {/* Diving outlook sentence */}
-              <p style={{
-                fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
-                fontSize: "1.125rem",
-                lineHeight: 1.7,
-                color: "#4A5568",
-                marginBottom: "1.5rem",
-                maxWidth: 680,
-              }}>
-                {divingOutlook ?? conditionSentence}
-              </p>
+              {/* ZONE 1 — the verdict */}
+              <div style={{ marginBottom: "1.5rem", maxWidth: 680 }}>
+                <MetricLabel>
+                  Reef state
+                  <InfoButton onClick={() => setInfo("state")} label="How we judge this" />
+                </MetricLabel>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.55rem", marginBottom: "0.5rem" }}>
+                  <span style={{ width: 11, height: 11, borderRadius: "50%", background: reefStateColor, display: "inline-block", flexShrink: 0 }} />
+                  <span style={{ fontSize: "1.5rem", fontWeight: 700, color: reefStateColor, lineHeight: 1.1 }}>
+                    {reefStateLabel}
+                  </span>
+                </div>
+                <p style={{
+                  fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                  fontSize: "1.0625rem",
+                  lineHeight: 1.6,
+                  color: "#4A5568",
+                  margin: 0,
+                }}>
+                  {verdictBasis ?? divingOutlook ?? conditionSentence}
+                </p>
+              </div>
 
               {/* Data card */}
               <div style={SECTION_CARD}>
-                {/* Coral cover + trend note */}
-                <div style={{ padding: "1.25rem 1.25rem 0.75rem" }}>
-                  <p style={{
-                    fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
-                    fontSize: "11px",
-                    fontWeight: 500,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: "#4A5568",
-                    marginBottom: "0.35rem",
-                  }}>
-                    Coral cover over time
-                  </p>
-                  {decline ? (
-                    <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
-                      Live coral has fallen from <strong>{decline.fromPct}%</strong>{" "}
-                      to <span style={{ color: "#C0412B" }}>{decline.toPct}%</span> since {decline.fromYear}.{" "}
-                      {decline.zeroYear ? (
-                        <span style={{ color: "#4A5568", fontWeight: 400 }}>
-                          If the decline holds, little would remain by around {decline.zeroYear}.
+                {/* ZONE 2 — protection (shown on all Blue Parks + any MPA) */}
+                {(blueParkAward || fishing) ? (
+                  <div style={{ padding: "1rem 1.25rem", background: "rgba(46,125,91,0.06)", borderBottom: "1px solid #E7E6E2" }}>
+                    <MetricLabel>
+                      Protection
+                      <InfoButton onClick={() => setInfo(blueParkAward ? "bluepark" : "fishing")} label="What this means" />
+                    </MetricLabel>
+                    <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
+                      {blueParkAward ? (
+                        <span style={{
+                          display: "inline-block",
+                          padding: "3px 10px",
+                          borderRadius: 999,
+                          fontSize: "0.75rem",
+                          fontWeight: 600,
+                          background:
+                            blueParkAward.level === "gold" ? "rgba(185,138,46,0.12)"
+                              : blueParkAward.level === "silver" ? "rgba(74,85,104,0.1)"
+                                : blueParkAward.level === "platinum" ? "rgba(14,28,40,0.08)"
+                                  : "rgba(46,125,91,0.1)",
+                          color:
+                            blueParkAward.level === "gold" ? "#B98A2E"
+                              : blueParkAward.level === "silver" ? "#4A5568"
+                                : blueParkAward.level === "platinum" ? "#0E1C28"
+                                  : "#2E7D5B",
+                        }}>
+                          Blue Park · {blueParkAward.level === "awarded" ? "Awarded" : blueParkAward.level.charAt(0).toUpperCase() + blueParkAward.level.slice(1)}
                         </span>
                       ) : null}
+                      {fishing ? (
+                        <span style={{
+                          display: "inline-block",
+                          padding: "3px 10px",
+                          borderRadius: 999,
+                          fontSize: "0.75rem",
+                          fontWeight: 600,
+                          background: fishing.tone === "good" ? "rgba(46,125,91,0.1)" : fishing.tone === "warm" ? "rgba(185,138,46,0.1)" : "rgba(14,28,40,0.06)",
+                          color: fishing.tone === "good" ? "#2E7D5B" : fishing.tone === "warm" ? "#B98A2E" : "#4A5568",
+                        }}>
+                          {fishing.label} fishing
+                        </span>
+                      ) : null}
+                    </div>
+                    {blueParkAward ? (
+                      <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.4rem", lineHeight: 1.45 }}>
+                        {blueParkAward.parkName} · {blueParkAward.year}
+                      </p>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                {/* Coral cover + trend note (only when a survey exists) */}
+                {(coverNow !== null || decline) ? (
+                  <div style={{ padding: "1.25rem 1.25rem 0.75rem" }}>
+                    <p style={{
+                      fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#4A5568",
+                      marginBottom: "0.35rem",
+                    }}>
+                      Coral cover over time
                     </p>
-                  ) : coverNow !== null ? (
-                    <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
-                      Live coral covers <strong>{coverNow}%</strong> of the reef
-                      {coverYear ? ` as of ${coverYear}` : ""}.
-                      {coverTrendNote ? <span style={{ color: "#4A5568", fontWeight: 400 }}> {coverTrendNote}</span> : null}
-                    </p>
-                  ) : (
-                    <p style={{ fontSize: "0.9375rem", color: "#4A5568", lineHeight: 1.5 }}>
-                      No coral cover survey is on file for this reef yet.
-                    </p>
-                  )}
-                  {coralSourceLabel ? (
-                    <DataFreshnessLabel source={coralSourceLabel} date={surveyDateLabel} />
-                  ) : null}
-                </div>
+                    {decline ? (
+                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
+                        Live coral has fallen from <strong>{decline.fromPct}%</strong>{" "}
+                        to <span style={{ color: "#C0412B" }}>{decline.toPct}%</span> since {decline.fromYear}.{" "}
+                        {decline.zeroYear ? (
+                          <span style={{ color: "#4A5568", fontWeight: 400 }}>
+                            If the decline holds, little would remain by around {decline.zeroYear}.
+                          </span>
+                        ) : null}
+                      </p>
+                    ) : coverNow !== null ? (
+                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
+                        Live coral covers <strong>{coverNow}%</strong> of the reef
+                        {coverYear ? ` as of ${coverYear}` : ""}.
+                        {coverTrendNote ? <span style={{ color: "#4A5568", fontWeight: 400 }}> {coverTrendNote}</span> : null}
+                      </p>
+                    ) : null}
+                    {coralSourceLabel ? (
+                      <DataFreshnessLabel source={coralSourceLabel} date={surveyDateLabel} />
+                    ) : null}
+                  </div>
+                ) : null}
 
                 {/* Story 4.2: CoralProjectionChart */}
                 {projectionDataPoints.length >= 2 ? (
@@ -440,137 +506,79 @@ export function LocationPageBody(props: LocationBodyProps) {
                   </div>
                 ) : null}
 
-                {/* Reef health metrics row */}
-                <div style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 0,
-                  borderTop: "1px solid #E7E6E2",
-                  background: "#F8F7F4",
-                }}>
-                  {/* Heat right now */}
-                  {heat ? (
-                    <Metric>
-                      <MetricLabel>
-                        Heat right now
-                        <InfoButton onClick={() => setInfo("heat")} label="What this means" />
-                      </MetricLabel>
-                      <p style={{ margin: 0 }}>
-                        <span style={{
-                          display: "inline-block",
-                          padding: "2px 8px",
-                          borderRadius: 999,
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
-                          background: heat.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
-                          color: heat.tone === "good" ? "#2E7D5B" : "#B98A2E",
-                        }}>
-                          {heat.label}
-                        </span>
-                      </p>
-                      {heat.detail ? (
-                        <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.2rem", lineHeight: 1.45 }}>{heat.detail}</p>
+                {/* ZONE 3 — what is driving it (the factors behind the verdict) */}
+                {(heat || (fishingPressure && fishingPressure.level !== "unknown") || speciesRichness !== null) ? (
+                  <div style={{ borderTop: "1px solid #E7E6E2", background: "#F8F7F4", padding: "1rem 1.25rem" }}>
+                    <MetricLabel>What is driving it</MetricLabel>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2.25rem", marginTop: "0.5rem" }}>
+                      {heat ? (
+                        <div>
+                          <p style={FACTOR_LABEL}>
+                            Heat right now
+                            <InfoButton onClick={() => setInfo("heat")} label="What this means" />
+                          </p>
+                          <span style={{
+                            display: "inline-block",
+                            padding: "2px 8px",
+                            borderRadius: 999,
+                            fontSize: "0.75rem",
+                            fontWeight: 600,
+                            background: heat.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
+                            color: heat.tone === "good" ? "#2E7D5B" : "#B98A2E",
+                          }}>
+                            {heat.label}
+                          </span>
+                          {heat.detail ? (
+                            <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>{heat.detail}</p>
+                          ) : null}
+                        </div>
                       ) : null}
-                    </Metric>
-                  ) : null}
 
-                  {/* Fishing */}
-                  {fishing ? (
-                    <Metric>
-                      <MetricLabel>
-                        Fishing
-                        <InfoButton onClick={() => setInfo("fishing")} label="What this means" />
-                      </MetricLabel>
-                      <p style={{ margin: 0 }}>
-                        <span style={{
-                          display: "inline-block",
-                          padding: "2px 8px",
-                          borderRadius: 999,
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
-                          background: fishing.tone === "good" ? "rgba(46,125,91,0.1)" : fishing.tone === "warm" ? "rgba(185,138,46,0.1)" : "rgba(14,28,40,0.06)",
-                          color: fishing.tone === "good" ? "#2E7D5B" : fishing.tone === "warm" ? "#B98A2E" : "#4A5568",
-                        }}>
-                          {fishing.label}
-                        </span>
-                      </p>
                       {fishingPressure && fishingPressure.level !== "unknown" ? (
-                        <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.2rem", lineHeight: 1.45 }}>
-                          {fishingPressure.level === "low"
-                            ? "Light"
-                            : fishingPressure.level === "moderate"
-                              ? "Moderate"
-                              : fishingPressure.level === "high"
-                                ? "Heavy"
-                                : "Very heavy"}{" "}
-                          boat fishing nearby
-                          {/* Trend is noise at low absolute effort — only show it for moderate and up. */}
-                          {fishingPressure.level !== "low" && fishingPressure.trend === "rising"
-                            ? ", rising"
-                            : fishingPressure.level !== "low" && fishingPressure.trend === "falling"
-                              ? ", easing"
-                              : fishingPressure.level !== "low" && fishingPressure.trend === "stable"
-                                ? ", steady"
-                                : ""}{" "}
-                          ({fishingPressure.fishingHours.toLocaleString()} vessel hours within {fishingPressure.radiusKm} km)
-                        </p>
+                        <div>
+                          <p style={FACTOR_LABEL}>
+                            Fishing pressure
+                            <InfoButton onClick={() => setInfo("fishing")} label="What this means" />
+                          </p>
+                          <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#0E1C28", margin: 0, lineHeight: 1.4 }}>
+                            {fishingPressure.level === "low"
+                              ? "Light"
+                              : fishingPressure.level === "moderate"
+                                ? "Moderate"
+                                : fishingPressure.level === "high"
+                                  ? "Heavy"
+                                  : "Very heavy"}{" "}
+                            boat fishing nearby
+                          </p>
+                          <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>
+                            {fishingPressure.fishingHours.toLocaleString()} vessel hours within {fishingPressure.radiusKm} km
+                            {/* Trend is noise at low absolute effort — only show it for moderate and up. */}
+                            {fishingPressure.level !== "low" && fishingPressure.trend === "rising"
+                              ? " · rising"
+                              : fishingPressure.level !== "low" && fishingPressure.trend === "falling"
+                                ? " · easing"
+                                : fishingPressure.level !== "low" && fishingPressure.trend === "stable"
+                                  ? " · steady"
+                                  : ""}
+                          </p>
+                        </div>
                       ) : null}
-                    </Metric>
-                  ) : null}
 
-                  {/* Blue Park Award */}
-                  {blueParkAward ? (
-                    <Metric>
-                      <MetricLabel>
-                        Blue Park
-                        <InfoButton onClick={() => setInfo("bluepark")} label="What this means" />
-                      </MetricLabel>
-                      <p style={{ margin: 0 }}>
-                        <span style={{
-                          display: "inline-block",
-                          padding: "2px 8px",
-                          borderRadius: 999,
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
-                          background:
-                            blueParkAward.level === "gold"
-                              ? "rgba(185,138,46,0.12)"
-                              : blueParkAward.level === "silver"
-                                ? "rgba(74,85,104,0.1)"
-                                : blueParkAward.level === "platinum"
-                                  ? "rgba(14,28,40,0.08)"
-                                  : "rgba(46,125,91,0.1)",
-                          color:
-                            blueParkAward.level === "gold"
-                              ? "#B98A2E"
-                              : blueParkAward.level === "silver"
-                                ? "#4A5568"
-                                : blueParkAward.level === "platinum"
-                                  ? "#0E1C28"
-                                  : "#2E7D5B",
-                        }}>
-                          {blueParkAward.level === "awarded"
-                            ? "Awarded"
-                            : blueParkAward.level.charAt(0).toUpperCase() + blueParkAward.level.slice(1)}
-                        </span>
-                      </p>
-                      <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.2rem", lineHeight: 1.45 }}>
-                        {blueParkAward.parkName} · {blueParkAward.year}
-                      </p>
-                    </Metric>
-                  ) : null}
-
-                  {/* Reef state */}
-                  <Metric last>
-                    <MetricLabel>
-                      Reef state
-                      <InfoButton onClick={() => setInfo("state")} label="How we judge this" />
-                    </MetricLabel>
-                    <p style={{ fontSize: "0.95rem", fontWeight: 700, color: reefStateColor, margin: 0 }}>
-                      {reefStateLabel}
-                    </p>
-                  </Metric>
-                </div>
+                      {speciesRichness !== null ? (
+                        <div>
+                          <p style={FACTOR_LABEL}>Species logged</p>
+                          <p style={{ margin: 0 }}>
+                            <span style={{ fontSize: "1.125rem", fontWeight: 700, color: "#0E1C28" }}>{speciesRichness.toLocaleString()}</span>
+                            <span style={{ fontSize: "0.8125rem", color: "#4A5568" }}> species</span>
+                          </p>
+                          <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>
+                            iNaturalist{speciesRadiusKm ? ` · within ${speciesRadiusKm} km` : ""}
+                          </p>
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                ) : null}
               </div>
             </section>
           ) : null}

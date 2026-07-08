@@ -47,7 +47,7 @@ export type InfoKey =
 export const INFO: Record<InfoKey, InfoEntry> = {
   state: {
     title: "What the reef labels mean",
-    sub: "We read three live signals — coral cover, heat stress and fishing pressure — and turn them into one plain word for what is happening on the reef. It is not a ranking, and every reef is worth diving.",
+    sub: "We read live signals — coral cover, heat stress and fishing pressure — plus documented recovery where a park has it, and turn them into one plain word for what is happening on the reef. It is not a ranking, and every reef is worth diving.",
     rows: [
       ["Improving", "rgba(16,185,129,0.15)", "#6ee7b7", "Near its natural baseline and steady. Recovering or healthy, not perfect."],
       ["Stable", "rgba(245,158,11,0.14)", "#fbbf24", "Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],

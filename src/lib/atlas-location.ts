@@ -1,6 +1,7 @@
 import { getAllLocations, getLocationById } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
+import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
 import {
   getReefState,
@@ -208,7 +209,9 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     region: location.region,
     description: location.description,
     hook: location.description,
-    state: getReefState(location.id),
+    // Evidence-backed manual override (e.g. a documented fish-biomass recovery
+    // the coral-cover engine cannot see) wins; otherwise the data-driven state.
+    state: getReefPressureByLocationId(location.id)?.manualReefState ?? getReefState(location.id),
     cover: coverNow !== null ? `${coverNow}%` : null,
     coverYear: coverNowYear,
     coverNow,

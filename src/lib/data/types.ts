@@ -541,6 +541,18 @@ export type ReefPressureRecord = {
   mpaStatusSource?: MpaStatusSource;
   /** Present only when mpaStatusSource === "mpatlas". */
   mpaAssessment?: MpaGuideAssessment;
+  /**
+   * Evidence-backed manual reef-state override. Use ONLY where a real,
+   * sourced condition signal exists that the coral-cover engine cannot see
+   * (e.g. a documented fish-biomass recovery in a temperate MPA). When set,
+   * it supersedes getReefState() for this location. Never set it to invent a
+   * positive label from absence of data — manualReefStateBasis must cite the
+   * evidence, and manualReefStateSourceIds must back it.
+   */
+  manualReefState?: "thriving" | "pressure" | "change";
+  /** One-line, sourced rationale shown as the reef-state verdict sentence. */
+  manualReefStateBasis?: string;
+  manualReefStateSourceIds?: string[];
   /** Source ids backing this record (e.g. "mpatlas", "wdpa"). */
   sourceIds?: string[];
   /** Always cites human-pressure-mpa-context (and possibly extras). */
