@@ -66,7 +66,11 @@ const loc = locations.find((l) => l.id === entry.locationId);
 if (!loc) fail.push(`sanity: locationId "${entry.locationId}" is not a real location`);
 
 const dr = entry.depthRange || {};
-if (!(dr.max <= 60)) fail.push(`sanity: depthRange.max=${dr.max}m implausible (>60m — likely feet mistaken for meters)`);
+// Skill-aware depth cap catches BOTH feet-mistaken-for-meters AND internal
+// inconsistency (e.g. "advanced" site claiming a 65m tech depth).
+const depthCaps = { "never-dived": 30, "open-water": 35, "advanced": 45, "tech": 80 };
+const cap = depthCaps[entry.skillLevel] ?? 60;
+if (!(dr.max <= cap)) fail.push(`sanity: depthRange.max=${dr.max}m too deep for skillLevel="${entry.skillLevel}" (cap ${cap}m — feet-as-meters bug or wrong skill level)`);
 if (!(dr.min >= 0 && dr.min < dr.max)) fail.push(`sanity: depthRange min/max off (min=${dr.min}, max=${dr.max})`);
 
 if (loc && Number.isFinite(entry.lat) && Number.isFinite(entry.lng)) {

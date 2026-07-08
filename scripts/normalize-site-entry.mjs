@@ -34,6 +34,9 @@ for (const k of Object.keys(e)) if (typeof e[k] === "string") e[k] = decode(e[k]
 // slug convention
 if (e.id) e.slug = e.id;
 
+// these are populated by separate systems — force empty (agents over-fill them)
+for (const k of ["lodging", "operators", "gearIds", "siteSpecificGear"]) e[k] = [];
+
 // depth
 roundRange(e.depthRange);
 
