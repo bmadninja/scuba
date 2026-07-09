@@ -640,6 +640,60 @@ export type CoralCoverSeriesPoint = {
 };
 
 /**
+ * One observed fish-biomass reading in a multi-year series, in kilograms per
+ * hectare. Derived from Reef Life Survey M1 fish transects: biomass is summed
+ * across all fish species per transect block, converted to a density, and then
+ * averaged across all M1 surveys within radius in that year. Every point is a
+ * real measured value — the display never extrapolates beyond these points.
+ */
+export type FishBiomassSeriesPoint = {
+  year: number;
+  /** Mean standing fish biomass for that year, kilograms per hectare. */
+  biomassKgPerHa: number;
+  /** Number of RLS M1 surveys averaged into this year's point. */
+  surveyCount: number;
+};
+
+/**
+ * A location's multi-year reef-fish-biomass history, matched by proximity from
+ * the Reef Life Survey (RLS) global M1 fish-transect dataset. This is a
+ * DISPLAY-ONLY dataset for the reef card's fish-biomass-over-time chart: exactly
+ * like the coral series, points are matched within a radius rather than by exact
+ * site, so it never drives the reef-state verdict or any headline number — only
+ * the labelled trend chart. Fish biomass is the metric that actually responds to
+ * protection (coral is heat driven), so this is the honest "protection works"
+ * benchmark. Lives in `src/data/fish-biomass-series.json`, one entry per
+ * location. Method is effort standardized: every RLS M1 transect is the same
+ * fixed area, so year-to-year change reflects the reef, not survey effort.
+ */
+export type FishBiomassSeriesRecord = {
+  locationId: string;
+  sourceId: string;
+  methodologyClaimId: string;
+  /** Match radius in degrees used to gather nearby surveys. */
+  radiusDeg: number;
+  surveyEventCount: number;
+  surveyYears: number;
+  /** Distinct RLS survey sites within radius that fed this series. */
+  siteCount: number;
+  /** Survey programs represented, e.g. ["RLS", "ATRC"]. */
+  programs: string[];
+  latest: {
+    year: number;
+    biomassKgPerHa: number;
+    /** Mean fish counted per standard M1 transect (500 m²) in the latest year. */
+    abundancePer500m2?: number;
+    /** Mean fish species seen per M1 transect in the latest year. */
+    speciesRichness?: number;
+    surveyDate: string;
+  };
+  series: FishBiomassSeriesPoint[];
+  citation?: string | null;
+  notes?: string;
+  lastReviewedAt?: string;
+};
+
+/**
  * A location's multi-year coral-cover survey history, matched by proximity from
  * an external survey platform (MERMAID). This is a DISPLAY-ONLY dataset for the
  * reef card's coral-cover-over-time chart: because points are matched within a

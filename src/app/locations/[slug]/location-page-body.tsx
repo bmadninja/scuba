@@ -10,6 +10,8 @@ import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
 import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
+import { FishBiomassChart } from "@/components/fish-biomass-chart";
+import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
 import type { BlueParkAward } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
@@ -147,6 +149,11 @@ export type LocationBodyProps = {
   // GCRMN regional average, drawn as a faint horizontal reference line
   coralContextValue: number | null;
   coralContextLabel: string | null;
+  // Reef-fish-biomass-over-time chart points (real Reef Life Survey transects)
+  biomassDataPoints: BiomassDataPoint[];
+  biomassSourceLabel: string | null;
+  // Cited sources behind a hand-reviewed reef-state verdict (peer-reviewed / award)
+  reefStateSources: { label: string; url: string | null }[];
   heat: ConditionPill | null;
   fishing: ConditionPill | null;
   blueParkAward: BlueParkAward | null;
@@ -329,6 +336,9 @@ export function LocationPageBody(props: LocationBodyProps) {
     coralChartSourceLabel,
     coralContextValue,
     coralContextLabel,
+    biomassDataPoints,
+    biomassSourceLabel,
+    reefStateSources,
     heat,
     fishing,
     blueParkAward,
@@ -453,6 +463,32 @@ export function LocationPageBody(props: LocationBodyProps) {
                 }}>
                   {verdictBasis ?? divingOutlook ?? conditionSentence}
                 </p>
+                {/* Evidence: cited sources behind a hand-reviewed verdict, so the
+                    claim is visibly backed by real, linkable studies. */}
+                {reefStateSources.length > 0 ? (
+                  <p style={{
+                    fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                    fontSize: "0.6875rem",
+                    color: "#4A5568",
+                    margin: "0.6rem 0 0",
+                    lineHeight: 1.5,
+                  }}>
+                    <span style={{ letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280" }}>Evidence</span>
+                    {"  "}
+                    {reefStateSources.map((s, i) => (
+                      <span key={s.label}>
+                        {i > 0 ? ", " : " "}
+                        {s.url ? (
+                          <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E7D5B", textDecoration: "underline" }}>
+                            {s.label}
+                          </a>
+                        ) : (
+                          <span>{s.label}</span>
+                        )}
+                      </span>
+                    ))}
+                  </p>
+                ) : null}
               </div>
 
               {/* Data card */}
@@ -545,6 +581,36 @@ export function LocationPageBody(props: LocationBodyProps) {
                       sourceLabel={coralChartSourceLabel ?? coralSourceLabel ?? undefined}
                       contextValue={coralContextValue ?? undefined}
                       contextLabel={coralContextLabel ?? undefined}
+                    />
+                  </div>
+                ) : null}
+
+                {/* Reef fish biomass over time (Reef Life Survey). Fish biomass
+                    is the metric that responds to protection, so this trend is
+                    the honest "protection works" companion to the heat-driven
+                    coral chart. Display only — it never sets the reef state. */}
+                {biomassDataPoints.length >= 2 ? (
+                  <div style={{ padding: "0.75rem 1.25rem 1.25rem", borderTop: "1px solid #E7E6E2" }}>
+                    <p style={{
+                      fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#4A5568",
+                      marginBottom: "0.35rem",
+                    }}>
+                      Reef fish biomass over time
+                    </p>
+                    <p style={{ fontSize: "0.75rem", color: "#4A5568", margin: "0 0 0.75rem", lineHeight: 1.5 }}>
+                      How much fish life these transects hold, measured the same way
+                      every year. Fish biomass is what recovers when a reef is
+                      protected from fishing.
+                    </p>
+                    <FishBiomassChart
+                      locationName={locationName}
+                      dataPoints={biomassDataPoints}
+                      sourceLabel={biomassSourceLabel ?? undefined}
                     />
                   </div>
                 ) : null}
