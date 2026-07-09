@@ -1,14 +1,20 @@
 import { test, expect } from '@playwright/test';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-// Live HTTP reachability check for a deterministic sample of hero and species
-// photos. Catches 404s, domain rot, and CDN misconfigurations before they
-// reach production. Runs in Node — no browser required.
+// Reachability check for a deterministic sample of hero and species photos.
+// Catches 404s, domain rot, and CDN misconfigurations before they reach
+// production. Runs in Node — no browser required.
+//
+// Two kinds of image URL live in the data:
+//   - Absolute URLs (Wikimedia, Ocean Image Bank CDN, …) → live HTTP probe.
+//   - Self-hosted relative paths ("/heroes/*.webp") → served by Next from
+//     public/, so fetch() cannot resolve them (no base URL) and would throw.
+//     For these the correct reachability check is that the file ships in the
+//     repo under public/, so we verify it exists on disk.
 //
 // Sampling: sort URLs for determinism, then take every Nth to stay under ~50
-// total requests. Each request uses HEAD (fast, no body transfer); falls back
-// to a GET range if the server returns 405.
+// requests. Each HTTP request uses HEAD (fast); falls back to a GET range on 405.
 
 const root = process.cwd();
 const readJson = (p: string) => JSON.parse(readFileSync(join(root, p), 'utf8'));
@@ -16,6 +22,8 @@ const readJson = (p: string) => JSON.parse(readFileSync(join(root, p), 'utf8'));
 const TIMEOUT_MS = 10_000;
 const MAX_HERO = 30;
 const MAX_SPECIES = 20;
+
+const IMAGE_EXT_RE = /\.(webp|jpe?g|png|gif|avif|svg)$/i;
 
 const HEADERS = {
   // Wikimedia requires a descriptive User-Agent or aggressively rate-limits.
@@ -47,6 +55,22 @@ async function probeUrl(url: string): Promise<{ ok: boolean; status: number; con
   }
 }
 
+// Dispatch on URL kind: self-hosted relative paths are verified by presence in
+// public/ (fetch cannot resolve them); everything else is probed over HTTP.
+async function checkReachable(url: string): Promise<{ ok: boolean; status: number; contentType: string }> {
+  if (url.startsWith('/')) {
+    const onDisk = existsSync(join(root, 'public', url));
+    return {
+      ok: onDisk,
+      status: onDisk ? 200 : 404,
+      // Infer a content-type from the extension so the image/* assertion still
+      // catches a non-image file wired up as a hero.
+      contentType: onDisk && IMAGE_EXT_RE.test(url) ? `image/${url.split('.').pop()!.toLowerCase()}` : '',
+    };
+  }
+  return probeUrl(url);
+}
+
 function sample<T>(items: T[], max: number): T[] {
   if (items.length <= max) return items;
   const stride = Math.floor(items.length / max);
@@ -75,7 +99,7 @@ const speciesSample = sample(speciesUrls, MAX_SPECIES);
 test.describe('Image reachability — hero photos', () => {
   for (const { slug, url } of heroSample) {
     test(`${slug}`, async () => {
-      const result = await probeUrl(url);
+      const result = await checkReachable(url);
       expect(result.ok, `${slug} → HTTP ${result.status} for ${url}`).toBe(true);
       if (result.status !== 429) {
         expect(
@@ -90,7 +114,7 @@ test.describe('Image reachability — hero photos', () => {
 test.describe('Image reachability — species photos', () => {
   for (const { name, url } of speciesSample) {
     test(`${name}`, async () => {
-      const result = await probeUrl(url);
+      const result = await checkReachable(url);
       expect(result.ok, `${name} → HTTP ${result.status} for ${url}`).toBe(true);
       if (result.status !== 429) {
         expect(
