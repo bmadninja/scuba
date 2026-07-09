@@ -279,6 +279,17 @@
     "lastReviewedAt": "2026-06-20"
   },
   {
+    "claimId": "reef-fish-abundance",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "reef"
+    ],
+    "confidence": "medium",
+    "calculation": "Per REEF geographic zone and calendar year, the community abundance index is the sighting-frequency-weighted mean density across all reported species: Σ(%SF·DEN)/Σ(%SF), where %SF is a species' sighting frequency (surveys recording it / total surveys) and DEN is its density score (mean of the Roving Diver Technique abundance categories Single=1, Few=2, Many=3, Abundant=4 across surveys recording it), bounded 1–4. Only years with at least 10 Species-&-Abundance surveys are kept, and a location needs at least 3 such years to publish a series. The number of surveys behind each year is stored and shown as the effort denominator. Trend is the sign of the least-squares slope of the index over years, with a 0.15 (on the 1–4 scale) deadband.",
+    "limitations": "This is a RELATIVE abundance index from volunteer surveys, not biomass and not a fish count. It is recorded at REEF geographic-zone resolution (a zone can span many dive sites), so it never represents a single site and never feeds the reef-state verdict — it is a display-only trend. Density categories are log-scaled and coarse (four bins). Observer skill varies between volunteers; this index pools expert and novice surveyors. Survey effort is uneven across years and zones, so sparse years are dropped rather than shown. Scoped to regions where REEF coverage is strong (Tropical Western Atlantic/Caribbean, US, Tropical Eastern Pacific); not applied where REEF coverage is thin (Mediterranean, Indo-Pacific).",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
     "claimId": "reef-health-agrra",
     "claimType": "reef-health",
     "sourceIds": [

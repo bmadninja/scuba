@@ -41,6 +41,7 @@ export type InfoKey =
   | "iucn"
   | "conditions"
   | "chances"
+  | "reefabundance"
   | "inaturalist"
   | "coralwatch"
   | "reefcheck"
@@ -185,6 +186,19 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     source: "Source: research grade observations, via iNaturalist, GBIF and OBIS.",
     link: true,
     anchor: "#sightings",
+  },
+  reefabundance: {
+    title: "What fish abundance shows",
+    body: [
+      "This is a read on how much fish life divers actually record here, from the REEF Volunteer Fish Survey Project. On every survey a trained diver notes each species seen and places it in an abundance band, from a single fish up to abundant, and REEF logs how many surveys were done.",
+      "Because the number of surveys is counted, the score is standardised for effort. A rising line means more fish seen per survey, not simply more divers logging. That is what makes it a real signal of fish life, and it is why we keep it separate from the coral reef state above.",
+      "It is a relative index on a scale of 1 to 4, not a fish count or a weight, and it covers a whole REEF zone rather than a single dive site. Coverage is strong in the Caribbean, the United States, and the tropical eastern Pacific, and thin elsewhere, so we only show it where the surveys run deep enough to trust.",
+    ],
+    source: "Source: REEF Volunteer Fish Survey Project database, reef.org.",
+    externalHref: "https://www.reef.org",
+    externalText: "Open REEF →",
+    link: true,
+    anchor: "#sources",
   },
   inaturalist: {
     title: "Logging with iNaturalist",
