@@ -414,9 +414,11 @@ export function AtlasNav({ entries = [], variant: _variant = "default" }: AtlasN
           transition: "transform 200ms ease",
           boxShadow: drawerOpen ? "0 0 40px rgba(14,28,40,0.18)" : "none",
         }}
-        role="dialog"
-        aria-modal="true"
+        role={drawerOpen ? "dialog" : undefined}
+        aria-modal={drawerOpen ? "true" : undefined}
         aria-label="Navigation menu"
+        aria-hidden={drawerOpen ? undefined : true}
+        inert={drawerOpen ? undefined : true}
       >
         {/* Drawer header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#E7E6E2]">
