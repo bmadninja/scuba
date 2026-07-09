@@ -878,9 +878,9 @@ export default function DataPage() {
               Everything on this site is built from public science.{" "}
               <b style={{ color: INK }}>{liveSources} of these are live data feeds</b>{" "}
               we pull automatically on a schedule: NOAA Coral Reef Watch,
-              Global Fishing Watch, iNaturalist, the IUCN Red List and
+              Global Fishing Watch, iNaturalist, GBIF, the IUCN Red List and
               MERMAID. They power reef heat, fishing pressure, species richness,
-              coral cover and conservation status. The rest are the peer reviewed and government
+              coral cover, species sightings and conservation status. The rest are the peer reviewed and government
               datasets we credit and build our methodology on, plus our own
               editorial notes where we say so. All {totalSources} independent
               sources are named and linked below.
