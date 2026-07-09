@@ -1,6 +1,6 @@
 ---
 title: Reef-State Model Redesign
-status: draft
+status: final
 created: 2026-07-09
 updated: 2026-07-09
 author: Josie
@@ -15,7 +15,7 @@ This PRD is for the builder-operator (Josie) and any downstream agent implementi
 
 ## 1. Vision
 
-Reef state is the single most load-bearing scientific claim scubaSeason makes: a colored dot and one word — **Improving / Stable / Declining / Not surveyed** — that tells a diver what condition a reef is in. Today that verdict is computed from only three inputs (observed coral cover, the worst NOAA thermal alert, and reconciled fishing pressure), while the strongest signal of reef health we actually collect — the **fish community** — is invisible to it. Every fish-biomass and abundance dataset we've added (RLS, REEF, AGRRA, Reef Check, Blue Parks) is flagged "display-only, never a reef-state input." The gap is patched by hand: **4** locations carry a true `manualReefState` override — three of them (`torre-guaceto-italy`, `abrolhos-banks`, `chumbe-island-tanzania`) forced to **thriving** purely on fish-biomass evidence the algorithm can't see ("biomass inside the reserve runs several times higher than the fished reefs outside") — and a further **10** records carry a documented fish-biomass *basis* without (yet) overriding the verdict, latent cases the editors have already reasoned through by hand. Editors are re-deriving, per site, exactly the signal the algorithm ignores.
+Reef state is the single most load-bearing scientific claim scubaSeason makes: a colored dot and one word — **Improving / Stable / Declining / Not surveyed** — that tells a diver what condition a reef is in. Today that verdict is computed from only three inputs (observed coral cover, the worst NOAA thermal alert, and reconciled fishing pressure), while the strongest signal of reef health we actually collect — the **fish community** — is invisible to it. Every fish dataset we've added — biomass and abundance series (RLS, REEF, AGRRA), the Reef Check regional benchmark, and the Blue Parks award tier — is flagged "display-only, never a reef-state input." The gap is patched by hand: **4** locations carry a true `manualReefState` override — three of them (`torre-guaceto-italy`, `abrolhos-banks`, `chumbe-island-tanzania`) forced to **thriving** purely on fish-biomass evidence the algorithm can't see ("biomass inside the reserve runs several times higher than the fished reefs outside") — and a further **10** records carry a documented fish-biomass *basis* without (yet) overriding the verdict, latent cases the editors have already reasoned through by hand. Editors are re-deriving, per site, exactly the signal the algorithm ignores.
 
 This redesign replaces the hard-threshold cascade with an **evidence-weighted, multi-pillar model**. Four pillars — coral, thermal, fish community, and fishing pressure — each score a reef's condition, each carry their own confidence, and combine into one verdict plus an explicit **confidence tier** and a **per-pillar breakdown** the reader can inspect. Fish biomass becomes a first-class pillar for the **77 of 355 locations that have structured survey data** (Reef Life Survey biomass, REEF abundance, AGRRA) — that is where the redesign adds the most: verdicts that reflect the fish community, normalized against a reference, on roughly a fifth of the atlas that today ignores it. Species sightings — now live from iNaturalist, GBIF and OBIS — take a supporting role: not a health signal in themselves, but a way to raise confidence and reduce "Not surveyed."
 
@@ -308,10 +308,12 @@ Overrides the FR-10 diff classifies **computable** are removed; every **genuine-
 5. **Confidence tier taxonomy (FR-12):** **three tiers — Well-surveyed / Provisional / Sparse.**
 6. **Regional-baseline coverage (FR-5, FR-8):** confirmed — coral baselines cover **10 regions** (`coral-cover-regional.json`); fish benchmarks cover **2 basins only** (`indo-pacific`, `atlantic`), so fish normalization is basin-coarse in v1. Uncovered regions/basins use a documented fallback + lower confidence. Verify exact fish-biomass reference cutoffs against the latest published report card before hard-coding (automated source fetch was blocked).
 
-**Reopened / new decisions for Josie (surfaced by the reviewer gate):**
-- **Q-A (scope, needs a call): literature-biomass reserves.** The 3 fish-driven `thriving` overrides can't be computed because their biomass evidence is prose-only. Two paths: **(i)** keep them as cited `manualReefState` exceptions (cheap, honest, zero new work — the recommended default), or **(ii)** add an ETL/extraction task that captures per-site biomass from the cited studies into a structured field so the Fish Pillar can read them (scope expansion; would still hit the FR-11 fishing gate for abrolhos/chumbe, so only `torre-guaceto` could plausibly flip). *Which path?*
-- **Q-B (methodology): fish reference definition.** With no per-site unfished baseline in the data, is per-source relative normalization + MPA-contrast (FR-8) acceptable for v1, or is a proper B/B₀ ingestion a launch blocker? *(Recommend: accept relative-for-v1, note the limitation.)*
-- **Q-C:** whether the 2-basin fish context and coral outcome-anchored bins need finer calibration before launch (assess after the diff).
+**Resolved by the reviewer gate (2026-07-09):**
+7. **Q-A literature-biomass reserves:** **keep as cited `manualReefState` exceptions for v1** (no new ingestion). The override mechanism exists precisely for evidence that isn't machine-readable; abrolhos/chumbe would stay overridden regardless (moderate-fishing gate). A structured-biomass ingestion that could let `torre-guaceto` compute is logged as a **possible v2**, not v1 scope.
+8. **Q-B fish reference definition:** **accept per-source relative normalization + MPA-contrast for v1** (FR-8); a proper B/B₀-against-unfished-baseline read is **not** a launch blocker — it needs data we don't have, and the limitation is documented in-place. Revisit as v2 alongside Q-A path (ii).
+
+**Remaining (resolve during implementation, non-blocking):**
+- **Q-C:** whether the 2-basin fish context and coral outcome-anchored bins need finer calibration before launch — assess after the FR-10 regression diff.
 
 ## 9. Assumptions Index
 *(All prior draft assumptions resolved by the 2026-07-09 data investigation and Josie's decisions above.)*
