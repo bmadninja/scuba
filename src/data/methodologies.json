@@ -299,5 +299,27 @@
     "calculation": "Standing reef-fish biomass from Reef Life Survey Method 1 (M1) underwater visual transects, served by the IMOS AODN geoserver (imos:ep_m1_public_data). For each M1 survey, fish biomass is summed across all species and size classes within each 50 m x 5 m (250 m²) transect block, converted to a density in kilograms per hectare (grams per block x 0.04), and averaged across the survey's blocks so the figure is robust to whether one or two blocks were surveyed. A location's value for a year is the mean survey density across all M1 surveys within 0.5° (~55 km) of the location centre in that year, so a run of surveys becomes a real trend line. Every point is an observed value; nothing is projected. Latest-year abundance and species richness are the mean fish count per standard 500 m² transect and the mean distinct fish species per transect.",
     "limitations": "Surveys are matched by proximity (0.5° radius), not by exact dive site, so nearby transects may not perfectly represent the named location. This is a DISPLAY-ONLY trend chart and never sets the reef-state label. RLS coverage is uneven: strong on temperate, Mediterranean and long-running Australian reefs, but sparse or absent across much of the tropical Indo-Pacific, and many reefs are surveyed only once (no trend, so no chart). Biomass is estimated from visual size-class to weight conversions and can spike when a single large school or big-bodied fish is recorded on a transect. Volunteer (RLS) and professional (ATRC and partner) M1 surveys are pooled by shared method.",
     "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "claimId": "reef-biomass-recovery",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "study-salinas-galapagos-2016",
+      "study-caselle-channel-islands-2015",
+      "study-quimbayo-malpelo-2016",
+      "study-pina-amargos-jr-2014",
+      "study-lamb-johnson-exuma-2010",
+      "study-friedlander-cocos-2012",
+      "study-muallil-tubbataha-2019",
+      "study-prato-providencia-2024",
+      "study-bruce-abrolhos-2012",
+      "study-mcclanahan-chumbe-2009",
+      "study-mcclanahan-kisite-2006",
+      "study-koester-aldabra-2023",
+      "blue-parks"
+    ],
+    "confidence": "high",
+    "limitations": "These are peer-reviewed reef fish biomass findings for individual Blue Park sites, each comparing protected water against fished water (inside versus outside) or protection over time (before versus after), with the headline figure quoted as published. We use fish biomass as the signal that protection is working, which is distinct from coral condition: coral loss on these reefs is driven by marine heat, not by fishing. Where a reef is a documented biomass recovery and its coral is not currently falling, we set the reef state to Improving on this basis (for example Channel Islands, Abrolhos, Chumbe, alongside Torre Guaceto). Where the coral is currently declining under heat, we keep the coral-driven reef state and show the biomass finding as context rather than labelling the reef Improving. Two figures (Chumbe, Kisite-Mpunguti) were confirmed through the peer-reviewed Conservation Evidence synthesis of the primary studies rather than the paywalled primary PDF. Standing stock benchmarks without a fished control (Darwin and Wolf, Malpelo, Cocos, Aldabra) show an intact protected reef rather than a measured before-and-after recovery.",
+    "lastReviewedAt": "2026-07-08"
   }
 ]
