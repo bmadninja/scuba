@@ -134,6 +134,7 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     body: [
       "This is how much fishing boat activity is actually happening in the water around the reef, measured from satellite by Global Fishing Watch within a set distance of the dive site.",
       "It is the reality check on the protection rule. Where fishing is banned, quiet water means the ban is holding. Busy water despite protection is the warning sign, and it is why we show the two side by side.",
+      "The small line under the label is the trend across recent years. A line that is falling beside a protected reef means the fishing pressure is easing, which suggests the protection may be taking hold. We show it as context, never as proof that anyone is being policed. Fishing near a protected area is often allowed just outside a small core, and the satellite misses small boats that do not broadcast their position.",
     ],
     source: "Source: Global Fishing Watch apparent fishing effort. It refreshes regularly.",
     link: true,

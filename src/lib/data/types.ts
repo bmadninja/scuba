@@ -843,11 +843,25 @@ export type CoralCoverData = {
  * AIS-detected fishing hours — small artisanal boats not broadcasting
  * AIS are not visible to GFW. Stored per location.
  */
+/** One year's measured apparent-fishing-hours in a location's effort series. */
+export type FishingEffortPoint = { year: number; fishingHours: number };
+
 export type FishingPressureRecord = {
   locationId: string;
   radiusKm: number;
   current: { year: number; fishingHours: number };
   historical?: { year: number; fishingHours: number };
+  /**
+   * Multi-year apparent-fishing-effort history, oldest first, one point per
+   * year within the query radius. DISPLAY-ONLY: it powers the effort-trend
+   * sparkline and never feeds the reef-state verdict (which reads only the
+   * latest band). A falling trend near a protected reef is a supporting
+   * "pressure easing" signal, not proof of enforcement — AIS misses small and
+   * dark vessels, and fishing near an MPA is often legal outside a no-take
+   * core. Populated by scripts/fetch-fishing-pressure.mjs; when absent, the
+   * data layer synthesizes a two-point series from `historical` + `current`.
+   */
+  series?: FishingEffortPoint[];
   fetchedAt: string;
   source: "global-fishing-watch";
 };

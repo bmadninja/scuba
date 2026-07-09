@@ -12,6 +12,7 @@ import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
 import { FishBiomassChart } from "@/components/fish-biomass-chart";
 import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
+import { FishingEffortTrend } from "@/components/fishing-effort-trend";
 import type { BlueParkAward } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
@@ -120,6 +121,10 @@ export type FishingPressureData = {
   // Measured GFW effort band + direction vs the multi-year baseline.
   level: "low" | "moderate" | "high" | "very-high" | "unknown";
   trend: "rising" | "stable" | "falling" | "unknown";
+  // Display-only multi-year effort trend (oldest first). Empty/short series
+  // are simply not charted; see showEffortTrend.
+  effortSeries: { year: number; fishingHours: number }[];
+  showEffortTrend: boolean;
 };
 
 // Story 4.3: water quality events panel
@@ -659,6 +664,17 @@ export function LocationPageBody(props: LocationBodyProps) {
                               }}>
                                 {boatTraffic.word}
                               </span>
+                              {/* Display-only measured-effort trend (GFW). Falling effort
+                                  beside a protected reef reads as pressure easing — context,
+                                  not proof of enforcement (see popup). Shows a plain stat
+                                  with two years, a real sparkline with three or more. */}
+                              {fishingPressure?.showEffortTrend ? (
+                                <FishingEffortTrend
+                                  series={fishingPressure.effortSeries}
+                                  trend={fishingPressure.trend}
+                                  radiusKm={fishingPressure.radiusKm}
+                                />
+                              ) : null}
                             </div>
                           ) : null}
                         </div>

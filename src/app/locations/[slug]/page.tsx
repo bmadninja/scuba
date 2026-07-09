@@ -627,6 +627,8 @@ export default async function LocationPage({
           radiusKm: locationFishing.radiusKm,
           level: locationFishing.effort,
           trend: locationFishing.trend,
+          effortSeries: locationFishing.effortSeries,
+          showEffortTrend: locationFishing.showEffortTrend,
         }
       : null;
 

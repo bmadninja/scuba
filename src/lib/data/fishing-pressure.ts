@@ -2,11 +2,14 @@ import fishingData from "@/data/fishing-pressure.json";
 import type {
   EffectiveFishing,
   FishingEffortLevel,
+  FishingEffortPoint,
   FishingPressureRecord,
   FishingTrend,
 } from "./types";
 import {
   editorialEffortLevel,
+  effortTrendWorthShowing,
+  fishingEffortSeries,
   fishingTrend,
   gfwEffortLevel,
   reconcile,
@@ -43,6 +46,17 @@ export type LocationFishing = {
   radiusKm: number;
   /** True when the effort came from GFW; false when it fell back to editorial. */
   measured: boolean;
+  /**
+   * Multi-year measured effort, oldest first, for the display-only trend
+   * sparkline. Empty when there is no GFW record. See {@link fishingEffortSeries}.
+   */
+  effortSeries: FishingEffortPoint[];
+  /**
+   * Whether the effort series is worth charting: two or more years with a
+   * genuinely measurable peak. Near-zero series are suppressed. See
+   * {@link effortTrendWorthShowing}.
+   */
+  showEffortTrend: boolean;
 };
 
 /**
@@ -58,6 +72,7 @@ export const getLocationFishing = (locationId: string): LocationFishing => {
     ? gfwEffortLevel(hours)
     : editorialEffortLevel(pressure?.fishingPressure);
   const effective = reconcile(effort, pressure?.mpaStatus ?? null);
+  const effortSeries = fishingEffortSeries(gfw);
   return {
     effective,
     effort,
@@ -66,5 +81,7 @@ export const getLocationFishing = (locationId: string): LocationFishing => {
     trend: fishingTrend(hours, gfw?.historical?.fishingHours),
     radiusKm: data.radiusKm,
     measured: Boolean(gfw),
+    effortSeries,
+    showEffortTrend: effortTrendWorthShowing(effortSeries),
   };
 };

@@ -392,7 +392,7 @@
     "sourceType": "government-monitoring",
     "accessedAt": "2026-05-25",
     "license": "CC BY-SA 4.0; API requires registration",
-    "notes": "AIS-derived fishing-effort data globally at 0.1° resolution. Use to indicate fishing pressure near dive sites and to support 'sits inside / outside fishing zone' claims."
+    "notes": "AIS-derived fishing-effort data globally at 0.1° resolution. Use to indicate fishing pressure near dive sites and to support 'sits inside / outside fishing zone' claims. We ingest apparent fishing hours within 50 km of each location as a multi-year series and show it as a trend; a falling trend near a protected reef is a supporting 'pressure easing' signal, treated as context (not proof of enforcement), since AIS misses small-scale and dark vessels and fishing near an MPA is often legal outside a no-take core."
   },
   {
     "id": "global-mangrove-watch",
