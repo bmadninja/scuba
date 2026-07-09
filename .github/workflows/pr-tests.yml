@@ -1,15 +1,22 @@
 name: PR Tests
 
-# Enforces the Playwright suite on every pull request into main, mirroring the
-# local "push to prod" pre-deploy hook (.claude/hooks/predeploy-test.sh) so that
-# the same `npm test` gate applies whether code ships via git or the Vercel CLI.
-# Merges are blocked until this check passes (branch protection on main).
+# Enforces the Playwright suite on every human/code pull request into main,
+# mirroring the local "push to prod" pre-deploy hook
+# (.claude/hooks/predeploy-test.sh) so the same `npm test` gate applies whether
+# code ships via git or the Vercel CLI. Branch protection on main requires the
+# "Playwright suite (npm test)" check before merge.
+#
+# Data-automation PRs (labeled "automation" by the discovery/enrichment bots)
+# skip the heavy browser suite and report success immediately: they are already
+# gated by the Vercel build in auto-merge-automation.yml, and Josie's call is
+# that data automation flows without the full test gate. The job still RUNS on
+# those PRs and reports the required context, so branch protection is satisfied
+# instead of hanging pending forever.
 
 on:
   pull_request:
     branches: [main]
 
-# Cancel superseded runs when a PR is pushed to repeatedly.
 concurrency:
   group: pr-tests-${{ github.ref }}
   cancel-in-progress: true
@@ -20,24 +27,33 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - name: Skip note for automation PRs
+        if: contains(github.event.pull_request.labels.*.name, 'automation')
+        run: echo "Automation PR — skipping the Playwright suite (Vercel build gates data changes)."
+
       - uses: actions/checkout@v4
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
 
       - uses: actions/setup-node@v4
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
         with:
           node-version: "24"
           cache: "npm"
 
       - name: Install dependencies
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
         run: npm ci
 
       - name: Install Playwright browser (chromium)
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
         run: npm test
 
       - name: Upload Playwright report on failure
-        if: failure()
+        if: ${{ failure() && !contains(github.event.pull_request.labels.*.name, 'automation') }}
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
