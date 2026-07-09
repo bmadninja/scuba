@@ -62,6 +62,7 @@
   },
   {
     "id": "obis",
+    "ingestion": "live",
     "name": "Ocean Biodiversity Information System",
     "url": "https://obis.org/",
     "publisher": "IOC-UNESCO",
@@ -393,7 +394,7 @@
     "sourceType": "government-monitoring",
     "accessedAt": "2026-05-25",
     "license": "CC BY-SA 4.0; API requires registration",
-    "notes": "AIS-derived fishing-effort data globally at 0.1° resolution. Use to indicate fishing pressure near dive sites and to support 'sits inside / outside fishing zone' claims."
+    "notes": "AIS-derived fishing-effort data globally at 0.1° resolution. Use to indicate fishing pressure near dive sites and to support 'sits inside / outside fishing zone' claims. We ingest apparent fishing hours within 50 km of each location as a multi-year series and show it as a trend; a falling trend near a protected reef is a supporting 'pressure easing' signal, treated as context (not proof of enforcement), since AIS misses small-scale and dark vessels and fishing near an MPA is often legal outside a no-take core."
   },
   {
     "id": "global-mangrove-watch",
@@ -644,5 +645,35 @@
     "accessedAt": "2026-06-20",
     "license": "CC BY 4.0 (open summary data)",
     "notes": "Coral reef benthic survey platform used by researchers globally. Open summary data available at /v1/summarysampleevents/ without authentication. Raw transect data may be restricted by project."
+  },
+  {
+    "id": "rls",
+    "name": "Reef Life Survey (RLS)",
+    "url": "https://reeflifesurvey.com/",
+    "publisher": "Reef Life Survey Foundation / IMAS, University of Tasmania (via IMOS AODN)",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-07-09",
+    "license": "CC BY 4.0",
+    "notes": "Global standardized reef-fish visual census (Method 1 fish transects). Open data served by the IMOS Australian Ocean Data Network (AODN) geoserver — no authentication required. Publishes per-species biomass, abundance and species richness per survey. Attribution required."
+  },
+  {
+    "id": "melia-2020-torre-guaceto",
+    "name": "Melià et al. 2020 — Protection reveals density-dependent dynamics in fish populations (Torre Guaceto MPA)",
+    "url": "https://doi.org/10.1371/journal.pone.0228604",
+    "publisher": "PLOS ONE 15(2):e0228604",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-09",
+    "license": "CC BY 4.0",
+    "notes": "Twelve years of annual underwater visual census (2004 to 2015) at Torre Guaceto. White sea bream (Diplodus sargus) density inside the fully protected zone was 0.070 ind/m² versus 0.010 (north) and 0.022 (south) on the adjacent unprotected coast — roughly 3 to 7 times higher inside. The only genuine multi-year fish series for this MPA; measures one key species' density, not total biomass."
+  },
+  {
+    "id": "guidetti-2014-med-mpa",
+    "name": "Guidetti et al. 2014 — Large-scale assessment of Mediterranean MPA effects on fish assemblages",
+    "url": "https://doi.org/10.1371/journal.pone.0091841",
+    "publisher": "PLOS ONE 9(4):e91841",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-09",
+    "license": "CC BY 4.0",
+    "notes": "Thirty Mediterranean locations surveyed 2007 to 2008. Total fish biomass averaged 83.4 g/m² in well enforced no-take reserves, 29.8 at partially protected sites and 10.0 where fished — about 8 times higher in highly protected reserves. Torre Guaceto is one of the highly protected reserves; its protection response was driven by the sea breams Diplodus sargus and D. vulgaris. Biomass figure is a highly-protected-group mean, not a Torre-only measurement."
   }
 ]

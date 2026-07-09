@@ -12,8 +12,10 @@ import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
 import { getAgrraReefSeriesByLocationId } from "@/lib/data/agrra-reef-series";
+import { getFishBiomassSeriesByLocationId } from "@/lib/data/fish-biomass-series";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { getSourcesByIds } from "@/lib/data/sources";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getLocationFishing } from "@/lib/data/fishing-pressure";
 import { fishingAllowsImproving } from "@/lib/data/effective-fishing";
@@ -40,6 +42,7 @@ import type {
   ThreatenedStats,
 } from "./location-page-body";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
+import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
 import type { BleachingAlertLevel, CoralCoverSeriesPoint, MpaStatus, PartnerLink, ReefHealthRecord } from "@/lib/data/types";
 
 // ---------------------------------------------------------------------------
@@ -492,8 +495,14 @@ export default async function LocationPage({
   // there is no formal protection.
   const fishing = fishingPill(reefPressure?.mpaStatus ?? null, locationFishing.effort);
   const blueParkAward = getBlueParkByLocationId(location.id);
+  // A real Reef Life Survey fish-biomass trend is reef data in its own right, so
+  // it opens the reef-health panel even on temperate reefs that have no coral
+  // cover, heat, fishing or Blue Park signal (e.g. St Abbs, Oban, Jervis Bay).
+  const hasFishBiomassSeries =
+    (getFishBiomassSeriesByLocationId(location.id)?.series.length ?? 0) >= 2;
   const hasReefData =
-    coverNow !== null || decline !== null || heat !== null || fishing !== null || blueParkAward !== null;
+    coverNow !== null || decline !== null || heat !== null || fishing !== null ||
+    blueParkAward !== null || hasFishBiomassSeries;
 
   // For a flat coral-cover trend, append a forward-looking sentence based on current
   // heat stress and the combined fishing read so the note reads as an honest
@@ -529,6 +538,17 @@ export default async function LocationPage({
   // The reef-state "verdict" sentence: an evidence-backed manual basis (e.g. a
   // documented recovery) wins, else the diving outlook / condition sentence.
   const verdictBasis = reefPressure?.manualReefStateBasis ?? null;
+
+  // Peer-reviewed / award sources behind a hand-reviewed reef-state verdict,
+  // surfaced as an "Evidence" link row under the verdict so the claim is visibly
+  // cited rather than only backed in the data.
+  const reefStateSources =
+    reefPressure?.manualReefStateSourceIds && reefPressure.manualReefStateBasis
+      ? getSourcesByIds(reefPressure.manualReefStateSourceIds).map((s) => ({
+          label: s.name.split(" — ")[0],
+          url: s.url ?? null,
+        }))
+      : [];
 
   // Coral-cover chart points. Prefer a real multi-year survey series when one
   // is on file: every year becomes a point and the chart draws a genuine trend.
@@ -599,6 +619,24 @@ export default async function LocationPage({
     ? `${regionalTrend!.label} average (GCRMN)`
     : null;
 
+  // Reef-fish-biomass chart points. Real Reef Life Survey (RLS) M1 transect
+  // biomass, matched by proximity and DISPLAY ONLY — it powers the fish-biomass-
+  // over-time chart and never touches the reef-state verdict or any headline
+  // number. Fish biomass is the metric that responds to protection, so this is
+  // the "protection works" companion to the (heat-driven) coral chart. One point
+  // per real survey year; only rendered when a genuine 2+ year series is on file.
+  const fishBiomassSeries = getFishBiomassSeriesByLocationId(location.id);
+  const biomassDataPoints: BiomassDataPoint[] = [];
+  let biomassSourceLabel: string | null = null;
+  if (fishBiomassSeries && fishBiomassSeries.series.length >= 2) {
+    for (const pt of fishBiomassSeries.series) {
+      biomassDataPoints.push({ year: pt.year, kgPerHa: pt.biomassKgPerHa });
+    }
+    const km = Math.round(fishBiomassSeries.radiusDeg * 111);
+    const programs = fishBiomassSeries.programs.join(" + ") || "Reef Life Survey";
+    biomassSourceLabel = `${programs} fish transects within ${km} km`;
+  }
+
   // GFW measured fishing effort (apparent-fishing-hours within the query
   // radius), with the derived band and trend for the location panel.
   const fishingPressureData: FishingPressureData | null =
@@ -609,6 +647,8 @@ export default async function LocationPage({
           radiusKm: locationFishing.radiusKm,
           level: locationFishing.effort,
           trend: locationFishing.trend,
+          effortSeries: locationFishing.effortSeries,
+          showEffortTrend: locationFishing.showEffortTrend,
         }
       : null;
 
@@ -832,6 +872,9 @@ export default async function LocationPage({
         coralChartSourceLabel={coralChartSourceLabel}
         coralContextValue={coralContextValue}
         coralContextLabel={coralContextLabel}
+        biomassDataPoints={biomassDataPoints}
+        biomassSourceLabel={biomassSourceLabel}
+        reefStateSources={reefStateSources}
         fishingPressure={fishingPressureData}
         waterQualityEvents={waterQualityEvents}
         bleachedPct={bleachedPct}

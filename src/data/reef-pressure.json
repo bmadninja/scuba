@@ -2199,7 +2199,7 @@
       "coastal tourism",
       "seagrass disturbance"
     ],
-    "visitorImpactNote": "Torre Guaceto is a Mediterranean conservation success. A small fully protected core, co managed with the local fishers who once emptied it, brought the fish back. Studies have measured total fish biomass in the fully protected zone at more than four times that of the unprotected coast just outside. Divers visit through the reserve, and the main things to tread lightly around are the Posidonia seagrass meadows and the shallow reef.",
+    "visitorImpactNote": "Torre Guaceto is a Mediterranean conservation success. A small fully protected core, co managed with the local fishers who once emptied it, brought the fish back. Across 12 years of surveys from 2004 to 2015, white sea bream, a prime local catch, were found roughly 3 to 7 times denser inside the fully protected zone than on the coast just outside. Divers visit through the reserve, and the main things to tread lightly around are the Posidonia seagrass meadows and the shallow reef.",
     "mpaStatusSource": "mpatlas",
     "mpaAssessment": {
       "levelOfProtection": "fully",
@@ -2222,8 +2222,10 @@
     ],
     "lastReviewedAt": "2026-07-08",
     "manualReefState": "thriving",
-    "manualReefStateBasis": "Strongly protected and recovering: studies have measured total fish biomass in the fully protected zone at more than four times that of the unprotected coast just outside, and the reserve holds a Blue Park Award for effective protection.",
+    "manualReefStateBasis": "Strongly protected and recovering. Across 12 years of surveys from 2004 to 2015, white sea bream, a prime fished species, were measured roughly 3 to 7 times denser inside the fully protected zone than on the adjacent unprotected coast. Well enforced Mediterranean reserves like this one, closed to fishing, carry total fish biomass around 8 times that of fished coast, and Torre Guaceto holds a Blue Park Award for effective protection.",
     "manualReefStateSourceIds": [
+      "melia-2020-torre-guaceto",
+      "guidetti-2014-med-mpa",
       "blue-parks"
     ]
   }

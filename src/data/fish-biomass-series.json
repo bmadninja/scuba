@@ -1,0 +1,2626 @@
+[
+  {
+    "locationId": "almeria",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 33,
+    "surveyYears": 3,
+    "siteCount": 31,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2015,
+      "biomassKgPerHa": 757,
+      "abundancePer500m2": 2359,
+      "speciesRichness": 20,
+      "surveyDate": "2015-09-14"
+    },
+    "series": [
+      {
+        "year": 2013,
+        "biomassKgPerHa": 352.2,
+        "surveyCount": 2
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 351.1,
+        "surveyCount": 28
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 757,
+        "surveyCount": 3
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "33 RLS RLS M1 fish transects across 3 survey years within 56 km of this location, 31 survey sites. Standing fish biomass in kg/ha; most recent survey 2015-09-14.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "apia-samoa",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 8,
+    "surveyYears": 2,
+    "siteCount": 3,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 204.5,
+      "abundancePer500m2": 609,
+      "speciesRichness": 47,
+      "surveyDate": "2024-07-13"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 622.2,
+        "surveyCount": 3
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 204.5,
+        "surveyCount": 5
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "8 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 3 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-07-13.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "bali-indonesia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 7,
+    "siteCount": 4,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 880.1,
+      "abundancePer500m2": 2287,
+      "speciesRichness": 88.5,
+      "surveyDate": "2024-11-21"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 2733.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1269.5,
+        "surveyCount": 6
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1258.3,
+        "surveyCount": 5
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 1306.3,
+        "surveyCount": 6
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 1458.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 1591.8,
+        "surveyCount": 1
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 880.1,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 4 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-11-21.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "bay-of-islands-nz",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 34,
+    "surveyYears": 2,
+    "siteCount": 16,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 1741.6,
+      "abundancePer500m2": 2490,
+      "speciesRichness": 18.8,
+      "surveyDate": "2024-05-11"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 345.7,
+        "surveyCount": 30
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 1741.6,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "34 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 16 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-05-11.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "bayahibe",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 25,
+    "surveyYears": 2,
+    "siteCount": 10,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 1153.1,
+      "abundancePer500m2": 3092,
+      "speciesRichness": 34.8,
+      "surveyDate": "2025-04-26"
+    },
+    "series": [
+      {
+        "year": 2023,
+        "biomassKgPerHa": 534.1,
+        "surveyCount": 9
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 1153.1,
+        "surveyCount": 16
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "25 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 10 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-04-26.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "bloody-bay-wall-cayman-islands",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 29,
+    "surveyYears": 2,
+    "siteCount": 15,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2023,
+      "biomassKgPerHa": 516.3,
+      "abundancePer500m2": 1796,
+      "speciesRichness": 39.4,
+      "surveyDate": "2023-11-12"
+    },
+    "series": [
+      {
+        "year": 2022,
+        "biomassKgPerHa": 379.8,
+        "surveyCount": 7
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 516.3,
+        "surveyCount": 22
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "29 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 15 survey sites. Standing fish biomass in kg/ha; most recent survey 2023-11-12.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "bocas-del-toro-panama",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 65,
+    "surveyYears": 7,
+    "siteCount": 17,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 292.6,
+      "abundancePer500m2": 4168,
+      "speciesRichness": 25.7,
+      "surveyDate": "2024-07-16"
+    },
+    "series": [
+      {
+        "year": 2015,
+        "biomassKgPerHa": 149.2,
+        "surveyCount": 32
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 0,
+        "surveyCount": 3
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 291.8,
+        "surveyCount": 6
+      },
+      {
+        "year": 2018,
+        "biomassKgPerHa": 175.6,
+        "surveyCount": 1
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 163,
+        "surveyCount": 7
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 296.2,
+        "surveyCount": 10
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 292.6,
+        "surveyCount": 6
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "65 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 17 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-07-16.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "bonaire-national-marine-park-bonaire",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 41,
+    "surveyYears": 2,
+    "siteCount": 14,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2022,
+      "biomassKgPerHa": 502.8,
+      "abundancePer500m2": 5146,
+      "speciesRichness": 37.1,
+      "surveyDate": "2022-06-12"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 723.9,
+        "surveyCount": 14
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 502.8,
+        "surveyCount": 27
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "41 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 14 survey sites. Standing fish biomass in kg/ha; most recent survey 2022-06-12.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "byron-bay-australia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 12,
+    "surveyYears": 4,
+    "siteCount": 5,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2023,
+      "biomassKgPerHa": 535.2,
+      "abundancePer500m2": 483,
+      "speciesRichness": 33,
+      "surveyDate": "2023-03-19"
+    },
+    "series": [
+      {
+        "year": 2010,
+        "biomassKgPerHa": 3625.5,
+        "surveyCount": 5
+      },
+      {
+        "year": 2021,
+        "biomassKgPerHa": 5779.2,
+        "surveyCount": 4
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 2181.7,
+        "surveyCount": 2
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 535.2,
+        "surveyCount": 1
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "12 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 5 survey sites. Standing fish biomass in kg/ha; most recent survey 2023-03-19.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "candidasa-bali-indonesia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 7,
+    "siteCount": 4,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 880.1,
+      "abundancePer500m2": 2287,
+      "speciesRichness": 88.5,
+      "surveyDate": "2024-11-21"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 2733.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1269.5,
+        "surveyCount": 6
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1258.3,
+        "surveyCount": 5
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 1306.3,
+        "surveyCount": 6
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 1458.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 1591.8,
+        "surveyCount": 1
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 880.1,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 4 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-11-21.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "cayman-brac",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 29,
+    "surveyYears": 2,
+    "siteCount": 15,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2023,
+      "biomassKgPerHa": 516.3,
+      "abundancePer500m2": 1796,
+      "speciesRichness": 39.4,
+      "surveyDate": "2023-11-12"
+    },
+    "series": [
+      {
+        "year": 2022,
+        "biomassKgPerHa": 379.8,
+        "surveyCount": 7
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 516.3,
+        "surveyCount": 22
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "29 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 15 survey sites. Standing fish biomass in kg/ha; most recent survey 2023-11-12.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "channel-islands-usa",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 39,
+    "surveyYears": 2,
+    "siteCount": 8,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2022,
+      "biomassKgPerHa": 405.2,
+      "abundancePer500m2": 245,
+      "speciesRichness": 11.7,
+      "surveyDate": "2022-09-15"
+    },
+    "series": [
+      {
+        "year": 2010,
+        "biomassKgPerHa": 685.2,
+        "surveyCount": 23
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 405.2,
+        "surveyCount": 16
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "39 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 8 survey sites. Standing fish biomass in kg/ha; most recent survey 2022-09-15.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "cocos-costa-rica",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 82,
+    "surveyYears": 3,
+    "siteCount": 24,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2011,
+      "biomassKgPerHa": 7135.8,
+      "abundancePer500m2": 1817,
+      "speciesRichness": 29.2,
+      "surveyDate": "2011-04-30"
+    },
+    "series": [
+      {
+        "year": 2006,
+        "biomassKgPerHa": 3543.7,
+        "surveyCount": 32
+      },
+      {
+        "year": 2008,
+        "biomassKgPerHa": 5216.6,
+        "surveyCount": 20
+      },
+      {
+        "year": 2011,
+        "biomassKgPerHa": 7135.8,
+        "surveyCount": 30
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "82 RLS RLS M1 fish transects across 3 survey years within 56 km of this location, 24 survey sites. Standing fish biomass in kg/ha; most recent survey 2011-04-30.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "coiba-panama",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 233,
+    "surveyYears": 4,
+    "siteCount": 59,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 2633.2,
+      "abundancePer500m2": 1063,
+      "speciesRichness": 29.6,
+      "surveyDate": "2025-10-21"
+    },
+    "series": [
+      {
+        "year": 2007,
+        "biomassKgPerHa": 1382.9,
+        "surveyCount": 101
+      },
+      {
+        "year": 2008,
+        "biomassKgPerHa": 3463.2,
+        "surveyCount": 3
+      },
+      {
+        "year": 2011,
+        "biomassKgPerHa": 2516.5,
+        "surveyCount": 73
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 2633.2,
+        "surveyCount": 56
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "233 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 59 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-10-21.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "coral-bay-wa",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 516,
+    "surveyYears": 12,
+    "siteCount": 32,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 665.5,
+      "abundancePer500m2": 1009,
+      "speciesRichness": 45.5,
+      "surveyDate": "2025-08-12"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 1028.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2010,
+        "biomassKgPerHa": 1484.1,
+        "surveyCount": 25
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 978.5,
+        "surveyCount": 41
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 836.1,
+        "surveyCount": 78
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 788.6,
+        "surveyCount": 58
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 1930.4,
+        "surveyCount": 61
+      },
+      {
+        "year": 2019,
+        "biomassKgPerHa": 1147.5,
+        "surveyCount": 65
+      },
+      {
+        "year": 2021,
+        "biomassKgPerHa": 1351.5,
+        "surveyCount": 54
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 1298.9,
+        "surveyCount": 57
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 802.9,
+        "surveyCount": 4
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 932.2,
+        "surveyCount": 37
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 665.5,
+        "surveyCount": 35
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "516 RLS RLS M1 fish transects across 12 survey years within 56 km of this location, 32 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-08-12.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "efate-vanuatu",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 18,
+    "surveyYears": 2,
+    "siteCount": 8,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 303.8,
+      "abundancePer500m2": 1868,
+      "speciesRichness": 57.9,
+      "surveyDate": "2024-09-18"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 481.4,
+        "surveyCount": 2
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 303.8,
+        "surveyCount": 16
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "18 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 8 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-09-18.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "el-hierro-spain",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 29,
+    "surveyYears": 2,
+    "siteCount": 12,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2015,
+      "biomassKgPerHa": 438.5,
+      "abundancePer500m2": 356,
+      "speciesRichness": 8.8,
+      "surveyDate": "2015-05-11"
+    },
+    "series": [
+      {
+        "year": 2011,
+        "biomassKgPerHa": 633.2,
+        "surveyCount": 15
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 438.5,
+        "surveyCount": 14
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "29 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 12 survey sites. Standing fish biomass in kg/ha; most recent survey 2015-05-11.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "exmouth-wa",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 158,
+    "surveyYears": 11,
+    "siteCount": 28,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2023,
+      "biomassKgPerHa": 783.4,
+      "abundancePer500m2": 666,
+      "speciesRichness": 48.6,
+      "surveyDate": "2023-10-31"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 558.6,
+        "surveyCount": 1
+      },
+      {
+        "year": 2010,
+        "biomassKgPerHa": 1839.2,
+        "surveyCount": 11
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 890.6,
+        "surveyCount": 12
+      },
+      {
+        "year": 2013,
+        "biomassKgPerHa": 642.3,
+        "surveyCount": 21
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 1527.4,
+        "surveyCount": 18
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 751.6,
+        "surveyCount": 21
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 1685.3,
+        "surveyCount": 12
+      },
+      {
+        "year": 2019,
+        "biomassKgPerHa": 695.2,
+        "surveyCount": 16
+      },
+      {
+        "year": 2021,
+        "biomassKgPerHa": 1135.7,
+        "surveyCount": 14
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 865,
+        "surveyCount": 8
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 783.4,
+        "surveyCount": 24
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "158 RLS RLS M1 fish transects across 11 survey years within 56 km of this location, 28 survey sites. Standing fish biomass in kg/ha; most recent survey 2023-10-31.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "fakarava",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 18,
+    "surveyYears": 2,
+    "siteCount": 16,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2012,
+      "biomassKgPerHa": 3479.6,
+      "abundancePer500m2": 4174,
+      "speciesRichness": 69.3,
+      "surveyDate": "2012-07-04"
+    },
+    "series": [
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1893.1,
+        "surveyCount": 6
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 3479.6,
+        "surveyCount": 12
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "18 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 16 survey sites. Standing fish biomass in kg/ha; most recent survey 2012-07-04.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "fakarava-french-polynesia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 14,
+    "surveyYears": 2,
+    "siteCount": 11,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2012,
+      "biomassKgPerHa": 3431.8,
+      "abundancePer500m2": 4007,
+      "speciesRichness": 70.6,
+      "surveyDate": "2012-06-30"
+    },
+    "series": [
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1054,
+        "surveyCount": 3
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 3431.8,
+        "surveyCount": 11
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "14 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 11 survey sites. Standing fish biomass in kg/ha; most recent survey 2012-06-30.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "false-bay",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 42,
+    "surveyYears": 3,
+    "siteCount": 10,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 1052.6,
+      "abundancePer500m2": 285,
+      "speciesRichness": 8.2,
+      "surveyDate": "2025-12-17"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 546.4,
+        "surveyCount": 14
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 574.6,
+        "surveyCount": 9
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 1052.6,
+        "surveyCount": 19
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "42 RLS RLS M1 fish transects across 3 survey years within 56 km of this location, 10 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-12-17.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "florida-keys-usa",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 46,
+    "surveyYears": 4,
+    "siteCount": 21,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 618,
+      "abundancePer500m2": 430,
+      "speciesRichness": 36.5,
+      "surveyDate": "2025-06-07"
+    },
+    "series": [
+      {
+        "year": 2010,
+        "biomassKgPerHa": 1919.4,
+        "surveyCount": 5
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 464.8,
+        "surveyCount": 5
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 845.3,
+        "surveyCount": 32
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 618,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "46 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 21 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-06-07.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "gili-islands-indonesia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 7,
+    "siteCount": 4,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 880.1,
+      "abundancePer500m2": 2287,
+      "speciesRichness": 88.5,
+      "surveyDate": "2024-11-21"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 2733.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1269.5,
+        "surveyCount": 6
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1258.3,
+        "surveyCount": 5
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 1306.3,
+        "surveyCount": 6
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 1458.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 1591.8,
+        "surveyCount": 1
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 880.1,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 4 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-11-21.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "gladden-spit-belize",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 123,
+    "surveyYears": 7,
+    "siteCount": 28,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 635,
+      "abundancePer500m2": 827,
+      "speciesRichness": 32.9,
+      "surveyDate": "2024-12-11"
+    },
+    "series": [
+      {
+        "year": 2015,
+        "biomassKgPerHa": 193.3,
+        "surveyCount": 7
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 387.7,
+        "surveyCount": 32
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 305.7,
+        "surveyCount": 6
+      },
+      {
+        "year": 2018,
+        "biomassKgPerHa": 305.9,
+        "surveyCount": 6
+      },
+      {
+        "year": 2019,
+        "biomassKgPerHa": 142.1,
+        "surveyCount": 6
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 333.4,
+        "surveyCount": 44
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 635,
+        "surveyCount": 22
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "123 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 28 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-12-11.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "gran-canaria",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 12,
+    "surveyYears": 2,
+    "siteCount": 6,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2015,
+      "biomassKgPerHa": 212.9,
+      "abundancePer500m2": 1352,
+      "speciesRichness": 7,
+      "surveyDate": "2015-05-19"
+    },
+    "series": [
+      {
+        "year": 2011,
+        "biomassKgPerHa": 355,
+        "surveyCount": 2
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 212.9,
+        "surveyCount": 10
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "12 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 6 survey sites. Standing fish biomass in kg/ha; most recent survey 2015-05-19.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "great-barrier-reef-australia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 41,
+    "surveyYears": 5,
+    "siteCount": 14,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 1195.2,
+      "abundancePer500m2": 1362,
+      "speciesRichness": 62.3,
+      "surveyDate": "2025-10-31"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1207.9,
+        "surveyCount": 24
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 1988.9,
+        "surveyCount": 8
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 2185.1,
+        "surveyCount": 2
+      },
+      {
+        "year": 2021,
+        "biomassKgPerHa": 1510.9,
+        "surveyCount": 4
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 1195.2,
+        "surveyCount": 3
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "41 RLS RLS M1 fish transects across 5 survey years within 56 km of this location, 14 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-10-31.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "hoi-ha-wan-hong-kong",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 18,
+    "surveyYears": 2,
+    "siteCount": 8,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 203.6,
+      "abundancePer500m2": 806,
+      "speciesRichness": 24,
+      "surveyDate": "2025-07-28"
+    },
+    "series": [
+      {
+        "year": 2014,
+        "biomassKgPerHa": 130.5,
+        "surveyCount": 14
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 203.6,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "18 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 8 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-07-28.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "jervis-bay-australia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 2402,
+    "surveyYears": 25,
+    "siteCount": 88,
+    "programs": [
+      "ATRC",
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 2621.1,
+      "abundancePer500m2": 991,
+      "speciesRichness": 22.8,
+      "surveyDate": "2025-03-16"
+    },
+    "series": [
+      {
+        "year": 1996,
+        "biomassKgPerHa": 801.8,
+        "surveyCount": 80
+      },
+      {
+        "year": 2000,
+        "biomassKgPerHa": 876.2,
+        "surveyCount": 96
+      },
+      {
+        "year": 2001,
+        "biomassKgPerHa": 757.1,
+        "surveyCount": 100
+      },
+      {
+        "year": 2003,
+        "biomassKgPerHa": 500,
+        "surveyCount": 124
+      },
+      {
+        "year": 2004,
+        "biomassKgPerHa": 541.7,
+        "surveyCount": 128
+      },
+      {
+        "year": 2005,
+        "biomassKgPerHa": 410,
+        "surveyCount": 136
+      },
+      {
+        "year": 2006,
+        "biomassKgPerHa": 897.1,
+        "surveyCount": 128
+      },
+      {
+        "year": 2007,
+        "biomassKgPerHa": 638,
+        "surveyCount": 140
+      },
+      {
+        "year": 2008,
+        "biomassKgPerHa": 932.5,
+        "surveyCount": 193
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1251.5,
+        "surveyCount": 186
+      },
+      {
+        "year": 2010,
+        "biomassKgPerHa": 2247.9,
+        "surveyCount": 124
+      },
+      {
+        "year": 2011,
+        "biomassKgPerHa": 2654.5,
+        "surveyCount": 76
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 940.5,
+        "surveyCount": 124
+      },
+      {
+        "year": 2013,
+        "biomassKgPerHa": 782.5,
+        "surveyCount": 56
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 657.5,
+        "surveyCount": 70
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 834.6,
+        "surveyCount": 47
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 1251.8,
+        "surveyCount": 71
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 1142.8,
+        "surveyCount": 147
+      },
+      {
+        "year": 2018,
+        "biomassKgPerHa": 2505.1,
+        "surveyCount": 41
+      },
+      {
+        "year": 2019,
+        "biomassKgPerHa": 2422.9,
+        "surveyCount": 52
+      },
+      {
+        "year": 2021,
+        "biomassKgPerHa": 1500.1,
+        "surveyCount": 40
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 765.8,
+        "surveyCount": 50
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 2136,
+        "surveyCount": 69
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 2632.7,
+        "surveyCount": 72
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 2621.1,
+        "surveyCount": 52
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "2402 RLS ATRC + RLS M1 fish transects across 25 survey years within 56 km of this location, 88 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-03-16.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "julian-rocks-australia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 12,
+    "surveyYears": 4,
+    "siteCount": 5,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2023,
+      "biomassKgPerHa": 535.2,
+      "abundancePer500m2": 483,
+      "speciesRichness": 33,
+      "surveyDate": "2023-03-19"
+    },
+    "series": [
+      {
+        "year": 2010,
+        "biomassKgPerHa": 3625.5,
+        "surveyCount": 5
+      },
+      {
+        "year": 2021,
+        "biomassKgPerHa": 5779.2,
+        "surveyCount": 4
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 2181.7,
+        "surveyCount": 2
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 535.2,
+        "surveyCount": 1
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "12 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 5 survey sites. Standing fish biomass in kg/ha; most recent survey 2023-03-19.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "la-gomera",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 53,
+    "surveyYears": 3,
+    "siteCount": 22,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2015,
+      "biomassKgPerHa": 814.8,
+      "abundancePer500m2": 4593,
+      "speciesRichness": 10.5,
+      "surveyDate": "2015-05-05"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 343.2,
+        "surveyCount": 36
+      },
+      {
+        "year": 2013,
+        "biomassKgPerHa": 571.9,
+        "surveyCount": 7
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 814.8,
+        "surveyCount": 10
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "53 RLS RLS M1 fish transects across 3 survey years within 56 km of this location, 22 survey sites. Standing fish biomass in kg/ha; most recent survey 2015-05-05.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "lanzarote-canary-islands",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 2,
+    "siteCount": 14,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2015,
+      "biomassKgPerHa": 732.5,
+      "abundancePer500m2": 2062,
+      "speciesRichness": 7.9,
+      "surveyDate": "2015-07-25"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 291.7,
+        "surveyCount": 6
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 732.5,
+        "surveyCount": 18
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 14 survey sites. Standing fish biomass in kg/ha; most recent survey 2015-07-25.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "lord-howe-island",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 1167,
+    "surveyYears": 12,
+    "siteCount": 45,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2026,
+      "biomassKgPerHa": 1336.3,
+      "abundancePer500m2": 966,
+      "speciesRichness": 25.5,
+      "surveyDate": "2026-04-04"
+    },
+    "series": [
+      {
+        "year": 2006,
+        "biomassKgPerHa": 648.1,
+        "surveyCount": 66
+      },
+      {
+        "year": 2008,
+        "biomassKgPerHa": 750.1,
+        "surveyCount": 76
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 827.6,
+        "surveyCount": 81
+      },
+      {
+        "year": 2010,
+        "biomassKgPerHa": 1295.9,
+        "surveyCount": 116
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1467.9,
+        "surveyCount": 111
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 1117.7,
+        "surveyCount": 106
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 911.4,
+        "surveyCount": 121
+      },
+      {
+        "year": 2018,
+        "biomassKgPerHa": 997.9,
+        "surveyCount": 108
+      },
+      {
+        "year": 2020,
+        "biomassKgPerHa": 803.7,
+        "surveyCount": 93
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 870.3,
+        "surveyCount": 110
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 1466,
+        "surveyCount": 83
+      },
+      {
+        "year": 2026,
+        "biomassKgPerHa": 1336.3,
+        "surveyCount": 96
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "1167 RLS RLS M1 fish transects across 12 survey years within 56 km of this location, 45 survey sites. Standing fish biomass in kg/ha; most recent survey 2026-04-04.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "mahe-seychelles",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 27,
+    "surveyYears": 2,
+    "siteCount": 12,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2023,
+      "biomassKgPerHa": 880.7,
+      "abundancePer500m2": 1838,
+      "speciesRichness": 45.2,
+      "surveyDate": "2023-05-22"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 696.1,
+        "surveyCount": 13
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 880.7,
+        "surveyCount": 14
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "27 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 12 survey sites. Standing fish biomass in kg/ha; most recent survey 2023-05-22.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "malpelo-colombia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 48,
+    "surveyYears": 4,
+    "siteCount": 11,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 7941,
+      "abundancePer500m2": 8224,
+      "speciesRichness": 28.4,
+      "surveyDate": "2025-10-29"
+    },
+    "series": [
+      {
+        "year": 2006,
+        "biomassKgPerHa": 4025.7,
+        "surveyCount": 24
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 4934.8,
+        "surveyCount": 12
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 30259.3,
+        "surveyCount": 5
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 7941,
+        "surveyCount": 7
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "48 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 11 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-10-29.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "medes-islands-spain",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 128,
+    "surveyYears": 3,
+    "siteCount": 56,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2023,
+      "biomassKgPerHa": 176.8,
+      "abundancePer500m2": 455,
+      "speciesRichness": 9.4,
+      "surveyDate": "2023-06-07"
+    },
+    "series": [
+      {
+        "year": 2011,
+        "biomassKgPerHa": 157.4,
+        "surveyCount": 26
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 225.4,
+        "surveyCount": 90
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 176.8,
+        "surveyCount": 12
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "128 RLS RLS M1 fish transects across 3 survey years within 56 km of this location, 56 survey sites. Standing fish biomass in kg/ha; most recent survey 2023-06-07.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "moorea",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 10,
+    "surveyYears": 2,
+    "siteCount": 6,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2012,
+      "biomassKgPerHa": 966.1,
+      "abundancePer500m2": 1264,
+      "speciesRichness": 51.3,
+      "surveyDate": "2012-07-22"
+    },
+    "series": [
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1564.3,
+        "surveyCount": 7
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 966.1,
+        "surveyCount": 3
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "10 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 6 survey sites. Standing fish biomass in kg/ha; most recent survey 2012-07-22.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "new-caledonia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 12,
+    "surveyYears": 4,
+    "siteCount": 9,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 2591.3,
+      "abundancePer500m2": 1166,
+      "speciesRichness": 79.7,
+      "surveyDate": "2024-10-20"
+    },
+    "series": [
+      {
+        "year": 2021,
+        "biomassKgPerHa": 2272.1,
+        "surveyCount": 5
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 564.4,
+        "surveyCount": 1
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 3297.3,
+        "surveyCount": 3
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 2591.3,
+        "surveyCount": 3
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "12 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 9 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-10-20.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "ningaloo-australia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 465,
+    "surveyYears": 12,
+    "siteCount": 30,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 687.1,
+      "abundancePer500m2": 968,
+      "speciesRichness": 45.5,
+      "surveyDate": "2025-08-12"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 1028.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2010,
+        "biomassKgPerHa": 1491.5,
+        "surveyCount": 23
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1021.5,
+        "surveyCount": 38
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 872.3,
+        "surveyCount": 72
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 835.7,
+        "surveyCount": 52
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 1996.7,
+        "surveyCount": 55
+      },
+      {
+        "year": 2019,
+        "biomassKgPerHa": 1152.6,
+        "surveyCount": 59
+      },
+      {
+        "year": 2021,
+        "biomassKgPerHa": 1474.2,
+        "surveyCount": 48
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 1366.2,
+        "surveyCount": 51
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 753.5,
+        "surveyCount": 6
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 1031.2,
+        "surveyCount": 31
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 687.1,
+        "surveyCount": 29
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "465 RLS RLS M1 fish transects across 12 survey years within 56 km of this location, 30 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-08-12.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "niue-avaiki-cave",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 11,
+    "surveyYears": 2,
+    "siteCount": 7,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2019,
+      "biomassKgPerHa": 419.8,
+      "abundancePer500m2": 552,
+      "speciesRichness": 42,
+      "surveyDate": "2019-06-14"
+    },
+    "series": [
+      {
+        "year": 2011,
+        "biomassKgPerHa": 946.9,
+        "surveyCount": 10
+      },
+      {
+        "year": 2019,
+        "biomassKgPerHa": 419.8,
+        "surveyCount": 1
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "11 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 7 survey sites. Standing fish biomass in kg/ha; most recent survey 2019-06-14.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "nusa-lembongan-indonesia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 7,
+    "siteCount": 4,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 880.1,
+      "abundancePer500m2": 2287,
+      "speciesRichness": 88.5,
+      "surveyDate": "2024-11-21"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 2733.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1269.5,
+        "surveyCount": 6
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1258.3,
+        "surveyCount": 5
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 1306.3,
+        "surveyCount": 6
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 1458.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 1591.8,
+        "surveyCount": 1
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 880.1,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 4 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-11-21.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "nusa-penida",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 7,
+    "siteCount": 4,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 880.1,
+      "abundancePer500m2": 2287,
+      "speciesRichness": 88.5,
+      "surveyDate": "2024-11-21"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 2733.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1269.5,
+        "surveyCount": 6
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1258.3,
+        "surveyCount": 5
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 1306.3,
+        "surveyCount": 6
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 1458.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 1591.8,
+        "surveyCount": 1
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 880.1,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 4 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-11-21.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "oahu",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 2,
+    "siteCount": 9,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2019,
+      "biomassKgPerHa": 201.7,
+      "abundancePer500m2": 288,
+      "speciesRichness": 23.3,
+      "surveyDate": "2019-09-11"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 368.8,
+        "surveyCount": 11
+      },
+      {
+        "year": 2019,
+        "biomassKgPerHa": 201.7,
+        "surveyCount": 13
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 9 survey sites. Standing fish biomass in kg/ha; most recent survey 2019-09-11.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "oban",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 23,
+    "surveyYears": 2,
+    "siteCount": 7,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 21.5,
+      "abundancePer500m2": 189,
+      "speciesRichness": 4.8,
+      "surveyDate": "2025-07-19"
+    },
+    "series": [
+      {
+        "year": 2011,
+        "biomassKgPerHa": 29.9,
+        "surveyCount": 11
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 21.5,
+        "surveyCount": 12
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "23 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 7 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-07-19.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "osprey-reef",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 94,
+    "surveyYears": 5,
+    "siteCount": 16,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 2178.9,
+      "abundancePer500m2": 886,
+      "speciesRichness": 56.9,
+      "surveyDate": "2025-11-07"
+    },
+    "series": [
+      {
+        "year": 2013,
+        "biomassKgPerHa": 623.2,
+        "surveyCount": 14
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 1899.3,
+        "surveyCount": 16
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 2591.8,
+        "surveyCount": 27
+      },
+      {
+        "year": 2020,
+        "biomassKgPerHa": 1457,
+        "surveyCount": 26
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 2178.9,
+        "surveyCount": 11
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "94 RLS RLS M1 fish transects across 5 survey years within 56 km of this location, 16 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-11-07.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "poor-knights-new-zealand",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 118,
+    "surveyYears": 4,
+    "siteCount": 44,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 1382.6,
+      "abundancePer500m2": 1663,
+      "speciesRichness": 16.1,
+      "surveyDate": "2024-05-13"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 687.2,
+        "surveyCount": 3
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 944,
+        "surveyCount": 9
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1066,
+        "surveyCount": 46
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 1382.6,
+        "surveyCount": 60
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "118 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 44 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-05-13.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "praslin-seychelles",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 27,
+    "surveyYears": 2,
+    "siteCount": 12,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2023,
+      "biomassKgPerHa": 880.7,
+      "abundancePer500m2": 1838,
+      "speciesRichness": 45.2,
+      "surveyDate": "2023-05-22"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 696.1,
+        "surveyCount": 13
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 880.7,
+        "surveyCount": 14
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "27 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 12 survey sites. Standing fish biomass in kg/ha; most recent survey 2023-05-22.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "raja-ampat-indonesia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 100,
+    "surveyYears": 2,
+    "siteCount": 38,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2018,
+      "biomassKgPerHa": 1392.9,
+      "abundancePer500m2": 3457,
+      "speciesRichness": 87.6,
+      "surveyDate": "2018-03-24"
+    },
+    "series": [
+      {
+        "year": 2014,
+        "biomassKgPerHa": 4283.7,
+        "surveyCount": 69
+      },
+      {
+        "year": 2018,
+        "biomassKgPerHa": 1392.9,
+        "surveyCount": 31
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "100 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 38 survey sites. Standing fish biomass in kg/ha; most recent survey 2018-03-24.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "rarotonga-cook-islands",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 5,
+    "surveyYears": 2,
+    "siteCount": 3,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2018,
+      "biomassKgPerHa": 1684.7,
+      "abundancePer500m2": 1006,
+      "speciesRichness": 53,
+      "surveyDate": "2018-06-17"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 888.8,
+        "surveyCount": 3
+      },
+      {
+        "year": 2018,
+        "biomassKgPerHa": 1684.7,
+        "surveyCount": 2
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "5 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 3 survey sites. Standing fish biomass in kg/ha; most recent survey 2018-06-17.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "san-juan-islands",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 9,
+    "surveyYears": 2,
+    "siteCount": 5,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 391.6,
+      "abundancePer500m2": 558,
+      "speciesRichness": 15,
+      "surveyDate": "2024-10-19"
+    },
+    "series": [
+      {
+        "year": 2023,
+        "biomassKgPerHa": 80.8,
+        "surveyCount": 7
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 391.6,
+        "surveyCount": 2
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "9 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 5 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-10-19.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "shark-bay-wa",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 3,
+    "surveyYears": 2,
+    "siteCount": 2,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2013,
+      "biomassKgPerHa": 781.3,
+      "abundancePer500m2": 610,
+      "speciesRichness": 22.5,
+      "surveyDate": "2013-11-11"
+    },
+    "series": [
+      {
+        "year": 2010,
+        "biomassKgPerHa": 1461.8,
+        "surveyCount": 1
+      },
+      {
+        "year": 2013,
+        "biomassKgPerHa": 781.3,
+        "surveyCount": 2
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "3 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 2 survey sites. Standing fish biomass in kg/ha; most recent survey 2013-11-11.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "ss-yongala-wreck",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 16,
+    "surveyYears": 4,
+    "siteCount": 5,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2020,
+      "biomassKgPerHa": 307.6,
+      "abundancePer500m2": 1454,
+      "speciesRichness": 53,
+      "surveyDate": "2020-10-14"
+    },
+    "series": [
+      {
+        "year": 2012,
+        "biomassKgPerHa": 521.7,
+        "surveyCount": 2
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 2392.4,
+        "surveyCount": 6
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 792.9,
+        "surveyCount": 4
+      },
+      {
+        "year": 2020,
+        "biomassKgPerHa": 307.6,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "16 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 5 survey sites. Standing fish biomass in kg/ha; most recent survey 2020-10-14.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "st-abbs-head",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 2,
+    "siteCount": 6,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2025,
+      "biomassKgPerHa": 36.2,
+      "abundancePer500m2": 338,
+      "speciesRichness": 4.8,
+      "surveyDate": "2025-07-16"
+    },
+    "series": [
+      {
+        "year": 2011,
+        "biomassKgPerHa": 51.9,
+        "surveyCount": 12
+      },
+      {
+        "year": 2025,
+        "biomassKgPerHa": 36.2,
+        "surveyCount": 12
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 6 survey sites. Standing fish biomass in kg/ha; most recent survey 2025-07-16.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "tenerife-canary-islands",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 138,
+    "surveyYears": 4,
+    "siteCount": 56,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2015,
+      "biomassKgPerHa": 336.5,
+      "abundancePer500m2": 331,
+      "speciesRichness": 10,
+      "surveyDate": "2015-05-03"
+    },
+    "series": [
+      {
+        "year": 2011,
+        "biomassKgPerHa": 517,
+        "surveyCount": 24
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 347.9,
+        "surveyCount": 98
+      },
+      {
+        "year": 2013,
+        "biomassKgPerHa": 408.3,
+        "surveyCount": 14
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 336.5,
+        "surveyCount": 2
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "138 RLS RLS M1 fish transects across 4 survey years within 56 km of this location, 56 survey sites. Standing fish biomass in kg/ha; most recent survey 2015-05-03.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "tulamben-bali-indonesia",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 24,
+    "surveyYears": 7,
+    "siteCount": 4,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 880.1,
+      "abundancePer500m2": 2287,
+      "speciesRichness": 88.5,
+      "surveyDate": "2024-11-21"
+    },
+    "series": [
+      {
+        "year": 2008,
+        "biomassKgPerHa": 2733.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2009,
+        "biomassKgPerHa": 1269.5,
+        "surveyCount": 6
+      },
+      {
+        "year": 2012,
+        "biomassKgPerHa": 1258.3,
+        "surveyCount": 5
+      },
+      {
+        "year": 2014,
+        "biomassKgPerHa": 1306.3,
+        "surveyCount": 6
+      },
+      {
+        "year": 2015,
+        "biomassKgPerHa": 1458.3,
+        "surveyCount": 1
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 1591.8,
+        "surveyCount": 1
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 880.1,
+        "surveyCount": 4
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "24 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 4 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-11-21.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "turneffe-belize",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 123,
+    "surveyYears": 7,
+    "siteCount": 28,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 635,
+      "abundancePer500m2": 827,
+      "speciesRichness": 32.9,
+      "surveyDate": "2024-12-11"
+    },
+    "series": [
+      {
+        "year": 2015,
+        "biomassKgPerHa": 193.3,
+        "surveyCount": 7
+      },
+      {
+        "year": 2016,
+        "biomassKgPerHa": 387.7,
+        "surveyCount": 32
+      },
+      {
+        "year": 2017,
+        "biomassKgPerHa": 305.7,
+        "surveyCount": 6
+      },
+      {
+        "year": 2018,
+        "biomassKgPerHa": 305.9,
+        "surveyCount": 6
+      },
+      {
+        "year": 2019,
+        "biomassKgPerHa": 142.1,
+        "surveyCount": 6
+      },
+      {
+        "year": 2022,
+        "biomassKgPerHa": 333.4,
+        "surveyCount": 44
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 635,
+        "surveyCount": 22
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "123 RLS RLS M1 fish transects across 7 survey years within 56 km of this location, 28 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-12-11.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "vancouver-island",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 13,
+    "surveyYears": 3,
+    "siteCount": 7,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 391.6,
+      "abundancePer500m2": 558,
+      "speciesRichness": 15,
+      "surveyDate": "2024-10-19"
+    },
+    "series": [
+      {
+        "year": 2010,
+        "biomassKgPerHa": 56.9,
+        "surveyCount": 2
+      },
+      {
+        "year": 2023,
+        "biomassKgPerHa": 79.9,
+        "surveyCount": 9
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 391.6,
+        "surveyCount": 2
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "13 RLS RLS M1 fish transects across 3 survey years within 56 km of this location, 7 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-10-19.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "vavau-tonga",
+    "sourceId": "rls",
+    "methodologyClaimId": "fish-biomass-rls",
+    "radiusDeg": 0.5,
+    "surveyEventCount": 42,
+    "surveyYears": 2,
+    "siteCount": 18,
+    "programs": [
+      "RLS"
+    ],
+    "latest": {
+      "year": 2024,
+      "biomassKgPerHa": 610.7,
+      "abundancePer500m2": 780,
+      "speciesRichness": 49.8,
+      "surveyDate": "2024-06-30"
+    },
+    "series": [
+      {
+        "year": 2009,
+        "biomassKgPerHa": 905.5,
+        "surveyCount": 8
+      },
+      {
+        "year": 2024,
+        "biomassKgPerHa": 610.7,
+        "surveyCount": 34
+      }
+    ],
+    "citation": "Reef Life Survey (RLS). Fish biomass from Method 1 transects, served by the Integrated Marine Observing System (IMOS) Australian Ocean Data Network. Edgar GJ, Stuart-Smith RD (2014) Systematic global assessment of reef fish communities by the Reef Life Survey program. Scientific Data 1:140007. Retrieved 2026-07-09 from https://reeflifesurvey.com.",
+    "notes": "42 RLS RLS M1 fish transects across 2 survey years within 56 km of this location, 18 survey sites. Standing fish biomass in kg/ha; most recent survey 2024-06-30.",
+    "lastReviewedAt": "2026-07-09"
+  }
+]
