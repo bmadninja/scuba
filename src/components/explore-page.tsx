@@ -121,6 +121,11 @@ export function ExplorePage({ locations, currentMonth }: Props) {
   const params = useSearchParams();
   const [sheetOpen, setSheetOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  // Filter controls are server-rendered and clickable before their onClick
+  // handlers hydrate; a click in that window is silently dropped. Gate the
+  // interactive controls on this flag so they only become actionable once
+  // hydrated (labels still render server-side for SEO).
+  const [hydrated, setHydrated] = useState(false);
   // Draft filters used only inside the mobile sheet (applied on "Apply filters")
   const [draftReefStates, setDraftReefStates] = useState<ReefState[]>([]);
   const [draftRegions, setDraftRegions] = useState<string[]>([]);
@@ -143,6 +148,12 @@ export function ExplorePage({ locations, currentMonth }: Props) {
     reefStates.length + regionFilters.length + monthFilters.length +
     diveTypeFilters.length + animalFilters.length + skillFilters.length;
   const hasActiveFilter = activeFilterCount > 0;
+
+  // Mark hydrated after mount so interactive controls only enable once their
+  // onClick handlers are attached (prevents pre-hydration dead clicks).
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   // Sync draft with URL params when sheet opens
   useEffect(() => {
@@ -374,13 +385,14 @@ export function ExplorePage({ locations, currentMonth }: Props) {
                 key={value}
                 type="button"
                 aria-pressed={active}
+                disabled={!hydrated}
                 onClick={() => toggleMultiParam("reef", value)}
                 className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1.5 text-sm whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
                 style={{
                   border: active ? "1px solid rgba(14,28,40,0.45)" : "1px solid #E7E6E2",
                   background: active ? "rgba(14,28,40,0.06)" : "transparent",
                   color: active ? "#0E1C28" : "#4A5568",
-                  cursor: "pointer",
+                  cursor: hydrated ? "pointer" : "default",
                 }}
               >
                 <span
@@ -418,13 +430,14 @@ export function ExplorePage({ locations, currentMonth }: Props) {
                 key={key}
                 type="button"
                 aria-expanded={isOpen}
+                disabled={!hydrated}
                 onClick={() => setOpenDropdown(isOpen ? null : key)}
                 className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-sm whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
                 style={{
                   border: (isOpen || count > 0) ? "1px solid rgba(14,28,40,0.45)" : "1px solid #E7E6E2",
                   background: (isOpen || count > 0) ? "rgba(14,28,40,0.06)" : "transparent",
                   color: (isOpen || count > 0) ? "#0E1C28" : "#4A5568",
-                  cursor: "pointer",
+                  cursor: hydrated ? "pointer" : "default",
                 }}
               >
                 {labels[key]}
@@ -445,6 +458,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
           {hasActiveFilter && (
             <button
               type="button"
+              disabled={!hydrated}
               onClick={clearAll}
               className="ml-auto shrink-0 whitespace-nowrap text-sm underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
               style={{ color: "#0E4F6E" }}
@@ -598,6 +612,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
           ))}
           <button
             type="button"
+            disabled={!hydrated}
             onClick={clearAll}
             className="ml-auto shrink-0 text-xs text-[#0E4F6E] underline focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
           >
@@ -712,6 +727,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
       >
         <button
           type="button"
+          disabled={!hydrated}
           onClick={() => setSheetOpen(true)}
           className="inline-flex h-11 min-w-[120px] items-center justify-center gap-2 rounded-full px-5 text-sm font-medium shadow-[0_8px_40px_rgba(14,28,40,0.18)] focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
           style={{
