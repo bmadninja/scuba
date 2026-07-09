@@ -4,20 +4,25 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Torre Guaceto: protection you can watch — Scuba Season",
   description:
-    "A Blue Park where strict protection brought the fish back and raised what local fishers earn. The case study for what enduring protection looks like, built on Marine Conservation Institute's own published figures.",
+    "A Blue Park where strict protection brought the fish back and raised what local fishers earn. The case study for what enduring protection looks like, built on published figures from Marine Conservation Institute and peer reviewed research.",
 };
 
-// Every figure on this page comes from Marine Conservation Institute's own
-// published article, "Enduring Blue Parks: Torre Guaceto" (José Escaño
-// Roepstorff / MCI), published openly at marine-conservation.org so a reviewer
-// can check each number against a source MCI itself published. Do not edit a
-// figure here without matching it to that source. Note: a site-specific fish
-// biomass percentage is NOT in this article (the widely quoted ~420% figure is
-// a Mediterranean-wide no-take average, not a Torre Guaceto measurement), so we
-// keep the fish recovery qualitative here rather than cite a number we cannot
-// source to Torre Guaceto.
+// The economic and protection figures (earnings, area, Blue Park level, 5 year
+// renewal) come from Marine Conservation Institute's own published article,
+// "Enduring Blue Parks: Torre Guaceto" (José Escaño Roepstorff / MCI), published
+// openly at marine-conservation.org so a reviewer can check each number. The
+// fish figure is separate: it is white seabream DENSITY (not total biomass)
+// from a peer reviewed 12 year study, Melià et al. 2020 in PLoS ONE. There is
+// no verifiable Torre Guaceto total-biomass multiplier in the literature — the
+// widely quoted ~420% figure is a Mediterranean-wide no-take average, not a
+// Torre measurement — so do not add one. Do not edit a figure here without
+// matching it to its cited source.
 const MCI_ARTICLE_URL =
   "https://marine-conservation.org/on-the-tide/enduring-blue-parks-torre-guaceto/";
+// Melià P, Casagrandi R, Di Franco A, Guidetti P, Gatto M (2020), PLoS ONE
+// 15(2):e0228604. Open access. White seabream density ~3–7x higher inside the
+// no-take zone than at adjacent fished sites over 2004–2015.
+const MELIA_2020_URL = "https://doi.org/10.1371/journal.pone.0228604";
 
 const STATS: { figure: string; label: string }[] = [
   {
@@ -172,10 +177,18 @@ export default function TorreGuacetoPage() {
             model for what good protection actually does.
           </p>
           <p>
-            When the strict no take zones went in, the fish came back fast. Inside
-            those zones fish populations rebounded while the unprotected water
-            right next door kept declining. More fish inside meant more spilling
-            out into the water where the local boats work.
+            When the strict no take zones went in, the fish came back fast. A{" "}
+            <a
+              href={MELIA_2020_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--color-ocean)" }}
+            >
+              12 year study
+            </a>{" "}
+            found 3 to 7 times more white seabream inside the strictly protected
+            zone than at the fished sites right next door. More fish inside meant
+            more spilling out into the water where the local boats work.
           </p>
           <p>
             Here is the part that changes the argument. The fishers did better,
@@ -233,10 +246,9 @@ export default function TorreGuacetoPage() {
             Where these numbers come from
           </h2>
           <p className="text-sm leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
-            Every figure on this page is drawn from Marine Conservation Institute,
-            which runs the Blue Parks program and assesses Torre Guaceto. The
-            earnings, expansion, Blue Park level, and 5 year renewal figures are
-            from their article{" "}
+            The earnings, expansion, Blue Park level, and 5 year renewal figures
+            come from Marine Conservation Institute, which runs the Blue Parks
+            program and assesses Torre Guaceto, in their article{" "}
             <a
               href={MCI_ARTICLE_URL}
               target="_blank"
@@ -245,7 +257,17 @@ export default function TorreGuacetoPage() {
             >
               Enduring Blue Parks
             </a>
-            . The protection level and management stage for the park are from{" "}
+            . The white seabream figure is from a peer reviewed 12 year study,{" "}
+            <a
+              href={MELIA_2020_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--color-ocean)" }}
+            >
+              Melià and colleagues, 2020, in PLoS ONE
+            </a>
+            , and measures the density of white seabream, not total fish biomass.
+            The protection level and management stage for the park are from{" "}
             <a
               href="https://mpatlas.org"
               target="_blank"
