@@ -669,6 +669,67 @@ export type CoralCoverSeriesRecord = {
 };
 
 /**
+ * One observed fish-abundance reading in a multi-year series. The value is a
+ * REEF community density index on the 1–4 scale (1 = Single, 2 = Few, 3 = Many,
+ * 4 = Abundant): the sighting-frequency-weighted mean of the Roving Diver
+ * Technique density scores across every species reported that year in the
+ * geographic zone. Always a real, effort-standardised value for the year — the
+ * display never extrapolates beyond these points.
+ */
+export type ReefFishAbundancePoint = {
+  year: number;
+  /** REEF community density index (1–4), sighting-frequency-weighted for the year. */
+  densityIndex: number;
+  /** Number of REEF Species-&-Abundance surveys behind this year's value. */
+  surveyCount: number;
+};
+
+/**
+ * A location's multi-year fish-abundance history from the REEF (Reef
+ * Environmental Education Foundation) Volunteer Fish Survey Project, matched to
+ * the REEF geographic zone that contains the location. This is a DISPLAY-ONLY
+ * dataset for the reef card's fish-abundance-over-time chart: it is a relative
+ * abundance index (not biomass), recorded at zone resolution by volunteer
+ * divers, so it never drives the reef-state verdict or any headline number,
+ * only the labelled trend chart. Unlike raw observation counts, REEF logs the
+ * number of surveys, so the density index is effort-standardised — a rising
+ * line reflects fish seen per survey, not more divers. Scoped to regions where
+ * REEF coverage is strong (Tropical Western Atlantic / Caribbean, US, Tropical
+ * Eastern Pacific); never applied to Mediterranean or Indo-Pacific sites where
+ * REEF coverage is thin. Lives in `src/data/reef-fish-abundance-series.json`,
+ * one entry per location.
+ */
+export type ReefFishAbundanceSeriesRecord = {
+  locationId: string;
+  sourceId: string;
+  methodologyClaimId: string;
+  /** REEF geographic zone code the series was drawn from. */
+  reefZoneCode: string;
+  /** Human-readable REEF geographic zone name. */
+  reefZoneName: string;
+  /** REEF region grouping (e.g. "TWA", "TEP", "PAC"). */
+  reefRegion: string;
+  /** Total REEF surveys behind the whole series. */
+  totalSurveyCount: number;
+  surveyYears: number;
+  latest: {
+    year: number;
+    densityIndex: number;
+    surveyCount: number;
+  };
+  /**
+   * Direction of the density index over the series, computed by the ingest for
+   * convenience. Display-only; never feeds the reef-state verdict.
+   */
+  trend: "rising" | "stable" | "falling";
+  series: ReefFishAbundancePoint[];
+  citation?: string | null;
+  notes?: string;
+  fetchedAt?: string;
+  lastReviewedAt?: string;
+};
+
+/**
  * A location's yearly count of research-grade iNaturalist observations within
  * its radius. Renders as a cumulative accumulation line — the scientific record
  * of a reef growing over time — turning the static species count into a real,

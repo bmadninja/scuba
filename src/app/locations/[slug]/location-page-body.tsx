@@ -10,6 +10,8 @@ import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
 import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
+import { FishAbundanceChart } from "@/components/fish-abundance-chart";
+import type { FishAbundancePoint } from "@/components/fish-abundance-chart";
 import type { BlueParkAward } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
@@ -128,6 +130,20 @@ export type WaterQualityEvent = {
   source: string | null;
 };
 
+// REEF Volunteer Fish Survey — display-only fish-abundance trend. Decoupled
+// from the reef-state verdict: it is a relative, effort-standardised index at
+// REEF-zone resolution, only present for strong-REEF regions (Caribbean/US/ETP).
+export type FishAbundanceView = {
+  points: FishAbundancePoint[];
+  trend: "rising" | "stable" | "falling";
+  firstYear: number;
+  latestYear: number;
+  surveyYears: number;
+  totalSurveyCount: number;
+  zoneName: string;
+  sourceLabel: string;
+};
+
 export type LocationBodyProps = {
   locationId: string;
   locationName: string;
@@ -155,6 +171,8 @@ export type LocationBodyProps = {
   fishingPressure: FishingPressureData | null;
   // Story 4.3: water quality events
   waterQualityEvents: WaterQualityEvent[];
+  // REEF fish-abundance trend (display-only; null outside strong-REEF regions)
+  fishAbundance: FishAbundanceView | null;
   // Story 4.1: reef health panel extra fields
   bleachedPct: number | null;
   dhwValue: number | null;
@@ -335,6 +353,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     verdictBasis,
     fishingPressure,
     waterQualityEvents,
+    fishAbundance,
     bleachedPct,
     dhwValue,
     surveyDateLabel,
@@ -606,6 +625,61 @@ export function LocationPageBody(props: LocationBodyProps) {
           ) : null}
 
 
+
+          {/* REEF FISH-ABUNDANCE PANEL — display-only, decoupled from reef state.
+              Only present for strong-REEF regions (Caribbean/US/ETP). */}
+          {fishAbundance ? (
+            <section id="fish-abundance" style={{ marginBottom: "3rem" }}>
+              <h2 style={SECTION_HEADER}>Fish abundance</h2>
+
+              <div style={{ marginBottom: "1.5rem", maxWidth: 680 }}>
+                <MetricLabel>
+                  Fish seen per survey
+                  <InfoButton onClick={() => setInfo("reefabundance")} label="What this means" />
+                </MetricLabel>
+                <p style={{
+                  fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                  fontSize: "1.0625rem",
+                  lineHeight: 1.6,
+                  color: "#4A5568",
+                  margin: 0,
+                }}>
+                  {(() => {
+                    const span = `${fishAbundance.surveyYears} years of REEF volunteer surveys around ${fishAbundance.zoneName}`;
+                    const tail = "This tracks fish life, standardised for survey effort, so we keep it separate from the coral read above.";
+                    if (fishAbundance.trend === "rising") {
+                      return `Across ${span}, divers have been recording more fish per survey. ${tail}`;
+                    }
+                    if (fishAbundance.trend === "falling") {
+                      return `Across ${span}, divers have been recording fewer fish per survey. ${tail}`;
+                    }
+                    return `Across ${span}, divers have recorded a steady amount of fish per survey. ${tail}`;
+                  })()}
+                </p>
+              </div>
+
+              <div style={SECTION_CARD}>
+                <div style={{ padding: "1.25rem" }}>
+                  <p style={{
+                    fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "#4A5568",
+                    marginBottom: "0.75rem",
+                  }}>
+                    Fish abundance over time
+                  </p>
+                  <FishAbundanceChart
+                    locationName={locationName}
+                    dataPoints={fishAbundance.points}
+                    sourceLabel={fishAbundance.sourceLabel}
+                  />
+                </div>
+              </div>
+            </section>
+          ) : null}
 
           {/* STORY 4.3: WATER QUALITY PANEL (only when data exists) */}
           {waterQualityEvents.length > 0 ? (

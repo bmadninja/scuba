@@ -642,5 +642,15 @@
     "accessedAt": "2026-06-20",
     "license": "CC BY 4.0 (open summary data)",
     "notes": "Coral reef benthic survey platform used by researchers globally. Open summary data available at /v1/summarysampleevents/ without authentication. Raw transect data may be restricted by project."
+  },
+  {
+    "id": "reef",
+    "name": "REEF Volunteer Fish Survey Project",
+    "url": "https://www.reef.org/db/reports/geo",
+    "publisher": "Reef Environmental Education Foundation (REEF)",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-07-09",
+    "license": "Copyright REEF; non-commercial use only (cleared for Scuba Season's non-commercial use; commercial reuse requires REEF's written permission). Cite per REEF's required format.",
+    "notes": "Roving Diver Technique fish surveys by trained volunteer divers. Public Geographic Area Report (reef.org/db/reports/geo) publishes effort-standardised sighting frequency (%SF) and density (DEN, 1–4) per species per geographic zone; its CSV export honours a start_date/end_date window, so a per-year series is built one calendar year at a time. No JSON data API and no GBIF/OBIS dataset exist. Strong coverage in the Tropical Western Atlantic/Caribbean, US, and Tropical Eastern Pacific; thin in the Mediterranean and Indo-Pacific."
   }
 ]

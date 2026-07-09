@@ -11,6 +11,7 @@ import { getGearById } from "@/lib/data/gear";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
+import { getReefFishAbundanceSeriesByLocationId } from "@/lib/data/reef-fish-abundance-series";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
@@ -28,6 +29,7 @@ import type {
   CoverTrend,
   FishingPressureData,
   WaterQualityEvent,
+  FishAbundanceView,
   GearGroup,
   GearItem,
   OperatorItem,
@@ -595,6 +597,29 @@ export default async function LocationPage({
   // Water quality events: empty for now (no data source wired yet)
   const waterQualityEvents: WaterQualityEvent[] = [];
 
+  // REEF Volunteer Fish Survey — display-only fish-abundance trend. Present only
+  // for strong-REEF regions (Caribbean/US/ETP); null everywhere else, so the
+  // panel never appears on Mediterranean or Indo-Pacific sites. Never touches the
+  // reef-state verdict — it is a relative abundance index at REEF-zone scale.
+  const reefAbundance = getReefFishAbundanceSeriesByLocationId(location.id);
+  const fishAbundance: FishAbundanceView | null =
+    reefAbundance && reefAbundance.series.length >= 2
+      ? {
+          points: reefAbundance.series.map((p) => ({
+            year: p.year,
+            value: p.densityIndex,
+            surveyCount: p.surveyCount,
+          })),
+          trend: reefAbundance.trend,
+          firstYear: reefAbundance.series[0].year,
+          latestYear: reefAbundance.latest.year,
+          surveyYears: reefAbundance.surveyYears,
+          totalSurveyCount: reefAbundance.totalSurveyCount,
+          zoneName: reefAbundance.reefZoneName,
+          sourceLabel: `REEF · ${reefAbundance.reefZoneName} · ${reefAbundance.totalSurveyCount.toLocaleString()} surveys`,
+        }
+      : null;
+
   const conditionSentence = (() => {
     const parts: string[] = [];
     if (decline) {
@@ -814,6 +839,7 @@ export default async function LocationPage({
         coralContextLabel={coralContextLabel}
         fishingPressure={fishingPressureData}
         waterQualityEvents={waterQualityEvents}
+        fishAbundance={fishAbundance}
         bleachedPct={bleachedPct}
         dhwValue={dhwValue ?? null}
         surveyDateLabel={surveyDateLabel}

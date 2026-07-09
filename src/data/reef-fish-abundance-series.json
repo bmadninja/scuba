@@ -1,0 +1,626 @@
+[
+  {
+    "locationId": "channel-islands-usa",
+    "sourceId": "reef",
+    "methodologyClaimId": "reef-fish-abundance",
+    "reefZoneCode": "4202",
+    "reefZoneName": "Northern Channel Islands",
+    "reefRegion": "PAC",
+    "totalSurveyCount": 501,
+    "surveyYears": 18,
+    "latest": {
+      "year": 2019,
+      "densityIndex": 2.51,
+      "surveyCount": 12
+    },
+    "trend": "stable",
+    "series": [
+      {
+        "year": 1997,
+        "densityIndex": 2.32,
+        "surveyCount": 30
+      },
+      {
+        "year": 1998,
+        "densityIndex": 2.3,
+        "surveyCount": 28
+      },
+      {
+        "year": 2000,
+        "densityIndex": 2.27,
+        "surveyCount": 24
+      },
+      {
+        "year": 2003,
+        "densityIndex": 2.29,
+        "surveyCount": 27
+      },
+      {
+        "year": 2004,
+        "densityIndex": 2.16,
+        "surveyCount": 43
+      },
+      {
+        "year": 2006,
+        "densityIndex": 2.32,
+        "surveyCount": 50
+      },
+      {
+        "year": 2007,
+        "densityIndex": 2.31,
+        "surveyCount": 43
+      },
+      {
+        "year": 2008,
+        "densityIndex": 2.23,
+        "surveyCount": 40
+      },
+      {
+        "year": 2009,
+        "densityIndex": 2.26,
+        "surveyCount": 10
+      },
+      {
+        "year": 2010,
+        "densityIndex": 2.22,
+        "surveyCount": 12
+      },
+      {
+        "year": 2011,
+        "densityIndex": 2.36,
+        "surveyCount": 20
+      },
+      {
+        "year": 2012,
+        "densityIndex": 2.38,
+        "surveyCount": 34
+      },
+      {
+        "year": 2014,
+        "densityIndex": 2.43,
+        "surveyCount": 34
+      },
+      {
+        "year": 2015,
+        "densityIndex": 2.34,
+        "surveyCount": 25
+      },
+      {
+        "year": 2016,
+        "densityIndex": 2.32,
+        "surveyCount": 33
+      },
+      {
+        "year": 2017,
+        "densityIndex": 2.23,
+        "surveyCount": 17
+      },
+      {
+        "year": 2018,
+        "densityIndex": 2.42,
+        "surveyCount": 19
+      },
+      {
+        "year": 2019,
+        "densityIndex": 2.51,
+        "surveyCount": 12
+      }
+    ],
+    "citation": "REEF. 2026. Reef Environmental Education Foundation Volunteer Fish Survey Project Database. World Wide Web electronic publication. www.REEF.org, retrieved 2026-07-09. Geographic zone 4202 (Northern Channel Islands).",
+    "notes": "501 REEF Species-&-Abundance surveys across 18 survey years in REEF zone 4202 (Northern Channel Islands, PAC). Community abundance index = sighting-frequency-weighted mean density (1–4). Display-only; never a reef-state input.",
+    "fetchedAt": "2026-07-09",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "cocos-costa-rica",
+    "sourceId": "reef",
+    "methodologyClaimId": "reef-fish-abundance",
+    "reefZoneCode": "6510",
+    "reefZoneName": "Cocos Island",
+    "reefRegion": "TEP",
+    "totalSurveyCount": 181,
+    "surveyYears": 8,
+    "latest": {
+      "year": 2023,
+      "densityIndex": 2.45,
+      "surveyCount": 21
+    },
+    "trend": "stable",
+    "series": [
+      {
+        "year": 2003,
+        "densityIndex": 2.38,
+        "surveyCount": 44
+      },
+      {
+        "year": 2007,
+        "densityIndex": 2.4,
+        "surveyCount": 19
+      },
+      {
+        "year": 2008,
+        "densityIndex": 2.14,
+        "surveyCount": 10
+      },
+      {
+        "year": 2010,
+        "densityIndex": 2.48,
+        "surveyCount": 26
+      },
+      {
+        "year": 2014,
+        "densityIndex": 2.19,
+        "surveyCount": 21
+      },
+      {
+        "year": 2018,
+        "densityIndex": 2.43,
+        "surveyCount": 19
+      },
+      {
+        "year": 2020,
+        "densityIndex": 2.42,
+        "surveyCount": 21
+      },
+      {
+        "year": 2023,
+        "densityIndex": 2.45,
+        "surveyCount": 21
+      }
+    ],
+    "citation": "REEF. 2026. Reef Environmental Education Foundation Volunteer Fish Survey Project Database. World Wide Web electronic publication. www.REEF.org, retrieved 2026-07-09. Geographic zone 6510 (Cocos Island).",
+    "notes": "181 REEF Species-&-Abundance surveys across 8 survey years in REEF zone 6510 (Cocos Island, TEP). Community abundance index = sighting-frequency-weighted mean density (1–4). Display-only; never a reef-state input.",
+    "fetchedAt": "2026-07-09",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "cuba-jardines-de-la-reina",
+    "sourceId": "reef",
+    "methodologyClaimId": "reef-fish-abundance",
+    "reefZoneCode": "5104",
+    "reefZoneName": "Archipiélago de los Jardines de la Reina",
+    "reefRegion": "TWA",
+    "totalSurveyCount": 1436,
+    "surveyYears": 10,
+    "latest": {
+      "year": 2025,
+      "densityIndex": 2.32,
+      "surveyCount": 21
+    },
+    "trend": "stable",
+    "series": [
+      {
+        "year": 2001,
+        "densityIndex": 2.31,
+        "surveyCount": 58
+      },
+      {
+        "year": 2016,
+        "densityIndex": 2.23,
+        "surveyCount": 105
+      },
+      {
+        "year": 2017,
+        "densityIndex": 2.53,
+        "surveyCount": 29
+      },
+      {
+        "year": 2018,
+        "densityIndex": 2.22,
+        "surveyCount": 343
+      },
+      {
+        "year": 2019,
+        "densityIndex": 2.2,
+        "surveyCount": 27
+      },
+      {
+        "year": 2021,
+        "densityIndex": 2.23,
+        "surveyCount": 144
+      },
+      {
+        "year": 2022,
+        "densityIndex": 2.19,
+        "surveyCount": 301
+      },
+      {
+        "year": 2023,
+        "densityIndex": 2.36,
+        "surveyCount": 36
+      },
+      {
+        "year": 2024,
+        "densityIndex": 2.14,
+        "surveyCount": 372
+      },
+      {
+        "year": 2025,
+        "densityIndex": 2.32,
+        "surveyCount": 21
+      }
+    ],
+    "citation": "REEF. 2026. Reef Environmental Education Foundation Volunteer Fish Survey Project Database. World Wide Web electronic publication. www.REEF.org, retrieved 2026-07-09. Geographic zone 5104 (Archipiélago de los Jardines de la Reina).",
+    "notes": "1436 REEF Species-&-Abundance surveys across 10 survey years in REEF zone 5104 (Archipiélago de los Jardines de la Reina, TWA). Community abundance index = sighting-frequency-weighted mean density (1–4). Display-only; never a reef-state input.",
+    "fetchedAt": "2026-07-09",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "darwin-galapagos-ecuador",
+    "sourceId": "reef",
+    "methodologyClaimId": "reef-fish-abundance",
+    "reefZoneCode": "7101",
+    "reefZoneName": "Darwin Island (Galápagos)",
+    "reefRegion": "TEP",
+    "totalSurveyCount": 170,
+    "surveyYears": 8,
+    "latest": {
+      "year": 2024,
+      "densityIndex": 2.38,
+      "surveyCount": 14
+    },
+    "trend": "stable",
+    "series": [
+      {
+        "year": 2001,
+        "densityIndex": 2.32,
+        "surveyCount": 12
+      },
+      {
+        "year": 2008,
+        "densityIndex": 2.69,
+        "surveyCount": 28
+      },
+      {
+        "year": 2010,
+        "densityIndex": 2.27,
+        "surveyCount": 14
+      },
+      {
+        "year": 2012,
+        "densityIndex": 2.4,
+        "surveyCount": 13
+      },
+      {
+        "year": 2014,
+        "densityIndex": 2.44,
+        "surveyCount": 17
+      },
+      {
+        "year": 2017,
+        "densityIndex": 2.32,
+        "surveyCount": 48
+      },
+      {
+        "year": 2021,
+        "densityIndex": 2.34,
+        "surveyCount": 24
+      },
+      {
+        "year": 2024,
+        "densityIndex": 2.38,
+        "surveyCount": 14
+      }
+    ],
+    "citation": "REEF. 2026. Reef Environmental Education Foundation Volunteer Fish Survey Project Database. World Wide Web electronic publication. www.REEF.org, retrieved 2026-07-09. Geographic zone 7101 (Darwin Island (Galápagos)).",
+    "notes": "170 REEF Species-&-Abundance surveys across 8 survey years in REEF zone 7101 (Darwin Island (Galápagos), TEP). Community abundance index = sighting-frequency-weighted mean density (1–4). Display-only; never a reef-state input.",
+    "fetchedAt": "2026-07-09",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "exuma-cays-bahamas",
+    "sourceId": "reef",
+    "methodologyClaimId": "reef-fish-abundance",
+    "reefZoneCode": "4209",
+    "reefZoneName": "The Exuma Islands",
+    "reefRegion": "TWA",
+    "totalSurveyCount": 3137,
+    "surveyYears": 29,
+    "latest": {
+      "year": 2026,
+      "densityIndex": 2.14,
+      "surveyCount": 21
+    },
+    "trend": "stable",
+    "series": [
+      {
+        "year": 1996,
+        "densityIndex": 2.1,
+        "surveyCount": 12
+      },
+      {
+        "year": 1997,
+        "densityIndex": 2.31,
+        "surveyCount": 161
+      },
+      {
+        "year": 1998,
+        "densityIndex": 2.24,
+        "surveyCount": 51
+      },
+      {
+        "year": 1999,
+        "densityIndex": 2.18,
+        "surveyCount": 64
+      },
+      {
+        "year": 2001,
+        "densityIndex": 2.23,
+        "surveyCount": 201
+      },
+      {
+        "year": 2002,
+        "densityIndex": 2.13,
+        "surveyCount": 85
+      },
+      {
+        "year": 2003,
+        "densityIndex": 2.18,
+        "surveyCount": 149
+      },
+      {
+        "year": 2004,
+        "densityIndex": 2.16,
+        "surveyCount": 469
+      },
+      {
+        "year": 2005,
+        "densityIndex": 2.14,
+        "surveyCount": 443
+      },
+      {
+        "year": 2006,
+        "densityIndex": 2.17,
+        "surveyCount": 329
+      },
+      {
+        "year": 2007,
+        "densityIndex": 2.11,
+        "surveyCount": 431
+      },
+      {
+        "year": 2008,
+        "densityIndex": 2.04,
+        "surveyCount": 93
+      },
+      {
+        "year": 2009,
+        "densityIndex": 2.18,
+        "surveyCount": 37
+      },
+      {
+        "year": 2010,
+        "densityIndex": 2.01,
+        "surveyCount": 44
+      },
+      {
+        "year": 2011,
+        "densityIndex": 2.27,
+        "surveyCount": 44
+      },
+      {
+        "year": 2012,
+        "densityIndex": 2.12,
+        "surveyCount": 47
+      },
+      {
+        "year": 2013,
+        "densityIndex": 2.22,
+        "surveyCount": 79
+      },
+      {
+        "year": 2014,
+        "densityIndex": 2.06,
+        "surveyCount": 61
+      },
+      {
+        "year": 2015,
+        "densityIndex": 2.11,
+        "surveyCount": 45
+      },
+      {
+        "year": 2016,
+        "densityIndex": 2.05,
+        "surveyCount": 17
+      },
+      {
+        "year": 2017,
+        "densityIndex": 2.01,
+        "surveyCount": 37
+      },
+      {
+        "year": 2018,
+        "densityIndex": 2.39,
+        "surveyCount": 20
+      },
+      {
+        "year": 2019,
+        "densityIndex": 2.13,
+        "surveyCount": 14
+      },
+      {
+        "year": 2021,
+        "densityIndex": 2.12,
+        "surveyCount": 67
+      },
+      {
+        "year": 2022,
+        "densityIndex": 2.05,
+        "surveyCount": 38
+      },
+      {
+        "year": 2023,
+        "densityIndex": 2.26,
+        "surveyCount": 41
+      },
+      {
+        "year": 2024,
+        "densityIndex": 2.4,
+        "surveyCount": 11
+      },
+      {
+        "year": 2025,
+        "densityIndex": 2.12,
+        "surveyCount": 26
+      },
+      {
+        "year": 2026,
+        "densityIndex": 2.14,
+        "surveyCount": 21
+      }
+    ],
+    "citation": "REEF. 2026. Reef Environmental Education Foundation Volunteer Fish Survey Project Database. World Wide Web electronic publication. www.REEF.org, retrieved 2026-07-09. Geographic zone 4209 (The Exuma Islands).",
+    "notes": "3137 REEF Species-&-Abundance surveys across 29 survey years in REEF zone 4209 (The Exuma Islands, TWA). Community abundance index = sighting-frequency-weighted mean density (1–4). Display-only; never a reef-state input.",
+    "fetchedAt": "2026-07-09",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "socorro-mexico",
+    "sourceId": "reef",
+    "methodologyClaimId": "reef-fish-abundance",
+    "reefZoneCode": "53",
+    "reefZoneName": "Revillagigedo Islands",
+    "reefRegion": "TEP",
+    "totalSurveyCount": 599,
+    "surveyYears": 14,
+    "latest": {
+      "year": 2026,
+      "densityIndex": 2.41,
+      "surveyCount": 13
+    },
+    "trend": "falling",
+    "series": [
+      {
+        "year": 2005,
+        "densityIndex": 2.75,
+        "surveyCount": 18
+      },
+      {
+        "year": 2009,
+        "densityIndex": 2.26,
+        "surveyCount": 19
+      },
+      {
+        "year": 2012,
+        "densityIndex": 2.28,
+        "surveyCount": 39
+      },
+      {
+        "year": 2013,
+        "densityIndex": 2.26,
+        "surveyCount": 122
+      },
+      {
+        "year": 2015,
+        "densityIndex": 2.24,
+        "surveyCount": 26
+      },
+      {
+        "year": 2017,
+        "densityIndex": 2.27,
+        "surveyCount": 18
+      },
+      {
+        "year": 2018,
+        "densityIndex": 2.28,
+        "surveyCount": 16
+      },
+      {
+        "year": 2019,
+        "densityIndex": 2.24,
+        "surveyCount": 49
+      },
+      {
+        "year": 2020,
+        "densityIndex": 2.25,
+        "surveyCount": 108
+      },
+      {
+        "year": 2021,
+        "densityIndex": 2.36,
+        "surveyCount": 61
+      },
+      {
+        "year": 2022,
+        "densityIndex": 2.14,
+        "surveyCount": 21
+      },
+      {
+        "year": 2023,
+        "densityIndex": 2.07,
+        "surveyCount": 43
+      },
+      {
+        "year": 2025,
+        "densityIndex": 2.2,
+        "surveyCount": 46
+      },
+      {
+        "year": 2026,
+        "densityIndex": 2.41,
+        "surveyCount": 13
+      }
+    ],
+    "citation": "REEF. 2026. Reef Environmental Education Foundation Volunteer Fish Survey Project Database. World Wide Web electronic publication. www.REEF.org, retrieved 2026-07-09. Geographic zone 53 (Revillagigedo Islands).",
+    "notes": "599 REEF Species-&-Abundance surveys across 14 survey years in REEF zone 53 (Revillagigedo Islands, TEP). Community abundance index = sighting-frequency-weighted mean density (1–4). Display-only; never a reef-state input.",
+    "fetchedAt": "2026-07-09",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "wolf-galapagos-ecuador",
+    "sourceId": "reef",
+    "methodologyClaimId": "reef-fish-abundance",
+    "reefZoneCode": "7102",
+    "reefZoneName": "Wolf Island (Galápagos)",
+    "reefRegion": "TEP",
+    "totalSurveyCount": 145,
+    "surveyYears": 7,
+    "latest": {
+      "year": 2024,
+      "densityIndex": 2.39,
+      "surveyCount": 11
+    },
+    "trend": "stable",
+    "series": [
+      {
+        "year": 2001,
+        "densityIndex": 2.3,
+        "surveyCount": 10
+      },
+      {
+        "year": 2002,
+        "densityIndex": 2.63,
+        "surveyCount": 12
+      },
+      {
+        "year": 2008,
+        "densityIndex": 2.43,
+        "surveyCount": 19
+      },
+      {
+        "year": 2014,
+        "densityIndex": 2.34,
+        "surveyCount": 23
+      },
+      {
+        "year": 2017,
+        "densityIndex": 2.19,
+        "surveyCount": 57
+      },
+      {
+        "year": 2021,
+        "densityIndex": 2.37,
+        "surveyCount": 13
+      },
+      {
+        "year": 2024,
+        "densityIndex": 2.39,
+        "surveyCount": 11
+      }
+    ],
+    "citation": "REEF. 2026. Reef Environmental Education Foundation Volunteer Fish Survey Project Database. World Wide Web electronic publication. www.REEF.org, retrieved 2026-07-09. Geographic zone 7102 (Wolf Island (Galápagos)).",
+    "notes": "145 REEF Species-&-Abundance surveys across 7 survey years in REEF zone 7102 (Wolf Island (Galápagos), TEP). Community abundance index = sighting-frequency-weighted mean density (1–4). Display-only; never a reef-state input.",
+    "fetchedAt": "2026-07-09",
+    "lastReviewedAt": "2026-07-09"
+  }
+]
