@@ -51,6 +51,7 @@
   },
   {
     "id": "gbif",
+    "ingestion": "live",
     "name": "Global Biodiversity Information Facility",
     "url": "https://www.gbif.org/",
     "publisher": "GBIF Secretariat",
