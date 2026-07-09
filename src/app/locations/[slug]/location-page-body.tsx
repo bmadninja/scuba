@@ -256,6 +256,20 @@ const DATA_FRESHNESS: React.CSSProperties = {
   marginTop: "0.25rem",
 };
 
+// Render **wrapped** spans in a reef-state basis as bold, in the "improving"
+// green, so the key protection figures stand out. Plain text passes through.
+function emphasizeBasis(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((seg, i) =>
+    seg.startsWith("**") && seg.endsWith("**") ? (
+      <strong key={i} style={{ color: "#2E7D5B", fontWeight: 700 }}>
+        {seg.slice(2, -2)}
+      </strong>
+    ) : (
+      seg
+    ),
+  );
+}
+
 function DataFreshnessLabel({ source, date }: { source: string; date?: string | null }) {
   return (
     <p style={DATA_FRESHNESS}>
@@ -488,7 +502,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                   color: "#4A5568",
                   margin: 0,
                 }}>
-                  {verdictBasis ?? divingOutlook ?? conditionSentence}
+                  {verdictBasis ? emphasizeBasis(verdictBasis) : (divingOutlook ?? conditionSentence)}
                 </p>
                 {/* Fish is the signal that responds to protection. One plain
                     supporting line under the verdict — never a separate chart. */}
