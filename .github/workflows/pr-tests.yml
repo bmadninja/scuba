@@ -48,9 +48,28 @@ jobs:
         if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
         run: npx playwright install --with-deps chromium
 
+      # Build once and serve the production bundle. `next dev` recompiles every
+      # route on first request, which made the 400-test suite blow past 30 min;
+      # `next start` serves instantly and is what actually ships. Playwright's
+      # config has reuseExistingServer: true, so it reuses this server on :3000
+      # instead of spawning `npm run dev`.
+      - name: Build production bundle
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
+        run: npm run build
+
+      - name: Start production server
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
+        run: |
+          npm start &
+          for i in $(seq 1 60); do
+            curl -sf http://localhost:3000 >/dev/null && echo "server up" && exit 0
+            sleep 2
+          done
+          echo "server failed to start" && exit 1
+
       - name: Run Playwright tests
         if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
-        run: npm test
+        run: npx playwright test --workers=2 --retries=1
 
       - name: Upload Playwright report on failure
         if: ${{ failure() && !contains(github.event.pull_request.labels.*.name, 'automation') }}
