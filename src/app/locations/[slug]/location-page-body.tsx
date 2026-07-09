@@ -15,6 +15,8 @@ import type { FishAbundancePoint } from "@/components/fish-abundance-chart";
 import { FishBiomassChart } from "@/components/fish-biomass-chart";
 import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
 import { FishingEffortTrend } from "@/components/fishing-effort-trend";
+import { ReefStateBreakdown } from "@/components/reef-state-breakdown";
+import type { PillarScore } from "@/lib/data/reef-state-pillars";
 import type { BlueParkAward, FishAbundanceSeriesRecord } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
@@ -196,6 +198,8 @@ export type LocationBodyProps = {
   reefStateLabel: string;
   reefStateColor: string;
   reefStateSub: string;
+  reefStatePillars: PillarScore[];
+  reefStateTierLabel: string;
   hasReefData: boolean;
   // Species
   species: SpeciesCard[];
@@ -380,6 +384,8 @@ export function LocationPageBody(props: LocationBodyProps) {
     reefStateLabel,
     reefStateColor,
     reefStateSub,
+    reefStatePillars,
+    reefStateTierLabel,
     hasReefData,
     species,
     threatenedStats,
@@ -535,6 +541,9 @@ export function LocationPageBody(props: LocationBodyProps) {
                   </p>
                 ) : null}
               </div>
+
+              {/* Per-pillar evidence breakdown + confidence tier (FR-12/13) */}
+              <ReefStateBreakdown pillars={reefStatePillars} tierLabel={reefStateTierLabel} />
 
               {/* Data card */}
               <div style={SECTION_CARD}>

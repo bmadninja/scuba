@@ -24,7 +24,7 @@ import { fishingAllowsImproving } from "@/lib/data/effective-fishing";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
-import { STATE_TEXT, STATE_COLOR, bestMonthsText } from "@/lib/data/reef-state";
+import { STATE_TEXT, STATE_COLOR, bestMonthsText, getReefStateDetail } from "@/lib/data/reef-state";
 import { LocationPageBody } from "./location-page-body";
 import { HeroGallery } from "@/components/hero-gallery";
 import type {
@@ -271,6 +271,9 @@ export default async function LocationPage({
   const isWitnessing = atlasLoc.state === "change";
   const heroPhotoUrl = underwaterPhotoUrl(atlasLoc.heroImageUrl);
   const stateColor = STATE_COLOR[atlasLoc.state];
+  // Per-pillar evidence behind the verdict (FR-12/13). The label may be an
+  // editorial override; the breakdown always shows the computed evidence.
+  const reefStateDetail = getReefStateDetail(location.id);
 
   // --- Sightings aggregated across sites, newest first ----------------------
   const allSightings = sites
@@ -934,6 +937,8 @@ export default async function LocationPage({
         reefStateLabel={STATE_TEXT[atlasLoc.state]}
         reefStateColor={stateColor}
         reefStateSub={STATE_SUB[atlasLoc.state]}
+        reefStatePillars={reefStateDetail.pillars}
+        reefStateTierLabel={reefStateDetail.tierLabel}
         hasReefData={hasReefData}
         species={species}
         threatenedStats={threatenedStats}
