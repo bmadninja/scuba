@@ -5,10 +5,23 @@ const LOCATION = '/locations/raja-ampat-indonesia';
 const SITE = '/sites/raja-ampat-cape-kri';
 
 // ── Story 7.3 — Categorised wildlife filter ────────────────────────────────
+// The wildlife taxonomy lives on the atlas (/locations), inside the "What to
+// see" filter dropdown (SpeciesGroups → WILDLIFE_TAXONOMY sub-groups), not on
+// the marketing homepage.
 test.describe('Wildlife filter taxonomy (7.3)', () => {
   test('filter rail has wildlife sub-groups', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.getByText(/sharks.*rays|marine mammals|macro/i).first()).toBeVisible({ timeout: 10_000 });
+    await page.goto('/locations', GOTO);
+    const trigger = page.getByRole('button', { name: 'What to see' });
+    const subgroup = page.getByText(/sharks.*rays|marine mammals|macro/i).first();
+    // The atlas filter buttons are interactive before their onClick handlers
+    // hydrate, so an early click can be silently dropped. Retry opening the
+    // dropdown (idempotently, guarded by aria-expanded) until it shows.
+    await expect(async () => {
+      if ((await trigger.getAttribute('aria-expanded')) !== 'true') {
+        await trigger.click();
+      }
+      await expect(subgroup).toBeVisible({ timeout: 2_000 });
+    }).toPass({ timeout: 15_000 });
   });
 });
 
@@ -64,12 +77,16 @@ test.describe('Location trip card (7.8)', () => {
 
   test('dive operators are listed inline inside "Where to stay"', async ({ page }) => {
     await page.goto(LOCATION);
-    // Expand renders <details open> so content is visible on page load — no click needed.
+    // "Where to stay" is a collapsed <details> (defaultOpen=false) — expand it
+    // first, then the mono "Dive operators" label becomes visible.
+    await page.locator('summary').filter({ hasText: 'Where to stay' }).first().click();
     await expect(page.getByText('Dive operators', { exact: true }).first()).toBeVisible({ timeout: 15_000 });
   });
 
   test('"Where to stay" discloses that links go to provider sites', async ({ page }) => {
     await page.goto(LOCATION);
+    // Disclosure copy lives inside the collapsed "Where to stay" expander.
+    await page.locator('summary').filter({ hasText: 'Where to stay' }).first().click();
     await expect(page.getByText(/each link goes to the provider/i).first()).toBeVisible({ timeout: 15_000 });
   });
 });
@@ -78,9 +95,9 @@ test.describe('Location trip card (7.8)', () => {
 test.describe('Gear section on location page (7.9)', () => {
   test('location page has a Gear section with grouped tiers', async ({ page }) => {
     await page.goto(LOCATION);
-    // Gear is a single section whose groups are labelled (e.g. "Basic kit" /
-    // "For this site"). Assert the section heading plus a group label.
-    await expect(page.getByText('Gear', { exact: true }).first()).toBeVisible({ timeout: 10_000 });
+    // The section heading is now "Gear & getting wet"; its groups are labelled
+    // (e.g. "Basic kit" / "For specific sites"). Assert the heading + a group label.
+    await expect(page.getByRole('heading', { name: 'Gear & getting wet' })).toBeVisible({ timeout: 10_000 });
     await expect(page.getByText(/basic kit|for this site/i).first()).toBeVisible({ timeout: 10_000 });
   });
 });
@@ -103,11 +120,10 @@ test.describe('Site detail sequence (7.10)', () => {
     expect(introFirst).toBe(true);
   });
 
-  test('site page has a "Dive operators" expander for trip planning', async ({ page }) => {
-    await page.goto(SITE, GOTO);
-    // Operators are in an <Expand summary="Dive operators"> accordion (summary includes a chevron char).
-    await expect(page.locator('summary').filter({ hasText: /dive operators/i }).first()).toBeVisible({ timeout: 10_000 });
-  });
+  // NOTE: the old "site page has a Dive operators expander" test was removed.
+  // Dive operators moved off the site page onto the location page; the site
+  // page's only trip-planning expander is now "Getting there". Operators on the
+  // location page's "Where to stay" expander are covered in the 7.8 block above.
 });
 
 // ── FAQ (merged into /data per other session) ─────────────────────────────
