@@ -10,10 +10,12 @@ import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
 import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
-import type {
-  BlueParkAward,
-  FishAbundanceSeriesRecord,
-} from "@/lib/data/types";
+import { FishAbundanceChart } from "@/components/fish-abundance-chart";
+import type { FishAbundancePoint } from "@/components/fish-abundance-chart";
+import { FishBiomassChart } from "@/components/fish-biomass-chart";
+import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
+import { FishingEffortTrend } from "@/components/fishing-effort-trend";
+import type { BlueParkAward, FishAbundanceSeriesRecord } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
 
@@ -121,6 +123,10 @@ export type FishingPressureData = {
   // Measured GFW effort band + direction vs the multi-year baseline.
   level: "low" | "moderate" | "high" | "very-high" | "unknown";
   trend: "rising" | "stable" | "falling" | "unknown";
+  // Display-only multi-year effort trend (oldest first). Empty/short series
+  // are simply not charted; see showEffortTrend.
+  effortSeries: { year: number; fishingHours: number }[];
+  showEffortTrend: boolean;
 };
 
 // Story 4.3: water quality events panel
@@ -129,6 +135,20 @@ export type WaterQualityEvent = {
   description: string;
   date: string | null;
   source: string | null;
+};
+
+// REEF Volunteer Fish Survey — display-only fish-abundance trend. Decoupled
+// from the reef-state verdict: it is a relative, effort-standardised index at
+// REEF-zone resolution, only present for strong-REEF regions (Caribbean/US/ETP).
+export type FishAbundanceView = {
+  points: FishAbundancePoint[];
+  trend: "rising" | "stable" | "falling";
+  firstYear: number;
+  latestYear: number;
+  surveyYears: number;
+  totalSurveyCount: number;
+  zoneName: string;
+  sourceLabel: string;
 };
 
 export type LocationBodyProps = {
@@ -150,8 +170,13 @@ export type LocationBodyProps = {
   // GCRMN regional average, drawn as a faint horizontal reference line
   coralContextValue: number | null;
   coralContextLabel: string | null;
-  // Indicator-fish evidence: one supporting line under the verdict
-  fishAbundance: FishAbundanceSeriesRecord | null;
+  // Reef-fish-biomass-over-time chart points (real Reef Life Survey transects)
+  biomassDataPoints: BiomassDataPoint[];
+  biomassSourceLabel: string | null;
+  // Cited sources behind a hand-reviewed reef-state verdict (peer-reviewed / award)
+  reefStateSources: { label: string; url: string | null }[];
+  // Per-site indicator-fish basis line under the verdict (e.g. Tubbataha SPR)
+  siteFishBasis: FishAbundanceSeriesRecord | null;
   heat: ConditionPill | null;
   fishing: ConditionPill | null;
   blueParkAward: BlueParkAward | null;
@@ -160,6 +185,8 @@ export type LocationBodyProps = {
   fishingPressure: FishingPressureData | null;
   // Story 4.3: water quality events
   waterQualityEvents: WaterQualityEvent[];
+  // REEF fish-abundance trend (display-only; null outside strong-REEF regions)
+  fishAbundance: FishAbundanceView | null;
   // Story 4.1: reef health panel extra fields
   bleachedPct: number | null;
   dhwValue: number | null;
@@ -334,13 +361,17 @@ export function LocationPageBody(props: LocationBodyProps) {
     coralChartSourceLabel,
     coralContextValue,
     coralContextLabel,
-    fishAbundance,
+    biomassDataPoints,
+    biomassSourceLabel,
+    reefStateSources,
+    siteFishBasis,
     heat,
     fishing,
     blueParkAward,
     verdictBasis,
     fishingPressure,
     waterQualityEvents,
+    fishAbundance,
     bleachedPct,
     dhwValue,
     surveyDateLabel,
@@ -461,7 +492,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                 </p>
                 {/* Fish is the signal that responds to protection. One plain
                     supporting line under the verdict — never a separate chart. */}
-                {fishAbundance ? (
+                {siteFishBasis ? (
                   <p style={{
                     fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
                     fontSize: "0.9375rem",
@@ -469,12 +500,38 @@ export function LocationPageBody(props: LocationBodyProps) {
                     color: "#4A5568",
                     margin: "0.6rem 0 0",
                   }}>
-                    {fishAbundance.headline}{" "}
-                    {fishAbundance.citationUrl ? (
-                      <Link href={fishAbundance.citationUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#4A5568", textDecoration: "underline" }}>
+                    {siteFishBasis.headline}{" "}
+                    {siteFishBasis.citationUrl ? (
+                      <Link href={siteFishBasis.citationUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#4A5568", textDecoration: "underline" }}>
                         source
                       </Link>
                     ) : null}
+                  </p>
+                ) : null}
+                {/* Evidence: cited sources behind a hand-reviewed verdict, so the
+                    claim is visibly backed by real, linkable studies. */}
+                {reefStateSources.length > 0 ? (
+                  <p style={{
+                    fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                    fontSize: "0.6875rem",
+                    color: "#4A5568",
+                    margin: "0.6rem 0 0",
+                    lineHeight: 1.5,
+                  }}>
+                    <span style={{ letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280" }}>Evidence</span>
+                    {"  "}
+                    {reefStateSources.map((s, i) => (
+                      <span key={s.label}>
+                        {i > 0 ? ", " : " "}
+                        {s.url ? (
+                          <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E7D5B", textDecoration: "underline" }}>
+                            {s.label}
+                          </a>
+                        ) : (
+                          <span>{s.label}</span>
+                        )}
+                      </span>
+                    ))}
                   </p>
                 ) : null}
               </div>
@@ -573,6 +630,36 @@ export function LocationPageBody(props: LocationBodyProps) {
                   </div>
                 ) : null}
 
+                {/* Reef fish biomass over time (Reef Life Survey). Fish biomass
+                    is the metric that responds to protection, so this trend is
+                    the honest "protection works" companion to the heat-driven
+                    coral chart. Display only — it never sets the reef state. */}
+                {biomassDataPoints.length >= 2 ? (
+                  <div style={{ padding: "0.75rem 1.25rem 1.25rem", borderTop: "1px solid #E7E6E2" }}>
+                    <p style={{
+                      fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#4A5568",
+                      marginBottom: "0.35rem",
+                    }}>
+                      Reef fish biomass over time
+                    </p>
+                    <p style={{ fontSize: "0.75rem", color: "#4A5568", margin: "0 0 0.75rem", lineHeight: 1.5 }}>
+                      How much fish life these transects hold, measured the same way
+                      every year. Fish biomass is what recovers when a reef is
+                      protected from fishing.
+                    </p>
+                    <FishBiomassChart
+                      locationName={locationName}
+                      dataPoints={biomassDataPoints}
+                      sourceLabel={biomassSourceLabel ?? undefined}
+                    />
+                  </div>
+                ) : null}
+
                 {/* ZONE 3 — the signals that feed the verdict, then separate context */}
                 {(heat || boatTraffic) ? (
                   <div style={{ borderTop: "1px solid #E7E6E2", background: "#F8F7F4", padding: "1rem 1.25rem" }}>
@@ -617,6 +704,17 @@ export function LocationPageBody(props: LocationBodyProps) {
                               }}>
                                 {boatTraffic.word}
                               </span>
+                              {/* Display-only measured-effort trend (GFW). Falling effort
+                                  beside a protected reef reads as pressure easing — context,
+                                  not proof of enforcement (see popup). Shows a plain stat
+                                  with two years, a real sparkline with three or more. */}
+                              {fishingPressure?.showEffortTrend ? (
+                                <FishingEffortTrend
+                                  series={fishingPressure.effortSeries}
+                                  trend={fishingPressure.trend}
+                                  radiusKm={fishingPressure.radiusKm}
+                                />
+                              ) : null}
                             </div>
                           ) : null}
                         </div>
@@ -630,6 +728,61 @@ export function LocationPageBody(props: LocationBodyProps) {
           ) : null}
 
 
+
+          {/* REEF FISH-ABUNDANCE PANEL — display-only, decoupled from reef state.
+              Only present for strong-REEF regions (Caribbean/US/ETP). */}
+          {fishAbundance ? (
+            <section id="fish-abundance" style={{ marginBottom: "3rem" }}>
+              <h2 style={SECTION_HEADER}>Fish abundance</h2>
+
+              <div style={{ marginBottom: "1.5rem", maxWidth: 680 }}>
+                <MetricLabel>
+                  Fish seen per survey
+                  <InfoButton onClick={() => setInfo("reefabundance")} label="What this means" />
+                </MetricLabel>
+                <p style={{
+                  fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                  fontSize: "1.0625rem",
+                  lineHeight: 1.6,
+                  color: "#4A5568",
+                  margin: 0,
+                }}>
+                  {(() => {
+                    const span = `${fishAbundance.surveyYears} years of REEF volunteer surveys around ${fishAbundance.zoneName}`;
+                    const tail = "This tracks fish life, standardised for survey effort, so we keep it separate from the coral read above.";
+                    if (fishAbundance.trend === "rising") {
+                      return `Across ${span}, divers have been recording more fish per survey. ${tail}`;
+                    }
+                    if (fishAbundance.trend === "falling") {
+                      return `Across ${span}, divers have been recording fewer fish per survey. ${tail}`;
+                    }
+                    return `Across ${span}, divers have recorded a steady amount of fish per survey. ${tail}`;
+                  })()}
+                </p>
+              </div>
+
+              <div style={SECTION_CARD}>
+                <div style={{ padding: "1.25rem" }}>
+                  <p style={{
+                    fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "#4A5568",
+                    marginBottom: "0.75rem",
+                  }}>
+                    Fish abundance over time
+                  </p>
+                  <FishAbundanceChart
+                    locationName={locationName}
+                    dataPoints={fishAbundance.points}
+                    sourceLabel={fishAbundance.sourceLabel}
+                  />
+                </div>
+              </div>
+            </section>
+          ) : null}
 
           {/* STORY 4.3: WATER QUALITY PANEL (only when data exists) */}
           {waterQualityEvents.length > 0 ? (

@@ -154,7 +154,8 @@
     "greenFinsOperatorCount": 3,
     "visitorImpactNote": "Tubbataha Reefs Natural Park is fully no-take and ranger-patrolled year-round. Liveaboards are the only access — book outfits that contribute to the conservation levy.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
     "lastReviewedAt": "2026-07-08",
     "mpaStatusSource": "mpatlas",
@@ -171,6 +172,11 @@
     },
     "sourceIds": [
       "mpatlas"
+    ],
+    "manualReefStateBasis": "Reef fish biomass inside this fully protected park is the highest recorded among Philippine reefs and several times that of the fished and open areas outside, which hold only a fraction of it (Muallil et al. 2019).",
+    "manualReefStateSourceIds": [
+      "study-muallil-tubbataha-2019",
+      "blue-parks"
     ]
   },
   {
@@ -1072,7 +1078,8 @@
     "greenFinsOperatorCount": 2,
     "visitorImpactNote": "Cocos Island National Park is no-take; illegal longline fishing on EEZ edges is the persistent threat. Support operators that fund anti-poaching patrols.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
     "lastReviewedAt": "2026-07-08",
     "mpaStatusSource": "mpatlas",
@@ -1090,6 +1097,11 @@
     },
     "sourceIds": [
       "mpatlas"
+    ],
+    "manualReefStateBasis": "Reef fish biomass inside this fully protected park averages 7.8 tonnes per hectare, among the highest in the tropics and nearly 40% apex predators (Friedlander et al. 2012); long term monitoring shows some shark and ray species declining, so the state here stays measured rather than improving.",
+    "manualReefStateSourceIds": [
+      "study-friedlander-cocos-2012",
+      "blue-parks"
     ]
   },
   {
@@ -1155,7 +1167,8 @@
     "greenFinsOperatorCount": 2,
     "visitorImpactNote": "Malpelo Fauna and Flora Sanctuary is no-take; illegal fishing on EEZ edges remains the main threat. Galápagos Marine Reserve recently expanded to 198,000 km². Industrial fishing on the EEZ edge remains a major issue — pick operators who back enforcement campaigns.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
     "lastReviewedAt": "2026-07-08",
     "mpaStatusSource": "mpatlas",
@@ -1172,6 +1185,11 @@
     },
     "sourceIds": [
       "mpatlas"
+    ],
+    "manualReefStateBasis": "Inside this fully protected sanctuary reef fish biomass reaches about 879 grams per square metre, among the highest in the Tropical Eastern Pacific and dominated by large predators (Quimbayo et al. 2016); the state shown reflects coral under recent heat stress rather than the fish community.",
+    "manualReefStateSourceIds": [
+      "study-quimbayo-malpelo-2016",
+      "blue-parks"
     ]
   },
   {
@@ -1187,7 +1205,8 @@
     "greenFinsOperatorCount": 3,
     "visitorImpactNote": "Seaflower Biosphere Reserve protects the wider archipelago. Mesoamerican Reef is partially protected by national parks. Sargassum and SCTLD are the dominant pressures. Support operators participating in coral nurseries.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
     "lastReviewedAt": "2026-07-08",
     "mpaStatusSource": "mpatlas",
@@ -1206,6 +1225,11 @@
     },
     "sourceIds": [
       "mpatlas"
+    ],
+    "manualReefStateBasis": "Fish biomass, abundance and density are all markedly higher inside this national park than on the unprotected reef just outside, a refuge that also shelters threatened species (Prato-Valderrama et al. 2024).",
+    "manualReefStateSourceIds": [
+      "study-prato-providencia-2024",
+      "blue-parks"
     ]
   },
   {
@@ -1220,7 +1244,8 @@
     "greenFinsOperatorCount": 2,
     "visitorImpactNote": "Galápagos Marine Reserve recently expanded to 198,000 km². Industrial fishing on the EEZ edge remains a major issue — pick operators who back enforcement campaigns.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
     "lastReviewedAt": "2026-07-08",
     "mpaStatusSource": "mpatlas",
@@ -1238,6 +1263,11 @@
     },
     "sourceIds": [
       "mpatlas"
+    ],
+    "manualReefStateBasis": "Surveys inside this fully protected sanctuary recorded the highest reef fish biomass yet measured on any reef, 17.5 tonnes per hectare, of which 12.4 tonnes per hectare was sharks, the greatest shark biomass on Earth (Salinas-de-León et al. 2016); the state shown reflects coral under recent heat stress, not the fish community that protection keeps world class.",
+    "manualReefStateSourceIds": [
+      "study-salinas-galapagos-2016",
+      "blue-parks"
     ]
   },
   {
@@ -1252,7 +1282,8 @@
     "greenFinsOperatorCount": 2,
     "visitorImpactNote": "Galápagos Marine Reserve recently expanded to 198,000 km². Industrial fishing on the EEZ edge remains a major issue — pick operators who back enforcement campaigns.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
     "lastReviewedAt": "2026-07-08",
     "mpaStatusSource": "mpatlas",
@@ -1270,6 +1301,11 @@
     },
     "sourceIds": [
       "mpatlas"
+    ],
+    "manualReefStateBasis": "Surveys at Darwin and Wolf recorded the highest reef fish biomass yet measured on any reef, 17.5 tonnes per hectare, of which 12.4 tonnes per hectare was sharks, the greatest shark biomass on Earth (Salinas-de-León et al. 2016); the state shown reflects coral under recent heat stress, not the fish community that protection keeps world class.",
+    "manualReefStateSourceIds": [
+      "study-salinas-galapagos-2016",
+      "blue-parks"
     ]
   },
   {
@@ -1403,9 +1439,15 @@
     "greenFinsOperatorCount": 1,
     "visitorImpactNote": "Exuma Cays Land and Sea Park is a 22-mile no-take zone — one of the world's first. Bahamas has banned commercial shark fishing nationwide since 2011 — a major win. Coastal-zone enforcement is patchier; cruise-port locations bear the brunt.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-05-26",
+    "manualReefStateBasis": "Total reef fish biomass inside this fully protected reserve runs about seven times higher than on fished reefs nearby, concentrated in large predators (Lamb and Johnson 2010); the state shown reflects coral cover lost to recent heat, not the fish that protection keeps abundant.",
+    "manualReefStateSourceIds": [
+      "study-lamb-johnson-exuma-2010",
+      "blue-parks"
+    ]
   },
   {
     "id": "reef-pressure-bloody-bay-wall-cayman-islands-2026",
@@ -1988,7 +2030,8 @@
     "greenFinsOperatorCount": 1,
     "visitorImpactNote": "Channel Islands National Marine Sanctuary is well-managed; kelp loss is the primary pressure, driven by warming + urchin booms.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
     "lastReviewedAt": "2026-07-08",
     "mpaStatusSource": "mpatlas",
@@ -2005,6 +2048,12 @@
     },
     "sourceIds": [
       "mpatlas"
+    ],
+    "manualReefState": "pressure",
+    "manualReefStateBasis": "Protection drove a clear recovery here: biomass of fished species climbed about 3.7 times faster inside the reserve network than outside through 2012 (Caselle et al. 2015). More recent surveys show that gain has not held under warming, so the reef reads Stable rather than Improving.",
+    "manualReefStateSourceIds": [
+      "study-caselle-channel-islands-2015",
+      "blue-parks"
     ]
   },
   {
@@ -2020,7 +2069,8 @@
     "greenFinsOperatorCount": 3,
     "visitorImpactNote": "Jardines de la Reina is the Caribbean's largest no-take reserve; permit-only access. Caribbean MPAs (Cayman, Saba, Bonaire, Bonaire, Cuba JdR) are some of the world's best-managed. Pay the conservation tag fee at entry and join a lionfish cull if offered.",
     "methodologyClaimIds": [
-      "human-pressure-mpa-context"
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
     ],
     "lastReviewedAt": "2026-07-08",
     "mpaStatusSource": "mpatlas",
@@ -2037,6 +2087,11 @@
     },
     "sourceIds": [
       "mpatlas"
+    ],
+    "manualReefStateBasis": "Protection is working for the fish here: on the reef crest inside this fully protected reserve, mutton snapper reach about eight times the density found on fished reefs outside (Pina-Amargós et al. 2014).",
+    "manualReefStateSourceIds": [
+      "study-pina-amargos-jr-2014",
+      "blue-parks"
     ]
   },
   {
@@ -2199,7 +2254,7 @@
       "coastal tourism",
       "seagrass disturbance"
     ],
-    "visitorImpactNote": "Torre Guaceto is a Mediterranean conservation success. A small fully protected core, co managed with the local fishers who once emptied it, brought the fish back. Studies have measured total fish biomass in the fully protected zone at more than four times that of the unprotected coast just outside. Divers visit through the reserve, and the main things to tread lightly around are the Posidonia seagrass meadows and the shallow reef.",
+    "visitorImpactNote": "Torre Guaceto is a Mediterranean conservation success. A small fully protected core, co managed with the local fishers who once emptied it, brought the fish back. Across 12 years of surveys from 2004 to 2015, white sea bream, a prime local catch, were found roughly 3 to 7 times denser inside the fully protected zone than on the coast just outside. Divers visit through the reserve, and the main things to tread lightly around are the Posidonia seagrass meadows and the shallow reef.",
     "mpaStatusSource": "mpatlas",
     "mpaAssessment": {
       "levelOfProtection": "fully",
@@ -2222,8 +2277,120 @@
     ],
     "lastReviewedAt": "2026-07-08",
     "manualReefState": "thriving",
-    "manualReefStateBasis": "Strongly protected and recovering: studies have measured total fish biomass in the fully protected zone at more than four times that of the unprotected coast just outside, and the reserve holds a Blue Park Award for effective protection.",
+    "manualReefStateBasis": "Strongly protected and recovering. Across 12 years of surveys from 2004 to 2015, white sea bream, a prime fished species, were measured roughly 3 to 7 times denser inside the fully protected zone than on the adjacent unprotected coast. Well enforced Mediterranean reserves like this one, closed to fishing, carry total fish biomass around 8 times that of fished coast, and Torre Guaceto holds a Blue Park Award for effective protection.",
     "manualReefStateSourceIds": [
+      "melia-2020-torre-guaceto",
+      "guidetti-2014-med-mpa",
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-abrolhos-banks-2026",
+    "locationId": "abrolhos-banks",
+    "mpaStatus": "no-take",
+    "mpaStatusSource": "manual",
+    "fishingPressure": "moderate",
+    "topPressures": [
+      "coastal runoff and sedimentation",
+      "fishing on the surrounding banks"
+    ],
+    "visitorImpactNote": "Abrolhos Marine National Park protects the richest coral reefs in the South Atlantic, and its fully protected reefs carry far more fish than the fished banks around them. Divers visit through the park, and the main pressures on this reef come from mainland runoff and fishing on the wider Abrolhos Bank rather than from inside the park itself.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
+    ],
+    "sourceIds": [
+      "blue-parks",
+      "global-fishing-watch",
+      "study-bruce-abrolhos-2012"
+    ],
+    "lastReviewedAt": "2026-07-08",
+    "manualReefState": "thriving",
+    "manualReefStateBasis": "Improving under protection: reef fish biomass on the fully protected reefs of this national marine park reached about 148 grams per square metre, roughly eighteen times the 8 grams per square metre on the most heavily fished reefs nearby (Bruce et al. 2012).",
+    "manualReefStateSourceIds": [
+      "study-bruce-abrolhos-2012",
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-chumbe-island-tanzania-2026",
+    "locationId": "chumbe-island-tanzania",
+    "mpaStatus": "no-take",
+    "mpaStatusSource": "manual",
+    "fishingPressure": "moderate",
+    "topPressures": [
+      "fishing pressure on the surrounding reefs",
+      "coral bleaching from warming"
+    ],
+    "visitorImpactNote": "Chumbe Island Coral Reef Sanctuary is one of the oldest managed reefs in East Africa, closed to fishing and patrolled by former fishers who now work as rangers. Decades of protection have left it with far more fish than the reefs nearby. Visits are managed carefully, and the main pressure here is warming rather than fishing.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
+    ],
+    "sourceIds": [
+      "blue-parks",
+      "global-fishing-watch",
+      "study-mcclanahan-chumbe-2009"
+    ],
+    "lastReviewedAt": "2026-07-08",
+    "manualReefState": "thriving",
+    "manualReefStateBasis": "Improving under protection: after more than a decade closed to fishing, reef fish biomass inside this sanctuary reached about 886 kilograms per hectare, against roughly 285 kilograms per hectare on the fished reefs nearby (McClanahan et al. 2009).",
+    "manualReefStateSourceIds": [
+      "study-mcclanahan-chumbe-2009",
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-diani-shimoni-kenya-2026",
+    "locationId": "diani-shimoni-kenya",
+    "mpaStatus": "designated-multi-use",
+    "mpaStatusSource": "manual",
+    "fishingPressure": "low",
+    "topPressures": [
+      "fishing outside the park boundary",
+      "coral bleaching from warming"
+    ],
+    "visitorImpactNote": "The Blue Park here is the fully protected Kisite park off Shimoni, where fish are several times more abundant than in the fished waters around it. The wider Diani reef sits outside that boundary, so protection varies across the area. Dive through the Shimoni operators who run inside the park to see the difference protection makes.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
+    ],
+    "sourceIds": [
+      "blue-parks",
+      "global-fishing-watch",
+      "study-mcclanahan-kisite-2006"
+    ],
+    "lastReviewedAt": "2026-07-08",
+    "manualReefStateBasis": "Inside the fully protected park off Shimoni, reef fish biomass runs far higher than in the fished waters around it, from roughly 680 to 1,350 kilograms per hectare against 260 to 460 outside (McClanahan et al. 2006); the wider Diani reef sits outside that boundary.",
+    "manualReefStateSourceIds": [
+      "study-mcclanahan-kisite-2006",
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-aldabra-atoll-2026",
+    "locationId": "aldabra-atoll",
+    "mpaStatus": "no-take",
+    "mpaStatusSource": "manual",
+    "fishingPressure": "moderate",
+    "topPressures": [
+      "distant water fishing on surrounding waters",
+      "coral bleaching from warming"
+    ],
+    "visitorImpactNote": "Aldabra Atoll is a strict reserve and World Heritage Site, closed to commercial fishing for about forty years and reachable only by liveaboard. Its reef carries some of the highest fish biomass in Seychelles. Remoteness is its best protection, though warming reaches even here.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context",
+      "reef-biomass-recovery"
+    ],
+    "sourceIds": [
+      "blue-parks",
+      "global-fishing-watch",
+      "study-koester-aldabra-2023"
+    ],
+    "lastReviewedAt": "2026-07-08",
+    "manualReefStateBasis": "Closed to commercial fishing for about forty years, this strict reserve carries reef fish biomass of around 4.8 tonnes per hectare, among the highest in Seychelles and far above the fished inner islands (Koester et al. 2023).",
+    "manualReefStateSourceIds": [
+      "study-koester-aldabra-2023",
       "blue-parks"
     ]
   }

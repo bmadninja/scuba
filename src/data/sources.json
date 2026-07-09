@@ -62,6 +62,7 @@
   },
   {
     "id": "obis",
+    "ingestion": "live",
     "name": "Ocean Biodiversity Information System",
     "url": "https://obis.org/",
     "publisher": "IOC-UNESCO",
@@ -180,10 +181,12 @@
     "id": "agrra",
     "name": "Atlantic and Gulf Rapid Reef Assessment",
     "url": "https://www.agrra.org/",
-    "publisher": "AGRRA Program / Perry Institute for Marine Science",
+    "publisher": "AGRRA Program / Ocean Research & Education Foundation",
     "sourceType": "scientific-survey",
-    "accessedAt": "2026-05-24",
-    "notes": "Standardised reef survey protocols and dataset for the wider Caribbean. Use for Caribbean coral cover and bleaching observations."
+    "accessedAt": "2026-07-09",
+    "notes": "Standardised rapid reef-assessment protocols and dataset for the wider Caribbean. Live-ingested from the public AGRRA Data Explorer ArcGIS FeatureServer (BaseBySite) for per-location multi-year live-coral-cover trend charts, and for a fish-biomass trend used as a Caribbean fallback where Reef Life Survey has no coverage. Use for Caribbean coral cover, fish biomass, and bleaching observations.",
+    "license": "Non-commercial + attribution (AGRRA Terms of Use). Data displayed via the open AGRRA Data Explorer; product use asks for written consent to info@agrra.org.",
+    "ingestion": "live"
   },
   {
     "id": "icri",
@@ -410,7 +413,7 @@
     "sourceType": "government-monitoring",
     "accessedAt": "2026-05-25",
     "license": "CC BY-SA 4.0; API requires registration",
-    "notes": "AIS-derived fishing-effort data globally at 0.1° resolution. Use to indicate fishing pressure near dive sites and to support 'sits inside / outside fishing zone' claims."
+    "notes": "AIS-derived fishing-effort data globally at 0.1° resolution. Use to indicate fishing pressure near dive sites and to support 'sits inside / outside fishing zone' claims. We ingest apparent fishing hours within 50 km of each location as a multi-year series and show it as a trend; a falling trend near a protected reef is a supporting 'pressure easing' signal, treated as context (not proof of enforcement), since AIS misses small-scale and dark vessels and fishing near an MPA is often legal outside a no-take core."
   },
   {
     "id": "global-mangrove-watch",
@@ -661,5 +664,165 @@
     "accessedAt": "2026-06-20",
     "license": "CC BY 4.0 (open summary data)",
     "notes": "Coral reef benthic survey platform used by researchers globally. Open summary data available at /v1/summarysampleevents/ without authentication. Raw transect data may be restricted by project."
+  },
+  {
+    "id": "reef",
+    "name": "REEF Volunteer Fish Survey Project",
+    "url": "https://www.reef.org/db/reports/geo",
+    "publisher": "Reef Environmental Education Foundation (REEF)",
+    "sourceType": "citizen-science",
+    "accessedAt": "2026-07-09",
+    "license": "Copyright REEF; non-commercial use only (cleared for Scuba Season's non-commercial use; commercial reuse requires REEF's written permission). Cite per REEF's required format.",
+    "notes": "Roving Diver Technique fish surveys by trained volunteer divers. Public Geographic Area Report (reef.org/db/reports/geo) publishes effort-standardised sighting frequency (%SF) and density (DEN, 1–4) per species per geographic zone; its CSV export honours a start_date/end_date window, so a per-year series is built one calendar year at a time. No JSON data API and no GBIF/OBIS dataset exist. Strong coverage in the Tropical Western Atlantic/Caribbean, US, and Tropical Eastern Pacific; thin in the Mediterranean and Indo-Pacific."
+  },
+  {
+    "id": "rls",
+    "name": "Reef Life Survey (RLS)",
+    "url": "https://reeflifesurvey.com/",
+    "publisher": "Reef Life Survey Foundation / IMAS, University of Tasmania (via IMOS AODN)",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-07-09",
+    "license": "CC BY 4.0",
+    "notes": "Global standardized reef-fish visual census (Method 1 fish transects). Open data served by the IMOS Australian Ocean Data Network (AODN) geoserver — no authentication required. Publishes per-species biomass, abundance and species richness per survey. Attribution required."
+  },
+  {
+    "id": "melia-2020-torre-guaceto",
+    "name": "Melià et al. 2020 — Protection reveals density-dependent dynamics in fish populations (Torre Guaceto MPA)",
+    "url": "https://doi.org/10.1371/journal.pone.0228604",
+    "publisher": "PLOS ONE 15(2):e0228604",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-09",
+    "license": "CC BY 4.0",
+    "notes": "Twelve years of annual underwater visual census (2004 to 2015) at Torre Guaceto. White sea bream (Diplodus sargus) density inside the fully protected zone was 0.070 ind/m² versus 0.010 (north) and 0.022 (south) on the adjacent unprotected coast — roughly 3 to 7 times higher inside. The only genuine multi-year fish series for this MPA; measures one key species' density, not total biomass."
+  },
+  {
+    "id": "guidetti-2014-med-mpa",
+    "name": "Guidetti et al. 2014 — Large-scale assessment of Mediterranean MPA effects on fish assemblages",
+    "url": "https://doi.org/10.1371/journal.pone.0091841",
+    "publisher": "PLOS ONE 9(4):e91841",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-09",
+    "license": "CC BY 4.0",
+    "notes": "Thirty Mediterranean locations surveyed 2007 to 2008. Total fish biomass averaged 83.4 g/m² in well enforced no-take reserves, 29.8 at partially protected sites and 10.0 where fished — about 8 times higher in highly protected reserves. Torre Guaceto is one of the highly protected reserves; its protection response was driven by the sea breams Diplodus sargus and D. vulgaris. Biomass figure is a highly-protected-group mean, not a Torre-only measurement."
+  },
+  {
+    "id": "study-salinas-galapagos-2016",
+    "name": "Salinas-de-León et al. 2016 — Largest global shark biomass, Darwin and Wolf",
+    "url": "https://doi.org/10.7717/peerj.1911",
+    "publisher": "PeerJ",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Open access (CC BY 4.0)",
+    "notes": "Stereo-video surveys at Darwin and Wolf recorded mean reef fish biomass of 17.5 t/ha, of which 12.4 t/ha was sharks — the largest shark biomass reported on any reef. Backs the Darwin and Wolf reef-state context."
+  },
+  {
+    "id": "study-caselle-channel-islands-2015",
+    "name": "Caselle et al. 2015 — Recovery trajectories, Channel Islands MPAs",
+    "url": "https://doi.org/10.1038/srep14102",
+    "publisher": "Scientific Reports",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Open access (CC BY 4.0)",
+    "notes": "Targeted fish biomass increased about 3.7 times faster inside Northern Channel Islands MPAs than outside (0.078 vs 0.021 t/ha/yr) across 2003-2012. Basis for the Channel Islands Improving label."
+  },
+  {
+    "id": "study-quimbayo-malpelo-2016",
+    "name": "Quimbayo et al. 2016 — Unusual reef fish biomass at Malpelo",
+    "url": "https://doi.org/10.1007/s10641-016-0557-y",
+    "publisher": "Environmental Biology of Fishes",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Citation required (subscription)",
+    "notes": "Reef fish biomass at Malpelo reached 879 g/m2 (2015), among the highest in the Tropical Eastern Pacific and predator dominated, inside the fully protected sanctuary."
+  },
+  {
+    "id": "study-pina-amargos-jr-2014",
+    "name": "Pina-Amargós et al. 2014 — Protection of targeted reef fish, Jardines de la Reina",
+    "url": "https://doi.org/10.7717/peerj.274",
+    "publisher": "PeerJ",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Open access (CC BY 4.0)",
+    "notes": "On the reef crest, mutton snapper density was about eight times higher inside the Jardines de la Reina no-take reserve than at fished sites."
+  },
+  {
+    "id": "study-lamb-johnson-exuma-2010",
+    "name": "Lamb & Johnson 2010 — Trophic restructuring, Exuma Cays Land and Sea Park",
+    "url": "https://doi.org/10.3354/meps08509",
+    "publisher": "Marine Ecology Progress Series",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Citation required (subscription)",
+    "notes": "Total reef fish biomass was about seven times higher inside the Exuma Cays Land and Sea Park than at fished sites, concentrated in high trophic level species."
+  },
+  {
+    "id": "study-friedlander-cocos-2012",
+    "name": "Friedlander et al. 2012 — Shallow-water fish assemblage, Isla del Coco",
+    "url": "https://www.scielo.sa.cr/scielo.php?script=sci_arttext&pid=S0034-77442012000800021",
+    "publisher": "Revista de Biología Tropical",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Open access",
+    "notes": "Nearshore reef fish biomass at Isla del Coco averaged 7.8 t/ha, among the largest in the tropics, with apex predators making up nearly 40%."
+  },
+  {
+    "id": "study-muallil-tubbataha-2019",
+    "name": "Muallil et al. 2019 — Effectiveness of small MPAs, Philippines (Tubbataha reference)",
+    "url": "https://doi.org/10.1016/j.ocecoaman.2019.104831",
+    "publisher": "Ocean & Coastal Management",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Citation required (subscription)",
+    "notes": "The Tubbataha no-take park held the highest reef fish biomass among Philippine sites surveyed and was used as the unfished reference; fished MPAs and open areas held only a fraction of it."
+  },
+  {
+    "id": "study-prato-providencia-2024",
+    "name": "Prato-Valderrama et al. 2024 — Fish refuge, Old Providence McBean Lagoon",
+    "url": "https://doi.org/10.26640/22159045.2024.647",
+    "publisher": "Boletín Científico CIOH",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Open access",
+    "notes": "Fish biomass, abundance and density were all higher inside Old Providence McBean Lagoon National Park than on unprotected reef outside, a refuge for threatened species."
+  },
+  {
+    "id": "study-bruce-abrolhos-2012",
+    "name": "Bruce et al. 2012 — Abrolhos Bank reef health and fish biomass",
+    "url": "https://doi.org/10.1371/journal.pone.0036687",
+    "publisher": "PLOS ONE",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Open access (CC BY)",
+    "notes": "Reef fish biomass on the fully protected Abrolhos National Marine Park reefs reached up to 148 g/m2 versus about 8 g/m2 on the most heavily fished reefs, close to an eighteen fold difference."
+  },
+  {
+    "id": "study-mcclanahan-chumbe-2009",
+    "name": "McClanahan et al. 2009 — Northern Tanzania coral reefs (Chumbe)",
+    "url": "https://doi.org/10.1002/aqc.1020",
+    "publisher": "Aquatic Conservation: Marine and Freshwater Ecosystems",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Citation required (subscription)",
+    "notes": "Reef fish biomass was about 886 kg/ha inside the Chumbe no-take sanctuary versus about 283-291 kg/ha on nearby fished reefs. Figures cross-checked against the peer-reviewed Conservation Evidence synthesis of this study."
+  },
+  {
+    "id": "study-mcclanahan-kisite-2006",
+    "name": "McClanahan et al. 2006 — Marine park vs multiple-use area, Kisite-Mpunguti",
+    "url": "https://doi.org/10.1002/aqc.715",
+    "publisher": "Aquatic Conservation: Marine and Freshwater Ecosystems",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Citation required (subscription)",
+    "notes": "Fish biomass was 682-1,354 kg/ha inside the Kisite-Mpunguti no-take park versus 260-457 kg/ha in the fished multiple-use area. Figures cross-checked against the peer-reviewed Conservation Evidence synthesis."
+  },
+  {
+    "id": "study-koester-aldabra-2023",
+    "name": "Koester et al. 2023 — Reef fish at remote Aldabra Atoll",
+    "url": "https://doi.org/10.3389/fmars.2023.1230717",
+    "publisher": "Frontiers in Marine Science",
+    "sourceType": "peer-reviewed-paper",
+    "accessedAt": "2026-07-08",
+    "license": "Open access (CC BY 4.0)",
+    "notes": "Reef fish biomass at the strict-reserve Aldabra Atoll was around 4.8 t/ha, among the highest in Seychelles and far above the fished granitic inner islands."
   }
 ]

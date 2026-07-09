@@ -10,7 +10,9 @@
 import fs from "node:fs";
 import {
   editorialEffortLevel,
+  effortTrendWorthShowing,
   fishingAllowsImproving,
+  fishingEffortSeries,
   fishingTrend,
   gfwEffortLevel,
   reconcile,
@@ -55,6 +57,40 @@ eq(fishingTrend(5, 0), "rising", "from zero baseline → rising");
 eq(fishingTrend(0, 0), "stable", "0 from 0 → stable");
 eq(fishingTrend(null, 100), "unknown", "no current → unknown");
 eq(fishingTrend(100, null), "unknown", "no baseline → unknown");
+
+// ── Unit: effort series (display-only trend) ────────────────────────────
+// Prefers an ingested series; else synthesizes from historical + current.
+eq(
+  fishingEffortSeries({ current: { year: 2025, fishingHours: 100 }, historical: { year: 2021, fishingHours: 400 } }),
+  [
+    { year: 2021, fishingHours: 400 },
+    { year: 2025, fishingHours: 100 },
+  ],
+  "synthesizes 2-point series from historical + current, oldest first",
+);
+eq(
+  fishingEffortSeries({
+    current: { year: 2025, fishingHours: 100 },
+    historical: { year: 2021, fishingHours: 400 },
+    series: [
+      { year: 2023, fishingHours: 300 },
+      { year: 2021, fishingHours: 400 },
+      { year: 2025, fishingHours: 100 },
+    ],
+  }),
+  [
+    { year: 2021, fishingHours: 400 },
+    { year: 2023, fishingHours: 300 },
+    { year: 2025, fishingHours: 100 },
+  ],
+  "uses ingested series when present, sorted ascending",
+);
+eq(fishingEffortSeries(null), [], "no record → empty series");
+eq(fishingEffortSeries({ current: { year: 2025, fishingHours: 100 } }), [{ year: 2025, fishingHours: 100 }], "single point when no historical");
+// Worth-showing gate: two-plus years and a peak at/above the low band (200h).
+eq(effortTrendWorthShowing([{ year: 2021, fishingHours: 0 }, { year: 2025, fishingHours: 2 }]), false, "near-zero series suppressed");
+eq(effortTrendWorthShowing([{ year: 2021, fishingHours: 400 }, { year: 2025, fishingHours: 100 }]), true, "measurable falling series shown");
+eq(effortTrendWorthShowing([{ year: 2025, fishingHours: 900 }]), false, "single point never charted");
 
 // ── Unit: improving gate + editorial fallback ───────────────────────────
 for (const e of ["protected", "low", "unknown"] as const) eq(fishingAllowsImproving(e), true, `${e} allows improving`);
