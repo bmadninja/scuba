@@ -11,6 +11,7 @@ import { getGearById } from "@/lib/data/gear";
 import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
+import { getAgrraReefSeriesByLocationId } from "@/lib/data/agrra-reef-series";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
@@ -39,7 +40,7 @@ import type {
   ThreatenedStats,
 } from "./location-page-body";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
-import type { BleachingAlertLevel, MpaStatus, PartnerLink, ReefHealthRecord } from "@/lib/data/types";
+import type { BleachingAlertLevel, CoralCoverSeriesPoint, MpaStatus, PartnerLink, ReefHealthRecord } from "@/lib/data/types";
 
 // ---------------------------------------------------------------------------
 // Plain-language mappings
@@ -531,15 +532,34 @@ export default async function LocationPage({
 
   // Coral-cover chart points. Prefer a real multi-year survey series when one
   // is on file: every year becomes a point and the chart draws a genuine trend.
-  // A nearby-survey series (MERMAID) is display-only and clearly labelled, so it
-  // powers the chart without touching the reef-state verdict or headline number.
-  // Otherwise fall back to the historical + current pair as a two-point
-  // before/after. One point per year, earliest wins on ties.
-  const nearbyCoralSeries = getCoralCoverSeriesByLocationId(location.id);
-  const series =
-    nearbyCoralSeries?.series ??
-    observed?.coralCoverSeries ??
-    null;
+  // Two nearby-survey composites can exist — MERMAID (mostly Indo-Pacific) and
+  // AGRRA (the Caribbean standard). Both are display-only and clearly labelled;
+  // when both cover a location we pick whichever has more survey years (MERMAID
+  // wins ties as the incumbent), never touching the reef-state verdict or the
+  // headline number. Otherwise fall back to the historical + current pair as a
+  // two-point before/after. One point per year, earliest wins on ties.
+  const mermaidCoralSeries = getCoralCoverSeriesByLocationId(location.id);
+  const agrraSeries = getAgrraReefSeriesByLocationId(location.id);
+  const nearbyCandidates: { series: CoralCoverSeriesPoint[]; label: string }[] = [];
+  if (mermaidCoralSeries?.series?.length) {
+    const km = Math.round(mermaidCoralSeries.radiusDeg * 111);
+    nearbyCandidates.push({
+      series: mermaidCoralSeries.series,
+      label: `MERMAID reef surveys within ${km} km`,
+    });
+  }
+  if (agrraSeries?.coral?.series?.length) {
+    const label =
+      agrraSeries.matchType === "country"
+        ? `AGRRA ${agrraSeries.country} national average`
+        : `AGRRA survey sites within ${Math.round((agrraSeries.radiusDeg ?? 0.75) * 111)} km`;
+    nearbyCandidates.push({ series: agrraSeries.coral.series, label });
+  }
+  // Stable sort keeps MERMAID (pushed first) ahead of AGRRA on a year-count tie.
+  nearbyCandidates.sort((a, b) => b.series.length - a.series.length);
+  const chosenNearby = nearbyCandidates[0] ?? null;
+
+  const series = chosenNearby?.series ?? observed?.coralCoverSeries ?? null;
   const projectionDataPoints: CoralDataPoint[] = [];
   let coralChartSourceLabel: string | null = coralSourceLabel;
   if (series && series.length >= 2) {
@@ -550,9 +570,8 @@ export default async function LocationPage({
     for (const [year, pct] of [...byYear.entries()].sort((a, b) => a[0] - b[0])) {
       projectionDataPoints.push({ year, pct });
     }
-    if (nearbyCoralSeries) {
-      const km = Math.round(nearbyCoralSeries.radiusDeg * 111);
-      coralChartSourceLabel = `MERMAID reef surveys within ${km} km`;
+    if (chosenNearby) {
+      coralChartSourceLabel = chosenNearby.label;
     }
   } else {
     if (coverBefore !== null && historicalYear !== null) {
@@ -562,6 +581,7 @@ export default async function LocationPage({
       projectionDataPoints.push({ year: surveyYear, pct: Math.round(coverNow) });
     }
   }
+
 
   // GCRMN regional context, drawn as one faint horizontal reference line at the
   // region's most recent average cover — "this reef vs its region" — instead of

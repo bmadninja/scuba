@@ -277,5 +277,16 @@
     "calculation": "Hard coral cover % taken from percent_cover_benthic_category_avg[\"Hard coral\"] in the MERMAID summarysampleevents endpoint. Benthic PIT preferred over LIT over photo-quadrat when multiple protocols exist for the same event. Most recent survey event within 0.5° of location centre used.",
     "limitations": "Survey events are matched by geographic proximity (0.5° radius), not by explicit dive site name — a survey at a nearby site may not perfectly represent the named location. Cover is the mean across all sample units in that survey event. Older surveys may not reflect post-bleaching changes.",
     "lastReviewedAt": "2026-06-20"
+  },
+  {
+    "claimId": "reef-health-agrra",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "agrra"
+    ],
+    "confidence": "high",
+    "calculation": "Live-coral cover % from LCAVG in the AGRRA Data Explorer BaseBySite FeatureServer, filtered to >= 0 to drop the -999 no-data sentinel. Survey sites are grouped into one mean value per survey year. Scope is proximity first — all AGRRA sites within 0.75° (~83 km) of the location centre — falling back to the location's own-country national composite only when proximity yields fewer than three survey years AND the nearest same-country AGRRA site is within 1.5°. A series is published only when it spans at least three survey years.",
+    "limitations": "AGRRA is a rapid-assessment programme: sites are not resurveyed on a fixed annual schedule, so survey years are uneven and some gaps are multi-year. Values are proximity or national composites matched to our location centres, not the exact dive site, and the annual mean pools every surveyed site in that scope. This trend chart is display-only: it never sets the reef-state verdict or the headline coral-cover number, which stay on the hand-reviewed reef-health record. Fish biomass from this dataset is intentionally not used — Reef Life Survey is the atlas-wide fish-biomass source.",
+    "lastReviewedAt": "2026-07-09"
   }
 ]

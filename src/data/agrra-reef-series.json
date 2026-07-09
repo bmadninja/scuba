@@ -1,0 +1,854 @@
+[
+  {
+    "locationId": "andros-bahamas",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 256,
+    "coralSurveyYears": 9,
+    "coral": {
+      "latest": {
+        "year": 2019,
+        "coralCoverPercent": 14.6
+      },
+      "series": [
+        {
+          "year": 2007,
+          "coralCoverPercent": 10.4
+        },
+        {
+          "year": 2008,
+          "coralCoverPercent": 10.8
+        },
+        {
+          "year": 2009,
+          "coralCoverPercent": 11.4
+        },
+        {
+          "year": 2011,
+          "coralCoverPercent": 11.7
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 13.9
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 7.8
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 9.8
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 11.9
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 14.6
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "256 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 9 survey years (2007–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "antigua-and-barbuda",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 26,
+    "coralSurveyYears": 3,
+    "coral": {
+      "latest": {
+        "year": 2019,
+        "coralCoverPercent": 5.4
+      },
+      "series": [
+        {
+          "year": 2017,
+          "coralCoverPercent": 11.7
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 9.3
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 5.4
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "26 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 3 survey years (2017–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "banco-chinchorro",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 99,
+    "coralSurveyYears": 6,
+    "coral": {
+      "latest": {
+        "year": 2021,
+        "coralCoverPercent": 14.4
+      },
+      "series": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 13.5
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 12.3
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 10.7
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 15.4
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 16.8
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 14.4
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "99 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 6 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "blue-hole-belize",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 230,
+    "coralSurveyYears": 7,
+    "coral": {
+      "latest": {
+        "year": 2021,
+        "coralCoverPercent": 19.5
+      },
+      "series": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 18.5
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 24.1
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 15.6
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 18.3
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 16.6
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 19.4
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 19.5
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "230 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "cozumel-mexico",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 111,
+    "coralSurveyYears": 7,
+    "coral": {
+      "latest": {
+        "year": 2022,
+        "coralCoverPercent": 10.5
+      },
+      "series": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 9.9
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 17.2
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 11.9
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 17.4
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 13.4
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 12
+        },
+        {
+          "year": 2022,
+          "coralCoverPercent": 10.5
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "111 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2022). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "exuma-cays-bahamas",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 76,
+    "coralSurveyYears": 5,
+    "coral": {
+      "latest": {
+        "year": 2019,
+        "coralCoverPercent": 3
+      },
+      "series": [
+        {
+          "year": 2008,
+          "coralCoverPercent": 17.7
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 14
+        },
+        {
+          "year": 2017,
+          "coralCoverPercent": 14.8
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 11.2
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 3
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "76 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 5 survey years (2008–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "gladden-spit-belize",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 301,
+    "coralSurveyYears": 8,
+    "coral": {
+      "latest": {
+        "year": 2021,
+        "coralCoverPercent": 22.2
+      },
+      "series": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 20.1
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 21.8
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 28.1
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 16.7
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 40.8
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 24.6
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 24.4
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 22.2
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "301 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 8 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "grenada-bianca-c",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 72,
+    "coralSurveyYears": 4,
+    "coral": {
+      "latest": {
+        "year": 2021,
+        "coralCoverPercent": 21.3
+      },
+      "series": [
+        {
+          "year": 2015,
+          "coralCoverPercent": 15.3
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 17.8
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 22.4
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 21.3
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "72 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 4 survey years (2015–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "grenada-main",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 72,
+    "coralSurveyYears": 4,
+    "coral": {
+      "latest": {
+        "year": 2021,
+        "coralCoverPercent": 21.3
+      },
+      "series": [
+        {
+          "year": 2015,
+          "coralCoverPercent": 15.3
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 17.8
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 22.4
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 21.3
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "72 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 4 survey years (2015–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "isla-mujeres",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 56,
+    "coralSurveyYears": 7,
+    "coral": {
+      "latest": {
+        "year": 2022,
+        "coralCoverPercent": 10.5
+      },
+      "series": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 6.2
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 16.7
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 11.1
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 15.5
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 11.6
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 11.3
+        },
+        {
+          "year": 2022,
+          "coralCoverPercent": 10.5
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "56 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2022). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "long-island-bahamas",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "country",
+    "country": "Bahamas",
+    "surveyEventCount": 588,
+    "coralSurveyYears": 11,
+    "coral": {
+      "latest": {
+        "year": 2019,
+        "coralCoverPercent": 10.7
+      },
+      "series": [
+        {
+          "year": 2007,
+          "coralCoverPercent": 10.4
+        },
+        {
+          "year": 2008,
+          "coralCoverPercent": 10.8
+        },
+        {
+          "year": 2009,
+          "coralCoverPercent": 11.4
+        },
+        {
+          "year": 2011,
+          "coralCoverPercent": 9.7
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 13.9
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 9.4
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 10.2
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 12
+        },
+        {
+          "year": 2017,
+          "coralCoverPercent": 10.5
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 9.3
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 10.7
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "588 AGRRA site-surveys, Bahamas national AGRRA average. Live-coral cover across 11 survey years (2007–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "roatan-honduras",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 295,
+    "coralSurveyYears": 10,
+    "coral": {
+      "latest": {
+        "year": 2022,
+        "coralCoverPercent": 11
+      },
+      "series": [
+        {
+          "year": 2010,
+          "coralCoverPercent": 15
+        },
+        {
+          "year": 2011,
+          "coralCoverPercent": 24
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 21.8
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 18.6
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 9.8
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 20.3
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 23.7
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 21.6
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 20.3
+        },
+        {
+          "year": 2022,
+          "coralCoverPercent": 11
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "295 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 10 survey years (2010–2022). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "saint-vincent-and-the-grenadines",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 48,
+    "coralSurveyYears": 3,
+    "coral": {
+      "latest": {
+        "year": 2019,
+        "coralCoverPercent": 23.2
+      },
+      "series": [
+        {
+          "year": 2015,
+          "coralCoverPercent": 10.5
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 15.7
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 23.2
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "48 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 3 survey years (2015–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "tela-honduras",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 145,
+    "coralSurveyYears": 8,
+    "coral": {
+      "latest": {
+        "year": 2021,
+        "coralCoverPercent": 24.7
+      },
+      "series": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 20.2
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 24.2
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 30.8
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 18.2
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 40.8
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 26.7
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 26.2
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 24.7
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "145 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 8 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "the-pit-belize",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 230,
+    "coralSurveyYears": 7,
+    "coral": {
+      "latest": {
+        "year": 2021,
+        "coralCoverPercent": 19.5
+      },
+      "series": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 18.5
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 24.1
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 15.6
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 18.3
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 16.6
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 19.4
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 19.5
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "230 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "tiger-beach-bahamas",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 35,
+    "coralSurveyYears": 6,
+    "coral": {
+      "latest": {
+        "year": 2019,
+        "coralCoverPercent": 8.4
+      },
+      "series": [
+        {
+          "year": 2012,
+          "coralCoverPercent": 14
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 8.2
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 9.8
+        },
+        {
+          "year": 2017,
+          "coralCoverPercent": 12.1
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 7.4
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 8.4
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "35 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 6 survey years (2012–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "turneffe-belize",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 249,
+    "coralSurveyYears": 7,
+    "coral": {
+      "latest": {
+        "year": 2021,
+        "coralCoverPercent": 19
+      },
+      "series": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 18.5
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 24.1
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 15.6
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 16.6
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 15.5
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 18.9
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 19
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "249 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "locationId": "utila-honduras",
+    "sourceId": "agrra",
+    "methodologyClaimId": "reef-health-agrra",
+    "matchType": "proximity",
+    "radiusDeg": 0.75,
+    "surveyEventCount": 267,
+    "coralSurveyYears": 11,
+    "coral": {
+      "latest": {
+        "year": 2022,
+        "coralCoverPercent": 11
+      },
+      "series": [
+        {
+          "year": 2010,
+          "coralCoverPercent": 15
+        },
+        {
+          "year": 2011,
+          "coralCoverPercent": 25.4
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 24.9
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 30.8
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 21.1
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 40.8
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 26.1
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 26.4
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 21.6
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 24.5
+        },
+        {
+          "year": 2022,
+          "coralCoverPercent": 11
+        }
+      ]
+    },
+    "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "267 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 11 survey years (2010–2022). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "lastReviewedAt": "2026-07-09"
+  }
+]

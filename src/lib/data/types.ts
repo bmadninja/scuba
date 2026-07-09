@@ -669,6 +669,43 @@ export type CoralCoverSeriesRecord = {
 };
 
 /**
+ * A location's multi-year AGRRA (Atlantic and Gulf Rapid Reef Assessment)
+ * live-coral-cover trend. Like the MERMAID `CoralCoverSeriesRecord`, this is a
+ * DISPLAY-ONLY dataset for the reef card's trend chart: AGRRA survey sites are
+ * matched to our locations by proximity (or a gated same-country national
+ * composite), so a series never drives the reef-state verdict or the headline
+ * coral number — only the labelled trend chart. Lives in
+ * `src/data/agrra-reef-series.json`, one entry per location. Built by
+ * scripts/fetch-agrra-reef-trends.mjs. (Fish biomass is deliberately NOT carried
+ * here: Reef Life Survey is the atlas-wide fish-biomass source.)
+ */
+export type AgrraReefSeriesRecord = {
+  locationId: string;
+  sourceId: string;
+  methodologyClaimId: string;
+  /**
+   * "proximity" = AGRRA sites within `radiusDeg` of the location; "country" =
+   * the location's own-country national composite (fallback when proximity is
+   * too thin). Drives the honest chart label.
+   */
+  matchType: "proximity" | "country";
+  /** Present when matchType === "proximity". */
+  radiusDeg?: number;
+  /** Present when matchType === "country". */
+  country?: string;
+  /** Total AGRRA site-surveys pooled into the chosen scope. */
+  surveyEventCount: number;
+  coralSurveyYears: number;
+  coral: {
+    latest: { year: number; coralCoverPercent: number };
+    series: CoralCoverSeriesPoint[];
+  };
+  citation?: string | null;
+  notes?: string;
+  lastReviewedAt?: string;
+};
+
+/**
  * A location's yearly count of research-grade iNaturalist observations within
  * its radius. Renders as a cumulative accumulation line — the scientific record
  * of a reef growing over time — turning the static species count into a real,
