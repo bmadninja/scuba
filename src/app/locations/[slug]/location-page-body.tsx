@@ -10,7 +10,10 @@ import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
 import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
-import type { BlueParkAward } from "@/lib/data/types";
+import type {
+  BlueParkAward,
+  FishAbundanceSeriesRecord,
+} from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
 
@@ -147,6 +150,8 @@ export type LocationBodyProps = {
   // GCRMN regional average, drawn as a faint horizontal reference line
   coralContextValue: number | null;
   coralContextLabel: string | null;
+  // Indicator-fish evidence: one supporting line under the verdict
+  fishAbundance: FishAbundanceSeriesRecord | null;
   heat: ConditionPill | null;
   fishing: ConditionPill | null;
   blueParkAward: BlueParkAward | null;
@@ -329,6 +334,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     coralChartSourceLabel,
     coralContextValue,
     coralContextLabel,
+    fishAbundance,
     heat,
     fishing,
     blueParkAward,
@@ -453,6 +459,24 @@ export function LocationPageBody(props: LocationBodyProps) {
                 }}>
                   {verdictBasis ?? divingOutlook ?? conditionSentence}
                 </p>
+                {/* Fish is the signal that responds to protection. One plain
+                    supporting line under the verdict — never a separate chart. */}
+                {fishAbundance ? (
+                  <p style={{
+                    fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                    fontSize: "0.9375rem",
+                    lineHeight: 1.6,
+                    color: "#4A5568",
+                    margin: "0.6rem 0 0",
+                  }}>
+                    {fishAbundance.headline}{" "}
+                    {fishAbundance.citationUrl ? (
+                      <Link href={fishAbundance.citationUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#4A5568", textDecoration: "underline" }}>
+                        source
+                      </Link>
+                    ) : null}
+                  </p>
+                ) : null}
               </div>
 
               {/* Data card */}

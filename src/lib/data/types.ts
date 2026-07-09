@@ -703,6 +703,113 @@ export type CoralRegionalTrend = {
 };
 
 /**
+ * One Reef Check indicator-fish taxon's regional density endpoints, counted on
+ * standardised belt transects and expressed as individuals per 100 m². The two
+ * values are the first and last year of Reef Check's global 5-Year compilation —
+ * a regional mean across many reefs, never a single site.
+ */
+export type ReefCheckFishIndicator = {
+  /** Display name, e.g. "Grouper (over 30 cm)". */
+  taxon: string;
+  /** Scientific family, e.g. "Serranidae". */
+  family: string;
+  /** Why the taxon is a fishing-pressure indicator, one short phrase. */
+  role: string;
+  startYear: number;
+  startDensity: number;
+  endYear: number;
+  endDensity: number;
+  /** Always "per 100 m²" for Reef Check fish belt transects. */
+  unit: string;
+  direction: "up" | "down";
+  /** Reported significance, e.g. "p ≤ 0.01". */
+  significance?: string;
+  /** True when Reef Check found this taxon significantly more abundant inside MPAs. */
+  higherInsideMpa?: boolean;
+};
+
+/**
+ * Reef Check's regional indicator-fish benchmark for one ocean basin. This is
+ * DISPLAY-ONLY context, never a reef-state input and never a site value: it
+ * shows how food- and aquarium-trade fish trended region-wide on standardised
+ * belt transects, plus the inside-vs-outside-MPA contrast that is the core
+ * "protection works" signal. Regional means from the 1997–2001 global dataset.
+ * Lives in `src/data/reef-check-fish-regional.json`.
+ */
+export type ReefCheckFishRegional = {
+  /** Basin key, e.g. "indo-pacific" or "atlantic". */
+  basin: string;
+  label: string;
+  sourceId: string;
+  /** Plain description of the belt-transect method + unit. */
+  method: string;
+  yearRange: [number, number];
+  /** Number of reef surveys behind the regional means, for honesty about n. */
+  sampleReefs: number;
+  indicators: ReefCheckFishIndicator[];
+  /** One sentence stating the significant inside-vs-outside-MPA finding. */
+  mpaContrast: string;
+  citation: string;
+  citationUrl?: string;
+};
+
+/**
+ * One monitored station's indicator-fish reading at two survey years. Both
+ * values are real, published survey endpoints for that exact station — never
+ * modelled, never read off a plotted line, never spliced across methods.
+ */
+export type FishAbundanceStation = {
+  /** Station name as published, e.g. "Lighthouse Reef". */
+  station: string;
+  startYear: number;
+  startValue: number;
+  endYear: number;
+  endValue: number;
+};
+
+/**
+ * A location's real indicator-fish (target / commercial reef fish) abundance
+ * evidence from an in-situ belt-transect monitoring program. DISPLAY-ONLY and
+ * never a reef-state input. We deliberately store published station endpoints
+ * rather than a smoothed multi-year line: for our first site (Tubbataha) the
+ * full annual arrays are held on request by the survey programs, so the honest
+ * artefact is a two-year (start vs end) comparison across every monitored
+ * station, plus the programs' own stated trend direction. The exact program,
+ * method and unit are named so this is never conflated with Reef Check's
+ * per-100 m² protocol (Tubbataha's data is Saving Philippine Reefs / Tubbataha
+ * Management Office, counted per 500 m²). Lives in
+ * `src/data/fish-abundance-series.json`.
+ */
+export type FishAbundanceSeriesRecord = {
+  locationId: string;
+  /** Primary program source id, e.g. "spr-ccef". */
+  sourceId: string;
+  /** Corroborating program source ids, e.g. ["tubbataha-management-office"]. */
+  secondarySourceIds?: string[];
+  methodologyClaimId: string;
+  /** What is counted, e.g. "Target-fish biomass". */
+  metric: string;
+  /** Unit of every value, e.g. "kg per 500 m²". */
+  unit: string;
+  /** Survey method, named so it is never mistaken for the Reef Check protocol. */
+  method: string;
+  /** Short attribution shown under the chart, e.g. the program names. */
+  sourceLabel: string;
+  direction: "up" | "down" | "flat";
+  /** The program's own stated trend claim, quotable and cited. */
+  headline: string;
+  stations: FishAbundanceStation[];
+  /** How many of the stations rose, for an honest "4 of 6" framing. */
+  stationsUp: number;
+  stationsTotal: number;
+  /** Honest counter-evidence or scope limit shown under the chart. */
+  caveat?: string;
+  citation: string;
+  citationUrl?: string;
+  lastReviewedAt?: string;
+};
+
+/**
  * Current thermal stress reading. Sourced from NOAA Coral Reef Watch or
  * an equivalent satellite product.
  */

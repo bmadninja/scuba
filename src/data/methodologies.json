@@ -277,5 +277,26 @@
     "calculation": "Hard coral cover % taken from percent_cover_benthic_category_avg[\"Hard coral\"] in the MERMAID summarysampleevents endpoint. Benthic PIT preferred over LIT over photo-quadrat when multiple protocols exist for the same event. Most recent survey event within 0.5° of location centre used.",
     "limitations": "Survey events are matched by geographic proximity (0.5° radius), not by explicit dive site name — a survey at a nearby site may not perfectly represent the named location. Cover is the mean across all sample units in that survey event. Older surveys may not reflect post-bleaching changes.",
     "lastReviewedAt": "2026-06-20"
+  },
+  {
+    "claimId": "reef-health-reef-check-fish",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "reef-check"
+    ],
+    "confidence": "medium",
+    "limitations": "This is a regional benchmark, not a reading of the reef you are looking at. The numbers are mean indicator-fish densities across all Reef Check belt transects in an ocean basin (the Indo-Pacific or the Atlantic and Caribbean) over 1997 to 2001, so they show a basin-wide direction, not the state of a single site. Reef Check counts a fixed set of indicator families (grouper, snapper, sweetlips, parrotfish, humphead wrasse, butterflyfish) rather than all fish, and volunteer counts carry more observer variance than professional surveys. We show it because those same standardised counts found five of ten indicator groups significantly more abundant inside marine protected areas than outside, which is honest, effort-standardised evidence that protection rebuilds fish. It never drives a location's reef-state verdict.",
+    "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "claimId": "reef-fish-abundance-insitu",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "spr-ccef",
+      "tubbataha-management-office"
+    ],
+    "confidence": "medium",
+    "limitations": "Fish abundance comes from in-situ belt-transect surveys (underwater visual census) at named monitoring stations, reported per 500 m² by the survey program, and is display-only context that does not set the reef-state verdict. We show published start-versus-end values for each station rather than a smoothed line because the full year-by-year data is held by the programs and released on request; reading points off a plotted figure would not be real data. Different programs use different methods, units and fish groupings and must not be spliced into one series. Target and commercial families track fishing and protection well; total-fish counts also swing with schooling species and storms, so we report the counter-evidence alongside the trend.",
+    "lastReviewedAt": "2026-07-08"
   }
 ]

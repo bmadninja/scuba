@@ -1,0 +1,28 @@
+[
+  {
+    "locationId": "tubbataha-philippines",
+    "sourceId": "spr-ccef",
+    "secondarySourceIds": ["tubbataha-management-office"],
+    "methodologyClaimId": "reef-fish-abundance-insitu",
+    "metric": "Target-fish biomass",
+    "unit": "kg per 500 m²",
+    "method": "Underwater visual census on belt transects. Commercial and target fish families (grouper, snapper, emperor, sweetlips, parrotfish, surgeonfish, rabbitfish and large wrasse) are summed and converted from length to biomass with FishBase coefficients. Saving Philippine Reefs monitoring expeditions to Tubbataha Reefs Natural Park.",
+    "sourceLabel": "Saving Philippine Reefs and Tubbataha Management Office",
+    "direction": "up",
+    "headline": "Commercially important reef fish at Tubbataha are on an increasing trend from 2004 to 2024, the sign of a fully protected reserve rebuilding its big fish.",
+    "stations": [
+      { "station": "Lighthouse Reef", "startYear": 2018, "startValue": 133, "endYear": 2024, "endValue": 290.1 },
+      { "station": "Bird Islet", "startYear": 2018, "startValue": 139, "endYear": 2024, "endValue": 238.4 },
+      { "station": "Amos Rock", "startYear": 2018, "startValue": 160, "endYear": 2024, "endValue": 183.6 },
+      { "station": "Jessie Beazley", "startYear": 2018, "startValue": 123, "endYear": 2024, "endValue": 168.2 },
+      { "station": "Black Rock", "startYear": 2018, "startValue": 188, "endYear": 2024, "endValue": 172.1 },
+      { "station": "Northwest Corner", "startYear": 2018, "startValue": 255, "endYear": 2024, "endValue": 191.4 }
+    ],
+    "stationsUp": 4,
+    "stationsTotal": 6,
+    "caveat": "Target-fish biomass rose at four of the six monitored stations between 2018 and 2024. A separate park count by the Tubbataha Management Office finds total fish biomass slightly down since 2016, which it attributes to year to year swings in large schooling fish and to Typhoon Odette in 2021 rather than to fishing. Full year by year values are held by the survey programs and released on request.",
+    "citation": "White, A.T., Meneses, A.B.T., Ovenden, M., and Berdin, R.D. (2024). 31st Saving Philippine Reefs: A Coral Reef Monitoring Expedition to Tubbataha Reefs Natural Park, May 2024. Coastal Conservation and Education Foundation, Cebu City; and Tubbataha Management Office (2023), Ecosystem Research and Monitoring Report 2022.",
+    "citationUrl": "https://www.coast.ph/wp-content/uploads/2024/11/SPR_2024_Tubbataha.pdf",
+    "lastReviewedAt": "2026-07-08"
+  }
+]

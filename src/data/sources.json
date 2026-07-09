@@ -116,8 +116,27 @@
     "url": "https://www.reefcheck.org/",
     "publisher": "Reef Check Foundation",
     "sourceType": "citizen-science",
-    "accessedAt": "2026-05-24",
-    "notes": "Global volunteer reef-monitoring program with standardised benthic and fish protocols. Use for observed reef condition where local surveys exist."
+    "accessedAt": "2026-07-08",
+    "license": "Published reports free to cite; raw site-level survey data by request only",
+    "notes": "Global volunteer reef-monitoring program with standardised belt transects that count indicator fish (grouper, snapper, sweetlips, parrotfish, humphead wrasse, butterflyfish, moray eels) as individuals per 100 m². We use its global 5-Year compilation (Hodgson and Liebeler 2002) for the regional indicator-fish benchmark in reef-check-fish-regional.json: how food and aquarium-trade fish trended across the Indo-Pacific and Atlantic 1997 to 2001, plus the inside-versus-outside marine-protected-area contrast. Regional means only, not site values. Site-level raw data is request-only via the Global Reef Tracker; no open bulk download or public API. Do not attribute Reef Check numbers to a single reef, and do not conflate this per-100 m² protocol with local per-500 m² surveys."
+  },
+  {
+    "id": "spr-ccef",
+    "name": "Saving Philippine Reefs",
+    "url": "https://www.coast.ph/",
+    "publisher": "Coastal Conservation and Education Foundation",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-07-08",
+    "notes": "Long-running Philippine reef-monitoring expeditions using underwater visual census on fixed belt transects, reporting fish density and biomass per 500 m² by target and commercial family. Source of the Tubbataha target-fish biomass endpoints (2018 to 2024) and the stated 2004 to 2024 increasing trend in commercially important fish. Distinct method and unit from Reef Check; never merge the two series."
+  },
+  {
+    "id": "tubbataha-management-office",
+    "name": "Tubbataha Management Office",
+    "url": "https://tubbatahareefs.org/",
+    "publisher": "Tubbataha Management Office / Tubbataha Protected Area Management Board",
+    "sourceType": "scientific-survey",
+    "accessedAt": "2026-07-08",
+    "notes": "Ranger and scientist ecosystem monitoring of Tubbataha Reefs Natural Park (Ecosystem Research and Monitoring Reports), reporting fish biomass in g/m² and density in individuals per 500 m² by fish visual census. Corroborates the Saving Philippine Reefs record with an independent count; its all-fish biomass trend since 2016 is slightly down, attributed to schooling-fish variability and Typhoon Odette rather than fishing."
   },
   {
     "id": "manta-trust",

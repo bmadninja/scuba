@@ -12,6 +12,7 @@ import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
+import { getFishAbundanceSeriesByLocationId } from "@/lib/data/fish-abundance-series";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getLocationFishing } from "@/lib/data/fishing-pressure";
@@ -491,8 +492,16 @@ export default async function LocationPage({
   // there is no formal protection.
   const fishing = fishingPill(reefPressure?.mpaStatus ?? null, locationFishing.effort);
   const blueParkAward = getBlueParkByLocationId(location.id);
+
+  // Indicator-fish evidence. Fish abundance (not observation volume) is what
+  // responds to protection, so a real per-site abundance record (currently
+  // Tubbataha, from Saving Philippine Reefs) is shown as one supporting line
+  // under the reef-state verdict. Display-only; it never sets the state.
+  const fishAbundance = getFishAbundanceSeriesByLocationId(location.id);
+
   const hasReefData =
-    coverNow !== null || decline !== null || heat !== null || fishing !== null || blueParkAward !== null;
+    coverNow !== null || decline !== null || heat !== null || fishing !== null ||
+    blueParkAward !== null || fishAbundance !== null;
 
   // For a flat coral-cover trend, append a forward-looking sentence based on current
   // heat stress and the combined fishing read so the note reads as an honest
@@ -812,6 +821,7 @@ export default async function LocationPage({
         coralChartSourceLabel={coralChartSourceLabel}
         coralContextValue={coralContextValue}
         coralContextLabel={coralContextLabel}
+        fishAbundance={fishAbundance}
         fishingPressure={fishingPressureData}
         waterQualityEvents={waterQualityEvents}
         bleachedPct={bleachedPct}
