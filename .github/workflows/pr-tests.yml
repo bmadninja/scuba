@@ -25,7 +25,7 @@ jobs:
   playwright:
     name: Playwright suite (npm test)
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - name: Skip note for automation PRs
         if: contains(github.event.pull_request.labels.*.name, 'automation')
@@ -67,9 +67,14 @@ jobs:
           done
           echo "server failed to start" && exit 1
 
+      # Exclude the "Image reachability" suite: 50 tests that probe live third
+      # party CDNs (Wikimedia etc.) with per-URL network timeouts. It is slow and
+      # inherently flaky, and already runs as its own separate, non-blocking
+      # workflow (image-reachability.yml) — it has no place in a required merge
+      # gate. 4 workers matches the runner's core count.
       - name: Run Playwright tests
         if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
-        run: npx playwright test --workers=2 --retries=1
+        run: npx playwright test --workers=4 --retries=1 --reporter=line --grep-invert "Image reachability"
 
       - name: Upload Playwright report on failure
         if: ${{ failure() && !contains(github.event.pull_request.labels.*.name, 'automation') }}
