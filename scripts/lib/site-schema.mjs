@@ -1,7 +1,20 @@
 import { z } from "zod";
 
 const SKILL_LEVELS = ["never-dived", "open-water", "advanced", "tech"];
-const DIVE_TYPES = ["large-pelagics", "coral", "geology", "wrecks", "macro", "cave", "drift"];
+// Keep in sync with the DiveType union in src/lib/data/types.ts.
+const DIVE_TYPES = [
+  "large-pelagics",
+  "coral",
+  "macro",
+  "wrecks",
+  "geology",
+  "blackwater",
+  "drift",
+  "cave",
+  "wall",
+  "night",
+  "muck",
+];
 const RELIABILITY = ["year-round", "seasonal", "rare"];
 const CURRENT = ["none", "mild", "moderate", "strong"];
 
@@ -15,7 +28,14 @@ export const SiteSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/),
   locationId: z.string(),
   name: z.string().min(2),
-  heroImageUrl: z.string().url().nullable(),
+  // Absolute https URL (Wikimedia/Pexels) OR a root-relative self-hosted path
+  // (/heroes/*.webp), which the OIB localisation pipeline writes.
+  heroImageUrl: z
+    .string()
+    .refine((v) => /^https?:\/\//.test(v) || v.startsWith("/"), {
+      message: "must be an absolute URL or a root-relative path",
+    })
+    .nullable(),
   lat: z.number().gte(-90).lte(90),
   lng: z.number().gte(-180).lte(180),
   description: z.string().min(80).max(800),

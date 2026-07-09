@@ -11,8 +11,6 @@
  */
 
 import { test, expect, type Page, type APIRequestContext } from '@playwright/test';
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
 
 const BASE = process.env.PLAYWRIGHT_BASE_URL ?? 'http://localhost:3000';
 
@@ -22,24 +20,6 @@ const TINY_JPEG_B64 =
 
 function tinyJpeg(): Buffer {
   return Buffer.from(TINY_JPEG_B64, 'base64');
-}
-
-function firstSiteSlug(): string {
-  const root = process.cwd();
-  try {
-    const sites = JSON.parse(readFileSync(join(root, 'src/lib/data/sites.json'), 'utf8'));
-    if (Array.isArray(sites) && sites.length > 0) return (sites[0] as { slug: string }).slug;
-    const keys = Object.keys(sites);
-    if (keys.length > 0) return (sites[keys[0]] as { slug: string }).slug;
-  } catch {
-    // fallback
-  }
-  return 'banda-sea-banda-besar';
-}
-
-async function loadSitePage(page: Page): Promise<void> {
-  const slug = firstSiteSlug();
-  await page.goto(`${BASE}/sites/${slug}`);
 }
 
 // Multipart object for Playwright request.post
@@ -235,110 +215,73 @@ test.describe('API: taxa search', () => {
   });
 });
 
-// ─── T21–T23: Pre-dive brief UI ───────────────────────────────────────────────
+// ─── Upload wizard UI (route /upload — redesigned sighting flow) ───────────────
+//
+// The submission flow was moved off the site page onto the dedicated /upload
+// route and rebuilt as a wizard: ModeSelector ("What did you do on the dive?")
+// → Step1SiteSearch ("Where did you dive?") → Step2Sighting ("Your sighting",
+// photos + category + coral/bleaching) → BroadcastConfirmation.
+//
+// Removed features (tested by earlier spec cases that no longer have any UI):
+//   • Methodology modal ("How does this work" / dialog / "Got it") — the
+//     component (pre-dive-brief.tsx) is orphaned and no longer rendered.
+//   • Site-page CTA "Submit a sighting after your dive" scrolling to
+//     #sighting-submission — that anchor/scroll no longer exists.
+//   • Sighting-flow CoralWatch eligibility badge ("will also queue for
+//     CoralWatch") + #depth-m / #observed-on fields — CoralWatch capture now
+//     lives in the separate structured-survey mode, not the photo flow.
 
-test.describe('UI: pre-dive brief', () => {
-  test.beforeEach(async ({ page }) => {
-    await loadSitePage(page);
-  });
+// Advance the wizard to the "Your sighting" step (photo + category).
+async function gotoSightingStep(page: Page): Promise<void> {
+  await page.goto(`${BASE}/upload`);
+  await page.getByRole('button', { name: /i took a photo/i }).click();
+  await page.getByRole('button', { name: /^continue$/i }).click();
+  await expect(page.getByRole('heading', { name: /^your sighting$/i })).toBeVisible();
+}
 
-  test('T21 methodology modal opens', async ({ page }) => {
-    await page.getByRole('button', { name: /how does this work/i }).click();
-    await expect(page.getByRole('dialog')).toBeVisible();
-    await expect(page.getByText('iNaturalist')).toBeVisible();
-    await expect(page.getByText('GBIF')).toBeVisible();
-    await expect(page.getByText('CoralWatch')).toBeVisible();
-  });
+async function uploadPhoto(page: Page): Promise<void> {
+  const [chooser] = await Promise.all([
+    page.waitForEvent('filechooser'),
+    page.getByRole('button', { name: /upload photos/i }).click(),
+  ]);
+  await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
+}
 
-  test('methodology modal closes on "Got it"', async ({ page }) => {
-    await page.getByRole('button', { name: /how does this work/i }).click();
-    await page.getByRole('button', { name: /got it/i }).click();
-    await expect(page.getByRole('dialog')).not.toBeVisible();
-  });
-
-  test('T22 CTA scrolls to submission form', async ({ page }) => {
-    await page.getByRole('button', { name: /submit a sighting after your dive/i }).click();
-    await page.waitForTimeout(700);
-    const form = page.locator('#sighting-submission');
-    await expect(form).toBeInViewport();
-  });
-});
-
-// ─── Submission form UI ────────────────────────────────────────────────────────
-
-test.describe('UI: submission form', () => {
-  test.beforeEach(async ({ page }) => {
-    await loadSitePage(page);
-  });
-
-  test('step 1 — drop zone visible on page load', async ({ page }) => {
+test.describe('UI: upload wizard (sighting mode)', () => {
+  test('sighting step — drop zone visible', async ({ page }) => {
+    await gotoSightingStep(page);
     await expect(page.getByRole('button', { name: /upload photos/i })).toBeVisible();
   });
 
-  test('step 1 — next blocked without photo', async ({ page }) => {
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
-    await expect(page.getByText(/please add at least one photo/i)).toBeVisible();
+  test('sighting step — submit blocked until a photo is added', async ({ page }) => {
+    await gotoSightingStep(page);
+    await expect(page.getByRole('button', { name: /submit sighting/i })).toBeDisabled();
+    await uploadPhoto(page);
+    await expect(page.getByRole('button', { name: /submit sighting/i })).toBeEnabled();
   });
 
-  test('step 2 — category selection flows through to details', async ({ page }) => {
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser'),
-      page.getByRole('button', { name: /upload photos/i }).click(),
-    ]);
-    await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
-
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
-    await page.getByRole('button', { name: /fish or marine life/i }).click();
-    await page.getByRole('button', { name: /next: details/i }).click();
-
-    await expect(page.locator('#observed-on')).toBeVisible();
+  test('category selection reveals its sub-options', async ({ page }) => {
+    await gotoSightingStep(page);
+    await page.getByRole('button', { name: /sharks & rays/i }).click();
+    await expect(page.getByRole('button', { name: /whale shark/i })).toBeVisible();
   });
 
-  test('coral category — bleaching score visible in details step', async ({ page }) => {
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser'),
-      page.getByRole('button', { name: /upload photos/i }).click(),
-    ]);
-    await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
-
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
+  test('coral category — bleaching score buttons appear inline', async ({ page }) => {
+    await gotoSightingStep(page);
+    await page.getByRole('button', { name: /invertebrates/i }).click();
     await page.getByRole('button', { name: /^coral$/i }).click();
-    await page.getByRole('button', { name: /next: details/i }).click();
-
-    await expect(page.getByRole('button', { name: /healthy/i })).toBeVisible();
-    await expect(page.getByRole('button', { name: /bleached/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^healthy$/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^bleached$/i })).toBeVisible();
   });
 
-  test('CoralWatch eligibility badge appears when depth + bleaching filled', async ({ page }) => {
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser'),
-      page.getByRole('button', { name: /upload photos/i }).click(),
-    ]);
-    await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
+  test('successful submit — broadcast confirmation lists platforms', async ({ page }) => {
+    await gotoSightingStep(page);
+    await uploadPhoto(page);
+    await page.getByRole('button', { name: /^fish/i }).click();
+    await page.getByRole('button', { name: /submit sighting/i }).click();
 
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
-    await page.getByRole('button', { name: /^coral$/i }).click();
-    await page.getByRole('button', { name: /next: details/i }).click();
-
-    await page.fill('#depth-m', '8');
-    await page.getByRole('button', { name: /pale/i }).click();
-
-    await expect(page.getByText(/will also queue for coralwatch/i)).toBeVisible();
-  });
-
-  test('confirm step — platform list shown', async ({ page }) => {
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser'),
-      page.getByRole('button', { name: /upload photos/i }).click(),
-    ]);
-    await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
-
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
-    await page.getByRole('button', { name: /fish or marine life/i }).click();
-    await page.getByRole('button', { name: /next: details/i }).click();
-    await page.getByRole('button', { name: /review and submit/i }).click();
-
-    await expect(page.getByText('Submitting to')).toBeVisible();
+    await expect(page.getByRole('heading', { name: /your sighting is on its way/i })).toBeVisible();
     await expect(page.getByText('iNaturalist')).toBeVisible();
+    await expect(page.getByText('GBIF')).toBeVisible();
   });
 });

@@ -15,9 +15,11 @@ const ARI = '/locations/ari-atoll-maldives';
 test.describe('Location page — reef condition section', () => {
   test('renders the "Reef condition" section with a coral-cover chart', async ({ page }) => {
     await page.goto(ARI, GOTO);
+    // The section keeps its id="reef-condition" but the redesign renamed its
+    // heading from "Reef condition" to "Reef health".
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    await expect(section.getByText('Reef condition').first()).toBeVisible();
+    await expect(section.getByRole('heading', { name: 'Reef health' })).toBeVisible();
     await expect(section.getByText('Coral cover over time')).toBeVisible();
     // The chart is an inline SVG with role="img" and a descriptive aria-label.
     await expect(section.getByRole('img').first()).toBeVisible();
@@ -37,10 +39,12 @@ test.describe('Location page — reef condition section', () => {
 test.describe('Location page — "Plan your trip" rail', () => {
   test('shows the trip card with Best months', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    await expect(page.getByText('Plan your trip')).toBeVisible({ timeout: 15_000 });
-    // Scope to #trip-planning to avoid strict-mode collision with TripSnapshot's
-    // "Best months" span elsewhere on the page.
-    await expect(page.locator('#trip-planning').getByText('Best months').first()).toBeVisible();
+    // The "Plan your trip" rail is the right-hand <aside>; scope the "Best months"
+    // label to it (TripSnapshot is no longer rendered on the location page, so
+    // there is only one, but scoping keeps the intent explicit and future-proof).
+    const rail = page.locator('aside').filter({ hasText: 'Plan your trip' });
+    await expect(rail.getByText('Plan your trip')).toBeVisible({ timeout: 15_000 });
+    await expect(rail.getByText('Best months').first()).toBeVisible();
   });
 
   test('"Where to stay" expander reveals booking links', async ({ page }) => {
@@ -49,8 +53,14 @@ test.describe('Location page — "Plan your trip" rail', () => {
       .locator('details')
       .filter({ has: page.locator('summary').filter({ hasText: 'Where to stay' }) });
     await expect(stay).toBeVisible({ timeout: 15_000 });
-    // The disclosure renders open; the helper sentence is part of its body.
-    await expect(stay.getByText(/book a place to stay and a dive operator/i)).toBeVisible();
+    // The redesign ships this disclosure COLLAPSED (defaultOpen=false), so its
+    // body is hidden until the summary is clicked.
+    const body = stay.getByText(/book a place to stay and a dive operator/i);
+    await expect(body).toBeHidden();
+    await stay.locator('summary').filter({ hasText: 'Where to stay' }).click();
+    await expect(body).toBeVisible();
+    // Opening it reveals the booking links (lodging / operator affiliate links).
+    await expect(stay.getByRole('link').first()).toBeVisible();
   });
 
   test('"Getting there" expander is present', async ({ page }) => {
@@ -62,19 +72,22 @@ test.describe('Location page — "Plan your trip" rail', () => {
 });
 
 test.describe('Location page — what you\'ll see (species)', () => {
+  // The redesign has no #species id; the species block is the <section> whose
+  // heading now reads "What you will see".
+  const speciesSection = (page: import('@playwright/test').Page) =>
+    page.locator('section').filter({ has: page.getByRole('heading', { name: 'What you will see' }) });
+
   test('renders the species section heading', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    // Scope to #species to avoid strict-mode collision with the nav anchor link
-    // that also contains "What you'll see".
-    await expect(page.locator('#species')).toBeVisible({ timeout: 15_000 });
-    await expect(page.locator('#species').getByText("What you'll see")).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'What you will see' })).toBeVisible({ timeout: 15_000 });
   });
 
   test('species cards show a "seen" recency line', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    await expect(page.locator('#species')).toBeVisible({ timeout: 15_000 });
-    // Each species card carries a "seen" recency string (e.g. "Seen this week").
-    await expect(page.locator('#species').getByText(/seen/i).first()).toBeVisible();
+    const section = speciesSection(page);
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    // Each species card carries a "seen" recency string (e.g. "Seen 3 months ago").
+    await expect(section.getByText(/seen/i).first()).toBeVisible();
   });
 });
 
@@ -117,8 +130,8 @@ test.describe('Location page — mobile', () => {
   test('reef condition, species, sites and trip rail all render stacked', async ({ page }) => {
     await page.goto(ARI, GOTO);
     await expect(page.locator('#reef-condition')).toBeVisible({ timeout: 15_000 });
-    // Use #species section rather than text to avoid strict-mode collision with nav link.
-    await expect(page.locator('#species')).toBeVisible();
+    // Species block has no id post-redesign — anchor on its heading instead.
+    await expect(page.getByRole('heading', { name: 'What you will see' })).toBeVisible();
     await expect(page.locator('#sites')).toBeVisible();
     await expect(page.getByText('Plan your trip')).toBeVisible();
   });
@@ -127,7 +140,10 @@ test.describe('Location page — mobile', () => {
     await page.goto(ARI, GOTO);
     const trigger = page.getByRole('button', { name: /how we judge this/i }).first();
     await expect(trigger).toBeVisible({ timeout: 15_000 });
-    const dialog = page.getByRole('dialog');
+    // Scope by the popup's accessible name: on the mobile viewport the persistent
+    // off-canvas nav drawer is also role="dialog", so a bare getByRole('dialog')
+    // would match two elements and fail strict mode.
+    const dialog = page.getByRole('dialog', { name: 'What the reef labels mean' });
     // Retry the click until the dialog opens — the handler is wired on hydration.
     await expect(async () => {
       await trigger.click();
@@ -145,7 +161,9 @@ test.describe('Location page — info popups', () => {
     // The reef-state metric carries a "How we judge this" info trigger.
     const trigger = page.getByRole('button', { name: /how we judge this/i }).first();
     await expect(trigger).toBeVisible();
-    const dialog = page.getByRole('dialog');
+    // Scope by accessible name so the popup is matched unambiguously (see the
+    // mobile touch test — a nav drawer can also carry role="dialog").
+    const dialog = page.getByRole('dialog', { name: 'What the reef labels mean' });
     // Retry the click until the dialog opens — the handler is wired on hydration.
     await expect(async () => {
       await trigger.click();

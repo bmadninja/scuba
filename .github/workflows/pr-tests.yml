@@ -67,14 +67,15 @@ jobs:
           done
           echo "server failed to start" && exit 1
 
-      # Exclude the "Image reachability" suite: 50 tests that probe live third
-      # party CDNs (Wikimedia etc.) with per-URL network timeouts. It is slow and
-      # inherently flaky, and already runs as its own separate, non-blocking
-      # workflow (image-reachability.yml) — it has no place in a required merge
-      # gate. 4 workers matches the runner's core count.
+      # Exclude live-network suites from the required gate: "Image reachability"
+      # (50 tests probing third-party CDNs) and "Affiliate link HTTP liveness"
+      # (probes operator/booking/Amazon URLs). Both are slow and inherently flaky
+      # on external uptime, and already run as their own non-blocking workflows.
+      # prod-quality.spec.ts is excluded at the config level (production monitor).
+      # 4 workers matches the runner's core count.
       - name: Run Playwright tests
         if: ${{ !contains(github.event.pull_request.labels.*.name, 'automation') }}
-        run: npx playwright test --workers=4 --retries=1 --reporter=line --grep-invert "Image reachability"
+        run: npx playwright test --workers=4 --retries=1 --reporter=line --grep-invert "Image reachability|Affiliate link HTTP liveness"
 
       - name: Upload Playwright report on failure
         if: ${{ failure() && !contains(github.event.pull_request.labels.*.name, 'automation') }}
