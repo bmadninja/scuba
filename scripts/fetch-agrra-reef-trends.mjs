@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 /**
- * AGRRA (Atlantic and Gulf Rapid Reef Assessment) live-coral-cover trend ingest.
+ * AGRRA (Atlantic and Gulf Rapid Reef Assessment) reef-trend ingest.
  *
- * Fetches site-level benthic survey summaries from the public AGRRA Data
- * Explorer ArcGIS FeatureServer and writes a per-location multi-year live-coral
- * cover series into src/data/agrra-reef-series.json.
+ * Fetches site-level benthic + fish survey summaries from the public AGRRA Data
+ * Explorer ArcGIS FeatureServer and writes per-location multi-year series for
+ * live-coral cover and fish biomass into src/data/agrra-reef-series.json.
  *
- * Fish biomass is deliberately NOT ingested here even though AGRRA carries an
- * FBIOMASS field: Reef Life Survey (RLS) is the atlas-wide fish-biomass source
- * (global coverage incl. temperate/Mediterranean reefs, a purpose-built census
- * protocol, and a clean CC BY 4.0 licence). AGRRA's contribution is the
- * Caribbean coral-cover trend, which RLS does not provide.
+ * Reef Life Survey (RLS) is the PRIMARY fish-biomass source (global, purpose-
+ * built census protocol, clean CC BY 4.0). AGRRA's fish series is a CARIBBEAN
+ * FALLBACK: RLS surveys almost none of the wider Caribbean (only ~2 of AGRRA's
+ * Caribbean sites), so without this fallback flagship reefs like Cozumel,
+ * Roatán, the Belize atolls and the Exuma Cays Blue Park would show no fish
+ * trend at all despite AGRRA having the data. page.tsx prefers RLS and uses the
+ * AGRRA fish block only where RLS has no series. AGRRA's coral-cover trend is
+ * unique — RLS does not provide it.
  *
  * Why a separate file (not coral-cover-series.json):
  *   coral-cover-series.json is fully overwritten by the MERMAID ingest each run.
@@ -30,8 +33,9 @@
  * Data source (no auth, anonymously queryable):
  *   BaseBySite FeatureServer, org services8.arcgis.com/C2yYpahRgrVlBqfg.
  *   Fields used: SITEYEARMO (survey year), SITELATITU/SITELONGIT (WGS84),
- *   COUNTRYNAM, SITENAME, LCAVG (mean live coral cover %). LCAVG uses -999 as a
- *   no-data sentinel, so it is filtered to >= 0 before use.
+ *   COUNTRYNAM, SITENAME, LCAVG (mean live coral cover %), FBIOMASS (total fish
+ *   biomass, g/100 m²). LCAVG/FBIOMASS use -999 as a no-data sentinel, so both
+ *   are filtered to >= 0 before use.
  *
  * Matching (hybrid):
  *   1. Proximity — all AGRRA sites within MATCH_RADIUS_DEG of the location are
@@ -65,7 +69,7 @@ const METHODOLOGIES_PATH = path.join(ROOT, "src/data/methodologies.json");
 const AGRRA_LAYER =
   "https://services8.arcgis.com/C2yYpahRgrVlBqfg/arcgis/rest/services/BaseBySite/FeatureServer/0";
 const OUT_FIELDS =
-  "SITEYEARMO,SITELATITU,SITELONGIT,LCAVG,COUNTRYNAM,SITENAME";
+  "SITEYEARMO,SITELATITU,SITELONGIT,LCAVG,FBIOMASS,COUNTRYNAM,SITENAME";
 const PAGE_SIZE = 2000;
 const PACE_MS = 300;
 const REQUEST_TIMEOUT_MS = 30_000;
@@ -87,6 +91,9 @@ const FALLBACK_RADIUS_DEG = 1.5;
 
 // A real multi-year trend needs at least this many distinct survey years.
 const MIN_TREND_YEARS = 3;
+// The fish chart renders from two points; include the fish series when the
+// chosen scope has at least this many fish-biomass survey years.
+const MIN_FISH_YEARS = 2;
 
 // Locations that fall near reef surveys but are not reefs themselves (inland
 // cenotes / freshwater). A proximity match there is a false positive.
@@ -201,6 +208,13 @@ function coralPoints(rows) {
   }));
 }
 
+function fishPoints(rows) {
+  return seriesFor(rows, "FBIOMASS").map((p) => ({
+    year: p.year,
+    fishBiomassGper100m2: Math.round(p.mean),
+  }));
+}
+
 const withinRadius = (loc, r, deg) =>
   Math.abs(loc.lat - r.SITELATITU) <= deg &&
   Math.abs(loc.lng - r.SITELONGIT) <= deg;
@@ -242,7 +256,9 @@ function buildRecord(loc, sites) {
 
   if (coral.length < MIN_TREND_YEARS) return null;
 
+  const fish = fishPoints(scopeRows);
   const coralLatest = coral[coral.length - 1];
+  const fishLatest = fish.length ? fish[fish.length - 1] : null;
 
   const scopeLabel =
     scope === "proximity"
@@ -251,8 +267,11 @@ function buildRecord(loc, sites) {
 
   const notes =
     `${scopeRows.length} AGRRA site-surveys, ${scopeLabel}. ` +
-    `Live-coral cover across ${coral.length} survey years (${coral[0].year}–${coralLatest.year}). ` +
-    `Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. ` +
+    `Live-coral cover across ${coral.length} survey years (${coral[0].year}–${coralLatest.year})` +
+    (fish.length >= MIN_FISH_YEARS
+      ? `; fish biomass across ${fish.length} years (${fish[0].year}–${fishLatest.year}), used only where RLS has no coverage.`
+      : ".") +
+    ` Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. ` +
     AGRRA_CITATION;
 
   return {
@@ -265,6 +284,7 @@ function buildRecord(loc, sites) {
       : { country }),
     surveyEventCount: scopeRows.length,
     coralSurveyYears: coral.length,
+    fishSurveyYears: fish.length,
     coral: {
       latest: {
         year: coralLatest.year,
@@ -272,6 +292,15 @@ function buildRecord(loc, sites) {
       },
       series: coral,
     },
+    ...(fish.length >= MIN_FISH_YEARS && {
+      fish: {
+        latest: {
+          year: fishLatest.year,
+          fishBiomassGper100m2: fishLatest.fishBiomassGper100m2,
+        },
+        series: fish,
+      },
+    }),
     citation: AGRRA_CITATION,
     notes,
     lastReviewedAt: new Date().toISOString().slice(0, 10),
@@ -296,7 +325,7 @@ function upsertAgrraSource(sources) {
       "Non-commercial + attribution (AGRRA Terms of Use). Data displayed via the open AGRRA Data Explorer; product use asks for written consent to info@agrra.org.",
     ingestion: "live",
     notes:
-      "Standardised rapid reef-assessment protocols and dataset for the wider Caribbean. Live-ingested from the public AGRRA Data Explorer ArcGIS FeatureServer (BaseBySite) for per-location multi-year live-coral-cover trend charts. Use for Caribbean coral cover and bleaching observations.",
+      "Standardised rapid reef-assessment protocols and dataset for the wider Caribbean. Live-ingested from the public AGRRA Data Explorer ArcGIS FeatureServer (BaseBySite) for per-location multi-year live-coral-cover trend charts, and for a fish-biomass trend used as a Caribbean fallback where Reef Life Survey has no coverage. Use for Caribbean coral cover, fish biomass, and bleaching observations.",
   };
   if (idx === -1) {
     sources.push(patch);
@@ -321,9 +350,9 @@ function upsertAgrraMethodology(methodologies) {
     sourceIds: ["agrra"],
     confidence: "high",
     calculation:
-      "Live-coral cover % from LCAVG in the AGRRA Data Explorer BaseBySite FeatureServer, filtered to >= 0 to drop the -999 no-data sentinel. Survey sites are grouped into one mean value per survey year. Scope is proximity first — all AGRRA sites within 0.75° (~83 km) of the location centre — falling back to the location's own-country national composite only when proximity yields fewer than three survey years AND the nearest same-country AGRRA site is within 1.5°. A series is published only when it spans at least three survey years.",
+      "Live-coral cover % from LCAVG and total fish biomass (g/100 m², displayed as kilograms per hectare via a lossless ×0.1 conversion) from FBIOMASS in the AGRRA Data Explorer BaseBySite FeatureServer, both filtered to >= 0 to drop the -999 no-data sentinel. Survey sites are grouped into one mean value per survey year. Scope is proximity first — all AGRRA sites within 0.75° (~83 km) of the location centre — falling back to the location's own-country national composite only when proximity yields fewer than three survey years AND the nearest same-country AGRRA site is within 1.5°. A coral series is published only when it spans at least three survey years; the fish series is carried when it spans at least two.",
     limitations:
-      "AGRRA is a rapid-assessment programme: sites are not resurveyed on a fixed annual schedule, so survey years are uneven and some gaps are multi-year. Values are proximity or national composites matched to our location centres, not the exact dive site, and the annual mean pools every surveyed site in that scope. This trend chart is display-only: it never sets the reef-state verdict or the headline coral-cover number, which stay on the hand-reviewed reef-health record. Fish biomass from this dataset is intentionally not used — Reef Life Survey is the atlas-wide fish-biomass source.",
+      "AGRRA is a rapid-assessment programme: sites are not resurveyed on a fixed annual schedule, so survey years are uneven and some gaps are multi-year. Values are proximity or national composites matched to our location centres, not the exact dive site, and the annual mean pools every surveyed site in that scope. These trend charts are display-only: they never set the reef-state verdict or the headline coral-cover number, which stay on the hand-reviewed reef-health record. Reef Life Survey is the primary fish-biomass source; the AGRRA fish series is shown only where RLS has no coverage, and the two use different survey methods so absolute biomass levels are not comparable across sources (within-site trend direction is what the chart conveys).",
     lastReviewedAt: today,
   };
   const idx = methodologies.findIndex((m) => m.claimId === "reef-health-agrra");
@@ -369,6 +398,7 @@ async function main() {
   const records = [];
   let proximity = 0;
   let countryComposite = 0;
+  let withFish = 0;
   let skippedNonReef = 0;
 
   for (const loc of locations) {
@@ -381,12 +411,17 @@ async function main() {
     records.push(record);
     if (record.matchType === "proximity") proximity++;
     else countryComposite++;
+    if (record.fish) withFish++;
 
     const c = record.coral;
+    const f = record.fish;
     console.log(
       `  ${loc.id.padEnd(38)} ${record.matchType.padEnd(9)} ` +
         `coral ${record.coralSurveyYears}yr ${c.series[0].year}–${c.latest.year} ` +
-        `(${c.series[0].coralCoverPercent}%→${c.latest.coralCoverPercent}%)`,
+        `(${c.series[0].coralCoverPercent}%→${c.latest.coralCoverPercent}%)` +
+        (f
+          ? `  fish ${record.fishSurveyYears}yr ${f.series[0].fishBiomassGper100m2}→${f.latest.fishBiomassGper100m2} g/100m²`
+          : "  fish —"),
     );
   }
 
@@ -399,6 +434,7 @@ async function main() {
   console.log(`locations with an AGRRA coral series: ${records.length}`);
   console.log(`  proximity:         ${proximity}`);
   console.log(`  country composite: ${countryComposite}`);
+  console.log(`  with fish series:  ${withFish}`);
   console.log(`  skipped (non-reef): ${skippedNonReef}`);
 
   if (DRY_RUN) {

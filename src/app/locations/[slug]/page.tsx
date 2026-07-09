@@ -635,6 +635,18 @@ export default async function LocationPage({
     const km = Math.round(fishBiomassSeries.radiusDeg * 111);
     const programs = fishBiomassSeries.programs.join(" + ") || "Reef Life Survey";
     biomassSourceLabel = `${programs} fish transects within ${km} km`;
+  } else if (agrraSeries?.fish && agrraSeries.fish.series.length >= 2) {
+    // Caribbean fallback: RLS barely surveys the wider Caribbean, so where it has
+    // no series we use AGRRA's fish biomass (g/100 m² shown as kg/ha, ×0.1) into
+    // the same chart, clearly labelled. Different survey method, so it is a
+    // within-site trend, never compared across sources.
+    for (const pt of agrraSeries.fish.series) {
+      biomassDataPoints.push({ year: pt.year, kgPerHa: Math.round(pt.fishBiomassGper100m2 / 10) });
+    }
+    biomassSourceLabel =
+      agrraSeries.matchType === "country"
+        ? `AGRRA ${agrraSeries.country} national average`
+        : `AGRRA fish transects within ${Math.round((agrraSeries.radiusDeg ?? 0.75) * 111)} km`;
   }
 
   // GFW measured fishing effort (apparent-fishing-hours within the query

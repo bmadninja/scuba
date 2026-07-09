@@ -722,16 +722,24 @@ export type CoralCoverSeriesRecord = {
   lastReviewedAt?: string;
 };
 
+/** One observed fish-biomass reading in an AGRRA multi-year series. */
+export type AgrraFishBiomassPoint = {
+  year: number;
+  /** Total fish biomass for that survey year, grams per 100 m². */
+  fishBiomassGper100m2: number;
+};
+
 /**
- * A location's multi-year AGRRA (Atlantic and Gulf Rapid Reef Assessment)
- * live-coral-cover trend. Like the MERMAID `CoralCoverSeriesRecord`, this is a
- * DISPLAY-ONLY dataset for the reef card's trend chart: AGRRA survey sites are
- * matched to our locations by proximity (or a gated same-country national
- * composite), so a series never drives the reef-state verdict or the headline
- * coral number — only the labelled trend chart. Lives in
- * `src/data/agrra-reef-series.json`, one entry per location. Built by
- * scripts/fetch-agrra-reef-trends.mjs. (Fish biomass is deliberately NOT carried
- * here: Reef Life Survey is the atlas-wide fish-biomass source.)
+ * A location's multi-year AGRRA (Atlantic and Gulf Rapid Reef Assessment) trend,
+ * carrying live-coral cover and — as a Caribbean fallback — fish biomass. Like
+ * the MERMAID `CoralCoverSeriesRecord`, this is a DISPLAY-ONLY dataset for the
+ * reef card's trend charts: AGRRA survey sites are matched to our locations by
+ * proximity (or a gated same-country national composite), so a series never
+ * drives the reef-state verdict or the headline coral number — only the labelled
+ * trend charts. Reef Life Survey (RLS) is the primary fish-biomass source; the
+ * AGRRA `fish` block is used only where RLS has no coverage (RLS surveys almost
+ * none of the wider Caribbean). Lives in `src/data/agrra-reef-series.json`, one
+ * entry per location. Built by scripts/fetch-agrra-reef-trends.mjs.
  */
 export type AgrraReefSeriesRecord = {
   locationId: string;
@@ -750,9 +758,15 @@ export type AgrraReefSeriesRecord = {
   /** Total AGRRA site-surveys pooled into the chosen scope. */
   surveyEventCount: number;
   coralSurveyYears: number;
+  fishSurveyYears: number;
   coral: {
     latest: { year: number; coralCoverPercent: number };
     series: CoralCoverSeriesPoint[];
+  };
+  /** Omitted when the scope has fewer than two fish-biomass survey years. */
+  fish?: {
+    latest: { year: number; fishBiomassGper100m2: number };
+    series: AgrraFishBiomassPoint[];
   };
   citation?: string | null;
   notes?: string;

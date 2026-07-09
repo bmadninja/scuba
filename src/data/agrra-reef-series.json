@@ -7,6 +7,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 256,
     "coralSurveyYears": 9,
+    "fishSurveyYears": 9,
     "coral": {
       "latest": {
         "year": 2019,
@@ -51,8 +52,52 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2019,
+        "fishBiomassGper100m2": 3374
+      },
+      "series": [
+        {
+          "year": 2007,
+          "fishBiomassGper100m2": 8920
+        },
+        {
+          "year": 2008,
+          "fishBiomassGper100m2": 7937
+        },
+        {
+          "year": 2009,
+          "fishBiomassGper100m2": 10910
+        },
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 8789
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 6582
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 4498
+        },
+        {
+          "year": 2015,
+          "fishBiomassGper100m2": 4592
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 6668
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 3374
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "256 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 9 survey years (2007–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "256 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 9 survey years (2007–2019); fish biomass across 9 years (2007–2019), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -63,6 +108,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 26,
     "coralSurveyYears": 3,
+    "fishSurveyYears": 3,
     "coral": {
       "latest": {
         "year": 2019,
@@ -83,8 +129,28 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2019,
+        "fishBiomassGper100m2": 7717
+      },
+      "series": [
+        {
+          "year": 2017,
+          "fishBiomassGper100m2": 2410
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 6762
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 7717
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "26 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 3 survey years (2017–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "26 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 3 survey years (2017–2019); fish biomass across 3 years (2017–2019), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -95,6 +161,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 99,
     "coralSurveyYears": 6,
+    "fishSurveyYears": 7,
     "coral": {
       "latest": {
         "year": 2021,
@@ -127,8 +194,44 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 4790
+      },
+      "series": [
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 905
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 2676
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 9531
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 5077
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 2907
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 3208
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 4790
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "99 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 6 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "99 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 6 survey years (2011–2021); fish biomass across 7 years (2011–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -139,6 +242,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 230,
     "coralSurveyYears": 7,
+    "fishSurveyYears": 7,
     "coral": {
       "latest": {
         "year": 2021,
@@ -175,8 +279,44 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 2627
+      },
+      "series": [
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 4146
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 3078
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 6455
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 3464
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 3641
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 4186
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 2627
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "230 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "230 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021); fish biomass across 7 years (2011–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -187,6 +327,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 111,
     "coralSurveyYears": 7,
+    "fishSurveyYears": 7,
     "coral": {
       "latest": {
         "year": 2022,
@@ -223,8 +364,44 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2022,
+        "fishBiomassGper100m2": 5026
+      },
+      "series": [
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 9354
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 8713
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 9986
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 7905
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 7446
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 6604
+        },
+        {
+          "year": 2022,
+          "fishBiomassGper100m2": 5026
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "111 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2022). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "111 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2022); fish biomass across 7 years (2011–2022), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -235,6 +412,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 76,
     "coralSurveyYears": 5,
+    "fishSurveyYears": 5,
     "coral": {
       "latest": {
         "year": 2019,
@@ -263,8 +441,36 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2019,
+        "fishBiomassGper100m2": 3120
+      },
+      "series": [
+        {
+          "year": 2008,
+          "fishBiomassGper100m2": 8092
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 11721
+        },
+        {
+          "year": 2017,
+          "fishBiomassGper100m2": 8473
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 10392
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 3120
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "76 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 5 survey years (2008–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "76 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 5 survey years (2008–2019); fish biomass across 5 years (2008–2019), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -275,6 +481,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 301,
     "coralSurveyYears": 8,
+    "fishSurveyYears": 7,
     "coral": {
       "latest": {
         "year": 2021,
@@ -315,8 +522,44 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 2164
+      },
+      "series": [
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 3132
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 4780
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 3548
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 3564
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 4027
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 5642
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 2164
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "301 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 8 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "301 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 8 survey years (2011–2021); fish biomass across 7 years (2011–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -327,6 +570,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 72,
     "coralSurveyYears": 4,
+    "fishSurveyYears": 4,
     "coral": {
       "latest": {
         "year": 2021,
@@ -351,8 +595,32 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 5048
+      },
+      "series": [
+        {
+          "year": 2015,
+          "fishBiomassGper100m2": 6145
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 3835
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 7754
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 5048
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "72 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 4 survey years (2015–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "72 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 4 survey years (2015–2021); fish biomass across 4 years (2015–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -363,6 +631,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 72,
     "coralSurveyYears": 4,
+    "fishSurveyYears": 4,
     "coral": {
       "latest": {
         "year": 2021,
@@ -387,8 +656,32 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 5048
+      },
+      "series": [
+        {
+          "year": 2015,
+          "fishBiomassGper100m2": 6145
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 3835
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 7754
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 5048
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "72 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 4 survey years (2015–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "72 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 4 survey years (2015–2021); fish biomass across 4 years (2015–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -399,6 +692,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 56,
     "coralSurveyYears": 7,
+    "fishSurveyYears": 7,
     "coral": {
       "latest": {
         "year": 2022,
@@ -435,8 +729,44 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2022,
+        "fishBiomassGper100m2": 5026
+      },
+      "series": [
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 15027
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 10559
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 11514
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 7365
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 8089
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 5763
+        },
+        {
+          "year": 2022,
+          "fishBiomassGper100m2": 5026
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "56 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2022). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "56 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2022); fish biomass across 7 years (2011–2022), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -447,6 +777,7 @@
     "country": "Bahamas",
     "surveyEventCount": 588,
     "coralSurveyYears": 11,
+    "fishSurveyYears": 11,
     "coral": {
       "latest": {
         "year": 2019,
@@ -499,8 +830,60 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2019,
+        "fishBiomassGper100m2": 5565
+      },
+      "series": [
+        {
+          "year": 2007,
+          "fishBiomassGper100m2": 8920
+        },
+        {
+          "year": 2008,
+          "fishBiomassGper100m2": 7937
+        },
+        {
+          "year": 2009,
+          "fishBiomassGper100m2": 10910
+        },
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 10156
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 5596
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 5538
+        },
+        {
+          "year": 2015,
+          "fishBiomassGper100m2": 5348
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 9097
+        },
+        {
+          "year": 2017,
+          "fishBiomassGper100m2": 6614
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 8748
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 5565
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "588 AGRRA site-surveys, Bahamas national AGRRA average. Live-coral cover across 11 survey years (2007–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "588 AGRRA site-surveys, Bahamas national AGRRA average. Live-coral cover across 11 survey years (2007–2019); fish biomass across 11 years (2007–2019), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -511,6 +894,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 295,
     "coralSurveyYears": 10,
+    "fishSurveyYears": 9,
     "coral": {
       "latest": {
         "year": 2022,
@@ -559,8 +943,52 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 4495
+      },
+      "series": [
+        {
+          "year": 2010,
+          "fishBiomassGper100m2": 6152
+        },
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 7533
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 8269
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 10130
+        },
+        {
+          "year": 2015,
+          "fishBiomassGper100m2": 5155
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 8584
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 3916
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 3494
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 4495
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "295 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 10 survey years (2010–2022). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "295 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 10 survey years (2010–2022); fish biomass across 9 years (2010–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -571,6 +999,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 48,
     "coralSurveyYears": 3,
+    "fishSurveyYears": 3,
     "coral": {
       "latest": {
         "year": 2019,
@@ -591,8 +1020,28 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2019,
+        "fishBiomassGper100m2": 6216
+      },
+      "series": [
+        {
+          "year": 2015,
+          "fishBiomassGper100m2": 8241
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 5133
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 6216
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "48 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 3 survey years (2015–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "48 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 3 survey years (2015–2019); fish biomass across 3 years (2015–2019), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -603,6 +1052,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 145,
     "coralSurveyYears": 8,
+    "fishSurveyYears": 7,
     "coral": {
       "latest": {
         "year": 2021,
@@ -643,8 +1093,44 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 3522
+      },
+      "series": [
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 3651
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 9190
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 2988
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 6118
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 6775
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 3131
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 3522
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "145 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 8 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "145 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 8 survey years (2011–2021); fish biomass across 7 years (2011–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -655,6 +1141,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 230,
     "coralSurveyYears": 7,
+    "fishSurveyYears": 7,
     "coral": {
       "latest": {
         "year": 2021,
@@ -691,8 +1178,44 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 2627
+      },
+      "series": [
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 4146
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 3078
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 6455
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 3464
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 3641
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 4186
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 2627
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "230 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "230 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021); fish biomass across 7 years (2011–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -703,6 +1226,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 35,
     "coralSurveyYears": 6,
+    "fishSurveyYears": 6,
     "coral": {
       "latest": {
         "year": 2019,
@@ -735,8 +1259,40 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2019,
+        "fishBiomassGper100m2": 9699
+      },
+      "series": [
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 2966
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 1919
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 5978
+        },
+        {
+          "year": 2017,
+          "fishBiomassGper100m2": 4529
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 5251
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 9699
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "35 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 6 survey years (2012–2019). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "35 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 6 survey years (2012–2019); fish biomass across 6 years (2012–2019), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -747,6 +1303,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 249,
     "coralSurveyYears": 7,
+    "fishSurveyYears": 7,
     "coral": {
       "latest": {
         "year": 2021,
@@ -783,8 +1340,44 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 2582
+      },
+      "series": [
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 3750
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 3078
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 6455
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 3151
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 3404
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 4150
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 2582
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "249 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "249 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 7 survey years (2011–2021); fish biomass across 7 years (2011–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   },
   {
@@ -795,6 +1388,7 @@
     "radiusDeg": 0.75,
     "surveyEventCount": 267,
     "coralSurveyYears": 11,
+    "fishSurveyYears": 9,
     "coral": {
       "latest": {
         "year": 2022,
@@ -847,8 +1441,52 @@
         }
       ]
     },
+    "fish": {
+      "latest": {
+        "year": 2021,
+        "fishBiomassGper100m2": 4528
+      },
+      "series": [
+        {
+          "year": 2010,
+          "fishBiomassGper100m2": 6152
+        },
+        {
+          "year": 2011,
+          "fishBiomassGper100m2": 6446
+        },
+        {
+          "year": 2012,
+          "fishBiomassGper100m2": 9258
+        },
+        {
+          "year": 2013,
+          "fishBiomassGper100m2": 2988
+        },
+        {
+          "year": 2014,
+          "fishBiomassGper100m2": 11274
+        },
+        {
+          "year": 2016,
+          "fishBiomassGper100m2": 8997
+        },
+        {
+          "year": 2018,
+          "fishBiomassGper100m2": 3590
+        },
+        {
+          "year": 2019,
+          "fishBiomassGper100m2": 3494
+        },
+        {
+          "year": 2021,
+          "fishBiomassGper100m2": 4528
+        }
+      ]
+    },
     "citation": "Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
-    "notes": "267 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 11 survey years (2010–2022). Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+    "notes": "267 AGRRA site-surveys, AGRRA survey sites within 83 km. Live-coral cover across 11 survey years (2010–2022); fish biomass across 9 years (2010–2021), used only where RLS has no coverage. Display-only nearby-survey composite — does not set the reef-state verdict or headline coral number. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
     "lastReviewedAt": "2026-07-09"
   }
 ]

@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Fetch AGRRA coral-cover trends
+      - name: Fetch AGRRA coral-cover + fish-biomass trends
         run: node scripts/fetch-agrra-reef-trends.mjs
 
       - name: Commit updated AGRRA series
@@ -32,6 +32,6 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data/agrra-reef-series.json src/data/sources.json src/data/methodologies.json
-          git commit -m "data: AGRRA coral-cover trend refresh"
+          git commit -m "data: AGRRA coral-cover + fish-biomass trend refresh"
           git pull --rebase
           git push
