@@ -1,6 +1,7 @@
 import type {
   EffectiveFishing,
   FishingEffortLevel,
+  FishingEffortPoint,
   FishingTrend,
   MpaStatus,
 } from "./types";
@@ -65,6 +66,53 @@ export function reconcile(effort: FishingEffortLevel, mpa: MpaStatus | null): Ef
   if (isProtected && effort === "low") return "protected";
   if (isProtected && (effort === "high" || effort === "very-high")) return "paper-park";
   return effort;
+}
+
+/**
+ * Below this peak (apparent fishing hours in any year of the series) we treat
+ * the trend as noise and do not chart it: a swing like 0h → 2h is not a
+ * "rising" story worth telling. Matches the low/moderate band boundary, so a
+ * shown trend always involves at least one year of genuinely measurable effort.
+ */
+export const EFFORT_TREND_MIN_HOURS = GFW_BANDS.low;
+
+/**
+ * The multi-year effort series to display, oldest first: the ingested per-year
+ * series when present, else a two-point series synthesized from the record's
+ * `historical` + `current` points. Deduplicates by year (last write wins) and
+ * sorts ascending. Chart-only — never a reef-state input.
+ */
+export function fishingEffortSeries(record: {
+  current?: FishingEffortPoint | null;
+  historical?: FishingEffortPoint | null;
+  series?: FishingEffortPoint[] | null;
+} | null | undefined): FishingEffortPoint[] {
+  if (!record) return [];
+  const source =
+    record.series && record.series.length > 0
+      ? record.series
+      : [record.historical, record.current];
+  const byYear = new Map<number, number>();
+  for (const p of source) {
+    if (!p || typeof p.year !== "number" || typeof p.fishingHours !== "number") {
+      continue;
+    }
+    byYear.set(p.year, p.fishingHours);
+  }
+  return [...byYear.entries()]
+    .map(([year, fishingHours]) => ({ year, fishingHours }))
+    .sort((a, b) => a.year - b.year);
+}
+
+/**
+ * Whether an effort series is worth charting as a trend: at least two distinct
+ * years and a peak above {@link EFFORT_TREND_MIN_HOURS}. Keeps near-zero
+ * series (where a tiny absolute change reads as a dramatic direction) off the
+ * card.
+ */
+export function effortTrendWorthShowing(series: FishingEffortPoint[]): boolean {
+  if (series.length < 2) return false;
+  return series.some((p) => p.fishingHours >= EFFORT_TREND_MIN_HOURS);
 }
 
 /** Current vs multi-year baseline → trend direction. */

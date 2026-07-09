@@ -640,6 +640,60 @@ export type CoralCoverSeriesPoint = {
 };
 
 /**
+ * One observed fish-biomass reading in a multi-year series, in kilograms per
+ * hectare. Derived from Reef Life Survey M1 fish transects: biomass is summed
+ * across all fish species per transect block, converted to a density, and then
+ * averaged across all M1 surveys within radius in that year. Every point is a
+ * real measured value — the display never extrapolates beyond these points.
+ */
+export type FishBiomassSeriesPoint = {
+  year: number;
+  /** Mean standing fish biomass for that year, kilograms per hectare. */
+  biomassKgPerHa: number;
+  /** Number of RLS M1 surveys averaged into this year's point. */
+  surveyCount: number;
+};
+
+/**
+ * A location's multi-year reef-fish-biomass history, matched by proximity from
+ * the Reef Life Survey (RLS) global M1 fish-transect dataset. This is a
+ * DISPLAY-ONLY dataset for the reef card's fish-biomass-over-time chart: exactly
+ * like the coral series, points are matched within a radius rather than by exact
+ * site, so it never drives the reef-state verdict or any headline number — only
+ * the labelled trend chart. Fish biomass is the metric that actually responds to
+ * protection (coral is heat driven), so this is the honest "protection works"
+ * benchmark. Lives in `src/data/fish-biomass-series.json`, one entry per
+ * location. Method is effort standardized: every RLS M1 transect is the same
+ * fixed area, so year-to-year change reflects the reef, not survey effort.
+ */
+export type FishBiomassSeriesRecord = {
+  locationId: string;
+  sourceId: string;
+  methodologyClaimId: string;
+  /** Match radius in degrees used to gather nearby surveys. */
+  radiusDeg: number;
+  surveyEventCount: number;
+  surveyYears: number;
+  /** Distinct RLS survey sites within radius that fed this series. */
+  siteCount: number;
+  /** Survey programs represented, e.g. ["RLS", "ATRC"]. */
+  programs: string[];
+  latest: {
+    year: number;
+    biomassKgPerHa: number;
+    /** Mean fish counted per standard M1 transect (500 m²) in the latest year. */
+    abundancePer500m2?: number;
+    /** Mean fish species seen per M1 transect in the latest year. */
+    speciesRichness?: number;
+    surveyDate: string;
+  };
+  series: FishBiomassSeriesPoint[];
+  citation?: string | null;
+  notes?: string;
+  lastReviewedAt?: string;
+};
+
+/**
  * A location's multi-year coral-cover survey history, matched by proximity from
  * an external survey platform (MERMAID). This is a DISPLAY-ONLY dataset for the
  * reef card's coral-cover-over-time chart: because points are matched within a
@@ -663,6 +717,57 @@ export type CoralCoverSeriesRecord = {
   bleachedPercent?: number;
   mortalityPercent?: number;
   series: CoralCoverSeriesPoint[];
+  citation?: string | null;
+  notes?: string;
+  lastReviewedAt?: string;
+};
+
+/** One observed fish-biomass reading in an AGRRA multi-year series. */
+export type AgrraFishBiomassPoint = {
+  year: number;
+  /** Total fish biomass for that survey year, grams per 100 m². */
+  fishBiomassGper100m2: number;
+};
+
+/**
+ * A location's multi-year AGRRA (Atlantic and Gulf Rapid Reef Assessment) trend,
+ * carrying live-coral cover and — as a Caribbean fallback — fish biomass. Like
+ * the MERMAID `CoralCoverSeriesRecord`, this is a DISPLAY-ONLY dataset for the
+ * reef card's trend charts: AGRRA survey sites are matched to our locations by
+ * proximity (or a gated same-country national composite), so a series never
+ * drives the reef-state verdict or the headline coral number — only the labelled
+ * trend charts. Reef Life Survey (RLS) is the primary fish-biomass source; the
+ * AGRRA `fish` block is used only where RLS has no coverage (RLS surveys almost
+ * none of the wider Caribbean). Lives in `src/data/agrra-reef-series.json`, one
+ * entry per location. Built by scripts/fetch-agrra-reef-trends.mjs.
+ */
+export type AgrraReefSeriesRecord = {
+  locationId: string;
+  sourceId: string;
+  methodologyClaimId: string;
+  /**
+   * "proximity" = AGRRA sites within `radiusDeg` of the location; "country" =
+   * the location's own-country national composite (fallback when proximity is
+   * too thin). Drives the honest chart label.
+   */
+  matchType: "proximity" | "country";
+  /** Present when matchType === "proximity". */
+  radiusDeg?: number;
+  /** Present when matchType === "country". */
+  country?: string;
+  /** Total AGRRA site-surveys pooled into the chosen scope. */
+  surveyEventCount: number;
+  coralSurveyYears: number;
+  fishSurveyYears: number;
+  coral: {
+    latest: { year: number; coralCoverPercent: number };
+    series: CoralCoverSeriesPoint[];
+  };
+  /** Omitted when the scope has fewer than two fish-biomass survey years. */
+  fish?: {
+    latest: { year: number; fishBiomassGper100m2: number };
+    series: AgrraFishBiomassPoint[];
+  };
   citation?: string | null;
   notes?: string;
   lastReviewedAt?: string;
@@ -850,11 +955,25 @@ export type CoralCoverData = {
  * AIS-detected fishing hours — small artisanal boats not broadcasting
  * AIS are not visible to GFW. Stored per location.
  */
+/** One year's measured apparent-fishing-hours in a location's effort series. */
+export type FishingEffortPoint = { year: number; fishingHours: number };
+
 export type FishingPressureRecord = {
   locationId: string;
   radiusKm: number;
   current: { year: number; fishingHours: number };
   historical?: { year: number; fishingHours: number };
+  /**
+   * Multi-year apparent-fishing-effort history, oldest first, one point per
+   * year within the query radius. DISPLAY-ONLY: it powers the effort-trend
+   * sparkline and never feeds the reef-state verdict (which reads only the
+   * latest band). A falling trend near a protected reef is a supporting
+   * "pressure easing" signal, not proof of enforcement — AIS misses small and
+   * dark vessels, and fishing near an MPA is often legal outside a no-take
+   * core. Populated by scripts/fetch-fishing-pressure.mjs; when absent, the
+   * data layer synthesizes a two-point series from `historical` + `current`.
+   */
+  series?: FishingEffortPoint[];
   fetchedAt: string;
   source: "global-fishing-watch";
 };

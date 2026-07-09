@@ -12,8 +12,11 @@ import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
 import { getReefFishAbundanceSeriesByLocationId } from "@/lib/data/reef-fish-abundance-series";
+import { getAgrraReefSeriesByLocationId } from "@/lib/data/agrra-reef-series";
+import { getFishBiomassSeriesByLocationId } from "@/lib/data/fish-biomass-series";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { getSourcesByIds } from "@/lib/data/sources";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getLocationFishing } from "@/lib/data/fishing-pressure";
 import { fishingAllowsImproving } from "@/lib/data/effective-fishing";
@@ -41,7 +44,8 @@ import type {
   ThreatenedStats,
 } from "./location-page-body";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
-import type { BleachingAlertLevel, MpaStatus, PartnerLink, ReefHealthRecord } from "@/lib/data/types";
+import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
+import type { BleachingAlertLevel, CoralCoverSeriesPoint, MpaStatus, PartnerLink, ReefHealthRecord } from "@/lib/data/types";
 
 // ---------------------------------------------------------------------------
 // Plain-language mappings
@@ -493,8 +497,14 @@ export default async function LocationPage({
   // there is no formal protection.
   const fishing = fishingPill(reefPressure?.mpaStatus ?? null, locationFishing.effort);
   const blueParkAward = getBlueParkByLocationId(location.id);
+  // A real Reef Life Survey fish-biomass trend is reef data in its own right, so
+  // it opens the reef-health panel even on temperate reefs that have no coral
+  // cover, heat, fishing or Blue Park signal (e.g. St Abbs, Oban, Jervis Bay).
+  const hasFishBiomassSeries =
+    (getFishBiomassSeriesByLocationId(location.id)?.series.length ?? 0) >= 2;
   const hasReefData =
-    coverNow !== null || decline !== null || heat !== null || fishing !== null || blueParkAward !== null;
+    coverNow !== null || decline !== null || heat !== null || fishing !== null ||
+    blueParkAward !== null || hasFishBiomassSeries;
 
   // For a flat coral-cover trend, append a forward-looking sentence based on current
   // heat stress and the combined fishing read so the note reads as an honest
@@ -531,17 +541,47 @@ export default async function LocationPage({
   // documented recovery) wins, else the diving outlook / condition sentence.
   const verdictBasis = reefPressure?.manualReefStateBasis ?? null;
 
+  // Peer-reviewed / award sources behind a hand-reviewed reef-state verdict,
+  // surfaced as an "Evidence" link row under the verdict so the claim is visibly
+  // cited rather than only backed in the data.
+  const reefStateSources =
+    reefPressure?.manualReefStateSourceIds && reefPressure.manualReefStateBasis
+      ? getSourcesByIds(reefPressure.manualReefStateSourceIds).map((s) => ({
+          label: s.name.split(" — ")[0],
+          url: s.url ?? null,
+        }))
+      : [];
+
   // Coral-cover chart points. Prefer a real multi-year survey series when one
   // is on file: every year becomes a point and the chart draws a genuine trend.
-  // A nearby-survey series (MERMAID) is display-only and clearly labelled, so it
-  // powers the chart without touching the reef-state verdict or headline number.
-  // Otherwise fall back to the historical + current pair as a two-point
-  // before/after. One point per year, earliest wins on ties.
-  const nearbyCoralSeries = getCoralCoverSeriesByLocationId(location.id);
-  const series =
-    nearbyCoralSeries?.series ??
-    observed?.coralCoverSeries ??
-    null;
+  // Two nearby-survey composites can exist — MERMAID (mostly Indo-Pacific) and
+  // AGRRA (the Caribbean standard). Both are display-only and clearly labelled;
+  // when both cover a location we pick whichever has more survey years (MERMAID
+  // wins ties as the incumbent), never touching the reef-state verdict or the
+  // headline number. Otherwise fall back to the historical + current pair as a
+  // two-point before/after. One point per year, earliest wins on ties.
+  const mermaidCoralSeries = getCoralCoverSeriesByLocationId(location.id);
+  const agrraSeries = getAgrraReefSeriesByLocationId(location.id);
+  const nearbyCandidates: { series: CoralCoverSeriesPoint[]; label: string }[] = [];
+  if (mermaidCoralSeries?.series?.length) {
+    const km = Math.round(mermaidCoralSeries.radiusDeg * 111);
+    nearbyCandidates.push({
+      series: mermaidCoralSeries.series,
+      label: `MERMAID reef surveys within ${km} km`,
+    });
+  }
+  if (agrraSeries?.coral?.series?.length) {
+    const label =
+      agrraSeries.matchType === "country"
+        ? `AGRRA ${agrraSeries.country} national average`
+        : `AGRRA survey sites within ${Math.round((agrraSeries.radiusDeg ?? 0.75) * 111)} km`;
+    nearbyCandidates.push({ series: agrraSeries.coral.series, label });
+  }
+  // Stable sort keeps MERMAID (pushed first) ahead of AGRRA on a year-count tie.
+  nearbyCandidates.sort((a, b) => b.series.length - a.series.length);
+  const chosenNearby = nearbyCandidates[0] ?? null;
+
+  const series = chosenNearby?.series ?? observed?.coralCoverSeries ?? null;
   const projectionDataPoints: CoralDataPoint[] = [];
   let coralChartSourceLabel: string | null = coralSourceLabel;
   if (series && series.length >= 2) {
@@ -552,9 +592,8 @@ export default async function LocationPage({
     for (const [year, pct] of [...byYear.entries()].sort((a, b) => a[0] - b[0])) {
       projectionDataPoints.push({ year, pct });
     }
-    if (nearbyCoralSeries) {
-      const km = Math.round(nearbyCoralSeries.radiusDeg * 111);
-      coralChartSourceLabel = `MERMAID reef surveys within ${km} km`;
+    if (chosenNearby) {
+      coralChartSourceLabel = chosenNearby.label;
     }
   } else {
     if (coverBefore !== null && historicalYear !== null) {
@@ -564,6 +603,7 @@ export default async function LocationPage({
       projectionDataPoints.push({ year: surveyYear, pct: Math.round(coverNow) });
     }
   }
+
 
   // GCRMN regional context, drawn as one faint horizontal reference line at the
   // region's most recent average cover — "this reef vs its region" — instead of
@@ -581,6 +621,36 @@ export default async function LocationPage({
     ? `${regionalTrend!.label} average (GCRMN)`
     : null;
 
+  // Reef-fish-biomass chart points. Real Reef Life Survey (RLS) M1 transect
+  // biomass, matched by proximity and DISPLAY ONLY — it powers the fish-biomass-
+  // over-time chart and never touches the reef-state verdict or any headline
+  // number. Fish biomass is the metric that responds to protection, so this is
+  // the "protection works" companion to the (heat-driven) coral chart. One point
+  // per real survey year; only rendered when a genuine 2+ year series is on file.
+  const fishBiomassSeries = getFishBiomassSeriesByLocationId(location.id);
+  const biomassDataPoints: BiomassDataPoint[] = [];
+  let biomassSourceLabel: string | null = null;
+  if (fishBiomassSeries && fishBiomassSeries.series.length >= 2) {
+    for (const pt of fishBiomassSeries.series) {
+      biomassDataPoints.push({ year: pt.year, kgPerHa: pt.biomassKgPerHa });
+    }
+    const km = Math.round(fishBiomassSeries.radiusDeg * 111);
+    const programs = fishBiomassSeries.programs.join(" + ") || "Reef Life Survey";
+    biomassSourceLabel = `${programs} fish transects within ${km} km`;
+  } else if (agrraSeries?.fish && agrraSeries.fish.series.length >= 2) {
+    // Caribbean fallback: RLS barely surveys the wider Caribbean, so where it has
+    // no series we use AGRRA's fish biomass (g/100 m² shown as kg/ha, ×0.1) into
+    // the same chart, clearly labelled. Different survey method, so it is a
+    // within-site trend, never compared across sources.
+    for (const pt of agrraSeries.fish.series) {
+      biomassDataPoints.push({ year: pt.year, kgPerHa: Math.round(pt.fishBiomassGper100m2 / 10) });
+    }
+    biomassSourceLabel =
+      agrraSeries.matchType === "country"
+        ? `AGRRA ${agrraSeries.country} national average`
+        : `AGRRA fish transects within ${Math.round((agrraSeries.radiusDeg ?? 0.75) * 111)} km`;
+  }
+
   // GFW measured fishing effort (apparent-fishing-hours within the query
   // radius), with the derived band and trend for the location panel.
   const fishingPressureData: FishingPressureData | null =
@@ -591,6 +661,8 @@ export default async function LocationPage({
           radiusKm: locationFishing.radiusKm,
           level: locationFishing.effort,
           trend: locationFishing.trend,
+          effortSeries: locationFishing.effortSeries,
+          showEffortTrend: locationFishing.showEffortTrend,
         }
       : null;
 
@@ -837,6 +909,9 @@ export default async function LocationPage({
         coralChartSourceLabel={coralChartSourceLabel}
         coralContextValue={coralContextValue}
         coralContextLabel={coralContextLabel}
+        biomassDataPoints={biomassDataPoints}
+        biomassSourceLabel={biomassSourceLabel}
+        reefStateSources={reefStateSources}
         fishingPressure={fishingPressureData}
         waterQualityEvents={waterQualityEvents}
         fishAbundance={fishAbundance}

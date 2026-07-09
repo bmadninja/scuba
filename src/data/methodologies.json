@@ -62,7 +62,7 @@
       "ocean-health-index"
     ],
     "confidence": "medium",
-    "limitations": "The MPA status shown on each reef (no-take, strict, multi-use, none) is currently an editorial classification by region, informed by published Protected Planet (WDPA) and Marine Protection Atlas designations rather than pulled live from them; a direct MPAtlas/WDPA ingest is in progress. Not every MPA is genuinely enforced, which is why we distinguish paper-park designations from no-take protection. Fishing pressure, by contrast, is measured: it comes from Global Fishing Watch AIS data within 50 kilometres of each location over the most recent year, so it reflects vessels near a reef rather than inside a single dive zone, and it captures industrial vessels but misses small-scale and illegal fishing. We use these layers for context — not to certify that a specific site is well-managed or fish-stocked. Always confirm permits and rules with the local operator before booking.",
+    "limitations": "The MPA status shown on each reef (no-take, strict, multi-use, none) is currently an editorial classification by region, informed by published Protected Planet (WDPA) and Marine Protection Atlas designations rather than pulled live from them; a direct MPAtlas/WDPA ingest is in progress. Not every MPA is genuinely enforced, which is why we distinguish paper-park designations from no-take protection. Fishing pressure, by contrast, is measured: it comes from Global Fishing Watch AIS data within 50 kilometres of each location, so it reflects vessels near a reef rather than inside a single dive zone, and it captures industrial vessels but misses small-scale and illegal fishing. We show this apparent fishing effort as a trend across several years, not a single snapshot. Where that trend is falling next to a protected reef, we read it as fishing pressure easing, a supporting signal that protection may be taking hold and a complement to the fish-biomass recovery story. It is context, not proof of enforcement: fishing near a marine protected area is often legal outside a small no-take core, and any vessel that does not broadcast AIS stays invisible, so a falling line is never an enforcement accusation. We use these layers for context — not to certify that a specific site is well-managed or fish-stocked. Always confirm permits and rules with the local operator before booking.",
     "lastReviewedAt": "2026-05-25"
   },
   {
@@ -288,5 +288,49 @@
     "calculation": "Per REEF geographic zone and calendar year, the community abundance index is the sighting-frequency-weighted mean density across all reported species: Σ(%SF·DEN)/Σ(%SF), where %SF is a species' sighting frequency (surveys recording it / total surveys) and DEN is its density score (mean of the Roving Diver Technique abundance categories Single=1, Few=2, Many=3, Abundant=4 across surveys recording it), bounded 1–4. Only years with at least 10 Species-&-Abundance surveys are kept, and a location needs at least 3 such years to publish a series. The number of surveys behind each year is stored and shown as the effort denominator. Trend is the sign of the least-squares slope of the index over years, with a 0.15 (on the 1–4 scale) deadband.",
     "limitations": "This is a RELATIVE abundance index from volunteer surveys, not biomass and not a fish count. It is recorded at REEF geographic-zone resolution (a zone can span many dive sites), so it never represents a single site and never feeds the reef-state verdict — it is a display-only trend. Density categories are log-scaled and coarse (four bins). Observer skill varies between volunteers; this index pools expert and novice surveyors. Survey effort is uneven across years and zones, so sparse years are dropped rather than shown. Scoped to regions where REEF coverage is strong (Tropical Western Atlantic/Caribbean, US, Tropical Eastern Pacific); not applied where REEF coverage is thin (Mediterranean, Indo-Pacific).",
     "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "claimId": "reef-health-agrra",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "agrra"
+    ],
+    "confidence": "high",
+    "calculation": "Live-coral cover % from LCAVG and total fish biomass (g/100 m², displayed as kilograms per hectare via a lossless ×0.1 conversion) from FBIOMASS in the AGRRA Data Explorer BaseBySite FeatureServer, both filtered to >= 0 to drop the -999 no-data sentinel. Survey sites are grouped into one mean value per survey year. Scope is proximity first — all AGRRA sites within 0.75° (~83 km) of the location centre — falling back to the location's own-country national composite only when proximity yields fewer than three survey years AND the nearest same-country AGRRA site is within 1.5°. A coral series is published only when it spans at least three survey years; the fish series is carried when it spans at least two.",
+    "limitations": "AGRRA is a rapid-assessment programme: sites are not resurveyed on a fixed annual schedule, so survey years are uneven and some gaps are multi-year. Values are proximity or national composites matched to our location centres, not the exact dive site, and the annual mean pools every surveyed site in that scope. These trend charts are display-only: they never set the reef-state verdict or the headline coral-cover number, which stay on the hand-reviewed reef-health record. Reef Life Survey is the primary fish-biomass source; the AGRRA fish series is shown only where RLS has no coverage, and the two use different survey methods so absolute biomass levels are not comparable across sources (within-site trend direction is what the chart conveys).",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "claimId": "fish-biomass-rls",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "rls"
+    ],
+    "confidence": "high",
+    "calculation": "Standing reef-fish biomass from Reef Life Survey Method 1 (M1) underwater visual transects, served by the IMOS AODN geoserver (imos:ep_m1_public_data). For each M1 survey, fish biomass is summed across all species and size classes within each 50 m x 5 m (250 m²) transect block, converted to a density in kilograms per hectare (grams per block x 0.04), and averaged across the survey's blocks so the figure is robust to whether one or two blocks were surveyed. A location's value for a year is the mean survey density across all M1 surveys within 0.5° (~55 km) of the location centre in that year, so a run of surveys becomes a real trend line. Every point is an observed value; nothing is projected. Latest-year abundance and species richness are the mean fish count per standard 500 m² transect and the mean distinct fish species per transect.",
+    "limitations": "Surveys are matched by proximity (0.5° radius), not by exact dive site, so nearby transects may not perfectly represent the named location. This is a DISPLAY-ONLY trend chart and never sets the reef-state label. RLS coverage is uneven: strong on temperate, Mediterranean and long-running Australian reefs, but sparse or absent across much of the tropical Indo-Pacific, and many reefs are surveyed only once (no trend, so no chart). Biomass is estimated from visual size-class to weight conversions and can spike when a single large school or big-bodied fish is recorded on a transect. Volunteer (RLS) and professional (ATRC and partner) M1 surveys are pooled by shared method.",
+    "lastReviewedAt": "2026-07-09"
+  },
+  {
+    "claimId": "reef-biomass-recovery",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "study-salinas-galapagos-2016",
+      "study-caselle-channel-islands-2015",
+      "study-quimbayo-malpelo-2016",
+      "study-pina-amargos-jr-2014",
+      "study-lamb-johnson-exuma-2010",
+      "study-friedlander-cocos-2012",
+      "study-muallil-tubbataha-2019",
+      "study-prato-providencia-2024",
+      "study-bruce-abrolhos-2012",
+      "study-mcclanahan-chumbe-2009",
+      "study-mcclanahan-kisite-2006",
+      "study-koester-aldabra-2023",
+      "blue-parks"
+    ],
+    "confidence": "high",
+    "limitations": "These are peer-reviewed reef fish biomass findings for individual Blue Park sites, each comparing protected water against fished water (inside versus outside) or protection over time (before versus after), with the headline figure quoted as published. We use fish biomass as the signal that protection is working, which is distinct from coral condition: coral loss on these reefs is driven by marine heat, not by fishing. Where a reef is a documented biomass recovery and its coral is not currently falling, we set the reef state to Improving on this basis (for example Channel Islands, Abrolhos, Chumbe, alongside Torre Guaceto). Where the coral is currently declining under heat, we keep the coral-driven reef state and show the biomass finding as context rather than labelling the reef Improving. Two figures (Chumbe, Kisite-Mpunguti) were confirmed through the peer-reviewed Conservation Evidence synthesis of the primary studies rather than the paywalled primary PDF. Standing stock benchmarks without a fished control (Darwin and Wolf, Malpelo, Cocos, Aldabra) show an intact protected reef rather than a measured before-and-after recovery.",
+    "lastReviewedAt": "2026-07-08"
   }
 ]
