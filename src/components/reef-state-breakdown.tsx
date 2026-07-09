@@ -27,9 +27,13 @@ function scoreColor(score: number): string {
 export function ReefStateBreakdown({
   pillars,
   tierLabel,
+  overridden = false,
 }: {
   pillars: PillarScore[];
   tierLabel: string;
+  /** True when an editorial verdict is set from cited evidence the pillars
+   *  can't read; the bars then show the computed signals, not the shown label. */
+  overridden?: boolean;
 }) {
   const byKey = new Map(pillars.map((p) => [p.key, p]));
   const rows = PILLAR_ORDER.map((k) => byKey.get(k)).filter(
@@ -124,6 +128,26 @@ export function ReefStateBreakdown({
           );
         })}
       </div>
+
+      {overridden ? (
+        <p
+          style={{
+            margin: "0.85rem 0 0",
+            padding: "0.5rem 0.7rem",
+            fontSize: "0.75rem",
+            lineHeight: 1.5,
+            color: "#7A5B14",
+            background: "rgba(185,138,46,0.1)",
+            border: "1px solid rgba(185,138,46,0.25)",
+            borderRadius: 10,
+          }}
+        >
+          <strong>Editorially adjusted.</strong> The verdict shown is set from
+          cited published evidence (see the sources above); the bars below show
+          the automatically computed signals, which may not capture that
+          evidence.
+        </p>
+      ) : null}
 
       <p
         style={{

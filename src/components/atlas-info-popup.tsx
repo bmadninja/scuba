@@ -50,9 +50,9 @@ export type InfoKey =
 export const INFO: Record<InfoKey, InfoEntry> = {
   state: {
     title: "What the reef labels mean",
-    sub: "This is a read on the reef's coral condition, turned into one plain word. We weigh coral cover and heat, with boat traffic as a check on whether the protection is holding. Blue Park status and species logged are shown for context and do not change it. It is not a ranking, and every reef is worth diving.",
+    sub: "This is a read on the reef's condition, turned into one plain word. We weigh up to four independent signals — coral cover, heat stress, the fish community, and fishing pressure — each scored against its own scientific reference, then combine the ones we have data for. Coral cover is judged against biologically-anchored thresholds, fish biomass against the survey program's own distribution, and heat against NOAA Coral Reef Watch. Every verdict carries a confidence level and a per-pillar breakdown you can open. Coral must be present and holding for a reef to read Improving, and a strong fish community never masks a bleached reef. Blue Park status is shown for context. It is not a ranking, and every reef is worth diving.",
     rows: [
-      ["Improving", "rgba(16,185,129,0.15)", "#6ee7b7", "Near its natural baseline and steady. Recovering or healthy, not perfect."],
+      ["Improving", "rgba(16,185,129,0.15)", "#6ee7b7", "Coral at or above its baseline and holding, low heat stress, light or protected fishing, and a fish community that backs it up."],
       ["Stable", "rgba(245,158,11,0.14)", "#fbbf24", "Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],
       ["Declining", "rgba(244,63,94,0.14)", "#fca5a5", "Heavy recent loss or bleaching. The 4th global bleaching event (2023 to 2025) affected 84% of reefs worldwide, the worst on record, with a new El Niño now developing. Diving here documents what remains and adds to the scientific record."],
       ["Not surveyed", "rgba(148,163,184,0.15)", "#cbd5e1", "No coral survey and no heat reading on file yet, so we do not assign a state. The absence of bad news is not evidence of a healthy reef, and a single logged dive can change that."],

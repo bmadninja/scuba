@@ -200,6 +200,7 @@ export type LocationBodyProps = {
   reefStateSub: string;
   reefStatePillars: PillarScore[];
   reefStateTierLabel: string;
+  reefStateOverridden: boolean;
   hasReefData: boolean;
   // Species
   species: SpeciesCard[];
@@ -386,6 +387,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     reefStateSub,
     reefStatePillars,
     reefStateTierLabel,
+    reefStateOverridden,
     hasReefData,
     species,
     threatenedStats,
@@ -543,7 +545,7 @@ export function LocationPageBody(props: LocationBodyProps) {
               </div>
 
               {/* Per-pillar evidence breakdown + confidence tier (FR-12/13) */}
-              <ReefStateBreakdown pillars={reefStatePillars} tierLabel={reefStateTierLabel} />
+              <ReefStateBreakdown pillars={reefStatePillars} tierLabel={reefStateTierLabel} overridden={reefStateOverridden} />
 
               {/* Data card */}
               <div style={SECTION_CARD}>

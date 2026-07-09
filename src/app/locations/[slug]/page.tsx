@@ -939,6 +939,7 @@ export default async function LocationPage({
         reefStateSub={STATE_SUB[atlasLoc.state]}
         reefStatePillars={reefStateDetail.pillars}
         reefStateTierLabel={reefStateDetail.tierLabel}
+        reefStateOverridden={reefPressure?.manualReefState != null}
         hasReefData={hasReefData}
         species={species}
         threatenedStats={threatenedStats}
