@@ -15,6 +15,7 @@ import { getReefFishAbundanceSeriesByLocationId } from "@/lib/data/reef-fish-abu
 import { getAgrraReefSeriesByLocationId } from "@/lib/data/agrra-reef-series";
 import { getFishBiomassSeriesByLocationId } from "@/lib/data/fish-biomass-series";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
+import { getFishAbundanceSeriesByLocationId } from "@/lib/data/fish-abundance-series";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getSourcesByIds } from "@/lib/data/sources";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
@@ -497,6 +498,11 @@ export default async function LocationPage({
   // there is no formal protection.
   const fishing = fishingPill(reefPressure?.mpaStatus ?? null, locationFishing.effort);
   const blueParkAward = getBlueParkByLocationId(location.id);
+  // Indicator-fish evidence: a real per-site abundance record (currently
+  // Tubbataha, from Saving Philippine Reefs) shown as one supporting line under
+  // the reef-state verdict. Display-only; it never sets the state.
+  const siteFishBasis = getFishAbundanceSeriesByLocationId(location.id);
+
   // A real Reef Life Survey fish-biomass trend is reef data in its own right, so
   // it opens the reef-health panel even on temperate reefs that have no coral
   // cover, heat, fishing or Blue Park signal (e.g. St Abbs, Oban, Jervis Bay).
@@ -504,7 +510,7 @@ export default async function LocationPage({
     (getFishBiomassSeriesByLocationId(location.id)?.series.length ?? 0) >= 2;
   const hasReefData =
     coverNow !== null || decline !== null || heat !== null || fishing !== null ||
-    blueParkAward !== null || hasFishBiomassSeries;
+    blueParkAward !== null || hasFishBiomassSeries || siteFishBasis !== null;
 
   // For a flat coral-cover trend, append a forward-looking sentence based on current
   // heat stress and the combined fishing read so the note reads as an honest
@@ -912,6 +918,7 @@ export default async function LocationPage({
         biomassDataPoints={biomassDataPoints}
         biomassSourceLabel={biomassSourceLabel}
         reefStateSources={reefStateSources}
+        siteFishBasis={siteFishBasis}
         fishingPressure={fishingPressureData}
         waterQualityEvents={waterQualityEvents}
         fishAbundance={fishAbundance}

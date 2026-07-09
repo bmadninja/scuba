@@ -15,7 +15,7 @@ import type { FishAbundancePoint } from "@/components/fish-abundance-chart";
 import { FishBiomassChart } from "@/components/fish-biomass-chart";
 import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
 import { FishingEffortTrend } from "@/components/fishing-effort-trend";
-import type { BlueParkAward } from "@/lib/data/types";
+import type { BlueParkAward, FishAbundanceSeriesRecord } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
 
@@ -175,6 +175,8 @@ export type LocationBodyProps = {
   biomassSourceLabel: string | null;
   // Cited sources behind a hand-reviewed reef-state verdict (peer-reviewed / award)
   reefStateSources: { label: string; url: string | null }[];
+  // Per-site indicator-fish basis line under the verdict (e.g. Tubbataha SPR)
+  siteFishBasis: FishAbundanceSeriesRecord | null;
   heat: ConditionPill | null;
   fishing: ConditionPill | null;
   blueParkAward: BlueParkAward | null;
@@ -362,6 +364,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     biomassDataPoints,
     biomassSourceLabel,
     reefStateSources,
+    siteFishBasis,
     heat,
     fishing,
     blueParkAward,
@@ -487,6 +490,24 @@ export function LocationPageBody(props: LocationBodyProps) {
                 }}>
                   {verdictBasis ?? divingOutlook ?? conditionSentence}
                 </p>
+                {/* Fish is the signal that responds to protection. One plain
+                    supporting line under the verdict — never a separate chart. */}
+                {siteFishBasis ? (
+                  <p style={{
+                    fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                    fontSize: "0.9375rem",
+                    lineHeight: 1.6,
+                    color: "#4A5568",
+                    margin: "0.6rem 0 0",
+                  }}>
+                    {siteFishBasis.headline}{" "}
+                    {siteFishBasis.citationUrl ? (
+                      <Link href={siteFishBasis.citationUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#4A5568", textDecoration: "underline" }}>
+                        source
+                      </Link>
+                    ) : null}
+                  </p>
+                ) : null}
                 {/* Evidence: cited sources behind a hand-reviewed verdict, so the
                     claim is visibly backed by real, linkable studies. */}
                 {reefStateSources.length > 0 ? (

@@ -1,0 +1,106 @@
+[
+  {
+    "basin": "indo-pacific",
+    "label": "Indo-Pacific",
+    "sourceId": "reef-check",
+    "method": "Reef Check volunteer belt transects: four 20 m by 5 m segments per reef, indicator fish counted to 5 m above the line and expressed as individuals per 100 m². Regional means from 1,107 reef surveys worldwide, 1997 to 2001.",
+    "yearRange": [1997, 2001],
+    "sampleReefs": 1107,
+    "indicators": [
+      {
+        "taxon": "Grouper (over 30 cm)",
+        "family": "Serranidae",
+        "role": "overfishing indicator",
+        "startYear": 1997,
+        "startDensity": 0.69,
+        "endYear": 2001,
+        "endDensity": 0.31,
+        "unit": "per 100 m²",
+        "direction": "down",
+        "significance": "p ≤ 0.01",
+        "higherInsideMpa": true
+      },
+      {
+        "taxon": "Butterflyfish",
+        "family": "Chaetodontidae",
+        "role": "aquarium trade indicator",
+        "startYear": 1997,
+        "startDensity": 12.5,
+        "endYear": 2001,
+        "endDensity": 6.1,
+        "unit": "per 100 m²",
+        "direction": "down",
+        "significance": "p ≤ 0.01",
+        "higherInsideMpa": false
+      },
+      {
+        "taxon": "Parrotfish (over 20 cm) and bumphead",
+        "family": "Scaridae",
+        "role": "herbivore and overfishing indicator",
+        "startYear": 1997,
+        "startDensity": 1.2,
+        "endYear": 2001,
+        "endDensity": 2.0,
+        "unit": "per 100 m²",
+        "direction": "up",
+        "significance": "p = 0.01",
+        "higherInsideMpa": true
+      }
+    ],
+    "mpaContrast": "Five of the ten indicator fish groups Reef Check tracked (grouper, snapper, parrotfish, bumphead parrotfish and sweetlips) were significantly more abundant inside marine protected areas than outside.",
+    "citation": "Hodgson, G. and Liebeler, J. (2002). The Global Coral Reef Crisis: Trends and Solutions 1997 to 2001. Reef Check Foundation, Institute of the Environment, UCLA. 80 pp. ISBN 0-9723051-0-6.",
+    "citationUrl": "https://www.reefcheck.org/wp-content/uploads/2020/07/ReefCheck5YearReport.pdf"
+  },
+  {
+    "basin": "atlantic",
+    "label": "Atlantic and Caribbean",
+    "sourceId": "reef-check",
+    "method": "Reef Check volunteer belt transects: four 20 m by 5 m segments per reef, indicator fish counted to 5 m above the line and expressed as individuals per 100 m². Regional means from 1,107 reef surveys worldwide, 1997 to 2001.",
+    "yearRange": [1997, 2001],
+    "sampleReefs": 1107,
+    "indicators": [
+      {
+        "taxon": "Snapper",
+        "family": "Lutjanidae",
+        "role": "food fish indicator",
+        "startYear": 1997,
+        "startDensity": 15.5,
+        "endYear": 2001,
+        "endDensity": 3.5,
+        "unit": "per 100 m²",
+        "direction": "down",
+        "significance": "p = 0.10",
+        "higherInsideMpa": true
+      },
+      {
+        "taxon": "Sweetlips and grunts",
+        "family": "Haemulidae",
+        "role": "food fish and spearfishing indicator",
+        "startYear": 1998,
+        "startDensity": 68.8,
+        "endYear": 2001,
+        "endDensity": 20.1,
+        "unit": "per 100 m²",
+        "direction": "down",
+        "significance": "p = 0.08",
+        "higherInsideMpa": true
+      },
+      {
+        "taxon": "Parrotfish (over 20 cm)",
+        "family": "Scaridae",
+        "role": "herbivore and overfishing indicator",
+        "startYear": 1998,
+        "startDensity": 13.2,
+        "endYear": 2001,
+        "endDensity": 5.1,
+        "unit": "per 100 m²",
+        "direction": "down",
+        "significance": "p = 0.05",
+        "higherInsideMpa": true
+      }
+    ],
+    "mpaContrast": "Five of the ten indicator fish groups Reef Check tracked (grouper, snapper, parrotfish, bumphead parrotfish and sweetlips) were significantly more abundant inside marine protected areas than outside.",
+    "citation": "Hodgson, G. and Liebeler, J. (2002). The Global Coral Reef Crisis: Trends and Solutions 1997 to 2001. Reef Check Foundation, Institute of the Environment, UCLA. 80 pp. ISBN 0-9723051-0-6.",
+    "citationUrl": "https://www.reefcheck.org/wp-content/uploads/2020/07/ReefCheck5YearReport.pdf"
+  }
+]
