@@ -23,7 +23,7 @@ const locations: WithHero[] = readJson('src/data/locations.json');
 // DOWN as unique underwater heroes are sourced.
 // Sites deliberately reuse their parent location's hero (borrowed-hero pattern),
 // so within-site collisions are expected and the cap is correspondingly high.
-const MAX_LOCATION_HERO_COLLISIONS = 75; // current: 61
+const MAX_LOCATION_HERO_COLLISIONS = 5; // current: 0 (debt cleared in #56); headroom only absorbs automation drift — re-run scripts/dedupe-collisions-oib.mjs if it climbs
 const MAX_SITE_HERO_COLLISIONS = 540; // current: 470 (mostly borrowed-hero pattern)
 
 test.describe('Hero photo data integrity', () => {
@@ -78,10 +78,10 @@ test.describe('Hero photo data integrity', () => {
       'burning_guadalcanal', '_burning',
     ];
     // Known non-underwater heroes awaiting replacement (tracked debt). The guard
-    // still catches any NEW bad hero; remove a slug here once its photo is fixed.
-    const KNOWN_BAD_HEROES = new Set<string>([
-      'lysefjord-stavanger-norway', // pexels "fish-aquarium" shot, not a wild reef
-    ]);
+    // still catches any NEW bad hero; add a slug here only as temporary debt and
+    // remove it once its photo is fixed. Currently empty — all known bad heroes
+    // have been replaced (lysefjord fixed in #56).
+    const KNOWN_BAD_HEROES = new Set<string>([]);
     const bad: string[] = [];
     for (const e of [...locations, ...sites]) {
       const url = (e.heroImageUrl ?? '').toLowerCase();
