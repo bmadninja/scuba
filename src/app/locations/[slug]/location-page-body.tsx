@@ -9,7 +9,6 @@ import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
 import { CoralProjectionChart } from "@/components/coral-projection-chart";
-import { SpeciesAccumulationChart, type CumulativePoint } from "@/components/species-accumulation-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
 import type { BlueParkAward } from "@/lib/data/types";
 
@@ -152,12 +151,6 @@ export type LocationBodyProps = {
   fishing: ConditionPill | null;
   blueParkAward: BlueParkAward | null;
   verdictBasis: string | null;
-  speciesRichness: number | null;
-  speciesRadiusKm: number | null;
-  // Dated observation accumulation (cumulative research-grade obs by year)
-  speciesObsCumulative: CumulativePoint[] | null;
-  speciesObsTotal: number | null;
-  speciesObsRadiusKm: number | null;
   // Story 4.3: GFW fishing pressure
   fishingPressure: FishingPressureData | null;
   // Story 4.3: water quality events
@@ -340,11 +333,6 @@ export function LocationPageBody(props: LocationBodyProps) {
     fishing,
     blueParkAward,
     verdictBasis,
-    speciesRichness,
-    speciesRadiusKm,
-    speciesObsCumulative,
-    speciesObsTotal,
-    speciesObsRadiusKm,
     fishingPressure,
     waterQualityEvents,
     bleachedPct,
@@ -385,10 +373,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                 : ""
         }`
       : null;
-  const speciesLoggedDetail =
-    speciesRichness !== null
-      ? `iNaturalist${speciesRadiusKm ? ` · within ${speciesRadiusKm} km` : ""}`
-      : null;
   // Measured boat activity, framed as a reality-check on the protection rule so
   // it complements (not contradicts) the "Banned fishing" chip: quiet water
   // confirms the ban is holding; busy water despite protection is the warning.
@@ -414,9 +398,7 @@ export function LocationPageBody(props: LocationBodyProps) {
       ? heat?.detail ?? null
       : info === "fishingpressure"
         ? fishingPressureDetail
-        : info === "specieslogged"
-          ? speciesLoggedDetail
-          : null;
+        : null;
 
   const hasStay = stayTiers.some((t) => t.items.length > 0) || operators.length > 0;
 
@@ -568,7 +550,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                 ) : null}
 
                 {/* ZONE 3 — the signals that feed the verdict, then separate context */}
-                {(heat || boatTraffic || speciesRichness !== null) ? (
+                {(heat || boatTraffic) ? (
                   <div style={{ borderTop: "1px solid #E7E6E2", background: "#F8F7F4", padding: "1rem 1.25rem" }}>
                     {(heat || boatTraffic) ? (
                       <>
@@ -617,37 +599,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                       </>
                     ) : null}
 
-                    {speciesRichness !== null ? (
-                      <div style={{
-                        marginTop: (heat || boatTraffic) ? "1rem" : 0,
-                        paddingTop: (heat || boatTraffic) ? "1rem" : 0,
-                        borderTop: (heat || boatTraffic) ? "1px solid #E7E6E2" : "none",
-                      }}>
-                        <MetricLabel>
-                          Also logged here
-                          <InfoButton onClick={() => setInfo("specieslogged")} label="What this means" />
-                        </MetricLabel>
-                        <p style={{ margin: "0.4rem 0 0" }}>
-                          <span style={{ fontSize: "1.125rem", fontWeight: 700, color: "#0E1C28" }}>{speciesRichness.toLocaleString()}</span>
-                          <span style={{ fontSize: "0.8125rem", color: "#4A5568" }}> species logged</span>
-                        </p>
-                        {speciesObsCumulative && speciesObsCumulative.length >= 2 && speciesObsTotal ? (
-                          <div style={{ marginTop: "0.6rem" }}>
-                            <SpeciesAccumulationChart
-                              points={speciesObsCumulative}
-                              radiusKm={speciesObsRadiusKm ?? speciesRadiusKm ?? 30}
-                            />
-                            <p style={{ fontSize: "0.75rem", color: "#0E1C28", marginTop: "0.15rem", lineHeight: 1.45 }}>
-                              <span style={{ fontWeight: 700 }}>{speciesObsTotal.toLocaleString()}</span> research grade
-                              observations logged near here and growing every year.
-                            </p>
-                          </div>
-                        ) : null}
-                        <p style={{ fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.25rem", lineHeight: 1.45 }}>
-                          Context, not part of the reef state.
-                        </p>
-                      </div>
-                    ) : null}
                   </div>
                 ) : null}
               </div>

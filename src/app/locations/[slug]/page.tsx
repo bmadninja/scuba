@@ -12,13 +12,8 @@ import { getLocationDetailsById } from "@/lib/data/location-details";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
-import {
-  getSpeciesObservationTimelineByLocationId,
-  getCumulativeObservations,
-} from "@/lib/data/species-observation-timeline";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
-import { getSpeciesDiversityByLocationId } from "@/lib/data/species-diversity";
 import { getLocationFishing } from "@/lib/data/fishing-pressure";
 import { fishingAllowsImproving } from "@/lib/data/effective-fishing";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
@@ -533,15 +528,6 @@ export default async function LocationPage({
   // The reef-state "verdict" sentence: an evidence-backed manual basis (e.g. a
   // documented recovery) wins, else the diving outlook / condition sentence.
   const verdictBasis = reefPressure?.manualReefStateBasis ?? null;
-  // Location-level species richness (cumulative iNaturalist research-grade
-  // observations within a radius) — shown as one honest stat, never a trend.
-  const speciesDiversity = getSpeciesDiversityByLocationId(location.id);
-
-  // Dated observation record: yearly research-grade iNaturalist observation
-  // counts, shown as a cumulative accumulation line — the scientific record of
-  // this reef growing over time. Real dated counts, never modelled.
-  const obsTimeline = getSpeciesObservationTimelineByLocationId(location.id);
-  const speciesObsCumulative = obsTimeline ? getCumulativeObservations(obsTimeline) : null;
 
   // Coral-cover chart points. Prefer a real multi-year survey series when one
   // is on file: every year becomes a point and the chart draws a genuine trend.
@@ -837,11 +823,6 @@ export default async function LocationPage({
         fishing={fishing}
         blueParkAward={blueParkAward}
         verdictBasis={verdictBasis}
-        speciesRichness={speciesDiversity?.speciesRichness ?? null}
-        speciesRadiusKm={speciesDiversity?.radiusKm ?? null}
-        speciesObsCumulative={speciesObsCumulative}
-        speciesObsTotal={obsTimeline?.totalObservations ?? null}
-        speciesObsRadiusKm={obsTimeline?.radiusKm ?? null}
         reefStateLabel={STATE_TEXT[atlasLoc.state]}
         reefStateColor={stateColor}
         reefStateSub={STATE_SUB[atlasLoc.state]}

@@ -2192,7 +2192,7 @@
   {
     "id": "reef-pressure-torre-guaceto-italy-2026",
     "locationId": "torre-guaceto-italy",
-    "mpaStatus": "designated-multi-use",
+    "mpaStatus": "no-take",
     "mpaName": "Area Marina Protetta di Torre Guaceto",
     "fishingPressure": "low",
     "topPressures": [
@@ -2200,8 +2200,20 @@
       "seagrass disturbance"
     ],
     "visitorImpactNote": "Torre Guaceto is a Mediterranean conservation success. A small fully protected core, co managed with the local fishers who once emptied it, brought the fish back. Studies have measured total fish biomass in the fully protected zone at more than four times that of the unprotected coast just outside. Divers visit through the reserve, and the main things to tread lightly around are the Posidonia seagrass meadows and the shallow reef.",
-    "mpaStatusSource": "manual",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 15263,
+      "mpaName": "Torre Guaceto",
+      "designatedDate": "1991-01-01",
+      "implementedDate": "2001-01-01",
+      "regulationsInForce": "yes",
+      "assessedAt": "2024-04-04"
+    },
     "sourceIds": [
+      "mpatlas",
       "blue-parks",
       "wdpa"
     ],
