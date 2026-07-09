@@ -15,7 +15,7 @@ This PRD is for the builder-operator (Josie) and any downstream agent implementi
 
 ## 1. Vision
 
-Reef state is the single most load-bearing scientific claim scubaSeason makes: a colored dot and one word — **Improving / Stable / Declining / Not surveyed** — that tells a diver what condition a reef is in. Today that verdict is computed from only three inputs (observed coral cover, the worst NOAA thermal alert, and reconciled fishing pressure), while the strongest signal of reef health we actually collect — the **fish community** — is invisible to it. Every fish-biomass and abundance dataset we've added (RLS, REEF, AGRRA, Reef Check, Blue Parks) is flagged "display-only, never a reef-state input." The gap is patched by hand: ~20 locations carry a `manualReefState` override whose justification is almost always fish biomass ("biomass inside the reserve runs seven times higher than the fished reefs outside"). Editors are re-deriving, per site, exactly the signal the algorithm ignores.
+Reef state is the single most load-bearing scientific claim scubaSeason makes: a colored dot and one word — **Improving / Stable / Declining / Not surveyed** — that tells a diver what condition a reef is in. Today that verdict is computed from only three inputs (observed coral cover, the worst NOAA thermal alert, and reconciled fishing pressure), while the strongest signal of reef health we actually collect — the **fish community** — is invisible to it. Every fish-biomass and abundance dataset we've added (RLS, REEF, AGRRA, Reef Check, Blue Parks) is flagged "display-only, never a reef-state input." The gap is patched by hand: **4** locations carry a true `manualReefState` override — three of them (`torre-guaceto-italy`, `abrolhos-banks`, `chumbe-island-tanzania`) forced to **thriving** purely on fish-biomass evidence the algorithm can't see ("biomass inside the reserve runs several times higher than the fished reefs outside") — and a further **10** records carry a documented fish-biomass *basis* without (yet) overriding the verdict, latent cases the editors have already reasoned through by hand. Editors are re-deriving, per site, exactly the signal the algorithm ignores.
 
 This redesign replaces the hard-threshold cascade with an **evidence-weighted, multi-pillar model**. Four pillars — coral, thermal, fish community, and fishing pressure — each score a reef's condition relative to a regional baseline, each carry their own confidence, and combine into one verdict plus an explicit **confidence tier** and a **per-pillar breakdown** the reader can inspect. Fish biomass becomes a first-class pillar, formalizing what the overrides do by hand and letting most of them retire. Species sightings — now live from iNaturalist, GBIF and OBIS — take a supporting role: not a health signal in themselves, but a way to raise confidence, reduce "Not surveyed," and stand in as a coarse fish-community proxy where no transect exists.
 
@@ -27,7 +27,7 @@ The approach is not invented from scratch: it mirrors how established indices sc
 - **As a diver planning a trip**, I want a trustworthy one-glance read of whether a reef is healthy or degraded, so I can choose where to dive and set expectations.
 - **As a diver comparing sites**, I want reef-state labels that mean the same thing across basins, so a "Stable" Caribbean reef and a "Stable" Coral Triangle reef are genuinely comparable.
 - **As a skeptical / scientifically-literate reader**, I want to see *why* a reef got its label — which evidence, how fresh, how confident — so I can trust or challenge it.
-- **As the builder-operator (Josie)**, I want the verdict to reflect the fish and coral data we already ingest without me writing a manual override per reserve, so the atlas scales past the ~20 sites I can hand-tune.
+- **As the builder-operator (Josie)**, I want the verdict to reflect the fish and coral data we already ingest without me writing a manual override per reserve, so the atlas scales past the handful of sites I can hand-tune.
 - **As an editor**, I want a documented escape hatch for the rare reef where published evidence genuinely overrides the computed signal, without that being the default maintenance path.
 
 ### 2.2 Non-Users (v1)
@@ -130,20 +130,21 @@ The Coral Pillar computes a trend (rising / stable / falling) from the multi-yea
 
 ### 4.3 Thermal Pillar
 
-**Description:** Scores heat stress from NOAA Coral Reef Watch, using recent alert **severity and recency/recurrence** rather than only the single worst alert level ever recorded. Consistent with CRW's own model, stress is an anomaly against a per-site baseline, and the alert ladder is anchored to bleaching/mortality outcomes. Realizes UJ-1.
+**Description:** Scores heat stress from NOAA Coral Reef Watch. **Data finding (resolved):** `reef-health.json` holds a single *current* thermal snapshot per location (nightly overwrite) with no per-site history, so cross-season *recurrence* cannot be scored without an ETL change (deferred, non-goal for MVP). It does carry a continuous **Degree Heating Weeks (DHW)** value for 120/121 records, so the v1 pillar scores on **continuous DHW magnitude** — already an anomaly against CRW's per-site baseline and anchored to bleaching/mortality outcomes — instead of the coarse worst-ever ordinal `alertLevel`. Realizes UJ-1.
 
 **Functional Requirements:**
 
-#### FR-7: Score thermal stress from CRW alert severity and recency
-The Thermal Pillar scores based on CRW alert level weighted by how recent and how recurrent the stress is.
+#### FR-7: Score thermal stress from continuous current DHW
+The Thermal Pillar scores from the current Degree Heating Weeks value (continuous), falling back to the ordinal `alertLevel` where DHW is absent.
 
 **Consequences (testable):**
-- A reef with a severe alert years ago but calm recent seasons scores better than one under a current severe alert. [ASSUMPTION: reef-health records carry enough temporal resolution to distinguish recent from historical stress; confirm in `reef-health.json`.]
-- Absence of any thermal reading yields no Thermal Pillar Score (not a zero/positive read).
+- Two reefs at different DHW magnitudes but the same ordinal alert band receive different Thermal Pillar Scores.
+- Absence of any thermal reading (no DHW and no `alertLevel`) yields no Thermal Pillar Score (not a zero/positive read).
+- **Deferred (v2, requires ETL change):** accumulating thermal snapshots over time to score recency/recurrence. Logged so it is not silently dropped.
 
 ### 4.4 Fish-Community Pillar
 
-**Description:** The headline addition. Scores the fish community relative to the Regional Baseline, expressing measured biomass/abundance as a fraction of a regional unfished/no-take reference (the fisheries-standard B/B₀ approach) using `reef-check-fish-regional.json` indicator densities and MPA-contrast context, and drawing evidence from Reef Life Survey biomass (`fish-biomass-series.json`), REEF abundance (`reef-fish-abundance-series.json`), AGRRA fish biomass (`agrra-reef-series.json`), Reef Check indicator fish, and Blue Parks peer-reviewed biomass (`blue-parks.json`). This formalizes the exact reasoning the ~20 `manualReefState` overrides encode by hand. Realizes UJ-2.
+**Description:** The headline addition. Scores the fish community relative to the Regional Baseline, expressing measured biomass/abundance as a fraction of a regional unfished/no-take reference (the fisheries-standard B/B₀ approach) using `reef-check-fish-regional.json` indicator densities and MPA-contrast context, and drawing evidence from Reef Life Survey biomass (`fish-biomass-series.json`), REEF abundance (`reef-fish-abundance-series.json`), AGRRA fish biomass (`agrra-reef-series.json`), Reef Check indicator fish, and Blue Parks peer-reviewed biomass (`blue-parks.json`). This formalizes the exact reasoning the fish-biomass `manualReefState` overrides encode by hand (all 4 current overrides have direct fish-series coverage). Realizes UJ-2.
 
 **Functional Requirements:**
 
@@ -162,11 +163,12 @@ When more than one fish source covers a location, the pillar combines them with 
 - The sources that drove the score are captured for the Pillar Breakdown (FR-13) with their `sourceIds`.
 
 #### FR-10: Reproduce the intent of existing manual overrides
-For the locations currently carrying a fish-biomass-based `manualReefState`, the Fish-Community Pillar (with the other pillars) reproduces the intended verdict without the override in the majority of cases.
+For the locations currently carrying a fish-biomass-based `manualReefState` (4 today; plus the 10 basis-annotated latent candidates), the Fish-Community Pillar with the other pillars reproduces the intended verdict without the override.
 
 **Consequences (testable):**
-- A regression check compares computed verdicts against the current ~20 override values; divergences are enumerated and each is either (a) accepted as a model improvement with rationale, or (b) retained as a genuine editorial override under FR-16.
-- Target: the model reproduces the intent of a strong majority of overrides unaided. [ASSUMPTION: exact target set with Josie after the regression run — see Open Questions.]
+- A regression harness computes verdicts for the 4 override locations (and the 10 basis-annotated records) and diffs against their current/documented values; divergences are enumerated and each is either (a) accepted as a model improvement with rationale, or (b) retained as a genuine editorial override under FR-16.
+- The migration target is **not fixed up front** — the regression diff runs first, then the acceptable divergence set is agreed. *(Decision: run the diff before setting the bar.)*
+- The 3 fish-driven `thriving` overrides (`torre-guaceto-italy`, `abrolhos-banks`, `chumbe-island-tanzania`) are the primary reproduction test — each must compute to `thriving` via the Fish + Fishing pillars, or its retention is justified.
 
 ### 4.5 Fishing Pillar
 
@@ -221,7 +223,8 @@ Sighting Signals contribute to Verdict Confidence and to the Not-Surveyed floor,
 
 **Consequences (testable):**
 - A reef with rich recent sightings but no coral/thermal/fish survey still does not receive a positive Verdict Label from sightings alone (FR-3 holds).
-- Recent verified sightings raise the Verdict Confidence tier and can move a location from Not-Surveyed to a low-confidence verdict only when at least one true condition pillar is also present. [ASSUMPTION: apex/indicator-species list and how presence maps to the fish proxy to be specified with Josie — see Open Questions.]
+- Recent verified sightings raise the Verdict Confidence tier and can move a location from Not-Surveyed to a low-confidence verdict only when at least one true condition pillar is also present.
+- The apex/indicator list ships as a small, conservative set referred to by **common names only** (no scientific/Latin names) — e.g. reef sharks, groupers, Napoleon wrasse, bumphead parrotfish, large jacks/trevally. It is refined post-launch.
 - Where used as an apex proxy, sightings are cross-referenced with IUCN status (`iucn-status.json`) and clearly labeled as a proxy in the breakdown.
 
 ### 4.8 Override Migration & Governance
@@ -242,7 +245,7 @@ Editors can still set `manualReefState`, and it supersedes the computed verdict,
 Overrides whose basis the Fish-Community Pillar now reproduces are removed, leaving only genuine exceptions.
 
 **Consequences (testable):**
-- Post-migration, the count of `manualReefState` entries is materially lower than the current ~20, and each remaining one has a documented reason it can't be computed.
+- Post-migration, the count of `manualReefState` entries is lower than the current 4, and each remaining one has a documented reason it can't be computed (e.g. `channel-islands-usa`, held at `pressure` because recovery has not held under warming — a caveat the fish pillar alone would miss).
 - A regression report records, per removed override, that the computed verdict now matches the retired value.
 
 ## 5. Non-Goals (Explicit)
@@ -275,7 +278,7 @@ Overrides whose basis the Fish-Community Pillar now reproduces are removed, leav
 *Each SM cross-references the FR(s) it validates.*
 
 **Primary**
-- **SM-1: Override reduction.** Count of `manualReefState` entries drops materially from the current ~20, with each remaining override documented as a genuine exception. Validates FR-10, FR-17. *Target set with Josie after the regression run.*
+- **SM-1: Override reduction.** Count of `manualReefState` entries drops from the current 4 (the 3 fish-driven `thriving` overrides migrate to computed), with each remaining override documented as a genuine exception; the 10 basis-annotated records need no further hand-tuning. Validates FR-10, FR-17. *Acceptable divergence set agreed after the regression diff.*
 - **SM-2: Verdict/chart consistency.** Zero locations where the reef-state label visibly contradicts its own coral-cover or fish-biomass chart. Validates FR-4, FR-13.
 - **SM-3: Coverage lift.** Fewer locations return Not surveyed than under the current model, driven by the Fish-Community Pillar and Sighting confidence — *without* violating the evidence floor. Validates FR-3, FR-8, FR-15.
 
@@ -287,16 +290,20 @@ Overrides whose basis the Fish-Community Pillar now reproduces are removed, leav
 - **SM-C1: Coverage must not become dishonest.** The drop in Not surveyed (SM-3) must not come from letting sightings or fishing alone manufacture positive labels. Counterbalances SM-3 — if Not-Surveyed falls but low-confidence positive labels spike on thin evidence, that is a regression, not a win.
 - **SM-C2: Improving must stay rare and earned.** The share of reefs labeled Improving must not rise simply because the fish pillar is generous; Improving still requires holding/rising coral and protected/low fishing. Counterbalances SM-1/SM-3.
 
-## 8. Open Questions
-1. **Override reproduction target (FR-10):** what fraction of the ~20 overrides must the model reproduce unaided before we're comfortable migrating? Decide after the regression run.
-2. **Pillar weights & score cutoffs:** exact importance weights per pillar and composite-score-to-label boundaries — first values proposed in the addendum (equal-weight default, cutoffs anchored to published ecological thresholds), to be calibrated against the override regression set.
-3. **Apex/indicator proxy (FR-15):** which species constitute the apex/indicator list, and how does presence/probability map to a fish proxy value where no biomass survey exists?
-4. **Thermal temporal resolution (FR-7):** does `reef-health.json` carry enough history per location to score recency/recurrence, or do we need a fetch change (which would breach the "no ETL change" non-goal)?
-5. **Confidence tier taxonomy (FR-12):** how many tiers and their names/thresholds (proposed: Well-surveyed / Provisional / Sparse).
-6. **Regional-baseline coverage:** which regions lack a baseline today, and what's the fallback behavior's effect on confidence? Verify exact fish-biomass reference cutoffs against the latest published report card before hard-coding (the automated source fetch was blocked).
+## 8. Resolved Decisions & Remaining Questions
+
+**Resolved (2026-07-09, Josie):**
+1. **Override reproduction target (FR-10):** *Run the regression diff first, then agree the acceptable-divergence set* — no fixed % set up front. Diff scope: the 4 true overrides + 10 basis-annotated records.
+2. **Pillar weights & score cutoffs (FR-1):** **Equal importance weights** as the documented default; composite-to-label cutoffs anchored to published ecological thresholds (addendum §A), calibrated against the regression set.
+3. **Apex/indicator proxy (FR-15):** ship a **small conservative list, common names only** (no scientific names); refine post-launch.
+4. **Thermal (FR-7):** confirmed by data — no per-site thermal history exists, so v1 scores on **continuous current DHW**, not recurrence. Recurrence deferred to a v2 ETL change.
+5. **Confidence tier taxonomy (FR-12):** **three tiers — Well-surveyed / Provisional / Sparse.**
+6. **Regional-baseline coverage (FR-5, FR-8):** confirmed — coral baselines cover **10 regions** (`coral-cover-regional.json`); fish benchmarks cover **2 basins only** (`indo-pacific`, `atlantic`), so fish normalization is basin-coarse in v1. Uncovered regions/basins use a documented fallback + lower confidence. Verify exact fish-biomass reference cutoffs against the latest published report card before hard-coding (automated source fetch was blocked).
+
+**Remaining (resolve during implementation):**
+- The concrete acceptable-divergence set from the FR-10 regression diff.
+- Whether the 2-basin fish benchmark is coarse enough to warrant a finer sub-basin baseline before launch (assess after the diff).
 
 ## 9. Assumptions Index
-- §4.1 (FR-1 NFR) — Reef-state stays build-time static over `src/data`, consistent with the read-only data model.
-- §4.3 (FR-7) — `reef-health.json` has enough temporal resolution to distinguish recent from historical thermal stress.
-- §4.4 (FR-10) — The exact override-reproduction target is set with Josie after the regression run.
-- §4.7 (FR-15) — The apex/indicator-species list and its mapping to a fish proxy are specified with Josie before that path is enabled.
+*(All prior draft assumptions resolved by the 2026-07-09 data investigation and Josie's decisions above.)*
+- §4.1 (FR-1 NFR) — Reef-state stays build-time static over `src/data`, consistent with the read-only data model. *(Standing assumption; unchanged.)*

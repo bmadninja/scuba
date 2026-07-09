@@ -18,14 +18,19 @@ Technical depth that belongs downstream (architecture / implementation), not in 
 
 The hard triggers stay as guardrails so a strong fish pillar can never paper over a bleached/collapsing reef.
 
-**Confidence tier (proposed):** `Well-surveyed` (≥3 pillars, fresh), `Provisional` (1–2 pillars or aging), `Sparse` (single stale pillar or sighting-lifted). Freshness reuses the existing `freshness()` thresholds (fresh ≤2y, stale ≤4y, cold beyond).
+**Confidence tier (confirmed, 3 tiers):** `Well-surveyed` (≥3 pillars, fresh), `Provisional` (1–2 pillars or aging), `Sparse` (single stale pillar or sighting-lifted). Freshness reuses the existing `freshness()` thresholds (fresh ≤2y, stale ≤4y, cold beyond).
+
+**Data findings (2026-07-09 investigation):**
+- **Thermal:** `reef-health.json` is a *current snapshot* per location (nightly overwrite), 0 locations with >1 thermal `asOf` → no recurrence history. But continuous `degreeHeatingWeeks` present on 120/121 records → score on continuous DHW in v1; recurrence needs a v2 ETL change that accumulates snapshots.
+- **Overrides:** only **4** true `manualReefState` values exist (not ~20): `channel-islands-usa` (pressure) + `torre-guaceto-italy` / `abrolhos-banks` / `chumbe-island-tanzania` (thriving, fish-biomass-driven). A further **10** records carry `manualReefStateBasis` context without overriding. All 4 overrides have direct fish-series coverage.
+- **Baseline coverage:** coral = 10 regions (caribbean, east-asian-seas, etp, persga-red-sea, pacific, ropme, south-asia, australia, brazil, wio); fish = **2 basins only** (indo-pacific, atlantic) → fish normalization is basin-coarse in v1.
 
 ## B. Per-pillar normalization + source-field map
 
 | Pillar | Primary inputs (fields) | Baseline / reference | Notes |
 |---|---|---|---|
 | **Coral** | `reef-health.json` `observed.coralCoverPercent`, `historicalCoralCoverPercent`, `surveyDate`; trend from `coral-cover-series.json`, `agrra-reef-series.json` | `coral-cover-regional.json` per-region series (e.g. Caribbean baseline ~15%, East Asian Seas ~33%) | Replaces absolute `<25`/`>=40`. Trend = series slope, fallback to observed-vs-historical pair. |
-| **Thermal** | `reef-health.json` `thermalStress.alertLevel` (+ any DHW/asOf history) | CRW anomaly-vs-site-MMM model is already baked into alertLevel | Weight by recency/recurrence, not worst-ever. Confirm temporal depth exists (Open Q4). |
+| **Thermal** | `reef-health.json` `thermalStress.degreeHeatingWeeks` (continuous), fallback `alertLevel` | CRW anomaly-vs-site-MMM already baked in | v1: continuous current DHW (no history exists). Recurrence deferred to v2 ETL change. |
 | **Fish** | `fish-biomass-series.json` (RLS), `reef-fish-abundance-series.json` (REEF), `agrra-reef-series.json` (AGRRA fish), `reef-check-fish-regional.json` indicators, `blue-parks.json` | Regional fished-reef + unfished/no-take reference → express as **B/B₀ ratio** | Precedence: peer-reviewed in-situ biomass > volunteer indicator counts. Gate on observer reliability where recorded. |
 | **Fishing** | `fishing-pressure.json` GFW hours + `series`; MPAtlas `mpaStatus` | `effective-fishing.ts` `reconcile()` bands; `fishingTrend()` for trajectory | Reuse as-is; add trajectory. `paper-park` never positive. |
 
@@ -52,5 +57,5 @@ Established frameworks reviewed to keep the model defensible:
 - Preserve `STATE_TEXT` / `STATE_COLOR` / `STATE_DEF` enums (FR-2); extend `STATE_DEF` copy.
 - Override application stays at `atlas-location.ts:214` (`manualReefState ?? computed`).
 - Breakdown consumed by `how-calculated.tsx`, `reef-state-card.tsx`, `reef-state-badge.tsx`.
-- Add a regression harness (extend `scripts/verify-fishing-model.ts` pattern) that computes verdicts for the ~20 override sites and diffs against current `manualReefState` values → produces the FR-10/FR-17 report.
+- Add a regression harness (extend `scripts/verify-fishing-model.ts` pattern) that computes verdicts for the 4 override sites + 10 basis-annotated records and diffs against current `manualReefState` / documented-basis values → produces the FR-10/FR-17 report. **Run this diff before setting any migration target.**
 - Provenance: every pillar row carries `sourceIds` / `methodologyClaimIds`; `validate-provenance.mjs` enforces cited overrides (FR-16).
