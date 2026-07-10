@@ -1,8 +1,8 @@
 ---
-stepsCompleted: []
+stepsCompleted: [1]
 inputDocuments: []
 workflowType: 'research'
-lastStep: 1
+lastStep: 2
 research_type: 'technical'
 research_topic: 'Fish Biodiversity Data Sources'
 research_goals: 'Landscape scan of all fish-biodiversity data sources vs. what the repo already has wired; best technical approach to display an area fish biodiversity over time; how to tie the fish-biodiversity signal into the existing reef-health model; data-gap analysis to identify organizations to reach out to for data access.'
@@ -22,7 +22,100 @@ source_verification: true
 
 ## Research Overview
 
-[Research overview and methodology will be appended here]
+Technical research into fish-biodiversity data sources for scubaseason.fun, in service of four goals: (1) a complete landscape of available sources mapped against what the repo already ingests; (2) the best technical path to display an area's fish biodiversity **over time**; (3) how that signal ties into the existing reef-health model; (4) a data-gap analysis that names the organizations to approach for access. Every non-obvious access/license claim is verified against a primary source (API docs, dataset landing pages, license text), and the "what we have" column is grounded against the actual repo code, not memory.
+
+**Methodology:** current web data with source verification, multi-source validation for critical claims, confidence levels applied where a source is credible but live access could not be confirmed, and an explicit *observed-vs-modeled* axis kept in frame to arm the open "biodiversity benchmark" design decision (design toward observed sources now vs. wait until AquaMaps is wired).
+
+---
+
+## Technical Research Scope Confirmation
+
+**Research Topic:** Fish Biodiversity Data Sources
+**Research Goals:** Landscape scan vs. what is wired; best approach to display fish biodiversity over time; reef-health linkage; data-gap → outreach analysis.
+
+**Scope:**
+
+- Source Landscape — exhaustive inventory scored on access mechanism, license, spatial coverage, taxonomic scope, and what "biodiversity" each actually measures
+- Time-Series Feasibility — which sources can support an over-time view of one area, and by what query mechanics
+- Reef-Health Linkage — display-only vs. verdict-feeding integration, unit reconciliation, ecological logic
+- Gap Analysis → Outreach — geographic/taxonomic/temporal gaps and the orgs to contact, with access path per source
+
+**Cross-cutting axis:** observed (survey) vs. modeled (predicted) data, to inform the AquaMaps decision.
+
+**Scope Confirmed:** 2026-07-10
+
+---
+
+## Source Landscape Analysis
+
+### The core distinction: what "fish biodiversity" actually measures
+
+"Fish biodiversity" is not one number. Sources measure four different things, and the choice of which to display over time depends on which of these you mean:
+
+| Measure | What it is | Responds to | Charts a trend? |
+|---|---|---|---|
+| **Occurrence / presence** | "species X was recorded here" | sampling effort (confounded) | only with an effort caveat |
+| **Richness** | count of distinct species per effort/area | effort + real diversity | yes, if effort-standardized |
+| **Abundance / density** | individuals per area or per survey | fishing, protection, recruitment | yes |
+| **Biomass** (kg/ha) | mass per area | fishing & protection (the honest "protection works" signal) | yes |
+| **Modeled range** | *predicted* probability of occurrence | environmental envelope, not observation | **no — static snapshot** |
+
+The repo's current fish story leans on **biomass** (RLS) and **abundance** (REEF, Reef Check), plus an all-taxa **richness** proxy (iNaturalist). That's the right instinct: biomass and effort-standardized abundance are the measures that actually move with reef condition.
+
+### Tier A — Standardized reef-fish survey programs (biomass / abundance / richness, genuine time-series)
+
+These are the sources that can honestly chart fish biodiversity *over time* for a fixed area, because each is a repeat, fixed-effort survey with dates.
+
+- **Reef Life Survey (RLS)** — *wired* (`fetch-rls-fish-biomass.mjs`). Global M1 fish-transect biomass/abundance/richness via the open IMOS AODN geoserver (WFS/CSV, no auth). Also mirrored as a [GBIF dataset](https://www.gbif.org/dataset/38f06820-08c5-42b2-94f6-47cc3e83a54a). Strong on temperate/Mediterranean/Australian reefs; **sparse in the tropical Indo-Pacific** by its own methodology note.
+- **MERMAID** — *partially wired* (coral only, `fetch-mermaid-coral-cover.mjs`). The same public `/v1/summarysampleevents/` endpoint carries **fish belt-transect biomass (kg/ha)**, aggregated at sample-event level with `biomass_kgha_by_trophic_group_avg` and `biomass_kgha_by_fish_family_avg` fields; biomass is computed from FishBase length-weight coefficients. No token for public/public-summary data; `mermaidr` R client exists. Coverage is concentrated in the **tropical Indo-Pacific — exactly RLS's blind spot.** ([API docs](https://mermaid-api.readthedocs.io/_/downloads/en/latest/pdf/), [reef-health metrics](https://datamermaid.org/documentation/mermaid-reef-health-metrics))
+- **Reef Check (via Aqualink)** — *wired as regional trends only, hand-transcribed*. **Fact update:** raw per-site Reef Check data (17,000+ surveys back to 1997, incl. fish belt-transect indicators like parrotfish >20 cm as an overfishing indicator) is now **free and open through the Aqualink Global Reef Tracker, which exposes a documented API** — no longer request-only. ([Global Reef Tracker](https://www.reefcheck.org/global-reef-tracker/), [Aqualink](https://aqualink.org/tracker))
+- **REEF Volunteer Fish Survey Project** — *wired* (`fetch-reef-abundance.mjs`). Roving Diver Technique density index (%SF × DEN), per-year via the Geographic Area Report CSV export. Strong in Caribbean/US/Tropical Eastern Pacific; thin in Med/Indo-Pacific.
+- **NOAA NCRMP** — *registered (`ncrmp`), not fetched for fish*. Stationary Point Count surveys catalog **richness, numeric density, and biomass** for US reefs (Hawaii, Marianas, PRIA, Am. Samoa, Florida, PR, USVI, Flower Garden Banks). Raw packages on NCEI; status-and-trends via the NCRMP Data Visualization Tool. ([NCEI landing](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:NCRMP-Fish-PRIA), [CoRIS](https://www.coris.noaa.gov/monitoring/data_pacific.html))
+- **NOAA PIFSC Pacific RAMP** — *not registered*. Long-term Pacific reef-fish monitoring since 2000 across >50 US Pacific islands/atolls; **data served via ERDDAP/OPeNDAP** (machine-readable). Deeper temporal baseline than NCRMP for the Pacific. ([Pacific RAMP](https://origin-apps-pifsc.fisheries.noaa.gov/cred/pacific_ramp.php))
+- **AIMS Long-Term Monitoring Program** — *registered (`aims-ltmp`)*. GBR reef-fish + coral trends since 1985; ERDDAP/eAtlas access. Best for GBR-area sites.
+
+### Tier B — Occurrence aggregators (presence → computed richness)
+
+Broad taxonomic and geographic coverage, but effort is **not** standardized — so richness-over-time from these is confounded by how many observers showed up. Best for a "how many fish species have been recorded near here" richness figure with an effort caveat, and for gap-filling species lists.
+
+- **GBIF** — *registered*. REST + **SQL Download API** supports polygon predicates, taxon filters (`Actinopterygii`, `Elasmobranchii`), summary/count views and **species occurrence "cubes"**; DOI-citable downloads. ([SQL downloads](https://techdocs.gbif.org/en/data-use/api-sql-downloads))
+- **OBIS** — *registered*. Marine-only, 161M records, WoRMS-aligned; REST API plus a **GeoParquet mirror on AWS** for large programmatic pulls. Cleaner than GBIF for marine richness by area. ([data access](https://obis.org/data/access/), [AWS open data](https://registry.opendata.aws/obis/))
+- **iNaturalist** — *wired* (`fetch-species-diversity.mjs`) but counts **all taxa**, not fish. A `taxon_id` filter to ray-finned + cartilaginous fishes converts it to a true fish-richness signal with zero new infrastructure.
+- **Atlas of Living Australia** — *registered*. Australian GBIF node; `galah` client; supersedes GBIF for AU sites.
+- **EMODnet Biology** — *not registered*. WFS/WMS for occurrence **and gridded abundance products**; `emodnet.wfs` R client. Best regional fill for European seas (Med, Atlantic Europe) where RLS/REEF are thin. ([biology portal](https://emodnet.ec.europa.eu/en/biology))
+- **OBIS-SEAMAP** — *registered*. Megafauna (sharks/rays/turtles/mammals), not reef fish per se; complements the sightings layer.
+
+### Tier C — Trait & taxonomic backbones (reference, not temporal)
+
+- **FishBase** — *registered*. Per-species traits, length-weight coefficients (the same ones MERMAID uses for biomass), IUCN status, distribution. `rfishbase` client.
+- **WoRMS** — *registered*. Authoritative marine taxonomy (AphiaID) — reconcile every species name here at ingest so all sources cross-link.
+- **SeaLifeBase** — non-fish marine trait sister of FishBase.
+
+### Tier D — Modeled / predicted distributions (AquaMaps)
+
+- **AquaMaps** — *not registered*. Computer-generated **predicted** range maps for ~33,500 fish/mammal/invertebrate species on a 0.5° ocean grid, built **on top of** FishBase/SeaLifeBase + OBIS/GBIF occurrences. License **CC BY-NC 3.0** (non-commercial). Also published as a [GBIF tool](https://www.gbif.org/tool/81356/aquamaps-predicted-range-maps-for-aquatic-species). ([algorithm & sources](https://www.aquamaps.org/main/AquaMaps_Algorithm_and_Data_Sources.pdf))
+
+  **Decisive finding for the benchmark decision:** AquaMaps is a **static predicted snapshot** (current public set restored from the v10/2019 release). It answers *"which species are expected to occur here"* — it **cannot show change over time**, because it isn't a repeat observation series. So for a "fish biodiversity **over time**" display, AquaMaps is the wrong instrument for the trend axis. Its real value is orthogonal: an *expected-species baseline* to contextualize what observed surveys do or don't find (a denominator for completeness), and a gap-filler where no survey program reaches. That reframes the design question — it's not "observed now vs. modeled later," it's **"observed for the trend, modeled as an optional expected-baseline overlay."**
+
+### What we have vs. what's open (summary)
+
+| Source | Measures | Access | Time-series? | Repo status |
+|---|---|---|---|---|
+| RLS | biomass/abund/richness | open WFS (AODN) | ✅ | wired |
+| MERMAID fish | biomass kg/ha | open API | ✅ | **coral only — fish untapped** |
+| Reef Check / Aqualink | indicator density | **open API (Aqualink)** | ✅ | regional-only, hand-keyed |
+| REEF | density index | CSV export | ✅ | wired |
+| NCRMP | richness/density/biomass | NCEI + viz tool | ✅ | registered, not fetched |
+| PIFSC Pacific RAMP | fish density/biomass | ERDDAP | ✅ | **not registered** |
+| AIMS LTMP | fish + coral | ERDDAP/eAtlas | ✅ | registered |
+| GBIF | occurrence→richness | REST/SQL API, DOI | ⚠️ effort-confounded | registered |
+| OBIS | occurrence→richness | REST + AWS parquet | ⚠️ effort-confounded | registered |
+| iNaturalist | richness | REST API | ⚠️ | wired (all-taxa, not fish) |
+| EMODnet Biology | occurrence + gridded | WFS | ⚠️/partial | **not registered** |
+| FishBase / WoRMS | traits / taxonomy | API | ✗ reference | registered |
+| AquaMaps | **predicted** range | download / GBIF | ✗ **static** | not registered |
+
+_Sources: [MERMAID API](https://mermaid-api.readthedocs.io/_/downloads/en/latest/pdf/), [MERMAID reef-health metrics](https://datamermaid.org/documentation/mermaid-reef-health-metrics), [AquaMaps algorithm & data sources](https://www.aquamaps.org/main/AquaMaps_Algorithm_and_Data_Sources.pdf), [AquaMaps on GBIF](https://www.gbif.org/tool/81356/aquamaps-predicted-range-maps-for-aquatic-species), [NCRMP/NCEI](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:NCRMP-Fish-PRIA), [CoRIS Pacific data](https://www.coris.noaa.gov/monitoring/data_pacific.html), [PIFSC Pacific RAMP](https://origin-apps-pifsc.fisheries.noaa.gov/cred/pacific_ramp.php), [OBIS data access](https://obis.org/data/access/), [OBIS on AWS](https://registry.opendata.aws/obis/), [GBIF SQL downloads](https://techdocs.gbif.org/en/data-use/api-sql-downloads), [EMODnet Biology](https://emodnet.ec.europa.eu/en/biology), [Reef Check Global Reef Tracker](https://www.reefcheck.org/global-reef-tracker/), [Aqualink tracker](https://aqualink.org/tracker), [RLS GBIF dataset](https://www.gbif.org/dataset/38f06820-08c5-42b2-94f6-47cc3e83a54a)._
 
 ---
 
