@@ -15,6 +15,8 @@ import type { FishAbundancePoint } from "@/components/fish-abundance-chart";
 import { FishBiomassChart } from "@/components/fish-biomass-chart";
 import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
 import { FishingEffortTrend } from "@/components/fishing-effort-trend";
+import { ReefBreakdownCard } from "@/components/reef-report/reef-breakdown-card";
+import type { ReefBreakdown } from "@/components/reef-report/reef-breakdown-config";
 import type { BlueParkAward, FishAbundanceSeriesRecord } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
@@ -175,6 +177,9 @@ export type LocationBodyProps = {
   biomassSourceLabel: string | null;
   // Cited sources behind a hand-reviewed reef-state verdict (peer-reviewed / award)
   reefStateSources: { label: string; url: string | null }[];
+  // Evidence-breakdown view-model: the four signals behind the rating. Null when
+  // no signal has honest data (card is not rendered).
+  reefBreakdown: ReefBreakdown | null;
   // Per-site indicator-fish basis line under the verdict (e.g. Tubbataha SPR)
   siteFishBasis: FishAbundanceSeriesRecord | null;
   heat: ConditionPill | null;
@@ -378,6 +383,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     biomassDataPoints,
     biomassSourceLabel,
     reefStateSources,
+    reefBreakdown,
     siteFishBasis,
     heat,
     fishing,
@@ -549,6 +555,14 @@ export function LocationPageBody(props: LocationBodyProps) {
                   </p>
                 ) : null}
               </div>
+
+              {/* Evidence breakdown — the four signals behind the rating,
+                  expandable to a reference chart with a shaded healthy zone. */}
+              {reefBreakdown ? (
+                <div style={{ maxWidth: 680, marginBottom: "1.5rem" }}>
+                  <ReefBreakdownCard data={reefBreakdown} />
+                </div>
+              ) : null}
 
               {/* Data card */}
               <div style={SECTION_CARD}>

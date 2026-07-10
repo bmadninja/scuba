@@ -40,6 +40,12 @@ export type SignalDatum = {
   trend: Trend;
   /** Ordered oldest→newest reading series, or null when there are no readings. */
   series: number[] | null;
+  /**
+   * Optional start/end labels for the chart read-out (e.g. ["2016", "now"]).
+   * Falls back to the pillar's static xAxis when omitted — set this when the
+   * real survey years are known so the read-out is honest per reef.
+   */
+  xAxis?: [string, string];
 };
 
 /** The full view-model the card renders. Assembled server-side per reef. */
@@ -232,3 +238,30 @@ export const TREND_ARROW: Record<Exclude<Trend, null>, string> = {
   holding: "→",
   falling: "↓",
 };
+
+/**
+ * Derive a health band for a signal from a real measured value, judged against
+ * that signal's own healthy range in `CHART`. This keeps the band consistent
+ * with the shaded healthy zone the chart draws — a value inside the zone reads
+ * `good`, moderately outside reads `mid`, far outside reads `bad`. It uses the
+ * design's stated thresholds only; it invents no new science.
+ *
+ * For "high is good" (coral, fish): good at/above the zone floor, `mid` down to
+ * half of it, `bad` below. For "low is good" (heat, fishing): good at/below the
+ * zone ceiling, `mid` up to twice it, `bad` above — which lines up with NOAA's
+ * DHW bleaching steps (4 → warning, 8 → alert) for water heat.
+ */
+export function bandFromValue(key: SignalKey, value: number | null): Band {
+  if (value == null || Number.isNaN(value)) return "none";
+  const cfg = CHART[key];
+  if (cfg.dir === "high") {
+    const floor = cfg.healthy[0];
+    if (value >= floor) return "good";
+    if (value >= floor / 2) return "mid";
+    return "bad";
+  }
+  const ceil = cfg.healthy[1];
+  if (value <= ceil) return "good";
+  if (value <= ceil * 2) return "mid";
+  return "bad";
+}

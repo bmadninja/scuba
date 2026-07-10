@@ -80,17 +80,20 @@ function ReferenceChart({
   series,
   tone,
   pillar,
+  xAxis,
   w = 208,
   h = 96,
 }: {
   series: number[] | null;
   tone: Band;
   pillar: PillarConfig;
+  /** Overrides the pillar's static start/end labels when real years are known. */
+  xAxis?: [string, string];
   w?: number;
   h?: number;
 }) {
   const cfg = CHART[pillar.key];
-  const [xStart, xEnd] = pillar.xAxis;
+  const [xStart, xEnd] = xAxis ?? pillar.xAxis;
 
   // Degenerate cases: a single reading has nothing to trend; a null series has
   // no readings at all.
@@ -648,7 +651,7 @@ function SignalRow({
       {open && !dead && (
         <div id={panelId} style={{ padding: "4px 18px 18px 41px", background: T.surface }}>
           <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
-            <ReferenceChart series={datum.series} tone={datum.band} pillar={pl} />
+            <ReferenceChart series={datum.series} tone={datum.band} pillar={pl} xAxis={datum.xAxis} />
             <div style={{ flex: 1, minWidth: 150 }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 7, marginBottom: 8 }}>
                 <span

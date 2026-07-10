@@ -21,6 +21,7 @@ import { getSourcesByIds } from "@/lib/data/sources";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getLocationFishing } from "@/lib/data/fishing-pressure";
 import { fishingAllowsImproving } from "@/lib/data/effective-fishing";
+import { buildReefBreakdown } from "@/lib/data/reef-breakdown";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
@@ -611,6 +612,31 @@ export default async function LocationPage({
   }
 
 
+  // Reef evidence-breakdown view-model — the four signals behind the rating,
+  // assembled honestly from the signals computed above (see reef-breakdown.ts).
+  // Coral cover drives a real chart; heat/fishing bands come from the same data
+  // the page already uses; fish stays "not surveyed" as no honest per-signal
+  // grade exists yet. Null → the card does not render.
+  const coralDirection: "up" | "flat" | "down" | null = decline
+    ? "down"
+    : coverTrend?.direction === "up"
+      ? "up"
+      : coverTrend?.direction === "flat"
+        ? "flat"
+        : null;
+  const reefBreakdown = buildReefBreakdown({
+    state: atlasLoc.state,
+    coral: { coverNow, series: projectionDataPoints, direction: coralDirection },
+    thermal: { dhw: dhwValue ?? null, alert: thermal ? thermalAlert : null },
+    fishing: {
+      mpaStatus: reefPressure?.mpaStatus ?? null,
+      effort: locationFishing.effort,
+      trend: locationFishing.trend,
+      detail: fishing?.sub ?? null,
+    },
+    citedManualState: reefStateSources.length > 0,
+  });
+
   // GCRMN regional context, drawn as one faint horizontal reference line at the
   // region's most recent average cover — "this reef vs its region" — instead of
   // a second time series on a mismatched axis. Shown whenever the region has a
@@ -918,6 +944,7 @@ export default async function LocationPage({
         biomassDataPoints={biomassDataPoints}
         biomassSourceLabel={biomassSourceLabel}
         reefStateSources={reefStateSources}
+        reefBreakdown={reefBreakdown}
         siteFishBasis={siteFishBasis}
         fishingPressure={fishingPressureData}
         waterQualityEvents={waterQualityEvents}
