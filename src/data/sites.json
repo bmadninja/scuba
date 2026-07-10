@@ -577947,5 +577947,1007 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Diving inside Kornati National Park requires a permit and a licensed operator. The wall is deep and best suited to experienced divers; plan depth and gas carefully."
+  },
+  {
+    "id": "statia-st-eustatius-the-aquarium",
+    "slug": "statia-st-eustatius-the-aquarium",
+    "locationId": "statia-st-eustatius",
+    "name": "The Aquarium",
+    "heroImageUrl": null,
+    "lat": 17.473,
+    "lng": -62.973,
+    "description": "A nutrient-dense shallow reef dominated by volcanic pinnacles and lava bombs encrusted with vibrant sponges and corals. Named for its abundance of schooling fish and macro life, this site excels for turtle encounters and macro photography, with resident octopus and numerous crustaceans in rocky crevices.",
+    "depthRange": {
+      "min": 14,
+      "max": 18
+    },
+    "skillLevel": "never-dived",
+    "diveTypes": [
+      "coral",
+      "macro",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Hawksbill Sea Turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Caribbean Reef Octopus",
+        "scientificName": "Octopus briareus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Seahorse",
+        "scientificName": "Hippocampus erectus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Scorpionfish",
+        "scientificName": "Scorpaena plumieri",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "commonName": "Great Barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green Moray Eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowtail Snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 24,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full suit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full suit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 26,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full suit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 29
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm or tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 23,
+          "max": 27
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 22,
+          "max": 26
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 24
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 21,
+          "max": 26
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 23,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm or tropical wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 24,
+          "max": 29
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm full suit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 72,
+    "getThere": "Fly to St. Eustatius airport (Roosevelt Field), located 2.5 km from Oranjestad town center. Most divers book with local operators: Golden Rock Dive Center (at Golden Rock Resort) or Scubaqua Dive Center (near airport). All 36 marine park sites are reachable within 5-15 minutes by boat from the dock.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "The Aquarium is located within St. Eustatius National Marine Park and is protected under STENAPA regulations. All dives require authorized mooring buoys. Site is excellent for macro photography and beginner divers seeking turtle encounters. Hurricane season risk June-November; diving possible year-round but best December-April."
+  },
+  {
+    "id": "sail-rock-southwest-pinnacle-samran-pinnacle",
+    "slug": "sail-rock-southwest-pinnacle-samran-pinnacle",
+    "locationId": "sail-rock-southwest-pinnacle",
+    "name": "Samran Pinnacle",
+    "heroImageUrl": null,
+    "lat": 9.93,
+    "lng": 100.05,
+    "description": "Granite pinnacles rising from 9m to 28m depth, hidden between Sail Rock and Koh Tao. Advanced site featuring massive schools of barracuda, groupers, and sea fans. Open ocean location with excellent pelagic encounters and whale shark sightings during spring.",
+    "depthRange": {
+      "min": 9,
+      "max": 28
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Chevron Barracuda",
+        "scientificName": "Sphyraena qenie",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whale Shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Brown Marbled Grouper",
+        "scientificName": "Epinephelus fuscoguttatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellowback Fusilier",
+        "scientificName": "Caesio teres",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "White-eye Moray Eel",
+        "scientificName": "Uropterygius macrocephalus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Pink Anemone Fish",
+        "scientificName": "Amphiprion perideraion",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 28,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5
+    ],
+    "editorialRank": 75,
+    "getThere": "Boat transfer from Koh Tao (approximately 25 minutes) or Koh Phangan. Nearest airport: Surat Thani International Airport (45 km north). Day trip transfers available from major islands.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Unmarked dive site without surface buoy; requires GPS coordinates for location. Open ocean exposure means stronger currents than coastal sites. Advanced diver certification required. Abandoned fishing nets may be present."
+  },
+  {
+    "id": "sao-tome-sao-tome-and-principe-lagoa-azul",
+    "slug": "sao-tome-sao-tome-and-principe-lagoa-azul",
+    "locationId": "sao-tome-sao-tome-and-principe",
+    "name": "Lagoa Azul",
+    "heroImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Lagoa_Azul_%28S%C3%A3o_Tom%C3%A9%29_%281%29.jpg/1280px-Lagoa_Azul_%28S%C3%A3o_Tom%C3%A9%29_%281%29.jpg",
+    "lat": 0.4062,
+    "lng": 6.6102,
+    "description": "A crystalline bay in northern São Tomé featuring a seahorse sanctuary where divers regularly encounter dozens of seahorses among seagrass meadows. Unique thermocline creates dramatic temperature transitions from tropical to temperate waters. Rich coral gardens with endemic species and colorful reef fish.",
+    "depthRange": {
+      "min": 10,
+      "max": 25
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Seahorse",
+        "scientificName": "Hippocampus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Moray Eel",
+        "scientificName": "Muraenidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grouper",
+        "scientificName": "Serranidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Snapper",
+        "scientificName": "Lutjanidae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Parrotfish",
+        "scientificName": "Scaridae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3mm) or rashguard"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3mm) or rashguard"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3mm) or rashguard"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 24
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical to light wetsuit (3-5mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Light wetsuit (5mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 23,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Light wetsuit (5mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 24
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Light wetsuit (5mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 23
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Light wetsuit (5mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 25,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 23
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical to light wetsuit (3-5mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 26
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 30
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Tropical wetsuit (3mm) or rashguard"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 75,
+    "getThere": "Fly into São Tomé International Airport (TMS). Northern coast is 4 km from Guadalupe town. Most dive operators offer boat transfers from the main harbor (10-15 minutes by boat).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Part of Parque Natural Obô de São Tomé. Notable thermocline feature where divers experience transition from tropical to temperate waters due to current convergence. Seagrass meadows support seahorse sanctuary. Vibrant endemic fish species. No decompression chamber on island; diving limited to 30m maximum depth for safety."
+  },
+  {
+    "id": "derawan-archipelago-indonesia-maratua-the-channel",
+    "slug": "derawan-archipelago-indonesia-maratua-the-channel",
+    "locationId": "derawan-archipelago-indonesia",
+    "name": "The Channel (Big Fish Country)",
+    "heroImageUrl": null,
+    "lat": 2.25,
+    "lng": 118.57,
+    "description": "Maratua Atoll's premier drift dive through a narrow reef channel, famous for massive barracuda tornado formations and prolific pelagic encounters including hammerheads, threshers, and tuna. Strong tidal flows concentrate marine life against sheer coral walls.",
+    "depthRange": {
+      "min": 25,
+      "max": 30
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "drift"
+    ],
+    "species": [
+      {
+        "commonName": "Barracuda, Chevron",
+        "scientificName": "Sphyraena qenie",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Shark, Grey Reef",
+        "scientificName": "Carcharhinus amblyrhynchos",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Shark, White-tip Reef",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Trevally, Giant",
+        "scientificName": "Caranx ignobilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Shark, Hammerhead",
+        "scientificName": "Sphyrna mokarran",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Shark, Thresher",
+        "scientificName": "Alopias superciliosus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Tuna, Yellowfin",
+        "scientificName": "Thunnus albacares",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Grouper, Giant",
+        "scientificName": "Epinephelus lanceolatus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 24
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or lycra"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Lycra suit or 3mm shorty"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 22,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Lycra suit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 22,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Lycra suit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 22,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Lycra suit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 22,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Lycra suit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Lycra suit or 3mm shorty"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 26
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or lycra"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 24
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 82,
+    "getThere": "Nearest airport: Balikpapan (BPN), East Kalimantan. Ground transfer to Derawan Town (4-6 hours), then speedboat to Maratua Island (45 min-1 hour). Most divers access via liveaboard from Derawan or stay at Maratua-based resorts.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Strong currents require advanced experience; 100+ logged dives recommended. Dive only during slack high tide window. Resorts close January due to rough monsoon conditions. Hire local guides familiar with precise tidal timing. Site fully exposed to ocean swells and may be undiveable in poor weather."
   }
 ]
