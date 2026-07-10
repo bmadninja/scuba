@@ -988,6 +988,22 @@ export type ThermalStress = {
   sstAnomalyC?: number;
   /** HotSpot value (°C above the warmest monthly mean). */
   hotspotC?: number;
+  /**
+   * Observed monthly SST history (NOAA CRW CoralTemp monthly), trailing ~10
+   * whole years, stored compactly as a start month plus one value per
+   * following month (`monthlyC[i]` ⇒ `start` + i months; null = a masked/gap
+   * month). Display only — powers the "water temperature over time" chart.
+   * NEVER an input to reef state.
+   */
+  sstSeries?: { start: string; monthlyC: (number | null)[] };
+  /** Most recent monthly SST (°C). Powers the Heat modal's "around X°C now". */
+  sstCurrentC?: number;
+  /**
+   * The usual SST for the current season (°C) — the mean of the current
+   * calendar month across `sstSeries`. Powers the modal's "usual Z°C". Shown,
+   * not scored.
+   */
+  sstClimatologyC?: number;
   sourceIds: string[];
   /**
    * Provenance of this thermal-stress reading. "noaa-crw-live" means the

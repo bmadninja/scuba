@@ -25,6 +25,36 @@ test.describe('Location page — reef condition section', () => {
     await expect(section.getByRole('img').first()).toBeVisible();
   });
 
+  test('renders the "Water temperature over time" chart with a trend read', async ({ page }) => {
+    await page.goto(ARI, GOTO);
+    const section = page.locator('#reef-condition');
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    // The temperature-over-time surface: heading, the plain warming/stable read,
+    // and the inline SVG chart (its own descriptive aria-label). Ari Atoll has a
+    // stored monthly SST series, so all three render.
+    await expect(section.getByText('Water temperature over time')).toBeVisible();
+    await expect(section.getByText(/the water here (is|has)/i)).toBeVisible();
+    await expect(
+      section.getByRole('img', { name: /water temperature history/i }),
+    ).toBeVisible();
+  });
+
+  test('Heat modal shows a live current-vs-usual temperature readout', async ({ page }) => {
+    await page.goto(ARI, GOTO);
+    const section = page.locator('#reef-condition');
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    // The "Heat right now" factor carries an info button; opening it reveals the
+    // live readout sourced from the real SST fields ("Around X°C now … usual Z°C").
+    const heatBlock = section
+      .locator('div')
+      .filter({ has: page.getByText('Heat right now') })
+      .last();
+    await heatBlock.getByRole('button').first().click();
+    await expect(
+      page.getByText(/Around \d+°C now,.*usual \d+°C for the season/i),
+    ).toBeVisible();
+  });
+
   test('shows the Reef state metric with a label', async ({ page }) => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');

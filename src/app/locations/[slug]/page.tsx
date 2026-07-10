@@ -14,6 +14,7 @@ import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
 import { getReefFishAbundanceSeriesByLocationId } from "@/lib/data/reef-fish-abundance-series";
 import { getAgrraReefSeriesByLocationId } from "@/lib/data/agrra-reef-series";
 import { getFishBiomassSeriesByLocationId } from "@/lib/data/fish-biomass-series";
+import { getWaterTempSummary } from "@/lib/data/water-temp";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
 import { getFishAbundanceSeriesByLocationId } from "@/lib/data/fish-abundance-series";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
@@ -46,6 +47,7 @@ import type {
 } from "./location-page-body";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
 import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
+import type { WaterTempDataPoint } from "@/components/water-temp-chart";
 import type { BleachingAlertLevel, CoralCoverSeriesPoint, MpaStatus, PartnerLink, ReefHealthRecord } from "@/lib/data/types";
 
 // ---------------------------------------------------------------------------
@@ -72,11 +74,15 @@ function fishingPill(mpa: MpaStatus | null, pressure: string | null): ConditionP
   if (mpa === "designated-multi-use") {
     return { label: "Limited", tone: "warm", sub: "Some fishing allowed in zones" };
   }
-  // No formal protection — fall back to the pressure read.
-  if (pressure === "low") return { label: "Light", tone: "good", sub: "Low fishing pressure" };
-  if (pressure === "moderate") return { label: "Open", tone: "warm", sub: "Some fishing pressure" };
+  // No formal protection — fall back to the measured read. This comes from
+  // Global Fishing Watch vessel tracking, which only sees commercial vessels
+  // broadcasting AIS and is blind to the small-scale and artisanal fishing that
+  // dominates most reefs, so the sublabel names the commercial signal honestly
+  // rather than claiming total fishing pressure.
+  if (pressure === "low") return { label: "Light", tone: "good", sub: "Little commercial vessel activity" };
+  if (pressure === "moderate") return { label: "Open", tone: "warm", sub: "Some commercial vessel activity" };
   if (pressure === "high" || pressure === "very-high") {
-    return { label: "Open", tone: "warm", sub: "Heavy fishing pressure" };
+    return { label: "Open", tone: "warm", sub: "Heavy commercial vessel activity" };
   }
   return null;
 }
@@ -445,35 +451,50 @@ export default async function LocationPage({
 
   const thermalAlert: BleachingAlertLevel = thermal?.alertLevel ?? "no-stress";
 
-  // Derive a plain "around X now, about Y above the usual Z" line from real data.
-  // We have an SST anomaly (current vs the seasonal climatology) but no absolute
-  // current SST, so we read the current month's typical water temp from the site
-  // conditions and treat usual = current − anomaly.
-  const currentMonthTemps = sites.flatMap((s) =>
-    (s.conditionsByMonth ?? [])
-      .filter((c) => c.month === currentMonth && c.waterTempC !== null)
-      .map((c) => c.waterTempC ? (c.waterTempC.min + c.waterTempC.max) / 2 : null)
-      .filter((t): t is number => t !== null),
-  );
-  const currentTempC =
-    currentMonthTemps.length > 0
-      ? Math.round(currentMonthTemps.reduce((a, b) => a + b, 0) / currentMonthTemps.length)
-      : null;
+  // Observed water-temperature history + "now vs usual" figures from the stored
+  // monthly SST series (NOAA CRW). Display only — never an input to reef state.
+  const waterTemp = getWaterTempSummary(thermal);
+  // NOAA daily SST anomaly, still the basis for the "Normal" heat-pill override.
   const anomalyC = thermal?.sstAnomalyC ?? null;
-  const usualTempC =
-    currentTempC !== null && anomalyC !== null
-      ? Math.round(currentTempC - anomalyC)
-      : null;
 
-  // Heat label logic, escalating with the NOAA alert level. "Normal" when the
-  // anomaly is small and no stress is flagged; "Warmer than usual" when elevated;
-  // bleaching-alert wording at the higher levels.
+  // Derive a plain "around X now, about Y above the usual Z" line. Preferred and
+  // genuinely live: the actual current SST and the seasonal-usual SST from the
+  // monthly series. Fallback for reefs with no series yet: the site's typical
+  // water temp for the month, with usual = current − anomaly (the old estimate).
+  let currentTempC: number | null = null;
+  let usualTempC: number | null = null;
+  if (waterTemp?.currentC != null && waterTemp?.climatologyC != null) {
+    currentTempC = Math.round(waterTemp.currentC);
+    usualTempC = Math.round(waterTemp.climatologyC);
+  } else {
+    const currentMonthTemps = sites.flatMap((s) =>
+      (s.conditionsByMonth ?? [])
+        .filter((c) => c.month === currentMonth && c.waterTempC !== null)
+        .map((c) => c.waterTempC ? (c.waterTempC.min + c.waterTempC.max) / 2 : null)
+        .filter((t): t is number => t !== null),
+    );
+    const est =
+      currentMonthTemps.length > 0
+        ? Math.round(currentMonthTemps.reduce((a, b) => a + b, 0) / currentMonthTemps.length)
+        : null;
+    const anomaly = thermal?.sstAnomalyC ?? null;
+    currentTempC = est;
+    usualTempC = est !== null && anomaly !== null ? Math.round(est - anomaly) : null;
+  }
+
+  // Heat modal readout: "around X°C now vs the usual Z°C for the season". When
+  // both real SST figures are present the difference is measured directly;
+  // otherwise it falls back to the stored anomaly.
   let heatDetail: string | null = null;
-  if (currentTempC !== null && usualTempC !== null && anomalyC !== null) {
-    const diff = Math.round(Math.abs(anomalyC));
-    if (currentTempC === usualTempC || Math.abs(anomalyC) < 0.5) {
+  if (currentTempC !== null && usualTempC !== null) {
+    const signedDiff =
+      waterTemp?.currentC != null && waterTemp?.climatologyC != null
+        ? waterTemp.currentC - waterTemp.climatologyC
+        : (thermal?.sstAnomalyC ?? currentTempC - usualTempC);
+    const diff = Math.round(Math.abs(signedDiff));
+    if (diff === 0 || Math.abs(signedDiff) < 0.5) {
       heatDetail = `Around ${currentTempC}°C now, about the usual ${usualTempC}°C for the season.`;
-    } else if (anomalyC > 0) {
+    } else if (signedDiff > 0) {
       heatDetail = `Around ${currentTempC}°C now, about ${diff}°C above the usual ${usualTempC}°C for the season.`;
     } else {
       heatDetail = `Around ${currentTempC}°C now, about ${diff}°C below the usual ${usualTempC}°C for the season.`;
@@ -656,6 +677,17 @@ export default async function LocationPage({
         ? `AGRRA ${agrraSeries.country} national average`
         : `AGRRA fish transects within ${Math.round((agrraSeries.radiusDeg ?? 0.75) * 111)} km`;
   }
+
+  // Water-temperature-over-time chart points: annual-mean SST from the stored
+  // monthly series. Display only — the temperature analogue of the coral and
+  // biomass charts. Rendered only when a 2+ year series is on file; absent
+  // reefs simply show no chart. A warming trend never touches the reef state.
+  const waterTempDataPoints: WaterTempDataPoint[] =
+    waterTemp?.annual.map((p) => ({ year: p.year, tempC: p.tempC })) ?? [];
+  const waterTempSourceLabel = waterTemp?.sourceLabel ?? null;
+  // Plain "warming" vs "stable" read shown beside coral cover.
+  const waterTempTrend = waterTemp?.trend ?? null;
+  const waterTempChangePerDecade = waterTemp?.changePerDecadeC ?? null;
 
   // GFW measured fishing effort (apparent-fishing-hours within the query
   // radius), with the derived band and trend for the location panel.
@@ -917,6 +949,10 @@ export default async function LocationPage({
         coralContextLabel={coralContextLabel}
         biomassDataPoints={biomassDataPoints}
         biomassSourceLabel={biomassSourceLabel}
+        waterTempDataPoints={waterTempDataPoints}
+        waterTempSourceLabel={waterTempSourceLabel}
+        waterTempTrend={waterTempTrend}
+        waterTempChangePerDecade={waterTempChangePerDecade}
         reefStateSources={reefStateSources}
         siteFishBasis={siteFishBasis}
         fishingPressure={fishingPressureData}

@@ -14,6 +14,8 @@ import { FishAbundanceChart } from "@/components/fish-abundance-chart";
 import type { FishAbundancePoint } from "@/components/fish-abundance-chart";
 import { FishBiomassChart } from "@/components/fish-biomass-chart";
 import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
+import { WaterTempChart } from "@/components/water-temp-chart";
+import type { WaterTempDataPoint } from "@/components/water-temp-chart";
 import { FishingEffortTrend } from "@/components/fishing-effort-trend";
 import type { BlueParkAward, FishAbundanceSeriesRecord } from "@/lib/data/types";
 
@@ -173,6 +175,12 @@ export type LocationBodyProps = {
   // Reef-fish-biomass-over-time chart points (real Reef Life Survey transects)
   biomassDataPoints: BiomassDataPoint[];
   biomassSourceLabel: string | null;
+  // Water-temperature-over-time chart points (annual-mean SST, NOAA CRW)
+  waterTempDataPoints: WaterTempDataPoint[];
+  waterTempSourceLabel: string | null;
+  // Plain warming/stable read + rate, shown beside coral cover. Display only.
+  waterTempTrend: "warming" | "stable" | null;
+  waterTempChangePerDecade: number | null;
   // Cited sources behind a hand-reviewed reef-state verdict (peer-reviewed / award)
   reefStateSources: { label: string; url: string | null }[];
   // Per-site indicator-fish basis line under the verdict (e.g. Tubbataha SPR)
@@ -377,6 +385,10 @@ export function LocationPageBody(props: LocationBodyProps) {
     coralContextLabel,
     biomassDataPoints,
     biomassSourceLabel,
+    waterTempDataPoints,
+    waterTempSourceLabel,
+    waterTempTrend,
+    waterTempChangePerDecade,
     reefStateSources,
     siteFishBasis,
     heat,
@@ -640,6 +652,49 @@ export function LocationPageBody(props: LocationBodyProps) {
                       sourceLabel={coralChartSourceLabel ?? coralSourceLabel ?? undefined}
                       contextValue={coralContextValue ?? undefined}
                       contextLabel={coralContextLabel ?? undefined}
+                    />
+                  </div>
+                ) : null}
+
+                {/* Water temperature over time. Annual-mean satellite SST beside
+                    coral cover, carrying the plain "warming vs stable" read.
+                    Display only — a warming trend never sets the reef state. */}
+                {waterTempDataPoints.length >= 2 ? (
+                  <div style={{ padding: "0.75rem 1.25rem 1.25rem", borderTop: "1px solid #E7E6E2" }}>
+                    <p style={{
+                      fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#4A5568",
+                      marginBottom: "0.35rem",
+                    }}>
+                      Water temperature over time
+                    </p>
+                    {waterTempTrend ? (
+                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45, margin: "0 0 0.2rem" }}>
+                        {waterTempTrend === "warming" ? (
+                          <>
+                            The water here is{" "}
+                            <span style={{ color: "#C4622D" }}>warming</span>
+                            {waterTempChangePerDecade
+                              ? `, about ${waterTempChangePerDecade.toFixed(1)}°C per decade.`
+                              : "."}
+                          </>
+                        ) : (
+                          <>The water here has stayed <strong>stable</strong> over the past decade.</>
+                        )}
+                      </p>
+                    ) : null}
+                    <p style={{ fontSize: "0.75rem", color: "#4A5568", margin: "0 0 0.75rem", lineHeight: 1.5 }}>
+                      Annual average sea surface temperature from satellite. Shown
+                      for context, it does not set the reef state.
+                    </p>
+                    <WaterTempChart
+                      locationName={locationName}
+                      dataPoints={waterTempDataPoints}
+                      sourceLabel={waterTempSourceLabel ?? undefined}
                     />
                   </div>
                 ) : null}
