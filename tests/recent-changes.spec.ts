@@ -116,18 +116,16 @@ test.describe('Location page — reef condition info popups', () => {
     await expect(dialog).toContainText(/what the reef labels mean/i);
   });
 
-  test('Bleaching risk "Heat right now" (i) opens the NOAA heat explainer', async ({ page }) => {
+  test('the Heat row shows a plain verdict, never the word "Watch"', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`);
     await page.waitForLoadState('networkidle');
-    // The redesigned reef-health panel carries the heat readout on the
-    // "Bleaching risk" row, via an info button labelled "Heat right now".
-    const trigger = page.getByRole('button', { name: 'Heat right now' }).first();
-    await expect(trigger).toBeVisible({ timeout: 15_000 });
-    await trigger.evaluate((el) => el.scrollIntoView({ block: 'center' }));
-    await trigger.click();
-    const dialog = page.getByRole('dialog');
-    await expect(dialog).toBeVisible({ timeout: 5_000 });
-    await expect(dialog).toContainText(/NOAA Coral Reef Watch/i);
+    const section = page.locator('#reef-condition');
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    // The final card carries the heat read as a plain verdict on the Heat row
+    // (Safe now / Warming / Bleaching now) — never NOAA jargon or the word "Watch".
+    await expect(section.getByText('Heat', { exact: true })).toBeVisible();
+    await expect(section.getByText(/Safe now|Warming|Bleaching now/)).toBeVisible();
+    await expect(section.getByText('Watch', { exact: true })).toHaveCount(0);
   });
 });
 

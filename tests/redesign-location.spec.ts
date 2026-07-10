@@ -13,42 +13,40 @@ const GOTO = { waitUntil: 'domcontentloaded' } as const;
 const ARI = '/locations/ari-atoll-maldives';
 
 test.describe('Location page — reef condition section', () => {
-  test('renders the "How this reef is doing" panel with the coral-cover chart', async ({ page }) => {
+  test('renders the "How this reef is doing" card led by the reef-state verdict', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    // The section keeps its id="reef-condition"; the redesign titles it
-    // "How this reef is doing" and leads with the four pillar rows.
+    // The section keeps its id="reef-condition"; the final card titles it
+    // "How this reef is doing", leads with the verdict, and lists four rows.
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
     await expect(section.getByRole('heading', { name: 'How this reef is doing' })).toBeVisible();
-    await expect(section.getByText('Coral health', { exact: true })).toBeVisible();
-    // The coral row chart is an inline SVG with role="img" and a live coral-cover label.
-    await expect(section.getByRole('img', { name: /live coral cover history/i })).toBeVisible();
-  });
-
-  test('renders the four pillar rows with self-labelled charts', async ({ page }) => {
-    await page.goto(ARI, GOTO);
-    const section = page.locator('#reef-condition');
-    await expect(section).toBeVisible({ timeout: 15_000 });
-    // The four verdict rows: coral health, fish biodiversity, bleaching risk, fishing.
-    // (The "Bleaching risk" title shares its line with an info button, so it is
-    // asserted via its unique on-chart labels below rather than exact text.)
-    await expect(section.getByText('Fish biodiversity', { exact: true })).toBeVisible();
+    await expect(section.getByRole('link', { name: /how we measure this/i })).toBeVisible();
+    // The four pillar rows.
+    await expect(section.getByText('Coral cover', { exact: true })).toBeVisible();
+    await expect(section.getByText('Fish life', { exact: true })).toBeVisible();
     await expect(section.getByText('Fishing', { exact: true })).toBeVisible();
-    // The bleaching-risk bar carries its accumulated-heat-stress threshold on-chart.
-    await expect(section.getByText(/accumulated heat stress/i)).toBeVisible();
-    await expect(section.getByText(/bleaching begins/i)).toBeVisible();
   });
 
-  test('Heat readout on the Bleaching risk row shows current-vs-usual temperature', async ({ page }) => {
+  test('the card leads with a verdict and consolidates sources into one line', async ({ page }) => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    // The "Bleaching risk" row carries an info button labelled "Heat right now";
-    // opening it reveals the live readout from the real SST fields.
-    await section.getByRole('button', { name: 'Heat right now' }).click();
-    await expect(
-      page.getByText(/Around \d+°C now,.*usual \d+°C for the season/i),
-    ).toBeVisible();
+    // The overall reef-state verdict word (any of the four labels). A pillar row
+    // can repeat the word, so assert at least one is visible.
+    await expect(section.getByText(/^(Improving|Stable|Declining|Not surveyed)$/).first()).toBeVisible();
+    // There is no per-site confidence badge chip.
+    await expect(section.getByText(/of 4 signals on file/i)).toHaveCount(0);
+    // One consolidated source line at the foot of the card.
+    await expect(section.getByText(/^Sources ·/)).toBeVisible();
+  });
+
+  test('the Heat row shows a plain verdict, never the word "Watch"', async ({ page }) => {
+    await page.goto(ARI, GOTO);
+    const section = page.locator('#reef-condition');
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    await expect(section.getByText('Heat', { exact: true })).toBeVisible();
+    await expect(section.getByText(/Safe now|Warming|Bleaching now/)).toBeVisible();
+    await expect(section.getByText('Watch', { exact: true })).toHaveCount(0);
   });
 
   test('shows the Reef state metric with a label', async ({ page }) => {

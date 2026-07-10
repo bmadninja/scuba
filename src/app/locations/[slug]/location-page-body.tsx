@@ -202,16 +202,9 @@ export type LocationBodyProps = {
   reefStateLabel: string;
   reefStateColor: string;
   reefStateSub: string;
-  // R2: per-site confidence badge (weakest tier among the label-setting pillars),
-  // plus the honest "N of 4 signals on file" count. null when Not surveyed.
-  reefConfidence: {
-    badge: "A" | "B" | "C" | "D";
-    badgeLabel: string;
-    onFile: number;
-    missing: string[];
-  } | null;
-  // Redesign: the four self-labelled pillar rows for the reef-health panel.
+  // The four pillar rows + one consolidated source line for the reef-health card.
   reefRows: ReefHealthRows;
+  reefSourceLine: string;
   hasReefData: boolean;
   // Species
   species: SpeciesCard[];
@@ -271,6 +264,13 @@ const DATA_FRESHNESS: React.CSSProperties = {
   color: "#4A5568",
   marginTop: "0.25rem",
 };
+
+// User-facing copy carries no hyphens (Josie voice). De-hyphenate compound words
+// (e.g. "soft-coral" -> "soft coral") while leaving em dashes and number ranges
+// alone. Only splits a hyphen sitting between two letters.
+function deHyphen(text: string): string {
+  return text.replace(/([A-Za-z])-([A-Za-z])/g, "$1 $2");
+}
 
 // Render **wrapped** spans in a reef-state basis as bold, in the "improving"
 // green, so the key protection figures stand out. Plain text passes through.
@@ -370,7 +370,6 @@ export function LocationPageBody(props: LocationBodyProps) {
     sightingSites,
     intro,
     conditionSentence,
-    reefStateSources,
     heat,
     verdictBasis,
     waterQualityEvents,
@@ -378,8 +377,8 @@ export function LocationPageBody(props: LocationBodyProps) {
     divingOutlook,
     reefStateLabel,
     reefStateColor,
-    reefConfidence,
     reefRows,
+    reefSourceLine,
     hasReefData,
     species,
     threatenedStats,
@@ -429,15 +428,10 @@ export function LocationPageBody(props: LocationBodyProps) {
             <ReefHealthPanel
               reefStateLabel={reefStateLabel}
               reefStateColor={reefStateColor}
-              confidence={reefConfidence}
-              reefStateSources={reefStateSources}
-              verdictBasis={verdictBasis ? emphasizeBasis(verdictBasis) : (divingOutlook ?? conditionSentence)}
-              coral={reefRows.coral}
-              fish={reefRows.fish}
-              bleaching={reefRows.bleaching}
-              fishing={reefRows.fishing}
+              verdictBasis={verdictBasis ? emphasizeBasis(deHyphen(verdictBasis)) : (divingOutlook ? deHyphen(divingOutlook) : conditionSentence)}
+              rows={reefRows}
+              sourceLine={reefSourceLine}
               onStateInfo={() => setInfo("state")}
-              onHeatInfo={() => setInfo("heat")}
             />
           ) : null}
 

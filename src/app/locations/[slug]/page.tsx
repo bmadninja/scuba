@@ -26,9 +26,8 @@ import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import { STATE_TEXT, STATE_COLOR, bestMonthsText, computeReefState } from "@/lib/data/reef-state";
-import { getReefConfidence, TIER_LABEL } from "@/lib/data/reef-confidence";
 import { biomassStanding } from "@/lib/data/biomass-standing";
-import type { ReefHealthRows } from "@/components/reef-health-panel";
+import type { ReefHealthRows, VerdictWord } from "@/components/reef-health-panel";
 import { LocationPageBody } from "./location-page-body";
 import { HeroGallery } from "@/components/hero-gallery";
 import type {
@@ -582,27 +581,6 @@ export default async function LocationPage({
         }))
       : [];
 
-  // R2 — per-site confidence badge. The badge tier is the weakest among the
-  // pillars that set the label; the honest count names which of the four
-  // pillars are on file and which state pillar is still missing.
-  const confidence = getReefConfidence(location.id);
-  const confPillarsOnFile =
-    (confidence.coral !== null ? 1 : 0) +
-    (confidence.biomass !== null ? 1 : 0) +
-    (reefHealth?.thermalStress ? 1 : 0) +
-    1; // fishing pressure is universal (gravity/editorial fallback)
-  const confMissing: string[] = [];
-  if (confidence.coral === null) confMissing.push("coral cover");
-  if (confidence.biomass === null) confMissing.push("fish life");
-  const reefConfidence =
-    atlasLoc.state === "unknown"
-      ? null
-      : {
-          badge: confidence.badge,
-          badgeLabel: TIER_LABEL[confidence.badge],
-          onFile: confPillarsOnFile,
-          missing: confMissing,
-        };
 
   // Coral-cover chart points. Prefer a real multi-year survey series when one
   // is on file: every year becomes a point and the chart draws a genuine trend.
@@ -729,119 +707,134 @@ export default async function LocationPage({
         }
       : null;
 
-  // ── Reef-health panel rows (redesign) ────────────────────────────────────
-  // Verdict-leads, chart-carries-the-numbers presentation over the SAME readers
-  // that build the label (computeReefState, biomass-standing, fishing). Each row
-  // carries a plain verdict word + the chart data that drives it.
+  // ── Reef-health card rows (final design) ─────────────────────────────────
+  // Verdict-leads presentation over the SAME readers that build the label
+  // (computeReefState lower-of-two, biomass-standing, fishing). Every row's
+  // visual is driven by the same value as its verdict, so they never disagree;
+  // units and jargon live only behind "How we measure this".
   const GREEN = STATE_COLOR.thriving;
   const AMBER = STATE_COLOR.pressure;
   const RED = STATE_COLOR.change;
   const pillars = computeReefState(location.id);
 
-  // Coral health — cover line + verdict + trend arrow.
-  const coralPoints =
-    projectionDataPoints.length > 0
-      ? projectionDataPoints
-      : pillars.coralCover !== null && surveyYear
-        ? [{ year: surveyYear, pct: Math.round(pillars.coralCover) }]
-        : [];
-  const coralRow: ReefHealthRows["coral"] =
-    pillars.coralCover !== null && coralPoints.length > 0
-      ? {
-          points: coralPoints,
-          verdict:
-            pillars.coralCover < 25
-              ? { word: "Declining", color: RED }
-              : pillars.coralCover >= 40 && !pillars.coralFalling
-                ? { word: "Improving", color: GREEN }
-                : { word: "Stable", color: AMBER },
-          arrow:
-            pillars.coralCoverBefore != null
-              ? pillars.coralCover > pillars.coralCoverBefore
-                ? "up"
-                : pillars.coralCover < pillars.coralCoverBefore
-                  ? "down"
-                  : "flat"
-              : "flat",
-          sourceLabel: coralChartSourceLabel ?? coralSourceLabel ?? "reef surveys",
-          healthyMin: 30,
-          healthyMax: 50,
-        }
-      : null;
+  // Coral cover — the row is driven entirely by the reef-health survey figure
+  // that also drives the verdict (pillars.coralCover), never the proximity
+  // MERMAID series, so the displayed % always matches the verdict.
+  const coralVerdict: VerdictWord =
+    pillars.coralCover === null
+      ? { word: "Stable", color: AMBER }
+      : pillars.coralCover < 25
+        ? { word: "Declining", color: RED }
+        : pillars.coralCover >= 40 && !pillars.coralFalling
+          ? { word: "Improving", color: GREEN }
+          : { word: "Stable", color: AMBER };
+  const coralArrow: "up" | "down" | "flat" =
+    coralVerdict.word === "Improving" ? "up" : coralVerdict.word === "Declining" ? "down" : "flat";
+  // A REAL trend needs 3+ site surveys (the reef-health coralCoverSeries).
+  const coralSeries = observed?.coralCoverSeries ?? null;
+  const hasCoralTrend = !!coralSeries && coralSeries.length >= 3;
+  let coralRow: ReefHealthRows["coral"] = null;
+  if (pillars.coralCover !== null) {
+    const currentPct = Math.round(pillars.coralCover);
+    if (hasCoralTrend && coralSeries) {
+      const points = coralSeries.map((p) => ({ year: p.year, pct: Math.round(p.coralCoverPercent) }));
+      // Pin the "now" endpoint to the verdict value so the chart cannot disagree.
+      points[points.length - 1] = { year: points[points.length - 1].year, pct: currentPct };
+      coralRow = {
+        kind: "trend",
+        points,
+        currentPct,
+        startYear: points[0].year,
+        verdict: coralVerdict,
+        arrow: coralArrow,
+      };
+    } else {
+      coralRow = { kind: "level", pct: currentPct, verdict: coralVerdict };
+    }
+  }
 
-  // Fish biodiversity — biomass vs the gravity-anchored B0 benchmark.
+  // Fish life — graded against the gravity-anchored B0 benchmark. The grade, the
+  // dot (ratio vs the B0 tick) and the subline are all driven by the same ratio,
+  // so they always agree. This is display only; the reef-state label still uses
+  // biomass-standing's sub-score bands unchanged.
   const bio = biomassStanding(location.id);
   const fishRow: ReefHealthRows["fish"] = bio
-    ? {
-        observedKgHa: Math.round(bio.observedKgPerHa),
-        b0KgHa: Math.round(bio.expectedB0KgPerHa),
-        grade: bio.standing >= 0.5 ? "Rich" : bio.standing >= 0.25 ? "Moderate" : "Sparse",
-        gradeColor: bio.standing >= 0.5 ? GREEN : bio.standing >= 0.25 ? AMBER : RED,
-        sourceLabel: "Reef Life Survey · standard M1 transects",
-      }
+    ? (() => {
+        const ratio = bio.observedKgPerHa / bio.expectedB0KgPerHa;
+        if (ratio >= 1.0) {
+          return { grade: "Rich" as const, color: GREEN, ratio, subline: "More fish than a healthy reef of its kind." };
+        }
+        if (ratio >= 0.5) {
+          return { grade: "Moderate" as const, color: AMBER, ratio, subline: "About what a healthy reef of its kind holds." };
+        }
+        return { grade: "Sparse" as const, color: RED, ratio, subline: "Fewer fish than a healthy reef of its kind." };
+      })()
     : null;
 
-  // Bleaching risk — accumulated heat stress (DHW) with a bleaching threshold.
-  const bleachRow: ReefHealthRows["bleaching"] = thermal
-    ? {
-        dhw: dhwValue ?? null,
-        verdict:
-          dhwValue != null
-            ? dhwValue < 4
-              ? { word: "Low", color: GREEN }
-              : dhwValue < 8
-                ? { word: "Watch", color: AMBER }
-                : { word: "High", color: RED }
-            : thermalAlert === "no-stress" || thermalAlert === "watch"
-              ? { word: "Low", color: GREEN }
-              : thermalAlert === "warning"
-                ? { word: "Watch", color: AMBER }
-                : { word: "High", color: RED },
-        nowC: currentTempC,
-        usualC: usualTempC,
-        sourceLabel: "NOAA Coral Reef Watch",
-      }
+  // Heat — verdict word and dot zone are both driven by the NOAA alert level, so
+  // they cannot disagree. Never the word "Watch".
+  const heatRow: ReefHealthRows["heat"] = thermal
+    ? thermalAlert === "no-stress"
+      ? { verdict: { word: "Safe now", color: GREEN }, pos: 0.16, subline: "No unusual heat right now." }
+      : thermalAlert === "watch"
+        ? { verdict: { word: "Warming", color: AMBER }, pos: 0.42, subline: "Warmer than usual right now, but not hot enough to bleach." }
+        : thermalAlert === "warning"
+          ? { verdict: { word: "Warming", color: AMBER }, pos: 0.58, subline: "Warmer than usual right now, but not hot enough to bleach." }
+          : thermalAlert === "alert-1"
+            ? { verdict: { word: "Bleaching now", color: RED }, pos: 0.8, subline: "Hot enough that coral is bleaching now." }
+            : { verdict: { word: "Bleaching now", color: RED }, pos: 0.93, subline: "Hot enough that coral is bleaching now." }
     : null;
 
-  // Fishing — protection verdict + measured boat-activity trend. The soft
-  // "Busy despite protection" treatment is preserved; no MPA is named a failure.
+  // Fishing — protection verdict from the effective read; the dot sits on a
+  // Quiet -> Busy scale from measured effort. Soft "busy despite protection"
+  // wording is kept; no MPA is named a failure.
   const effortBand = locationFishing.effort;
   const reefProtected =
     !!fishing && (fishing.label === "Banned" || fishing.label === "Patrolled" || fishing.label === "Limited");
   const busyDespiteProtection = reefProtected && (effortBand === "high" || effortBand === "very-high");
-  const fishingRow: ReefHealthRows["fishing"] = {
-    verdict: fishing
-      ? fishing.label === "Banned"
-        ? { word: "Protected", color: GREEN }
-        : fishing.label === "Patrolled"
-          ? { word: "Patrolled", color: GREEN }
-          : fishing.label === "Limited"
-            ? { word: "Limited", color: AMBER }
-            : { word: "Open", color: fishing.tone === "good" ? GREEN : AMBER }
-      : { word: "Open", color: AMBER },
-    series: locationFishing.effortSeries.map((p) => ({ year: p.year, hours: p.fishingHours })),
-    busyDespiteProtection,
-    trafficWord:
-      effortBand === "low"
-        ? "Quiet"
-        : effortBand === "moderate"
-          ? "Moderate"
-          : busyDespiteProtection
-            ? "Busy despite protection"
-            : effortBand === "high"
-              ? "Busy"
-              : effortBand === "very-high"
-                ? "Very busy"
-                : "Quiet",
-    sourceLabel: "Global Fishing Watch",
-  };
+  const effortPos =
+    effortBand === "low" ? 0.15 : effortBand === "moderate" ? 0.45 : effortBand === "high" ? 0.72 : effortBand === "very-high" ? 0.9 : 0.15;
+  const fishingRow: ReefHealthRows["fishing"] = fishing
+    ? {
+        verdict:
+          fishing.label === "Banned"
+            ? { word: "Protected", color: GREEN }
+            : fishing.label === "Patrolled"
+              ? { word: "Patrolled", color: GREEN }
+              : fishing.label === "Limited"
+                ? { word: "Limited", color: AMBER }
+                : { word: "Open", color: fishing.tone === "good" ? GREEN : AMBER },
+        pos: effortPos,
+        subline: busyDespiteProtection
+          ? fishing.label === "Banned"
+            ? "Fishing is banned here, though boats are still busy nearby."
+            : "Protected on paper, but boats are still busy nearby."
+          : fishing.label === "Banned"
+            ? "Quiet water, and fishing is fully banned here."
+            : fishing.label === "Patrolled"
+              ? "Quiet water, and the protection is actively patrolled."
+              : fishing.label === "Limited"
+                ? "Some fishing is allowed here, in marked zones."
+                : effortBand === "high" || effortBand === "very-high"
+                  ? "Open to fishing, and the water is busy."
+                  : "Open to fishing, and the water is fairly quiet.",
+      }
+    : null;
 
   const reefRows: ReefHealthRows = {
     coral: coralRow,
     fish: fishRow,
-    bleaching: bleachRow,
+    heat: heatRow,
     fishing: fishingRow,
   };
+
+  // One consolidated source line for the whole card — only the present pillars.
+  const sourceParts: string[] = [];
+  if (coralRow) sourceParts.push("MERMAID and partner coral surveys");
+  if (fishRow) sourceParts.push("Reef Life Survey");
+  if (heatRow) sourceParts.push("NOAA Coral Reef Watch");
+  if (fishingRow) sourceParts.push("Global Fishing Watch and reef gravity");
+  const reefSourceLine = sourceParts.length > 0 ? `Sources · ${sourceParts.join(" · ")}` : "";
 
   // Water quality events: empty for now (no data source wired yet)
   const waterQualityEvents: WaterQualityEvent[] = [];
@@ -1109,8 +1102,8 @@ export default async function LocationPage({
         reefStateLabel={STATE_TEXT[atlasLoc.state]}
         reefStateColor={stateColor}
         reefStateSub={STATE_SUB[atlasLoc.state]}
-        reefConfidence={reefConfidence}
         reefRows={reefRows}
+        reefSourceLine={reefSourceLine}
         hasReefData={hasReefData}
         species={species}
         threatenedStats={threatenedStats}
