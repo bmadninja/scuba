@@ -1,8 +1,8 @@
 ---
-stepsCompleted: [1]
+stepsCompleted: [1, 2]
 inputDocuments: []
 workflowType: 'research'
-lastStep: 2
+lastStep: 3
 research_type: 'technical'
 research_topic: 'Fish Biodiversity Data Sources'
 research_goals: 'Landscape scan of all fish-biodiversity data sources vs. what the repo already has wired; best technical approach to display an area fish biodiversity over time; how to tie the fish-biodiversity signal into the existing reef-health model; data-gap analysis to identify organizations to reach out to for data access.'
@@ -116,6 +116,70 @@ Broad taxonomic and geographic coverage, but effort is **not** standardized — 
 | AquaMaps | **predicted** range | download / GBIF | ✗ **static** | not registered |
 
 _Sources: [MERMAID API](https://mermaid-api.readthedocs.io/_/downloads/en/latest/pdf/), [MERMAID reef-health metrics](https://datamermaid.org/documentation/mermaid-reef-health-metrics), [AquaMaps algorithm & data sources](https://www.aquamaps.org/main/AquaMaps_Algorithm_and_Data_Sources.pdf), [AquaMaps on GBIF](https://www.gbif.org/tool/81356/aquamaps-predicted-range-maps-for-aquatic-species), [NCRMP/NCEI](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:NCRMP-Fish-PRIA), [CoRIS Pacific data](https://www.coris.noaa.gov/monitoring/data_pacific.html), [PIFSC Pacific RAMP](https://origin-apps-pifsc.fisheries.noaa.gov/cred/pacific_ramp.php), [OBIS data access](https://obis.org/data/access/), [OBIS on AWS](https://registry.opendata.aws/obis/), [GBIF SQL downloads](https://techdocs.gbif.org/en/data-use/api-sql-downloads), [EMODnet Biology](https://emodnet.ec.europa.eu/en/biology), [Reef Check Global Reef Tracker](https://www.reefcheck.org/global-reef-tracker/), [Aqualink tracker](https://aqualink.org/tracker), [RLS GBIF dataset](https://www.gbif.org/dataset/38f06820-08c5-42b2-94f6-47cc3e83a54a)._
+
+---
+
+## Integration & Time-Series Mechanics
+
+### The two query shapes for an "over-time-by-area" display
+
+Every viable source reduces to one of two integration patterns, both already proven in the repo's ingest layer:
+
+1. **Spatial-proximity shape** (RLS pattern, `fetch-rls-fish-biomass.mjs`). Draw a bounding box / radius around the location centre (repo uses 0.5° ≈ 55 km), pull every survey with a date inside it, group by year, aggregate per-survey metrics, and emit a yearly mean. Portable to **MERMAID** (`mermaid_get_summary_sampleevents(limit = NULL)` returns every public/public-summary project's sample events **by site and date, with lat/lon — no project ownership required, read-only GET**), and to **GBIF/OBIS** polygon+taxon queries. ([mermaidr accessing project data](https://data-mermaid.github.io/mermaidr/articles/accessing_project_data.html), [MERMAID aggregated views](https://mermaid-api.readthedocs.io/en/latest/aggregated.html))
+2. **Site-code shape** (REEF pattern, `fetch-reef-abundance.mjs`). Maintain a vetted crosswalk `locationId → program zone/site id`, then query one calendar-year window per year. More precise (no proximity smear) but needs a hand-built map per source. Reef Check via **Aqualink's API** fits here (site-keyed).
+
+Both fit the repo's existing pipeline unchanged: **fetch → normalize → write `*-series.json` in `src/data` → typed accessor in `src/lib/data` → register a `source` + `methodology`**. Adding MERMAID fish or NCRMP is a new `fetch-*.mjs` in the exact mold of the RLS script — no new infrastructure, no new dependency.
+
+### Access mechanisms by source (all fit the pipeline)
+
+| Protocol | Sources | Format |
+|---|---|---|
+| Open WFS (OGC) | RLS/AODN, EMODnet Biology | CSV / GML |
+| REST JSON | MERMAID, GBIF, OBIS, iNaturalist | JSON |
+| ERDDAP / OPeNDAP | PIFSC Pacific RAMP, AIMS LTMP | CSV / NetCDF |
+| CSV export | REEF Geographic Area Report | CSV |
+| Documented API | Reef Check (Aqualink) | JSON |
+| Bulk archive | NCRMP (NCEI), OBIS (AWS GeoParquet) | CSV / Parquet |
+
+### The crux: effort standardization decides what you can honestly chart
+
+- **Biomass / abundance sources are already effort-standardized** (fixed transect area, logged survey count): RLS, MERMAID, Reef Check, REEF, NCRMP, PIFSC. A rising line = more fish per unit survey = a real signal. **These are the only sources safe for a clean "fish biodiversity over time" trend.**
+- **Occurrence aggregators are NOT effort-standardized**: GBIF, OBIS, iNaturalist. Detected-richness-over-time rises as more observers show up, so an upward line can be pure observer growth, not more fish. If used temporally, they must be shown as *cumulative detected richness* or normalized by record count, and explicitly caveated — never as a bare "diversity is increasing" claim. Their honest use is a **current-state richness snapshot** ("N fish species recorded near here") and species-list gap-filling.
+
+This confirms the design instinct: build the trend on **observed biomass/abundance**, and treat richness-from-occurrence as a companion snapshot, not a trend line.
+
+---
+
+## Reef-Health Linkage
+
+### How the model actually works today (grounded in `src/lib/data/reef-state.ts`)
+
+`getReefState()` derives one of four states — **Improving / Stable / Declining / Not surveyed** (internal keys `thriving`/`pressure`/`change`/`unknown`) — from exactly three inputs: **coral cover, thermal-stress alert level, and fishing pressure**. Critically:
+
+- **Fish biomass is not an input.** `fish-biomass-series.ts` is explicitly *display-only* ("never a reef-state input"). The fish chart sits beside the coral chart but does not touch the verdict.
+- A location returns **"unknown"** unless it has a coral-cover survey **or** a thermal reading. Fishing pressure alone does not qualify a reef as "surveyed."
+- The model is deliberately conservative: a comment in the RLS ingest states proximity-matched fish data must **never override a hand-reviewed classification**.
+
+### The benchmark that makes a raw kg/ha number mean something
+
+A standing insight from the fisheries-ecology literature (McClanahan, MacNeil et al.) gives published, citable thresholds for reef-fish biomass:
+
+- **Unfished baseline B₀ ≈ 1,150–1,200 kg/ha** (from remote reefs + oldest no-take parks)
+- **~600 kg/ha** — the point where fish diversity begins to decline
+- **300–600 kg/ha** — the sustainable-yield (BMMSY) window
+- Conservation target ~1,150 kg/ha where ecological processes are maintained
+
+([PNAS — critical thresholds](https://www.pnas.org/doi/10.1073/pnas.1106861108), [McClanahan 2018 benchmarks](https://onlinelibrary.wiley.com/doi/10.1111/faf.12268), [global baselines & benchmarks](https://www.researchgate.net/publication/330528804_Global_baselines_and_benchmarks_for_fish_biomass_Comparing_remote_reefs_and_fisheries_closures))
+
+**This likely answers the open "biodiversity benchmark question" directly:** the benchmark is **B₀ (~1,150 kg/ha)**. An RLS/MERMAID value of, say, 140 kg/ha stops being a floating number and becomes *"~12% of an unfished reef"* — an honest, sourced, protection-works frame that needs no modeled data at all.
+
+### Two integration options
+
+**Option A — Keep fish display-only, add benchmark context (low risk).** Chart RLS + MERMAID biomass beside coral, annotated against B₀ and the 600 kg/ha diversity threshold. The coral-driven verdict is untouched; no proximity match can corrupt a curated state. This is the safe default and already a UX upgrade.
+
+**Option B — Let fish *rescue* "Not surveyed", bounded (higher value).** Because the model returns "unknown" without a coral or thermal reading, a site with strong RLS/MERMAID fish transects but no coral survey is labelled "Not surveyed" today — even though a fish transect *is* eyes underwater. The cleanest promotion: **let an effort-standardized fish survey satisfy the "surveyed" condition and set a state where coral is silent**, using the biomass thresholds to tier it. Guardrail, per the repo's own rule: fish informs the verdict **only where coral is absent**, or nudges within a band — it never overrides a hand-reviewed coral classification.
+
+**Recommended path:** ship **A** now (it's the benchmark the UX flow is asking for, and it unblocks the design without touching state logic), then evaluate **B** as a scoped enhancement once MERMAID fish coverage is in and you can see how many "Not surveyed" tropical sites it would rescue.
 
 ---
 
