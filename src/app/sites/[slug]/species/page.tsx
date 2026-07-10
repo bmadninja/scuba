@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
+import { getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
@@ -197,10 +197,10 @@ function resolvePhoto(
   return global?.imageUrl;
 }
 
+// Per-site species lists (~1,300) aren't in the sitemap; render on first
+// visit instead of at build time (cached statically after).
 export function generateStaticParams() {
-  return getAllSites()
-    .filter((s) => s.species && Array.isArray(s.species) && s.species.length > 0)
-    .map((s) => ({ slug: s.slug }));
+  return [];
 }
 
 export async function generateMetadata({

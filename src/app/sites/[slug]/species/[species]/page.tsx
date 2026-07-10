@@ -19,20 +19,11 @@ function slugifySpecies(name: string): string {
   return name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
 }
 
+// ~10,000 site×species combinations exist; prerendering them all made
+// `next build` the dominant cost of every deploy. These pages aren't in the
+// sitemap, so render each on first visit instead (cached statically after).
 export async function generateStaticParams() {
-  const params: { slug: string; species: string }[] = [];
-  for (const site of getAllSites()) {
-    const sightings = getSightingsBySiteId(site.id);
-    const allSpecies = [
-      ...(site.species ?? []).map((s) => s.commonName),
-      ...(sightings ?? []).map((s) => s.speciesCommon),
-    ];
-    const unique = Array.from(new Set(allSpecies));
-    for (const sp of unique) {
-      params.push({ slug: site.slug, species: slugifySpecies(sp) });
-    }
-  }
-  return params;
+  return [];
 }
 
 export async function generateMetadata({
