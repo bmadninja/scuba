@@ -13,43 +13,39 @@ const GOTO = { waitUntil: 'domcontentloaded' } as const;
 const ARI = '/locations/ari-atoll-maldives';
 
 test.describe('Location page — reef condition section', () => {
-  test('renders the "Reef condition" section with a coral-cover chart', async ({ page }) => {
+  test('renders the "How this reef is doing" panel with the coral-cover chart', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    // The section keeps its id="reef-condition" but the redesign renamed its
-    // heading from "Reef condition" to "Reef health".
+    // The section keeps its id="reef-condition"; the redesign titles it
+    // "How this reef is doing" and leads with the four pillar rows.
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    await expect(section.getByRole('heading', { name: 'Reef health' })).toBeVisible();
-    await expect(section.getByText('Coral cover over time')).toBeVisible();
-    // The chart is an inline SVG with role="img" and a descriptive aria-label.
-    await expect(section.getByRole('img').first()).toBeVisible();
+    await expect(section.getByRole('heading', { name: 'How this reef is doing' })).toBeVisible();
+    await expect(section.getByText('Coral health', { exact: true })).toBeVisible();
+    // The coral row chart is an inline SVG with role="img" and a live coral-cover label.
+    await expect(section.getByRole('img', { name: /live coral cover history/i })).toBeVisible();
   });
 
-  test('renders the "Water temperature over time" chart with a trend read', async ({ page }) => {
+  test('renders the four pillar rows with self-labelled charts', async ({ page }) => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    // The temperature-over-time surface: heading, the plain warming/stable read,
-    // and the inline SVG chart (its own descriptive aria-label). Ari Atoll has a
-    // stored monthly SST series, so all three render.
-    await expect(section.getByText('Water temperature over time')).toBeVisible();
-    await expect(section.getByText(/the water here (is|has)/i)).toBeVisible();
-    await expect(
-      section.getByRole('img', { name: /water temperature history/i }),
-    ).toBeVisible();
+    // The four verdict rows: coral health, fish biodiversity, bleaching risk, fishing.
+    // (The "Bleaching risk" title shares its line with an info button, so it is
+    // asserted via its unique on-chart labels below rather than exact text.)
+    await expect(section.getByText('Fish biodiversity', { exact: true })).toBeVisible();
+    await expect(section.getByText('Fishing', { exact: true })).toBeVisible();
+    // The bleaching-risk bar carries its accumulated-heat-stress threshold on-chart.
+    await expect(section.getByText(/accumulated heat stress/i)).toBeVisible();
+    await expect(section.getByText(/bleaching begins/i)).toBeVisible();
   });
 
-  test('Heat modal shows a live current-vs-usual temperature readout', async ({ page }) => {
+  test('Heat readout on the Bleaching risk row shows current-vs-usual temperature', async ({ page }) => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    // The "Heat right now" factor carries an info button; opening it reveals the
-    // live readout sourced from the real SST fields ("Around X°C now … usual Z°C").
-    const heatBlock = section
-      .locator('div')
-      .filter({ has: page.getByText('Heat right now') })
-      .last();
-    await heatBlock.getByRole('button').first().click();
+    // The "Bleaching risk" row carries an info button labelled "Heat right now";
+    // opening it reveals the live readout from the real SST fields.
+    await section.getByRole('button', { name: 'Heat right now' }).click();
     await expect(
       page.getByText(/Around \d+°C now,.*usual \d+°C for the season/i),
     ).toBeVisible();

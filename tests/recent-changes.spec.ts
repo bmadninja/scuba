@@ -116,16 +116,15 @@ test.describe('Location page — reef condition info popups', () => {
     await expect(dialog).toContainText(/what the reef labels mean/i);
   });
 
-  test('"Heat right now" metric (i) opens the NOAA heat explainer', async ({ page }) => {
+  test('Bleaching risk "Heat right now" (i) opens the NOAA heat explainer', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`);
     await page.waitForLoadState('networkidle');
-    const metric = page
-      .locator('p:has(button[aria-label])')
-      .filter({ hasText: 'Heat right now' })
-      .first();
-    await expect(metric).toBeVisible({ timeout: 15_000 });
-    await metric.evaluate((el) => el.scrollIntoView({ block: 'center' }));
-    await metric.getByRole('button', { name: 'What this means' }).click();
+    // The redesigned reef-health panel carries the heat readout on the
+    // "Bleaching risk" row, via an info button labelled "Heat right now".
+    const trigger = page.getByRole('button', { name: 'Heat right now' }).first();
+    await expect(trigger).toBeVisible({ timeout: 15_000 });
+    await trigger.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    await trigger.click();
     const dialog = page.getByRole('dialog');
     await expect(dialog).toBeVisible({ timeout: 5_000 });
     await expect(dialog).toContainText(/NOAA Coral Reef Watch/i);

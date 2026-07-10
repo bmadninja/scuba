@@ -25,8 +25,10 @@ import { fishingAllowsImproving } from "@/lib/data/effective-fishing";
 import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
-import { STATE_TEXT, STATE_COLOR, bestMonthsText } from "@/lib/data/reef-state";
+import { STATE_TEXT, STATE_COLOR, bestMonthsText, computeReefState } from "@/lib/data/reef-state";
 import { getReefConfidence, TIER_LABEL } from "@/lib/data/reef-confidence";
+import { biomassStanding } from "@/lib/data/biomass-standing";
+import type { ReefHealthRows } from "@/components/reef-health-panel";
 import { LocationPageBody } from "./location-page-body";
 import { HeroGallery } from "@/components/hero-gallery";
 import type {
@@ -727,6 +729,120 @@ export default async function LocationPage({
         }
       : null;
 
+  // ── Reef-health panel rows (redesign) ────────────────────────────────────
+  // Verdict-leads, chart-carries-the-numbers presentation over the SAME readers
+  // that build the label (computeReefState, biomass-standing, fishing). Each row
+  // carries a plain verdict word + the chart data that drives it.
+  const GREEN = STATE_COLOR.thriving;
+  const AMBER = STATE_COLOR.pressure;
+  const RED = STATE_COLOR.change;
+  const pillars = computeReefState(location.id);
+
+  // Coral health — cover line + verdict + trend arrow.
+  const coralPoints =
+    projectionDataPoints.length > 0
+      ? projectionDataPoints
+      : pillars.coralCover !== null && surveyYear
+        ? [{ year: surveyYear, pct: Math.round(pillars.coralCover) }]
+        : [];
+  const coralRow: ReefHealthRows["coral"] =
+    pillars.coralCover !== null && coralPoints.length > 0
+      ? {
+          points: coralPoints,
+          verdict:
+            pillars.coralCover < 25
+              ? { word: "Declining", color: RED }
+              : pillars.coralCover >= 40 && !pillars.coralFalling
+                ? { word: "Improving", color: GREEN }
+                : { word: "Stable", color: AMBER },
+          arrow:
+            pillars.coralCoverBefore != null
+              ? pillars.coralCover > pillars.coralCoverBefore
+                ? "up"
+                : pillars.coralCover < pillars.coralCoverBefore
+                  ? "down"
+                  : "flat"
+              : "flat",
+          sourceLabel: coralChartSourceLabel ?? coralSourceLabel ?? "reef surveys",
+          healthyMin: 30,
+          healthyMax: 50,
+        }
+      : null;
+
+  // Fish biodiversity — biomass vs the gravity-anchored B0 benchmark.
+  const bio = biomassStanding(location.id);
+  const fishRow: ReefHealthRows["fish"] = bio
+    ? {
+        observedKgHa: Math.round(bio.observedKgPerHa),
+        b0KgHa: Math.round(bio.expectedB0KgPerHa),
+        grade: bio.standing >= 0.5 ? "Rich" : bio.standing >= 0.25 ? "Moderate" : "Sparse",
+        gradeColor: bio.standing >= 0.5 ? GREEN : bio.standing >= 0.25 ? AMBER : RED,
+        sourceLabel: "Reef Life Survey · standard M1 transects",
+      }
+    : null;
+
+  // Bleaching risk — accumulated heat stress (DHW) with a bleaching threshold.
+  const bleachRow: ReefHealthRows["bleaching"] = thermal
+    ? {
+        dhw: dhwValue ?? null,
+        verdict:
+          dhwValue != null
+            ? dhwValue < 4
+              ? { word: "Low", color: GREEN }
+              : dhwValue < 8
+                ? { word: "Watch", color: AMBER }
+                : { word: "High", color: RED }
+            : thermalAlert === "no-stress" || thermalAlert === "watch"
+              ? { word: "Low", color: GREEN }
+              : thermalAlert === "warning"
+                ? { word: "Watch", color: AMBER }
+                : { word: "High", color: RED },
+        nowC: currentTempC,
+        usualC: usualTempC,
+        sourceLabel: "NOAA Coral Reef Watch",
+      }
+    : null;
+
+  // Fishing — protection verdict + measured boat-activity trend. The soft
+  // "Busy despite protection" treatment is preserved; no MPA is named a failure.
+  const effortBand = locationFishing.effort;
+  const reefProtected =
+    !!fishing && (fishing.label === "Banned" || fishing.label === "Patrolled" || fishing.label === "Limited");
+  const busyDespiteProtection = reefProtected && (effortBand === "high" || effortBand === "very-high");
+  const fishingRow: ReefHealthRows["fishing"] = {
+    verdict: fishing
+      ? fishing.label === "Banned"
+        ? { word: "Protected", color: GREEN }
+        : fishing.label === "Patrolled"
+          ? { word: "Patrolled", color: GREEN }
+          : fishing.label === "Limited"
+            ? { word: "Limited", color: AMBER }
+            : { word: "Open", color: fishing.tone === "good" ? GREEN : AMBER }
+      : { word: "Open", color: AMBER },
+    series: locationFishing.effortSeries.map((p) => ({ year: p.year, hours: p.fishingHours })),
+    busyDespiteProtection,
+    trafficWord:
+      effortBand === "low"
+        ? "Quiet"
+        : effortBand === "moderate"
+          ? "Moderate"
+          : busyDespiteProtection
+            ? "Busy despite protection"
+            : effortBand === "high"
+              ? "Busy"
+              : effortBand === "very-high"
+                ? "Very busy"
+                : "Quiet",
+    sourceLabel: "Global Fishing Watch",
+  };
+
+  const reefRows: ReefHealthRows = {
+    coral: coralRow,
+    fish: fishRow,
+    bleaching: bleachRow,
+    fishing: fishingRow,
+  };
+
   // Water quality events: empty for now (no data source wired yet)
   const waterQualityEvents: WaterQualityEvent[] = [];
 
@@ -994,6 +1110,7 @@ export default async function LocationPage({
         reefStateColor={stateColor}
         reefStateSub={STATE_SUB[atlasLoc.state]}
         reefConfidence={reefConfidence}
+        reefRows={reefRows}
         hasReefData={hasReefData}
         species={species}
         threatenedStats={threatenedStats}
