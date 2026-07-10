@@ -1,8 +1,8 @@
 ---
-stepsCompleted: [1, 2, 3, 4]
+stepsCompleted: [1, 2, 3, 4, 5, 6]
 inputDocuments: []
 workflowType: 'research'
-lastStep: 5
+lastStep: 6
 research_type: 'technical'
 research_topic: 'Fish Biodiversity Data Sources'
 research_goals: 'Landscape scan of all fish-biodiversity data sources vs. what the repo already has wired; best technical approach to display an area fish biodiversity over time; how to tie the fish-biodiversity signal into the existing reef-health model; data-gap analysis to identify organizations to reach out to for data access.'
@@ -25,6 +25,46 @@ source_verification: true
 Technical research into fish-biodiversity data sources for scubaseason.fun, in service of four goals: (1) a complete landscape of available sources mapped against what the repo already ingests; (2) the best technical path to display an area's fish biodiversity **over time**; (3) how that signal ties into the existing reef-health model; (4) a data-gap analysis that names the organizations to approach for access. Every non-obvious access/license claim is verified against a primary source (API docs, dataset landing pages, license text), and the "what we have" column is grounded against the actual repo code, not memory.
 
 **Methodology:** current web data with source verification, multi-source validation for critical claims, confidence levels applied where a source is credible but live access could not be confirmed, and an explicit *observed-vs-modeled* axis kept in frame to arm the open "biodiversity benchmark" design decision (design toward observed sources now vs. wait until AquaMaps is wired).
+
+---
+
+## Executive Summary
+
+The reef fish biodiversity of a place is not one number but four — occurrence, richness, abundance, and biomass — and only the effort-standardized ones (biomass, abundance) honestly move with reef condition. scubaseason.fun already leans on the right measures (RLS biomass, REEF/Reef Check abundance), but treats Reef Life Survey as its primary fish source, and RLS is sparse exactly where the world's richest reefs are: the tropical Indo-Pacific. This research maps the full source landscape and finds that the gap is far more closable — with far less effort and far less permission-seeking — than it first appears.
+
+Three findings reframe the work. **First, the tropical gap is an *open-data* problem, not an access problem:** MERMAID already covers 73 countries and ~12,000 sites across the Coral Triangle and Western Indian Ocean, its fish belt-transect biomass rides the *same public API the repo already calls for coral*, and wiring it is a sibling of the existing RLS script. **Second, the open "biodiversity benchmark" design decision has a published answer:** reef-fish biomass has a citable unfished baseline (B₀ ≈ 1,150 kg/ha, with 600 kg/ha as the diversity-decline threshold), so a raw kg/ha value becomes an honest "% of an unfished reef" — no modeled data required. **Third, AquaMaps cannot chart change over time** — it is a static predicted snapshot — so the real design axis is not "observed now vs. modeled later" but "observed for the trend, modeled as an optional expected-species overlay." That should unblock the parked UX decision.
+
+The recommendation is to build the fish-biodiversity trend on the commercially-clean, effort-standardized survey backbone (RLS + MERMAID + Reef Check/Aqualink + NCRMP/PIFSC), annotate it against the B₀ benchmark, keep occurrence aggregators (GBIF/OBIS/iNaturalist) as current-state richness snapshots rather than trends, and reserve outreach (REEF, CORDIO/GCRMN, WCS) for the residual gaps that open data cannot reach. Full detail, phased roadmap, and source verification follow.
+
+**Key Findings:**
+
+- Fish biodiversity = four distinct measures; only effort-standardized biomass/abundance can honestly chart a trend. Occurrence aggregators are snapshot-only (effort-confounded).
+- **MERMAID fish biomass** is open, untapped, and fills RLS's tropical Indo-Pacific gap — same API already used for coral.
+- **AquaMaps is a static prediction** — an expected-species baseline, not a trend source. This reframes (and unblocks) the benchmark decision.
+- A **published biomass benchmark (B₀ ≈ 1,150 kg/ha)** turns raw survey numbers into a sourced "protection-works" frame — likely the "biodiversity benchmark" the UX flow was asking for.
+- The reef-health model runs on coral + heat + fishing only; fish is display-only today. Fish can *rescue* "Not surveyed" sites where coral is silent, bounded so it never overrides a curated coral verdict.
+- **Reef Check raw data is now open via the Aqualink API** — the repo's "request-only" note is out of date.
+- The trend backbone (RLS, MERMAID, GBIF, OBIS, NCRMP, PIFSC, AIMS) is CC BY / public-domain — commercially clean; NC sources (AquaMaps, REEF, FishBase) are enrichment to keep off the backbone.
+
+**Top Recommendations:**
+
+1. Wire **MERMAID fish biomass** first (highest value, mirrors the RLS script) — closes the tropical gap with open data.
+2. **Annotate the biomass chart against B₀ ≈ 1,150 kg/ha** — answers the benchmark question with zero new data.
+3. Fix **iNaturalist to a fish taxon filter** for a true richness snapshot (hours of work).
+4. Keep fish **display-only** initially; evaluate a **bounded reef-state linkage** (fish rescues "Not surveyed") after MERMAID coverage is visible.
+5. Run **outreach (REEF, CORDIO/GCRMN WIO, WCS)** in parallel, only for the residual gaps open data can't fill.
+
+## Table of Contents
+
+1. Research Overview & Methodology
+2. Technical Research Scope Confirmation
+3. Source Landscape Analysis — four measures, four tiers, have-vs-gap scorecard
+4. Integration & Time-Series Mechanics — query shapes, effort standardization
+5. Reef-Health Linkage — model grounding, the B₀ benchmark, two integration options
+6. Data-Gap Analysis & Outreach Targets — three gap axes, ranked contacts
+7. Implementation Approaches & Recommendations — phased roadmap, risks, metrics
+8. Research Synthesis & Conclusion
+9. Source Reference Index
 
 ---
 
@@ -270,4 +310,66 @@ _Sources: [mermaidr accessing project data](https://data-mermaid.github.io/merma
 
 ---
 
-<!-- Content will be appended sequentially through research workflow steps -->
+## Research Synthesis & Conclusion
+
+### What this research settles
+
+The four original goals resolve cleanly:
+
+- **Landscape** — Fish-biodiversity data spans four tiers: standardized survey programs (trend-capable: RLS, MERMAID, Reef Check, REEF, NCRMP, PIFSC, AIMS), occurrence aggregators (snapshot-only: GBIF, OBIS, iNaturalist, ALA, EMODnet), trait/taxonomy backbones (FishBase, WoRMS), and modeled predictions (AquaMaps). The repo already holds most of the tier-1 backbone; the two biggest omissions — MERMAID fish and Reef Check-via-Aqualink — are both open.
+- **Over time** — Only effort-standardized biomass/abundance sources can honestly chart a trend for an area, via one of two proven query shapes (proximity-box or site-code). Occurrence richness is a snapshot, not a trend.
+- **Reef-health tie-in** — Fish is display-only today; the highest-integrity linkage is to let an effort-standardized fish survey rescue "Not surveyed" sites where coral is absent, tiered by the B₀ benchmark, never overriding a curated coral verdict.
+- **Gaps & outreach** — Most gaps close with open data (MERMAID above all); genuine outreach is a short list (REEF, CORDIO/GCRMN WIO, WCS, local MPA managers) for the residual.
+
+### Strategic impact
+
+The decision that was blocking the UX flow — observed vs. modeled — dissolves once you see that AquaMaps cannot represent change over time. The trend is built on observed surveys; AquaMaps, if used at all, is an orthogonal "expected species" overlay. And the benchmark that gives the whole feature meaning already exists as published science (B₀ ≈ 1,150 kg/ha), so scubaseason.fun can ship an honest, sourced fish-biodiversity-over-time story now, on commercially-clean data, without waiting on anything.
+
+### Recommended next steps
+
+1. Implement **Phase 0 (iNat fish filter)** and **Phase 1 (MERMAID fish biomass)** — small, high-leverage, unblock the tropical gap.
+2. Ship **Phase 2 (B₀ benchmark annotation)** immediately after, and take it back to the UX flow as the answer to the "biodiversity benchmark question."
+3. Draft the **outreach emails** (REEF, CORDIO/GCRMN, WCS) in parallel.
+4. Defer AquaMaps to an optional display-only overlay; defer the reef-state linkage (Phase 5) until MERMAID coverage is measurable.
+
+Hand this document to the dev agent (or `bmad-create-story`) to turn Phases 0–2 into implementable stories.
+
+---
+
+## Source Reference Index
+
+**Standardized survey programs (trend-capable)**
+- Reef Life Survey — [reeflifesurvey.com survey data](https://reeflifesurvey.com/survey-data/), [RLS GBIF dataset](https://www.gbif.org/dataset/38f06820-08c5-42b2-94f6-47cc3e83a54a)
+- MERMAID — [API docs (PDF)](https://mermaid-api.readthedocs.io/_/downloads/en/latest/pdf/), [aggregated views](https://mermaid-api.readthedocs.io/en/latest/aggregated.html), [mermaidr project data](https://data-mermaid.github.io/mermaidr/articles/accessing_project_data.html), [reef-health metrics](https://datamermaid.org/documentation/mermaid-reef-health-metrics), [coverage/milestones](https://gcrmn.net/2026/04/14/mermaid/), [Indonesia endorsement](https://datamermaid.org/reef-stories/indonesia-and-mermaid-join-forces-to-safeguard-the-future-of-the-coral-triangle)
+- Reef Check / Aqualink — [Global Reef Tracker](https://www.reefcheck.org/global-reef-tracker/), [Aqualink tracker](https://aqualink.org/tracker)
+- REEF Volunteer Fish Survey — [program](https://www.reef.org/programs/volunteer-fish-survey-project), [database reports](https://www.reef.org/database-reports), [data users May 2025](https://www.reef.org/news/enews/making-it-count-may-2025/putting-it-work-who%E2%80%99s-using-reef-data-may-2025)
+- NOAA NCRMP — [NCEI landing (PRIA)](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:NCRMP-Fish-PRIA), [CoRIS Pacific data](https://www.coris.noaa.gov/monitoring/data_pacific.html), [NCRMP data viz tool](https://ncrmp.coralreef.noaa.gov/pages/ncrmp-data)
+- NOAA PIFSC Pacific RAMP — [program page](https://origin-apps-pifsc.fisheries.noaa.gov/cred/pacific_ramp.php)
+
+**Occurrence aggregators (snapshot / richness)**
+- GBIF — [SQL downloads](https://techdocs.gbif.org/en/data-use/api-sql-downloads), [API reference](https://techdocs.gbif.org/en/openapi/)
+- OBIS — [data access](https://obis.org/data/access/), [AWS open data](https://registry.opendata.aws/obis/), [manual](https://manual.obis.org/access.html)
+- EMODnet Biology — [biology portal](https://emodnet.ec.europa.eu/en/biology), [web service docs](https://emodnet.ec.europa.eu/en/emodnet-web-service-documentation), [emodnet.wfs R package](https://docs.ropensci.org/emodnet.wfs/)
+
+**Modeled / predicted**
+- AquaMaps — [algorithm & data sources (PDF)](https://www.aquamaps.org/main/AquaMaps_Algorithm_and_Data_Sources.pdf), [AquaMaps on GBIF](https://www.gbif.org/tool/81356/aquamaps-predicted-range-maps-for-aquatic-species), [Wikipedia overview](https://en.wikipedia.org/wiki/AquaMaps)
+
+**Biomass benchmark science**
+- [PNAS — critical thresholds for reef fisheries](https://www.pnas.org/doi/10.1073/pnas.1106861108)
+- [McClanahan et al. 2018 — community biomass benchmarks (Fish and Fisheries)](https://onlinelibrary.wiley.com/doi/10.1111/faf.12268)
+- [Global baselines & benchmarks for fish biomass](https://www.researchgate.net/publication/330528804_Global_baselines_and_benchmarks_for_fish_biomass_Comparing_remote_reefs_and_fisheries_closures)
+
+**Regional monitoring / outreach**
+- GCRMN — [about](https://gcrmn.net/about-gcrmn/), [WIO workshop 2025](https://gcrmn.net/2025/02/20/wio-workshop-2025/)
+- WCS MERMAID — [wcs.org](https://www.wcs.org/our-work/species/coral/mermaid)
+
+### Methodology & confidence
+
+All access-mechanism, license, and coverage claims were verified against primary sources (API docs, dataset landing pages, program pages) during research on 2026-07-10; the repo "have vs. gap" column was grounded against actual ingest code (`fetch-rls-fish-biomass.mjs`, `fetch-reef-abundance.mjs`, `fetch-mermaid-coral-cover.mjs`, `reef-state.ts`, `fish-biomass-series.ts`). Confidence is **high** for open-API sources (MERMAID, GBIF, OBIS, NCRMP, RLS/AODN) and **medium** where exact per-endpoint limits (MERMAID pagination/rate limits) or current commercial-use terms (REEF) require confirmation at implementation time.
+
+---
+
+**Research Completion Date:** 2026-07-10
+**Author:** Josie (facilitated by Mary, Business Analyst)
+**Source Verification:** All non-obvious claims cited to primary sources; repo claims grounded in code.
+**Confidence Level:** High for the core recommendations; medium on implementation-time specifics noted above.
