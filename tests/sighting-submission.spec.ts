@@ -27,7 +27,7 @@ function tinyJpeg(): Buffer {
 function firstSiteSlug(): string {
   const root = process.cwd();
   try {
-    const sites = JSON.parse(readFileSync(join(root, 'src/lib/data/sites.json'), 'utf8'));
+    const sites = JSON.parse(readFileSync(join(root, 'src/data/sites.json'), 'utf8'));
     if (Array.isArray(sites) && sites.length > 0) return (sites[0] as { slug: string }).slug;
     const keys = Object.keys(sites);
     if (keys.length > 0) return (sites[keys[0]] as { slug: string }).slug;
@@ -235,110 +235,153 @@ test.describe('API: taxa search', () => {
   });
 });
 
-// ─── T21–T23: Pre-dive brief UI ───────────────────────────────────────────────
+// ─── T21–T22: /upload entry points ─────────────────────────────────────────────
+//
+// The feature was relocated from an inline "pre-dive brief" methodology modal on
+// the site detail page to a standalone page at /upload (UploadWizard). There is
+// no methodology-explainer modal anywhere in the current flow — PreDiveBrief is
+// dead code and is never rendered from the site page. The two tests below that
+// used to open/close that modal are rewritten to verify the equivalent current
+// entry point instead: the /upload page loads with its first step, the Mode
+// Selector ("What did you do on the dive?"), and picking a mode advances past it
+// (the closest current analogue to "dismissing" the initial screen).
 
-test.describe('UI: pre-dive brief', () => {
-  test.beforeEach(async ({ page }) => {
+async function gotoUpload(page: Page, siteSlug?: string): Promise<void> {
+  const url = siteSlug ? `${BASE}/upload?site=${encodeURIComponent(siteSlug)}` : `${BASE}/upload`;
+  await page.goto(url);
+}
+
+test.describe('UI: /upload entry points', () => {
+  test('T21 /upload loads with the mode selector as its first step', async ({ page }) => {
+    await gotoUpload(page);
+    await expect(page.getByRole('heading', { name: /what did you do on the dive/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /i took a photo/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /i ran a structured survey/i })).toBeVisible();
+  });
+
+  test('selecting a mode advances past the mode selector', async ({ page }) => {
+    await gotoUpload(page);
+    await page.getByRole('button', { name: /i took a photo/i }).click();
+    await expect(page.getByRole('heading', { name: /where did you dive/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /what did you do on the dive/i })).not.toBeVisible();
+  });
+
+  test('T22 "Diving here?" nudge on the site page links to /upload', async ({ page }) => {
+    const slug = firstSiteSlug();
     await loadSitePage(page);
-  });
-
-  test('T21 methodology modal opens', async ({ page }) => {
-    await page.getByRole('button', { name: /how does this work/i }).click();
-    await expect(page.getByRole('dialog')).toBeVisible();
-    await expect(page.getByText('iNaturalist')).toBeVisible();
-    await expect(page.getByText('GBIF')).toBeVisible();
-    await expect(page.getByText('CoralWatch')).toBeVisible();
-  });
-
-  test('methodology modal closes on "Got it"', async ({ page }) => {
-    await page.getByRole('button', { name: /how does this work/i }).click();
-    await page.getByRole('button', { name: /got it/i }).click();
-    await expect(page.getByRole('dialog')).not.toBeVisible();
-  });
-
-  test('T22 CTA scrolls to submission form', async ({ page }) => {
-    await page.getByRole('button', { name: /submit a sighting after your dive/i }).click();
-    await page.waitForTimeout(700);
-    const form = page.locator('#sighting-submission');
-    await expect(form).toBeInViewport();
+    // The global nav also has an "Upload a sighting" link (plain /upload, no
+    // site param) — scope to the site-specific nudge card CTA by its href.
+    const link = page.locator(`a[href="/upload?site=${encodeURIComponent(slug)}"]`);
+    await expect(link).toBeVisible();
+    await expect(link).toHaveText(/upload a sighting/i);
+    await link.click();
+    await expect(page).toHaveURL(new RegExp(`/upload\\?site=${slug}`));
+    await expect(page.getByRole('heading', { name: /what did you do on the dive/i })).toBeVisible();
   });
 });
 
 // ─── Submission form UI ────────────────────────────────────────────────────────
+//
+// Current flow: Mode Selector ("I took a photo") -> Site Search ("Continue") ->
+// a single combined "Your sighting" screen (photo + category + sub-category,
+// submitted immediately) -> BroadcastConfirmation after a real successful submit.
+// There is no separate "details" step, no #observed-on field (date is set from
+// EXIF/today, not typed in), and no pre-submit "review and confirm" screen.
+
+async function chooseTookAPhoto(page: Page): Promise<void> {
+  await page.getByRole('button', { name: /i took a photo/i }).click();
+}
+
+async function continueSiteSearch(page: Page): Promise<void> {
+  await page.getByRole('button', { name: /^continue$/i }).click();
+}
+
+async function reachSightingScreen(page: Page): Promise<void> {
+  await gotoUpload(page);
+  await chooseTookAPhoto(page);
+  await continueSiteSearch(page);
+  await expect(page.getByRole('heading', { name: /your sighting/i })).toBeVisible();
+}
+
+async function addPhoto(page: Page): Promise<void> {
+  const [chooser] = await Promise.all([
+    page.waitForEvent('filechooser'),
+    page.getByRole('button', { name: /upload photos/i }).click(),
+  ]);
+  await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
+}
 
 test.describe('UI: submission form', () => {
-  test.beforeEach(async ({ page }) => {
-    await loadSitePage(page);
+  test('step 1 — mode selector is visible and actionable on page load', async ({ page }) => {
+    await gotoUpload(page);
+    await expect(page.getByRole('heading', { name: /what did you do on the dive/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /i took a photo/i })).toBeVisible();
   });
 
-  test('step 1 — drop zone visible on page load', async ({ page }) => {
-    await expect(page.getByRole('button', { name: /upload photos/i })).toBeVisible();
+  test('step 1 — submit is blocked without a photo', async ({ page }) => {
+    await reachSightingScreen(page);
+    // The current flow enforces "at least 1 photo" by disabling the Submit
+    // button (formData.photos.length === 0) rather than showing a validation
+    // message on click — a disabled native <button> never fires its onClick,
+    // so the "Please add at least 1 photo." copy in the source is defensive/
+    // unreachable via the UI and is not asserted here.
+    const submitBtn = page.getByRole('button', { name: /^submit sighting$/i });
+    await expect(submitBtn).toBeVisible();
+    await expect(submitBtn).toBeDisabled();
   });
 
-  test('step 1 — next blocked without photo', async ({ page }) => {
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
-    await expect(page.getByText(/please add at least one photo/i)).toBeVisible();
+  test('category selection reveals sub-options (Sharks & rays)', async ({ page }) => {
+    await reachSightingScreen(page);
+    await addPhoto(page);
+
+    await page.getByRole('button', { name: /sharks & rays/i }).click();
+
+    await expect(page.getByRole('button', { name: /^whale shark$/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^hammerhead$/i })).toBeVisible();
   });
 
-  test('step 2 — category selection flows through to details', async ({ page }) => {
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser'),
-      page.getByRole('button', { name: /upload photos/i }).click(),
-    ]);
-    await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
+  test('coral sub-option (under Invertebrates) — bleaching score becomes visible', async ({ page }) => {
+    await reachSightingScreen(page);
+    await addPhoto(page);
 
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
-    await page.getByRole('button', { name: /fish or marine life/i }).click();
-    await page.getByRole('button', { name: /next: details/i }).click();
-
-    await expect(page.locator('#observed-on')).toBeVisible();
-  });
-
-  test('coral category — bleaching score visible in details step', async ({ page }) => {
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser'),
-      page.getByRole('button', { name: /upload photos/i }).click(),
-    ]);
-    await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
-
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
+    await page.getByRole('button', { name: /invertebrates/i }).click();
     await page.getByRole('button', { name: /^coral$/i }).click();
-    await page.getByRole('button', { name: /next: details/i }).click();
 
-    await expect(page.getByRole('button', { name: /healthy/i })).toBeVisible();
-    await expect(page.getByRole('button', { name: /bleached/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^healthy$/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^bleached$/i })).toBeVisible();
   });
 
-  test('CoralWatch eligibility badge appears when depth + bleaching filled', async ({ page }) => {
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser'),
-      page.getByRole('button', { name: /upload photos/i }).click(),
-    ]);
-    await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
+  test('casual sighting flow has no depth field or CoralWatch eligibility UI', async ({ page }) => {
+    // Confirmed decision: the casual "I took a photo" flow has no depth/temperature
+    // inputs at all — those only exist in the separate "structured survey" mode.
+    // A normal photo sighting can therefore never trigger a CoralWatch eligibility
+    // badge in the current UI, even though the backend still supports it when
+    // depth+bleaching are present. This is a negative assertion of that reality,
+    // not a restoration of the dropped UI.
+    await reachSightingScreen(page);
+    await addPhoto(page);
 
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
+    // Select Coral (the sub-option most likely to expose CoralWatch-related UI,
+    // since it is the only path to a bleaching score) and confirm there is still
+    // no depth input and no CoralWatch text anywhere on the screen.
+    await page.getByRole('button', { name: /invertebrates/i }).click();
     await page.getByRole('button', { name: /^coral$/i }).click();
-    await page.getByRole('button', { name: /next: details/i }).click();
+    await expect(page.getByRole('button', { name: /^healthy$/i })).toBeVisible();
 
-    await page.fill('#depth-m', '8');
-    await page.getByRole('button', { name: /pale/i }).click();
-
-    await expect(page.getByText(/will also queue for coralwatch/i)).toBeVisible();
+    await expect(page.locator('#depth-m')).toHaveCount(0);
+    await expect(page.getByText(/coralwatch/i)).toHaveCount(0);
   });
 
-  test('confirm step — platform list shown', async ({ page }) => {
-    const [chooser] = await Promise.all([
-      page.waitForEvent('filechooser'),
-      page.getByRole('button', { name: /upload photos/i }).click(),
-    ]);
-    await chooser.setFiles({ name: 'test.jpg', mimeType: 'image/jpeg', buffer: tinyJpeg() });
+  test('successful submission shows the platform list in the post-submit confirmation', async ({ page }) => {
+    await reachSightingScreen(page);
+    await addPhoto(page);
+    await page.getByRole('button', { name: /^fish/i }).click();
 
-    await page.getByRole('button', { name: /next: what did you see/i }).click();
-    await page.getByRole('button', { name: /fish or marine life/i }).click();
-    await page.getByRole('button', { name: /next: details/i }).click();
-    await page.getByRole('button', { name: /review and submit/i }).click();
+    await page.getByRole('button', { name: /^submit sighting$/i }).click();
 
-    await expect(page.getByText('Submitting to')).toBeVisible();
+    await expect(page.getByRole('heading', { name: /your sighting is on its way/i })).toBeVisible();
     await expect(page.getByText('iNaturalist')).toBeVisible();
+    await expect(page.getByText('GBIF')).toBeVisible();
+    await expect(page.getByText('OBIS')).toBeVisible();
   });
 });

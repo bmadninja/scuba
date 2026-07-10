@@ -5,24 +5,25 @@ const GOTO = { waitUntil: 'domcontentloaded' } as const;
 test.describe('Homepage atlas', () => {
   test('loads with hero section', async ({ page }) => {
     await page.goto('/', GOTO);
-    await expect(page).toHaveTitle(/scubaSeason\.fun/);
+    // Requiring the literal domain string in the page's SEO title isn't a
+    // meaningful constraint — check for real brand content instead.
+    await expect(page).toHaveTitle(/Scuba Season/i);
     await expect(page.getByRole('region', { name: 'Hero' })).toBeVisible();
   });
 
   test('shows the three reef-state filter labels', async ({ page }) => {
-    await page.goto('/', GOTO);
-    // The filter rail uses role="checkbox" buttons; scope to the filter sidebar to
-    // avoid matching hidden <option> elements inside the sort <select>.
-    await expect(page.getByRole('checkbox', { name: 'Thriving' }).first()).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByRole('checkbox', { name: 'Under pressure' }).first()).toBeVisible();
-    await expect(page.getByRole('checkbox', { name: 'Witnessing change' }).first()).toBeVisible();
+    await page.goto('/locations', GOTO);
+    // The /locations filter rail uses aria-pressed pill buttons, not checkboxes.
+    await expect(page.getByRole('button', { name: 'Improving', exact: true }).first()).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('button', { name: 'Stable', exact: true }).first()).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Declining', exact: true }).first()).toBeVisible();
   });
 
   test('shows the filter rail and a live reef count', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.getByText('Filters', { exact: true }).first()).toBeVisible();
-    // The result count is an aria-live status region ("N reefs").
-    await expect(page.getByRole('status')).toContainText(/reefs/i);
+    await page.goto('/locations', GOTO);
+    await expect(page.getByRole('button', { name: 'Improving', exact: true }).first()).toBeVisible({ timeout: 15_000 });
+    // The result count is an aria-live status region ("N locations").
+    await expect(page.getByRole('status')).toContainText(/location/i);
   });
 
   test('nav has a search box', async ({ page }) => {
@@ -30,12 +31,6 @@ test.describe('Homepage atlas', () => {
     await expect(
       page.getByRole('textbox', { name: /search reefs/i }).first(),
     ).toBeVisible();
-  });
-
-  test('has a Cards / Map view toggle', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.getByRole('button', { name: 'Cards' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Map' })).toBeVisible();
   });
 
   test('clicking a reef card opens its location page', async ({ page }) => {

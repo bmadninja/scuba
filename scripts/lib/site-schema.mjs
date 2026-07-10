@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const SKILL_LEVELS = ["never-dived", "open-water", "advanced", "tech"];
-const DIVE_TYPES = ["large-pelagics", "coral", "geology", "wrecks", "macro", "cave", "drift"];
+const DIVE_TYPES = ["large-pelagics", "coral", "geology", "wrecks", "macro", "cave", "drift", "wall", "muck", "night"];
 const RELIABILITY = ["year-round", "seasonal", "rare"];
 const CURRENT = ["none", "mild", "moderate", "strong"];
 
@@ -15,7 +15,15 @@ export const SiteSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/),
   locationId: z.string(),
   name: z.string().min(2),
-  heroImageUrl: z.string().url().nullable(),
+  // Absolute URL (legacy Wikimedia/remote sources) OR a self-hosted
+  // root-relative path under /heroes/ (see public/heroes/ migration).
+  heroImageUrl: z
+    .string()
+    .refine(
+      (v) => /^https?:\/\//.test(v) || v.startsWith("/heroes/"),
+      { message: "heroImageUrl must be an absolute URL or a /heroes/... path" },
+    )
+    .nullable(),
   lat: z.number().gte(-90).lte(90),
   lng: z.number().gte(-180).lte(180),
   description: z.string().min(80).max(800),

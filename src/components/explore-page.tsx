@@ -615,6 +615,8 @@ export function ExplorePage({ locations, currentMonth }: Props) {
         }}
       >
         <p
+          role="status"
+          aria-live="polite"
           style={{
             fontFamily: "var(--font-mono), \"IBM Plex Mono\", ui-monospace, monospace",
             fontSize: "11px",

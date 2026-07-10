@@ -17,7 +17,7 @@ test.describe('Location page — reef condition section', () => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    await expect(section.getByText('Reef condition').first()).toBeVisible();
+    await expect(section.getByText('Reef health').first()).toBeVisible();
     await expect(section.getByText('Coral cover over time')).toBeVisible();
     // The chart is an inline SVG with role="img" and a descriptive aria-label.
     await expect(section.getByRole('img').first()).toBeVisible();
@@ -38,9 +38,10 @@ test.describe('Location page — "Plan your trip" rail', () => {
   test('shows the trip card with Best months', async ({ page }) => {
     await page.goto(ARI, GOTO);
     await expect(page.getByText('Plan your trip')).toBeVisible({ timeout: 15_000 });
-    // Scope to #trip-planning to avoid strict-mode collision with TripSnapshot's
-    // "Best months" span elsewhere on the page.
-    await expect(page.locator('#trip-planning').getByText('Best months').first()).toBeVisible();
+    // Scope to the "Plan your trip" <aside> to avoid strict-mode collision with
+    // TripSnapshot's "Best months" span elsewhere on the page.
+    const tripRail = page.locator('aside').filter({ hasText: 'Plan your trip' });
+    await expect(tripRail.getByText('Best months').first()).toBeVisible();
   });
 
   test('"Where to stay" expander reveals booking links', async ({ page }) => {
@@ -49,7 +50,9 @@ test.describe('Location page — "Plan your trip" rail', () => {
       .locator('details')
       .filter({ has: page.locator('summary').filter({ hasText: 'Where to stay' }) });
     await expect(stay).toBeVisible({ timeout: 15_000 });
-    // The disclosure renders open; the helper sentence is part of its body.
+    // The disclosure renders collapsed by default; open it before asserting
+    // the booking links (part of its body) are visible.
+    await stay.locator('summary').click();
     await expect(stay.getByText(/book a place to stay and a dive operator/i)).toBeVisible();
   });
 
@@ -64,17 +67,20 @@ test.describe('Location page — "Plan your trip" rail', () => {
 test.describe('Location page — what you\'ll see (species)', () => {
   test('renders the species section heading', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    // Scope to #species to avoid strict-mode collision with the nav anchor link
-    // that also contains "What you'll see".
-    await expect(page.locator('#species')).toBeVisible({ timeout: 15_000 });
-    await expect(page.locator('#species').getByText("What you'll see")).toBeVisible();
+    // The species <section> has no id; scope via its heading text instead.
+    const speciesSection = page.locator('section').filter({ hasText: 'What you will see' });
+    await expect(speciesSection).toBeVisible({ timeout: 15_000 });
+    await expect(
+      speciesSection.getByRole('heading', { name: /what you will see/i }),
+    ).toBeVisible();
   });
 
   test('species cards show a "seen" recency line', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    await expect(page.locator('#species')).toBeVisible({ timeout: 15_000 });
+    const speciesSection = page.locator('section').filter({ hasText: 'What you will see' });
+    await expect(speciesSection).toBeVisible({ timeout: 15_000 });
     // Each species card carries a "seen" recency string (e.g. "Seen this week").
-    await expect(page.locator('#species').getByText(/seen/i).first()).toBeVisible();
+    await expect(speciesSection.getByText(/seen/i).first()).toBeVisible();
   });
 });
 
@@ -117,8 +123,9 @@ test.describe('Location page — mobile', () => {
   test('reef condition, species, sites and trip rail all render stacked', async ({ page }) => {
     await page.goto(ARI, GOTO);
     await expect(page.locator('#reef-condition')).toBeVisible({ timeout: 15_000 });
-    // Use #species section rather than text to avoid strict-mode collision with nav link.
-    await expect(page.locator('#species')).toBeVisible();
+    // The species <section> has no id; scope via its heading text instead.
+    const speciesSection = page.locator('section').filter({ hasText: 'What you will see' });
+    await expect(speciesSection).toBeVisible();
     await expect(page.locator('#sites')).toBeVisible();
     await expect(page.getByText('Plan your trip')).toBeVisible();
   });
@@ -127,7 +134,10 @@ test.describe('Location page — mobile', () => {
     await page.goto(ARI, GOTO);
     const trigger = page.getByRole('button', { name: /how we judge this/i }).first();
     await expect(trigger).toBeVisible({ timeout: 15_000 });
-    const dialog = page.getByRole('dialog');
+    // On the mobile viewport the off-canvas nav drawer is also role="dialog"
+    // (aria-label "Navigation menu"), even while closed, so exclude it to
+    // avoid a strict-mode collision with the info popup's own dialog.
+    const dialog = page.locator('[role="dialog"]:not([aria-label="Navigation menu"])');
     // Retry the click until the dialog opens — the handler is wired on hydration.
     await expect(async () => {
       await trigger.click();

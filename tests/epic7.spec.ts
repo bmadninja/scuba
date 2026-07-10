@@ -7,7 +7,10 @@ const SITE = '/sites/raja-ampat-cape-kri';
 // ── Story 7.3 — Categorised wildlife filter ────────────────────────────────
 test.describe('Wildlife filter taxonomy (7.3)', () => {
   test('filter rail has wildlife sub-groups', async ({ page }) => {
-    await page.goto('/', GOTO);
+    // The wildlife taxonomy now lives on /locations, inside a collapsed
+    // "What to see" dropdown pill — open it before asserting group names.
+    await page.goto('/locations', GOTO);
+    await page.getByRole('button', { name: 'What to see' }).click();
     await expect(page.getByText(/sharks.*rays|marine mammals|macro/i).first()).toBeVisible({ timeout: 10_000 });
   });
 });
@@ -64,12 +67,14 @@ test.describe('Location trip card (7.8)', () => {
 
   test('dive operators are listed inline inside "Where to stay"', async ({ page }) => {
     await page.goto(LOCATION);
-    // Expand renders <details open> so content is visible on page load — no click needed.
+    // "Where to stay" is collapsed by default now — open it before asserting.
+    await page.locator('summary').filter({ hasText: 'Where to stay' }).first().click();
     await expect(page.getByText('Dive operators', { exact: true }).first()).toBeVisible({ timeout: 15_000 });
   });
 
   test('"Where to stay" discloses that links go to provider sites', async ({ page }) => {
     await page.goto(LOCATION);
+    await page.locator('summary').filter({ hasText: 'Where to stay' }).first().click();
     await expect(page.getByText(/each link goes to the provider/i).first()).toBeVisible({ timeout: 15_000 });
   });
 });
@@ -79,8 +84,9 @@ test.describe('Gear section on location page (7.9)', () => {
   test('location page has a Gear section with grouped tiers', async ({ page }) => {
     await page.goto(LOCATION);
     // Gear is a single section whose groups are labelled (e.g. "Basic kit" /
-    // "For this site"). Assert the section heading plus a group label.
-    await expect(page.getByText('Gear', { exact: true }).first()).toBeVisible({ timeout: 10_000 });
+    // "For this site"). The section heading reads "Gear & getting wet".
+    // Assert the section heading plus a group label.
+    await expect(page.getByText(/gear & getting wet/i).first()).toBeVisible({ timeout: 10_000 });
     await expect(page.getByText(/basic kit|for this site/i).first()).toBeVisible({ timeout: 10_000 });
   });
 });

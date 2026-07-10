@@ -10,8 +10,8 @@
  *   6.  Images — broken images, alt text, card images, aspect ratios
  *   7.  Mobile layout (375 px) — no horizontal overflow, nav/content visible
  *   8.  Tablet layout (768 px) — no horizontal overflow
- *   9.  Filter rail — all 14 controls functional (reef state, months, cert,
- *        sort, needs fresh eyes, map toggle, reef count live region)
+ *   9.  Filter rail (/locations) — reef state pills, months, cert dropdown,
+ *        location count live region
  *   10. Info popups — open in-page, content present, dismissible
  *   11. Search — multiple query types, URL params, species results, empty state
  *   12. Location page — all sections present across multiple fixtures
@@ -32,6 +32,9 @@ import { test, expect, type Page } from '@playwright/test';
 
 const GOTO = { waitUntil: 'domcontentloaded' } as const;
 const IDLE = { waitUntil: 'networkidle' } as const;
+
+// Explorer route (filter rail + card grid + map)
+const LOCATIONS = '/locations';
 
 // Location fixtures (data-rich; used in existing unit tests)
 const ARI       = '/locations/ari-atoll-maldives';
@@ -331,7 +334,7 @@ test.describe('Images', () => {
   test('Species thumbnails on location page have alt text', async ({ page }) => {
     await page.goto(ARI, GOTO);
     await page.waitForLoadState('networkidle').catch(() => null);
-    const speciesSection = page.locator('#species, section').filter({ hasText: "What you'll see" });
+    const speciesSection = page.locator('#species, section').filter({ hasText: "What you will see" });
     if (await speciesSection.count() === 0) return;
     const thumbs = speciesSection.locator('img');
     const count = Math.min(3, await thumbs.count());
@@ -381,16 +384,22 @@ test.describe('Mobile layout (375 px)', () => {
     expect(await hasHorizontalOverflow(page), `${CAPE_KRI} horizontal overflow on 375px`).toBe(false);
   });
 
-  test('Reef count is readable on mobile', async ({ page }) => {
-    await page.goto('/', GOTO);
+  test('Location count is readable on mobile', async ({ page }) => {
+    await page.goto(LOCATIONS, GOTO);
     const status = page.getByRole('status');
-    await expect(status).toContainText(/\d+\s*reef/i, { timeout: 20_000 });
+    await expect(status).toContainText(/\d+\s*location/i, { timeout: 20_000 });
   });
 
   test('Filter rail opens on mobile', async ({ page }) => {
-    await page.goto('/', GOTO);
-    // "Filters" label or a toggle button for the filter panel must be visible
-    await expect(page.getByText('Filters', { exact: true }).first()).toBeVisible({ timeout: 15_000 });
+    await page.goto(LOCATIONS, GOTO);
+    // Mobile trigger is the sticky bottom "Filter" button, which opens a
+    // role="dialog" sheet labeled "Filters".
+    const filterBtn = page.getByRole('button', { name: 'Filter' });
+    await expect(filterBtn).toBeVisible({ timeout: 15_000 });
+    await filterBtn.click();
+    await expect(
+      page.getByRole('dialog', { name: 'Filters' })
+    ).toBeVisible({ timeout: 5_000 });
   });
 });
 
@@ -420,168 +429,118 @@ test.describe('Tablet layout (768 px)', () => {
 // 9. FILTER RAIL
 // ═══════════════════════════════════════════════════════════════════════════
 test.describe('Filter rail', () => {
-  test('Reef count live region shows a positive number', async ({ page }) => {
-    await page.goto('/', GOTO);
+  test('Location count live region shows a positive number', async ({ page }) => {
+    await page.goto(LOCATIONS, GOTO);
     const status = page.getByRole('status');
-    await expect(status).toContainText(/\d+\s*reef/i, { timeout: 20_000 });
+    await expect(status).toContainText(/\d+\s*location/i, { timeout: 20_000 });
     const text = await status.innerText();
     const n = parseInt(text.replace(/\D/g, ''), 10);
-    expect(n, 'Reef count should be > 0').toBeGreaterThan(0);
+    expect(n, 'Location count should be > 0').toBeGreaterThan(0);
   });
 
-  test('"Filters" label is visible', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.getByText('Filters', { exact: true }).first()).toBeVisible({ timeout: 15_000 });
+  test('"Filters" label is visible on mobile', async ({ page }) => {
+    // The "Filters" label only exists on the mobile filter sheet (aria-label),
+    // opened via the sticky bottom "Filter" button.
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto(LOCATIONS, GOTO);
+    const filterBtn = page.getByRole('button', { name: 'Filter' });
+    await expect(filterBtn).toBeVisible({ timeout: 15_000 });
+    await filterBtn.click();
+    await expect(
+      page.getByRole('dialog', { name: 'Filters' })
+    ).toBeVisible({ timeout: 5_000 });
   });
 
-  test('Three reef-state checkboxes are present', async ({ page }) => {
-    await page.goto('/', GOTO);
-    for (const label of ['Thriving', 'Under pressure', 'Witnessing change']) {
+  test('Four reef-state pill filters are present', async ({ page }) => {
+    await page.goto(LOCATIONS, GOTO);
+    for (const label of ['Improving', 'Stable', 'Declining', 'Not surveyed']) {
       await expect(
-        page.getByRole('checkbox', { name: label })
+        page.getByRole('button', { name: label, exact: true })
       ).toBeVisible({ timeout: 15_000 });
     }
   });
 
-  test('Deselecting "Thriving" reduces the reef count', async ({ page }) => {
-    await page.goto('/', GOTO);
+  test('Selecting "Improving" reduces the location count', async ({ page }) => {
+    await page.goto(LOCATIONS, GOTO);
     const status = page.getByRole('status');
-    await expect(status).toContainText(/\d+\s*reef/i, { timeout: 20_000 });
-    const before = parseInt((await status.innerText()).replace(/\D/g, ''), 10);
-    await page.getByRole('checkbox', { name: 'Thriving' }).click();
-    await expect(status).toContainText(/\d+\s*reef/i, { timeout: 10_000 });
+    await expect(status).toContainText(/\d+\s*location/i, { timeout: 20_000 });
+    const beforeText = await status.innerText();
+    const before = parseInt(beforeText.replace(/\D/g, ''), 10);
+    await page.getByRole('button', { name: 'Improving', exact: true }).click();
+    // Wait for the actual filter to land (URL param + a real text change) rather
+    // than re-matching the same generic /\d+\s*location/i pattern, which the
+    // pre-click text already satisfies and can race a slow re-render.
+    await expect(page).toHaveURL(/reef=thriving/, { timeout: 10_000 });
+    await expect(status).not.toHaveText(beforeText, { timeout: 10_000 });
     const after = parseInt((await status.innerText()).replace(/\D/g, ''), 10);
-    expect(after, 'Deselecting Thriving should reduce reef count').toBeLessThan(before);
+    expect(after, 'Selecting Improving should reduce the location count').toBeLessThan(before);
   });
 
-  test('Deselecting a reef state persists to the URL', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.getByRole('checkbox', { name: 'Thriving' })).toBeVisible({ timeout: 15_000 });
-    await page.getByRole('checkbox', { name: 'Thriving' }).click();
-    await expect(page).toHaveURL(/c=/, { timeout: 5_000 });
+  test('Selecting a reef state persists to the URL', async ({ page }) => {
+    await page.goto(LOCATIONS, GOTO);
+    const pill = page.getByRole('button', { name: 'Improving', exact: true });
+    await expect(pill).toBeVisible({ timeout: 15_000 });
+    await pill.click();
+    await expect(page).toHaveURL(/reef=/, { timeout: 5_000 });
   });
 
-  test('"When" section shows all 12 month buttons', async ({ page }) => {
-    await page.goto('/', GOTO);
-    const when = page.locator('details').filter({
-      has: page.locator('summary').filter({ hasText: 'When' }),
-    }).first();
-    await expect(when).toBeVisible({ timeout: 15_000 });
+  test('"When" dropdown shows all 12 month buttons', async ({ page }) => {
+    await page.goto(LOCATIONS, GOTO);
+    const whenPill = page.getByRole('button', { name: 'When', exact: true });
+    await expect(whenPill).toBeVisible({ timeout: 15_000 });
+    await expect(whenPill).toHaveAttribute('aria-expanded', 'false');
+    await whenPill.click();
+    await expect(whenPill).toHaveAttribute('aria-expanded', 'true');
     for (const m of ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']) {
-      await expect(when.getByRole('button', { name: m, exact: true })).toBeVisible();
+      await expect(page.getByRole('button', { name: m, exact: true })).toBeVisible();
     }
   });
 
   test('Clicking a month updates the URL', async ({ page }) => {
-    await page.goto('/', GOTO);
-    const when = page.locator('details').filter({
-      has: page.locator('summary').filter({ hasText: 'When' }),
-    }).first();
-    await expect(when).toBeVisible({ timeout: 15_000 });
-    await when.getByRole('button', { name: 'Jan', exact: true }).click();
-    await expect(page).toHaveURL(/m=1\b/);
+    await page.goto(LOCATIONS, GOTO);
+    const whenPill = page.getByRole('button', { name: 'When', exact: true });
+    await expect(whenPill).toBeVisible({ timeout: 15_000 });
+    await whenPill.click();
+    await page.getByRole('button', { name: 'Jan', exact: true }).click();
+    await expect(page).toHaveURL(/month=1\b/);
   });
 
   test('Clicking two months keeps both in the URL', async ({ page }) => {
-    await page.goto('/', GOTO);
-    const when = page.locator('details').filter({
-      has: page.locator('summary').filter({ hasText: 'When' }),
-    }).first();
-    await expect(when).toBeVisible({ timeout: 15_000 });
-    await when.getByRole('button', { name: 'Jan', exact: true }).click();
-    await when.getByRole('button', { name: 'Jun', exact: true }).click();
-    await expect(page).toHaveURL(/m=1(%2C|,)6|m=6(%2C|,)1/);
+    await page.goto(LOCATIONS, GOTO);
+    const whenPill = page.getByRole('button', { name: 'When', exact: true });
+    await expect(whenPill).toBeVisible({ timeout: 15_000 });
+    await whenPill.click();
+    await page.getByRole('button', { name: 'Jan', exact: true }).click();
+    // Wait for the first toggle's URL update to commit before the second
+    // click — the filter bar reads the URLSearchParams from its own render
+    // closure, so two clicks fired before a re-render can race and clobber
+    // each other.
+    await expect(page).toHaveURL(/month=1\b/, { timeout: 5_000 });
+    await page.getByRole('button', { name: 'Jun', exact: true }).click();
+    await expect(page).toHaveURL(/month=1(%2C|,)6|month=6(%2C|,)1/);
   });
 
-  test('Certification filter shows four levels', async ({ page }) => {
-    await page.goto('/', GOTO);
+  test('Certification dropdown shows four levels', async ({ page }) => {
+    await page.goto(LOCATIONS, GOTO);
+    const certPill = page.getByRole('button', { name: 'Certification', exact: true });
+    await expect(certPill).toBeVisible({ timeout: 15_000 });
+    await certPill.click();
     for (const cert of ['Beginner', 'Open water', 'Advanced', 'Technical']) {
-      await expect(page.getByText(cert, { exact: true }).first()).toBeVisible({ timeout: 15_000 });
+      await expect(page.getByRole('button', { name: cert, exact: true })).toBeVisible({ timeout: 15_000 });
     }
   });
 
   test('Selecting "Beginner" cert filters the count', async ({ page }) => {
-    await page.goto('/', GOTO);
+    await page.goto(LOCATIONS, GOTO);
     const status = page.getByRole('status');
-    await expect(status).toContainText(/\d+\s*reef/i, { timeout: 20_000 });
+    await expect(status).toContainText(/\d+\s*location/i, { timeout: 20_000 });
     const before = parseInt((await status.innerText()).replace(/\D/g, ''), 10);
-    await page.getByText('Beginner', { exact: true }).first().click();
-    await expect(status).toContainText(/\d+\s*reef/i, { timeout: 10_000 });
+    const certPill = page.getByRole('button', { name: 'Certification', exact: true });
+    await certPill.click();
+    await page.getByRole('button', { name: 'Beginner', exact: true }).click();
+    await expect(status).toContainText(/\d+\s*location/i, { timeout: 10_000 });
     const after = parseInt((await status.innerText()).replace(/\D/g, ''), 10);
     expect(after).toBeLessThanOrEqual(before);
-  });
-
-  test('"Needs fresh eyes" checkbox is visible', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.getByText('Needs fresh eyes').first()).toBeVisible({ timeout: 15_000 });
-  });
-
-  test('"Needs fresh eyes" reduces the reef count', async ({ page }) => {
-    await page.goto('/', GOTO);
-    const status = page.getByRole('status');
-    await expect(status).toContainText(/\d+\s*reef/i, { timeout: 20_000 });
-    const before = parseInt((await status.innerText()).replace(/\D/g, ''), 10);
-    await page.getByText('Needs fresh eyes').first().click();
-    await expect(status).toContainText(/\d+\s*reef/i, { timeout: 10_000 });
-    const after = parseInt((await status.innerText()).replace(/\D/g, ''), 10);
-    expect(after, '"Needs fresh eyes" should narrow the count').toBeLessThan(before);
-  });
-
-  test('Sort dropdown shows "Best season" as default', async ({ page }) => {
-    await page.goto('/', GOTO);
-    const sort = page.getByRole('combobox', { name: /sort/i });
-    await expect(sort).toBeVisible({ timeout: 15_000 });
-    await expect(sort).toHaveValue('season');
-  });
-
-  test('Switching sort to "Name" removes seasonal divider', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.locator('a[href^="/locations/"]').first()).toBeVisible({ timeout: 20_000 });
-    await expect(page.getByText('Great at other times of year').first()).toBeVisible();
-    await page.getByRole('combobox', { name: /sort/i }).selectOption('name');
-    await expect(page.getByText('Great at other times of year')).toHaveCount(0, { timeout: 10_000 });
-  });
-
-  test('Seasonal divider "Great at other times of year" shows in default sort', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(
-      page.getByText('Great at other times of year').first()
-    ).toBeVisible({ timeout: 20_000 });
-  });
-
-  test('Sort by "Oldest surveys first" works', async ({ page }) => {
-    await page.goto('/', GOTO);
-    const sort = page.getByRole('combobox', { name: /sort/i });
-    await expect(sort).toBeVisible({ timeout: 15_000 });
-    await sort.selectOption('oldest');
-    await expect(sort).toHaveValue('oldest');
-    await expect(page.getByText('Great at other times of year')).toHaveCount(0, { timeout: 10_000 });
-  });
-
-  test('sort= URL param is reflected in the select', async ({ page }) => {
-    await page.goto('/?sort=oldest', GOTO);
-    await expect(
-      page.getByRole('combobox', { name: /sort/i })
-    ).toHaveValue('oldest', { timeout: 15_000 });
-  });
-
-  test('Cards/Map toggle is present', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.getByRole('button', { name: 'Cards' })).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByRole('button', { name: 'Map' })).toBeVisible({ timeout: 15_000 });
-  });
-
-  test('Switching to Map hides the card grid', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await page.getByRole('button', { name: 'Map' }).click();
-    await expect(page.locator('a[href^="/locations/"]').first()).toBeHidden({ timeout: 10_000 });
-  });
-
-  test('Switching back to Cards restores the grid', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await page.getByRole('button', { name: 'Map' }).click();
-    await page.getByRole('button', { name: 'Cards' }).click();
-    await expect(page.locator('a[href^="/locations/"]').first()).toBeVisible({ timeout: 10_000 });
   });
 });
 
@@ -598,9 +557,12 @@ test.describe('Info popups', () => {
     // URL must not change
     await page.waitForTimeout(400);
     expect(page.url()).toBe(beforeUrl);
-    // A popup/dialog/tooltip must now be visible
-    const popup = page.locator('[role="dialog"], [role="tooltip"], [popover], dialog');
-    await expect(popup.first()).toBeVisible({ timeout: 5_000 });
+    // The "how we judge this" trigger opens AtlasInfoPopup's "state" entry,
+    // whose dialog is labeled with its title. Match on that specifically —
+    // the generic dialog selector also matches the (hidden) mobile nav sheet
+    // that's always present in the DOM.
+    const popup = page.getByRole('dialog', { name: 'What the reef labels mean' });
+    await expect(popup).toBeVisible({ timeout: 5_000 });
   });
 
   test('Popup contains explanatory text (not empty)', async ({ page }) => {
@@ -608,7 +570,7 @@ test.describe('Info popups', () => {
     const infoBtn = page.getByRole('button', { name: /how we judge this/i }).first();
     await expect(infoBtn).toBeVisible({ timeout: 15_000 });
     await infoBtn.click();
-    const popup = page.locator('[role="dialog"], [role="tooltip"], [popover], dialog').first();
+    const popup = page.getByRole('dialog', { name: 'What the reef labels mean' });
     await expect(popup).toBeVisible({ timeout: 5_000 });
     const text = await popup.innerText().catch(() => '');
     expect(text.trim().length, 'Popup should contain visible text').toBeGreaterThan(20);
@@ -745,14 +707,14 @@ test.describe('Location page — Ari Atoll', () => {
     ).toBeVisible({ timeout: 15_000 });
   });
 
-  test('Shows "What you\'ll see" species section', async ({ page }) => {
+  test('Shows "What you will see" species section', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    await expect(page.getByText("What you'll see")).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText("What you will see")).toBeVisible({ timeout: 15_000 });
   });
 
   test('Species show a "seen" recency line', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    await expect(page.getByText("What you'll see")).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText("What you will see")).toBeVisible({ timeout: 15_000 });
     await expect(page.getByText(/seen/i).first()).toBeVisible();
   });
 
@@ -780,9 +742,9 @@ test.describe('Location page — Raja Ampat (second fixture)', () => {
     await expect(page.locator('#reef-condition')).toBeVisible({ timeout: 15_000 });
   });
 
-  test('Shows "What you\'ll see" section', async ({ page }) => {
+  test('Shows "What you will see" section', async ({ page }) => {
     await page.goto(RAJA, GOTO);
-    await expect(page.getByText("What you'll see")).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText("What you will see")).toBeVisible({ timeout: 15_000 });
   });
 });
 
@@ -808,7 +770,7 @@ test.describe('Reef state badges', () => {
   test('Homepage cards show reef state labels', async ({ page }) => {
     await page.goto('/', GOTO);
     await expect(page.locator('a[href^="/locations/"]').first()).toBeVisible({ timeout: 20_000 });
-    const count = await page.getByText(/Thriving|Under pressure|Witnessing change/).count();
+    const count = await page.getByText(/Improving|Stable|Declining/).count();
     expect(count, 'At least one reef state badge should appear in the card grid').toBeGreaterThan(0);
   });
 
@@ -816,34 +778,27 @@ test.describe('Reef state badges', () => {
     await page.goto('/', GOTO);
     await expect(page.locator('a[href^="/locations/"]').first()).toBeVisible({ timeout: 20_000 });
     // Collectively at least two distinct states should be visible
-    const thriving  = await page.getByText('Thriving').count();
-    const pressure  = await page.getByText('Under pressure').count();
-    const change    = await page.getByText('Witnessing change').count();
-    const distinct  = [thriving, pressure, change].filter(n => n > 0).length;
+    const improving = await page.getByText('Improving').count();
+    const stable    = await page.getByText('Stable').count();
+    const declining = await page.getByText('Declining').count();
+    const distinct  = [improving, stable, declining].filter(n => n > 0).length;
     expect(distinct, 'At least 2 distinct reef states should appear on the homepage').toBeGreaterThanOrEqual(2);
   });
 
   test('Location page shows its reef state', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    const state = page.getByText(/Thriving|Under pressure|Witnessing change/).first();
+    const state = page.getByText(/Improving|Stable|Declining|Not surveyed/).first();
     await expect(state).toBeVisible({ timeout: 15_000 });
   });
 
   test('Reef state badge text matches a canonical label', async ({ page }) => {
     await page.goto(ARI, GOTO);
     const badgeText = await page
-      .getByText(/Thriving|Under pressure|Witnessing change/)
+      .getByText(/Improving|Stable|Declining|Not surveyed/)
       .first()
       .innerText();
     // CSS text-transform may uppercase the text; normalize before comparing
-    expect(['thriving', 'under pressure', 'witnessing change']).toContain(badgeText.trim().toLowerCase());
-  });
-
-  test('Skill level badge is present on location cards', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.locator('a[href^="/locations/"]').first()).toBeVisible({ timeout: 20_000 });
-    const skillBadge = page.getByText(/Beginner|Open water|Advanced|Technical/).first();
-    await expect(skillBadge).toBeVisible({ timeout: 10_000 });
+    expect(['improving', 'stable', 'declining', 'not surveyed']).toContain(badgeText.trim().toLowerCase());
   });
 });
 
@@ -1087,8 +1042,8 @@ test.describe('Accessibility basics', () => {
     expect(await page.locator('h1').count()).toBe(1);
   });
 
-  test('Reef count region is an aria-live element', async ({ page }) => {
-    await page.goto('/', GOTO);
+  test('Location count region is an aria-live element', async ({ page }) => {
+    await page.goto(LOCATIONS, GOTO);
     const status = page.getByRole('status');
     await expect(status).toBeVisible({ timeout: 20_000 });
     const liveAttr = await status.getAttribute('aria-live');
@@ -1120,16 +1075,23 @@ test.describe('Card grid quality', () => {
     }
   });
 
-  test('Card images maintain portrait/landscape orientation consistently', async ({ page }) => {
+  test('Card images maintain a sane, non distorted aspect ratio', async ({ page }) => {
     await page.goto('/', GOTO);
+    // The homepage intentionally mixes portrait (3:4 ReefStateCardTrio) and
+    // other card formats — this only guards against zero-size or wildly
+    // stretched images, not a single fixed orientation.
     const imgs = page.locator('a[href^="/locations/"] img');
     await expect(imgs.first()).toBeVisible({ timeout: 20_000 });
     const first = await imgs.first().boundingBox();
     const second = await imgs.nth(1).boundingBox();
     if (!first || !second) return;
-    // Both images should be wider than they are tall (landscape/4:3 card format)
-    expect(first.width).toBeGreaterThan(first.height);
-    expect(second.width).toBeGreaterThan(second.height);
+    for (const box of [first, second]) {
+      expect(box.width, 'Card image should have non-zero width').toBeGreaterThan(0);
+      expect(box.height, 'Card image should have non-zero height').toBeGreaterThan(0);
+      const ratio = box.width / box.height;
+      expect(ratio, `Card image aspect ratio ${ratio.toFixed(2)} looks distorted`).toBeGreaterThan(0.4);
+      expect(ratio).toBeLessThan(2.5);
+    }
   });
 
   test('Country label is present on location cards', async ({ page }) => {
@@ -1140,10 +1102,5 @@ test.describe('Card grid quality', () => {
     const text = await card.innerText();
     // Should contain a country name (non-numeric text beyond just the reef name)
     expect(text.trim().split('\n').length, 'Card should have multiple lines of text').toBeGreaterThan(1);
-  });
-
-  test('Seasonal divider separates in-season from off-season cards', async ({ page }) => {
-    await page.goto('/', GOTO);
-    await expect(page.getByText('Great at other times of year').first()).toBeVisible({ timeout: 20_000 });
   });
 });

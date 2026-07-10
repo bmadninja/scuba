@@ -94,6 +94,7 @@ export function HomepageStatStrip({ locationCount, siteCount }: { locationCount:
       }}
     >
       <div
+        className="stat-strip-grid"
         style={{
           maxWidth: 1280,
           margin: "0 auto",

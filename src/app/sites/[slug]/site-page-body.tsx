@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { AffiliateLink } from "@/components/affiliate-link";
 import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
 
@@ -218,6 +219,7 @@ function formatDate(iso: string | null): string {
 export function SitePageBody(props: SiteBodyProps) {
   const [info, setInfo] = useState<InfoKey | null>(null);
   const [tripSheetOpen, setTripSheetOpen] = useState(false);
+  const [showAllOperators, setShowAllOperators] = useState(false);
 
   const {
     siteId,
@@ -235,9 +237,12 @@ export function SitePageBody(props: SiteBodyProps) {
     tripFacts,
     monthCells,
     getThere,
+    operators,
+    lodging,
   } = props;
 
   const hasTrip = getThere !== null;
+  const hasOperators = operators.length > 0 || lodging.length > 0;
 
   // ─── Sidebar content (shared between desktop sticky and mobile sheet) ─────
   // Note: defined as a JSX constant (not a component function) to avoid the
@@ -318,6 +323,87 @@ export function SitePageBody(props: SiteBodyProps) {
                 <div>
                   <p style={{ ...MONO, fontSize: "11px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#4A5568", marginBottom: "0.2rem" }}>Liveaboard option</p>
                   <p style={{ fontSize: "0.8125rem", color: "#4A5568", lineHeight: 1.5 }}>{getThere.liveaboardDescription}</p>
+                </div>
+              ) : null}
+            </div>
+          </Expand>
+        ) : null}
+
+        {/* Dive operators + lodging — mirrors the location page's "Where to
+            stay" expander, scoped to this one site. */}
+        {hasOperators ? (
+          <Expand summary="Dive operators">
+            <p style={{ fontSize: "0.8125rem", color: "#4A5568", lineHeight: 1.55, marginBottom: "0.75rem" }}>
+              Most divers book a place to stay and a dive operator together. Each link goes to the provider&rsquo;s own site.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {lodging.length > 0 ? (
+                <div>
+                  <p style={{ ...MONO, fontSize: "11px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#4A5568", marginBottom: "0.4rem" }}>
+                    Where to stay
+                  </p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                    {lodging.map((l) => (
+                      <AffiliateLink
+                        key={`stay-${l.partner}-${l.label}`}
+                        url={l.url || "#"}
+                        event="lodging_click"
+                        partner={l.partner}
+                        query={l.label}
+                        siteId={siteId}
+                        isAffiliate={l.isAffiliate}
+                        className="flex items-center justify-between gap-2 rounded border border-[#E7E6E2] bg-white px-3 py-2 text-sm font-medium text-[#0E1C28] no-underline transition hover:border-[#0E1C28]"
+                      >
+                        <span style={{ display: "flex", alignItems: "center", gap: "0.4rem", minWidth: 0 }}>
+                          <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            {l.label}
+                          </span>
+                          {l.kind === "liveaboard" ? (
+                            <span style={{ flexShrink: 0, ...MONO, fontSize: "10px", fontWeight: 500, letterSpacing: "0.04em", textTransform: "uppercase" as const, padding: "1px 5px", borderRadius: 999, background: "rgba(46,125,91,0.1)", color: "#2E7D5B" }}>
+                              stay + dive
+                            </span>
+                          ) : null}
+                        </span>
+                        <span aria-hidden="true" style={{ color: "#4A5568", flexShrink: 0 }}>→</span>
+                      </AffiliateLink>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {operators.length > 0 ? (
+                <div>
+                  <p style={{ ...MONO, fontSize: "11px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#4A5568", marginBottom: "0.4rem" }}>
+                    Dive operators
+                  </p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                    {(showAllOperators ? operators : operators.slice(0, 2)).map((op) => (
+                      <AffiliateLink
+                        key={`op-${op.partner}-${op.label}`}
+                        url={op.url || "#"}
+                        event="operator_click"
+                        partner={op.partner}
+                        query={op.label}
+                        productId={op.productId}
+                        siteId={siteId}
+                        isAffiliate={op.isAffiliate}
+                        className="flex items-center justify-between gap-2 rounded border border-[#E7E6E2] bg-white px-3 py-2 text-sm font-medium text-[#0E1C28] no-underline transition hover:border-[#0E1C28]"
+                      >
+                        <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
+                          {op.label}
+                        </span>
+                        <span aria-hidden="true" style={{ color: "#4A5568", flexShrink: 0 }}>→</span>
+                      </AffiliateLink>
+                    ))}
+                  </div>
+                  {operators.length > 2 && !showAllOperators ? (
+                    <button
+                      onClick={() => setShowAllOperators(true)}
+                      style={{ marginTop: "0.5rem", background: "none", border: "none", padding: 0, cursor: "pointer", ...MONO, fontSize: "11px", fontWeight: 500, letterSpacing: "0.08em", color: "#4A5568", textDecoration: "underline" }}
+                    >
+                      Show all {operators.length} operators
+                    </button>
+                  ) : null}
                 </div>
               ) : null}
             </div>

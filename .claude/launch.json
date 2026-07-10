@@ -30,5 +30,12 @@
       "port": 4173,
       "cwd": "_preview"
     }
+  ,{
+      "name": "xenodochial-wilson-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "autoPort": true
+    }
   ]
 }

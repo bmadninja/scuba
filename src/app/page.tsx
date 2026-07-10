@@ -17,6 +17,16 @@ export const metadata: Metadata = {
   description: `${locationCount} dive locations and ${siteCount.toLocaleString(
     "en-US",
   )} sites with live reef health, confirmed species sightings, and real conditions — so you can plan a dive that matters.`,
+  openGraph: {
+    images: [
+      {
+        url: "https://images.prismic.io/ocean-agency-cms/aRXUmrpReVYa4bjH_OceanImageBank_LarsvonRitterZahony_12_OceanImageBankcover.jpg?auto=format,compress&w=2560",
+        width: 1200,
+        height: 630,
+        alt: "A swirling school of mobula rays beneath the ocean surface",
+      },
+    ],
+  },
 };
 
 // ─── Data for ReefStateCard trio (one per state: improving / stable / declining)
@@ -321,7 +331,7 @@ export default function Home() {
                   num: "01",
                   eyebrow: "Live reef health",
                   heading: "We show you what the reef looks like today. Not what last year's dive guide said.",
-                  body: "Most platforms pull from the same static sources, updated once a year if you are lucky. We combine live satellite data from NOAA with the most recent in-water coral surveys — so the health label you see reflects what is actually happening underwater right now.",
+                  body: "Most platforms pull from the same static sources, updated once a year if you are lucky. We combine live satellite data from NOAA with the most recent underwater coral surveys — so the health label you see reflects what is actually happening underwater right now.",
                 },
                 {
                   num: "02",
@@ -655,7 +665,7 @@ export default function Home() {
                   maxWidth: 440,
                 }}
               >
-                iNaturalist, GBIF, OBIS and more — no accounts required. Your sighting is geo-tagged, species-matched, and forwarded automatically. Scientists see it the same day.
+                iNaturalist, GBIF, OBIS and more — no accounts required. Your sighting is tagged with your location, matched to a species, and forwarded automatically. Scientists see it the same day.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "flex-start" }}>
                 <Link
