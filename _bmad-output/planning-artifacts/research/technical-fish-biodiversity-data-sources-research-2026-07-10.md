@@ -1,8 +1,8 @@
 ---
-stepsCompleted: [1, 2, 3]
+stepsCompleted: [1, 2, 3, 4]
 inputDocuments: []
 workflowType: 'research'
-lastStep: 4
+lastStep: 5
 research_type: 'technical'
 research_topic: 'Fish Biodiversity Data Sources'
 research_goals: 'Landscape scan of all fish-biodiversity data sources vs. what the repo already has wired; best technical approach to display an area fish biodiversity over time; how to tie the fish-biodiversity signal into the existing reef-health model; data-gap analysis to identify organizations to reach out to for data access.'
@@ -219,6 +219,54 @@ Ranked by value-per-effort once the open sources are in:
 ### Cross-cutting license flag for outreach and design
 
 If scubaseason.fun is (or becomes) commercial, the **non-commercial** sources need a negotiated term or a display-only posture: **AquaMaps (CC BY-NC 3.0), REEF (non-commercial), FishBase (some content CC BY-NC), SeaLifeBase (CC BY-NC)**. The trend backbone — **RLS, MERMAID, GBIF, OBIS, NCRMP, PIFSC, AIMS (CC BY / public domain)** — is commercially clean. Design the benchmark on the clean-license trend sources; treat NC sources as enrichment you can drop.
+
+---
+
+## Implementation Approaches & Recommendations
+
+### Adoption strategy: incremental, mirror what exists
+
+Every recommendation below reuses the repo's proven ingest mold (`fetch-*.mjs` → `*-series.json` → typed accessor → registered `source` + `methodology`). No new dependency, no new infrastructure, no schema change to reef-state. Ship each phase independently; each is valuable alone.
+
+### Implementation Roadmap
+
+**Phase 0 — iNaturalist fish filter (hours, near-zero risk).** In `fetch-species-diversity.mjs`, add a `taxon_id` filter for ray-finned + cartilaginous fishes (Actinopterygii, Elasmobranchii, Holocephali) to `species_counts`. Converts an all-taxa richness proxy (currently inflated by terrestrial taxa at coastal sites) into a true fish-richness snapshot. Smallest possible win.
+
+**Phase 1 — MERMAID fish biomass (highest value).** New `fetch-mermaid-fish-biomass.mjs`, a sibling of `fetch-rls-fish-biomass.mjs`:
+- Endpoint: `mermaid_get_summary_sampleevents(limit = NULL)` equivalent REST call (`/v1/summarysampleevents/`), public/public-summary projects, read-only, no token.
+- Field: `biomass_kgha_avg` (total standing fish biomass, FishBase length-weight coefficients) per site+date; optionally `biomass_kgha_by_trophic_group_avg` for a trophic breakdown.
+- Match: same 0.5° proximity box + `MIN_TREND_YEARS` gate as RLS.
+- Write into `fish-biomass-series.json` with `sourceId: "mermaid"`, `methodologyClaimId: "fish-biomass-mermaid"`.
+- **This fills RLS's tropical Indo-Pacific gap with open data** (73 countries, Coral Triangle, WIO).
+
+**Phase 2 — Benchmark annotation (answers the UX "biodiversity benchmark" question).** No new data. Annotate the fish-biomass chart against the published unfished baseline **B₀ ≈ 1,150 kg/ha** and the **600 kg/ha** diversity-decline threshold, and register a `methodology` claim citing McClanahan/MacNeil et al. Turns every raw kg/ha into a sourced "% of an unfished reef" frame. Do this right after Phase 1 so the new tropical data lands with meaning.
+
+**Phase 3 — Reef Check via Aqualink (per-site upgrade).** Replace the hand-transcribed regional trends with per-site Aqualink API pulls where sites match, giving real per-site indicator-fish trends back to 1997.
+
+**Phase 4 — US reef fish (NCRMP + PIFSC).** ERDDAP/NCEI ingest for US-territory sites (Hawaii, Marianas, PRIA, Florida, PR, USVI) — richness + density + biomass, government-grade, deep temporal baseline.
+
+**Phase 5 — Bounded reef-health linkage (careful, high value).** Extend `getReefState()` so an effort-standardized fish survey can *satisfy the "surveyed" condition and set a state where coral is absent*, tiered by the biomass thresholds. Guardrail (repo's own rule): fish informs the verdict **only where no coral survey exists**, and a proximity-matched fish trend **never** overrides a hand-reviewed coral classification. Evaluate after Phase 1 reveals how many "Not surveyed" tropical sites this would rescue.
+
+**Phase 6 — AquaMaps expected-species overlay (optional, display-only).** A "what species should occur here" baseline for completeness context — **not a trend**. Mind CC BY-NC if the site monetizes.
+
+**Outreach track (runs in parallel with Phases 3–5):** email REEF (`data@REEF.org`) for bulk raw; CORDIO / GCRMN WIO node and WCS for Indian-Ocean + Coral-Triangle projects not yet public-summary; local MPA managers for hero sites.
+
+### Risks & mitigations
+
+- **Method heterogeneity** (RLS M1 250 m² blocks vs MERMAID belt transects vs Reef Check indicators): co-chart as kg/ha but **label every series by program and never blend across methods silently** — the repo already refuses to merge REEF into Reef Check for this reason.
+- **Proximity smear** (0.5° radius ≠ exact site): keep fish display-only by default; gate any state contribution behind the Phase-5 guardrail.
+- **License**: keep NC sources (AquaMaps, REEF, FishBase) off the commercial trend backbone.
+- **Partial MERMAID coverage**: only public/public-summary projects return data, so coverage < full 12k sites; `log()` what was dropped rather than implying full coverage.
+- **Latency**: reuse the existing freshness model (`fresh` ≤ 2 yr).
+
+### Success metrics
+
+- Δ in locations carrying a ≥2-year fish-biomass trend, before vs. after MERMAID (primary).
+- Count of tropical Indo-Pacific locations that gain a series they never had.
+- Count of "Not surveyed" sites rescued to a real state via fish (if Phase 5 ships).
+- Benchmark-annotation coverage (share of fish charts showing the B₀ frame).
+
+_Sources: [mermaidr accessing project data](https://data-mermaid.github.io/mermaidr/articles/accessing_project_data.html), [MERMAID reef-health metrics](https://datamermaid.org/documentation/mermaid-reef-health-metrics), [PNAS critical thresholds](https://www.pnas.org/doi/10.1073/pnas.1106861108), [McClanahan 2018 benchmarks](https://onlinelibrary.wiley.com/doi/10.1111/faf.12268)._
 
 ---
 
