@@ -1,8 +1,8 @@
 ---
-stepsCompleted: [1, 2]
+stepsCompleted: [1, 2, 3]
 inputDocuments: []
 workflowType: 'research'
-lastStep: 3
+lastStep: 4
 research_type: 'technical'
 research_topic: 'Fish Biodiversity Data Sources'
 research_goals: 'Landscape scan of all fish-biodiversity data sources vs. what the repo already has wired; best technical approach to display an area fish biodiversity over time; how to tie the fish-biodiversity signal into the existing reef-health model; data-gap analysis to identify organizations to reach out to for data access.'
@@ -180,6 +180,45 @@ A standing insight from the fisheries-ecology literature (McClanahan, MacNeil et
 **Option B — Let fish *rescue* "Not surveyed", bounded (higher value).** Because the model returns "unknown" without a coral or thermal reading, a site with strong RLS/MERMAID fish transects but no coral survey is labelled "Not surveyed" today — even though a fish transect *is* eyes underwater. The cleanest promotion: **let an effort-standardized fish survey satisfy the "surveyed" condition and set a state where coral is silent**, using the biomass thresholds to tier it. Guardrail, per the repo's own rule: fish informs the verdict **only where coral is absent**, or nudges within a band — it never overrides a hand-reviewed coral classification.
 
 **Recommended path:** ship **A** now (it's the benchmark the UX flow is asking for, and it unblocks the design without touching state logic), then evaluate **B** as a scoped enhancement once MERMAID fish coverage is in and you can see how many "Not surveyed" tropical sites it would rescue.
+
+---
+
+## Data-Gap Analysis & Outreach Targets
+
+### The gaps come in three axes
+
+**1. Geographic.** RLS is thin across the tropical Indo-Pacific / Coral Triangle; REEF is thin in the Med and Indo-Pacific. **This is mostly closable with open data, not outreach:** MERMAID runs **73 countries and ~12,000 sites**, is government-endorsed in Indonesia, and is strong across the Coral Triangle, Timor-Leste, Mozambique and the Western Indian Ocean — precisely RLS's blind spot ([MERMAID milestones](https://gcrmn.net/2026/04/14/mermaid/), [Indonesia endorsement](https://datamermaid.org/reef-stories/indonesia-and-mermaid-join-forces-to-safeguard-the-future-of-the-coral-triangle)). The residual after MERMAID: reefs with no standardized program at all (parts of the Red Sea, West Africa, remote Pacific outside US territories).
+
+**2. Temporal.** Two distinct problems: (a) **single-survey sites** — RLS/MERMAID visited once, so there is no trend to chart (structural; no source fixes it except repeat surveys); (b) **latency** — annual-to-biennial survey cadence means "current" fish data is often 1–2 years old, which the repo's own freshness model already accounts for (`fresh` ≤ 2 yr).
+
+**3. Taxonomic / measurement.** Biomass sources answer "how much fish" but not "how many species"; occurrence sources answer richness but with confounded effort. No single source gives clean effort-standardized *richness* trends globally — RLS species-richness-per-transect is the closest, and it inherits RLS's geographic gaps.
+
+### Coverage after wiring the open sources (do this before any outreach)
+
+The honest headline: **most of the gap closes with sources that need no permission.** In priority order, all open-access:
+
+| # | Source | Fills | Access | Outreach needed? |
+|---|---|---|---|---|
+| 1 | **MERMAID fish** | tropical Indo-Pacific biomass | open API | **No** |
+| 2 | **iNaturalist (fish-filtered)** | richness snapshot everywhere | open API | No |
+| 3 | **Reef Check / Aqualink** | indicator density, 100+ countries | open API | No |
+| 4 | **NCRMP + PIFSC RAMP** | US reef fish (Pacific/Caribbean/FL) | NCEI / ERDDAP | No |
+| 5 | **GBIF / OBIS (fish predicate)** | richness fill where surveys absent | open API/DOI | No |
+| 6 | **EMODnet Biology** | European seas | open WFS | No |
+
+### Outreach targets — for the residual only
+
+Ranked by value-per-effort once the open sources are in:
+
+1. **REEF (Reef Environmental Education Foundation)** — for **bulk raw survey files** beyond the public Geographic Area Report the repo already uses (finer site-level resolution, full species matrices). Access path: email **data@REEF.org** / Dr. Christy Pattengill-Semmens; historically permissive for science/non-commercial. ⚠️ Confirm commercial terms if the site monetizes. ([REEF data users](https://www.reef.org/news/enews/making-it-count-may-2025/putting-it-work-who%E2%80%99s-using-reef-data-may-2025))
+2. **CORDIO East Africa / GCRMN Western Indian Ocean node** — reef-fish monitoring for Kenya, Tanzania, Mozambique, Seychelles, Comoros, Madagascar, where open coverage is thin. Access path: the GCRMN regional committee / CORDIO directly; increasingly funneled through MERMAID, so ask whether their MERMAID projects can be set to "public summary." ([GCRMN WIO](https://gcrmn.net/2025/02/20/wio-workshop-2025/))
+3. **WCS (Wildlife Conservation Society)** — runs MERMAID; holds Coral Triangle + Mozambique projects, some kept private rather than public-summary. Access path: partner via MERMAID and request public-summary flips, or a WCS data-sharing agreement. ([WCS MERMAID](https://www.wcs.org/our-work/species/coral/mermaid))
+4. **Local MPA managers / Blue Parks partners** — site-specific fish series for flagship locations, exactly the precedent the repo already set with Tubbataha (Saving Philippine Reefs / CCEF). Highest-quality, lowest-scalability; reserve for hero sites.
+5. **OBIS-SEAMAP** — for the megafauna sightings layer (sharks/rays/turtles), not core reef fish: registration + a short use statement unlocks bulk download.
+
+### Cross-cutting license flag for outreach and design
+
+If scubaseason.fun is (or becomes) commercial, the **non-commercial** sources need a negotiated term or a display-only posture: **AquaMaps (CC BY-NC 3.0), REEF (non-commercial), FishBase (some content CC BY-NC), SeaLifeBase (CC BY-NC)**. The trend backbone — **RLS, MERMAID, GBIF, OBIS, NCRMP, PIFSC, AIMS (CC BY / public domain)** — is commercially clean. Design the benchmark on the clean-license trend sources; treat NC sources as enrichment you can drop.
 
 ---
 
