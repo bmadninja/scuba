@@ -1,0 +1,176 @@
+<title>Reef breakdown — verdict + full chart, always visible (mock)</title>
+<style>
+  :root{
+    --paper:#FFFFFF; --surface:#F8F7F4; --hairline:#E7E6E2; --hairline-strong:#D3D1CB;
+    --ink:#0E1C28; --ink-2:#4A5568; --mute:#6B7280;
+    --ok:#2E7D5B; --warn:#B98A2E; --bad:#C0412B; --yellow:#F6C700; --page:#FBFAF8;
+    --serif:"Source Serif 4","Source Serif Pro",Georgia,serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  .page{max-width:640px;margin:0 auto;padding:44px 22px 90px;}
+  .kicker{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin:0;}
+  h1.t{font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-0.02em;margin:8px 0 6px;text-wrap:balance;}
+  p.lede{font-size:14.5px;color:var(--ink-2);line-height:1.6;margin:0 0 4px;max-width:560px;}
+  .stack{display:flex;flex-direction:column;gap:44px;margin-top:36px;}
+  .ctx{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin-bottom:10px;}
+
+  .card{border:1px solid var(--hairline-strong);border-radius:12px;background:var(--paper);overflow:hidden;}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:16px 20px 15px;border-bottom:1px solid var(--hairline);}
+  .card-title{font-family:var(--serif);font-size:18px;color:var(--ink);letter-spacing:-0.01em;}
+  .measure{font-family:var(--mono);font-size:11px;color:var(--ink-2);cursor:pointer;background:none;border:none;padding:0;display:inline-flex;align-items:center;gap:6px;}
+  .measure .i{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid var(--hairline-strong);font-family:var(--serif);font-style:italic;font-size:10px;}
+
+  /* one signal = verdict header + its full labelled chart, always visible */
+  .sig{padding:16px 20px 18px;border-top:1px solid var(--hairline);}
+  .sig:first-of-type{border-top:none;}
+  .sig-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px;}
+  .sig-name{font-size:13px;color:var(--ink-2);}
+  .sig-verdict{display:inline-flex;align-items:center;gap:8px;font-size:17px;font-weight:600;letter-spacing:-0.01em;}
+  .sig-verdict .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+  .sig-verdict .arrow{font-size:14px;font-weight:500;opacity:.85;}
+
+  .readout{display:flex;justify-content:space-between;margin-top:5px;font-family:var(--mono);font-size:9px;color:var(--mute);gap:8px;}
+  .cap{font-size:12.5px;color:var(--ink-2);line-height:1.5;margin-top:9px;}
+  .cap b{color:var(--ink);font-weight:600;}
+  .src{font-family:var(--mono);font-size:10px;color:var(--mute);letter-spacing:.02em;margin-top:8px;}
+  .scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--mute);margin-top:5px;}
+  .track{position:relative;height:11px;border-radius:6px;overflow:hidden;}
+
+  .foot-note{font-size:12.5px;color:var(--mute);line-height:1.5;padding:12px 20px;border-top:1px solid var(--hairline);background:var(--surface);display:flex;gap:9px;}
+  .foot-note .d{width:7px;height:7px;border-radius:50%;background:var(--ink);margin-top:5px;flex-shrink:0;}
+  .compare{margin-top:8px;font-size:12.5px;color:var(--mute);line-height:1.6;border-left:2px solid var(--yellow);padding:2px 0 2px 12px;}
+</style>
+
+<div class="page">
+  <p class="kicker">Mock · verdict + full chart · always visible</p>
+  <h1 class="t">How this reef is doing</h1>
+  <p class="lede">One-word verdict leads each signal; the full, labelled chart sits right beneath it — no dropdown, nothing hidden. Every axis, healthy band and reading is labelled, so each chart stands on its own.</p>
+  <div class="stack" id="stack"></div>
+  <p class="compare">This keeps the proper reference charts (fixed axes, shaded healthy zone, start→end readings) and just removes the expand. Taller card, but every claim is visible and self-explanatory.</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var C={ok:"var(--ok)",mid:"var(--warn)",bad:"var(--bad)",none:"var(--mute)"};
+  function tone(b){return C[b]||C.none;}
+
+  // ── labelled reference charts ────────────────────────────────────────
+  function coralChart(series){ // % cover, domain 0-60, healthy 40-60
+    var w=252,h=94,padL=30,padR=44,padT=8,padB=14,pw=w-padL-padR,ph=h-padT-padB,dHi=60;
+    var xf=function(i){return padL+(i/(series.length-1))*pw;};
+    var yf=function(v){return padT+(1-Math.max(0,Math.min(dHi,v))/dHi)*ph;};
+    var line=series.map(function(v,i){return (i?"L":"M")+xf(i).toFixed(1)+" "+yf(v).toFixed(1);}).join(" ");
+    var area=line+" L"+xf(series.length-1).toFixed(1)+" "+(padT+ph).toFixed(1)+" L"+xf(0).toFixed(1)+" "+(padT+ph).toFixed(1)+" Z";
+    var last=series[series.length-1], band=last>=40?"ok":last>=20?"mid":"bad", c=tone(band);
+    var bandTop=yf(60),bandBot=yf(40);
+    var ticks=[0,20,40,60].map(function(v){return '<line x1="'+padL+'" y1="'+yf(v)+'" x2="'+(w-padR)+'" y2="'+yf(v)+'" stroke="var(--hairline)" opacity="0.6"/><text x="'+(padL-6)+'" y="'+(yf(v)+3)+'" text-anchor="end" font-family="var(--mono)" font-size="8" fill="var(--mute)">'+v+'%</text>';}).join("");
+    return '<svg viewBox="0 0 '+w+' '+h+'" width="'+w+'" height="'+h+'" style="display:block;overflow:visible">'+
+      '<rect x="'+padL+'" y="'+bandTop+'" width="'+pw+'" height="'+(bandBot-bandTop)+'" fill="var(--ok)" opacity="0.10"/>'+
+      '<line x1="'+padL+'" y1="'+bandBot+'" x2="'+(w-padR)+'" y2="'+bandBot+'" stroke="var(--ok)" stroke-dasharray="3 2" opacity="0.7"/>'+
+      '<text x="'+(w-padR)+'" y="'+(bandTop+9)+'" text-anchor="end" font-family="var(--mono)" font-size="7.5" fill="color-mix(in oklch,var(--ok) 55%,var(--mute))">HEALTHY</text>'+
+      ticks+
+      '<line x1="'+padL+'" y1="'+padT+'" x2="'+padL+'" y2="'+(padT+ph)+'" stroke="var(--hairline-strong)"/>'+
+      '<path d="'+area+'" fill="'+c+'" opacity="0.09"/>'+
+      '<path d="'+line+'" fill="none" stroke="'+c+'" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>'+
+      series.map(function(v,i){var l=i===series.length-1;return '<circle cx="'+xf(i)+'" cy="'+yf(v)+'" r="'+(l?3:1.7)+'" fill="'+(l?c:"var(--paper)")+'" stroke="'+c+'" stroke-width="1.1"/>';}).join("")+
+      '</svg>';
+  }
+  function effortChart(series,band,yLabel){ // relative trend, labelled axis, no healthy band
+    var w=252,h=94,padL=30,padR=44,padT=10,padB=14,pw=w-padL-padR,ph=h-padT-padB,c=tone(band);
+    var lo=0, hi=Math.max.apply(null,series)*1.1||1;
+    var xf=function(i){return padL+(i/(series.length-1))*pw;};
+    var yf=function(v){return padT+(1-(v-lo)/(hi-lo))*ph;};
+    var line=series.map(function(v,i){return (i?"L":"M")+xf(i).toFixed(1)+" "+yf(v).toFixed(1);}).join(" ");
+    var area=line+" L"+xf(series.length-1).toFixed(1)+" "+(padT+ph).toFixed(1)+" L"+xf(0).toFixed(1)+" "+(padT+ph).toFixed(1)+" Z";
+    var grid=[0,hi/2,hi].map(function(v){return '<line x1="'+padL+'" y1="'+yf(v)+'" x2="'+(w-padR)+'" y2="'+yf(v)+'" stroke="var(--hairline)" opacity="0.6"/>';}).join("");
+    return '<svg viewBox="0 0 '+w+' '+h+'" width="'+w+'" height="'+h+'" style="display:block;overflow:visible">'+
+      grid+
+      '<text x="'+(padL-6)+'" y="'+(padT+3)+'" text-anchor="end" font-family="var(--mono)" font-size="7.5" fill="var(--mute)">high</text>'+
+      '<text x="'+(padL-6)+'" y="'+(padT+ph)+'" text-anchor="end" font-family="var(--mono)" font-size="7.5" fill="var(--mute)">low</text>'+
+      '<line x1="'+padL+'" y1="'+padT+'" x2="'+padL+'" y2="'+(padT+ph)+'" stroke="var(--hairline-strong)"/>'+
+      '<path d="'+area+'" fill="'+c+'" opacity="0.09"/>'+
+      '<path d="'+line+'" fill="none" stroke="'+c+'" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>'+
+      series.map(function(v,i){var l=i===series.length-1;return '<circle cx="'+xf(i)+'" cy="'+yf(v)+'" r="'+(l?3:1.7)+'" fill="'+(l?c:"var(--paper)")+'" stroke="'+c+'" stroke-width="1.1"/>';}).join("")+
+      '<text x="'+(w-padR+4)+'" y="'+(padT+ph/2)+'" font-family="var(--mono)" font-size="7.5" fill="var(--mute)">'+yLabel+'</text>'+
+      '</svg>';
+  }
+  function richnessBar(value,bench,max,band){
+    var c=tone(band), pct=Math.min(100,value/max*100), bpct=Math.min(100,bench/max*100);
+    return '<div class="track" style="background:#ECEBE7">'+
+      '<div style="position:absolute;inset:0 auto 0 0;width:'+pct+'%;border-radius:6px;background:color-mix(in oklch,'+c+' 55%,var(--paper))"></div>'+
+      '<div style="position:absolute;top:-3px;bottom:-3px;left:'+bpct+'%;width:2px;background:var(--ink);opacity:.55"></div></div>'+
+      '<div class="scale"><span>0</span><span>healthy reef of its kind ▲</span><span>'+max+' spp</span></div>';
+  }
+  function dhwScale(dhw){
+    var pct=Math.min(100,dhw/12*100);
+    return '<div class="track" style="background:linear-gradient(90deg,#DCEFE6 0 33%,#F3E6CC 33% 66%,#F3D9D2 66% 100%)">'+
+      '<div style="position:absolute;top:0;bottom:0;left:0;width:33%;box-shadow:inset 0 0 0 1px color-mix(in oklch,var(--ok) 40%,var(--hairline))"></div>'+
+      '<div style="position:absolute;top:-3px;bottom:-3px;left:calc('+pct+'% - 1.5px);width:3px;border-radius:2px;background:var(--ink)"></div></div>'+
+      '<div class="scale"><span>0</span><span>4 · bleaching risk</span><span>12 °C-wk</span></div>';
+  }
+  function readout(a,mid,b){return '<div class="readout"><span>'+a+'</span><span>'+mid+'</span><span>'+b+'</span></div>';}
+
+  var REEFS=[
+    { ctx:"Raja Ampat · Indonesia", override:null, signals:[
+      {name:"Coral health", verdict:"Improving", band:"ok", arrow:"↑",
+        chart:coralChart([32,35,38,42,45,47,49,50]),
+        extra:readout('2016 · <span style="color:var(--ink-2)">32%</span>','% of seabed as living coral','now · <span style="color:color-mix(in oklch,var(--ok) 68%,var(--ink));font-weight:500">50%</span>'),
+        src:"Source · MERMAID diver surveys"},
+      {name:"Fish biodiversity", verdict:"Rich", band:"ok", arrow:"",
+        chart:richnessBar(72,55,90,"ok"),
+        extra:'<div class="cap"><b>≈72 fish species</b> per standard 500 m² survey — above a healthy reef of its kind.</div>',
+        src:"Source · Reef Life Survey · standard M1 transects"},
+      {name:"Bleaching risk", verdict:"Low", band:"ok", arrow:"",
+        chart:dhwScale(1),
+        extra:'<div class="cap"><b>1 °C-week</b> of accumulated heat right now — far below the bleaching threshold.</div>',
+        src:"Source · NOAA Coral Reef Watch"},
+      {name:"Fishing", verdict:"Protected", band:"ok", arrow:"",
+        chart:effortChart([6,4,5,4,3,4,3,3],"ok","boat activity, 30 km"),
+        extra:'<div class="cap">Inside an enforced <b>no-take reserve</b>; boat-tracking shows quiet, flat effort — the ban is holding.</div>',
+        src:"Source · MPAtlas · Global Fishing Watch"},
+    ]},
+    { ctx:"Cozumel · Mexico", override:"This rating was set from published studies, not just the signals below.", signals:[
+      {name:"Coral health", verdict:"Declining", band:"bad", arrow:"↓",
+        chart:coralChart([20,18,17,15,14,13,12,11]),
+        extra:readout('2011 · <span style="color:var(--ink-2)">20%</span>','% of seabed as living coral','now · <span style="color:color-mix(in oklch,var(--bad) 68%,var(--ink));font-weight:500">11%</span>'),
+        src:"Source · AGRRA survey sites"},
+      {name:"Bleaching risk", verdict:"Elevated", band:"mid", arrow:"",
+        chart:dhwScale(6),
+        extra:'<div class="cap"><b>6 °C-weeks</b> accumulated — into the range where pale coral shows in the shallows.</div>',
+        src:"Source · NOAA Coral Reef Watch"},
+      {name:"Fishing", verdict:"Heavily fished", band:"bad", arrow:"",
+        chart:effortChart([30,38,45,52,60,68,74,80],"bad","boat activity, 30 km"),
+        extra:'<div class="cap">No formal protection; boat-tracking shows <b>heavy, rising effort</b> nearby.</div>',
+        src:"Source · Global Fishing Watch"},
+    ]},
+  ];
+
+  function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+  function sig(s){
+    var d=el("div","sig");
+    d.innerHTML='<div class="sig-head"><span class="sig-name">'+s.name+'</span>'+
+      '<span class="sig-verdict" style="color:color-mix(in oklch,'+tone(s.band)+' 78%,var(--ink))">'+
+      '<span class="dot" style="background:'+tone(s.band)+'"></span>'+s.verdict+(s.arrow?'<span class="arrow">'+s.arrow+'</span>':'')+'</span></div>'+
+      s.chart+(s.extra||'')+'<div class="src">'+s.src+'</div>';
+    return d;
+  }
+  function card(reef){
+    var wrap=el("div");
+    wrap.appendChild(el("div","ctx",reef.ctx));
+    var cd=el("div","card");
+    var head=el("div","card-head");
+    head.appendChild(el("div","card-title","How this reef is doing"));
+    var m=el("button","measure");m.type="button";m.innerHTML='<span class="i">i</span>How we measure this';
+    head.appendChild(m); cd.appendChild(head);
+    reef.signals.forEach(function(s){cd.appendChild(sig(s));});
+    if(reef.override){var f=el("div","foot-note");f.innerHTML='<span class="d"></span><span>'+reef.override+'</span>';cd.appendChild(f);}
+    wrap.appendChild(cd); return wrap;
+  }
+  var stack=document.getElementById("stack");
+  REEFS.forEach(function(reef){stack.appendChild(card(reef));});
+})();
+</script>
