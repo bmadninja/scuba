@@ -1,0 +1,2429 @@
+{
+  "_comment": "Per-site reef market-gravity (Andrello et al. 2022 local-reef-pressures). gravity = raw market gravity (right-skewed); fishingPressureValue = global 0..1 percentile — band on the percentile. Built by scripts/fetch-reef-gravity.mjs. Sites with no mapped reef cell within maxPixelKm are omitted.",
+  "lastBuiltAt": "2026-07-10",
+  "source": "andrello-2022-local-reef-pressures",
+  "citation": "Andrello et al. 2022, Conservation Letters, doi:10.1111/conl.12858",
+  "maxPixelKm": 25,
+  "records": [
+    {
+      "locationId": "abrolhos-banks",
+      "gravity": 0.65,
+      "fishingPressureValue": 0.4878,
+      "nearestPixelKm": 2.7,
+      "pixelLat": -17.975,
+      "pixelLng": -38.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "addu-atoll",
+      "gravity": 0.0307,
+      "fishingPressureValue": 0.1374,
+      "nearestPixelKm": 1.3,
+      "pixelLat": -0.625,
+      "pixelLng": 73.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "aldabra-atoll",
+      "gravity": 0.0298,
+      "fishingPressureValue": 0.1352,
+      "nearestPixelKm": 3.9,
+      "pixelLat": -9.425,
+      "pixelLng": 46.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "alor",
+      "gravity": 0.8809,
+      "fishingPressureValue": 0.53,
+      "nearestPixelKm": 7.9,
+      "pixelLat": -8.175,
+      "pixelLng": 124.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "amami-islands",
+      "gravity": 0.8014,
+      "fishingPressureValue": 0.5165,
+      "nearestPixelKm": 8.7,
+      "pixelLat": 28.375,
+      "pixelLng": 129.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "ambon-bay",
+      "gravity": 3259.9374,
+      "fishingPressureValue": 0.9975,
+      "nearestPixelKm": 2.1,
+      "pixelLat": -3.675,
+      "pixelLng": 128.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "andaman-islands-india",
+      "gravity": 4.8901,
+      "fishingPressureValue": 0.761,
+      "nearestPixelKm": 2.6,
+      "pixelLat": 11.975,
+      "pixelLng": 92.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "andros-bahamas",
+      "gravity": 9.9793,
+      "fishingPressureValue": 0.8344,
+      "nearestPixelKm": 3.8,
+      "pixelLat": 24.725,
+      "pixelLng": -77.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "anguilla",
+      "gravity": 1.1903,
+      "fishingPressureValue": 0.5754,
+      "nearestPixelKm": 4.6,
+      "pixelLat": 18.225,
+      "pixelLng": -63.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "anilao-philippines",
+      "gravity": 324.8623,
+      "fishingPressureValue": 0.9834,
+      "nearestPixelKm": 7.7,
+      "pixelLat": 13.625,
+      "pixelLng": 120.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "anse-chastanet-saint-lucia",
+      "gravity": 9.2736,
+      "fishingPressureValue": 0.827,
+      "nearestPixelKm": 3.2,
+      "pixelLat": 13.825,
+      "pixelLng": -61.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "antigua-and-barbuda",
+      "gravity": 561.9892,
+      "fishingPressureValue": 0.9889,
+      "nearestPixelKm": 7.5,
+      "pixelLat": 17.125,
+      "pixelLng": -61.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "apia-samoa",
+      "gravity": 317.4869,
+      "fishingPressureValue": 0.9832,
+      "nearestPixelKm": 2.8,
+      "pixelLat": -13.825,
+      "pixelLng": -171.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "apo-island",
+      "gravity": 2.6682,
+      "fishingPressureValue": 0.6876,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 9.075,
+      "pixelLng": 123.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "apo-reef-philippines",
+      "gravity": 41.2772,
+      "fishingPressureValue": 0.9284,
+      "nearestPixelKm": 2.3,
+      "pixelLat": 12.675,
+      "pixelLng": 120.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "apra-harbor-guam",
+      "gravity": 0.0908,
+      "fishingPressureValue": 0.2254,
+      "nearestPixelKm": 3.4,
+      "pixelLat": 13.425,
+      "pixelLng": 144.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "aqaba-jordan",
+      "gravity": 2.5306,
+      "fishingPressureValue": 0.6815,
+      "nearestPixelKm": 3.1,
+      "pixelLat": 29.525,
+      "pixelLng": 34.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "ari-atoll-maldives",
+      "gravity": 1.6999,
+      "fishingPressureValue": 0.6298,
+      "nearestPixelKm": 0.6,
+      "pixelLat": 3.875,
+      "pixelLng": 72.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "baa-atoll",
+      "gravity": 0.6859,
+      "fishingPressureValue": 0.4955,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 5.025,
+      "pixelLng": 73.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bahrain",
+      "gravity": 994.614,
+      "fishingPressureValue": 0.9928,
+      "nearestPixelKm": 6.8,
+      "pixelLat": 26.075,
+      "pixelLng": 50.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "banco-chinchorro",
+      "gravity": 0.1116,
+      "fishingPressureValue": 0.2503,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 18.575,
+      "pixelLng": -87.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "banda-sea",
+      "gravity": 0.7827,
+      "fishingPressureValue": 0.5132,
+      "nearestPixelKm": 21.1,
+      "pixelLat": -5.425,
+      "pixelLng": 127.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "barbados-west-coast",
+      "gravity": 43.9312,
+      "fishingPressureValue": 0.9318,
+      "nearestPixelKm": 6.2,
+      "pixelLat": 13.225,
+      "pixelLng": -59.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "batangas",
+      "gravity": 433.1936,
+      "fishingPressureValue": 0.9862,
+      "nearestPixelKm": 2.1,
+      "pixelLat": 13.775,
+      "pixelLng": 120.925,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "batticaloa",
+      "gravity": 5.4759,
+      "fishingPressureValue": 0.7719,
+      "nearestPixelKm": 14.6,
+      "pixelLat": 7.825,
+      "pixelLng": 81.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bay-of-pigs",
+      "gravity": 10.5216,
+      "fishingPressureValue": 0.8399,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 22.075,
+      "pixelLng": -81.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bayahibe",
+      "gravity": 193.6499,
+      "fishingPressureValue": 0.9759,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 18.375,
+      "pixelLng": -68.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bazaruto-archipelago",
+      "gravity": 0.588,
+      "fishingPressureValue": 0.4707,
+      "nearestPixelKm": 3.8,
+      "pixelLat": -21.725,
+      "pixelLng": 35.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "beqa-lagoon-fiji",
+      "gravity": 9.5195,
+      "fishingPressureValue": 0.8297,
+      "nearestPixelKm": 2,
+      "pixelLat": -18.375,
+      "pixelLng": 178.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bermuda",
+      "gravity": 452.4632,
+      "fishingPressureValue": 0.9868,
+      "nearestPixelKm": 3,
+      "pixelLat": 32.325,
+      "pixelLng": -64.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bloody-bay-wall-cayman-islands",
+      "gravity": 0.1211,
+      "fishingPressureValue": 0.2596,
+      "nearestPixelKm": 2.3,
+      "pixelLat": 19.725,
+      "pixelLng": -79.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "blue-corner-palau",
+      "gravity": 0.6227,
+      "fishingPressureValue": 0.4808,
+      "nearestPixelKm": 1.6,
+      "pixelLat": 7.125,
+      "pixelLng": 134.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "blue-hole-belize",
+      "gravity": 1.3223,
+      "fishingPressureValue": 0.5913,
+      "nearestPixelKm": 1.5,
+      "pixelLat": 17.325,
+      "pixelLng": -87.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bocas-del-toro-panama",
+      "gravity": 773.558,
+      "fishingPressureValue": 0.9913,
+      "nearestPixelKm": 2.4,
+      "pixelLat": 9.325,
+      "pixelLng": -82.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bonaire-national-marine-park-bonaire",
+      "gravity": 3.7163,
+      "fishingPressureValue": 0.7282,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 12.225,
+      "pixelLng": -68.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bonegi-solomon-islands",
+      "gravity": 1318.0468,
+      "fishingPressureValue": 0.9945,
+      "nearestPixelKm": 7.4,
+      "pixelLat": -9.425,
+      "pixelLng": 159.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bora-bora-fp",
+      "gravity": 0.0476,
+      "fishingPressureValue": 0.1662,
+      "nearestPixelKm": 3.3,
+      "pixelLat": -16.475,
+      "pixelLng": -151.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "brothers-egypt",
+      "gravity": 0.9315,
+      "fishingPressureValue": 0.5381,
+      "nearestPixelKm": 2.7,
+      "pixelLat": 26.325,
+      "pixelLng": 34.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "bunaken-indonesia",
+      "gravity": 263.3766,
+      "fishingPressureValue": 0.9808,
+      "nearestPixelKm": 1.8,
+      "pixelLat": 1.625,
+      "pixelLng": 124.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "cabo-san-lucas",
+      "gravity": 5.8257,
+      "fishingPressureValue": 0.7782,
+      "nearestPixelKm": 4.6,
+      "pixelLat": 22.875,
+      "pixelLng": -109.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "camiguin-philippines",
+      "gravity": 5.2934,
+      "fishingPressureValue": 0.7687,
+      "nearestPixelKm": 5,
+      "pixelLat": 9.225,
+      "pixelLng": 124.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "candidasa-bali-indonesia",
+      "gravity": 94.4351,
+      "fishingPressureValue": 0.9581,
+      "nearestPixelKm": 2.8,
+      "pixelLat": -8.525,
+      "pixelLng": 115.575,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "cartagena-rosario-islands",
+      "gravity": 114.4141,
+      "fishingPressureValue": 0.9638,
+      "nearestPixelKm": 1.7,
+      "pixelLat": 10.175,
+      "pixelLng": -75.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "catalina-islands-costa-rica",
+      "gravity": 31.183,
+      "fishingPressureValue": 0.9151,
+      "nearestPixelKm": 7.4,
+      "pixelLat": 10.575,
+      "pixelLng": -85.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "cayman-brac",
+      "gravity": 0.1172,
+      "fishingPressureValue": 0.2557,
+      "nearestPixelKm": 0.6,
+      "pixelLat": 19.725,
+      "pixelLng": -79.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "cenotes-mexico",
+      "gravity": 1.5689,
+      "fishingPressureValue": 0.6177,
+      "nearestPixelKm": 4.5,
+      "pixelLat": 20.225,
+      "pixelLng": -87.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "chumbe-island-tanzania",
+      "gravity": 539.6268,
+      "fishingPressureValue": 0.9886,
+      "nearestPixelKm": 0.8,
+      "pixelLat": -6.275,
+      "pixelLng": 39.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "chuuk-lagoon-fsm",
+      "gravity": 0.0013,
+      "fishingPressureValue": 0.0261,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 7.425,
+      "pixelLng": 151.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "cocos-costa-rica",
+      "gravity": 0.0274,
+      "fishingPressureValue": 0.1307,
+      "nearestPixelKm": 0.4,
+      "pixelLat": 5.525,
+      "pixelLng": -87.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "cocos-keeling-islands",
+      "gravity": 0.0684,
+      "fishingPressureValue": 0.1997,
+      "nearestPixelKm": 1.3,
+      "pixelLat": -12.175,
+      "pixelLng": 96.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "coiba-panama",
+      "gravity": 0.7985,
+      "fishingPressureValue": 0.5159,
+      "nearestPixelKm": 18.2,
+      "pixelLat": 7.475,
+      "pixelLng": -81.675,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "con-dao",
+      "gravity": 0.9252,
+      "fishingPressureValue": 0.537,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 8.675,
+      "pixelLng": 106.575,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "coral-bay-wa",
+      "gravity": 0.1544,
+      "fishingPressureValue": 0.2901,
+      "nearestPixelKm": 2,
+      "pixelLat": -23.125,
+      "pixelLng": 113.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "corn-islands-nicaragua",
+      "gravity": 0.8656,
+      "fishingPressureValue": 0.5275,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 12.175,
+      "pixelLng": -83.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "coron",
+      "gravity": 15.8258,
+      "fishingPressureValue": 0.8752,
+      "nearestPixelKm": 3.4,
+      "pixelLat": 11.975,
+      "pixelLng": 120.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "cozumel-mexico",
+      "gravity": 0.7752,
+      "fishingPressureValue": 0.5119,
+      "nearestPixelKm": 5.5,
+      "pixelLat": 20.425,
+      "pixelLng": -86.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "cuba-jardines-de-la-reina",
+      "gravity": 2.8786,
+      "fishingPressureValue": 0.6957,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 20.825,
+      "pixelLng": -78.925,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "dahab-egypt",
+      "gravity": 0.0683,
+      "fishingPressureValue": 0.1995,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 28.525,
+      "pixelLng": 34.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "dahlak-eritrea",
+      "gravity": 9.4893,
+      "fishingPressureValue": 0.8293,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 15.775,
+      "pixelLng": 40.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "darwin-galapagos-ecuador",
+      "gravity": 0.0034,
+      "fishingPressureValue": 0.0352,
+      "nearestPixelKm": 1.7,
+      "pixelLat": 1.675,
+      "pixelLng": -91.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "daymaniyat-oman",
+      "gravity": 55.2434,
+      "fishingPressureValue": 0.9404,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 23.875,
+      "pixelLng": 58.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "derawan-archipelago-indonesia",
+      "gravity": 0.4306,
+      "fishingPressureValue": 0.418,
+      "nearestPixelKm": 10.6,
+      "pixelLat": 2.225,
+      "pixelLng": 118.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "diani-shimoni-kenya",
+      "gravity": 69.9291,
+      "fishingPressureValue": 0.9481,
+      "nearestPixelKm": 0.8,
+      "pixelLat": -4.625,
+      "pixelLng": 39.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "djibouti-gulf-of-tadjoura",
+      "gravity": 33.7177,
+      "fishingPressureValue": 0.9192,
+      "nearestPixelKm": 1.6,
+      "pixelLat": 11.775,
+      "pixelLng": 42.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "dominica-island",
+      "gravity": 5534.1687,
+      "fishingPressureValue": 0.9984,
+      "nearestPixelKm": 8.9,
+      "pixelLat": 15.375,
+      "pixelLng": -61.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "donsol",
+      "gravity": 9.7273,
+      "fishingPressureValue": 0.8317,
+      "nearestPixelKm": 13,
+      "pixelLat": 12.925,
+      "pixelLng": 124.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "dubai-uae",
+      "gravity": 1089.2295,
+      "fishingPressureValue": 0.9934,
+      "nearestPixelKm": 14.4,
+      "pixelLat": 25.325,
+      "pixelLng": 55.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "dumaguete",
+      "gravity": 2.0381,
+      "fishingPressureValue": 0.6548,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 9.325,
+      "pixelLng": 123.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "efate-vanuatu",
+      "gravity": 21.5163,
+      "fishingPressureValue": 0.8949,
+      "nearestPixelKm": 4.2,
+      "pixelLat": -17.775,
+      "pixelLng": 168.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "eilat",
+      "gravity": 2.5306,
+      "fishingPressureValue": 0.6815,
+      "nearestPixelKm": 4.3,
+      "pixelLat": 29.525,
+      "pixelLng": 34.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "el-nido-philippines",
+      "gravity": 8.3117,
+      "fishingPressureValue": 0.8158,
+      "nearestPixelKm": 1.7,
+      "pixelLat": 11.175,
+      "pixelLng": 119.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "exmouth-wa",
+      "gravity": 0.1205,
+      "fishingPressureValue": 0.2589,
+      "nearestPixelKm": 0.9,
+      "pixelLat": -21.925,
+      "pixelLng": 114.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "exuma-cays-bahamas",
+      "gravity": 1.8122,
+      "fishingPressureValue": 0.6394,
+      "nearestPixelKm": 3.8,
+      "pixelLat": 24.275,
+      "pixelLng": -76.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "fakarava",
+      "gravity": 0.015,
+      "fishingPressureValue": 0.0913,
+      "nearestPixelKm": 2.1,
+      "pixelLat": -16.075,
+      "pixelLng": -145.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "fakarava-french-polynesia",
+      "gravity": 0.0156,
+      "fishingPressureValue": 0.0947,
+      "nearestPixelKm": 2.1,
+      "pixelLat": -16.475,
+      "pixelLng": -145.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "fernandina-island-galapagos",
+      "gravity": 0.007,
+      "fishingPressureValue": 0.0536,
+      "nearestPixelKm": 21,
+      "pixelLat": -0.275,
+      "pixelLng": -91.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "fernando-de-noronha-brazil",
+      "gravity": 0.5996,
+      "fishingPressureValue": 0.4742,
+      "nearestPixelKm": 2.3,
+      "pixelLat": -3.875,
+      "pixelLng": -32.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "florida-keys-usa",
+      "gravity": 0.1758,
+      "fishingPressureValue": 0.3043,
+      "nearestPixelKm": 3.4,
+      "pixelLat": 24.525,
+      "pixelLng": -81.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "fury-shoals-egypt",
+      "gravity": 1.19,
+      "fishingPressureValue": 0.5753,
+      "nearestPixelKm": 19.5,
+      "pixelLat": 23.925,
+      "pixelLng": 35.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "german-channel-palau",
+      "gravity": 0.761,
+      "fishingPressureValue": 0.5094,
+      "nearestPixelKm": 2.5,
+      "pixelLat": 7.225,
+      "pixelLng": 134.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "gili-islands-indonesia",
+      "gravity": 90.9533,
+      "fishingPressureValue": 0.957,
+      "nearestPixelKm": 3.9,
+      "pixelLat": -8.375,
+      "pixelLng": 116.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "gladden-spit-belize",
+      "gravity": 0.9416,
+      "fishingPressureValue": 0.5398,
+      "nearestPixelKm": 1.2,
+      "pixelLat": 16.525,
+      "pixelLng": -87.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "gorgona-island",
+      "gravity": 6.7932,
+      "fishingPressureValue": 0.7935,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 2.975,
+      "pixelLng": -78.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "grand-cayman",
+      "gravity": 9.2565,
+      "fishingPressureValue": 0.8268,
+      "nearestPixelKm": 2.5,
+      "pixelLat": 19.325,
+      "pixelLng": -81.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "grande-comore-comoros",
+      "gravity": 22.4211,
+      "fishingPressureValue": 0.8973,
+      "nearestPixelKm": 1.3,
+      "pixelLat": -11.375,
+      "pixelLng": 43.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "great-barrier-reef-australia",
+      "gravity": 0.9576,
+      "fishingPressureValue": 0.5428,
+      "nearestPixelKm": 20.3,
+      "pixelLat": -18.425,
+      "pixelLng": 147.575,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "great-white-wall-fiji",
+      "gravity": 0.2324,
+      "fishingPressureValue": 0.3336,
+      "nearestPixelKm": 3.2,
+      "pixelLat": -16.775,
+      "pixelLng": 179.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "green-island-taiwan",
+      "gravity": 39.6814,
+      "fishingPressureValue": 0.9266,
+      "nearestPixelKm": 2.4,
+      "pixelLat": 22.675,
+      "pixelLng": 121.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "grenada-bianca-c",
+      "gravity": 3.15,
+      "fishingPressureValue": 0.7058,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 12.025,
+      "pixelLng": -61.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "grenada-main",
+      "gravity": 1.2207,
+      "fishingPressureValue": 0.5789,
+      "nearestPixelKm": 5.9,
+      "pixelLat": 12.125,
+      "pixelLng": -61.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "guadeloupe-caribbean",
+      "gravity": 1.6553,
+      "fishingPressureValue": 0.6259,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 16.275,
+      "pixelLng": -61.575,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "haiti-diving",
+      "gravity": 1078.9781,
+      "fishingPressureValue": 0.9933,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 18.625,
+      "pixelLng": -72.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "halmahera-indonesia",
+      "gravity": 0.3509,
+      "fishingPressureValue": 0.3817,
+      "nearestPixelKm": 13.5,
+      "pixelLat": 0.475,
+      "pixelLng": 127.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "hikkaduwa-sri-lanka",
+      "gravity": 302.6083,
+      "fishingPressureValue": 0.9828,
+      "nearestPixelKm": 3.4,
+      "pixelLat": 6.125,
+      "pixelLng": 80.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "hoi-ha-wan-hong-kong",
+      "gravity": 1716.3703,
+      "fishingPressureValue": 0.9957,
+      "nearestPixelKm": 1.1,
+      "pixelLat": 22.475,
+      "pixelLng": 114.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "hurghada-egypt",
+      "gravity": 1372.1108,
+      "fishingPressureValue": 0.9947,
+      "nearestPixelKm": 2.2,
+      "pixelLat": 27.275,
+      "pixelLng": 33.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "inhambane",
+      "gravity": 51.4997,
+      "fishingPressureValue": 0.9379,
+      "nearestPixelKm": 17.6,
+      "pixelLat": -23.775,
+      "pixelLng": 35.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "isabela-island-galapagos",
+      "gravity": 0.0242,
+      "fishingPressureValue": 0.1246,
+      "nearestPixelKm": 7.9,
+      "pixelLat": -1.025,
+      "pixelLng": -91.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "ishigaki-island",
+      "gravity": 12.859,
+      "fishingPressureValue": 0.8586,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 24.325,
+      "pixelLng": 124.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "isla-mujeres",
+      "gravity": 5.2797,
+      "fishingPressureValue": 0.7684,
+      "nearestPixelKm": 1,
+      "pixelLat": 21.225,
+      "pixelLng": -86.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "jeddah-saudi-arabia",
+      "gravity": 63789.6728,
+      "fishingPressureValue": 0.9999,
+      "nearestPixelKm": 5.3,
+      "pixelLat": 21.525,
+      "pixelLng": 39.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "jellyfish-lake-palau",
+      "gravity": 2.3351,
+      "fishingPressureValue": 0.6728,
+      "nearestPixelKm": 3,
+      "pixelLat": 7.275,
+      "pixelLng": 134.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kadavu-island",
+      "gravity": 0.8186,
+      "fishingPressureValue": 0.5194,
+      "nearestPixelKm": 0.8,
+      "pixelLat": -18.975,
+      "pixelLng": 178.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kalpitiya",
+      "gravity": 10.704,
+      "fishingPressureValue": 0.8417,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 8.225,
+      "pixelLng": 79.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kapalai-island",
+      "gravity": 0.3177,
+      "fishingPressureValue": 0.3673,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 4.225,
+      "pixelLng": 118.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kauai-hawaii-usa",
+      "gravity": 1.4466,
+      "fishingPressureValue": 0.6054,
+      "nearestPixelKm": 14.3,
+      "pixelLat": 22.225,
+      "pixelLng": -159.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kenting-national-park",
+      "gravity": 123.6404,
+      "fishingPressureValue": 0.9662,
+      "nearestPixelKm": 3.2,
+      "pixelLat": 21.925,
+      "pixelLng": 120.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kerama-islands",
+      "gravity": 24.2698,
+      "fishingPressureValue": 0.9021,
+      "nearestPixelKm": 2.7,
+      "pixelLat": 26.175,
+      "pixelLng": 127.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kimbe-bay-papua-new-guinea",
+      "gravity": 0.6339,
+      "fishingPressureValue": 0.4835,
+      "nearestPixelKm": 3.9,
+      "pixelLat": -5.575,
+      "pixelLng": 150.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "koh-lipe-thailand",
+      "gravity": 0.9721,
+      "fishingPressureValue": 0.5451,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 6.475,
+      "pixelLng": 99.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "koh-phi-phi-thailand",
+      "gravity": 4.8865,
+      "fishingPressureValue": 0.761,
+      "nearestPixelKm": 1.8,
+      "pixelLat": 7.725,
+      "pixelLng": 98.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "koh-rong-cambodia",
+      "gravity": 0.613,
+      "fishingPressureValue": 0.478,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 10.725,
+      "pixelLng": 103.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "koh-samui-ang-thong",
+      "gravity": 3.5137,
+      "fishingPressureValue": 0.7206,
+      "nearestPixelKm": 6.9,
+      "pixelLat": 9.525,
+      "pixelLng": 100.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "koh-tao-thailand",
+      "gravity": 1.051,
+      "fishingPressureValue": 0.5567,
+      "nearestPixelKm": 3.2,
+      "pixelLat": 10.125,
+      "pixelLng": 99.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "komodo-national-park-indonesia",
+      "gravity": 0.7292,
+      "fishingPressureValue": 0.5028,
+      "nearestPixelKm": 2.9,
+      "pixelLat": -8.575,
+      "pixelLng": 119.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kona-hawaii-usa",
+      "gravity": 1.3624,
+      "fishingPressureValue": 0.5961,
+      "nearestPixelKm": 2.7,
+      "pixelLat": 19.625,
+      "pixelLng": -155.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "kosrae-fsm",
+      "gravity": 0.002,
+      "fishingPressureValue": 0.0313,
+      "nearestPixelKm": 0.9,
+      "pixelLat": 5.325,
+      "pixelLng": 162.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "lakshadweep-india",
+      "gravity": 0.3081,
+      "fishingPressureValue": 0.3634,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 10.975,
+      "pixelLng": 72.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "lanai-hawaii-usa",
+      "gravity": 6.0332,
+      "fishingPressureValue": 0.7816,
+      "nearestPixelKm": 6.9,
+      "pixelLat": 20.875,
+      "pixelLng": -156.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "lankayan-island",
+      "gravity": 1.6892,
+      "fishingPressureValue": 0.6288,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 6.575,
+      "pixelLng": 117.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "lembeh-strait-indonesia",
+      "gravity": 33.8687,
+      "fishingPressureValue": 0.9195,
+      "nearestPixelKm": 1.8,
+      "pixelLat": 1.475,
+      "pixelLng": 125.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "lhaviyani-atoll",
+      "gravity": 0.4363,
+      "fishingPressureValue": 0.4206,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 5.425,
+      "pixelLng": 73.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "long-island-bahamas",
+      "gravity": 0.3816,
+      "fishingPressureValue": 0.3952,
+      "nearestPixelKm": 3.8,
+      "pixelLat": 23.225,
+      "pixelLng": -75.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "lord-howe-island",
+      "gravity": 0.1073,
+      "fishingPressureValue": 0.2454,
+      "nearestPixelKm": 2.2,
+      "pixelLat": -31.575,
+      "pixelLng": 159.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "los-roques-venezuela",
+      "gravity": 6.0862,
+      "fishingPressureValue": 0.7825,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 11.975,
+      "pixelLng": -66.675,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "los-testigos",
+      "gravity": 0.443,
+      "fishingPressureValue": 0.4232,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 11.375,
+      "pixelLng": -63.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mabul-malaysia",
+      "gravity": 0.3177,
+      "fishingPressureValue": 0.3673,
+      "nearestPixelKm": 2.4,
+      "pixelLat": 4.225,
+      "pixelLng": 118.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mactan-island",
+      "gravity": 1.8857,
+      "fishingPressureValue": 0.645,
+      "nearestPixelKm": 1.4,
+      "pixelLat": 10.325,
+      "pixelLng": 123.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "madang-png",
+      "gravity": 1.3225,
+      "fishingPressureValue": 0.5913,
+      "nearestPixelKm": 16.6,
+      "pixelLat": -5.075,
+      "pixelLng": 145.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mafia-island",
+      "gravity": 19.259,
+      "fishingPressureValue": 0.8883,
+      "nearestPixelKm": 3.9,
+      "pixelLat": -7.925,
+      "pixelLng": 39.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mahe-seychelles",
+      "gravity": 18.474,
+      "fishingPressureValue": 0.8855,
+      "nearestPixelKm": 3.7,
+      "pixelLat": -4.675,
+      "pixelLng": 55.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "malapascua-philippines",
+      "gravity": 1.1918,
+      "fishingPressureValue": 0.5756,
+      "nearestPixelKm": 1.4,
+      "pixelLat": 11.325,
+      "pixelLng": 124.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "malmok-aruba",
+      "gravity": 66.4776,
+      "fishingPressureValue": 0.9466,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 12.625,
+      "pixelLng": -70.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "malpelo-colombia",
+      "gravity": 0.0486,
+      "fishingPressureValue": 0.1681,
+      "nearestPixelKm": 4,
+      "pixelLat": 3.975,
+      "pixelLng": -81.575,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "manado-north-sulawesi",
+      "gravity": 936.1677,
+      "fishingPressureValue": 0.9925,
+      "nearestPixelKm": 4.2,
+      "pixelLat": 1.525,
+      "pixelLng": 124.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "manta-ridge-yap",
+      "gravity": 0.0058,
+      "fishingPressureValue": 0.0454,
+      "nearestPixelKm": 1.1,
+      "pixelLat": 9.525,
+      "pixelLng": 138.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "maria-la-gorda",
+      "gravity": 12.6438,
+      "fishingPressureValue": 0.8568,
+      "nearestPixelKm": 4.4,
+      "pixelLat": 21.825,
+      "pixelLng": -84.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mariana-islands-guam",
+      "gravity": 0.1101,
+      "fishingPressureValue": 0.2487,
+      "nearestPixelKm": 2.3,
+      "pixelLat": 13.475,
+      "pixelLng": 144.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "marsa-alam-egypt",
+      "gravity": 1.1235,
+      "fishingPressureValue": 0.5667,
+      "nearestPixelKm": 1.2,
+      "pixelLat": 25.075,
+      "pixelLng": 34.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "marshall-islands-bikini-atoll",
+      "gravity": 0.0035,
+      "fishingPressureValue": 0.0362,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 11.525,
+      "pixelLng": 165.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "martinique-caribbean",
+      "gravity": 404.888,
+      "fishingPressureValue": 0.9852,
+      "nearestPixelKm": 7.3,
+      "pixelLat": 14.575,
+      "pixelLng": -61.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "maui",
+      "gravity": 4.4012,
+      "fishingPressureValue": 0.7495,
+      "nearestPixelKm": 15.9,
+      "pixelLat": 20.925,
+      "pixelLng": -156.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mauritius-island",
+      "gravity": 135.7622,
+      "fishingPressureValue": 0.9685,
+      "nearestPixelKm": 8.3,
+      "pixelLat": -20.175,
+      "pixelLng": 57.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mayotte",
+      "gravity": 30.3984,
+      "fishingPressureValue": 0.9139,
+      "nearestPixelKm": 1,
+      "pixelLat": -12.825,
+      "pixelLng": 45.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "memba-bay-mozambique",
+      "gravity": 1.2488,
+      "fishingPressureValue": 0.5824,
+      "nearestPixelKm": 3.9,
+      "pixelLat": -14.225,
+      "pixelLng": 40.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "milne-bay-papua-new-guinea",
+      "gravity": 8.6557,
+      "fishingPressureValue": 0.8201,
+      "nearestPixelKm": 2.4,
+      "pixelLat": -10.325,
+      "pixelLng": 150.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mirissa",
+      "gravity": 86.5591,
+      "fishingPressureValue": 0.9556,
+      "nearestPixelKm": 3,
+      "pixelLat": 5.925,
+      "pixelLng": 80.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "miyako-islands",
+      "gravity": 0.4088,
+      "fishingPressureValue": 0.408,
+      "nearestPixelKm": 3.8,
+      "pixelLat": 24.825,
+      "pixelLng": 125.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "mnemba-tanzania",
+      "gravity": 0.459,
+      "fishingPressureValue": 0.4292,
+      "nearestPixelKm": 1.8,
+      "pixelLat": -5.825,
+      "pixelLng": 39.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "moalboal-philippines",
+      "gravity": 1.6102,
+      "fishingPressureValue": 0.6217,
+      "nearestPixelKm": 3.4,
+      "pixelLat": 9.925,
+      "pixelLng": 123.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "moorea",
+      "gravity": 3.7427,
+      "fishingPressureValue": 0.7291,
+      "nearestPixelKm": 4.5,
+      "pixelLat": -17.525,
+      "pixelLng": -149.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "musandam-peninsula",
+      "gravity": 12.5759,
+      "fishingPressureValue": 0.8562,
+      "nearestPixelKm": 3.7,
+      "pixelLat": 26.225,
+      "pixelLng": 56.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "muscat-oman",
+      "gravity": 6482.9673,
+      "fishingPressureValue": 0.9986,
+      "nearestPixelKm": 2.1,
+      "pixelLat": 23.625,
+      "pixelLng": 58.575,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "neil-island",
+      "gravity": 11.136,
+      "fishingPressureValue": 0.8453,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 11.825,
+      "pixelLng": 93.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "netrani-island",
+      "gravity": 11.2243,
+      "fishingPressureValue": 0.8459,
+      "nearestPixelKm": 20.2,
+      "pixelLat": 14.175,
+      "pixelLng": 74.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "new-caledonia",
+      "gravity": 51.7297,
+      "fishingPressureValue": 0.938,
+      "nearestPixelKm": 1.6,
+      "pixelLat": -22.275,
+      "pixelLng": 166.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "nha-trang-vietnam",
+      "gravity": 1036.4549,
+      "fishingPressureValue": 0.9929,
+      "nearestPixelKm": 3.4,
+      "pixelLat": 12.225,
+      "pixelLng": 109.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "ningaloo-australia",
+      "gravity": 0.1406,
+      "fishingPressureValue": 0.2769,
+      "nearestPixelKm": 3,
+      "pixelLat": -22.725,
+      "pixelLng": 113.675,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "niue-avaiki-cave",
+      "gravity": 0.4194,
+      "fishingPressureValue": 0.413,
+      "nearestPixelKm": 5,
+      "pixelLat": -19.075,
+      "pixelLng": -169.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "north-male-atoll-maldives",
+      "gravity": 26.5579,
+      "fishingPressureValue": 0.9072,
+      "nearestPixelKm": 1.8,
+      "pixelLat": 4.325,
+      "pixelLng": 73.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "nosy-be-madagascar",
+      "gravity": 0.8445,
+      "fishingPressureValue": 0.5239,
+      "nearestPixelKm": 5.6,
+      "pixelLat": -13.275,
+      "pixelLng": 48.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "nusa-lembongan-indonesia",
+      "gravity": 63.2495,
+      "fishingPressureValue": 0.9449,
+      "nearestPixelKm": 2.6,
+      "pixelLat": -8.675,
+      "pixelLng": 115.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "nusa-penida",
+      "gravity": 32.7095,
+      "fishingPressureValue": 0.9176,
+      "nearestPixelKm": 5.7,
+      "pixelLat": -8.775,
+      "pixelLng": 115.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "oahu",
+      "gravity": 6470.202,
+      "fishingPressureValue": 0.9986,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 21.275,
+      "pixelLng": -157.875,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "okinawa-japan",
+      "gravity": 1215.9842,
+      "fishingPressureValue": 0.9941,
+      "nearestPixelKm": 3.7,
+      "pixelLat": 26.275,
+      "pixelLng": 127.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "osprey-reef",
+      "gravity": 0.1708,
+      "fishingPressureValue": 0.3011,
+      "nearestPixelKm": 1.7,
+      "pixelLat": -13.875,
+      "pixelLng": 146.575,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "pemba-island-tanzania",
+      "gravity": 6.6222,
+      "fishingPressureValue": 0.7906,
+      "nearestPixelKm": 5.7,
+      "pixelLat": -5.225,
+      "pixelLng": 39.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "perhentian-islands",
+      "gravity": 17.4163,
+      "fishingPressureValue": 0.8815,
+      "nearestPixelKm": 2.7,
+      "pixelLat": 5.925,
+      "pixelLng": 102.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "pescador-island-philippines",
+      "gravity": 1.637,
+      "fishingPressureValue": 0.6241,
+      "nearestPixelKm": 1.7,
+      "pixelLat": 9.975,
+      "pixelLng": 123.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "phu-quoc",
+      "gravity": 1.414,
+      "fishingPressureValue": 0.6022,
+      "nearestPixelKm": 10.1,
+      "pixelLat": 10.275,
+      "pixelLng": 104.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "phuket-thailand",
+      "gravity": 184.2189,
+      "fishingPressureValue": 0.975,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 7.925,
+      "pixelLng": 98.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "pigeon-island",
+      "gravity": 222.568,
+      "fishingPressureValue": 0.9785,
+      "nearestPixelKm": 6.7,
+      "pixelLat": 8.525,
+      "pixelLng": 81.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "pohnpei-fsm",
+      "gravity": 0.28,
+      "fishingPressureValue": 0.3525,
+      "nearestPixelKm": 8.6,
+      "pixelLat": 6.925,
+      "pixelLng": 158.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "praslin-seychelles",
+      "gravity": 1.5526,
+      "fishingPressureValue": 0.6158,
+      "nearestPixelKm": 0.7,
+      "pixelLat": -4.325,
+      "pixelLng": 55.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "president-coolidge-vanuatu",
+      "gravity": 0.0557,
+      "fishingPressureValue": 0.1807,
+      "nearestPixelKm": 4.7,
+      "pixelLat": -15.425,
+      "pixelLng": 167.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "providencia-colombia",
+      "gravity": 0.3505,
+      "fishingPressureValue": 0.3815,
+      "nearestPixelKm": 0.7,
+      "pixelLat": 13.375,
+      "pixelLng": -81.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "providenciales-turks-and-caicos",
+      "gravity": 0.026,
+      "fishingPressureValue": 0.1279,
+      "nearestPixelKm": 1,
+      "pixelLat": 21.775,
+      "pixelLng": -72.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "puerto-galera-philippines",
+      "gravity": 234.7203,
+      "fishingPressureValue": 0.9794,
+      "nearestPixelKm": 1.7,
+      "pixelLat": 13.525,
+      "pixelLng": 120.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "puerto-princesa-honda-bay",
+      "gravity": 0.1471,
+      "fishingPressureValue": 0.2836,
+      "nearestPixelKm": 4.7,
+      "pixelLat": 10.125,
+      "pixelLng": 118.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "quirimbas-archipelago",
+      "gravity": 1.1724,
+      "fishingPressureValue": 0.573,
+      "nearestPixelKm": 3.9,
+      "pixelLat": -12.075,
+      "pixelLng": 40.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "rabaul-png",
+      "gravity": 3.7806,
+      "fishingPressureValue": 0.7302,
+      "nearestPixelKm": 2.8,
+      "pixelLat": -4.175,
+      "pixelLng": 152.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "raja-ampat-indonesia",
+      "gravity": 0.1456,
+      "fishingPressureValue": 0.282,
+      "nearestPixelKm": 4.7,
+      "pixelLat": -0.275,
+      "pixelLng": 130.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "rangiroa-french-polynesia",
+      "gravity": 0.0194,
+      "fishingPressureValue": 0.1096,
+      "nearestPixelKm": 1.3,
+      "pixelLat": -14.975,
+      "pixelLng": -147.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "rarotonga-cook-islands",
+      "gravity": 1.7844,
+      "fishingPressureValue": 0.6372,
+      "nearestPixelKm": 4.7,
+      "pixelLat": -21.225,
+      "pixelLng": -159.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "ras-mohammed-egypt",
+      "gravity": 1.4344,
+      "fishingPressureValue": 0.6043,
+      "nearestPixelKm": 2.3,
+      "pixelLat": 27.725,
+      "pixelLng": 34.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "redang-island",
+      "gravity": 16.4495,
+      "fishingPressureValue": 0.8778,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 5.775,
+      "pixelLng": 103.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "reunion-island",
+      "gravity": 42.763,
+      "fishingPressureValue": 0.9303,
+      "nearestPixelKm": 23.5,
+      "pixelLat": -21.125,
+      "pixelLng": 55.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "richelieu-rock-thailand",
+      "gravity": 0.2682,
+      "fishingPressureValue": 0.3474,
+      "nearestPixelKm": 12.7,
+      "pixelLat": 9.325,
+      "pixelLng": 97.925,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "rinca-island-indonesia",
+      "gravity": 0.6067,
+      "fishingPressureValue": 0.4763,
+      "nearestPixelKm": 1.3,
+      "pixelLat": -8.675,
+      "pixelLng": 119.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "roatan-honduras",
+      "gravity": 6.3525,
+      "fishingPressureValue": 0.7861,
+      "nearestPixelKm": 0.9,
+      "pixelLat": 16.325,
+      "pixelLng": -86.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "rodrigues-island",
+      "gravity": 0.0531,
+      "fishingPressureValue": 0.1764,
+      "nearestPixelKm": 3.8,
+      "pixelLat": -19.725,
+      "pixelLng": 63.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "romblon",
+      "gravity": 31.9382,
+      "fishingPressureValue": 0.9166,
+      "nearestPixelKm": 0.7,
+      "pixelLat": 12.575,
+      "pixelLng": 122.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "rosario-islands",
+      "gravity": 85.0952,
+      "fishingPressureValue": 0.9551,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 10.175,
+      "pixelLng": -75.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "saba-saba",
+      "gravity": 0.5867,
+      "fishingPressureValue": 0.4703,
+      "nearestPixelKm": 6.7,
+      "pixelLat": 17.575,
+      "pixelLng": -63.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "sail-rock-southwest-pinnacle",
+      "gravity": 1.2682,
+      "fishingPressureValue": 0.5851,
+      "nearestPixelKm": 12.3,
+      "pixelLat": 9.825,
+      "pixelLng": 100.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "saint-kitts-and-nevis",
+      "gravity": 68.1757,
+      "fishingPressureValue": 0.9475,
+      "nearestPixelKm": 2.1,
+      "pixelLat": 17.375,
+      "pixelLng": -62.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "saint-vincent-and-the-grenadines",
+      "gravity": 22.7735,
+      "fishingPressureValue": 0.8982,
+      "nearestPixelKm": 3.7,
+      "pixelLat": 13.125,
+      "pixelLng": -61.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "sainte-marie-island-madagascar",
+      "gravity": 2.2468,
+      "fishingPressureValue": 0.6681,
+      "nearestPixelKm": 3.8,
+      "pixelLat": -17.025,
+      "pixelLng": 49.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "salt-island-bvi",
+      "gravity": 3.4671,
+      "fishingPressureValue": 0.7188,
+      "nearestPixelKm": 0.4,
+      "pixelLat": 18.375,
+      "pixelLng": -64.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "salvador-da-bahia",
+      "gravity": 48210.4889,
+      "fishingPressureValue": 0.9998,
+      "nearestPixelKm": 6.6,
+      "pixelLat": -13.025,
+      "pixelLng": -38.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "san-juan-puerto-rico",
+      "gravity": 6974.9886,
+      "fishingPressureValue": 0.9987,
+      "nearestPixelKm": 2.2,
+      "pixelLat": 18.475,
+      "pixelLng": -66.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "sanya-china",
+      "gravity": 0.9115,
+      "fishingPressureValue": 0.5349,
+      "nearestPixelKm": 5,
+      "pixelLat": 18.225,
+      "pixelLng": 109.475,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "sharm-el-sheikh-egypt",
+      "gravity": 0.9904,
+      "fishingPressureValue": 0.548,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 27.875,
+      "pixelLng": 34.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "siargao",
+      "gravity": 3.4776,
+      "fishingPressureValue": 0.7192,
+      "nearestPixelKm": 8.3,
+      "pixelLat": 9.875,
+      "pixelLng": 126.125,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "similan-islands-thailand",
+      "gravity": 0.1364,
+      "fishingPressureValue": 0.2734,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 8.675,
+      "pixelLng": 97.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "sint-maarten",
+      "gravity": 0.3155,
+      "fishingPressureValue": 0.3664,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 18.025,
+      "pixelLng": -63.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "sipadan-malaysia",
+      "gravity": 0.2918,
+      "fishingPressureValue": 0.3568,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 4.125,
+      "pixelLng": 118.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "sogod-bay-philippines",
+      "gravity": 3.7895,
+      "fishingPressureValue": 0.7305,
+      "nearestPixelKm": 2.9,
+      "pixelLat": 10.175,
+      "pixelLng": 125.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "south-male-atoll",
+      "gravity": 12.6611,
+      "fishingPressureValue": 0.8569,
+      "nearestPixelKm": 3.9,
+      "pixelLat": 3.925,
+      "pixelLng": 73.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "ss-yongala-wreck",
+      "gravity": 2.2574,
+      "fishingPressureValue": 0.6687,
+      "nearestPixelKm": 15,
+      "pixelLat": -19.175,
+      "pixelLng": 147.625,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "statia-st-eustatius",
+      "gravity": 2.6228,
+      "fishingPressureValue": 0.6856,
+      "nearestPixelKm": 1.6,
+      "pixelLat": 17.475,
+      "pixelLng": -62.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "stingray-city-cayman-islands",
+      "gravity": 26.1706,
+      "fishingPressureValue": 0.9063,
+      "nearestPixelKm": 1.1,
+      "pixelLat": 19.325,
+      "pixelLng": -81.375,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "sudan-shaab-rumi",
+      "gravity": 103.8673,
+      "fishingPressureValue": 0.9611,
+      "nearestPixelKm": 18.5,
+      "pixelLat": 19.825,
+      "pixelLng": 37.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tayrona-national-park",
+      "gravity": 41.4572,
+      "fishingPressureValue": 0.9287,
+      "nearestPixelKm": 0.3,
+      "pixelLat": 11.325,
+      "pixelLng": -74.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "ternate-north-maluku",
+      "gravity": 0.7096,
+      "fishingPressureValue": 0.4993,
+      "nearestPixelKm": 5.1,
+      "pixelLat": 0.775,
+      "pixelLng": 127.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "the-pit-belize",
+      "gravity": 1.3223,
+      "fishingPressureValue": 0.5913,
+      "nearestPixelKm": 1.5,
+      "pixelLat": 17.325,
+      "pixelLng": -87.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tiger-beach-bahamas",
+      "gravity": 0.0778,
+      "fishingPressureValue": 0.2114,
+      "nearestPixelKm": 5.9,
+      "pixelLat": 26.675,
+      "pixelLng": -79.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tioman-island",
+      "gravity": 7.1822,
+      "fishingPressureValue": 0.7997,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 2.825,
+      "pixelLng": 104.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tobago-main-trinidad-and-tobago",
+      "gravity": 0.6023,
+      "fishingPressureValue": 0.4751,
+      "nearestPixelKm": 2.6,
+      "pixelLat": 11.275,
+      "pixelLng": -60.675,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tobago-speyside-trinidad-and-tobago",
+      "gravity": 0.4168,
+      "fishingPressureValue": 0.4115,
+      "nearestPixelKm": 2.6,
+      "pixelLat": 11.275,
+      "pixelLng": -60.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tofo-mozambique",
+      "gravity": 51.4997,
+      "fishingPressureValue": 0.9379,
+      "nearestPixelKm": 9.8,
+      "pixelLat": -23.775,
+      "pixelLng": 35.525,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tomini-bay-indonesia",
+      "gravity": 0.7497,
+      "fishingPressureValue": 0.5072,
+      "nearestPixelKm": 4.7,
+      "pixelLat": -0.375,
+      "pixelLng": 122.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "trincomalee-sri-lanka",
+      "gravity": 222.568,
+      "fishingPressureValue": 0.9785,
+      "nearestPixelKm": 9.6,
+      "pixelLat": 8.525,
+      "pixelLng": 81.275,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tubbataha-philippines",
+      "gravity": 0.1802,
+      "fishingPressureValue": 0.3069,
+      "nearestPixelKm": 13.1,
+      "pixelLat": 8.875,
+      "pixelLng": 119.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tufi-papua-new-guinea",
+      "gravity": 0.252,
+      "fishingPressureValue": 0.3415,
+      "nearestPixelKm": 0.1,
+      "pixelLat": -9.075,
+      "pixelLng": 149.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tufi-png",
+      "gravity": 0.252,
+      "fishingPressureValue": 0.3415,
+      "nearestPixelKm": 0.8,
+      "pixelLat": -9.075,
+      "pixelLng": 149.325,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tulamben-bali-indonesia",
+      "gravity": 28.4845,
+      "fishingPressureValue": 0.9109,
+      "nearestPixelKm": 9.5,
+      "pixelLat": -8.325,
+      "pixelLng": 115.675,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "turks-and-caicos",
+      "gravity": 0.069,
+      "fishingPressureValue": 0.2005,
+      "nearestPixelKm": 15.1,
+      "pixelLat": 21.825,
+      "pixelLng": -71.775,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "turneffe-belize",
+      "gravity": 3.122,
+      "fishingPressureValue": 0.7049,
+      "nearestPixelKm": 3.8,
+      "pixelLat": 17.275,
+      "pixelLng": -87.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "tuvalu",
+      "gravity": 90.5333,
+      "fishingPressureValue": 0.9567,
+      "nearestPixelKm": 2.8,
+      "pixelLat": -8.525,
+      "pixelLng": 179.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "us-virgin-islands",
+      "gravity": 0.3522,
+      "fishingPressureValue": 0.3823,
+      "nearestPixelKm": 1.9,
+      "pixelLat": 17.725,
+      "pixelLng": -64.725,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "utila-honduras",
+      "gravity": 4.5044,
+      "fishingPressureValue": 0.7521,
+      "nearestPixelKm": 2.8,
+      "pixelLat": 16.075,
+      "pixelLng": -86.925,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "vanuatu-espiritu-santo",
+      "gravity": 0.0558,
+      "fishingPressureValue": 0.1809,
+      "nearestPixelKm": 8.5,
+      "pixelLat": -15.525,
+      "pixelLng": 167.225,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "vavau-tonga",
+      "gravity": 0.0198,
+      "fishingPressureValue": 0.1111,
+      "nearestPixelKm": 5.5,
+      "pixelLat": -18.625,
+      "pixelLng": -174.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "verde-island-passage",
+      "gravity": 292.9798,
+      "fishingPressureValue": 0.9824,
+      "nearestPixelKm": 1.3,
+      "pixelLat": 13.575,
+      "pixelLng": 121.075,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "wakatobi-indonesia",
+      "gravity": 0.3988,
+      "fishingPressureValue": 0.4033,
+      "nearestPixelKm": 3.9,
+      "pixelLat": -5.725,
+      "pixelLng": 123.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "watamu-kenya",
+      "gravity": 48.906,
+      "fishingPressureValue": 0.9361,
+      "nearestPixelKm": 2.6,
+      "pixelLat": -3.375,
+      "pixelLng": 40.025,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "westpunt-curacao",
+      "gravity": 90.9279,
+      "fishingPressureValue": 0.9569,
+      "nearestPixelKm": 2.3,
+      "pixelLat": 12.375,
+      "pixelLng": -69.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "wolf-galapagos-ecuador",
+      "gravity": 0.0042,
+      "fishingPressureValue": 0.0383,
+      "nearestPixelKm": 1.7,
+      "pixelLat": 1.375,
+      "pixelLng": -91.825,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "yasawa-islands",
+      "gravity": 0.5822,
+      "fishingPressureValue": 0.4692,
+      "nearestPixelKm": 3.8,
+      "pixelLat": -17.025,
+      "pixelLng": 177.425,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "yonaguni-japan",
+      "gravity": 33.2016,
+      "fishingPressureValue": 0.9183,
+      "nearestPixelKm": 1.2,
+      "pixelLat": 24.475,
+      "pixelLng": 122.975,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    },
+    {
+      "locationId": "zanzibar-island",
+      "gravity": 643.6981,
+      "fishingPressureValue": 0.9898,
+      "nearestPixelKm": 1.7,
+      "pixelLat": -6.175,
+      "pixelLng": 39.175,
+      "source": "andrello-2022-local-reef-pressures",
+      "fetchedAt": "2026-07-10T15:49:37.868Z"
+    }
+  ]
+}

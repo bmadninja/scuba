@@ -8,15 +8,13 @@ import { EditorialHook } from "@/components/editorial-hook";
 import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
-import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
 import { FishAbundanceChart } from "@/components/fish-abundance-chart";
 import type { FishAbundancePoint } from "@/components/fish-abundance-chart";
-import { FishBiomassChart } from "@/components/fish-biomass-chart";
 import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
-import { WaterTempChart } from "@/components/water-temp-chart";
 import type { WaterTempDataPoint } from "@/components/water-temp-chart";
-import { FishingEffortTrend } from "@/components/fishing-effort-trend";
+import { ReefHealthPanel } from "@/components/reef-health-panel";
+import type { ReefHealthRows } from "@/components/reef-health-panel";
 import type { BlueParkAward, FishAbundanceSeriesRecord } from "@/lib/data/types";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
@@ -204,6 +202,9 @@ export type LocationBodyProps = {
   reefStateLabel: string;
   reefStateColor: string;
   reefStateSub: string;
+  // The four pillar rows + one consolidated source line for the reef-health card.
+  reefRows: ReefHealthRows;
+  reefSourceLine: string;
   hasReefData: boolean;
   // Species
   species: SpeciesCard[];
@@ -263,6 +264,13 @@ const DATA_FRESHNESS: React.CSSProperties = {
   color: "#4A5568",
   marginTop: "0.25rem",
 };
+
+// User-facing copy carries no hyphens (Josie voice). De-hyphenate compound words
+// (e.g. "soft-coral" -> "soft coral") while leaving em dashes and number ranges
+// alone. Only splits a hyphen sitting between two letters.
+function deHyphen(text: string): string {
+  return text.replace(/([A-Za-z])-([A-Za-z])/g, "$1 $2");
+}
 
 // Render **wrapped** spans in a reef-state basis as bold, in the "improving"
 // green, so the key protection figures stand out. Plain text passes through.
@@ -347,18 +355,6 @@ function MetricLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Lighter label for an individual factor inside the "what is driving it" zone —
-// deliberately quieter than MetricLabel so factors read as inputs, not verdicts.
-const FACTOR_LABEL: React.CSSProperties = {
-  fontSize: "11px",
-  fontWeight: 500,
-  color: "#4A5568",
-  marginBottom: "0.3rem",
-  marginTop: 0,
-  display: "flex",
-  alignItems: "center",
-  gap: "0.3rem",
-};
 
 // ─── Main client body ─────────────────────────────────────────────────────────
 
@@ -374,38 +370,15 @@ export function LocationPageBody(props: LocationBodyProps) {
     sightingSites,
     intro,
     conditionSentence,
-    decline,
-    coverTrend,
-    coverNow,
-    coverYear,
-    coverTrendNote,
-    projectionDataPoints,
-    coralChartSourceLabel,
-    coralContextValue,
-    coralContextLabel,
-    biomassDataPoints,
-    biomassSourceLabel,
-    waterTempDataPoints,
-    waterTempSourceLabel,
-    waterTempTrend,
-    waterTempChangePerDecade,
-    reefStateSources,
-    siteFishBasis,
     heat,
-    fishing,
-    blueParkAward,
     verdictBasis,
-    fishingPressure,
     waterQualityEvents,
     fishAbundance,
-    bleachedPct,
-    dhwValue,
-    surveyDateLabel,
-    coralSourceLabel,
     divingOutlook,
     reefStateLabel,
     reefStateColor,
-    reefStateSub,
+    reefRows,
+    reefSourceLine,
     hasReefData,
     species,
     threatenedStats,
@@ -422,46 +395,9 @@ export function LocationPageBody(props: LocationBodyProps) {
     seasonNotes,
   } = props;
 
-  // Live per-factor readouts, shown inside their info modal rather than on the
-  // card face (keeps the "what is driving it" row to one value each).
-  const fishingPressureDetail =
-    fishingPressure && fishingPressure.level !== "unknown"
-      ? `${fishingPressure.fishingHours.toLocaleString()} vessel hours within ${fishingPressure.radiusKm} km${
-          fishingPressure.level !== "low" && fishingPressure.trend === "rising"
-            ? " · rising"
-            : fishingPressure.level !== "low" && fishingPressure.trend === "falling"
-              ? " · easing"
-              : fishingPressure.level !== "low" && fishingPressure.trend === "stable"
-                ? " · steady"
-                : ""
-        }`
-      : null;
-  // Measured boat activity, framed as a reality-check on the protection rule so
-  // it complements (not contradicts) the "Banned fishing" chip: quiet water
-  // confirms the ban is holding; busy water despite protection is the warning.
-  const reefIsProtected =
-    !!fishing && (fishing.label === "Banned" || fishing.label === "Patrolled" || fishing.label === "Limited");
-  const boatTraffic =
-    fishingPressure && fishingPressure.level !== "unknown"
-      ? fishingPressure.level === "low"
-        ? { word: "Quiet", tone: "good" as const }
-        : fishingPressure.level === "moderate"
-          ? { word: "Moderate", tone: "warm" as const }
-          : {
-              word: reefIsProtected
-                ? "Busy despite protection"
-                : fishingPressure.level === "high"
-                  ? "Busy"
-                  : "Very busy",
-              tone: "warm" as const,
-            }
-      : null;
-  const infoDetail =
-    info === "heat"
-      ? heat?.detail ?? null
-      : info === "fishingpressure"
-        ? fishingPressureDetail
-        : null;
+  // The live "around X°C now vs usual" readout for the heat popup, opened from
+  // the Bleaching risk row's info button.
+  const infoDetail = info === "heat" ? heat?.detail ?? null : null;
 
   const hasStay = stayTiers.some((t) => t.items.length > 0) || operators.length > 0;
 
@@ -485,318 +421,18 @@ export function LocationPageBody(props: LocationBodyProps) {
             </div>
           ) : null}
 
-          {/* STORY 4.1 + 4.2 + 4.3: REEF HEALTH PANEL */}
+          {/* REEF HEALTH PANEL — "How this reef is doing" (redesign). Verdict
+              leads; each pillar row is a self-labelled chart with the numbers on
+              it. Presentation over the same readers that build the label. */}
           {hasReefData ? (
-            <section id="reef-condition" style={{ marginBottom: "3rem" }}>
-              <h2 style={SECTION_HEADER}>Reef health</h2>
-
-              {/* ZONE 1 — the verdict */}
-              <div style={{ marginBottom: "1.5rem", maxWidth: 680 }}>
-                <MetricLabel>
-                  Reef state
-                  <InfoButton onClick={() => setInfo("state")} label="How we judge this" />
-                </MetricLabel>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.55rem", marginBottom: "0.5rem" }}>
-                  <span style={{ width: 11, height: 11, borderRadius: "50%", background: reefStateColor, display: "inline-block", flexShrink: 0 }} />
-                  <span style={{ fontSize: "1.5rem", fontWeight: 700, color: reefStateColor, lineHeight: 1.1 }}>
-                    {reefStateLabel}
-                  </span>
-                </div>
-                {(coverNow !== null || decline) ? (
-                  <p style={{ fontSize: "0.75rem", color: "#4A5568", margin: "0 0 0.45rem" }}>
-                    A read on the coral, from cover and heat
-                  </p>
-                ) : null}
-                <p style={{
-                  fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
-                  fontSize: "1.0625rem",
-                  lineHeight: 1.6,
-                  color: "#4A5568",
-                  margin: 0,
-                }}>
-                  {verdictBasis ? emphasizeBasis(verdictBasis) : (divingOutlook ?? conditionSentence)}
-                </p>
-                {/* Fish is the signal that responds to protection. One plain
-                    supporting line under the verdict — never a separate chart. */}
-                {siteFishBasis ? (
-                  <p style={{
-                    fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
-                    fontSize: "0.9375rem",
-                    lineHeight: 1.6,
-                    color: "#4A5568",
-                    margin: "0.6rem 0 0",
-                  }}>
-                    {siteFishBasis.headline}{" "}
-                    {siteFishBasis.citationUrl ? (
-                      <Link href={siteFishBasis.citationUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#4A5568", textDecoration: "underline" }}>
-                        source
-                      </Link>
-                    ) : null}
-                  </p>
-                ) : null}
-                {/* Evidence: cited sources behind a hand-reviewed verdict, so the
-                    claim is visibly backed by real, linkable studies. */}
-                {reefStateSources.length > 0 ? (
-                  <p style={{
-                    fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
-                    fontSize: "0.6875rem",
-                    color: "#4A5568",
-                    margin: "0.6rem 0 0",
-                    lineHeight: 1.5,
-                  }}>
-                    <span style={{ letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280" }}>Evidence</span>
-                    {"  "}
-                    {reefStateSources.map((s, i) => (
-                      <span key={s.label}>
-                        {i > 0 ? ", " : " "}
-                        {s.url ? (
-                          <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E7D5B", textDecoration: "underline" }}>
-                            {s.label}
-                          </a>
-                        ) : (
-                          <span>{s.label}</span>
-                        )}
-                      </span>
-                    ))}
-                  </p>
-                ) : null}
-              </div>
-
-              {/* Data card */}
-              <div style={SECTION_CARD}>
-                {/* ZONE 2 — protection (shown on all Blue Parks + any MPA) */}
-                {(blueParkAward || fishing) ? (
-                  <div style={{ padding: "1rem 1.25rem", background: "rgba(46,125,91,0.06)", borderBottom: "1px solid #E7E6E2" }}>
-                    <MetricLabel>
-                      Protection
-                      <InfoButton onClick={() => setInfo(blueParkAward ? "bluepark" : "fishing")} label="What this means" />
-                    </MetricLabel>
-                    <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
-                      {blueParkAward ? (
-                        <span style={{
-                          display: "inline-block",
-                          padding: "3px 10px",
-                          borderRadius: 999,
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
-                          background:
-                            blueParkAward.level === "gold" ? "rgba(185,138,46,0.12)"
-                              : blueParkAward.level === "silver" ? "rgba(74,85,104,0.1)"
-                                : blueParkAward.level === "platinum" ? "rgba(14,28,40,0.08)"
-                                  : "rgba(46,125,91,0.1)",
-                          color:
-                            blueParkAward.level === "gold" ? "#B98A2E"
-                              : blueParkAward.level === "silver" ? "#4A5568"
-                                : blueParkAward.level === "platinum" ? "#0E1C28"
-                                  : "#2E7D5B",
-                        }}>
-                          Blue Park · {blueParkAward.level === "awarded" ? "Awarded" : blueParkAward.level.charAt(0).toUpperCase() + blueParkAward.level.slice(1)}
-                        </span>
-                      ) : null}
-                      {fishing ? (
-                        <span style={{
-                          display: "inline-block",
-                          padding: "3px 10px",
-                          borderRadius: 999,
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
-                          background: fishing.tone === "good" ? "rgba(46,125,91,0.1)" : fishing.tone === "warm" ? "rgba(185,138,46,0.1)" : "rgba(14,28,40,0.06)",
-                          color: fishing.tone === "good" ? "#2E7D5B" : fishing.tone === "warm" ? "#B98A2E" : "#4A5568",
-                        }}>
-                          {fishing.label} fishing
-                        </span>
-                      ) : null}
-                    </div>
-                  </div>
-                ) : null}
-
-                {/* Coral cover + trend note (only when a survey exists) */}
-                {(coverNow !== null || decline) ? (
-                  <div style={{ padding: "1.25rem 1.25rem 0.75rem" }}>
-                    <p style={{
-                      fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
-                      fontSize: "11px",
-                      fontWeight: 500,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "#4A5568",
-                      marginBottom: "0.35rem",
-                    }}>
-                      Coral cover over time
-                    </p>
-                    {/* The chart below IS the coral-cover-over-time story — only
-                        restate it in prose when there is no chart (single-survey reef). */}
-                    {projectionDataPoints.length < 2 ? (
-                      decline ? (
-                        <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
-                          Live coral has fallen from <strong>{decline.fromPct}%</strong>{" "}
-                          to <span style={{ color: "#C0412B" }}>{decline.toPct}%</span> between {decline.fromYear} and {decline.toYear}.
-                        </p>
-                      ) : coverNow !== null ? (
-                        <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45 }}>
-                          Live coral covers <strong>{coverNow}%</strong> of the reef
-                          {coverYear ? ` as of ${coverYear}` : ""}.
-                          {coverTrendNote ? <span style={{ color: "#4A5568", fontWeight: 400 }}> {coverTrendNote}</span> : null}
-                        </p>
-                      ) : null
-                    ) : null}
-                  </div>
-                ) : null}
-
-                {/* Story 4.2: CoralProjectionChart */}
-                {projectionDataPoints.length >= 2 ? (
-                  <div style={{ padding: "0.25rem 1.25rem 1rem" }}>
-                    <CoralProjectionChart
-                      locationName={locationName}
-                      dataPoints={projectionDataPoints}
-                      sourceLabel={coralChartSourceLabel ?? coralSourceLabel ?? undefined}
-                      contextValue={coralContextValue ?? undefined}
-                      contextLabel={coralContextLabel ?? undefined}
-                    />
-                  </div>
-                ) : null}
-
-                {/* Water temperature over time. Annual-mean satellite SST beside
-                    coral cover, carrying the plain "warming vs stable" read.
-                    Display only — a warming trend never sets the reef state. */}
-                {waterTempDataPoints.length >= 2 ? (
-                  <div style={{ padding: "0.75rem 1.25rem 1.25rem", borderTop: "1px solid #E7E6E2" }}>
-                    <p style={{
-                      fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
-                      fontSize: "11px",
-                      fontWeight: 500,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "#4A5568",
-                      marginBottom: "0.35rem",
-                    }}>
-                      Water temperature over time
-                    </p>
-                    {waterTempTrend ? (
-                      <p style={{ fontSize: "1rem", fontWeight: 600, color: "#0E1C28", lineHeight: 1.45, margin: "0 0 0.2rem" }}>
-                        {waterTempTrend === "warming" ? (
-                          <>
-                            The water here is{" "}
-                            <span style={{ color: "#C4622D" }}>warming</span>
-                            {waterTempChangePerDecade
-                              ? `, about ${waterTempChangePerDecade.toFixed(1)}°C per decade.`
-                              : "."}
-                          </>
-                        ) : (
-                          <>The water here has stayed <strong>stable</strong> over the past decade.</>
-                        )}
-                      </p>
-                    ) : null}
-                    <p style={{ fontSize: "0.75rem", color: "#4A5568", margin: "0 0 0.75rem", lineHeight: 1.5 }}>
-                      Annual average sea surface temperature from satellite. Shown
-                      for context, it does not set the reef state.
-                    </p>
-                    <WaterTempChart
-                      locationName={locationName}
-                      dataPoints={waterTempDataPoints}
-                      sourceLabel={waterTempSourceLabel ?? undefined}
-                    />
-                  </div>
-                ) : null}
-
-                {/* Reef fish biomass over time (Reef Life Survey). Fish biomass
-                    is the metric that responds to protection, so this trend is
-                    the honest "protection works" companion to the heat-driven
-                    coral chart. Display only — it never sets the reef state. */}
-                {biomassDataPoints.length >= 2 ? (
-                  <div style={{ padding: "0.75rem 1.25rem 1.25rem", borderTop: "1px solid #E7E6E2" }}>
-                    <p style={{
-                      fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
-                      fontSize: "11px",
-                      fontWeight: 500,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "#4A5568",
-                      marginBottom: "0.35rem",
-                    }}>
-                      Reef fish biomass over time
-                    </p>
-                    <p style={{ fontSize: "0.75rem", color: "#4A5568", margin: "0 0 0.75rem", lineHeight: 1.5 }}>
-                      How much fish life these transects hold, measured the same way
-                      every year. Fish biomass is what recovers when a reef is
-                      protected from fishing.
-                    </p>
-                    <FishBiomassChart
-                      locationName={locationName}
-                      dataPoints={biomassDataPoints}
-                      sourceLabel={biomassSourceLabel ?? undefined}
-                    />
-                  </div>
-                ) : null}
-
-                {/* ZONE 3 — the signals that feed the verdict, then separate context */}
-                {(heat || boatTraffic) ? (
-                  <div style={{ borderTop: "1px solid #E7E6E2", background: "#F8F7F4", padding: "1rem 1.25rem" }}>
-                    {(heat || boatTraffic) ? (
-                      <>
-                        <MetricLabel>What is driving it</MetricLabel>
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2.25rem", marginTop: "0.5rem" }}>
-                          {heat ? (
-                            <div>
-                              <p style={FACTOR_LABEL}>
-                                Heat right now
-                                <InfoButton onClick={() => setInfo("heat")} label="What this means" />
-                              </p>
-                              <span style={{
-                                display: "inline-block",
-                                padding: "2px 8px",
-                                borderRadius: 999,
-                                fontSize: "0.75rem",
-                                fontWeight: 600,
-                                background: heat.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
-                                color: heat.tone === "good" ? "#2E7D5B" : "#B98A2E",
-                              }}>
-                                {heat.label}
-                              </span>
-                            </div>
-                          ) : null}
-
-                          {boatTraffic ? (
-                            <div>
-                              <p style={FACTOR_LABEL}>
-                                Boat traffic
-                                <InfoButton onClick={() => setInfo("fishingpressure")} label="What this means" />
-                              </p>
-                              <span style={{
-                                display: "inline-block",
-                                padding: "2px 8px",
-                                borderRadius: 999,
-                                fontSize: "0.75rem",
-                                fontWeight: 600,
-                                background: boatTraffic.tone === "good" ? "rgba(46,125,91,0.1)" : "rgba(185,138,46,0.1)",
-                                color: boatTraffic.tone === "good" ? "#2E7D5B" : "#B98A2E",
-                              }}>
-                                {boatTraffic.word}
-                              </span>
-                              {/* Display-only measured-effort trend (GFW). Falling effort
-                                  beside a protected reef reads as pressure easing — context,
-                                  not proof of enforcement (see popup). Shows a plain stat
-                                  with two years, a real sparkline with three or more. */}
-                              {fishingPressure?.showEffortTrend ? (
-                                <FishingEffortTrend
-                                  series={fishingPressure.effortSeries}
-                                  trend={fishingPressure.trend}
-                                  radiusKm={fishingPressure.radiusKm}
-                                />
-                              ) : null}
-                            </div>
-                          ) : null}
-                        </div>
-                      </>
-                    ) : null}
-
-                  </div>
-                ) : null}
-              </div>
-            </section>
+            <ReefHealthPanel
+              reefStateLabel={reefStateLabel}
+              reefStateColor={reefStateColor}
+              verdictBasis={verdictBasis ? emphasizeBasis(deHyphen(verdictBasis)) : (divingOutlook ? deHyphen(divingOutlook) : conditionSentence)}
+              rows={reefRows}
+              sourceLine={reefSourceLine}
+            />
           ) : null}
-
-
 
           {/* REEF FISH-ABUNDANCE PANEL — display-only, decoupled from reef state.
               Only present for strong-REEF regions (Caribbean/US/ETP). */}

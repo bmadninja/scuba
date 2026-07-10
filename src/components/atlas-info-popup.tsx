@@ -50,7 +50,7 @@ export type InfoKey =
 export const INFO: Record<InfoKey, InfoEntry> = {
   state: {
     title: "What the reef labels mean",
-    sub: "This is a read on the reef's coral condition, turned into one plain word. We weigh coral cover and heat, with boat traffic as a check on whether the protection is holding. Blue Park status and species logged are shown for context and do not change it. It is not a ranking, and every reef is worth diving.",
+    sub: "This is a read on the reef itself, turned into one plain word. Two reef signals build it: how much living coral is on the reef, and how much fish life it holds. We lead with the weaker of the two. Heat and fishing then act as forces on top: they can hold a reef back from Improving, and a serious heat alert can push it to Declining. Blue Park status and species logged are shown for context and do not change it. It is not a ranking, and every reef is worth diving.",
     rows: [
       ["Improving", "rgba(16,185,129,0.15)", "#6ee7b7", "Near its natural baseline and steady. Recovering or healthy, not perfect."],
       ["Stable", "rgba(245,158,11,0.14)", "#fbbf24", "Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],
@@ -331,6 +331,10 @@ export function AtlasInfoPopup({
           borderRadius: "1.25rem",
           maxWidth: 460,
           width: "100%",
+          // Cap to the viewport and scroll inside so a tall modal (e.g. the reef
+          // labels explainer) never pushes its Close button off a phone screen.
+          maxHeight: "calc(100dvh - 3rem)",
+          overflowY: "auto",
           padding: "1.75rem",
           boxShadow: "0 24px 64px -16px rgba(0,0,0,0.4)",
           position: "relative",

@@ -13,56 +13,50 @@ const GOTO = { waitUntil: 'domcontentloaded' } as const;
 const ARI = '/locations/ari-atoll-maldives';
 
 test.describe('Location page — reef condition section', () => {
-  test('renders the "Reef condition" section with a coral-cover chart', async ({ page }) => {
+  test('renders the "How this reef is doing" card led by the reef-state verdict', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    // The section keeps its id="reef-condition" but the redesign renamed its
-    // heading from "Reef condition" to "Reef health".
+    // The section keeps its id="reef-condition"; the final card titles it
+    // "How this reef is doing", leads with the verdict, and lists four rows.
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    await expect(section.getByRole('heading', { name: 'Reef health' })).toBeVisible();
-    await expect(section.getByText('Coral cover over time')).toBeVisible();
-    // The chart is an inline SVG with role="img" and a descriptive aria-label.
-    await expect(section.getByRole('img').first()).toBeVisible();
+    await expect(section.getByRole('heading', { name: 'How this reef is doing' })).toBeVisible();
+    await expect(section.getByRole('link', { name: /how we measure this/i })).toBeVisible();
+    // The four pillar rows.
+    await expect(section.getByText('Coral cover', { exact: true })).toBeVisible();
+    await expect(section.getByText('Fish life', { exact: true })).toBeVisible();
+    await expect(section.getByText('Fishing', { exact: true })).toBeVisible();
   });
 
-  test('renders the "Water temperature over time" chart with a trend read', async ({ page }) => {
-    await page.goto(ARI, GOTO);
-    const section = page.locator('#reef-condition');
-    await expect(section).toBeVisible({ timeout: 15_000 });
-    // The temperature-over-time surface: heading, the plain warming/stable read,
-    // and the inline SVG chart (its own descriptive aria-label). Ari Atoll has a
-    // stored monthly SST series, so all three render.
-    await expect(section.getByText('Water temperature over time')).toBeVisible();
-    await expect(section.getByText(/the water here (is|has)/i)).toBeVisible();
-    await expect(
-      section.getByRole('img', { name: /water temperature history/i }),
-    ).toBeVisible();
-  });
-
-  test('Heat modal shows a live current-vs-usual temperature readout', async ({ page }) => {
+  test('the card leads with a verdict and consolidates sources into one line', async ({ page }) => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    // The "Heat right now" factor carries an info button; opening it reveals the
-    // live readout sourced from the real SST fields ("Around X°C now … usual Z°C").
-    const heatBlock = section
-      .locator('div')
-      .filter({ has: page.getByText('Heat right now') })
-      .last();
-    await heatBlock.getByRole('button').first().click();
-    await expect(
-      page.getByText(/Around \d+°C now,.*usual \d+°C for the season/i),
-    ).toBeVisible();
+    // The overall reef-state verdict word (any of the four labels). A pillar row
+    // can repeat the word, so assert at least one is visible.
+    await expect(section.getByText(/^(Improving|Stable|Declining|Not surveyed)$/).first()).toBeVisible();
+    // There is no per-site confidence badge chip.
+    await expect(section.getByText(/of 4 signals on file/i)).toHaveCount(0);
+    // One consolidated source line at the foot of the card.
+    await expect(section.getByText(/^Sources ·/)).toBeVisible();
   });
 
-  test('shows the Reef state metric with a label', async ({ page }) => {
+  test('the Heat row shows a plain verdict, never the word "Watch"', async ({ page }) => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');
-    // The "Reef state" label shares its <p> with an info button, so match the
-    // metric's info trigger instead (unique, stable accessible name).
-    await expect(
-      section.getByRole('button', { name: /how we judge this/i }),
-    ).toBeVisible({ timeout: 15_000 });
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    await expect(section.getByText('Heat', { exact: true })).toBeVisible();
+    await expect(section.getByText(/Safe now|Warming|Bleaching now/)).toBeVisible();
+    await expect(section.getByText('Watch', { exact: true })).toHaveCount(0);
+  });
+
+  test('shows the Reef state verdict led by the label', async ({ page }) => {
+    await page.goto(ARI, GOTO);
+    const section = page.locator('#reef-condition');
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    // The card leads with the "Reef state" eyebrow and the big verdict word,
+    // and carries no per-card popup — only the "How we measure this" link.
+    await expect(section.getByText('Reef state', { exact: true })).toBeVisible();
+    await expect(section.getByRole('button', { name: /how we judge this/i })).toHaveCount(0);
   });
 });
 
@@ -168,12 +162,14 @@ test.describe('Location page — mobile', () => {
 
   test('info popup opens and closes on touch', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    const trigger = page.getByRole('button', { name: /how we judge this/i }).first();
+    // The reef-state popup is gone; the shared AtlasInfoPopup is still exercised
+    // via the always-present sighting-broadcast info button.
+    const trigger = page.getByRole('button', { name: 'Learn how broadcasts work' }).first();
     await expect(trigger).toBeVisible({ timeout: 15_000 });
     // Scope by the popup's accessible name: on the mobile viewport the persistent
     // off-canvas nav drawer is also role="dialog", so a bare getByRole('dialog')
     // would match two elements and fail strict mode.
-    const dialog = page.getByRole('dialog', { name: 'What the reef labels mean' });
+    const dialog = page.getByRole('dialog', { name: 'How sighting broadcasts work' });
     // Retry the click until the dialog opens — the handler is wired on hydration.
     await expect(async () => {
       await trigger.click();
@@ -188,12 +184,11 @@ test.describe('Location page — info popups', () => {
   test('an info (i) button opens a modal dialog that closes again', async ({ page }) => {
     await page.goto(ARI, GOTO);
     await expect(page.locator('#reef-condition')).toBeVisible({ timeout: 15_000 });
-    // The reef-state metric carries a "How we judge this" info trigger.
-    const trigger = page.getByRole('button', { name: /how we judge this/i }).first();
+    const trigger = page.getByRole('button', { name: 'Learn how broadcasts work' }).first();
     await expect(trigger).toBeVisible();
     // Scope by accessible name so the popup is matched unambiguously (see the
     // mobile touch test — a nav drawer can also carry role="dialog").
-    const dialog = page.getByRole('dialog', { name: 'What the reef labels mean' });
+    const dialog = page.getByRole('dialog', { name: 'How sighting broadcasts work' });
     // Retry the click until the dialog opens — the handler is wired on hydration.
     await expect(async () => {
       await trigger.click();
