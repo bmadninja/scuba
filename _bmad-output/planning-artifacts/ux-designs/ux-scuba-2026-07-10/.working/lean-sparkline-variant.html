@@ -1,0 +1,138 @@
+<title>Reef breakdown — always-visible sparklines (mock)</title>
+<style>
+  :root{
+    --paper:#FFFFFF; --surface:#F8F7F4; --hairline:#E7E6E2; --hairline-strong:#D3D1CB;
+    --ink:#0E1C28; --ink-2:#4A5568; --mute:#6B7280;
+    --ok:#2E7D5B; --warn:#B98A2E; --bad:#C0412B; --yellow:#F6C700; --page:#FBFAF8;
+    --serif:"Source Serif 4","Source Serif Pro",Georgia,serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;}
+  .page{max-width:640px;margin:0 auto;padding:44px 22px 90px;}
+  .kicker{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin:0;}
+  h1.t{font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-0.02em;margin:8px 0 6px;text-wrap:balance;}
+  p.lede{font-size:14.5px;color:var(--ink-2);line-height:1.6;margin:0 0 4px;max-width:560px;}
+  .stack{display:flex;flex-direction:column;gap:44px;margin-top:36px;}
+  .ctx{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin-bottom:10px;}
+
+  .card{border:1px solid var(--hairline-strong);border-radius:12px;background:var(--paper);overflow:hidden;}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:15px 18px 14px;border-bottom:1px solid var(--hairline);}
+  .card-title{font-family:var(--serif);font-size:18px;color:var(--ink);letter-spacing:-0.01em;}
+  .measure{font-family:var(--mono);font-size:11px;color:var(--ink-2);cursor:pointer;background:none;border:none;padding:0;display:inline-flex;align-items:center;gap:6px;}
+  .measure .i{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid var(--hairline-strong);font-family:var(--serif);font-style:italic;font-size:10px;}
+
+  /* row: verdict block on the left, always-visible evidence on the right */
+  .row{display:grid;grid-template-columns:1fr 158px;gap:16px;align-items:center;padding:15px 18px;border-top:1px solid var(--hairline);}
+  .row:first-of-type{border-top:none;}
+  .r-label{font-size:12.5px;color:var(--ink-2);margin-bottom:3px;}
+  .r-verdict{display:inline-flex;align-items:center;gap:8px;font-size:17px;font-weight:600;letter-spacing:-0.01em;}
+  .r-verdict .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+  .r-verdict .arrow{font-size:14px;font-weight:500;opacity:.85;}
+  .ev{justify-self:end;text-align:right;}
+  .ev svg{display:block;margin-left:auto;}
+  .ev .cap{font-family:var(--mono);font-size:9.5px;color:var(--mute);margin-top:4px;letter-spacing:.01em;}
+
+  .foot-note{font-size:12.5px;color:var(--mute);line-height:1.5;padding:11px 18px;border-top:1px solid var(--hairline);background:var(--surface);display:flex;gap:9px;}
+  .foot-note .d{width:7px;height:7px;border-radius:50%;background:var(--ink);margin-top:5px;flex-shrink:0;}
+  .src-row{font-family:var(--mono);font-size:10px;color:var(--mute);padding:10px 18px 13px;border-top:1px solid var(--hairline);}
+
+  .compare{margin-top:8px;font-size:12.5px;color:var(--mute);line-height:1.6;border-left:2px solid var(--yellow);padding:2px 0 2px 12px;}
+  @media(max-width:520px){
+    .row{grid-template-columns:1fr;gap:8px;}
+    .ev{justify-self:start;text-align:left;} .ev svg{margin-left:0;} .ev .cap{text-align:left;}
+  }
+</style>
+
+<div class="page">
+  <p class="kicker">Mock · always-visible sparklines · proposal</p>
+  <h1 class="t">How this reef is doing</h1>
+  <p class="lede">Same one-word verdicts — but the evidence sits inline on every row, always visible. No tapping, nothing hidden. Coral and fishing show a trend line; biodiversity a bar against a benchmark; bleaching a heat scale.</p>
+  <div class="stack" id="stack"></div>
+  <p class="compare">Trade-off vs the expand version: everything is visible at a glance (good for scanning, good for trust), but the card is taller and denser. The verdict is still the star; the sparkline is a quiet confirmation beside it.</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var C={ok:"var(--ok)",mid:"var(--warn)",bad:"var(--bad)",none:"var(--mute)"};
+  function tone(b){return C[b]||C.none;}
+
+  // ── mini evidence (fixed 150×34 footprint) ───────────────────────────
+  var EW=150, EH=34;
+  function spark(series, band, opts){ // trend line, endpoint emphasised
+    opts=opts||{};
+    var c=tone(band), padT=5, padB=5, pw=EW, ph=EH-padT-padB;
+    var lo=Math.min.apply(null,series), hi=Math.max.apply(null,series), rng=(hi-lo)||1;
+    var xf=function(i){return (i/(series.length-1))*(pw-4)+2;};
+    var yf=function(v){return padT+(1-(v-lo)/rng)*ph;};
+    var line=series.map(function(v,i){return (i?"L":"M")+xf(i).toFixed(1)+" "+yf(v).toFixed(1);}).join(" ");
+    var area=line+" L"+xf(series.length-1).toFixed(1)+" "+(padT+ph)+" L"+xf(0).toFixed(1)+" "+(padT+ph)+" Z";
+    var lx=xf(series.length-1), ly=yf(series[series.length-1]);
+    return '<svg viewBox="0 0 '+EW+' '+EH+'" width="'+EW+'" height="'+EH+'">'+
+      '<path d="'+area+'" fill="'+c+'" opacity="0.08"/>'+
+      '<path d="'+line+'" fill="none" stroke="'+c+'" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'+
+      '<circle cx="'+lx.toFixed(1)+'" cy="'+ly.toFixed(1)+'" r="2.6" fill="'+c+'"/></svg>';
+  }
+  function richBar(value,bench,max,band){
+    var c=tone(band), h=10, y=(EH-h)/2, pw=EW;
+    var fw=Math.min(pw,value/max*pw), bx=Math.min(pw,bench/max*pw);
+    return '<svg viewBox="0 0 '+EW+' '+EH+'" width="'+EW+'" height="'+EH+'">'+
+      '<rect x="0" y="'+y+'" width="'+pw+'" height="'+h+'" rx="5" fill="#ECEBE7"/>'+
+      '<rect x="0" y="'+y+'" width="'+fw.toFixed(1)+'" height="'+h+'" rx="5" fill="color-mix(in oklch,'+c+' 55%,var(--paper))"/>'+
+      '<line x1="'+bx.toFixed(1)+'" y1="'+(y-3)+'" x2="'+bx.toFixed(1)+'" y2="'+(y+h+3)+'" stroke="var(--ink)" stroke-width="1.5" opacity="0.55"/></svg>';
+  }
+  function dhwScale(dhw){ // 0-12, healthy <=4
+    var h=10,y=(EH-h)/2,pw=EW, mx=Math.min(pw,dhw/12*pw), hz=pw*4/12;
+    return '<svg viewBox="0 0 '+EW+' '+EH+'" width="'+EW+'" height="'+EH+'">'+
+      '<defs><linearGradient id="dhwg" x1="0" x2="1"><stop offset="0" stop-color="#DCEFE6"/><stop offset="0.33" stop-color="#DCEFE6"/><stop offset="0.33" stop-color="#F3E6CC"/><stop offset="0.66" stop-color="#F3E6CC"/><stop offset="0.66" stop-color="#F3D9D2"/><stop offset="1" stop-color="#F3D9D2"/></linearGradient></defs>'+
+      '<rect x="0" y="'+y+'" width="'+pw+'" height="'+h+'" rx="5" fill="url(#dhwg)"/>'+
+      '<rect x="0" y="'+y+'" width="'+hz.toFixed(1)+'" height="'+h+'" rx="5" fill="none" stroke="color-mix(in oklch,var(--ok) 40%,var(--hairline))"/>'+
+      '<rect x="'+(mx-1.5).toFixed(1)+'" y="'+(y-3)+'" width="3" height="'+(h+6)+'" rx="1.5" fill="var(--ink)"/></svg>';
+  }
+
+  var REEFS=[
+    { ctx:"Raja Ampat · Indonesia", override:null,
+      sources:"MERMAID · Reef Life Survey · NOAA CRW · Global Fishing Watch", signals:[
+      {label:"Coral health", verdict:"Improving", band:"ok", arrow:"↑", ev:spark([32,35,38,42,45,47,49,50],"ok"), cap:"32 → 50% cover"},
+      {label:"Fish biodiversity", verdict:"Rich", band:"ok", arrow:"", ev:richBar(72,55,90,"ok"), cap:"≈72 species / survey"},
+      {label:"Bleaching risk", verdict:"Low", band:"ok", arrow:"", ev:dhwScale(1), cap:"1 °C-wk heat"},
+      {label:"Fishing", verdict:"Protected", band:"ok", arrow:"", ev:spark([6,4,5,4,3,4,3,3],"ok"), cap:"no-take · quiet"},
+    ]},
+    { ctx:"Cozumel · Mexico", override:"This rating was set from published studies, not just the signals below.",
+      sources:"AGRRA · NOAA CRW · Global Fishing Watch", signals:[
+      {label:"Coral health", verdict:"Declining", band:"bad", arrow:"↓", ev:spark([20,18,17,15,14,13,12,11],"bad"), cap:"20 → 11% cover"},
+      {label:"Bleaching risk", verdict:"Elevated", band:"mid", arrow:"", ev:dhwScale(6), cap:"6 °C-wk heat"},
+      {label:"Fishing", verdict:"Heavily fished", band:"bad", arrow:"", ev:spark([30,38,45,52,60,68,74,80],"bad"), cap:"open · effort rising"},
+    ]},
+  ];
+
+  function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+  function row(s){
+    var r=el("div","row");
+    r.innerHTML=
+      '<div><div class="r-label">'+s.label+'</div>'+
+      '<div class="r-verdict" style="color:color-mix(in oklch,'+tone(s.band)+' 78%,var(--ink))">'+
+        '<span class="dot" style="background:'+tone(s.band)+'"></span>'+s.verdict+
+        (s.arrow?'<span class="arrow">'+s.arrow+'</span>':'')+'</div></div>'+
+      '<div class="ev">'+s.ev+'<div class="cap">'+s.cap+'</div></div>';
+    return r;
+  }
+  function card(reef){
+    var wrap=el("div");
+    wrap.appendChild(el("div","ctx",reef.ctx));
+    var cd=el("div","card");
+    var head=el("div","card-head");
+    head.appendChild(el("div","card-title","How this reef is doing"));
+    var m=el("button","measure");m.type="button";m.innerHTML='<span class="i">i</span>How we measure this';
+    head.appendChild(m); cd.appendChild(head);
+    reef.signals.forEach(function(s){cd.appendChild(row(s));});
+    if(reef.override){var f=el("div","foot-note");f.innerHTML='<span class="d"></span><span>'+reef.override+'</span>';cd.appendChild(f);}
+    cd.appendChild(el("div","src-row","Sources · "+reef.sources));
+    wrap.appendChild(cd); return wrap;
+  }
+  var stack=document.getElementById("stack");
+  REEFS.forEach(function(reef){stack.appendChild(card(reef));});
+})();
+</script>
