@@ -41,28 +41,23 @@ test.describe('Atlas info popup (via location page)', () => {
 
   test('popup is hidden by default', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`, GOTO);
-    const metric = page
-      .locator('p:has(button[aria-label])')
-      .filter({ hasText: 'Reef state' })
-      .first();
-    await expect(metric).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator('#reef-condition')).toBeVisible({ timeout: 15_000 });
     await expect(page.getByRole('dialog')).toHaveCount(0);
   });
 
   test('clicking a (i) opens the dialog; Escape closes it', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`);
     await page.waitForLoadState('networkidle');
-    const metric = page
-      .locator('p:has(button[aria-label])')
-      .filter({ hasText: 'Reef state' })
-      .first();
-    await expect(metric).toBeVisible({ timeout: 15_000 });
-    await metric.evaluate((el) => el.scrollIntoView({ block: 'center' }));
-    await metric.getByRole('button', { name: 'How we judge this' }).click();
+    // The reef-state popup is gone; exercise the shared AtlasInfoPopup mechanics
+    // via the sighting-broadcast info button, which is always present.
+    const trigger = page.getByRole('button', { name: 'Learn how broadcasts work' }).first();
+    await expect(trigger).toBeVisible({ timeout: 15_000 });
+    await trigger.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    await trigger.click();
 
     const dialog = page.getByRole('dialog');
     await expect(dialog).toBeVisible({ timeout: 5_000 });
-    await expect(dialog).toContainText(/what the reef labels mean/i);
+    await expect(dialog).toContainText(/how sighting broadcasts work/i);
 
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).toHaveCount(0);
@@ -71,49 +66,40 @@ test.describe('Atlas info popup (via location page)', () => {
   test('info dialog links to the Method page', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`);
     await page.waitForLoadState('networkidle');
-    const metric = page
-      .locator('p:has(button[aria-label])')
-      .filter({ hasText: 'Reef state' })
-      .first();
-    await expect(metric).toBeVisible({ timeout: 15_000 });
-    await metric.evaluate((el) => el.scrollIntoView({ block: 'center' }));
-    await metric.getByRole('button', { name: 'How we judge this' }).click();
+    const trigger = page.getByRole('button', { name: 'Learn how broadcasts work' }).first();
+    await expect(trigger).toBeVisible({ timeout: 15_000 });
+    await trigger.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    await trigger.click();
     const dialog = page.getByRole('dialog');
     await expect(dialog).toBeVisible({ timeout: 5_000 });
     await expect(dialog.getByRole('link', { name: /method page/i })).toBeVisible();
   });
 });
 
-// ── Location page — reef condition info popups (replaces old stat strip) ───
-// The old stat strip with hover InfoTooltips for "Reef state" / "Coral cover"
-// is gone. The redesigned "Reef condition" block shows Heat right now / Fishing
-// / Reef state metrics, each with an (i) InfoButton opening the shared popup.
-test.describe('Location page — reef condition info popups', () => {
+// ── Location page — reef-health card info entry point ──────────────────────
+// The card has a single info entry point: the "How we measure this" link to the
+// method page. The old per-card "Reef state (i)" / "how we judge this" popup is
+// removed; the four label definitions now live on the method page.
+test.describe('Location page — reef-health card info entry point', () => {
   const SLUG = 'raja-ampat-indonesia';
 
-  test('"Reef state" metric has an (i) info button', async ({ page }) => {
+  test('the card has no reef-state popup, only the "How we measure this" link', async ({ page }) => {
     await page.goto(`/locations/${SLUG}`, GOTO);
-    const metric = page
-      .locator('p:has(button[aria-label])')
-      .filter({ hasText: 'Reef state' })
-      .first();
-    await expect(metric).toBeVisible({ timeout: 15_000 });
-    await expect(metric.getByRole('button', { name: 'How we judge this' })).toBeVisible();
+    const section = page.locator('#reef-condition');
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    await expect(section.getByRole('button', { name: /how we judge this/i })).toHaveCount(0);
+    const link = section.getByRole('link', { name: /how we measure this/i });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', /\/data#reefstate/);
   });
 
-  test('clicking the "Reef state" (i) opens the reef-labels explainer', async ({ page }) => {
-    await page.goto(`/locations/${SLUG}`);
-    await page.waitForLoadState('networkidle');
-    const metric = page
-      .locator('p:has(button[aria-label])')
-      .filter({ hasText: 'Reef state' })
-      .first();
-    await expect(metric).toBeVisible({ timeout: 15_000 });
-    await metric.evaluate((el) => el.scrollIntoView({ block: 'center' }));
-    await metric.getByRole('button', { name: 'How we judge this' }).click();
-    const dialog = page.getByRole('dialog');
-    await expect(dialog).toBeVisible({ timeout: 5_000 });
-    await expect(dialog).toContainText(/what the reef labels mean/i);
+  test('the method page defines all four reef-state labels', async ({ page }) => {
+    await page.goto('/data', GOTO);
+    const section = page.locator('#reefstate');
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    for (const label of ['Improving', 'Stable', 'Declining', 'Not surveyed']) {
+      await expect(section.getByText(label, { exact: true }).first()).toBeVisible();
+    }
   });
 
   test('the Heat row shows a plain verdict, never the word "Watch"', async ({ page }) => {

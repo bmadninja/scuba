@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { InfoButton } from "@/components/atlas-info-popup";
 
 /**
  * "How this reef is doing" — the reef-health card (final design).
@@ -83,7 +82,6 @@ export type ReefHealthPanelProps = {
   rows: ReefHealthRows;
   /** One consolidated, muted "Sources ·" line for the whole card. */
   sourceLine: string;
-  onStateInfo: () => void;
 };
 
 function VerdictTag({ v, arrow }: { v: VerdictWord; arrow?: "up" | "down" | "flat" }) {
@@ -313,10 +311,7 @@ export function ReefHealthPanel(props: ReefHealthPanelProps) {
 
       {/* Overall verdict */}
       <div style={{ maxWidth: 680, marginBottom: "1.25rem" }}>
-        <p style={{ ...CAPS, display: "flex", alignItems: "center", gap: "0.3rem", marginBottom: "0.35rem" }}>
-          Reef state
-          <InfoButton onClick={props.onStateInfo} label="How we judge this" />
-        </p>
+        <p style={{ ...CAPS, marginBottom: "0.35rem" }}>Reef state</p>
         <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.55rem" }}>
           <span style={{ width: 15, height: 15, borderRadius: "50%", background: props.reefStateColor, display: "inline-block", flexShrink: 0 }} />
           <span style={{ fontSize: "2rem", fontWeight: 700, color: props.reefStateColor, lineHeight: 1.05 }}>{props.reefStateLabel}</span>

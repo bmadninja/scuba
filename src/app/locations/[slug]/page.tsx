@@ -720,7 +720,14 @@ export default async function LocationPage({
   // Coral cover — the row is driven entirely by the reef-health survey figure
   // that also drives the verdict (pillars.coralCover), never the proximity
   // MERMAID series, so the displayed % always matches the verdict.
-  const coralVerdict: VerdictWord =
+  //
+  // Two vocabularies, by whether a REAL trend (3+ site surveys) exists:
+  //  - trend  -> a direction word (Improving / Stable / Declining) + arrow.
+  //  - level  -> a level word (Healthy / Moderate / Low / Critical), no arrow,
+  //             because a single reading has no direction to report.
+  // Neither touches the overall reef-state headline (that stays from
+  // computeReefState).
+  const coralTrendVerdict: VerdictWord =
     pillars.coralCover === null
       ? { word: "Stable", color: AMBER }
       : pillars.coralCover < 25
@@ -729,7 +736,15 @@ export default async function LocationPage({
           ? { word: "Improving", color: GREEN }
           : { word: "Stable", color: AMBER };
   const coralArrow: "up" | "down" | "flat" =
-    coralVerdict.word === "Improving" ? "up" : coralVerdict.word === "Declining" ? "down" : "flat";
+    coralTrendVerdict.word === "Improving" ? "up" : coralTrendVerdict.word === "Declining" ? "down" : "flat";
+  const coralLevelVerdict = (pct: number): VerdictWord =>
+    pct >= 40
+      ? { word: "Healthy", color: GREEN }
+      : pct >= 20
+        ? { word: "Moderate", color: AMBER }
+        : pct >= 10
+          ? { word: "Low", color: AMBER }
+          : { word: "Critical", color: RED };
   // A REAL trend needs 3+ site surveys (the reef-health coralCoverSeries).
   const coralSeries = observed?.coralCoverSeries ?? null;
   const hasCoralTrend = !!coralSeries && coralSeries.length >= 3;
@@ -745,11 +760,11 @@ export default async function LocationPage({
         points,
         currentPct,
         startYear: points[0].year,
-        verdict: coralVerdict,
+        verdict: coralTrendVerdict,
         arrow: coralArrow,
       };
     } else {
-      coralRow = { kind: "level", pct: currentPct, verdict: coralVerdict };
+      coralRow = { kind: "level", pct: currentPct, verdict: coralLevelVerdict(currentPct) };
     }
   }
 

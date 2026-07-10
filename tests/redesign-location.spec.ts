@@ -49,14 +49,14 @@ test.describe('Location page — reef condition section', () => {
     await expect(section.getByText('Watch', { exact: true })).toHaveCount(0);
   });
 
-  test('shows the Reef state metric with a label', async ({ page }) => {
+  test('shows the Reef state verdict led by the label', async ({ page }) => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');
-    // The "Reef state" label shares its <p> with an info button, so match the
-    // metric's info trigger instead (unique, stable accessible name).
-    await expect(
-      section.getByRole('button', { name: /how we judge this/i }),
-    ).toBeVisible({ timeout: 15_000 });
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    // The card leads with the "Reef state" eyebrow and the big verdict word,
+    // and carries no per-card popup — only the "How we measure this" link.
+    await expect(section.getByText('Reef state', { exact: true })).toBeVisible();
+    await expect(section.getByRole('button', { name: /how we judge this/i })).toHaveCount(0);
   });
 });
 
@@ -162,12 +162,14 @@ test.describe('Location page — mobile', () => {
 
   test('info popup opens and closes on touch', async ({ page }) => {
     await page.goto(ARI, GOTO);
-    const trigger = page.getByRole('button', { name: /how we judge this/i }).first();
+    // The reef-state popup is gone; the shared AtlasInfoPopup is still exercised
+    // via the always-present sighting-broadcast info button.
+    const trigger = page.getByRole('button', { name: 'Learn how broadcasts work' }).first();
     await expect(trigger).toBeVisible({ timeout: 15_000 });
     // Scope by the popup's accessible name: on the mobile viewport the persistent
     // off-canvas nav drawer is also role="dialog", so a bare getByRole('dialog')
     // would match two elements and fail strict mode.
-    const dialog = page.getByRole('dialog', { name: 'What the reef labels mean' });
+    const dialog = page.getByRole('dialog', { name: 'How sighting broadcasts work' });
     // Retry the click until the dialog opens — the handler is wired on hydration.
     await expect(async () => {
       await trigger.click();
@@ -182,12 +184,11 @@ test.describe('Location page — info popups', () => {
   test('an info (i) button opens a modal dialog that closes again', async ({ page }) => {
     await page.goto(ARI, GOTO);
     await expect(page.locator('#reef-condition')).toBeVisible({ timeout: 15_000 });
-    // The reef-state metric carries a "How we judge this" info trigger.
-    const trigger = page.getByRole('button', { name: /how we judge this/i }).first();
+    const trigger = page.getByRole('button', { name: 'Learn how broadcasts work' }).first();
     await expect(trigger).toBeVisible();
     // Scope by accessible name so the popup is matched unambiguously (see the
     // mobile touch test — a nav drawer can also carry role="dialog").
-    const dialog = page.getByRole('dialog', { name: 'What the reef labels mean' });
+    const dialog = page.getByRole('dialog', { name: 'How sighting broadcasts work' });
     // Retry the click until the dialog opens — the handler is wired on hydration.
     await expect(async () => {
       await trigger.click();

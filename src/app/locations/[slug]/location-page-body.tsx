@@ -431,7 +431,6 @@ export function LocationPageBody(props: LocationBodyProps) {
               verdictBasis={verdictBasis ? emphasizeBasis(deHyphen(verdictBasis)) : (divingOutlook ? deHyphen(divingOutlook) : conditionSentence)}
               rows={reefRows}
               sourceLine={reefSourceLine}
-              onStateInfo={() => setInfo("state")}
             />
           ) : null}
 

@@ -569,6 +569,27 @@ export default function DataPage() {
                   </div>
                 </div>
               </div>
+
+              {/* The fourth label — no state to draw, so it sits below the grid. */}
+              <div
+                style={{
+                  border: `1px solid ${HAIRLINE}`,
+                  borderRadius: "1rem",
+                  padding: "1.25rem",
+                  borderTop: `3px solid ${INK2}`,
+                  background: PAPER,
+                  marginTop: "1rem",
+                }}
+              >
+                <p style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.5rem", color: INK2 }}>
+                  Not surveyed
+                </p>
+                <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
+                  No coral survey and no heat reading on file yet, so we do not
+                  assign a state. The absence of bad news is not evidence of a
+                  healthy reef, and a single logged dive can change that.
+                </p>
+              </div>
             </div>
 
             <div
