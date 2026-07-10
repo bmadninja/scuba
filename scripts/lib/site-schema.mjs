@@ -95,7 +95,7 @@ Return STRICT JSON for a dive site matching this TypeScript shape (no extra fiel
     scientificName?: string,
     reliability: "year-round" | "seasonal" | "rare",
     bestMonths?: number[]        // 1-12, required when reliability="seasonal"
-  }, ...],                       // 2+ entries
+  }, ...],                       // 2+ entries. MARINE FAUNA ONLY — see hard rules below
   conditionsByMonth: [           // EXACTLY 12 entries, month 1..12
     {
       month: 1..12,
@@ -120,4 +120,16 @@ Hard rules:
 - If you cannot find ≥3 independent corroborating sources for lat/lng and depth, refuse.
 - heroImageUrl MUST be a real Wikimedia Commons file URL you verified, or null.
 - description must NOT use marketing fluff ("paradise", "unforgettable"). Be concrete.
+- species MUST be fauna a diver/snorkeler can actually encounter UNDERWATER at this
+  site: fish, sharks/rays, corals, mollusks (nudibranchs, octopus, cuttlefish),
+  crustaceans, echinoderms, sea turtles, marine mammals (whales, dolphins, seals,
+  manatees), sea snakes. NEVER include land/coastal wildlife just because it lives
+  near the site's coordinates — no birds (kookaburras, gulls, ibis, ospreys...), no
+  land reptiles or mammals (water dragons, wallabies...), no insects. If you are
+  unsure whether a species is seen underwater during the dive itself, leave it out.
+- lat/lng MUST be the actual coordinates of this specific site, and MUST be
+  geographically plausible for the given locationId (the same country/region, not
+  just "somewhere with a similar name"). A site named after a famous wreck or
+  landmark that turns out to be thousands of km from the target location is NOT a
+  match for that location — refuse instead of filing it there.
 `;

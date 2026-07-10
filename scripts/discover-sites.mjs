@@ -45,6 +45,13 @@ const MAX_SITES = Number(process.env.MAX_SITES ?? "1");
 const EXHAUSTION_THRESHOLD = Number(process.env.EXHAUSTION_THRESHOLD ?? "5"); // consecutive rejects → stop
 const REGION_FOCUS = process.env.REGION_FOCUS; // optional comma-separated region hints for parallel workers
 const FILL_EMPTY_ONLY = process.env.FILL_EMPTY_ONLY === "1"; // stop as soon as every location has ≥1 site (daily routine default)
+// Reject a researched site whose coordinates land implausibly far from its
+// target location's anchor point — catches the LLM naming a real site that
+// happens to sit under a different, wrong locationId (e.g. an Australian
+// wreck filed under "raja-ampat-indonesia"). 300km comfortably covers large
+// archipelagos/reef systems (Great Barrier Reef, Komodo) without allowing a
+// cross-country/cross-ocean mismatch through.
+const MAX_LOCATION_DISTANCE_KM = 300;
 
 const client = new Anthropic();
 
@@ -326,7 +333,11 @@ If you cannot corroborate the site (≥3 sources), respond with: \`\`\`json
 async function selfReview(entry) {
   const sys = `You are a skeptical fact-checker. Score the confidence (0..1) that this dive-site entry is accurate and non-hallucinated.
 Return JSON: { "score": 0..1, "issues": ["..."] }
-Score <0.8 if: coordinates seem off, species list looks generic, depth range implausible, description vague.`;
+Score <0.8 if: coordinates seem off, species list looks generic, depth range implausible, description vague,
+OR the species list includes anything a diver would NOT encounter underwater during the dive itself — birds
+(kookaburras, gulls, ibis, ospreys, lorikeets...), land/coastal reptiles or mammals (water dragons, wallabies...),
+insects, or other terrestrial wildlife that merely lives near the site's coordinates. List each offending species
+by name in "issues".`;
   const resp = await callClaude({
     system: sys,
     messages: [{ role: "user", content: "Entry:\n" + JSON.stringify(entry, null, 2) }],
@@ -421,6 +432,17 @@ async function discoverOne() {
   const parsed = SiteSchema.safeParse(entry);
   if (!parsed.success) {
     console.error("  Schema errors:", parsed.error.issues.slice(0, 5));
+    return null;
+  }
+
+  console.log("→ Geo sanity check...");
+  const location = locations.find((l) => l.id === gap.locationId);
+  const geoDistance = location ? distanceKm(location, parsed.data) : null;
+  if (geoDistance != null && geoDistance > MAX_LOCATION_DISTANCE_KM) {
+    console.log(
+      `  Rejected: ${parsed.data.name} is ${geoDistance.toFixed(0)}km from ${location.name} ` +
+        `(max ${MAX_LOCATION_DISTANCE_KM}km) — likely wrong locationId, not a real gap in this location.`,
+    );
     return null;
   }
 
