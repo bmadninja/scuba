@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   fetch:
@@ -23,6 +24,9 @@ jobs:
         run: node scripts/fetch-reef-health-live.mjs
 
       - name: Commit updated reef-health.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
           if git diff --quiet -- src/data/reef-health.json; then
             echo "No reef-health changes today."
@@ -30,7 +34,12 @@ jobs:
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="data/reef-health-$(date +%Y%m%d)"
+          git checkout -b "$BRANCH"
           git add src/data/reef-health.json
           git commit -m "data: nightly NOAA CRW thermal-stress refresh"
-          git pull --rebase
-          git push
+          git push origin "$BRANCH"
+          gh pr create --repo "$REPO" \
+            --title "data: nightly NOAA CRW thermal-stress refresh" \
+            --body "Automated daily reef-health data refresh from NOAA CRW." \
+            --label automation
