@@ -1,6 +1,7 @@
 import { getReefHealthByLocationId } from "./reef-health";
 import { getLocationFishing } from "./fishing-pressure";
 import { fishingAllowsImproving } from "./effective-fishing";
+import { biomassStanding, type BiomassStanding } from "./biomass-standing";
 import type { BleachingAlertLevel } from "./types";
 
 export type ReefState = "thriving" | "pressure" | "change" | "unknown";
@@ -60,12 +61,58 @@ export const STATE_DEF: Record<ReefState, { short: string; signal: string }> = {
   },
 };
 
-export function getReefState(locationId: string): ReefState {
+/** Coral-cover STATE sub-score (1–5). Bins from the brief. */
+export function coralSubScore(coverPercent: number): 1 | 2 | 3 | 4 | 5 {
+  if (coverPercent >= 40) return 5;
+  if (coverPercent >= 30) return 4;
+  if (coverPercent >= 20) return 3;
+  if (coverPercent >= 10) return 2;
+  return 1;
+}
+
+/**
+ * The pillars behind a location's reef-state label, computed once so the label,
+ * the confidence badge, and the gap map all read the SAME numbers. This is the
+ * single source of truth for the two-layer model.
+ *
+ * Two-layer, state-only model (brief 2026-07-10, decisions locked):
+ *   STATE pillars (build the label): coral cover + fish biomass, combined
+ *   lower-of-two. PRESSURE pillars (gate only): thermal stress + fishing.
+ *
+ * The label maps the lower-of-two condition onto the four states while
+ * PRESERVING every asymmetry the coral-only engine had:
+ *  - a pressure alone never causes Declining, EXCEPT an active bleaching alert
+ *    (rank ≥ 3) which is measured damage in progress;
+ *  - heat can force Declining; fishing only gates Improving;
+ *  - coral's own Declining/Improving thresholds are UNCHANGED (<25% / ≥40%), so
+ *    a site with no biomass reads byte-identically to the previous engine.
+ *
+ * The biomass pillar (see biomass-standing.ts) only exists where a site has an
+ * RLS series AND a reef-gravity cell to anchor B0; elsewhere it is null and the
+ * coral-only path runs exactly as before.
+ */
+export type ReefStatePillars = {
+  state: ReefState;
+  /** Best observed coral cover %, or null. */
+  coralCover: number | null;
+  /** Prior cover paired with the reading that set coralCover (trend basis). */
+  coralCoverBefore: number | null;
+  coralSubScore: 1 | 2 | 3 | 4 | 5 | null;
+  coralFalling: boolean;
+  /** Fish-biomass state pillar, or null when not scorable in v1. */
+  biomass: BiomassStanding | null;
+  /** Lower-of-two of the present state sub-scores (the condition level). */
+  conditionLevel: 1 | 2 | 3 | 4 | 5 | null;
+  /** Worst NOAA thermal alert rank (0–4). A pressure. */
+  alertRank: number;
+  worstAlert: BleachingAlertLevel | null;
+};
+
+export function computeReefState(locationId: string): ReefStatePillars {
   const healthRecords = getReefHealthByLocationId(locationId);
 
   let worstAlert: BleachingAlertLevel | null = null;
   let bestCover: number | null = null;
-  // Prior cover paired with the reading that sets bestCover, for the trend.
   let bestCoverBefore: number | null = null;
 
   for (const r of healthRecords) {
@@ -80,43 +127,77 @@ export function getReefState(locationId: string): ReefState {
     }
   }
 
-  // Reef state describes reef *condition*, so it needs a condition signal:
-  // an observed coral cover survey or a thermal-stress reading. With neither,
-  // we return "unknown" rather than defaulting to a positive label — the
-  // absence of bad news is not evidence of a healthy reef. Fishing pressure
-  // alone (a human-pressure input) does not qualify a reef as surveyed.
-  if (worstAlert === null && bestCover === null) {
-    return "unknown";
-  }
+  // Fish biomass STATE pillar (co-equal with coral). Null unless the site has
+  // both an RLS series and a gravity cell to anchor B0 — see biomass-standing.ts.
+  const biomass = biomassStanding(locationId);
+  const coralSub = bestCover === null ? null : coralSubScore(bestCover);
 
   const alertRank = worstAlert ? ALERT_RANK[worstAlert] : 0;
-  // Combined human-pressure read: measured GFW effort reconciled with MPAtlas
-  // protection. Only genuinely low or confirmed-protected water can reach
-  // "thriving"; a paper park with heavy measured fishing cannot.
-  const { effective } = getLocationFishing(locationId);
-
-  // Witnessing change: severely degraded coral OR serious bleaching alert
-  if ((bestCover !== null && bestCover < 25) || alertRank >= 3) {
-    return "change";
-  }
-  // Coral trend, mirrored exactly from the cover chart: any measured drop
-  // (before > now) reads as "fallen" there, so such a reef cannot be labelled
-  // "Improving" here — the label would contradict its own chart. A reef with
-  // good cover that is slipping is "Stable" (holding, not pristine).
   const coralFalling =
     bestCover !== null && bestCoverBefore !== null && bestCover < bestCoverBefore;
-  // Thriving: good cover, low stress, low/confirmed-protected fishing, and
-  // coral that is holding or rising (not falling).
+
+  // Condition level = the LOWER of the two present state sub-scores. A reef is
+  // only as healthy as its weakest state pillar.
+  const subs = [coralSub, biomass?.subScore ?? null].filter(
+    (s): s is 1 | 2 | 3 | 4 | 5 => s !== null,
+  );
+  const conditionLevel = subs.length ? (Math.min(...subs) as 1 | 2 | 3 | 4 | 5) : null;
+
+  const pillars: Omit<ReefStatePillars, "state"> = {
+    coralCover: bestCover,
+    coralCoverBefore: bestCoverBefore,
+    coralSubScore: coralSub,
+    coralFalling,
+    biomass,
+    conditionLevel,
+    alertRank,
+    worstAlert,
+  };
+
+  // Reef state needs a condition signal: a coral survey, a thermal reading, OR
+  // now a fish-biomass reading. With none, "Not surveyed" — the absence of bad
+  // news is not evidence of a healthy reef.
+  if (worstAlert === null && bestCover === null && biomass === null) {
+    return { state: "unknown", ...pillars };
+  }
+
+  const { effective } = getLocationFishing(locationId);
+
+  // ── Declining (measured damage) ──────────────────────────────────────────
+  // EITHER state pillar low is measured loss: coral <25% (UNCHANGED threshold,
+  // so coral-only sites are unaffected) OR fish biomass sub-score ≤2 (standing
+  // below ~0.375 of B0). Plus an active bleaching alert (rank ≥3). A pressure
+  // never triggers this on its own — only measured reef condition or a live
+  // bleaching alert.
+  const coralDeclining = bestCover !== null && bestCover < 25;
+  const biomassDeclining = biomass !== null && biomass.subScore <= 2;
+  if (coralDeclining || biomassDeclining || alertRank >= 3) {
+    return { state: "change", ...pillars };
+  }
+
+  // ── Improving (both state pillars strong, no active pressure holding it) ──
+  // Every PRESENT state pillar must be strong: coral ≥40% (sub 5, UNCHANGED)
+  // and biomass sub ≥4 (standing ≥0.5 of B0). Heat no worse than watch, fishing
+  // permits improving, and coral is not measurably falling. (Biomass trend is
+  // display-only in v1 — see biomass-standing.ts — so it does not gate here.)
+  const coralAllowsImproving = bestCover === null || bestCover >= 40;
+  const biomassAllowsImproving = biomass === null || biomass.subScore >= 4;
   if (
-    (bestCover === null || bestCover >= 40) &&
+    coralAllowsImproving &&
+    biomassAllowsImproving &&
     alertRank <= 1 &&
     fishingAllowsImproving(effective) &&
     !coralFalling
   ) {
-    return "thriving";
+    return { state: "thriving", ...pillars };
   }
-  // Everything else: under pressure
-  return "pressure";
+
+  // ── Stable (everything else) ─────────────────────────────────────────────
+  return { state: "pressure", ...pillars };
+}
+
+export function getReefState(locationId: string): ReefState {
+  return computeReefState(locationId).state;
 }
 
 export function getReefHeatLevel(locationId: string): number {

@@ -204,6 +204,14 @@ export type LocationBodyProps = {
   reefStateLabel: string;
   reefStateColor: string;
   reefStateSub: string;
+  // R2: per-site confidence badge (weakest tier among the label-setting pillars),
+  // plus the honest "N of 4 signals on file" count. null when Not surveyed.
+  reefConfidence: {
+    badge: "A" | "B" | "C" | "D";
+    badgeLabel: string;
+    onFile: number;
+    missing: string[];
+  } | null;
   hasReefData: boolean;
   // Species
   species: SpeciesCard[];
@@ -406,6 +414,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     reefStateLabel,
     reefStateColor,
     reefStateSub,
+    reefConfidence,
     hasReefData,
     species,
     threatenedStats,
@@ -502,9 +511,54 @@ export function LocationPageBody(props: LocationBodyProps) {
                     {reefStateLabel}
                   </span>
                 </div>
+                {/* R2 — confidence badge: the weakest tier among the pillars that
+                    set the label, plus an honest "N of 4 signals on file" count. */}
+                {reefConfidence ? (
+                  <div
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.4rem",
+                      padding: "0.25rem 0.6rem",
+                      borderRadius: 999,
+                      border: "1px solid #D8DCE2",
+                      background: "#F6F7F9",
+                      fontSize: "0.6875rem",
+                      color: "#4A5568",
+                      margin: "0 0 0.55rem",
+                    }}
+                    title="How sure we are: a real direction over time, a before and after, a single reading, or nothing yet. The badge is the weakest of the signals that set this label."
+                  >
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: "50%",
+                        background:
+                          reefConfidence.badge === "A"
+                            ? "#2E7D5B"
+                            : reefConfidence.badge === "B"
+                              ? "#B98A2E"
+                              : reefConfidence.badge === "C"
+                                ? "#C77D2E"
+                                : "#7A8698",
+                        flexShrink: 0,
+                      }}
+                    />
+                    <span style={{ fontWeight: 600 }}>{reefConfidence.badgeLabel}</span>
+                    <span aria-hidden="true" style={{ color: "#B4BAC2" }}>·</span>
+                    <span>
+                      {reefConfidence.onFile} of 4 signals on file
+                      {reefConfidence.missing.length > 0
+                        ? `, ${reefConfidence.missing.join(" and ")} missing`
+                        : ""}
+                    </span>
+                  </div>
+                ) : null}
                 {(coverNow !== null || decline) ? (
                   <p style={{ fontSize: "0.75rem", color: "#4A5568", margin: "0 0 0.45rem" }}>
-                    A read on the coral, from cover and heat
+                    A read on the reef, from coral, fish life, heat and fishing
                   </p>
                 ) : null}
                 <p style={{

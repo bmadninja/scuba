@@ -1,0 +1,7145 @@
+{
+  "lastBuiltAt": "2026-07-10T18:46:55.635Z",
+  "note": "Internal coverage/gap map. Site × pillar × confidence tier + site badge. GTM outreach asset — not a public UI surface. Regenerate with `npx tsx scripts/build-reef-gap-map.ts`.",
+  "summary": {
+    "total": 355,
+    "byBadge": {
+      "A": 11,
+      "B": 123,
+      "C": 0,
+      "D": 221
+    },
+    "byPillar": {
+      "coral": {
+        "A": 0,
+        "B": 113,
+        "C": 0,
+        "D": 0,
+        "none": 242
+      },
+      "biomass": {
+        "A": 19,
+        "B": 18,
+        "C": 0,
+        "D": 0,
+        "none": 318
+      },
+      "heat": {
+        "A": 113,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "none": 242
+      },
+      "fishing": {
+        "A": 0,
+        "B": 220,
+        "C": 134,
+        "D": 1,
+        "none": 0
+      }
+    }
+  },
+  "rows": [
+    {
+      "locationId": "ari-atoll-maldives",
+      "slug": "ari-atoll-maldives",
+      "name": "Ari Atoll",
+      "country": "Maldives",
+      "region": "Indian Ocean",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "north-male-atoll-maldives",
+      "slug": "north-male-atoll-maldives",
+      "name": "North Male Atoll",
+      "country": "Maldives",
+      "region": "Indian Ocean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "raja-ampat-indonesia",
+      "slug": "raja-ampat-indonesia",
+      "name": "Raja Ampat",
+      "country": "Indonesia",
+      "region": "West Papua",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": "B",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "komodo-national-park-indonesia",
+      "slug": "komodo-national-park-indonesia",
+      "name": "Komodo National Park",
+      "country": "Indonesia",
+      "region": "Lesser Sunda Islands",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tulamben-bali-indonesia",
+      "slug": "tulamben-bali-indonesia",
+      "name": "Tulamben",
+      "country": "Indonesia",
+      "region": "Bali",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "A",
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "bunaken-indonesia",
+      "slug": "bunaken-indonesia",
+      "name": "Bunaken",
+      "country": "Indonesia",
+      "region": "North Sulawesi",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "malapascua-philippines",
+      "slug": "malapascua-philippines",
+      "name": "Malapascua",
+      "country": "Philippines",
+      "region": "Visayas",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tubbataha-philippines",
+      "slug": "tubbataha-philippines",
+      "name": "Tubbataha Reefs",
+      "country": "Philippines",
+      "region": "Sulu Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "apo-reef-philippines",
+      "slug": "apo-reef-philippines",
+      "name": "Apo Reef",
+      "country": "Philippines",
+      "region": "Mindoro",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "moalboal-philippines",
+      "slug": "moalboal-philippines",
+      "name": "Moalboal",
+      "country": "Philippines",
+      "region": "Cebu",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "similan-islands-thailand",
+      "slug": "similan-islands-thailand",
+      "name": "Similan Islands",
+      "country": "Thailand",
+      "region": "Andaman Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "koh-tao-thailand",
+      "slug": "koh-tao-thailand",
+      "name": "Koh Tao",
+      "country": "Thailand",
+      "region": "Gulf of Thailand",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "richelieu-rock-thailand",
+      "slug": "richelieu-rock-thailand",
+      "name": "Richelieu Rock",
+      "country": "Thailand",
+      "region": "Andaman Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sipadan-malaysia",
+      "slug": "sipadan-malaysia",
+      "name": "Sipadan",
+      "country": "Malaysia",
+      "region": "Sabah",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mabul-malaysia",
+      "slug": "mabul-malaysia",
+      "name": "Mabul",
+      "country": "Malaysia",
+      "region": "Sabah",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "layang-layang-malaysia",
+      "slug": "layang-layang-malaysia",
+      "name": "Layang Layang",
+      "country": "Malaysia",
+      "region": "South China Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mergui-archipelago-myanmar",
+      "slug": "mergui-archipelago-myanmar",
+      "name": "Mergui Archipelago",
+      "country": "Myanmar",
+      "region": "Andaman Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "koh-rong-cambodia",
+      "slug": "koh-rong-cambodia",
+      "name": "Koh Rong",
+      "country": "Cambodia",
+      "region": "Gulf of Thailand",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "nha-trang-vietnam",
+      "slug": "nha-trang-vietnam",
+      "name": "Nha Trang",
+      "country": "Vietnam",
+      "region": "South Central Coast",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "green-island-taiwan",
+      "slug": "green-island-taiwan",
+      "name": "Green Island",
+      "country": "Taiwan",
+      "region": "Western Pacific",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "yonaguni-japan",
+      "slug": "yonaguni-japan",
+      "name": "Yonaguni",
+      "country": "Japan",
+      "region": "Ryukyu Islands",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ogasawara-japan",
+      "slug": "ogasawara-japan",
+      "name": "Ogasawara",
+      "country": "Japan",
+      "region": "Bonin Islands",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "jeju-south-korea",
+      "slug": "jeju-south-korea",
+      "name": "Jeju Island",
+      "country": "South Korea",
+      "region": "Korea Strait",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sanya-china",
+      "slug": "sanya-china",
+      "name": "Sanya",
+      "country": "China",
+      "region": "Hainan",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "andaman-islands-india",
+      "slug": "andaman-islands-india",
+      "name": "Havelock Island",
+      "country": "India",
+      "region": "Andaman Islands",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lakshadweep-india",
+      "slug": "lakshadweep-india",
+      "name": "Bangaram",
+      "country": "India",
+      "region": "Lakshadweep",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "hikkaduwa-sri-lanka",
+      "slug": "hikkaduwa-sri-lanka",
+      "name": "Hikkaduwa",
+      "country": "Sri Lanka",
+      "region": "Southwest Coast",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "trincomalee-sri-lanka",
+      "slug": "trincomalee-sri-lanka",
+      "name": "Trincomalee",
+      "country": "Sri Lanka",
+      "region": "East Coast",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "aqaba-jordan",
+      "slug": "aqaba-jordan",
+      "name": "Aqaba",
+      "country": "Jordan",
+      "region": "Red Sea",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "daymaniyat-oman",
+      "slug": "daymaniyat-oman",
+      "name": "Daymaniyat Islands",
+      "country": "Oman",
+      "region": "Arabian Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "fujairah-uae",
+      "slug": "fujairah-uae",
+      "name": "Fujairah",
+      "country": "United Arab Emirates",
+      "region": "Gulf of Oman",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "jeddah-saudi-arabia",
+      "slug": "jeddah-saudi-arabia",
+      "name": "Jeddah Reefs",
+      "country": "Saudi Arabia",
+      "region": "Red Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "brothers-egypt",
+      "slug": "brothers-egypt",
+      "name": "Brothers Islands",
+      "country": "Egypt",
+      "region": "Red Sea",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ras-mohammed-egypt",
+      "slug": "ras-mohammed-egypt",
+      "name": "Ras Mohammed",
+      "country": "Egypt",
+      "region": "Red Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sudan-shaab-rumi",
+      "slug": "sudan-shaab-rumi",
+      "name": "Shaab Rumi",
+      "country": "Sudan",
+      "region": "Red Sea",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "dahlak-eritrea",
+      "slug": "dahlak-eritrea",
+      "name": "Dahlak Archipelago",
+      "country": "Eritrea",
+      "region": "Red Sea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "djibouti-gulf-of-tadjoura",
+      "slug": "djibouti-gulf-of-tadjoura",
+      "name": "Gulf of Tadjoura",
+      "country": "Djibouti",
+      "region": "Gulf of Aden",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mnemba-tanzania",
+      "slug": "mnemba-tanzania",
+      "name": "Mnemba Atoll",
+      "country": "Tanzania",
+      "region": "Zanzibar",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "watamu-kenya",
+      "slug": "watamu-kenya",
+      "name": "Watamu Marine Park",
+      "country": "Kenya",
+      "region": "East Africa",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tofo-mozambique",
+      "slug": "tofo-mozambique",
+      "name": "Tofo",
+      "country": "Mozambique",
+      "region": "Indian Ocean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "memba-bay-mozambique",
+      "slug": "memba-bay-mozambique",
+      "name": "Memba Bay",
+      "country": "Mozambique",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "aliwal-south-africa",
+      "slug": "aliwal-south-africa",
+      "name": "Aliwal Shoal",
+      "country": "South Africa",
+      "region": "KwaZulu-Natal",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sodwana-south-africa",
+      "slug": "sodwana-south-africa",
+      "name": "Sodwana Bay",
+      "country": "South Africa",
+      "region": "KwaZulu-Natal",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "nosy-be-madagascar",
+      "slug": "nosy-be-madagascar",
+      "name": "Nosy Be",
+      "country": "Madagascar",
+      "region": "Mozambique Channel",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mahe-seychelles",
+      "slug": "mahe-seychelles",
+      "name": "Mahé",
+      "country": "Seychelles",
+      "region": "Indian Ocean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "B",
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "praslin-seychelles",
+      "slug": "praslin-seychelles",
+      "name": "Praslin",
+      "country": "Seychelles",
+      "region": "Indian Ocean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "B",
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "grande-comore-comoros",
+      "slug": "grande-comore-comoros",
+      "name": "Mitsamiouli",
+      "country": "Comoros",
+      "region": "Mozambique Channel",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sal-cape-verde",
+      "slug": "sal-cape-verde",
+      "name": "Sal",
+      "country": "Cape Verde",
+      "region": "Atlantic Ocean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sao-tome-sao-tome-and-principe",
+      "slug": "sao-tome-sao-tome-and-principe",
+      "name": "São Tomé North Coast",
+      "country": "São Tomé and Príncipe",
+      "region": "Gulf of Guinea",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "cozumel-mexico",
+      "slug": "cozumel-mexico",
+      "name": "Cozumel",
+      "country": "Mexico",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "cenotes-mexico",
+      "slug": "cenotes-mexico",
+      "name": "Riviera Maya Cenotes",
+      "country": "Mexico",
+      "region": "Yucatán Peninsula",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "socorro-mexico",
+      "slug": "socorro-mexico",
+      "name": "Socorro Islands",
+      "country": "Mexico",
+      "region": "Eastern Pacific",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "silfra-iceland",
+      "slug": "silfra-iceland",
+      "name": "Silfra Fissure",
+      "country": "Iceland",
+      "region": "Thingvellir",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "blue-hole-belize",
+      "slug": "blue-hole-belize",
+      "name": "Great Blue Hole",
+      "country": "Belize",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "turneffe-belize",
+      "slug": "turneffe-belize",
+      "name": "Turneffe Atoll",
+      "country": "Belize",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "A",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "utila-honduras",
+      "slug": "utila-honduras",
+      "name": "Utila",
+      "country": "Honduras",
+      "region": "Bay Islands",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "roatan-honduras",
+      "slug": "roatan-honduras",
+      "name": "Roatán",
+      "country": "Honduras",
+      "region": "Bay Islands",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "cocos-costa-rica",
+      "slug": "cocos-costa-rica",
+      "name": "Cocos Island",
+      "country": "Costa Rica",
+      "region": "Eastern Pacific",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": "B",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "catalina-islands-costa-rica",
+      "slug": "catalina-islands-costa-rica",
+      "name": "Catalina Islands",
+      "country": "Costa Rica",
+      "region": "Guanacaste",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "coiba-panama",
+      "slug": "coiba-panama",
+      "name": "Coiba National Park",
+      "country": "Panama",
+      "region": "Eastern Pacific",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "A",
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "bocas-del-toro-panama",
+      "slug": "bocas-del-toro-panama",
+      "name": "Bocas del Toro",
+      "country": "Panama",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "A",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "malpelo-colombia",
+      "slug": "malpelo-colombia",
+      "name": "Malpelo Island",
+      "country": "Colombia",
+      "region": "Eastern Pacific",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": "A",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "providencia-colombia",
+      "slug": "providencia-colombia",
+      "name": "Providencia",
+      "country": "Colombia",
+      "region": "Caribbean",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "wolf-galapagos-ecuador",
+      "slug": "wolf-galapagos-ecuador",
+      "name": "Wolf Island",
+      "country": "Ecuador",
+      "region": "Galápagos",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "darwin-galapagos-ecuador",
+      "slug": "darwin-galapagos-ecuador",
+      "name": "Darwin Island",
+      "country": "Ecuador",
+      "region": "Galápagos",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "fernando-de-noronha-brazil",
+      "slug": "fernando-de-noronha-brazil",
+      "name": "Fernando de Noronha",
+      "country": "Brazil",
+      "region": "Atlantic Ocean",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "arraial-do-cabo-brazil",
+      "slug": "arraial-do-cabo-brazil",
+      "name": "Arraial do Cabo",
+      "country": "Brazil",
+      "region": "Southeast Brazil",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "los-roques-venezuela",
+      "slug": "los-roques-venezuela",
+      "name": "Los Roques",
+      "country": "Venezuela",
+      "region": "Caribbean",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bonaire-national-marine-park-bonaire",
+      "slug": "bonaire-national-marine-park-bonaire",
+      "name": "Bonaire National Marine Park",
+      "country": "Bonaire",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "B",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "westpunt-curacao",
+      "slug": "westpunt-curacao",
+      "name": "Westpunt",
+      "country": "Curaçao",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tiger-beach-bahamas",
+      "slug": "tiger-beach-bahamas",
+      "name": "Tiger Beach",
+      "country": "Bahamas",
+      "region": "Atlantic Ocean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "exuma-cays-bahamas",
+      "slug": "exuma-cays-bahamas",
+      "name": "Exuma Cays",
+      "country": "Bahamas",
+      "region": "Atlantic Ocean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bloody-bay-wall-cayman-islands",
+      "slug": "bloody-bay-wall-cayman-islands",
+      "name": "Bloody Bay Wall",
+      "country": "Cayman Islands",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "B",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "stingray-city-cayman-islands",
+      "slug": "stingray-city-cayman-islands",
+      "name": "Stingray City",
+      "country": "Cayman Islands",
+      "region": "Caribbean",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "saba-saba",
+      "slug": "saba-saba",
+      "name": "Saba Marine Park",
+      "country": "Saba",
+      "region": "Caribbean",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "statia-st-eustatius",
+      "slug": "statia-st-eustatius",
+      "name": "St. Eustatius Marine Park",
+      "country": "Sint Eustatius",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "grenada-bianca-c",
+      "slug": "grenada-bianca-c",
+      "name": "Bianca C Wreck",
+      "country": "Grenada",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "the-pit-belize",
+      "slug": "the-pit-belize",
+      "name": "The Pit",
+      "country": "Belize",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "poor-knights-new-zealand",
+      "slug": "poor-knights-new-zealand",
+      "name": "Poor Knights Islands",
+      "country": "New Zealand",
+      "region": "Northland",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "milford-sound-new-zealand",
+      "slug": "milford-sound-new-zealand",
+      "name": "Milford Sound",
+      "country": "New Zealand",
+      "region": "Fiordland",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ningaloo-australia",
+      "slug": "ningaloo-australia",
+      "name": "Ningaloo Reef",
+      "country": "Australia",
+      "region": "Western Australia",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "A",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "julian-rocks-australia",
+      "slug": "julian-rocks-australia",
+      "name": "Julian Rocks",
+      "country": "Australia",
+      "region": "New South Wales",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kimbe-bay-papua-new-guinea",
+      "slug": "kimbe-bay-papua-new-guinea",
+      "name": "Kimbe Bay",
+      "country": "Papua New Guinea",
+      "region": "New Britain",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "milne-bay-papua-new-guinea",
+      "slug": "milne-bay-papua-new-guinea",
+      "name": "Milne Bay",
+      "country": "Papua New Guinea",
+      "region": "Coral Sea",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "beqa-lagoon-fiji",
+      "slug": "beqa-lagoon-fiji",
+      "name": "Beqa Lagoon",
+      "country": "Fiji",
+      "region": "South Pacific",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "great-white-wall-fiji",
+      "slug": "great-white-wall-fiji",
+      "name": "Great White Wall",
+      "country": "Fiji",
+      "region": "Somosomo Strait",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "blue-corner-palau",
+      "slug": "blue-corner-palau",
+      "name": "Blue Corner",
+      "country": "Palau",
+      "region": "Micronesia",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "jellyfish-lake-palau",
+      "slug": "jellyfish-lake-palau",
+      "name": "Rock Islands",
+      "country": "Palau",
+      "region": "Micronesia",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "manta-ridge-yap",
+      "slug": "manta-ridge-yap",
+      "name": "Manta Ridge",
+      "country": "Federated States of Micronesia",
+      "region": "Yap",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "chuuk-lagoon-fsm",
+      "slug": "chuuk-lagoon-fsm",
+      "name": "Chuuk Lagoon",
+      "country": "Federated States of Micronesia",
+      "region": "Chuuk",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "president-coolidge-vanuatu",
+      "slug": "president-coolidge-vanuatu",
+      "name": "SS President Coolidge",
+      "country": "Vanuatu",
+      "region": "Espiritu Santo",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "rangiroa-french-polynesia",
+      "slug": "rangiroa-french-polynesia",
+      "name": "Tiputa Pass",
+      "country": "French Polynesia",
+      "region": "Tuamotu Archipelago",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "fakarava-french-polynesia",
+      "slug": "fakarava-french-polynesia",
+      "name": "South Pass",
+      "country": "French Polynesia",
+      "region": "Tuamotu Archipelago",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "B",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "bonegi-solomon-islands",
+      "slug": "bonegi-solomon-islands",
+      "name": "Bonegi Wrecks",
+      "country": "Solomon Islands",
+      "region": "Guadalcanal",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "niue-avaiki-cave",
+      "slug": "niue-avaiki-cave",
+      "name": "Niue Reef",
+      "country": "Niue",
+      "region": "South Pacific",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "B",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "medes-islands-spain",
+      "slug": "medes-islands-spain",
+      "name": "Medes Islands",
+      "country": "Spain",
+      "region": "Mediterranean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "el-hierro-spain",
+      "slug": "el-hierro-spain",
+      "name": "La Restinga",
+      "country": "Spain",
+      "region": "Canary Islands",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "vis-croatia",
+      "slug": "vis-croatia",
+      "name": "Vis Island",
+      "country": "Croatia",
+      "region": "Adriatic Sea",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "gozo-malta",
+      "slug": "gozo-malta",
+      "name": "Gozo",
+      "country": "Malta",
+      "region": "Mediterranean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "azores-portugal",
+      "slug": "azores-portugal",
+      "name": "Santa Maria",
+      "country": "Portugal",
+      "region": "Azores",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sardinia-italy",
+      "slug": "sardinia-italy",
+      "name": "Capo Carbonara",
+      "country": "Italy",
+      "region": "Mediterranean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kornati-croatia",
+      "slug": "kornati-croatia",
+      "name": "Kornati National Park",
+      "country": "Croatia",
+      "region": "Adriatic Sea",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "florida-keys-usa",
+      "slug": "florida-keys-usa",
+      "name": "Florida Keys",
+      "country": "United States",
+      "region": "Florida",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "A",
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "kona-hawaii-usa",
+      "slug": "kona-hawaii-usa",
+      "name": "Kona Coast",
+      "country": "United States",
+      "region": "Hawaii",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "channel-islands-usa",
+      "slug": "channel-islands-usa",
+      "name": "Channel Islands",
+      "country": "United States",
+      "region": "California",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "cuba-jardines-de-la-reina",
+      "slug": "cuba-jardines-de-la-reina",
+      "name": "Jardines de la Reina",
+      "country": "Cuba",
+      "region": "Caribbean",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": true,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "silver-bank-dominican-republic",
+      "slug": "silver-bank-dominican-republic",
+      "name": "Silver Bank",
+      "country": "Dominican Republic",
+      "region": "Atlantic Ocean",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "anse-chastanet-saint-lucia",
+      "slug": "anse-chastanet-saint-lucia",
+      "name": "Anse Chastanet",
+      "country": "Saint Lucia",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tobago-speyside-trinidad-and-tobago",
+      "slug": "tobago-speyside-trinidad-and-tobago",
+      "name": "Speyside",
+      "country": "Trinidad and Tobago",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "larnaca-cyprus",
+      "slug": "larnaca-cyprus",
+      "name": "Larnaca",
+      "country": "Cyprus",
+      "region": "Mediterranean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "salt-island-bvi",
+      "slug": "salt-island-bvi",
+      "name": "Salt Island",
+      "country": "British Virgin Islands",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "great-barrier-reef-australia",
+      "slug": "great-barrier-reef-australia",
+      "name": "Great Barrier Reef",
+      "country": "Australia",
+      "region": "Queensland",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": "A",
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": true,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "malmok-aruba",
+      "slug": "malmok-aruba",
+      "name": "Malmok",
+      "country": "Aruba",
+      "region": "Caribbean",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "scapa-flow-uk",
+      "slug": "scapa-flow-uk",
+      "name": "Scapa Flow",
+      "country": "United Kingdom",
+      "region": "Orkney",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tela-honduras",
+      "slug": "tela-honduras",
+      "name": "Tela",
+      "country": "Honduras",
+      "region": "North Coast",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "wakatobi-indonesia",
+      "slug": "wakatobi-indonesia",
+      "name": "Wakatobi",
+      "country": "Indonesia",
+      "region": "Southeast Sulawesi",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sogod-bay-philippines",
+      "slug": "sogod-bay-philippines",
+      "name": "Sogod Bay",
+      "country": "Philippines",
+      "region": "Southern Leyte",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "derawan-archipelago-indonesia",
+      "slug": "derawan-archipelago-indonesia",
+      "name": "Derawan Archipelago",
+      "country": "Indonesia",
+      "region": "East Kalimantan",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": "B",
+        "biomass": null,
+        "heat": "A",
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": true,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "dahab-egypt",
+      "slug": "dahab-egypt",
+      "name": "Dahab",
+      "country": "Egypt",
+      "region": "Red Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sharm-el-sheikh-egypt",
+      "slug": "sharm-el-sheikh-egypt",
+      "name": "Sharm el Sheikh",
+      "country": "Egypt",
+      "region": "Red Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "hurghada-egypt",
+      "slug": "hurghada-egypt",
+      "name": "Hurghada",
+      "country": "Egypt",
+      "region": "Red Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "pemba-island-tanzania",
+      "slug": "pemba-island-tanzania",
+      "name": "Pemba Island",
+      "country": "Tanzania",
+      "region": "East Africa",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "puerto-galera-philippines",
+      "slug": "puerto-galera-philippines",
+      "name": "Puerto Galera",
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "anilao-philippines",
+      "slug": "anilao-philippines",
+      "name": "Anilao",
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "el-nido-philippines",
+      "slug": "el-nido-philippines",
+      "name": "El Nido, Palawan",
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mauritius-island",
+      "slug": "mauritius-island",
+      "name": "Mauritius",
+      "country": "Mauritius",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "reunion-island",
+      "slug": "reunion-island",
+      "name": "Réunion Island",
+      "country": "France",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kas-turkey",
+      "slug": "kas-turkey",
+      "name": "Kaş",
+      "country": "Turkey",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "santorini-greece",
+      "slug": "santorini-greece",
+      "name": "Santorini",
+      "country": "Greece",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lanzarote-canary-islands",
+      "slug": "lanzarote-canary-islands",
+      "name": "Lanzarote",
+      "country": "Spain",
+      "region": "Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "okinawa-japan",
+      "slug": "okinawa-japan",
+      "name": "Okinawa",
+      "country": "Japan",
+      "region": "Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "vavau-tonga",
+      "slug": "vavau-tonga",
+      "name": "Vava'u, Tonga",
+      "country": "Tonga",
+      "region": "Pacific",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "rarotonga-cook-islands",
+      "slug": "rarotonga-cook-islands",
+      "name": "Rarotonga, Cook Islands",
+      "country": "Cook Islands",
+      "region": "Pacific",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "turks-and-caicos",
+      "slug": "turks-and-caicos",
+      "name": "Turks and Caicos Islands",
+      "country": "Turks and Caicos Islands",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "dominica-island",
+      "slug": "dominica-island",
+      "name": "Dominica",
+      "country": "Dominica",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "barbados-west-coast",
+      "slug": "barbados-west-coast",
+      "name": "Barbados",
+      "country": "Barbados",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sea-of-cortez-mexico",
+      "slug": "sea-of-cortez-mexico",
+      "name": "Sea of Cortez",
+      "country": "Mexico",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "phuket-thailand",
+      "slug": "phuket-thailand",
+      "name": "Phuket",
+      "country": "Thailand",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bali-indonesia",
+      "slug": "bali-indonesia",
+      "name": "Bali",
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "gili-islands-indonesia",
+      "slug": "gili-islands-indonesia",
+      "name": "Gili Islands",
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "state": "thriving",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "lembeh-strait-indonesia",
+      "slug": "lembeh-strait-indonesia",
+      "name": "Lembeh Strait",
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "vanuatu-espiritu-santo",
+      "slug": "vanuatu-espiritu-santo",
+      "name": "Espiritu Santo",
+      "country": "Vanuatu",
+      "region": "Pacific Islands & PNG",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "marshall-islands-bikini-atoll",
+      "slug": "marshall-islands-bikini-atoll",
+      "name": "Bikini Atoll",
+      "country": "Marshall Islands",
+      "region": "Pacific Islands & PNG",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tuvalu",
+      "slug": "tuvalu",
+      "name": "Tuvalu",
+      "country": "Tuvalu",
+      "region": "Pacific Islands & PNG",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "new-caledonia",
+      "slug": "new-caledonia",
+      "name": "New Caledonia",
+      "country": "France",
+      "region": "Pacific Islands & PNG",
+      "state": "pressure",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "madang-png",
+      "slug": "madang-png",
+      "name": "Madang",
+      "country": "Papua New Guinea",
+      "region": "Pacific Islands & PNG",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tufi-png",
+      "slug": "tufi-png",
+      "name": "Tufi",
+      "country": "Papua New Guinea",
+      "region": "Pacific Islands & PNG",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "baa-atoll",
+      "slug": "baa-atoll",
+      "name": "Baa Atoll",
+      "country": "Maldives",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "south-male-atoll",
+      "slug": "south-male-atoll",
+      "name": "South Male Atoll",
+      "country": "Maldives",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lhaviyani-atoll",
+      "slug": "lhaviyani-atoll",
+      "name": "Lhaviyani Atoll",
+      "country": "Maldives",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "aldabra-atoll",
+      "slug": "aldabra-atoll",
+      "name": "Aldabra Atoll",
+      "country": "Seychelles",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "rodrigues-island",
+      "slug": "rodrigues-island",
+      "name": "Rodrigues Island",
+      "country": "Mauritius",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "neil-island",
+      "slug": "neil-island",
+      "name": "Neil Island (Andaman Islands)",
+      "country": "India",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "coron",
+      "slug": "coron",
+      "name": "Coron",
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "apo-island",
+      "slug": "apo-island",
+      "name": "Apo Island",
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "banda-sea",
+      "slug": "banda-sea",
+      "name": "Banda Sea",
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "alor",
+      "slug": "alor",
+      "name": "Alor",
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ambon-bay",
+      "slug": "ambon-bay",
+      "name": "Ambon Bay",
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "con-dao",
+      "slug": "con-dao",
+      "name": "Con Dao",
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "phu-quoc",
+      "slug": "phu-quoc",
+      "name": "Phu Quoc",
+      "country": "Vietnam",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "corn-islands-nicaragua",
+      "slug": "corn-islands-nicaragua",
+      "name": "Corn Islands",
+      "country": "Nicaragua",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "azores-faial-pico",
+      "slug": "azores-faial-pico",
+      "name": "Azores — Faial and Pico",
+      "country": "Portugal",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bazaruto-archipelago",
+      "slug": "bazaruto-archipelago",
+      "name": "Bazaruto Archipelago",
+      "country": "Mozambique",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mafia-island",
+      "slug": "mafia-island",
+      "name": "Mafia Island",
+      "country": "Tanzania",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "grand-cayman",
+      "slug": "grand-cayman",
+      "name": "Grand Cayman",
+      "country": "Cayman Islands",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "cayman-brac",
+      "slug": "cayman-brac",
+      "name": "Cayman Brac",
+      "country": "Cayman Islands",
+      "region": "Caribbean",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "tobago-main-trinidad-and-tobago",
+      "slug": "tobago-main-trinidad-and-tobago",
+      "name": "Tobago",
+      "country": "Trinidad and Tobago",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "grenada-main",
+      "slug": "grenada-main",
+      "name": "Grenada",
+      "country": "Grenada",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "guadeloupe-caribbean",
+      "slug": "guadeloupe-caribbean",
+      "name": "Guadeloupe",
+      "country": "France",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "martinique-caribbean",
+      "slug": "martinique-caribbean",
+      "name": "Martinique",
+      "country": "France",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "marseille-calanques-france",
+      "slug": "marseille-calanques-france",
+      "name": "Marseille Calanques",
+      "country": "France",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ustica-island-italy",
+      "slug": "ustica-island-italy",
+      "name": "Ustica Island",
+      "country": "Italy",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "rhodes-greece",
+      "slug": "rhodes-greece",
+      "name": "Rhodes",
+      "country": "Greece",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "crete-greece",
+      "slug": "crete-greece",
+      "name": "Crete",
+      "country": "Greece",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "menorca-spain",
+      "slug": "menorca-spain",
+      "name": "Menorca",
+      "country": "Spain",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tremiti-islands-italy",
+      "slug": "tremiti-islands-italy",
+      "name": "Tremiti Islands",
+      "country": "Italy",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "gladden-spit-belize",
+      "slug": "gladden-spit-belize",
+      "name": "Gladden Spit",
+      "country": "Belize",
+      "region": "Caribbean",
+      "state": "thriving",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "long-island-bahamas",
+      "slug": "long-island-bahamas",
+      "name": "Long Island",
+      "country": "Bahamas",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "madeira-portugal",
+      "slug": "madeira-portugal",
+      "name": "Madeira",
+      "country": "Portugal",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tenerife-canary-islands",
+      "slug": "tenerife-canary-islands",
+      "name": "Tenerife",
+      "country": "Spain",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "trondheim-fjord",
+      "slug": "trondheim-fjord",
+      "name": "Trondheim Fjord",
+      "country": "Norway",
+      "region": "North Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "st-abbs-head",
+      "slug": "st-abbs-head",
+      "name": "St. Abbs Head",
+      "country": "United Kingdom",
+      "region": "North Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "muscat-oman",
+      "slug": "muscat-oman",
+      "name": "Muscat",
+      "country": "Oman",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "izu-peninsula",
+      "slug": "izu-peninsula",
+      "name": "Izu Peninsula",
+      "country": "Japan",
+      "region": "Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "maui",
+      "slug": "maui",
+      "name": "Maui",
+      "country": "United States",
+      "region": "Hawaii",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "oahu",
+      "slug": "oahu",
+      "name": "Oahu",
+      "country": "United States",
+      "region": "Hawaii",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "lord-howe-island",
+      "slug": "lord-howe-island",
+      "name": "Lord Howe Island",
+      "country": "Australia",
+      "region": "Tasman Sea",
+      "state": "thriving",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "manado-north-sulawesi",
+      "slug": "manado-north-sulawesi",
+      "name": "Manado",
+      "country": "Indonesia",
+      "region": "North Sulawesi",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "halmahera-indonesia",
+      "slug": "halmahera-indonesia",
+      "name": "Halmahera",
+      "country": "Indonesia",
+      "region": "Maluku",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mactan-island",
+      "slug": "mactan-island",
+      "name": "Mactan Island",
+      "country": "Philippines",
+      "region": "Visayas",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "pigeon-island",
+      "slug": "pigeon-island",
+      "name": "Pigeon Island",
+      "country": "Sri Lanka",
+      "region": "East Coast",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "batticaloa",
+      "slug": "batticaloa",
+      "name": "Batticaloa",
+      "country": "Sri Lanka",
+      "region": "East Coast",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "apia-samoa",
+      "slug": "apia-samoa",
+      "name": "Apia, Samoa",
+      "country": "Samoa",
+      "region": "Pacific",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "mariana-islands-guam",
+      "slug": "mariana-islands-guam",
+      "name": "Mariana Islands (Guam & Saipan)",
+      "country": "United States",
+      "region": "Micronesia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "gran-canaria",
+      "slug": "gran-canaria",
+      "name": "Gran Canaria",
+      "country": "Spain",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "fuerteventura",
+      "slug": "fuerteventura",
+      "name": "Fuerteventura",
+      "country": "Spain",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "andros-bahamas",
+      "slug": "andros-bahamas",
+      "name": "Andros",
+      "country": "Bahamas",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "easter-island-chile",
+      "slug": "easter-island-chile",
+      "name": "Easter Island",
+      "country": "Chile",
+      "region": "Eastern Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "diani-shimoni-kenya",
+      "slug": "diani-shimoni-kenya",
+      "name": "Diani / Shimoni",
+      "country": "Kenya",
+      "region": "East Africa",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "zanzibar-island",
+      "slug": "zanzibar-island",
+      "name": "Zanzibar Island",
+      "country": "Tanzania",
+      "region": "East Africa",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "djerba",
+      "slug": "djerba",
+      "name": "Djerba",
+      "country": "Tunisia",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "algarve",
+      "slug": "algarve",
+      "name": "Algarve",
+      "country": "Portugal",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bermuda",
+      "slug": "bermuda",
+      "name": "Bermuda",
+      "country": "Bermuda",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "saint-helena",
+      "slug": "saint-helena",
+      "name": "Saint Helena Island",
+      "country": "Saint Helena",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "marsa-alam-egypt",
+      "slug": "marsa-alam-egypt",
+      "name": "Marsa Alam",
+      "country": "Egypt",
+      "region": "Red Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "fury-shoals-egypt",
+      "slug": "fury-shoals-egypt",
+      "name": "Fury Shoals",
+      "country": "Egypt",
+      "region": "Red Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "us-virgin-islands",
+      "slug": "us-virgin-islands",
+      "name": "US Virgin Islands",
+      "country": "United States Virgin Islands",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "anguilla",
+      "slug": "anguilla",
+      "name": "Anguilla",
+      "country": "Anguilla",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "saint-kitts-and-nevis",
+      "slug": "saint-kitts-and-nevis",
+      "name": "Saint Kitts and Nevis",
+      "country": "Saint Kitts and Nevis",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "antigua-and-barbuda",
+      "slug": "antigua-and-barbuda",
+      "name": "Antigua and Barbuda",
+      "country": "Antigua and Barbuda",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "saint-vincent-and-the-grenadines",
+      "slug": "saint-vincent-and-the-grenadines",
+      "name": "Saint Vincent and the Grenadines",
+      "country": "Saint Vincent and the Grenadines",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tioman-island",
+      "slug": "tioman-island",
+      "name": "Tioman Island",
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "redang-island",
+      "slug": "redang-island",
+      "name": "Redang Island",
+      "country": "Malaysia",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lankayan-island",
+      "slug": "lankayan-island",
+      "name": "Lankayan Island",
+      "country": "Malaysia",
+      "region": "Sabah",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kapalai-island",
+      "slug": "kapalai-island",
+      "name": "Kapalai Island",
+      "country": "Malaysia",
+      "region": "Sabah",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kerama-islands",
+      "slug": "kerama-islands",
+      "name": "Kerama Islands",
+      "country": "Japan",
+      "region": "Ryukyu Islands",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ishigaki-island",
+      "slug": "ishigaki-island",
+      "name": "Ishigaki Island",
+      "country": "Japan",
+      "region": "Ryukyu Islands",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "portofino",
+      "slug": "portofino",
+      "name": "Portofino",
+      "country": "Italy",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "aeolian-islands",
+      "slug": "aeolian-islands",
+      "name": "Aeolian Islands",
+      "country": "Italy",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "isla-mujeres",
+      "slug": "isla-mujeres",
+      "name": "Isla Mujeres",
+      "country": "Mexico",
+      "region": "Yucatán Peninsula",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "banco-chinchorro",
+      "slug": "banco-chinchorro",
+      "name": "Banco Chinchorro",
+      "country": "Mexico",
+      "region": "Yucatán Peninsula",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tayrona-national-park",
+      "slug": "tayrona-national-park",
+      "name": "Tayrona National Park",
+      "country": "Colombia",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "rosario-islands",
+      "slug": "rosario-islands",
+      "name": "Rosario Islands",
+      "country": "Colombia",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ss-yongala-wreck",
+      "slug": "ss-yongala-wreck",
+      "name": "SS Yongala Wreck",
+      "country": "Australia",
+      "region": "Queensland",
+      "state": "change",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "osprey-reef",
+      "slug": "osprey-reef",
+      "name": "Osprey Reef",
+      "country": "Australia",
+      "region": "Coral Sea",
+      "state": "thriving",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "kadavu-island",
+      "slug": "kadavu-island",
+      "name": "Kadavu Island",
+      "country": "Fiji",
+      "region": "Pacific Islands & PNG",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "yasawa-islands",
+      "slug": "yasawa-islands",
+      "name": "Yasawa Islands",
+      "country": "Fiji",
+      "region": "Pacific Islands & PNG",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "puerto-rico",
+      "slug": "puerto-rico",
+      "name": "Puerto Rico",
+      "country": "United States",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sint-maarten",
+      "slug": "sint-maarten",
+      "name": "Sint Maarten / Saint-Martin",
+      "country": "Sint Maarten",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "north-carolina-usa",
+      "slug": "north-carolina-usa",
+      "name": "North Carolina",
+      "country": "United States",
+      "region": "East Coast",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "british-columbia-canada",
+      "slug": "british-columbia-canada",
+      "name": "British Columbia",
+      "country": "Canada",
+      "region": "Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ireland",
+      "slug": "ireland",
+      "name": "Ireland",
+      "country": "Ireland",
+      "region": "North Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "wales",
+      "slug": "wales",
+      "name": "Wales (Pembrokeshire)",
+      "country": "United Kingdom",
+      "region": "North Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lofoten-islands",
+      "slug": "lofoten-islands",
+      "name": "Lofoten Islands",
+      "country": "Norway",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "faroe-islands",
+      "slug": "faroe-islands",
+      "name": "Faroe Islands",
+      "country": "Faroe Islands",
+      "region": "North Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "false-bay",
+      "slug": "false-bay",
+      "name": "False Bay",
+      "country": "South Africa",
+      "region": "Western Cape",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "quirimbas-archipelago",
+      "slug": "quirimbas-archipelago",
+      "name": "Quirimbas Archipelago",
+      "country": "Mozambique",
+      "region": "Mozambique Channel",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "corsica",
+      "slug": "corsica",
+      "name": "Corsica",
+      "country": "France",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ibiza-formentera",
+      "slug": "ibiza-formentera",
+      "name": "Ibiza and Formentera",
+      "country": "Spain",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mirissa",
+      "slug": "mirissa",
+      "name": "Mirissa",
+      "country": "Sri Lanka",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "mayotte",
+      "slug": "mayotte",
+      "name": "Mayotte",
+      "country": "France",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "rabaul-png",
+      "slug": "rabaul-png",
+      "name": "Rabaul",
+      "country": "Papua New Guinea",
+      "region": "Pacific Islands & PNG",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "pohnpei-fsm",
+      "slug": "pohnpei-fsm",
+      "name": "Pohnpei",
+      "country": "Federated States of Micronesia",
+      "region": "Micronesia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "isabela-island-galapagos",
+      "slug": "isabela-island-galapagos",
+      "name": "Isabela Island",
+      "country": "Ecuador",
+      "region": "Eastern Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "fernandina-island-galapagos",
+      "slug": "fernandina-island-galapagos",
+      "name": "Fernandina Island",
+      "country": "Ecuador",
+      "region": "Eastern Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bodrum-turkey",
+      "slug": "bodrum-turkey",
+      "name": "Bodrum",
+      "country": "Turkey",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "marmaris-turkey",
+      "slug": "marmaris-turkey",
+      "name": "Marmaris",
+      "country": "Turkey",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "maria-la-gorda",
+      "slug": "maria-la-gorda",
+      "name": "María la Gorda",
+      "country": "Cuba",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bay-of-pigs",
+      "slug": "bay-of-pigs",
+      "name": "Bay of Pigs",
+      "country": "Cuba",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "abrolhos-banks",
+      "slug": "abrolhos-banks",
+      "name": "Abrolhos Banks",
+      "country": "Brazil",
+      "region": "Southeast Brazil",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "paraty",
+      "slug": "paraty",
+      "name": "Paraty",
+      "country": "Brazil",
+      "region": "Southeast Brazil",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "montenegro",
+      "slug": "montenegro",
+      "name": "Montenegro",
+      "country": "Montenegro",
+      "region": "Adriatic Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "albania",
+      "slug": "albania",
+      "name": "Albania",
+      "country": "Albania",
+      "region": "Adriatic Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "netrani-island",
+      "slug": "netrani-island",
+      "name": "Netrani Island",
+      "country": "India",
+      "region": "Arabian Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "addu-atoll",
+      "slug": "addu-atoll",
+      "name": "Addu Atoll",
+      "country": "Maldives",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "dubai-uae",
+      "slug": "dubai-uae",
+      "name": "Dubai",
+      "country": "United Arab Emirates",
+      "region": "Gulf of Oman",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "abu-dhabi-uae",
+      "slug": "abu-dhabi-uae",
+      "name": "Abu Dhabi",
+      "country": "United Arab Emirates",
+      "region": "Gulf of Oman",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bahrain",
+      "slug": "bahrain",
+      "name": "Bahrain",
+      "country": "Bahrain",
+      "region": "Arabian Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "musandam-peninsula",
+      "slug": "musandam-peninsula",
+      "name": "Musandam Peninsula",
+      "country": "Oman",
+      "region": "Gulf of Oman",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kalpitiya",
+      "slug": "kalpitiya",
+      "name": "Kalpitiya",
+      "country": "Sri Lanka",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bayahibe",
+      "slug": "bayahibe",
+      "name": "Bayahibe",
+      "country": "Dominican Republic",
+      "region": "Caribbean",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "haiti-diving",
+      "slug": "haiti-diving",
+      "name": "Haiti",
+      "country": "Haiti",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kosrae-fsm",
+      "slug": "kosrae-fsm",
+      "name": "Kosrae",
+      "country": "Federated States of Micronesia",
+      "region": "Micronesia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "efate-vanuatu",
+      "slug": "efate-vanuatu",
+      "name": "Efate",
+      "country": "Vanuatu",
+      "region": "Pacific Islands & PNG",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "kauai-hawaii-usa",
+      "slug": "kauai-hawaii-usa",
+      "name": "Kauai",
+      "country": "United States",
+      "region": "Hawaii",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lanai-hawaii-usa",
+      "slug": "lanai-hawaii-usa",
+      "name": "Lanai",
+      "country": "United States",
+      "region": "Hawaii",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "amami-islands",
+      "slug": "amami-islands",
+      "name": "Amami Islands",
+      "country": "Japan",
+      "region": "Ryukyu Islands",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "miyako-islands",
+      "slug": "miyako-islands",
+      "name": "Miyako Islands",
+      "country": "Japan",
+      "region": "Ryukyu Islands",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kenting-national-park",
+      "slug": "kenting-national-park",
+      "name": "Kenting National Park",
+      "country": "Taiwan",
+      "region": "South China Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "little-liuqiu",
+      "slug": "little-liuqiu",
+      "name": "Little Liuqiu Island",
+      "country": "Taiwan",
+      "region": "South China Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sainte-marie-island-madagascar",
+      "slug": "sainte-marie-island-madagascar",
+      "name": "Sainte-Marie Island",
+      "country": "Madagascar",
+      "region": "Indian Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "chumbe-island-tanzania",
+      "slug": "chumbe-island-tanzania",
+      "name": "Chumbe Island Coral Park",
+      "country": "Tanzania",
+      "region": "East Africa",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "milos-greece",
+      "slug": "milos-greece",
+      "name": "Milos",
+      "country": "Greece",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "corfu-greece",
+      "slug": "corfu-greece",
+      "name": "Corfu",
+      "country": "Greece",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "istria-croatia",
+      "slug": "istria-croatia",
+      "name": "Istria",
+      "country": "Croatia",
+      "region": "Adriatic Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "huatulco",
+      "slug": "huatulco",
+      "name": "Huatulco",
+      "country": "Mexico",
+      "region": "Eastern Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "loreto",
+      "slug": "loreto",
+      "name": "Loreto",
+      "country": "Mexico",
+      "region": "Eastern Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "la-gomera",
+      "slug": "la-gomera",
+      "name": "La Gomera",
+      "country": "Spain",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "galicia",
+      "slug": "galicia",
+      "name": "Galicia",
+      "country": "Spain",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "zakynthos",
+      "slug": "zakynthos",
+      "name": "Zakynthos",
+      "country": "Greece",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "dumaguete",
+      "slug": "dumaguete",
+      "name": "Dumaguete",
+      "country": "Philippines",
+      "region": "Visayas",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "donsol",
+      "slug": "donsol",
+      "name": "Donsol",
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "flores",
+      "slug": "flores",
+      "name": "Flores",
+      "country": "Indonesia",
+      "region": "Lesser Sunda Islands",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sao-miguel-azores",
+      "slug": "sao-miguel-azores",
+      "name": "São Miguel",
+      "country": "Portugal",
+      "region": "Azores",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "boa-vista-cape-verde",
+      "slug": "boa-vista-cape-verde",
+      "name": "Boa Vista",
+      "country": "Cape Verde",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "pozzuoli-baiae",
+      "slug": "pozzuoli-baiae",
+      "name": "Pozzuoli / Baiae",
+      "country": "Italy",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "almeria",
+      "slug": "almeria",
+      "name": "Almería",
+      "country": "Spain",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "fethiye-gocek",
+      "slug": "fethiye-gocek",
+      "name": "Fethiye / Göcek",
+      "country": "Turkey",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "antalya",
+      "slug": "antalya",
+      "name": "Antalya",
+      "country": "Turkey",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "senegal",
+      "slug": "senegal",
+      "name": "Senegal",
+      "country": "Senegal",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bijagos-islands",
+      "slug": "bijagos-islands",
+      "name": "Bijagós Islands",
+      "country": "Guinea-Bissau",
+      "region": "Atlantic Ocean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "inhambane",
+      "slug": "inhambane",
+      "name": "Inhambane",
+      "country": "Mozambique",
+      "region": "Mozambique Channel",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "eilat",
+      "slug": "eilat",
+      "name": "Eilat",
+      "country": "Israel",
+      "region": "Red Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "eyjafjordur",
+      "slug": "eyjafjordur",
+      "name": "Eyjafjörður",
+      "country": "Iceland",
+      "region": "North Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "oban",
+      "slug": "oban",
+      "name": "Oban",
+      "country": "United Kingdom",
+      "region": "North Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "gorgona-island",
+      "slug": "gorgona-island",
+      "name": "Gorgona Island",
+      "country": "Colombia",
+      "region": "Eastern Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "paracas",
+      "slug": "paracas",
+      "name": "Paracas",
+      "country": "Peru",
+      "region": "Eastern Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "naxos-greece",
+      "slug": "naxos-greece",
+      "name": "Naxos",
+      "country": "Greece",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lefkada-greece",
+      "slug": "lefkada-greece",
+      "name": "Lefkada",
+      "country": "Greece",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "romblon",
+      "slug": "romblon",
+      "name": "Romblon",
+      "country": "Philippines",
+      "region": "Visayas",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "batangas",
+      "slug": "batangas",
+      "name": "Batangas",
+      "country": "Philippines",
+      "region": "Luzon",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "trinidad",
+      "slug": "trinidad",
+      "name": "Trinidad",
+      "country": "Trinidad and Tobago",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "los-testigos",
+      "slug": "los-testigos",
+      "name": "Los Testigos",
+      "country": "Venezuela",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "koh-phi-phi-thailand",
+      "slug": "koh-phi-phi-thailand",
+      "name": "Koh Phi Phi",
+      "country": "Thailand",
+      "region": "Andaman Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "koh-lipe-thailand",
+      "slug": "koh-lipe-thailand",
+      "name": "Koh Lipe",
+      "country": "Thailand",
+      "region": "Andaman Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lombok",
+      "slug": "lombok",
+      "name": "Lombok",
+      "country": "Indonesia",
+      "region": "Lesser Sunda Islands",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "perhentian-islands",
+      "slug": "perhentian-islands",
+      "name": "Perhentian Islands",
+      "country": "Malaysia",
+      "region": "South China Sea",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "coral-bay-wa",
+      "slug": "coral-bay-wa",
+      "name": "Coral Bay",
+      "country": "Australia",
+      "region": "Western Australia",
+      "state": "thriving",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "exmouth-wa",
+      "slug": "exmouth-wa",
+      "name": "Exmouth",
+      "country": "Australia",
+      "region": "Western Australia",
+      "state": "pressure",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "bay-of-islands-nz",
+      "slug": "bay-of-islands-nz",
+      "name": "Bay of Islands",
+      "country": "New Zealand",
+      "region": "Northland",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "bora-bora-fp",
+      "slug": "bora-bora-fp",
+      "name": "Bora Bora",
+      "country": "French Polynesia",
+      "region": "Society Islands",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "fakarava",
+      "slug": "fakarava",
+      "name": "Fakarava",
+      "country": "French Polynesia",
+      "region": "Tuamotu Archipelago",
+      "state": "thriving",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "moorea",
+      "slug": "moorea",
+      "name": "Moorea",
+      "country": "French Polynesia",
+      "region": "Society Islands",
+      "state": "pressure",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "cartagena-rosario-islands",
+      "slug": "cartagena-rosario-islands",
+      "name": "Cartagena / Rosario Islands",
+      "country": "Colombia",
+      "region": "Caribbean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "manta-ecuador",
+      "slug": "manta-ecuador",
+      "name": "Manta / La Plata Island",
+      "country": "Ecuador",
+      "region": "Eastern Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "cabo-san-lucas",
+      "slug": "cabo-san-lucas",
+      "name": "Cabo San Lucas",
+      "country": "Mexico",
+      "region": "North America",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "puerto-vallarta",
+      "slug": "puerto-vallarta",
+      "name": "Puerto Vallarta",
+      "country": "Mexico",
+      "region": "North America",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "vancouver-island",
+      "slug": "vancouver-island",
+      "name": "Vancouver Island / Victoria",
+      "country": "Canada",
+      "region": "British Columbia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "san-juan-islands",
+      "slug": "san-juan-islands",
+      "name": "San Juan Islands",
+      "country": "United States",
+      "region": "Washington",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "nice-cote-dazur-france",
+      "slug": "nice-cote-dazur-france",
+      "name": "Nice / Cote d'Azur",
+      "country": "France",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "puerto-princesa-honda-bay",
+      "slug": "puerto-princesa-honda-bay",
+      "name": "Puerto Princesa / Honda Bay",
+      "country": "Philippines",
+      "region": "Asia Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "siargao",
+      "slug": "siargao",
+      "name": "Siargao",
+      "country": "Philippines",
+      "region": "Asia Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ternate-north-maluku",
+      "slug": "ternate-north-maluku",
+      "name": "Ternate",
+      "country": "Indonesia",
+      "region": "Maluku",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tufi-papua-new-guinea",
+      "slug": "tufi-papua-new-guinea",
+      "name": "Tufi",
+      "country": "Papua New Guinea",
+      "region": "Oro Province",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "terceira-azores",
+      "slug": "terceira-azores",
+      "name": "Terceira",
+      "country": "Portugal",
+      "region": "Atlantic",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "nusa-penida",
+      "slug": "nusa-penida",
+      "name": "Nusa Penida",
+      "country": "Indonesia",
+      "region": "Southeast Asia",
+      "state": "pressure",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "verde-island-passage",
+      "slug": "verde-island-passage",
+      "name": "Verde Island Passage",
+      "country": "Philippines",
+      "region": "Southeast Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "candidasa-bali-indonesia",
+      "slug": "candidasa-bali-indonesia",
+      "name": "Candidasa",
+      "country": "Indonesia",
+      "region": "Asia Pacific",
+      "state": "pressure",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "nusa-lembongan-indonesia",
+      "slug": "nusa-lembongan-indonesia",
+      "name": "Nusa Lembongan",
+      "country": "Indonesia",
+      "region": "Asia Pacific",
+      "state": "pressure",
+      "badge": "A",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "A",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "jervis-bay-australia",
+      "slug": "jervis-bay-australia",
+      "name": "Jervis Bay",
+      "country": "Australia",
+      "region": "New South Wales",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "byron-bay-australia",
+      "slug": "byron-bay-australia",
+      "name": "Byron Bay",
+      "country": "Australia",
+      "region": "New South Wales",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "shark-bay-wa",
+      "slug": "shark-bay-wa",
+      "name": "Shark Bay",
+      "country": "Australia",
+      "region": "Western Australia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "cocos-keeling-islands",
+      "slug": "cocos-keeling-islands",
+      "name": "Cocos (Keeling) Islands",
+      "country": "Australia",
+      "region": "Indian Ocean Territory",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "koh-samui-ang-thong",
+      "slug": "koh-samui-ang-thong",
+      "name": "Koh Samui & Ang Thong",
+      "country": "Thailand",
+      "region": "Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "sail-rock-southwest-pinnacle",
+      "slug": "sail-rock-southwest-pinnacle",
+      "name": "Sail Rock & Southwest Pinnacle",
+      "country": "Thailand",
+      "region": "Asia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "osezaki-japan",
+      "slug": "osezaki-japan",
+      "name": "Osezaki",
+      "country": "Japan",
+      "region": "Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tateyama-sagami-bay",
+      "slug": "tateyama-sagami-bay",
+      "name": "Tateyama / Sagami Bay",
+      "country": "Japan",
+      "region": "Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "german-channel-palau",
+      "slug": "german-channel-palau",
+      "name": "German Channel",
+      "country": "Palau",
+      "region": "Micronesia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "salvador-da-bahia",
+      "slug": "salvador-da-bahia",
+      "name": "Salvador da Bahia",
+      "country": "Brazil",
+      "region": "South America",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "ilha-grande",
+      "slug": "ilha-grande",
+      "name": "Ilha Grande",
+      "country": "Brazil",
+      "region": "South America",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "principe-island",
+      "slug": "principe-island",
+      "name": "Príncipe Island",
+      "country": "São Tomé and Príncipe",
+      "region": "Africa",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "kosterfjord-sweden",
+      "slug": "kosterfjord-sweden",
+      "name": "Kosterfjord",
+      "country": "Sweden",
+      "region": "Europe",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "lysefjord-stavanger-norway",
+      "slug": "lysefjord-stavanger-norway",
+      "name": "Lysefjord / Stavanger",
+      "country": "Norway",
+      "region": "Europe",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "camiguin-philippines",
+      "slug": "camiguin-philippines",
+      "name": "Camiguin",
+      "country": "Philippines",
+      "region": "Asia Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "pescador-island-philippines",
+      "slug": "pescador-island-philippines",
+      "name": "Pescador Island",
+      "country": "Philippines",
+      "region": "Asia Pacific",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "tomini-bay-indonesia",
+      "slug": "tomini-bay-indonesia",
+      "name": "Tomini Bay, Togian Islands",
+      "country": "Indonesia",
+      "region": "Central Sulawesi",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "rinca-island-indonesia",
+      "slug": "rinca-island-indonesia",
+      "name": "Rinca Island",
+      "country": "Indonesia",
+      "region": "East Nusa Tenggara",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "chinhoyi-caves-zimbabwe",
+      "slug": "chinhoyi-caves-zimbabwe",
+      "name": "Chinhoyi Caves",
+      "country": "Zimbabwe",
+      "region": "Mashonaland West",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "hoi-ha-wan-hong-kong",
+      "slug": "hoi-ha-wan-hong-kong",
+      "name": "Hoi Ha Wan",
+      "country": "Hong Kong",
+      "region": "Sai Kung",
+      "state": "change",
+      "badge": "B",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": "B",
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": true,
+      "hasCoralTrend": false,
+      "biomassMissing": false
+    },
+    {
+      "locationId": "hranice-abyss-czech-republic",
+      "slug": "hranice-abyss-czech-republic",
+      "name": "Hranice Abyss",
+      "country": "Czech Republic",
+      "region": "Moravia",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "apra-harbor-guam",
+      "slug": "apra-harbor-guam",
+      "name": "Apra Harbor",
+      "country": "Guam",
+      "region": "Central Guam",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "providenciales-turks-and-caicos",
+      "slug": "providenciales-turks-and-caicos",
+      "name": "Providenciales",
+      "country": "Turks and Caicos",
+      "region": "Caicos Islands",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "san-juan-puerto-rico",
+      "slug": "san-juan-puerto-rico",
+      "name": "San Juan",
+      "country": "Puerto Rico",
+      "region": "Northeast",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "B"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "socotra-yemen",
+      "slug": "socotra-yemen",
+      "name": "Socotra",
+      "country": "Yemen",
+      "region": "Socotra Archipelago",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": false,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "C"
+      },
+      "fishingSource": "gfw",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    },
+    {
+      "locationId": "torre-guaceto-italy",
+      "slug": "torre-guaceto-italy",
+      "name": "Torre Guaceto",
+      "country": "Italy",
+      "region": "Mediterranean",
+      "state": "unknown",
+      "badge": "D",
+      "isBluePark": true,
+      "tiers": {
+        "coral": null,
+        "biomass": null,
+        "heat": null,
+        "fishing": "D"
+      },
+      "fishingSource": "editorial",
+      "hasBiomassTrend": false,
+      "hasCoralTrend": false,
+      "biomassMissing": true
+    }
+  ]
+}

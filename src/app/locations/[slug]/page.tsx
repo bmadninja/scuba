@@ -26,6 +26,7 @@ import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED, countThreatenedSpecies } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import { STATE_TEXT, STATE_COLOR, bestMonthsText } from "@/lib/data/reef-state";
+import { getReefConfidence, TIER_LABEL } from "@/lib/data/reef-confidence";
 import { LocationPageBody } from "./location-page-body";
 import { HeroGallery } from "@/components/hero-gallery";
 import type {
@@ -579,6 +580,28 @@ export default async function LocationPage({
         }))
       : [];
 
+  // R2 — per-site confidence badge. The badge tier is the weakest among the
+  // pillars that set the label; the honest count names which of the four
+  // pillars are on file and which state pillar is still missing.
+  const confidence = getReefConfidence(location.id);
+  const confPillarsOnFile =
+    (confidence.coral !== null ? 1 : 0) +
+    (confidence.biomass !== null ? 1 : 0) +
+    (reefHealth?.thermalStress ? 1 : 0) +
+    1; // fishing pressure is universal (gravity/editorial fallback)
+  const confMissing: string[] = [];
+  if (confidence.coral === null) confMissing.push("coral cover");
+  if (confidence.biomass === null) confMissing.push("fish life");
+  const reefConfidence =
+    atlasLoc.state === "unknown"
+      ? null
+      : {
+          badge: confidence.badge,
+          badgeLabel: TIER_LABEL[confidence.badge],
+          onFile: confPillarsOnFile,
+          missing: confMissing,
+        };
+
   // Coral-cover chart points. Prefer a real multi-year survey series when one
   // is on file: every year becomes a point and the chart draws a genuine trend.
   // Two nearby-survey composites can exist — MERMAID (mostly Indo-Pacific) and
@@ -970,6 +993,7 @@ export default async function LocationPage({
         reefStateLabel={STATE_TEXT[atlasLoc.state]}
         reefStateColor={stateColor}
         reefStateSub={STATE_SUB[atlasLoc.state]}
+        reefConfidence={reefConfidence}
         hasReefData={hasReefData}
         species={species}
         threatenedStats={threatenedStats}
