@@ -35,7 +35,7 @@ const SCENARIOS: Scenario[] = [
       overrideNote:
         "We set this rating from a published long-term study — not just the signals below.",
       signals: {
-        coral: { band: "good", detail: "holding steady", trend: "holding", series: [49, 52, 51, 54, 55, 54, 55, 55] },
+        coral: { band: "good", detail: "much the same as before", trend: "holding", series: [49, 52, 51, 54, 55, 54, 55, 55] },
         thermal: { band: "good", detail: "no hot spells this year", trend: null, series: [1, 0, 2, 1, 0, 1, 0, 0] },
         fish: { band: "bad", detail: "fewer than a healthy reef", trend: null, series: [31, 29, 27, 25, 23, 21, 20, 19] },
         fishing: { band: "bad", detail: "boats fishing hard", trend: "rising", series: [42, 47, 51, 58, 63, 70, 74, 78] },

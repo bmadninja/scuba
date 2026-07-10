@@ -70,10 +70,12 @@ const VERDICT_FROM_STATE: Record<ReefBreakdownInput["state"], VerdictLabel> = {
   unknown: "Stable",
 };
 
-// Plain, number-free detail + trend for the coral row from its direction.
+// Plain, number-free detail + trend for the coral row from its direction. The
+// detail complements the trend tag rather than echoing it — so a "→ holding"
+// trend does not sit beside a "holding steady" detail.
 const CORAL_DETAIL: Record<Exclude<CoralDirection, null>, string> = {
   up: "climbing back",
-  flat: "holding steady",
+  flat: "much the same as before",
   down: "slipping year on year",
 };
 const CORAL_TREND: Record<Exclude<CoralDirection, null>, Trend> = {
