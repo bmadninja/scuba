@@ -50,7 +50,7 @@ import type {
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
 import type { BiomassDataPoint } from "@/components/fish-biomass-chart";
 import type { WaterTempDataPoint } from "@/components/water-temp-chart";
-import type { BleachingAlertLevel, CoralCoverSeriesPoint, MpaStatus, PartnerLink, ReefHealthRecord } from "@/lib/data/types";
+import type { BleachingAlertLevel, CoralCoverSeriesPoint, MpaStatus, PartnerLink, ReefHealthRecord, SpeciesEntry } from "@/lib/data/types";
 
 // ---------------------------------------------------------------------------
 // Plain-language mappings
@@ -292,13 +292,6 @@ export default async function LocationPage({
       return db - da;
     });
 
-  const highlightedSpecies = allSightings
-    .reduce<typeof allSightings>((acc, sv) => {
-      if (!acc.find((x) => x.speciesCommon === sv.speciesCommon)) acc.push(sv);
-      return acc;
-    }, [])
-    .slice(0, 6);
-
   // Most-recent species per site, for the simplified site rows.
   const siteHeadline = new Map<string, (typeof allSightings)[number][]>();
   for (const sv of allSightings) {
@@ -316,21 +309,121 @@ export default async function LocationPage({
     : null;
 
   // --- Species cards --------------------------------------------------------
-  const species: SpeciesCard[] = highlightedSpecies.slice(0, 3).map((sv, i) => {
-    const days = daysSince(sv.lastConfirmedAt);
-    const iucn = IUCN_ENABLED ? getIucnStatus(sv.speciesScientific) : null;
-    const photoCredit = sv.speciesScientific ? getSpeciesPhotoCredit(sv.speciesScientific) : null;
+  // Union of every curated species across the location's dive sites (the same
+  // lists the site cards draw from), enriched with the freshest confirmed
+  // sighting where one exists. Sighting-only species are kept but unlinked:
+  // the species detail route only resolves curated entries.
+  const latestSightingByName = new Map<string, (typeof allSightings)[number]>();
+  for (const sv of allSightings) {
+    const k = sv.speciesCommon.trim().toLowerCase();
+    if (!latestSightingByName.has(k)) latestSightingByName.set(k, sv);
+  }
+
+  const curatedSpecies = new Map<
+    string,
+    { entry: SpeciesEntry; sitesWith: { slug: string; name: string }[] }
+  >();
+  for (const s of sites) {
+    for (const e of s.species ?? []) {
+      if (!e.commonName) continue;
+      const k = e.commonName.trim().toLowerCase();
+      const existing = curatedSpecies.get(k);
+      if (existing) existing.sitesWith.push({ slug: s.slug, name: s.name });
+      else curatedSpecies.set(k, { entry: e, sitesWith: [{ slug: s.slug, name: s.name }] });
+    }
+  }
+
+  const RELIABILITY_ORDER = { "year-round": 0, seasonal: 1, rare: 2 } as const;
+  const RELIABILITY_TEXT = {
+    "year-round": "Seen year round",
+    seasonal: "Seasonal visitor",
+    rare: "Rare sighting",
+  } as const;
+
+  const buildCard = (opts: {
+    commonName: string;
+    scientificName?: string;
+    fallbackImageUrl?: string;
+    sighting: (typeof allSightings)[number] | undefined;
+    reliability: SpeciesEntry["reliability"] | null;
+    siteSlug: string | null;
+    siteName: string | null;
+  }): SpeciesCard => {
+    const days = opts.sighting ? daysSince(opts.sighting.lastConfirmedAt) : null;
+    const iucn = IUCN_ENABLED
+      ? getIucnStatus(opts.scientificName ?? opts.sighting?.speciesScientific)
+      : null;
+    const photoKey =
+      (opts.scientificName ?? opts.sighting?.speciesScientific)?.toLowerCase() ??
+      opts.commonName.toLowerCase();
+    const photoCredit =
+      (opts.siteSlug ? getSpeciesPhotoCredit(`${opts.siteSlug}:${photoKey}`) : null) ??
+      getSpeciesPhotoCredit(photoKey);
     return {
-      key: `${sv.speciesCommon}-${i}`,
-      commonName: sv.speciesCommon,
-      href: sv.siteSlug ? `/sites/${sv.siteSlug}/species/${sv.speciesCommon.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}` : null,
-      imageUrl: photoCredit?.imageUrl ? photoCredit.imageUrl.replace("/square.", "/medium.") : null,
-      icon: getSpeciesIcon(sv.speciesCommon),
-      seenText: fmtRelative(days, sv.lastConfirmedAt),
+      key: opts.commonName.trim().toLowerCase(),
+      commonName: opts.commonName,
+      href: opts.siteSlug
+        ? `/sites/${opts.siteSlug}/species/${opts.commonName.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`
+        : null,
+      imageUrl:
+        (photoCredit?.imageUrl
+          ? photoCredit.imageUrl.replace("/square.", "/medium.")
+          : null) ?? opts.fallbackImageUrl ?? null,
+      icon: getSpeciesIcon(opts.commonName),
+      seenText:
+        opts.sighting
+          ? fmtRelative(days, opts.sighting.lastConfirmedAt)
+          : RELIABILITY_TEXT[opts.reliability ?? "rare"],
       dotColor: dotColor(days),
       iucnLabel: iucn ? (IUCN_LABEL[iucn.category] ?? null) : null,
       iucnBadge: iucn ? (IUCN_BADGE[iucn.category] ?? null) : null,
+      siteName: opts.siteName,
     };
+  };
+
+  const curatedCards = [...curatedSpecies.entries()].map(([k, { entry, sitesWith }]) => {
+    const sighting = latestSightingByName.get(k);
+    // Link to the site of the latest sighting when that site also curates the
+    // species, otherwise the first curating site.
+    const site =
+      (sighting && sitesWith.find((sw) => sw.slug === sighting.siteSlug)) ?? sitesWith[0];
+    return buildCard({
+      commonName: entry.commonName,
+      scientificName: entry.scientificName,
+      fallbackImageUrl: entry.imageUrl,
+      sighting,
+      reliability: entry.reliability,
+      siteSlug: site.slug,
+      siteName: site.name,
+    });
+  });
+
+  const sightingOnlyCards = [...latestSightingByName.entries()]
+    .filter(([k]) => !curatedSpecies.has(k))
+    .map(([, sv]) =>
+      buildCard({
+        commonName: sv.speciesCommon,
+        scientificName: sv.speciesScientific,
+        sighting: sv,
+        reliability: null,
+        siteSlug: null,
+        siteName: sv.siteName ?? null,
+      }),
+    );
+
+  const sightingTime = (c: SpeciesCard) => {
+    const sv = latestSightingByName.get(c.key);
+    return sv?.lastConfirmedAt ? new Date(sv.lastConfirmedAt).getTime() : 0;
+  };
+  const species: SpeciesCard[] = [...curatedCards, ...sightingOnlyCards].sort((a, b) => {
+    const ta = sightingTime(a);
+    const tb = sightingTime(b);
+    if (ta !== tb) return tb - ta;
+    const ra = curatedSpecies.get(a.key)?.entry.reliability ?? "rare";
+    const rb = curatedSpecies.get(b.key)?.entry.reliability ?? "rare";
+    if (RELIABILITY_ORDER[ra] !== RELIABILITY_ORDER[rb])
+      return RELIABILITY_ORDER[ra] - RELIABILITY_ORDER[rb];
+    return a.commonName.localeCompare(b.commonName);
   });
 
   // --- Site rows ------------------------------------------------------------
