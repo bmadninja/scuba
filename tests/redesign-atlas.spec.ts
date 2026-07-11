@@ -39,19 +39,46 @@ async function openDropdown(
   return btn;
 }
 
-// Click a control and retry until the expected URL param appears (hydration gate
-// for pills that live directly on the sticky bar, outside any dropdown).
-async function clickUntilUrl(
+// Select a filter pill, then assert the resulting URL param.
+//
+// These pills are TOGGLES whose selected state is reflected in the URL via an
+// async `router.replace`. Two races made the old "click, then assert the URL"
+// approach flaky under CI's parallel load:
+//
+//   1. Toggle + retry-until-URL: re-clicking a toggle until the URL matches can
+//      DEselect it — if the first click registered but the URL assertion timed
+//      out under load, the retry click reverses it.
+//   2. Stale closure: the button's onClick closes over the current URL params.
+//      `router.replace` updates the browser URL slightly before React re-renders
+//      and rebinds sibling handlers to the fresh params, so a follow-up click
+//      fired in that window overwrites the first selection instead of appending
+//      (this is what dropped `month=1` when the second month was clicked).
+//
+// The fix: click exactly once (Playwright auto-waits for the button to be
+// enabled, i.e. hydrated) and wait for the pill's own aria-pressed=true before
+// touching the URL or clicking anything else. aria-pressed only flips after the
+// re-render that also rebinds sibling onClick handlers, so it deterministically
+// closes both windows. The URL assertion still runs — intent is unchanged.
+async function selectPill(
+  page: import('@playwright/test').Page,
+  name: string,
+  opts: { exact?: boolean } = {},
+) {
+  const btn = page.getByRole('button', { name, exact: opts.exact });
+  await expect(btn).toBeVisible({ timeout: 15_000 });
+  await btn.click();
+  await expect(btn).toHaveAttribute('aria-pressed', 'true', { timeout: 15_000 });
+  return btn;
+}
+
+async function selectPillAndExpectUrl(
   page: import('@playwright/test').Page,
   name: string,
   urlRe: RegExp,
+  opts: { exact?: boolean } = {},
 ) {
-  const btn = page.getByRole('button', { name });
-  await expect(btn).toBeVisible({ timeout: 15_000 });
-  await expect(async () => {
-    await btn.click();
-    await expect(page).toHaveURL(urlRe);
-  }).toPass({ timeout: 15_000 });
+  await selectPill(page, name, opts);
+  await expect(page).toHaveURL(urlRe, { timeout: 15_000 });
 }
 
 // ── Month filter buttons ───────────────────────────────────────────────────
@@ -69,18 +96,24 @@ test.describe('Month filter', () => {
   test('clicking a month button updates the URL', async ({ page }) => {
     await page.goto('/locations', GOTO);
     await openDropdown(page, 'When');
-    await page.getByRole('button', { name: 'Jan', exact: true }).click();
-    await expect(page).toHaveURL(/month=1\b/);
+    await selectPillAndExpectUrl(page, 'Jan', /month=1\b/, { exact: true });
   });
 
   test('clicking two months keeps both in the URL', async ({ page }) => {
     await page.goto('/locations', GOTO);
     await openDropdown(page, 'When');
-    await page.getByRole('button', { name: 'Jan', exact: true }).click();
-    await expect(page).toHaveURL(/month=1\b/);
-    await page.getByRole('button', { name: 'Jun', exact: true }).click();
+    // Wait for Jan's selected state (aria-pressed) before clicking Jun — that
+    // gate guarantees React has re-rendered with month=1 and rebound Jun's
+    // handler to the fresh params, so the second click appends instead of
+    // clobbering month=1.
+    await selectPillAndExpectUrl(page, 'Jan', /month=1\b/, { exact: true });
     // URLSearchParams encodes the comma as %2C.
-    await expect(page).toHaveURL(/month=1(%2C|,)6|month=6(%2C|,)1/);
+    await selectPillAndExpectUrl(
+      page,
+      'Jun',
+      /month=1(%2C|,)6|month=6(%2C|,)1/,
+      { exact: true },
+    );
   });
 });
 
@@ -101,8 +134,7 @@ test.describe('Certification level filter', () => {
     const before = await readCount(page);
 
     await openDropdown(page, 'Certification');
-    await page.getByRole('button', { name: 'Beginner', exact: true }).click();
-    await expect(page).toHaveURL(/skill=Beginner/);
+    await selectPillAndExpectUrl(page, 'Beginner', /skill=Beginner/, { exact: true });
     const after = await readCount(page);
     expect(after).toBeLessThanOrEqual(before);
   });
@@ -123,7 +155,7 @@ test.describe('Location count', () => {
     const before = await readCount(page);
 
     // Nothing is selected by default; selecting one reef state narrows results.
-    await clickUntilUrl(page, 'Improving', /reef=thriving/);
+    await selectPillAndExpectUrl(page, 'Improving', /reef=thriving/);
     const after = await readCount(page);
     expect(after).toBeLessThan(before);
   });
@@ -153,6 +185,6 @@ test.describe('Reef state filter', () => {
   test('selecting a reef state persists to the URL', async ({ page }) => {
     await page.goto('/locations', GOTO);
     // Default is none-selected; selecting Improving writes reef=thriving.
-    await clickUntilUrl(page, 'Improving', /reef=thriving/);
+    await selectPillAndExpectUrl(page, 'Improving', /reef=thriving/);
   });
 });
