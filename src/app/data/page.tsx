@@ -186,6 +186,21 @@ export default function DataPage() {
     marginBottom: "1rem",
     maxWidth: 660,
   };
+  const stepTagStyle: React.CSSProperties = {
+    fontFamily: mono,
+    fontSize: "0.5875rem",
+    fontWeight: 700,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: INK,
+    marginBottom: "0.35rem",
+  };
+  const stepBodyStyle: React.CSSProperties = {
+    fontSize: "0.8125rem",
+    lineHeight: 1.6,
+    color: INK2,
+    margin: 0,
+  };
 
   const tocLink = (
     href: string,
@@ -321,24 +336,15 @@ export default function DataPage() {
             >
               <h3 style={subHStyle}>1 honest label per reef</h3>
               <p style={subPStyle}>
-                Two reef signals build the label:{" "}
-                <b style={{ color: INK }}>coral cover</b> (live coral percent,
-                from reef surveys) and{" "}
-                <b style={{ color: INK }}>fish life</b> (fish weight per hectare
-                on a standard swim, against what a barely fished reef could hold).
-                We turn each into a level from 1 to 5, then take the lower one,
-                because a reef is only as healthy as its thinnest part. Two forces
-                then gate the result:{" "}
-                <b style={{ color: INK }}>heat stress</b> (the NOAA bleaching
-                alert) and <b style={{ color: INK }}>fishing pressure</b>. Each
-                label below is the plain meaning, plus the exact rule that
-                produces it.
+                Every reef gets one plain word, built in a few clear steps. Here
+                is exactly what happens, from the raw readings to the label you
+                see on the reef.
               </p>
               <div
                 style={{
                   border: `1px solid ${HAIRLINE}`,
                   borderRadius: "0.85rem",
-                  padding: "1rem 1.15rem",
+                  padding: "1.15rem 1.15rem 1.25rem",
                   background: PAPER,
                   margin: "1.25rem 0 1.5rem",
                 }}
@@ -351,25 +357,88 @@ export default function DataPage() {
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                     color: INK2,
-                    marginBottom: "0.6rem",
+                    marginBottom: "0.9rem",
                   }}
                 >
-                  The 1 to 5 levels
+                  How the label is built
                 </p>
-                <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    Coral cover: {code("40% or more = 5")}, {code("20 to 39% = 4 to 3")}, {code("10 to 19% = 2")}, {code("under 10% = 1")}
+                <ol
+                  style={{
+                    listStyle: "none",
+                    margin: 0,
+                    padding: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1rem",
+                  }}
+                >
+                  <li>
+                    <p style={stepTagStyle}>Step 1 — where the numbers come from</p>
+                    <p style={stepBodyStyle}>
+                      <b style={{ color: INK }}>
+                        The readings come from marine science groups, not from us.
+                      </b>{" "}
+                      Coral cover comes from divers and scientists surveying reefs
+                      in the water (Reef Check, AIMS, GCRMN and partners). Fish
+                      life comes from Reef Life Survey. Heat comes from NOAA Coral
+                      Reef Watch. Fishing comes from satellite tracking. We do not
+                      run our own boats or labs. Turning those readings into a
+                      level and a single word is our own reading, not an official
+                      rating any group publishes.
+                    </p>
                   </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    Fish life, as a share of what the reef could hold: {code("0.75+ = 5")}, {code("0.50 to 0.74 = 4")}, {code("0.25 to 0.49 = 3 to 2")}, {code("under 0.25 = 1")}
+                  <li>
+                    <p style={stepTagStyle}>Step 2 — coral cover becomes a level from 1 to 5</p>
+                    <p style={stepBodyStyle}>
+                      <b style={{ color: INK }}>Coral cover</b> is the share of the
+                      seabed that is living coral, rather than sand, rubble or dead
+                      rock. So 40% means 40% of the reef floor is live coral.{" "}
+                      {code("40% or more = 5")}, {code("20 to 39% = 4 to 3")},{" "}
+                      {code("10 to 19% = 2")}, {code("under 10% = 1")}.
+                    </p>
                   </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    We take the {code("lower")} of the two, then heat and fishing decide whether the reef is held back or pushed down from there.
+                  <li>
+                    <p style={stepTagStyle}>Step 3 — fish life becomes a level from 1 to 5</p>
+                    <p style={stepBodyStyle}>
+                      <b style={{ color: INK }}>Fish life</b> is how much fish
+                      weight the reef carries on a standard swim, measured against
+                      what a barely fished reef of the same type could hold. We
+                      write it as a share of that full amount, where 1.0 is
+                      everything the reef could hold. {code("0.75+ = 5")},{" "}
+                      {code("0.50 to 0.74 = 4")}, {code("0.25 to 0.49 = 3 to 2")},{" "}
+                      {code("under 0.25 = 1")}. So 0.75 means the reef still holds
+                      about three quarters of the fish it could.
+                    </p>
                   </li>
-                </ul>
+                  <li>
+                    <p style={stepTagStyle}>Step 4 — we take the lower of the two</p>
+                    <p style={stepBodyStyle}>
+                      A reef is only as healthy as its thinnest part, so the weaker
+                      of the coral level and the fish level sets the starting point.
+                    </p>
+                  </li>
+                  <li>
+                    <p style={stepTagStyle}>Step 5 — heat and fishing can move it</p>
+                    <p style={stepBodyStyle}>
+                      <b style={{ color: INK }}>Heat stress</b> (the NOAA bleaching
+                      alert) and <b style={{ color: INK }}>fishing pressure</b> do
+                      not set the label on their own, but they can move it. Heavy
+                      fishing holds a reef back from Improving, and a serious heat
+                      alert pushes it to Declining, because that is damage
+                      happening right now. Strong protection and calm water let a
+                      reef hold or recover.
+                    </p>
+                  </li>
+                  <li>
+                    <p style={stepTagStyle}>Step 6 — that gives one plain word</p>
+                    <p style={stepBodyStyle}>
+                      The result is Improving, Stable or Declining, each shown
+                      below with the exact rule that produces it. When there is no
+                      reef survey and no heat reading yet, we do not guess: the
+                      reef is Not surveyed.
+                    </p>
+                  </li>
+                </ol>
               </div>
 
               <div className="method-state-cards">
@@ -585,10 +654,45 @@ export default function DataPage() {
                   Not surveyed
                 </p>
                 <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
-                  No coral survey and no heat reading on file yet, so we do not
-                  assign a state. The absence of bad news is not evidence of a
-                  healthy reef, and a single logged dive can change that.
+                  No coral survey, no heat reading, and no fish survey on file
+                  yet, so we do not assign a state. The absence of bad news is
+                  not evidence of a healthy reef, and a single logged dive can
+                  change that.
                 </p>
+              </div>
+
+              <div
+                style={{
+                  marginTop: "1.5rem",
+                  border: `1px solid ${HAIRLINE}`,
+                  borderRadius: "1rem",
+                  padding: "1.15rem 1.25rem",
+                  background: "rgba(31,111,168,0.05)",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "0.75rem",
+                }}
+              >
+                <p style={{ fontSize: "0.85rem", lineHeight: 1.55, color: INK2, margin: 0, maxWidth: 440 }}>
+                  Want the exact formulas, thresholds, source datasets and
+                  citations behind every label?
+                </p>
+                <Link
+                  href="/data/method"
+                  style={{
+                    flexShrink: 0,
+                    fontFamily: mono,
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    color: OCEAN,
+                    textDecoration: "none",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  See how we do the math →
+                </Link>
               </div>
             </div>
 
