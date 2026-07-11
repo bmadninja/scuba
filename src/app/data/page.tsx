@@ -294,7 +294,7 @@ export default function DataPage() {
         >
           {tocLink("#reefstate", "Reef state", "group")}
           {tocLink("#rs-label", "The label and the rule", "sub")}
-          {tocLink("#rs-signals", "The signals behind it", "sub")}
+          {tocLink("#rs-confidence", "How sure we are", "sub")}
           {tocLink("#sightings", "Sightings", "group")}
           {tocLink("#si-chances", "Your chances", "sub")}
           {tocLink("#si-verify", "How we verify", "sub")}
@@ -688,78 +688,34 @@ export default function DataPage() {
             </div>
 
             <div
-              id="rs-signals"
+              id="rs-confidence"
               style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
             >
-              <h3 style={subHStyle}>The four signals behind it</h3>
+              <h3 style={subHStyle}>How sure we are</h3>
               <p style={subPStyle}>
-                Four public sources feed that rule. Two build the label, two gate
-                it. We do not run our own boats or labs — we stand on the
-                organisations who do.
+                Each reef also carries a confidence badge, because a single
+                reading and a real trend are not the same thing. The badge is the
+                weakest of the signals that set the label, so it never reads more
+                confident than its thinnest input.
               </p>
-              <div className="method-sig-grid">
-                <SignalCard
-                  name="Coral cover — builds the label"
-                  body="How much of the seabed is live coral, from divers and scientists counting it in the water. No satellite can see it. For some reefs we only have a couple of survey years, so we show the trend as a guide."
-                  href="https://www.reefcheck.org/"
-                  linkText="Reef Check"
-                  linkSuffix=", AIMS, GCRMN and partners"
-                  metaRight={<span>Per survey</span>}
-                />
-                <SignalCard
-                  name="Fish life — builds the label"
-                  body="How much fish life the reef holds, as fish weight per hectare on a standard swim, against what a reef like this could hold if it were barely fished. Fish respond fast to fishing and protection, so this is our clearest sign that protection is working."
-                  href="https://reeflifesurvey.com/"
-                  linkText="Reef Life Survey"
-                  metaRight={<span>Per survey</span>}
-                />
-                <SignalCard
-                  name="Heat stress — a pressure, gates the label"
-                  body="How warm the water is against what is normal for the season. Brief warmth is fine; it is sustained heat over weeks that bleaches coral, and a serious alert can move the label to Declining."
-                  href="https://coralreefwatch.noaa.gov/"
-                  linkText="NOAA Coral Reef Watch"
-                  metaRight={<span style={{ color: IMPROVING, fontWeight: 600 }}>Live, nightly</span>}
-                />
-                <SignalCard
-                  name="Fishing pressure — a pressure, gates the label"
-                  body="How heavily a reef is fished, and whether it sits inside a protected area. We read satellite tracking of larger boats together with a global model that also covers the small local boats satellites miss, so every reef has a level. Strong protection lets a reef recover faster."
-                  href="https://globalfishingwatch.org/"
-                  linkText="Global Fishing Watch"
-                  linkSuffix=" and reef gravity from Andrello and Cinner"
-                  metaRight={<span>Weekly</span>}
-                />
-              </div>
-
-              <div
-                id="rs-confidence"
-                style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
-              >
-                <h3 style={subHStyle}>How sure we are</h3>
-                <p style={subPStyle}>
-                  Each reef also carries a confidence badge, because a single
-                  reading and a real trend are not the same thing. The badge is
-                  the weakest of the signals that set the label, so it never reads
-                  more confident than its thinnest input.
-                </p>
-                <ul style={{ listStyle: "none", margin: "0.5rem 0 0", padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem", maxWidth: 640 }}>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    <b style={{ color: INK }}>Measured trend</b> — 3 or more surveys across at least 4 years. A real direction.
-                  </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    <b style={{ color: INK }}>Before and after</b> — 2 surveys. It rose or fell, but this is not a trend line.
-                  </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    <b style={{ color: INK }}>Single reading</b> — 1 survey. The level today, not a direction.
-                  </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    <b style={{ color: INK }}>Not on file yet</b> — no data here. This reef is waiting for a survey.
-                  </li>
-                </ul>
-              </div>
+              <ul style={{ listStyle: "none", margin: "0.5rem 0 0", padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem", maxWidth: 640 }}>
+                <li style={condLi}>
+                  <span style={condDot} aria-hidden="true" />
+                  <b style={{ color: INK }}>Measured trend</b> — 3 or more surveys across at least 4 years. A real direction.
+                </li>
+                <li style={condLi}>
+                  <span style={condDot} aria-hidden="true" />
+                  <b style={{ color: INK }}>Before and after</b> — 2 surveys. It rose or fell, but this is not a trend line.
+                </li>
+                <li style={condLi}>
+                  <span style={condDot} aria-hidden="true" />
+                  <b style={{ color: INK }}>Single reading</b> — 1 survey. The level today, not a direction.
+                </li>
+                <li style={condLi}>
+                  <span style={condDot} aria-hidden="true" />
+                  <b style={{ color: INK }}>Not on file yet</b> — no data here. This reef is waiting for a survey.
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -1223,59 +1179,6 @@ const condDot: React.CSSProperties = {
   background: "var(--color-hairline)",
 };
 const pipeLink: React.CSSProperties = { color: "var(--color-ocean)", textDecoration: "none" };
-
-function SignalCard({
-  name,
-  body,
-  href,
-  linkText,
-  linkSuffix,
-  metaRight,
-}: {
-  name: string;
-  body: string;
-  href: string;
-  linkText: string;
-  linkSuffix?: string;
-  metaRight: React.ReactNode;
-}) {
-  return (
-    <div style={{ border: `1px solid var(--color-hairline)`, borderRadius: "1rem", padding: "1.25rem", background: "var(--color-paper)" }}>
-      <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--color-ink)", marginBottom: "0.6rem" }}>
-        {name}
-      </p>
-      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "var(--color-ink-2)", marginBottom: "0.7rem" }}>
-        {body}
-      </p>
-      <div
-        style={{
-          fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
-          fontSize: "0.6875rem",
-          color: "var(--color-ink-2)",
-          display: "flex",
-          justifyContent: "space-between",
-          gap: "0.5rem",
-          borderTop: `1px solid var(--color-hairline)`,
-          paddingTop: "0.6rem",
-          flexWrap: "wrap",
-        }}
-      >
-        <span>
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener"
-            style={{ color: "var(--color-ocean)", textDecoration: "none" }}
-          >
-            {linkText}
-          </a>
-          {linkSuffix}
-        </span>
-        {metaRight}
-      </div>
-    </div>
-  );
-}
 
 function Band({
   color,
