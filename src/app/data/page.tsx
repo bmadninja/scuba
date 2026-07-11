@@ -327,9 +327,8 @@ export default function DataPage() {
             >
               <h3 style={subHStyle}>1 honest label per reef</h3>
               <p style={subPStyle}>
-                Every reef gets one plain word, built in a few clear steps. Here
-                is exactly what happens, from the raw readings to the label you
-                see on the reef.
+                Here is exactly what happens, step by step, from the raw readings
+                to the label you see on the reef.
               </p>
               <div
                 style={{
@@ -383,9 +382,8 @@ export default function DataPage() {
                     <p style={stepBodyStyle}>
                       <b style={{ color: INK }}>Coral cover</b> is the share of the
                       seabed that is living coral, rather than sand, rubble or dead
-                      rock. So 40% means 40% of the reef floor is live coral.{" "}
-                      {code("40% or more = 5")}, {code("20 to 39% = 4 to 3")},{" "}
-                      {code("10 to 19% = 2")}, {code("under 10% = 1")}.
+                      rock. So 40% means 40% of the reef floor is live coral, and
+                      the more live coral there is, the higher the level.
                     </p>
                   </li>
                   <li>
@@ -395,10 +393,9 @@ export default function DataPage() {
                       weight the reef carries on a standard swim, measured against
                       what a barely fished reef of the same type could hold. We
                       write it as a share of that full amount, where 1.0 is
-                      everything the reef could hold. {code("0.75+ = 5")},{" "}
-                      {code("0.50 to 0.74 = 4")}, {code("0.25 to 0.49 = 3 to 2")},{" "}
-                      {code("under 0.25 = 1")}. So 0.75 means the reef still holds
-                      about three quarters of the fish it could.
+                      everything the reef could hold. So 0.75 means the reef still
+                      holds about three quarters of the fish it could, and the
+                      fuller the reef, the higher the level.
                     </p>
                   </li>
                   <li>
@@ -774,11 +771,9 @@ export default function DataPage() {
               <p style={subPStyle}>
                 Wildlife moves and seasons shift, so we treat every label as a
                 guide, never a promise. When a site has no recent records for an
-                animal, we mark it{" "}
-                <b style={{ color: INK }}>Expected</b> — it is known from this
-                reef but not yet confirmed by fresh logs — rather than dressing
-                it up as a measured chance. When we have nothing at all, we say
-                the data is thin rather than guess.
+                animal, we mark it <b style={{ color: INK }}>Expected</b> rather
+                than dressing it up as a measured chance. When we have nothing at
+                all, we say the data is thin rather than guess.
               </p>
             </div>
 
@@ -1049,8 +1044,8 @@ export default function DataPage() {
               Everything on this site is built from public science.{" "}
               <b style={{ color: INK }}>{liveSources} of these are live data feeds</b>{" "}
               we pull automatically on a schedule: NOAA Coral Reef Watch,
-              Global Fishing Watch, iNaturalist, GBIF, OBIS, the IUCN Red List
-              and MERMAID. They power reef heat, fishing pressure, species
+              Global Fishing Watch, iNaturalist, GBIF, OBIS, AGRRA, the IUCN Red
+              List and MERMAID. They power reef heat, fishing pressure, species
               richness, coral cover, species sightings and conservation status.
               The rest are the peer reviewed and government
               datasets we credit and build our methodology on, plus our own
