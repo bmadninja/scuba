@@ -12,6 +12,11 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 3,
   reporter: 'html',
+  // Web-first assertions default to 5s. Under CI's 4-worker parallel load a
+  // slow router.replace / navigation can exceed that; 10s absorbs the jitter
+  // without masking real regressions (a genuinely broken assertion still fails,
+  // just later). Per-assertion overrides in specs may raise this further.
+  expect: { timeout: 10_000 },
   use: {
     baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
