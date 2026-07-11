@@ -186,6 +186,21 @@ export default function DataPage() {
     marginBottom: "1rem",
     maxWidth: 660,
   };
+  const stepTagStyle: React.CSSProperties = {
+    fontFamily: mono,
+    fontSize: "0.5875rem",
+    fontWeight: 700,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: INK,
+    marginBottom: "0.35rem",
+  };
+  const stepBodyStyle: React.CSSProperties = {
+    fontSize: "0.8125rem",
+    lineHeight: 1.6,
+    color: INK2,
+    margin: 0,
+  };
 
   const tocLink = (
     href: string,
@@ -279,10 +294,10 @@ export default function DataPage() {
         >
           {tocLink("#reefstate", "Reef state", "group")}
           {tocLink("#rs-label", "The label and the rule", "sub")}
-          {tocLink("#rs-signals", "The signals behind it", "sub")}
+          {tocLink("#rs-confidence", "How sure we are", "sub")}
           {tocLink("#sightings", "Sightings", "group")}
           {tocLink("#si-chances", "Your chances", "sub")}
-          {tocLink("#si-verify", "How we verify", "sub")}
+          {tocLink("#si-verify", "How a sighting is confirmed", "sub")}
           {tocLink("#si-labels", "Conservation labels", "sub")}
           {tocLink("#divers", "For divers", "group")}
           {tocLink("#researchers", "For researchers", "group")}
@@ -299,20 +314,11 @@ export default function DataPage() {
             <span id="reef-state" style={{ position: "absolute", marginTop: "-5rem" }} aria-hidden="true" />
             <h2 style={groupTitleStyle}>Reef state</h2>
             <p style={groupIntroStyle}>
-              We describe a reef with one plain word. To get there we look at{" "}
-              <b style={{ color: INK }}>two things about the reef itself</b> — how
-              much living coral is on it, and how much fish life it holds — and{" "}
-              <b style={{ color: INK }}>two forces acting on it</b> — how hot the
-              water has been, and how much fishing is happening around it. The two
-              reef signals build the label. The two forces do not set it on their
-              own: they can hold a reef back from Improving, and a serious heat
-              alert can push it to Declining, because that is damage happening
-              right now. It is not a ranking and not a score, and every reef is
-              worth diving. When a reef has no reef survey and no heat reading
-              yet, we do not guess a state from the quiet. We label it{" "}
-              <b style={{ color: INK }}>Not surveyed</b> and show exactly what is
-              missing, because the absence of bad news is not evidence of a
-              healthy reef.
+              We describe every reef with one plain word, built from{" "}
+              <b style={{ color: INK }}>two things on the reef itself</b> — living
+              coral and fish life — and <b style={{ color: INK }}>two forces
+              acting on it</b> — heat and fishing. It is not a ranking or a
+              score, and every reef is worth diving.
             </p>
 
             <div
@@ -321,24 +327,14 @@ export default function DataPage() {
             >
               <h3 style={subHStyle}>1 honest label per reef</h3>
               <p style={subPStyle}>
-                Two reef signals build the label:{" "}
-                <b style={{ color: INK }}>coral cover</b> (live coral percent,
-                from reef surveys) and{" "}
-                <b style={{ color: INK }}>fish life</b> (fish weight per hectare
-                on a standard swim, against what a barely fished reef could hold).
-                We turn each into a level from 1 to 5, then take the lower one,
-                because a reef is only as healthy as its thinnest part. Two forces
-                then gate the result:{" "}
-                <b style={{ color: INK }}>heat stress</b> (the NOAA bleaching
-                alert) and <b style={{ color: INK }}>fishing pressure</b>. Each
-                label below is the plain meaning, plus the exact rule that
-                produces it.
+                Here is exactly what happens, step by step, from the raw readings
+                to the label you see on the reef.
               </p>
               <div
                 style={{
                   border: `1px solid ${HAIRLINE}`,
                   borderRadius: "0.85rem",
-                  padding: "1rem 1.15rem",
+                  padding: "1.15rem 1.15rem 1.25rem",
                   background: PAPER,
                   margin: "1.25rem 0 1.5rem",
                 }}
@@ -351,25 +347,86 @@ export default function DataPage() {
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                     color: INK2,
-                    marginBottom: "0.6rem",
+                    marginBottom: "0.9rem",
                   }}
                 >
-                  The 1 to 5 levels
+                  How the label is built
                 </p>
-                <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    Coral cover: {code("40% or more = 5")}, {code("20 to 39% = 4 to 3")}, {code("10 to 19% = 2")}, {code("under 10% = 1")}
+                <ol
+                  style={{
+                    listStyle: "none",
+                    margin: 0,
+                    padding: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1rem",
+                  }}
+                >
+                  <li>
+                    <p style={stepTagStyle}>Step 1 — where the numbers come from</p>
+                    <p style={stepBodyStyle}>
+                      <b style={{ color: INK }}>
+                        The readings come from marine science groups, not from us.
+                      </b>{" "}
+                      Coral cover comes from divers and scientists surveying reefs
+                      in the water (Reef Check, AIMS, GCRMN and partners). Fish
+                      life comes from Reef Life Survey. Heat comes from NOAA Coral
+                      Reef Watch. Fishing comes from satellite tracking. We do not
+                      run our own boats or labs. Turning those readings into a
+                      level and a single word is our own reading, not an official
+                      rating any group publishes.
+                    </p>
                   </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    Fish life, as a share of what the reef could hold: {code("0.75+ = 5")}, {code("0.50 to 0.74 = 4")}, {code("0.25 to 0.49 = 3 to 2")}, {code("under 0.25 = 1")}
+                  <li>
+                    <p style={stepTagStyle}>Step 2 — coral cover becomes a level from 1 to 5</p>
+                    <p style={stepBodyStyle}>
+                      <b style={{ color: INK }}>Coral cover</b> is the share of the
+                      seabed that is living coral, rather than sand, rubble or dead
+                      rock. So 40% means 40% of the reef floor is live coral, and
+                      the more live coral there is, the higher the level.
+                    </p>
                   </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    We take the {code("lower")} of the two, then heat and fishing decide whether the reef is held back or pushed down from there.
+                  <li>
+                    <p style={stepTagStyle}>Step 3 — fish life becomes a level from 1 to 5</p>
+                    <p style={stepBodyStyle}>
+                      <b style={{ color: INK }}>Fish life</b> is how much fish
+                      weight the reef carries on a standard swim, measured against
+                      what a barely fished reef of the same type could hold. We
+                      write it as a share of that full amount, where 1.0 is
+                      everything the reef could hold. So 0.75 means the reef still
+                      holds about three quarters of the fish it could, and the
+                      fuller the reef, the higher the level.
+                    </p>
                   </li>
-                </ul>
+                  <li>
+                    <p style={stepTagStyle}>Step 4 — we take the lower of the two</p>
+                    <p style={stepBodyStyle}>
+                      A reef is only as healthy as its thinnest part, so the weaker
+                      of the coral level and the fish level sets the starting point.
+                    </p>
+                  </li>
+                  <li>
+                    <p style={stepTagStyle}>Step 5 — heat and fishing can move it</p>
+                    <p style={stepBodyStyle}>
+                      <b style={{ color: INK }}>Heat stress</b> (the NOAA bleaching
+                      alert) and <b style={{ color: INK }}>fishing pressure</b> do
+                      not set the label on their own, but they can move it. Heavy
+                      fishing holds a reef back from Improving, and a serious heat
+                      alert pushes it to Declining, because that is damage
+                      happening right now. Strong protection and calm water let a
+                      reef hold or recover.
+                    </p>
+                  </li>
+                  <li>
+                    <p style={stepTagStyle}>Step 6 — that gives one plain word</p>
+                    <p style={stepBodyStyle}>
+                      The result is Improving, Stable or Declining, each shown
+                      below with the exact rule that produces it. When there is no
+                      reef survey and no heat reading yet, we do not guess: the
+                      reef is Not surveyed.
+                    </p>
+                  </li>
+                </ol>
               </div>
 
               <div className="method-state-cards">
@@ -585,86 +642,77 @@ export default function DataPage() {
                   Not surveyed
                 </p>
                 <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
-                  No coral survey and no heat reading on file yet, so we do not
-                  assign a state. The absence of bad news is not evidence of a
-                  healthy reef, and a single logged dive can change that.
+                  No coral survey, no heat reading, and no fish survey on file
+                  yet, so we do not assign a state. The absence of bad news is
+                  not evidence of a healthy reef, and a single logged dive can
+                  change that.
                 </p>
+              </div>
+
+              <div
+                style={{
+                  marginTop: "1.5rem",
+                  border: `1px solid ${HAIRLINE}`,
+                  borderRadius: "1rem",
+                  padding: "1.15rem 1.25rem",
+                  background: "rgba(31,111,168,0.05)",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "0.75rem",
+                }}
+              >
+                <p style={{ fontSize: "0.85rem", lineHeight: 1.55, color: INK2, margin: 0, maxWidth: 440 }}>
+                  Want the exact formulas, thresholds, source datasets and
+                  citations behind every label?
+                </p>
+                <Link
+                  href="/data/method"
+                  style={{
+                    flexShrink: 0,
+                    fontFamily: mono,
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    color: OCEAN,
+                    textDecoration: "none",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  See how we do the math →
+                </Link>
               </div>
             </div>
 
             <div
-              id="rs-signals"
+              id="rs-confidence"
               style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
             >
-              <h3 style={subHStyle}>The four signals behind it</h3>
+              <h3 style={subHStyle}>How sure we are</h3>
               <p style={subPStyle}>
-                Four public sources feed that rule. Two build the label, two gate
-                it. We do not run our own boats or labs — we stand on the
-                organisations who do.
+                Each reef also carries a confidence badge, because a single
+                reading and a real trend are not the same thing. The badge is the
+                weakest of the signals that set the label, so it never reads more
+                confident than its thinnest input.
               </p>
-              <div className="method-sig-grid">
-                <SignalCard
-                  name="Coral cover — builds the label"
-                  body="How much of the seabed is live coral, from divers and scientists counting it in the water. No satellite can see it. For some reefs we only have a couple of survey years, so we show the trend as a guide."
-                  href="https://www.reefcheck.org/"
-                  linkText="Reef Check"
-                  linkSuffix=", AIMS, GCRMN and partners"
-                  metaRight={<span>Per survey</span>}
-                />
-                <SignalCard
-                  name="Fish life — builds the label"
-                  body="How much fish life the reef holds, as fish weight per hectare on a standard swim, against what a reef like this could hold if it were barely fished. Fish respond fast to fishing and protection, so this is our clearest sign that protection is working."
-                  href="https://reeflifesurvey.com/"
-                  linkText="Reef Life Survey"
-                  metaRight={<span>Per survey</span>}
-                />
-                <SignalCard
-                  name="Heat stress — a pressure, gates the label"
-                  body="How warm the water is against what is normal for the season. Brief warmth is fine; it is sustained heat over weeks that bleaches coral, and a serious alert can move the label to Declining."
-                  href="https://coralreefwatch.noaa.gov/"
-                  linkText="NOAA Coral Reef Watch"
-                  metaRight={<span style={{ color: IMPROVING, fontWeight: 600 }}>Live, nightly</span>}
-                />
-                <SignalCard
-                  name="Fishing pressure — a pressure, gates the label"
-                  body="How heavily a reef is fished, and whether it sits inside a protected area. We read satellite tracking of larger boats together with a global model that also covers the small local boats satellites miss, so every reef has a level. Strong protection lets a reef recover faster."
-                  href="https://globalfishingwatch.org/"
-                  linkText="Global Fishing Watch"
-                  linkSuffix=" and reef gravity from Andrello and Cinner"
-                  metaRight={<span>Weekly</span>}
-                />
-              </div>
-
-              <div
-                id="rs-confidence"
-                style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
-              >
-                <h3 style={subHStyle}>How sure we are</h3>
-                <p style={subPStyle}>
-                  Each reef also carries a confidence badge, because a single
-                  reading and a real trend are not the same thing. The badge is
-                  the weakest of the signals that set the label, so it never reads
-                  more confident than its thinnest input.
-                </p>
-                <ul style={{ listStyle: "none", margin: "0.5rem 0 0", padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem", maxWidth: 640 }}>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    <b style={{ color: INK }}>Measured trend</b> — 3 or more surveys across at least 4 years. A real direction.
-                  </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    <b style={{ color: INK }}>Before and after</b> — 2 surveys. It rose or fell, but this is not a trend line.
-                  </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    <b style={{ color: INK }}>Single reading</b> — 1 survey. The level today, not a direction.
-                  </li>
-                  <li style={condLi}>
-                    <span style={condDot} aria-hidden="true" />
-                    <b style={{ color: INK }}>Not on file yet</b> — no data here. This reef is waiting for a survey.
-                  </li>
-                </ul>
-              </div>
+              <ul style={{ listStyle: "none", margin: "0.5rem 0 0", padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem", maxWidth: 640 }}>
+                <li style={condLi}>
+                  <span style={condDot} aria-hidden="true" />
+                  <b style={{ color: INK }}>Measured trend</b> — 3 or more surveys across at least 4 years. A real direction.
+                </li>
+                <li style={condLi}>
+                  <span style={condDot} aria-hidden="true" />
+                  <b style={{ color: INK }}>Before and after</b> — 2 surveys. It rose or fell, but this is not a trend line.
+                </li>
+                <li style={condLi}>
+                  <span style={condDot} aria-hidden="true" />
+                  <b style={{ color: INK }}>Single reading</b> — 1 survey. The level today, not a direction.
+                </li>
+                <li style={condLi}>
+                  <span style={condDot} aria-hidden="true" />
+                  <b style={{ color: INK }}>Not on file yet</b> — no data here. This reef is waiting for a survey.
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -723,11 +771,9 @@ export default function DataPage() {
               <p style={subPStyle}>
                 Wildlife moves and seasons shift, so we treat every label as a
                 guide, never a promise. When a site has no recent records for an
-                animal, we mark it{" "}
-                <b style={{ color: INK }}>Expected</b> — it is known from this
-                reef but not yet confirmed by fresh logs — rather than dressing
-                it up as a measured chance. When we have nothing at all, we say
-                the data is thin rather than guess.
+                animal, we mark it <b style={{ color: INK }}>Expected</b> rather
+                than dressing it up as a measured chance. When we have nothing at
+                all, we say the data is thin rather than guess.
               </p>
             </div>
 
@@ -735,10 +781,12 @@ export default function DataPage() {
               id="si-verify"
               style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
             >
-              <h3 style={subHStyle}>How we verify a sighting</h3>
+              <h3 style={subHStyle}>How a sighting is confirmed</h3>
               <p style={subPStyle}>
-                Every sighting starts as a real photograph and is checked before
-                we count it.
+                We do not verify sightings ourselves. Every sighting starts as a
+                real diver photograph, the iNaturalist community confirms the
+                species to research grade, and we show only the ones that clear
+                that bar.
               </p>
               <div
                 className="method-pipe"
@@ -996,8 +1044,8 @@ export default function DataPage() {
               Everything on this site is built from public science.{" "}
               <b style={{ color: INK }}>{liveSources} of these are live data feeds</b>{" "}
               we pull automatically on a schedule: NOAA Coral Reef Watch,
-              Global Fishing Watch, iNaturalist, GBIF, OBIS, the IUCN Red List
-              and MERMAID. They power reef heat, fishing pressure, species
+              Global Fishing Watch, iNaturalist, GBIF, OBIS, AGRRA, the IUCN Red
+              List and MERMAID. They power reef heat, fishing pressure, species
               richness, coral cover, species sightings and conservation status.
               The rest are the peer reviewed and government
               datasets we credit and build our methodology on, plus our own
@@ -1128,59 +1176,6 @@ const condDot: React.CSSProperties = {
   background: "var(--color-hairline)",
 };
 const pipeLink: React.CSSProperties = { color: "var(--color-ocean)", textDecoration: "none" };
-
-function SignalCard({
-  name,
-  body,
-  href,
-  linkText,
-  linkSuffix,
-  metaRight,
-}: {
-  name: string;
-  body: string;
-  href: string;
-  linkText: string;
-  linkSuffix?: string;
-  metaRight: React.ReactNode;
-}) {
-  return (
-    <div style={{ border: `1px solid var(--color-hairline)`, borderRadius: "1rem", padding: "1.25rem", background: "var(--color-paper)" }}>
-      <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--color-ink)", marginBottom: "0.6rem" }}>
-        {name}
-      </p>
-      <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: "var(--color-ink-2)", marginBottom: "0.7rem" }}>
-        {body}
-      </p>
-      <div
-        style={{
-          fontFamily: "var(--font-mono), 'IBM Plex Mono', monospace",
-          fontSize: "0.6875rem",
-          color: "var(--color-ink-2)",
-          display: "flex",
-          justifyContent: "space-between",
-          gap: "0.5rem",
-          borderTop: `1px solid var(--color-hairline)`,
-          paddingTop: "0.6rem",
-          flexWrap: "wrap",
-        }}
-      >
-        <span>
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener"
-            style={{ color: "var(--color-ocean)", textDecoration: "none" }}
-          >
-            {linkText}
-          </a>
-          {linkSuffix}
-        </span>
-        {metaRight}
-      </div>
-    </div>
-  );
-}
 
 function Band({
   color,
