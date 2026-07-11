@@ -314,20 +314,11 @@ export default function DataPage() {
             <span id="reef-state" style={{ position: "absolute", marginTop: "-5rem" }} aria-hidden="true" />
             <h2 style={groupTitleStyle}>Reef state</h2>
             <p style={groupIntroStyle}>
-              We describe a reef with one plain word. To get there we look at{" "}
-              <b style={{ color: INK }}>two things about the reef itself</b> — how
-              much living coral is on it, and how much fish life it holds — and{" "}
-              <b style={{ color: INK }}>two forces acting on it</b> — how hot the
-              water has been, and how much fishing is happening around it. The two
-              reef signals build the label. The two forces do not set it on their
-              own: they can hold a reef back from Improving, and a serious heat
-              alert can push it to Declining, because that is damage happening
-              right now. It is not a ranking and not a score, and every reef is
-              worth diving. When a reef has no reef survey and no heat reading
-              yet, we do not guess a state from the quiet. We label it{" "}
-              <b style={{ color: INK }}>Not surveyed</b> and show exactly what is
-              missing, because the absence of bad news is not evidence of a
-              healthy reef.
+              We describe every reef with one plain word, built from{" "}
+              <b style={{ color: INK }}>two things on the reef itself</b> — living
+              coral and fish life — and <b style={{ color: INK }}>two forces
+              acting on it</b> — heat and fishing. It is not a ranking or a
+              score, and every reef is worth diving.
             </p>
 
             <div
