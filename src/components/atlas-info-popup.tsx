@@ -45,10 +45,10 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     title: "What the reef labels mean",
     sub: "This is a read on the reef itself, turned into one plain word. Two reef signals build it: how much living coral is on the reef, and how much fish life it holds. We lead with the weaker of the two. Heat and fishing then act as forces on top: they can hold a reef back from Improving, and a serious heat alert can push it to Declining. Blue Park status and species logged are shown for context and do not change it. It is not a ranking, and every reef is worth diving.",
     rows: [
-      ["Improving", "rgba(16,185,129,0.15)", "#6ee7b7", "Near its natural baseline and steady. Recovering or healthy, not perfect."],
-      ["Stable", "rgba(245,158,11,0.14)", "#fbbf24", "Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],
-      ["Declining", "rgba(244,63,94,0.14)", "#fca5a5", "Heavy recent loss or bleaching. The 4th global bleaching event (2023 to 2025) affected 84% of reefs worldwide, the worst on record, with a new El Niño now developing. Diving here documents what remains and adds to the scientific record."],
-      ["Not surveyed", "rgba(148,163,184,0.15)", "#cbd5e1", "No coral survey and no heat reading on file yet, so we do not assign a state. The absence of bad news is not evidence of a healthy reef, and a single logged dive can change that."],
+      ["Improving", "rgba(46,125,91,0.13)", "#216B49", "Near its natural baseline and steady. Recovering or healthy, not perfect."],
+      ["Stable", "rgba(185,138,46,0.16)", "#7A5A12", "Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],
+      ["Declining", "rgba(192,65,43,0.13)", "#A8351F", "Heavy recent loss or bleaching. The 4th global bleaching event (2023 to 2025) affected 84% of reefs worldwide, the worst on record, with a new El Niño now developing. Diving here documents what remains and adds to the scientific record."],
+      ["Not surveyed", "rgba(14,28,40,0.07)", "#4A5568", "No coral survey and no heat reading on file yet, so we do not assign a state. The absence of bad news is not evidence of a healthy reef, and a single logged dive can change that."],
     ],
     link: true,
     anchor: "#reefstate",
@@ -101,10 +101,10 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     title: "What fishing protection means",
     sub: "How much fishing is allowed shapes how fast a reef can recover.",
     rows: [
-      ["Banned", "rgba(16,185,129,0.15)", "#6ee7b7", "No fishing of any kind. The strongest protection — gives the reef room to recover."],
-      ["Limited", "rgba(245,158,11,0.15)", "#fcd34d", "Some fishing allowed in marked zones or seasons."],
-      ["Open", "rgba(244,63,94,0.14)", "#fca5a5", "No fishing restrictions in place."],
-      ["Patrolled", "rgba(255,255,255,0.08)", "#aebcd0", "Rules are actively enforced on the water, not just on paper."],
+      ["Banned", "rgba(46,125,91,0.13)", "#216B49", "No fishing of any kind. The strongest protection — gives the reef room to recover."],
+      ["Limited", "rgba(185,138,46,0.16)", "#7A5A12", "Some fishing allowed in marked zones or seasons."],
+      ["Open", "rgba(192,65,43,0.13)", "#A8351F", "No fishing restrictions in place."],
+      ["Patrolled", "rgba(14,28,40,0.07)", "#4A5568", "Rules are actively enforced on the water, not just on paper."],
     ],
     link: true,
     anchor: "#reef-state",
@@ -148,11 +148,11 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     title: "What the conservation labels mean",
     sub: "Each animal carries its status from the IUCN Red List, the global standard for extinction risk. It tells you how threatened the species is in the wild.",
     rows: [
-      ["Least concern", "rgba(16,185,129,0.15)", "#6ee7b7", "Widespread and not currently at risk."],
-      ["Near threatened", "rgba(132,204,22,0.15)", "#bef264", "Could become at risk in the near future."],
-      ["Vulnerable", "rgba(245,158,11,0.15)", "#fcd34d", "High risk of extinction in the wild."],
-      ["Endangered", "rgba(244,63,94,0.14)", "#fca5a5", "Very high risk of extinction in the wild."],
-      ["Critically endangered", "rgba(185,28,28,0.2)", "#fca5a5", "Extremely high risk — one step from extinct in the wild."],
+      ["Least concern", "rgba(46,125,91,0.13)", "#216B49", "Widespread and not currently at risk."],
+      ["Near threatened", "rgba(101,163,13,0.16)", "#4D7C0F", "Could become at risk in the near future."],
+      ["Vulnerable", "rgba(185,138,46,0.16)", "#7A5A12", "High risk of extinction in the wild."],
+      ["Endangered", "rgba(192,65,43,0.13)", "#A8351F", "Very high risk of extinction in the wild."],
+      ["Critically endangered", "rgba(153,27,27,0.13)", "#991B1B", "Extremely high risk — one step from extinct in the wild."],
     ],
     link: true,
     anchor: "#sources",
@@ -161,10 +161,10 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     title: "What the conditions mean",
     sub: "A quick read on what to expect underwater. These are typical for the season, not a guarantee on the day — your operator briefs the actual plan.",
     rows: [
-      ["Depth", "rgba(0,212,255,0.12)", "#00d4ff", "The shallow and deep range of the dive. Shallower sites suit newer divers."],
-      ["Current", "rgba(255,255,255,0.08)", "#aebcd0", "How much the water moves you along. Gentle on most reefs, stronger on outer edges."],
-      ["Visibility", "rgba(0,212,255,0.12)", "#00d4ff", "How far you can see underwater. Usually clearest in the calm season."],
-      ["Water", "rgba(245,158,11,0.15)", "#fcd34d", "Temperature range, which sets your wetsuit thickness."],
+      ["Depth", "rgba(14,79,110,0.11)", "#0E4F6E", "The shallow and deep range of the dive. Shallower sites suit newer divers."],
+      ["Current", "rgba(14,28,40,0.07)", "#4A5568", "How much the water moves you along. Gentle on most reefs, stronger on outer edges."],
+      ["Visibility", "rgba(14,79,110,0.11)", "#0E4F6E", "How far you can see underwater. Usually clearest in the calm season."],
+      ["Water", "rgba(185,138,46,0.16)", "#7A5A12", "Temperature range, which sets your wetsuit thickness."],
     ],
   },
   chances: {
@@ -302,7 +302,7 @@ export function AtlasInfoPopup({
       style={{
         position: "fixed",
         inset: 0,
-        background: "rgba(8,15,30,0.5)",
+        background: "rgba(14,28,40,0.45)",
         backdropFilter: "blur(2px)",
         WebkitBackdropFilter: "blur(2px)",
         zIndex: 100,
@@ -318,17 +318,19 @@ export function AtlasInfoPopup({
         aria-modal="true"
         aria-label={entry.title}
         style={{
-          background: "#0a1628",
+          background: "#FFFFFF",
+          border: "1px solid #E7E6E2",
           borderRadius: "1.25rem",
-          maxWidth: 460,
+          maxWidth: 480,
           width: "100%",
           // Cap to the viewport and scroll inside so a tall modal (e.g. the reef
           // labels explainer) never pushes its Close button off a phone screen.
           maxHeight: "calc(100dvh - 3rem)",
           overflowY: "auto",
-          padding: "1.75rem",
-          boxShadow: "0 24px 64px -16px rgba(0,0,0,0.4)",
+          padding: "1.9rem",
+          boxShadow: "0 24px 64px -16px rgba(14,28,40,0.25)",
           position: "relative",
+          fontFamily: "var(--font-sans)",
         }}
       >
         <button
@@ -338,23 +340,60 @@ export function AtlasInfoPopup({
           aria-label="Close"
           style={{
             position: "absolute",
-            top: "1rem",
-            right: "1.1rem",
-            background: "none",
-            border: "none",
-            fontSize: "1.4rem",
-            color: "#8b9db8",
+            top: "1.4rem",
+            right: "1.4rem",
+            width: 34,
+            height: 34,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#FFFFFF",
+            border: "1px solid #E7E6E2",
+            borderRadius: 8,
+            fontSize: "1.25rem",
+            color: "#4A5568",
             cursor: "pointer",
             lineHeight: 1,
           }}
         >
           ×
         </button>
-        <p style={{ fontSize: "1.2rem", fontWeight: 800, color: "#f0f4f8", marginBottom: "0.4rem" }}>
-          {entry.title}
-        </p>
+        <div
+          style={{
+            paddingRight: "2.5rem",
+            paddingBottom: "1.1rem",
+            marginBottom: "1.35rem",
+            borderBottom: "1px solid #E7E6E2",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "11px",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "#8794A5",
+              margin: "0 0 0.55rem",
+            }}
+          >
+            How this works
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "1.7rem",
+              lineHeight: 1.15,
+              color: "#0E1C28",
+              margin: 0,
+            }}
+          >
+            {entry.title}
+          </p>
+        </div>
         {entry.sub && (
-          <p style={{ fontSize: "0.875rem", color: "#8b9db8", marginBottom: "1.25rem", lineHeight: 1.55 }}>
+          <p style={{ fontSize: "0.95rem", color: "#1B2A38", marginBottom: "1.25rem", lineHeight: 1.6 }}>
             {entry.sub}
           </p>
         )}
@@ -362,9 +401,9 @@ export function AtlasInfoPopup({
           <p style={{
             fontSize: "0.95rem",
             fontWeight: 600,
-            color: "#f0f4f8",
-            background: "rgba(255,255,255,0.06)",
-            border: "1px solid rgba(255,255,255,0.12)",
+            color: "#0E1C28",
+            background: "rgba(246,199,0,0.12)",
+            border: "1px solid rgba(246,199,0,0.4)",
             borderRadius: 8,
             padding: "0.65rem 0.85rem",
             margin: "0 0 1.1rem",
@@ -377,8 +416,8 @@ export function AtlasInfoPopup({
           <p
             key={i}
             style={{
-              fontSize: "0.875rem",
-              color: "#aebcd0",
+              fontSize: "0.95rem",
+              color: "#1B2A38",
               lineHeight: 1.65,
               marginBottom: i === (entry.body!.length - 1) ? 0 : "0.8rem",
             }}
@@ -393,7 +432,7 @@ export function AtlasInfoPopup({
               display: "flex",
               gap: "0.75rem",
               padding: "0.8rem 0",
-              borderTop: "1px solid rgba(255,255,255,0.1)",
+              borderTop: "1px solid #E7E6E2",
             }}
           >
             <span
@@ -410,7 +449,7 @@ export function AtlasInfoPopup({
             >
               {row[0]}
             </span>
-            <span style={{ fontSize: "0.8125rem", color: "#aebcd0", lineHeight: 1.5 }}>
+            <span style={{ fontSize: "0.875rem", color: "#4A5568", lineHeight: 1.55 }}>
               {row[3]}
             </span>
           </div>
@@ -418,12 +457,13 @@ export function AtlasInfoPopup({
         {entry.source && (
           <p
             style={{
-              fontSize: "0.75rem",
-              color: "#8b9db8",
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.72rem",
+              color: "#6B7A8D",
               marginTop: "0.9rem",
               paddingTop: "0.8rem",
-              borderTop: "1px solid rgba(255,255,255,0.1)",
-              lineHeight: 1.5,
+              borderTop: "1px solid #E7E6E2",
+              lineHeight: 1.55,
             }}
           >
             {entry.source}
@@ -439,7 +479,7 @@ export function AtlasInfoPopup({
               marginTop: "1rem",
               fontSize: "0.875rem",
               fontWeight: 700,
-              color: "#00d4ff",
+              color: "#0E4F6E",
               textDecoration: "none",
             }}
           >
@@ -451,10 +491,15 @@ export function AtlasInfoPopup({
             href={`/data${entry.anchor ?? ""}`}
             style={{
               display: "inline-block",
-              marginTop: entry.externalHref ? "0.5rem" : "1rem",
-              fontSize: "0.875rem",
+              marginTop: "1.35rem",
+              padding: "0.7rem 1.15rem",
+              background: "#F6C700",
+              color: "#0E1C28",
+              borderRadius: 8,
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.82rem",
               fontWeight: 600,
-              color: "#00d4ff",
+              letterSpacing: "0.01em",
               textDecoration: "none",
             }}
           >
@@ -487,8 +532,8 @@ export function InfoButton({
         width: 15,
         height: 15,
         borderRadius: "50%",
-        border: "1.4px solid #8b9db8",
-        color: "#8b9db8",
+        border: "1.4px solid #4A5568",
+        color: "#4A5568",
         fontSize: "0.62rem",
         fontWeight: 700,
         display: "inline-flex",
