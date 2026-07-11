@@ -7,12 +7,13 @@ import exifr from "exifr";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-type Mode = "sighting" | "survey";
+type Mode = "sighting" | "survey" | "photogrammetry";
 type Category = "fish" | "shark" | "turtle" | "invert" | "other";
 type BleachingScore = "healthy" | "pale" | "bleached" | "dead";
 type WizardStep = 1 | 2 | 3;
 type RoutingCategory = "seahorse" | "whale_dolphin" | "whale_shark" | "coral";
 type SurveyStep = 1 | 2 | 3 | 4;
+type PhotogStep = 1 | 2 | 3;
 
 type CoralWatchEntry = {
   growthForm: string;
@@ -35,6 +36,29 @@ type ReefSurveyData = {
 };
 
 type SurveySubmitResponse = {
+  success?: boolean;
+  queued?: boolean;
+  message?: string;
+  error?: string;
+};
+
+type PhotogrammetryData = {
+  site: SiteOption | null;
+  date: string;
+  depthM: string;
+  cameraModel: string;
+  lensType: string;
+  intervalSeconds: string;
+  altitudeM: string;
+  passCount: string;
+  imageCount: string;
+  areaCoveredM2: string;
+  reefSlope: string;
+  observerEmail: string;
+  notes: string;
+};
+
+type PhotogSubmitResponse = {
   success?: boolean;
   queued?: boolean;
   message?: string;
@@ -1312,6 +1336,23 @@ function ModeSelector({ onSelect }: { onSelect: (mode: Mode) => void }) {
             You used a quadrat frame, transect tape, or CoralWatch chart on the reef.
           </p>
         </button>
+        <button
+          type="button"
+          onClick={() => onSelect("photogrammetry")}
+          className="rounded-sm text-left p-5 transition-colors"
+          style={{
+            border: "1px solid var(--color-hairline)",
+            background: "var(--color-paper)",
+            cursor: "pointer",
+          }}
+        >
+          <p className="text-sm font-bold mb-1" style={{ color: "var(--color-ink)" }}>
+            I mapped the reef in 3D
+          </p>
+          <p className="text-sm" style={{ color: "var(--color-ink-2)" }}>
+            You swam overlapping passes to build a 3D photogrammetry model of the reef.
+          </p>
+        </button>
       </div>
     </div>
   );
@@ -1815,9 +1856,413 @@ function SurveyConfirmation({
   );
 }
 
+// ─── Photogrammetry: equipment gate ───────────────────────────────────────────
+
+const PHOTOG_SPEC_ITEMS = [
+  "A camera with a wide lens",
+  "Interval mode set to one photo every half second",
+  "Room to swim overlapping parallel passes about 1.5 metres above the reef",
+  "A fast memory card with space for hundreds of photos",
+];
+
+function PhotogEquipmentGate({ onProceed, onBack }: { onProceed: () => void; onBack: () => void }) {
+  const [showWhy, setShowWhy] = useState(false);
+
+  return (
+    <div>
+      <h2
+        className="mb-2"
+        style={{
+          fontFamily: "var(--font-serif)",
+          fontWeight: 300,
+          fontStyle: "italic",
+          fontSize: "1.75rem",
+          color: "var(--color-ink)",
+        }}
+        tabIndex={-1}
+        id="step-heading"
+      >
+        Before you start
+      </h2>
+      <p className="mb-6 text-sm" style={{ color: "var(--color-ink-2)" }}>
+        A 3D model needs the reef shot a particular way. Check your gear and method match before you log the pass.
+      </p>
+
+      <ul
+        className="mb-8 space-y-3"
+        style={{ listStyle: "none", padding: 0, margin: "0 0 2rem 0" }}
+      >
+        {PHOTOG_SPEC_ITEMS.map((item) => (
+          <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--color-ink)" }}>
+            <span
+              style={{
+                display: "inline-block",
+                width: 20,
+                height: 20,
+                minWidth: 20,
+                borderRadius: "50%",
+                border: "1.5px solid var(--color-hairline)",
+                marginTop: 1,
+              }}
+            />
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      <div className="flex flex-col gap-3">
+        <PrimaryBtn onClick={onProceed}>My gear matches — start logging</PrimaryBtn>
+        <GhostBtn onClick={() => setShowWhy((v) => !v)}>
+          {showWhy ? "Hide" : "My gear does not match"}
+        </GhostBtn>
+      </div>
+
+      {showWhy && (
+        <div
+          className="mt-4 rounded-sm p-4 text-sm"
+          style={{
+            border: "1px solid var(--color-hairline)",
+            background: "var(--color-paper)",
+            color: "var(--color-ink)",
+          }}
+        >
+          <p className="mb-2 font-medium">This mode needs a photogrammetry pass.</p>
+          <p style={{ color: "var(--color-ink-2)" }}>
+            Without a wide lens, interval shooting, and overlapping passes, the photos cannot be stitched into a 3D model. If you took a single photo of a species or coral, go back and choose the photo option instead. If you ran a quadrat survey, choose the structured survey option.
+          </p>
+        </div>
+      )}
+
+      <button
+        type="button"
+        onClick={onBack}
+        className="mt-6 text-sm"
+        style={{ background: "none", border: "none", cursor: "pointer", color: "var(--color-ink-2)", padding: 0, textDecoration: "underline" }}
+      >
+        Back
+      </button>
+    </div>
+  );
+}
+
+// ─── Photogrammetry step 2: pass metadata ─────────────────────────────────────
+
+const LENS_OPTIONS = ["Wide", "Ultrawide", "Dome"] as const;
+
+function PhotogStep2Metadata({
+  data,
+  setData,
+  onBack,
+  onNext,
+}: {
+  data: PhotogrammetryData;
+  setData: React.Dispatch<React.SetStateAction<PhotogrammetryData>>;
+  onBack: () => void;
+  onNext: () => void;
+}) {
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const field = (key: keyof PhotogrammetryData) => ({
+    value: data[key] as string,
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+      setData((prev) => ({ ...prev, [key]: e.target.value })),
+  });
+
+  const validate = () => {
+    const errs: Record<string, string> = {};
+    if (!data.date) errs.date = "Date is required.";
+    if (!data.depthM || isNaN(Number(data.depthM))) errs.depthM = "Enter a valid depth.";
+    if (!data.observerEmail.trim()) errs.observerEmail = "Observer email is required.";
+    return errs;
+  };
+
+  const handleNext = () => {
+    const errs = validate();
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    onNext();
+  };
+
+  const labelStyle = {
+    fontFamily: "var(--font-mono)",
+    fontSize: 11,
+    textTransform: "uppercase" as const,
+    letterSpacing: "0.08em",
+    color: "var(--color-ink-2)",
+    display: "block",
+    marginBottom: 4,
+  };
+  const inputStyle = {
+    border: "1px solid var(--color-hairline)",
+    outline: "none",
+    color: "var(--color-ink)",
+    background: "var(--color-paper)",
+    width: "100%",
+    borderRadius: 2,
+    padding: "0.75rem 1rem",
+    fontFamily: "var(--font-sans)",
+    fontSize: "1rem",
+  };
+
+  return (
+    <div>
+      <h2
+        className="mb-2"
+        style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontStyle: "italic", fontSize: "1.75rem", color: "var(--color-ink)" }}
+        tabIndex={-1}
+        id="step-heading"
+      >
+        Pass details
+      </h2>
+      <p className="mb-6 text-sm" style={{ color: "var(--color-ink-2)" }}>
+        These describe the pass so Wildflow can turn it into a 3D model. Fill them in before you forget the numbers from the dive.
+      </p>
+
+      <div className="space-y-4">
+        <div>
+          <label style={labelStyle}>Date</label>
+          <input type="date" style={inputStyle} {...field("date")} />
+          {errors.date && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.date}</p>}
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label style={labelStyle}>Depth (m)</label>
+            <input type="number" min="0" max="200" step="0.5" placeholder="e.g. 8" style={inputStyle} {...field("depthM")} />
+            {errors.depthM && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.depthM}</p>}
+          </div>
+          <div>
+            <label style={labelStyle}>Camera model (optional)</label>
+            <input type="text" placeholder="e.g. wide action camera" style={inputStyle} {...field("cameraModel")} />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-3">
+          <div>
+            <label style={labelStyle}>Lens</label>
+            <select
+              value={data.lensType}
+              onChange={(e) => setData((prev) => ({ ...prev, lensType: e.target.value }))}
+              style={{ ...inputStyle, appearance: "none" }}
+            >
+              {LENS_OPTIONS.map((o) => (
+                <option key={o} value={o}>{o}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label style={labelStyle}>Interval (s)</label>
+            <input type="number" min="0.1" max="5" step="0.1" placeholder="0.5" style={inputStyle} {...field("intervalSeconds")} />
+          </div>
+          <div>
+            <label style={labelStyle}>Altitude (m)</label>
+            <input type="number" min="0.1" max="10" step="0.1" placeholder="1.5" style={inputStyle} {...field("altitudeM")} />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-3">
+          <div>
+            <label style={labelStyle}>Passes (optional)</label>
+            <input type="number" min="1" max="500" step="1" placeholder="e.g. 6" style={inputStyle} {...field("passCount")} />
+          </div>
+          <div>
+            <label style={labelStyle}>Image count (optional)</label>
+            <input type="number" min="1" max="100000" step="1" placeholder="e.g. 800" style={inputStyle} {...field("imageCount")} />
+          </div>
+          <div>
+            <label style={labelStyle}>Area (m²) (optional)</label>
+            <input type="number" min="1" max="100000" step="1" placeholder="e.g. 400" style={inputStyle} {...field("areaCoveredM2")} />
+          </div>
+        </div>
+
+        <div>
+          <label style={labelStyle}>Reef slope (optional)</label>
+          <select
+            value={data.reefSlope}
+            onChange={(e) => setData((prev) => ({ ...prev, reefSlope: e.target.value }))}
+            style={{ ...inputStyle, appearance: "none" }}
+          >
+            {REEF_SLOPE_OPTIONS.map((o) => (
+              <option key={o} value={o}>{o || "— not specified —"}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label style={labelStyle}>Observer email</label>
+          <input type="email" placeholder="e.g. you@example.com" style={inputStyle} {...field("observerEmail")} />
+          <p className="text-xs mt-1" style={{ color: "var(--color-ink-2)" }}>
+            Required so we can send you where to upload your image set.
+          </p>
+          {errors.observerEmail && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.observerEmail}</p>}
+        </div>
+
+        <div>
+          <label style={labelStyle}>Notes (optional)</label>
+          <textarea
+            rows={3}
+            placeholder="Visibility, current, coverage gaps..."
+            value={data.notes}
+            onChange={(e) => setData((prev) => ({ ...prev, notes: e.target.value }))}
+            style={{ ...inputStyle, resize: "vertical" }}
+          />
+        </div>
+      </div>
+
+      <div className="flex gap-3 flex-wrap mt-6">
+        <GhostBtn onClick={onBack}>Back</GhostBtn>
+        <PrimaryBtn onClick={handleNext}>Continue</PrimaryBtn>
+      </div>
+    </div>
+  );
+}
+
+// ─── Photogrammetry step 3: review + submit ───────────────────────────────────
+
+function PhotogStep3Submit({
+  data,
+  onBack,
+  onSuccess,
+}: {
+  data: PhotogrammetryData;
+  onBack: () => void;
+  onSuccess: (res: PhotogSubmitResponse) => void;
+}) {
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    setErrorMsg(null);
+    try {
+      const body: Record<string, string> = {
+        siteId: data.site?.id ?? "unknown",
+        siteName: data.site?.name ?? "Not specified",
+        siteLat: String(data.site?.lat ?? 0),
+        siteLng: String(data.site?.lng ?? 0),
+        date: data.date,
+        depthM: data.depthM,
+        observerEmail: data.observerEmail,
+      };
+      // Optional fields: include only when non-empty so the outbox stays minimal.
+      const optional: Array<[keyof PhotogrammetryData, string]> = [
+        ["cameraModel", data.cameraModel],
+        ["lensType", data.lensType],
+        ["intervalSeconds", data.intervalSeconds],
+        ["altitudeM", data.altitudeM],
+        ["passCount", data.passCount],
+        ["imageCount", data.imageCount],
+        ["areaCoveredM2", data.areaCoveredM2],
+        ["reefSlope", data.reefSlope],
+        ["notes", data.notes],
+      ];
+      for (const [key, value] of optional) {
+        if (value && value.trim()) body[key] = value.trim();
+      }
+      const res = await fetch("/api/submit-photogrammetry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const json = (await res.json()) as PhotogSubmitResponse;
+      if (!res.ok) {
+        setErrorMsg(json.error ?? json.message ?? "Submission failed. Please try again.");
+      } else {
+        onSuccess(json);
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const dt = (label: string, value: string) => (
+    <div className="flex gap-2">
+      <dt style={{ color: "var(--color-ink-2)", minWidth: 110, fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</dt>
+      <dd style={{ color: "var(--color-ink)" }}>{value}</dd>
+    </div>
+  );
+
+  return (
+    <div>
+      <h2
+        className="mb-6"
+        style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontStyle: "italic", fontSize: "1.75rem", color: "var(--color-ink)" }}
+        tabIndex={-1}
+        id="step-heading"
+      >
+        Review and submit
+      </h2>
+
+      <div className="rounded-sm p-4 mb-6" style={{ border: "1px solid var(--color-hairline)", background: "var(--color-paper)" }}>
+        <dl className="space-y-2 text-sm">
+          {dt("Site", data.site?.name ?? "Not specified")}
+          {dt("Date", data.date)}
+          {dt("Depth", `${data.depthM} m`)}
+          {data.lensType && dt("Lens", data.lensType)}
+          {data.intervalSeconds && dt("Interval", `${data.intervalSeconds} s`)}
+          {data.altitudeM && dt("Altitude", `${data.altitudeM} m`)}
+          {data.passCount && dt("Passes", data.passCount)}
+          {data.imageCount && dt("Images", data.imageCount)}
+          {data.reefSlope && dt("Reef slope", data.reefSlope)}
+          {dt("Observer", data.observerEmail)}
+        </dl>
+      </div>
+
+      <div className="mb-6">
+        <p className="mb-3" style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)" }}>
+          Routing to
+        </p>
+        <ul className="space-y-1 text-sm" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          <li style={{ color: "var(--color-ink)" }}>Wildflow (queued for routing)</li>
+        </ul>
+      </div>
+
+      <div
+        className="rounded-sm p-4 mb-6 text-sm"
+        style={{ background: "rgba(14,28,40,0.03)", border: "1px solid var(--color-hairline)", color: "var(--color-ink-2)" }}
+      >
+        We route these pass details to Wildflow for you. Your image set is hundreds of photos, so it goes to Wildflow directly rather than through us. We will be in touch with where to send it.
+      </div>
+
+      {errorMsg && <p className="mb-4 text-sm" style={{ color: "var(--color-declining)" }}>{errorMsg}</p>}
+
+      <div className="flex gap-3 flex-wrap">
+        <GhostBtn onClick={onBack} disabled={loading}>Back</GhostBtn>
+        <PrimaryBtn onClick={handleSubmit} loading={loading}>Submit pass</PrimaryBtn>
+      </div>
+    </div>
+  );
+}
+
+// ─── Photogrammetry confirmation ──────────────────────────────────────────────
+
+function PhotogConfirmation({ onAnother }: { onAnother: () => void }) {
+  return (
+    <div>
+      <h2
+        className="mb-4"
+        style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontStyle: "italic", fontSize: "1.875rem", color: "var(--color-ink)" }}
+      >
+        Pass logged.
+      </h2>
+      <p className="text-sm mb-4" style={{ color: "var(--color-ink-2)" }}>
+        Your pass details have been recorded and we are routing them to Wildflow on your behalf. Josie has been alerted.
+      </p>
+      <p className="text-sm mb-6" style={{ color: "var(--color-ink-2)" }}>
+        Your image set goes to Wildflow directly, because a pass is hundreds of photos. We will be in touch with where to send it.
+      </p>
+      <div className="mt-4">
+        <GhostBtn onClick={onAnother}>Submit another pass</GhostBtn>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main wizard (inner — reads search params) ────────────────────────────────
 
 const SURVEY_STEP_LABELS = ["Dive site", "Survey details", "CoralWatch", "Submit"];
+const PHOTOG_STEP_LABELS = ["Dive site", "Pass details", "Submit"];
 
 function UploadWizardInner() {
   const searchParams = useSearchParams();
@@ -1874,6 +2319,30 @@ function UploadWizardInner() {
   });
   const [surveyResponse, setSurveyResponse] = useState<SurveySubmitResponse | null>(null);
 
+  // Photogrammetry mode state
+  const [photogStep, setPhotogStep] = useState<PhotogStep>(1);
+  const [photogData, setPhotogData] = useState<PhotogrammetryData>(() => {
+    const prefilled = prefilledSlug
+      ? ALL_SITES.find((s) => s.slug === prefilledSlug || s.id === prefilledSlug) ?? null
+      : null;
+    return {
+      site: prefilled,
+      date: todayIso(),
+      depthM: "",
+      cameraModel: "",
+      lensType: "Wide",
+      intervalSeconds: "0.5",
+      altitudeM: "1.5",
+      passCount: "",
+      imageCount: "",
+      areaCoveredM2: "",
+      reefSlope: "",
+      observerEmail: "",
+      notes: "",
+    };
+  });
+  const [photogResponse, setPhotogResponse] = useState<PhotogSubmitResponse | null>(null);
+
   // Auto-advance to step 2 if site was pre-filled from URL (sighting mode)
   useEffect(() => {
     if (prefilledSlug && formData.site) {
@@ -1892,6 +2361,7 @@ function UploadWizardInner() {
 
   const goToStep = (s: WizardStep) => { setStep(s); focusHeading(); };
   const goToSurveyStep = (s: SurveyStep) => { setSurveyStep(s); focusHeading(); };
+  const goToPhotogStep = (s: PhotogStep) => { setPhotogStep(s); focusHeading(); };
 
   const handleAnother = () => {
     setFormData((prev) => ({
@@ -1932,6 +2402,28 @@ function UploadWizardInner() {
     setShowEquipmentGate(false);
   };
 
+  const handlePhotogAnother = () => {
+    setPhotogData((prev) => ({
+      site: prev.site,
+      date: todayIso(),
+      depthM: "",
+      cameraModel: "",
+      lensType: "Wide",
+      intervalSeconds: "0.5",
+      altitudeM: "1.5",
+      passCount: "",
+      imageCount: "",
+      areaCoveredM2: "",
+      reefSlope: "",
+      observerEmail: prev.observerEmail,
+      notes: "",
+    }));
+    setPhotogResponse(null);
+    setPhotogStep(1);
+    setMode(null);
+    setShowEquipmentGate(false);
+  };
+
   // Mode not yet chosen
   if (mode === null) {
     return (
@@ -1939,7 +2431,7 @@ function UploadWizardInner() {
         <ModeSelector
           onSelect={(m) => {
             setMode(m);
-            if (m === "survey") {
+            if (m === "survey" || m === "photogrammetry") {
               setShowEquipmentGate(true);
             }
             focusHeading();
@@ -1954,6 +2446,18 @@ function UploadWizardInner() {
     return (
       <div ref={headingRef as React.RefObject<HTMLDivElement>}>
         <EquipmentGate
+          onProceed={() => { setShowEquipmentGate(false); focusHeading(); }}
+          onBack={() => { setMode(null); setShowEquipmentGate(false); focusHeading(); }}
+        />
+      </div>
+    );
+  }
+
+  // Equipment gate for photogrammetry mode
+  if (mode === "photogrammetry" && showEquipmentGate) {
+    return (
+      <div ref={headingRef as React.RefObject<HTMLDivElement>}>
+        <PhotogEquipmentGate
           onProceed={() => { setShowEquipmentGate(false); focusHeading(); }}
           onBack={() => { setMode(null); setShowEquipmentGate(false); focusHeading(); }}
         />
@@ -2035,6 +2539,78 @@ function UploadWizardInner() {
             data={surveyData}
             onBack={() => goToSurveyStep(3)}
             onSuccess={(res) => { setSurveyResponse(res); focusHeading(); }}
+          />
+        )}
+      </div>
+    );
+  }
+
+  // ── Photogrammetry mode ─────────────────────────────────────────────────────
+  if (mode === "photogrammetry") {
+    if (photogResponse) {
+      return (
+        <div ref={headingRef as React.RefObject<HTMLDivElement>}>
+          <PhotogConfirmation onAnother={handlePhotogAnother} />
+        </div>
+      );
+    }
+    return (
+      <div ref={headingRef as React.RefObject<HTMLDivElement>}>
+        <div className="mb-8">
+          <div className="flex items-center">
+            {PHOTOG_STEP_LABELS.map((label, i) => {
+              const stepNum = (i + 1) as PhotogStep;
+              const completed = photogStep > stepNum;
+              const active = photogStep === stepNum;
+              return (
+                <div key={label} className="flex items-center flex-1 last:flex-none">
+                  <div className="flex flex-col items-center">
+                    <div
+                      className="w-7 h-7 rounded-full flex items-center justify-center text-sm font-mono transition-colors"
+                      style={{
+                        background: completed ? "var(--color-ink)" : active ? "var(--color-brand-yellow)" : "var(--color-paper)",
+                        color: completed ? "var(--color-paper)" : active ? "var(--color-ink)" : "var(--color-ink-2)",
+                        border: completed || active ? "none" : "1px solid var(--color-hairline)",
+                        minWidth: 28,
+                        minHeight: 28,
+                      }}
+                    >
+                      {completed ? "✓" : stepNum}
+                    </div>
+                    <span className="mt-1 text-center" style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)", whiteSpace: "nowrap" }}>
+                      {label}
+                    </span>
+                  </div>
+                  {i < PHOTOG_STEP_LABELS.length - 1 && (
+                    <div className="flex-1 mx-2 transition-colors" style={{ height: 1, background: completed ? "var(--color-ink)" : "var(--color-hairline)", marginBottom: 18 }} />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {photogStep === 1 && (
+          <Step1SiteSearch
+            formData={{ ...formData, site: photogData.site }}
+            onSelectSite={(site) => setPhotogData((prev) => ({ ...prev, site }))}
+            onSkip={() => goToPhotogStep(2)}
+            onNext={() => goToPhotogStep(2)}
+          />
+        )}
+        {photogStep === 2 && (
+          <PhotogStep2Metadata
+            data={photogData}
+            setData={setPhotogData}
+            onBack={() => goToPhotogStep(1)}
+            onNext={() => goToPhotogStep(3)}
+          />
+        )}
+        {photogStep === 3 && (
+          <PhotogStep3Submit
+            data={photogData}
+            onBack={() => goToPhotogStep(2)}
+            onSuccess={(res) => { setPhotogResponse(res); focusHeading(); }}
           />
         )}
       </div>

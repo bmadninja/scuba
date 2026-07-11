@@ -54,3 +54,15 @@ All forks, taste calls, and deviations logged here. Append; never overwrite.
 | 48 | CoralWatch claim removed from species sighting platform list | The old upload wizard listed CoralWatch as a destination for species sightings. It was never true — CoralWatch receives bleaching data, not species observations. Removed to fix a false claim. |
 | 49 | /learn capture formats: 5 cards (iNat / CoralWatch / MERMAID / Wildflow 3D / Reef Check) replacing single GoPro walkthrough | Old section conflated 3D photogrammetry with the other capture formats and implied GoPro was required. New section separates each platform with its own method, spec, and camera requirement (or lack thereof). |
 | 50 | Wildflow credit corrected: method = Bayley & Mogg (2020, Methods Ecol Evol) + AIMS EcoRRAP (Gordon, Figueira et al. 2023) | Wildflow applies and documents the method but did not invent it. Claiming otherwise would be inaccurate in a grant context. GoPro requirement removed; any wide-lens camera with interval shooting qualifies. |
+
+
+---
+
+# Autonomous build decisions — Wildflow photogrammetry (2026-07-10)
+
+- **Worktree off origin/main.** Main working tree had 7 CI commits + 113 modified + 415 untracked files; built in an isolated worktree so the PR contains only the feature. Node_modules APFS-cloned.
+- **Story 1.5 gitignore already satisfied.** origin/main (#71) added `/src/data/*-queue.json` to .gitignore, which auto-covers photogrammetry-queue.json. No new gitignore entry needed; verified with git check-ignore.
+- **Site optional (FR3).** Mirrored survey mode: client sends fallback siteId "unknown" / siteName "Not specified" / lat,lng "0" when skipped, so the Zod min(1) holds. Logged rather than making site required.
+- **Optional fields omitted when empty.** Client includes optional numeric fields in the POST body only when non-empty, so the transient outbox stays minimal (FR7) and empty strings never hit the regex validators.
+- **Equipment-gate decline path (FR2).** "My gear does not match" reveals an explanation and does NOT advance; only "My gear matches" proceeds. Honest gate, not a soft confirm.
+- **No image destination shown (FR6).** Confirmation is a soft "we will be in touch with where to send it" — no URL/email, because Wildflow intake is unconfirmed. Honesty fork: chose not to imply a path that does not exist.
