@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { resizePhotoUrl } from "@/lib/photo-quality";
@@ -29,6 +29,7 @@ export type SpeciesCard = {
   dotColor: string;
   iucnLabel: string | null;
   iucnBadge: { bg: string; color: string } | null;
+  siteName: string | null;
 };
 
 export type SiteRow = {
@@ -258,6 +259,22 @@ const SECTION_CARD: React.CSSProperties = {
   background: "#FFFFFF",
 };
 
+const SPECIES_ARROW: React.CSSProperties = {
+  position: "absolute",
+  top: "48px",
+  width: "32px",
+  height: "32px",
+  borderRadius: "50%",
+  border: "1px solid #E7E6E2",
+  background: "#FFFFFF",
+  boxShadow: "0 1px 4px rgba(14,28,40,0.12)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  padding: 0,
+};
+
 const DATA_FRESHNESS: React.CSSProperties = {
   fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
   fontSize: "11px",
@@ -361,7 +378,11 @@ function MetricLabel({ children }: { children: React.ReactNode }) {
 export function LocationPageBody(props: LocationBodyProps) {
   const [info, setInfo] = useState<InfoKey | null>(null);
   const [showAllSites, setShowAllSites] = useState(false);
-  const [showAllSpecies, setShowAllSpecies] = useState(false);
+  const speciesScrollRef = useRef<HTMLDivElement>(null);
+  const scrollSpecies = (dir: -1 | 1) => {
+    const el = speciesScrollRef.current;
+    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
+  };
   const [showAllOperators, setShowAllOperators] = useState(false);
 
   const {
@@ -407,13 +428,13 @@ export function LocationPageBody(props: LocationBodyProps) {
         className="location-body-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 360px",
+          gridTemplateColumns: "minmax(0, 1fr) 360px",
           gap: "4rem",
           alignItems: "start",
         }}
       >
         {/* ============================ LEFT ============================ */}
-        <div>
+        <div style={{ minWidth: 0 }}>
           {/* INTRO */}
           {intro ? (
             <div style={{ marginBottom: "3rem" }}>
@@ -525,14 +546,31 @@ export function LocationPageBody(props: LocationBodyProps) {
                   <InfoButton onClick={() => setInfo("iucn")} label="What the conservation labels mean" />
                 </span>
               </h2>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.75rem" }}>
-                {(showAllSpecies ? species : species.slice(0, 3)).map((sp) => {
+              {species.length > 1 ? (
+                <p style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", color: "#4A5568", margin: "-0.5rem 0 0.75rem" }}>
+                  {species.length} species across the dive sites here
+                </p>
+              ) : null}
+              <div style={{ position: "relative" }}>
+                <div
+                  ref={speciesScrollRef}
+                  className="species-scroller"
+                  style={{
+                    display: "flex",
+                    gap: "0.75rem",
+                    overflowX: "auto",
+                    scrollSnapType: "x mandatory",
+                    WebkitOverflowScrolling: "touch",
+                  }}
+                >
+                {species.map((sp) => {
                   const Card = sp.href ? Link : "div";
                   return (
                     <Card
                       key={sp.key}
                       // @ts-expect-error polymorphic href
                       href={sp.href ?? undefined}
+                      className={sp.href ? "site-row-link" : undefined}
                       style={{
                         border: "1px solid #E7E6E2",
                         borderRadius: "8px",
@@ -542,6 +580,8 @@ export function LocationPageBody(props: LocationBodyProps) {
                         display: "flex",
                         flexDirection: "column",
                         background: "#FFFFFF",
+                        flex: "0 0 185px",
+                        scrollSnapAlign: "start",
                       }}
                     >
                       {sp.imageUrl ? (
@@ -560,6 +600,11 @@ export function LocationPageBody(props: LocationBodyProps) {
                           <span aria-hidden="true" style={{ width: 5, height: 5, borderRadius: "50%", background: sp.dotColor, flexShrink: 0 }} />
                           {sp.seenText}
                         </p>
+                        {sp.siteName ? (
+                          <p style={{ fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", color: "#4A5568", marginBottom: "0.3rem", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                            at {sp.siteName}
+                          </p>
+                        ) : null}
                         {sp.iucnBadge && sp.iucnLabel ? (
                           <p style={{ margin: 0 }}>
                             <span style={{
@@ -581,15 +626,30 @@ export function LocationPageBody(props: LocationBodyProps) {
                     </Card>
                   );
                 })}
+                </div>
+                {species.length > 3 ? (
+                  <>
+                    <button
+                      type="button"
+                      aria-label="Scroll species left"
+                      className="species-arrow"
+                      onClick={() => scrollSpecies(-1)}
+                      style={{ ...SPECIES_ARROW, left: "-14px" }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="#0E1C28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="Scroll species right"
+                      className="species-arrow"
+                      onClick={() => scrollSpecies(1)}
+                      style={{ ...SPECIES_ARROW, right: "-14px" }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="#0E1C28" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </button>
+                  </>
+                ) : null}
               </div>
-              {species.length > 3 && !showAllSpecies ? (
-                <button
-                  onClick={() => setShowAllSpecies(true)}
-                  style={{ marginTop: "0.75rem", background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace', fontSize: "11px", fontWeight: 500, letterSpacing: "0.08em", color: "#4A5568", textDecoration: "underline" }}
-                >
-                  Show all {species.length} species
-                </button>
-              ) : null}
             </section>
           ) : null}
 
@@ -993,6 +1053,12 @@ export function LocationPageBody(props: LocationBodyProps) {
         .trip-expand summary::-webkit-details-marker { display: none; }
         .site-row-link:hover { border-color: #0E1C28 !important; }
         .site-row-link:focus-visible { outline: 2px solid #F6C700; outline-offset: 2px; }
+        .species-scroller { scrollbar-width: none; }
+        .species-scroller::-webkit-scrollbar { display: none; }
+        .species-arrow:hover { border-color: #0E1C28 !important; }
+        @media (max-width: 768px) {
+          .species-arrow { display: none !important; }
+        }
         .quotes-grid figure:last-child:nth-child(odd) { grid-column: 1 / -1; }
         @media (max-width: 1024px) {
           .location-body-grid { grid-template-columns: 1fr !important; }
