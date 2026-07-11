@@ -297,7 +297,7 @@ export default function DataPage() {
           {tocLink("#rs-confidence", "How sure we are", "sub")}
           {tocLink("#sightings", "Sightings", "group")}
           {tocLink("#si-chances", "Your chances", "sub")}
-          {tocLink("#si-verify", "How we verify", "sub")}
+          {tocLink("#si-verify", "How a sighting is confirmed", "sub")}
           {tocLink("#si-labels", "Conservation labels", "sub")}
           {tocLink("#divers", "For divers", "group")}
           {tocLink("#researchers", "For researchers", "group")}
@@ -786,10 +786,12 @@ export default function DataPage() {
               id="si-verify"
               style={{ marginTop: "2.5rem", scrollMarginTop: "5rem" }}
             >
-              <h3 style={subHStyle}>How we verify a sighting</h3>
+              <h3 style={subHStyle}>How a sighting is confirmed</h3>
               <p style={subPStyle}>
-                Every sighting starts as a real photograph and is checked before
-                we count it.
+                We do not verify sightings ourselves. Every sighting starts as a
+                real diver photograph, the iNaturalist community confirms the
+                species to research grade, and we show only the ones that clear
+                that bar.
               </p>
               <div
                 className="method-pipe"
