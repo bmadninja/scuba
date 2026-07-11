@@ -577948,4 +577948,217 @@
     "siteSpecificGear": [],
     "notes": "Diving inside Kornati National Park requires a permit and a licensed operator. The wall is deep and best suited to experienced divers; plan depth and gas carefully."
   }
+,
+  {
+    "id": "silfra-iceland-davidsgja",
+    "slug": "silfra-iceland-davidsgja",
+    "locationId": "silfra-iceland",
+    "name": "Davíðsgjá Fissure",
+    "heroImageUrl": null,
+    "lat": 64.29,
+    "lng": -21.07,
+    "description": "A dramatic, lesser-known fissure hidden within Lake Thingvallavatn, Davíðsgjá diverges between tectonic plates with branching narrow passages and towering gorge walls. Crystal-clear glacial waters reveal 100+ meters of visibility in an intimate geological cathedral.",
+    "depthRange": {
+      "min": 8,
+      "max": 21
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology",
+      "cave"
+    ],
+    "species": [
+      {
+        "commonName": "Brown trout",
+        "scientificName": "Salmo trutta",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Arctic char",
+        "scientificName": "Salvelinus alpinus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Three-spined stickleback",
+        "scientificName": "Gasterosteus aculeatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Freshwater amphipod",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 50,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit with hood"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 50,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit with hood"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 70,
+          "max": 100
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit with hood"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 80,
+          "max": 110
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 90,
+          "max": 120
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 3,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 95,
+          "max": 130
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm full drysuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 3,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 95,
+          "max": 130
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm full drysuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 3,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 90,
+          "max": 125
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm full drysuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 80,
+          "max": 110
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 70,
+          "max": 100
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 60,
+          "max": 90
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit with hood"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 2,
+          "max": 4
+        },
+        "visibilityM": {
+          "min": 50,
+          "max": 80
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full drysuit with hood"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 72,
+    "getThere": "45 km northeast of Reykjavik via Route 1 and Route 36 into Thingvellir National Park. International flights to Keflavik (KEF), 50 minutes transfer. Located on Lake Thingvallavatn's north shore.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Requires PADI Open Water minimum plus 10 logged dry suit dives. Physically demanding entry over lava terrain with full equipment. Weather-dependent in winter (Nov-Mar). Often combined with Silfra for comprehensive rift diving experience."
+  }
 ]
