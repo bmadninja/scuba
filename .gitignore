@@ -67,3 +67,11 @@ Josie_Leung_CV_NatGeo.pdf
 
 # MPAtlas licensed export (non-commercial, attribution) — do not commit
 data/external/
+
+# Storeless conduit: routing outboxes are transient, NOT storage.
+# Never commit diver observation data (site coords, dates, coral readings,
+# observer email PII) to this public repo. The API recreates these on write.
+/src/data/reef-survey-queue.json
+/src/data/coralwatch-queue.json
+/src/data/failed-submissions.json
+/src/data/*-queue.json
