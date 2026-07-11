@@ -118,38 +118,6 @@ const DECLINING = "var(--color-declining)";
 const mono = "var(--font-mono), 'IBM Plex Mono', monospace";
 const serif = "var(--font-serif), 'Source Serif 4', Georgia, serif";
 
-function code(text: string) {
-  return (
-    <code
-      style={{
-        fontFamily: mono,
-        fontSize: "0.9em",
-        background: "rgba(14,28,40,0.07)",
-        padding: "0.05rem 0.3rem",
-        borderRadius: 4,
-        color: INK,
-      }}
-    >
-      {text}
-    </code>
-  );
-}
-
-function Conj({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      style={{
-        fontSize: "0.6875rem",
-        fontWeight: 700,
-        letterSpacing: "0.06em",
-        color: INK2,
-      }}
-    >
-      {children}
-    </span>
-  );
-}
-
 export default function DataPage() {
   const sourceMap = new Map((sourcesData as Source[]).map((s) => [s.id, s]));
   const totalSources = getExternalSourceCount();
@@ -186,22 +154,6 @@ export default function DataPage() {
     marginBottom: "1rem",
     maxWidth: 660,
   };
-  const stepTagStyle: React.CSSProperties = {
-    fontFamily: mono,
-    fontSize: "0.5875rem",
-    fontWeight: 700,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    color: INK,
-    marginBottom: "0.35rem",
-  };
-  const stepBodyStyle: React.CSSProperties = {
-    fontSize: "0.8125rem",
-    lineHeight: 1.6,
-    color: INK2,
-    margin: 0,
-  };
-
   const tocLink = (
     href: string,
     label: string,
@@ -327,107 +279,10 @@ export default function DataPage() {
             >
               <h3 style={subHStyle}>1 honest label per reef</h3>
               <p style={subPStyle}>
-                Here is exactly what happens, step by step, from the raw readings
-                to the label you see on the reef.
+                Every reading behind these words comes from marine science groups
+                surveying the reef in the water, not from us. Here is what each
+                word means.
               </p>
-              <div
-                style={{
-                  border: `1px solid ${HAIRLINE}`,
-                  borderRadius: "0.85rem",
-                  padding: "1.15rem 1.15rem 1.25rem",
-                  background: PAPER,
-                  margin: "1.25rem 0 1.5rem",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: mono,
-                    fontSize: "0.5875rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    color: INK2,
-                    marginBottom: "0.9rem",
-                  }}
-                >
-                  How the label is built
-                </p>
-                <ol
-                  style={{
-                    listStyle: "none",
-                    margin: 0,
-                    padding: 0,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "1rem",
-                  }}
-                >
-                  <li>
-                    <p style={stepTagStyle}>Step 1 — where the numbers come from</p>
-                    <p style={stepBodyStyle}>
-                      <b style={{ color: INK }}>
-                        The readings come from marine science groups, not from us.
-                      </b>{" "}
-                      Coral cover comes from divers and scientists surveying reefs
-                      in the water (Reef Check, AIMS, GCRMN and partners). Fish
-                      life comes from Reef Life Survey. Heat comes from NOAA Coral
-                      Reef Watch. Fishing comes from satellite tracking. We do not
-                      run our own boats or labs. Turning those readings into a
-                      level and a single word is our own reading, not an official
-                      rating any group publishes.
-                    </p>
-                  </li>
-                  <li>
-                    <p style={stepTagStyle}>Step 2 — coral cover becomes a level from 1 to 5</p>
-                    <p style={stepBodyStyle}>
-                      <b style={{ color: INK }}>Coral cover</b> is the share of the
-                      seabed that is living coral, rather than sand, rubble or dead
-                      rock. So 40% means 40% of the reef floor is live coral, and
-                      the more live coral there is, the higher the level.
-                    </p>
-                  </li>
-                  <li>
-                    <p style={stepTagStyle}>Step 3 — fish life becomes a level from 1 to 5</p>
-                    <p style={stepBodyStyle}>
-                      <b style={{ color: INK }}>Fish life</b> is how much fish
-                      weight the reef carries on a standard swim, measured against
-                      what a barely fished reef of the same type could hold. We
-                      write it as a share of that full amount, where 1.0 is
-                      everything the reef could hold. So 0.75 means the reef still
-                      holds about three quarters of the fish it could, and the
-                      fuller the reef, the higher the level.
-                    </p>
-                  </li>
-                  <li>
-                    <p style={stepTagStyle}>Step 4 — we take the lower of the two</p>
-                    <p style={stepBodyStyle}>
-                      A reef is only as healthy as its thinnest part, so the weaker
-                      of the coral level and the fish level sets the starting point.
-                    </p>
-                  </li>
-                  <li>
-                    <p style={stepTagStyle}>Step 5 — heat and fishing can move it</p>
-                    <p style={stepBodyStyle}>
-                      <b style={{ color: INK }}>Heat stress</b> (the NOAA bleaching
-                      alert) and <b style={{ color: INK }}>fishing pressure</b> do
-                      not set the label on their own, but they can move it. Heavy
-                      fishing holds a reef back from Improving, and a serious heat
-                      alert pushes it to Declining, because that is damage
-                      happening right now. Strong protection and calm water let a
-                      reef hold or recover.
-                    </p>
-                  </li>
-                  <li>
-                    <p style={stepTagStyle}>Step 6 — that gives one plain word</p>
-                    <p style={stepBodyStyle}>
-                      The result is Improving, Stable or Declining, each shown
-                      below with the exact rule that produces it. When there is no
-                      reef survey and no heat reading yet, we do not guess: the
-                      reef is Not surveyed.
-                    </p>
-                  </li>
-                </ol>
-              </div>
 
               <div className="method-state-cards">
                 {/* Thriving */}
@@ -454,56 +309,6 @@ export default function DataPage() {
                     Near its natural baseline and steady. Recovering or healthy,
                     not perfect or untouched.
                   </p>
-                  <div
-                    style={{
-                      marginTop: "0.9rem",
-                      paddingTop: "0.85rem",
-                      borderTop: `1px solid ${HAIRLINE}`,
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontFamily: mono,
-                        fontSize: "0.5875rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: INK2,
-                        marginBottom: "0.35rem",
-                      }}
-                    >
-                      The rule
-                    </p>
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        margin: "0.45rem 0 0",
-                        padding: 0,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "0.35rem",
-                      }}
-                    >
-                      <li style={condLi}>
-                        <span style={condDot} aria-hidden="true" />
-                        Coral cover {code("40% or more")} (or not yet surveyed){" "}
-                        <Conj>AND</Conj>
-                      </li>
-                      <li style={condLi}>
-                        <span style={condDot} aria-hidden="true" />
-                        Fish life at {code("level 4 or 5")} (or not yet surveyed){" "}
-                        <Conj>AND</Conj>
-                      </li>
-                      <li style={condLi}>
-                        <span style={condDot} aria-hidden="true" />
-                        Heat no worse than {code("Watch")} <Conj>AND</Conj>
-                      </li>
-                      <li style={condLi}>
-                        <span style={condDot} aria-hidden="true" />
-                        Fishing {code("low")} or the reef fully protected, and nothing measurably falling
-                      </li>
-                    </ul>
-                  </div>
                 </div>
 
                 {/* Under pressure */}
@@ -530,30 +335,6 @@ export default function DataPage() {
                     Below its baseline or slipping, from heat or fishing, but the
                     reef structure and fish life still hold.
                   </p>
-                  <div
-                    style={{
-                      marginTop: "0.9rem",
-                      paddingTop: "0.85rem",
-                      borderTop: `1px solid ${HAIRLINE}`,
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontFamily: mono,
-                        fontSize: "0.5875rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: INK2,
-                        marginBottom: "0.35rem",
-                      }}
-                    >
-                      The rule
-                    </p>
-                    <p style={{ fontSize: "0.8125rem", lineHeight: 1.6, color: INK2 }}>
-                      Everything between the other 2.
-                    </p>
-                  </div>
                 </div>
 
                 {/* Witnessing change */}
@@ -580,50 +361,6 @@ export default function DataPage() {
                     Heavy recent loss or bleaching. Diving here is a chance to
                     document what remains, not a write off.
                   </p>
-                  <div
-                    style={{
-                      marginTop: "0.9rem",
-                      paddingTop: "0.85rem",
-                      borderTop: `1px solid ${HAIRLINE}`,
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontFamily: mono,
-                        fontSize: "0.5875rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: INK2,
-                        marginBottom: "0.35rem",
-                      }}
-                    >
-                      The rule
-                    </p>
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        margin: "0.45rem 0 0",
-                        padding: 0,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "0.35rem",
-                      }}
-                    >
-                      <li style={condLi}>
-                        <span style={condDot} aria-hidden="true" />
-                        Coral cover {code("below 25%")} <Conj>OR</Conj>
-                      </li>
-                      <li style={condLi}>
-                        <span style={condDot} aria-hidden="true" />
-                        Fish life at {code("level 2 or 1")} (well below what the reef could hold) <Conj>OR</Conj>
-                      </li>
-                      <li style={condLi}>
-                        <span style={condDot} aria-hidden="true" />
-                        Heat at {code("Alert Level 1")} or higher
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
 
@@ -690,29 +427,12 @@ export default function DataPage() {
             >
               <h3 style={subHStyle}>How sure we are</h3>
               <p style={subPStyle}>
-                Each reef also carries a confidence badge, because a single
-                reading and a real trend are not the same thing. The badge is the
-                weakest of the signals that set the label, so it never reads more
-                confident than its thinnest input.
+                A single reading and a real trend are not the same thing, so the
+                coral cover chart plots the surveys we have for the reef. Several
+                points across the years show a real trend. A single point is the
+                level today, not a direction. Where no survey exists yet, the reef
+                reads Not surveyed rather than a guess.
               </p>
-              <ul style={{ listStyle: "none", margin: "0.5rem 0 0", padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem", maxWidth: 640 }}>
-                <li style={condLi}>
-                  <span style={condDot} aria-hidden="true" />
-                  <b style={{ color: INK }}>Measured trend</b> — 3 or more surveys across at least 4 years. A real direction.
-                </li>
-                <li style={condLi}>
-                  <span style={condDot} aria-hidden="true" />
-                  <b style={{ color: INK }}>Before and after</b> — 2 surveys. It rose or fell, but this is not a trend line.
-                </li>
-                <li style={condLi}>
-                  <span style={condDot} aria-hidden="true" />
-                  <b style={{ color: INK }}>Single reading</b> — 1 survey. The level today, not a direction.
-                </li>
-                <li style={condLi}>
-                  <span style={condDot} aria-hidden="true" />
-                  <b style={{ color: INK }}>Not on file yet</b> — no data here. This reef is waiting for a survey.
-                </li>
-              </ul>
             </div>
           </section>
 
@@ -1159,22 +879,6 @@ export default function DataPage() {
   );
 }
 
-const condLi: React.CSSProperties = {
-  fontSize: "0.8125rem",
-  lineHeight: 1.45,
-  color: "var(--color-ink-2)",
-  paddingLeft: "0.95rem",
-  position: "relative",
-};
-const condDot: React.CSSProperties = {
-  position: "absolute",
-  left: 0,
-  top: "0.55em",
-  width: 5,
-  height: 5,
-  borderRadius: "50%",
-  background: "var(--color-hairline)",
-};
 const pipeLink: React.CSSProperties = { color: "var(--color-ocean)", textDecoration: "none" };
 
 function Band({
