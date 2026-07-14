@@ -7,6 +7,8 @@ import { SpeciesFilmstrip } from "@/components/species-filmstrip";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { getAllSites } from "@/lib/data/sites";
 import { getAllLocations } from "@/lib/data/locations";
+import { getAtlasLocationBySlug } from "@/lib/atlas-location";
+import type { ReefState } from "@/lib/data/reef-state";
 
 // Derive catalog counts from the live data so the copy never drifts from reality.
 const siteCount = getAllSites().length;
@@ -19,96 +21,107 @@ export const metadata: Metadata = {
   )} sites with live reef health, confirmed species sightings, and real conditions — so you can plan a dive that matters.`,
 };
 
+// The homepage reef-state badge vocab (improving / stable / declining /
+// unsurveyed) maps onto the atlas engine's internal state keys. Deriving the
+// badge from the atlas — the SAME source the location page and /locations cards
+// read — keeps every surface honest: no hand-set label can drift from the data.
+const STATE_VOCAB: Record<ReefState, "improving" | "stable" | "declining" | "unsurveyed"> = {
+  thriving: "improving",
+  pressure: "stable",
+  change: "declining",
+  unknown: "unsurveyed",
+};
+
+// The computed, canonical reef-state label for a featured slug. Falls back to
+// "unsurveyed" only if the slug is missing from the atlas (it should not be).
+function featuredState(slug: string): "improving" | "stable" | "declining" | "unsurveyed" {
+  const atlas = getAtlasLocationBySlug(slug);
+  return atlas ? STATE_VOCAB[atlas.state] : "unsurveyed";
+}
+
 // ─── Data for ReefStateCard trio (one per state: improving / stable / declining)
-const REEF_STATE_CARDS: ReefStateCardData[] = [
-  {
-    slug: "raja-ampat-indonesia",
-    name: "Raja Ampat",
-    country: "Indonesia",
-    region: "Coral Triangle",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_NoemiMerz_12.jpg",
-    state: "improving",
-    hook: "56% coral cover, strictly protected, with the highest marine biodiversity on the planet.",
-  },
-  {
-    slug: "blue-corner-palau",
-    name: "Blue Corner",
-    country: "Palau",
-    region: "Pacific",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_CinziaOseleBismarck_06.jpg",
-    state: "stable",
-    hook: "38% coral cover inside one of the oldest marine sanctuaries in the Pacific. Sharks on every dive.",
-  },
-  {
-    slug: "great-barrier-reef-australia",
-    name: "Great Barrier Reef",
-    country: "Australia",
-    region: "Pacific",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_JordanRobins_02.jpg",
-    state: "declining",
-    hook: "Back to back bleaching events from 2016 to 2024. Every dive here is a record of what survives.",
-  },
-];
+const REEF_STATE_CARDS: ReefStateCardData[] = (
+  [
+    {
+      slug: "raja-ampat-indonesia",
+      name: "Raja Ampat",
+      country: "Indonesia",
+      region: "Coral Triangle",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_NoemiMerz_12.jpg",
+      hook: "56% coral cover, strictly protected, with the highest marine biodiversity on the planet.",
+    },
+    {
+      slug: "blue-corner-palau",
+      name: "Blue Corner",
+      country: "Palau",
+      region: "Pacific",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_CinziaOseleBismarck_06.jpg",
+      hook: "38% coral cover inside one of the oldest marine sanctuaries in the Pacific. Sharks on every dive.",
+    },
+    {
+      slug: "great-barrier-reef-australia",
+      name: "Great Barrier Reef",
+      country: "Australia",
+      region: "Pacific",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_JordanRobins_02.jpg",
+      hook: "Back to back bleaching events from 2016 to 2024. Every dive here is a record of what survives.",
+    },
+  ] as const
+).map((c) => ({ ...c, state: featuredState(c.slug) }));
 
 // ─── Featured mosaic cards (6-8 locations across regions)
-const MOSAIC_CARDS: MosaicCard[] = [
-  {
-    slug: "komodo-national-park-indonesia",
-    name: "Komodo National Park",
-    country: "Indonesia",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TheOceanAgency_360_84.jpg",
-    state: "improving",
-  },
-  {
-    slug: "tubbataha-philippines",
-    name: "Tubbataha Reefs",
-    country: "Philippines",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_GregoryPiper_71.jpg",
-    state: "improving",
-  },
-  {
-    slug: "rangiroa-french-polynesia",
-    name: "Tiputa Pass",
-    country: "French Polynesia",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_HannesKlostermann_51.jpg",
-    state: "improving",
-  },
-  {
-    slug: "bunaken-indonesia",
-    name: "Bunaken",
-    country: "Indonesia",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_IshanHassan_05.jpg",
-    state: "stable",
-  },
-  {
-    slug: "florida-keys-usa",
-    name: "Florida Keys",
-    country: "United States",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_DaniEscayola_24.jpg",
-    state: "declining",
-  },
-  {
-    slug: "malapascua-philippines",
-    name: "Malapascua",
-    country: "Philippines",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_LiangFu_08.jpg",
-    state: "stable",
-  },
-  {
-    slug: "bonegi-solomon-islands",
-    name: "Bonegi Wrecks",
-    country: "Solomon Islands",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TraceyJennings_15.jpg",
-    state: "improving",
-  },
-  {
-    slug: "blue-corner-palau",
-    name: "Blue Corner",
-    country: "Palau",
-    heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_CinziaOseleBismarck_06.jpg",
-    state: "stable",
-  },
-];
+const MOSAIC_CARDS: MosaicCard[] = (
+  [
+    {
+      slug: "komodo-national-park-indonesia",
+      name: "Komodo National Park",
+      country: "Indonesia",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TheOceanAgency_360_84.jpg",
+    },
+    {
+      slug: "tubbataha-philippines",
+      name: "Tubbataha Reefs",
+      country: "Philippines",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_GregoryPiper_71.jpg",
+    },
+    {
+      slug: "rangiroa-french-polynesia",
+      name: "Tiputa Pass",
+      country: "French Polynesia",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_HannesKlostermann_51.jpg",
+    },
+    {
+      slug: "bunaken-indonesia",
+      name: "Bunaken",
+      country: "Indonesia",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_IshanHassan_05.jpg",
+    },
+    {
+      slug: "florida-keys-usa",
+      name: "Florida Keys",
+      country: "United States",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_DaniEscayola_24.jpg",
+    },
+    {
+      slug: "malapascua-philippines",
+      name: "Malapascua",
+      country: "Philippines",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_LiangFu_08.jpg",
+    },
+    {
+      slug: "bonegi-solomon-islands",
+      name: "Bonegi Wrecks",
+      country: "Solomon Islands",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_TraceyJennings_15.jpg",
+    },
+    {
+      slug: "blue-corner-palau",
+      name: "Blue Corner",
+      country: "Palau",
+      heroImageUrl: "https://d1qsp4j04beddk.cloudfront.net/OceanImageBank_CinziaOseleBismarck_06.jpg",
+    },
+  ] as const
+).map((c) => ({ ...c, state: featuredState(c.slug) }));
 
 export default function Home() {
   return (
