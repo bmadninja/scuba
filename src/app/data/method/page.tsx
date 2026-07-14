@@ -602,36 +602,56 @@ conditionLevel  +  heat alert (gate)  +  fishing (gate)  ─→  Improving | Sta
           </p>
         </section>
 
-        {/* ── 8. CONFIDENCE ─────────────────────────────────────────────── */}
+        {/* ── 8. HOW SURE WE ARE ────────────────────────────────────────── */}
         <section style={{ marginBottom: "3.5rem" }}>
-          <h2 style={h2Style}>8. Confidence badge</h2>
+          <h2 style={h2Style}>8. How sure we are</h2>
           <p style={pStyle}>
-            Each pillar carries a data confidence tier. The site badge is the{" "}
-            <b style={{ color: INK }}>weakest</b> tier among the pillars that
-            actually set the label (coral, biomass, and heat only when an active
-            alert forced Declining). Fishing is reported per pillar but never
-            weakens the badge.
+            There is no confidence badge on a reef page. A single reading and a
+            real trend are not the same thing, so the{" "}
+            <b style={{ color: INK }}>coral cover chart</b> carries this openly:
+            it plots every dated coral survey we hold for the reef, and the shape
+            of that line is the honest signal of how much we know.
           </p>
           <div style={tableWrap}>
             <table style={table}>
               <thead>
                 <tr>
-                  <th style={th}>Tier</th>
-                  <th style={th}>Coral / biomass rule</th>
+                  <th style={th}>Coral surveys on file</th>
+                  <th style={th}>What the chart shows</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td style={td}>A — Measured trend</td><td style={td}>3 or more surveys spanning at least 4 years</td></tr>
-                <tr><td style={td}>B — Before and after</td><td style={td}>2 surveys</td></tr>
-                <tr><td style={td}>C — Single reading</td><td style={td}>1 survey</td></tr>
-                <tr><td style={td}>D — Not on file</td><td style={td}>no data for this pillar here</td></tr>
+                <tr><td style={td}>3 or more, spanning at least 4 years</td><td style={td}>a line across the years, a measured direction</td></tr>
+                <tr><td style={td}>2</td><td style={td}>before and after, so it rose or fell, but this is not yet a trend line</td></tr>
+                <tr><td style={td}>1</td><td style={td}>a single point, the level today, not a direction</td></tr>
+                <tr><td style={td}>0</td><td style={td}>no line, and the reef reads Not surveyed rather than a guess</td></tr>
               </tbody>
             </table>
           </div>
           <p style={pStyle}>
-            Heat is tier A whenever an alert is on file, D when absent. Fishing is
-            B for a multi year GFW effort trend, C for a single GFW reading or a
-            gravity model band, D for editorial only.
+            The other three pillars each show a current reading on their own
+            marked scale rather than a line, so their confidence is read the same
+            plain way: a reading is on file, or the pillar reads Not surveyed. Heat
+            uses the worst alert on record, and fishing uses the best measured
+            source available (section 6).
+          </p>
+          <p
+            style={{
+              fontSize: "0.82rem",
+              lineHeight: 1.6,
+              color: INK2,
+              borderLeft: `2px solid ${HAIRLINE}`,
+              paddingLeft: "0.85rem",
+              margin: "0 0 1.25rem",
+              maxWidth: 660,
+            }}
+          >
+            <b style={{ color: INK, fontFamily: mono, fontSize: "0.7rem", letterSpacing: "0.05em" }}>
+              INTERNAL ONLY —{" "}
+            </b>
+            An A to D confidence tier per pillar exists behind the scenes to steer
+            where we chase new surveys, but it is a coverage tool and is not
+            surfaced on any reef page. The chart above is what a reader sees.
           </p>
         </section>
 
