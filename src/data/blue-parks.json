@@ -14,10 +14,17 @@
   { "locationId": "fernandina-island-galapagos", "level": "awarded", "year": 2020, "parkName": "Galápagos Marine Reserve", "sourceIds": ["blue-parks"] },
   { "locationId": "socorro-mexico", "level": "awarded", "year": 2021, "parkName": "Parque Nacional Revillagigedo", "sourceIds": ["blue-parks"] },
   { "locationId": "cuba-jardines-de-la-reina", "level": "awarded", "year": 2021, "parkName": "Parque Nacional Jardines de la Reina", "sourceIds": ["blue-parks"] },
-  { "locationId": "diani-shimoni-kenya", "level": "awarded", "year": 2021, "parkName": "Kisite-Mpunguti Marine Park & Reserve", "note": "The awarded park lies off Shimoni; Diani proper sits outside its boundary.", "sourceIds": ["blue-parks"] },
   { "locationId": "providencia-colombia", "level": "awarded", "year": 2022, "parkName": "Old Providence McBean Lagoon National Park", "note": "Covers the island's northeast lagoon and reef, not every Providencia dive site.", "sourceIds": ["blue-parks"] },
   { "locationId": "apo-reef-philippines", "level": "awarded", "year": 2022, "parkName": "Apo Reef Natural Park", "sourceIds": ["blue-parks"] },
-  { "locationId": "coron", "level": "awarded", "year": 2024, "parkName": "Siete Pecados Marine Park", "note": "A protected sub-area off Coron town, not the wider Coron dive area.", "sourceIds": ["blue-parks"] },
   { "locationId": "gorgona-island", "level": "awarded", "year": 2025, "parkName": "Parque Nacional Natural Gorgona", "sourceIds": ["blue-parks"] },
-  { "locationId": "torre-guaceto-italy", "level": "silver", "year": 2019, "parkName": "Area Marina Protetta di Torre Guaceto", "note": "First Italian MPA to earn a Blue Park Award; Silver retained on its five-year review.", "sourceIds": ["blue-parks"] }
+  { "locationId": "torre-guaceto-italy", "level": "silver", "year": 2019, "parkName": "Area Marina Protetta di Torre Guaceto", "note": "First Italian MPA to earn a Blue Park Award; Silver retained on its five-year review.", "sourceIds": ["blue-parks"] },
+  { "locationId": "cerbere-banyuls-france", "level": "silver", "year": 2018, "parkName": "Réserve Naturelle Marine de Cerbère-Banyuls", "note": "France's first marine reserve. Silver Blue Park retained at its 2024 five year review; only the small integral zone is fully no take.", "sourceIds": ["blue-parks"] },
+  { "locationId": "alcatrazes-brazil", "level": "gold", "year": 2023, "parkName": "Refúgio de Vida Silvestre do Arquipélago de Alcatrazes", "note": "Reopened to authorized diving in 2018 after decades as a naval firing range.", "sourceIds": ["blue-parks"] },
+  { "locationId": "goat-island-new-zealand", "level": "gold", "year": 2018, "parkName": "Cape Rodney-Okakari Point Marine Reserve", "note": "New Zealand's first marine reserve, protected since 1975.", "sourceIds": ["blue-parks"] },
+  { "locationId": "wilsons-promontory-australia", "level": "platinum", "year": 2018, "parkName": "Wilsons Promontory Marine National Park", "sourceIds": ["blue-parks"] },
+  { "locationId": "shark-fin-bay-philippines", "level": "gold", "year": 2025, "parkName": "Shark Fin Bay MPA Network", "note": "Reef restoration led by the Sulubaai Environmental Foundation around Pangatalan Island.", "sourceIds": ["blue-parks"] },
+  { "locationId": "siete-pecados-philippines", "level": "silver", "year": 2024, "parkName": "Siete Pecados Marine Park", "note": "A managed no take park off Coron town, previously carried on the Coron location.", "sourceIds": ["blue-parks"] },
+  { "locationId": "cahuita-costa-rica", "level": "gold", "year": 2025, "parkName": "Cahuita National Park", "sourceIds": ["blue-parks"] },
+  { "locationId": "nosy-tanihely-madagascar", "level": "awarded", "year": 2026, "parkName": "Nosy Tanihely National Park", "note": "2026 awardee; MCI did not publish a tier, so shown as Awarded.", "sourceIds": ["blue-parks"] },
+  { "locationId": "kisite-mpunguti-kenya", "level": "gold", "year": 2021, "parkName": "Kisite-Mpunguti Marine Park & Reserve", "note": "Kenya's first Blue Park. The Kisite park core is no take; the surrounding Mpunguti reserve permits traditional fishing. Previously carried on the Diani Shimoni location.", "sourceIds": ["blue-parks"] }
 ]

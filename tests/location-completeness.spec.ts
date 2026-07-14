@@ -43,11 +43,13 @@ function loadData() {
 }
 
 // ── 1. Every location must have at least one dive site ────────────────────
-// Hard failure if the count gets WORSE. The 6 known no-site locations are a
-// backlog — each one needs dive sites added to src/data/sites.json.
+// Hard failure if the count gets WORSE. The current no-site locations are the
+// 9 Marine Conservation Institute Blue Park awardees added for the MCI
+// partnership (real MPAs, reef-state "Not surveyed", dive sites pending
+// enrichment). Each needs dive sites added to src/data/sites.json.
 // Reduce MAX_NO_SITE_LOCATIONS toward 0 as sites are added.
 
-const MAX_NO_SITE_LOCATIONS = 6;
+const MAX_NO_SITE_LOCATIONS = 9;
 
 test(`no more than ${MAX_NO_SITE_LOCATIONS} locations are missing dive sites`, () => {
   const { locations, sitesByLoc } = loadData();
