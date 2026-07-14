@@ -1,18 +1,12 @@
-Enriching 5 sites (< 5 species each, target 8)
+Enriching 4 sites (< 5 species each, target 8)
 
-[1/5] Fossil Cave (3 species) → no new species found
+[1/4] Fossil Cave (3 species) → ERROR: No JSON array found in response
 
-[1/5] Dhalak Bank (4 species) → no new species found
+[2/4] Dhalak Bank (4 species) → no new species found
 
-[1/5] Hawakil Bay Wall (4 species) → ERROR: No JSON array found in response
+[2/4] Hawakil Bay Wall (4 species) → no new species found
 
-[2/5] Zirku Island (3 species) → +1 species
-    + Hawksbill turtle (Eretmochelys imbricata) [year-round]
+[2/4] Zirku Island (4 species) → no new species found
 
-[3/5] Chinhoyi Caves (3 species) → +3 species
-    + Goldfish (Carassius auratus) [year-round]
-    + Largemouth Bass (Micropterus salmoides) [year-round]
-    + Gilt-head Seabream (Sparus aurata) [year-round]
-
-Done. Enriched: 2  Failed: 1
+Done. Enriched: 0  Failed: 1
 Run fetch-species-photos.mjs next to get iNaturalist thumbnails for new species.
