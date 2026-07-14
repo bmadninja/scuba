@@ -1,18 +1,22 @@
-Enriching 5 sites (< 5 species each, target 8)
+Enriching 9 sites (< 5 species each, target 8)
 
-[1/5] Fossil Cave (3 species) → no new species found
+[1/9] Fossil Cave (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mwUY1t2JFeJJMuwHNt"}
 
-[1/5] Dhalak Bank (4 species) → no new species found
+[2/9] Dhalak Bank (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mwc2xohdgSkG1er454"}
 
-[1/5] Hawakil Bay Wall (4 species) → ERROR: No JSON array found in response
+[3/9] Hawakil Bay Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mwjNF4PJUgceSjcn9A"}
 
-[2/5] Zirku Island (3 species) → +1 species
-    + Hawksbill turtle (Eretmochelys imbricata) [year-round]
+[4/9] Zirku Island (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mwrRtuumtagCMbR8rx"}
 
-[3/5] Chinhoyi Caves (3 species) → +3 species
-    + Goldfish (Carassius auratus) [year-round]
-    + Largemouth Bass (Micropterus salmoides) [year-round]
-    + Gilt-head Seabream (Sparus aurata) [year-round]
+[5/9] Western Reefs (3 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mwynAj1fi6p6dv9H6q"}
 
-Done. Enriched: 2  Failed: 1
+[6/9] Kisite Island (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mx6r4t7koCy6Z3cSWX"}
+
+[7/9] Tanikely Sud (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mxDnXaZcnqM8M24gKX"}
+
+[8/9] Siete Pecados Reef (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mxLiFfmnL55WGHvCy2"}
+
+[9/9] Twin Peaks (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011Cd1mxTw5oiDuxT6Cqqb5g"}
+
+Done. Enriched: 0  Failed: 9
 Run fetch-species-photos.mjs next to get iNaturalist thumbnails for new species.
