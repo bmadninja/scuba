@@ -2394,5 +2394,193 @@
       "study-koester-aldabra-2023",
       "blue-parks"
     ]
+  },
+  {
+    "id": "reef-pressure-cerbere-banyuls-france-2026",
+    "locationId": "cerbere-banyuls-france",
+    "mpaStatus": "strict-mpa",
+    "mpaSinceYear": 1974,
+    "mpaName": "Réserve Naturelle Marine de Cerbère-Banyuls",
+    "fishingPressure": "low",
+    "topPressures": [
+      "Mediterranean warming",
+      "recreational and boat pressure"
+    ],
+    "visitorImpactNote": "One of the Mediterranean's oldest marine reserves. Dive with local Banyuls operators, stay clear of the small integral no take zone, and keep off the fragile gorgonian walls.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-alcatrazes-brazil-2026",
+    "locationId": "alcatrazes-brazil",
+    "mpaStatus": "no-take",
+    "mpaSinceYear": 2016,
+    "mpaName": "Refúgio de Vida Silvestre do Arquipélago de Alcatrazes",
+    "fishingPressure": "low",
+    "topPressures": [
+      "controlled visitor access",
+      "regional fishing pressure outside the refuge"
+    ],
+    "visitorImpactNote": "Access is regulated by ICMBio and diving runs only through authorized operators on set dates. Book a permitted trip, follow the daily visitor caps, and treat this recovering rocky reef gently.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-goat-island-new-zealand-2026",
+    "locationId": "goat-island-new-zealand",
+    "mpaStatus": "no-take",
+    "mpaSinceYear": 1975,
+    "mpaName": "Cape Rodney-Okakari Point Marine Reserve",
+    "fishingPressure": "low",
+    "topPressures": [
+      "sea urchin barrens",
+      "high visitor numbers"
+    ],
+    "visitorImpactNote": "Half a century of full protection has made the snapper and crayfish here famously unafraid. Snorkel or dive from the beach, take nothing, and give the recovering kelp room.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-wilsons-promontory-australia-2026",
+    "locationId": "wilsons-promontory-australia",
+    "mpaStatus": "no-take",
+    "mpaSinceYear": 2002,
+    "mpaName": "Wilsons Promontory Marine National Park",
+    "fishingPressure": "low",
+    "topPressures": [
+      "exposure to Bass Strait swell",
+      "warming waters"
+    ],
+    "visitorImpactNote": "A Platinum standard temperate no take park reached by boat from the Prom. Dive it on the calm weather windows, watch for fur seals, and leave the sponge gardens untouched.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-shark-fin-bay-philippines-2026",
+    "locationId": "shark-fin-bay-philippines",
+    "mpaStatus": "strict-mpa",
+    "mpaName": "Shark Fin Bay MPA Network",
+    "fishingPressure": "low",
+    "topPressures": [
+      "past destructive fishing now under restoration",
+      "coastal development"
+    ],
+    "visitorImpactNote": "A restoration story: reefs rebuilt with artificial structures and no take cores. Dive through the managed eco tourism programme, respect the protected zones, and let the recovery keep going.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-siete-pecados-philippines-2026",
+    "locationId": "siete-pecados-philippines",
+    "mpaStatus": "no-take",
+    "mpaSinceYear": 2005,
+    "mpaName": "Siete Pecados Marine Park",
+    "fishingPressure": "low",
+    "topPressures": [
+      "heavy snorkel and boat traffic",
+      "anchor damage"
+    ],
+    "visitorImpactNote": "One of Coron's busiest snorkel and dive stops, protected by the local community since 2005. Pay the small park fee, use the mooring buoys, and keep fins off the shallow coral.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-cahuita-costa-rica-2026",
+    "locationId": "cahuita-costa-rica",
+    "mpaStatus": "no-take",
+    "mpaSinceYear": 1970,
+    "mpaName": "Cahuita National Park",
+    "fishingPressure": "low",
+    "topPressures": [
+      "sediment and runoff from coastal and banana farming",
+      "warming and bleaching"
+    ],
+    "visitorImpactNote": "Costa Rica's best Caribbean reef, kept fishing free and visited on guided snorkel tours from Cahuita. Go with a licensed guide, avoid touching the coral, and support the runoff work upstream.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-nosy-tanihely-madagascar-2026",
+    "locationId": "nosy-tanihely-madagascar",
+    "mpaStatus": "no-take",
+    "mpaSinceYear": 2010,
+    "mpaName": "Nosy Tanihely National Park",
+    "fishingPressure": "low",
+    "topPressures": [
+      "day trip visitor pressure",
+      "warming waters"
+    ],
+    "visitorImpactNote": "The classic day trip reef from Nosy Be, fishing free since 2010. Come early before the crowds, keep clear of the resident turtles, and leave the coral aquarium as you found it.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
+  },
+  {
+    "id": "reef-pressure-kisite-mpunguti-kenya-2026",
+    "locationId": "kisite-mpunguti-kenya",
+    "mpaStatus": "no-take",
+    "mpaSinceYear": 1978,
+    "mpaName": "Kisite-Mpunguti Marine Park & Reserve",
+    "fishingPressure": "low",
+    "topPressures": [
+      "boat and snorkel traffic",
+      "fishing pressure in the surrounding reserve"
+    ],
+    "visitorImpactNote": "East Africa's showpiece coral park, reached by boat from Shimoni and Wasini. Dive the no take Kisite core, watch for the resident bottlenose dolphins, and take only photographs.",
+    "methodologyClaimIds": [
+      "human-pressure-mpa-context"
+    ],
+    "lastReviewedAt": "2026-07-13",
+    "mpaStatusSource": "manual",
+    "sourceIds": [
+      "blue-parks"
+    ]
   }
 ]

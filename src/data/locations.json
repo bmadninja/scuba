@@ -10625,5 +10625,220 @@
       "torre-guaceto-italy-reef"
     ],
     "heroImageUrl": "/heroes/OceanImageBank_DimitrisPoursanidis_20-1920.webp"
+  },
+  {
+    "id": "cerbere-banyuls-france",
+    "slug": "cerbere-banyuls-france",
+    "name": "Cerbère Banyuls",
+    "country": "France",
+    "region": "Mediterranean",
+    "countryCode": "FR",
+    "lat": 42.47,
+    "lng": 3.16,
+    "description": "France's first marine reserve, a Mediterranean site of seagrass meadows, rocky reefs and caves known for endangered dusky groupers, moray eels and spiny lobsters.",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "cerbere-banyuls-france-peyrefite-snorkel-trail"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_DimitrisPoursanidis_25-1920.webp",
+    "lodging": []
+  },
+  {
+    "id": "alcatrazes-brazil",
+    "slug": "alcatrazes-brazil",
+    "name": "Alcatrazes",
+    "country": "Brazil",
+    "region": "Southeast Brazil",
+    "countryCode": "BR",
+    "lat": -24.1006,
+    "lng": -45.6969,
+    "description": "A protected archipelago off São Paulo often called the Brazilian Galapagos, with rocky reefs rich in reef fish, rays, sea turtles and breeding groupers. Diving is by authorized operators on limited dates.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "siteIds": [
+      "alcatrazes-brazil-ilha-do-farol"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_MasayukiAgawa_32-1920.webp",
+    "lodging": []
+  },
+  {
+    "id": "goat-island-new-zealand",
+    "slug": "goat-island-new-zealand",
+    "name": "Goat Island",
+    "country": "New Zealand",
+    "region": "Northland",
+    "countryCode": "NZ",
+    "lat": -36.2686,
+    "lng": 174.7975,
+    "description": "New Zealand's first marine reserve, a no take bay near Auckland famous for tame snapper, crayfish and recovering kelp forests.",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "siteIds": [
+      "goat-island-new-zealand-western-reefs"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_StefanAndrews_01-1920.webp",
+    "lodging": []
+  },
+  {
+    "id": "wilsons-promontory-australia",
+    "slug": "wilsons-promontory-australia",
+    "name": "Wilsons Promontory",
+    "country": "Australia",
+    "region": "Bass Strait",
+    "countryCode": "AU",
+    "lat": -39.03,
+    "lng": 146.38,
+    "description": "Victoria's largest no take marine park off a granite headland, with colourful sponge gardens, temperate reefs, seals and abundant fish life.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "siteIds": [
+      "wilsons-promontory-australia-cleft-island",
+      "wilsons-promontory-australia-norman-bay-south"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_StefanAndrews_33-1920.webp",
+    "lodging": []
+  },
+  {
+    "id": "shark-fin-bay-philippines",
+    "slug": "shark-fin-bay-philippines",
+    "name": "Shark Fin Bay",
+    "country": "Philippines",
+    "region": "Palawan",
+    "countryCode": "PH",
+    "lat": 10.75,
+    "lng": 119.48,
+    "description": "A community marine park network in northern Palawan restoring coral reefs, seagrass and mangroves around Pangatalan Island, with humphead wrasse and turtles. Diving is by managed eco tourism.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "siteIds": [],
+    "heroImageUrl": "/heroes/OceanImageBank_AlexMustard_01-1920.webp",
+    "lodging": []
+  },
+  {
+    "id": "siete-pecados-philippines",
+    "slug": "siete-pecados-philippines",
+    "name": "Siete Pecados",
+    "country": "Philippines",
+    "region": "Palawan",
+    "countryCode": "PH",
+    "lat": 11.998,
+    "lng": 120.207,
+    "description": "A popular Coron snorkel and dive park of seven islets with healthy shallow coral reefs, reef fish, turtles and schooling barracuda in clear calm water.",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "siteIds": [
+      "siete-pecados-philippines-siete-picados",
+      "siete-pecados-philippines-twin-peaks"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_JayneJenkins_Tahiti_09-1920.webp",
+    "lodging": []
+  },
+  {
+    "id": "cahuita-costa-rica",
+    "slug": "cahuita-costa-rica",
+    "name": "Cahuita",
+    "country": "Costa Rica",
+    "region": "Caribbean",
+    "countryCode": "CR",
+    "lat": 9.7397,
+    "lng": -82.8092,
+    "description": "The healthiest coral reef on Costa Rica's Caribbean coast, with more than 30 coral species, over 100 reef fish, sea turtles and easy guided snorkeling.",
+    "bestMonths": [
+      2,
+      3,
+      9,
+      10
+    ],
+    "siteIds": [
+      "cahuita-costa-rica-punta-cahuita"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_FabriceDudenhofer_32-1920.webp",
+    "lodging": []
+  },
+  {
+    "id": "nosy-tanihely-madagascar",
+    "slug": "nosy-tanihely-madagascar",
+    "name": "Nosy Tanihely",
+    "country": "Madagascar",
+    "region": "Mozambique Channel",
+    "countryCode": "MG",
+    "lat": -13.4833,
+    "lng": 48.2333,
+    "description": "A small no take island reserve near Nosy Be famous for its coral aquarium, resident sea turtles, rays and easy shallow diving.",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "siteIds": [
+      "nosy-tanihely-madagascar-tanikely-sud"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_EmilieLedwidge_17-1920.webp",
+    "lodging": []
+  },
+  {
+    "id": "kisite-mpunguti-kenya",
+    "slug": "kisite-mpunguti-kenya",
+    "name": "Kisite Mpunguti",
+    "country": "Kenya",
+    "region": "East Africa",
+    "countryCode": "KE",
+    "lat": -4.7139,
+    "lng": 39.3622,
+    "description": "A no take Kenyan coral park off Wasini famous for resident dolphins, clear water snorkeling and reefs full of turtles and reef fish.",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "siteIds": [
+      "kisite-mpunguti-kenya-kisite-island"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_GabrielBarathieu_09-1920.webp",
+    "lodging": []
   }
 ]
