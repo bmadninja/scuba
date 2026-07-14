@@ -1,6 +1,8 @@
 Enriching 4 sites (< 5 species each, target 8)
 
-[1/4] Fossil Cave (3 species) → ERROR: No JSON array found in response
+[1/4] Fossil Cave (3 species) → +2 species
+    + Crenarum Syncarid (Koonunga crenarum) [year-round]
+    + Hornei Syncarid (Koonunga hornei) [year-round]
 
 [2/4] Dhalak Bank (4 species) → no new species found
 
@@ -8,5 +10,5 @@ Enriching 4 sites (< 5 species each, target 8)
 
 [2/4] Zirku Island (4 species) → no new species found
 
-Done. Enriched: 0  Failed: 1
+Done. Enriched: 1  Failed: 0
 Run fetch-species-photos.mjs next to get iNaturalist thumbnails for new species.
