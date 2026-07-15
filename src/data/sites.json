@@ -580382,22 +580382,26 @@
       {
         "commonName": "Great Barracuda",
         "scientificName": "Sphyraena barracuda",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325650165/large.jpg"
       },
       {
         "commonName": "Grey Reef Shark",
         "scientificName": "Carcharhinus amblyrhynchos",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/605363813/large.jpg"
       },
       {
         "commonName": "Whitetip Reef Shark",
         "scientificName": "Triaenodon obesus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/341895869/large.jpeg"
       },
       {
         "commonName": "Bluefin Trevally",
         "scientificName": "Caranx melampygus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/566299921/large.jpg"
       },
       {
         "commonName": "Spotted Eagle Ray",
@@ -580412,7 +580416,8 @@
           8,
           9,
           10
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/195315918/large.jpg"
       },
       {
         "commonName": "Scalloped Hammerhead",
@@ -580423,7 +580428,8 @@
           7,
           8,
           9
-        ]
+        ],
+        "imageUrl": "https://static.inaturalist.org/photos/187599200/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -580621,12 +580627,14 @@
       {
         "commonName": "Grouper",
         "scientificName": "Epinephelus spp.",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/179748157/large.jpg"
       },
       {
         "commonName": "Stingray",
         "scientificName": "Dasyatis spp.",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/102601823/large.jpg"
       },
       {
         "commonName": "Humpback whale",
@@ -580637,12 +580645,14 @@
           8,
           9,
           10
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/275145082/large.jpg"
       },
       {
         "commonName": "Wrasse",
         "scientificName": "Labridae spp.",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/267363876/large.jpeg"
       },
       {
         "commonName": "Barracuda",
@@ -580656,12 +580666,14 @@
           9,
           10,
           11
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/663214758/large.jpg"
       },
       {
         "commonName": "Hammerhead shark",
         "scientificName": "Sphyrna spp.",
-        "reliability": "rare"
+        "reliability": "rare",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/31082387/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -580861,26 +580873,31 @@
       {
         "commonName": "Yellowtail Clownfish",
         "scientificName": "Amphiprion clarkii",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/118086499/large.jpeg"
       },
       {
         "commonName": "Butterflyfish",
         "scientificName": "Chaetodon spp.",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/529223663/large.jpg"
       },
       {
         "commonName": "Moray Eel",
         "scientificName": "Gymnothorax spp.",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/338484927/large.jpg"
       },
       {
         "commonName": "Cuttlefish",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/28142554/large.jpeg"
       },
       {
         "commonName": "Scorpion Fish",
         "scientificName": "Scorpaenidae",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/31146240/large.jpg"
       },
       {
         "commonName": "Butterfly Ray",
@@ -580893,7 +580910,8 @@
           7,
           8,
           9
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/151218610/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -581097,37 +581115,44 @@
           3,
           4,
           5
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/423296545/large.jpeg"
       },
       {
         "commonName": "Yellow-tailed barracuda",
         "scientificName": "Sphyraena flavicauda",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/323248326/large.jpg"
       },
       {
         "commonName": "Blue-spotted stingray",
         "scientificName": "Neotrygon kuhlii",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/197817092/large.jpg"
       },
       {
         "commonName": "Bluebarred parrotfish",
         "scientificName": "Scarus ghobban",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/342024268/large.jpeg"
       },
       {
         "commonName": "Coral grouper",
         "scientificName": "Cephalopholis miniata",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78715/large.jpg"
       },
       {
         "commonName": "Clown anemonefish",
         "scientificName": "Amphiprion ocellaris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41721337/large.jpeg"
       },
       {
         "commonName": "Moon wrasse",
         "scientificName": "Thalassoma lunare",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/173760852/large.jpeg"
       }
     ],
     "conditionsByMonth": [
@@ -581334,17 +581359,20 @@
           7,
           8,
           9
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/154762278/large.jpeg"
       },
       {
         "commonName": "Moray Eel",
         "scientificName": "Muraena helena",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461210843/large.jpeg"
       },
       {
         "commonName": "Common Octopus",
         "scientificName": "Octopus vulgaris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/460716294/large.jpeg"
       },
       {
         "commonName": "Opah (Moonfish)",
@@ -581352,17 +581380,20 @@
         "reliability": "seasonal",
         "bestMonths": [
           6
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/479884225/large.jpg"
       },
       {
         "commonName": "Noble Pen Shell",
         "scientificName": "Pinna nobilis",
-        "reliability": "rare"
+        "reliability": "rare",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/177356712/large.jpeg"
       },
       {
         "commonName": "Red Sea Bream",
         "scientificName": "Pagellus bogaraveo",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/329903759/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -581560,32 +581591,38 @@
       {
         "commonName": "Yellowback Fusilier",
         "scientificName": "Caesio cuning",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305765562/large.jpg"
       },
       {
         "commonName": "Chevron Barracuda",
         "scientificName": "Sphyraena qenie",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472227676/large.jpg"
       },
       {
         "commonName": "Giant Trevally",
         "scientificName": "Caranx ignobilis",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472034210/large.png"
       },
       {
         "commonName": "One-spotted Snapper",
         "scientificName": "Lutjanus monostigma",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/625995519/large.jpg"
       },
       {
         "commonName": "Brown Marbled Grouper",
         "scientificName": "Epinephelus malabaricus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/350307955/large.jpeg"
       },
       {
         "commonName": "Anemonefish",
         "scientificName": "Amphiprion ocellaris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41721337/large.jpeg"
       },
       {
         "commonName": "Whale Shark",
@@ -581597,11 +581634,13 @@
           5,
           9,
           10
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/423296545/large.jpeg"
       },
       {
         "commonName": "Barrel Sponge",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/154277855/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -581801,12 +581840,14 @@
       {
         "commonName": "Dwarf Arctic char",
         "scientificName": "Salvelinus alpinus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297904717/large.jpg"
       },
       {
         "commonName": "Piscivorous Arctic char",
         "scientificName": "Salvelinus alpinus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297904717/large.jpg"
       },
       {
         "commonName": "Brown trout",
@@ -581820,12 +581861,14 @@
           8,
           9,
           10
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/139462412/large.jpg"
       },
       {
         "commonName": "Three-spine stickleback",
         "scientificName": "Gasterosteus aculeatus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/254596254/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -582023,42 +582066,50 @@
       {
         "commonName": "Great Barracuda",
         "scientificName": "Sphyraena barracuda",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/11391849/large.jpg"
       },
       {
         "commonName": "Queen Angelfish",
         "scientificName": "Holacanthus ciliaris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/30899640/large.jpg"
       },
       {
         "commonName": "Nurse Shark",
         "scientificName": "Ginglymostoma cirratum",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/289445243/large.jpeg"
       },
       {
         "commonName": "Green Moray Eel",
         "scientificName": "Gymnothorax funebris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/551414959/large.jpg"
       },
       {
         "commonName": "Caribbean Spiny Lobster",
         "scientificName": "Panulirus argus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/539339295/large.jpg"
       },
       {
         "commonName": "Caribbean Reef Shark",
         "scientificName": "Carcharhinus perezi",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/552802602/large.jpg"
       },
       {
         "commonName": "Schoolmaster Snapper",
         "scientificName": "Lutjanus apodus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297886521/large.jpg"
       },
       {
         "commonName": "White Grunt",
         "scientificName": "Haemulon plumierii",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/485228447/large.jpeg"
       },
       {
         "commonName": "Green Sea Turtle",
@@ -582074,7 +582125,8 @@
           9,
           10,
           11
-        ]
+        ],
+        "imageUrl": "https://static.inaturalist.org/photos/177739424/large.jpg"
       },
       {
         "commonName": "Hawksbill Sea Turtle",
@@ -582090,7 +582142,8 @@
           9,
           10,
           11
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/465329734/large.jpeg"
       }
     ],
     "conditionsByMonth": [
@@ -582289,7 +582342,8 @@
       {
         "commonName": "Caribbean Reef Shark",
         "scientificName": "Carcharhinus perezi",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/225237037/large.jpg"
       },
       {
         "commonName": "Spotted Eagle Ray",
@@ -582300,12 +582354,14 @@
           4,
           5,
           6
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/441410591/large.jpg"
       },
       {
         "commonName": "Manta Ray",
         "scientificName": "Mobula birostris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33852153/large.jpg"
       },
       {
         "commonName": "Green Sea Turtle",
@@ -582318,7 +582374,8 @@
           9,
           10,
           11
-        ]
+        ],
+        "imageUrl": "https://static.inaturalist.org/photos/266010345/large.jpg"
       },
       {
         "commonName": "Hawksbill Turtle",
@@ -582332,17 +582389,20 @@
           9,
           10,
           11
-        ]
+        ],
+        "imageUrl": "https://static.inaturalist.org/photos/197131621/large.jpeg"
       },
       {
         "commonName": "Queen Angelfish",
         "scientificName": "Holacanthus ciliaris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/422126842/large.jpeg"
       },
       {
         "commonName": "Nassau Grouper",
         "scientificName": "Epinephelus striatus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/443731072/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -582516,8 +582576,7 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Part of Lighthouse Reef Marine Protected Area. No spearfishing. Advanced wall diving technique recommended. Spawning aggregation of Nassau grouper occurs December-January."
-  }
-,
+  },
   {
     "id": "silfra-iceland-davidsgja",
     "slug": "silfra-iceland-davidsgja",
@@ -582540,17 +582599,20 @@
       {
         "commonName": "Brown trout",
         "scientificName": "Salmo trutta",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/139462412/large.jpg"
       },
       {
         "commonName": "Arctic char",
         "scientificName": "Salvelinus alpinus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/297904717/large.jpg"
       },
       {
         "commonName": "Three-spined stickleback",
         "scientificName": "Gasterosteus aculeatus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/254596254/large.jpg"
       },
       {
         "commonName": "Freshwater amphipod",
