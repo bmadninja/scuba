@@ -2091,7 +2091,7 @@ function PhotogStep2Metadata({
           <label style={labelStyle}>Observer email</label>
           <input type="email" placeholder="e.g. you@example.com" style={inputStyle} {...field("observerEmail")} />
           <p className="text-xs mt-1" style={{ color: "var(--color-ink-2)" }}>
-            Required so we can send you where to upload your image set.
+            So we can follow up with you about your pass.
           </p>
           {errors.observerEmail && <p className="text-xs mt-1" style={{ color: "var(--color-declining)" }}>{errors.observerEmail}</p>}
         </div>
@@ -2209,20 +2209,11 @@ function PhotogStep3Submit({
         </dl>
       </div>
 
-      <div className="mb-6">
-        <p className="mb-3" style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-ink-2)" }}>
-          Routing to
-        </p>
-        <ul className="space-y-1 text-sm" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-          <li style={{ color: "var(--color-ink)" }}>Wildflow (queued for routing)</li>
-        </ul>
-      </div>
-
       <div
         className="rounded-sm p-4 mb-6 text-sm"
         style={{ background: "rgba(14,28,40,0.03)", border: "1px solid var(--color-hairline)", color: "var(--color-ink-2)" }}
       >
-        We route these pass details to Wildflow for you. Your image set is hundreds of photos, so it goes to Wildflow directly rather than through us. We will be in touch with where to send it.
+        After you submit, upload your footage directly to Wildflow at wildflow.ai/upload. A patch is 10 to 20 GB, so it goes straight to Wildflow rather than through us. We keep a record of your pass so we can follow up.
       </div>
 
       {errorMsg && <p className="mb-4 text-sm" style={{ color: "var(--color-declining)" }}>{errorMsg}</p>}
@@ -2246,12 +2237,23 @@ function PhotogConfirmation({ onAnother }: { onAnother: () => void }) {
       >
         Pass logged.
       </h2>
-      <p className="text-sm mb-4" style={{ color: "var(--color-ink-2)" }}>
-        Your pass details have been recorded and we are routing them to Wildflow on your behalf. Josie has been alerted.
-      </p>
       <p className="text-sm mb-6" style={{ color: "var(--color-ink-2)" }}>
-        Your image set goes to Wildflow directly, because a pass is hundreds of photos. We will be in touch with where to send it.
+        Your pass is recorded. The next step is to upload your footage to Wildflow, who turn it into a 3D model of your reef. A patch is 10 to 20 GB, so it uploads straight to Wildflow rather than through us.
       </p>
+      <a
+        href="https://wildflow.ai/upload"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center rounded-sm px-5 py-3 text-sm font-sans font-medium mb-4"
+        style={{
+          background: "var(--color-brand-yellow)",
+          color: "var(--color-ink)",
+          textDecoration: "none",
+          display: "inline-block",
+        }}
+      >
+        Upload footage to Wildflow
+      </a>
       <div className="mt-4">
         <GhostBtn onClick={onAnother}>Submit another pass</GhostBtn>
       </div>

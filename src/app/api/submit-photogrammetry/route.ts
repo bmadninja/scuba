@@ -4,11 +4,12 @@ import { sendTelegram } from "@/lib/telegram";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
 
-// Storeless conduit: this route captures a 3D photogrammetry pass's METADATA and
-// queues it in a transient routing outbox (src/data/photogrammetry-queue.json,
-// git-ignored via /src/data/*-queue.json) for Josie to route to Wildflow by hand
-// until an intake API exists. The diver's image set (hundreds of photos) is NOT
-// received here — it goes from the diver to Wildflow directly.
+// Storeless conduit: this route logs a 3D photogrammetry pass's METADATA to a
+// transient, git-ignored record (src/data/photogrammetry-queue.json via
+// /src/data/*-queue.json) so we know a diver ran a pass and can follow up. The
+// diver uploads their own footage (10-20 GB per patch) directly to Wildflow at
+// wildflow.ai/upload — no account required, nothing routed through us. The
+// footage is NOT received here.
 const BodySchema = z.object({
   siteId: z.string().min(1),
   siteName: z.string().min(1),
@@ -75,7 +76,7 @@ export async function POST(request: NextRequest) {
     ...(d.reefSlope && { reefSlope: d.reefSlope }),
     ...(d.notes && { notes: d.notes }),
     submittedAt: new Date().toISOString(),
-    status: "pending_wildflow_routing",
+    status: "logged_diver_self_upload",
   };
 
   try {
@@ -97,7 +98,7 @@ export async function POST(request: NextRequest) {
       `${passLine}${imageLine}`.trim() +
       `\nObserver: ${d.observerEmail}` +
       notesLine +
-      `\n\nAction needed: route this metadata to Wildflow (the diver sends their image set to Wildflow directly).`
+      `\n\nFYI only — the diver was directed to upload their footage to wildflow.ai/upload directly. No action needed.`
   );
 
   return Response.json({ success: true, queued: true });
