@@ -242,6 +242,15 @@ const LABEL_STYLE: React.CSSProperties = {
   gap: "0.4rem",
 };
 
+// Blue Park Award tier → display label. "awarded" has no published tier, so it
+// carries no tier word (the year line stands alone).
+const BLUE_PARK_LEVEL_LABEL: Record<string, string> = {
+  platinum: "Platinum tier",
+  gold: "Gold tier",
+  silver: "Silver tier",
+  awarded: "",
+};
+
 const SECTION_HEADER: React.CSSProperties = {
   fontFamily: 'var(--font-serif), "Source Serif 4", Georgia, serif',
   fontSize: "2rem",
@@ -414,6 +423,7 @@ export function LocationPageBody(props: LocationBodyProps) {
     quotes,
     goodToKnow,
     seasonNotes,
+    blueParkAward,
   } = props;
 
   // The live "around X°C now vs usual" readout for the heat popup, opened from
@@ -439,6 +449,51 @@ export function LocationPageBody(props: LocationBodyProps) {
           {intro ? (
             <div style={{ marginBottom: "3rem" }}>
               <EditorialHook text={intro} />
+            </div>
+          ) : null}
+
+          {/* BLUE PARK AWARD — Marine Conservation Institute recognition. Shown
+              only when this location holds (or sits inside) a Blue Park. */}
+          {blueParkAward ? (
+            <div
+              style={{
+                border: "1px solid rgba(46,125,91,0.28)",
+                borderRadius: "8px",
+                background: "rgba(46,125,91,0.06)",
+                padding: "1.125rem 1.375rem",
+                marginBottom: "3rem",
+              }}
+            >
+              <div style={{ ...LABEL_STYLE, color: "#216B49", marginBottom: "0.5rem" }}>
+                Blue Park Award
+                <InfoButton onClick={() => setInfo("bluepark")} label="What a Blue Park Award means" />
+              </div>
+              <p
+                style={{
+                  fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                  fontSize: "1.0625rem",
+                  fontWeight: 600,
+                  color: "#0E1C28",
+                  margin: 0,
+                  lineHeight: 1.4,
+                }}
+              >
+                {blueParkAward.parkName}
+              </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                  fontSize: "0.9375rem",
+                  color: "#4A5568",
+                  margin: "0.25rem 0 0",
+                  lineHeight: 1.5,
+                }}
+              >
+                {[BLUE_PARK_LEVEL_LABEL[blueParkAward.level], `Awarded ${blueParkAward.year}`]
+                  .filter(Boolean)
+                  .join(" · ")}
+                {blueParkAward.note ? `. ${deHyphen(blueParkAward.note)}` : ""}
+              </p>
             </div>
           ) : null}
 
