@@ -8,9 +8,16 @@ You are a scheduled, autonomous dive-site discovery pass for scubaseason.fun. Yo
    `cd /Users/josietyleung/github/scuba && git fetch origin main -q && git checkout origin/main -- src/data/sites.json src/data/locations.json`
 
 2. **Find gaps:** `node scripts/find-site-gaps.mjs 12`
-   This prints up to 12 target locations (empty locations first, then thin ones). **If it prints `[]`, the catalog is caught up — stop now, this run is a cheap no-op. Do not invent work.**
+   This prints up to 12 target locations (empty locations first, then thin ones).
 
-3. **Research each target with a Haiku subagent** (one per target, run them in parallel). For each, use the Agent tool with `model: "haiku"`, `subagent_type: "general-purpose"`. Give the agent:
+3. **News-operator candidates:** `gh issue list --repo bmadninja/scuba --label discovery-candidate --state open --json number,title,body`
+   These are dive-location candidates surfaced by the news operator (new MPAs, reef discoveries, newly opened regions). For each open issue:
+   - If the candidate matches an EXISTING entry in `src/data/locations.json` (by name/region/country), add it to the FRONT of this run's target list (it still counts toward the 12-target cap and passes through every guardrail below). When its site is committed, close the issue with a comment naming the site added.
+   - If the candidate is NOT in `locations.json`, this routine cannot add it — creating location entries is out of scope (you only touch `sites.json`). Comment once on the issue: `Needs a new locations.json entry before discovery can fill sites — awaiting Josie's approval.` (skip the comment if one like it already exists), and leave the issue open.
+
+   **If step 2 printed `[]` AND there are no actionable candidate issues, the catalog is caught up — stop now, this run is a cheap no-op. Do not invent work.**
+
+4. **Research each target with a Haiku subagent** (one per target, run them in parallel). For each, use the Agent tool with `model: "haiku"`, `subagent_type: "general-purpose"`. Give the agent:
    - the location `id`, `name`, `country`, and anchor `lat`/`lng`
    - the location's `existingSites` list with the instruction: **pick a DIFFERENT, notable dive site not in that list** (for thin locations you are adding variety, not duplicating what exists)
    - the schema contract: run `node -e 'import("./scripts/lib/site-schema.mjs").then(m=>console.log(m.SCHEMA_DESCRIPTION_FOR_LLM))'` and paste it in
@@ -23,20 +30,20 @@ You are a scheduled, autonomous dive-site discovery pass for scubaseason.fun. Yo
      - If the site cannot be corroborated by 3+ independent sources, return exactly `{"refuse": true, "reason": "..."}`.
    - instruction: final message must be ONLY the raw JSON object (or refuse object).
 
-4. **Normalize + guard each returned entry** (skip refusals):
+5. **Normalize + guard each returned entry** (skip refusals):
    a. Write the raw JSON to a temp file under the scratchpad dir.
    b. `node scripts/normalize-site-entry.mjs <tempfile>` — auto-repairs the quirks Haiku reliably emits (float temps → int, null `bestMonths` → dropped, HTML entities decoded, `slug` = `id`). This keeps good sites from being discarded over trivial formatting.
    c. `node scripts/validate-site-entry.mjs <tempfile>` — if it exits non-zero, **SKIP this entry** (log the printed reasons). This catches schema errors, duplicates, feet/meters depth bugs, and out-of-range coordinates.
    d. **Fact-check:** spawn a second `model: "haiku"` subagent as a skeptical fact-checker. Give it the entry JSON and ask for `{"score": 0..1, "issues": [...]}` — score <0.8 if coordinates look off, species look generic, depth implausible, or description vague. If `score < 0.8`, **SKIP this entry.**
 
-5. **Commit the survivors:** append every entry that PASSED the guard AND scored ≥0.8 to `src/data/sites.json` (keep 2-space indent + trailing newline), then:
+6. **Commit the survivors:** append every entry that PASSED the guard AND scored ≥0.8 to `src/data/sites.json` (keep 2-space indent + trailing newline), then:
    `git add src/data/sites.json && git -c user.email="bot@scubaseason.fun" -c user.name="scubaseason-bot" commit -m "data: add <names> (Max+Haiku discovery)" && git fetch origin main -q && git rebase origin/main -q && git push origin main -q`
    (If nothing survived, do not commit.)
 
-6. **Done.** Print a one-line summary (how many added, names; how many skipped and why). No Telegram needed — the 8am/5pm "Dive site count" routine surfaces additions.
+7. **Done.** Print a one-line summary (how many added, names; how many skipped and why). No Telegram needed — the 8am/5pm "Dive site count" routine surfaces additions.
 
 ## Guardrails (hard rules)
 - **Haiku subagents only** (`model: "haiku"`). This must stay on Max credit and cheap.
 - **Max 12 new sites per run** (spawn the research subagents in parallel; runs are 5h apart so a batch this size fits inside one Max window). If you notice throttling/rate-limit errors, finish the sites you have and stop early rather than hammering.
 - **Never commit** an entry that fails `validate-site-entry.mjs` or scores <0.8.
-- If `find-site-gaps.mjs` returns `[]`, do nothing and exit.
+- If `find-site-gaps.mjs` returns `[]` and there are no actionable `discovery-candidate` issues, do nothing and exit.
