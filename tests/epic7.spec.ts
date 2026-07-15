@@ -12,16 +12,24 @@ test.describe('Wildlife filter taxonomy (7.3)', () => {
   test('filter rail has wildlife sub-groups', async ({ page }) => {
     await page.goto('/locations', GOTO);
     const trigger = page.getByRole('button', { name: 'What to see' });
-    const subgroup = page.getByText(/sharks.*rays|marine mammals|macro/i).first();
-    // The atlas filter buttons are interactive before their onClick handlers
-    // hydrate, so an early click can be silently dropped. Retry opening the
-    // dropdown (idempotently, guarded by aria-expanded) until it shows.
+    // The trigger is server-rendered `disabled` and only enables once React
+    // hydration has attached its onClick (ExplorePage's `hydrated` flag), so
+    // enabled doubles as the hydration signal. Hydrating the atlas (globe +
+    // full card grid) can take well over 15s on a loaded CI runner.
+    await expect(trigger).toBeEnabled({ timeout: 60_000 });
+    // Open the dropdown; aria-expanded confirms the handler fired. The guard
+    // keeps retries idempotent (a blind re-click would toggle it closed).
     await expect(async () => {
       if ((await trigger.getAttribute('aria-expanded')) !== 'true') {
         await trigger.click();
       }
-      await expect(subgroup).toBeVisible({ timeout: 2_000 });
-    }).toPass({ timeout: 15_000 });
+      await expect(trigger).toHaveAttribute('aria-expanded', 'true', { timeout: 1_000 });
+    }).toPass({ timeout: 30_000 });
+    // Sub-group headers are buttons inside the open panel; role+name scoping
+    // avoids matching stray "macro"/"sharks" prose elsewhere on the page.
+    await expect(
+      page.getByRole('button', { name: /sharks & rays|marine mammals|macro & critters/i }).first(),
+    ).toBeVisible();
   });
 });
 
