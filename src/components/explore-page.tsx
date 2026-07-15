@@ -27,6 +27,8 @@ export type ExploreLocation = ReefCardLocation & {
   maxCurrentStrength: "none" | "mild" | "moderate" | "strong";
   lat: number;
   lng: number;
+  isBluePark: boolean;
+  mpaStatus: string | null;
 };
 
 type Props = {
@@ -68,6 +70,22 @@ const DIVE_TYPE_OPTIONS = [
   { value: "night", label: "Night" },
 ];
 
+
+// Protection & recognition. `bluepark` reads the Blue Park award flag; the
+// others map to a location's derived MPA status. OR semantics within the group.
+const PROTECTION_OPTIONS = [
+  { value: "bluepark", label: "Blue Park award" },
+  { value: "no-take", label: "No fishing" },
+  { value: "strict-mpa", label: "Strict MPA" },
+];
+
+function locationMatchesProtection(
+  loc: { isBluePark: boolean; mpaStatus: string | null },
+  value: string,
+): boolean {
+  if (value === "bluepark") return loc.isBluePark;
+  return loc.mpaStatus === value;
+}
 
 const SKILL_OPTIONS = ["Beginner", "Open water", "Advanced", "Technical"];
 
@@ -143,10 +161,12 @@ export function ExplorePage({ locations, currentMonth }: Props) {
   const diveTypeFilters = getMultiParam(params, "divetype");
   const animalFilters = getMultiParam(params, "animal");
   const skillFilters = getMultiParam(params, "skill");
+  const protectionFilters = getMultiParam(params, "protection");
 
   const activeFilterCount =
     reefStates.length + regionFilters.length + monthFilters.length +
-    diveTypeFilters.length + animalFilters.length + skillFilters.length;
+    diveTypeFilters.length + animalFilters.length + skillFilters.length +
+    protectionFilters.length;
   const hasActiveFilter = activeFilterCount > 0;
 
   // Mark hydrated after mount so interactive controls only enable once their
@@ -274,6 +294,11 @@ export function ExplorePage({ locations, currentMonth }: Props) {
         const maxRank = Math.max(...skillFilters.map((s) => SKILL_RANK[s] ?? 0));
         if ((SKILL_RANK[loc.skill] ?? 0) > maxRank) return false;
       }
+      if (
+        protectionFilters.length > 0 &&
+        !protectionFilters.some((p) => locationMatchesProtection(loc, p))
+      )
+        return false;
       return true;
     });
 
@@ -286,7 +311,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
     });
 
     return result;
-  }, [locations, reefStates, regionFilters, monthFilters, diveTypeFilters, animalFilters, skillFilters, currentMonth]);
+  }, [locations, reefStates, regionFilters, monthFilters, diveTypeFilters, animalFilters, skillFilters, protectionFilters, currentMonth]);
 
   // When a globe marker is clicked, select the card and scroll it into view
   const handleMarkerClick = useCallback((slug: string) => {
@@ -408,8 +433,9 @@ export function ExplorePage({ locations, currentMonth }: Props) {
           <span aria-hidden="true" className="shrink-0 h-5" style={{ width: 1, background: "rgba(14,28,40,0.06)" }} />
 
           {/* Dropdown filter pills */}
-          {(["whatToSee", "diveType", "region", "when", "certification"] as const).map((key) => {
+          {(["whatToSee", "diveType", "region", "when", "protection", "certification"] as const).map((key) => {
             const labels: Record<string, string> = {
+              protection: "Conservation",
               whatToSee: "What to see",
               diveType: "Dive type",
               region: "Region",
@@ -417,6 +443,7 @@ export function ExplorePage({ locations, currentMonth }: Props) {
               certification: "Certification",
             };
             const counts: Record<string, number> = {
+              protection: protectionFilters.length,
               whatToSee: animalFilters.length,
               diveType: diveTypeFilters.length,
               region: regionFilters.length,
@@ -474,6 +501,30 @@ export function ExplorePage({ locations, currentMonth }: Props) {
             className="border-t border-white/10 px-4 py-4"
             style={{ maxWidth: 1320, margin: "0 auto" }}
           >
+            {openDropdown === "protection" && (
+              <div className="flex flex-wrap gap-2">
+                {PROTECTION_OPTIONS.map(({ value, label }) => {
+                  const active = protectionFilters.includes(value);
+                  return (
+                    <button
+                      key={value}
+                      type="button"
+                      aria-pressed={active}
+                      onClick={() => toggleMultiParam("protection", value)}
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-[#F6C700] focus-visible:outline-offset-2"
+                      style={{
+                        border: active ? "1px solid #0E4F6E" : "1px solid #E7E6E2",
+                        background: active ? "rgba(0,212,255,0.12)" : "#F8F7F4",
+                        color: active ? "#0E4F6E" : "#4A5568",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
             {openDropdown === "whatToSee" && (
               <SpeciesGroups animalFilters={animalFilters} onToggle={(v) => toggleMultiParam("animal", v)} />
             )}
