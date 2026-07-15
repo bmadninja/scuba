@@ -12,20 +12,14 @@ Each morning:
 
    `git -C <ops-docs clone> log --since="36 hours ago" --pretty=format:"%ci %s"`
 
-   Inspect which commit prefixes appeared. Operators commit with prefixed messages: `news:`, `dispatch:`, `reef:`, `gtm:`, `grants:`, `product:`. Expected cadence:
-   - `news` — daily, ~23:37 UTC
-   - `dispatch` — daily, ~00:30 UTC
-   - `reef` — daily, ~12:45 UTC
-   - `gtm` — daily-ish (rests Tue/Thu/weekend)
-   - `grants` — ~2x/week (Tue/Thu)
-   - `product` — a few times/day
+   Inspect which commit prefixes appeared. Operators commit with prefixed messages: `news:`, `dispatch:`, `reef:`, `gtm:`, `grants:`, `product:`. As of 2026-07-15 **all six run daily** on their Cloud schedule — the git history shows every operator committing on consecutive days (product is confirmed daily at 7:00 GMT-4). Ignore the local `.claude/agents/*` descriptions that say "every 2 hours", "Tue/Thu", or "Mon/Wed/Fri" — those are stale and do NOT reflect the live routines. The claude.ai Routines UI is the source of truth for exact times.
 
-   Any operator whose expected window has already passed today with NO matching commit in the log is STALE. (Do not flag an operator that is legitimately resting today — e.g. gtm on a Tue/Thu/weekend, grants on a non-Tue/Thu.) This detection must be same-morning and automatic: two operators recently failed silently for 5–6 runs each and were only caught days later when a human read a flag in markdown. Do not let that happen again.
+   Treat an operator as STALE if it has **no commit in the last ~30h**. This detection must be same-morning and automatic: two operators recently failed silently for 5–6 runs each and were only caught days later when a human read a flag in markdown. Do not let that happen again.
 
 2. **Read every state file** in the ops-docs clone:
    - docs/product-charter.md
-   - docs/gtm-charter.md (GTM only runs Mon/Wed/Fri)
-   - docs/grants-charter.md (Grants only runs Tue/Thu)
+   - docs/gtm-charter.md
+   - docs/grants-charter.md
    - docs/reef-log.md
    - docs/news-charter.md
 
@@ -49,8 +43,8 @@ Message format (keep under ~250 words total):
 Good morning! Today's operator plans:
 
 *Product:* [one sentence — specific task]
-*GTM:* [one sentence] or "resting today" on Tue/Thu/weekend
-*Grants:* [one sentence] or "resting today" on Mon/Wed/Fri/weekend
+*GTM:* [one sentence]
+*Grants:* [one sentence]
 
 ⚠️ STALE ROUTINE: [only if an operator missed its window, one line each, e.g. "reef operator: no commit in 30h — may be silently failing, consider firing it manually". Omit this whole section if nothing is stale.]
 
