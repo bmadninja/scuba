@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   fetch:
@@ -25,7 +26,10 @@ jobs:
           IUCN_API_KEY: ${{ secrets.IUCN_API_KEY }}
         run: node scripts/fetch-iucn-status.mjs
 
-      - name: Commit updated iucn-status.json
+      - name: Open PR with updated iucn-status.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
           if git diff --quiet -- src/data/iucn-status.json; then
             echo "No IUCN status changes today."
@@ -33,7 +37,13 @@ jobs:
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="data/iucn-status-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
           git add src/data/iucn-status.json
           git commit -m "data: daily IUCN Red List refresh"
-          git pull --rebase
-          git push
+          git push origin "$BRANCH"
+          gh pr create --repo "$REPO" \
+            --base main --head "$BRANCH" \
+            --title "data: daily IUCN Red List refresh" \
+            --body "Automated daily IUCN Red List category refresh. Auto-merges once checks are green." \
+            --label automation
