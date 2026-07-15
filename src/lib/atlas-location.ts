@@ -2,6 +2,7 @@ import { getAllLocations, getLocationById } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
 import {
   getReefState,
@@ -12,7 +13,7 @@ import {
   skillText,
   ALERT_TO_HEAT,
 } from "@/lib/data/reef-state";
-import type { Location } from "@/lib/data/types";
+import type { Location, MpaStatus } from "@/lib/data/types";
 import type { ReefState } from "@/lib/data/reef-state";
 
 export type AtlasLocation = {
@@ -42,6 +43,10 @@ export type AtlasLocation = {
   animalTags: string[];
   diveTypeTags: string[];
   maxCurrentStrength: "none" | "mild" | "moderate" | "strong";
+  /** This location is (or sits inside) a Marine Conservation Institute Blue Park. */
+  isBluePark: boolean;
+  /** Derived MPA protection status, or null when no reef-pressure record exists. */
+  mpaStatus: MpaStatus | null;
 };
 
 // ─── Wildlife taxonomy (Story 7.2 / 7.3) ──────────────────────────────────────
@@ -201,6 +206,7 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
 
   const heatLevel = getReefHeatLevel(location.id);
   const [x, y] = geoToMapXY(location.lat, location.lng);
+  const reefPressure = getReefPressureByLocationId(location.id);
 
   return {
     slug: location.slug,
@@ -211,7 +217,7 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     hook: location.description,
     // Evidence-backed manual override (e.g. a documented fish-biomass recovery
     // the coral-cover engine cannot see) wins; otherwise the data-driven state.
-    state: getReefPressureByLocationId(location.id)?.manualReefState ?? getReefState(location.id),
+    state: reefPressure?.manualReefState ?? getReefState(location.id),
     cover: coverNow !== null ? `${coverNow}%` : null,
     coverYear: coverNowYear,
     coverNow,
@@ -231,6 +237,8 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     animalTags,
     diveTypeTags,
     maxCurrentStrength,
+    isBluePark: getBlueParkByLocationId(location.id) !== null,
+    mpaStatus: reefPressure?.mpaStatus ?? null,
   };
 }
 

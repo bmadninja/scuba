@@ -53,6 +53,8 @@ export default function LocationsPage() {
       lng: latLngBySlug[a.slug]?.lng ?? 0,
       coverNow: a.coverNow,
       hasSightings,
+      isBluePark: a.isBluePark,
+      mpaStatus: a.mpaStatus,
     };
   });
 
