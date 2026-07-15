@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   validate:
@@ -26,7 +27,10 @@ jobs:
       - name: Validate NCRMP + AGRRA citation URLs
         run: node scripts/fetch-coral-cover.mjs
 
-      - name: Commit updated coral-cover.json
+      - name: Open PR with updated coral-cover.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
           if git diff --quiet -- src/data/coral-cover.json; then
             echo "No coral-cover changes this month."
@@ -34,13 +38,13 @@ jobs:
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="data/coral-cover-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
           git add src/data/coral-cover.json
           git commit -m "data: monthly NCRMP/AGRRA citation refresh"
-          git pull --rebase
-          SHA=$(git rev-parse HEAD)
-          gh api repos/${{ github.repository }}/statuses/$SHA \
-            -X POST \
-            -f state=success \
-            -f context="Probe hero + species image URLs" \
-            -f description="Data-only commit; no image URLs changed"
-          git push
+          git push origin "$BRANCH"
+          gh pr create --repo "$REPO" \
+            --base main --head "$BRANCH" \
+            --title "data: monthly NCRMP/AGRRA citation refresh" \
+            --body "Automated monthly NCRMP/AGRRA citation-URL validation and lastBuiltAt bump. Auto-merges once checks are green." \
+            --label automation
