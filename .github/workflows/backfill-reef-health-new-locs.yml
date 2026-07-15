@@ -2,6 +2,11 @@ name: Backfill reef health for new locations
 
 on:
   workflow_dispatch:
+    inputs:
+      confirm_estimates:
+        description: "This WRITES FABRICATED regional-estimate coral cover (breaks the all-real-data invariant). Type 'yes' only if you truly intend that."
+        required: true
+        default: "no"
 
 permissions:
   contents: write
@@ -10,6 +15,12 @@ jobs:
   backfill:
     runs-on: ubuntu-latest
     steps:
+      - name: Refuse unless explicitly confirmed
+        if: ${{ inputs.confirm_estimates != 'yes' }}
+        run: |
+          echo "::error::This workflow writes FABRICATED regional-estimate coral cover, falsely attributed to GCRMN. Re-run with confirm_estimates=yes only if you truly intend that. Aborting."
+          exit 1
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -17,7 +28,7 @@ jobs:
           node-version: "22"
 
       - name: Backfill reef-health records for new locations
-        run: node scripts/backfill-reef-health-new-locs.mjs
+        run: node scripts/backfill-reef-health-new-locs.mjs --i-understand-this-writes-estimates
 
       - name: Commit updated reef-health.json
         run: |

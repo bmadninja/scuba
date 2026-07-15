@@ -1,7 +1,21 @@
 #!/usr/bin/env node
 /**
- * Backfill reef-health records for locations added after the original backfill.
- * Auto-assigns regional templates by country. The live-fetch script then
+ * ⚠️  WARNING — THIS SCRIPT WRITES FABRICATED (regional-estimate) CORAL COVER.
+ *
+ * It assigns regional-average TEMPLATE coral cover to every location missing a
+ * reef-health record and stamps it `sourceIds: ["gcrmn"]` +
+ * `surveyMethod: "Regional reef monitoring programme"` — i.e. made-up numbers
+ * falsely attributed to a real survey program. That coral value then drives the
+ * LOCKED reef-state label, and the live NOAA fetch (fetch-reef-health-live.mjs)
+ * never corrects it — it overwrites only the thermal block.
+ *
+ * The atlas is currently 100% real-sourced. Running this breaks that invariant.
+ * Close coverage gaps with REAL data instead (see the reef coverage-gap queue in
+ * the private scuba-ops-docs repo). This script is guarded: it aborts unless run
+ * with the explicit `--i-understand-this-writes-estimates` flag.
+ *
+ * Original intent (kept for reference): backfill reef-health records for
+ * locations added after the original backfill; the live-fetch script then
  * overwrites thermalStress with real NOAA data.
  */
 
@@ -275,7 +289,33 @@ function makeRecord(loc, tmplKey) {
   };
 }
 
+const CONFIRM_FLAG = "--i-understand-this-writes-estimates";
+
+function assertConfirmed() {
+  if (process.argv.includes(CONFIRM_FLAG)) return;
+  console.error(`
+================================================================================
+  STOP — this script FABRICATES coral-cover data. It is not a real-data tool.
+--------------------------------------------------------------------------------
+  It writes regional-average TEMPLATE coral cover for every location missing a
+  reef-health record, stamped sourceIds:["gcrmn"] + surveyMethod "Regional reef
+  monitoring programme" — made-up numbers falsely attributed to a real survey
+  program. That value drives the LOCKED reef-state label, and the live NOAA
+  fetch never corrects it (it only overwrites the thermal block).
+
+  The atlas is currently 100% real-sourced. Running this breaks that invariant.
+  Close coverage gaps with REAL data instead — see the reef coverage-gap queue
+  in the private scuba-ops-docs repo.
+
+  If you TRULY intend to write regional estimates, re-run with the explicit flag:
+    node scripts/backfill-reef-health-new-locs.mjs ${CONFIRM_FLAG}
+================================================================================
+`);
+  process.exit(1);
+}
+
 async function main() {
+  assertConfirmed();
   const locations = JSON.parse(await fs.readFile(LOC_PATH, "utf8"));
   const reefHealth = JSON.parse(await fs.readFile(RH_PATH, "utf8"));
 
