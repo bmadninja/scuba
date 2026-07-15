@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   fetch:
@@ -25,7 +26,10 @@ jobs:
           GFW_API_TOKEN: ${{ secrets.GFW_API_TOKEN }}
         run: node scripts/fetch-fishing-pressure.mjs
 
-      - name: Commit updated fishing-pressure.json
+      - name: Open PR with updated fishing-pressure.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
           if git diff --quiet -- src/data/fishing-pressure.json; then
             echo "No fishing-pressure changes today."
@@ -33,7 +37,13 @@ jobs:
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          BRANCH="data/fishing-pressure-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
           git add src/data/fishing-pressure.json
           git commit -m "data: daily GFW fishing-pressure refresh"
-          git pull --rebase
-          git push
+          git push origin "$BRANCH"
+          gh pr create --repo "$REPO" \
+            --base main --head "$BRANCH" \
+            --title "data: daily GFW fishing-pressure refresh" \
+            --body "Automated daily apparent-fishing-effort refresh from Global Fishing Watch. Auto-merges once checks are green." \
+            --label automation
