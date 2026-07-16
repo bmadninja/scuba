@@ -18329,5 +18329,377 @@
       "reef-health-gcrmn-agrra"
     ],
     "lastReviewedAt": "2026-06-12"
+  },
+  {
+    "id": "reef-health-grenada-main-agrra",
+    "locationId": "grenada-main",
+    "observed": {
+      "surveyDate": "2021-01-01",
+      "surveyMethod": "AGRRA rapid reef assessment — pooled mean of 72 site-surveys at AGRRA stations within ~83 km of the location (nearby-survey composite, not an on-site survey)",
+      "coralCoverPercent": 21.3,
+      "historicalCoralCoverPercent": 15.3,
+      "historicalSurveyDate": "2015-01-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "No on-site reef survey exists for this location, so its reef-state is based on the nearest AGRRA stations (within ~83 km) composite: 4 survey years, 2015–2021. Live-coral cover is the pooled per-year mean of LCAVG across every AGRRA site in scope. This is real survey data from nearby reefs standing in for an unsurveyed location, not a modelled or estimated value. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+      "coralCoverSeries": [
+        {
+          "year": 2015,
+          "coralCoverPercent": 15.3
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 17.8
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 22.4
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 21.3
+        }
+      ]
+    },
+    "methodologyClaimIds": [
+      "reef-health-agrra-composite"
+    ],
+    "lastReviewedAt": "2026-07-16"
+  },
+  {
+    "id": "reef-health-gladden-spit-belize-agrra",
+    "locationId": "gladden-spit-belize",
+    "observed": {
+      "surveyDate": "2021-01-01",
+      "surveyMethod": "AGRRA rapid reef assessment — pooled mean of 301 site-surveys at AGRRA stations within ~83 km of the location (nearby-survey composite, not an on-site survey)",
+      "coralCoverPercent": 22.2,
+      "historicalCoralCoverPercent": 20.1,
+      "historicalSurveyDate": "2011-01-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "No on-site reef survey exists for this location, so its reef-state is based on the nearest AGRRA stations (within ~83 km) composite: 8 survey years, 2011–2021. Live-coral cover is the pooled per-year mean of LCAVG across every AGRRA site in scope. This is real survey data from nearby reefs standing in for an unsurveyed location, not a modelled or estimated value. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+      "coralCoverSeries": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 20.1
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 21.8
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 28.1
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 16.7
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 40.8
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 24.6
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 24.4
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 22.2
+        }
+      ]
+    },
+    "methodologyClaimIds": [
+      "reef-health-agrra-composite"
+    ],
+    "lastReviewedAt": "2026-07-16"
+  },
+  {
+    "id": "reef-health-long-island-bahamas-agrra",
+    "locationId": "long-island-bahamas",
+    "observed": {
+      "surveyDate": "2019-01-01",
+      "surveyMethod": "AGRRA rapid reef assessment — Bahamas national composite (pooled mean of 588 site-surveys; no AGRRA station lies within ~83 km of the location)",
+      "coralCoverPercent": 10.7,
+      "historicalCoralCoverPercent": 10.4,
+      "historicalSurveyDate": "2007-01-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "No on-site reef survey exists for this location, so its reef-state is based on the nearest AGRRA Bahamas national composite: 11 survey years, 2007–2019. Live-coral cover is the pooled per-year mean of LCAVG across every AGRRA site in scope. This is real survey data from nearby reefs standing in for an unsurveyed location, not a modelled or estimated value. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+      "coralCoverSeries": [
+        {
+          "year": 2007,
+          "coralCoverPercent": 10.4
+        },
+        {
+          "year": 2008,
+          "coralCoverPercent": 10.8
+        },
+        {
+          "year": 2009,
+          "coralCoverPercent": 11.4
+        },
+        {
+          "year": 2011,
+          "coralCoverPercent": 9.7
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 13.9
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 9.4
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 10.2
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 12
+        },
+        {
+          "year": 2017,
+          "coralCoverPercent": 10.5
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 9.3
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 10.7
+        }
+      ]
+    },
+    "methodologyClaimIds": [
+      "reef-health-agrra-composite"
+    ],
+    "lastReviewedAt": "2026-07-16"
+  },
+  {
+    "id": "reef-health-andros-bahamas-agrra",
+    "locationId": "andros-bahamas",
+    "observed": {
+      "surveyDate": "2019-01-01",
+      "surveyMethod": "AGRRA rapid reef assessment — pooled mean of 256 site-surveys at AGRRA stations within ~83 km of the location (nearby-survey composite, not an on-site survey)",
+      "coralCoverPercent": 14.6,
+      "historicalCoralCoverPercent": 10.4,
+      "historicalSurveyDate": "2007-01-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "No on-site reef survey exists for this location, so its reef-state is based on the nearest AGRRA stations (within ~83 km) composite: 9 survey years, 2007–2019. Live-coral cover is the pooled per-year mean of LCAVG across every AGRRA site in scope. This is real survey data from nearby reefs standing in for an unsurveyed location, not a modelled or estimated value. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+      "coralCoverSeries": [
+        {
+          "year": 2007,
+          "coralCoverPercent": 10.4
+        },
+        {
+          "year": 2008,
+          "coralCoverPercent": 10.8
+        },
+        {
+          "year": 2009,
+          "coralCoverPercent": 11.4
+        },
+        {
+          "year": 2011,
+          "coralCoverPercent": 11.7
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 13.9
+        },
+        {
+          "year": 2013,
+          "coralCoverPercent": 7.8
+        },
+        {
+          "year": 2015,
+          "coralCoverPercent": 9.8
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 11.9
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 14.6
+        }
+      ]
+    },
+    "methodologyClaimIds": [
+      "reef-health-agrra-composite"
+    ],
+    "lastReviewedAt": "2026-07-16"
+  },
+  {
+    "id": "reef-health-antigua-and-barbuda-agrra",
+    "locationId": "antigua-and-barbuda",
+    "observed": {
+      "surveyDate": "2019-01-01",
+      "surveyMethod": "AGRRA rapid reef assessment — pooled mean of 26 site-surveys at AGRRA stations within ~83 km of the location (nearby-survey composite, not an on-site survey)",
+      "coralCoverPercent": 5.4,
+      "historicalCoralCoverPercent": 11.7,
+      "historicalSurveyDate": "2017-01-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "No on-site reef survey exists for this location, so its reef-state is based on the nearest AGRRA stations (within ~83 km) composite: 3 survey years, 2017–2019. Live-coral cover is the pooled per-year mean of LCAVG across every AGRRA site in scope. This is real survey data from nearby reefs standing in for an unsurveyed location, not a modelled or estimated value. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+      "coralCoverSeries": [
+        {
+          "year": 2017,
+          "coralCoverPercent": 11.7
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 9.3
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 5.4
+        }
+      ]
+    },
+    "methodologyClaimIds": [
+      "reef-health-agrra-composite"
+    ],
+    "lastReviewedAt": "2026-07-16"
+  },
+  {
+    "id": "reef-health-saint-vincent-and-the-grenadines-agrra",
+    "locationId": "saint-vincent-and-the-grenadines",
+    "observed": {
+      "surveyDate": "2019-01-01",
+      "surveyMethod": "AGRRA rapid reef assessment — pooled mean of 48 site-surveys at AGRRA stations within ~83 km of the location (nearby-survey composite, not an on-site survey)",
+      "coralCoverPercent": 23.2,
+      "historicalCoralCoverPercent": 10.5,
+      "historicalSurveyDate": "2015-01-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "No on-site reef survey exists for this location, so its reef-state is based on the nearest AGRRA stations (within ~83 km) composite: 3 survey years, 2015–2019. Live-coral cover is the pooled per-year mean of LCAVG across every AGRRA site in scope. This is real survey data from nearby reefs standing in for an unsurveyed location, not a modelled or estimated value. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+      "coralCoverSeries": [
+        {
+          "year": 2015,
+          "coralCoverPercent": 10.5
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 15.7
+        },
+        {
+          "year": 2019,
+          "coralCoverPercent": 23.2
+        }
+      ]
+    },
+    "methodologyClaimIds": [
+      "reef-health-agrra-composite"
+    ],
+    "lastReviewedAt": "2026-07-16"
+  },
+  {
+    "id": "reef-health-isla-mujeres-agrra",
+    "locationId": "isla-mujeres",
+    "observed": {
+      "surveyDate": "2022-01-01",
+      "surveyMethod": "AGRRA rapid reef assessment — pooled mean of 56 site-surveys at AGRRA stations within ~83 km of the location (nearby-survey composite, not an on-site survey)",
+      "coralCoverPercent": 10.5,
+      "historicalCoralCoverPercent": 6.2,
+      "historicalSurveyDate": "2011-01-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "No on-site reef survey exists for this location, so its reef-state is based on the nearest AGRRA stations (within ~83 km) composite: 7 survey years, 2011–2022. Live-coral cover is the pooled per-year mean of LCAVG across every AGRRA site in scope. This is real survey data from nearby reefs standing in for an unsurveyed location, not a modelled or estimated value. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+      "coralCoverSeries": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 6.2
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 16.7
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 11.1
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 15.5
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 11.6
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 11.3
+        },
+        {
+          "year": 2022,
+          "coralCoverPercent": 10.5
+        }
+      ]
+    },
+    "methodologyClaimIds": [
+      "reef-health-agrra-composite"
+    ],
+    "lastReviewedAt": "2026-07-16"
+  },
+  {
+    "id": "reef-health-banco-chinchorro-agrra",
+    "locationId": "banco-chinchorro",
+    "observed": {
+      "surveyDate": "2021-01-01",
+      "surveyMethod": "AGRRA rapid reef assessment — pooled mean of 99 site-surveys at AGRRA stations within ~83 km of the location (nearby-survey composite, not an on-site survey)",
+      "coralCoverPercent": 14.4,
+      "historicalCoralCoverPercent": 13.5,
+      "historicalSurveyDate": "2011-01-01",
+      "sourceIds": [
+        "agrra"
+      ],
+      "notes": "No on-site reef survey exists for this location, so its reef-state is based on the nearest AGRRA stations (within ~83 km) composite: 6 survey years, 2011–2021. Live-coral cover is the pooled per-year mean of LCAVG across every AGRRA site in scope. This is real survey data from nearby reefs standing in for an unsurveyed location, not a modelled or estimated value. Kramer, P.R., Roth, L., and Lang, J. AGRRA Database (Atlantic and Gulf Rapid Reef Assessment). Ocean Research & Education Foundation. www.agrra.org.",
+      "coralCoverSeries": [
+        {
+          "year": 2011,
+          "coralCoverPercent": 13.5
+        },
+        {
+          "year": 2012,
+          "coralCoverPercent": 12.3
+        },
+        {
+          "year": 2014,
+          "coralCoverPercent": 10.7
+        },
+        {
+          "year": 2016,
+          "coralCoverPercent": 15.4
+        },
+        {
+          "year": 2018,
+          "coralCoverPercent": 16.8
+        },
+        {
+          "year": 2021,
+          "coralCoverPercent": 14.4
+        }
+      ]
+    },
+    "methodologyClaimIds": [
+      "reef-health-agrra-composite"
+    ],
+    "lastReviewedAt": "2026-07-16"
   }
 ]
