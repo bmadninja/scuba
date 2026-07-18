@@ -353,5 +353,16 @@
     "confidence": "high",
     "limitations": "These are peer-reviewed reef fish biomass findings for individual Blue Park sites, each comparing protected water against fished water (inside versus outside) or protection over time (before versus after), with the headline figure quoted as published. We use fish biomass as the signal that protection is working, which is distinct from coral condition: coral loss on these reefs is driven by marine heat, not by fishing. Where a reef is a documented biomass recovery and its coral is not currently falling, we set the reef state to Improving on this basis (for example Channel Islands, Abrolhos, Chumbe, alongside Torre Guaceto). Where the coral is currently declining under heat, we keep the coral-driven reef state and show the biomass finding as context rather than labelling the reef Improving. Two figures (Chumbe, Kisite-Mpunguti) were confirmed through the peer-reviewed Conservation Evidence synthesis of the primary studies rather than the paywalled primary PDF. Standing stock benchmarks without a fished control (Darwin and Wolf, Malpelo, Cocos, Aldabra) show an intact protected reef rather than a measured before-and-after recovery.",
     "lastReviewedAt": "2026-07-08"
+  },
+  {
+    "claimId": "reef-health-agrra-composite",
+    "claimType": "reef-health",
+    "sourceIds": [
+      "agrra"
+    ],
+    "confidence": "medium",
+    "calculation": "For locations with no on-site reef survey, live-coral cover % is the pooled per-survey-year mean of LCAVG from the AGRRA Data Explorer BaseBySite FeatureServer, filtered to >= 0 to drop the -999 no-data sentinel. Scope is proximity first — every AGRRA site within 0.75° (~83 km) of the location centre — falling back to the location's own-country national composite only when proximity yields fewer than three survey years AND the nearest same-country AGRRA site is within 1.5°. The latest survey year sets the headline coral-cover number and the earliest sets the historical baseline; a record is created only when the series spans at least three survey years. Thermal stress is added separately by the daily NOAA CRW job.",
+    "limitations": "Unlike an on-site survey, these values are a nearby AGRRA composite matched to the location centre, so they describe the surrounding reef area rather than the exact dive site, and the annual mean pools every surveyed station in scope. They are used to give an otherwise-unsurveyed location a real, honestly-sourced reef-state instead of leaving it blank; a location's record is upgraded to a curated on-site survey whenever one becomes available. Every number is a real AGRRA survey value — none is modelled or estimated. Confidence is medium (not high) precisely because the survey is near the location, not at it.",
+    "lastReviewedAt": "2026-07-16"
   }
 ]
