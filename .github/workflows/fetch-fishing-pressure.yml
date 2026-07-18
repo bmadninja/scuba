@@ -41,6 +41,10 @@ jobs:
           git checkout -b "$BRANCH"
           git add src/data/fishing-pressure.json
           git commit -m "data: daily GFW fishing-pressure refresh"
+          # Rebase onto latest remote main so any workflow-file changes that landed
+          # during the long GFW fetch don't cause a "workflows permission" push rejection.
+          git fetch origin main
+          git rebase origin/main
           git push origin "$BRANCH"
           gh pr create --repo "$REPO" \
             --base main --head "$BRANCH" \
