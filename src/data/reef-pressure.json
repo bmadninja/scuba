@@ -1135,7 +1135,21 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-05-26"
+    "lastReviewedAt": "2026-07-18",
+    "mpaStatusSource": "manual",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "mpaName": "Coiba [Marine Reserve Zone]",
+      "designatedDate": "1991-01-01",
+      "implementedDate": "2004-07-29",
+      "regulationsInForce": "yes",
+      "assessedAt": "2026-04-09"
+    },
+    "sourceIds": [
+      "mpatlas"
+    ]
   },
   {
     "id": "reef-pressure-bocas-del-toro-panama-2026",
@@ -1429,7 +1443,7 @@
   {
     "id": "reef-pressure-exuma-cays-bahamas-2026",
     "locationId": "exuma-cays-bahamas",
-    "mpaStatus": "designated-multi-use",
+    "mpaStatus": "no-take",
     "fishingPressure": "moderate",
     "topPressures": [
       "shark tourism management",
@@ -1442,11 +1456,26 @@
       "human-pressure-mpa-context",
       "reef-biomass-recovery"
     ],
-    "lastReviewedAt": "2026-05-26",
+    "lastReviewedAt": "2026-07-18",
     "manualReefStateBasis": "Total reef fish biomass inside this fully protected reserve runs about seven times higher than on fished reefs nearby, concentrated in large predators (Lamb and Johnson 2010); the state shown reflects coral cover lost to recent heat, not the fish that protection keeps abundant.",
     "manualReefStateSourceIds": [
       "study-lamb-johnson-exuma-2010",
       "blue-parks"
+    ],
+    "mpaStatusSource": "manual",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 2228,
+      "mpatlasId": "5874",
+      "mpaName": "Exuma Cays Land and Sea Park",
+      "designatedDate": "1964-01-01",
+      "regulationsInForce": "yes",
+      "assessedAt": "2024-06-12"
+    },
+    "sourceIds": [
+      "mpatlas"
     ]
   },
   {
@@ -2261,6 +2290,7 @@
       "stage": "actively-managed",
       "mpaGuideStatus": "af",
       "wdpaId": 15263,
+      "mpatlasId": "1227",
       "mpaName": "Torre Guaceto",
       "designatedDate": "1991-01-01",
       "implementedDate": "2001-01-01",
@@ -2275,7 +2305,7 @@
     "methodologyClaimIds": [
       "human-pressure-mpa-context"
     ],
-    "lastReviewedAt": "2026-07-08",
+    "lastReviewedAt": "2026-07-16",
     "manualReefState": "thriving",
     "manualReefStateBasis": "Strongly protected and recovering. Across 12 years of surveys from 2004 to 2015, white sea bream, a prime fished species, were measured roughly **3 to 7 times denser** inside the fully protected zone than on the adjacent unprotected coast. Well enforced Mediterranean reserves like this one, closed to fishing, carry total fish biomass **around 8 times** that of fished coast, and Torre Guaceto holds a Blue Park Award for effective protection.",
     "manualReefStateSourceIds": [
@@ -2331,15 +2361,27 @@
     "sourceIds": [
       "blue-parks",
       "global-fishing-watch",
-      "study-mcclanahan-chumbe-2009"
+      "study-mcclanahan-chumbe-2009",
+      "mpatlas"
     ],
-    "lastReviewedAt": "2026-07-08",
+    "lastReviewedAt": "2026-07-18",
     "manualReefState": "thriving",
     "manualReefStateBasis": "Improving under protection: after more than a decade closed to fishing, reef fish biomass inside this sanctuary reached about 886 kilograms per hectare, against roughly 285 kilograms per hectare on the fished reefs nearby (McClanahan et al. 2009).",
     "manualReefStateSourceIds": [
       "study-mcclanahan-chumbe-2009",
       "blue-parks"
-    ]
+    ],
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 72397,
+      "mpatlasId": "2483",
+      "mpaName": "Chumbe Island Coral Park (CHICOP)",
+      "designatedDate": "1994-01-01",
+      "regulationsInForce": "yes",
+      "assessedAt": "2024-06-12"
+    }
   },
   {
     "id": "reef-pressure-diani-shimoni-kenya-2026",

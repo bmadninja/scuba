@@ -1,0 +1,89 @@
+[
+  {
+    "locationId": "cocos-keeling-islands",
+    "mpaStatus": "designated-multi-use",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "lightly",
+      "stage": "implemented",
+      "mpaGuideStatus": "il",
+      "mpaName": "Cocos (Keeling) Island"
+    },
+    "matchVia": "centroid",
+    "lastReviewedAt": "2026-07-19"
+  },
+  {
+    "locationId": "lankayan-island",
+    "mpaStatus": "no-take",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "fully",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "af",
+      "wdpaId": 555697546,
+      "mpatlasId": "68818941",
+      "mpaName": "Sugud Island",
+      "designatedDate": "2001-12-21",
+      "regulationsInForce": "yes",
+      "assessedAt": "2026-04-09"
+    },
+    "matchVia": "centroid",
+    "lastReviewedAt": "2026-07-19"
+  },
+  {
+    "locationId": "osprey-reef",
+    "mpaStatus": "designated-multi-use",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "lightly",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "al",
+      "wdpaId": 555556875,
+      "mpatlasId": "68808920",
+      "mpaName": "Coral Sea",
+      "designatedDate": "2013-12-14",
+      "implementedDate": "2018-07-01",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Pike et al. (2024)",
+      "assessedAt": "2024-10-20"
+    },
+    "matchVia": "centroid",
+    "lastReviewedAt": "2026-07-19"
+  },
+  {
+    "locationId": "san-juan-islands",
+    "mpaStatus": "designated-multi-use",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "minimally",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "am",
+      "wdpaId": 312353,
+      "mpatlasId": "9016",
+      "mpaName": "San Juan County/Cypress Island",
+      "designatedDate": "2007-01-01",
+      "implementedDate": "2007-01-01",
+      "regulationsInForce": "yes",
+      "affiliatedReports": "Sullivan-Stack et al. (2022)",
+      "assessedAt": "2024-06-12"
+    },
+    "matchVia": "centroid",
+    "lastReviewedAt": "2026-07-19"
+  },
+  {
+    "locationId": "tremiti-islands-italy",
+    "mpaStatus": "designated-multi-use",
+    "mpaStatusSource": "mpatlas",
+    "mpaAssessment": {
+      "levelOfProtection": "minimally",
+      "stage": "actively-managed",
+      "mpaGuideStatus": "am",
+      "wdpaId": 13164,
+      "mpaName": "Zone C (Partial Reserve)",
+      "regulationsInForce": "yes",
+      "assessedAt": "2025-11-25"
+    },
+    "matchVia": "centroid",
+    "lastReviewedAt": "2026-07-19"
+  }
+]
