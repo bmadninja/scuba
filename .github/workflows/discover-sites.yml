@@ -25,7 +25,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Install deps
         run: npm ci
@@ -50,7 +50,7 @@ jobs:
             exit 0
           fi
           if [ $code -eq 3 ]; then
-            echo "::error::Discovery failed (auth or API error). Rotate ANTHROPIC_API_KEY — see run log above."
+            echo "::error::Discovery failed (auth or API error — often a low credit balance). Check billing at console.anthropic.com or rotate ANTHROPIC_API_KEY — see run log above."
             exit 1
           fi
           exit $code
