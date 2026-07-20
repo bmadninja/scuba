@@ -554,6 +554,7 @@ function Step2Sighting({
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const searchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dateEditedRef = useRef(false);
 
   const addFiles = useCallback(
     async (files: FileList | null) => {
@@ -593,7 +594,7 @@ function Step2Sighting({
           try {
             const tags = await exifr.parse(firstFile, { pick: ["DateTimeOriginal", "DateTime", "latitude", "longitude"] });
             if (tags) {
-              if (!formData.date) {
+              if (!dateEditedRef.current) {
                 const raw: Date | string | undefined = tags.DateTimeOriginal ?? tags.DateTime;
                 if (raw) {
                   const d = raw instanceof Date ? raw : new Date(raw);
@@ -616,7 +617,7 @@ function Step2Sighting({
         })();
       }
     },
-    [formData.date, setFormData]
+    [setFormData]
   );
 
   const removePhoto = (i: number) => {
@@ -917,6 +918,46 @@ function Step2Sighting({
         {photoError && (
           <p className="text-sm mt-1" style={{ color: "var(--color-declining)" }}>{photoError}</p>
         )}
+      </section>
+
+      {/* Observation date */}
+      <section className="mb-6">
+        <p
+          className="mb-3 text-sm"
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 11,
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            color: "var(--color-ink-2)",
+          }}
+        >
+          When did you dive?
+        </p>
+        <input
+          type="date"
+          value={formData.date}
+          max={todayIso()}
+          aria-label="Date you saw this"
+          onChange={(e) => {
+            dateEditedRef.current = true;
+            setFormData((prev) => ({ ...prev, date: e.target.value }));
+          }}
+          style={{
+            border: "1px solid var(--color-hairline)",
+            outline: "none",
+            color: "var(--color-ink)",
+            background: "var(--color-paper)",
+            width: "100%",
+            borderRadius: 2,
+            padding: "0.75rem 1rem",
+            fontFamily: "var(--font-sans)",
+            fontSize: "1rem",
+          }}
+        />
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--color-ink-2)", marginTop: 8 }}>
+          We read this from your photo when we can. Change it if the date looks wrong.
+        </p>
       </section>
 
       {/* Category */}
