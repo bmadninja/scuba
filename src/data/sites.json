@@ -582823,32 +582823,38 @@
           8,
           9,
           10
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/154762278/large.jpeg"
       },
       {
         "commonName": "Common Dentex",
         "scientificName": "Dentex dentex",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/276963608/large.jpg"
       },
       {
         "commonName": "Mediterranean Damselfish",
         "scientificName": "Chromis chromis",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/414134855/large.jpeg"
       },
       {
         "commonName": "Mediterranean Moray",
         "scientificName": "Muraena helena",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461210843/large.jpeg"
       },
       {
         "commonName": "Spiny Lobster",
         "scientificName": "Palinurus elephas",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/370973626/large.jpeg"
       },
       {
         "commonName": "Zebra Seabream",
         "scientificName": "Diplodus cervinus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/523991909/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -583048,23 +583054,28 @@
       {
         "commonName": "Snapper",
         "scientificName": "Pagrus auratus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/18161210/large.jpeg"
       },
       {
         "commonName": "Blue maomao",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/14580599/large.jpg"
       },
       {
         "commonName": "Red moki",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/177002718/large.jpg"
       },
       {
         "commonName": "Goatfish",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/597242015/large.jpg"
       },
       {
         "commonName": "Eagle ray",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/225109012/large.jpg"
       },
       {
         "commonName": "Kahawai",
@@ -583073,7 +583084,8 @@
           12,
           1,
           2
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8049205/large.jpeg"
       },
       {
         "commonName": "Kingfish",
@@ -583082,11 +583094,13 @@
           12,
           1,
           2
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/43786174/large.jpeg"
       },
       {
         "commonName": "Octopus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/345884189/large.jpg"
       }
     ],
     "conditionsByMonth": [
