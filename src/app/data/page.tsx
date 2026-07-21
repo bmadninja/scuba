@@ -903,6 +903,37 @@ export default function DataPage() {
               </Link>
             </div>
 
+            <div style={{ marginTop: "2.5rem" }}>
+              <h3 style={subHStyle}>Mapped a reef in 3D?</h3>
+              <p style={subPStyle}>
+                If you swam overlapping passes to build a photogrammetry model,
+                the upload flow recognises that too. Tell us that is what you did
+                on the dive and we route your pass to{" "}
+                <a href="https://wildflow.ai/" target="_blank" rel="noopener" style={{ color: OCEAN }}>
+                  Wildflow
+                </a>
+                , who turn the footage into a 3D model of the reef. The footage
+                itself uploads straight to Wildflow, so a large capture never has
+                to pass through us.
+              </p>
+              <Link
+                href="/upload"
+                style={{
+                  display: "inline-block",
+                  marginTop: "0.9rem",
+                  padding: "0.7rem 1.2rem",
+                  borderRadius: "0.7rem",
+                  border: `1px solid ${INK}`,
+                  color: INK,
+                  fontSize: "0.875rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                }}
+              >
+                Map a reef
+              </Link>
+            </div>
+
             <div
               style={{
                 border: `1px solid rgba(246,199,0,0.3)`,

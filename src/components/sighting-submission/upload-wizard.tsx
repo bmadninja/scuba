@@ -1280,8 +1280,8 @@ function ModeSelector({ onSelect }: { onSelect: (mode: Mode) => void }) {
 
       {/* Value prop */}
       <p className="mb-6 text-sm leading-relaxed" style={{ color: "var(--color-ink)" }}>
-        There are dozens of marine conservation organizations that rely on diver observations for their work — tracking species populations, monitoring reef health, protecting critical habitats. Finding them yourself, registering accounts, learning each upload form... that adds up to 38 minutes per dive trip. Upload here and we handle all of it. 1 photo, a few seconds, and your sighting reaches the science.{" "}
-        <a href="/data" style={{ color: "var(--color-ocean)", textDecoration: "underline" }}>
+        There are dozens of marine conservation organizations that rely on diver observations for their work — tracking species populations, monitoring reef health, protecting critical habitats. Finding them yourself, registering accounts, learning each upload form... that adds up to 38 minutes per dive trip. Upload here and we handle all of it. Whether you took a photo, ran a structured survey, or mapped a reef in 3D, a few seconds is all it takes and your dive reaches the science.{" "}
+        <a href="/data#divers" style={{ color: "var(--color-ocean)", textDecoration: "underline" }}>
           See which organizations receive your data.
         </a>
       </p>
