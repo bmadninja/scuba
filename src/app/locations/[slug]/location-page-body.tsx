@@ -507,6 +507,7 @@ export function LocationPageBody(props: LocationBodyProps) {
               verdictBasis={verdictBasis ? emphasizeBasis(deHyphen(verdictBasis)) : (divingOutlook ? deHyphen(divingOutlook) : conditionSentence)}
               rows={reefRows}
               sourceLine={reefSourceLine}
+              fishTrendAnchor={fishAbundance ? "#fish-abundance" : null}
             />
           ) : null}
 
@@ -514,7 +515,7 @@ export function LocationPageBody(props: LocationBodyProps) {
               Only present for strong-REEF regions (Caribbean/US/ETP). */}
           {fishAbundance ? (
             <section id="fish-abundance" style={{ marginBottom: "3rem" }}>
-              <h2 style={SECTION_HEADER}>Fish abundance</h2>
+              <h2 style={SECTION_HEADER}>Fish life over time</h2>
 
               <div style={{ marginBottom: "1.5rem", maxWidth: 680 }}>
                 <MetricLabel>
@@ -530,7 +531,13 @@ export function LocationPageBody(props: LocationBodyProps) {
                 }}>
                   {(() => {
                     const span = `${fishAbundance.surveyYears} years of REEF volunteer surveys around ${fishAbundance.zoneName}`;
-                    const tail = "This tracks fish life, standardised for survey effort, so we keep it separate from the coral read above.";
+                    // The tail ties this trend to the "Fish life" row in the reef
+                    // card above: when that row carries a graded level, this is the
+                    // same read over time; when it does not, this is the fish read
+                    // the card could not score. Either way it is one fish story.
+                    const tail = reefRows.fish
+                      ? "It is the fish life graded in the reef card above, shown here over the years, standardised for survey effort."
+                      : "The reef card above has not scored a fish level here yet, so this effort-standardised trend is our read on fish life.";
                     if (fishAbundance.trend === "rising") {
                       return `Across ${span}, divers have been recording more fish per survey. ${tail}`;
                     }
@@ -553,7 +560,7 @@ export function LocationPageBody(props: LocationBodyProps) {
                     color: "#4A5568",
                     marginBottom: "0.75rem",
                   }}>
-                    Fish abundance over time
+                    Fish seen per survey, by year
                   </p>
                   <FishAbundanceChart
                     locationName={locationName}

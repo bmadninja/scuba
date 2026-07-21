@@ -82,6 +82,13 @@ export type ReefHealthPanelProps = {
   rows: ReefHealthRows;
   /** One consolidated, muted "Sources ·" line for the whole card. */
   sourceLine: string;
+  /**
+   * When the fish level is unscored (rows.fish === null) but a REEF fish-trend
+   * chart exists lower on the page, the fish row points to it instead of reading
+   * a flat "Not surveyed" — the level is not scored, but fish life IS tracked.
+   * Pass the in-page anchor (e.g. "#fish-abundance"); omit when no trend exists.
+   */
+  fishTrendAnchor?: string | null;
 };
 
 function VerdictTag({ v, arrow }: { v: VerdictWord; arrow?: "up" | "down" | "flat" }) {
@@ -142,6 +149,29 @@ function NotSurveyedRow({ name }: { name: string }) {
       grey
       visual={<div style={{ height: 8, borderRadius: 999, background: TRACK, maxWidth: 360 }} />}
       verdict={<span style={{ fontSize: "0.9rem", fontWeight: 600, color: GREY }}>Not surveyed</span>}
+    />
+  );
+}
+
+/**
+ * Fish row for sites where the biomass level is unscored but a REEF fish-trend
+ * chart exists below. Reads "Tracked below" and links to it, so the card never
+ * claims fish life is unsurveyed while a decades-long trend sits right beneath.
+ */
+function FishTrackedRow({ anchor }: { anchor: string }) {
+  return (
+    <Row
+      name="Fish life"
+      grey
+      visual={<div style={{ height: 8, borderRadius: 999, background: TRACK, maxWidth: 360 }} />}
+      verdict={
+        <Link
+          href={anchor}
+          style={{ fontSize: "0.9rem", fontWeight: 600, color: INK2, textDecoration: "none", whiteSpace: "nowrap" }}
+        >
+          Tracked below ↓
+        </Link>
+      }
     />
   );
 }
@@ -344,7 +374,11 @@ export function ReefHealthPanel(props: ReefHealthPanelProps) {
 
         {/* Fish life */}
         {rows.fish === null ? (
-          <NotSurveyedRow name="Fish life" />
+          props.fishTrendAnchor ? (
+            <FishTrackedRow anchor={props.fishTrendAnchor} />
+          ) : (
+            <NotSurveyedRow name="Fish life" />
+          )
         ) : (
           <Row
             name="Fish life"
