@@ -833,7 +833,10 @@ export default function DataPage() {
               <h3 style={subHStyle}>Add what you see</h3>
               <p style={subPStyle}>
                 Photograph what you see on a dive and upload it once, right
-                here. We send that sighting on to iNaturalist, GBIF, OBIS and
+                here. We send that sighting on to{" "}
+                <OrgLink href="https://www.inaturalist.org/">iNaturalist</OrgLink>,{" "}
+                <OrgLink href="https://www.gbif.org/">GBIF</OrgLink>,{" "}
+                <OrgLink href="https://obis.org/">OBIS</OrgLink> and
                 more than 5 research platforms for you, so a single upload
                 reaches every database scientists actually use.
               </p>
@@ -881,7 +884,9 @@ export default function DataPage() {
                 If you used a quadrat frame, transect tape, or a CoralWatch
                 chart on the reef, the upload flow recognises that too. Tell
                 us that is what you did on the dive and we route quadrat
-                photos and coral health readings to MERMAID and CoralWatch
+                photos and coral health readings to{" "}
+                <OrgLink href="https://datamermaid.org/">MERMAID</OrgLink> and{" "}
+                <OrgLink href="https://www.coralwatch.org/">CoralWatch</OrgLink>{" "}
                 instead of the sighting databases, so structured data lands
                 with the right partners automatically.
               </p>
@@ -1159,6 +1164,14 @@ const condDot: React.CSSProperties = {
   background: "var(--color-hairline)",
 };
 const pipeLink: React.CSSProperties = { color: "var(--color-ocean)", textDecoration: "none" };
+
+function OrgLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener" style={{ color: "var(--color-ocean)", textDecoration: "none" }}>
+      {children}
+    </a>
+  );
+}
 
 function SignalCard({
   name,
