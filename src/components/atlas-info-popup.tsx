@@ -179,7 +179,7 @@ export const INFO: Record<InfoKey, InfoEntry> = {
     anchor: "#sightings",
   },
   reefabundance: {
-    title: "What fish abundance shows",
+    title: "What fish life over time shows",
     body: [
       "This is a read on how much fish life divers actually record here, from the REEF Volunteer Fish Survey Project. On every survey a trained diver notes each species seen and places it in an abundance band, from a single fish up to abundant, and REEF logs how many surveys were done.",
       "Because the number of surveys is counted, the score is standardised for effort. A rising line means more fish seen per survey, not simply more divers logging. That is what makes it a real signal of fish life, and it is why we keep it separate from the coral reef state above.",

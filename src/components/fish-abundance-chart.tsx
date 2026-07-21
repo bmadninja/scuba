@@ -123,7 +123,7 @@ export function FishAbundanceChart({
     .map((d) => `<tr><td>${d.year}</td><td>${d.value.toFixed(2)}</td><td>${d.surveyCount}</td></tr>`)
     .join("");
 
-  const ariaLabel = `REEF fish abundance history for ${locationName}`;
+  const ariaLabel = `Fish life over time for ${locationName}, from REEF volunteer surveys`;
 
   return (
     <div style={{ position: "relative" }}>
