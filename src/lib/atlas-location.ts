@@ -2,6 +2,7 @@ import { getAllLocations, getLocationById } from "@/lib/data/locations";
 import { getSitesByLocationId } from "@/lib/data/sites";
 import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { getStandaloneMpaStatus } from "@/lib/data/mpa-status";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getCoralCoverForLocation } from "@/lib/data/coral-cover";
 import {
@@ -45,7 +46,11 @@ export type AtlasLocation = {
   maxCurrentStrength: "none" | "mild" | "moderate" | "strong";
   /** This location is (or sits inside) a Marine Conservation Institute Blue Park. */
   isBluePark: boolean;
-  /** Derived MPA protection status, or null when no reef-pressure record exists. */
+  /**
+   * Derived MPA protection status. From the reef-pressure record when present,
+   * otherwise from standalone MPAtlas coverage (mpa-status.json); null when
+   * neither source has a value.
+   */
   mpaStatus: MpaStatus | null;
 };
 
@@ -238,7 +243,10 @@ export function buildAtlasLocation(location: Location): AtlasLocation {
     diveTypeTags,
     maxCurrentStrength,
     isBluePark: getBlueParkByLocationId(location.id) !== null,
-    mpaStatus: reefPressure?.mpaStatus ?? null,
+    // Editorial reef-pressure record wins; otherwise fall back to standalone
+    // MPAtlas protection for locations that have no record but sit in an
+    // assessed reserve. Null only when neither source has a value.
+    mpaStatus: reefPressure?.mpaStatus ?? getStandaloneMpaStatus(location.id)?.mpaStatus ?? null,
   };
 }
 

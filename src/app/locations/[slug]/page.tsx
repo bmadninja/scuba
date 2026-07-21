@@ -18,6 +18,7 @@ import { getWaterTempSummary } from "@/lib/data/water-temp";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
 import { getFishAbundanceSeriesByLocationId } from "@/lib/data/fish-abundance-series";
 import { getReefPressureByLocationId } from "@/lib/data/reef-pressure";
+import { getStandaloneMpaStatus } from "@/lib/data/mpa-status";
 import { getSourcesByIds } from "@/lib/data/sources";
 import { getBlueParkByLocationId } from "@/lib/data/blue-parks";
 import { getLocationFishing } from "@/lib/data/fishing-pressure";
@@ -611,8 +612,12 @@ export default async function LocationPage({
     };
   }
   // Protection pill from MPAtlas; measured GFW effort drives the fallback when
-  // there is no formal protection.
-  const fishing = fishingPill(reefPressure?.mpaStatus ?? null, locationFishing.effort);
+  // there is no formal protection. Standalone MPAtlas coverage backs locations
+  // that have no editorial reef-pressure record but sit in an assessed reserve.
+  const fishing = fishingPill(
+    reefPressure?.mpaStatus ?? getStandaloneMpaStatus(location.id)?.mpaStatus ?? null,
+    locationFishing.effort,
+  );
   const blueParkAward = getBlueParkByLocationId(location.id);
   // Indicator-fish evidence: a real per-site abundance record (currently
   // Tubbataha, from Saving Philippine Reefs) shown as one supporting line under

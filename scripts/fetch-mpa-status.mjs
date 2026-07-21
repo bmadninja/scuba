@@ -54,9 +54,21 @@ import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
 const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
 const RP_PATH = path.join(ROOT, "src/data/reef-pressure.json");
 const LOC_PATH = path.join(ROOT, "src/data/locations.json");
+// Standalone MPAtlas protection for locations that match an assessed zone but
+// have no editorial reef-pressure record. Pure assessment data (no invented
+// pressure/visitor copy); the app reads it as a fallback for mpaStatus.
+const MPA_STATUS_PATH = path.join(ROOT, "src/data/mpa-status.json");
 const GEOJSON_PATH = path.join(ROOT, "data/external/mpatlas-zones.geojson");
 const REVIEW_MD = path.join(ROOT, ".claude/mpa-status-review.md");
 const REVIEW_JSON = path.join(ROOT, ".claude/mpa-status-review.json");
+
+// Point sits outside every assessed polygon, but within this many km of the
+// nearest scored zone's boundary → a "near-miss" recovery. A rough dive
+// centroid often lands just outside a small reef reserve's polygon.
+const NEAR_MISS_KM = 5;
+// At or under this boundary gap the near-miss is treated as confident enough to
+// auto-apply (medium); between it and NEAR_MISS_KM it is held for review (low).
+const NEAR_MISS_CONFIDENT_KM = 1;
 
 const API_BASE = "https://mpatlas.org/api/v1/internal";
 const UA = "scubaseason-data-qa (hello@scubaseason.fun)";
@@ -352,29 +364,50 @@ function bboxOf(geom) {
   return [mnx, mny, mxx, mxy];
 }
 
-async function runFull(locByLoc, records, siteById) {
-  let geojson;
-  try {
-    geojson = JSON.parse(await fs.readFile(GEOJSON_PATH, "utf8"));
-  } catch {
-    console.warn(
-      "MPAtlas zone polygons not found at data/external/mpatlas-zones.geojson\n" +
-        "  Download the assessed-MPA geodatabase (login) from\n" +
-        "  https://guide.mpatlas.org/data/download/ then:\n" +
-        "    ogr2ogr -f GeoJSON -t_srs EPSG:4326 data/external/mpatlas-zones.geojson \\\n" +
-        "      MPAtlas.gdb MPA_zone_designated_implemented_poly\n" +
-        "  Or run with --csv / --spot-check to work without the geodatabase.",
-    );
-    return null;
+// Distance in km from a point to the nearest edge of a polygon, using a local
+// equirectangular projection centred on the point (accurate at the few-km
+// scale that near-miss recovery cares about). Returns 0 for degenerate rings.
+function segDistKm(px, py, ax, ay, bx, by) {
+  const dx = bx - ax, dy = by - ay;
+  const len2 = dx * dx + dy * dy;
+  let t = len2 ? ((px - ax) * dx + (py - ay) * dy) / len2 : 0;
+  t = Math.max(0, Math.min(1, t));
+  return Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+}
+function pointToPolygonKm(lng, lat, geom) {
+  const latR = (lat * Math.PI) / 180;
+  const kx = 111.32 * Math.cos(latR);
+  const ky = 110.574;
+  let min = Infinity;
+  const polys = geom.type === "MultiPolygon" ? geom.coordinates : [geom.coordinates];
+  for (const poly of polys) {
+    for (const ring of poly) {
+      for (let i = 0; i < ring.length - 1; i++) {
+        const ax = (ring[i][0] - lng) * kx, ay = (ring[i][1] - lat) * ky;
+        const bx = (ring[i + 1][0] - lng) * kx, by = (ring[i + 1][1] - lat) * ky;
+        const d = segDistKm(0, 0, ax, ay, bx, by);
+        if (d < min) min = d;
+      }
+    }
   }
+  return min;
+}
 
+// Build the reusable zone matcher once: the polygon index, the property-key
+// detection, the CSV enrichment join, and the exact / near-miss lookups. Shared
+// by the records pass (runFull) and the recordless-location pass (runStandalone)
+// so both resolve a dive point against the exact same assessed geometry.
+async function buildMatcher(geojson) {
   const props0 = geojson.features?.[0]?.properties ?? {};
-  const levelKey = pick(props0, ["protection_mpaguide_level", "mpaguide_protection_level", "protection_level", "lop"]);
-  const stageKey = pick(props0, ["establishment_stage", "stage", "status"]);
-  const nameKey = pick(props0, ["name", "zone_name", "site_name", "wdpa_name"]);
-  const siteKey = pick(props0, ["site_name", "name"]);
-  const wdpaKey = pick(props0, ["wdpa_id", "wdpaid", "wdpa"]);
-  const wdpaPidKey = pick(props0, ["wdpa_pid", "wdpapid"]);
+  const keys = {
+    levelKey: pick(props0, ["protection_mpaguide_level", "mpaguide_protection_level", "protection_level", "lop"]),
+    stageKey: pick(props0, ["establishment_stage", "stage", "status"]),
+    nameKey: pick(props0, ["name", "zone_name", "site_name", "wdpa_name"]),
+    siteKey: pick(props0, ["site_name", "name"]),
+    wdpaKey: pick(props0, ["wdpa_id", "wdpaid", "wdpa"]),
+    wdpaPidKey: pick(props0, ["wdpa_pid", "wdpapid"]),
+  };
+  const { levelKey, stageKey, nameKey, siteKey, wdpaKey, wdpaPidKey } = keys;
 
   // The polygon layer carries only level/stage/wdpa. The richer per-zone
   // attributes (designated/implemented dates, regulations, peer-reviewed
@@ -424,6 +457,9 @@ async function runFull(locByLoc, records, siteById) {
       const bb = bboxOf(f.geometry);
       return { f, bb, area: (bb[2] - bb[0]) * (bb[3] - bb[1]) };
     });
+  // Only zones carrying a real (non-unknown) level are eligible for near-miss
+  // recovery — a boundary gap to an unassessed zone gives no protection value.
+  const scoredIndex = index.filter((it) => normLevel(it.f.properties[levelKey]) !== "unknown");
 
   // All assessed zones containing a point, smallest-first.
   const zonesAt = (lng, lat) => {
@@ -434,6 +470,31 @@ async function runFull(locByLoc, records, siteById) {
     }
     return out.sort((a, b) => a.area - b.area);
   };
+
+  // Nearest scored zone whose boundary is within NEAR_MISS_KM of any candidate
+  // point. `ambiguous` flags a second scored zone of a DIFFERENT mapped status
+  // equally close — a genuinely uncertain edge that must never auto-apply.
+  const nearestScored = (points) => {
+    let best = null;
+    const within = [];
+    const PAD = NEAR_MISS_KM / 100; // ~1.1km per 0.01° lat — generous prefilter
+    for (const pt of points) {
+      for (const it of scoredIndex) {
+        if (pt.lng < it.bb[0] - PAD || pt.lng > it.bb[2] + PAD || pt.lat < it.bb[1] - PAD || pt.lat > it.bb[3] + PAD) continue;
+        const d = pointToPolygonKm(pt.lng, pt.lat, it.f.geometry);
+        if (d > NEAR_MISS_KM) continue;
+        within.push({ it, d });
+        if (!best || d < best.distKm) best = { it, distKm: d, pointLabel: pt.label };
+      }
+    }
+    if (!best) return null;
+    const bestStatus = mapMpaStatus(best.it.f.properties[levelKey], best.it.f.properties[stageKey]);
+    best.ambiguous = within.some(
+      (w) => w.it !== best.it && mapMpaStatus(w.it.f.properties[levelKey], w.it.f.properties[stageKey]) !== bestStatus,
+    );
+    return best;
+  };
+
   const toHit = (it, via) => {
     const p = it.f.properties;
     return {
@@ -452,54 +513,103 @@ async function runFull(locByLoc, records, siteById) {
   const bestZone = (zones) =>
     zones.find((z) => normLevel(z.f.properties[levelKey]) !== "unknown") ?? zones[0];
 
+  return { keys, zonesAt, nearestScored, toHit, bestZone };
+}
+
+// Resolve one location against the assessed geometry: centroid containment
+// first, then dive-site containment, then a bounded near-miss to the nearest
+// scored boundary. Returns a hit (with confidence/via/reason) or null.
+function matchLocation(matcher, loc, siteById) {
+  const { keys, zonesAt, nearestScored, toHit, bestZone } = matcher;
+  const { levelKey, stageKey } = keys;
+
+  // 1. Location centroid — most representative of "the location".
+  if (typeof loc.lat === "number") {
+    const z = zonesAt(loc.lng, loc.lat);
+    if (z.length) return { ...toHit(bestZone(z), "centroid"), confidence: "high" };
+  }
+  // 2. Fall back to the location's dive sites. Collect the mapped status at
+  //    each site; if they disagree the location spans protection levels.
+  if (siteById) {
+    const perSite = [];
+    for (const sid of loc.siteIds ?? []) {
+      const s = siteById.get(sid);
+      const lat = s?.lat, lng = s?.lng ?? s?.lon;
+      if (typeof lat !== "number" || typeof lng !== "number") continue;
+      const z = zonesAt(lng, lat);
+      if (z.length) perSite.push(bestZone(z));
+    }
+    if (perSite.length) {
+      const statuses = new Set(
+        perSite.map((z) => mapMpaStatus(z.f.properties[levelKey], z.f.properties[stageKey])).filter(Boolean),
+      );
+      const rep = perSite.sort((a, b) => a.area - b.area)[0];
+      let hit = {
+        ...toHit(rep, "dive-site"),
+        confidence: statuses.size > 1 ? "low" : "medium",
+        reason:
+          statuses.size > 1
+            ? "location spans zones of differing protection — value is the strictest-covered site"
+            : "matched via a dive site within the location, not its centroid",
+      };
+      if (statuses.size > 1) {
+        // When sites disagree, surface the strictest as the representative.
+        const order = { "no-take": 3, "strict-mpa": 2, "designated-multi-use": 1 };
+        const strict = perSite
+          .map((z) => ({ z, s: mapMpaStatus(z.f.properties[levelKey], z.f.properties[stageKey]) }))
+          .filter((x) => x.s)
+          .sort((a, b) => (order[b.s] ?? 0) - (order[a.s] ?? 0))[0];
+        if (strict) hit = { ...toHit(strict.z, "dive-site"), confidence: "low", reason: hit.reason };
+      }
+      return hit;
+    }
+  }
+  // 3. Near-miss: a rough centroid often lands just outside a small reef
+  //    reserve. Recover the nearest scored boundary within NEAR_MISS_KM, graded
+  //    by how close: sub-km is confident (medium), further out is held (low).
+  const points = [];
+  if (typeof loc.lat === "number") points.push({ lng: loc.lng, lat: loc.lat, label: "location centroid" });
+  for (const sid of loc.siteIds ?? []) {
+    const s = siteById?.get(sid);
+    const lat = s?.lat, lng = s?.lng ?? s?.lon;
+    if (typeof lat === "number" && typeof lng === "number") points.push({ lng, lat, label: `dive site ${sid}` });
+  }
+  const near = nearestScored(points);
+  if (near && !near.ambiguous) {
+    return {
+      ...toHit(near.it, "near-miss"),
+      confidence: near.distKm <= NEAR_MISS_CONFIDENT_KM ? "medium" : "low",
+      dist: near.distKm,
+      reason: `no zone contains the point; nearest assessed boundary is ${near.distKm.toFixed(1)}km from the ${near.pointLabel}`,
+    };
+  }
+  return null;
+}
+
+async function runFull(locByLoc, records, siteById, matcher) {
   const rows = [];
   for (const rec of records) {
     const loc = locByLoc.get(rec.locationId);
     if (!loc) continue;
-    let hit = null;
-
-    // 1. Location centroid — most representative of "the location".
-    if (typeof loc.lat === "number") {
-      const z = zonesAt(loc.lng, loc.lat);
-      if (z.length) hit = { ...toHit(bestZone(z), "centroid"), confidence: "high" };
-    }
-    // 2. Fall back to the location's dive sites. Collect the mapped status at
-    //    each site; if they disagree the location spans protection levels.
-    if (!hit && siteById) {
-      const perSite = [];
-      for (const sid of loc.siteIds ?? []) {
-        const s = siteById.get(sid);
-        const lat = s?.lat, lng = s?.lng ?? s?.lon;
-        if (typeof lat !== "number" || typeof lng !== "number") continue;
-        const z = zonesAt(lng, lat);
-        if (z.length) perSite.push(bestZone(z));
-      }
-      if (perSite.length) {
-        const statuses = new Set(
-          perSite.map((z) => mapMpaStatus(z.f.properties[levelKey], z.f.properties[stageKey])).filter(Boolean),
-        );
-        // Representative = smallest zone among the sites.
-        const rep = perSite.sort((a, b) => a.area - b.area)[0];
-        hit = {
-          ...toHit(rep, "dive-site"),
-          confidence: statuses.size > 1 ? "low" : "medium",
-          reason:
-            statuses.size > 1
-              ? "location spans zones of differing protection — value is the strictest-covered site"
-              : "matched via a dive site within the location, not its centroid",
-        };
-        if (statuses.size > 1) {
-          // When sites disagree, surface the strictest as the representative.
-          const order = { "no-take": 3, "strict-mpa": 2, "designated-multi-use": 1 };
-          const strict = perSite
-            .map((z) => ({ z, s: mapMpaStatus(z.f.properties[levelKey], z.f.properties[stageKey]) }))
-            .filter((x) => x.s)
-            .sort((a, b) => (order[b.s] ?? 0) - (order[a.s] ?? 0))[0];
-          if (strict) hit = { ...toHit(strict.z, "dive-site"), confidence: "low", reason: hit.reason };
-        }
-      }
-    }
+    const hit = matchLocation(matcher, loc, siteById);
     rows.push(buildRow(rec, loc, hit, { mode: "full" }));
+  }
+  return rows;
+}
+
+// Recordless-location pass: locations with no editorial reef-pressure record
+// that nonetheless sit in (or beside) an assessed, scored zone. Their protection
+// status is pure MPAtlas data and lands in src/data/mpa-status.json — never a
+// fabricated pressure record.
+function runStandalone(locations, recIds, siteById, matcher) {
+  const rows = [];
+  for (const loc of locations) {
+    if (recIds.has(loc.id)) continue;
+    const hit = matchLocation(matcher, loc, siteById);
+    if (!hit) continue;
+    const status = mapMpaStatus(hit.level, hit.stage);
+    if (!status) continue; // unknown/unassessed level → no confident standalone value
+    rows.push(buildStandaloneRow(loc, hit, status));
   }
   return rows;
 }
@@ -650,10 +760,45 @@ function buildRow(rec, loc, hit, { mode }) {
   };
 }
 
+// A row for a location that has no reef-pressure record. Carries the MPAtlas
+// assessment only — the shape src/data/mpa-status.json stores, plus review meta.
+function buildStandaloneRow(loc, hit, status) {
+  const assessment = {
+    levelOfProtection: normLevel(hit.level),
+    stage: normStage(hit.stage),
+    mpaGuideStatus: hit.mpaGuideStatus,
+    wdpaId: hit.wdpaId ? Number(hit.wdpaId) : undefined,
+    mpatlasId: hit.mpatlasId ?? hit.id,
+    mpaName: hit.matchedSite ?? hit.name,
+    designatedDate: hit.designatedDate,
+    implementedDate: hit.implementedDate,
+    regulationsInForce: hit.regulationsInForce,
+    affiliatedReports: hit.affiliatedReports,
+    assessedAt: hit.assessedAt,
+  };
+  for (const k of Object.keys(assessment)) if (assessment[k] === undefined) delete assessment[k];
+  return {
+    locationId: loc.id,
+    name: loc.name,
+    country: loc.country,
+    mpatlasStatus: status,
+    confidence: hit.confidence ?? "high",
+    via: hit.via,
+    distanceKm: hit.dist != null ? Math.round(hit.dist * 10) / 10 : undefined,
+    reason: hit.reason,
+    assessment,
+  };
+}
+
 // ── Review writers ───────────────────────────────────────────────────────
-async function writeReview(rows, mode) {
+async function writeReview(rows, mode, standalone = []) {
   await fs.mkdir(path.dirname(REVIEW_JSON), { recursive: true });
-  await fs.writeFile(REVIEW_JSON, JSON.stringify({ mode, rows }, null, 2) + "\n");
+  await fs.writeFile(REVIEW_JSON, JSON.stringify({ mode, rows, standalone }, null, 2) + "\n");
+
+  // Standalone matches trustworthy enough to store (see standaloneAccepted).
+  // The rest are surfaced as candidates for manual confirmation, never stored.
+  const standaloneWritable = standalone.filter(standaloneAccepted);
+  const standaloneHeld = standalone.filter((s) => s.mpatlasStatus && !standaloneAccepted(s));
 
   const matched = rows.filter((r) => r.mpatlasStatus != null);
   const diffs = matched.filter((r) => r.agree === false);
@@ -725,6 +870,34 @@ async function writeReview(rows, mode) {
     "",
     ...noMpa.map((r) => `- ${r.name} (${r.country}) — template says \`${r.templateStatus}\``),
     "",
+    `## New standalone coverage — locations with no reef-pressure record (${standaloneWritable.length})`,
+    "",
+    `Locations whose own centre sits inside a real site-level assessed zone but`,
+    `have no editorial reef-pressure record. Written to \`src/data/mpa-status.json\``,
+    `on \`--apply\` — pure MPAtlas assessment, no invented pressure copy.`,
+    "",
+    `| Site | MPAtlas | Confidence/via | Matched MPA |\n|---|---|---|---|`,
+    ...standaloneWritable.map(
+      (s) =>
+        `| ${s.name} (${s.country}) | ${s.mpatlasStatus} | ${s.confidence}/${s.via}${
+          s.distanceKm != null ? ` (${s.distanceKm}km)` : ""
+        } | ${s.assessment?.mpaName ?? "—"} |`,
+    ),
+    "",
+    `## Standalone candidates — NOT stored, need manual confirmation (${standaloneHeld.length})`,
+    "",
+    `Matched a zone but not auto-stored: reached via a single dive site in a broad`,
+    `region, a near-miss to a boundary, or a basin-scale mammal / EEZ sanctuary`,
+    `(Pelagos, Agoa, Humpback) that is not this reef's own protection. Confirm by`,
+    `hand before promoting any of these.`,
+    "",
+    ...standaloneHeld.map(
+      (s) =>
+        `- ${s.name} (${s.country}) — ${s.mpatlasStatus} via ${s.via}${
+          s.distanceKm != null ? ` (${s.distanceKm}km)` : ""
+        } → ${s.assessment?.mpaName ?? "—"}`,
+    ),
+    "",
   ].join("\n");
 
   await fs.writeFile(REVIEW_MD, md + "\n");
@@ -733,7 +906,29 @@ async function writeReview(rows, mode) {
     diffs: diffs.length,
     wdpaOnly: wdpaOnly.length,
     noMpa: noMpa.length,
+    standalone: standaloneWritable.length,
+    standaloneHeld: standaloneHeld.length,
   };
+}
+
+// Write the standalone MPAtlas protection file consumed by the app. Fully
+// machine-derived and regenerated each run (no manual locks live here), so it
+// is rewritten wholesale from the confident standalone matches.
+async function writeStandalone(standalone, today) {
+  const writable = standalone
+    .filter(standaloneAccepted)
+    .sort((a, b) => a.locationId.localeCompare(b.locationId))
+    .map((s) => ({
+      locationId: s.locationId,
+      mpaStatus: s.mpatlasStatus,
+      mpaStatusSource: "mpatlas",
+      mpaAssessment: s.assessment,
+      matchVia: s.via,
+      ...(s.distanceKm != null ? { matchDistanceKm: s.distanceKm } : {}),
+      lastReviewedAt: today,
+    }));
+  await fs.writeFile(MPA_STATUS_PATH, JSON.stringify(writable, null, 2) + "\n");
+  return writable.length;
 }
 
 // Reviewer decisions: keep the current value even though geometry produced a
@@ -741,6 +936,24 @@ async function writeReview(rows, mode) {
 const APPLY_HOLD = new Set([
   "great-barrier-reef-australia", // 15-zone park spanning full→incompatible; stays designated-multi-use
 ]);
+
+// A standalone match (a location with no reef-pressure record) is trustworthy
+// enough to STORE only when:
+//  - the location's own centroid sits in the zone (not a single dive site in a
+//    broad region, and not a near-miss to a boundary), and
+//  - the matched zone is real site-level reef protection — NOT a basin-scale
+//    marine-mammal / EEZ sanctuary (Pelagos, Agoa, Humpback), a bare buffer
+//    zone, or the Great Barrier Reef umbrella (held as multi-use elsewhere).
+// Everything else is surfaced in the review as a manual-confirmation candidate.
+function standaloneAccepted(s) {
+  if (s.confidence !== "high" && s.confidence !== "medium") return false;
+  if (s.via !== "centroid") return false;
+  if (APPLY_HOLD.has(s.locationId)) return false;
+  const name = String(s.assessment?.mpaName ?? "").toLowerCase();
+  if (/sanctuary|mammal|cetacean|whale|pelagos|agoa|great barrier reef/.test(name)) return false;
+  if (/\bbuffer\b/.test(name)) return false;
+  return true;
+}
 
 // Apply high/medium-confidence, non-locked, non-held changes to
 // reef-pressure.json with full MPAtlas provenance. Also fixes the legacy
@@ -816,6 +1029,7 @@ async function main() {
   const recByLoc = new Map(records.map((r) => [r.locationId, r]));
 
   let rows;
+  let standalone = [];
   let mode;
   if (flag === "spot-check") {
     mode = "spot-check";
@@ -837,16 +1051,39 @@ async function main() {
     } catch {
       siteById = null;
     }
-    rows = await runFull(locByLoc, records, siteById);
-    if (rows == null) return; // dataset absent — instructions already printed
+    let geojson;
+    try {
+      geojson = JSON.parse(await fs.readFile(GEOJSON_PATH, "utf8"));
+    } catch {
+      console.warn(
+        "MPAtlas zone polygons not found at data/external/mpatlas-zones.geojson\n" +
+          "  Download the assessed-MPA geodatabase (login) from\n" +
+          "  https://guide.mpatlas.org/data/download/ then:\n" +
+          "    ogr2ogr -f GeoJSON -t_srs EPSG:4326 data/external/mpatlas-zones.geojson \\\n" +
+          "      MPAtlas.gdb MPA_zone_designated_implemented_poly\n" +
+          "  Or run with --csv / --spot-check to work without the geodatabase.",
+      );
+      return; // dataset absent — instructions printed
+    }
+    const matcher = await buildMatcher(geojson);
+    // Records pass (writes into reef-pressure.json) + recordless pass (writes
+    // the standalone src/data/mpa-status.json). Both share the same geometry.
+    rows = await runFull(locByLoc, records, siteById, matcher);
+    const recIds = new Set(records.map((r) => r.locationId));
+    standalone = runStandalone(locations, recIds, siteById, matcher);
   }
 
-  const summary = await writeReview(rows, mode);
+  const summary = await writeReview(rows, mode, standalone);
   console.log("");
   console.log(`Review written to ${path.relative(ROOT, REVIEW_MD)}`);
   console.log(
     `  matched: ${summary.matched}  would-change: ${summary.diffs}  wdpa-only: ${summary.wdpaOnly}  no-mpa: ${summary.noMpa}`,
   );
+  if (mode === "full") {
+    console.log(
+      `  standalone (new coverage, no record): ${summary.standalone} writable, ${summary.standaloneHeld} held for review`,
+    );
+  }
 
   if (process.argv.includes("--apply")) {
     const { applied, confirmed, refreshed, held, typoFixed } = await applyChanges(rows, records);
@@ -866,8 +1103,14 @@ async function main() {
       for (const [id, why] of held) console.log(`  · ${id.padEnd(34)} ${why}`);
     }
     if (typoFixed) console.log(`Fixed ${typoFixed} legacy fishingPressure "medium" → "moderate".`);
+    if (mode === "full") {
+      const today = new Date().toISOString().slice(0, 10);
+      const n = await writeStandalone(standalone, today);
+      console.log("");
+      console.log(`Wrote ${n} standalone MPAtlas record(s) to ${path.relative(ROOT, MPA_STATUS_PATH)}.`);
+    }
   } else {
-    console.log("  Nothing written to reef-pressure.json — review, then re-run with --apply.");
+    console.log("  Nothing written to reef-pressure.json / mpa-status.json — review, then re-run with --apply.");
   }
 }
 
