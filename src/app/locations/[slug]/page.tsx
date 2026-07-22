@@ -629,9 +629,8 @@ export default async function LocationPage({
   // cover, heat, fishing or Blue Park signal (e.g. St Abbs, Oban, Jervis Bay).
   const hasFishBiomassSeries =
     (getFishBiomassSeriesByLocationId(location.id)?.series.length ?? 0) >= 2;
-  const hasReefData =
-    coverNow !== null || decline !== null || heat !== null || fishing !== null ||
-    blueParkAward !== null || hasFishBiomassSeries || siteFishBasis !== null;
+  // hasReefData is computed below, once the coral-series chart points are known,
+  // so a reef carrying only a proximity coral series still opens the panel.
 
   // For a flat coral-cover trend, append a forward-looking sentence based on current
   // heat stress and the combined fishing read so the note reads as an honest
@@ -693,9 +692,12 @@ export default async function LocationPage({
   const nearbyCandidates: { series: CoralCoverSeriesPoint[]; label: string }[] = [];
   if (mermaidCoralSeries?.series?.length) {
     const km = Math.round(mermaidCoralSeries.radiusDeg * 111);
+    // Public MERMAID data is contributed by many survey teams, not one org, so
+    // the caption credits "MERMAID and the survey teams" rather than any single
+    // contributor (never "WCS").
     nearbyCandidates.push({
       series: mermaidCoralSeries.series,
-      label: `MERMAID reef surveys within ${km} km`,
+      label: `MERMAID and the survey teams, within ${km} km`,
     });
   }
   if (agrraSeries?.coral?.series?.length) {
@@ -732,6 +734,61 @@ export default async function LocationPage({
     }
   }
 
+  // One consistent coral number per reef: the latest observed survey value from
+  // the chosen series (the last chart point), falling back to the single
+  // reef-health reading only when no series covers the reef. This one value
+  // drives the reef-card coral row AND the "Live coral covers X%" basis line, so
+  // the card and the chart can never show two different numbers.
+  const coralDisplayPct: number | null =
+    projectionDataPoints.length > 0
+      ? projectionDataPoints[projectionDataPoints.length - 1].pct
+      : coverNow !== null
+        ? Math.round(coverNow)
+        : null;
+
+  // Plain-language credit for whoever ran the coral surveys, shared by the card
+  // source line and the chart caption. MERMAID public data is contributed by many
+  // survey teams (never "WCS"); AIMS and AGRRA/GCRMN are credited where they are
+  // the source. For the reef-health fallback we read the record's actual
+  // `observed.sourceIds` (not the loose methodology bucket, which mislabels e.g.
+  // GCRMN-monitored Maldives reefs as AIMS) and credit the first survey program
+  // present, in specificity order.
+  const CORAL_SOURCE_CREDIT: [string, string][] = [
+    ["aims-ltmp", "AIMS long term monitoring"],
+    ["mermaid", "MERMAID and the survey teams"],
+    ["agrra", "AGRRA and GCRMN reef surveys"],
+    ["gcrmn", "GCRMN reef surveys"],
+    ["reef-check", "Reef Check surveys"],
+    ["reef-life-survey", "Reef Life Survey"],
+    ["allen-coral-atlas", "Allen Coral Atlas"],
+  ];
+  const coralSourceCredit: string | null = (() => {
+    if (chosenNearby) {
+      return chosenNearby.label.startsWith("AGRRA")
+        ? "AGRRA and GCRMN reef surveys"
+        : "MERMAID and the survey teams";
+    }
+    if (coralDisplayPct === null) return null;
+    const ids = new Set(observed?.sourceIds ?? []);
+    for (const [id, credit] of CORAL_SOURCE_CREDIT) {
+      if (ids.has(id)) return credit;
+    }
+    return "Reef survey";
+  })();
+  // When the chart is drawn from the single reef-health reading (no proximity
+  // series), caption it with the accurate program credit rather than the loose
+  // "AIMS / NOAA"-style methodology label.
+  if (!chosenNearby && coralSourceCredit) {
+    coralChartSourceLabel = coralSourceCredit;
+  }
+
+  // The reef-health card shows whenever there is ANY reef signal — including a
+  // coral series on its own (the 30 reefs that only carry a proximity coral
+  // history), so their coral row un-blanks even without heat, fishing or biomass.
+  const hasReefData =
+    coverNow !== null || decline !== null || heat !== null || fishing !== null ||
+    blueParkAward !== null || hasFishBiomassSeries || siteFishBasis !== null ||
+    projectionDataPoints.length >= 1;
 
   // GCRMN regional context, drawn as one faint horizontal reference line at the
   // region's most recent average cover — "this reef vs its region" — instead of
@@ -825,16 +882,14 @@ export default async function LocationPage({
   //             because a single reading has no direction to report.
   // Neither touches the overall reef-state headline (that stays from
   // computeReefState).
-  const coralTrendVerdict: VerdictWord =
-    pillars.coralCover === null
-      ? { word: "Stable", color: AMBER }
-      : pillars.coralCover < 25
-        ? { word: "Declining", color: RED }
-        : pillars.coralCover >= 40 && !pillars.coralFalling
-          ? { word: "Improving", color: GREEN }
-          : { word: "Stable", color: AMBER };
-  const coralArrow: "up" | "down" | "flat" =
-    coralTrendVerdict.word === "Improving" ? "up" : coralTrendVerdict.word === "Declining" ? "down" : "flat";
+  // The coral row is driven by the SAME observed coral series the chart below
+  // draws (projectionDataPoints), so the card value and the chart never disagree.
+  // Precedence: a real multi-year survey series (MERMAID proximity → AGRRA →
+  // reef-health's own coralCoverSeries) is the source of truth for the value and
+  // trend; the single reef-health reading is the fallback only when no series
+  // covers the reef. This is display of observed coral history and is DECOUPLED
+  // from the reef-state label (computeReefState is unchanged) — so a reef can
+  // show real coral cover here while its overall state stays "Not surveyed".
   const coralLevelVerdict = (pct: number): VerdictWord =>
     pct >= 40
       ? { word: "Healthy", color: GREEN }
@@ -843,27 +898,33 @@ export default async function LocationPage({
         : pct >= 10
           ? { word: "Low", color: AMBER }
           : { word: "Critical", color: RED };
-  // A REAL trend needs 3+ site surveys (the reef-health coralCoverSeries).
-  const coralSeries = observed?.coralCoverSeries ?? null;
-  const hasCoralTrend = !!coralSeries && coralSeries.length >= 3;
+  // Direction word for a genuine multi-year trend (3+ survey years). Improving
+  // needs healthy cover (≥40%) that is not net-falling across the series; below
+  // 25% reads Declining; everything in between is Stable. Same thresholds the
+  // coral-only engine used, now read off the observed series first/last points.
+  const coralTrendVerdict = (currentPct: number, falling: boolean): VerdictWord =>
+    currentPct < 25
+      ? { word: "Declining", color: RED }
+      : currentPct >= 40 && !falling
+        ? { word: "Improving", color: GREEN }
+        : { word: "Stable", color: AMBER };
   let coralRow: ReefHealthRows["coral"] = null;
-  if (pillars.coralCover !== null) {
-    const currentPct = Math.round(pillars.coralCover);
-    if (hasCoralTrend && coralSeries) {
-      const points = coralSeries.map((p) => ({ year: p.year, pct: Math.round(p.coralCoverPercent) }));
-      // Pin the "now" endpoint to the verdict value so the chart cannot disagree.
-      points[points.length - 1] = { year: points[points.length - 1].year, pct: currentPct };
-      coralRow = {
-        kind: "trend",
-        points,
-        currentPct,
-        startYear: points[0].year,
-        verdict: coralTrendVerdict,
-        arrow: coralArrow,
-      };
+  if (projectionDataPoints.length >= 1) {
+    const points = projectionDataPoints.map((p) => ({ year: p.year, pct: p.pct }));
+    const currentPct = points[points.length - 1].pct;
+    if (points.length >= 3) {
+      const falling = currentPct < points[0].pct;
+      const verdict = coralTrendVerdict(currentPct, falling);
+      const arrow: "up" | "down" | "flat" =
+        verdict.word === "Improving" ? "up" : verdict.word === "Declining" ? "down" : "flat";
+      coralRow = { kind: "trend", points, currentPct, startYear: points[0].year, verdict, arrow };
     } else {
+      // One or two readings — a level word, no direction claim.
       coralRow = { kind: "level", pct: currentPct, verdict: coralLevelVerdict(currentPct) };
     }
+  } else if (pillars.coralCover !== null) {
+    const currentPct = Math.round(pillars.coralCover);
+    coralRow = { kind: "level", pct: currentPct, verdict: coralLevelVerdict(currentPct) };
   }
 
   // Fish life — graded against the gravity-anchored B0 benchmark. The grade, the
@@ -943,7 +1004,7 @@ export default async function LocationPage({
 
   // One consolidated source line for the whole card — only the present pillars.
   const sourceParts: string[] = [];
-  if (coralRow) sourceParts.push("MERMAID and partner coral surveys");
+  if (coralRow && coralSourceCredit) sourceParts.push(coralSourceCredit);
   if (fishRow) sourceParts.push("Reef Life Survey");
   if (heatRow) sourceParts.push("NOAA Coral Reef Watch");
   if (fishingRow) sourceParts.push("Global Fishing Watch and reef gravity");
@@ -979,8 +1040,11 @@ export default async function LocationPage({
     const parts: string[] = [];
     if (decline) {
       parts.push(`This reef has lost much of its live coral since ${decline.fromYear}.`);
-    } else if (coverNow !== null) {
-      parts.push(`Live coral covers ${Math.round(coverNow)}% of this reef.`);
+    } else if (coralDisplayPct !== null) {
+      // Uses the unified coral number (survey series latest, else reef-health), so
+      // reefs that only carry a proximity coral series read "Live coral covers
+      // X%" here instead of "still being gathered".
+      parts.push(`Live coral covers ${coralDisplayPct}% of this reef.`);
     }
     if (heat) {
       parts.push(

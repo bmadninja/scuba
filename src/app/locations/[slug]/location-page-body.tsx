@@ -8,6 +8,7 @@ import { EditorialHook } from "@/components/editorial-hook";
 import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
 import type { SiteOption } from "@/components/sighting-submission/submission-form";
+import { CoralProjectionChart } from "@/components/coral-projection-chart";
 import type { CoralDataPoint } from "@/components/coral-projection-chart";
 import { FishAbundanceChart } from "@/components/fish-abundance-chart";
 import type { FishAbundancePoint } from "@/components/fish-abundance-chart";
@@ -166,7 +167,7 @@ export type LocationBodyProps = {
   coverTrendNote: string | null;
   // Coral-cover-over-time chart points (real observed surveys)
   projectionDataPoints: CoralDataPoint[];
-  // Attribution shown under the chart, e.g. "MERMAID reef surveys within 55 km"
+  // Attribution shown under the chart, e.g. "MERMAID and the survey teams, within 55 km"
   coralChartSourceLabel: string | null;
   // GCRMN regional average, drawn as a faint horizontal reference line
   coralContextValue: number | null;
@@ -403,6 +404,10 @@ export function LocationPageBody(props: LocationBodyProps) {
     heat,
     verdictBasis,
     waterQualityEvents,
+    projectionDataPoints,
+    coralChartSourceLabel,
+    coralContextValue,
+    coralContextLabel,
     fishAbundance,
     divingOutlook,
     reefStateLabel,
@@ -509,6 +514,68 @@ export function LocationPageBody(props: LocationBodyProps) {
               sourceLine={reefSourceLine}
               fishTrendAnchor={fishAbundance ? "#fish-abundance" : null}
             />
+          ) : null}
+
+          {/* CORAL COVER OVER TIME — observed survey history drawn as a real
+              trajectory (display only, decoupled from the reef-state label). Every
+              point is a measured survey, never a projection. Rendered whenever a
+              2+ point coral series is on file, which is what turns the coral data
+              into a trend a diver can see. */}
+          {projectionDataPoints.length >= 2 ? (
+            <section id="coral-cover" style={{ marginBottom: "3rem" }}>
+              <h2 style={SECTION_HEADER}>Coral cover over time</h2>
+
+              <div style={{ marginBottom: "1.5rem", maxWidth: 680 }}>
+                <MetricLabel>Live coral cover, by survey year</MetricLabel>
+                <p style={{
+                  fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                  fontSize: "1.0625rem",
+                  lineHeight: 1.6,
+                  color: "#4A5568",
+                  margin: 0,
+                }}>
+                  {(() => {
+                    const first = projectionDataPoints[0];
+                    const last = projectionDataPoints[projectionDataPoints.length - 1];
+                    const span =
+                      projectionDataPoints.length >= 3
+                        ? `${projectionDataPoints.length} survey years from ${first.year} to ${last.year}`
+                        : `surveys in ${first.year} and ${last.year}`;
+                    const tail = "Every point is a real survey reading, never a projection.";
+                    if (last.pct > first.pct) {
+                      return `Across ${span}, live coral cover here has risen from ${first.pct}% to ${last.pct}%. ${tail}`;
+                    }
+                    if (last.pct < first.pct) {
+                      return `Across ${span}, live coral cover here has fallen from ${first.pct}% to ${last.pct}%. ${tail}`;
+                    }
+                    return `Across ${span}, live coral cover here has held steady at about ${last.pct}%. ${tail}`;
+                  })()}
+                </p>
+              </div>
+
+              <div style={SECTION_CARD}>
+                <div style={{ padding: "1.25rem" }}>
+                  <p style={{
+                    fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "#4A5568",
+                    marginBottom: "0.75rem",
+                  }}>
+                    Live coral cover, percent by year
+                  </p>
+                  <CoralProjectionChart
+                    locationName={locationName}
+                    dataPoints={projectionDataPoints}
+                    sourceLabel={coralChartSourceLabel ?? undefined}
+                    contextValue={coralContextValue ?? undefined}
+                    contextLabel={coralContextLabel ?? undefined}
+                  />
+                </div>
+              </div>
+            </section>
           ) : null}
 
           {/* REEF FISH-ABUNDANCE PANEL — display-only, decoupled from reef state.
