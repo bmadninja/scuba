@@ -148,6 +148,10 @@ export function ExplorePage({ locations, currentMonth }: Props) {
   const [draftReefStates, setDraftReefStates] = useState<ReefState[]>([]);
   const [draftRegions, setDraftRegions] = useState<string[]>([]);
   const [draftMonths, setDraftMonths] = useState<number[]>([]);
+  const [draftAnimals, setDraftAnimals] = useState<string[]>([]);
+  const [draftDiveTypes, setDraftDiveTypes] = useState<string[]>([]);
+  const [draftProtection, setDraftProtection] = useState<string[]>([]);
+  const [draftSkills, setDraftSkills] = useState<string[]>([]);
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const cardRefs = useRef<Map<string, HTMLAnchorElement | null>>(new Map());
   const filterBarRef = useRef<HTMLDivElement>(null);
@@ -181,6 +185,10 @@ export function ExplorePage({ locations, currentMonth }: Props) {
       setDraftReefStates([...reefStates]);
       setDraftRegions([...regionFilters]);
       setDraftMonths([...monthFilters]);
+      setDraftAnimals([...animalFilters]);
+      setDraftDiveTypes([...diveTypeFilters]);
+      setDraftProtection([...protectionFilters]);
+      setDraftSkills([...skillFilters]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sheetOpen]);
@@ -259,10 +267,16 @@ export function ExplorePage({ locations, currentMonth }: Props) {
     if (draftRegions.length > 0) next.set("region", draftRegions.join(","));
     if (draftMonths.length > 0)
       next.set("month", draftMonths.map(String).join(","));
+    if (draftAnimals.length > 0) next.set("animal", draftAnimals.join(","));
+    if (draftDiveTypes.length > 0)
+      next.set("divetype", draftDiveTypes.join(","));
+    if (draftProtection.length > 0)
+      next.set("protection", draftProtection.join(","));
+    if (draftSkills.length > 0) next.set("skill", draftSkills.join(","));
     const qs = next.toString();
     router.replace(qs ? `/locations?${qs}` : "/locations", { scroll: false });
     setSheetOpen(false);
-  }, [draftReefStates, draftRegions, draftMonths, router]);
+  }, [draftReefStates, draftRegions, draftMonths, draftAnimals, draftDiveTypes, draftProtection, draftSkills, router]);
 
   const filtered = useMemo(() => {
     let result = locations.filter((loc) => {
@@ -661,6 +675,38 @@ export function ExplorePage({ locations, currentMonth }: Props) {
               {MONTH_LABELS[m - 1]}
             </span>
           ))}
+          {animalFilters.map((a) => (
+            <span
+              key={a}
+              className="flex shrink-0 items-center gap-1 rounded-full bg-[#0E1C28] px-3 py-1 text-xs text-white"
+            >
+              {a}
+            </span>
+          ))}
+          {diveTypeFilters.map((dt) => (
+            <span
+              key={dt}
+              className="flex shrink-0 items-center gap-1 rounded-full bg-[#0E1C28] px-3 py-1 text-xs text-white"
+            >
+              {DIVE_TYPE_OPTIONS.find((o) => o.value === dt)?.label ?? dt}
+            </span>
+          ))}
+          {protectionFilters.map((p) => (
+            <span
+              key={p}
+              className="flex shrink-0 items-center gap-1 rounded-full bg-[#0E1C28] px-3 py-1 text-xs text-white"
+            >
+              {PROTECTION_OPTIONS.find((o) => o.value === p)?.label ?? p}
+            </span>
+          ))}
+          {skillFilters.map((s) => (
+            <span
+              key={s}
+              className="flex shrink-0 items-center gap-1 rounded-full bg-[#0E1C28] px-3 py-1 text-xs text-white"
+            >
+              {s}
+            </span>
+          ))}
           <button
             type="button"
             disabled={!hydrated}
@@ -899,6 +945,56 @@ export function ExplorePage({ locations, currentMonth }: Props) {
                 </div>
               </section>
 
+              {/* What to see (species) */}
+              <section>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-mono), \"IBM Plex Mono\", ui-monospace, monospace",
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    color: "var(--color-ink-2)",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  What to see
+                </h2>
+                <SpeciesGroups
+                  animalFilters={draftAnimals}
+                  onToggle={(v) => toggleDraft(draftAnimals, setDraftAnimals, v)}
+                />
+              </section>
+
+              {/* Dive type */}
+              <section>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-mono), \"IBM Plex Mono\", ui-monospace, monospace",
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    color: "var(--color-ink-2)",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  Dive type
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {DIVE_TYPE_OPTIONS.map(({ value, label }) => (
+                    <FilterPill
+                      key={value}
+                      label={label}
+                      active={draftDiveTypes.includes(value)}
+                      onClick={() =>
+                        toggleDraft(draftDiveTypes, setDraftDiveTypes, value)
+                      }
+                    />
+                  ))}
+                </div>
+              </section>
+
               {/* Region */}
               <section>
                 <h2
@@ -957,6 +1053,64 @@ export function ExplorePage({ locations, currentMonth }: Props) {
                       />
                     );
                   })}
+                </div>
+              </section>
+
+              {/* Conservation */}
+              <section>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-mono), \"IBM Plex Mono\", ui-monospace, monospace",
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    color: "var(--color-ink-2)",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  Conservation
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {PROTECTION_OPTIONS.map(({ value, label }) => (
+                    <FilterPill
+                      key={value}
+                      label={label}
+                      active={draftProtection.includes(value)}
+                      onClick={() =>
+                        toggleDraft(draftProtection, setDraftProtection, value)
+                      }
+                    />
+                  ))}
+                </div>
+              </section>
+
+              {/* Certification */}
+              <section>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-mono), \"IBM Plex Mono\", ui-monospace, monospace",
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                    color: "var(--color-ink-2)",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  Certification
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {SKILL_OPTIONS.map((s) => (
+                    <FilterPill
+                      key={s}
+                      label={s}
+                      active={draftSkills.includes(s)}
+                      onClick={() =>
+                        toggleDraft(draftSkills, setDraftSkills, s)
+                      }
+                    />
+                  ))}
                 </div>
               </section>
             </div>
