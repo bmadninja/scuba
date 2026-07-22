@@ -48,7 +48,7 @@ export const INFO: Record<InfoKey, InfoEntry> = {
       ["Improving", "rgba(46,125,91,0.13)", "#216B49", "Near its natural baseline and steady. Recovering or healthy, not perfect."],
       ["Stable", "rgba(185,138,46,0.16)", "#7A5A12", "Below baseline or slipping from heat or fishing, but the reef structure and fish life still hold."],
       ["Declining", "rgba(192,65,43,0.13)", "#A8351F", "Heavy recent loss or bleaching. The 4th global bleaching event (2023 to 2025) affected 84% of reefs worldwide, the worst on record, with a new El Niño now developing. Diving here documents what remains and adds to the scientific record."],
-      ["Not surveyed", "rgba(14,28,40,0.07)", "#4A5568", "No coral survey and no heat reading on file yet, so we do not assign a state. The absence of bad news is not evidence of a healthy reef, and a single logged dive can change that."],
+      ["Not surveyed", "rgba(14,28,40,0.07)", "#4A5568", "We only set an overall state when we have enough of a read on the reef itself. Some reefs show a nearby coral survey, and those read Partly surveyed rather than blank, but coral alone is not enough to grade the whole reef. The absence of bad news is not evidence of a healthy reef, and a single logged dive can change that."],
     ],
     link: true,
     anchor: "#reefstate",

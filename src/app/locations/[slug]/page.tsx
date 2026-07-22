@@ -746,6 +746,21 @@ export default async function LocationPage({
         ? Math.round(coverNow)
         : null;
 
+  // Display-only reef-state label. When the locked scoring model has no on-site
+  // signal to grade the reef (state "unknown") BUT a nearby coral survey series
+  // is on file — the ~24 reefs whose coral row + trajectory now render — the grey
+  // "Not surveyed" pill would sit directly over a live coral chart and read as a
+  // contradiction. We do NOT touch computeReefState (the ~55km proximity series
+  // deliberately never grades a reef; see reef-state.ts), and the reef still
+  // counts as "unknown" in the atlas filters — so the atlas/pitch counts are
+  // unchanged. We only relabel the pill to the honest "Partly surveyed", keeping
+  // the same grey treatment so it stays in the not-fully-scored family.
+  const isPartlySurveyed =
+    atlasLoc.state === "unknown" && projectionDataPoints.length >= 1;
+  const reefStateLabelText = isPartlySurveyed
+    ? "Partly surveyed"
+    : STATE_TEXT[atlasLoc.state];
+
   // Plain-language credit for whoever ran the coral surveys, shared by the card
   // source line and the chart caption. MERMAID public data is contributed by many
   // survey teams (never "WCS"); AIMS and AGRRA/GCRMN are credited where they are
@@ -1219,7 +1234,7 @@ export default async function LocationPage({
             }}
           >
             <span aria-hidden="true" style={{ width: 6, height: 6, borderRadius: "50%", background: stateColor, flexShrink: 0 }} />
-            {STATE_TEXT[atlasLoc.state]}
+            {reefStateLabelText}
           </div>
           <h1
             style={{
@@ -1276,7 +1291,7 @@ export default async function LocationPage({
         fishing={fishing}
         blueParkAward={blueParkAward}
         verdictBasis={verdictBasis}
-        reefStateLabel={STATE_TEXT[atlasLoc.state]}
+        reefStateLabel={reefStateLabelText}
         reefStateColor={stateColor}
         reefStateSub={STATE_SUB[atlasLoc.state]}
         reefRows={reefRows}
