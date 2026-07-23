@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { InfoButton } from "@/components/atlas-info-popup";
 
 /**
  * "How this reef is doing" — the reef-health card (final design).
@@ -89,6 +90,12 @@ export type ReefHealthPanelProps = {
    * Pass the in-page anchor (e.g. "#fish-abundance"); omit when no trend exists.
    */
   fishTrendAnchor?: string | null;
+  /**
+   * Opens the "What the reef labels mean" (INFO.state) explainer in place. Wired
+   * from the page body, which owns the AtlasInfoPopup state. Renders the small
+   * (i) trigger beside the "Reef state" verdict when provided.
+   */
+  onExplainState?: () => void;
 };
 
 function VerdictTag({ v, arrow }: { v: VerdictWord; arrow?: "up" | "down" | "flat" }) {
@@ -341,7 +348,12 @@ export function ReefHealthPanel(props: ReefHealthPanelProps) {
 
       {/* Overall verdict */}
       <div style={{ maxWidth: 680, marginBottom: "1.25rem" }}>
-        <p style={{ ...CAPS, marginBottom: "0.35rem" }}>Reef state</p>
+        <p style={{ ...CAPS, marginBottom: "0.35rem", display: "flex", alignItems: "center", gap: "0.4rem" }}>
+          <span>Reef state</span>
+          {props.onExplainState ? (
+            <InfoButton onClick={props.onExplainState} label="What the reef labels mean" />
+          ) : null}
+        </p>
         <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.55rem" }}>
           <span style={{ width: 15, height: 15, borderRadius: "50%", background: props.reefStateColor, display: "inline-block", flexShrink: 0 }} />
           <span style={{ fontSize: "2rem", fontWeight: 700, color: props.reefStateColor, lineHeight: 1.05 }}>{props.reefStateLabel}</span>

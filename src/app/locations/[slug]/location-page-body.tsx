@@ -513,6 +513,7 @@ export function LocationPageBody(props: LocationBodyProps) {
               rows={reefRows}
               sourceLine={reefSourceLine}
               fishTrendAnchor={fishAbundance ? "#fish-abundance" : null}
+              onExplainState={() => setInfo("state")}
             />
           ) : null}
 

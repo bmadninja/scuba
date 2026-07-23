@@ -53,8 +53,9 @@ test.describe('Location page — reef condition section', () => {
     await page.goto(ARI, GOTO);
     const section = page.locator('#reef-condition');
     await expect(section).toBeVisible({ timeout: 15_000 });
-    // The card leads with the "Reef state" eyebrow and the big verdict word,
-    // and carries no per-card popup — only the "How we measure this" link.
+    // The card leads with the "Reef state" eyebrow and the big verdict word. It
+    // carries the "How we measure this" method link plus a reef-state (i) that
+    // opens the labels explainer, but never the old "how we judge this" trigger.
     await expect(section.getByText('Reef state', { exact: true })).toBeVisible();
     await expect(section.getByRole('button', { name: /how we judge this/i })).toHaveCount(0);
   });
@@ -194,6 +195,26 @@ test.describe('Location page — info popups', () => {
       await trigger.click();
       await expect(dialog).toBeVisible({ timeout: 2_000 });
     }).toPass({ timeout: 15_000 });
+    await dialog.getByRole('button', { name: 'Close' }).click();
+    await expect(dialog).toHaveCount(0);
+  });
+
+  test('the reef-state (i) button opens the "What the reef labels mean" explainer', async ({ page }) => {
+    await page.goto(ARI, GOTO);
+    const section = page.locator('#reef-condition');
+    await expect(section).toBeVisible({ timeout: 15_000 });
+    // The (i) sits beside the "Reef state" verdict eyebrow and opens INFO.state.
+    const trigger = section.getByRole('button', { name: 'What the reef labels mean' });
+    await expect(trigger).toBeVisible();
+    const dialog = page.getByRole('dialog', { name: 'What the reef labels mean' });
+    // Retry the click until the dialog opens — the handler is wired on hydration.
+    await expect(async () => {
+      await trigger.click();
+      await expect(dialog).toBeVisible({ timeout: 2_000 });
+    }).toPass({ timeout: 15_000 });
+    // The explainer lists the reef-state labels a diver reads on the card.
+    await expect(dialog.getByText('Improving', { exact: true })).toBeVisible();
+    await expect(dialog.getByText('Not surveyed', { exact: true })).toBeVisible();
     await dialog.getByRole('button', { name: 'Close' }).click();
     await expect(dialog).toHaveCount(0);
   });
