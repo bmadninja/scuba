@@ -1,6 +1,6 @@
 {
   "_comment": "Apparent fishing-effort hours within 50km of each location, from Global Fishing Watch. Built by scripts/fetch-fishing-pressure.mjs. Only locations with successful API responses are written here. Locations missing from this file render no fishing-pressure block.",
-  "lastBuiltAt": "2026-07-28",
+  "lastBuiltAt": "2026-07-29",
   "radiusKm": 50,
   "records": [
     {
@@ -40,7 +40,7 @@
           "fishingHours": 2
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -80,7 +80,7 @@
           "fishingHours": 667
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -120,7 +120,7 @@
           "fishingHours": 81
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -160,7 +160,7 @@
           "fishingHours": 853
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -200,7 +200,7 @@
           "fishingHours": 1774
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -240,7 +240,7 @@
           "fishingHours": 289
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -280,7 +280,7 @@
           "fishingHours": 91
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -320,7 +320,7 @@
           "fishingHours": 9
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -360,7 +360,7 @@
           "fishingHours": 8
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -400,7 +400,7 @@
           "fishingHours": 46
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -440,7 +440,7 @@
           "fishingHours": 1676
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -480,7 +480,7 @@
           "fishingHours": 8424
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -520,7 +520,7 @@
           "fishingHours": 665
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -560,7 +560,7 @@
           "fishingHours": 3
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -600,7 +600,7 @@
           "fishingHours": 9
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -640,7 +640,7 @@
           "fishingHours": 69
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -680,7 +680,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -720,7 +720,7 @@
           "fishingHours": 100950
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -760,7 +760,7 @@
           "fishingHours": 246746
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -800,7 +800,7 @@
           "fishingHours": 116065
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -840,7 +840,7 @@
           "fishingHours": 9971
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -880,7 +880,7 @@
           "fishingHours": 6249
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -920,7 +920,7 @@
           "fishingHours": 471005
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -960,7 +960,7 @@
           "fishingHours": 41742
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1000,7 +1000,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1040,7 +1040,7 @@
           "fishingHours": 515
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1080,7 +1080,7 @@
           "fishingHours": 232380
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1120,7 +1120,7 @@
           "fishingHours": 4187
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1160,7 +1160,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1200,7 +1200,7 @@
           "fishingHours": 138
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1240,7 +1240,7 @@
           "fishingHours": 2316
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1280,7 +1280,7 @@
           "fishingHours": 971
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1320,7 +1320,7 @@
           "fishingHours": 131
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1360,7 +1360,7 @@
           "fishingHours": 2400
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1400,7 +1400,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1440,7 +1440,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1480,7 +1480,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1520,7 +1520,7 @@
           "fishingHours": 86
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1560,7 +1560,7 @@
           "fishingHours": 519
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1600,7 +1600,7 @@
           "fishingHours": 8409
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1640,7 +1640,7 @@
           "fishingHours": 4
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1680,7 +1680,7 @@
           "fishingHours": 4341
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1720,7 +1720,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1760,7 +1760,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1800,7 +1800,7 @@
           "fishingHours": 1724
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1840,7 +1840,7 @@
           "fishingHours": 1267
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1880,7 +1880,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1920,7 +1920,7 @@
           "fishingHours": 587
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -1960,7 +1960,7 @@
           "fishingHours": 65
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2000,7 +2000,7 @@
           "fishingHours": 6
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2040,7 +2040,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2080,7 +2080,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2120,7 +2120,7 @@
           "fishingHours": 5878
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2160,7 +2160,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2200,7 +2200,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2240,7 +2240,7 @@
           "fishingHours": 13
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2280,7 +2280,7 @@
           "fishingHours": 10
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2320,7 +2320,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2360,7 +2360,7 @@
           "fishingHours": 8
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2400,7 +2400,7 @@
           "fishingHours": 357
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2440,7 +2440,7 @@
           "fishingHours": 48
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2480,7 +2480,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2520,7 +2520,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2560,7 +2560,7 @@
           "fishingHours": 80
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2600,7 +2600,7 @@
           "fishingHours": 78
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2640,7 +2640,7 @@
           "fishingHours": 132
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2680,7 +2680,7 @@
           "fishingHours": 14326
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2720,7 +2720,7 @@
           "fishingHours": 387
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2760,7 +2760,7 @@
           "fishingHours": 143
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2800,7 +2800,7 @@
           "fishingHours": 3558
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2840,7 +2840,7 @@
           "fishingHours": 666
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2880,7 +2880,7 @@
           "fishingHours": 343
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2920,7 +2920,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -2960,7 +2960,7 @@
           "fishingHours": 5
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3000,7 +3000,7 @@
           "fishingHours": 246
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3040,7 +3040,7 @@
           "fishingHours": 1134
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3080,7 +3080,7 @@
           "fishingHours": 3391
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3120,7 +3120,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3160,7 +3160,7 @@
           "fishingHours": 2788
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3200,7 +3200,7 @@
           "fishingHours": 948
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3240,7 +3240,7 @@
           "fishingHours": 84
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3280,7 +3280,7 @@
           "fishingHours": 1085
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3320,7 +3320,7 @@
           "fishingHours": 3
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3360,7 +3360,7 @@
           "fishingHours": 9
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3400,7 +3400,7 @@
           "fishingHours": 7348
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3440,7 +3440,7 @@
           "fishingHours": 56
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3480,7 +3480,7 @@
           "fishingHours": 673
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3520,7 +3520,7 @@
           "fishingHours": 678
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3560,7 +3560,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3600,7 +3600,7 @@
           "fishingHours": 52
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3640,7 +3640,7 @@
           "fishingHours": 92
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3680,7 +3680,7 @@
           "fishingHours": 9
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3720,7 +3720,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3760,7 +3760,7 @@
           "fishingHours": 1096
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3800,7 +3800,7 @@
           "fishingHours": 9
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3840,7 +3840,7 @@
           "fishingHours": 38179
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3880,7 +3880,7 @@
           "fishingHours": 134
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3920,7 +3920,7 @@
           "fishingHours": 52053
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -3960,7 +3960,7 @@
           "fishingHours": 37866
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4000,7 +4000,7 @@
           "fishingHours": 1982
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4040,7 +4040,7 @@
           "fishingHours": 18377
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4080,7 +4080,7 @@
           "fishingHours": 53372
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4120,7 +4120,7 @@
           "fishingHours": 6554
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4160,7 +4160,7 @@
           "fishingHours": 379
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4200,7 +4200,7 @@
           "fishingHours": 3162
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4240,7 +4240,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4280,7 +4280,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4320,7 +4320,7 @@
           "fishingHours": 41
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4360,7 +4360,7 @@
           "fishingHours": 387
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4400,7 +4400,7 @@
           "fishingHours": 10885
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4440,7 +4440,7 @@
           "fishingHours": 847
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4480,7 +4480,7 @@
           "fishingHours": 65
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4520,7 +4520,7 @@
           "fishingHours": 1302
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4560,7 +4560,7 @@
           "fishingHours": 8376
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4600,7 +4600,7 @@
           "fishingHours": 7
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4640,7 +4640,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4680,7 +4680,7 @@
           "fishingHours": 115
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4720,7 +4720,7 @@
           "fishingHours": 56
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4760,7 +4760,7 @@
           "fishingHours": 34
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4800,7 +4800,7 @@
           "fishingHours": 2328
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4840,7 +4840,7 @@
           "fishingHours": 1057
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4880,7 +4880,7 @@
           "fishingHours": 1
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4920,7 +4920,7 @@
           "fishingHours": 24
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -4960,7 +4960,7 @@
           "fishingHours": 19
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5000,7 +5000,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5040,7 +5040,7 @@
           "fishingHours": 6685
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5080,7 +5080,7 @@
           "fishingHours": 1154
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5120,7 +5120,7 @@
           "fishingHours": 2801
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5160,7 +5160,7 @@
           "fishingHours": 436
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5200,7 +5200,7 @@
           "fishingHours": 4036
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5240,7 +5240,7 @@
           "fishingHours": 45084
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5280,7 +5280,7 @@
           "fishingHours": 244
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5320,7 +5320,7 @@
           "fishingHours": 327
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5360,7 +5360,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5400,7 +5400,7 @@
           "fishingHours": 21
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5440,7 +5440,7 @@
           "fishingHours": 2305
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5480,7 +5480,7 @@
           "fishingHours": 109
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5520,7 +5520,7 @@
           "fishingHours": 64413
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5560,7 +5560,7 @@
           "fishingHours": 2698
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5600,7 +5600,7 @@
           "fishingHours": 75
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5640,7 +5640,7 @@
           "fishingHours": 630
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5680,7 +5680,7 @@
           "fishingHours": 91
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5720,7 +5720,7 @@
           "fishingHours": 64
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5760,7 +5760,7 @@
           "fishingHours": 205
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5800,7 +5800,7 @@
           "fishingHours": 928
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5840,7 +5840,7 @@
           "fishingHours": 66
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5880,7 +5880,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5920,7 +5920,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -5960,7 +5960,7 @@
           "fishingHours": 640
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6000,7 +6000,7 @@
           "fishingHours": 9
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6040,7 +6040,7 @@
           "fishingHours": 378
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6080,7 +6080,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6120,7 +6120,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6160,7 +6160,7 @@
           "fishingHours": 31
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6200,7 +6200,7 @@
           "fishingHours": 166
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6240,47 +6240,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "alor",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 95
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 178
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 18
-        },
-        {
-          "year": 2021,
-          "fishingHours": 178
-        },
-        {
-          "year": 2022,
-          "fishingHours": 78
-        },
-        {
-          "year": 2023,
-          "fishingHours": 108
-        },
-        {
-          "year": 2024,
-          "fishingHours": 546
-        },
-        {
-          "year": 2025,
-          "fishingHours": 95
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6320,127 +6280,7 @@
           "fishingHours": 3
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "con-dao",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 192568
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 147
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 147
-        },
-        {
-          "year": 2022,
-          "fishingHours": 16975
-        },
-        {
-          "year": 2023,
-          "fishingHours": 48417
-        },
-        {
-          "year": 2024,
-          "fishingHours": 104363
-        },
-        {
-          "year": 2025,
-          "fishingHours": 192568
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "phu-quoc",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 81901
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 6272
-        },
-        {
-          "year": 2023,
-          "fishingHours": 2335
-        },
-        {
-          "year": 2024,
-          "fishingHours": 43719
-        },
-        {
-          "year": 2025,
-          "fishingHours": 81901
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "corn-islands-nicaragua",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 5
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6480,327 +6320,7 @@
           "fishingHours": 1289
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "bazaruto-archipelago",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 3933
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 5025
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 2967
-        },
-        {
-          "year": 2021,
-          "fishingHours": 5025
-        },
-        {
-          "year": 2022,
-          "fishingHours": 6941
-        },
-        {
-          "year": 2023,
-          "fishingHours": 3241
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3349
-        },
-        {
-          "year": 2025,
-          "fishingHours": 3933
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "mafia-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 174
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 540
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 27
-        },
-        {
-          "year": 2021,
-          "fishingHours": 540
-        },
-        {
-          "year": 2022,
-          "fishingHours": 396
-        },
-        {
-          "year": 2023,
-          "fishingHours": 500
-        },
-        {
-          "year": 2024,
-          "fishingHours": 467
-        },
-        {
-          "year": 2025,
-          "fishingHours": 174
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "grand-cayman",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 5
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 10
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 10
-        },
-        {
-          "year": 2022,
-          "fishingHours": 123
-        },
-        {
-          "year": 2023,
-          "fishingHours": 302
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 5
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "cayman-brac",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 7
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 7
-        },
-        {
-          "year": 2022,
-          "fishingHours": 44
-        },
-        {
-          "year": 2023,
-          "fishingHours": 194
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "tobago-main-trinidad-and-tobago",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 788
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 472
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 504
-        },
-        {
-          "year": 2021,
-          "fishingHours": 472
-        },
-        {
-          "year": 2022,
-          "fishingHours": 415
-        },
-        {
-          "year": 2023,
-          "fishingHours": 393
-        },
-        {
-          "year": 2024,
-          "fishingHours": 509
-        },
-        {
-          "year": 2025,
-          "fishingHours": 788
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "grenada-main",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 2919
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1751
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1161
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1751
-        },
-        {
-          "year": 2022,
-          "fishingHours": 1762
-        },
-        {
-          "year": 2023,
-          "fishingHours": 985
-        },
-        {
-          "year": 2024,
-          "fishingHours": 592
-        },
-        {
-          "year": 2025,
-          "fishingHours": 2919
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "guadeloupe-caribbean",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 309
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 973
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 943
-        },
-        {
-          "year": 2021,
-          "fishingHours": 973
-        },
-        {
-          "year": 2022,
-          "fishingHours": 1124
-        },
-        {
-          "year": 2023,
-          "fishingHours": 805
-        },
-        {
-          "year": 2024,
-          "fishingHours": 335
-        },
-        {
-          "year": 2025,
-          "fishingHours": 309
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "martinique-caribbean",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 751
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 427
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 85
-        },
-        {
-          "year": 2021,
-          "fishingHours": 427
-        },
-        {
-          "year": 2022,
-          "fishingHours": 528
-        },
-        {
-          "year": 2023,
-          "fishingHours": 462
-        },
-        {
-          "year": 2024,
-          "fishingHours": 884
-        },
-        {
-          "year": 2025,
-          "fishingHours": 751
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6840,87 +6360,7 @@
           "fishingHours": 10418
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "ustica-island-italy",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 10442
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 9278
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 12476
-        },
-        {
-          "year": 2023,
-          "fishingHours": 7368
-        },
-        {
-          "year": 2024,
-          "fishingHours": 12998
-        },
-        {
-          "year": 2025,
-          "fishingHours": 10442
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "rhodes-greece",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 13379
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 26240
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 26725
-        },
-        {
-          "year": 2021,
-          "fishingHours": 26240
-        },
-        {
-          "year": 2022,
-          "fishingHours": 17225
-        },
-        {
-          "year": 2023,
-          "fishingHours": 14557
-        },
-        {
-          "year": 2024,
-          "fishingHours": 21566
-        },
-        {
-          "year": 2025,
-          "fishingHours": 13379
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -6960,207 +6400,7 @@
           "fishingHours": 11540
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "menorca-spain",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 8160
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 10302
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 10609
-        },
-        {
-          "year": 2021,
-          "fishingHours": 10302
-        },
-        {
-          "year": 2022,
-          "fishingHours": 10180
-        },
-        {
-          "year": 2023,
-          "fishingHours": 7902
-        },
-        {
-          "year": 2024,
-          "fishingHours": 9261
-        },
-        {
-          "year": 2025,
-          "fishingHours": 8160
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "tremiti-islands-italy",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 130035
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 132224
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 132532
-        },
-        {
-          "year": 2021,
-          "fishingHours": 132224
-        },
-        {
-          "year": 2022,
-          "fishingHours": 114603
-        },
-        {
-          "year": 2023,
-          "fishingHours": 103301
-        },
-        {
-          "year": 2024,
-          "fishingHours": 133246
-        },
-        {
-          "year": 2025,
-          "fishingHours": 130035
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "gladden-spit-belize",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 6
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "long-island-bahamas",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 5
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 62
-        },
-        {
-          "year": 2021,
-          "fishingHours": 5
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 5
-        },
-        {
-          "year": 2024,
-          "fishingHours": 7
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "madeira-portugal",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1652
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 13007
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 5514
-        },
-        {
-          "year": 2021,
-          "fishingHours": 13007
-        },
-        {
-          "year": 2022,
-          "fishingHours": 8382
-        },
-        {
-          "year": 2023,
-          "fishingHours": 5524
-        },
-        {
-          "year": 2024,
-          "fishingHours": 2196
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1652
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -7200,207 +6440,7 @@
           "fishingHours": 4059
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "trondheim-fjord",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4618
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 5076
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 3219
-        },
-        {
-          "year": 2021,
-          "fishingHours": 5076
-        },
-        {
-          "year": 2022,
-          "fishingHours": 8380
-        },
-        {
-          "year": 2023,
-          "fishingHours": 4960
-        },
-        {
-          "year": 2024,
-          "fishingHours": 4344
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4618
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "st-abbs-head",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 58879
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 75591
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 51971
-        },
-        {
-          "year": 2021,
-          "fishingHours": 75591
-        },
-        {
-          "year": 2022,
-          "fishingHours": 79724
-        },
-        {
-          "year": 2023,
-          "fishingHours": 53914
-        },
-        {
-          "year": 2024,
-          "fishingHours": 49441
-        },
-        {
-          "year": 2025,
-          "fishingHours": 58879
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "muscat-oman",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 47
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 6
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 65
-        },
-        {
-          "year": 2023,
-          "fishingHours": 799
-        },
-        {
-          "year": 2024,
-          "fishingHours": 297
-        },
-        {
-          "year": 2025,
-          "fishingHours": 47
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "izu-peninsula",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 21602
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 4435
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1654
-        },
-        {
-          "year": 2021,
-          "fishingHours": 4435
-        },
-        {
-          "year": 2022,
-          "fishingHours": 8497
-        },
-        {
-          "year": 2023,
-          "fishingHours": 9837
-        },
-        {
-          "year": 2024,
-          "fishingHours": 13326
-        },
-        {
-          "year": 2025,
-          "fishingHours": 21602
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "maui",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 386
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 28
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 94
-        },
-        {
-          "year": 2021,
-          "fishingHours": 28
-        },
-        {
-          "year": 2022,
-          "fishingHours": 56
-        },
-        {
-          "year": 2023,
-          "fishingHours": 148
-        },
-        {
-          "year": 2024,
-          "fishingHours": 194
-        },
-        {
-          "year": 2025,
-          "fishingHours": 386
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -7440,7 +6480,7 @@
           "fishingHours": 1684
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -7480,207 +6520,7 @@
           "fishingHours": 1
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "manado-north-sulawesi",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 567
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 3
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1
-        },
-        {
-          "year": 2024,
-          "fishingHours": 612
-        },
-        {
-          "year": 2025,
-          "fishingHours": 567
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "halmahera-indonesia",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 72
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 110
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 110
-        },
-        {
-          "year": 2022,
-          "fishingHours": 3
-        },
-        {
-          "year": 2023,
-          "fishingHours": 5
-        },
-        {
-          "year": 2024,
-          "fishingHours": 34
-        },
-        {
-          "year": 2025,
-          "fishingHours": 72
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "mactan-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 71
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 2
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 2
-        },
-        {
-          "year": 2022,
-          "fishingHours": 41
-        },
-        {
-          "year": 2023,
-          "fishingHours": 85
-        },
-        {
-          "year": 2024,
-          "fishingHours": 180
-        },
-        {
-          "year": 2025,
-          "fishingHours": 71
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "pigeon-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4275
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 500
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1363
-        },
-        {
-          "year": 2024,
-          "fishingHours": 2533
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4275
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "batticaloa",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 6674
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 618
-        },
-        {
-          "year": 2023,
-          "fishingHours": 3192
-        },
-        {
-          "year": 2024,
-          "fishingHours": 2873
-        },
-        {
-          "year": 2025,
-          "fishingHours": 6674
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -7720,47 +6560,7 @@
           "fishingHours": 5071
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "mariana-islands-guam",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 13
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 56
-        },
-        {
-          "year": 2021,
-          "fishingHours": 13
-        },
-        {
-          "year": 2022,
-          "fishingHours": 5
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 29
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -7800,7 +6600,7 @@
           "fishingHours": 15812
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -7840,127 +6640,7 @@
           "fishingHours": 2646
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "andros-bahamas",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 285
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 387
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 56
-        },
-        {
-          "year": 2021,
-          "fishingHours": 387
-        },
-        {
-          "year": 2022,
-          "fishingHours": 292
-        },
-        {
-          "year": 2023,
-          "fishingHours": 723
-        },
-        {
-          "year": 2024,
-          "fishingHours": 537
-        },
-        {
-          "year": 2025,
-          "fishingHours": 285
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "easter-island-chile",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 3
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 5
-        },
-        {
-          "year": 2021,
-          "fishingHours": 3
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 5
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "diani-shimoni-kenya",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 88
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 507
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 2656
-        },
-        {
-          "year": 2021,
-          "fishingHours": 507
-        },
-        {
-          "year": 2022,
-          "fishingHours": 443
-        },
-        {
-          "year": 2023,
-          "fishingHours": 414
-        },
-        {
-          "year": 2024,
-          "fishingHours": 382
-        },
-        {
-          "year": 2025,
-          "fishingHours": 88
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8000,7 +6680,7 @@
           "fishingHours": 174
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8040,167 +6720,7 @@
           "fishingHours": 2820
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "algarve",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 71363
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 65051
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 51063
-        },
-        {
-          "year": 2021,
-          "fishingHours": 65051
-        },
-        {
-          "year": 2022,
-          "fishingHours": 65737
-        },
-        {
-          "year": 2023,
-          "fishingHours": 73250
-        },
-        {
-          "year": 2024,
-          "fishingHours": 75470
-        },
-        {
-          "year": 2025,
-          "fishingHours": 71363
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "bermuda",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 211
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 25
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 29
-        },
-        {
-          "year": 2021,
-          "fishingHours": 25
-        },
-        {
-          "year": 2022,
-          "fishingHours": 202
-        },
-        {
-          "year": 2023,
-          "fishingHours": 181
-        },
-        {
-          "year": 2024,
-          "fishingHours": 263
-        },
-        {
-          "year": 2025,
-          "fishingHours": 211
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "saint-helena",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 327
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 327
-        },
-        {
-          "year": 2022,
-          "fishingHours": 6
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "marsa-alam-egypt",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 480
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 2
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 10
-        },
-        {
-          "year": 2023,
-          "fishingHours": 14
-        },
-        {
-          "year": 2024,
-          "fishingHours": 209
-        },
-        {
-          "year": 2025,
-          "fishingHours": 480
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8240,127 +6760,7 @@
           "fishingHours": 1907
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "us-virgin-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 19
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 14
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 21
-        },
-        {
-          "year": 2021,
-          "fishingHours": 14
-        },
-        {
-          "year": 2022,
-          "fishingHours": 8
-        },
-        {
-          "year": 2023,
-          "fishingHours": 39
-        },
-        {
-          "year": 2024,
-          "fishingHours": 41
-        },
-        {
-          "year": 2025,
-          "fishingHours": 19
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "anguilla",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 361
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 51
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 24
-        },
-        {
-          "year": 2021,
-          "fishingHours": 51
-        },
-        {
-          "year": 2022,
-          "fishingHours": 567
-        },
-        {
-          "year": 2023,
-          "fishingHours": 141
-        },
-        {
-          "year": 2024,
-          "fishingHours": 540
-        },
-        {
-          "year": 2025,
-          "fishingHours": 361
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "saint-kitts-and-nevis",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 3676
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 278
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 297
-        },
-        {
-          "year": 2021,
-          "fishingHours": 278
-        },
-        {
-          "year": 2022,
-          "fishingHours": 2524
-        },
-        {
-          "year": 2023,
-          "fishingHours": 2878
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3540
-        },
-        {
-          "year": 2025,
-          "fishingHours": 3676
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8400,47 +6800,7 @@
           "fishingHours": 491
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "saint-vincent-and-the-grenadines",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 80
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 379
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 52
-        },
-        {
-          "year": 2021,
-          "fishingHours": 379
-        },
-        {
-          "year": 2022,
-          "fishingHours": 812
-        },
-        {
-          "year": 2023,
-          "fishingHours": 245
-        },
-        {
-          "year": 2024,
-          "fishingHours": 108
-        },
-        {
-          "year": 2025,
-          "fishingHours": 80
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8480,47 +6840,7 @@
           "fishingHours": 33143
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "redang-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 33539
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 7925
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1429
-        },
-        {
-          "year": 2021,
-          "fishingHours": 7925
-        },
-        {
-          "year": 2022,
-          "fishingHours": 19850
-        },
-        {
-          "year": 2023,
-          "fishingHours": 4394
-        },
-        {
-          "year": 2024,
-          "fishingHours": 20014
-        },
-        {
-          "year": 2025,
-          "fishingHours": 33539
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8560,167 +6880,7 @@
           "fishingHours": 9
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "kapalai-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 1
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "kerama-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 29022
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 12572
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 6809
-        },
-        {
-          "year": 2021,
-          "fishingHours": 12572
-        },
-        {
-          "year": 2022,
-          "fishingHours": 18007
-        },
-        {
-          "year": 2023,
-          "fishingHours": 21604
-        },
-        {
-          "year": 2024,
-          "fishingHours": 23315
-        },
-        {
-          "year": 2025,
-          "fishingHours": 29022
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "ishigaki-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 6073
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 2818
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 5600
-        },
-        {
-          "year": 2021,
-          "fishingHours": 2818
-        },
-        {
-          "year": 2022,
-          "fishingHours": 2301
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1549
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3885
-        },
-        {
-          "year": 2025,
-          "fishingHours": 6073
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "portofino",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 37176
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 31232
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 35849
-        },
-        {
-          "year": 2021,
-          "fishingHours": 31232
-        },
-        {
-          "year": 2022,
-          "fishingHours": 41659
-        },
-        {
-          "year": 2023,
-          "fishingHours": 44411
-        },
-        {
-          "year": 2024,
-          "fishingHours": 45996
-        },
-        {
-          "year": 2025,
-          "fishingHours": 37176
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8760,127 +6920,7 @@
           "fishingHours": 11941
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "isla-mujeres",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 121
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 1
-        },
-        {
-          "year": 2025,
-          "fishingHours": 121
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "banco-chinchorro",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "tayrona-national-park",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 2
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 721
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 87
-        },
-        {
-          "year": 2021,
-          "fishingHours": 721
-        },
-        {
-          "year": 2022,
-          "fishingHours": 132
-        },
-        {
-          "year": 2023,
-          "fishingHours": 13
-        },
-        {
-          "year": 2024,
-          "fishingHours": 52
-        },
-        {
-          "year": 2025,
-          "fishingHours": 2
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8920,7 +6960,7 @@
           "fishingHours": 507
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -8960,7 +7000,7 @@
           "fishingHours": 2502
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -9000,527 +7040,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "kadavu-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1456
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 149
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 593
-        },
-        {
-          "year": 2021,
-          "fishingHours": 149
-        },
-        {
-          "year": 2022,
-          "fishingHours": 255
-        },
-        {
-          "year": 2023,
-          "fishingHours": 240
-        },
-        {
-          "year": 2024,
-          "fishingHours": 160
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1456
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "yasawa-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 206
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 42
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 52
-        },
-        {
-          "year": 2021,
-          "fishingHours": 42
-        },
-        {
-          "year": 2022,
-          "fishingHours": 10
-        },
-        {
-          "year": 2023,
-          "fishingHours": 180
-        },
-        {
-          "year": 2024,
-          "fishingHours": 106
-        },
-        {
-          "year": 2025,
-          "fishingHours": 206
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "puerto-rico",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 75
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 6
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1
-        },
-        {
-          "year": 2021,
-          "fishingHours": 6
-        },
-        {
-          "year": 2022,
-          "fishingHours": 45
-        },
-        {
-          "year": 2023,
-          "fishingHours": 61
-        },
-        {
-          "year": 2024,
-          "fishingHours": 84
-        },
-        {
-          "year": 2025,
-          "fishingHours": 75
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "sint-maarten",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 368
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 48
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 29
-        },
-        {
-          "year": 2021,
-          "fishingHours": 48
-        },
-        {
-          "year": 2022,
-          "fishingHours": 581
-        },
-        {
-          "year": 2023,
-          "fishingHours": 146
-        },
-        {
-          "year": 2024,
-          "fishingHours": 548
-        },
-        {
-          "year": 2025,
-          "fishingHours": 368
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "north-carolina-usa",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1732
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 11096
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 12827
-        },
-        {
-          "year": 2021,
-          "fishingHours": 11096
-        },
-        {
-          "year": 2022,
-          "fishingHours": 4749
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1218
-        },
-        {
-          "year": 2024,
-          "fishingHours": 1456
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1732
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "british-columbia-canada",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1390
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1427
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1839
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1427
-        },
-        {
-          "year": 2022,
-          "fishingHours": 1570
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1459
-        },
-        {
-          "year": 2024,
-          "fishingHours": 975
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1390
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "ireland",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "wales",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4378
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 11930
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 17941
-        },
-        {
-          "year": 2021,
-          "fishingHours": 11930
-        },
-        {
-          "year": 2022,
-          "fishingHours": 11857
-        },
-        {
-          "year": 2023,
-          "fishingHours": 14589
-        },
-        {
-          "year": 2024,
-          "fishingHours": 17313
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4378
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "lofoten-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 70723
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 132684
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 131136
-        },
-        {
-          "year": 2021,
-          "fishingHours": 132684
-        },
-        {
-          "year": 2022,
-          "fishingHours": 132380
-        },
-        {
-          "year": 2023,
-          "fishingHours": 122499
-        },
-        {
-          "year": 2024,
-          "fishingHours": 78676
-        },
-        {
-          "year": 2025,
-          "fishingHours": 70723
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "faroe-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 35482
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 44164
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 39575
-        },
-        {
-          "year": 2021,
-          "fishingHours": 44164
-        },
-        {
-          "year": 2022,
-          "fishingHours": 41573
-        },
-        {
-          "year": 2023,
-          "fishingHours": 33923
-        },
-        {
-          "year": 2024,
-          "fishingHours": 39334
-        },
-        {
-          "year": 2025,
-          "fishingHours": 35482
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "false-bay",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 13273
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 14427
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 12365
-        },
-        {
-          "year": 2021,
-          "fishingHours": 14427
-        },
-        {
-          "year": 2022,
-          "fishingHours": 11566
-        },
-        {
-          "year": 2023,
-          "fishingHours": 17119
-        },
-        {
-          "year": 2024,
-          "fishingHours": 13075
-        },
-        {
-          "year": 2025,
-          "fishingHours": 13273
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "quirimbas-archipelago",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 35
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 35
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 91
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "corsica",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 963
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 959
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 928
-        },
-        {
-          "year": 2021,
-          "fishingHours": 959
-        },
-        {
-          "year": 2022,
-          "fishingHours": 2063
-        },
-        {
-          "year": 2023,
-          "fishingHours": 953
-        },
-        {
-          "year": 2024,
-          "fishingHours": 820
-        },
-        {
-          "year": 2025,
-          "fishingHours": 963
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -9560,7 +7080,7 @@
           "fishingHours": 20358
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -9600,47 +7120,7 @@
           "fishingHours": 326955
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "mayotte",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 242
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 420
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 3
-        },
-        {
-          "year": 2021,
-          "fishingHours": 420
-        },
-        {
-          "year": 2022,
-          "fishingHours": 2284
-        },
-        {
-          "year": 2023,
-          "fishingHours": 2948
-        },
-        {
-          "year": 2024,
-          "fishingHours": 2502
-        },
-        {
-          "year": 2025,
-          "fishingHours": 242
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -9680,47 +7160,7 @@
           "fishingHours": 2376
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "pohnpei-fsm",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4192
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 5261
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 11318
-        },
-        {
-          "year": 2021,
-          "fishingHours": 5261
-        },
-        {
-          "year": 2022,
-          "fishingHours": 916
-        },
-        {
-          "year": 2023,
-          "fishingHours": 2893
-        },
-        {
-          "year": 2024,
-          "fishingHours": 7562
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4192
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -9760,7 +7200,7 @@
           "fishingHours": 2600
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -9800,7 +7240,7 @@
           "fishingHours": 461
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -9840,47 +7280,7 @@
           "fishingHours": 28217
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "marmaris-turkey",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 10359
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 12580
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 13488
-        },
-        {
-          "year": 2021,
-          "fishingHours": 12580
-        },
-        {
-          "year": 2022,
-          "fishingHours": 8761
-        },
-        {
-          "year": 2023,
-          "fishingHours": 5157
-        },
-        {
-          "year": 2024,
-          "fishingHours": 8634
-        },
-        {
-          "year": 2025,
-          "fishingHours": 10359
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -9920,167 +7320,7 @@
           "fishingHours": 6
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "bay-of-pigs",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 113
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "abrolhos-banks",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 301
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 45
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 22
-        },
-        {
-          "year": 2021,
-          "fishingHours": 45
-        },
-        {
-          "year": 2022,
-          "fishingHours": 855
-        },
-        {
-          "year": 2023,
-          "fishingHours": 301
-        },
-        {
-          "year": 2024,
-          "fishingHours": 520
-        },
-        {
-          "year": 2025,
-          "fishingHours": 301
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "paraty",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 17568
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 7000
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 2324
-        },
-        {
-          "year": 2021,
-          "fishingHours": 7000
-        },
-        {
-          "year": 2022,
-          "fishingHours": 23976
-        },
-        {
-          "year": 2023,
-          "fishingHours": 19225
-        },
-        {
-          "year": 2024,
-          "fishingHours": 23972
-        },
-        {
-          "year": 2025,
-          "fishingHours": 17568
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "montenegro",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 15076
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 15708
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 14358
-        },
-        {
-          "year": 2021,
-          "fishingHours": 15708
-        },
-        {
-          "year": 2022,
-          "fishingHours": 13489
-        },
-        {
-          "year": 2023,
-          "fishingHours": 13470
-        },
-        {
-          "year": 2024,
-          "fishingHours": 11267
-        },
-        {
-          "year": 2025,
-          "fishingHours": 15076
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -10120,167 +7360,7 @@
           "fishingHours": 18613
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "netrani-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 11282
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 10972
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 176
-        },
-        {
-          "year": 2021,
-          "fishingHours": 10972
-        },
-        {
-          "year": 2022,
-          "fishingHours": 20908
-        },
-        {
-          "year": 2023,
-          "fishingHours": 22183
-        },
-        {
-          "year": 2024,
-          "fishingHours": 13350
-        },
-        {
-          "year": 2025,
-          "fishingHours": 11282
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "addu-atoll",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 23
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 17
-        },
-        {
-          "year": 2024,
-          "fishingHours": 115
-        },
-        {
-          "year": 2025,
-          "fishingHours": 23
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "dubai-uae",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 9909
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 6650
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 7342
-        },
-        {
-          "year": 2021,
-          "fishingHours": 6650
-        },
-        {
-          "year": 2022,
-          "fishingHours": 11625
-        },
-        {
-          "year": 2023,
-          "fishingHours": 14216
-        },
-        {
-          "year": 2024,
-          "fishingHours": 14178
-        },
-        {
-          "year": 2025,
-          "fishingHours": 9909
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "abu-dhabi-uae",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4305
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 530
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 20
-        },
-        {
-          "year": 2021,
-          "fishingHours": 530
-        },
-        {
-          "year": 2022,
-          "fishingHours": 7901
-        },
-        {
-          "year": 2023,
-          "fishingHours": 6578
-        },
-        {
-          "year": 2024,
-          "fishingHours": 8412
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4305
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -10320,7 +7400,7 @@
           "fishingHours": 94952
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -10360,47 +7440,7 @@
           "fishingHours": 7834
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "kalpitiya",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 2197
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 35
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 138
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1145
-        },
-        {
-          "year": 2024,
-          "fishingHours": 11943
-        },
-        {
-          "year": 2025,
-          "fishingHours": 2197
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -10440,127 +7480,7 @@
           "fishingHours": 24
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "haiti-diving",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "kosrae-fsm",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 568
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 3443
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 2096
-        },
-        {
-          "year": 2021,
-          "fishingHours": 3443
-        },
-        {
-          "year": 2022,
-          "fishingHours": 1229
-        },
-        {
-          "year": 2023,
-          "fishingHours": 547
-        },
-        {
-          "year": 2024,
-          "fishingHours": 345
-        },
-        {
-          "year": 2025,
-          "fishingHours": 568
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "efate-vanuatu",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 176
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 385
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1564
-        },
-        {
-          "year": 2021,
-          "fishingHours": 385
-        },
-        {
-          "year": 2022,
-          "fishingHours": 427
-        },
-        {
-          "year": 2023,
-          "fishingHours": 87
-        },
-        {
-          "year": 2024,
-          "fishingHours": 435
-        },
-        {
-          "year": 2025,
-          "fishingHours": 176
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -10600,7 +7520,7 @@
           "fishingHours": 334
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -10640,7 +7560,7 @@
           "fishingHours": 305
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -10680,167 +7600,7 @@
           "fishingHours": 1578
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "miyako-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1200
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1198
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 842
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1198
-        },
-        {
-          "year": 2022,
-          "fishingHours": 359
-        },
-        {
-          "year": 2023,
-          "fishingHours": 905
-        },
-        {
-          "year": 2024,
-          "fishingHours": 1082
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1200
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "kenting-national-park",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 99244
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 26417
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 11752
-        },
-        {
-          "year": 2021,
-          "fishingHours": 26417
-        },
-        {
-          "year": 2022,
-          "fishingHours": 71298
-        },
-        {
-          "year": 2023,
-          "fishingHours": 94294
-        },
-        {
-          "year": 2024,
-          "fishingHours": 85307
-        },
-        {
-          "year": 2025,
-          "fishingHours": 99244
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "little-liuqiu",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 239722
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 146397
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 119206
-        },
-        {
-          "year": 2021,
-          "fishingHours": 146397
-        },
-        {
-          "year": 2022,
-          "fishingHours": 261521
-        },
-        {
-          "year": 2023,
-          "fishingHours": 244249
-        },
-        {
-          "year": 2024,
-          "fishingHours": 246827
-        },
-        {
-          "year": 2025,
-          "fishingHours": 239722
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "sainte-marie-island-madagascar",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 100
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 177
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 3
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 5
-        },
-        {
-          "year": 2025,
-          "fishingHours": 100
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -10880,287 +7640,7 @@
           "fishingHours": 352
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "milos-greece",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 2505
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1934
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1822
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1934
-        },
-        {
-          "year": 2022,
-          "fishingHours": 2701
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1250
-        },
-        {
-          "year": 2024,
-          "fishingHours": 1815
-        },
-        {
-          "year": 2025,
-          "fishingHours": 2505
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "corfu-greece",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 17427
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 15730
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 9895
-        },
-        {
-          "year": 2021,
-          "fishingHours": 15730
-        },
-        {
-          "year": 2022,
-          "fishingHours": 13187
-        },
-        {
-          "year": 2023,
-          "fishingHours": 14897
-        },
-        {
-          "year": 2024,
-          "fishingHours": 18403
-        },
-        {
-          "year": 2025,
-          "fishingHours": 17427
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "istria-croatia",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 45096
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 51888
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 46782
-        },
-        {
-          "year": 2021,
-          "fishingHours": 51888
-        },
-        {
-          "year": 2022,
-          "fishingHours": 48950
-        },
-        {
-          "year": 2023,
-          "fishingHours": 49670
-        },
-        {
-          "year": 2024,
-          "fishingHours": 40719
-        },
-        {
-          "year": 2025,
-          "fishingHours": 45096
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "huatulco",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 23
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 5
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 33
-        },
-        {
-          "year": 2021,
-          "fishingHours": 5
-        },
-        {
-          "year": 2022,
-          "fishingHours": 1
-        },
-        {
-          "year": 2023,
-          "fishingHours": 8
-        },
-        {
-          "year": 2024,
-          "fishingHours": 2
-        },
-        {
-          "year": 2025,
-          "fishingHours": 23
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "loreto",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 111
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 38
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 83
-        },
-        {
-          "year": 2021,
-          "fishingHours": 38
-        },
-        {
-          "year": 2022,
-          "fishingHours": 117
-        },
-        {
-          "year": 2023,
-          "fishingHours": 104
-        },
-        {
-          "year": 2024,
-          "fishingHours": 136
-        },
-        {
-          "year": 2025,
-          "fishingHours": 111
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "la-gomera",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 5080
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 12582
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 8935
-        },
-        {
-          "year": 2021,
-          "fishingHours": 12582
-        },
-        {
-          "year": 2022,
-          "fishingHours": 9180
-        },
-        {
-          "year": 2023,
-          "fishingHours": 4935
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3745
-        },
-        {
-          "year": 2025,
-          "fishingHours": 5080
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "galicia",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 46669
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 53668
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 57352
-        },
-        {
-          "year": 2021,
-          "fishingHours": 53668
-        },
-        {
-          "year": 2022,
-          "fishingHours": 52465
-        },
-        {
-          "year": 2023,
-          "fishingHours": 59685
-        },
-        {
-          "year": 2024,
-          "fishingHours": 49235
-        },
-        {
-          "year": 2025,
-          "fishingHours": 46669
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11200,127 +7680,7 @@
           "fishingHours": 17444
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "dumaguete",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 166
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 3
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 2
-        },
-        {
-          "year": 2021,
-          "fishingHours": 3
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1
-        },
-        {
-          "year": 2024,
-          "fishingHours": 34
-        },
-        {
-          "year": 2025,
-          "fishingHours": 166
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "donsol",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 122
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 2
-        },
-        {
-          "year": 2023,
-          "fishingHours": 19
-        },
-        {
-          "year": 2024,
-          "fishingHours": 29
-        },
-        {
-          "year": 2025,
-          "fishingHours": 122
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "flores",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 36
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 36
-        },
-        {
-          "year": 2022,
-          "fishingHours": 7
-        },
-        {
-          "year": 2023,
-          "fishingHours": 16
-        },
-        {
-          "year": 2024,
-          "fishingHours": 60
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11360,87 +7720,7 @@
           "fishingHours": 5990
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "boa-vista-cape-verde",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 523
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 2
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 12
-        },
-        {
-          "year": 2023,
-          "fishingHours": 139
-        },
-        {
-          "year": 2024,
-          "fishingHours": 590
-        },
-        {
-          "year": 2025,
-          "fishingHours": 523
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "pozzuoli-baiae",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 48349
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 58242
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 59874
-        },
-        {
-          "year": 2021,
-          "fishingHours": 58242
-        },
-        {
-          "year": 2022,
-          "fishingHours": 54350
-        },
-        {
-          "year": 2023,
-          "fishingHours": 50841
-        },
-        {
-          "year": 2024,
-          "fishingHours": 53412
-        },
-        {
-          "year": 2025,
-          "fishingHours": 48349
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11480,7 +7760,7 @@
           "fishingHours": 45413
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11520,7 +7800,7 @@
           "fishingHours": 1602
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11560,207 +7840,7 @@
           "fishingHours": 2510
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "senegal",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 48520
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 76181
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 58416
-        },
-        {
-          "year": 2021,
-          "fishingHours": 76181
-        },
-        {
-          "year": 2022,
-          "fishingHours": 60626
-        },
-        {
-          "year": 2023,
-          "fishingHours": 44772
-        },
-        {
-          "year": 2024,
-          "fishingHours": 44328
-        },
-        {
-          "year": 2025,
-          "fishingHours": 48520
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "bijagos-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 116
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 353
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 141
-        },
-        {
-          "year": 2021,
-          "fishingHours": 353
-        },
-        {
-          "year": 2022,
-          "fishingHours": 89
-        },
-        {
-          "year": 2023,
-          "fishingHours": 104
-        },
-        {
-          "year": 2024,
-          "fishingHours": 850
-        },
-        {
-          "year": 2025,
-          "fishingHours": 116
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "inhambane",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 6603
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 3944
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 3498
-        },
-        {
-          "year": 2021,
-          "fishingHours": 3944
-        },
-        {
-          "year": 2022,
-          "fishingHours": 3267
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1948
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3643
-        },
-        {
-          "year": 2025,
-          "fishingHours": 6603
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "eilat",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 20
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 7
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "eyjafjordur",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 8435
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 18435
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 19700
-        },
-        {
-          "year": 2021,
-          "fishingHours": 18435
-        },
-        {
-          "year": 2022,
-          "fishingHours": 16007
-        },
-        {
-          "year": 2023,
-          "fishingHours": 15909
-        },
-        {
-          "year": 2024,
-          "fishingHours": 15789
-        },
-        {
-          "year": 2025,
-          "fishingHours": 8435
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11800,47 +7880,7 @@
           "fishingHours": 5668
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "gorgona-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 14202
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 116
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 12822
-        },
-        {
-          "year": 2023,
-          "fishingHours": 21581
-        },
-        {
-          "year": 2024,
-          "fishingHours": 26586
-        },
-        {
-          "year": 2025,
-          "fishingHours": 14202
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11880,7 +7920,7 @@
           "fishingHours": 25007
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11920,7 +7960,7 @@
           "fishingHours": 3196
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -11960,127 +8000,7 @@
           "fishingHours": 15610
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "romblon",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 2
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 2
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "batangas",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 26
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 54
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 54
-        },
-        {
-          "year": 2022,
-          "fishingHours": 165
-        },
-        {
-          "year": 2023,
-          "fishingHours": 38
-        },
-        {
-          "year": 2024,
-          "fishingHours": 118
-        },
-        {
-          "year": 2025,
-          "fishingHours": 26
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "trinidad",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 530
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 461
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 76
-        },
-        {
-          "year": 2021,
-          "fishingHours": 461
-        },
-        {
-          "year": 2022,
-          "fishingHours": 837
-        },
-        {
-          "year": 2023,
-          "fishingHours": 256
-        },
-        {
-          "year": 2024,
-          "fishingHours": 498
-        },
-        {
-          "year": 2025,
-          "fishingHours": 530
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -12120,127 +8040,7 @@
           "fishingHours": 2157
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "koh-phi-phi-thailand",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 55739
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 23561
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 13228
-        },
-        {
-          "year": 2021,
-          "fishingHours": 23561
-        },
-        {
-          "year": 2022,
-          "fishingHours": 18606
-        },
-        {
-          "year": 2023,
-          "fishingHours": 9989
-        },
-        {
-          "year": 2024,
-          "fishingHours": 29680
-        },
-        {
-          "year": 2025,
-          "fishingHours": 55739
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "koh-lipe-thailand",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 33244
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 21283
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 155
-        },
-        {
-          "year": 2021,
-          "fishingHours": 21283
-        },
-        {
-          "year": 2022,
-          "fishingHours": 30450
-        },
-        {
-          "year": 2023,
-          "fishingHours": 11237
-        },
-        {
-          "year": 2024,
-          "fishingHours": 21120
-        },
-        {
-          "year": 2025,
-          "fishingHours": 33244
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "lombok",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 118
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 30
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 102
-        },
-        {
-          "year": 2021,
-          "fishingHours": 30
-        },
-        {
-          "year": 2022,
-          "fishingHours": 100
-        },
-        {
-          "year": 2023,
-          "fishingHours": 517
-        },
-        {
-          "year": 2024,
-          "fishingHours": 265
-        },
-        {
-          "year": 2025,
-          "fishingHours": 118
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -12280,47 +8080,7 @@
           "fishingHours": 13301
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "coral-bay-wa",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 33
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 40
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 17
-        },
-        {
-          "year": 2021,
-          "fishingHours": 40
-        },
-        {
-          "year": 2022,
-          "fishingHours": 9
-        },
-        {
-          "year": 2023,
-          "fishingHours": 9
-        },
-        {
-          "year": 2024,
-          "fishingHours": 23
-        },
-        {
-          "year": 2025,
-          "fishingHours": 33
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -12360,87 +8120,7 @@
           "fishingHours": 16883
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "bay-of-islands-nz",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1447
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1010
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 605
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1010
-        },
-        {
-          "year": 2022,
-          "fishingHours": 810
-        },
-        {
-          "year": 2023,
-          "fishingHours": 769
-        },
-        {
-          "year": 2024,
-          "fishingHours": 1489
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1447
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "bora-bora-fp",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 108
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 109
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 333
-        },
-        {
-          "year": 2021,
-          "fishingHours": 109
-        },
-        {
-          "year": 2022,
-          "fishingHours": 20
-        },
-        {
-          "year": 2023,
-          "fishingHours": 226
-        },
-        {
-          "year": 2024,
-          "fishingHours": 127
-        },
-        {
-          "year": 2025,
-          "fishingHours": 108
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -12480,87 +8160,7 @@
           "fishingHours": 47
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "moorea",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 1430
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 189
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 601
-        },
-        {
-          "year": 2021,
-          "fishingHours": 189
-        },
-        {
-          "year": 2022,
-          "fishingHours": 261
-        },
-        {
-          "year": 2023,
-          "fishingHours": 839
-        },
-        {
-          "year": 2024,
-          "fishingHours": 535
-        },
-        {
-          "year": 2025,
-          "fishingHours": 1430
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "cartagena-rosario-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 505
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 432
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 193
-        },
-        {
-          "year": 2021,
-          "fishingHours": 432
-        },
-        {
-          "year": 2022,
-          "fishingHours": 788
-        },
-        {
-          "year": 2023,
-          "fishingHours": 327
-        },
-        {
-          "year": 2024,
-          "fishingHours": 204
-        },
-        {
-          "year": 2025,
-          "fishingHours": 505
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -12600,87 +8200,7 @@
           "fishingHours": 24870
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "cabo-san-lucas",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 894
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1089
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1140
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1089
-        },
-        {
-          "year": 2022,
-          "fishingHours": 1098
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1202
-        },
-        {
-          "year": 2024,
-          "fishingHours": 1120
-        },
-        {
-          "year": 2025,
-          "fishingHours": 894
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "puerto-vallarta",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 70
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 13
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 51
-        },
-        {
-          "year": 2021,
-          "fishingHours": 13
-        },
-        {
-          "year": 2022,
-          "fishingHours": 54
-        },
-        {
-          "year": 2023,
-          "fishingHours": 13
-        },
-        {
-          "year": 2024,
-          "fishingHours": 162
-        },
-        {
-          "year": 2025,
-          "fishingHours": 70
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -12720,287 +8240,7 @@
           "fishingHours": 7209
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "san-juan-islands",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 12388
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 5447
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 4526
-        },
-        {
-          "year": 2021,
-          "fishingHours": 5447
-        },
-        {
-          "year": 2022,
-          "fishingHours": 7918
-        },
-        {
-          "year": 2023,
-          "fishingHours": 10559
-        },
-        {
-          "year": 2024,
-          "fishingHours": 9372
-        },
-        {
-          "year": 2025,
-          "fishingHours": 12388
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "nice-cote-dazur-france",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 6374
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 8692
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 7768
-        },
-        {
-          "year": 2021,
-          "fishingHours": 8692
-        },
-        {
-          "year": 2022,
-          "fishingHours": 7746
-        },
-        {
-          "year": 2023,
-          "fishingHours": 6783
-        },
-        {
-          "year": 2024,
-          "fishingHours": 6536
-        },
-        {
-          "year": 2025,
-          "fishingHours": 6374
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "puerto-princesa-honda-bay",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "siargao",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 8
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 5
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 8
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "ternate-north-maluku",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 56
-        },
-        {
-          "year": 2023,
-          "fishingHours": 5
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "tufi-papua-new-guinea",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 0
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 0
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 0
-        },
-        {
-          "year": 2022,
-          "fishingHours": 1
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 0
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "terceira-azores",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 964
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 837
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1592
-        },
-        {
-          "year": 2021,
-          "fishingHours": 837
-        },
-        {
-          "year": 2022,
-          "fishingHours": 470
-        },
-        {
-          "year": 2023,
-          "fishingHours": 898
-        },
-        {
-          "year": 2024,
-          "fishingHours": 867
-        },
-        {
-          "year": 2025,
-          "fishingHours": 964
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -13040,207 +8280,7 @@
           "fishingHours": 4234
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "verde-island-passage",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 19
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 23
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 0
-        },
-        {
-          "year": 2021,
-          "fishingHours": 23
-        },
-        {
-          "year": 2022,
-          "fishingHours": 165
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 105
-        },
-        {
-          "year": 2025,
-          "fishingHours": 19
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "candidasa-bali-indonesia",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 3308
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 773
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 291
-        },
-        {
-          "year": 2021,
-          "fishingHours": 773
-        },
-        {
-          "year": 2022,
-          "fishingHours": 2724
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1154
-        },
-        {
-          "year": 2024,
-          "fishingHours": 2318
-        },
-        {
-          "year": 2025,
-          "fishingHours": 3308
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "nusa-lembongan-indonesia",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 4361
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1153
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 485
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1153
-        },
-        {
-          "year": 2022,
-          "fishingHours": 3307
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1758
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3400
-        },
-        {
-          "year": 2025,
-          "fishingHours": 4361
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "jervis-bay-australia",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 3481
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 547
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 787
-        },
-        {
-          "year": 2021,
-          "fishingHours": 547
-        },
-        {
-          "year": 2022,
-          "fishingHours": 739
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1753
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3551
-        },
-        {
-          "year": 2025,
-          "fishingHours": 3481
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "byron-bay-australia",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 945
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 319
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 860
-        },
-        {
-          "year": 2021,
-          "fishingHours": 319
-        },
-        {
-          "year": 2022,
-          "fishingHours": 525
-        },
-        {
-          "year": 2023,
-          "fishingHours": 481
-        },
-        {
-          "year": 2024,
-          "fishingHours": 924
-        },
-        {
-          "year": 2025,
-          "fishingHours": 945
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -13280,7 +8320,7 @@
           "fishingHours": 12
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -13320,87 +8360,7 @@
           "fishingHours": 0
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "koh-samui-ang-thong",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 10928
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1384
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1236
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1384
-        },
-        {
-          "year": 2022,
-          "fishingHours": 47
-        },
-        {
-          "year": 2023,
-          "fishingHours": 2043
-        },
-        {
-          "year": 2024,
-          "fishingHours": 2817
-        },
-        {
-          "year": 2025,
-          "fishingHours": 10928
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "sail-rock-southwest-pinnacle",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 11584
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 1550
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 1342
-        },
-        {
-          "year": 2021,
-          "fishingHours": 1550
-        },
-        {
-          "year": 2022,
-          "fishingHours": 53
-        },
-        {
-          "year": 2023,
-          "fishingHours": 2363
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3003
-        },
-        {
-          "year": 2025,
-          "fishingHours": 11584
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -13440,7 +8400,7 @@
           "fishingHours": 17873
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -13480,87 +8440,7 @@
           "fishingHours": 28976
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "german-channel-palau",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 672
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 25
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 19
-        },
-        {
-          "year": 2021,
-          "fishingHours": 25
-        },
-        {
-          "year": 2022,
-          "fishingHours": 27
-        },
-        {
-          "year": 2023,
-          "fishingHours": 122
-        },
-        {
-          "year": 2024,
-          "fishingHours": 3
-        },
-        {
-          "year": 2025,
-          "fishingHours": 672
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "salvador-da-bahia",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 832
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 133
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 269
-        },
-        {
-          "year": 2021,
-          "fishingHours": 133
-        },
-        {
-          "year": 2022,
-          "fishingHours": 314
-        },
-        {
-          "year": 2023,
-          "fishingHours": 1236
-        },
-        {
-          "year": 2024,
-          "fishingHours": 1752
-        },
-        {
-          "year": 2025,
-          "fishingHours": 832
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     },
     {
@@ -13600,127 +8480,7 @@
           "fishingHours": 25329
         }
       ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "principe-island",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 55
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 162
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 3
-        },
-        {
-          "year": 2021,
-          "fishingHours": 162
-        },
-        {
-          "year": 2022,
-          "fishingHours": 0
-        },
-        {
-          "year": 2023,
-          "fishingHours": 0
-        },
-        {
-          "year": 2024,
-          "fishingHours": 0
-        },
-        {
-          "year": 2025,
-          "fishingHours": 55
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "kosterfjord-sweden",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 58993
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 92552
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 79456
-        },
-        {
-          "year": 2021,
-          "fishingHours": 92552
-        },
-        {
-          "year": 2022,
-          "fishingHours": 83258
-        },
-        {
-          "year": 2023,
-          "fishingHours": 68824
-        },
-        {
-          "year": 2024,
-          "fishingHours": 60872
-        },
-        {
-          "year": 2025,
-          "fishingHours": 58993
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
-      "source": "global-fishing-watch"
-    },
-    {
-      "locationId": "lysefjord-stavanger-norway",
-      "radiusKm": 50,
-      "current": {
-        "year": 2025,
-        "fishingHours": 10525
-      },
-      "historical": {
-        "year": 2021,
-        "fishingHours": 24741
-      },
-      "series": [
-        {
-          "year": 2020,
-          "fishingHours": 17885
-        },
-        {
-          "year": 2021,
-          "fishingHours": 24741
-        },
-        {
-          "year": 2022,
-          "fishingHours": 15792
-        },
-        {
-          "year": 2023,
-          "fishingHours": 20841
-        },
-        {
-          "year": 2024,
-          "fishingHours": 12536
-        },
-        {
-          "year": 2025,
-          "fishingHours": 10525
-        }
-      ],
-      "fetchedAt": "2026-07-28T09:29:12.272Z",
+      "fetchedAt": "2026-07-29T09:31:08.494Z",
       "source": "global-fishing-watch"
     }
   ]
