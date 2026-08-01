@@ -583276,4 +583276,231 @@
     "siteSpecificGear": [],
     "notes": "Strong current year-round—experienced divers and boat operator mandatory. Diver must locate anchor warp underwater for exit due to current strength. Best conditions: southerly winds (flat sea) and calm swell. Avoid northerly winds which increase turbidity. Marine reserve regulations apply; check with operators for current restrictions."
   }
+,
+{
+  "id": "sao-tome-sao-tome-and-principe-pico-douro",
+  "slug": "sao-tome-sao-tome-and-principe-pico-douro",
+  "locationId": "sao-tome-sao-tome-and-principe",
+  "name": "Pico d'Ouro",
+  "heroImageUrl": null,
+  "lat": 0.35,
+  "lng": 6.73,
+  "description": "An intact fishing vessel wreck resting on sandy seafloor. Pelagic diving with active barracuda, jacks, and wahoos hunting in the blue water above the wreck. A resident shy sea turtle frequently visits this dynamic site, making it a favorite for photographers capturing predator interactions.",
+  "depthRange": {
+    "min": 16,
+    "max": 22
+  },
+  "skillLevel": "advanced",
+  "diveTypes": [
+    "wrecks",
+    "large-pelagics"
+  ],
+  "species": [
+    {
+      "commonName": "Great Barracuda",
+      "scientificName": "Sphyraena barracuda",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Sea Turtle",
+      "scientificName": "Chelonia mydas",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Giant Trevally",
+      "scientificName": "Caranx ignobilis",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Wahoo",
+      "scientificName": "Acanthocybium solandri",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Grouper",
+      "scientificName": "Serranidae",
+      "reliability": "year-round"
+    },
+    {
+      "commonName": "Moray Eel",
+      "scientificName": "Muraenidae",
+      "reliability": "year-round"
+    }
+  ],
+  "conditionsByMonth": [
+    {
+      "month": 1,
+      "waterTempC": {
+        "min": 28,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 20,
+        "max": 30
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit or rash guard"
+    },
+    {
+      "month": 2,
+      "waterTempC": {
+        "min": 28,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 22,
+        "max": 30
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit or rash guard"
+    },
+    {
+      "month": 3,
+      "waterTempC": {
+        "min": 28,
+        "max": 29
+      },
+      "visibilityM": {
+        "min": 20,
+        "max": 28
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit or rash guard"
+    },
+    {
+      "month": 4,
+      "waterTempC": {
+        "min": 26,
+        "max": 28
+      },
+      "visibilityM": {
+        "min": 12,
+        "max": 20
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 5,
+      "waterTempC": {
+        "min": 26,
+        "max": 27
+      },
+      "visibilityM": {
+        "min": 10,
+        "max": 18
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 6,
+      "waterTempC": {
+        "min": 26,
+        "max": 27
+      },
+      "visibilityM": {
+        "min": 15,
+        "max": 25
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 7,
+      "waterTempC": {
+        "min": 26,
+        "max": 27
+      },
+      "visibilityM": {
+        "min": 16,
+        "max": 25
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 8,
+      "waterTempC": {
+        "min": 26,
+        "max": 28
+      },
+      "visibilityM": {
+        "min": 16,
+        "max": 25
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 9,
+      "waterTempC": {
+        "min": 27,
+        "max": 28
+      },
+      "visibilityM": {
+        "min": 15,
+        "max": 24
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 10,
+      "waterTempC": {
+        "min": 27,
+        "max": 29
+      },
+      "visibilityM": {
+        "min": 12,
+        "max": 20
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 11,
+      "waterTempC": {
+        "min": 28,
+        "max": 29
+      },
+      "visibilityM": {
+        "min": 12,
+        "max": 20
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "3mm wetsuit or rash guard"
+    },
+    {
+      "month": 12,
+      "waterTempC": {
+        "min": 28,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 22,
+        "max": 30
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit or rash guard"
+    }
+  ],
+  "bestMonths": [
+    12,
+    1,
+    2,
+    3,
+    6,
+    7,
+    8,
+    9
+  ],
+  "editorialRank": 65,
+  "getThere": "Fly into São Tomé International Airport (TMS). Transfer by road to the capital city of São Tomé. Dive operators offer 5-15 minute speedboat transfers from the main port to the wreck site in Ana Chaves Bay.",
+  "lodging": [],
+  "operators": [],
+  "gearIds": [],
+  "siteSpecificGear": [],
+  "notes": "The Pico d'Ouro is a fishing vessel that sank in 2014, was refloated by the Portuguese Navy in 2015, and resank in deeper waters where it now rests intact. Suitable for advanced divers only due to depth and pelagic hunting activity. Watch for strong water movement during tide changes."
+}
 ]
