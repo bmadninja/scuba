@@ -35,15 +35,15 @@
       ]
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.1,
+      "sstAnomalyC": -0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -229,15 +229,15 @@
       "notes": "Ningaloo experienced sustained thermal stress in early 2024 — extent of mortality varied by reef tract."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.2,
+      "sstAnomalyC": 0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -389,15 +389,15 @@
       "notes": "Raja Ampat retains some of the highest live coral cover in the Coral Triangle. Strong currents and refugia help limit thermal stress."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
-      "degreeHeatingWeeks": 2.3,
-      "sstAnomalyC": 0.7,
+      "degreeHeatingWeeks": 2.1,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -550,15 +550,15 @@
       "notes": "April 2024 surveys recorded localised bleaching on shallow reef flats; submerged reef slopes remained largely unaffected."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 2.1,
-      "sstAnomalyC": 1.2,
+      "sstAnomalyC": 1.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -710,7 +710,7 @@
       "notes": "Caribbean-wide 2023–2024 heat dome impacted Cozumel; SCTLD (stony coral tissue loss disease) continues to compound losses."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 1.1,
@@ -718,7 +718,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -871,15 +871,15 @@
       "notes": "Bonaire saw widespread bleaching during the 2023 marine heatwave; recovery is patchy but ongoing."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -1032,15 +1032,15 @@
       "notes": "Fakarava's UNESCO Biosphere status and limited human pressure correlate with stable cover. 2024 SST anomalies were modest."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.4,
+      "sstAnomalyC": 0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -1192,15 +1192,15 @@
       "notes": "Northern Red Sea corals continue to show unusual thermal tolerance — one of the few global refugia."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 0.5,
-      "sstAnomalyC": 1.6,
+      "degreeHeatingWeeks": 0.7,
+      "sstAnomalyC": 1.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -1352,15 +1352,15 @@
       "notes": "West Hawaii reefs were hit by elevated SSTs in late 2024; partial recovery underway through 2025."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -1513,15 +1513,15 @@
       "notes": "Palau's deep oceanic upwelling provides some thermal buffering for outer reefs."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 3.3,
-      "sstAnomalyC": -0.2,
+      "sstAnomalyC": -0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -1673,15 +1673,15 @@
       "notes": "Sipadan benefits from MPA status; bleaching in 2024 was concentrated on shallower terraces."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 3.1,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 1.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -1834,15 +1834,15 @@
       "notes": "Maldives saw widespread bleaching in 2024 with stronger impact on shallow lagoon reefs than ocean-side thila and kandu."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.6,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -1995,15 +1995,15 @@
       "notes": "Maldives 2024 bleaching — observed condition reflects the steep loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -2155,15 +2155,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -2315,7 +2315,7 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 1.1,
       "sstAnomalyC": 0.2,
@@ -2323,7 +2323,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -2475,7 +2475,7 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.3,
@@ -2483,7 +2483,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -2635,15 +2635,15 @@
       "notes": "Philippines coast — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 3.3,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -2795,15 +2795,15 @@
       "notes": "Philippines MPA — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 2,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -2955,15 +2955,15 @@
       "notes": "Philippines coast — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 3.3,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -3115,15 +3115,15 @@
       "notes": "Andaman Sea — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
-      "degreeHeatingWeeks": 2.2,
+      "degreeHeatingWeeks": 2,
       "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -3276,15 +3276,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.1,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -3436,15 +3436,15 @@
       "notes": "Andaman Sea — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
-      "degreeHeatingWeeks": 1.3,
-      "sstAnomalyC": 0.8,
+      "degreeHeatingWeeks": 1,
+      "sstAnomalyC": 1.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -3596,15 +3596,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 3.1,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -3756,15 +3756,15 @@
       "notes": "South China Sea atoll — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 1.9,
-      "sstAnomalyC": 1.4,
+      "sstAnomalyC": 1.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -3916,15 +3916,15 @@
       "notes": "Andaman Sea — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
-      "degreeHeatingWeeks": 1.2,
-      "sstAnomalyC": 0.4,
+      "degreeHeatingWeeks": 0.9,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -4077,15 +4077,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.2,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -4238,15 +4238,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 2.8,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -4398,7 +4398,7 @@
       "notes": "Western Pacific — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0.5,
       "sstAnomalyC": 0.6,
@@ -4406,7 +4406,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -4558,15 +4558,15 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 0.2,
-      "sstAnomalyC": 1.1,
+      "degreeHeatingWeeks": 0.3,
+      "sstAnomalyC": 1.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -4718,15 +4718,15 @@
       "notes": "Western Pacific refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 6,
+      "degreeHeatingWeeks": 6.5,
       "sstAnomalyC": 3.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -4878,15 +4878,15 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 3.5,
-      "sstAnomalyC": 4.5,
+      "degreeHeatingWeeks": 3.9,
+      "sstAnomalyC": 4.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -5039,7 +5039,7 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 7.7,
       "sstAnomalyC": 0.9,
@@ -5047,7 +5047,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -5199,15 +5199,15 @@
       "notes": "South Asian reef — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
-      "degreeHeatingWeeks": 1,
+      "degreeHeatingWeeks": 0.8,
       "sstAnomalyC": 1.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -5359,15 +5359,15 @@
       "notes": "South Asian reef — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0.2,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -5519,15 +5519,15 @@
       "notes": "South Asian reef — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.6,
+      "sstAnomalyC": 1.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -5679,15 +5679,15 @@
       "notes": "South Asian reef — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.1,
+      "sstAnomalyC": 0,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -5839,15 +5839,15 @@
       "notes": "Red Sea refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
-      "alertLevel": "watch",
-      "degreeHeatingWeeks": 0.1,
-      "sstAnomalyC": 1,
+      "asOf": "2026-08-01",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 0.3,
+      "sstAnomalyC": 1.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -5999,15 +5999,15 @@
       "notes": "Southern Red Sea — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 3.1,
-      "sstAnomalyC": 0,
+      "sstAnomalyC": -0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -6160,15 +6160,15 @@
       "notes": "Gulf of Thailand — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 1.5,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -6320,15 +6320,15 @@
       "notes": "Red Sea refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.2,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -6480,15 +6480,15 @@
       "notes": "Red Sea refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
-      "alertLevel": "watch",
-      "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.4,
+      "asOf": "2026-08-01",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 0.2,
+      "sstAnomalyC": 1.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -6640,15 +6640,15 @@
       "notes": "Red Sea refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.2,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -6800,15 +6800,15 @@
       "notes": "Southern Red Sea — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -6960,15 +6960,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 10.9,
-      "sstAnomalyC": 1.8,
+      "sstAnomalyC": 1.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -7120,7 +7120,7 @@
       "notes": "East Africa post-2024 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 1,
@@ -7128,7 +7128,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -7280,15 +7280,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -7440,15 +7440,15 @@
       "notes": "East Africa post-2024 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -7600,15 +7600,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -7760,15 +7760,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.4,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -7920,7 +7920,7 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.9,
@@ -7928,7 +7928,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -8080,15 +8080,15 @@
       "notes": "East Africa post-2024 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.8,
+      "sstAnomalyC": 2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -8240,7 +8240,7 @@
       "notes": "East Africa post-2024 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 1.8,
@@ -8248,7 +8248,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -8400,15 +8400,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.6,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -8560,15 +8560,15 @@
       "notes": "Cape Verde — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.4,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -8720,15 +8720,15 @@
       "notes": "East Africa — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -8880,15 +8880,15 @@
       "notes": "Cenote freshwater — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
       "degreeHeatingWeeks": 0.5,
-      "sstAnomalyC": 1.5,
+      "sstAnomalyC": 1.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -9040,15 +9040,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 5,
-      "sstAnomalyC": 1.9,
+      "degreeHeatingWeeks": 5.2,
+      "sstAnomalyC": 2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -9200,15 +9200,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.1,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -9360,15 +9360,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.1,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -9520,15 +9520,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -9680,15 +9680,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -9840,15 +9840,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 3.6,
-      "sstAnomalyC": 3,
+      "degreeHeatingWeeks": 3.4,
+      "sstAnomalyC": 2.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -10000,15 +10000,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
-      "degreeHeatingWeeks": 4.8,
-      "sstAnomalyC": 1.1,
+      "degreeHeatingWeeks": 4.7,
+      "sstAnomalyC": 1.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -10160,15 +10160,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-2",
-      "degreeHeatingWeeks": 9.3,
-      "sstAnomalyC": 2.2,
+      "degreeHeatingWeeks": 9.5,
+      "sstAnomalyC": 2.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -10320,15 +10320,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
       "degreeHeatingWeeks": 1.6,
-      "sstAnomalyC": 1.7,
+      "sstAnomalyC": 1.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -10480,15 +10480,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-2",
-      "degreeHeatingWeeks": 14.8,
+      "degreeHeatingWeeks": 14.9,
       "sstAnomalyC": 2.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -10640,15 +10640,15 @@
       "notes": "Caribbean MPA — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.5,
+      "sstAnomalyC": 0.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -10800,15 +10800,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-1",
       "degreeHeatingWeeks": 6.5,
-      "sstAnomalyC": 4.8,
+      "sstAnomalyC": 4.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -10960,15 +10960,15 @@
       "notes": "Eastern Tropical Pacific — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 6,
-      "sstAnomalyC": 4.5,
+      "degreeHeatingWeeks": 5.9,
+      "sstAnomalyC": 4.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -11120,15 +11120,15 @@
       "notes": "Mid-Atlantic islands — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.4,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -11280,15 +11280,15 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -11440,15 +11440,15 @@
       "notes": "Caribbean MPA — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 1.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -11600,15 +11600,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -11760,15 +11760,15 @@
       "notes": "Bahamas — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 3.1,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.7,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -11920,15 +11920,15 @@
       "notes": "Bahamas — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 1,
-      "sstAnomalyC": 1.6,
+      "degreeHeatingWeeks": 1.2,
+      "sstAnomalyC": 1.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -12080,15 +12080,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 0.5,
-      "sstAnomalyC": 1.5,
+      "degreeHeatingWeeks": 0.6,
+      "sstAnomalyC": 1.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -12240,15 +12240,15 @@
       "notes": "Caribbean MPA — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
-      "alertLevel": "watch",
-      "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.2,
+      "asOf": "2026-08-01",
+      "alertLevel": "warning",
+      "degreeHeatingWeeks": 0.2,
+      "sstAnomalyC": 1.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -12400,15 +12400,15 @@
       "notes": "Caribbean MPA — observed condition reflects the thinning regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -12561,15 +12561,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.7,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -12721,15 +12721,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -12881,15 +12881,15 @@
       "notes": "Cenote freshwater — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.1,
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -13041,15 +13041,15 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 0.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -13201,7 +13201,7 @@
       "notes": "Temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0,
@@ -13209,7 +13209,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -13361,15 +13361,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.4,
+      "sstAnomalyC": -0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -13521,15 +13521,15 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0,
+      "sstAnomalyC": -0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -13681,15 +13681,15 @@
       "notes": "Western Pacific — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.4,
+      "sstAnomalyC": 0,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -13841,15 +13841,15 @@
       "notes": "Western Pacific — observed condition reflects the slow loss regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": -0.7,
+      "sstAnomalyC": -0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -14001,7 +14001,7 @@
       "notes": "Pacific refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 2.6,
       "sstAnomalyC": -0.1,
@@ -14009,7 +14009,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -14161,7 +14161,7 @@
       "notes": "Western Pacific refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 1.4,
       "sstAnomalyC": 0.4,
@@ -14169,7 +14169,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -14321,15 +14321,15 @@
       "notes": "Chuuk lagoon — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0,
+      "sstAnomalyC": -0.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -14482,15 +14482,15 @@
       "notes": "French Polynesia — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.6,
+      "sstAnomalyC": 0.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -14642,7 +14642,7 @@
       "notes": "Coral Triangle — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.3,
@@ -14650,7 +14650,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -14802,15 +14802,15 @@
       "notes": "Pacific refugium — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0,
+      "sstAnomalyC": -0.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -14962,15 +14962,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 6.6,
-      "sstAnomalyC": 3.2,
+      "degreeHeatingWeeks": 6.9,
+      "sstAnomalyC": 3.3,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -15122,15 +15122,15 @@
       "notes": "Canary Islands — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.5,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -15282,15 +15282,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-2",
-      "degreeHeatingWeeks": 8.3,
-      "sstAnomalyC": 2.8,
+      "degreeHeatingWeeks": 8.7,
+      "sstAnomalyC": 3.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -15442,15 +15442,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 5.3,
-      "sstAnomalyC": 2.9,
+      "degreeHeatingWeeks": 5.6,
+      "sstAnomalyC": 3.2,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -15602,15 +15602,15 @@
       "notes": "Azores temperate reef — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.4,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -15762,15 +15762,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-2",
-      "degreeHeatingWeeks": 11.9,
-      "sstAnomalyC": 4.5,
+      "degreeHeatingWeeks": 12.5,
+      "sstAnomalyC": 4.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -15922,15 +15922,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 3.5,
-      "sstAnomalyC": 1.8,
+      "degreeHeatingWeeks": 3.7,
+      "sstAnomalyC": 2.4,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -16082,15 +16082,15 @@
       "notes": "Florida Keys — observed condition reflects the severe decline regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-2",
-      "degreeHeatingWeeks": 9.6,
-      "sstAnomalyC": 1.6,
+      "degreeHeatingWeeks": 9.9,
+      "sstAnomalyC": 1.9,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -16243,15 +16243,15 @@
       "notes": "Kelp ecosystem — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 6.1,
-      "sstAnomalyC": 3,
+      "degreeHeatingWeeks": 6.5,
+      "sstAnomalyC": 3.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -16403,15 +16403,15 @@
       "notes": "Jardines de la Reina MPA — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "alert-1",
-      "degreeHeatingWeeks": 4,
+      "degreeHeatingWeeks": 4.3,
       "sstAnomalyC": 1.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -16563,15 +16563,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.5,
+      "sstAnomalyC": 0.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -16723,15 +16723,15 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.9,
+      "sstAnomalyC": 0.8,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -16883,15 +16883,15 @@
       "notes": "Mediterranean — observed condition reflects the stable regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 0.9,
-      "sstAnomalyC": 1.8,
+      "degreeHeatingWeeks": 1.1,
+      "sstAnomalyC": 1.6,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -17043,7 +17043,7 @@
       "notes": "Caribbean post-2023 — observed condition reflects the declining regional pattern."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 1,
@@ -17051,7 +17051,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -17310,15 +17310,15 @@
       "notes": "General assessment for the region based on available data."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1,
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -17535,7 +17535,7 @@
       "notes": "Southern Caribbean site off Aruba's northwest coast. Aruba sits outside the main hurricane belt and benefits from cooler upwelling from the Venezuelan coast, moderating SSTs relative to the northern Caribbean. The site's primary draw is the Antilla wreck; surrounding reef shows the moderate decline typical of the southern Caribbean over the past decade, compounded by the 2023 regional heat event."
     },
     "thermalStress": {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "no-stress",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.7,
@@ -17543,7 +17543,7 @@
         "noaa-crw"
       ],
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -17701,12 +17701,12 @@
       "degreeHeatingWeeks": 1.9,
       "source": "noaa-crw-live",
       "notes": "While Honduras North Coast reached severe alert levels in 2024, Tela's heat-tolerant clade D zooxanthellae symbionts (confirmed University of Miami, 2024) mean the effective bleaching response was significantly below the regional SST anomaly. 60% post-event coral cover confirms this. DHW estimated at watch-level impact despite regional alert-1 conditions.",
-      "asOf": "2026-07-31",
-      "sstAnomalyC": 1.1,
+      "asOf": "2026-08-01",
+      "sstAnomalyC": 1,
       "sourceIds": [
         "noaa-crw"
       ],
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -17864,12 +17864,12 @@
       "degreeHeatingWeeks": 0,
       "source": "noaa-crw-live",
       "notes": "No bleaching-level alert documented at Wakatobi during the 2024 global bleaching event. Reef scan photo surveys and eDNA sampling confirmed healthy reef condition. Nearest NOAA CRW gauge: Maluku, Indonesia regional product. Wakatobi corals show anomalous heat tolerance — SST anomalies do not predict benthic composition changes here as they do elsewhere.",
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "sstAnomalyC": 0,
       "sourceIds": [
         "noaa-crw"
       ],
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -18027,12 +18027,12 @@
       "degreeHeatingWeeks": 0,
       "source": "noaa-crw-live",
       "notes": "Philippines broadly experienced Alert Level 1-2 conditions during the 2023-2024 global bleaching event. Panaon Island outer reefs are recognized by the 50 Reefs Initiative as among the most thermally resilient reefs globally. No site-specific Sogod Bay bleaching report published for 2024 as of June 2026. Estimate based on Eastern Philippines regional NOAA CRW gauge.",
-      "asOf": "2026-07-31",
-      "sstAnomalyC": 0.5,
+      "asOf": "2026-08-01",
+      "sstAnomalyC": 0.1,
       "sourceIds": [
         "noaa-crw"
       ],
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -18187,15 +18187,15 @@
     },
     "thermalStress": {
       "alertLevel": "watch",
-      "degreeHeatingWeeks": 4.2,
+      "degreeHeatingWeeks": 4,
       "source": "noaa-crw-live",
       "notes": "Coral Triangle region experienced active HotSpots >1 degree C during the 4th global bleaching event (2023-2025). Bleaching warning events documented at Derawan in 2002-2003, 2010-2011, 2020, and 2021. No site-specific 2024 bleaching survey published for Derawan as of June 2026. Alert level estimated from NOAA CRW 5km product at 2.25N 118.42E.",
-      "asOf": "2026-07-31",
-      "sstAnomalyC": 1,
+      "asOf": "2026-08-01",
+      "sstAnomalyC": 1.1,
       "sourceIds": [
         "noaa-crw"
       ],
-      "fetchedAt": "2026-08-02T08:54:27.880Z",
+      "fetchedAt": "2026-08-03T10:13:00.183Z",
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -18370,10 +18370,10 @@
       "sourceIds": [
         "noaa-crw"
       ],
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.7,
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -18502,7 +18502,7 @@
       "sstCurrentC": 28.2,
       "sstClimatologyC": 28.4,
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z"
+      "fetchedAt": "2026-08-03T10:13:00.183Z"
     }
   },
   {
@@ -18561,10 +18561,10 @@
       "sourceIds": [
         "noaa-crw"
       ],
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.1,
+      "sstAnomalyC": 0.9,
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -18693,7 +18693,7 @@
       "sstCurrentC": 29.3,
       "sstClimatologyC": 29.2,
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z"
+      "fetchedAt": "2026-08-03T10:13:00.183Z"
     }
   },
   {
@@ -18764,10 +18764,10 @@
       "sourceIds": [
         "noaa-crw"
       ],
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 1.2,
+      "sstAnomalyC": 1.1,
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -18896,7 +18896,7 @@
       "sstCurrentC": 29.6,
       "sstClimatologyC": 29.2,
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z"
+      "fetchedAt": "2026-08-03T10:13:00.183Z"
     }
   },
   {
@@ -18959,10 +18959,10 @@
       "sourceIds": [
         "noaa-crw"
       ],
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "warning",
-      "degreeHeatingWeeks": 1.9,
-      "sstAnomalyC": 1.5,
+      "degreeHeatingWeeks": 2.1,
+      "sstAnomalyC": 1.4,
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -19091,7 +19091,7 @@
       "sstCurrentC": 30.2,
       "sstClimatologyC": 29.5,
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z"
+      "fetchedAt": "2026-08-03T10:13:00.183Z"
     }
   },
   {
@@ -19130,7 +19130,7 @@
       "sourceIds": [
         "noaa-crw"
       ],
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.8,
@@ -19262,7 +19262,7 @@
       "sstCurrentC": 28.4,
       "sstClimatologyC": 28.5,
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z"
+      "fetchedAt": "2026-08-03T10:13:00.183Z"
     }
   },
   {
@@ -19301,7 +19301,7 @@
       "sourceIds": [
         "noaa-crw"
       ],
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
       "sstAnomalyC": 0.6,
@@ -19433,7 +19433,7 @@
       "sstCurrentC": 28.1,
       "sstClimatologyC": 28.3,
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z"
+      "fetchedAt": "2026-08-03T10:13:00.183Z"
     }
   },
   {
@@ -19488,10 +19488,10 @@
       "sourceIds": [
         "noaa-crw"
       ],
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0,
-      "sstAnomalyC": 0.8,
+      "sstAnomalyC": 0.9,
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -19620,7 +19620,7 @@
       "sstCurrentC": 29.1,
       "sstClimatologyC": 29,
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z"
+      "fetchedAt": "2026-08-03T10:13:00.183Z"
     }
   },
   {
@@ -19671,10 +19671,10 @@
       "sourceIds": [
         "noaa-crw"
       ],
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-01",
       "alertLevel": "watch",
       "degreeHeatingWeeks": 0.3,
-      "sstAnomalyC": 1.4,
+      "sstAnomalyC": 1.1,
       "sstSeries": {
         "start": "2016-08",
         "monthlyC": [
@@ -19803,7 +19803,7 @@
       "sstCurrentC": 29.4,
       "sstClimatologyC": 29.2,
       "source": "noaa-crw-live",
-      "fetchedAt": "2026-08-02T08:54:27.880Z"
+      "fetchedAt": "2026-08-03T10:13:00.183Z"
     }
   }
 ]
