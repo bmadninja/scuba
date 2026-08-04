@@ -167378,6 +167378,42 @@
         "scientificName": "Epinephelus fuscoguttatus",
         "reliability": "year-round",
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/2433956/large.jpg"
+      },
+      {
+        "commonName": "Giant Grouper",
+        "reliability": "year-round",
+        "scientificName": "Epinephelus lanceolatus",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/11975452/large.jpeg"
+      },
+      {
+        "commonName": "Kingfish",
+        "reliability": "year-round",
+        "scientificName": "Scomberomorus commerson",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/609015502/large.jpg"
+      },
+      {
+        "commonName": "Manta Ray",
+        "reliability": "seasonal",
+        "scientificName": "Manta birostris",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          1,
+          2,
+          3,
+          4
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33852153/large.jpg"
+      },
+      {
+        "commonName": "Green Sea Turtle",
+        "reliability": "year-round",
+        "scientificName": "Chelonia mydas",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/263124138/large.jpeg"
       }
     ],
     "conditionsByMonth": [
@@ -578747,6 +578783,56 @@
           12
         ],
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/14580599/large.jpg"
+      },
+      {
+        "commonName": "Giant Boarfish",
+        "reliability": "seasonal",
+        "scientificName": "Pseudopentaceros richardsoni",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/510043144/large.jpg"
+      },
+      {
+        "commonName": "Stingray",
+        "reliability": "seasonal",
+        "scientificName": "Hypanus americanus",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117019880/large.jpg"
+      },
+      {
+        "commonName": "Blue Cod",
+        "reliability": "year-round",
+        "scientificName": "Parapercis colias",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/623345786/large.jpg"
+      },
+      {
+        "commonName": "Kahawai",
+        "reliability": "seasonal",
+        "scientificName": "Arripis trutta",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/183649103/large.jpeg"
+      },
+      {
+        "commonName": "Silver Drummer",
+        "reliability": "year-round",
+        "scientificName": "Girella tricuspidata",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/13158816/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -578989,6 +579075,44 @@
           3
         ],
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/348111136/large.jpeg"
+      },
+      {
+        "commonName": "Hawksbill sea turtle",
+        "reliability": "year-round",
+        "scientificName": "Eretmochelys imbricata",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/229088617/large.jpeg"
+      },
+      {
+        "commonName": "Humpback whale",
+        "reliability": "seasonal",
+        "scientificName": "Megaptera novaeangliae",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/153249709/large.jpg"
+      },
+      {
+        "commonName": "Whale shark",
+        "reliability": "seasonal",
+        "scientificName": "Rhincodon typus",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          9,
+          10,
+          11
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410545024/large.jpeg"
+      },
+      {
+        "commonName": "Bluespotted stingray",
+        "reliability": "year-round",
+        "scientificName": "Taeniura lymma",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/245496765/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -579258,6 +579382,37 @@
           12
         ],
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90216358/large.jpeg"
+      },
+      {
+        "commonName": "Leopard shark",
+        "reliability": "year-round",
+        "scientificName": "Negaprion acutidens",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/436135774/large.jpeg"
+      },
+      {
+        "commonName": "Barracuda",
+        "reliability": "year-round",
+        "scientificName": "Sphyraena barracuda",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77090658/large.jpeg"
+      },
+      {
+        "commonName": "Crocodile fish",
+        "reliability": "year-round",
+        "scientificName": "Platycephalus indicus",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/186724371/large.jpg"
+      },
+      {
+        "commonName": "Manta ray",
+        "reliability": "seasonal",
+        "scientificName": "Manta birostris",
+        "bestMonths": [
+          9,
+          10,
+          11,
+          12,
+          1
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346085683/large.jpg"
       }
     ],
     "conditionsByMonth": [
@@ -579484,6 +579639,34 @@
           5
         ],
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/99738435/large.jpeg"
+      },
+      {
+        "commonName": "Peacock wrasse",
+        "reliability": "year-round",
+        "scientificName": "Iniistius pavo",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/59020992/large.jpeg"
+      },
+      {
+        "commonName": "Humphead wrasse",
+        "reliability": "rare",
+        "scientificName": "Cheilinus undulatus",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/72584387/large.jpg"
+      },
+      {
+        "commonName": "Moorish idol",
+        "reliability": "year-round",
+        "scientificName": "Zanclus cornutus",
+        "bestMonths": [],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/569817365/large.jpg"
+      },
+      {
+        "commonName": "Clownfish",
+        "reliability": "year-round",
+        "scientificName": "Amphiprion ocellaris",
+        "bestMonths": [],
+        "imageUrl": "https://static.inaturalist.org/photos/461354585/large.jpeg"
       }
     ],
     "conditionsByMonth": [
@@ -579719,6 +579902,30 @@
           5
         ],
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/195315918/large.jpg"
+      },
+      {
+        "commonName": "Clownfish",
+        "reliability": "year-round",
+        "scientificName": "Amphiprion ocellaris",
+        "imageUrl": "https://static.inaturalist.org/photos/461354585/large.jpeg"
+      },
+      {
+        "commonName": "Parrotfish",
+        "reliability": "year-round",
+        "scientificName": "Scaridae",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/634647554/large.jpg"
+      },
+      {
+        "commonName": "Grouper",
+        "reliability": "year-round",
+        "scientificName": "Epinephelus",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/576952820/large.jpg"
+      },
+      {
+        "commonName": "Sweetlips",
+        "reliability": "year-round",
+        "scientificName": "Plectorhinchus",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/357918245/large.jpg"
       }
     ],
     "conditionsByMonth": [
