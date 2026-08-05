@@ -11,6 +11,7 @@ import { getSightingsBySiteId } from "@/lib/data/sightings";
 import { getIucnStatus, IUCN_ENABLED } from "@/lib/data/iucn-status";
 import { getSpeciesPhotoCredit } from "@/lib/data/species-photos";
 import { skillText } from "@/lib/data/reef-state";
+import { getCrempSiteSeriesBySiteId } from "@/lib/data/cremp-reef-series";
 import { SitePageBody } from "./site-page-body";
 import { HeroGallery } from "@/components/hero-gallery";
 import type {
@@ -22,6 +23,7 @@ import type {
   LodgingItem,
   MonthlyConditionRow,
   OperatorItem,
+  SiteCoralHistory,
   TripFact,
 } from "./site-page-body";
 import type { Site } from "@/lib/data/types";
@@ -435,6 +437,36 @@ export default async function SiteDetailPage({
       ? { kind: "prose", text: site.getThere }
       : null;
 
+  // Coral history measured on this exact reef. Only a handful of dive sites
+  // worldwide sit on a long-term monitoring station, so this is null almost
+  // everywhere — the location page's regional chart is the general case.
+  const crempSite = getCrempSiteSeriesBySiteId(site.id);
+  const coralHistory: SiteCoralHistory | null = crempSite
+    ? (() => {
+        const points = crempSite.series.map((p) => ({
+          year: p.year,
+          pct: Math.round(p.coralCoverPercent),
+        }));
+        const first = crempSite.series[0];
+        const last = crempSite.series[crempSite.series.length - 1];
+        const direction =
+          last.coralCoverPercent < first.coralCoverPercent
+            ? `fallen from ${first.coralCoverPercent}% to ${last.coralCoverPercent}%`
+            : last.coralCoverPercent > first.coralCoverPercent
+              ? `risen from ${first.coralCoverPercent}% to ${last.coralCoverPercent}%`
+              : `held near ${last.coralCoverPercent}%`;
+        return {
+          points,
+          sourceLabel: `${crempSite.programme}, ${crempSite.stationCount} fixed stations on this reef`,
+          intro:
+            `Divers from ${crempSite.programme} have counted the coral on ${site.name} itself every year ` +
+            `since ${first.year}, returning to the same ${crempSite.stationCount} marked stations. Over that ` +
+            `time live stony coral cover here has ${direction}. This is a survey of this reef, not of the ` +
+            `region around it.`,
+        };
+      })()
+    : null;
+
   const isGenericSearchUrl = (url: string) =>
     !url || url.includes("dive-shop-search") || url.includes("/dive-shop");
   const operators: OperatorItem[] = (site.operators ?? [])
@@ -591,6 +623,7 @@ export default async function SiteDetailPage({
         getThere={getThere}
         operators={operators}
         lodging={lodging}
+        coralHistory={coralHistory}
       />
     </>
   );

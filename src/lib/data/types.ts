@@ -774,6 +774,70 @@ export type AgrraReefSeriesRecord = {
 };
 
 /**
+ * Fields shared by the location-level and dive-site-level CREMP records.
+ *
+ * CREMP (the Florida Coral Reef Evaluation and Monitoring Project, run by FWC's
+ * Fish & Wildlife Research Institute, with Southeast Florida sites run by Nova
+ * Southeastern University as SECREMP) resurveys the SAME fixed stations every
+ * year, so unlike MERMAID and AGRRA there is no proximity radius here — the
+ * stations are the reef. It is still DISPLAY-ONLY, like every other trend
+ * series: it draws the coral-cover chart and never feeds the reef-state verdict
+ * or the headline coral number.
+ *
+ * Built by scripts/build-cremp-coral-series.mjs from the committed raw export.
+ */
+type CrempSeriesBase = {
+  sourceId: string;
+  methodologyClaimId: string;
+  /** "CREMP" or, for the Southeast Florida sites, "SECREMP". */
+  programme: string;
+  stationCount: number;
+  /** Station-surveys pooled into the series. */
+  surveyEventCount: number;
+  surveyYears: number;
+  latest: { year: number; coralCoverPercent: number };
+  series: CoralCoverSeriesPoint[];
+  citation?: string | null;
+  notes?: string;
+  lastReviewedAt?: string;
+};
+
+/**
+ * A location's CREMP stony-coral history, pooled from the monitored reefs in
+ * that region. Lives in `src/data/cremp-reef-series.json`, one entry per
+ * location.
+ */
+export type CrempReefSeriesRecord = CrempSeriesBase & {
+  locationId: string;
+  matchType: "monitored-sites";
+  /** Plain-language name of the pooled region, e.g. "Florida Keys". */
+  scopeLabel: string;
+  /** CREMP subregion codes pooled, e.g. ["UK", "MK", "LK"]. */
+  subregions: string[];
+  siteCount: number;
+  /**
+   * True when only reefs monitored in every survey year were pooled, so the
+   * trend cannot be an artifact of reefs joining the programme later. False
+   * means the region was too young or too patchy for a continuous panel and
+   * every reef on record was used — the chart caption says so.
+   */
+  continuousPanel: boolean;
+};
+
+/**
+ * A dive site's own CREMP history, where a CREMP monitoring site IS that reef
+ * rather than one near it. Only exact reef matches are on file, so the chart
+ * can say "this reef" without hedging. Lives in
+ * `src/data/cremp-site-series.json`, one entry per dive site.
+ */
+export type CrempSiteSeriesRecord = CrempSeriesBase & {
+  siteId: string;
+  matchType: "same-reef";
+  /** The CREMP station sets pooled, e.g. ["Molasses Shallow", "Molasses Deep"]. */
+  crempSites: string[];
+};
+
+/**
  * One observed fish-abundance reading in a multi-year series. The value is a
  * REEF community density index on the 1–4 scale (1 = Single, 2 = Few, 3 = Many,
  * 4 = Abundant): the sighting-frequency-weighted mean of the Roving Diver

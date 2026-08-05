@@ -10840,5 +10840,68 @@
     ],
     "heroImageUrl": "/heroes/OceanImageBank_GabrielBarathieu_09-1920.webp",
     "lodging": []
+  },
+  {
+    "id": "dry-tortugas-usa",
+    "slug": "dry-tortugas-usa",
+    "name": "Dry Tortugas",
+    "country": "United States",
+    "region": "Florida",
+    "countryCode": "US",
+    "lat": 24.628,
+    "lng": -82.873,
+    "description": "Calm summer seas open up the long crossing to Florida's most remote reefs.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "siteIds": [
+      "dry-tortugas-windjammer-wreck",
+      "dry-tortugas-little-africa",
+      "dry-tortugas-texas-rock"
+    ],
+    "sourceIds": [
+      "cremp"
+    ],
+    "methodologyClaimIds": [
+      "reef-health-cremp"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_ShaunWolfe_06-1920.webp"
+  },
+  {
+    "id": "southeast-florida-usa",
+    "slug": "southeast-florida-usa",
+    "name": "Southeast Florida",
+    "country": "United States",
+    "region": "Florida",
+    "countryCode": "US",
+    "lat": 26.121,
+    "lng": -80.095,
+    "description": "Warm drift dives along the reef tract, with big sharks in the blue off Jupiter and Palm Beach.",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "siteIds": [
+      "southeast-florida-blue-heron-bridge",
+      "southeast-florida-lady-luck",
+      "southeast-florida-zion-train"
+    ],
+    "sourceIds": [
+      "cremp"
+    ],
+    "methodologyClaimIds": [
+      "reef-health-cremp"
+    ],
+    "heroImageUrl": "/heroes/OceanImageBank_CassandraScott_04-1920.webp"
   }
 ]
