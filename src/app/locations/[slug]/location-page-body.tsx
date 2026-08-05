@@ -169,9 +169,6 @@ export type LocationBodyProps = {
   projectionDataPoints: CoralDataPoint[];
   // Attribution shown under the chart, e.g. "MERMAID and the survey teams, within 55 km"
   coralChartSourceLabel: string | null;
-  // Set only when the chart's last point and the headline coral number come from
-  // different survey designs, and explains why both are right.
-  coralChartNote: string | null;
   // GCRMN regional average, drawn as a faint horizontal reference line
   coralContextValue: number | null;
   coralContextLabel: string | null;
@@ -409,7 +406,6 @@ export function LocationPageBody(props: LocationBodyProps) {
     waterQualityEvents,
     projectionDataPoints,
     coralChartSourceLabel,
-    coralChartNote,
     coralContextValue,
     coralContextLabel,
     fishAbundance,
@@ -578,20 +574,6 @@ export function LocationPageBody(props: LocationBodyProps) {
                     contextValue={coralContextValue ?? undefined}
                     contextLabel={coralContextLabel ?? undefined}
                   />
-                  {coralChartNote ? (
-                    <p style={{
-                      fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
-                      fontSize: "0.875rem",
-                      lineHeight: 1.6,
-                      color: "#4A5568",
-                      margin: "1rem 0 0",
-                      paddingTop: "0.9rem",
-                      borderTop: "1px solid #E7E6E2",
-                      maxWidth: 620,
-                    }}>
-                      {coralChartNote}
-                    </p>
-                  ) : null}
                 </div>
               </div>
             </section>

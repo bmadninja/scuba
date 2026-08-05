@@ -86,21 +86,19 @@ test('Florida Keys charts the CREMP history and credits CREMP', async ({ page })
   await expect(section.locator('svg circle[r="4"]')).toHaveCount(30);
 });
 
-test('a CREMP reef keeps its reef-health headline number and explains the gap', async ({ page }) => {
-  await page.goto('/locations/florida-keys-usa', GOTO);
-  // The chart's own last point is far below the reef-health reading, and the
-  // page must show the reef-health number rather than silently restating the
-  // reef's coral cover on a different survey design.
+test('the Florida Keys headline number and chart agree, both on CREMP', async ({ page }) => {
+  // The reef-health record cites CREMP itself, so there is exactly one coral
+  // number on the page. This replaces an earlier NCRMP-attributed 13%/24% pair
+  // that did not match the published record for the Keys reef tract.
   const keys = locationSeries.find((r: { locationId: string }) => r.locationId === 'florida-keys-usa');
   const health = read('src/data/reef-health.json').find(
     (r: { locationId: string }) => r.locationId === 'florida-keys-usa',
   );
+  expect(health.observed.sourceIds).toContain('cremp');
   const headline = Math.round(health.observed.coralCoverPercent);
-  const chartLatest = Math.round(keys.latest.coralCoverPercent);
-  expect(headline).not.toBe(chartLatest);
+  expect(headline).toBe(Math.round(keys.latest.coralCoverPercent));
 
-  // The reef-health card's coral pillar carries the headline figure, NOT the
-  // chart's last point.
+  await page.goto('/locations/florida-keys-usa', GOTO);
   // The pillar label is "Coral cover" in the DOM; the caps are a CSS transform.
   const coralPillar = page
     .locator('p', { hasText: /^Coral cover$/ })
@@ -108,13 +106,15 @@ test('a CREMP reef keeps its reef-health headline number and explains the gap', 
     .locator('..');
   await expect(coralPillar).toBeVisible({ timeout: 15_000 });
   await expect(coralPillar).toContainText(`${headline}%`);
-  await expect(coralPillar).not.toContainText(`${chartLatest}%`);
+  // The old contradiction must not come back in either direction.
+  await expect(page.locator('#coral-cover')).not.toContainText('reads lower than');
+});
 
-  // ...and the note names that same figure, so the two numbers are reconciled
-  // on the page rather than left looking like a bug.
-  await expect(
-    page.locator('#coral-cover').getByText(`reads lower than the ${headline}%`, { exact: false }),
-  ).toBeVisible();
+test('the Florida Keys reef-state label is unchanged by the corrected number', async ({ page }) => {
+  // Both the old 13% and the corrected 4% sit under the model's <25% coral
+  // threshold, so the atlas label and its filter counts do not move.
+  await page.goto('/locations/florida-keys-usa', GOTO);
+  await expect(page.getByText('Declining').first()).toBeVisible({ timeout: 15_000 });
 });
 
 test('a dive site on a CREMP station charts its own reef', async ({ page }) => {

@@ -756,40 +756,13 @@ export default async function LocationPage({
   // reef-health reading only when no series covers the reef. This one value
   // drives the reef-card coral row AND the "Live coral covers X%" basis line, so
   // the card and the chart can never show two different numbers.
-  //
-  // CREMP is the one exception. Its fixed stations measure a genuinely different
-  // quantity from the stratified-random NCRMP surveys behind the reef-health
-  // record — in the Keys, 4% against 13% for the same year — so letting the
-  // chart's last point overwrite the headline would silently restate the reef's
-  // coral number on a survey design that was never meant to produce it. The
-  // headline stays on the hand-reviewed reef-health reading and the chart
-  // carries a note explaining why the two differ.
   const crempIsChosen = chosenNearby?.isCremp === true;
   const coralDisplayPct: number | null =
-    crempIsChosen && coverNow !== null
-      ? Math.round(coverNow)
-      : projectionDataPoints.length > 0
-        ? projectionDataPoints[projectionDataPoints.length - 1].pct
-        : coverNow !== null
-          ? Math.round(coverNow)
-          : null;
-
-  // Shown under the chart only when the headline number and the chart's own last
-  // point disagree, which today means a CREMP reef whose reef-health record came
-  // from a different programme.
-  const coralChartNote: string | null = (() => {
-    if (!crempIsChosen || !crempSeries) return null;
-    const chartPct = crempSeries.latest.coralCoverPercent;
-    if (coralDisplayPct === null || Math.abs(coralDisplayPct - chartPct) < 1) return null;
-    return (
-      `This chart reads lower than the ${coralDisplayPct}% above it, and both are right. ` +
-      `${crempSeries.programme} divers return to the same fixed stations every year, which is what ` +
-      `makes a trend across ${crempSeries.surveyYears} survey years possible, but those stations sit on ` +
-      `reef that has since lost most of its coral. The headline figure comes from surveys spread across ` +
-      `the whole region, including healthier ground the fixed stations never touch. Read the chart ` +
-      `for the direction of travel, not for today's number.`
-    );
-  })();
+    projectionDataPoints.length > 0
+      ? projectionDataPoints[projectionDataPoints.length - 1].pct
+      : coverNow !== null
+        ? Math.round(coverNow)
+        : null;
 
   // Display-only reef-state label. When the locked scoring model has no on-site
   // signal to grade the reef (state "unknown") BUT a nearby coral survey series
@@ -825,11 +798,12 @@ export default async function LocationPage({
     ["allen-coral-atlas", "Allen Coral Atlas"],
   ];
   const coralSourceCredit: string | null = (() => {
-    // CREMP draws the chart but deliberately does NOT set the headline number,
-    // so the card's credit has to follow the reef-health record the number
-    // actually came from. (Without this the default branch below would credit
-    // MERMAID for a reef MERMAID has never surveyed.)
-    if (chosenNearby && !crempIsChosen) {
+    // Without the CREMP arm this would credit MERMAID for any non-AGRRA series,
+    // including reefs MERMAID has never surveyed.
+    if (crempIsChosen && crempSeries) {
+      return `${crempSeries.programme} fixed station monitoring`;
+    }
+    if (chosenNearby) {
       return chosenNearby.label.startsWith("AGRRA")
         ? "AGRRA and GCRMN reef surveys"
         : "MERMAID and the survey teams";
@@ -839,10 +813,6 @@ export default async function LocationPage({
     for (const [id, credit] of CORAL_SOURCE_CREDIT) {
       if (ids.has(id)) return credit;
     }
-    // A CREMP reef with no reef-health record of its own took its number
-    // straight off the chart, so credit the programme rather than falling
-    // through to the anonymous "Reef survey" placeholder.
-    if (crempIsChosen && crempSeries) return `${crempSeries.programme} fixed station monitoring`;
     return "Reef survey";
   })();
   // When the chart is drawn from the single reef-health reading (no proximity
@@ -979,13 +949,7 @@ export default async function LocationPage({
         ? { word: "Improving", color: GREEN }
         : { word: "Stable", color: AMBER };
   let coralRow: ReefHealthRows["coral"] = null;
-  if (crempIsChosen && coralDisplayPct !== null) {
-    // The card keeps the reef-health number rather than the chart's last point,
-    // so a CREMP reef shows ONE coral figure across the card, the basis line and
-    // the chart note. Drawing the CREMP trend here instead would put a sparkline
-    // ending at 4% next to a 13% headline.
-    coralRow = { kind: "level", pct: coralDisplayPct, verdict: coralLevelVerdict(coralDisplayPct) };
-  } else if (projectionDataPoints.length >= 1) {
+  if (projectionDataPoints.length >= 1) {
     const points = projectionDataPoints.map((p) => ({ year: p.year, pct: p.pct }));
     const currentPct = points[points.length - 1].pct;
     if (points.length >= 3) {
@@ -1081,12 +1045,6 @@ export default async function LocationPage({
   // One consolidated source line for the whole card — only the present pillars.
   const sourceParts: string[] = [];
   if (coralRow && coralSourceCredit) sourceParts.push(coralSourceCredit);
-  // The CREMP chart is credited separately from the headline number, which came
-  // from a different programme.
-  if (crempIsChosen && crempSeries) {
-    const crempCredit = `${crempSeries.programme} fixed station monitoring`;
-    if (coralSourceCredit !== crempCredit) sourceParts.push(crempCredit);
-  }
   if (fishRow) sourceParts.push("Reef Life Survey");
   if (heatRow) sourceParts.push("NOAA Coral Reef Watch");
   if (fishingRow) sourceParts.push("Global Fishing Watch and reef gravity");
@@ -1336,7 +1294,6 @@ export default async function LocationPage({
         coverTrendNote={coverTrendNote}
         projectionDataPoints={projectionDataPoints}
         coralChartSourceLabel={coralChartSourceLabel}
-        coralChartNote={coralChartNote}
         coralContextValue={coralContextValue}
         coralContextLabel={coralContextLabel}
         biomassDataPoints={biomassDataPoints}
