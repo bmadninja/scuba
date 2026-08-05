@@ -582076,6 +582076,17 @@
         "scientificName": "Gasterosteus aculeatus",
         "reliability": "year-round",
         "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/254596254/large.jpg"
+      },
+      {
+        "commonName": "Groundwater amphipod",
+        "reliability": "year-round",
+        "scientificName": "Crymostigius thingvallensis",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/236892891/large.jpeg"
+      },
+      {
+        "commonName": "Crangonyx amphipod",
+        "reliability": "year-round",
+        "scientificName": "Crangonyx islandicus"
       }
     ],
     "conditionsByMonth": [
