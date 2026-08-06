@@ -1,14 +1,10 @@
-Enriching 4 sites (< 5 species each, target 8)
+Enriching 3 sites (< 5 species each, target 8)
 
-[1/4] Hawakil Bay Wall (4 species) → no new species found
+[1/3] Hawakil Bay Wall (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CdmNvuJVkYWyKg4uhyEGX"}
 
-[1/4] Zirku Island (4 species) → no new species found
+[2/3] Zirku Island (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CdmNw2kiQE2mczc41TUvv"}
 
-[1/4] Davíðsgjá (4 species) → no new species found
+[3/3] Davíðsgjá Fissure (4 species) → ERROR: 400 {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CdmNw9p7wxSfEo6A3191U"}
 
-[1/4] Davíðsgjá Fissure (4 species) → +2 species
-    + Groundwater amphipod (Crymostigius thingvallensis) [year-round]
-    + Crangonyx amphipod (Crangonyx islandicus) [year-round]
-
-Done. Enriched: 1  Failed: 0
+Done. Enriched: 0  Failed: 3
 Run fetch-species-photos.mjs next to get iNaturalist thumbnails for new species.
