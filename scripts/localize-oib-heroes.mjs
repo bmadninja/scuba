@@ -246,12 +246,28 @@ async function main() {
   // Photographer credits (OIB terms require attribution)
   console.log("Fetching photographer credits from OIB…");
   const allCredits = await fetchCredits();
-  const used = {};
-  for (const f of converted) {
-    if (allCredits[f]) used[f] = allCredits[f];
+  // Merge into whatever is already on file rather than replacing it. `converted`
+  // holds only the files localized THIS run, so on an incremental run (the normal
+  // case now that the whole hero set is local) a plain overwrite would drop the
+  // attribution for every previously localized photo — which OIB's terms require
+  // us to keep.
+  let existing = {};
+  try {
+    existing = JSON.parse(await fs.readFile(CREDITS_PATH, "utf8"));
+  } catch {
+    // First run, no credits file yet.
   }
-  await fs.writeFile(CREDITS_PATH, JSON.stringify(used, null, 2) + "\n");
-  console.log(`Saved ${Object.keys(used).length} credits to hero-photo-credits.json`);
+  const added = [];
+  for (const f of converted) {
+    if (allCredits[f] && existing[f] !== allCredits[f]) {
+      existing[f] = allCredits[f];
+      added.push(f);
+    }
+  }
+  await fs.writeFile(CREDITS_PATH, JSON.stringify(existing, null, 2) + "\n");
+  console.log(
+    `Saved ${added.length} new credits (${Object.keys(existing).length} on file) to hero-photo-credits.json`,
+  );
 }
 
 main().catch((err) => {

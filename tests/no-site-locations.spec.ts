@@ -23,6 +23,8 @@ const NO_SITE_LOCATIONS = [
   { slug: 'sao-tome-sao-tome-and-principe',name: 'São Tomé' },
   { slug: 'mergui-archipelago-myanmar',    name: 'Mergui Archipelago' },
   { slug: 'dahlak-eritrea',               name: 'Dahlak Archipelago' },
+  { slug: 'dry-tortugas-usa',             name: 'Dry Tortugas' },
+  { slug: 'southeast-florida-usa',        name: 'Southeast Florida' },
 ] as const;
 
 // ── Each no-site location must load and show trip planning content ─────────
