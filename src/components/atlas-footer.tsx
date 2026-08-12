@@ -100,6 +100,9 @@ export function AtlasFooter() {
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
             Data licensed CC BY-NC &middot; Sources: {sourceCount} datasets &middot; &copy; 2026 Scuba Season
           </p>
+          <p className="mt-1.5 text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+            Scuba Season is the operating name of MC5 Labs, Inc.
+          </p>
         </div>
       </div>
     </footer>
