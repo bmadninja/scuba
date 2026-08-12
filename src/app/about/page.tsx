@@ -473,6 +473,11 @@ export default function AboutPage() {
             hello@scubaseason.fun
           </a>
         </div>
+
+        {/* LEGAL ENTITY */}
+        <p className="mt-10 text-xs leading-[1.7]" style={{ color: "var(--color-ink-2)" }}>
+          Scuba Season is the operating name of MC5 Labs, Inc.
+        </p>
       </div>
     </>
   );
