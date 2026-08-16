@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { AtlasInfoPopup, InfoButton } from "@/components/atlas-info-popup";
 import type { InfoKey } from "@/components/atlas-info-popup";
+import { CoralProjectionChart } from "@/components/coral-projection-chart";
+import type { CoralDataPoint } from "@/components/coral-projection-chart";
 
 // ─── Serializable view-model passed from the server page ──────────────────────
 
@@ -82,6 +84,19 @@ export type GetThereView =
   | { kind: "prose"; text: string }
   | null;
 
+/**
+ * A coral-cover history measured on THIS reef, not near it. Only present for
+ * dive sites that a long-term monitoring programme surveys directly, so the
+ * copy can say "this reef" without hedging.
+ */
+export type SiteCoralHistory = {
+  points: CoralDataPoint[];
+  /** Attribution under the chart, e.g. "CREMP fixed stations, 8 of them". */
+  sourceLabel: string;
+  /** One sentence on who measures it and how, shown above the chart. */
+  intro: string;
+};
+
 export type SiteBodyProps = {
   siteId: string;
   siteSlug: string;
@@ -100,6 +115,8 @@ export type SiteBodyProps = {
   getThere: GetThereView;
   operators: OperatorItem[];
   lodging: LodgingItem[];
+  /** Null for the great majority of sites, which no programme surveys directly. */
+  coralHistory: SiteCoralHistory | null;
 };
 
 // ─── Style constants (light token system) ────────────────────────────────────
@@ -235,6 +252,7 @@ export function SitePageBody(props: SiteBodyProps) {
     tripFacts,
     monthCells,
     getThere,
+    coralHistory,
   } = props;
 
   const hasTrip = getThere !== null;
@@ -392,6 +410,38 @@ export function SitePageBody(props: SiteBodyProps) {
                     {c.sub ? <p style={{ ...MONO, fontSize: "0.6875rem", color: "#4A5568", marginTop: "0.15rem" }}>{c.sub}</p> : null}
                   </div>
                 ))}
+              </div>
+            </section>
+          ) : null}
+
+          {/* CORAL COVER ON THIS REEF — only for the handful of dive sites a
+              long-term programme surveys directly, so every point is a survey
+              of this reef rather than of the region around it. Display only:
+              nothing here feeds the reef-state label. */}
+          {coralHistory && coralHistory.points.length >= 2 ? (
+            <section id="coral-cover" style={{ marginBottom: "3rem" }}>
+              <p style={LABEL_STYLE}>Coral on this reef</p>
+              <p style={{
+                fontFamily: 'var(--font-sans), "IBM Plex Sans", sans-serif',
+                fontSize: "1.0625rem",
+                lineHeight: 1.7,
+                color: "#4A5568",
+                maxWidth: 660,
+                marginBottom: "1.25rem",
+              }}>
+                {coralHistory.intro}
+              </p>
+              <div style={SECTION_CARD}>
+                <div style={{ padding: "1.25rem" }}>
+                  <p style={{ ...MONO, fontSize: "11px", fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase", color: "#4A5568", marginBottom: "0.75rem" }}>
+                    Live coral cover, percent by year
+                  </p>
+                  <CoralProjectionChart
+                    locationName={siteName}
+                    dataPoints={coralHistory.points}
+                    sourceLabel={coralHistory.sourceLabel}
+                  />
+                </div>
               </div>
             </section>
           ) : null}

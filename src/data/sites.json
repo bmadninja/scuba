@@ -583493,5 +583493,1320 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Strong current year-round—experienced divers and boat operator mandatory. Diver must locate anchor warp underwater for exit due to current strength. Best conditions: southerly winds (flat sea) and calm swell. Avoid northerly winds which increase turbidity. Marine reserve regulations apply; check with operators for current restrictions."
+  },
+  {
+    "id": "dry-tortugas-windjammer-wreck",
+    "slug": "dry-tortugas-windjammer-wreck",
+    "locationId": "dry-tortugas-usa",
+    "name": "Windjammer Wreck",
+    "lat": 24.62435,
+    "lng": -82.94273,
+    "description": "The Avanti, a 261 foot iron sailing ship carrying lumber from Pensacola to Uruguay, went down here on 22 January 1907 about 1,100 yards southwest of Loggerhead Key. She lies in roughly 6 m of clear water, broken into a bow field running east to west and a stern field running north to south, with ribs and plating now grown over in hard coral and sea fans. Shallow enough to snorkel and bright enough to see the whole layout in one dive. Inside Dry Tortugas National Park.",
+    "depthRange": {
+      "min": 3,
+      "max": 7
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "coral"
+    ],
+    "species": [
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366814441/large.jpg"
+      },
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/296393894/large.jpg"
+      },
+      {
+        "commonName": "Yellowtail snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/277121303/large.jpg"
+      },
+      {
+        "commonName": "Sea fan",
+        "scientificName": "Gorgonia ventalina",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/399954618/large.jpg"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 80,
+    "getThere": "Fly into Key West (EYW) or drive the Overseas Highway from Miami (MIA). Dive boats and liveaboards leave Key West for the crossing, which takes most of a day. The wreck sits inside Dry Tortugas National Park, southwest of Loggerhead Key.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "National park waters. No anchoring on coral, no collecting and nothing may be taken off the wreck, which is a protected archaeological site. Boats use the park mooring.",
+    "heroImageUrl": "/heroes/OceanImageBank_ShaunWolfe_06-1920.webp"
+  },
+  {
+    "id": "dry-tortugas-little-africa",
+    "slug": "dry-tortugas-little-africa",
+    "locationId": "dry-tortugas-usa",
+    "name": "Little Africa",
+    "lat": 24.638,
+    "lng": -82.9228,
+    "description": "A broad shallow patch reef a few yards off the western shore of Loggerhead Key, named for the outline it traces from the surface. Large stony coral heads and gorgonians sit on sand in water shallow enough to snorkel all day, with juvenile barracuda, spiny lobster tucked under the ledges and the usual reef fish crowd. The most forgiving site in the Tortugas and the one most day visitors see.",
+    "depthRange": {
+      "min": 1,
+      "max": 6
+    },
+    "skillLevel": "never-dived",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366814441/large.jpg"
+      },
+      {
+        "commonName": "Caribbean spiny lobster",
+        "scientificName": "Panulirus argus",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/574042833/large.jpg"
+      },
+      {
+        "commonName": "Stoplight parrotfish",
+        "scientificName": "Sparisoma viride",
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/60655837/large.jpeg"
+      },
+      {
+        "commonName": "Brain coral",
+        "scientificName": "Pseudodiploria strigosa",
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/54063060/large.jpg"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 72,
+    "getThere": "Reached from Key West by liveaboard, charter boat or seaplane to Garden Key followed by a boat transfer. Loggerhead Key is about 3 miles west of Garden Key inside Dry Tortugas National Park.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "National park waters: no collecting, no touching coral, no anchoring on reef. A research natural area covers part of the water around Loggerhead Key, so follow your operator on where landing and diving are allowed.",
+    "heroImageUrl": "/heroes/OceanImageBank_ShaunWolfe_06-1920.webp"
+  },
+  {
+    "id": "dry-tortugas-texas-rock",
+    "slug": "dry-tortugas-texas-rock",
+    "locationId": "dry-tortugas-usa",
+    "name": "Texas Rock",
+    "lat": 24.68023,
+    "lng": -82.88533,
+    "description": "An isolated coral mound north of Garden Key that rises out of open sand from about 18 m up to roughly 11 m below the surface. Orange dominates: elephant ear sponges, crinoids and ball sponges cover the sides, with stony coral and gorgonians over the top. Because it stands alone in sand it stacks fish, and a full lap of the mound is a whole dive. One of the CREMP stations, so the coral here has been counted every year since 2009.",
+    "depthRange": {
+      "min": 11,
+      "max": 18
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Black grouper",
+        "scientificName": "Mycteroperca bonaci",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/36130823/large.jpg"
+      },
+      {
+        "commonName": "Bar jack",
+        "scientificName": "Caranx ruber",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/607779708/large.jpg"
+      },
+      {
+        "commonName": "Orange elephant ear sponge",
+        "scientificName": "Agelas clathrodes",
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/26792495/large.jpeg"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366814441/large.jpg"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 74,
+    "getThere": "Dive boats and liveaboards run out of Key West, a crossing of about 70 miles that takes most of a day. Texas Rock lies north of Garden Key and is a boat mark rather than anything you can reach from land.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Open water away from the islands, so current picks up and the site is weather dependent. National park rules apply: mooring or live boat only, no collecting.",
+    "heroImageUrl": "/heroes/OceanImageBank_ShaunWolfe_06-1920.webp"
+  },
+  {
+    "id": "southeast-florida-blue-heron-bridge",
+    "slug": "southeast-florida-blue-heron-bridge",
+    "locationId": "southeast-florida-usa",
+    "name": "Blue Heron Bridge",
+    "lat": 26.7832,
+    "lng": -80.0423,
+    "description": "A shallow sand and rubble flat under the bridge at Phil Foster Park in Riviera Beach, entered straight off the beach and rarely deeper than 6 m. It is one of the best macro sites anywhere: seahorses, octopus, batfish, frogfish, juvenile everything, and a snorkel trail of small wrecks. The catch is tide. The water only clears on the incoming, so dives run in the hour either side of high tide and the site is unusable outside that window.",
+    "depthRange": {
+      "min": 1,
+      "max": 6
+    },
+    "skillLevel": "never-dived",
+    "diveTypes": [
+      "muck",
+      "macro",
+      "night"
+    ],
+    "species": [
+      {
+        "commonName": "Lined seahorse",
+        "scientificName": "Hippocampus erectus",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/439279768/large.jpeg"
+      },
+      {
+        "commonName": "Common octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/166419253/large.jpeg"
+      },
+      {
+        "commonName": "Shortnose batfish",
+        "scientificName": "Ogcocephalus nasutus",
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/473413818/large.jpeg"
+      },
+      {
+        "commonName": "Southern stingray",
+        "scientificName": "Hypanus americanus",
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/357511928/large.jpeg"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 10
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 88,
+    "getThere": "Phil Foster Park, 900 Blue Heron Blvd on Singer Island, Riviera Beach. About 15 minutes from Palm Beach International (PBI) and under an hour from Fort Lauderdale (FLL). Park on site and walk in; no boat needed.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Check the tide table before you go and plan to be in the water an hour before high tide. Boat traffic runs in the channel, so a surface marker is expected and the marked snorkel trail is the safe side. Night diving needs a permit from the county.",
+    "heroImageUrl": "/heroes/OceanImageBank_CassandraScott_04-1920.webp"
+  },
+  {
+    "id": "southeast-florida-lady-luck",
+    "slug": "southeast-florida-lady-luck",
+    "locationId": "southeast-florida-usa",
+    "name": "Lady Luck",
+    "lat": 26.230833,
+    "lng": -80.063503,
+    "description": "A 324 foot tanker sunk on 23 July 2016 about a mile southeast of Hillsboro Inlet as the centrepiece of Shipwreck Park off Pompano Beach. She sits upright with the bridge around 25 m, a main deck of installed sculpture near 32 m and the sand at about 38 m, so the dive is planned in layers. Already well grown in and holding goliath grouper, barracuda and passing pelagics.",
+    "depthRange": {
+      "min": 25,
+      "max": 38
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "drift"
+    ],
+    "species": [
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/296393894/large.jpg"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366814441/large.jpg"
+      },
+      {
+        "commonName": "Atlantic spadefish",
+        "scientificName": "Chaetodipterus faber",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/55204891/large.jpg"
+      },
+      {
+        "commonName": "Green moray",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/169862096/large.jpeg"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 76,
+    "getThere": "Boats run from Pompano Beach and Hillsboro Inlet, about 20 minutes from Fort Lauderdale (FLL). The wreck is roughly a mile offshore, so it is a short ride out.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Deep enough that nitrox and advanced certification are the norm, and the Gulf Stream can put a real current across the wreck. Penetration is for trained wreck divers only.",
+    "heroImageUrl": "/heroes/OceanImageBank_CassandraScott_04-1920.webp"
+  },
+  {
+    "id": "southeast-florida-zion-train",
+    "slug": "southeast-florida-zion-train",
+    "locationId": "southeast-florida-usa",
+    "name": "Zion Train",
+    "lat": 26.9263,
+    "lng": -80.0753,
+    "description": "A small freighter lying over on her port side in about 27 m off Jupiter, the first stop on the run of wrecks divers here call the Wreck Trek. A resident goliath grouper holds inside the broken bow year round, and from mid August through September the wreck becomes a spawning aggregation site where dozens of them gather. Current is usually running, so this is a live boat drift onto the structure.",
+    "depthRange": {
+      "min": 24,
+      "max": 27
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "drift",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Goliath grouper",
+        "scientificName": "Epinephelus itajara",
+        "reliability": "seasonal",
+        "bestMonths": [
+          8,
+          9
+        ],
+        "imageUrl": "https://static.inaturalist.org/photos/296393894/large.jpg"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366814441/large.jpg"
+      },
+      {
+        "commonName": "Bull shark",
+        "scientificName": "Carcharhinus leucas",
+        "reliability": "rare",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/369731652/large.jpg"
+      },
+      {
+        "commonName": "Atlantic spadefish",
+        "scientificName": "Chaetodipterus faber",
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/55204891/large.jpg"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 22,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 22,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Tropical wetsuit (3 mm)"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 22
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Temperate wetsuit (5 mm)"
+      }
+    ],
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 78,
+    "getThere": "Boats leave from Jupiter Inlet, about 25 minutes from Palm Beach International (PBI) and an hour from Fort Lauderdale (FLL). The wreck is a short run offshore into the Gulf Stream.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Drift dive in a strong current: you go in as a group on the captain's call and surface with a marker. Goliath grouper are protected in Florida waters and must not be harassed during the spawning aggregation.",
+    "heroImageUrl": "/heroes/OceanImageBank_CassandraScott_04-1920.webp"
   }
 ]

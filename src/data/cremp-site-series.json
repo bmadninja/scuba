@@ -1,0 +1,378 @@
+[
+  {
+    "siteId": "florida-keys-molasses-reef",
+    "sourceId": "cremp",
+    "methodologyClaimId": "reef-health-cremp",
+    "programme": "CREMP",
+    "matchType": "same-reef",
+    "crempSites": [
+      "Molasses Shallow",
+      "Molasses Deep"
+    ],
+    "stationCount": 8,
+    "surveyEventCount": 210,
+    "surveyYears": 30,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 2.7
+    },
+    "series": [
+      {
+        "year": 1996,
+        "coralCoverPercent": 6.4
+      },
+      {
+        "year": 1997,
+        "coralCoverPercent": 6.3
+      },
+      {
+        "year": 1998,
+        "coralCoverPercent": 4.5
+      },
+      {
+        "year": 1999,
+        "coralCoverPercent": 2.6
+      },
+      {
+        "year": 2000,
+        "coralCoverPercent": 2.5
+      },
+      {
+        "year": 2001,
+        "coralCoverPercent": 1.4
+      },
+      {
+        "year": 2002,
+        "coralCoverPercent": 2.2
+      },
+      {
+        "year": 2003,
+        "coralCoverPercent": 2.5
+      },
+      {
+        "year": 2004,
+        "coralCoverPercent": 3.5
+      },
+      {
+        "year": 2005,
+        "coralCoverPercent": 3.2
+      },
+      {
+        "year": 2006,
+        "coralCoverPercent": 2.4
+      },
+      {
+        "year": 2007,
+        "coralCoverPercent": 3.3
+      },
+      {
+        "year": 2008,
+        "coralCoverPercent": 3.8
+      },
+      {
+        "year": 2009,
+        "coralCoverPercent": 3.7
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 5.2
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 4.7
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 5.3
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 5.7
+      },
+      {
+        "year": 2014,
+        "coralCoverPercent": 5.4
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 5.6
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 5.1
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 3.4
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 2.5
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 2.8
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 2.9
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 2.9
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 3.5
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 3
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 3
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 2.7
+      }
+    ],
+    "citation": "Florida Fish and Wildlife Conservation Commission, Fish and Wildlife Research Institute. Coral Reef Evaluation and Monitoring Project (CREMP), 1996-2025. Southeast Florida sites surveyed by Nova Southeastern University under SECREMP. Data provided by Lindsay Huebner, August 2026. https://myfwc.com/research/habitat/coral/cremp/",
+    "notes": "Stony coral cover measured on this reef by CREMP, 1996 to 2025: 6.4% to 2.7%. Pooled from the Molasses Shallow and Molasses Deep station sets, 8 fixed stations, 210 station-surveys.",
+    "lastReviewedAt": "2026-08-05"
+  },
+  {
+    "siteId": "florida-keys-looe-key",
+    "sourceId": "cremp",
+    "methodologyClaimId": "reef-health-cremp",
+    "programme": "CREMP",
+    "matchType": "same-reef",
+    "crempSites": [
+      "Looe Key Shallow",
+      "Looe Key Deep"
+    ],
+    "stationCount": 8,
+    "surveyEventCount": 220,
+    "surveyYears": 30,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 3.7
+    },
+    "series": [
+      {
+        "year": 1996,
+        "coralCoverPercent": 13.2
+      },
+      {
+        "year": 1997,
+        "coralCoverPercent": 12.7
+      },
+      {
+        "year": 1998,
+        "coralCoverPercent": 11.2
+      },
+      {
+        "year": 1999,
+        "coralCoverPercent": 9.2
+      },
+      {
+        "year": 2000,
+        "coralCoverPercent": 9.8
+      },
+      {
+        "year": 2001,
+        "coralCoverPercent": 10.6
+      },
+      {
+        "year": 2002,
+        "coralCoverPercent": 10.7
+      },
+      {
+        "year": 2003,
+        "coralCoverPercent": 10.2
+      },
+      {
+        "year": 2004,
+        "coralCoverPercent": 9.4
+      },
+      {
+        "year": 2005,
+        "coralCoverPercent": 8.1
+      },
+      {
+        "year": 2006,
+        "coralCoverPercent": 8.1
+      },
+      {
+        "year": 2007,
+        "coralCoverPercent": 8
+      },
+      {
+        "year": 2008,
+        "coralCoverPercent": 6.8
+      },
+      {
+        "year": 2009,
+        "coralCoverPercent": 8.5
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 8.7
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 8.5
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 8.1
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 10.3
+      },
+      {
+        "year": 2014,
+        "coralCoverPercent": 9.1
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 8.6
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 9.7
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 7.2
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 7.1
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 6
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 5.7
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 5.7
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 5.3
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 5.3
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 3.9
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 3.7
+      }
+    ],
+    "citation": "Florida Fish and Wildlife Conservation Commission, Fish and Wildlife Research Institute. Coral Reef Evaluation and Monitoring Project (CREMP), 1996-2025. Southeast Florida sites surveyed by Nova Southeastern University under SECREMP. Data provided by Lindsay Huebner, August 2026. https://myfwc.com/research/habitat/coral/cremp/",
+    "notes": "Stony coral cover measured on this reef by CREMP, 1996 to 2025: 13.2% to 3.7%. Pooled from the Looe Key Shallow and Looe Key Deep station sets, 8 fixed stations, 220 station-surveys.",
+    "lastReviewedAt": "2026-08-05"
+  },
+  {
+    "siteId": "dry-tortugas-texas-rock",
+    "sourceId": "cremp",
+    "methodologyClaimId": "reef-health-cremp",
+    "programme": "CREMP",
+    "matchType": "same-reef",
+    "crempSites": [
+      "Texas Rock"
+    ],
+    "stationCount": 4,
+    "surveyEventCount": 68,
+    "surveyYears": 17,
+    "latest": {
+      "year": 2025,
+      "coralCoverPercent": 3
+    },
+    "series": [
+      {
+        "year": 2009,
+        "coralCoverPercent": 6.2
+      },
+      {
+        "year": 2010,
+        "coralCoverPercent": 8.4
+      },
+      {
+        "year": 2011,
+        "coralCoverPercent": 7.5
+      },
+      {
+        "year": 2012,
+        "coralCoverPercent": 8.7
+      },
+      {
+        "year": 2013,
+        "coralCoverPercent": 6.7
+      },
+      {
+        "year": 2014,
+        "coralCoverPercent": 7.5
+      },
+      {
+        "year": 2015,
+        "coralCoverPercent": 7.6
+      },
+      {
+        "year": 2016,
+        "coralCoverPercent": 7
+      },
+      {
+        "year": 2017,
+        "coralCoverPercent": 6.6
+      },
+      {
+        "year": 2018,
+        "coralCoverPercent": 6.3
+      },
+      {
+        "year": 2019,
+        "coralCoverPercent": 5.8
+      },
+      {
+        "year": 2020,
+        "coralCoverPercent": 6.5
+      },
+      {
+        "year": 2021,
+        "coralCoverPercent": 6.8
+      },
+      {
+        "year": 2022,
+        "coralCoverPercent": 3.5
+      },
+      {
+        "year": 2023,
+        "coralCoverPercent": 3.3
+      },
+      {
+        "year": 2024,
+        "coralCoverPercent": 3.1
+      },
+      {
+        "year": 2025,
+        "coralCoverPercent": 3
+      }
+    ],
+    "citation": "Florida Fish and Wildlife Conservation Commission, Fish and Wildlife Research Institute. Coral Reef Evaluation and Monitoring Project (CREMP), 1996-2025. Southeast Florida sites surveyed by Nova Southeastern University under SECREMP. Data provided by Lindsay Huebner, August 2026. https://myfwc.com/research/habitat/coral/cremp/",
+    "notes": "Stony coral cover measured on this reef by CREMP, 2009 to 2025: 6.2% to 3%. Pooled from the Texas Rock station sets, 4 fixed stations, 68 station-surveys.",
+    "lastReviewedAt": "2026-08-05"
+  }
+]

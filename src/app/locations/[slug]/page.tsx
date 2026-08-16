@@ -13,6 +13,7 @@ import { getReefHealthByLocationId } from "@/lib/data/reef-health";
 import { getCoralCoverSeriesByLocationId } from "@/lib/data/coral-cover-series";
 import { getReefFishAbundanceSeriesByLocationId } from "@/lib/data/reef-fish-abundance-series";
 import { getAgrraReefSeriesByLocationId } from "@/lib/data/agrra-reef-series";
+import { getCrempReefSeriesByLocationId } from "@/lib/data/cremp-reef-series";
 import { getFishBiomassSeriesByLocationId } from "@/lib/data/fish-biomass-series";
 import { getWaterTempSummary } from "@/lib/data/water-temp";
 import { getRegionalCoralTrendForLocation } from "@/lib/data/coral-cover-regional";
@@ -689,7 +690,22 @@ export default async function LocationPage({
   // two-point before/after. One point per year, earliest wins on ties.
   const mermaidCoralSeries = getCoralCoverSeriesByLocationId(location.id);
   const agrraSeries = getAgrraReefSeriesByLocationId(location.id);
-  const nearbyCandidates: { series: CoralCoverSeriesPoint[]; label: string }[] = [];
+  const crempSeries = getCrempReefSeriesByLocationId(location.id);
+  const nearbyCandidates: { series: CoralCoverSeriesPoint[]; label: string; isCremp?: boolean }[] =
+    [];
+  // CREMP is pushed first so it wins a year-count tie: it resurveys the same
+  // fixed stations every year, so it is the only coral series we carry that was
+  // not matched to the location by proximity.
+  if (crempSeries?.series?.length) {
+    const panel = crempSeries.continuousPanel
+      ? `${crempSeries.siteCount} reefs monitored every year`
+      : `${crempSeries.siteCount} monitored reefs`;
+    nearbyCandidates.push({
+      series: crempSeries.series,
+      label: `${crempSeries.programme} fixed stations, ${panel}`,
+      isCremp: true,
+    });
+  }
   if (mermaidCoralSeries?.series?.length) {
     const km = Math.round(mermaidCoralSeries.radiusDeg * 111);
     // Public MERMAID data is contributed by many survey teams, not one org, so
@@ -707,7 +723,8 @@ export default async function LocationPage({
         : `AGRRA survey sites within ${Math.round((agrraSeries.radiusDeg ?? 0.75) * 111)} km`;
     nearbyCandidates.push({ series: agrraSeries.coral.series, label });
   }
-  // Stable sort keeps MERMAID (pushed first) ahead of AGRRA on a year-count tie.
+  // Stable sort keeps the earlier-pushed source (CREMP, then MERMAID) ahead on a
+  // year-count tie.
   nearbyCandidates.sort((a, b) => b.series.length - a.series.length);
   const chosenNearby = nearbyCandidates[0] ?? null;
 
@@ -739,6 +756,7 @@ export default async function LocationPage({
   // reef-health reading only when no series covers the reef. This one value
   // drives the reef-card coral row AND the "Live coral covers X%" basis line, so
   // the card and the chart can never show two different numbers.
+  const crempIsChosen = chosenNearby?.isCremp === true;
   const coralDisplayPct: number | null =
     projectionDataPoints.length > 0
       ? projectionDataPoints[projectionDataPoints.length - 1].pct
@@ -770,6 +788,8 @@ export default async function LocationPage({
   // present, in specificity order.
   const CORAL_SOURCE_CREDIT: [string, string][] = [
     ["aims-ltmp", "AIMS long term monitoring"],
+    ["cremp", "CREMP fixed station monitoring"],
+    ["ncrmp", "NOAA reef monitoring"],
     ["mermaid", "MERMAID and the survey teams"],
     ["agrra", "AGRRA and GCRMN reef surveys"],
     ["gcrmn", "GCRMN reef surveys"],
@@ -778,6 +798,11 @@ export default async function LocationPage({
     ["allen-coral-atlas", "Allen Coral Atlas"],
   ];
   const coralSourceCredit: string | null = (() => {
+    // Without the CREMP arm this would credit MERMAID for any non-AGRRA series,
+    // including reefs MERMAID has never surveyed.
+    if (crempIsChosen && crempSeries) {
+      return `${crempSeries.programme} fixed station monitoring`;
+    }
     if (chosenNearby) {
       return chosenNearby.label.startsWith("AGRRA")
         ? "AGRRA and GCRMN reef surveys"

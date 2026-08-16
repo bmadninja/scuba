@@ -386,7 +386,7 @@
       "sourceIds": [
         "reef-check"
       ],
-      "notes": "Raja Ampat retains some of the highest live coral cover in the Coral Triangle. Strong currents and refugia help limit thermal stress."
+      "notes": "Reef Check survey from April 2024, which PREDATES the marine heatwave that hit Raja Ampat from October 2024 and the mass bleaching reported from December 2024. Treat this reading as pre-bleaching. Impacts were patchy, hitting the central archipelago and Dampier Strait hardest; the most recent MERMAID survey within 55 km, in December 2025, still read about 50% hard coral cover. A fresh post-bleaching reading is the priority for this location."
     },
     "thermalStress": {
       "asOf": "2026-08-14",
@@ -526,11 +526,11 @@
       "sstCurrentC": 29.1,
       "sstClimatologyC": 29.3
     },
-    "divingOutlook": "One of the few places where what you see today is what divers saw a decade ago. Plan the trip with confidence — peak fish biomass, intact soft-coral fields, manta and wobbegong encounters all reliable.",
+    "divingOutlook": "Raja Ampat still holds some of the highest coral cover anywhere, and a survey nearby in December 2025 read about 50%. It is not untouched: a marine heatwave from late 2024 bleached and killed coral across parts of the archipelago, worst in the central reefs and the Dampier Strait, and how much a reef lost varies a lot between dive sites. Fish life, mantas and wobbegongs stay reliable.",
     "methodologyClaimIds": [
       "reef-health-aims-noaa"
     ],
-    "lastReviewedAt": "2026-05-24"
+    "lastReviewedAt": "2026-08-05"
   },
   {
     "id": "reef-health-tubbataha-2024",
@@ -16069,17 +16069,15 @@
     "id": "reef-health-florida-keys-usa-2024",
     "locationId": "florida-keys-usa",
     "observed": {
-      "surveyDate": "2024-09-15",
-      "surveyMethod": "NOAA NCRMP Florida Keys monitoring",
-      "coralCoverPercent": 13,
-      "bleachedPercent": 28,
-      "mortalityPercent": 13,
-      "historicalCoralCoverPercent": 24,
-      "historicalSurveyDate": "2014-09-15",
+      "surveyDate": "2025-12-31",
+      "surveyMethod": "CREMP fixed-station point-count (FWC/FWRI)",
+      "coralCoverPercent": 4,
+      "historicalCoralCoverPercent": 12,
+      "historicalSurveyDate": "1996-12-31",
       "sourceIds": [
-        "ncrmp"
+        "cremp"
       ],
-      "notes": "Florida Keys — observed condition reflects the severe decline regional pattern."
+      "notes": "Stony coral cover from CREMP's fixed monitoring stations, pooled across the 34 Florida Keys reefs surveyed in every year since 1996. Replaces an earlier NCRMP-attributed pair (13% in 2024 against 24% in 2014) that did not match the published record: the Florida Keys reef tract is documented at roughly 12% cover in 1996 falling to about 5% by 2015, and 24% corresponds to a pre-1970s baseline rather than a 2014 survey."
     },
     "thermalStress": {
       "asOf": "2026-08-14",
@@ -16221,9 +16219,9 @@
     },
     "divingOutlook": "Florida Keys reefs have lost the majority of their hard coral over two decades and were hit hard by 2023's marine heatwave. Wrecks and fish life still excellent.",
     "methodologyClaimIds": [
-      "reef-health-aims-noaa"
+      "reef-health-cremp"
     ],
-    "lastReviewedAt": "2026-05-24"
+    "lastReviewedAt": "2026-08-05"
   },
   {
     "id": "reef-health-channel-islands-usa-2024",

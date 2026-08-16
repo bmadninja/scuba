@@ -834,5 +834,16 @@
     "accessedAt": "2026-07-09",
     "license": "Citation required; article published openly",
     "notes": "MCI's published Torre Guaceto case study. Source for the fisher-earnings figure ($210 to $10,500 a day) and the protected-area expansion (22 to more than 90 km²)."
+  },
+  {
+    "id": "cremp",
+    "name": "Coral Reef Evaluation and Monitoring Project (CREMP / SECREMP)",
+    "url": "https://myfwc.com/research/habitat/coral/cremp/",
+    "publisher": "Florida Fish and Wildlife Conservation Commission, Fish and Wildlife Research Institute",
+    "sourceType": "government-monitoring",
+    "accessedAt": "2026-08-05",
+    "license": "Florida public record. Attribution to FWC/FWRI requested.",
+    "notes": "Fixed-station benthic point-count monitoring across the Florida Keys (from 1996), the Dry Tortugas (from 1999) and Southeast Florida (from 2003, surveyed by Nova Southeastern University under the sister SECREMP project). The same stations are resurveyed every year, which makes this one of the longest continuous coral-cover records anywhere. Full 1996-2025 cover export provided by Lindsay Huebner (Assistant Research Scientist, Coral Program) in August 2026; the FWC site publishes through 2024 while the database is being migrated. Use for Florida coral-cover trends.",
+    "ingestion": "snapshot"
   }
 ]
