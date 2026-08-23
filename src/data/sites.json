@@ -583495,4 +583495,229 @@
     "siteSpecificGear": [],
     "notes": "Strong current year-round—experienced divers and boat operator mandatory. Diver must locate anchor warp underwater for exit due to current strength. Best conditions: southerly winds (flat sea) and calm swell. Avoid northerly winds which increase turbidity. Marine reserve regulations apply; check with operators for current restrictions."
   }
+,
+  {
+    "id": "apra-harbor-guam-piti-bomb-holes",
+    "slug": "apra-harbor-guam-piti-bomb-holes",
+    "locationId": "apra-harbor-guam",
+    "name": "Piti Bomb Holes Marine Preserve",
+    "heroImageUrl": null,
+    "lat": 13.4702,
+    "lng": 144.7012,
+    "description": "A protected marine preserve featuring natural percolation pits that resemble bomb craters in the reef flat. Home to over 200 fish species and 100 coral varieties, offering accessible snorkeling and diving with green sea turtles, barracuda, and dense anemone beds in crystal-clear water.",
+    "depthRange": {
+      "min": 0,
+      "max": 11
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluefin trevally",
+        "scientificName": "Caranx melampygus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Yellow goatfish",
+        "scientificName": "Mulloides vanicolensis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hard coral",
+        "scientificName": "Scleractinia",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 14
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 14
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 13
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 13
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 9,
+          "max": 14
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "editorialRank": 72,
+    "getThere": "Fly into Guam International Airport (GUM), about 15 km south of Piti. Piti Bomb Holes is reached by boat from local dive operators in Tumon Bay, about 20-30 minutes transit. Shore entry also possible at Piti Pier for snorkeling and shallow diving.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Protected marine preserve with restricted access - check current regulations with local dive operators. Shallow site suitable for beginners; natural freshwater percolation pits create unique water stratification. Excellent for photography and macro diving."
+  }
 ]
