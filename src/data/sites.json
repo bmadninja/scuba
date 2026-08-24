@@ -583494,8 +583494,7 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Strong current year-round—experienced divers and boat operator mandatory. Diver must locate anchor warp underwater for exit due to current strength. Best conditions: southerly winds (flat sea) and calm swell. Avoid northerly winds which increase turbidity. Marine reserve regulations apply; check with operators for current restrictions."
-  }
-,
+  },
   {
     "id": "apra-harbor-guam-piti-bomb-holes",
     "slug": "apra-harbor-guam-piti-bomb-holes",
@@ -583519,32 +583518,38 @@
       {
         "commonName": "Green sea turtle",
         "scientificName": "Chelonia mydas",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/709559773/large.jpg"
       },
       {
         "commonName": "Hawksbill turtle",
         "scientificName": "Eretmochelys imbricata",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/595472208/large.jpg"
       },
       {
         "commonName": "Great barracuda",
         "scientificName": "Sphyraena barracuda",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/627833036/large.jpg"
       },
       {
         "commonName": "Bluefin trevally",
         "scientificName": "Caranx melampygus",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23671025/large.jpeg"
       },
       {
         "commonName": "Yellow goatfish",
         "scientificName": "Mulloides vanicolensis",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://static.inaturalist.org/photos/28900146/large.jpg"
       },
       {
         "commonName": "Hard coral",
         "scientificName": "Scleractinia",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/32386143/large.jpg"
       }
     ],
     "conditionsByMonth": [

@@ -74339,5 +74339,66 @@
     "license": null,
     "attribution": "(c) Alex Maisey, all rights reserved, uploaded by Alex Maisey",
     "source": "inat-taxa"
+  },
+  "apra-harbor-guam-piti-bomb-holes:chelonia mydas": {
+    "siteSlug": "apra-harbor-guam-piti-bomb-holes",
+    "speciesKey": "chelonia mydas",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/709559773/large.jpg",
+    "taxonId": 39659,
+    "observationId": 387486500,
+    "license": "cc-by-nc",
+    "attribution": "(c) Gabe, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "apra-harbor-guam-piti-bomb-holes:eretmochelys imbricata": {
+    "siteSlug": "apra-harbor-guam-piti-bomb-holes",
+    "speciesKey": "eretmochelys imbricata",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/595472208/large.jpg",
+    "taxonId": 39672,
+    "observationId": 328596069,
+    "license": "cc-by-nc",
+    "attribution": "(c) Mike Yan, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "apra-harbor-guam-piti-bomb-holes:sphyraena barracuda": {
+    "siteSlug": "apra-harbor-guam-piti-bomb-holes",
+    "speciesKey": "sphyraena barracuda",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/627833036/large.jpg",
+    "taxonId": 47251,
+    "observationId": 344576688,
+    "license": "cc-by-nc",
+    "attribution": "(c) Maggie Silverman, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "apra-harbor-guam-piti-bomb-holes:caranx melampygus": {
+    "siteSlug": "apra-harbor-guam-piti-bomb-holes",
+    "speciesKey": "caranx melampygus",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/23671025/large.jpeg",
+    "taxonId": 123690,
+    "observationId": 15833297,
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Ashton Williams, some rights reserved (CC BY-NC-SA)",
+    "source": "inat-regional"
+  },
+  "apra-harbor-guam-piti-bomb-holes:mulloides vanicolensis": {
+    "siteSlug": "apra-harbor-guam-piti-bomb-holes",
+    "speciesKey": "mulloides vanicolensis",
+    "imageUrl": "https://static.inaturalist.org/photos/28900146/large.jpg",
+    "taxonId": 123346,
+    "observationId": 18862329,
+    "license": null,
+    "attribution": "(c) Carol Kwok, all rights reserved",
+    "source": "inat-regional"
+  },
+  "apra-harbor-guam-piti-bomb-holes:scleractinia": {
+    "siteSlug": "apra-harbor-guam-piti-bomb-holes",
+    "speciesKey": "scleractinia",
+    "taxonId": 459957,
+    "matchedName": "Flabellum alabastrum",
+    "matchedCommon": "Ivory Stone Coral",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/32386143/large.jpg",
+    "license": "cc-by-nc",
+    "attribution": "(c) Gonzalo Mucientes Sandoval, some rights reserved (CC BY-NC), uploaded by Gonzalo Mucientes Sandoval",
+    "source": "inat-taxa"
   }
 }
