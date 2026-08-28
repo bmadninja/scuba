@@ -583724,5 +583724,233 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Protected marine preserve with restricted access - check current regulations with local dive operators. Shallow site suitable for beginners; natural freshwater percolation pits create unique water stratification. Excellent for photography and macro diving."
+  },
+  {
+    "id": "socotra-yemen-ras-irsil",
+    "slug": "socotra-yemen-ras-irsil",
+    "locationId": "socotra-yemen",
+    "name": "Ras Irsil",
+    "heroImageUrl": null,
+    "lat": 12.5467,
+    "lng": 54.5183,
+    "description": "Eastern tip of Socotra featuring seven distinct dive sites with numerous historical shipwrecks accumulated over centuries due to strong currents and an underwater mountain. Wrecks are 40-50 years old and many can be entered. A protected area with challenging conditions and strong currents.",
+    "depthRange": {
+      "min": 15,
+      "max": 45
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "wrecks",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Great Barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4
+        ]
+      },
+      {
+        "commonName": "Peacock Grouper",
+        "scientificName": "Cephalopholis argus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Coral Grouper",
+        "scientificName": "Cephalopholis miniata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Parrotfish",
+        "scientificName": "Scaridae spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Wrasse",
+        "scientificName": "Labridae spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Stingray",
+        "scientificName": "Dasyatidae spp.",
+        "reliability": "seasonal"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Thick wetsuit; advanced divers only"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Conditions improve; 3-5mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Peak season; calm seas, excellent visibility"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Excellent conditions; warmest waters"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Monsoon begins; not recommended"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Monsoon season; avoid diving"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Peak monsoon; dangerous conditions"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Hazardous conditions; do not dive"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Late monsoon; unsafe conditions"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Season reopens; improving conditions"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 32
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Good conditions; 3mm wetsuit suitable"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Good diving; excellent visibility"
+      }
+    ],
+    "bestMonths": [
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "editorialRank": 75,
+    "getThere": "Fly to Socotra's Hadibu airport from Aden or Salalah (Oman). Transfer via 4x4 to Ras Irsil on the eastern coast, approximately 120km from Hadibu (3-4 hours drive).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Ras Irsil is a protected area designated for its concentration of historical shipwrecks. The underwater mountain and powerful currents created a wreck graveyard over centuries. Most wrecks are accessible to advanced divers, some can be penetrated. Requires advanced certification and strong current experience. Strongest currents during monsoon season (May-September); safest conditions March-April."
   }
 ]
