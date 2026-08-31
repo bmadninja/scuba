@@ -319,7 +319,7 @@
     "confidence": "high",
     "calculation": "Live-coral cover % from LCAVG and total fish biomass (g/100 m², displayed as kilograms per hectare via a lossless ×0.1 conversion) from FBIOMASS in the AGRRA Data Explorer BaseBySite FeatureServer, both filtered to >= 0 to drop the -999 no-data sentinel. Survey sites are grouped into one mean value per survey year. Scope is proximity first — all AGRRA sites within 0.75° (~83 km) of the location centre — falling back to the location's own-country national composite only when proximity yields fewer than three survey years AND the nearest same-country AGRRA site is within 1.5°. A coral series is published only when it spans at least three survey years; the fish series is carried when it spans at least two.",
     "limitations": "AGRRA is a rapid-assessment programme: sites are not resurveyed on a fixed annual schedule, so survey years are uneven and some gaps are multi-year. Values are proximity or national composites matched to our location centres, not the exact dive site, and the annual mean pools every surveyed site in that scope. These trend charts are display-only: they never set the reef-state verdict or the headline coral-cover number, which stay on the hand-reviewed reef-health record. Reef Life Survey is the primary fish-biomass source; the AGRRA fish series is shown only where RLS has no coverage, and the two use different survey methods so absolute biomass levels are not comparable across sources (within-site trend direction is what the chart conveys).",
-    "lastReviewedAt": "2026-08-24"
+    "lastReviewedAt": "2026-08-31"
   },
   {
     "claimId": "fish-biomass-rls",
