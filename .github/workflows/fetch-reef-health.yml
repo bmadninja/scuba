@@ -35,8 +35,21 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           BRANCH="data/reef-health-$(date +%Y%m%d-%H%M%S)"
-          git checkout -b "$BRANCH"
+          # Build the branch from the latest remote main carrying ONLY the data
+          # file. The default GITHUB_TOKEN is a GitHub App without `workflows`
+          # scope, so GitHub rejects any pushed branch that appears to modify
+          # .github/workflows/** — which happens when concurrent auto-merge PRs
+          # advance main past this stale checkout. Resetting to origin/main keeps
+          # the branch diff to the data file alone.
+          cp src/data/reef-health.json "$RUNNER_TEMP/data.json"
+          git fetch origin main --quiet
+          git checkout -B "$BRANCH" origin/main
+          cp "$RUNNER_TEMP/data.json" src/data/reef-health.json
           git add src/data/reef-health.json
+          if git diff --cached --quiet; then
+            echo "Data already current on origin/main; nothing to open."
+            exit 0
+          fi
           git commit -m "data: nightly NOAA CRW thermal-stress refresh"
           git push origin "$BRANCH"
           gh pr create --repo "$REPO" \
