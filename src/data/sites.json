@@ -583725,4 +583725,229 @@
     "siteSpecificGear": [],
     "notes": "Protected marine preserve with restricted access - check current regulations with local dive operators. Shallow site suitable for beginners; natural freshwater percolation pits create unique water stratification. Excellent for photography and macro diving."
   }
+,
+  {
+    "id": "san-juan-puerto-rico-isla-verde-reef",
+    "slug": "san-juan-puerto-rico-isla-verde-reef",
+    "locationId": "san-juan-puerto-rico",
+    "name": "Isla Verde Reef",
+    "heroImageUrl": null,
+    "lat": 18.44361,
+    "lng": -66.02222,
+    "description": "A vibrant fringing reef system protected as a marine reserve, featuring coral-covered walls and sandy drop-offs with abundant marine biodiversity. Located 80-100 yards from shore near the Isla Verde cay, this urban reef hosts endangered species including sea turtles and manatees, plus federally protected elkhorn and brain corals with dense populations of tropical fish.",
+    "depthRange": {
+      "min": 5,
+      "max": 20
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill sea turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Southern stingray",
+        "scientificName": "Hypanus americanus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Stoplight parrotfish",
+        "scientificName": "Sparisoma viride",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 23,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2-3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 25,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "2mm wetsuit or rash guard"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 9
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "2-3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 23,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 6,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 65,
+    "getThere": "San Juan International Airport (SJU), 10km from Isla Verde. Transfer via taxi or rental car to Isla Verde Beach or Carolina Park (Balneario de Carolina). Dive operators available at nearby marinas.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Protected as Isla Verde Reef Marine Reserve. Visibility tends toward lower end (10-20 feet average) due to urban location near river mouth. Best accessed with local guide. Access via Pine Grove Beach (best snorkeling) or through dive operators at Cangrejos Marina. Watch for boat traffic in the area."
+  }
 ]
