@@ -583725,4 +583725,2680 @@
     "siteSpecificGear": [],
     "notes": "Protected marine preserve with restricted access - check current regulations with local dive operators. Shallow site suitable for beginners; natural freshwater percolation pits create unique water stratification. Excellent for photography and macro diving."
   }
+,
+  {
+    "id": "nosy-tanihely-madagascar-banc-des-fusiliers",
+    "slug": "nosy-tanihely-madagascar-banc-des-fusiliers",
+    "locationId": "nosy-tanihely-madagascar",
+    "name": "Banc des Fusiliers",
+    "heroImageUrl": null,
+    "lat": -13.38,
+    "lng": 48.18,
+    "description": "Shallow submerged bank behind Nosy Sakatia teeming with schools of fusiliers, snappers, groupers and barracuda. Exceptional macro photography site with vibrant coral gardens and abundant reef life.",
+    "depthRange": {
+      "min": 14,
+      "max": 20
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Fusiliers",
+        "scientificName": "Caesionidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Snappers",
+        "scientificName": "Lutjanidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Groupers",
+        "scientificName": "Epinephelidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bigeye Trevally",
+        "scientificName": "Caranx sexfasciatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Leaf Fish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Leopard Moray",
+        "scientificName": "Muraena pardalis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Triggerfish",
+        "scientificName": "Triggerfish",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Butterfly Fish",
+        "scientificName": "Chaetodontidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef Sharks",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Stingrays",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Soft Corals",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hard Corals",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Gorgonians",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit optional; wet season, occasional rough seas"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit optional; humid, cyclone risk possible"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit optional; transitional season"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit optional; dry season begins, conditions improving"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; peak dry season, excellent visibility"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 24,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; coolest month, pristine visibility"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit; best overall conditions, clearest water"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 24,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; excellent dry season conditions"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit; whale shark season begins"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit; peak whale shark season"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit optional; wet season starting, whale sharks still present"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit optional; warm, humid, potential rough seas"
+      }
+    ],
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 55,
+    "getThere": "Fly into Antananarivo (TNR), Madagascar. Connect to Nosy Be (DIE) via domestic flight (approximately 1 hour). From Nosy Be, Banc des Fusiliers is accessible by boat from dive centers in Ambatoloaka or Hell-Ville, approximately 10 km offshore near Nosy Sakatia.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Located behind Nosy Sakatia island. Recommended as second dive due to shallow depth. Exceptional for macro photography. Tide can affect current strength. Confirm conditions with local dive operator before diving."
+  },
+  {
+    "id": "san-juan-puerto-rico-cayo-lobito",
+    "slug": "san-juan-puerto-rico-cayo-lobito",
+    "locationId": "san-juan-puerto-rico",
+    "name": "Cayo Lobito",
+    "heroImageUrl": null,
+    "lat": 18.314,
+    "lng": -65.269,
+    "description": "Known as the nurse shark capital of Puerto Rico, Cayo Lobito offers an exceptional opportunity to see large populations of nurse sharks resting in groups on the sandy bottom at approximately 23 meters depth. Excellent visibility and well-preserved reef habitat within the Culebra Marine Reserve Park.",
+    "depthRange": {
+      "min": 20,
+      "max": 23
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Nurse shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bar jack",
+        "scientificName": "Caranx ruber",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Hawksbill sea turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Moray eel",
+        "scientificName": "Muraenidae",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or rash guard"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or rash guard"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 27
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or rash guard"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 24
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 21
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard or light skin"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 21
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard or light skin"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 21
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard or light skin"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Rash guard or light skin"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Rash guard or light skin"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 23
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm or rash guard"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 26
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or rash guard"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly into Luis Munoz Marin International Airport (SJU) in San Juan. Drive 45 minutes east to Fajardo ferry terminal. Ferry to Culebra takes 30-45 minutes. Dive operators depart from Culebra town dock, 10-15 minutes by boat to Cayo Lobito.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Cayo Lobito is renowned for Puerto Rico's densest nurse shark population. Sharks typically rest in groups on the sandy bottom during day dives. Site is protected within the Luis Pena Channel Marine Reserve. Best conditions December through April when visibility exceeds 25 meters. Hurricane season (June-November) brings reduced visibility and stronger currents. Contact Culebra Divers or other local operators for current conditions and seasonal updates."
+  },
+  {
+    "id": "chinhoyi-caves-zimbabwe-charara-bay",
+    "slug": "chinhoyi-caves-zimbabwe-charara-bay",
+    "locationId": "chinhoyi-caves-zimbabwe",
+    "name": "Charara Bay",
+    "heroImageUrl": null,
+    "lat": -16.559,
+    "lng": 28.963,
+    "description": "A freshwater lake dive amid submerged forests and rocky outcrops on Lake Kariba's eastern shore. Encounter tigerfish, cichlids, and bream in this scenic setting within Matusadona National Park's zone.",
+    "depthRange": {
+      "min": 5,
+      "max": 40
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "geology",
+      "macro",
+      "large-pelagics"
+    ],
+    "species": [
+      {
+        "commonName": "Tigerfish",
+        "scientificName": "Hydrocynus vittatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Black Bream",
+        "scientificName": "Haplochromis macrochir",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Tilapia",
+        "scientificName": "Oreochromis macrochir",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Catfish",
+        "scientificName": "Clarias gariepinus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Cichlid",
+        "scientificName": "Cichlidae sp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Kapenta",
+        "scientificName": "Limnothrissa miodon",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 4
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm shorty; summer wet season, lower visibility"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 4
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or 5mm shorty; rainy season continues"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 5
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty; end of wet season, occasional clearer days"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 6
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty; transitional season, improving visibility"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full suit recommended; start of dry season, excellent visibility"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 22,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full suit; coolest month, best visibility"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 22,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm full suit; dry season peak, excellent conditions"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 8
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full suit; wind increases but visibility remains good; note windy conditions"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 7
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "5mm full suit or 3mm; windy and hot, visibility may decrease"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 7
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm or 5mm; end of dry season, warming up; occasional rain begins"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 5
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty; wet season begins, visibility decreases"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 29,
+          "max": 32
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 4
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty; summer, warm water, low visibility; holiday period"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 48,
+    "getThere": "Fly to Harare International Airport or Victoria Falls Airport; transfer by road to Kariba town (5-6 hours from Harare), then boat access to Charara Bay on Lake Kariba's eastern shore near Matusadona National Park.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Freshwater diving in a scenic setting. Charara Bay is located east of Kariba town and provides access to Lake Kariba's submerged forests and rocky formations. Crocodiles and hippos are present in the lake; observe safety protocols. Local guides recommended for remote access. Best diving during dry season (May-October) for visibility and comfort. Water chemistry and thermocline information differs from marine diving practices."
+  },
+  {
+    "id": "socotra-yemen-dihamri",
+    "slug": "socotra-yemen-dihamri",
+    "locationId": "socotra-yemen",
+    "name": "Dihamri Marine Protected Area",
+    "heroImageUrl": null,
+    "lat": 12.47,
+    "lng": 53.6,
+    "description": "Pristine coral reef reserve on Socotra's north coast with an underwater mountain sculpting five distinct dive sites. Abundant moray eels, parrotfish, and reef sharks in 50+ meter depths. One of the richest coral ecosystems in the archipelago with over 80 coral species and endemic endemics.",
+    "depthRange": {
+      "min": 10,
+      "max": 50
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "coral",
+      "large-pelagics",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Honeycomb Moray",
+        "scientificName": "Gymnothorax favagineus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Parrotfish (multiple species)",
+        "scientificName": "Scaridae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Sea Turtle",
+        "scientificName": "Cheloniidae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "commonName": "Giant Grouper",
+        "scientificName": "Epinephelus lanceolatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Manta Ray",
+        "scientificName": "Manta alfredi",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          12,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Great Barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "seasonal",
+        "bestMonths": [
+          10,
+          11,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Reef Coral",
+        "scientificName": "Scleractinia (80+ species)",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Eagle Ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          10,
+          11
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit; good diving window with calm seas"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit; excellent conditions, peak shoulder season"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; peak season with best visibility and calm seas"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm or rashguard; peak season conditions"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 35
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rashguard recommended; warming water, still good for diving"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 26,
+          "max": 31
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "Rashguard; monsoon begins, rough seas, reduced visibility"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 23,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit advisable; peak monsoon, most dangerous conditions"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 23,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "5mm wetsuit; monsoon continues, many operators close operations"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 25
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3-5mm wetsuit; monsoon ends gradually, conditions improving"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; excellent season, calm seas, good visibility"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 25,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit; peak season continues with stable conditions"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 24,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 32
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit; good winter diving with manageable conditions"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly into Seiyun (SEH) in eastern Yemen, then arrange domestic flight to Socotra International Airport (SCT). Dihamri eco-campsite on north coast offers accommodation and dive coordination; 15-minute boat rides to sites.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Socotra remains a remote, politically sensitive destination. Check current travel advisories and confirm operator status before booking. Five distinct sites within Dihamri MPA; an underwater mountain shapes the reef. Night dives available. Current can be strong in some spots."
+  },
+  {
+    "id": "shark-fin-bay-philippines-dinot-rocks",
+    "slug": "shark-fin-bay-philippines-dinot-rocks",
+    "locationId": "shark-fin-bay-philippines",
+    "name": "Dinot Rocks",
+    "heroImageUrl": null,
+    "lat": 10.75,
+    "lng": 119.48,
+    "description": "A shallow reef system in Taytay Bay known for abundant coral formations and frequent sea turtle gatherings. Ideal for beginner divers, featuring colorful hard and soft corals, reef fish schools, and wildlife viewing in a peaceful, less-crowded setting within the Shark Fin Bay marine conservation area.",
+    "depthRange": {
+      "min": 5,
+      "max": 25
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Hawksbill sea turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "commonName": "Grouper",
+        "scientificName": "Serranidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Reef shark",
+        "scientificName": "Carcharhinus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "commonName": "Blue and gold fusilier",
+        "scientificName": "Caesio caerulaurea",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Damselfish",
+        "scientificName": "Pomacentridae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Angelfish",
+        "scientificName": "Pomacanthidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Stingray",
+        "scientificName": "Myliobatoidea",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Rash guard or thin wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 28
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Rash guard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 16,
+          "max": 26
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or rash guard"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "editorialRank": 65,
+    "getThere": "Fly to Puerto Princesa Palawan (PPS airport). Travel 3-4 hours north by van or private transport to Taytay town. Arrange boat access through local operators; Dinot Rocks lies within Taytay Bay.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Dinot Rocks is ideal for beginner divers and part of the Taytay Bay marine conservation network. Sea urchins present on some reef areas; watch your step when wading. Local permits and guides may be required; arrange through Taytay tourism office or resort operators. The site falls within Taytay Bay, part of the larger Shark Fin Bay MPA network undergoing coral restoration. Current operators and exact access rules subject to change; confirm with local authorities before visiting."
+  },
+  {
+    "id": "sao-tome-sao-tome-and-principe-lagoa-azul",
+    "slug": "sao-tome-sao-tome-and-principe-lagoa-azul",
+    "locationId": "sao-tome-sao-tome-and-principe",
+    "name": "Lagoa Azul",
+    "heroImageUrl": null,
+    "lat": 0.345,
+    "lng": 6.698,
+    "description": "A sheltered bay on São Tomé's north coast famed for seahorse sightings and unique thermocline effects where tropical and temperate waters converge. Beach entry suitable for all levels, with shallow reefs hosting morays and frogfish, plus deep mesophotic black coral gardens below 30m.",
+    "depthRange": {
+      "min": 2,
+      "max": 30
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Seahorse",
+        "scientificName": "Hippocampus",
+        "reliability": "year-round",
+        "bestMonths": [
+          1,
+          2,
+          3,
+          12
+        ]
+      },
+      {
+        "commonName": "Moray eel",
+        "scientificName": "Muraenidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Frogfish",
+        "scientificName": "Antennarius multiocellatus",
+        "reliability": "rare"
+      },
+      {
+        "commonName": "Black coral",
+        "scientificName": "Antipathes gracilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Dusky dottyback",
+        "scientificName": "Paranthias furcifer",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Golden snapper",
+        "scientificName": "Lutjanus fulgens",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm shorty"
+      }
+    ],
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "editorialRank": 72,
+    "getThere": "Fly to São Tomé International Airport (TMS), transfer north to the capital São Tomé (15 km). Lagoa Azul is accessible by boat or road to northern coastal access points. Most dives arranged through operators based in São Tomé city or nearby Pestana hotel.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Beach entry on rocky shores; watch for sea urchins and slippery rocks. No decompression chamber on island; dives limited to 30m max. Thermocline present due to current convergence. Night dives possible. Best visibility December–March; June–August drier but lower visibility (10–18m)."
+  },
+  {
+    "id": "kisite-mpunguti-kenya-nyuli",
+    "slug": "kisite-mpunguti-kenya-nyuli",
+    "locationId": "kisite-mpunguti-kenya",
+    "name": "Nyuli Reef",
+    "heroImageUrl": null,
+    "lat": -4.77,
+    "lng": 39.35,
+    "description": "A dramatic plunging reef wall descending from 28m to depths beyond 45m, known for strong currents, schooling pelagics, and seasonal large marine megafauna. Advanced divers only.",
+    "depthRange": {
+      "min": 28,
+      "max": 45
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "large-pelagics",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Trevally",
+        "scientificName": "Caranx species",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Manta ray",
+        "scientificName": "Manta birostris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Napoleon wrasse",
+        "scientificName": "Cheilinus undulatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Shovel-nose ray",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Humpback whale",
+        "scientificName": "Megaptera novaeangliae",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Whale shark",
+        "scientificName": "Rhincodon typus",
+        "reliability": "seasonal",
+        "bestMonths": [
+          11,
+          12,
+          1,
+          2
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "rashguard or 3mm"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 30
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "rashguard or 3mm"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "rashguard or 3mm"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm to 5mm suit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 15
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm to 5mm suit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm to 5mm suit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 25,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm to 5mm suit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm to 5mm suit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm to 5mm suit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "rashguard or 3mm"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "rashguard or 3mm"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "rashguard or 3mm"
+      }
+    ],
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    "editorialRank": 78,
+    "getThere": "Fly to Mombasa Jomo Kenyatta International Airport (MBA), 50km north. Transfer by vehicle 50km south to Shimoni or Diani Beach. Boat transfer required; access only by dhow.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Nyuli is an advanced-only site due to depth and strong currents where two currents converge, creating nutrient upwelling that attracts large pelagics. Maximum depth well below recreational limits; technical diving certification recommended. Dive with local operators who know current conditions."
+  },
+  {
+    "id": "opatovice-quarry-hranice-czech-republic",
+    "slug": "opatovice-quarry-hranice-czech-republic",
+    "locationId": "hranice-abyss-czech-republic",
+    "name": "Opatovice Quarry",
+    "heroImageUrl": null,
+    "lat": 49.508,
+    "lng": 17.747,
+    "description": "A popular flooded limestone quarry 6 km from Hranice featuring clear water, rock walls, and intact excavator wrecks. Best for recreational summer diving with moderate depth and good visibility.",
+    "depthRange": {
+      "min": 5,
+      "max": 31
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Pike",
+        "scientificName": "Esox lucius",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "European Perch",
+        "scientificName": "Perca fluviatilis",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Common Carp",
+        "scientificName": "Cyprinus carpio",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "European Catfish",
+        "scientificName": "Silurus glanis",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 1,
+          "max": 5
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 4
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit required; cold water with minimal thermocline"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 1,
+          "max": 6
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 4
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit required; water still very cold"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 3,
+          "max": 9
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 5
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit recommended; water warming slowly"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 5,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 6
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit or thick 5mm wetsuit; spring turnover may reduce visibility"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 10,
+          "max": 18
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 7
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit or thin drysuit; shoulder season with improving conditions"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 14,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 8
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3-5mm wetsuit; peak season with warm surface water and established thermocline"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 16,
+          "max": 24
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 8
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3-5mm wetsuit; warmest month with strong thermocline at depth"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 15,
+          "max": 23
+        },
+        "visibilityM": {
+          "min": 4,
+          "max": 8
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "3-5mm wetsuit; excellent conditions, avoid disturbing bottom silt"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 12,
+          "max": 20
+        },
+        "visibilityM": {
+          "min": 3,
+          "max": 7
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit; water cooling, early autumn conditions"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 8,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 6
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "5mm wetsuit or drysuit; autumn turnover may affect visibility"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 4,
+          "max": 10
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 5
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit recommended; water cooling rapidly"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 1,
+          "max": 6
+        },
+        "visibilityM": {
+          "min": 2,
+          "max": 4
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "Drysuit required; winter conditions"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "editorialRank": 35,
+    "getThere": "From Prague, take the D1 highway toward Olomouc (240 km, ~2.5 hours). Exit toward Hranice, then continue 6 km to Opatovice village. Parking available near quarry entrance on road 438. Nearest airport: Olomouc (60 km).",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Quarry bottom features two tracked excavators at ~20m depth. Visibility varies significantly based on water disturbance; avoid stirring silt. Watch for thermocline at 6-8m in summer. Site is most popular May-September for recreational diving. Minimal facilities on-site; bring own supplies or check with local dive operators in Hranice for support."
+  },
+  {
+    "id": "cahuita-costa-rica-puerto-vargas",
+    "slug": "cahuita-costa-rica-puerto-vargas",
+    "locationId": "cahuita-costa-rica",
+    "name": "Puerto Vargas Reef",
+    "heroImageUrl": null,
+    "lat": 9.71,
+    "lng": -82.81,
+    "description": "Puerto Vargas reef showcases the healthiest coral gardens of Cahuita National Park at very shallow depths. Lobe and leaf corals blanket the seafloor, supporting abundant wrasses, damselfish, and grunts. Morning dives offer the clearest visibility into this tropical reef ecosystem.",
+    "depthRange": {
+      "min": 1,
+      "max": 10
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Wrasses",
+        "scientificName": "Labridae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Grunts",
+        "scientificName": "Haemulidae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Damselfish",
+        "scientificName": "Pomacentridae",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Lobe coral",
+        "scientificName": "Siderastrea siderea",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Leaf coral",
+        "scientificName": "Agaricia agaricites",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "seasonal",
+        "bestMonths": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Long-spined sea urchin",
+        "scientificName": "Diadema antillarum",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          2,
+          3,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 14
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 16,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 16,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 12
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm"
+      }
+    ],
+    "bestMonths": [
+      2,
+      3,
+      9,
+      10
+    ],
+    "editorialRank": 72,
+    "getThere": "Puerto Vargas ranger station entrance, 8 km south of Cahuita town via trail or car. Nearest major airport: Limon International (40 km northwest). Ground transport: buses from San Jose or Puerto Viejo to Cahuita; arrange boat trips with local dive operators from Cahuita or Puerto Viejo.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Puerto Vargas is the southern reef entrance to Cahuita National Park with the park's highest coral cover. Peak diving depth 6m. Fish survey recorded 90 species in 2018-2019. Affected by Rio La Estrella sedimentation; visibility recovers 3-5 days after heavy rainfall. Best morning dives before wind and silt increase. CARICOMP-monitored site since 1999."
+  },
+  {
+    "id": "providenciales-turks-and-caicos-shark-hotel",
+    "slug": "providenciales-turks-and-caicos-shark-hotel",
+    "locationId": "providenciales-turks-and-caicos",
+    "name": "Shark Hotel",
+    "heroImageUrl": null,
+    "lat": 21.8,
+    "lng": -72.3,
+    "description": "A thrilling wall dive in Northwest Point Marine National Park featuring a dramatic 130-foot swim-through chimney and Caribbean reef sharks patrolling pristine waters. Visibility often exceeds 30 meters, and the site's diverse coral formations and robust fish populations make it one of the Caribbean's premier advanced diving experiences.",
+    "depthRange": {
+      "min": 14,
+      "max": 46
+    },
+    "skillLevel": "tech",
+    "diveTypes": [
+      "large-pelagics",
+      "coral",
+      "geology"
+    ],
+    "species": [
+      {
+        "commonName": "Caribbean Reef Shark",
+        "scientificName": "Carcharhinus perezi",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Nurse Shark",
+        "scientificName": "Ginglymostoma cirratum",
+        "reliability": "seasonal",
+        "bestMonths": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "commonName": "Yellowtail Snapper",
+        "scientificName": "Ocyurus chrysurus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Caribbean Yellow Goatfish",
+        "scientificName": "Mulloidichthys martinicus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Hawksbill Sea Turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted Eagle Ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Pillar Coral",
+        "scientificName": "Dendrogyra cylindrus",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 38
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 26,
+          "max": 40
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 26,
+          "max": 40
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "2mm or rash guard"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 38
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "2mm or rash guard"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 38
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "2mm or rash guard"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 24,
+          "max": 36
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "rash guard"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 29,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 24,
+          "max": 36
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "rash guard"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 28,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 37
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "2mm or rash guard"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 36
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 27
+        },
+        "visibilityM": {
+          "min": 25,
+          "max": 35
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorialRank": 82,
+    "getThere": "Fly into Providenciales International Airport (PLS), approximately 30 km from the capital, Cockburn Town. Transfer by taxi or rental car to a dive shop; Shark Hotel requires a 45-60 minute boat ride from Provo's north shore marina.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Advanced divers only. The chimney swim-through starts at approximately 24-30 meters and exits around 39-40 meters; only attempt with proper training and experience. Shark sightings are frequent but not guaranteed. Strong currents can occur in summer and fall; check conditions with a local operator before diving."
+  },
+  {
+    "id": "torre-guaceto-italy-santa-sabina-wreck",
+    "slug": "torre-guaceto-italy-santa-sabina-wreck",
+    "locationId": "torre-guaceto-italy",
+    "name": "Torre Santa Sabina Roman Wreck",
+    "heroImageUrl": null,
+    "lat": 40.73,
+    "lng": 17.87,
+    "description": "Late Roman cargo ship in Baia dei Camerini, one of the Mediterranean's best-preserved wrecks with intact superstructure and scattered amphorae. Shallow-water archaeological site managed by University of Salento under active excavation.",
+    "depthRange": {
+      "min": 2,
+      "max": 8
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "wrecks",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Dusky Grouper",
+        "scientificName": "Epinephelus marginatus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Common Octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Mediterranean Moray Eel",
+        "scientificName": "Gymnothorax unicolor",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Gilt-head Sea Bream",
+        "scientificName": "Sparus aurata",
+        "reliability": "seasonal",
+        "bestMonths": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Red Gorgonian",
+        "scientificName": "Paragorgia arborea",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or thin drysuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 13,
+          "max": 14
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 14
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or thin drysuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 13,
+          "max": 15
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 16
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5-7mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 15,
+          "max": 17
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit or skin"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or skin"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 26
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Skin or light wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 25,
+          "max": 26
+        },
+        "visibilityM": {
+          "min": 20,
+          "max": 26
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Skin or light wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 24,
+          "max": 25
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 24
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit or skin"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 20,
+          "max": 22
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 17,
+          "max": 19
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 14,
+          "max": 16
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "none",
+        "suitRecommendation": "7mm wetsuit or thin drysuit"
+      }
+    ],
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "editorialRank": 62,
+    "getThere": "Nearest major airport is Brindisi Papola Casale (40km north). Drive south through Carovigno to Baia dei Camerini beach. Entry via Via Torre Santa Sabina. Parking and beach access available. Check with Soprintendenza Archeologica for Brindisi or local authorities regarding site access and archaeological permits.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Active archaeological excavation under University of Salento supervision through UnderwaterMuse Interreg project. Recreational diving access may be restricted; obtain permits from Soprintendenza Archeologica before planning a dive. First located 1970s, extensively excavated 2000s and 2020-2021. Almost unique Mediterranean wreck preserving intact superstructure and deck beams."
+  }
 ]
