@@ -334,7 +334,7 @@ export default function Home() {
                   num: "01",
                   eyebrow: "Live reef health",
                   heading: "We show you what the reef looks like today. Not what last year's dive guide said.",
-                  body: "Most platforms pull from the same static sources, updated once a year if you are lucky. We combine live satellite data from NOAA with the most recent in-water coral surveys — so the health label you see reflects what is actually happening underwater right now.",
+                  body: "Most platforms pull from the same static sources, updated once a year if you are lucky. We combine live satellite data from NOAA with the most recent underwater coral surveys — so the health label you see reflects what is actually happening underwater right now.",
                 },
                 {
                   num: "02",
@@ -668,7 +668,7 @@ export default function Home() {
                   maxWidth: 440,
                 }}
               >
-                iNaturalist, GBIF, OBIS and more — no accounts required. Your sighting is geo-tagged, species-matched, and forwarded automatically. Scientists see it the same day.
+                iNaturalist, GBIF, OBIS and more — no accounts required. Your sighting is tagged with your location, matched to a species, and forwarded automatically. Scientists see it the same day.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "flex-start" }}>
                 <Link
