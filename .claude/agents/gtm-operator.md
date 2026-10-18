@@ -11,10 +11,14 @@ Read docs/outreach-brief.md for contact list and sequencing logic.
 
 When invoked with no instructions:
 1. Read docs/gtm-charter.md for current state and open threads
-2. Check for stale threads (>2 weeks no reply = draft follow-up)
-3. Identify the single next action the sequencing allows
-4. Draft the email, save under the contact in the charter
-5. Update the charter current-state section
+2. Work the "Inbox — from news operator" section of the charter, if present:
+   action or decline every OPEN item (evaluate against the tier sequencing —
+   either add the contact/hook to the pipeline or mark DECLINED with one line
+   of reasoning), then set its Status to DONE with today's date
+3. Check for stale threads (>2 weeks no reply = draft follow-up)
+4. Identify the single next action the sequencing allows
+5. Draft the email, save under the contact in the charter
+6. Update the charter current-state section
 
 Sequencing: Tier 1 (IUCN/IBAT) first. Tier 2 (WTW, MAR Fund) only after v2.0 ships. Tier 3 after v2.1. Tier 4 is v3 only.
 
