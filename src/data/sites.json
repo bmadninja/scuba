@@ -583725,4 +583725,264 @@
     "siteSpecificGear": [],
     "notes": "Protected marine preserve with restricted access - check current regulations with local dive operators. Shallow site suitable for beginners; natural freshwater percolation pits create unique water stratification. Excellent for photography and macro diving."
   }
+,
+{
+  "id": "sao-tome-sao-tome-and-principe-pedra-pinnacle",
+  "slug": "sao-tome-sao-tome-and-principe-pedra-pinnacle",
+  "locationId": "sao-tome-sao-tome-and-principe",
+  "name": "Pedra Pinnacle",
+  "heroImageUrl": null,
+  "lat": 0.35,
+  "lng": 6.73,
+  "description": "Deep rock pinnacle rising from the seafloor with jagged formations and overhangs. Excellent for advanced divers seeking encounters with large barracuda schools, moray eels, octopuses in rocky crevices, and nurse sharks patrolling the bottom. Rock formations create dramatic visual relief and diverse microhabitats.",
+  "depthRange": {
+    "min": 20,
+    "max": 38
+  },
+  "skillLevel": "advanced",
+  "diveTypes": [
+    "large-pelagics",
+    "coral",
+    "geology"
+  ],
+  "species": [
+    {
+      "commonName": "Great barracuda",
+      "scientificName": "Sphyraena barracuda",
+      "reliability": "year-round",
+      "bestMonths": [
+        1,
+        2,
+        3,
+        12
+      ]
+    },
+    {
+      "commonName": "Nurse shark",
+      "scientificName": "Ginglymostoma cirratum",
+      "reliability": "year-round",
+      "bestMonths": [
+        1,
+        2,
+        3,
+        12
+      ]
+    },
+    {
+      "commonName": "Moray eel",
+      "scientificName": "Gymnothorax species",
+      "reliability": "year-round",
+      "bestMonths": [
+        1,
+        2,
+        3,
+        12
+      ]
+    },
+    {
+      "commonName": "Common octopus",
+      "scientificName": "Octopus vulgaris",
+      "reliability": "year-round",
+      "bestMonths": [
+        1,
+        2,
+        3,
+        12
+      ]
+    },
+    {
+      "commonName": "Grouper",
+      "scientificName": "Epinephelus species",
+      "reliability": "seasonal",
+      "bestMonths": [
+        12,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "commonName": "Hawksbill turtle",
+      "scientificName": "Eretmochelys imbricata",
+      "reliability": "seasonal",
+      "bestMonths": [
+        12,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "conditionsByMonth": [
+    {
+      "month": 1,
+      "waterTempC": {
+        "min": 26,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 20,
+        "max": 30
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit sufficient"
+    },
+    {
+      "month": 2,
+      "waterTempC": {
+        "min": 26,
+        "max": 31
+      },
+      "visibilityM": {
+        "min": 20,
+        "max": 30
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit sufficient"
+    },
+    {
+      "month": 3,
+      "waterTempC": {
+        "min": 26,
+        "max": 31
+      },
+      "visibilityM": {
+        "min": 18,
+        "max": 28
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit sufficient"
+    },
+    {
+      "month": 4,
+      "waterTempC": {
+        "min": 27,
+        "max": 31
+      },
+      "visibilityM": {
+        "min": 15,
+        "max": 25
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 5,
+      "waterTempC": {
+        "min": 25,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 12,
+        "max": 22
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 6,
+      "waterTempC": {
+        "min": 22,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 10,
+        "max": 20
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "5mm wetsuit recommended"
+    },
+    {
+      "month": 7,
+      "waterTempC": {
+        "min": 23,
+        "max": 29
+      },
+      "visibilityM": {
+        "min": 10,
+        "max": 20
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "5mm wetsuit recommended"
+    },
+    {
+      "month": 8,
+      "waterTempC": {
+        "min": 23,
+        "max": 28
+      },
+      "visibilityM": {
+        "min": 10,
+        "max": 20
+      },
+      "currentStrength": "moderate",
+      "suitRecommendation": "5mm wetsuit recommended"
+    },
+    {
+      "month": 9,
+      "waterTempC": {
+        "min": 24,
+        "max": 29
+      },
+      "visibilityM": {
+        "min": 12,
+        "max": 22
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3-5mm wetsuit"
+    },
+    {
+      "month": 10,
+      "waterTempC": {
+        "min": 25,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 14,
+        "max": 24
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 11,
+      "waterTempC": {
+        "min": 26,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 16,
+        "max": 26
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit"
+    },
+    {
+      "month": 12,
+      "waterTempC": {
+        "min": 26,
+        "max": 30
+      },
+      "visibilityM": {
+        "min": 20,
+        "max": 30
+      },
+      "currentStrength": "mild",
+      "suitRecommendation": "3mm wetsuit sufficient"
+    }
+  ],
+  "bestMonths": [
+    12,
+    1,
+    2,
+    3
+  ],
+  "editorialRank": 72,
+  "getThere": "Fly to São Tomé International Airport (TMS). Boat transfers from Atlantic Diving Center or Dive São Tomé (15-20 minute ride).",
+  "lodging": [],
+  "operators": [],
+  "gearIds": [],
+  "siteSpecificGear": [],
+  "notes": null
+}
 ]
