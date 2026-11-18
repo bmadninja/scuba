@@ -22,8 +22,20 @@ function slugifySpecies(name: string): string {
 // ~10,000 site×species combinations exist; prerendering them all made
 // `next build` the dominant cost of every deploy. These pages aren't in the
 // sitemap, so render each on first visit instead (cached statically after).
-export async function generateStaticParams() {
-  return [];
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  const out: { slug: string; species: string }[] = [];
+  for (const site of getAllSites()) {
+    const seen = new Set<string>();
+    for (const sp of site.species ?? []) {
+      const species = slugifySpecies(sp.commonName);
+      if (!species || seen.has(species)) continue;
+      seen.add(species);
+      out.push({ slug: site.slug, species });
+    }
+  }
+  return out;
 }
 
 export async function generateMetadata({

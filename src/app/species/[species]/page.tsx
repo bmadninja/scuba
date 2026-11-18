@@ -51,8 +51,10 @@ function buildSpeciesIndex(): Map<string, { commonName: string; entries: Species
 
 // ~2,600 species pages, none in the sitemap — rendering them all at build
 // time slowed every deploy. Render on first visit instead (cached after).
-export async function generateStaticParams() {
-  return [];
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return Array.from(buildSpeciesIndex().keys()).map((species) => ({ species }));
 }
 
 export async function generateMetadata({

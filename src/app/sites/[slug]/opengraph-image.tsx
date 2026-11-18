@@ -1,12 +1,20 @@
 import { ImageResponse } from "next/og";
-import { getSiteBySlug } from "@/lib/data/sites";
+import { getAllSites, getSiteBySlug } from "@/lib/data/sites";
 import { getLocationById } from "@/lib/data/locations";
 import { SITE_NAME } from "@/lib/site-config";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getAllSites()
+    .filter((s) => s.species && Array.isArray(s.species) && s.conditionsByMonth && Array.isArray(s.conditionsByMonth))
+    .map((s) => ({ slug: s.slug }));
+}
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "Dive site preview";
-export const runtime = "nodejs";
 
 export default async function Image({
   params,
@@ -87,6 +95,7 @@ function Chip({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
+        display: "flex",
         padding: "10px 22px",
         borderRadius: 9999,
         background: "rgba(255,255,255,0.18)",
