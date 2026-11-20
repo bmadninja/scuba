@@ -583724,5 +583724,242 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Protected marine preserve with restricted access - check current regulations with local dive operators. Shallow site suitable for beginners; natural freshwater percolation pits create unique water stratification. Excellent for photography and macro diving."
+  },
+  {
+    "id": "shark-fin-bay-philippines-dilumacad-island",
+    "slug": "shark-fin-bay-philippines-dilumacad-island",
+    "locationId": "shark-fin-bay-philippines",
+    "name": "Dilumacad Island (Helicopter Island)",
+    "heroImageUrl": null,
+    "lat": 10.95,
+    "lng": 119.42,
+    "description": "A stunning limestone island shaped like a helicopter, offering both shallow coral reef dives and an advanced tunnel system. Rich in marine biodiversity with frequent sea turtle sightings, diverse fish species, and colorful coral formations. The famed 35-40m tunnel through the island's north side provides thrilling penetration diving.",
+    "depthRange": {
+      "min": 5,
+      "max": 43
+    },
+    "skillLevel": "advanced",
+    "diveTypes": [
+      "coral",
+      "cave",
+      "geology",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Green Sea Turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Hawksbill Turtle",
+        "scientificName": "Eretmochelys imbricata",
+        "reliability": "seasonal",
+        "bestMonths": [
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "commonName": "Lionfish",
+        "scientificName": "Pterois spp.",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Bluespotted Stingray",
+        "scientificName": "Taeniura lymma",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Whitetip Reef Shark",
+        "scientificName": "Triaenodon obesus",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Frogfish",
+        "scientificName": "Antennarius spp.",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or rash guard"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or rash guard"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or rash guard"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or rash guard"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 30
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or rash guard"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 28,
+          "max": 30
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 10
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 5,
+          "max": 15
+        },
+        "currentStrength": "strong",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "Tropical wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or rash guard"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "Tropical wetsuit or rash guard"
+      }
+    ],
+    "bestMonths": [
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "editorialRank": 76,
+    "getThere": "Fly into Puerto Princesa International Airport (about 50km south). Take a 2-3 hour road transfer to El Nido town, then arrange a 20-30 minute speedboat to Dilumacad Island. Most dives are arranged through El Nido-based dive operators.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "The island's famous limestone tunnel is for advanced divers only (Advanced Open Water certification, 30+ logged dives recommended). Tunnel dive available November-May. Dive the reef for all levels. Part of a managed turtle sanctuary. Local dive operators maintain access; check current conditions before visiting. Strong currents possible during monsoon season (June-September)."
   }
 ]
