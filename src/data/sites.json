@@ -583725,4 +583725,240 @@
     "siteSpecificGear": [],
     "notes": "Protected marine preserve with restricted access - check current regulations with local dive operators. Shallow site suitable for beginners; natural freshwater percolation pits create unique water stratification. Excellent for photography and macro diving."
   }
+,
+  {
+    "id": "cahuita-costa-rica-punta-uva",
+    "slug": "cahuita-costa-rica-punta-uva",
+    "locationId": "cahuita-costa-rica",
+    "name": "Punta Uva",
+    "heroImageUrl": null,
+    "lat": 9.638,
+    "lng": -82.697,
+    "description": "Shallow fringing reef with mixed sand and coral, located in the Gandoca-Manzanillo area. Popular shore dive with calm waters ideal for learning, featuring tropical fish, morays, and occasional sea turtles. Best visited in dry season when visibility exceeds 20 meters. Conditions vary seasonally due to Caribbean river runoff.",
+    "depthRange": {
+      "min": 10,
+      "max": 24
+    },
+    "skillLevel": "open-water",
+    "diveTypes": [
+      "coral",
+      "macro"
+    ],
+    "species": [
+      {
+        "commonName": "Green sea turtle",
+        "scientificName": "Chelonia mydas",
+        "reliability": "seasonal",
+        "bestMonths": [
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Queen angelfish",
+        "scientificName": "Holacanthus ciliaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Green moray eel",
+        "scientificName": "Gymnothorax funebris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Spotted eagle ray",
+        "scientificName": "Aetobatus narinari",
+        "reliability": "seasonal",
+        "bestMonths": [
+          2,
+          3,
+          4,
+          9,
+          10
+        ]
+      },
+      {
+        "commonName": "Queen parrotfish",
+        "scientificName": "Scarus vetula",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Great barracuda",
+        "scientificName": "Sphyraena barracuda",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; dry season dry season with good visibility"
+      },
+      {
+        "month": 2,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; best visibility window, low rainfall"
+      },
+      {
+        "month": 3,
+        "waterTempC": {
+          "min": 26,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 18,
+          "max": 25
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; excellent conditions, dry season peak"
+      },
+      {
+        "month": 4,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 22
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; tail end of dry season, rainfall increasing"
+      },
+      {
+        "month": 5,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit; rainy season begins, reduced visibility"
+      },
+      {
+        "month": 6,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 8,
+          "max": 15
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit; heavy rainfall, river runoff reduces visibility"
+      },
+      {
+        "month": 7,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 10,
+          "max": 18
+        },
+        "currentStrength": "moderate",
+        "suitRecommendation": "3mm wetsuit; rainy season, green turtle nesting peak"
+      },
+      {
+        "month": 8,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; calmer waters emerge, turtle activity high"
+      },
+      {
+        "month": 9,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 24
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; second best diving window, calm and clear"
+      },
+      {
+        "month": 10,
+        "waterTempC": {
+          "min": 27,
+          "max": 29
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 23
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; excellent conditions, reduced rainfall"
+      },
+      {
+        "month": 11,
+        "waterTempC": {
+          "min": 27,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 12,
+          "max": 20
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; transition to drier weather, improving visibility"
+      },
+      {
+        "month": 12,
+        "waterTempC": {
+          "min": 26,
+          "max": 28
+        },
+        "visibilityM": {
+          "min": 15,
+          "max": 21
+        },
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit; dry season begins, good conditions"
+      }
+    ],
+    "bestMonths": [
+      2,
+      3,
+      9,
+      10
+    ],
+    "editorialRank": 68,
+    "getThere": "Punta Uva is located south of Puerto Viejo on Costa Rica's Caribbean coast, approximately 2 km south within the Gandoca-Manzanillo Wildlife Refuge area. Access by car via the coastal road through Manzanillo village (about 45 minutes from Puerto Viejo). Most dive operators provide shore launch and boat access from the beach; check conditions before arrival, as rough seas may limit diving.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Coral condition and visibility vary significantly by season and recent rainfall. The fringing reef is closest to shore, making it ideal for shallow recreational dives and training. Part of Gandoca-Manzanillo Wildlife Refuge; check current regulations. Mixed reviews on coral health and marine life abundance, so conditions may differ from operator marketing claims. Local dive shops essential for current conditions and site selection."
+  }
 ]
