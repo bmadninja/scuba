@@ -74400,5 +74400,65 @@
     "license": "cc-by-nc",
     "attribution": "(c) Gonzalo Mucientes Sandoval, some rights reserved (CC BY-NC), uploaded by Gonzalo Mucientes Sandoval",
     "source": "inat-taxa"
+  },
+  "cahuita-costa-rica-punta-uva:chelonia mydas": {
+    "siteSlug": "cahuita-costa-rica-punta-uva",
+    "speciesKey": "chelonia mydas",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/705611179/large.jpg",
+    "taxonId": 39659,
+    "observationId": 385429593,
+    "license": "cc-by-nc",
+    "attribution": "(c) johasarapiqui, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "cahuita-costa-rica-punta-uva:holacanthus ciliaris": {
+    "siteSlug": "cahuita-costa-rica-punta-uva",
+    "speciesKey": "holacanthus ciliaris",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/193894178/large.jpg",
+    "taxonId": 47235,
+    "observationId": 114867625,
+    "license": "cc-by-nc",
+    "attribution": "(c) Hubert Szczygieł, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "cahuita-costa-rica-punta-uva:gymnothorax funebris": {
+    "siteSlug": "cahuita-costa-rica-punta-uva",
+    "speciesKey": "gymnothorax funebris",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213343/large.JPG",
+    "taxonId": 120125,
+    "observationId": 156060,
+    "license": "cc-by-nc",
+    "attribution": "(c) Andrea Espinosa, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "cahuita-costa-rica-punta-uva:aetobatus narinari": {
+    "siteSlug": "cahuita-costa-rica-punta-uva",
+    "speciesKey": "aetobatus narinari",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/30124537/large.jpeg",
+    "taxonId": 49297,
+    "observationId": 19569977,
+    "license": "cc-by-nc",
+    "attribution": "(c) Michael Barth, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "cahuita-costa-rica-punta-uva:scarus vetula": {
+    "siteSlug": "cahuita-costa-rica-punta-uva",
+    "speciesKey": "scarus vetula",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/196081342/large.jpg",
+    "taxonId": 112169,
+    "observationId": 116180883,
+    "license": "cc-by-nc",
+    "attribution": "(c) Hubert Szczygieł, some rights reserved (CC BY-NC)",
+    "source": "inat-regional"
+  },
+  "cahuita-costa-rica-punta-uva:sphyraena barracuda": {
+    "siteSlug": "cahuita-costa-rica-punta-uva",
+    "speciesKey": "sphyraena barracuda",
+    "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113742165/large.jpg",
+    "taxonId": 47251,
+    "observationId": 70016145,
+    "license": "cc0",
+    "attribution": "no rights reserved",
+    "source": "inat-regional"
   }
 }
