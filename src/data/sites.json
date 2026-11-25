@@ -583724,8 +583724,7 @@
     "gearIds": [],
     "siteSpecificGear": [],
     "notes": "Protected marine preserve with restricted access - check current regulations with local dive operators. Shallow site suitable for beginners; natural freshwater percolation pits create unique water stratification. Excellent for photography and macro diving."
-  }
-,
+  },
   {
     "id": "cahuita-costa-rica-punta-uva",
     "slug": "cahuita-costa-rica-punta-uva",
@@ -583754,17 +583753,20 @@
           8,
           9,
           10
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/705611179/large.jpg"
       },
       {
         "commonName": "Queen angelfish",
         "scientificName": "Holacanthus ciliaris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/193894178/large.jpg"
       },
       {
         "commonName": "Green moray eel",
         "scientificName": "Gymnothorax funebris",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213343/large.JPG"
       },
       {
         "commonName": "Spotted eagle ray",
@@ -583776,17 +583778,20 @@
           4,
           9,
           10
-        ]
+        ],
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/30124537/large.jpeg"
       },
       {
         "commonName": "Queen parrotfish",
         "scientificName": "Scarus vetula",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/196081342/large.jpg"
       },
       {
         "commonName": "Great barracuda",
         "scientificName": "Sphyraena barracuda",
-        "reliability": "year-round"
+        "reliability": "year-round",
+        "imageUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113742165/large.jpg"
       }
     ],
     "conditionsByMonth": [
