@@ -583966,4 +583966,144 @@
     "siteSpecificGear": [],
     "notes": "Coral condition and visibility vary significantly by season and recent rainfall. The fringing reef is closest to shore, making it ideal for shallow recreational dives and training. Part of Gandoca-Manzanillo Wildlife Refuge; check current regulations. Mixed reviews on coral health and marine life abundance, so conditions may differ from operator marketing claims. Local dive shops essential for current conditions and site selection."
   }
+,
+  {
+    "id": "torre-guaceto-italy-punta-del-serrone",
+    "slug": "punta-del-serrone",
+    "locationId": "torre-guaceto-italy",
+    "name": "Punta del Serrone",
+    "heroImageUrl": null,
+    "lat": 40.675,
+    "lng": 17.949,
+    "description": "Rocky canyon dive site renowned for macro photography and nudibranchs. Shallow formations drop from 6m to 13-16m with caves and arches. Historically significant—the discovery site of the Bronzes of Brindisi, an important ancient artifact collection.",
+    "depthRange": {
+      "min": 6,
+      "max": 16
+    },
+    "skillLevel": "open-water",
+    "diveTypes": ["macro", "geology", "cave"],
+    "species": [
+      {
+        "commonName": "Flabellina nudibranch",
+        "scientificName": "Flabellina affinis",
+        "reliability": "seasonal",
+        "bestMonths": [5, 6, 7, 8, 9]
+      },
+      {
+        "commonName": "Common octopus",
+        "scientificName": "Octopus vulgaris",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "European conger eel",
+        "scientificName": "Conger conger",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Red scorpionfish",
+        "scientificName": "Scorpaena scrofa",
+        "reliability": "year-round"
+      },
+      {
+        "commonName": "Brown meagre",
+        "scientificName": "Sciaena umbra",
+        "reliability": "year-round"
+      }
+    ],
+    "conditionsByMonth": [
+      {
+        "month": 1,
+        "waterTempC": {"min": 13, "max": 15},
+        "visibilityM": {"min": 8, "max": 12},
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full wetsuit"
+      },
+      {
+        "month": 2,
+        "waterTempC": {"min": 13, "max": 15},
+        "visibilityM": {"min": 8, "max": 12},
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full wetsuit"
+      },
+      {
+        "month": 3,
+        "waterTempC": {"min": 14, "max": 16},
+        "visibilityM": {"min": 10, "max": 14},
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 4,
+        "waterTempC": {"min": 16, "max": 19},
+        "visibilityM": {"min": 12, "max": 16},
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 5,
+        "waterTempC": {"min": 18, "max": 21},
+        "visibilityM": {"min": 16, "max": 20},
+        "currentStrength": "mild",
+        "suitRecommendation": "3mm wetsuit"
+      },
+      {
+        "month": 6,
+        "waterTempC": {"min": 20, "max": 23},
+        "visibilityM": {"min": 18, "max": 22},
+        "currentStrength": "mild",
+        "suitRecommendation": "2-3mm wetsuit"
+      },
+      {
+        "month": 7,
+        "waterTempC": {"min": 23, "max": 26},
+        "visibilityM": {"min": 18, "max": 22},
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm wetsuit or tropical"
+      },
+      {
+        "month": 8,
+        "waterTempC": {"min": 24, "max": 27},
+        "visibilityM": {"min": 18, "max": 22},
+        "currentStrength": "mild",
+        "suitRecommendation": "2mm wetsuit or tropical"
+      },
+      {
+        "month": 9,
+        "waterTempC": {"min": 22, "max": 25},
+        "visibilityM": {"min": 16, "max": 20},
+        "currentStrength": "mild",
+        "suitRecommendation": "2-3mm wetsuit"
+      },
+      {
+        "month": 10,
+        "waterTempC": {"min": 19, "max": 23},
+        "visibilityM": {"min": 14, "max": 18},
+        "currentStrength": "mild",
+        "suitRecommendation": "3-5mm wetsuit"
+      },
+      {
+        "month": 11,
+        "waterTempC": {"min": 16, "max": 20},
+        "visibilityM": {"min": 10, "max": 14},
+        "currentStrength": "mild",
+        "suitRecommendation": "5mm wetsuit"
+      },
+      {
+        "month": 12,
+        "waterTempC": {"min": 14, "max": 16},
+        "visibilityM": {"min": 8, "max": 12},
+        "currentStrength": "mild",
+        "suitRecommendation": "7mm full wetsuit"
+      }
+    ],
+    "bestMonths": [5, 6, 7, 8, 9],
+    "editorialRank": 65,
+    "getThere": "Nearest airport: Brindisi-Casale (10 km). Dive site located 15-20 km south of Brindisi city center. Accessible by car/taxi to Marina di Brindisi, then boat transfer approximately 10-15 minutes. Local dive operators arrange accommodation transfers.",
+    "lodging": [],
+    "operators": [],
+    "gearIds": [],
+    "siteSpecificGear": [],
+    "notes": "Historically significant site within Brindisi's marine archaeological zone. The Bronzes of Brindisi, important ancient artifacts, were discovered here in the 1990s. Rocky terrain with sharp edges—gloves recommended. Located in a marine protected area; check with operators for current access regulations. Conger eels more active during night/dusk dives."
+  }
+
 ]
